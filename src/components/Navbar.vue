@@ -34,22 +34,20 @@ export default {
   },
   components: {
     Tiz,
-  },
-  mounted() {
-    document.title += " - new title";
-  },
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-#nav {
-  padding: 30px;
-}
-
 #nav a {
+  padding: 10px;
   font-weight: bold;
   color: #2c3e50;
+}
+
+#nav {
+  padding-bottom: 10px;
 }
 
 #nav a.router-link-exact-active {
@@ -58,7 +56,7 @@ export default {
 
 .header {
   width: 800px;
-  height: 100px;
+  height: 70px;
   background: url(../assets/img/navbar.svg);
 }
 
