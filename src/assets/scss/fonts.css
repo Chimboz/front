@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Pixelated Verdana';
+    src: url('../fonts/pixelated_verdana_regular_12pt.woff2') format('woff2'),
+        url('../fonts/pixelated_verdana_regular_12pt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixelated Verdana';
+    src: url('../fonts/pixelated_verdana_bold_12pt.woff2') format('woff2'),
+        url('../fonts/pixelated_verdana_bold_12pt.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chimboz Heavy';
+    src: url('../fonts/chimbozheavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chimboz Heavy';
+    src: url('../fonts/chimbozheavyBG.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jagger SF';
+    src: url('../fonts/jagger_sf.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

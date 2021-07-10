@@ -6,6 +6,39 @@
   --navbar-top: 80px;
 }
 
-app {
-  width: 700px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  background-color: #6090be;
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+}
+
+::-webkit-scrollbar {
+  background-color: #202324;
+  color: #aba499;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #181a1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+}
+
+::selection {
+  background-color: #004daa !important;
+  color: #e8e6e3 !important;
+}
+
+#app {
+  width: 800px;
+  margin: auto;
 }
