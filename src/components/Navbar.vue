@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="header">
     <img id="logo" src="../assets/img/logo.svg" />
     <div class="toast">
       <div style="margin-top: -10px">
@@ -10,6 +10,14 @@
       </div>
       <Tiz />
     </div>
+  </div>
+  <div id="nav">
+    <router-link to="/">Home</router-link>
+    <router-link to="/tchat">Tchat</router-link>
+    <router-link to="/account">Mon compte</router-link>
+    <router-link to="/games">Jeux</router-link>
+    <router-link to="/members">Membres</router-link>
+    <router-link to="/bbs">Forum</router-link>
   </div>
 </template>
 
@@ -35,7 +43,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.navbar {
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.header {
   width: 800px;
   height: 100px;
   background: url(../assets/img/navbar.svg);
@@ -72,7 +93,7 @@ export default {
   border: none;
   background: white;
   width: 120px;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
 }
 
 #connect .chz-icon {
