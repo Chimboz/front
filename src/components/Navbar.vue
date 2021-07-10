@@ -72,6 +72,7 @@ export default {
   border: none;
   background: white;
   width: 120px;
+  letter-spacing: .3px;
 }
 
 #connect .chz-icon {
@@ -81,5 +82,6 @@ export default {
 #connect:hover {
   background: #ade5f3;
   font-weight: bold;
+  letter-spacing: 0;
 }
 </style>
