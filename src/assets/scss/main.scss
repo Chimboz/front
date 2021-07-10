@@ -40,6 +40,10 @@ body {
   color: #e8e6e3 !important;
 }
 
+img {
+  image-rendering: pixelated;
+}
+
 #app {
   width: 800px;
   margin: auto;

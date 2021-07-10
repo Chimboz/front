@@ -1,19 +1,21 @@
 <template>
-  <img
-    class="card-header-img"
-    v-if="filename"
-    :src="require(`@/assets/img/${filename}`)"
-  />
-  <div class="card">
-    <h2>
-      <slot name="header"></slot>
-    </h2>
-    <em>"<slot name="subtitle"></slot>"</em>
-    <br />
-    <br />
-    <main>
-      <slot></slot>
-    </main>
+  <div>
+    <img
+      class="card-header-img"
+      v-if="filename"
+      :src="require(`@/assets/img/${filename}`)"
+    />
+    <div class="card">
+      <h2>
+        <slot name="header"></slot>
+      </h2>
+      <em>"<slot name="subtitle"></slot>"</em>
+      <br />
+      <br />
+      <main>
+        <slot></slot>
+      </main>
+    </div>
   </div>
 </template>
 
@@ -46,12 +48,12 @@ export default {
 }
 
 img {
-    display: block;
+  display: block;
 }
 
 img + .card {
   border-radius: 0 0 12px 12px;
-  display:inline-block;
+  display: inline-block;
   background-image: linear-gradient(
     to bottom,
     #d5e6f3 0px,
