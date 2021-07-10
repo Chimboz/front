@@ -1,11 +1,10 @@
 <template>
   <div>
     <img
-      class="card-header-img"
-      v-if="filename"
-      :src="require(`@/assets/img/${filename}`)"
+      v-if="top"
+      src="@/assets/img/menul_top_blu.gif"
     />
-    <div class="card">
+    <div class="card" v-bind:class="{ bot: bot }">
       <h2>
         <slot name="header"></slot>
       </h2>
@@ -16,6 +15,11 @@
         <slot></slot>
       </main>
     </div>
+    <img
+      v-if="bot"
+      src="@/assets/img/footg_blu_ext.gif"
+    />
+    
   </div>
 </template>
 
@@ -64,6 +68,17 @@ img + .card {
     #6ebef0 0px,
     #6ebef0 calc(100% - 12px),
     #5aa1cd 100%
+  );
+}
+
+.bot {
+  border-radius: 12px 12px 0 0;
+  display: block;
+  background-image: linear-gradient(
+    to bottom,
+    #aadcfc 0px,
+    #6ebef0 12px,
+    #6ebef0 100%
   );
 }
 </style>

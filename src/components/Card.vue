@@ -1,7 +1,6 @@
 <template>
   <div>
     <img
-      class="card-header-img"
       v-if="filename"
       :src="require(`@/assets/img/${filename}`)"
     />
