@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar">
-    <img id="logo" src="../assets/img/logo.svg" />
+  <div class="header">
+    <router-link to="/"><img id="logo" src="../assets/img/logo.svg" /></router-link>
     <div class="toast">
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
@@ -10,6 +10,14 @@
       </div>
       <Tiz />
     </div>
+  </div>
+  <div id="nav">
+    <router-link to="/">Accueil</router-link>
+    <router-link to="/tchat">Tchat</router-link>
+    <router-link to="/account">Mon compte</router-link>
+    <router-link to="/games">Jeux</router-link>
+    <router-link to="/members">Membres</router-link>
+    <router-link to="/bbs">Forum</router-link>
   </div>
 </template>
 
@@ -26,18 +34,36 @@ export default {
   },
   components: {
     Tiz,
-  },
-  mounted() {
-    document.title += " - new title";
-  },
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.navbar {
+#nav a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a:hover {
+  color: #2c3e50aa
+}
+
+#nav {
+  text-align: center;
+  padding: 10px;
+}
+
+#nav a.router-link-exact-active {
+  color: #fff;
+}
+
+.header {
   width: 800px;
-  height: 100px;
+  height: 70px;
   background: url(../assets/img/navbar.svg);
 }
 
@@ -72,6 +98,7 @@ export default {
   border: none;
   background: white;
   width: 120px;
+  letter-spacing: 0.3px;
 }
 
 #connect .chz-icon {
@@ -81,5 +108,6 @@ export default {
 #connect:hover {
   background: #ade5f3;
   font-weight: bold;
+  letter-spacing: 0;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div>
     <img
-      v-if="filename"
-      :src="require(`@/assets/img/${filename}`)"
+      v-if="top"
+      src="@/assets/img/menul_top_blu.gif"
     />
-    <div class="card">
+    <div class="card" v-bind:class="{ bot: bot }">
       <h2>
         <slot name="header"></slot>
       </h2>
@@ -15,6 +15,11 @@
         <slot></slot>
       </main>
     </div>
+    <img
+      v-if="bot"
+      src="@/assets/img/footg_blu_ext.gif"
+    />
+    
   </div>
 </template>
 
@@ -22,8 +27,13 @@
 export default {
   name: "Navbar",
   props: {
-    filename: {
-      type: String,
+    bot: {
+      type: Boolean,
+      default: false
+    },
+    top: {
+      type: Boolean,
+      default: false
     },
   },
 };
@@ -32,17 +42,17 @@ export default {
 <style lang="scss" scoped>
 .card {
   border-radius: 12px;
-  width: 468px;
+  width: 154px;
   padding: 17px 5px;
   height: auto;
   text-align: center;
   background-color: #d5e6f3;
   background-image: linear-gradient(
     to bottom,
-    #f2f8fc 0px,
-    #d5e6f3 12px,
-    #d5e6f3 calc(100% - 12px),
-    #a5cbe9 100%
+    #aadcfc 0px,
+    #6ebef0 12px,
+    #6ebef0 calc(100% - 12px),
+    #5aa1cd 100%
   );
 }
 
@@ -55,9 +65,20 @@ img + .card {
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
-    #d5e6f3 0px,
-    #d5e6f3 calc(100% - 12px),
-    #a5cbe9 100%
+    #6ebef0 0px,
+    #6ebef0 calc(100% - 12px),
+    #5aa1cd 100%
+  );
+}
+
+.bot {
+  border-radius: 12px 12px 0 0;
+  display: block;
+  background-image: linear-gradient(
+    to bottom,
+    #aadcfc 0px,
+    #6ebef0 12px,
+    #6ebef0 100%
   );
 }
 </style>

@@ -20,11 +20,11 @@
         20CeNt avec 1077 match nuls ! <br /> </Column
     ></template>
     <Card filename="head_bac_page.gif">
-      <template v-slot:header> Accueil </template>
+      <template v-slot:header> BBS </template>
       <template v-slot:subtitle
-        >Accueil</template
+        >BBS</template
       >
-      Accueil
+      BBS
     </Card>
     <template v-slot:right-column
       ><Column top>
@@ -54,7 +54,7 @@ import Container from "@/views/Container.vue";
 import Column from "@/components/Column.vue";
 
 export default {
-  name: "Home",
+  name: "BBS",
   components: {
     Card,
     Container,
@@ -62,6 +62,5 @@ export default {
   },
 };
 </script>
-
 <style lang="scss" scoped>
 </style>
