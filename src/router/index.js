@@ -6,7 +6,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { title: 'Chapatiz Retro' }
+    meta: { title: 'Chapatiz Retro₁₀' }
   },
   {
     path: '/tchat',
@@ -15,25 +15,25 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Tchat.vue'),
-    meta: { title: 'Chapatiz Retro | Tchat' }
+    meta: { title: 'Chapatiz Retro₂₃ | Tchat' }
   },
   {
     path: '/account',
     name: 'Account',
     component: () => import('../views/Account.vue'),
-    meta: { title: 'Chapatiz Retro | Mon compte' }
+    meta: { title: 'Chapatiz Retro₄₅ | Mon compte' }
   },
   {
     path: '/games',
     name: 'Games',
     component: () => import('../views/Games.vue'),
-    meta: { title: 'Chapatiz Retro | Jeux' }
+    meta: { title: 'Chapatiz Retro₆₇ | Jeux' }
   },
   {
     path: '/members',
     name: 'Members',
     component: () => import('../views/Members.vue'),
-    meta: { title: 'Chapatiz Retro | Membres' }
+    meta: { title: 'Chapatiz Retro₈₉ | Membres' }
   },
   {
     path: '/bbs',

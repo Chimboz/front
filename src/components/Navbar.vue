@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img id="logo" src="../assets/img/logo.svg" />
+    <router-link to="/"><img id="logo" src="../assets/img/logo.svg" /></router-link>
     <div class="toast">
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <div id="nav">
-    <router-link to="/">Home</router-link>
+    <router-link to="/">Accueil</router-link>
     <router-link to="/tchat">Tchat</router-link>
     <router-link to="/account">Mon compte</router-link>
     <router-link to="/games">Jeux</router-link>
@@ -41,17 +41,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 #nav a {
+  text-decoration: none;
   padding: 10px;
+  font-size: 15px;
   font-weight: bold;
   color: #2c3e50;
 }
 
+#nav a:hover {
+  color: #2c3e50aa
+}
+
 #nav {
-  padding-bottom: 10px;
+  text-align: center;
+  padding: 10px;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #fff;
 }
 
 .header {
