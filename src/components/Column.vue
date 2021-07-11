@@ -4,7 +4,7 @@
       v-if="top"
       src="@/assets/img/menul_top_blu.gif"
     />
-    <div class="card" v-bind:class="{ bot: bot }">
+    <div class="column-card" v-bind:class="{ bot: bot }">
       <h2>
         <slot name="header"></slot>
       </h2>
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
+.column-card {
   border-radius: 12px;
   width: 154px;
   padding: 17px 5px;
@@ -54,14 +54,16 @@ export default {
     #6ebef0 calc(100% - 12px),
     #5aa1cd 100%
   );
+  box-shadow: 0px 1px #355668;
 }
 
 img {
   display: block;
 }
 
-img + .card {
+img + .column-card {
   border-radius: 0 0 12px 12px;
+  padding-top: 5px;
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
@@ -74,6 +76,7 @@ img + .card {
 .bot {
   border-radius: 12px 12px 0 0;
   display: block;
+  padding-bottom: 5px;
   background-image: linear-gradient(
     to bottom,
     #aadcfc 0px,

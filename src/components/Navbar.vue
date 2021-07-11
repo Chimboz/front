@@ -62,9 +62,9 @@ export default {
 }
 
 .header {
-  width: 800px;
+  width: 100%;
   height: 70px;
-  background: url(../assets/img/navbar.svg);
+  background: url(../assets/img/navbar_old.svg);
 }
 
 #logo {
