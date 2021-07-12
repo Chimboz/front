@@ -1,16 +1,16 @@
-name: DEPLOY TO STAGING
+name: Deploy
 
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   firebase-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
       - name: Installing project dependencies
         run: npm install
       - name: Building the project
