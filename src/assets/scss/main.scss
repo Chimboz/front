@@ -38,6 +38,15 @@ body {
   color: #004e84 !important;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
 img {
   image-rendering: pixelated;
 }
