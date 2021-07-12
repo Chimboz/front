@@ -25,7 +25,7 @@
     <router-link to="/members"
       ><button class="nav-btn">Membres</button></router-link
     >
-    <router-link to="/bbs"><button class="nav-btn">Forum</button></router-link>
+    <router-link to="/bbs"><button class="nav-btn">Communauté</button></router-link>
   </div>
 </template>
 
@@ -103,7 +103,6 @@ export default {
   height: 25px;
   font-family: "Chimboz Heavy";
   font-weight: normal;
-  color: #fff;
   background-image: linear-gradient(
     to bottom,
     #ffe4f5 0%,
@@ -116,15 +115,31 @@ export default {
   color: #fff;
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #f0009c, #b40075) 1 100%;
+  border-color: #f0009c #ae0050 #ae0050 #ae0050;
+  text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050, 0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050, -1px 1px 0 #ae0050;
 }
 
 #nav a:first-child .nav-btn {
+  border-left-color: #f0009c;
   border-radius: 10px 0 0 10px;
+  border-left-width: 5px;
 }
 
 #nav a:last-child .nav-btn {
+  border-right-color: #f0009c;
   border-radius: 0 10px 10px 0;
+  border-right-width: 5px;
+}
+
+
+#nav {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#nav a.router-link-exact-active .nav-btn {
+  color: #b30048;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
 .nav-btn:hover {
@@ -135,19 +150,22 @@ export default {
     #ce4800 50%,
     #ff6600 100%
   );
-  border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
+  color: #fff !important;
+  border-color: #ff6600 #973500 #973500 #973500;
+  text-shadow: 2px 0 0 #ce4800, -2px 0 0 #ce4800, 0 2px 0 #ce4800, 0 -2px 0 #ce4800, 1px 1px #ce4800, -1px -1px 0 #ce4800, 1px -1px 0 #ce4800, -1px 1px 0 #ce4800 !important;
+  //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
+}
+
+#nav a:first-child .nav-btn:hover {
+  border-left-color: #ff6600;
+}
+
+#nav a:last-child .nav-btn:hover {
+  border-right-color: #ff6600;
 }
 
 .nav-btn a:hover {
   text-decoration: none;
 }
 
-#nav {
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-#nav a.router-link-exact-active {
-  color: #fff;
-}
 </style>
