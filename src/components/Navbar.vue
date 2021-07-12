@@ -52,6 +52,7 @@ export default {
   width: 100%;
   height: 70px;
   background: url(../assets/img/navbar_old.svg);
+  border-radius: 0 0 30px 30px;
 }
 
 #logo {
