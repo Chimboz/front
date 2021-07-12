@@ -1,9 +1,9 @@
 <template>
   <Container>
-    <template v-slot:left-column
+    <template #left-column
       ><Column top>
-        <template v-slot:header> Records ! </template>
-        <template v-slot:subtitle
+        <template #header> Records ! </template>
+        <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
         >
         parties jouées:
@@ -20,16 +20,16 @@
         20CeNt avec 1077 match nuls ! <br /> </Column
     ></template>
     <Card filename="head_bac_page.gif">
-      <template v-slot:header> Mon compte </template>
-      <template v-slot:subtitle
+      <template #header> Mon compte </template>
+      <template #subtitle
         >Mon compte</template
       >
       Mon compte
     </Card>
-    <template v-slot:right-column
+    <template #right-column
       ><Column top>
-        <template v-slot:header> Records ! </template>
-        <template v-slot:subtitle
+        <template #header> Records ! </template>
+        <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
         >
         parties jouées:
