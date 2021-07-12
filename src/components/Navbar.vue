@@ -25,7 +25,9 @@
     <router-link to="/members"
       ><button class="nav-btn">Membres</button></router-link
     >
-    <router-link to="/bbs"><button class="nav-btn">Communauté</button></router-link>
+    <router-link to="/bbs"
+      ><button class="nav-btn">Communauté</button></router-link
+    >
   </div>
 </template>
 
@@ -52,7 +54,8 @@ export default {
   width: 100%;
   height: 70px;
   background: url(../assets/img/navbar_old.svg);
-  border-radius: 0 0 30px 30px;
+  //box-shadow: inset 0 -10px 5px -5px #76bde8;
+  border-radius: 0 0 25% 25%;
 }
 
 #logo {
@@ -119,7 +122,9 @@ export default {
   line-height: 14px;
   border-style: solid;
   border-color: #f0009c #ae0050 #ae0050 #ae0050;
-  text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050, 0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050, -1px 1px 0 #ae0050;
+  text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050,
+    0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050,
+    -1px 1px 0 #ae0050;
   box-shadow: 0 2px 2px #0006;
 }
 
@@ -135,7 +140,6 @@ export default {
   border-right-width: 5px;
 }
 
-
 #nav {
   text-align: center;
   padding-bottom: 10px;
@@ -143,7 +147,8 @@ export default {
 
 #nav a.router-link-exact-active .nav-btn {
   color: #b30048;
-  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
+    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
 .nav-btn:hover {
@@ -156,7 +161,9 @@ export default {
   );
   color: #fff !important;
   border-color: #ff6600 #973500 #973500 #973500;
-  text-shadow: 2px 0 0 #ce4800, -2px 0 0 #ce4800, 0 2px 0 #ce4800, 0 -2px 0 #ce4800, 1px 1px #ce4800, -1px -1px 0 #ce4800, 1px -1px 0 #ce4800, -1px 1px 0 #ce4800 !important;
+  text-shadow: 2px 0 0 #ce4800, -2px 0 0 #ce4800, 0 2px 0 #ce4800,
+    0 -2px 0 #ce4800, 1px 1px #ce4800, -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
+    -1px 1px 0 #ce4800 !important;
   //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
 }
 
@@ -171,5 +178,4 @@ export default {
 .nav-btn a:hover {
   text-decoration: none;
 }
-
 </style>
