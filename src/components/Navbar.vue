@@ -114,10 +114,13 @@ export default {
   padding: 5px 20px;
   font-size: 17px;
   color: #fff;
-  border-width: 1px;
+  border-width: 2px 1px;
+  align-items: center;
+  line-height: 14px;
   border-style: solid;
   border-color: #f0009c #ae0050 #ae0050 #ae0050;
   text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050, 0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050, -1px 1px 0 #ae0050;
+  box-shadow: 0 2px 2px #0006;
 }
 
 #nav a:first-child .nav-btn {
