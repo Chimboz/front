@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   border-radius: 12px;
-  width: 468px;
+  width: 100%;
   padding: 17px 5px;
   height: auto;
   text-align: center;
@@ -48,6 +48,7 @@ export default {
 
 img {
   display: block;
+  width: 100%
 }
 
 img + .card {
