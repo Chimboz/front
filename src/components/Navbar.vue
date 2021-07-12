@@ -115,11 +115,11 @@ export default {
     #f0009c 100%
   );
   padding: 5px 20px;
-  font-size: 17px;
+  font-size: 18px;
   color: #fff;
   border-width: 2px 1px;
   align-items: center;
-  line-height: 14px;
+  line-height: 12px;
   border-style: solid;
   border-color: #f0009c #ae0050 #ae0050 #ae0050;
   text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050,
