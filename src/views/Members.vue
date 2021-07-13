@@ -54,7 +54,7 @@ import Container from "@/views/Container.vue";
 import Column from "@/components/Column.vue";
 
 export default {
-  name: "Account",
+  name: "Members",
   components: {
     Card,
     Container,
@@ -66,4 +66,3 @@ export default {
 <style lang="scss" scoped>
 
 </style>
-

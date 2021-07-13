@@ -4,7 +4,7 @@
       v-if="top"
       src="@/assets/img/menul_top_blu.gif"
     />
-    <div class="column-card" v-bind:class="{ bot: bot }">
+    <div class="column-card" :class="{ bot: bot }">
       <h2>
         <slot name="header"></slot>
       </h2>
@@ -19,13 +19,13 @@
       v-if="bot"
       src="@/assets/img/footg_blu_ext.gif"
     />
-    
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "Navbar",
+  name: "Column",
   props: {
     bot: {
       type: Boolean,

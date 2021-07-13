@@ -19,7 +19,7 @@
         match nuls: <br />
         20CeNt avec 1077 match nuls ! <br /> </Column
     ></template>
-    <Card filename="head_bac_page.gif">
+    <Card yellow>
       <template #header> Accueil </template>
       <template #subtitle
         >Accueil</template
