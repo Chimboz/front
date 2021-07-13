@@ -19,10 +19,23 @@
         match nuls: <br />
         20CeNt avec 1077 match nuls ! <br /> </Column
     ></template>
-    <Card yellow>
+    <Card yellow left-align>
       <template #subtop>Chapaniouz</template>
-      <template #header> Accueil </template>
-      Accueil
+      <template #header
+        ><img
+          src="@/assets/img/chimboking.gif"
+          alt="Chimboking"
+          style="float: left; margin: 0 12px 12px 12px"
+        />
+        Changelog du 12/07/2021
+      </template>
+
+      - La salle En route vers Kopakabana est désormais ouverte ! L'ambiance
+      change selon l'heure (heure de Paris)<br />
+      - La salle Patojdur est désormais ouverte !<br />
+      - Le jeu Patojdur est opérationnel avec son classement (il manque
+      l'animation de nage)<br />
+      VIDEZ VOTRE CACHE<br />
     </Card>
     <template #right-column
       ><Column bot>

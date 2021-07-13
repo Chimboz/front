@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ yellow: yellow }">
+  <div :class="{ yellow: yellow, 'left-align': 'left-align'  }">
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
     <div v-else-if="$slots['subtop']" class="subtop"><slot name="subtop"></slot></div>
     <div class="card">
@@ -66,16 +66,26 @@ img + .card, .subtop + .card {
 }
 
 .subtop {
+  color: #fff;
+  border-top: 2px solid;
   padding-left: 25px;
-  font-size: 12px;
+  font-family: "Chimboz Heavy";
+  font-size: 18px;
+  line-height: 12px;
   text-align: left;
   height: 25px;
   box-shadow: 0 -1px #18486a;
   border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.left-align .card {
+  text-align:left;
 }
 
 .yellow .subtop {
-  border-top: 1px solid #a38c47;
+  border-color: #a38c47;
   background-image: linear-gradient(
     to bottom,
     #a38c47 0px,
@@ -83,7 +93,7 @@ img + .card, .subtop + .card {
     #ffe5a3 calc(100% - 3px),
     #a38c47 100%
   );
-  text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050, 0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050, -1px 1px 0 #ae0050;
+  text-shadow: 2px 0 0 #963d00, -2px 0 0 #963d00, 0 2px 0 #963d00, 0 -2px 0 #963d00, 1px 1px #963d00, -1px -1px 0 #963d00, 1px -1px 0 #963d00, -1px 1px 0 #963d00;
 }
 
 .yellow .card {
@@ -105,5 +115,9 @@ img + .card, .subtop + .card {
     #fff4d5 calc(100% - 12px),
     #ddcb9b 100%
   ) !important;
+}
+
+.yellow h2 {
+  color: #726338;
 }
 </style>
