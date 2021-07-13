@@ -167,6 +167,16 @@ export default {
   //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
 }
 
+.nav-btn:active {
+  background-image: linear-gradient(
+    to top,
+    #fff2ea 0%,
+    #ff7214 50%,
+    #ce4800 50%,
+    #ff6600 100%
+  );
+}
+
 #nav a:first-child .nav-btn:hover {
   border-left-color: #ff6600;
 }
