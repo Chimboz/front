@@ -1,14 +1,16 @@
 <template>
-  <div :class="{ yellow: yellow, 'left-align': 'left-align'  }">
+  <div :class="{ yellow: yellow, 'justified': justified }">
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
-    <div v-else-if="$slots['subtop']" class="subtop"><slot name="subtop"></slot></div>
+    <div v-else-if="$slots['subtop']" class="subtop">
+      <slot name="subtop"></slot>
+    </div>
     <div class="card">
       <h2>
         <slot name="header"></slot>
       </h2>
       <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em>
-      <br v-if="$slots['subtitle'] && $slots.default"/>
-      <br v-if="$slots['header'] && $slots.default"/>
+      <br v-if="$slots['subtitle'] && $slots.default" />
+      <br v-if="$slots['header'] && $slots.default" />
       <main>
         <slot></slot>
       </main>
@@ -27,6 +29,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    justified: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -35,7 +41,7 @@ export default {
 .card {
   border-radius: 12px;
   width: 100%;
-  padding: 17px 5px;
+  padding: 17px;
   height: auto;
   text-align: center;
   background-color: #d5e6f3;
@@ -54,7 +60,8 @@ img {
   width: 100%;
 }
 
-img + .card, .subtop + .card {
+img + .card,
+.subtop + .card {
   border-radius: 0 0 12px 12px;
   display: inline-block;
   background-image: linear-gradient(
@@ -67,7 +74,7 @@ img + .card, .subtop + .card {
 
 .subtop {
   color: #fff;
-  border-top: 2px solid;
+  border-top: 1px solid;
   padding-left: 25px;
   font-family: "Chimboz Heavy";
   font-size: 18px;
@@ -80,8 +87,8 @@ img + .card, .subtop + .card {
   align-items: center;
 }
 
-.left-align .card {
-  text-align:left;
+.justified .card {
+  text-align: justify;
 }
 
 .yellow .subtop {
@@ -93,7 +100,9 @@ img + .card, .subtop + .card {
     #ffe5a3 calc(100% - 3px),
     #a38c47 100%
   );
-  text-shadow: 2px 0 0 #963d00, -2px 0 0 #963d00, 0 2px 0 #963d00, 0 -2px 0 #963d00, 1px 1px #963d00, -1px -1px 0 #963d00, 1px -1px 0 #963d00, -1px 1px 0 #963d00;
+  text-shadow: 2px 0 0 #963d00, -2px 0 0 #963d00, 0 2px 0 #963d00,
+    0 -2px 0 #963d00, 1px 1px #963d00, -1px -1px 0 #963d00, 1px -1px 0 #963d00,
+    -1px 1px 0 #963d00;
 }
 
 .yellow .card {

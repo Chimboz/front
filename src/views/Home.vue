@@ -19,13 +19,13 @@
         match nuls: <br />
         20CeNt avec 1077 match nuls ! <br /> </Column
     ></template>
-    <Card yellow left-align>
+    <Card yellow justified>
       <template #subtop>Chapaniouz</template>
       <template #header
         ><img
           src="@/assets/img/chimboking.gif"
           alt="Chimboking"
-          style="float: left; margin: 0 12px 12px 12px"
+          style="float: left; margin: 0 17px 17px 0"
         />
         Changelog du 12/07/2021
       </template>
