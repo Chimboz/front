@@ -22,7 +22,7 @@
 import Board from "./Board.vue";
 
 export default {
-  name: "BBS",
+  name: "BoardList",
   components: {
     Board,
   },

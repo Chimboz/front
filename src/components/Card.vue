@@ -1,10 +1,7 @@
 <template>
   <div>
-    <img
-      v-if="filename"
-      :src="require(`@/assets/img/${filename}`)"
-    />
-    <div class="card">
+    <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
+    <div class="card" :class="{ yellow: yellow }">
       <h2>
         <slot name="header"></slot>
       </h2>
@@ -20,10 +17,14 @@
 
 <script>
 export default {
-  name: "Navbar",
+  name: "Card",
   props: {
     filename: {
       type: String,
+    },
+    yellow: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -32,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   border-radius: 12px;
-  width: 468px;
+  width: 100%;
   padding: 17px 5px;
   height: auto;
   text-align: center;
@@ -48,6 +49,7 @@ export default {
 
 img {
   display: block;
+  width: 100%;
 }
 
 img + .card {
@@ -59,5 +61,17 @@ img + .card {
     #d5e6f3 calc(100% - 12px),
     #a5cbe9 100%
   );
+}
+
+.yellow {
+  background-color: #fff4d5 !important;
+  background-image: linear-gradient(
+    to bottom,
+    #fff 0px,
+    #fff4d5 12px,
+    #fff4d5 calc(100% - 12px),
+    #ddcb9b 100%
+  ) !important;
+  box-shadow: 0px 1px #5c341f;
 }
 </style>

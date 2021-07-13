@@ -38,6 +38,15 @@ body {
   color: #004e84 !important;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
 img {
   image-rendering: pixelated;
 }
@@ -58,4 +67,8 @@ h2 {
   font-size: 14px;
   font-weight: bold;
   color: #004e84;
+}
+
+#loadtime {
+  text-align: center;
 }
