@@ -20,10 +20,8 @@
         20CeNt avec 1077 match nuls ! <br /> </Column
     ></template>
     <Card yellow>
+      <template #subtop>Chapaniouz</template>
       <template #header> Accueil </template>
-      <template #subtitle
-        >Accueil</template
-      >
       Accueil
     </Card>
     <template #right-column

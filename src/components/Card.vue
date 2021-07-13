@@ -1,13 +1,14 @@
 <template>
-  <div>
+  <div :class="{ yellow: yellow }">
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
-    <div class="card" :class="{ yellow: yellow }">
+    <div v-else-if="$slots['subtop']" class="subtop"><slot name="subtop"></slot></div>
+    <div class="card">
       <h2>
         <slot name="header"></slot>
       </h2>
-      <em>"<slot name="subtitle"></slot>"</em>
-      <br />
-      <br />
+      <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em>
+      <br v-if="$slots['subtitle'] && $slots.default"/>
+      <br v-if="$slots['header'] && $slots.default"/>
       <main>
         <slot></slot>
       </main>
@@ -45,6 +46,7 @@ export default {
     #d5e6f3 calc(100% - 12px),
     #a5cbe9 100%
   );
+  box-shadow: 0 1px #293d47;
 }
 
 img {
@@ -52,7 +54,7 @@ img {
   width: 100%;
 }
 
-img + .card {
+img + .card, .subtop + .card {
   border-radius: 0 0 12px 12px;
   display: inline-block;
   background-image: linear-gradient(
@@ -63,7 +65,28 @@ img + .card {
   );
 }
 
-.yellow {
+.subtop {
+  padding-left: 25px;
+  font-size: 12px;
+  text-align: left;
+  height: 25px;
+  box-shadow: 0 -1px #18486a;
+  border-radius: 12px 12px 0 0;
+}
+
+.yellow .subtop {
+  border-top: 1px solid #a38c47;
+  background-image: linear-gradient(
+    to bottom,
+    #a38c47 0px,
+    #ffe5a3 3px,
+    #ffe5a3 calc(100% - 3px),
+    #a38c47 100%
+  );
+  text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050, 0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050, -1px 1px 0 #ae0050;
+}
+
+.yellow .card {
   background-color: #fff4d5 !important;
   background-image: linear-gradient(
     to bottom,
@@ -73,5 +96,14 @@ img + .card {
     #ddcb9b 100%
   ) !important;
   box-shadow: 0px 1px #5c341f;
+}
+
+.yellow .subtop + .card {
+  background-image: linear-gradient(
+    to bottom,
+    #fff4d5 0px,
+    #fff4d5 calc(100% - 12px),
+    #ddcb9b 100%
+  ) !important;
 }
 </style>
