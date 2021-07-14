@@ -32,6 +32,10 @@
   width: 100%;
 }
 
+.main-column {
+  width: 100%;
+}
+
 @media (min-width: 800px) {
   .side-column {
     width: 154px;
@@ -52,10 +56,9 @@
   .column {
     padding: 0 !important;
   }
-}
 
-.main-column {
-  width: 100%;
+  .main-column {
+    width: 468px;
+  }
 }
 </style>
-

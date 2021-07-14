@@ -17,17 +17,17 @@
     <router-link to="/"><button class="nav-btn">🏠</button></router-link>
     <router-link to="/tchat"
       ><button class="nav-btn">
-        Jouer !<img id="arrow" src="@/assets/img/arrow.svg" /></button
+        🗨️ Jouer !<img id="arrow" src="@/assets/img/arrow.svg" /></button
     ></router-link>
     <router-link to="/account"
-      ><button class="nav-btn">Mon compte</button></router-link
+      ><button class="nav-btn">👤 Mon compte</button></router-link
     >
-    <router-link to="/games"><button class="nav-btn">Jeux</button></router-link>
+    <router-link to="/games"><button class="nav-btn">🎮 Jeux</button></router-link>
     <router-link to="/members"
-      ><button class="nav-btn">Membres</button></router-link
+      ><button class="nav-btn">👥 Membres</button></router-link
     >
     <router-link to="/bbs"
-      ><button class="nav-btn">Communauté</button></router-link
+      ><button class="nav-btn">📮 Communauté</button></router-link
     >
   </div>
 </template>
@@ -114,7 +114,7 @@ export default {
     #ffe4f5 0%,
     #ff1fb0 50%,
     #b30048 50%,
-    #f0009c 100%
+    #f0009c
   );
   padding: 5px 20px;
   font-size: 18px;
@@ -145,6 +145,13 @@ export default {
 #nav a:first-child .nav-btn {
   border-right-color: #f0009c;
   border-left-color: #f0009c;
+  background-image: radial-gradient(
+    ellipse 120% 100% at 50% 15%,
+    #ffe4f5 15%,
+    #ff1fb0 50%,
+    #b30048 50%,
+    #f0009c
+  );
   border-radius: 10px;
   border-width: 2px 5px;
   padding: 5px;
@@ -167,10 +174,10 @@ export default {
 .nav-btn:hover {
   background-image: linear-gradient(
     to bottom,
-    #fff2ea 0%,
+    #fff2ea,
     #ff7214 50%,
     #ce4800 50%,
-    #ff6600 100%
+    #ff6600
   );
   color: #fff !important;
   border-color: #ff6600 #973500 #973500 #973500;
@@ -180,13 +187,23 @@ export default {
   //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
 }
 
+#nav a:first-child .nav-btn:hover {
+  background-image: radial-gradient(
+    ellipse 120% 100% at 50% 15%,
+    #fff2ea 15%,
+    #ff7214 50%,
+    #ce4800 50%,
+    #ff6600
+  );
+}
+
 .nav-btn:active {
   background-image: linear-gradient(
     to top,
-    #fff2ea 0%,
+    #fff2ea,
     #ff7214 50%,
     #ce4800 50%,
-    #ff6600 100%
+    #ff6600
   );
 }
 

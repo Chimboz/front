@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ yellow: yellow, 'justified': justified }">
+  <div :class="{ yellow: yellow, justified: justified }">
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
     <div v-else-if="$slots['subtop']" class="subtop">
       <slot name="subtop"></slot>
@@ -81,10 +81,22 @@ img + .card,
   line-height: 12px;
   text-align: left;
   height: 25px;
-  box-shadow: 0 -1px #18486a;
   border-radius: 12px 12px 0 0;
   display: flex;
   align-items: center;
+  border-color: #1b4166;
+  box-shadow: 0 -1px #18486a;
+  background-image: linear-gradient(
+    to bottom,
+    #1b4166 0px,
+    #c4e8ff 3px,
+    #99cdef 5px,
+    #99cdef calc(100% - 3px),
+    #628499 100%
+  );
+  text-shadow: 2px 0 0 #004b7d, -2px 0 0 #004b7d, 0 2px 0 #004b7d,
+    0 -2px 0 #004b7d, 1px 1px #004b7d, -1px -1px 0 #004b7d, 1px -1px 0 #004b7d,
+    -1px 1px 0 #004b7d;
 }
 
 .justified .card {
@@ -96,7 +108,8 @@ img + .card,
   background-image: linear-gradient(
     to bottom,
     #a38c47 0px,
-    #ffe5a3 3px,
+    #fff7d7 3px,
+    #ffe5a3 5px,
     #ffe5a3 calc(100% - 3px),
     #a38c47 100%
   );

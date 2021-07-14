@@ -2,23 +2,28 @@
   <Container>
     <template #left-column
       ><Column top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Column
-    ></template>
+        <img
+          src="@/assets/img/home/fd_niveau.gif"
+          style="width: calc(100% + 10px); margin-left: -5px"
+        />
+        <img
+          src="@/assets/img/home/fd_mi.png"
+          style="width: calc(100% + 10px); margin-left: -5px"
+        />
+        <img
+          src="@/assets/img/home/fd_amis.png"
+          style="width: calc(100% + 10px); margin-left: -5px"
+        />
+      </Column><br>
+      <Column yellow> bite </Column></template
+    >
+    <Card filename="header_lottery.png">
+      <template #header
+        ><img src="@/assets/img/header_hello.png" style="width: 100%"
+      /></template>
+      Tu peux gagner jusqu'à 30 pépettes<br />
+      Clique sur le bouton pour gagner tes ppts </Card
+    ><br />
     <Card yellow justified>
       <template #subtop>Chapaniouz</template>
       <template #header
@@ -37,25 +42,35 @@
       l'animation de nage)<br />
       VIDEZ VOTRE CACHE<br />
     </Card>
+    <br />
+    <Card>
+      <template #subtop>Chaparazzi</template>
+      <div class="gallery">
+        <img
+          src="@/assets/img/chimboking.gif"
+          alt="Chimboking"
+          style="margin: auto"
+        /><img
+          src="@/assets/img/chimboking.gif"
+          alt="Chimboking"
+          style="margin: auto"
+        /><img
+          src="@/assets/img/chimboking.gif"
+          alt="Chimboking"
+          style="margin: auto"
+        />
+      </div>
+    </Card>
     <template #right-column
-      ><Column bot>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+      ><Column top>
+        <template #header
+          ><h1>2</h1>
+          connectés</template
         >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Column
-    ></template>
+        233 membres<br />
+        112 passés depuis 24h.
+      </Column></template
+    >
   </Container>
 </template>
 
@@ -75,4 +90,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.gallery {
+  display: flex;
+}
 </style>

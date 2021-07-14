@@ -1,25 +1,18 @@
 <template>
-  <div>
-    <img
-      v-if="top"
-      src="@/assets/img/menul_top_blu.gif"
-    />
+  <div :class="{ yellow: yellow }" >
+    <img v-if="top" src="@/assets/img/menul_top_blu.gif" />
     <div class="column-card" :class="{ bot: bot }">
       <h2>
         <slot name="header"></slot>
       </h2>
-      <em>"<slot name="subtitle"></slot>"</em>
-      <br />
-      <br />
+      <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em>
+      <br v-if="$slots['subtitle'] && $slots.default" />
+      <br v-if="$slots['header'] && $slots.default" />
       <main>
         <slot></slot>
       </main>
     </div>
-    <img
-      v-if="bot"
-      src="@/assets/img/footg_blu_ext.gif"
-    />
-
+    <img v-if="bot" src="@/assets/img/footg_blu_ext.gif" />
   </div>
 </template>
 
@@ -29,11 +22,15 @@ export default {
   props: {
     bot: {
       type: Boolean,
-      default: false
+      default: false,
     },
     top: {
       type: Boolean,
-      default: false
+      default: false,
+    },
+    yellow: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -83,5 +80,18 @@ img + .column-card {
     #6ebef0 12px,
     #6ebef0 100%
   );
+}
+
+
+.yellow .column-card {
+  background-color: #fff4d5 !important;
+  background-image: linear-gradient(
+    to bottom,
+    #fff 0px,
+    #fff4d5 12px,
+    #fff4d5 calc(100% - 12px),
+    #ddcb9b 100%
+  ) !important;
+  box-shadow: 0px 1px #5c341f;
 }
 </style>
