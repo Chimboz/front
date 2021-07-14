@@ -3,7 +3,7 @@
     <router-link to="/"
       ><img id="logo" src="../assets/img/logo.svg"
     /></router-link>
-    <div class="toast">
+    <div class="login">
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
         <button id="connect">
@@ -14,10 +14,11 @@
     </div>
   </div>
   <div id="nav">
-    <router-link to="/"><button class="nav-btn">Accueil</button></router-link>
+    <router-link to="/"><button class="nav-btn">🏠</button></router-link>
     <router-link to="/tchat"
-      ><button class="nav-btn">Jouer !</button></router-link
-    >
+      ><button class="nav-btn">
+        Jouer !<img id="arrow" src="@/assets/img/arrow.svg" /></button
+    ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">Mon compte</button></router-link
     >
@@ -62,7 +63,7 @@ export default {
   float: left;
 }
 
-.toast {
+.login {
   display: flex;
   text-align: right;
   justify-content: flex-end;
@@ -103,6 +104,7 @@ export default {
 }
 
 .nav-btn {
+  display: flex;
   cursor: pointer;
   height: 25px;
   font-family: "Chimboz Heavy";
@@ -128,7 +130,7 @@ export default {
   box-shadow: 0 2px 2px #0006;
 }
 
-#nav a:first-child .nav-btn {
+#nav a:nth-child(2) .nav-btn {
   border-left-color: #f0009c;
   border-radius: 10px 0 0 10px;
   border-left-width: 5px;
@@ -140,9 +142,20 @@ export default {
   border-right-width: 5px;
 }
 
+#nav a:first-child .nav-btn {
+  border-right-color: #f0009c;
+  border-left-color: #f0009c;
+  border-radius: 10px;
+  border-width: 2px 5px;
+  padding: 5px;
+  margin-right: 12px;
+}
+
 #nav {
+  display: flex;
   text-align: center;
   padding-bottom: 10px;
+  justify-content: center;
 }
 
 #nav a.router-link-exact-active .nav-btn {
@@ -177,15 +190,65 @@ export default {
   );
 }
 
+#nav a:nth-child(2) .nav-btn:hover,
 #nav a:first-child .nav-btn:hover {
   border-left-color: #ff6600;
 }
 
-#nav a:last-child .nav-btn:hover {
+#nav a:last-child .nav-btn:hover,
+#nav a:first-child .nav-btn:hover {
   border-right-color: #ff6600;
 }
 
-.nav-btn a:hover {
+a:hover {
   text-decoration: none;
+}
+
+#arrow {
+  will-change: transform;
+  transform: rotateZ(-25deg);
+  margin-right: -30px;
+  z-index: 2;
+}
+
+.nav-btn:hover #arrow {
+  animation: jitter 0.5s forwards;
+}
+
+@keyframes jitter {
+  0% {
+    transform: rotateZ(-25deg);
+  }
+  10% {
+    transform: rotateZ(35deg);
+  }
+  20% {
+    transform: rotateZ(-15deg);
+  }
+  30% {
+    transform: rotateZ(25deg);
+  }
+  40% {
+    transform: rotateZ(-15deg);
+  }
+  50% {
+    transform: rotateZ(15deg);
+  }
+  60% {
+    transform: rotateZ(-15deg);
+  }
+  70% {
+    transform: rotateZ(15deg) scale(1.05);
+  }
+  80% {
+    transform: rotateZ(0deg) scale(1.1);
+  }
+  90% {
+    transform: rotateZ(30deg) scale(1.15);
+  }
+  100% {
+    transform: rotateZ(-30deg) scale(1.15);
+    filter: saturate(1.5);
+  }
 }
 </style>
