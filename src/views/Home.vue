@@ -92,5 +92,6 @@ export default {
 <style lang="scss" scoped>
 .gallery {
   display: flex;
+  flex-wrap: wrap;
 }
 </style>

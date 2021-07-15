@@ -17,17 +17,33 @@
     <router-link to="/"><button class="nav-btn">🏠</button></router-link>
     <router-link to="/tchat"
       ><button class="nav-btn">
-        🗨️ Jouer !<img id="arrow" src="@/assets/img/arrow.svg" /></button
+        🗨️
+        <div class="nav-text">Jouer&nbsp;!</div>
+        <img id="arrow" src="@/assets/img/arrow.svg" /></button
     ></router-link>
     <router-link to="/account"
-      ><button class="nav-btn">👤 Mon compte</button></router-link
+      ><button class="nav-btn">
+        👤
+        <div class="nav-text">Mon compte</div>
+      </button></router-link
     >
-    <router-link to="/games"><button class="nav-btn">🎮 Jeux</button></router-link>
+    <router-link to="/games"
+      ><button class="nav-btn">
+        🎮
+        <div class="nav-text">Jeux</div>
+      </button></router-link
+    >
     <router-link to="/members"
-      ><button class="nav-btn">👥 Membres</button></router-link
+      ><button class="nav-btn">
+        👥
+        <div class="nav-text">Membres</div>
+      </button></router-link
     >
     <router-link to="/bbs"
-      ><button class="nav-btn">📮 Communauté</button></router-link
+      ><button class="nav-btn">
+        📮
+        <div class="nav-text">Communauté</div>
+      </button></router-link
     >
   </div>
 </template>
@@ -116,7 +132,7 @@ export default {
     #b30048 50%,
     #f0009c
   );
-  padding: 5px 20px;
+  padding: 5px 4%;
   font-size: 18px;
   color: #fff;
   border-width: 2px 1px;
@@ -128,6 +144,10 @@ export default {
     0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050,
     -1px 1px 0 #ae0050;
   box-shadow: 0 2px 2px #0006;
+}
+
+#nav a:not(:first-child) {
+  display: contents;
 }
 
 #nav a:nth-child(2) .nav-btn {
@@ -154,7 +174,6 @@ export default {
   );
   border-radius: 10px;
   border-width: 2px 5px;
-  padding: 5px;
   margin-right: 12px;
 }
 
@@ -165,13 +184,8 @@ export default {
   justify-content: center;
 }
 
+.nav-btn:hover,
 #nav a.router-link-exact-active .nav-btn {
-  color: #b30048;
-  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
-    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-}
-
-.nav-btn:hover {
   background-image: linear-gradient(
     to bottom,
     #fff2ea,
@@ -187,7 +201,8 @@ export default {
   //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
 }
 
-#nav a:first-child .nav-btn:hover {
+#nav a:first-child .nav-btn:hover,
+#nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #fff2ea 15%,
@@ -197,23 +212,17 @@ export default {
   );
 }
 
-.nav-btn:active {
-  background-image: linear-gradient(
-    to top,
-    #fff2ea,
-    #ff7214 50%,
-    #ce4800 50%,
-    #ff6600
-  );
-}
-
 #nav a:nth-child(2) .nav-btn:hover,
-#nav a:first-child .nav-btn:hover {
+#nav a:first-child .nav-btn:hover,
+#nav a:first-child.router-link-exact-active .nav-btn,
+#nav a:nth-child(2).router-link-exact-active .nav-btn {
   border-left-color: #ff6600;
 }
 
 #nav a:last-child .nav-btn:hover,
-#nav a:first-child .nav-btn:hover {
+#nav a:first-child .nav-btn:hover,
+#nav a:last-child.router-link-exact-active .nav-btn,
+#nav a:first-child.router-link-exact-active .nav-btn {
   border-right-color: #ff6600;
 }
 
@@ -221,11 +230,36 @@ a:hover {
   text-decoration: none;
 }
 
-#arrow {
-  will-change: transform;
-  transform: rotateZ(-25deg);
-  margin-right: -30px;
-  z-index: 2;
+.nav-btn:active {
+  background-image: linear-gradient(
+    to top,
+    #fff2ea,
+    #ff7214 50%,
+    #ce4800 50%,
+    #ff6600
+  ) !important;
+}
+
+.nav-text, #arrow {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .nav-text {
+    display: contents;
+  }
+
+  a:not(:first-child) .nav-btn {
+    padding: 5px 20px;
+  }
+
+  #arrow {
+    display: inherit;
+    will-change: transform;
+    transform: rotateZ(-25deg);
+    margin-right: -30px;
+    z-index: 2;
+  }
 }
 
 .nav-btn:hover #arrow {
