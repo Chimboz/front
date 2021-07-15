@@ -20,16 +20,25 @@
 .row {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .column {
   text-align: -webkit-center;
   padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .side-column {
+  width: 50%;
+  overflow: hidden;
+}
+
+.main-column {
   width: 100%;
+  order: 1;
 }
 
 @media (min-width: 800px) {
@@ -52,10 +61,10 @@
   .column {
     padding: 0 !important;
   }
-}
 
-.main-column {
-  width: 100%;
+  .main-column {
+    width: 468px;
+    order: 0;
+  }
 }
 </style>
-

@@ -46,9 +46,24 @@ a:hover {
   text-decoration: underline;
 }
 
-
-img {
-  image-rendering: pixelated;
+hr {
+  border-top: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #a2bdd1 25%,
+    #a2bdd1 75%,
+    transparent
+  );
+  border-image: linear-gradient(
+      to right,
+      transparent,
+      #d6e7f3 25%,
+      #d6e7f3 75%,
+      transparent
+    )
+    1;
+  height: 2px;
 }
 
 #app {
