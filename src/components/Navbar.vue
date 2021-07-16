@@ -14,35 +14,42 @@
     </div>
   </div>
   <div id="nav">
-    <router-link to="/"><button class="nav-btn">🏠</button></router-link>
+    <router-link to="/"
+      ><button class="nav-btn">
+        <img
+          class="nav-icon"
+          src="@/assets/img/navbar/home.svg"
+          style="margin: 5px; padding: 2px"
+        /></button
+    ></router-link>
     <router-link to="/tchat"
       ><button class="nav-btn">
-        🗨️
-        <div class="nav-text">Jouer&nbsp;!</div>
+        <img class="nav-icon" src="@/assets/img/navbar/tchat.svg" />
+        <div class="nav-text">&nbsp;Jouer&nbsp;!</div>
         <img id="arrow" src="@/assets/img/arrow.svg" /></button
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">
-        👤
-        <div class="nav-text">Mon compte</div>
+        <img class="nav-icon" src="@/assets/img/navbar/account.svg" />
+        <div class="nav-text">&nbsp;Mon&nbsp;compte</div>
       </button></router-link
     >
     <router-link to="/games"
       ><button class="nav-btn">
-        🎮
-        <div class="nav-text">Jeux</div>
+        <img class="nav-icon" src="@/assets/img/navbar/games.svg" />
+        <div class="nav-text">&nbsp;Jeux</div>
       </button></router-link
     >
     <router-link to="/members"
       ><button class="nav-btn">
-        👥
-        <div class="nav-text">Membres</div>
+        <img class="nav-icon" src="@/assets/img/navbar/members.svg" />
+        <div class="nav-text">&nbsp;Membres</div>
       </button></router-link
     >
     <router-link to="/bbs"
       ><button class="nav-btn">
-        📮
-        <div class="nav-text">Communauté</div>
+        <img class="nav-icon" src="@/assets/img/navbar/community.svg" />
+        <div class="nav-text">&nbsp;Communauté</div>
       </button></router-link
     >
   </div>
@@ -132,7 +139,7 @@ export default {
     #b30048 50%,
     #f0009c
   );
-  padding: 5px 4%;
+  padding: 0 4%;
   font-size: 18px;
   color: #fff;
   border-width: 2px 1px;
@@ -162,6 +169,16 @@ export default {
   border-right-width: 5px;
 }
 
+.nav-icon {
+  height: 100%;
+  filter: saturate(1.5) hue-rotate(-45deg);
+}
+
+.nav-btn:hover .nav-icon,
+#nav a.router-link-exact-active .nav-icon {
+  filter: none;
+}
+
 #nav a:first-child .nav-btn {
   border-right-color: #f0009c;
   border-left-color: #f0009c;
@@ -179,9 +196,8 @@ export default {
 
 #nav {
   display: flex;
-  text-align: center;
-  padding-bottom: 10px;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .nav-btn:hover,
@@ -240,17 +256,18 @@ a:hover {
   ) !important;
 }
 
-.nav-text, #arrow {
+.nav-text,
+#arrow {
   display: none;
 }
 
 @media (min-width: 600px) {
   .nav-text {
-    display: contents;
+    display: block;
   }
 
   a:not(:first-child) .nav-btn {
-    padding: 5px 20px;
+    padding: 0 20px;
   }
 
   #arrow {
