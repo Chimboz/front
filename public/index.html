@@ -4,7 +4,18 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1.0">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1.0">
+    <link rel="manifest" href="/site.webmanifest?v=1.0">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.0" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=1.0">
+    <meta name="apple-mobile-web-app-title" content="Chapatiz Retro">
+    <meta name="application-name" content="Chapatiz Retro">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=1.0">
+    <meta name="theme-color" content="#ffffff">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script type="text/javascript">
       var timerStart = Date.now();
@@ -20,11 +31,15 @@
     </noscript>
     <div id="app"></div>
     <div id="loadtime"></div>
+    <br />
     <!-- built files will be auto injected -->
 
     <script type="text/javascript">
       window.addEventListener("load", function() {
-        document.querySelector("#loadtime").innerHTML = '<img src="https://img.shields.io/badge/loadtime-' + (Date.now() - timerStart) + 'ms-blue"/>';
+        document.querySelector("#loadtime").innerHTML =
+          '<img src="https://img.shields.io/badge/loadtime-' +
+          (Date.now() - timerStart) +
+          'ms-blue"/>';
       });
     </script>
   </body>
