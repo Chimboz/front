@@ -184,7 +184,7 @@ export default {
   border-left-color: #f0009c;
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    #ffe4f5 15%,
+    #ffe4f5,
     #ff1fb0 50%,
     #b30048 50%,
     #f0009c
@@ -253,6 +253,16 @@ a:hover {
     #ff7214 50%,
     #ce4800 50%,
     #ff6600
+  ) !important;
+}
+
+#nav a:first-child .nav-btn:active {
+  background-image: radial-gradient(
+    ellipse 120% 100% at 50% 15%,
+    #ff6600,
+    #ce4800 50%,
+    #ff7214 50%,
+    #fff2ea
   ) !important;
 }
 
