@@ -1,15 +1,11 @@
 {
-    "username": "Owned",
-    "look": "1,2,3,4,5,6",
-    "level": 25,
-    "sex": "M",
-    "phrase_pref": "Nitens lux, horrenda procella, tenebris aeternis involuta",
-    "centres": [
-        "1",
-        "2",
-        "3",
-        "4"
-    ],
-    "website": "http://last.fm/user/Tigriz",
-    "emote": "zzz"
+  "username": "Owned",
+  "look": "1,2,3,4,5,6",
+  "level": 25,
+  "sex": "M",
+  "phrase_pref": "Nitens lux, horrenda procella, tenebris aeternis involuta",
+  "centres": ["Musique", "informatique", "mathématiques", "Sayaka"],
+  "website": "http://last.fm/user/Tigriz",
+  "emote": "zzz",
+  "ppt": 3877
 }

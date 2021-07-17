@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Qui valide ?",
+    "id": 1,
+    "reply": 2,
+    "view": 123456,
+    "author": { "name": "Tigriz", "id": 3 },
+    "last_msg": {
+      "author": { "name": "Owned", "id": 2 },
+      "date": 1626534039650,
+      "msgid": 1
+    }
+  },
+  {
+    "title": "Validax",
+    "id": 4,
+    "reply": 3,
+    "view": 65432,
+    "author": { "name": "Tigriz", "id": 3 },
+    "last_msg": {
+      "author": { "name": "Owned", "id": 2 },
+      "date": 1626554039650,
+      "msgid": 5
+    }
+  }
+]

@@ -33,7 +33,7 @@
 
 .side-column {
   width: 50%;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .main-column {
@@ -63,7 +63,7 @@
   }
 
   .main-column {
-    width: 468px;
+    flex: 1 0 0%;
     order: 0;
   }
 }
