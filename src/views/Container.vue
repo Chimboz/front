@@ -33,7 +33,6 @@
 
 .side-column {
   width: 50%;
-  overflow-y: hidden;
 }
 
 .main-column {

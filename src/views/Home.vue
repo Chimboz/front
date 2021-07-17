@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column
-      ><Column top>
+      ><Card blue top>
         <img
           src="@/assets/img/home/fd_niveau.gif"
           style="width: calc(100% + 10px); margin-left: -5px"
@@ -14,8 +14,8 @@
           src="@/assets/img/home/fd_amis.png"
           style="width: calc(100% + 10px); margin-left: -5px"
         />
-      </Column><br>
-      <Column yellow> monkaS </Column></template
+      </Card><br>
+      <Card yellow> monkaS </Card></template
     >
     <Card filename="header_lottery.png">
       <template #header
@@ -62,14 +62,14 @@
       </div>
     </Card>
     <template #right-column
-      ><Column top>
+      ><Card blue top>
         <template #header
           ><h1>2</h1>
           connectés</template
         >
         233 membres<br />
         112 passés depuis 24h.
-      </Column></template
+      </Card></template
     >
   </Container>
 </template>
@@ -77,14 +77,12 @@
 <script>
 import Card from "@/components/Card.vue";
 import Container from "@/views/Container.vue";
-import Column from "@/components/Column.vue";
 
 export default {
   name: "Home",
   components: {
     Card,
     Container,
-    Column,
   },
 };
 </script>

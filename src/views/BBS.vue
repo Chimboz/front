@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column
-      ><Column top>
+      ><Card blue top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -17,26 +17,28 @@
         fredazur avec 20763 parties perdues ! <br />
         <br />
         match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Column
+        20CeNt avec 1077 match nuls ! <br /> </Card
     ></template>
-    <BoardList>
-    </BoardList>
+    <BoardList> </BoardList>
   </Container>
 </template>
 
 <script>
+import Card from "@/components/Card.vue";
 import BoardList from "@/components/BBS/BoardList.vue";
 import Container from "@/views/Container.vue";
-import Column from "@/components/Column.vue";
 
 export default {
   name: "BBS",
   components: {
     BoardList,
     Container,
-    Column,
+    Card
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+.main-column {
+  width: 100% !important;
+}
 </style>
