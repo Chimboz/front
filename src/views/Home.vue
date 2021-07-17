@@ -15,7 +15,7 @@
           style="width: calc(100% + 10px); margin-left: -5px"
         />
       </Column><br>
-      <Column yellow> bite </Column></template
+      <Column yellow> monkaS </Column></template
     >
     <Card filename="header_lottery.png">
       <template #header
