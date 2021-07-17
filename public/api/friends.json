@@ -1,0 +1,15 @@
+[
+  {
+    "friend": { "name": "Owned", "id": 2 },
+    "online": true,
+    "room": "Accueil"
+  },
+  {
+    "friend": { "name": "Chapaking", "id": 1 },
+    "online": true
+  },
+  {
+    "friend": { "name": "ChAtEuX", "id": 9 },
+    "online": false
+  }
+]
