@@ -1,16 +1,16 @@
 <template>
   <table>
-    <tbody>
+    <thead>
       <tr>
         <th colspan="2" valign="top" height="25" nowrap="nowrap">BBS</th>
         <th width="50" valign="top" nowrap="nowrap">Sujets</th>
         <th width="50" valign="top" nowrap="nowrap">Messages</th>
         <th class="thCornerR" valign="top" nowrap="nowrap">Dernier message</th>
       </tr>
+    </thead>
 
-      <Board v-for="category in boards" :key="category" :category="category">
-      </Board>
-    </tbody>
+    <Board v-for="category in boards" :key="category" :category="category">
+    </Board>
   </table>
 </template>
 
