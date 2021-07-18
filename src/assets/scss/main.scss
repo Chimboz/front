@@ -35,7 +35,7 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background: transparent
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -56,7 +56,8 @@ body {
 
 a {
   text-decoration: none;
-  color: #096EA8;
+  font-weight: bold;
+  color: #096ea8;
 }
 
 a:hover {
@@ -103,4 +104,46 @@ h2 {
 
 #loadtime {
   text-align: center;
+}
+
+.jitter {
+  will-change: transform;
+  transform: rotateZ(-25deg);
+}
+
+@keyframes jitter {
+  0% {
+    transform: rotateZ(-25deg);
+  }
+  10% {
+    transform: rotateZ(35deg);
+  }
+  20% {
+    transform: rotateZ(-15deg);
+  }
+  30% {
+    transform: rotateZ(25deg);
+  }
+  40% {
+    transform: rotateZ(-15deg);
+  }
+  50% {
+    transform: rotateZ(15deg);
+  }
+  60% {
+    transform: rotateZ(-15deg);
+  }
+  70% {
+    transform: rotateZ(15deg) scale(1.05);
+  }
+  80% {
+    transform: rotateZ(0deg) scale(1.1);
+  }
+  90% {
+    transform: rotateZ(30deg) scale(1.15);
+  }
+  100% {
+    transform: rotateZ(-30deg) scale(1.15);
+    filter: saturate(1.5);
+  }
 }
