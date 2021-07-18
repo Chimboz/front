@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <Container v-if="!loading">
     <template #left-column
       ><Card blue top>
         <img
@@ -13,8 +13,8 @@
         <img
           src="@/assets/img/home/fd_amis.png"
           style="width: calc(100% + 10px); margin-left: -5px"
-        />
-      </Card><br>
+        /> </Card
+      ><br />
       <Card yellow> monkaS </Card></template
     >
     <Card filename="header_lottery.png">
@@ -64,11 +64,11 @@
     <template #right-column
       ><Card blue top>
         <template #header
-          ><h1>2</h1>
+          ><h1>{{ data.connected }}</h1>
           connectés</template
         >
-        233 membres<br />
-        112 passés depuis 24h.
+        {{ data.members }} membres<br />
+        {{ data.last24 }} passés depuis 24h.
       </Card></template
     >
   </Container>
@@ -83,6 +83,32 @@ export default {
   components: {
     Card,
     Container,
+  },
+  data() {
+    return {
+      data: null,
+      error: null,
+      loading: true,
+    };
+  },
+  beforeRouteEnter(to, from, next) {
+    const url = "/api/home.json";
+    next((vm) => {
+      vm.axios
+        .get(url)
+        .then((res) => {
+          if (res) {
+            vm.data = res.data;
+            vm.loading = false;
+          } else {
+            // Didn't like the result, redirect
+            next("/");
+          }
+        })
+        .catch((error) => {
+          vm.error = error.toString();
+        });
+    });
   },
 };
 </script>
