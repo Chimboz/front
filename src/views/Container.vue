@@ -16,11 +16,12 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .row {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .column {
@@ -31,8 +32,8 @@
   align-items: stretch;
 }
 
-.side-column {
-  width: 50%;
+.side-column .card {
+  width: 154px;
 }
 
 .main-column {
