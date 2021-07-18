@@ -26,7 +26,7 @@
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/tchat.svg" />
         <div class="nav-text">&nbsp;Jouer&nbsp;!</div>
-        <img id="arrow" src="@/assets/img/arrow.svg" /></button
+        <img class="arrow jitter" src="@/assets/img/arrow.svg" /></button
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">
@@ -280,53 +280,14 @@ a:hover {
     padding: 0 20px;
   }
 
-  #arrow {
+  .arrow {
     display: inherit;
-    will-change: transform;
-    transform: rotateZ(-25deg);
     margin-right: -30px;
     z-index: 2;
   }
-}
 
-.nav-btn:hover #arrow {
-  animation: jitter 0.5s forwards;
-}
-
-@keyframes jitter {
-  0% {
-    transform: rotateZ(-25deg);
-  }
-  10% {
-    transform: rotateZ(35deg);
-  }
-  20% {
-    transform: rotateZ(-15deg);
-  }
-  30% {
-    transform: rotateZ(25deg);
-  }
-  40% {
-    transform: rotateZ(-15deg);
-  }
-  50% {
-    transform: rotateZ(15deg);
-  }
-  60% {
-    transform: rotateZ(-15deg);
-  }
-  70% {
-    transform: rotateZ(15deg) scale(1.05);
-  }
-  80% {
-    transform: rotateZ(0deg) scale(1.1);
-  }
-  90% {
-    transform: rotateZ(30deg) scale(1.15);
-  }
-  100% {
-    transform: rotateZ(-30deg) scale(1.15);
-    filter: saturate(1.5);
+  .nav-btn:hover .arrow {
+    animation: jitter 0.5s forwards;
   }
 }
 </style>

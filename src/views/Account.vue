@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column
-      ><Column top>
+      ><Card blue top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -17,7 +17,7 @@
         fredazur avec 20763 parties perdues ! <br />
         <br />
         match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Column
+        20CeNt avec 1077 match nuls ! <br /> </Card
     ></template>
     <Card filename="head_bac_page.gif">
       <template #header> Mon compte </template>
@@ -27,7 +27,7 @@
       Mon compte
     </Card>
     <template #right-column
-      ><Column top>
+      ><Card blue top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -43,24 +43,21 @@
         fredazur avec 20763 parties perdues ! <br />
         <br />
         match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Column
+        20CeNt avec 1077 match nuls ! <br /> </Card
     ></template>
   </Container>
 </template>
 <script>
 import Card from "@/components/Card.vue";
 import Container from "@/views/Container.vue";
-import Column from "@/components/Column.vue";
 
 export default {
   name: "Account",
   components: {
     Card,
     Container,
-    Column,
   },
 };
 </script>
 <style lang="scss" scoped>
 </style>
-

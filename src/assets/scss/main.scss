@@ -1,9 +1,5 @@
 :root {
-  --cursor-size: 256px;
-  --purple: #7050aa;
-  --blue: #5c56f5;
-  --navbar-size: 90px;
-  --navbar-top: 80px;
+  --main: 0;
 }
 
 * {
@@ -35,7 +31,7 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background: transparent
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -50,12 +46,19 @@ body {
 }
 
 ::selection {
-  background-color: #fff !important;
-  color: #004e84 !important;
+  background-color: #ff6600;
+  color: #fff;
+  text-shadow: 2px 0 0 #ce4800,
+  -2px 0 0 #ce4800, 0 2px 0 #ce4800,
+  0 -2px 0 #ce4800, 1px 1px #ce4800,
+  -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
+  -1px 1px 0 #ce4800;
 }
 
 a {
   text-decoration: none;
+  font-weight: bold;
+  color: #096ea8;
 }
 
 a:hover {
@@ -102,4 +105,46 @@ h2 {
 
 #loadtime {
   text-align: center;
+}
+
+.jitter {
+  will-change: transform;
+  transform: rotateZ(-25deg);
+}
+
+@keyframes jitter {
+  0% {
+    transform: rotateZ(-25deg);
+  }
+  10% {
+    transform: rotateZ(35deg);
+  }
+  20% {
+    transform: rotateZ(-15deg);
+  }
+  30% {
+    transform: rotateZ(25deg);
+  }
+  40% {
+    transform: rotateZ(-15deg);
+  }
+  50% {
+    transform: rotateZ(15deg);
+  }
+  60% {
+    transform: rotateZ(-15deg);
+  }
+  70% {
+    transform: rotateZ(15deg) scale(1.05);
+  }
+  80% {
+    transform: rotateZ(0deg) scale(1.1);
+  }
+  90% {
+    transform: rotateZ(30deg) scale(1.15);
+  }
+  100% {
+    transform: rotateZ(-30deg) scale(1.15);
+    filter: saturate(1.5);
+  }
 }

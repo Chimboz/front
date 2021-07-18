@@ -1,10 +1,11 @@
 <template>
-  <div :class="{ yellow: yellow, justified: justified }">
+  <div :class="{ justified: justified }" :style="cssVars">
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
+    <img v-if="top" src="@/assets/img/menul_top_blu.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
       <slot name="subtop"></slot>
     </div>
-    <div class="card">
+    <div class="card" :class="{ bot: bot }">
       <h2>
         <slot name="header"></slot>
       </h2>
@@ -15,6 +16,7 @@
         <slot></slot>
       </main>
     </div>
+    <img v-if="bot" src="@/assets/img/footg_blu_ext.gif" />
   </div>
 </template>
 
@@ -23,15 +25,89 @@ export default {
   name: "Card",
   props: {
     filename: {
+      required: false,
       type: String,
     },
     yellow: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    blue: {
+      required: false,
       type: Boolean,
       default: false,
     },
     justified: {
+      required: false,
       type: Boolean,
       default: false,
+    },
+    bot: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    top: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    cssVars() {
+      return {
+        "--light-card-color": this.yellow
+          ? "#fff"
+          : this.blue
+          ? "#aadcfc"
+          : "#f2f8fc",
+        "--main-card-color": this.yellow
+          ? "#fff4d5"
+          : this.blue
+          ? "#6ebef0"
+          : "#d5e6f3",
+        "--dark-card-color": this.yellow
+          ? "#ddcb9b"
+          : this.blue
+          ? "#5aa1cd"
+          : "#a5cbe9",
+        "--shadow-card-color": this.yellow
+          ? "#5c341f"
+          : this.blue
+          ? "#355668"
+          : "#18486a",
+        "--title-card-color": this.yellow
+          ? "#726338"
+          : this.blue
+          ? "#096EA8"
+          : "#004e84",
+        "--title-subtop-color": this.yellow
+          ? "#963d00"
+          : this.blue
+          ? "#004b7d"
+          : "#004b7d",
+        "--shadow-subtop-color": this.yellow
+          ? "#a38c47"
+          : this.blue
+          ? "#1b4166"
+          : "#1b4166",
+        "--light-subtop-color": this.yellow
+          ? "#fff7d7"
+          : this.blue
+          ? "#c4e8ff"
+          : "#c4e8ff",
+        "--main-subtop-color": this.yellow
+          ? "#ffe5a3"
+          : this.blue
+          ? "#99cdef"
+          : "#99cdef",
+        "--dark-subtop-color": this.yellow
+          ? "#a38c47"
+          : this.blue
+          ? "#628499"
+          : "#628499",
+      };
     },
   },
 };
@@ -47,12 +123,12 @@ export default {
   background-color: #d5e6f3;
   background-image: linear-gradient(
     to bottom,
-    #f2f8fc 0px,
-    #d5e6f3 12px,
-    #d5e6f3 calc(100% - 12px),
-    #a5cbe9 100%
+    var(--light-card-color) 0px,
+    var(--main-card-color) 12px,
+    var(--main-card-color) calc(100% - 12px),
+    var(--dark-card-color) 100%
   );
-  box-shadow: 0 1px #293d47;
+  box-shadow: 0 1px var(--shadow-card-color);
 }
 
 img {
@@ -66,10 +142,14 @@ img + .card,
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
-    #d5e6f3 0px,
-    #d5e6f3 calc(100% - 12px),
-    #a5cbe9 100%
+    var(--main-card-color) 0px,
+    var(--main-card-color) calc(100% - 12px),
+    var(--dark-card-color) 100%
   );
+}
+
+img + .card {
+  padding-top: 5px;
 }
 
 .subtop {
@@ -84,62 +164,40 @@ img + .card,
   border-radius: 12px 12px 0 0;
   display: flex;
   align-items: center;
-  border-color: #1b4166;
-  box-shadow: 0 -1px #18486a;
+  border-color: var(--shadow-subtop-color);
+  box-shadow: 0 -1px var(--shadow-card-color);
   background-image: linear-gradient(
     to bottom,
-    #1b4166 0px,
-    #c4e8ff 3px,
-    #99cdef 5px,
-    #99cdef calc(100% - 3px),
-    #628499 100%
+    var(--shadow-subtop-color) 0px,
+    var(--light-subtop-color) 3px,
+    var(--main-subtop-color) 5px,
+    var(--main-subtop-color) calc(100% - 3px),
+    var(--dark-subtop-color) 100%
   );
-  text-shadow: 2px 0 0 #004b7d, -2px 0 0 #004b7d, 0 2px 0 #004b7d,
-    0 -2px 0 #004b7d, 1px 1px #004b7d, -1px -1px 0 #004b7d, 1px -1px 0 #004b7d,
-    -1px 1px 0 #004b7d;
+  text-shadow: 2px 0 0 var(--title-subtop-color),
+    -2px 0 0 var(--title-subtop-color), 0 2px 0 var(--title-subtop-color),
+    0 -2px 0 var(--title-subtop-color), 1px 1px var(--title-subtop-color),
+    -1px -1px 0 var(--title-subtop-color), 1px -1px 0 var(--title-subtop-color),
+    -1px 1px 0 var(--title-subtop-color);
 }
 
 .justified .card {
   text-align: justify;
 }
 
-.yellow .subtop {
-  border-color: #a38c47;
+.bot {
+  border-radius: 12px 12px 0 0;
+  display: block;
+  padding-bottom: 5px;
   background-image: linear-gradient(
     to bottom,
-    #a38c47 0px,
-    #fff7d7 3px,
-    #ffe5a3 5px,
-    #ffe5a3 calc(100% - 3px),
-    #a38c47 100%
+    var(--light-card-color) 0px,
+    var(--main-card-color) 12px,
+    var(--main-card-color) 100%
   );
-  text-shadow: 2px 0 0 #963d00, -2px 0 0 #963d00, 0 2px 0 #963d00,
-    0 -2px 0 #963d00, 1px 1px #963d00, -1px -1px 0 #963d00, 1px -1px 0 #963d00,
-    -1px 1px 0 #963d00;
 }
 
-.yellow .card {
-  background-color: #fff4d5 !important;
-  background-image: linear-gradient(
-    to bottom,
-    #fff 0px,
-    #fff4d5 12px,
-    #fff4d5 calc(100% - 12px),
-    #ddcb9b 100%
-  ) !important;
-  box-shadow: 0px 1px #5c341f;
-}
-
-.yellow .subtop + .card {
-  background-image: linear-gradient(
-    to bottom,
-    #fff4d5 0px,
-    #fff4d5 calc(100% - 12px),
-    #ddcb9b 100%
-  ) !important;
-}
-
-.yellow h2 {
-  color: #726338;
+.card h2 {
+  color: var(--title-card-color);
 }
 </style>

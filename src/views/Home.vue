@@ -1,23 +1,54 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column
-      ><Column top>
-        <img
-          src="@/assets/img/home/fd_niveau.gif"
-          style="width: calc(100% + 10px); margin-left: -5px"
-        />
-        <img
-          src="@/assets/img/home/fd_mi.png"
-          style="width: calc(100% + 10px); margin-left: -5px"
-        />
-        <img
-          src="@/assets/img/home/fd_amis.png"
-          style="width: calc(100% + 10px); margin-left: -5px"
-        />
-      </Column><br>
-      <Column yellow> monkaS </Column></template
+      ><Card blue top>
+        <a href="#">
+          <div class="level">
+            Niveau
+            <div class="number">
+              <img
+                v-for="number in data.level.toString(10)"
+                :key="number.index"
+                :src="require(`@/assets/img/numbers/${number}.png`)"
+              />
+            </div></div
+        ></a>
+        <a href="#">
+          <div class="messages">
+            <div>
+              <img
+                v-for="number in data.messages.toString(10)"
+                :key="number.index"
+                :src="require(`@/assets/img/numbers/roz/${number}.png`)"
+              />
+            </div>
+            <img
+              src="@/assets/img/home/fd_mi.png"
+              style="width: calc(100% + 34px); margin-left: -17px"
+            />
+          </div>
+          message(s)</a
+        >
+        <a href="#">
+          <div class="friends">
+            <div>
+              <img
+                v-for="number in data.friends.toString(10)"
+                :key="number.index"
+                :src="require(`@/assets/img/numbers/roz/${number}.png`)"
+              />
+            </div>
+            <img
+              src="@/assets/img/home/fd_amis.png"
+              style="width: calc(100% + 34px); margin-left: -17px"
+            />
+          </div>
+          ami(s) connecté(s)</a
+        ></Card
+      ><br />
+      <Card yellow> monkaS </Card></template
     >
-    <Card filename="header_lottery.png">
+    <Card filename="header_lottery.png" v-if="data.lottery">
       <template #header
         ><img src="@/assets/img/header_hello.png" style="width: 100%"
       /></template>
@@ -62,14 +93,14 @@
       </div>
     </Card>
     <template #right-column
-      ><Column top>
+      ><Card blue top>
         <template #header
-          ><h1>2</h1>
+          ><h1>{{ data.connected }}</h1>
           connectés</template
         >
-        233 membres<br />
-        112 passés depuis 24h.
-      </Column></template
+        {{ data.members }} membres<br />
+        {{ data.last24 }} passés depuis 24h.
+      </Card></template
     >
   </Container>
 </template>
@@ -77,14 +108,45 @@
 <script>
 import Card from "@/components/Card.vue";
 import Container from "@/views/Container.vue";
-import Column from "@/components/Column.vue";
 
 export default {
   name: "Home",
   components: {
     Card,
     Container,
-    Column,
+  },
+  data() {
+    return {
+      data: null,
+      error: null,
+      loading: true,
+    };
+  },
+  beforeRouteEnter(to, from, next) {
+    const url = "/api/home.json";
+    next((vm) => {
+      vm.axios
+        .get(url)
+        .then((res) => {
+          if (res) {
+            vm.data = res.data;
+            vm.loading = false;
+          } else {
+            // Didn't like the result, redirect
+            next("/");
+          }
+        })
+        .catch((error) => {
+          vm.error = error.toString();
+        });
+    });
+  },
+  async beforeRouteUpdate() {
+    try {
+      this.data = await this.axios.get("/api/home.json");
+    } catch (error) {
+      this.error = error.toString();
+    }
   },
 };
 </script>
@@ -93,5 +155,44 @@ export default {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+}
+
+.level {
+  margin-left: -17px;
+  width: calc(100% + 34px);
+  background: linear-gradient(
+      to right,
+      #6ebef0a0,
+      transparent 10%,
+      transparent 90%,
+      #6ebef0a0
+    ),
+    linear-gradient(
+      to bottom,
+      #6ebef0 15%,
+      #a8dfff 15%,
+      #a8dfff 85%,
+      #6ebef0 85%
+    );
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.level .number {
+  display: flex;
+  border-radius: 12px / 8px;
+  padding: 8px;
+  font-size: 25px;
+  background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
+}
+
+.messages div {
+  transform: translate3d(20%, 200%, 0)
+}
+
+.friends div {
+  transform: translate3d(0, 200%, 0)
 }
 </style>
