@@ -1,9 +1,5 @@
 :root {
-  --cursor-size: 256px;
-  --purple: #7050aa;
-  --blue: #5c56f5;
-  --navbar-size: 90px;
-  --navbar-top: 80px;
+  --main: 0;
 }
 
 * {
@@ -50,8 +46,13 @@ body {
 }
 
 ::selection {
-  background-color: #fff !important;
-  color: #004e84 !important;
+  background-color: #ff6600;
+  color: #fff;
+  text-shadow: 2px 0 0 #ce4800,
+  -2px 0 0 #ce4800, 0 2px 0 #ce4800,
+  0 -2px 0 #ce4800, 1px 1px #ce4800,
+  -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
+  -1px 1px 0 #ce4800;
 }
 
 a {
