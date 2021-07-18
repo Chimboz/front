@@ -267,7 +267,7 @@ a:hover {
 }
 
 .nav-text,
-#arrow {
+.arrow {
   display: none;
 }
 
