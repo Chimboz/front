@@ -7,13 +7,9 @@
         <th width="50" valign="top" nowrap="nowrap">Messages</th>
         <th class="thCornerR" valign="top" nowrap="nowrap">Dernier message</th>
       </tr>
-      <tr class="category">
-        <th valign="middle" colspan="5" height="28"><a>▼ Chapatiz Retro</a></th>
-      </tr>
 
-      <tr>
-        <Board></Board>
-      </tr>
+      <Board v-for="category in boards" :key="category" :category="category">
+      </Board>
     </tbody>
   </table>
 </template>
@@ -26,9 +22,15 @@ export default {
   components: {
     Board,
   },
+  props: {
+    boards: {
+      required: true,
+      type: Array,
+    },
+  },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 table {
   width: 100%;
   border-spacing: 0;
@@ -46,13 +48,5 @@ th {
     #d6e7f3 100%
   );
   border-bottom: 1px solid #a2bdd1;
-}
-
-.category th {
-  padding: 0 5px;
-  color: #6090be;
-}
-.category {
-  text-align: left;
 }
 </style>
