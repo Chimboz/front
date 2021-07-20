@@ -41,3 +41,7 @@ npm run lint
 
 **Customize configuration**
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# Useful tools
+[SVG Animation editor](http://anigen.org/versions/0_8_1/)
+Inkscape
