@@ -112,7 +112,12 @@ export default {
   },
 };
 </script>
-
+<style lang="scss">
+.fullwidth {
+  width: calc(100% + 34px);
+  margin-left: -17px;
+}
+</style>
 <style lang="scss" scoped>
 .card {
   border-radius: 12px;
