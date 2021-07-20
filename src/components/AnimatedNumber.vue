@@ -1,5 +1,9 @@
 <template>
-  {{ displayNumber }}
+  <img
+                v-for="digit in displayNumber.toString(10)"
+                :key="digit.index"
+                :src="require(`@/assets/img/numbers/${digit}.png`)"
+              />
 </template>
 
 <script>
