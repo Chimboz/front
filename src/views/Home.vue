@@ -3,7 +3,7 @@
     <template #left-column
       ><Card blue top>
         <a href="#">
-          <div class="level">
+          <div class="level fullwidth">
             Niveau
             <div class="number">
               <img
@@ -22,10 +22,7 @@
                 :src="require(`@/assets/img/numbers/roz/${number}.png`)"
               />
             </div>
-            <img
-              src="@/assets/img/home/fd_mi.png"
-              style="width: calc(100% + 34px); margin-left: -17px"
-            />
+            <img src="@/assets/img/home/fd_mi.png" class="fullwidth" />
           </div>
           message(s)</a
         >
@@ -38,15 +35,22 @@
                 :src="require(`@/assets/img/numbers/roz/${number}.png`)"
               />
             </div>
-            <img
-              src="@/assets/img/home/fd_amis.png"
-              style="width: calc(100% + 34px); margin-left: -17px"
-            />
+            <img src="@/assets/img/home/fd_amis.png" class="fullwidth" />
           </div>
           ami(s) connecté(s)</a
         ></Card
       ><br />
-      <Card yellow> monkaS </Card></template
+      <Card yellow>
+        <object
+          type="image/svg+xml"
+          :data="require('@/assets/img/bank.svg')"
+          class="fullwidth"
+        ></object>
+        <div class="money">
+          Tu as actuellement :<br />
+          <AnimatedNumber :number="data.credits" /> Pépettes
+        </div></Card
+      ></template
     >
     <Card filename="header_lottery.png" v-if="data.lottery">
       <template #header
@@ -107,6 +111,7 @@
 
 <script>
 import Card from "@/components/Card.vue";
+import AnimatedNumber from "@/components/AnimatedNumber.vue";
 import Container from "@/views/Container.vue";
 
 export default {
@@ -114,6 +119,7 @@ export default {
   components: {
     Card,
     Container,
+    AnimatedNumber,
   },
   data() {
     return {
@@ -158,8 +164,6 @@ export default {
 }
 
 .level {
-  margin-left: -17px;
-  width: calc(100% + 34px);
   background: linear-gradient(
       to right,
       #6ebef0a0,
@@ -189,10 +193,10 @@ export default {
 }
 
 .messages div {
-  transform: translate3d(20%, 200%, 0)
+  transform: translate3d(20%, 200%, 0);
 }
 
 .friends div {
-  transform: translate3d(0, 200%, 0)
+  transform: translate3d(0, 200%, 0);
 }
 </style>
