@@ -2,8 +2,8 @@
   <Container v-if="data">
     <template #left-column
       ><Card blue top>
-        <a href="#">
-          <div class="level">
+        <router-link to="/levels">
+          <div class="level fullwidth">
             Niveau
             <div class="number">
               <img
@@ -12,8 +12,8 @@
                 :src="require(`@/assets/img/numbers/${number}.png`)"
               />
             </div></div
-        ></a>
-        <a href="#">
+        ></router-link>
+        <router-link to="/mi">
           <div class="messages">
             <div>
               <img
@@ -22,14 +22,11 @@
                 :src="require(`@/assets/img/numbers/roz/${number}.png`)"
               />
             </div>
-            <img
-              src="@/assets/img/home/fd_mi.png"
-              style="width: calc(100% + 34px); margin-left: -17px"
-            />
+            <img src="@/assets/img/home/fd_mi.png" class="fullwidth" />
           </div>
-          message(s)</a
+          message(s)</router-link
         >
-        <a href="#">
+        <router-link to="/friends">
           <div class="friends">
             <div>
               <img
@@ -38,16 +35,31 @@
                 :src="require(`@/assets/img/numbers/roz/${number}.png`)"
               />
             </div>
-            <img
-              src="@/assets/img/home/fd_amis.png"
-              style="width: calc(100% + 34px); margin-left: -17px"
-            />
+            <img src="@/assets/img/home/fd_amis.png" class="fullwidth" />
           </div>
-          ami(s) connecté(s)</a
+          ami(s) connecté(s)</router-link
         ></Card
       ><br />
-      <Card yellow> monkaS </Card></template
+      <Card yellow>
+        <template #button>
+          <Button yellow>Pépettes</Button>
+        </template>
+        <object
+          type="image/svg+xml"
+          :data="require('@/assets/img/bank.svg')"
+          class="fullwidth"
+        ></object>
+        <router-link to="/bank">
+          Tu as actuellement<br />
+          <AnimatedNumber :number="data.credits" /><br />
+          pépettes </router-link
+        ><br /><br />
+        <router-link to="/reflooz"
+          ><Button yellow>Reflooz</Button></router-link
+        ></Card
+      ></template
     >
+    <img src="@/assets/img/summer.png" style="max-width: 100%" /><br />
     <Card filename="header_lottery.png" v-if="data.lottery">
       <template #header
         ><img src="@/assets/img/header_hello.png" style="width: 100%"
@@ -95,18 +107,46 @@
     <template #right-column
       ><Card blue top>
         <template #header
-          ><h1>{{ data.connected }}</h1>
-          connectés</template
+          ><router-link to="/connecteds"
+            ><h1>{{ data.connected }}</h1>
+            connectés</router-link
+          ></template
         >
         {{ data.members }} membres<br />
-        {{ data.last24 }} passés depuis 24h.
-      </Card></template
-    >
+        {{ data.last24 }} passés depuis 24h. </Card
+      ><br />
+      <Card>
+        <template #button>
+          <Button>Aide</Button>
+        </template>
+
+        <router-link to="/help"
+          ><img src="@/assets/img/arrow_sm.svg" /> Perdu ? Besoin d'aide ?
+          Clique ici !</router-link
+        ></Card
+      ><br />
+      <Card yellow filename="head_fringues.png">
+        <template #button>
+          <Button yellow>Pack</Button>
+        </template>
+        <img
+          src="@/assets/img/packs/supporter.jpg"
+          style="max-width: 100%"
+        /><br /><br />
+        <Button yellow class="fullwidth">Item</Button><br />
+        <img
+          src="@/assets/img/packs/blister_eskimok_perou1.jpg"
+          style="max-width: 100%"
+        />
+      </Card>
+    </template>
   </Container>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
+import Button from "@/components/Button.vue";
+import AnimatedNumber from "@/components/AnimatedNumber.vue";
 import Container from "@/views/Container.vue";
 
 export default {
@@ -114,6 +154,8 @@ export default {
   components: {
     Card,
     Container,
+    AnimatedNumber,
+    Button,
   },
   data() {
     return {
@@ -158,8 +200,6 @@ export default {
 }
 
 .level {
-  margin-left: -17px;
-  width: calc(100% + 34px);
   background: linear-gradient(
       to right,
       #6ebef0a0,
@@ -189,10 +229,10 @@ export default {
 }
 
 .messages div {
-  transform: translate3d(20%, 200%, 0)
+  transform: translate3d(20%, 200%, 0);
 }
 
 .friends div {
-  transform: translate3d(0, 200%, 0)
+  transform: translate3d(0, 200%, 0);
 }
 </style>

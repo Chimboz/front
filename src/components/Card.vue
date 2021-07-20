@@ -1,9 +1,12 @@
 <template>
   <div :class="{ justified: justified }" :style="cssVars">
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
-    <img v-if="top" src="@/assets/img/menul_top_blu.gif" />
+    <img v-else-if="top" src="@/assets/img/menul_top_blu.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
       <slot name="subtop"></slot>
+    </div>
+    <div v-if="$slots['button']" class="card-btn">
+      <slot name="button"></slot>
     </div>
     <div class="card" :class="{ bot: bot }">
       <h2>
@@ -56,63 +59,54 @@ export default {
   },
   computed: {
     cssVars() {
+      if (this.yellow)
+        return {
+          "--light-card-color": "#fff",
+          "--main-card-color": "#fff4d5",
+          "--dark-card-color": "#ddcb9b",
+          "--shadow-card-color": "#5c341f",
+          "--title-card-color": "#726338",
+          "--title-subtop-color": "#963d00",
+          "--shadow-subtop-color": "#a38c47",
+          "--light-subtop-color": "#fff7d7",
+          "--main-subtop-color": "#ffe5a3",
+          "--dark-subtop-color": "#a38c47",
+        };
+      if (this.blue)
+        return {
+          "--light-card-color": "#aadcfc",
+          "--main-card-color": "#6ebef0",
+          "--dark-card-color": "#5aa1cd",
+          "--shadow-card-color": "#355668",
+          "--title-card-color": "#096EA8",
+          "--title-subtop-color": "#004b7d",
+          "--shadow-subtop-color": "#1b4166",
+          "--light-subtop-color": "#c4e8ff",
+          "--main-subtop-color": "#99cdef",
+          "--dark-subtop-color": "#628499",
+        };
       return {
-        "--light-card-color": this.yellow
-          ? "#fff"
-          : this.blue
-          ? "#aadcfc"
-          : "#f2f8fc",
-        "--main-card-color": this.yellow
-          ? "#fff4d5"
-          : this.blue
-          ? "#6ebef0"
-          : "#d5e6f3",
-        "--dark-card-color": this.yellow
-          ? "#ddcb9b"
-          : this.blue
-          ? "#5aa1cd"
-          : "#a5cbe9",
-        "--shadow-card-color": this.yellow
-          ? "#5c341f"
-          : this.blue
-          ? "#355668"
-          : "#18486a",
-        "--title-card-color": this.yellow
-          ? "#726338"
-          : this.blue
-          ? "#096EA8"
-          : "#004e84",
-        "--title-subtop-color": this.yellow
-          ? "#963d00"
-          : this.blue
-          ? "#004b7d"
-          : "#004b7d",
-        "--shadow-subtop-color": this.yellow
-          ? "#a38c47"
-          : this.blue
-          ? "#1b4166"
-          : "#1b4166",
-        "--light-subtop-color": this.yellow
-          ? "#fff7d7"
-          : this.blue
-          ? "#c4e8ff"
-          : "#c4e8ff",
-        "--main-subtop-color": this.yellow
-          ? "#ffe5a3"
-          : this.blue
-          ? "#99cdef"
-          : "#99cdef",
-        "--dark-subtop-color": this.yellow
-          ? "#a38c47"
-          : this.blue
-          ? "#628499"
-          : "#628499",
+        "--light-card-color": "#f2f8fc",
+        "--main-card-color": "#d5e6f3",
+        "--dark-card-color": "#a5cbe9",
+        "--shadow-card-color": "#18486a",
+        "--title-card-color": "#004e84",
+        "--title-subtop-color": "#004b7d",
+        "--shadow-subtop-color": "#1b4166",
+        "--light-subtop-color": "#c4e8ff",
+        "--main-subtop-color": "#99cdef",
+        "--dark-subtop-color": "#628499",
       };
     },
   },
 };
 </script>
-
+<style lang="scss">
+.fullwidth {
+  width: calc(100% + 34px) !important;
+  margin-left: -17px;
+}
+</style>
 <style lang="scss" scoped>
 .card {
   border-radius: 12px;
@@ -137,7 +131,8 @@ img {
 }
 
 img + .card,
-.subtop + .card {
+.subtop + .card,
+.card-btn + .card {
   border-radius: 0 0 12px 12px;
   display: inline-block;
   background-image: linear-gradient(
@@ -146,6 +141,10 @@ img + .card,
     var(--main-card-color) calc(100% - 12px),
     var(--dark-card-color) 100%
   );
+}
+
+.card-btn {
+  background: linear-gradient(to bottom, transparent, transparent 50%, var(--main-card-color) 50%);
 }
 
 img + .card {

@@ -64,8 +64,8 @@
 </template>
 
 <script>
-import moment from "moment";
-import "moment/locale/fr";
+import { formatDistance } from "date-fns";
+import { fr } from "date-fns/locale";
 
 export default {
   name: "Board",
@@ -77,8 +77,10 @@ export default {
   },
   methods: {
     formatDate(date) {
-      moment.locale("fr");
-      return moment(date).format("DD MMM YYYY hh:mm");
+      return formatDistance(new Date(date), new Date(), {
+        locale: fr,
+        addSuffix: true,
+      });
     },
   },
 };

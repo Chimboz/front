@@ -49,4 +49,19 @@ th {
   );
   border-bottom: 1px solid #a2bdd1;
 }
+td:nth-child(3),
+td:nth-child(4),
+th:nth-child(3),
+th:nth-child(4) {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  td:nth-child(3),
+  td:nth-child(4),
+  th:nth-child(3),
+  th:nth-child(4) {
+    display: table-cell;
+  }
+}
 </style>
