@@ -1,63 +1,193 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column
       ><Card blue top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
-    <Card filename="head_bac_page.gif">
-      <template #header> Mon compte </template>
-      <template #subtitle
-        >Mon compte</template
-      >
-      Mon compte
+        <router-link to="/levels">
+          <div class="level fullwidth">
+            Niveau
+            <div class="number">
+              <img
+                v-for="number in data.level.toString(10)"
+                :key="number.index"
+                :src="require(`@/assets/img/numbers/${number}.png`)"
+              />
+            </div></div></router-link
+        ><br />
+        <div class="menu fullwidth">
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Mon
+            compte</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Ma
+            messagerie</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Mes
+            groupes</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Mes amis</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Pamalin</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Majmin</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Fringues</router-link
+          >
+        </div></Card
+      ><br />
+      <Card yellow>
+        <template #button>
+          <Button yellow>Pépettes</Button>
+        </template>
+        <object
+          type="image/svg+xml"
+          :data="require('@/assets/img/bank.svg')"
+          class="fullwidth"
+        ></object>
+        <router-link to="/bank">
+          Tu as actuellement<br />
+          <AnimatedNumber :number="data.credits" /><br />
+          pépettes </router-link
+        ><br /><br />
+        <router-link to="/reflooz"
+          ><Button yellow>Reflooz</Button></router-link
+        ></Card
+      ></template
+    >
+    <Card blue>
+      <div class="cabin">
+        <Tiz
+          tabindex="0"
+          @keydown.up="up"
+          @keydown.down="down"
+          @keydown.left="left"
+          @keydown.right="right"
+        />
+      </div>
     </Card>
-    <template #right-column
-      ><Card blue top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
+    <template #right-column>
+      <Card blue filename="fd_slot_mi_sky.gif"> </Card><br />
+      <Card blue filename="fd_slot_forum_sky.gif"> </Card><br /><Card blue>
+        <template #button> <Button>Amis</Button> </template>
+      </Card>
+    </template>
   </Container>
 </template>
+
 <script>
 import Card from "@/components/Card.vue";
+import Button from "@/components/Button.vue";
+import Tiz from "@/components/Tiz.vue";
+import AnimatedNumber from "@/components/AnimatedNumber.vue";
 import Container from "@/views/Container.vue";
 
 export default {
   name: "Account",
   components: {
     Card,
+    Button,
+    AnimatedNumber,
     Container,
+    Tiz,
+  },
+  data() {
+    return {
+      data: null,
+      error: null,
+      loading: true,
+    };
+  },
+  methods: {
+    up() {
+      console.log("up");
+    },
+    down() {
+      console.log("down");
+    },
+    left() {
+      console.log("left");
+    },
+    right() {
+      console.log("right");
+    },
+  },
+  beforeRouteEnter(to, from, next) {
+    const url = "/api/home.json";
+    next((vm) => {
+      vm.axios
+        .get(url)
+        .then((res) => {
+          if (res) {
+            vm.data = res.data;
+            vm.loading = false;
+          } else {
+            // Didn't like the result, redirect
+            next("/");
+          }
+        })
+        .catch((error) => {
+          vm.error = error.toString();
+        });
+    });
+  },
+  async beforeRouteUpdate() {
+    try {
+      this.data = await this.axios.get("/api/home.json");
+    } catch (error) {
+      this.error = error.toString();
+    }
   },
 };
 </script>
+
+<style lang="scss">
+.cabin .tiz {
+  height: 300px;
+}
+</style>
+
 <style lang="scss" scoped>
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px 10px;
+}
+
+.list:nth-child(2n + 1) {
+  background: #a8dfff
+    linear-gradient(
+      to right,
+      #6ebef0a0,
+      transparent 10%,
+      transparent 90%,
+      #6ebef0a0
+    );
+}
+
+.cabin {
+  animation: bg 0.5s infinite alternate;
+  //width: 25%;
+}
+@keyframes bg {
+  0% {
+    box-shadow: inset 0 3em 3em #240026;
+  }
+  100% {
+    box-shadow: inset 0 3em 3em #b40026;
+  }
+}
 </style>

@@ -115,13 +115,13 @@
         {{ data.members }} membres<br />
         {{ data.last24 }} passés depuis 24h. </Card
       ><br />
-      <Card>
+      <Card blue>
         <template #button>
           <Button>Aide</Button>
         </template>
 
         <router-link to="/help"
-          ><img src="@/assets/img/arrow_sm.svg" /> Perdu ? Besoin d'aide ?
+          ><img src="@/assets/img/arrow_sm.svg"/> Perdu ? Besoin d'aide ?
           Clique ici !</router-link
         ></Card
       ><br />
@@ -197,35 +197,6 @@ export default {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-}
-
-.level {
-  background: linear-gradient(
-      to right,
-      #6ebef0a0,
-      transparent 10%,
-      transparent 90%,
-      #6ebef0a0
-    ),
-    linear-gradient(
-      to bottom,
-      #6ebef0 15%,
-      #a8dfff 15%,
-      #a8dfff 85%,
-      #6ebef0 85%
-    );
-  display: flex;
-
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.level .number {
-  display: flex;
-  border-radius: 12px / 8px;
-  padding: 8px;
-  font-size: 25px;
-  background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }
 
 .messages div {
