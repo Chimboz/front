@@ -150,7 +150,9 @@ export default {
 
 <style lang="scss">
 .cabin .tiz {
-  height: 300px;
+  position: relative;
+  width: 100%;
+  z-index: 3;
 }
 </style>
 
@@ -179,15 +181,42 @@ export default {
 }
 
 .cabin {
-  animation: bg 0.5s infinite alternate;
-  //width: 25%;
+  position: relative;
+  width: 33%;
+}
+
+.cabin:before {
+  background: linear-gradient(to bottom, #240026, transparent);
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: bg 0.3s linear infinite 0.3s alternate;
+  z-index: 2;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
+}
+.cabin:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #b40026, transparent);
+  animation: bg 0.3s linear infinite alternate;
+  z-index: 1;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
 }
 @keyframes bg {
   0% {
-    box-shadow: inset 0 3em 3em #240026;
+    opacity: 0;
   }
   100% {
-    box-shadow: inset 0 3em 3em #b40026;
+    opacity: 1;
   }
 }
 </style>
