@@ -54,7 +54,7 @@
           <AnimatedNumber :number="data.credits" /><br />
           pépettes </router-link
         ><br /><br />
-        <router-link to="/reflooz"
+        <router-link to="/reflooz" class="btn-route"
           ><Button yellow>Reflooz</Button></router-link
         ></Card
       ></template
