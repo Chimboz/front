@@ -75,4 +75,8 @@ export default {
   border-width: 2px 5px;
   overflow: overlay;
 }
+
+.btn:hover {
+  filter: brightness(1.2)
+}
 </style>
