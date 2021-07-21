@@ -1,5 +1,8 @@
 <template>
-  <div :class="{ justified: justified }" :style="cssVars">
+  <div
+    :class="{ justified: justified }"
+    :style="cssVars"
+  >
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
     <img v-else-if="top" src="@/assets/img/menul_top_blu.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
@@ -144,7 +147,12 @@ img + .card,
 }
 
 .card-btn {
-  background: linear-gradient(to bottom, transparent, transparent 50%, var(--main-card-color) 50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    var(--main-card-color) 50%
+  );
 }
 
 img + .card {

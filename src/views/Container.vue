@@ -32,6 +32,10 @@
   align-items: stretch;
 }
 
+.side-column > div {
+  width: min-content;
+}
+
 .side-column .card {
   width: 154px;
 }
