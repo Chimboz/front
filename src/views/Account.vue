@@ -63,14 +63,7 @@
       ></template
     >
     <Card blue>
-      <div
-        class="cabin"
-        tabindex="0"
-        @keydown.up="up"
-        @keydown.down="down"
-        @keydown.left="left"
-        @keydown.right="right"
-      >
+      <div class="parent">
         <div class="arrows">
           <button>
             <img src="@/assets/img/arrow_sm.svg" /></button
@@ -86,7 +79,17 @@
             <img src="@/assets/img/arrow_sm.svg" />
           </button>
         </div>
-        <Tiz style="width: 50%" />
+        <div
+          class="cabin"
+          tabindex="0"
+          @keydown.up="up"
+          @keydown.down="down"
+          @keydown.left="left"
+          @keydown.right="right"
+        >
+          <Tiz style="width: 75%; z-index: 3; margin-bottom: 12px" />
+          <div class="circle"></div>
+        </div>
         <div class="arrows">
           <button>
             <img src="@/assets/img/arrow_sm.svg" /></button
@@ -183,11 +186,13 @@ export default {
 .cabin .tiz {
   position: relative;
   width: 100%;
-  z-index: 3;
 }
 </style>
 
 <style lang="scss" scoped>
+.parent {
+  display: flex;
+}
 .menu {
   display: flex;
   flex-direction: column;
@@ -213,11 +218,13 @@ export default {
 
 .cabin {
   position: relative;
-  width: 33%;
+  width: 28%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-items: flex-end;
+  margin: 0 -12px;
+  height: 180px;
 }
 
 .cabin:before {
@@ -230,8 +237,8 @@ export default {
   height: 100%;
   animation: bg 0.3s linear infinite 0.3s alternate;
   z-index: 2;
-  border-top-left-radius: 50% 10%;
-  border-top-right-radius: 50% 10%;
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
 }
 .cabin:after {
   position: absolute;
@@ -243,8 +250,8 @@ export default {
   background-image: linear-gradient(to bottom, #b40026, transparent);
   animation: bg 0.3s linear infinite alternate;
   z-index: 1;
-  border-top-left-radius: 50% 10%;
-  border-top-right-radius: 50% 10%;
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
 }
 @keyframes bg {
   0% {
@@ -259,6 +266,7 @@ export default {
   display: flex;
   flex-direction: column;
   z-index: 3;
+  justify-content: space-evenly;
 }
 
 .arrows {
@@ -283,10 +291,59 @@ export default {
 }
 
 .arrows button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.5);
 }
 
 .arrows button:active {
   filter: brightness(0.9);
+}
+
+.circle {
+  width: 100%;
+  height: 20%;
+  background: radial-gradient(
+    #fff,
+    #fff 30%,
+    #ff99cc 32%,
+    #ff99cc 40%,
+    #fff 42%,
+    #fff 50%,
+    #ff99cc 52%,
+    #ff99cc 60%,
+    #fff 62%
+  );
+  border-radius: 100%;
+  position: absolute;
+  animation: bg2 0.3s infinite;
+  z-index: 2;
+}
+
+@keyframes bg2 {
+  0% {
+    background: radial-gradient(
+      #fff,
+      #fff 30%,
+      #ff99cc 32%,
+      #ff99cc 40%,
+      #fff 42%,
+      #fff 50%,
+      #ff99cc 52%,
+      #ff99cc 60%,
+      #fff 62%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      #ff99cc,
+      #ff99cc 30%,
+      #fff 32%,
+      #fff 40%,
+      #ff99cc 42%,
+      #ff99cc 50%,
+      #fff 52%,
+      #fff 60%,
+      #ff99cc 62%
+    );
+  }
 }
 </style>
