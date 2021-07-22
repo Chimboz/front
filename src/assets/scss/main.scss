@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-weight: normal;
