@@ -7,7 +7,7 @@
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
         <button id="connect">
-          <img class="chz-icon" src="../assets/img/check.svg" /> Se connecter
+          <img class="chz-icon" src="../assets/img/cross.svg" /> Se déconnecter
         </button>
       </div>
       <Tiz />
@@ -112,7 +112,7 @@ export default {
   margin-right: -20px;
   border: none;
   background: white;
-  width: 120px;
+  width: 130px;
   letter-spacing: 0.3px;
 }
 
