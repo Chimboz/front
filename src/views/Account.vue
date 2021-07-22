@@ -63,14 +63,45 @@
       ></template
     >
     <Card blue>
-      <div class="cabin">
-        <Tiz
-          tabindex="0"
-          @keydown.up="up"
-          @keydown.down="down"
-          @keydown.left="left"
-          @keydown.right="right"
-        />
+      <div
+        class="cabin"
+        tabindex="0"
+        @keydown.up="up"
+        @keydown.down="down"
+        @keydown.left="left"
+        @keydown.right="right"
+      >
+        <div class="arrows">
+          <button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" />
+          </button>
+        </div>
+        <Tiz style="width: 50%" />
+        <div class="arrows">
+          <button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" /></button
+          ><button>
+            <img src="@/assets/img/arrow_sm.svg" />
+          </button>
+        </div>
       </div>
     </Card>
     <template #right-column>
@@ -183,6 +214,10 @@ export default {
 .cabin {
   position: relative;
   width: 33%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-items: flex-end;
 }
 
 .cabin:before {
@@ -218,5 +253,40 @@ export default {
   100% {
     opacity: 1;
   }
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.arrows {
+  align-items: flex-start;
+}
+
+.arrows:last-child {
+  align-items: flex-end;
+}
+
+.arrows:first-child img {
+  transform: scaleX(-1);
+}
+
+.arrows button {
+  background: none;
+  border: 0;
+}
+
+.arrows button:nth-child(2n) img {
+  height: 30px;
+}
+
+.arrows button:hover {
+  filter: brightness(1.1);
+}
+
+.arrows button:active {
+  filter: brightness(0.9);
 }
 </style>
