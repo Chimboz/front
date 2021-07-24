@@ -4,7 +4,7 @@
       ><Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
-            Niveau
+            {{ $t('currentLevel') }}
             <div class="number">
               <img
                 v-for="number in data.level.toString(10)"
@@ -15,37 +15,34 @@
         ><br />
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Mon
-            compte</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.link') }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Ma
-            messagerie</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.internalMessagingLink') }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Mes
-            groupes</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.myGroupsLink') }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Mes amis</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.myFriendsLink') }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Pamalin</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.notSmartLink') }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Majmin</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Fringues</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.shoppingLink') }}</router-link
           >
         </div></Card
       ><br />
       <Card yellow>
         <template #button>
-          <Button yellow>Pépettes</Button>
+          <Button yellow>{{ $t('credit.title') }}</Button>
         </template>
         <object
           type="image/svg+xml"
@@ -53,9 +50,9 @@
           class="fullwidth"
         ></object>
         <router-link to="/bank">
-          Tu as actuellement<br />
+          {{ $t('credit.youGot') }}<br />
           <AnimatedNumber :number="data.credits" /><br />
-          pépettes </router-link
+          {{ $t('credit') }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
           ><Button yellow>Reflooz</Button></router-link
@@ -110,7 +107,7 @@
     <template #right-column>
       <Card blue filename="fd_slot_mi_sky.gif"> </Card><br />
       <Card blue filename="fd_slot_forum_sky.gif"> </Card><br /><Card blue>
-        <template #button> <Button>Amis</Button> </template>
+        <template #button> <Button>{{ $t('myAccount.friendsList') }}</Button> </template>
       </Card>
     </template>
   </Container>
