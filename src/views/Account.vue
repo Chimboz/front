@@ -4,7 +4,7 @@
       ><Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
-            {{ $t('currentLevel') }}
+            {{ $t("currentLevel") }}
             <div class="number">
               <img
                 v-for="number in data.level.toString(10)"
@@ -15,34 +15,46 @@
         ><br />
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.link') }}</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.link")
+            }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.internalMessagingLink') }}</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.internalMessagingLink")
+            }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.myGroupsLink') }}</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.myGroupsLink")
+            }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.myFriendsLink') }}</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.myFriendsLink")
+            }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.notSmartLink') }}</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.notSmartLink")
+            }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{ $t('myAccount.shoppingLink') }}</router-link
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.shoppingLink")
+            }}</router-link
           >
         </div></Card
       ><br />
       <Card yellow>
         <template #button>
-          <Button yellow>{{ $t('credit.title') }}</Button>
+          <Button yellow>{{ $t("credit.title") }}</Button>
         </template>
         <object
           type="image/svg+xml"
@@ -50,64 +62,110 @@
           class="fullwidth"
         ></object>
         <router-link to="/bank">
-          {{ $t('credit.youGot') }}<br />
+          {{ $t("credit.youGot") }}<br />
           <AnimatedNumber :number="data.credits" /><br />
-          {{ $t('credit') }} </router-link
+          {{ $t("credit") }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
-          ><Button yellow>Reflooz</Button></router-link
+          ><Button orange>Reflooz</Button></router-link
         ></Card
       ></template
     >
     <Card blue>
-      <div class="parent">
-        <div class="arrows">
-          <button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
+      <div class="left-acc">
+        <div class="cabin">
+          <div class="arrows">
+            <button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" />
+            </button>
+          </div>
+          <div
+            class="cabin-scene"
+            tabindex="0"
+            @keydown.up="up = true"
+            @keyup.up="up = false"
+            @keydown.down="down = true"
+            @keyup.down="down = false"
+            @keydown.left="left = true"
+            @keyup.left="left = false"
+            @keydown.right="right = true"
+            @keyup.right="right = false"
+          >
+            <Tiz style="width: 75%; z-index: 3; margin-bottom: 12px" />
+            <div class="circle"></div>
+          </div>
+          <div class="arrows">
+            <button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" /></button
+            ><button>
+              <img src="@/assets/img/arrow_sm.svg" />
+            </button>
+          </div>
+        </div>
+        <div class="controls">
+          <div>
+            <button>
+              <img
+                src="@/assets/img/arrow_sm.svg"
+                style="transform: rotate(-90deg)"
+                :class="{ pushed: up }"
+              /></button
+            ><br /><button>
+              <img
+                src="@/assets/img/arrow_sm.svg"
+                style="transform: scaleX(-1)"
+                :class="{ pushed: left }"
+              /></button
+            ><button id="random">
+              <img src="@/assets/img/chaparadio/stop.svg" /></button
+            ><button>
+              <img
+                src="@/assets/img/arrow_sm.svg"
+                :class="{ pushed: right }"
+              /></button
+            ><br /><button>
+              <img
+                src="@/assets/img/arrow_sm.svg"
+                :class="{ pushed: down }"
+                style="transform: rotate(-90deg) scaleX(-1)"
+              />
+            </button>
+          </div>
+        </div>
+        <!-- <div class="gender">
+          <button><img src="@/assets/img/sex/male.svg" /></button
           ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
+            <img src="@/assets/img/sex/female.svg" /></button
           ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" />
+            <img src="@/assets/img/sex/unknown.svg" />
           </button>
-        </div>
-        <div
-          class="cabin"
-          tabindex="0"
-          @keydown.up="up"
-          @keydown.down="down"
-          @keydown.left="left"
-          @keydown.right="right"
-        >
-          <Tiz style="width: 75%; z-index: 3; margin-bottom: 12px" />
-          <div class="circle"></div>
-        </div>
-        <div class="arrows">
-          <button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" /></button
-          ><button>
-            <img src="@/assets/img/arrow_sm.svg" />
-          </button>
-        </div>
+        </div> -->
       </div>
     </Card>
     <template #right-column>
       <Card blue filename="fd_slot_mi_sky.gif"> </Card><br />
       <Card blue filename="fd_slot_forum_sky.gif"> </Card><br /><Card blue>
-        <template #button> <Button>{{ $t('myAccount.friendsList') }}</Button> </template>
+        <template #button>
+          <Button>{{ $t("myAccount.friendsList") }}</Button>
+        </template>
       </Card>
     </template>
   </Container>
@@ -131,24 +189,14 @@ export default {
   },
   data() {
     return {
+      up: false,
+      down: false,
+      right: false,
+      left: false,
       data: null,
       error: null,
       loading: true,
     };
-  },
-  methods: {
-    up() {
-      console.log("up");
-    },
-    down() {
-      console.log("down");
-    },
-    left() {
-      console.log("left");
-    },
-    right() {
-      console.log("right");
-    },
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/home.json";
@@ -180,16 +228,42 @@ export default {
 </script>
 
 <style lang="scss">
-.cabin .tiz {
+.cabin-scene .tiz {
   position: relative;
   width: 100%;
 }
 </style>
 
 <style lang="scss" scoped>
-.parent {
+.left-acc {
   display: flex;
+  width: 33%;
+  flex-direction: column;
 }
+
+.controls button {
+  display: contents;
+}
+
+.controls {
+  perspective: 400px;
+}
+
+.controls div {
+  transform: rotateX(45deg);
+}
+
+.controls img {
+  margin: -2px 0;
+  height: 28px;
+}
+
+#random {
+  height: 28px;
+  width: 28px;
+  overflow: visible;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -213,9 +287,9 @@ export default {
     );
 }
 
-.cabin {
+.cabin-scene {
   position: relative;
-  width: 28%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -224,7 +298,7 @@ export default {
   height: 180px;
 }
 
-.cabin:before {
+.cabin-scene:before {
   background: linear-gradient(to bottom, #240026, transparent);
   position: absolute;
   content: "";
@@ -237,7 +311,7 @@ export default {
   border-top-left-radius: 50% 20%;
   border-top-right-radius: 50% 20%;
 }
-.cabin:after {
+.cabin-scene:after {
   position: absolute;
   content: "";
   top: 0;
@@ -245,12 +319,13 @@ export default {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(to bottom, #b40026, transparent);
-  animation: bg 0.3s linear infinite alternate;
+  animation: opacity 0.3s linear infinite alternate;
   z-index: 1;
   border-top-left-radius: 50% 20%;
   border-top-right-radius: 50% 20%;
 }
-@keyframes bg {
+
+@keyframes opacity {
   0% {
     opacity: 0;
   }
@@ -278,7 +353,7 @@ export default {
   transform: scaleX(-1);
 }
 
-.arrows button {
+button {
   background: none;
   border: 0;
 }
@@ -287,12 +362,22 @@ export default {
   height: 30px;
 }
 
-.arrows button:hover {
+.arrows button:hover,
+.controls button:hover img {
   filter: brightness(1.5);
 }
 
-.arrows button:active {
+.arrows button:active,
+.controls button:active img,
+.pushed {
   filter: brightness(0.9);
+}
+
+.cabin {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle {
@@ -311,11 +396,11 @@ export default {
   );
   border-radius: 100%;
   position: absolute;
-  animation: bg2 0.3s infinite;
+  animation: blink 0.3s infinite;
   z-index: 2;
 }
 
-@keyframes bg2 {
+@keyframes blink {
   0% {
     background: radial-gradient(
       #fff,

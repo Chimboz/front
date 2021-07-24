@@ -55,7 +55,7 @@
           {{ $t('credit', data.credits) }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
-          ><Button yellow>Reflooz</Button></router-link
+          ><Button orange>Reflooz</Button></router-link
         ></Card
       ></template
     >

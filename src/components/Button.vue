@@ -16,7 +16,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    blue: {
+    orange: {
       required: false,
       type: Boolean,
       default: false,
@@ -31,6 +31,14 @@ export default {
           "--button-color-3": "#e58900",
           "--button-color-4": "#ffb700",
           "--button-color-5": "#bb5c1d",
+        };
+      if (this.orange)
+        return {
+          "--button-color-1": "#fff2ea",
+          "--button-color-2": "#ff7214",
+          "--button-color-3": "#ce4800",
+          "--button-color-4": "#ff6600",
+          "--button-color-5": "#973500",
         };
       return {
         "--button-color-1": "#ffe4f5",
@@ -77,6 +85,6 @@ export default {
 }
 
 .btn:hover {
-  filter: brightness(1.2)
+  filter: brightness(1.2);
 }
 </style>
