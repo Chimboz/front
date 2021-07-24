@@ -62,9 +62,9 @@
           class="fullwidth"
         ></object>
         <router-link to="/bank">
-          {{ $t('credit.youGot') }}<br />
+          {{ $t("credit.youGot") }}<br />
           <AnimatedNumber :number="data.credits" /><br />
-          {{ $t('credit', data.credits) }} </router-link
+          {{ $t("credit", data.credits) }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
           ><Button orange>Reflooz</Button></router-link
@@ -101,7 +101,20 @@
             @keydown.right="right = true"
             @keyup.right="right = false"
           >
-            <Tiz style="width: 75%; z-index: 3; margin-bottom: 12px" />
+            <Tiz
+              style="width: 75%; z-index: 3; margin-bottom: 12px"
+              :avatar="0"
+              :hat="0"
+              :body="0"
+              :shoes="0"
+              :item0="0"
+              :item1="0"
+              :item2="0"
+              :up="up"
+              :down="down"
+              :left="left"
+              :right="right"
+            />
             <div class="circle"></div>
           </div>
           <div class="arrows">
@@ -308,8 +321,7 @@ export default {
   height: 100%;
   animation: bg 0.3s linear infinite 0.3s alternate;
   z-index: 2;
-  border-top-left-radius: 50% 20%;
-  border-top-right-radius: 50% 20%;
+  border-radius: 50%/20%;
 }
 .cabin-scene:after {
   position: absolute;
@@ -321,8 +333,7 @@ export default {
   background-image: linear-gradient(to bottom, #b40026, transparent);
   animation: opacity 0.3s linear infinite alternate;
   z-index: 1;
-  border-top-left-radius: 50% 20%;
-  border-top-right-radius: 50% 20%;
+  border-radius: 50%/20%;
 }
 
 @keyframes opacity {
