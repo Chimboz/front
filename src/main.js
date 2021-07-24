@@ -8,7 +8,8 @@ import VueAxios from "vue-axios";
 import Vuex from "vuex";
 import i18n from './i18n'
 
-createApp(App).use(i18n)
+createApp(App)
+  .use(i18n)
   .use(router)
   .use(VueAxios, axios)
   .use(Vuex)
