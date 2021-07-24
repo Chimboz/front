@@ -24,7 +24,7 @@
             </div>
             <img src="@/assets/img/home/fd_mi.png" class="fullwidth" />
           </div>
-          {{ $t('mi.message') }}</router-link
+          {{ $t('mi.message', data.messages) }}</router-link
         >
         <router-link to="/friends">
           <div class="friends">
@@ -37,12 +37,12 @@
             </div>
             <img src="@/assets/img/home/fd_amis.png" class="fullwidth" />
           </div>
-          {{ $t('friends.online') }}</router-link
+          {{ $t('friends.online', data.friends) }}</router-link
         ></Card
       ><br />
       <Card yellow>
         <template #button>
-          <Button yellow>{{ $t('credit.title') }}</Button>
+          <Button yellow>{{ $t('credit.title', data.credits) }}</Button>
         </template>
         <object
           type="image/svg+xml"
@@ -52,7 +52,7 @@
         <router-link to="/bank">
           {{ $t('credit.youGot') }}<br />
           <AnimatedNumber :number="data.credits" /><br />
-          {{ $t('credit') }} </router-link
+          {{ $t('credit', data.credits) }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
           ><Button yellow>Reflooz</Button></router-link
@@ -109,11 +109,11 @@
         <template #header
           ><router-link to="/connecteds"
             ><h1>{{ data.connected }}</h1>
-            {{ $t('connecteds') }}</router-link
+            {{ $t('connecteds', data.connected) }}</router-link
           ></template
         >
-        {{ data.members }} {{ $t('members') }}  <br />
-        {{ data.last24 }} {{ $t('members.past') }} </Card
+        {{ data.members }} {{ $t('members', data.members) }}  <br />
+        {{ data.last24 }} {{ $t('members.past', data.last24) }} </Card
       ><br />
       <Card blue>
         <template #button>
