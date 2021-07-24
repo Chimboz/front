@@ -7,7 +7,7 @@
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
         <button id="connect">
-          <img class="chz-icon" src="../assets/img/cross.svg" /> Se déconnecter
+          <img class="chz-icon" src="../assets/img/cross.svg" />{{ $t('logout.button') }}
         </button>
       </div>
       <Tiz />
@@ -25,31 +25,31 @@
     <router-link to="/tchat"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/tchat.svg" />
-        <div class="nav-text">&nbsp;Jouer&nbsp;!</div>
+        <div class="nav-text">&nbsp;{{ $t('playing.button') }}</div>
         <img class="arrow jitter" src="@/assets/img/arrow.svg" /></button
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/account.svg" />
-        <div class="nav-text">&nbsp;Mon&nbsp;compte</div>
+        <div class="nav-text">&nbsp;{{ $t('myAccount.button') }}</div>
       </button></router-link
     >
     <router-link to="/games"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/games.svg" />
-        <div class="nav-text">&nbsp;Jeux</div>
+        <div class="nav-text">&nbsp;{{ $t('games.button') }}</div>
       </button></router-link
     >
     <router-link to="/members"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/members.svg" />
-        <div class="nav-text">&nbsp;Membres</div>
+        <div class="nav-text">&nbsp;{{ $t('members.button') }}</div>
       </button></router-link
     >
     <router-link to="/bbs"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/community.svg" />
-        <div class="nav-text">&nbsp;Communauté</div>
+        <div class="nav-text">&nbsp;{{ $t('community.button') }}</div>
       </button></router-link
     >
   </div>

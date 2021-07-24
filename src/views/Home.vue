@@ -4,7 +4,7 @@
       ><Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
-            Niveau
+            {{ $t('currentLevel') }}
             <div class="number">
               <img
                 v-for="number in data.level.toString(10)"
@@ -24,7 +24,7 @@
             </div>
             <img src="@/assets/img/home/fd_mi.png" class="fullwidth" />
           </div>
-          message(s)</router-link
+          {{ $t('mi.message') }}</router-link
         >
         <router-link to="/friends">
           <div class="friends">
@@ -37,12 +37,12 @@
             </div>
             <img src="@/assets/img/home/fd_amis.png" class="fullwidth" />
           </div>
-          ami(s) connecté(s)</router-link
+          {{ $t('friends.online') }}</router-link
         ></Card
       ><br />
       <Card yellow>
         <template #button>
-          <Button yellow>Pépettes</Button>
+          <Button yellow>{{ $t('credit.title') }}</Button>
         </template>
         <object
           type="image/svg+xml"
@@ -50,9 +50,9 @@
           class="fullwidth"
         ></object>
         <router-link to="/bank">
-          Tu as actuellement<br />
+          {{ $t('credit.youGot') }}<br />
           <AnimatedNumber :number="data.credits" /><br />
-          pépettes </router-link
+          {{ $t('credit') }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
           ><Button yellow>Reflooz</Button></router-link
@@ -64,8 +64,8 @@
       <template #header
         ><img src="@/assets/img/header_hello.png" style="width: 100%"
       /></template>
-      Tu peux gagner jusqu'à 30 pépettes<br />
-      Clique sur le bouton pour gagner tes ppts </Card
+      {{ $t('lottery.firstLine') }}<br />
+      {{ $t('lottery.secondLine') }}</Card
     ><br />
     <Card yellow justified>
       <template #subtop>Chapaniouz</template>
@@ -109,20 +109,19 @@
         <template #header
           ><router-link to="/connecteds"
             ><h1>{{ data.connected }}</h1>
-            connectés</router-link
+            {{ $t('connecteds') }}</router-link
           ></template
         >
-        {{ data.members }} membres<br />
-        {{ data.last24 }} passés depuis 24h. </Card
+        {{ data.members }} {{ $t('members') }}  <br />
+        {{ data.last24 }} {{ $t('members.past') }} </Card
       ><br />
       <Card blue>
         <template #button>
-          <Button>Aide</Button>
+          <Button>{{ $t('help.button') }}</Button>
         </template>
 
         <router-link to="/help"
-          ><img src="@/assets/img/arrow_sm.svg"/> Perdu ? Besoin d'aide ?
-          Clique ici !</router-link
+          ><img src="@/assets/img/arrow_sm.svg"/>{{ $t('help.tip') }}</router-link
         ></Card
       ><br />
       <Card yellow filename="head_fringues.png">
