@@ -1,50 +1,10 @@
 <template>
   <Container>
-    <template #left-column
-      ><Card blue top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
-    <Card filename="head_bac_page.gif">
-      <template #header> Tchat </template>
-      <template #subtitle
-        >Tchat</template
-      >
-      Tchat
+    <Card blue>
+      <img src="@/assets/img/stores/fdroid-fr.svg" />
+      <img src="@/assets/img/stores/google-fr.png" />
+      <img style="padding: 20px" src="@/assets/img/stores/apple-fr.svg" />
     </Card>
-    <template #right-column
-      ><Card blue top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
   </Container>
 </template>
 
@@ -56,11 +16,17 @@ export default {
   name: "Tchat",
   components: {
     Card,
-    Container
+    Container,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
+.card {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card img {
+  width: 33%;
+}
 </style>
