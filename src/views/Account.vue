@@ -64,7 +64,7 @@
         <router-link to="/bank">
           {{ $t("credit.youGot") }}<br />
           <AnimatedNumber :number="data.credits" /><br />
-          {{ $t("credit") }} </router-link
+          {{ $t("credit", data.credits) }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
           ><Button orange>Reflooz</Button></router-link
@@ -72,92 +72,125 @@
       ></template
     >
     <Card blue>
-      <div class="left-acc">
-        <div class="cabin">
-          <div class="arrows">
-            <button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" />
-            </button>
-          </div>
-          <div
-            class="cabin-scene"
-            tabindex="0"
-            @keydown.up="up = true"
-            @keyup.up="up = false"
-            @keydown.down="down = true"
-            @keyup.down="down = false"
-            @keydown.left="left = true"
-            @keyup.left="left = false"
-            @keydown.right="right = true"
-            @keyup.right="right = false"
-          >
-            <Tiz style="width: 75%; z-index: 3; margin-bottom: 12px" />
-            <div class="circle"></div>
-          </div>
-          <div class="arrows">
-            <button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" /></button
-            ><button>
-              <img src="@/assets/img/arrow_sm.svg" />
-            </button>
-          </div>
-        </div>
-        <div class="controls">
-          <div>
-            <button>
-              <img
-                src="@/assets/img/arrow_sm.svg"
-                style="transform: rotate(-90deg)"
-                :class="{ pushed: up }"
-              /></button
-            ><br /><button>
-              <img
-                src="@/assets/img/arrow_sm.svg"
-                style="transform: scaleX(-1)"
-                :class="{ pushed: left }"
-              /></button
-            ><button id="random">
-              <img src="@/assets/img/chaparadio/stop.svg" /></button
-            ><button>
-              <img
-                src="@/assets/img/arrow_sm.svg"
-                :class="{ pushed: right }"
-              /></button
-            ><br /><button>
-              <img
-                src="@/assets/img/arrow_sm.svg"
-                :class="{ pushed: down }"
-                style="transform: rotate(-90deg) scaleX(-1)"
+      <div class="container-acc">
+        <div class="left-acc">
+          <div class="cabin">
+            <div class="arrows">
+              <button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" />
+              </button>
+            </div>
+            <div
+              class="cabin-scene"
+              tabindex="0"
+              @keydown.up="up = true"
+              @keyup.up="up = false"
+              @keydown.down="down = true"
+              @keyup.down="down = false"
+              @keydown.left="left = true"
+              @keyup.left="left = false"
+              @keydown.right="right = true"
+              @keyup.right="right = false"
+            >
+              <Tiz
+                style="width: 75%; z-index: 3; margin-bottom: 12px"
+                :avatar="0"
+                :hat="0"
+                :body="0"
+                :shoes="0"
+                :item0="0"
+                :item1="0"
+                :item2="0"
+                :up="up"
+                :down="down"
+                :left="left"
+                :right="right"
               />
+              <div class="circle"></div>
+            </div>
+            <div class="arrows">
+              <button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" /></button
+              ><button>
+                <img src="@/assets/img/arrow_sm.svg" />
+              </button>
+            </div>
+          </div>
+          <div class="controls">
+            <div>
+              <button>
+                <img
+                  src="@/assets/img/arrow_sm.svg"
+                  style="transform: rotate(-90deg)"
+                  :class="{ pushed: up }"
+                /></button
+              ><br /><button>
+                <img
+                  src="@/assets/img/arrow_sm.svg"
+                  style="transform: scaleX(-1)"
+                  :class="{ pushed: left }"
+                /></button
+              ><button id="random">
+                <img src="@/assets/img/chaparadio/stop.svg" /></button
+              ><button>
+                <img
+                  src="@/assets/img/arrow_sm.svg"
+                  :class="{ pushed: right }"
+                /></button
+              ><br /><button>
+                <img
+                  src="@/assets/img/arrow_sm.svg"
+                  :class="{ pushed: down }"
+                  style="transform: rotate(-90deg) scaleX(-1)"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="gender">
+            <button><img src="@/assets/img/sex/male.svg" /></button
+            ><button>
+              <img src="@/assets/img/sex/female.svg" /></button
+            ><button>
+              <img src="@/assets/img/sex/unknown.svg" />
             </button>
           </div>
         </div>
-        <!-- <div class="gender">
-          <button><img src="@/assets/img/sex/male.svg" /></button
-          ><button>
-            <img src="@/assets/img/sex/female.svg" /></button
-          ><button>
-            <img src="@/assets/img/sex/unknown.svg" />
-          </button>
-        </div> -->
+        <div class="right-acc">
+          <div class="nav-acc">
+            <button>{{ $t("myAccount.profileSection") }}</button
+            ><button>{{ $t("myAccount.invSection") }}</button>
+            <div id="profile">
+              <h3>Ta phrase préférée</h3>
+              <input type="text" />
+              <h3>Ta page perso</h3>
+              <input type="text" />
+              <h3>centres d'intéret</h3>
+              1&nbsp;<input type="text" /><br />1&nbsp;<input
+                type="text"
+              /><br />1&nbsp;<input type="text" /><br />1&nbsp;<input
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </Card>
     <template #right-column>
@@ -165,6 +198,12 @@
       <Card blue filename="fd_slot_forum_sky.gif"> </Card><br /><Card blue>
         <template #button>
           <Button>{{ $t("myAccount.friendsList") }}</Button>
+        </template>
+      </Card>
+      <br>
+      <Card blue>
+        <template #button>
+          <Button>{{ $t("myAccount.groupsList") }}</Button>
         </template>
       </Card>
     </template>
@@ -235,9 +274,33 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.container-acc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+input[type="text"]{
+  padding: 2px;
+  border-radius: 100px;
+}
 .left-acc {
   display: flex;
   width: 33%;
+  flex-direction: column;
+}
+
+h3 {
+  font-family: "Chimboz Heavy";
+  font-weight: normal;
+  color: #fff;
+  font-size: 18px;
+}
+
+.right-acc {
+  display: flex;
+  width: 67%;
   flex-direction: column;
 }
 
@@ -264,29 +327,6 @@ export default {
   overflow: visible;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-}
-
-.list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 2px 10px;
-}
-
-.list:nth-child(2n + 1) {
-  background: #a8dfff
-    linear-gradient(
-      to right,
-      #6ebef0a0,
-      transparent 10%,
-      transparent 90%,
-      #6ebef0a0
-    );
-}
-
 .cabin-scene {
   position: relative;
   width: 100%;
@@ -308,8 +348,7 @@ export default {
   height: 100%;
   animation: bg 0.3s linear infinite 0.3s alternate;
   z-index: 2;
-  border-top-left-radius: 50% 20%;
-  border-top-right-radius: 50% 20%;
+  border-radius: 50%/20%;
 }
 .cabin-scene:after {
   position: absolute;
@@ -321,8 +360,7 @@ export default {
   background-image: linear-gradient(to bottom, #b40026, transparent);
   animation: opacity 0.3s linear infinite alternate;
   z-index: 1;
-  border-top-left-radius: 50% 20%;
-  border-top-right-radius: 50% 20%;
+  border-radius: 50%/20%;
 }
 
 @keyframes opacity {

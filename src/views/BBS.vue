@@ -2,24 +2,53 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
+        <div class="menu fullwidth">
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.link")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.internalMessagingLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.myGroupsLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.myFriendsLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.notSmartLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.shoppingLink")
+            }}</router-link
+          >
+        </div>
+      </Card></template
+    >
     <BoardList :boards="data"> </BoardList>
+    <br />
+    <Card
+      ><img src="@/assets/img/bbs/folder_lock.gif" /> Verrouillé<br />
+      <img src="@/assets/img/bbs/folder_new.gif" /> Nouveaux messages<br />
+      <img src="@/assets/img/bbs/folder.gif" /> Pas de nouveaux messages<br
+    /></Card>
   </Container>
 </template>
 

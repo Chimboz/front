@@ -2,59 +2,105 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
-    <Card filename="head_bac_page.gif">
-      <template #header> Records ! </template>
-      <template #subtitle
-        >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+        <div class="menu fullwidth">
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.link")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.internalMessagingLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.myGroupsLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.myFriendsLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.notSmartLink")
+            }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+              $t("myAccount.shoppingLink")
+            }}</router-link
+          >
+        </div> </Card
+      ><br />
+      <Rules />
+    </template>
+    <Card filename="games/head_bacteria_center.jpg" blue justified>
+      <img
+        src="@/assets/img/games/visuel_bacteria.jpg"
+        alt="Bacteria"
+        style="float: left; margin-right: 17px"
+      />
+      <h4>Le jeu culte de l'archipel</h4>
+      <br />
+      Des millions des parties jouées, des centaines de milliers de joueurs !
+      Depuis des millénaires, les Watas, bactéries rouges enflammée, affrontent
+      les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
+      Stratégie incontournable sur l'archipel !<br />
+      <br />
+      <router-link to="/games/bacteria"
+        ><div class="btn-sm roz">
+          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
+        </div></router-link
       >
-      parties jouées:
-      <br />
-      fredazur avec 22665 parties jouées ! <br />
-      <br />
-      parties gagnées: <br />
-      AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-      <br />
-      parties perdues: <br />
-      fredazur avec 20763 parties perdues ! <br />
-      <br />
-      match nuls: <br />
-      20CeNt avec 1077 match nuls ! <br />
     </Card>
     <br />
-    <Card blue>
-      <template #header> Records ! </template>
-      <template #subtitle
-        >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+    <Card filename="games/head_patoj_center.gif" blue justified>
+      <img
+        src="@/assets/img/games/visuel_patojdur.jpg"
+        alt="Bacteria"
+        style="float: left; margin-right: 17px"
+      />
+      <h4>La course la plus humide du web !</h4>
+      <br />
+
+      Viens affronter les plus rapides patojeurs dans une course d'obstacles
+      haute en couleur ! Seul les plus rapides entreront dans la légende !
+      <br />
+      <br />
+      <router-link to="/games/patojdur"
+        ><div class="btn-sm roz">
+          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
+        </div></router-link
       >
-      parties jouées:
+    </Card>
+    <br />
+    <Card filename="games/head_mazo_center.gif" blue justified>
+      <img
+        src="@/assets/img/games/visuel_mazo.jpg"
+        alt="Bacteria"
+        style="float: left; margin-right: 17px"
+      />
+      <h4>Fais bosser ta bonne étoile !</h4>
       <br />
-      fredazur avec 22665 parties jouées ! <br />
+
+      Le premier jeu de hasard sur Chapatiz ! Des millions de parties jouées, un
+      suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
+      patience, pour rivaliser avec les meilleurs !<br />
       <br />
-      parties gagnées: <br />
-      AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-      <br />
-      parties perdues: <br />
-      fredazur avec 20763 parties perdues ! <br />
-      <br />
-      match nuls: <br />
-      20CeNt avec 1077 match nuls ! <br />
+      <router-link to="/games/mazo"
+        ><div class="btn-sm roz">
+          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
+        </div></router-link
+      >
     </Card>
     <template #right-column
       ><Card blue top>
@@ -80,6 +126,7 @@
 
 <script>
 import Card from "@/components/Card.vue";
+import Rules from "@/components/Rules.vue";
 import Container from "@/views/Container.vue";
 
 export default {
@@ -87,6 +134,7 @@ export default {
   components: {
     Card,
     Container,
+    Rules,
   },
 };
 </script>
