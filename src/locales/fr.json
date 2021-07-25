@@ -22,8 +22,10 @@
   "myAccount.internalMessagingLink": "ChapatizMessenger",
   "myAccount.myGroupsLink": "Mes groupes",
   "myAccount.friendsList": "Amis",
+  "myAccount.groupsList": "Groupes",
   "myAccount.myFriendsLink": "Mes amis",
   "myAccount.notSmartLink": "Pamalin",
   "myAccount.shoppingLink": "Magasin",
-  
+  "myAccount.profileSection": "Profil",
+  "myAccount.invSection": "Inventaire"
 }
