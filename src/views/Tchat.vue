@@ -2,8 +2,8 @@
   <Container>
     <Card blue>
       <img src="@/assets/img/stores/fdroid-fr.svg" />
-      <img src="@/assets/img/stores/google-fr.png" />
-      <img style="padding: 20px" src="@/assets/img/stores/apple-fr.svg" />
+      <img src="@/assets/img/stores/google-fr.svg" />
+      <img src="@/assets/img/stores/apple-bk-fr.svg" />
     </Card>
   </Container>
 </template>
@@ -27,6 +27,7 @@ export default {
   justify-content: space-evenly;
 }
 .card img {
+  padding: 0 10px;
   width: 33%;
 }
 </style>
