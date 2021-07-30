@@ -9,7 +9,7 @@
               <img
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
-                :src="require(`@/assets/img/numbers/${number}.png`)"
+                :src="require(`@/assets/img/numbers/${number}.svg`)"
               />
             </div></div></router-link
         ><br />
