@@ -6,7 +6,7 @@ import router from "./router";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import Vuex from "vuex";
-import i18n from './i18n'
+import i18n from "./i18n";
 
 createApp(App)
   .use(i18n)
