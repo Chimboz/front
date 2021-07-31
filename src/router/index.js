@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import store from "../store/index.js";
 
 const routes = [
   {
@@ -50,7 +51,7 @@ const routes = [
   },
   // 404
   {
-    path: '/:pathMatch(.*)*',
+    path: "/:pathMatch(.*)*",
     name: "404",
     component: () => import("../views/NotFound.vue"),
     meta: { title: "Chapatiz Retro | Not Found" },
@@ -64,7 +65,15 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
+  if (to.name) {
+    // Start the route progress bar.
+    store.commit("start");
+  }
   next();
+});
+
+router.afterEach(() => {
+  store.commit("done");
 });
 
 export default router;
