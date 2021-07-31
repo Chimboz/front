@@ -19,7 +19,7 @@
               <img
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
-                :src="require(`@/assets/img/numbers/roz/${number}.png`)"
+                :src="require(`@/assets/img/numbers/roz/${number}.svg`)"
               />
             </div>
             <img src="@/assets/img/home/fd_mi.png" class="fullwidth" />
@@ -32,7 +32,7 @@
               <img
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
-                :src="require(`@/assets/img/numbers/roz/${number}.png`)"
+                :src="require(`@/assets/img/numbers/roz/${number}.svg`)"
               />
             </div>
             <img src="@/assets/img/home/fd_amis.png" class="fullwidth" />

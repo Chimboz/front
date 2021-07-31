@@ -17,9 +17,9 @@
       </td>
       <td class="row1" width="100%" height="50">
         <span class="forumlink">
-          <a href="bbs/1" class="forumlink" style="color: #ff3399">{{
+          <router-link :to="'/bbs/'+bbs.id" class="forumlink" style="color: #ff3399">{{
             bbs.name
-          }}</a
+          }}</router-link
           ><br />
         </span>
         <span class="genmed">{{ bbs.desc }}<br /> </span
