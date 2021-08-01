@@ -42,12 +42,20 @@
 
 .main-column {
   width: 100%;
+}
+
+.left-column {
   order: 1;
+}
+
+.right-column {
+  order: 2;
 }
 
 @media (min-width: 800px) {
   .side-column {
     width: 154px;
+    order: 0;
   }
 
   .left-column {
