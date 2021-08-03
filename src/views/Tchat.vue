@@ -18,6 +18,13 @@ export default {
     Card,
     Container,
   },
+  beforeRouteEnter(to, from, next) {
+    setTimeout(()=>next(),2000)
+
+  },
+  async beforeRouteUpdate() {
+    setTimeout(()=>console.log("2000ms"),2000)
+  }
 };
 </script>
 
