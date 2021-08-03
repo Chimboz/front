@@ -42,6 +42,22 @@ npm run lint
 **Customize configuration**
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+# Dependencies
+- Bbob
+- Axios
+- date-fns
+- mitt
+- vue-i18n
+- vue-router
+- vuex
+
 # Useful tools
+## SVG
 [SVG Animation editor](http://anigen.org/versions/0_8_1/)
-Inkscape
+[SVG Path editor](https://yqnn.github.io/svg-path-editor/)
+[Inkscape](https://inkscape.org/)
+
+## Vue doc
+[Vue](https://v3.vuejs.org/)
+[Router](https://next.router.vuejs.org/)
+[Vuex](https://next.vuex.vuejs.org/)
