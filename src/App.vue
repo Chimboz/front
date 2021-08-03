@@ -1,23 +1,23 @@
 <template>
-  <Progress :value="this.$store.state.progress"/>
+  <ProgressBar />
   <Navbar />
-  <router-view/>
+  <router-view />
   <Footer />
 </template>
 
 <script>
-import Progress from '@/components/Progress.vue'
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
+import ProgressBar from "@/components/ProgressBar.vue";
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Navbar,
     Footer,
-    Progress
-  }
-}
+    ProgressBar,
+  },
+};
 </script>
 
 
@@ -28,5 +28,4 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-
 </style>

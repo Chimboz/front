@@ -221,7 +221,7 @@ export default {
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    #fff2ea 15%,
+    #fff2ea 0%,
     #ff7214 50%,
     #ce4800 50%,
     #ff6600
