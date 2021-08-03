@@ -96,7 +96,7 @@ export default {
 }
 
 .loader {
-    background: #23d6d6;
+    background: #f0009c;
     display: inline-block;
     height: 100%;
     width: 50%;
@@ -109,7 +109,7 @@ export default {
     float: right;
     height: 100%;
     width: 20%;
-    background-image: linear-gradient(to right, #23d6d6, #29ffff, #23d6d6);
+    background-image: linear-gradient(to right, #f0009c, #ff6600, #f0009c);
     animation: loading-animation 2s ease-in infinite;
 }
 
@@ -119,7 +119,7 @@ export default {
     width: 30px;
     margin-left: -30px;
     border-radius: 0 0 5px 0;
-    box-shadow: 0 0 10px #23d6d6;
+    box-shadow: 0 0 10px #ff6600;
 }
 
 @keyframes loading-animation {
