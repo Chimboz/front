@@ -7,27 +7,33 @@
     </tr>
   </tbody>
   <tbody v-for="(bbs, index) in category.bbs" :key="bbs.id">
-    <tr>
+    <tr class="bbs">
       <td class="row1" align="center" valign="middle" height="50">
         <img
-          src="@/assets/img/bbs/folder_lock.svg"
+          class="icon"
+          :src="require(`@/assets/img/bbs/folder${bbs.new?'_new':''}${bbs.locked?'_lock':''}.svg`)"
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         />
       </td>
       <td class="row1" width="100%" height="50">
         <span class="forumlink">
-          <router-link :to="'/bbs/'+bbs.id" class="forumlink" style="color: #ff3399">{{
-            bbs.name
-          }}</router-link
+          <router-link
+            :to="'/bbs/' + bbs.id"
+            class="forumlink"
+            style="color: #ff3399"
+            >{{ bbs.name }}</router-link
           ><br />
         </span>
         <span class="genmed">{{ bbs.desc }}<br /> </span
         ><span class="gensmall"
           >Modérateur
-          <a href="/groups/3" v-for="mod in bbs.mods" :key="mod.id">{{
-            mod.name
-          }}</a></span
+          <div v-for="mod in bbs.mods" :key="mod.id"  style="display: inline">
+            <router-link :to="'/groups/' + mod.id">{{
+              mod.name
+            }}</router-link>
+            <div v-if="bbs.mods.indexOf(mod) != bbs.mods.length-1" style="display: inline">,&nbsp;</div>
+          </div></span
         >
       </td>
       <td class="row2" align="center" valign="middle" height="50">
@@ -48,7 +54,7 @@
         &nbsp;»&nbsp;
         <a href="/topic/938277"
           ><img
-            src="@/assets/img/bbs/msg.svg"
+            :src="require(`@/assets/img/bbs/msg${bbs.new?'_new':''}.svg`)"
             style="vertical-align: bottom"
             alt="Voir le dernier message"
             title="Voir le dernier message"
@@ -97,5 +103,9 @@ tr {
 }
 .category {
   text-align: left;
+}
+
+.bbs .icon {
+  padding: 10px;
 }
 </style>

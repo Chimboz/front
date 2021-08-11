@@ -56,6 +56,7 @@
         "id": 1,
         "name": "Bacteria",
         "locked": false,
+        "new": true,
         "desc": "C'est le 1er jeu de Chimboz, un jeu mythique, plus d'un million de parties depuis le lancement, tout ce que tu veux savoir sur ce jeu, c'est là....",
         "mods": [
           {

@@ -45,10 +45,17 @@
     <BoardList :boards="data"> </BoardList>
     <br />
     <Card
-      ><img src="@/assets/img/bbs/folder_lock.svg" /> Verrouillé<br />
-      <img src="@/assets/img/bbs/folder_new.svg" /> Nouveaux messages<br />
-      <img src="@/assets/img/bbs/folder.svg" /> Pas de nouveaux messages<br
-    /></Card>
+      ><div class="symbol-info">
+        <img src="@/assets/img/bbs/folder_new_lock.svg" />&nbsp;Verrouillé
+        nouveaux messages&nbsp;<br />
+        <img
+          src="@/assets/img/bbs/folder_lock.svg"
+        />&nbsp;Verrouillé&nbsp;<br />
+        <img src="@/assets/img/bbs/folder_new.svg" />&nbsp;Nouveaux
+        messages&nbsp;<br />
+        <img src="@/assets/img/bbs/folder.svg" />&nbsp;Pas de nouveaux
+        messages&nbsp;<br /></div
+    ></Card>
   </Container>
 </template>
 
@@ -100,7 +107,10 @@ export default {
 };
 </script>
 <style lang="scss">
-.main-column {
-  width: 100% !important;
+.symbol-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 </style>
