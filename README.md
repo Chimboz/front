@@ -53,11 +53,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Useful tools
 ## SVG
-[SVG Animation editor](http://anigen.org/versions/0_8_1/)
-[SVG Path editor](https://yqnn.github.io/svg-path-editor/)
-[Inkscape](https://inkscape.org/)
+[SVG Animation editor](http://anigen.org/versions/0_8_1/)  
+[SVG Path editor](https://yqnn.github.io/svg-path-editor/)  
+[Inkscape](https://inkscape.org/)  
 
 ## Vue doc
-[Vue](https://v3.vuejs.org/)
-[Router](https://next.router.vuejs.org/)
-[Vuex](https://next.vuex.vuejs.org/)
+[Vue](https://v3.vuejs.org/)  
+[Router](https://next.router.vuejs.org/)  
+[Vuex](https://next.vuex.vuejs.org/)  

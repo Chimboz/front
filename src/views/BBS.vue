@@ -45,9 +45,9 @@
     <BoardList :boards="data"> </BoardList>
     <br />
     <Card
-      ><img src="@/assets/img/bbs/folder_lock.gif" /> Verrouillé<br />
-      <img src="@/assets/img/bbs/folder_new.gif" /> Nouveaux messages<br />
-      <img src="@/assets/img/bbs/folder.gif" /> Pas de nouveaux messages<br
+      ><img src="@/assets/img/bbs/folder_lock.svg" /> Verrouillé<br />
+      <img src="@/assets/img/bbs/folder_new.svg" /> Nouveaux messages<br />
+      <img src="@/assets/img/bbs/folder.svg" /> Pas de nouveaux messages<br
     /></Card>
   </Container>
 </template>

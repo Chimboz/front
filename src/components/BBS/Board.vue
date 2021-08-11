@@ -10,7 +10,7 @@
     <tr>
       <td class="row1" align="center" valign="middle" height="50">
         <img
-          src="@/assets/img/bbs/folder_lock.gif"
+          src="@/assets/img/bbs/folder_lock.svg"
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         />
@@ -48,8 +48,8 @@
         &nbsp;»&nbsp;
         <a href="/topic/938277"
           ><img
-            src="@/assets/img/bbs/icon_latest_reply.gif"
-            style="vertical-align: middle"
+            src="@/assets/img/bbs/msg.svg"
+            style="vertical-align: bottom"
             alt="Voir le dernier message"
             title="Voir le dernier message"
         /></a>
