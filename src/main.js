@@ -9,6 +9,8 @@ import store from "./store/index.js";
 import mitt from 'mitt';
 import i18n from "./i18n";
 
+// https://www.epiloge.com/how-to-add-dynamic-meta-tags-to-your-vuejs-app-for-google-seo-0fa058
+
 const eventBus = mitt()
 const app = createApp(App)
   .use(i18n)
