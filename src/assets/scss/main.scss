@@ -52,11 +52,9 @@ body {
 ::selection {
   background-color: #ff6600;
   color: #fff;
-  text-shadow: 2px 0 0 #ce4800,
-  -2px 0 0 #ce4800, 0 2px 0 #ce4800,
-  0 -2px 0 #ce4800, 1px 1px #ce4800,
-  -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
-  -1px 1px 0 #ce4800;
+  text-shadow: 2px 0 0 #ce4800, -2px 0 0 #ce4800, 0 2px 0 #ce4800,
+    0 -2px 0 #ce4800, 1px 1px #ce4800, -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
+    -1px 1px 0 #ce4800;
 }
 
 a {
@@ -67,6 +65,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.link-pink {
+  color: #ff3399;
 }
 
 hr {
@@ -133,7 +135,7 @@ hr {
 }
 
 .roz {
-  background: #F12490
+  background: #f12490;
 }
 
 h2 {
@@ -193,7 +195,6 @@ h2 {
   text-decoration: none !important;
 }
 
-
 .level {
   background: linear-gradient(
       to right,
@@ -223,6 +224,6 @@ h2 {
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }
 
-img[src*='arrow_sm']{
+img[src*="arrow_sm"] {
   height: 17px;
 }

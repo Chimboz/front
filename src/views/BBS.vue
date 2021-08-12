@@ -73,7 +73,7 @@ export default {
   },
   data() {
     return {
-      data: null,
+      data: [],
       error: null,
       loading: true,
     };

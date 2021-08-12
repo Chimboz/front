@@ -25,7 +25,7 @@
 }
 
 .column {
-  text-align: -webkit-center;
+  text-align: center;
   padding: 12px;
   display: flex;
   flex-direction: column;

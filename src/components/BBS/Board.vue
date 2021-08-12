@@ -16,7 +16,7 @@
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         />
       </td>
-      <td class="row1" width="100%" height="50">
+      <td class="row1" width="100%" height="50" align="left">
         <span class="forumlink">
           <router-link
             :to="'/bbs/' + bbs.id"
@@ -101,7 +101,7 @@ tr {
   padding: 0 5px;
   color: #6090be;
 }
-.category {
+.category{
   text-align: left;
 }
 
