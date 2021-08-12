@@ -24,7 +24,7 @@
     <meta name="theme-color" content="#6090be">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script type="text/javascript">
-      var timerStart = Date.now();
+      globalThis.timerStart = Date.now();
     </script>
   </head>
   <body>
@@ -40,10 +40,10 @@
     <br />
     <script type="text/javascript">
       window.addEventListener("load", function() {
-        document.querySelector("#loadtime").innerHTML =
-          '<img src="https://img.shields.io/badge/loadtime-' +
-          (Date.now() - timerStart) +
-          'ms-blue"/>';
+        const $img = document.createElement("img");
+        const loadTime = Date.now() - globalThis.timerStart;
+        $img.src = `https://img.shields.io/badge/loadtime-${loadTime}ms-blue`;
+        document.getElementById("loadtime").appendChild($img);
       });
     </script>
   </body>
