@@ -7,7 +7,9 @@
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
         <button id="connect">
-          <img class="chz-icon" src="../assets/img/cross.svg" />{{ $t('logout.button') }}
+          <img class="chz-icon" src="../assets/img/cross.svg" />{{
+            $t("logout.button")
+          }}
         </button>
       </div>
       <Tiz />
@@ -25,31 +27,33 @@
     <router-link to="/tchat"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/tchat.svg" />
-        <div class="nav-text">&nbsp;{{ $t('playing.button') }}</div>
+        <div class="nav-text"><StrokeText>{{ $t("playing.button") }}</StrokeText></div>
         <img class="arrow jitter" src="@/assets/img/arrow.svg" /></button
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/account.svg" />
-        <div class="nav-text">&nbsp;{{ $t('myAccount.button') }}</div>
+        <div class="nav-text"><StrokeText>{{ $t("myAccount.button") }}</StrokeText></div>
       </button></router-link
     >
     <router-link to="/games"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/games.svg" />
-        <div class="nav-text">&nbsp;{{ $t('games.button') }}</div>
+        <div class="nav-text"><StrokeText>{{ $t("games.button") }}</StrokeText></div>
       </button></router-link
     >
     <router-link to="/members"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/members.svg" />
-        <div class="nav-text">&nbsp;{{ $t('members.button') }}</div>
+        <div class="nav-text"><StrokeText>{{ $t("members.button") }}</StrokeText></div>
       </button></router-link
     >
     <router-link to="/bbs"
       ><button class="nav-btn">
         <img class="nav-icon" src="@/assets/img/navbar/community.svg" />
-        <div class="nav-text">&nbsp;{{ $t('community.button') }}</div>
+        <div class="nav-text">
+          <StrokeText>{{ $t("community.button") }}</StrokeText>
+        </div>
       </button></router-link
     >
   </div>
@@ -57,6 +61,7 @@
 
 <script>
 import Tiz from "@/components/Tiz.vue";
+import StrokeText from "@/components/StrokeText.vue";
 
 export default {
   name: "Navbar",
@@ -68,6 +73,7 @@ export default {
   },
   components: {
     Tiz,
+    StrokeText,
   },
 };
 </script>
@@ -130,8 +136,6 @@ export default {
   display: flex;
   cursor: pointer;
   height: 25px;
-  font-family: "Chimboz Heavy";
-  font-weight: normal;
   background-image: linear-gradient(
     to bottom,
     #ffe4f5 0%,
@@ -141,15 +145,10 @@ export default {
   );
   padding: 0 4%;
   font-size: 18px;
-  color: #fff;
   border-width: 2px 1px;
   align-items: center;
-  line-height: 12px;
   border-style: solid;
   border-color: #f0009c #ae0050 #ae0050 #ae0050;
-  text-shadow: 2px 0 0 #ae0050, -2px 0 0 #ae0050, 0 2px 0 #ae0050,
-    0 -2px 0 #ae0050, 1px 1px #ae0050, -1px -1px 0 #ae0050, 1px -1px 0 #ae0050,
-    -1px 1px 0 #ae0050;
   box-shadow: 0 2px 2px #0006;
 }
 
@@ -211,9 +210,6 @@ export default {
   );
   color: #fff !important;
   border-color: #ff6600 #973500 #973500 #973500;
-  text-shadow: 2px 0 0 #ce4800, -2px 0 0 #ce4800, 0 2px 0 #ce4800,
-    0 -2px 0 #ce4800, 1px 1px #ce4800, -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
-    -1px 1px 0 #ce4800 !important;
   //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
 }
 
@@ -273,7 +269,19 @@ a:hover {
 
 @media (min-width: 600px) {
   .nav-text {
+    font-family: "Chimboz Heavy";
+    font-weight: normal;
+    font-size: 18px;
+    height: 100%;
+    fill: #fff;
+    stroke: #ae0050;
+    stroke-width: 3;
     display: block;
+  }
+
+  .nav-btn:hover .nav-text,
+  #nav a.router-link-exact-active .nav-text {
+    stroke: #ce4800;
   }
 
   a:not(:first-child) .nav-btn {

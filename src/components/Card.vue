@@ -6,7 +6,7 @@
     <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
     <img v-else-if="top" src="@/assets/img/menul_top_blu.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
-      <slot name="subtop"></slot>
+      <StrokeText><slot name="subtop"></slot></StrokeText>
     </div>
     <div v-if="$slots['button']" class="card-btn">
       <slot name="button"></slot>
@@ -27,8 +27,13 @@
 </template>
 
 <script>
+import StrokeText from "@/components/StrokeText.vue";
+
 export default {
   name: "Card",
+  components: {
+    StrokeText,
+  },
   props: {
     filename: {
       required: false,
@@ -181,11 +186,9 @@ img + .card {
     var(--main-subtop-color) calc(100% - 3px),
     var(--dark-subtop-color) 100%
   );
-  text-shadow: 2px 0 0 var(--title-subtop-color),
-    -2px 0 0 var(--title-subtop-color), 0 2px 0 var(--title-subtop-color),
-    0 -2px 0 var(--title-subtop-color), 1px 1px var(--title-subtop-color),
-    -1px -1px 0 var(--title-subtop-color), 1px -1px 0 var(--title-subtop-color),
-    -1px 1px 0 var(--title-subtop-color);
+  stroke: var(--title-subtop-color);
+  fill: #fff;
+  stroke-width: 3
 }
 
 .justified .card {
