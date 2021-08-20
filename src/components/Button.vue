@@ -2,14 +2,18 @@
   <button class="btn" :style="cssVars">
     <!-- <img class="btn-icon" src="@/assets/img/navbar/games.svg" /> -->
     <div class="btn-text">
-      &nbsp;
-      <slot></slot>
+      <StrokeText><slot></slot></StrokeText>
     </div>
   </button>
 </template>
 <script>
+import StrokeText from "@/components/StrokeText.vue";
+
 export default {
   name: "Button",
+  components: {
+    StrokeText,
+  },
   props: {
     yellow: {
       required: false,
@@ -67,21 +71,25 @@ export default {
     var(--button-color-4)
   );
   padding: 0 4%;
-  font-size: 18px;
-  color: #fff;
   align-items: center;
   line-height: 12px;
   border-style: solid;
   border-color: var(--button-color-4) var(--button-color-4)
     var(--button-color-5) var(--button-color-4);
-  text-shadow: 2px 0 0 var(--button-color-5), -2px 0 0 var(--button-color-5),
-    0 2px 0 var(--button-color-5), 0 -2px 0 var(--button-color-5),
-    1px 1px var(--button-color-5), -1px -1px 0 var(--button-color-5),
-    1px -1px 0 var(--button-color-5), -1px 1px 0 var(--button-color-5);
+
   box-shadow: 0 2px 2px #0006;
+  filter: brightness(1);
   border-radius: 10px;
   border-width: 2px 5px;
-  overflow: overlay;
+}
+
+.btn-text {
+  overflow: hidden;
+  font-size: 18px;
+  fill: #fff;
+  stroke-width: 3;
+  stroke: var(--button-color-5);
+  height: 100%;
 }
 
 .btn:hover {
