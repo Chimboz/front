@@ -8,11 +8,5 @@
 <script>
 export default {
   name: "StrokeText",
-  props: {
-    stroke: {
-      required: true,
-      type: String,
-    },
-  },
 };
 </script>

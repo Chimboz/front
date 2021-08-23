@@ -15,9 +15,11 @@
       </td>
       <td class="row1" width="100%" height="50" align="left">
         <span class="forumlink">
-          <router-link :to="'/topic/' + topic.id" class="forumlink">{{
-            topic.title
-          }}</router-link>
+          <router-link
+            :to="$route.params.id + '/' + topic.id"
+            class="forumlink"
+            >{{ topic.title }}</router-link
+          >
         </span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
