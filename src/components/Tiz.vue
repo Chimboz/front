@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <img class="tiz" src="../assets/img/tiz.svg" />
-    <div class="tiz-shadow"></div>
+  <div class="tiz">
+    <img class="avatar" src="../assets/img/tiz.svg" />
+    <div class="shadow"></div>
   </div>
 </template>
 <script>
@@ -68,7 +68,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tiz-shadow {
+.tiz {
+  width: min-content;
+  margin: auto;
+}
+
+.tiz .avatar {
+  width: -webkit-fill-available;
+}
+
+.tiz .shadow {
   margin-top: -10px;
   width: 100%;
   height: 10px;

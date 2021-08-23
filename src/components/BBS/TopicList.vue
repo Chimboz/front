@@ -4,7 +4,7 @@
     <router-link to="/bbs" class="link-pink">BBS</router-link></span
   >
   <br />
-  <table>
+  <table class="bbs">
     <thead>
       <tr>
         <th colspan="2" valign="top" height="25" nowrap="nowrap">Sujets</th>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
-table {
+table.bbs {
   width: 100%;
   border-spacing: 0;
   box-shadow: 0 0 3px#000;
@@ -45,7 +45,7 @@ table {
   background: #c9dfef;
   padding: 6px 0;
 }
-th {
+.bbs th {
   height: 24px;
   background-image: linear-gradient(
     to bottom,
@@ -55,18 +55,18 @@ th {
   );
   border-bottom: 1px solid #a2bdd1;
 }
-td:nth-child(3),
-td:nth-child(4),
-th:nth-child(3),
-th:nth-child(4) {
+.bbs td:nth-child(3),
+.bbs td:nth-child(4),
+.bbs th:nth-child(3),
+.bbs th:nth-child(4) {
   display: none;
 }
 
 @media (min-width: 600px) {
-  td:nth-child(3),
-  td:nth-child(4),
-  th:nth-child(3),
-  th:nth-child(4) {
+  .bbs td:nth-child(3),
+  .bbs td:nth-child(4),
+  .bbs th:nth-child(3),
+  .bbs th:nth-child(4) {
     display: table-cell;
   }
 }

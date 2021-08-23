@@ -71,7 +71,7 @@ export default {
 }
 .message {
   background: #fff;
-  padding: 12px;
+  padding: 6px;
 }
 
 .title img {
@@ -81,6 +81,5 @@ export default {
 .msg-body {
   width: 100%;
   text-align: left;
-  padding-left: 12px;
 }
 </style>

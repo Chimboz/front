@@ -12,7 +12,7 @@
           }}
         </button>
       </div>
-      <Tiz />
+      <Tiz style="margin: 0"/>
     </div>
   </div>
   <div id="nav">
