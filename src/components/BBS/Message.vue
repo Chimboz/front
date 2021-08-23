@@ -29,7 +29,7 @@
     </td>
   </tr>
   <tr>
-    <td><hr /></td>
+    <td style="background: #fff"><hr /></td>
   </tr>
 </template>
 
