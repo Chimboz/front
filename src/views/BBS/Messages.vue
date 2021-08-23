@@ -42,7 +42,7 @@
         </div>
       </Card></template
     >
-    <TopicList :topics="data"> </TopicList>
+    <MessageList :messages="data"> </MessageList>
     <br />
     <Card
       ><img src="@/assets/img/bbs/folder_lock.svg" /> Verrouillé<br />
@@ -54,13 +54,13 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import TopicList from "@/components/BBS/TopicList.vue";
+import MessageList from "@/components/BBS/MessageList.vue";
 import Container from "@/views/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    TopicList,
+    MessageList,
     Container,
     Card,
   },
@@ -72,8 +72,7 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    //const url = "/api/bbs_agora.json";
-    const url = "/api/bbs_agora.json";
+    const url = "/api/topic.json";
     next((vm) => {
       vm.axios
         .get(url)
@@ -82,6 +81,7 @@ export default {
             vm.data = res.data;
             vm.loading = false;
           } else {
+            // Didn't like the result, redirect
             next("/bbs");
           }
         })
@@ -92,7 +92,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/bbs_agora.json");
+      this.data = await this.axios.get("/api/bbs.json");
     } catch (error) {
       this.error = error.toString();
     }

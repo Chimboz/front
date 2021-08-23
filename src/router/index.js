@@ -48,6 +48,12 @@ const routes = [
     component: () => import("../views/BBS/Topics.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
+  {
+    path: "/bbs/:id/:topic",
+    name: "BBS machin truc",
+    component: () => import("../views/BBS/Messages.vue"),
+    meta: { title: "Chapatiz Retro | BBS" },
+  },
   // 404
   {
     path: "/:pathMatch(.*)*",

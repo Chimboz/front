@@ -1,29 +1,36 @@
 <template>
+  <span class="link-pink" style="text-align: left">
+    <router-link to="/bbs" class="link-pink">BBS</router-link> »
+    <router-link :to="'/bbs/'+$route.params.id" class="link-pink">BBS</router-link></span
+  >
+  <span style="text-align: left; font-size: 20px" v-if="messages[0]">
+    <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="link-pink">{{
+      messages[0].title
+    }}</router-link></span
+  >
+  <br />
   <table>
     <thead>
       <tr>
-        <th colspan="2" valign="top" height="25" nowrap="nowrap">Sujets</th>
-        <th width="50" valign="top" nowrap="nowrap">Réponses</th>
-        <th width="100" valign="top" nowrap="nowrap">Auteur</th>
-        <th width="50" valign="top" nowrap="nowrap">Vus</th>
-        <th valign="top" nowrap="nowrap">Dernier message</th>
+        <th valign="top" height="25" nowrap="nowrap">
+          « Sujet Précédent Sujet Suivant »
+        </th>
       </tr>
     </thead>
-
-    <Topic v-for="topic in topics" :key="topic.id" :topic="topic" />
+    <Message v-for="message in messages" :key="message.id" :message="message" />
   </table>
 </template>
 
 <script>
-import Topic from "./Topic.vue";
+import Message from "./Message.vue";
 
 export default {
-  name: "TopicList",
+  name: "MessageList",
   components: {
-    Topic,
+    Message,
   },
   props: {
-    topics: {
+    messages: {
       required: true,
       type: Array,
     },
