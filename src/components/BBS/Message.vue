@@ -23,7 +23,7 @@
             <hr />
           </div>
           <div class="content" v-html="formatBBCode(message.content)"></div>
-          <div class="signature"></div>
+          <div class="signature" v-if="message.signature"><i><br>"{{message.author.signature}}"</i></div>
         </div>
       </div>
     </td>
