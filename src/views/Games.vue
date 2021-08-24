@@ -4,38 +4,38 @@
       ><Card blue top>
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -43,9 +43,9 @@
       ><br />
       <Rules />
     </template>
-    <Card filename="games/head_bacteria_center.jpg" blue justified>
+    <Card filename="bacteria_blue.jpg" blue justified>
       <img
-        src="@/assets/img/games/visuel_bacteria.jpg"
+        src="@/assets/img/games/bacteria/visuel.jpg"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
       />
@@ -57,15 +57,15 @@
       Stratégie incontournable sur l'archipel !<br />
       <br />
       <router-link to="/games/bacteria"
-        ><div class="btn-sm roz">
-          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
+        ><div class="btn-sm pink">
+          <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
         </div></router-link
       >
     </Card>
     <br />
-    <Card filename="games/head_patoj_center.gif" blue justified>
+    <Card filename="patojdur_blue.gif" blue justified>
       <img
-        src="@/assets/img/games/visuel_patojdur.jpg"
+        src="@/assets/img/games/patojdur/visuel.jpg"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
       />
@@ -77,15 +77,15 @@
       <br />
       <br />
       <router-link to="/games/patojdur"
-        ><div class="btn-sm roz">
-          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
+        ><div class="btn-sm pink">
+          <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
         </div></router-link
       >
     </Card>
     <br />
-    <Card filename="games/head_mazo_center.gif" blue justified>
+    <Card filename="mazo_blue.gif" blue justified>
       <img
-        src="@/assets/img/games/visuel_mazo.jpg"
+        src="@/assets/img/games/mazo/visuel.jpg"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
       />
@@ -97,8 +97,8 @@
       patience, pour rivaliser avec les meilleurs !<br />
       <br />
       <router-link to="/games/mazo"
-        ><div class="btn-sm roz">
-          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
+        ><div class="btn-sm pink">
+          <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
         </div></router-link
       >
     </Card>

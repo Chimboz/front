@@ -19,10 +19,10 @@
               <img
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
-                :src="require(`@/assets/img/numbers/roz/${number}.svg`)"
+                :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img src="@/assets/img/home/fd_mi.png" class="fullwidth" />
+            <img src="@/assets/img/home/messages.png" class="fullwidth" />
           </div>
           {{ $t('mi.message', data.messages) }}</router-link
         >
@@ -32,10 +32,10 @@
               <img
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
-                :src="require(`@/assets/img/numbers/roz/${number}.svg`)"
+                :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img src="@/assets/img/home/fd_amis.png" class="fullwidth" />
+            <img src="@/assets/img/home/friends.png" class="fullwidth" />
           </div>
           {{ $t('friends.online', data.friends) }}</router-link
         ></Card
@@ -46,7 +46,7 @@
         </template>
         <object
           type="image/svg+xml"
-          :data="require('@/assets/img/bank.svg')"
+          :data="require('@/assets/img/credits/bank.svg')"
           class="fullwidth"
         ></object>
         <router-link to="/bank">
@@ -59,10 +59,10 @@
         ></Card
       ></template
     >
-    <img src="@/assets/img/summer.png" style="max-width: 100%" /><br />
-    <Card filename="header_lottery.png" v-if="data.lottery">
+    <img src="@/assets/img/home/announces/summer.png" style="max-width: 100%" /><br />
+    <Card filename="lottery.png" v-if="data.lottery">
       <template #header
-        ><img src="@/assets/img/header_hello.png" style="width: 100%"
+        ><img src="@/assets/img/home/header_hello.png" style="width: 100%"
       /></template>
       {{ $t('lottery.firstLine') }}<br />
       {{ $t('lottery.secondLine') }}</Card
@@ -71,7 +71,7 @@
       <template #subtop>Chapaniouz</template>
       <template #header
         ><img
-          src="@/assets/img/chimboking.gif"
+          src="@/assets/img/home/chimboking.gif"
           alt="Chimboking"
           style="float: left; margin: 0 17px 17px 0"
         />
@@ -90,15 +90,15 @@
       <template #subtop>Chaparazzi</template>
       <div class="gallery">
         <img
-          src="@/assets/img/chimboking.gif"
+          src="@/assets/img/home/chimboking.gif"
           alt="Chimboking"
           style="margin: auto"
         /><img
-          src="@/assets/img/chimboking.gif"
+          src="@/assets/img/home/chimboking.gif"
           alt="Chimboking"
           style="margin: auto"
         /><img
-          src="@/assets/img/chimboking.gif"
+          src="@/assets/img/home/chimboking.gif"
           alt="Chimboking"
           style="margin: auto"
         />
@@ -121,20 +121,20 @@
         </template>
 
         <router-link to="/help"
-          ><img src="@/assets/img/arrow_sm.svg"/>{{ $t('help.tip') }}</router-link
+          ><img src="@/assets/img/puce.svg"/>{{ $t('help.tip') }}</router-link
         ></Card
       ><br />
-      <Card yellow filename="head_fringues.png">
+      <Card yellow filename="packs.png">
         <template #button>
           <Button yellow>Pack</Button>
         </template>
         <img
-          src="@/assets/img/packs/supporter.jpg"
+          src="@/assets/img/packs/1.jpg"
           style="max-width: 100%"
         /><br /><br />
         <Button yellow class="fullwidth">Item</Button><br />
         <img
-          src="@/assets/img/packs/blister_eskimok_perou1.jpg"
+          src="@/assets/img/packs/2.jpg"
           style="max-width: 100%"
         />
       </Card>

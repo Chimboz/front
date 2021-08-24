@@ -1,6 +1,6 @@
 <template>
   <div class="tiz">
-    <img class="avatar" src="../assets/img/tiz.svg" />
+    <img class="avatar" src="../assets/img/tiz/tiz.svg" />
     <div class="shadow"></div>
   </div>
 </template>

@@ -3,8 +3,8 @@
     :class="{ justified: justified }"
     :style="cssVars"
   >
-    <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
-    <img v-else-if="top" src="@/assets/img/menul_top_blu.gif" />
+    <img v-if="filename" :src="require(`@/assets/img/cards/header/${filename}`)" />
+    <img v-else-if="top" src="@/assets/img/cards/header/default.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
       <StrokeText><slot name="subtop"></slot></StrokeText>
     </div>
@@ -22,7 +22,7 @@
         <slot></slot>
       </main>
     </div>
-    <img v-if="bot" src="@/assets/img/footg_blu_ext.gif" />
+    <img v-if="bot" src="@/assets/img/cards/footer/default.gif" />
   </div>
 </template>
 

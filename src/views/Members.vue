@@ -4,38 +4,38 @@
       ><Card blue top>
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -43,7 +43,7 @@
       ><br />
       <Rules />
     </template>
-    <Card filename="members/head_new_center.gif" blue>
+    <Card filename="new.gif" blue>
       <div style="display: flex; justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div><br />
@@ -55,7 +55,7 @@
       >
     </Card>
     <br />
-    <Card filename="members/head_popu_center.gif" blue>
+    <Card filename="popularity.gif" blue>
       <div style="display: flex; justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -66,7 +66,7 @@
       <router-link to="/popu">Voir la page popularité</router-link>
     </Card>
     <br />
-    <Card filename="members/head_wed_center.gif" blue>
+    <Card filename="wedding.gif" blue>
       <div style="display: flex; justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>

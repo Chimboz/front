@@ -20,7 +20,7 @@ body {
   background-color: #6090be;
   background-repeat: repeat-x;
   background-attachment: scroll;
-  background-image: url(../img/bg_header.gif);
+  background-image: url(../img/navbar/background.gif);
   overflow-x: hidden;
 }
 
@@ -134,7 +134,7 @@ hr {
     );
 }
 
-.roz {
+.pink {
   background: #f12490;
 }
 .centered {
@@ -142,7 +142,7 @@ hr {
 }
 
 .blu {
-  background: #78AADB;
+  background: #78aadb;
 }
 
 h2 {
@@ -231,6 +231,6 @@ h2 {
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }
 
-img[src*="arrow_sm"] {
+img[src*="puce"] {
   height: 17px;
 }

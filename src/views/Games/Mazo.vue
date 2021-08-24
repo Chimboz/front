@@ -4,38 +4,38 @@
       ><Card blue top>
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -43,7 +43,7 @@
       ><br />
       <Rules />
     </template>
-    <Card filename="games/mazo/head_mazo_page.gif" justified>
+    <Card filename="mazo.gif" justified>
       <div class="centered">
         <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Records</div></a>
         <a href="#tutorial"
@@ -52,15 +52,15 @@
         <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Pires</div></a>
         <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Groupes</div></a>
         <a href="#tutorial"
-          ><div class="btn-sm roz">
-            <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment
+          ><div class="btn-sm pink">
+            <img src="@/assets/img/games/help.png" />&nbsp;Comment
             jouer&nbsp;?
           </div></a
         >
       </div>
       <br />
       <img
-        src="@/assets/img/games/bacteria/partie.gif"
+        src="@/assets/img/games/bacteria/preview.gif"
         alt="Bacteria"
         style="float: left; margin-right: 17px; border: 3px solid #6699cc"
       />
@@ -172,7 +172,7 @@
       </table>
     </Card>
     <template #right-column
-      ><Card filename="ensavoirplus_top.gif" top>
+      ><Card filename="ensavoirplus.gif" top>
         Toutes les infos, les techniques, news.<br />
         BBS de Bacteria<br />
         <br />

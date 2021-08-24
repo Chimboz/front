@@ -15,38 +15,38 @@
         ><br />
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -58,7 +58,7 @@
         </template>
         <object
           type="image/svg+xml"
-          :data="require('@/assets/img/bank.svg')"
+          :data="require('@/assets/img/credits/bank.svg')"
           class="fullwidth"
         ></object>
         <router-link to="/bank">
@@ -77,17 +77,17 @@
           <div class="cabin">
             <div class="arrows">
               <button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" />
+                <img src="@/assets/img/puce.svg" />
               </button>
             </div>
             <div
@@ -120,17 +120,17 @@
             </div>
             <div class="arrows">
               <button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" />
+                <img src="@/assets/img/puce.svg" />
               </button>
             </div>
           </div>
@@ -138,26 +138,26 @@
             <div>
               <button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
               ><br /><button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
               ><button id="random">
-                <img src="@/assets/img/chaparadio/stop.svg" /></button
+                <img src="@/assets/img/home/chaparadio/stop.svg" /></button
               ><button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
                   style="transform: rotate(-90deg) scaleX(-1)"
                 />
@@ -194,8 +194,8 @@
       </div>
     </Card>
     <template #right-column>
-      <Card blue filename="fd_slot_mi_sky.gif"> </Card><br />
-      <Card blue filename="fd_slot_forum_sky.gif"> </Card><br /><Card blue>
+      <Card blue filename="messages.gif"> </Card><br />
+      <Card blue filename="forum.gif"> </Card><br /><Card blue>
         <template #button>
           <Button>{{ $t("myAccount.friendsList") }}</Button>
         </template>
