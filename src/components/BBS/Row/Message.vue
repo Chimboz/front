@@ -75,9 +75,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.flex {
-  display: flex;
-}
 .message {
   background: #fff;
   padding: 6px;

@@ -30,7 +30,6 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  display: flex;
   justify-content: space-evenly;
 }
 .card img {

@@ -20,8 +20,8 @@
         <span class="forumlink">
           <router-link
             :to="'/bbs/' + bbs.id"
-            class="forumlink"
-            style="color: #ff3399"
+            class="forumlink pink"
+            
             >{{ bbs.name }}</router-link
           ><br />
         </span>

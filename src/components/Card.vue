@@ -5,7 +5,7 @@
   >
     <img draggable="false"  alt="Card header" v-if="filename" :src="require(`@/assets/img/cards/header/${filename}`)" />
     <img draggable="false"  alt="Card header" v-else-if="top" src="@/assets/img/cards/header/default.gif" />
-    <div v-else-if="$slots['subtop']" class="subtop">
+    <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)"><slot name="subtop"></slot></StrokeText>
     </div>
     <div v-if="$slots['button']" class="card-btn">
@@ -210,8 +210,6 @@ img + .card {
   text-align: left;
   height: 25px;
   border-radius: 12px 12px 0 0;
-  display: flex;
-  align-items: center;
   border-color: var(--shadow-subtop-color);
   box-shadow: 0 -1px var(--shadow-card-color);
   background-image: linear-gradient(

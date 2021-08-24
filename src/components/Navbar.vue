@@ -1,13 +1,18 @@
 <template>
   <div class="header">
     <router-link to="/"
-      ><img draggable="false"  alt="Logo Chapatiz Retro" id="logo" src="../assets/img/logo.svg"
+      ><img
+        draggable="false"
+        alt="Logo Chapatiz Retro"
+        id="logo"
+        src="../assets/img/logo.svg"
     /></router-link>
-    <div class="login">
+    <div class="login flex centered">
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
-        <button id="connect">
-          <img draggable="false" 
+        <button id="connect" class="flex centered">
+          <img
+            draggable="false"
             alt="Disconnect icon"
             class="chz-icon"
             src="../assets/img/login/disconnect.svg"
@@ -17,10 +22,11 @@
       <Tiz style="margin: 0" />
     </div>
   </div>
-  <div id="nav">
+  <div id="nav" class="flex">
     <router-link to="/"
-      ><button class="nav-btn">
-        <img draggable="false" 
+      ><button class="nav-btn flex centered">
+        <img
+          draggable="false"
           alt="Home icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/home.svg"
@@ -28,8 +34,9 @@
         /></button
     ></router-link>
     <router-link to="/tchat"
-      ><button class="nav-btn">
-        <img draggable="false" 
+      ><button class="nav-btn flex centered">
+        <img
+          draggable="false"
           alt="Tchat icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/tchat.svg"
@@ -37,15 +44,17 @@
         <div class="nav-text">
           <StrokeText>{{ $t("playing.button") }}</StrokeText>
         </div>
-        <img draggable="false" 
+        <img
+          draggable="false"
           alt="Arrow icon"
           class="arrow jitter"
           src="@/assets/img/arrow.svg"
         /></button
     ></router-link>
     <router-link to="/account"
-      ><button class="nav-btn">
-        <img draggable="false" 
+      ><button class="nav-btn flex centered">
+        <img
+          draggable="false"
           alt="Account icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/account.svg"
@@ -56,8 +65,9 @@
       </button></router-link
     >
     <router-link to="/games"
-      ><button class="nav-btn">
-        <img draggable="false" 
+      ><button class="nav-btn flex centered">
+        <img
+          draggable="false"
           alt="Games icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/games.svg"
@@ -68,8 +78,9 @@
       </button></router-link
     >
     <router-link to="/members"
-      ><button class="nav-btn">
-        <img draggable="false" 
+      ><button class="nav-btn flex centered">
+        <img
+          draggable="false"
           alt="Member icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/members.svg"
@@ -80,8 +91,9 @@
       </button></router-link
     >
     <router-link to="/bbs"
-      ><button class="nav-btn">
-        <img draggable="false" 
+      ><button class="nav-btn flex centered">
+        <img
+          draggable="false"
           alt="Community icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/community.svg"
@@ -128,10 +140,8 @@ export default {
 }
 
 .login {
-  display: flex;
   text-align: right;
   justify-content: flex-end;
-  align-items: center;
   padding: 12px 14px 0 0;
 }
 
@@ -145,8 +155,6 @@ export default {
 }
 
 #connect {
-  display: flex;
-  align-items: center;
   font-family: "Pixelated Verdana";
   border-radius: 100px;
   padding: 3px;
@@ -168,7 +176,6 @@ export default {
 }
 
 .nav-btn {
-  display: flex;
   cursor: pointer;
   height: 25px;
   background-image: linear-gradient(
@@ -181,7 +188,6 @@ export default {
   padding: 0 4%;
   font-size: 18px;
   border-width: 2px 1px;
-  align-items: center;
   border-style: solid;
   border-color: #f0009c #ae0050 #ae0050 #ae0050;
   box-shadow: 0 2px 2px #0006;
@@ -209,6 +215,7 @@ export default {
 }
 
 .nav-btn:hover .nav-icon,
+.nav-btn:active .nav-icon,
 #nav a.router-link-exact-active .nav-icon {
   filter: none;
 }
@@ -229,12 +236,12 @@ export default {
 }
 
 #nav {
-  display: flex;
   justify-content: center;
   padding-bottom: 10px;
 }
 
 .nav-btn:hover,
+.nav-btn:active,
 #nav a.router-link-exact-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
@@ -245,10 +252,9 @@ export default {
   );
   color: #fff !important;
   border-color: #ff6600 #973500 #973500 #973500;
-  //border-image: linear-gradient(to bottom, #ff6600, #973500) 1 100%;
 }
 
-#nav a:first-child .nav-btn:hover,
+#nav a:first-child .nav-btn:hover, #nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
@@ -261,6 +267,8 @@ export default {
 
 #nav a:nth-child(2) .nav-btn:hover,
 #nav a:first-child .nav-btn:hover,
+#nav a:nth-child(2) .nav-btn:active,
+#nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn,
 #nav a:nth-child(2).router-link-exact-active .nav-btn {
   border-left-color: #ff6600;
@@ -268,6 +276,8 @@ export default {
 
 #nav a:last-child .nav-btn:hover,
 #nav a:first-child .nav-btn:hover,
+#nav a:last-child .nav-btn:active,
+#nav a:first-child .nav-btn:active,
 #nav a:last-child.router-link-exact-active .nav-btn,
 #nav a:first-child.router-link-exact-active .nav-btn {
   border-right-color: #ff6600;
@@ -315,6 +325,7 @@ a:hover {
   }
 
   .nav-btn:hover .nav-text,
+  .nav-btn:active .nav-text,
   #nav a.router-link-exact-active .nav-text {
     stroke: #ce4800;
   }

@@ -91,7 +91,7 @@
     <br />
     <Card>
       <template #subtop>Chaparazzi</template>
-      <div class="gallery">
+      <div class="gallery flex">
         <img draggable="false" 
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
@@ -199,7 +199,6 @@ export default {
 
 <style lang="scss" scoped>
 .gallery {
-  display: flex;
   flex-wrap: wrap;
 }
 

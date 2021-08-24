@@ -1,15 +1,15 @@
 <template>
-  <div class="row">
-    <div v-if="$slots['left-column']" class="side-column left-column column">
+  <div class="row flex">
+    <div v-if="$slots['left-column']" class="side-column left-column column flex">
       <slot name="left-column"></slot>
     </div>
-    <div class="main-column column">
+    <div class="main-column column flex">
       <slot></slot>
     </div>
     <div
       style=""
       v-if="$slots['right-column']"
-      class="side-column right-column column"
+      class="side-column right-column column flex"
     >
       <slot name="right-column"></slot>
     </div>
@@ -18,7 +18,6 @@
 
 <style lang="scss">
 .row {
-  display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,7 +26,6 @@
 .column {
   text-align: center;
   padding: 12px;
-  display: flex;
   flex-direction: column;
   align-items: stretch;
 }

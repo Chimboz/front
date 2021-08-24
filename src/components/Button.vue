@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :style="cssVars">
+  <button class="btn flex" :style="cssVars">
     <img draggable="false"  v-if="icon" class="btn-icon" :src="require(`@/assets/img/icons/buttons/${icon}`)" />
     <div class="btn-text">
       <StrokeText><slot></slot></StrokeText>
@@ -61,7 +61,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .btn {
-  display: flex;
   cursor: pointer;
   width: 100%;
   height: 25px;

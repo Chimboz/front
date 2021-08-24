@@ -51,7 +51,7 @@
     <BBSList :boards="data"> </BBSList>
     <br />
     <Card
-      ><div class="symbol-info">
+      ><div class="symbol-info flex centered">
         <img draggable="false" 
           alt="BBS Verrouillé (nouveaux messages)"
           title="BBS Verrouillé (nouveaux messages)"
@@ -125,9 +125,7 @@ export default {
 </script>
 <style lang="scss">
 .symbol-info {
-  display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 </style>

@@ -44,7 +44,7 @@
       <Rules />
     </template>
     <Card filename="new.gif" blue>
-      <div style="display: flex; justify-content: space-evenly">
+      <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div><br />
       Les derniers membres qui ont rejoint l'archipel !
@@ -56,7 +56,7 @@
     </Card>
     <br />
     <Card filename="popularity.gif" blue>
-      <div style="display: flex; justify-content: space-evenly">
+      <div  class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
       <br />
@@ -67,7 +67,7 @@
     </Card>
     <br />
     <Card filename="wedding.gif" blue>
-      <div style="display: flex; justify-content: space-evenly">
+      <div  class="flex"  style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
       <br />

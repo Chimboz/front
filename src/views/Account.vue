@@ -79,10 +79,10 @@
       ></template
     >
     <Card blue>
-      <div class="container-acc">
-        <div class="left-acc">
-          <div class="cabin">
-            <div class="arrows">
+      <div class="container-acc flex">
+        <div class="left-acc flex">
+          <div class="cabin flex centered">
+            <div class="arrows flex">
               <button>
                 <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
@@ -98,7 +98,7 @@
               </button>
             </div>
             <div
-              class="cabin-scene"
+              class="cabin-scene flex"
               tabindex="0"
               @keydown.up="up = true"
               @keyup.up="up = false"
@@ -125,7 +125,7 @@
               />
               <div class="circle"></div>
             </div>
-            <div class="arrows">
+            <div class="arrows flex">
               <button>
                 <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
@@ -201,7 +201,7 @@
             </button>
           </div>
         </div>
-        <div class="right-acc">
+        <div class="right-acc flex">
           <div class="nav-acc">
             <button>{{ $t("myAccount.profileSection") }}</button
             ><button>{{ $t("myAccount.invSection") }}</button>
@@ -303,7 +303,6 @@ export default {
 
 <style lang="scss" scoped>
 .container-acc {
-  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: stretch;
@@ -314,7 +313,6 @@ input[type="text"] {
   border-radius: 100px;
 }
 .left-acc {
-  display: flex;
   width: 33%;
   flex-direction: column;
 }
@@ -327,7 +325,6 @@ h3 {
 }
 
 .right-acc {
-  display: flex;
   width: 67%;
   flex-direction: column;
 }
@@ -358,9 +355,7 @@ h3 {
 .cabin-scene {
   position: relative;
   width: 100%;
-  display: flex;
   justify-content: space-evenly;
-  align-items: center;
   align-items: flex-end;
   margin: 0 -12px;
   height: 180px;
@@ -401,7 +396,6 @@ h3 {
 }
 
 .arrows {
-  display: flex;
   flex-direction: column;
   z-index: 3;
   justify-content: space-evenly;
@@ -440,10 +434,8 @@ button {
 }
 
 .cabin {
-  display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
 }
 
 .circle {

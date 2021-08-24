@@ -207,6 +207,10 @@ img {
   display: flex;
 }
 
+.flex.centered {
+  align-items: center;
+}
+
 .col {
   flex-direction: column;
 }
