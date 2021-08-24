@@ -1,6 +1,6 @@
 <template>
   <button class="btn" :style="cssVars">
-    <!-- <img class="btn-icon" src="@/assets/img/navbar/games.svg" /> -->
+    <img v-if="icon" class="btn-icon" :src="require(`@/assets/img/icons/buttons/${icon}`)" />
     <div class="btn-text">
       <StrokeText><slot></slot></StrokeText>
     </div>
@@ -15,6 +15,10 @@ export default {
     StrokeText,
   },
   props: {
+    icon: {
+      required: false,
+      type: String
+    },
     yellow: {
       required: false,
       type: Boolean,
@@ -90,6 +94,10 @@ export default {
   stroke-width: 3;
   stroke: var(--button-color-5);
   height: 100%;
+}
+
+.btn-icon {
+  position: absolute;
 }
 
 .btn:hover {

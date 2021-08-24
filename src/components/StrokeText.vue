@@ -1,6 +1,6 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="200%" height="100%">
-    <text stroke-linecap="round" x="3px" y="70%" paint-order="stroke">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <text stroke-linecap="round" x="50%" y="75%" paint-order="stroke" text-anchor="middle">
       <slot></slot>
     </text>
   </svg>

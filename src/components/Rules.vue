@@ -1,5 +1,5 @@
 <template>
-    <Card blue bot>Ne donne jamais ton mot de passe, à personne&nbsp;!<br><Button>Règles</Button></Card>
+    <Card blue bot>Ne donne jamais ton mot de passe, à personne&nbsp;!<br><Button icon="register.svg">Règles</Button></Card>
 </template>
 <script>
 import Card from "@/components/Card.vue";

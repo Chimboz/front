@@ -61,7 +61,7 @@
       ><br />
       <Card yellow>
         <template #button>
-          <Button yellow>{{ $t("credit.title") }}</Button>
+          <Button yellow icon="register.svg">{{ $t("credit.title") }}</Button>
         </template>
         <object
           type="image/svg+xml"
@@ -74,7 +74,7 @@
           {{ $t("credit", data.credits) }} </router-link
         ><br /><br />
         <router-link to="/reflooz" class="btn-route"
-          ><Button orange>Reflooz</Button></router-link
+          ><Button orange icon="register.svg">Reflooz</Button></router-link
         ></Card
       ></template
     >
@@ -225,13 +225,13 @@
       <Card blue filename="messages.gif"> </Card><br />
       <Card blue filename="forum.gif"> </Card><br /><Card blue>
         <template #button>
-          <Button>{{ $t("myAccount.friendsList") }}</Button>
+          <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>
         </template>
       </Card>
       <br />
       <Card blue>
         <template #button>
-          <Button>{{ $t("myAccount.groupsList") }}</Button>
+          <Button icon="register.svg">{{ $t("myAccount.groupsList") }}</Button>
         </template>
       </Card>
     </template>

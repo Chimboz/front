@@ -6,7 +6,7 @@
     <img alt="Card header" v-if="filename" :src="require(`@/assets/img/cards/header/${filename}`)" />
     <img alt="Card header" v-else-if="top" src="@/assets/img/cards/header/default.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
-      <StrokeText><slot name="subtop"></slot></StrokeText>
+      <StrokeText style="transform: translateX(-40%)"><slot name="subtop"></slot></StrokeText>
     </div>
     <div v-if="$slots['button']" class="card-btn">
       <slot name="button"></slot>

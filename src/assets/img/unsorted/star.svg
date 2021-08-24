@@ -3,8 +3,8 @@
    height="18.000122"
    width="18"
    version="1.1"
-   id="svg4088"
-   sodipodi:docname="account.svg"
+   id="svg3377"
+   sodipodi:docname="star.svg"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -12,7 +12,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview4090"
+     id="namedview3379"
      pagecolor="#505050"
      bordercolor="#eeeeee"
      borderopacity="1"
@@ -20,19 +20,20 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="43.945946"
-     inkscape:cx="8.8290283"
-     inkscape:cy="10.581181"
-     inkscape:current-layer="svg4088" />
+     inkscape:zoom="30.271815"
+     inkscape:cx="9.8771746"
+     inkscape:cy="12.486863"
+     inkscape:current-layer="g3339" />
   <g
      transform="translate(-1.45,1.6501216)"
-     id="g4050">
+     id="g3339"
+     inkscape:groupmode="layer">
     <use
        height="50"
        transform="matrix(0.36,0,0,0.36,1.45,-1.65)"
        width="50"
        xlink:href="#sprite0"
-       id="use4042"
+       id="use3331"
        x="0"
        y="0" />
     <use
@@ -40,28 +41,48 @@
        transform="translate(10.8,-1.65)"
        width="8.6499996"
        xlink:href="#sprite1"
-       id="use4044"
+       id="use3333"
        x="0"
        y="0" />
     <use
-       height="13.6"
-       transform="translate(5.05,0.45)"
-       width="11.3"
+       height="8.8000002"
+       transform="translate(5.9,3.35)"
+       width="9.5500002"
        xlink:href="#sprite2"
-       id="use4046"
+       id="use3335"
        x="0"
-       y="0" />
+       y="0"
+       style="display:none" />
     <use
-       height="13.6"
-       transform="translate(5.05,0.45)"
-       width="11.3"
+       height="8.8000002"
+       transform="translate(5.9,3.35)"
+       width="9.5500002"
        xlink:href="#sprite3"
-       id="use4048"
+       id="use3337"
        x="0"
-       y="0" />
+       y="0"
+       style="display:none" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-rule:evenodd;stroke-width:3.77953;-inkscape-stroke:none;stop-color:#000000"
+       id="path4421"
+       inkscape:flatsided="false"
+       sodipodi:sides="5"
+       sodipodi:cx="4.1366082"
+       sodipodi:cy="4.5438181"
+       sodipodi:r1="5.5146594"
+       sodipodi:r2="2.7573297"
+       sodipodi:arg1="0"
+       sodipodi:arg2="0.62831853"
+       inkscape:rounded="0.12429311"
+       inkscape:randomized="0"
+       d="m 9.6512676,4.5438181 c 0,0.4551732 -3.0163887,1.2524749 -3.2839328,1.6207177 C 6.0997907,6.5327787 6.2736271,9.6479146 5.8407317,9.7885708 5.4078363,9.9292271 3.7174419,7.3068507 3.2845465,7.1661945 2.8516511,7.0255382 -0.05730085,8.1534964 -0.32484494,7.7852535 -0.59238903,7.4170107 1.3792785,4.9989913 1.3792785,4.5438181 c 0,-0.4551732 -1.97166753,-2.8731926 -1.70412344,-3.2414355 C -0.05730085,0.93413976 2.8516511,2.062098 3.2845465,1.9214417 3.7174419,1.7807854 5.4078363,-0.84159093 5.8407317,-0.70093468 6.2736271,-0.56027843 6.0997907,2.5548575 6.3673348,2.9231003 6.6348789,3.2913432 9.6512676,4.0886449 9.6512676,4.5438181 Z"
+       transform="rotate(-18.00364,17.947704,-14.828976)"
+       inkscape:transform-center-x="0.0070516979"
+       inkscape:transform-center-y="-0.51943481" />
   </g>
   <defs
-     id="defs4086">
+     id="defs3375">
     <g
        id="sprite0"
        transform="translate(25,25)">
@@ -70,7 +91,7 @@
          transform="translate(-25,-25)"
          width="50"
          xlink:href="#shape0"
-         id="use4052"
+         id="use3341"
          x="0"
          y="0" />
     </g>
@@ -82,7 +103,7 @@
          fill="#ffffff"
          fill-rule="evenodd"
          stroke="none"
-         id="path4055" />
+         id="path3344" />
     </g>
     <g
        id="sprite1">
@@ -90,7 +111,7 @@
          height="17.950001"
          width="8.6499996"
          xlink:href="#shape1"
-         id="use4058"
+         id="use3347"
          x="0"
          y="0" />
     </g>
@@ -101,7 +122,7 @@
          fill="url(#gradient0)"
          fill-rule="evenodd"
          stroke="none"
-         id="path4061" />
+         id="path3350" />
     </g>
     <linearGradient
        gradientTransform="matrix(0.0053,0,0,0.011,4.3,8.95)"
@@ -113,53 +134,53 @@
       <stop
          offset="0.0"
          stop-color="#ff9966"
-         id="stop4064" />
+         id="stop3353" />
       <stop
          offset="1.0"
          stop-color="#ff9966"
          stop-opacity="0.0"
-         id="stop4066" />
+         id="stop3355" />
     </linearGradient>
     <g
        id="sprite2">
       <use
-         height="13.6"
-         width="11.3"
+         height="8.8000002"
+         width="9.5500002"
          xlink:href="#shape2"
-         id="use4069"
+         id="use3358"
          x="0"
          y="0" />
     </g>
     <g
        id="shape2">
       <path
-         d="M 11.3,7.2 Q 11,7.8 10.05,7.8 L 9.85,7.6 Q 9.2,10.35 5.65,10.35 2.2,10.35 1.5,7.75 L 1.3,7.8 Q 0.35,7.8 0.05,7.2 -0.1,7.05 0.5,6.2 L 1.35,5.3 Q 1.6,3.7 2.6,2.15 3.95,0 5.65,0 q 1.7,0 3.05,2.15 1,1.5 1.25,3.1 l 0.9,0.95 0.45,1 m -7.65,3.5 q 1.55,0 1.55,2.05 0,0.7 -1.6,0.8 l -2.2,-0.3 q -0.9,-0.5 0.3,-1.55 1.1,-1 1.95,-1 m 4.15,0 q 0.85,0 1.95,1 1.15,1.05 0.3,1.55 -0.7,0.45 -2.2,0.3 -1.6,-0.1 -1.6,-0.8 0,-2.05 1.55,-2.05"
+         d="M 4.75,5.3 7.3,0 q 2.25,1.4 2.25,4 0,2 -1.4,3.4 Q 6.75,8.8 4.75,8.8 2.8,8.8 1.4,7.4 0,6 0,4 0,1.4 2.25,0 l 2.5,5.3"
          fill="#ff3300"
          fill-rule="evenodd"
          stroke="none"
-         id="path4072" />
+         id="path3361" />
     </g>
     <g
        id="sprite3">
       <use
-         height="13.6"
-         width="11.3"
+         height="8.8000002"
+         width="9.5500002"
          xlink:href="#shape3"
-         id="use4075"
+         id="use3364"
          x="0"
          y="0" />
     </g>
     <g
        id="shape3">
       <path
-         d="M 11.3,7.2 Q 11,7.8 10.05,7.8 L 9.85,7.6 Q 9.2,10.35 5.65,10.35 2.2,10.35 1.5,7.75 L 1.3,7.8 Q 0.35,7.8 0.05,7.2 -0.1,7.05 0.5,6.2 L 1.35,5.3 Q 1.6,3.7 2.6,2.15 3.95,0 5.65,0 q 1.7,0 3.05,2.15 1,1.5 1.25,3.1 l 0.9,0.95 0.45,1 m -7.65,3.5 q 1.55,0 1.55,2.05 0,0.7 -1.6,0.8 l -2.2,-0.3 q -0.9,-0.5 0.3,-1.55 1.1,-1 1.95,-1 m 4.15,0 q 0.85,0 1.95,1 1.15,1.05 0.3,1.55 -0.7,0.45 -2.2,0.3 -1.6,-0.1 -1.6,-0.8 0,-2.05 1.55,-2.05"
+         d="M 4.75,5.3 7.3,0 q 2.25,1.4 2.25,4 0,2 -1.4,3.4 Q 6.75,8.8 4.75,8.8 2.8,8.8 1.4,7.4 0,6 0,4 0,1.4 2.25,0 l 2.5,5.3"
          fill="url(#gradient1)"
          fill-rule="evenodd"
          stroke="none"
-         id="path4078" />
+         id="path3367" />
     </g>
     <linearGradient
-       gradientTransform="matrix(0.0062,0,0,0.0063,5.65,5.15)"
+       gradientTransform="matrix(0.0058,0,0,0.0054,4.75,4.4)"
        gradientUnits="userSpaceOnUse"
        id="gradient1"
        spreadMethod="pad"
@@ -168,12 +189,12 @@
       <stop
          offset="0.0"
          stop-color="#ff9966"
-         id="stop4081" />
+         id="stop3370" />
       <stop
          offset="1.0"
          stop-color="#ff9966"
          stop-opacity="0.0"
-         id="stop4083" />
+         id="stop3372" />
     </linearGradient>
   </defs>
 </svg>
