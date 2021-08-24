@@ -7,14 +7,14 @@
             {{ $t("currentLevel") }}
             <div class="number">
               <img
-              :alt="number"
+                :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/${number}.svg`)"
               />
             </div></div></router-link
         ><br />
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
@@ -36,7 +36,10 @@
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
@@ -44,7 +47,10 @@
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
@@ -139,29 +145,33 @@
             <div>
               <button>
                 <img
-                alt="Puce"
+                  alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
               ><br /><button>
                 <img
-                alt="Puce"
+                  alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
               ><button id="random">
-                <img alt="Random button" src="@/assets/img/home/chaparadio/stop.svg" /></button
+                <img
+                  alt="Random button"
+                  title="Randomize look"
+                  src="@/assets/img/home/chaparadio/stop.svg"
+                /></button
               ><button>
                 <img
-                alt="Puce"
+                  alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
                 <img
-                alt="Puce"
+                  alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
                   style="transform: rotate(-90deg) scaleX(-1)"
@@ -170,11 +180,24 @@
             </div>
           </div>
           <div class="gender">
-            <button><img alt="Male gender" title="Male gender" src="@/assets/img/sex/male.svg" /></button
+            <button>
+              <img
+                alt="Male gender"
+                title="Male gender"
+                src="@/assets/img/sex/male.svg"
+              /></button
             ><button>
-              <img alt="Female gender" title="Female gender" src="@/assets/img/sex/female.svg" /></button
+              <img
+                alt="Female gender"
+                title="Female gender"
+                src="@/assets/img/sex/female.svg"
+              /></button
             ><button>
-              <img alt="Unknown gender" title="Unknown gender" src="@/assets/img/sex/unknown.svg" />
+              <img
+                alt="Unknown gender"
+                title="Unknown gender"
+                src="@/assets/img/sex/unknown.svg"
+              />
             </button>
           </div>
         </div>
@@ -205,7 +228,7 @@
           <Button>{{ $t("myAccount.friendsList") }}</Button>
         </template>
       </Card>
-      <br>
+      <br />
       <Card blue>
         <template #button>
           <Button>{{ $t("myAccount.groupsList") }}</Button>
@@ -286,7 +309,7 @@ export default {
   align-items: stretch;
 }
 
-input[type="text"]{
+input[type="text"] {
   padding: 2px;
   border-radius: 100px;
 }

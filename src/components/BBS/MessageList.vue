@@ -1,10 +1,10 @@
 <template>
-  <span class="link-pink" style="text-align: left">
-    <router-link to="/bbs" class="link-pink">BBS</router-link> »
-    <router-link :to="'/bbs/'+$route.params.id" class="link-pink">BBS</router-link></span
+  <span class="pink" style="text-align: left">
+    <router-link to="/bbs" class="pink">BBS</router-link> »
+    <router-link :to="'/bbs/'+$route.params.id" class="pink">BBS</router-link></span
   >
   <span style="text-align: left; font-size: 20px" v-if="messages[0]">
-    <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="link-pink">{{
+    <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="pink">{{
       messages[0].title
     }}</router-link></span
   >

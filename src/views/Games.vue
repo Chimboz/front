@@ -2,7 +2,7 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
@@ -56,10 +56,10 @@
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
       Stratégie incontournable sur l'archipel !<br />
       <br />
-      <router-link to="/games/bacteria"
-        ><div class="btn-sm pink">
+      <router-link class="btn-sm pink-bg" to="/games/bacteria"
+        >
           <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
-        </div></router-link
+        </router-link
       >
     </Card>
     <br />
@@ -76,10 +76,10 @@
       haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br />
       <br />
-      <router-link to="/games/patojdur"
-        ><div class="btn-sm pink">
+      <router-link class="btn-sm pink-bg" to="/games/patojdur"
+        >
           <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
-        </div></router-link
+        </router-link
       >
     </Card>
     <br />
@@ -96,10 +96,10 @@
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
       patience, pour rivaliser avec les meilleurs !<br />
       <br />
-      <router-link to="/games/mazo"
-        ><div class="btn-sm pink">
+      <router-link class="btn-sm pink-bg" to="/games/mazo"
+        >
           <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
-        </div></router-link
+        </router-link
       >
     </Card>
     <template #right-column
@@ -138,6 +138,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

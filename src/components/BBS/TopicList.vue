@@ -1,7 +1,7 @@
 <template>
-  <span class="link-pink" style="text-align: left">
-    <router-link to="/bbs" class="link-pink">BBS</router-link> »
-    <router-link to="/bbs" class="link-pink">BBS</router-link></span
+  <span class="pink" style="text-align: left">
+    <router-link to="/bbs" class="pink">BBS</router-link> »
+    <router-link to="/bbs" class="pink">BBS</router-link></span
   >
   <br />
   <table class="bbs">

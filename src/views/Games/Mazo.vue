@@ -2,7 +2,7 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
@@ -45,14 +45,14 @@
     </template>
     <Card filename="mazo.gif" justified>
       <div class="centered">
-        <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Records</div></a>
+        <a href="#tutorial"><div class="btn-sm blue-bg">▶&nbsp;Les Records</div></a>
         <a href="#tutorial"
-          ><div class="btn-sm blu">▶&nbsp;Les Meilleurs</div></a
+          ><div class="btn-sm blue-bg">▶&nbsp;Les Meilleurs</div></a
         >
-        <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Pires</div></a>
-        <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Groupes</div></a>
+        <a href="#tutorial"><div class="btn-sm blue-bg">▶&nbsp;Les Pires</div></a>
+        <a href="#tutorial"><div class="btn-sm blue-bg">▶&nbsp;Les Groupes</div></a>
         <a href="#tutorial"
-          ><div class="btn-sm pink">
+          ><div class="btn-sm pink-bg">
             <img alt="Help icon" src="@/assets/img/games/help.png" />&nbsp;Comment
             jouer&nbsp;?
           </div></a

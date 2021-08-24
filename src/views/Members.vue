@@ -2,7 +2,7 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
