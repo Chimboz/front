@@ -1,56 +1,91 @@
 <template>
   <div class="header">
     <router-link to="/"
-      ><img id="logo" src="../assets/img/logo.svg"
+      ><img alt="Logo Chapatiz Retro" id="logo" src="../assets/img/logo.svg"
     /></router-link>
     <div class="login">
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
         <button id="connect">
-          <img class="chz-icon" src="../assets/img/cross.svg" />{{
-            $t("logout.button")
-          }}
+          <img
+            alt="Disconnect icon"
+            class="chz-icon"
+            src="../assets/img/login/disconnect.svg"
+          />{{ $t("logout.button") }}
         </button>
       </div>
-      <Tiz style="margin: 0"/>
+      <Tiz style="margin: 0" />
     </div>
   </div>
   <div id="nav">
     <router-link to="/"
       ><button class="nav-btn">
         <img
+          alt="Home icon"
           class="nav-icon"
-          src="@/assets/img/navbar/home.svg"
+          src="@/assets/img/navbar/icon/home.svg"
           style="margin: 5px; padding: 2px"
         /></button
     ></router-link>
     <router-link to="/tchat"
       ><button class="nav-btn">
-        <img class="nav-icon" src="@/assets/img/navbar/tchat.svg" />
-        <div class="nav-text"><StrokeText>{{ $t("playing.button") }}</StrokeText></div>
-        <img class="arrow jitter" src="@/assets/img/arrow.svg" /></button
+        <img
+          alt="Tchat icon"
+          class="nav-icon"
+          src="@/assets/img/navbar/icon/tchat.svg"
+        />
+        <div class="nav-text">
+          <StrokeText>{{ $t("playing.button") }}</StrokeText>
+        </div>
+        <img
+          alt="Arrow icon"
+          class="arrow jitter"
+          src="@/assets/img/arrow.svg"
+        /></button
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">
-        <img class="nav-icon" src="@/assets/img/navbar/account.svg" />
-        <div class="nav-text"><StrokeText>{{ $t("myAccount.button") }}</StrokeText></div>
+        <img
+          alt="Account icon"
+          class="nav-icon"
+          src="@/assets/img/navbar/icon/account.svg"
+        />
+        <div class="nav-text">
+          <StrokeText>{{ $t("myAccount.button") }}</StrokeText>
+        </div>
       </button></router-link
     >
     <router-link to="/games"
       ><button class="nav-btn">
-        <img class="nav-icon" src="@/assets/img/navbar/games.svg" />
-        <div class="nav-text"><StrokeText>{{ $t("games.button") }}</StrokeText></div>
+        <img
+          alt="Games icon"
+          class="nav-icon"
+          src="@/assets/img/navbar/icon/games.svg"
+        />
+        <div class="nav-text">
+          <StrokeText>{{ $t("games.button") }}</StrokeText>
+        </div>
       </button></router-link
     >
     <router-link to="/members"
       ><button class="nav-btn">
-        <img class="nav-icon" src="@/assets/img/navbar/members.svg" />
-        <div class="nav-text"><StrokeText>{{ $t("members.button") }}</StrokeText></div>
+        <img
+          alt="Member icon"
+          class="nav-icon"
+          src="@/assets/img/navbar/icon/members.svg"
+        />
+        <div class="nav-text">
+          <StrokeText>{{ $t("members.button") }}</StrokeText>
+        </div>
       </button></router-link
     >
     <router-link to="/bbs"
       ><button class="nav-btn">
-        <img class="nav-icon" src="@/assets/img/navbar/community.svg" />
+        <img
+          alt="Community icon"
+          class="nav-icon"
+          src="@/assets/img/navbar/icon/community.svg"
+        />
         <div class="nav-text">
           <StrokeText>{{ $t("community.button") }}</StrokeText>
         </div>
@@ -83,7 +118,7 @@ export default {
 .header {
   width: 100%;
   height: 70px;
-  background: url(../assets/img/navbar_old.svg);
+  background: url(../assets/img/navbar/navbar_old.svg);
   //box-shadow: inset 0 -10px 5px -5px #76bde8;
   border-radius: 0 0 25% 25%;
 }

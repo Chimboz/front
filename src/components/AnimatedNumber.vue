@@ -1,5 +1,5 @@
 <template>
-  <img
+  <img :alt="digit"
                 v-for="digit in displayNumber.toString(10)"
                 :key="digit.index"
                 :src="require(`@/assets/img/numbers/${digit}.svg`)"

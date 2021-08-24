@@ -12,6 +12,8 @@
           <div class="title">
             <b
               ><img
+                alt="Voir le dernier message"
+                title="Voir le dernier message"
                 :src="
                   require(`@/assets/img/bbs/msg${
                     message.new ? '_new' : ''
@@ -23,12 +25,14 @@
             <hr />
           </div>
           <div class="content" v-html="formatBBCode(message.content)"></div>
-          <div class="signature" v-if="message.signature"><i><br>"{{message.author.signature}}"</i></div>
+          <div class="signature" v-if="message.signature">
+            <i><br />"{{ message.author.signature }}"</i>
+          </div>
         </div>
       </div>
     </td>
   </tr>
-  <tr>
+  <tr v-if="separator">
     <td style="background: #fff"><hr /></td>
   </tr>
 </template>
@@ -51,6 +55,11 @@ export default {
       required: true,
       type: Object,
     },
+    separator: {
+      required: false,
+      default: true,
+      type: Boolean,
+    },
   },
   methods: {
     formatBBCode(code) {
@@ -72,10 +81,6 @@ export default {
 .message {
   background: #fff;
   padding: 6px;
-}
-
-.title img {
-  vertical-align: middle;
 }
 
 .msg-body {

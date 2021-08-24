@@ -93,6 +93,16 @@ export default {
 }
 
 .btn:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  background-image: linear-gradient(
+    to top,
+    var(--button-color-1) 0%,
+    var(--button-color-2) 50%,
+    var(--button-color-3) 50%,
+    var(--button-color-4)
+  );
 }
 </style>

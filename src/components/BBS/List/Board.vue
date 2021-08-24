@@ -1,7 +1,7 @@
 <template>
-  <span class="link-pink" style="text-align: left">
-    <router-link to="/bbs" class="link-pink">BBS</router-link> »
-    <router-link to="/bbs" class="link-pink">BBS</router-link></span
+  <span class="pink justified">
+    <router-link to="/bbs" class="pink">BBS</router-link> »
+    <router-link to="/bbs" class="pink">BBS</router-link></span
   >
   <br />
   <table class="bbs">
@@ -15,15 +15,15 @@
       </tr>
     </thead>
 
-    <Topic v-for="topic in topics" :key="topic.id" :topic="topic" />
+    <Topic v-for="(topic, index) in topics" :key="topic.id" :topic="topic"  :separator="index != topics.length-1" />
   </table>
 </template>
 
 <script>
-import Topic from "./Topic.vue";
+import Topic from "../Row/Topic.vue";
 
 export default {
-  name: "TopicList",
+  name: "Board",
   components: {
     Topic,
   },

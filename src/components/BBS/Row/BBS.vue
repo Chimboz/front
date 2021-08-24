@@ -55,7 +55,6 @@
         <a href="/topic/938277"
           ><img
             :src="require(`@/assets/img/bbs/msg${bbs.new?'_new':''}.svg`)"
-            style="vertical-align: bottom"
             alt="Voir le dernier message"
             title="Voir le dernier message"
         /></a>
@@ -74,7 +73,7 @@ import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
-  name: "Board",
+  name: "BBS Row",
   props: {
     category: {
       required: true,

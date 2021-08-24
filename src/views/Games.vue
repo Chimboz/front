@@ -2,40 +2,40 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -43,9 +43,9 @@
       ><br />
       <Rules />
     </template>
-    <Card filename="games/head_bacteria_center.jpg" blue justified>
+    <Card filename="bacteria_blue.jpg" blue justified>
       <img
-        src="@/assets/img/games/visuel_bacteria.jpg"
+        src="@/assets/img/games/bacteria/visuel.jpg"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
       />
@@ -56,17 +56,17 @@
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
       Stratégie incontournable sur l'archipel !<br />
       <br />
-      <router-link to="/games/bacteria"
-        ><div class="btn-sm roz">
-          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
-        </div></router-link
+      <router-link class="btn-sm pink-bg" to="/games/bacteria"
+        >
+          <img src="@/assets/img/icons/help.png" />&nbsp;Comment jouer&nbsp;?
+        </router-link
       >
     </Card>
     <br />
-    <Card filename="games/head_patoj_center.gif" blue justified>
+    <Card filename="patojdur_blue.gif" blue justified>
       <img
-        src="@/assets/img/games/visuel_patojdur.jpg"
-        alt="Bacteria"
+        src="@/assets/img/games/patojdur/visuel.jpg"
+        alt="Patojdur"
         style="float: left; margin-right: 17px"
       />
       <h4>La course la plus humide du web !</h4>
@@ -76,17 +76,17 @@
       haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br />
       <br />
-      <router-link to="/games/patojdur"
-        ><div class="btn-sm roz">
-          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
-        </div></router-link
+      <router-link class="btn-sm pink-bg" to="/games/patojdur"
+        >
+          <img src="@/assets/img/icons/help.png" />&nbsp;Comment jouer&nbsp;?
+        </router-link
       >
     </Card>
     <br />
-    <Card filename="games/head_mazo_center.gif" blue justified>
+    <Card filename="mazo_blue.gif" blue justified>
       <img
-        src="@/assets/img/games/visuel_mazo.jpg"
-        alt="Bacteria"
+        src="@/assets/img/games/mazo/visuel.jpg"
+        alt="Mazo"
         style="float: left; margin-right: 17px"
       />
       <h4>Fais bosser ta bonne étoile !</h4>
@@ -96,10 +96,10 @@
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
       patience, pour rivaliser avec les meilleurs !<br />
       <br />
-      <router-link to="/games/mazo"
-        ><div class="btn-sm roz">
-          <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment jouer&nbsp;?
-        </div></router-link
+      <router-link class="btn-sm pink-bg" to="/games/mazo"
+        >
+          <img src="@/assets/img/icons/help.png" />&nbsp;Comment jouer&nbsp;?
+        </router-link
       >
     </Card>
     <template #right-column
@@ -138,6 +138,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

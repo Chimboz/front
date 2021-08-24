@@ -3,8 +3,8 @@
     :class="{ justified: justified }"
     :style="cssVars"
   >
-    <img v-if="filename" :src="require(`@/assets/img/${filename}`)" />
-    <img v-else-if="top" src="@/assets/img/menul_top_blu.gif" />
+    <img alt="Card header" v-if="filename" :src="require(`@/assets/img/cards/header/${filename}`)" />
+    <img alt="Card header" v-else-if="top" src="@/assets/img/cards/header/default.gif" />
     <div v-else-if="$slots['subtop']" class="subtop">
       <StrokeText><slot name="subtop"></slot></StrokeText>
     </div>
@@ -22,7 +22,7 @@
         <slot></slot>
       </main>
     </div>
-    <img v-if="bot" src="@/assets/img/footg_blu_ext.gif" />
+    <img alt="Card footer" v-if="bot" src="@/assets/img/cards/footer/default.gif" />
   </div>
 </template>
 
@@ -45,6 +45,16 @@ export default {
       default: false,
     },
     blue: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    lightblue: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    red: {
       required: false,
       type: Boolean,
       default: false,
@@ -86,6 +96,32 @@ export default {
           "--main-card-color": "#6ebef0",
           "--dark-card-color": "#5aa1cd",
           "--shadow-card-color": "#355668",
+          "--title-card-color": "#096EA8",
+          "--title-subtop-color": "#004b7d",
+          "--shadow-subtop-color": "#1b4166",
+          "--light-subtop-color": "#c4e8ff",
+          "--main-subtop-color": "#99cdef",
+          "--dark-subtop-color": "#628499",
+        };
+        if (this.lightblue)
+        return {
+          "--light-card-color": "#aadcfc",
+          "--main-card-color": "#6ebef0",
+          "--dark-card-color": "#5aa1cd",
+          "--shadow-card-color": "#355668",
+          "--title-card-color": "#096EA8",
+          "--title-subtop-color": "#004b7d",
+          "--shadow-subtop-color": "#1b4166",
+          "--light-subtop-color": "#c4e8ff",
+          "--main-subtop-color": "#99cdef",
+          "--dark-subtop-color": "#628499",
+        };
+        if (this.red)
+        return {
+          "--light-card-color": "#ff9e9e",
+          "--main-card-color": "#FF5454",
+          "--dark-card-color": "#e00c0c",
+          "--shadow-card-color": "#5078a0",
           "--title-card-color": "#096EA8",
           "--title-subtop-color": "#004b7d",
           "--shadow-subtop-color": "#1b4166",

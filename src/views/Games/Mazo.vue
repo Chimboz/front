@@ -2,40 +2,46 @@
   <Container>
     <template #left-column
       ><Card blue top>
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -43,25 +49,22 @@
       ><br />
       <Rules />
     </template>
-    <Card filename="games/mazo/head_mazo_page.gif" justified>
+    <Card filename="bacteria.gif" justified>
       <div class="centered">
-        <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Records</div></a>
-        <a href="#tutorial"
-          ><div class="btn-sm blu">▶&nbsp;Les Meilleurs</div></a
-        >
-        <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Pires</div></a>
-        <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Groupes</div></a>
-        <a href="#tutorial"
-          ><div class="btn-sm roz">
-            <img src="@/assets/img/games/bt-help-left.png" />&nbsp;Comment
-            jouer&nbsp;?
-          </div></a
-        >
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Records</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Meilleurs</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Pires</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Groupes</a>
+        <a href="#tutorial" class="btn-sm pink-bg">
+          <img alt="Help icon" src="@/assets/img/icons/help.png" />&nbsp;Comment
+          jouer&nbsp;?
+        </a>
       </div>
       <br />
       <img
-        src="@/assets/img/games/bacteria/partie.gif"
-        alt="Bacteria"
+        src="@/assets/img/games/bacteria/preview.gif"
+        alt="A game of bacteria"
+        title="A game of bacteria"
         style="float: left; margin-right: 17px; border: 3px solid #6699cc"
       />
       <br />
@@ -124,10 +127,8 @@
     </Card>
     <br /><Card>
       <template #header>Les 20 pires brèles de Bacteria ! </template>
-      <template #subtitle
-        >Les meilleurs... en partant du bas !</template
-      >
-      (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br>
+      <template #subtitle>Les meilleurs... en partant du bas !</template>
+      (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br />
       <table class="score fullwidth">
         <thead>
           <tr>
@@ -172,7 +173,7 @@
       </table>
     </Card>
     <template #right-column
-      ><Card filename="ensavoirplus_top.gif" top>
+      ><Card filename="ensavoirplus.gif" top>
         Toutes les infos, les techniques, news.<br />
         BBS de Bacteria<br />
         <br />

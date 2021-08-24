@@ -7,46 +7,53 @@
             {{ $t("currentLevel") }}
             <div class="number">
               <img
+                :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/${number}.svg`)"
               />
             </div></div></router-link
         ><br />
-        <div class="menu fullwidth">
+        <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;Forum</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;MajMin</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/arrow_sm.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -58,7 +65,7 @@
         </template>
         <object
           type="image/svg+xml"
-          :data="require('@/assets/img/bank.svg')"
+          :data="require('@/assets/img/credits/bank.svg')"
           class="fullwidth"
         ></object>
         <router-link to="/bank">
@@ -77,17 +84,17 @@
           <div class="cabin">
             <div class="arrows">
               <button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" />
+                <img alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
             <div
@@ -120,17 +127,17 @@
             </div>
             <div class="arrows">
               <button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/arrow_sm.svg" />
+                <img alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
           </div>
@@ -138,26 +145,34 @@
             <div>
               <button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
               ><br /><button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
               ><button id="random">
-                <img src="@/assets/img/chaparadio/stop.svg" /></button
+                <img
+                  alt="Random button"
+                  title="Randomize look"
+                  src="@/assets/img/home/chaparadio/stop.svg"
+                /></button
               ><button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
                 <img
-                  src="@/assets/img/arrow_sm.svg"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
                   style="transform: rotate(-90deg) scaleX(-1)"
                 />
@@ -165,11 +180,24 @@
             </div>
           </div>
           <div class="gender">
-            <button><img src="@/assets/img/sex/male.svg" /></button
+            <button>
+              <img
+                alt="Male gender"
+                title="Male gender"
+                src="@/assets/img/sex/male.svg"
+              /></button
             ><button>
-              <img src="@/assets/img/sex/female.svg" /></button
+              <img
+                alt="Female gender"
+                title="Female gender"
+                src="@/assets/img/sex/female.svg"
+              /></button
             ><button>
-              <img src="@/assets/img/sex/unknown.svg" />
+              <img
+                alt="Unknown gender"
+                title="Unknown gender"
+                src="@/assets/img/sex/unknown.svg"
+              />
             </button>
           </div>
         </div>
@@ -194,13 +222,13 @@
       </div>
     </Card>
     <template #right-column>
-      <Card blue filename="fd_slot_mi_sky.gif"> </Card><br />
-      <Card blue filename="fd_slot_forum_sky.gif"> </Card><br /><Card blue>
+      <Card blue filename="messages.gif"> </Card><br />
+      <Card blue filename="forum.gif"> </Card><br /><Card blue>
         <template #button>
           <Button>{{ $t("myAccount.friendsList") }}</Button>
         </template>
       </Card>
-      <br>
+      <br />
       <Card blue>
         <template #button>
           <Button>{{ $t("myAccount.groupsList") }}</Button>
@@ -281,7 +309,7 @@ export default {
   align-items: stretch;
 }
 
-input[type="text"]{
+input[type="text"] {
   padding: 2px;
   border-radius: 100px;
 }

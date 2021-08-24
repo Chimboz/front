@@ -42,7 +42,10 @@
       window.addEventListener("load", function() {
         const $img = document.createElement("img");
         const loadTime = Date.now() - globalThis.timerStart;
-        $img.src = "https://img.shields.io/badge/loadtime-"+loadTime+"ms-blue";
+        $img.src =
+          "https://img.shields.io/badge/loadtime-" + loadTime + "ms-blue";
+        $img.alt = "Loadtime " + loadTime + "ms";
+        $img.title = $img.alt;
         document.getElementById("loadtime").appendChild($img);
       });
     </script>

@@ -63,13 +63,13 @@ const routes = [
   {
     path: "/bbs/:id",
     name: "BBS machin", // TODO
-    component: () => import("../views/BBS/Topics.vue"),
+    component: () => import("../views/BBS/Board.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   {
     path: "/bbs/:id/:topic",
     name: "BBS machin truc", // TODO
-    component: () => import("../views/BBS/Messages.vue"),
+    component: () => import("../views/BBS/Topic.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   // 404

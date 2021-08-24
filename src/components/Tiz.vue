@@ -1,6 +1,6 @@
 <template>
   <div class="tiz">
-    <img class="avatar" src="../assets/img/tiz.svg" />
+    <img  alt="Tiz avatar" class="avatar" src="../assets/img/tiz/tiz.svg" />
     <div class="shadow"></div>
   </div>
 </template>
@@ -78,8 +78,7 @@ export default {
 }
 
 .tiz .shadow {
-  margin-top: -10px;
-  width: 100%;
+  margin-top: -8px;
   height: 10px;
   border-radius: 100%;
   background: #0005;

@@ -9,18 +9,18 @@
       </tr>
     </thead>
 
-    <Board v-for="category in boards" :key="category" :category="category">
-    </Board>
+    <BBSRow v-for="category in boards" :key="category" :category="category">
+    </BBSRow>
   </table>
 </template>
 
 <script>
-import Board from "./Board.vue";
+import BBSRow from "../Row/BBS.vue";
 
 export default {
-  name: "BoardList",
+  name: "BBSList",
   components: {
-    Board,
+    BBSRow,
   },
   props: {
     boards: {

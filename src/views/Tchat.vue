@@ -1,9 +1,9 @@
 <template>
   <Container>
     <Card blue>
-      <img src="@/assets/img/stores/fdroid-fr.svg" />
-      <img src="@/assets/img/stores/google-fr.svg" />
-      <img src="@/assets/img/stores/apple-bk-fr.svg" />
+      <img alt="Download now on F-Droid" title="Download now on F-Droid" src="@/assets/img/appstores/fdroid-fr.svg" />
+      <img alt="Download now on Google Play Store" title="Download now on Google Play Store" src="@/assets/img/appstores/google-fr.svg" />
+      <img alt="Download now on Apple Store" title="Download now on Apple Store" src="@/assets/img/appstores/apple-bk-fr.svg" />
     </Card>
   </Container>
 </template>

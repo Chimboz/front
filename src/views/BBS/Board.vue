@@ -48,43 +48,70 @@
         </div>
       </Card></template
     >
-    <BBSList :boards="data"> </BBSList>
+    <Board :topics="data"> </Board>
     <br />
     <Card
-      ><div class="symbol-info">
-        <img
-          alt="BBS Verrouillé (nouveaux messages)"
-          title="BBS Verrouillé (nouveaux messages)"
-          src="@/assets/img/bbs/folder_new_lock.svg"
-        />&nbsp;Verrouillé nouveaux messages&nbsp;<br />
-        <img
-          alt="BBS Verrouillé"
-          title="BBS Verrouillé"
-          src="@/assets/img/bbs/folder_lock.svg"
-        />&nbsp;Verrouillé&nbsp;<br />
-        <img
-          alt="Nouveaux messages"
-          title="Nouveaux messages"
-          src="@/assets/img/bbs/folder_new.svg"
-        />&nbsp;Nouveaux messages&nbsp;<br />
-        <img
-          alt="Pas de nouveaux messages"
-          title="Pas de nouveaux messages"
-          src="@/assets/img/bbs/folder.svg"
-        />&nbsp;Pas de nouveaux messages&nbsp;<br /></div
-    ></Card>
+      ><img
+        src="@/assets/img/bbs/folder_new.svg"
+        alt="Nouveaux messages"
+        title="Nouveaux messages"
+      />
+      Nouveaux messages<br />
+      <img
+        src="@/assets/img/bbs/folder_new_hot.svg"
+        alt="Nouveaux messages [ Populaire ]"
+        title="Nouveaux messages [ Populaire ]"
+      />
+      Nouveaux messages [ Populaire ]<br />
+      <img
+        src="@/assets/img/bbs/folder_new_lock.svg"
+        alt="Nouveaux messages [ Verrouillé ]"
+        title="Nouveaux messages [ Verrouillé ]"
+      />
+      Nouveaux messages [ Verrouillé ]<br />
+      <img
+        src="@/assets/img/bbs/folder.svg"
+        alt="Pas de nouveaux messages"
+        title="Pas de nouveaux messages"
+      />
+      Pas de nouveaux messages<br />
+      <img
+        src="@/assets/img/bbs/folder_hot.svg"
+        alt="Pas de nouveaux messages [ Populaire ]"
+        title="Pas de nouveaux messages [ Populaire ]"
+      />
+      Pas de nouveaux messages [ Populaire ]<br />
+      <img
+        src="@/assets/img/bbs/folder_lock.svg"
+        alt="Pas de nouveaux messages [ Verrouillé ]"
+        title="Pas de nouveaux messages [ Verrouillé ]"
+      />
+      Pas de nouveaux messages [ Verrouillé ]<br />
+      <img
+        src="@/assets/img/bbs/folder_announce.svg"
+        alt="Annonce"
+        title="Annonce"
+      />
+      Annonce<br />
+      <img
+        src="@/assets/img/bbs/folder_sticky.svg"
+        alt="Post-it"
+        title="Post-it"
+      />
+      Post-it</Card
+    >
   </Container>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
-import BBSList from "@/components/BBS/List/BBS.vue";
+import Board from "@/components/BBS/List/Board.vue";
 import Container from "@/views/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    BBSList,
+    Board,
     Container,
     Card,
   },
@@ -96,7 +123,8 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    const url = "/api/bbs.json";
+    //const url = "/api/bbs_agora.json";
+    const url = "/api/bbs_agora.json";
     next((vm) => {
       vm.axios
         .get(url)
@@ -105,8 +133,7 @@ export default {
             vm.data = res.data;
             vm.loading = false;
           } else {
-            // Didn't like the result, redirect
-            next("/");
+            next("/bbs");
           }
         })
         .catch((error) => {
@@ -116,7 +143,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/bbs.json");
+      this.data = await this.axios.get("/api/bbs_agora.json");
     } catch (error) {
       this.error = error.toString();
     }
@@ -124,10 +151,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.symbol-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.main-column {
+  width: 100% !important;
 }
 </style>

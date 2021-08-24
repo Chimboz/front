@@ -1,12 +1,12 @@
 <template>
-  <span class="link-pink" style="text-align: left">
-    <router-link to="/bbs" class="link-pink">BBS</router-link> »
-    <router-link :to="'/bbs/'+$route.params.id" class="link-pink">BBS</router-link></span
+  <span class="pink justified" style="text-align: left">
+    <router-link to="/bbs" class="pink">BBS</router-link> »
+    <router-link :to="'/bbs/'+$route.params.id" class="pink">BBS</router-link></span
   >
-  <span style="text-align: left; font-size: 20px" v-if="messages[0]">
-    <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="link-pink">{{
+  <h1 class="justified" v-if="messages[0]">
+    <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="pink">{{
       messages[0].title
-    }}</router-link></span
+    }}</router-link></h1
   >
   <br />
   <table class="bbs">
@@ -17,15 +17,15 @@
         </th>
       </tr>
     </thead>
-    <Message v-for="message in messages" :key="message.id" :message="message" />
+    <Message v-for="(message, index) in messages" :key="message.id" :message="message" :separator="index != messages.length-1"/>
   </table>
 </template>
 
 <script>
-import Message from "./Message.vue";
+import Message from "../Row/Message.vue";
 
 export default {
-  name: "MessageList",
+  name: "Topic",
   components: {
     Message,
   },
