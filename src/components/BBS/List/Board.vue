@@ -1,5 +1,5 @@
 <template>
-  <span class="pink" style="text-align: left">
+  <span class="pink justified">
     <router-link to="/bbs" class="pink">BBS</router-link> »
     <router-link to="/bbs" class="pink">BBS</router-link></span
   >

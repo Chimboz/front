@@ -83,10 +83,6 @@ export default {
   padding: 6px;
 }
 
-.title img {
-  vertical-align: middle;
-}
-
 .msg-body {
   width: 100%;
   text-align: left;

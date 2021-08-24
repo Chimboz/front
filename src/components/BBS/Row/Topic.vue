@@ -44,7 +44,6 @@
         <a href="/topic/938277"
           ><img
             :src="require(`@/assets/img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
-            style="vertical-align: bottom"
             alt="Voir le dernier message"
             title="Voir le dernier message"
         /></a>

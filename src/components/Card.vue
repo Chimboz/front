@@ -49,6 +49,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    lightblue: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    red: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
     justified: {
       required: false,
       type: Boolean,
@@ -86,6 +96,32 @@ export default {
           "--main-card-color": "#6ebef0",
           "--dark-card-color": "#5aa1cd",
           "--shadow-card-color": "#355668",
+          "--title-card-color": "#096EA8",
+          "--title-subtop-color": "#004b7d",
+          "--shadow-subtop-color": "#1b4166",
+          "--light-subtop-color": "#c4e8ff",
+          "--main-subtop-color": "#99cdef",
+          "--dark-subtop-color": "#628499",
+        };
+        if (this.lightblue)
+        return {
+          "--light-card-color": "#aadcfc",
+          "--main-card-color": "#6ebef0",
+          "--dark-card-color": "#5aa1cd",
+          "--shadow-card-color": "#355668",
+          "--title-card-color": "#096EA8",
+          "--title-subtop-color": "#004b7d",
+          "--shadow-subtop-color": "#1b4166",
+          "--light-subtop-color": "#c4e8ff",
+          "--main-subtop-color": "#99cdef",
+          "--dark-subtop-color": "#628499",
+        };
+        if (this.red)
+        return {
+          "--light-card-color": "#ff9e9e",
+          "--main-card-color": "#FF5454",
+          "--dark-card-color": "#e00c0c",
+          "--shadow-card-color": "#5078a0",
           "--title-card-color": "#096EA8",
           "--title-subtop-color": "#004b7d",
           "--shadow-subtop-color": "#1b4166",

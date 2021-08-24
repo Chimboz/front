@@ -94,16 +94,21 @@ hr {
   height: 2px;
 }
 
+h1 {
+  font-size: 20px;
+}
+
 h2 {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: bold;
-  color: #004e84;
 }
 
 
 img[src*="puce"] {
   height: 17px;
+}
+
+img{
+  vertical-align: middle;
 }
 
 // App width
@@ -170,7 +175,6 @@ img[src*="puce"] {
   transform: rotateZ(-25deg);
 }
 
-
 .level {
   background: linear-gradient(
       to right,
@@ -212,6 +216,10 @@ img[src*="puce"] {
 
 .centered {
   text-align: center;
+}
+
+.justified {
+  text-align: justify;
 }
 
 // Animations

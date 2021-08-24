@@ -51,12 +51,12 @@
     </template>
     <Card filename="bacteria.gif" justified>
       <div class="centered">
-        <a href="#tutorial" class="btn-sm blue-bg">▶&nbsp;Les Records</a>
-        <a href="#tutorial" class="btn-sm blue-bg">▶&nbsp;Les Meilleurs</a>
-        <a href="#tutorial" class="btn-sm blue-bg">▶&nbsp;Les Pires</a>
-        <a href="#tutorial" class="btn-sm blue-bg">▶&nbsp;Les Groupes</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Records</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Meilleurs</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Pires</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Groupes</a>
         <a href="#tutorial" class="btn-sm pink-bg">
-          <img alt="Help icon" src="@/assets/img/games/help.png" />&nbsp;Comment
+          <img alt="Help icon" src="@/assets/img/icons/help.png" />&nbsp;Comment
           jouer&nbsp;?
         </a>
       </div>

@@ -1,8 +1,10 @@
 <template>
   <Container>
-    <Card blue>
-      404 Not Found
+    <template #left-column></template>
+    <Card red>
+      <img alt="Error icon" src="@/assets/img/icons/error.gif"><b>Erreur, la page que vous cherchez n'existe pas.</b>
     </Card>
+    <template #right-column></template>
   </Container>
 </template>
 
@@ -18,14 +20,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.card {
-  display: flex;
-  justify-content: space-evenly;
-}
-.card img {
-  padding: 0 10px;
-  width: 33%;
-}
-</style>

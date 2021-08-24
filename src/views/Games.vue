@@ -58,7 +58,7 @@
       <br />
       <router-link class="btn-sm pink-bg" to="/games/bacteria"
         >
-          <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
+          <img src="@/assets/img/icons/help.png" />&nbsp;Comment jouer&nbsp;?
         </router-link
       >
     </Card>
@@ -78,7 +78,7 @@
       <br />
       <router-link class="btn-sm pink-bg" to="/games/patojdur"
         >
-          <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
+          <img src="@/assets/img/icons/help.png" />&nbsp;Comment jouer&nbsp;?
         </router-link
       >
     </Card>
@@ -98,7 +98,7 @@
       <br />
       <router-link class="btn-sm pink-bg" to="/games/mazo"
         >
-          <img src="@/assets/img/games/help.png" />&nbsp;Comment jouer&nbsp;?
+          <img src="@/assets/img/icons/help.png" />&nbsp;Comment jouer&nbsp;?
         </router-link
       >
     </Card>

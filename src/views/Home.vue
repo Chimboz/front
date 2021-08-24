@@ -208,6 +208,6 @@ export default {
 }
 
 .friends div {
-  transform: translate3d(0, 200%, 0);
+  transform: translate3d(0, 210%, 0);
 }
 </style>

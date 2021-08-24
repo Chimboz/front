@@ -1,12 +1,12 @@
 <template>
-  <span class="pink" style="text-align: left">
+  <span class="pink justified" style="text-align: left">
     <router-link to="/bbs" class="pink">BBS</router-link> »
     <router-link :to="'/bbs/'+$route.params.id" class="pink">BBS</router-link></span
   >
-  <span style="text-align: left; font-size: 20px" v-if="messages[0]">
+  <h1 class="justified" v-if="messages[0]">
     <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="pink">{{
       messages[0].title
-    }}</router-link></span
+    }}</router-link></h1
   >
   <br />
   <table class="bbs">

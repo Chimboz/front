@@ -24,7 +24,10 @@
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
@@ -32,7 +35,10 @@
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
             ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
@@ -43,25 +49,22 @@
       ><br />
       <Rules />
     </template>
-    <Card filename="patojdur.gif" justified>
+    <Card filename="bacteria.gif" justified>
       <div class="centered">
-        <a href="#tutorial"><div class="btn-sm blue-bg">▶&nbsp;Les Records</div></a>
-        <a href="#tutorial"
-          ><div class="btn-sm blue-bg">▶&nbsp;Les Meilleurs</div></a
-        >
-        <a href="#tutorial"><div class="btn-sm blue-bg">▶&nbsp;Les Pires</div></a>
-        <a href="#tutorial"><div class="btn-sm blue-bg">▶&nbsp;Les Groupes</div></a>
-        <a href="#tutorial"
-          ><div class="btn-sm pink-bg">
-            <img src="@/assets/img/games/help.png" />&nbsp;Comment
-            jouer&nbsp;?
-          </div></a
-        >
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Records</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Meilleurs</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Pires</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Groupes</a>
+        <a href="#tutorial" class="btn-sm pink-bg">
+          <img alt="Help icon" src="@/assets/img/icons/help.png" />&nbsp;Comment
+          jouer&nbsp;?
+        </a>
       </div>
       <br />
       <img
         src="@/assets/img/games/bacteria/preview.gif"
-        alt="Bacteria"
+        alt="A game of bacteria"
+        title="A game of bacteria"
         style="float: left; margin-right: 17px; border: 3px solid #6699cc"
       />
       <br />
@@ -124,10 +127,8 @@
     </Card>
     <br /><Card>
       <template #header>Les 20 pires brèles de Bacteria ! </template>
-      <template #subtitle
-        >Les meilleurs... en partant du bas !</template
-      >
-      (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br>
+      <template #subtitle>Les meilleurs... en partant du bas !</template>
+      (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br />
       <table class="score fullwidth">
         <thead>
           <tr>
