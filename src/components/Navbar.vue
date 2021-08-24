@@ -1,13 +1,13 @@
 <template>
   <div class="header">
     <router-link to="/"
-      ><img alt="Logo Chapatiz Retro" id="logo" src="../assets/img/logo.svg"
+      ><img draggable="false"  alt="Logo Chapatiz Retro" id="logo" src="../assets/img/logo.svg"
     /></router-link>
     <div class="login">
       <div style="margin-top: -10px">
         <p id="username">{{ username }}</p>
         <button id="connect">
-          <img
+          <img draggable="false" 
             alt="Disconnect icon"
             class="chz-icon"
             src="../assets/img/login/disconnect.svg"
@@ -20,7 +20,7 @@
   <div id="nav">
     <router-link to="/"
       ><button class="nav-btn">
-        <img
+        <img draggable="false" 
           alt="Home icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/home.svg"
@@ -29,7 +29,7 @@
     ></router-link>
     <router-link to="/tchat"
       ><button class="nav-btn">
-        <img
+        <img draggable="false" 
           alt="Tchat icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/tchat.svg"
@@ -37,7 +37,7 @@
         <div class="nav-text">
           <StrokeText>{{ $t("playing.button") }}</StrokeText>
         </div>
-        <img
+        <img draggable="false" 
           alt="Arrow icon"
           class="arrow jitter"
           src="@/assets/img/arrow.svg"
@@ -45,7 +45,7 @@
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn">
-        <img
+        <img draggable="false" 
           alt="Account icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/account.svg"
@@ -57,7 +57,7 @@
     >
     <router-link to="/games"
       ><button class="nav-btn">
-        <img
+        <img draggable="false" 
           alt="Games icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/games.svg"
@@ -69,7 +69,7 @@
     >
     <router-link to="/members"
       ><button class="nav-btn">
-        <img
+        <img draggable="false" 
           alt="Member icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/members.svg"
@@ -81,7 +81,7 @@
     >
     <router-link to="/bbs"
       ><button class="nav-btn">
-        <img
+        <img draggable="false" 
           alt="Community icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/community.svg"

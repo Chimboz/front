@@ -63,7 +63,6 @@ body {
 }
 
 // Default tags
-
 a {
   text-decoration: none;
   font-weight: bold;
@@ -102,12 +101,12 @@ h2 {
   font-size: 14px;
 }
 
-
 img[src*="puce"] {
   height: 17px;
 }
 
-img{
+img {
+  user-select: none;
   vertical-align: middle;
 }
 
@@ -124,7 +123,6 @@ img{
 }
 
 // Custom classes
-// Colors
 .pink {
   color: #ff3399;
 }
@@ -204,7 +202,6 @@ img{
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }
 
-
 // Atomic classes
 .flex {
   display: flex;
@@ -223,7 +220,6 @@ img{
 }
 
 // Animations
-
 @keyframes jitter {
   0% {
     transform: rotateZ(-25deg);

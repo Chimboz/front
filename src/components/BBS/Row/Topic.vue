@@ -2,7 +2,7 @@
   <tbody>
     <tr class="topic">
       <td class="row1" align="center" valign="middle" height="50">
-        <img
+        <img draggable="false" 
           class="icon"
           :src="
             require(`@/assets/img/bbs/folder${topic.new ? '_new' : ''}${
@@ -42,7 +42,7 @@
         <a href="/annuaire/5">{{ topic.last_msg.author.name }}</a>
         &nbsp;»&nbsp;
         <a href="/topic/938277"
-          ><img
+          ><img draggable="false" 
             :src="require(`@/assets/img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"

@@ -9,7 +9,7 @@
   <tbody v-for="(bbs, index) in category.bbs" :key="bbs.id">
     <tr class="bbs">
       <td class="row1" align="center" valign="middle" height="50">
-        <img
+        <img draggable="false" 
           class="icon"
           :src="require(`@/assets/img/bbs/folder${bbs.new?'_new':''}${bbs.locked?'_lock':''}.svg`)"
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
@@ -53,7 +53,7 @@
         <a href="/annuaire/5">{{ bbs.last_msg.author.name }}</a>
         &nbsp;»&nbsp;
         <a href="/topic/938277"
-          ><img
+          ><img draggable="false" 
             :src="require(`@/assets/img/bbs/msg${bbs.new?'_new':''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"

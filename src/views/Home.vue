@@ -6,7 +6,7 @@
           <div class="level fullwidth">
             {{ $t('currentLevel') }}
             <div class="number">
-              <img
+              <img draggable="false" 
               :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -17,28 +17,28 @@
         <router-link to="/mi">
           <div class="messages">
             <div>
-              <img
+              <img draggable="false" 
               :alt="number"
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img alt="Messages" src="@/assets/img/home/messages.png" class="fullwidth" />
+            <img draggable="false"  alt="Messages" src="@/assets/img/home/messages.png" class="fullwidth" />
           </div>
           {{ $t('mi.message', data.messages) }}</router-link
         >
         <router-link to="/friends">
           <div class="friends">
             <div>
-              <img
+              <img draggable="false" 
               :alt="number"
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img alt="Friends" src="@/assets/img/home/friends.png" class="fullwidth" />
+            <img draggable="false"  alt="Friends" src="@/assets/img/home/friends.png" class="fullwidth" />
           </div>
           {{ $t('friends.online', data.friends) }}</router-link
         ></Card
@@ -62,10 +62,10 @@
         ></Card
       ></template
     >
-    <img src="@/assets/img/home/announces/summer.png" style="max-width: 100%" /><br />
+    <img draggable="false"  src="@/assets/img/home/announces/summer.png" style="max-width: 100%" /><br />
     <Card filename="lottery.png" v-if="data.lottery">
       <template #header
-        ><img src="@/assets/img/home/header_hello.png" style="width: 100%"
+        ><img draggable="false"  src="@/assets/img/home/header_hello.png" style="width: 100%"
       /></template>
       {{ $t('lottery.firstLine') }}<br />
       {{ $t('lottery.secondLine') }}</Card
@@ -73,7 +73,7 @@
     <Card yellow justified>
       <template #subtop>Chapaniouz</template>
       <template #header
-        ><img
+        ><img draggable="false" 
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="float: left; margin: 0 17px 17px 0"
@@ -92,15 +92,15 @@
     <Card>
       <template #subtop>Chaparazzi</template>
       <div class="gallery">
-        <img
+        <img draggable="false" 
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
-        /><img
+        /><img draggable="false" 
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
-        /><img
+        /><img draggable="false" 
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
@@ -124,20 +124,20 @@
         </template>
 
         <router-link to="/help"
-          ><img alt="Puce" src="@/assets/img/puce.svg"/>{{ $t('help.tip') }}</router-link
+          ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg"/>{{ $t('help.tip') }}</router-link
         ></Card
       ><br />
       <Card yellow filename="packs.png">
         <template #button>
           <Button yellow icon="register.svg">Pack</Button>
         </template>
-        <img
+        <img draggable="false" 
         alt="Pack supporter"
           src="@/assets/img/packs/2.jpg"
           style="max-width: 100%"
         /><br /><br />
         <Button yellow icon="register.svg" class="fullwidth">Item</Button><br />
-        <img
+        <img draggable="false" 
         alt="Item eskimok"
           src="@/assets/img/packs/1.jpg"
           style="max-width: 100%"

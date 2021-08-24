@@ -11,7 +11,7 @@
         <div class="msg-body">
           <div class="title">
             <b
-              ><img
+              ><img draggable="false" 
                 alt="Voir le dernier message"
                 title="Voir le dernier message"
                 :src="

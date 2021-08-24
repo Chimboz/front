@@ -4,44 +4,44 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img
+            ><img draggable="false" 
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img
+            ><img draggable="false" 
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -52,22 +52,22 @@
     <br />
     <Card
       ><div class="symbol-info">
-        <img
+        <img draggable="false" 
           alt="BBS Verrouillé (nouveaux messages)"
           title="BBS Verrouillé (nouveaux messages)"
           src="@/assets/img/bbs/folder_new_lock.svg"
         />&nbsp;Verrouillé nouveaux messages&nbsp;<br />
-        <img
+        <img draggable="false" 
           alt="BBS Verrouillé"
           title="BBS Verrouillé"
           src="@/assets/img/bbs/folder_lock.svg"
         />&nbsp;Verrouillé&nbsp;<br />
-        <img
+        <img draggable="false" 
           alt="Nouveaux messages"
           title="Nouveaux messages"
           src="@/assets/img/bbs/folder_new.svg"
         />&nbsp;Nouveaux messages&nbsp;<br />
-        <img
+        <img draggable="false" 
           alt="Pas de nouveaux messages"
           title="Pas de nouveaux messages"
           src="@/assets/img/bbs/folder.svg"

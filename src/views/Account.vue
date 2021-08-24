@@ -6,7 +6,7 @@
           <div class="level fullwidth">
             {{ $t("currentLevel") }}
             <div class="number">
-              <img
+              <img draggable="false" 
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -16,44 +16,44 @@
         ><br />
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img
+            ><img draggable="false" 
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img
+            ><img draggable="false" 
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -84,17 +84,17 @@
           <div class="cabin">
             <div class="arrows">
               <button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" />
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
             <div
@@ -127,50 +127,50 @@
             </div>
             <div class="arrows">
               <button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img alt="Puce" src="@/assets/img/puce.svg" />
+                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
           </div>
           <div class="controls">
             <div>
               <button>
-                <img
+                <img draggable="false" 
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
               ><br /><button>
-                <img
+                <img draggable="false" 
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
               ><button id="random">
-                <img
+                <img draggable="false" 
                   alt="Random button"
                   title="Randomize look"
                   src="@/assets/img/home/chaparadio/stop.svg"
                 /></button
               ><button>
-                <img
+                <img draggable="false" 
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
-                <img
+                <img draggable="false" 
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
@@ -181,19 +181,19 @@
           </div>
           <div class="gender">
             <button>
-              <img
+              <img draggable="false" 
                 alt="Male gender"
                 title="Male gender"
                 src="@/assets/img/sex/male.svg"
               /></button
             ><button>
-              <img
+              <img draggable="false" 
                 alt="Female gender"
                 title="Female gender"
                 src="@/assets/img/sex/female.svg"
               /></button
             ><button>
-              <img
+              <img draggable="false" 
                 alt="Unknown gender"
                 title="Unknown gender"
                 src="@/assets/img/sex/unknown.svg"

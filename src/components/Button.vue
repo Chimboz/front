@@ -1,6 +1,6 @@
 <template>
   <button class="btn" :style="cssVars">
-    <img v-if="icon" class="btn-icon" :src="require(`@/assets/img/icons/buttons/${icon}`)" />
+    <img draggable="false"  v-if="icon" class="btn-icon" :src="require(`@/assets/img/icons/buttons/${icon}`)" />
     <div class="btn-text">
       <StrokeText><slot></slot></StrokeText>
     </div>
