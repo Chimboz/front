@@ -48,7 +48,7 @@
         </div>
       </Card></template
     >
-    <TopicList :topics="data"> </TopicList>
+    <Board :topics="data"> </Board>
     <br />
     <Card
       ><img
@@ -105,13 +105,13 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import TopicList from "@/components/BBS/TopicList.vue";
+import Board from "@/components/BBS/List/Board.vue";
 import Container from "@/views/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    TopicList,
+    Board,
     Container,
     Card,
   },

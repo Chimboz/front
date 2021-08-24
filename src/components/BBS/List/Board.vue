@@ -1,35 +1,41 @@
 <template>
+  <span class="pink" style="text-align: left">
+    <router-link to="/bbs" class="pink">BBS</router-link> »
+    <router-link to="/bbs" class="pink">BBS</router-link></span
+  >
+  <br />
   <table class="bbs">
     <thead>
       <tr>
-        <th colspan="2" valign="top" height="25" nowrap="nowrap">BBS</th>
-        <th width="50" valign="top" nowrap="nowrap">Sujets</th>
-        <th width="50" valign="top" nowrap="nowrap">Messages</th>
-        <th class="thCornerR" valign="top" nowrap="nowrap">Dernier message</th>
+        <th colspan="2" valign="top" height="25" nowrap="nowrap">Sujets</th>
+        <th width="50" valign="top" nowrap="nowrap">Réponses</th>
+        <th width="100" valign="top" nowrap="nowrap">Auteur</th>
+        <th width="50" valign="top" nowrap="nowrap">Vus</th>
+        <th valign="top" nowrap="nowrap">Dernier message</th>
       </tr>
     </thead>
 
-    <Board v-for="category in boards" :key="category" :category="category">
-    </Board>
+    <Topic v-for="topic in topics" :key="topic.id" :topic="topic" />
   </table>
 </template>
 
 <script>
-import Board from "./Board.vue";
+import Topic from "../Row/Topic.vue";
 
 export default {
-  name: "BoardList",
+  name: "Board",
   components: {
-    Board,
+    Topic,
   },
   props: {
-    boards: {
+    topics: {
       required: true,
       type: Array,
     },
   },
 };
 </script>
+
 <style lang="scss">
 table.bbs {
   width: 100%;

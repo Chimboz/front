@@ -48,7 +48,7 @@
         </div>
       </Card></template
     >
-    <BoardList :boards="data"> </BoardList>
+    <BBSList :boards="data"> </BBSList>
     <br />
     <Card
       ><div class="symbol-info">
@@ -78,13 +78,13 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import BoardList from "@/components/BBS/BoardList.vue";
+import BBSList from "@/components/BBS/List/BBS.vue";
 import Container from "@/views/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    BoardList,
+    BBSList,
     Container,
     Card,
   },

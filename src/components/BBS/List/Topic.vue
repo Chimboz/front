@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import Message from "./Message.vue";
+import Message from "../Row/Message.vue";
 
 export default {
-  name: "MessageList",
+  name: "Topic",
   components: {
     Message,
   },

@@ -74,7 +74,7 @@ import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
-  name: "Board",
+  name: "BBS Row",
   props: {
     category: {
       required: true,

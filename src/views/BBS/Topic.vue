@@ -42,7 +42,7 @@
         </div>
       </Card></template
     >
-    <MessageList :messages="data"> </MessageList>
+    <Topic :messages="data"> </Topic>
     <br />
     <Card></Card>
   </Container>
@@ -50,13 +50,13 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import MessageList from "@/components/BBS/MessageList.vue";
+import Topic from "@/components/BBS/List/Topic.vue";
 import Container from "@/views/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    MessageList,
+    Topic,
     Container,
     Card,
   },
