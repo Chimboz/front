@@ -7,6 +7,7 @@
             {{ $t("currentLevel") }}
             <div class="number">
               <img
+              :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/${number}.svg`)"
@@ -15,38 +16,38 @@
         ><br />
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -77,17 +78,17 @@
           <div class="cabin">
             <div class="arrows">
               <button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" />
+                <img alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
             <div
@@ -120,17 +121,17 @@
             </div>
             <div class="arrows">
               <button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" /></button
+                <img alt="Puce" src="@/assets/img/puce.svg" /></button
               ><button>
-                <img src="@/assets/img/puce.svg" />
+                <img alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
           </div>
@@ -138,25 +139,29 @@
             <div>
               <button>
                 <img
+                alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
               ><br /><button>
                 <img
+                alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
               ><button id="random">
-                <img src="@/assets/img/home/chaparadio/stop.svg" /></button
+                <img alt="Random button" src="@/assets/img/home/chaparadio/stop.svg" /></button
               ><button>
                 <img
+                alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
                 <img
+                alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
                   style="transform: rotate(-90deg) scaleX(-1)"
@@ -165,11 +170,11 @@
             </div>
           </div>
           <div class="gender">
-            <button><img src="@/assets/img/sex/male.svg" /></button
+            <button><img alt="Male gender" title="Male gender" src="@/assets/img/sex/male.svg" /></button
             ><button>
-              <img src="@/assets/img/sex/female.svg" /></button
+              <img alt="Female gender" title="Female gender" src="@/assets/img/sex/female.svg" /></button
             ><button>
-              <img src="@/assets/img/sex/unknown.svg" />
+              <img alt="Unknown gender" title="Unknown gender" src="@/assets/img/sex/unknown.svg" />
             </button>
           </div>
         </div>

@@ -4,38 +4,38 @@
       ><Card blue top>
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -44,11 +44,7 @@
     >
     <MessageList :messages="data"> </MessageList>
     <br />
-    <Card
-      ><img src="@/assets/img/bbs/folder_lock.svg" /> Verrouillé<br />
-      <img src="@/assets/img/bbs/folder_new.svg" /> Nouveaux messages<br />
-      <img src="@/assets/img/bbs/folder.svg" /> Pas de nouveaux messages<br
-    /></Card>
+    <Card></Card>
   </Container>
 </template>
 

@@ -4,38 +4,44 @@
       ><Card blue top>
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -45,10 +51,55 @@
     <TopicList :topics="data"> </TopicList>
     <br />
     <Card
-      ><img src="@/assets/img/bbs/folder_lock.svg" /> Verrouillé<br />
-      <img src="@/assets/img/bbs/folder_new.svg" /> Nouveaux messages<br />
-      <img src="@/assets/img/bbs/folder.svg" /> Pas de nouveaux messages<br
-    /></Card>
+      ><img
+        src="@/assets/img/bbs/folder_new.svg"
+        alt="Nouveaux messages"
+        title="Nouveaux messages"
+      />
+      Nouveaux messages<br />
+      <img
+        src="@/assets/img/bbs/folder_new_hot.svg"
+        alt="Nouveaux messages [ Populaire ]"
+        title="Nouveaux messages [ Populaire ]"
+      />
+      Nouveaux messages [ Populaire ]<br />
+      <img
+        src="@/assets/img/bbs/folder_new_lock.svg"
+        alt="Nouveaux messages [ Verrouillé ]"
+        title="Nouveaux messages [ Verrouillé ]"
+      />
+      Nouveaux messages [ Verrouillé ]<br />
+      <img
+        src="@/assets/img/bbs/folder.svg"
+        alt="Pas de nouveaux messages"
+        title="Pas de nouveaux messages"
+      />
+      Pas de nouveaux messages<br />
+      <img
+        src="@/assets/img/bbs/folder_hot.svg"
+        alt="Pas de nouveaux messages [ Populaire ]"
+        title="Pas de nouveaux messages [ Populaire ]"
+      />
+      Pas de nouveaux messages [ Populaire ]<br />
+      <img
+        src="@/assets/img/bbs/folder_lock.svg"
+        alt="Pas de nouveaux messages [ Verrouillé ]"
+        title="Pas de nouveaux messages [ Verrouillé ]"
+      />
+      Pas de nouveaux messages [ Verrouillé ]<br />
+      <img
+        src="@/assets/img/bbs/folder_announce.svg"
+        alt="Annonce"
+        title="Annonce"
+      />
+      Annonce<br />
+      <img
+        src="@/assets/img/bbs/folder_sticky.svg"
+        alt="Post-it"
+        title="Post-it"
+      />
+      Post-it</Card
+    >
   </Container>
 </template>
 

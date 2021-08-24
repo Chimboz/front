@@ -4,38 +4,38 @@
       ><Card blue top>
         <div class="menu fullwidth">
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -53,7 +53,7 @@
         <a href="#tutorial"><div class="btn-sm blu">▶&nbsp;Les Groupes</div></a>
         <a href="#tutorial"
           ><div class="btn-sm pink">
-            <img src="@/assets/img/games/help.png" />&nbsp;Comment
+            <img alt="Help icon" src="@/assets/img/games/help.png" />&nbsp;Comment
             jouer&nbsp;?
           </div></a
         >
@@ -61,7 +61,8 @@
       <br />
       <img
         src="@/assets/img/games/bacteria/preview.gif"
-        alt="Bacteria"
+        alt="A game of bacteria"
+        title="A game of bacteria"
         style="float: left; margin-right: 17px; border: 3px solid #6699cc"
       />
       <br />

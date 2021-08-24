@@ -120,7 +120,7 @@ export default {
   float: right;
   height: 100%;
   width: 20%;
-  background-image: linear-gradient(to right, #f0009c, #ff6600, #f0009c);
+  background-image: linear-gradient(to right, #f0009c, #fff, #f0009c);
   animation: loading-animation 2s ease-in infinite;
 }
 
@@ -130,7 +130,7 @@ export default {
   width: 30px;
   margin-left: -30px;
   border-radius: 0 0 5px 0;
-  box-shadow: 0 0 10px #ff6600;
+  box-shadow: 0 0 10px #fff;
 }
 
 @keyframes loading-animation {

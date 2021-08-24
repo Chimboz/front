@@ -7,6 +7,7 @@
             {{ $t('currentLevel') }}
             <div class="number">
               <img
+              :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/${number}.svg`)"
@@ -17,12 +18,13 @@
           <div class="messages">
             <div>
               <img
+              :alt="number"
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img src="@/assets/img/home/messages.png" class="fullwidth" />
+            <img alt="Messages" src="@/assets/img/home/messages.png" class="fullwidth" />
           </div>
           {{ $t('mi.message', data.messages) }}</router-link
         >
@@ -30,12 +32,13 @@
           <div class="friends">
             <div>
               <img
+              :alt="number"
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img src="@/assets/img/home/friends.png" class="fullwidth" />
+            <img alt="Friends" src="@/assets/img/home/friends.png" class="fullwidth" />
           </div>
           {{ $t('friends.online', data.friends) }}</router-link
         ></Card
@@ -72,7 +75,7 @@
       <template #header
         ><img
           src="@/assets/img/home/chimboking.gif"
-          alt="Chimboking"
+          alt="Chimboking portrait"
           style="float: left; margin: 0 17px 17px 0"
         />
         Changelog du 12/07/2021
@@ -91,15 +94,15 @@
       <div class="gallery">
         <img
           src="@/assets/img/home/chimboking.gif"
-          alt="Chimboking"
+          alt="Chimboking portrait"
           style="margin: auto"
         /><img
           src="@/assets/img/home/chimboking.gif"
-          alt="Chimboking"
+          alt="Chimboking portrait"
           style="margin: auto"
         /><img
           src="@/assets/img/home/chimboking.gif"
-          alt="Chimboking"
+          alt="Chimboking portrait"
           style="margin: auto"
         />
       </div>
@@ -121,7 +124,7 @@
         </template>
 
         <router-link to="/help"
-          ><img src="@/assets/img/puce.svg"/>{{ $t('help.tip') }}</router-link
+          ><img alt="Puce" src="@/assets/img/puce.svg"/>{{ $t('help.tip') }}</router-link
         ></Card
       ><br />
       <Card yellow filename="packs.png">
@@ -129,12 +132,14 @@
           <Button yellow>Pack</Button>
         </template>
         <img
-          src="@/assets/img/packs/1.jpg"
+        alt="Pack supporter"
+          src="@/assets/img/packs/2.jpg"
           style="max-width: 100%"
         /><br /><br />
         <Button yellow class="fullwidth">Item</Button><br />
         <img
-          src="@/assets/img/packs/2.jpg"
+        alt="Item eskimok"
+          src="@/assets/img/packs/1.jpg"
           style="max-width: 100%"
         />
       </Card>
