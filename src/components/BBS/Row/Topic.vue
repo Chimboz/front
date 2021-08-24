@@ -50,8 +50,8 @@
         /></a>
       </td>
     </tr>
-    <tr>
-      <td valign="middle" colspan="6">
+    <tr v-if="separator">
+      <td colspan="6">
         <hr />
       </td>
     </tr>
@@ -68,6 +68,11 @@ export default {
     topic: {
       required: true,
       type: Object,
+    },
+    separator: {
+      required: false,
+      default: true,
+      type: Boolean,
     },
   },
   methods: {

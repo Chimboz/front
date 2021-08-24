@@ -32,7 +32,7 @@
       </div>
     </td>
   </tr>
-  <tr>
+  <tr v-if="separator">
     <td style="background: #fff"><hr /></td>
   </tr>
 </template>
@@ -54,6 +54,11 @@ export default {
     message: {
       required: true,
       type: Object,
+    },
+    separator: {
+      required: false,
+      default: true,
+      type: Boolean,
     },
   },
   methods: {

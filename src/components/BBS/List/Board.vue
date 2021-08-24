@@ -15,7 +15,7 @@
       </tr>
     </thead>
 
-    <Topic v-for="topic in topics" :key="topic.id" :topic="topic" />
+    <Topic v-for="(topic, index) in topics" :key="topic.id" :topic="topic"  :separator="index != topics.length-1" />
   </table>
 </template>
 

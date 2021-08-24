@@ -17,7 +17,7 @@
         </th>
       </tr>
     </thead>
-    <Message v-for="message in messages" :key="message.id" :message="message" />
+    <Message v-for="(message, index) in messages" :key="message.id" :message="message" :separator="index != messages.length-1"/>
   </table>
 </template>
 
