@@ -57,9 +57,9 @@ body {
 ::selection {
   background-color: #ff6600;
   color: #fff;
-  text-shadow: 2px 0 0 #ce4800, -2px 0 0 #ce4800, 0 2px 0 #ce4800,
-    0 -2px 0 #ce4800, 1px 1px #ce4800, -1px -1px 0 #ce4800, 1px -1px 0 #ce4800,
-    -1px 1px 0 #ce4800;
+  text-shadow: 1px 0 0 #ce4800, -1px 0 0 #ce4800, 0 1px 0 #ce4800,
+    0 -1px 0 #ce4800, .5px .5px #ce4800, -.5px -.5px 0 #ce4800, .5px -.5px 0 #ce4800,
+    -.5px .5px 0 #ce4800;
 }
 
 // Default tags
