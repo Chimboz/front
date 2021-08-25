@@ -6,7 +6,8 @@
           <div class="level fullwidth">
             {{ $t("currentLevel") }}
             <div class="number">
-              <img draggable="false" 
+              <img
+                draggable="false"
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -16,46 +17,60 @@
         ><br />
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.link")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.link") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.internalMessagingLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myGroupsLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myFriendsLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" 
+            ><img
+              draggable="false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.notSmartLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" 
+            ><img
+              draggable="false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.shoppingLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
           >
         </div></Card
       ><br />
@@ -84,17 +99,37 @@
           <div class="cabin flex centered">
             <div class="arrows flex">
               <button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />
+                <img draggable="false" alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
             <div
@@ -110,7 +145,6 @@
               @keyup.right="right = false"
             >
               <Tiz
-                style="width: 75%; z-index: 3; margin-bottom: 12px"
                 :avatar="0"
                 :hat="0"
                 :body="0"
@@ -127,50 +161,75 @@
             </div>
             <div class="arrows flex">
               <button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" /></button
+                <img
+                  draggable="false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                /></button
               ><button>
-                <img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />
+                <img draggable="false" alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
           </div>
           <div class="controls">
             <div>
               <button>
-                <img draggable="false" 
+                <img
+                  draggable="false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
               ><br /><button>
-                <img draggable="false" 
+                <img
+                  draggable="false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
               ><button id="random">
-                <img draggable="false" 
+                <img
+                  draggable="false"
                   alt="Random button"
                   title="Randomize look"
                   src="@/assets/img/home/chaparadio/stop.svg"
                 /></button
               ><button>
-                <img draggable="false" 
+                <img
+                  draggable="false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
-                <img draggable="false" 
+                <img
+                  draggable="false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
@@ -181,19 +240,22 @@
           </div>
           <div class="gender">
             <button>
-              <img draggable="false" 
+              <img
+                draggable="false"
                 alt="Male gender"
                 title="Male gender"
                 src="@/assets/img/sex/male.svg"
               /></button
             ><button>
-              <img draggable="false" 
+              <img
+                draggable="false"
                 alt="Female gender"
                 title="Female gender"
                 src="@/assets/img/sex/female.svg"
               /></button
             ><button>
-              <img draggable="false" 
+              <img
+                draggable="false"
                 alt="Unknown gender"
                 title="Unknown gender"
                 src="@/assets/img/sex/unknown.svg"
@@ -297,15 +359,16 @@ export default {
 <style lang="scss">
 .cabin-scene .tiz {
   position: relative;
-  width: 100%;
+  width: 75%;
+  z-index: 3;
+  margin-bottom: 4px;
 }
 </style>
 
 <style lang="scss" scoped>
 .container-acc {
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
 }
 
 input[type="text"] {
@@ -313,7 +376,6 @@ input[type="text"] {
   border-radius: 100px;
 }
 .left-acc {
-  width: 33%;
   flex-direction: column;
 }
 
@@ -325,7 +387,6 @@ h3 {
 }
 
 .right-acc {
-  width: 67%;
   flex-direction: column;
 }
 
@@ -355,10 +416,9 @@ h3 {
 .cabin-scene {
   position: relative;
   width: 100%;
-  justify-content: space-evenly;
+  height: 100%;
   align-items: flex-end;
   margin: 0 -12px;
-  height: 180px;
 }
 
 .cabin-scene:before {
@@ -398,7 +458,6 @@ h3 {
 .arrows {
   flex-direction: column;
   z-index: 3;
-  justify-content: space-evenly;
 }
 
 .arrows {
@@ -433,11 +492,6 @@ button {
   filter: brightness(0.9);
 }
 
-.cabin {
-  width: 100%;
-  justify-content: center;
-}
-
 .circle {
   width: 100%;
   height: 20%;
@@ -456,6 +510,21 @@ button {
   position: absolute;
   animation: blink 0.3s infinite;
   z-index: 2;
+}
+
+@media (min-width: 800px) {
+  .left-acc {
+    width: 33%;
+  }
+
+  .right-acc {
+    width: 67%;
+  }
+
+  .container-acc {
+    flex-direction: row;
+    align-items: inherit;
+  }
 }
 
 @keyframes blink {
