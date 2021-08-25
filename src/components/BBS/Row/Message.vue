@@ -7,18 +7,17 @@
       ><br />{{ format(message.date, "PPP à pp") }}
     </td>
     <td class="msg-body justified">
-      <div class="title ellipsis">
-        <b
-          ><img
-            draggable="false"
-            alt="Voir le dernier message"
-            title="Voir le dernier message"
-            :src="
-              require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
-            "
-          />
-          {{ message.title }}</b
-        >
+      <div class="head flex">
+        <img
+          draggable="false"
+          alt="Voir le dernier message"
+          title="Voir le dernier message"
+          :src="require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)"
+        /><h4 class="title ellipsis">&nbsp;{{ message.title }}</h4>
+        <img
+          alt="Quote button"
+          src="https://chapatizretro.com/data/content/images/bbs/icon_quote.png"
+        />
       </div>
       <hr />
       <div class="content" v-html="formatMd(message.content)"></div>
@@ -92,5 +91,14 @@ export default {
 <style lang="scss" scoped>
 td {
   padding: 6px;
+}
+
+.head {
+  flex-wrap: wrap;
+}
+
+.title {
+  flex: 1;
+  align-self: center;
 }
 </style>

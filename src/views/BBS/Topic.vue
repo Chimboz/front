@@ -95,8 +95,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.main-column {
-  width: 100% !important;
-}
-</style>

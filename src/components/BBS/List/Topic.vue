@@ -1,23 +1,34 @@
 <template>
   <span class="pink justified" style="text-align: left">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link :to="'/bbs/'+$route.params.id" class="pink">BBS</router-link></span
+    <router-link :to="'/bbs/' + $route.params.id" class="pink"
+      >BBS</router-link
+    ></span
   >
-  <h1 class="justified" v-if="messages[0]">
-    <router-link :to="'/bbs/'+$route.params.id+'/'+$route.params.topic" class="pink">{{
-      messages[0].title
-    }}</router-link></h1
+  <router-link
+    :to="'/bbs/' + $route.params.id + '/' + $route.params.topic"
+    class="pink"
+    ><h1 class="justified ellipsis" v-if="messages[0]">
+      {{ messages[0].title }}
+    </h1></router-link
   >
   <br />
   <table class="bbs">
     <thead>
       <tr>
-        <th valign="top" colspan=2 height="25" nowrap="nowrap">
+        <th valign="top" colspan="2" height="25" nowrap="nowrap">
           « Sujet Précédent Sujet Suivant »
         </th>
       </tr>
     </thead>
-    <Message v-for="(message, index) in messages" :key="message.id" :message="message" :separator="index != messages.length-1"/>
+    <tbody>
+      <Message
+        v-for="(message, index) in messages"
+        :key="message.id"
+        :message="message"
+        :separator="index != messages.length - 1"
+      />
+    </tbody>
   </table>
 </template>
 
@@ -37,3 +48,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.ellipsis {
+  color: #ff3399;
+}
+</style>
