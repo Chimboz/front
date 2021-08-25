@@ -9,9 +9,6 @@
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
-    "@bbob/core": "^2.7.0",
-    "@bbob/html": "^2.7.0",
-    "@bbob/preset-html5": "^2.7.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "date-fns": "^2.22.1",
@@ -21,7 +18,8 @@
     "vue-axios": "^3.2.4",
     "vue-i18n": "^9.1.0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "xbbcode-parser": "^0.1.2"
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^2.1.0",

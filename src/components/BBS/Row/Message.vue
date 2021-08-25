@@ -34,9 +34,7 @@
 
 <script>
 import Tiz from "@/components/Tiz.vue";
-import bbob from "@bbob/core";
-import { render } from "@bbob/html";
-import presetHTML5 from "@bbob/preset-html5";
+import XBBCode from "xbbcode-parser";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 
@@ -58,7 +56,11 @@ export default {
   },
   methods: {
     formatBBCode(code) {
-      return bbob(presetHTML5()).process(code, { render }).html;
+      return XBBCode.process({
+        text: code,
+        removeMisalignedTags: false,
+        addInLineBreaks: true,
+      }).html;
     },
     format(date, pattern) {
       return format(new Date(date), pattern, {
