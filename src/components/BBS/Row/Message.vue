@@ -76,7 +76,6 @@ export default {
 </style>
 <style lang="scss" scoped>
 td {
-  background: #fff;
   padding: 6px;
 }
 </style>

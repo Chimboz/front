@@ -92,19 +92,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-tr {
-  background: white;
-}
-
 .category th {
   padding: 0 5px;
   color: #6090be;
 }
 .category{
   text-align: left;
-}
-
-.bbs .icon {
-  padding: 10px;
 }
 </style>

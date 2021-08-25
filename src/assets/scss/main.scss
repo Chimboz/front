@@ -151,7 +151,6 @@ img {
   white-space: nowrap;
 }
 
-// Card lists
 .card .list {
   display: flex;
   justify-content: flex-start;
@@ -206,6 +205,48 @@ img {
   padding: 8px;
   font-size: 25px;
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
+}
+
+table.bbs {
+  width: 100%;
+  border-spacing: 0;
+  box-shadow: 0 0 3px#000;
+  border-radius: 4px;
+  background: #c9dfef;
+  padding: 6px 0;
+}
+.bbs th {
+  height: 24px;
+  background-image: linear-gradient(
+    to bottom,
+    #c9dfef 0px,
+    #c9dfef 50%,
+    #d6e7f3 100%
+  );
+  border-bottom: 1px solid #a2bdd1;
+}
+.bbs td:nth-child(3),
+.bbs td:nth-child(4),
+.bbs th:nth-child(3),
+.bbs th:nth-child(4) {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .bbs td:nth-child(3),
+  .bbs td:nth-child(4),
+  .bbs th:nth-child(3),
+  .bbs th:nth-child(4) {
+    display: table-cell;
+  }
+}
+
+tr {
+  background: white;
+}
+
+.topic .icon {
+  padding: 10px;
 }
 
 // Atomic classes
