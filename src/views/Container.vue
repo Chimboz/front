@@ -75,6 +75,7 @@
   .main-column {
     flex: 1 0 0%;
     order: 0;
+    min-width: 0
   }
 }
 </style>
