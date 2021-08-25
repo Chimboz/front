@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td class="info" width=100>
+    <td class="info" width="100" valign="top">
       <Tiz /><br /><a :href="'/annuaire/' + message.author.id">{{
         message.author.name
       }}</a
@@ -28,7 +28,7 @@
     </td>
   </tr>
   <tr v-if="separator">
-    <td colspan=2 style="background: #fff"><hr /></td>
+    <td colspan="2" style="background: #fff"><hr /></td>
   </tr>
 </template>
 
