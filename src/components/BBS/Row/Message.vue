@@ -7,13 +7,14 @@
       ><br />{{ format(message.date, "PPP à pp") }}
     </td>
     <td class="msg-body justified">
-      <div class="head flex">
+      <div class="head flex centered">
         <img
           draggable="false"
           alt="Voir le dernier message"
           title="Voir le dernier message"
           :src="require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)"
-        /><h4 class="title ellipsis">&nbsp;{{ message.title }}</h4>
+        />
+        <h4 class="ellipsis justified title">{{ message.title }}</h4>
         <img
           alt="Quote button"
           src="https://chapatizretro.com/data/content/images/bbs/icon_quote.png"
@@ -99,6 +100,5 @@ td {
 
 .title {
   flex: 1;
-  align-self: center;
 }
 </style>
