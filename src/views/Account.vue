@@ -264,24 +264,30 @@
           </div>
         </div>
         <div class="right-acc flex">
-          <div class="nav-acc">
-            <button>{{ $t("myAccount.profileSection") }}</button
-            ><button>{{ $t("myAccount.invSection") }}</button>
-            <div id="profile">
-              <h3>Ta phrase préférée</h3>
-              <input type="text" />
-              <h3>Ta page perso</h3>
-              <input type="text" />
-              <h3>centres d'intéret</h3>
-              1&nbsp;<input type="text" /><br />1&nbsp;<input
-                type="text"
-              /><br />1&nbsp;<input type="text" /><br />1&nbsp;<input
-                type="text"
-              />
-            </div>
+          <div class="nav-acc flex">
+            <Button :class="{active: profile}" @click="profile=true">{{ $t("myAccount.profileSection") }}</Button
+            ><Button :class="{active: !profile}" @click="profile=false">{{ $t("myAccount.invSection") }}</Button>
+          </div>
+          <div id="profile" :class="{active: profile}">
+            <h3>Ta phrase préférée</h3>
+            <input type="text" />
+            <h3>Ta page perso</h3>
+            <input type="text" />
+            <h3>centres d'intéret</h3>
+            1&nbsp;<input type="text" /><br />1&nbsp;<input
+              type="text"
+            /><br />1&nbsp;<input type="text" /><br />1&nbsp;<input
+              type="text"
+            />
+          </div>
+          <div id="inventory" :class="{active: !profile}">
+            <div class="category"></div>
+            <div class="chest"></div>
+            <div class="desc"></div>
           </div>
         </div>
       </div>
+      <div class="flex"><Button>Annuler</Button><Button>Sauver</Button><Button>Fiche</Button></div>
     </Card>
     <template #right-column>
       <Card blue filename="messages.gif"> </Card><br />
@@ -318,6 +324,7 @@ export default {
   },
   data() {
     return {
+      profile: true,
       up: false,
       down: false,
       right: false,
@@ -419,6 +426,18 @@ h3 {
   height: 100%;
   align-items: flex-end;
   margin: 0 -12px;
+}
+
+#profile, #inventory{
+  display: none;
+}
+
+#profile.active, #inventory.active {
+  display: unset;
+}
+
+.nav-acc .active {
+  color: red;
 }
 
 .cabin-scene:before {

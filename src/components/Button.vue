@@ -93,6 +93,7 @@ export default {
   stroke-width: 3;
   stroke: var(--button-color-5);
   height: 100%;
+  width: 100%
 }
 
 .btn-icon {
@@ -103,7 +104,7 @@ export default {
   filter: brightness(1.1);
 }
 
-.btn:active {
+.btn:active, .btn.active {
   background-image: linear-gradient(
     to top,
     var(--button-color-1) 0%,
