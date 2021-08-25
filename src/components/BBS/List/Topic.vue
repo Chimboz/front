@@ -12,7 +12,7 @@
   <table class="bbs">
     <thead>
       <tr>
-        <th valign="top" height="25" nowrap="nowrap">
+        <th valign="top" colspan=2 height="25" nowrap="nowrap">
           « Sujet Précédent Sujet Suivant »
         </th>
       </tr>

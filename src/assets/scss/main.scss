@@ -58,8 +58,8 @@ body {
   background-color: #ff6600;
   color: #fff;
   text-shadow: 1px 0 0 #ce4800, -1px 0 0 #ce4800, 0 1px 0 #ce4800,
-    0 -1px 0 #ce4800, .7px .7px #ce4800, -.7px -.7px 0 #ce4800, .7px -.7px 0 #ce4800,
-    -.7px .7px 0 #ce4800;
+    0 -1px 0 #ce4800, 0.7px 0.7px #ce4800, -0.7px -0.7px 0 #ce4800,
+    0.7px -0.7px 0 #ce4800, -0.7px 0.7px 0 #ce4800;
 }
 
 // Default tags
@@ -143,6 +143,12 @@ img {
   padding: 0 5px;
   color: #fff;
   align-items: center;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 // Card lists
