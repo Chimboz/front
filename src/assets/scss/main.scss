@@ -110,6 +110,14 @@ img {
   vertical-align: middle;
 }
 
+tr {
+  background: #fff;
+}
+
+p {
+  padding-bottom: 6px;
+}
+
 // App width
 #app {
   width: 100%;
@@ -239,10 +247,6 @@ table.bbs {
   .bbs th:nth-child(4) {
     display: table-cell;
   }
-}
-
-tr {
-  background: white;
 }
 
 .topic .icon, .bbs .icon {
