@@ -21,7 +21,7 @@
         >
       </div>
       <hr />
-      <div class="content" v-html="formatBBCode(message.content)"></div>
+      <div class="content" v-html="formatMd(message.content)"></div>
       <div class="signature" v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>
       </div>
@@ -34,7 +34,8 @@
 
 <script>
 import Tiz from "@/components/Tiz.vue";
-import XBBCode from "xbbcode-parser";
+import Marked from "marked";
+import DOMPurify from "dompurify";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 
@@ -55,12 +56,24 @@ export default {
     },
   },
   methods: {
-    formatBBCode(code) {
-      return XBBCode.process({
-        text: code,
-        removeMisalignedTags: false,
-        addInLineBreaks: true,
-      }).html;
+    formatMd(message) {
+      Marked.setOptions({
+        renderer: new Marked.Renderer(),
+        highlight: function (code, lang) {
+          const hljs = require("highlight.js");
+          const language = hljs.getLanguage(lang) ? lang : "plaintext";
+          return hljs.highlight(code, { language }).value;
+        },
+        langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+        pedantic: false,
+        gfm: true,
+        breaks: true,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false,
+        xhtml: false,
+      });
+      return DOMPurify.sanitize(Marked(message));
     },
     format(date, pattern) {
       return format(new Date(date), pattern, {
