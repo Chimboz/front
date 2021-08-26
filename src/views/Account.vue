@@ -274,17 +274,18 @@
           </div>
           <div id="profile" :class="{ active: profile }">
             <Emotes />
-            <br>
+            <br />
             <h3 class="justified">Ta phrase préférée</h3>
             <input type="text" />
             <h3 class="justified">Ta page perso</h3>
             <input type="text" />
             <h3 class="justified">centres d'intéret</h3>
-            1&nbsp;<input type="text" /><br />2&nbsp;<input
-              type="text"
-            /><br />3&nbsp;<input type="text" /><br />4&nbsp;<input
-              type="text"
-            />
+            <ol>
+              <li><input type="text" /></li>
+              <li><input type="text" /></li>
+              <li><input type="text" /></li>
+              <li><input type="text" /></li>
+            </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
             <div class="category"></div>
@@ -293,7 +294,7 @@
           </div>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex btn-menu">
         <Button red>Annuler</Button
         ><Button green
           ><template #prepend
@@ -411,8 +412,18 @@ input[type="text"] {
   background: #c8deef;
 }
 
+li::marker {
+  font-family: "Chimboz Heavy";
+  font-size: 18px;
+  color: #2a5380;
+}
+
 .left-acc {
   flex-direction: column;
+}
+
+.btn-menu .btn {
+  margin: 4px;
 }
 
 h3 {
@@ -464,7 +475,7 @@ h3 {
 }
 
 #profile input {
-  width: 100%
+  width: 100%;
 }
 
 #profile.active,
