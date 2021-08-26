@@ -51,7 +51,7 @@
 <script>
 import Card from "@/components/Card.vue";
 import Topic from "@/components/BBS/List/Topic.vue";
-import Container from "@/views/Container.vue";
+import Container from "@/components/Container.vue";
 
 export default {
   name: "BBS",

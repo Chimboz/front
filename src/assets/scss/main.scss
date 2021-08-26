@@ -190,6 +190,10 @@ p {
   transform: rotateZ(-25deg);
 }
 
+button:hover .arrow {
+  animation: jitter 0.5s forwards;
+}
+
 .level {
   background: linear-gradient(
       to right,
@@ -312,6 +316,5 @@ table.bbs {
   }
   100% {
     transform: rotateZ(-30deg) scale(1.15);
-    filter: saturate(1.5);
   }
 }

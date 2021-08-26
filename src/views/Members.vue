@@ -101,7 +101,7 @@
 import Card from "@/components/Card.vue";
 import Rules from "@/components/Rules.vue";
 import Tiz from "@/components/Tiz.vue";
-import Container from "@/views/Container.vue";
+import Container from "@/components/Container.vue";
 
 export default {
   name: "Members",

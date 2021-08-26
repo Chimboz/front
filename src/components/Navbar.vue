@@ -339,9 +339,5 @@ a:hover {
     margin-right: -30px;
     z-index: 2;
   }
-
-  .nav-btn:hover .arrow {
-    animation: jitter 0.5s forwards;
-  }
 }
 </style>

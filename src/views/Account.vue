@@ -265,29 +265,46 @@
         </div>
         <div class="right-acc flex">
           <div class="nav-acc flex">
-            <Button :class="{active: profile}" @click="profile=true">{{ $t("myAccount.profileSection") }}</Button
-            ><Button :class="{active: !profile}" @click="profile=false">{{ $t("myAccount.invSection") }}</Button>
+            <Button :class="{ active: profile }" @click="profile = true">{{
+              $t("myAccount.profileSection")
+            }}</Button
+            ><Button :class="{ active: !profile }" @click="profile = false">{{
+              $t("myAccount.invSection")
+            }}</Button>
           </div>
-          <div id="profile" :class="{active: profile}">
-            <h3>Ta phrase préférée</h3>
+          <div id="profile" :class="{ active: profile }">
+            <Emotes />
+            <br>
+            <h3 class="justified">Ta phrase préférée</h3>
             <input type="text" />
-            <h3>Ta page perso</h3>
+            <h3 class="justified">Ta page perso</h3>
             <input type="text" />
-            <h3>centres d'intéret</h3>
-            1&nbsp;<input type="text" /><br />1&nbsp;<input
+            <h3 class="justified">centres d'intéret</h3>
+            1&nbsp;<input type="text" /><br />2&nbsp;<input
               type="text"
-            /><br />1&nbsp;<input type="text" /><br />1&nbsp;<input
+            /><br />3&nbsp;<input type="text" /><br />4&nbsp;<input
               type="text"
             />
           </div>
-          <div id="inventory" :class="{active: !profile}">
+          <div id="inventory" :class="{ active: !profile }">
             <div class="category"></div>
             <div class="chest"></div>
             <div class="desc"></div>
           </div>
         </div>
       </div>
-      <div class="flex"><Button>Annuler</Button><Button>Sauver</Button><Button>Fiche</Button></div>
+      <div class="flex">
+        <Button red>Annuler</Button
+        ><Button green
+          ><template #prepend
+            ><img
+              draggable="false"
+              alt="Arrow icon"
+              class="arrow jitter"
+              src="@/assets/img/arrow.svg" /></template
+          >Sauver</Button
+        ><Button>Fiche</Button>
+      </div>
     </Card>
     <template #right-column>
       <Card blue filename="messages.gif"> </Card><br />
@@ -310,8 +327,9 @@
 import Card from "@/components/Card.vue";
 import Button from "@/components/Button.vue";
 import Tiz from "@/components/Tiz.vue";
+import Emotes from "@/components/Emotes.vue";
 import AnimatedNumber from "@/components/AnimatedNumber.vue";
-import Container from "@/views/Container.vue";
+import Container from "@/components/Container.vue";
 
 export default {
   name: "Account",
@@ -321,6 +339,7 @@ export default {
     AnimatedNumber,
     Container,
     Tiz,
+    Emotes,
   },
   data() {
     return {
@@ -379,9 +398,19 @@ export default {
 }
 
 input[type="text"] {
+  text-align: center;
+  font-family: "Pixelated Verdana";
+  font-weight: bold;
+  font-size: 13.3333px;
+  color: #2a5380;
+  border: 2px solid;
+  border-color: #369 #39c #39c #369;
+  box-shadow: inset 1px 1px 2px #3699;
   padding: 2px;
-  border-radius: 100px;
+  border-radius: 6px;
+  background: #c8deef;
 }
+
 .left-acc {
   flex-direction: column;
 }
@@ -428,11 +457,18 @@ h3 {
   margin: 0 -12px;
 }
 
-#profile, #inventory{
+#profile,
+#inventory {
   display: none;
+  padding: 10px;
 }
 
-#profile.active, #inventory.active {
+#profile input {
+  width: 100%
+}
+
+#profile.active,
+#inventory.active {
   display: unset;
 }
 
@@ -544,6 +580,10 @@ button {
     flex-direction: row;
     align-items: inherit;
   }
+}
+
+.arrow {
+  filter: hue-rotate(135deg) saturate(1.5) !important;
 }
 
 @keyframes blink {

@@ -1,6 +1,12 @@
 <template>
   <button class="btn flex" :style="cssVars">
-    <img draggable="false"  v-if="icon" class="btn-icon" :src="require(`@/assets/img/icons/buttons/${icon}`)" />
+    <slot name="prepend"></slot>
+    <img
+      draggable="false"
+      v-if="icon"
+      class="btn-icon"
+      :src="require(`@/assets/img/icons/buttons/${icon}`)"
+    />
     <div class="btn-text">
       <StrokeText><slot></slot></StrokeText>
     </div>
@@ -17,7 +23,17 @@ export default {
   props: {
     icon: {
       required: false,
-      type: String
+      type: String,
+    },
+    red: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    green: {
+      required: false,
+      type: Boolean,
+      default: false,
     },
     yellow: {
       required: false,
@@ -47,6 +63,22 @@ export default {
           "--button-color-3": "#ce4800",
           "--button-color-4": "#ff6600",
           "--button-color-5": "#973500",
+        };
+      if (this.red)
+        return {
+          "--button-color-1": "#ffe0e0",
+          "--button-color-2": "#f11818",
+          "--button-color-3": "#c90303",
+          "--button-color-4": "#ff0000",
+          "--button-color-5": "#ac0000",
+        };
+      if (this.green)
+        return {
+          "--button-color-1": "#f6fbf5",
+          "--button-color-2": "#53af35",
+          "--button-color-3": "#206501",
+          "--button-color-4": "#279b00",
+          "--button-color-5": "#154301",
         };
       return {
         "--button-color-1": "#ffe4f5",
@@ -93,7 +125,7 @@ export default {
   stroke-width: 3;
   stroke: var(--button-color-5);
   height: 100%;
-  width: 100%
+  width: 100%;
 }
 
 .btn-icon {
@@ -104,7 +136,8 @@ export default {
   filter: brightness(1.1);
 }
 
-.btn:active, .btn.active {
+.btn:active,
+.btn.active {
   background-image: linear-gradient(
     to top,
     var(--button-color-1) 0%,

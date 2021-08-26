@@ -151,7 +151,7 @@
 import Card from "@/components/Card.vue";
 import Button from "@/components/Button.vue";
 import AnimatedNumber from "@/components/AnimatedNumber.vue";
-import Container from "@/views/Container.vue";
+import Container from "@/components/Container.vue";
 
 export default {
   name: "Home",

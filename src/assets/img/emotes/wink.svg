@@ -2,7 +2,7 @@
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" height="23.5px" width="23.5px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 40.05, 13.0)">
     <use height="23.45" transform="matrix(1.0, 0.0, 0.0, 1.0, -40.0, -13.0)" width="23.45" xlink:href="#sprite0"/>
-    <use height="8.5" transform="matrix(1.0, 0.0, 0.0, 1.0, -37.0, -3.2)" width="16.9" xlink:href="#shape1"/>
+    <use height="11.45" transform="matrix(1.0, 0.0, 0.0, 1.0, -34.55, -5.55)" width="12.7" xlink:href="#shape1"/>
   </g>
   <defs>
     <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 11.7, 11.75)">
@@ -15,8 +15,10 @@
       <path d="M2.25 -10.55 L0.05 -10.75 -3.35 -10.25 M-5.05 -9.5 L-6.9 -8.25 M-9.25 -5.45 Q-10.75 -3.05 -10.7 -0.1 L-10.7 0.05 Q-10.75 4.45 -7.6 7.6" fill="none" stroke="#ff99cc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0"/>
       <path d="M-3.35 -10.25 L-5.05 -9.5 M-6.9 -8.25 L-7.6 -7.6 -9.25 -5.45" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0"/>
     </g>
-    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 37.0, 3.2)">
-      <path d="M-20.1 -3.2 L-22.85 2.3 -24.65 -0.55 -26.95 1.6 -28.2 -0.45 -29.9 1.5 -31.75 -0.55 -33.8 1.85 -37.0 -3.2 Q-32.2 -1.75 -28.05 -1.75 -24.45 -1.75 -20.1 -3.2 M-28.45 2.2 L-26.55 3.75 -24.7 1.8 -24.35 5.0 -28.15 5.3 -33.05 4.7 -31.85 1.85 -30.3 3.9 -28.45 2.2" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 34.55, 5.55)">
+      <path d="M-28.15 5.9 Q-30.8 5.9 -32.7 3.4 -34.1 1.65 -34.55 -0.15 -27.7 0.7 -21.85 -0.35 -22.2 1.65 -23.6 3.4 -25.5 5.9 -28.15 5.9" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+      <path d="M-29.65 -2.5 Q-30.2 -1.95 -30.95 -1.95 -31.7 -1.95 -32.2 -2.5 -32.75 -3.0 -32.75 -3.75 -32.75 -4.5 -32.2 -5.05 -31.7 -5.55 -30.95 -5.55 -30.2 -5.55 -29.65 -5.05 -29.15 -4.5 -29.15 -3.75 -29.15 -3.0 -29.65 -2.5" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+      <path d="M-26.45 -2.65 Q-25.0 -4.0 -23.05 -4.6" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
     </g>
   </defs>
 </svg>
