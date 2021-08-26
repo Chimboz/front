@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr :id="message.id">
     <td class="info" width="100" valign="top">
       <Tiz /><br /><a :href="'/annuaire/' + message.author.id">{{
         message.author.name
@@ -8,11 +8,13 @@
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
-        <img
-          draggable="false"
-          alt="Voir le dernier message"
-          title="Voir le dernier message"
-          :src="require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)"
+          <img
+            draggable="false"
+            alt="Voir le dernier message"
+            title="Voir le dernier message"
+            :src="
+              require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
+            "
         />
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         <img
