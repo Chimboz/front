@@ -189,7 +189,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/home.json");
+      this.data = await this.axios.get("/api/home.json").then((res)=>res.data);
     } catch (error) {
       this.error = error.toString();
     }

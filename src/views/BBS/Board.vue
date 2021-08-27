@@ -143,7 +143,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/bbs_agora.json");
+      this.data = await this.axios.get("/api/bbs_agora.json").then((res)=>res.data);
     } catch (error) {
       this.error = error.toString();
     }

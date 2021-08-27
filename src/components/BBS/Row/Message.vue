@@ -7,8 +7,9 @@
       ><br />{{ format(message.date, "PPP à pp") }}
     </td>
     <td class="msg-body justified">
-      <div class="head flex centered">·
-        <router-link :to="'#'+message.id">
+      <div class="head flex centered">
+        ·
+        <router-link :to="'#' + message.id">
           <img
             draggable="false"
             alt="Voir le dernier message"
@@ -59,7 +60,15 @@ export default {
       type: Boolean,
     },
   },
+  mounted() {
+    if (this.$route.hash) {
+      this.scrollTo(this.$route.hash);
+    }
+  },
   methods: {
+    scrollTo(anchor) {
+      location.href = anchor;
+    },
     formatMd(message) {
       Marked.setOptions({
         renderer: new Marked.Renderer(),
