@@ -145,13 +145,13 @@
               @keyup.right="right = false"
             >
               <Tiz
-                :avatar="0"
-                :hat="0"
-                :body="0"
-                :shoes="0"
-                :item0="0"
-                :item1="0"
-                :item2="0"
+                :avatar="data.look.avatar"
+                :hat="data.look.hat"
+                :body="data.look.body"
+                :shoes="data.look.shoes"
+                :item0="data.look.item0"
+                :item1="data.look.item1"
+                :item2="data.look.item2"
                 :up="up"
                 :down="down"
                 :left="left"
@@ -276,15 +276,15 @@
             <Emotes />
             <br />
             <h3 class="justified">Ta phrase préférée</h3>
-            <input type="text" />
+            <input type="text" v-model="data.phrase_pref" />
             <h3 class="justified">Ta page perso</h3>
-            <input type="text" />
+            <input type="text" v-model="data.website" />
             <h3 class="justified">centres d'intéret</h3>
             <ol>
-              <li><input type="text" /></li>
-              <li><input type="text" /></li>
-              <li><input type="text" /></li>
-              <li><input type="text" /></li>
+              <li><input type="text" v-model="data.centres[0]" /></li>
+              <li><input type="text" v-model="data.centres[1]" /></li>
+              <li><input type="text" v-model="data.centres[2]" /></li>
+              <li><input type="text" v-model="data.centres[3]" /></li>
             </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
@@ -295,8 +295,7 @@
         </div>
       </div>
       <div class="flex btn-menu">
-        <Button red>Annuler</Button
-        ><Button green
+        <Button green
           ><template #prepend
             ><img
               draggable="false"
@@ -355,7 +354,7 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    const url = "/api/home.json";
+    const url = "/api/profile.json";
     next((vm) => {
       vm.axios
         .get(url)
@@ -462,8 +461,8 @@ h3 {
 
 .cabin-scene {
   position: relative;
-  width: 100%;
-  height: 100%;
+  height: 140px;
+  width: 100px;
   align-items: flex-end;
   margin: 0 -12px;
 }
