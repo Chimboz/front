@@ -8,7 +8,6 @@
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
-        ·
         <router-link :to="'#' + message.id">
           <img
             draggable="false"
