@@ -39,7 +39,7 @@
         ><span class="gensmall"
           >Modérateur
           <div v-for="mod in bbs.mods" :key="mod.id" style="display: inline">
-            <router-link :to="'/groups/' + mod.id">{{ mod.name }}</router-link>
+            <router-link :to="'groups/' + mod.id">{{ mod.name }}</router-link>
             <div
               v-if="bbs.mods.indexOf(mod) != bbs.mods.length - 1"
               style="display: inline"
@@ -57,15 +57,15 @@
       </td>
       <td align="center" valign="middle" nowrap="nowrap">
         {{ formatDate(bbs.last_msg.date) }}<br />
-        <a href="/annuaire/5">{{ bbs.last_msg.author.name }}</a>
+        <router-link :to="'/annuaire/'+bbs.last_msg.author.id">{{ bbs.last_msg.author.name }}</router-link>
         &nbsp;»&nbsp;
-        <a href="/topic/938277"
+        <router-link :to="'/bbs/'+bbs.id+'/'+bbs.last_msg.topicid+'#'+bbs.last_msg.msgid"
           ><img
             draggable="false"
             :src="require(`@/assets/img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
-        /></a>
+        /></router-link>
       </td>
     </tr>
     <tr v-if="index != category.bbs.length - 1">

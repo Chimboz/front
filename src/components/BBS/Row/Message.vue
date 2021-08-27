@@ -8,6 +8,7 @@
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
+        <a :href="'#'+message.id">
           <img
             draggable="false"
             alt="Voir le dernier message"
@@ -15,14 +16,15 @@
             :src="
               require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
-        />
+          />
+        </a>
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         <img
           alt="Quote button"
           src="https://chapatizretro.com/data/content/images/bbs/icon_quote.png"
         />
       </div>
-      <hr />
+      <hr style="margin: 2px 0" />
       <div class="content" v-html="formatMd(message.content)"></div>
       <div class="signature" v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>

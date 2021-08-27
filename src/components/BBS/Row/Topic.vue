@@ -26,7 +26,7 @@
         <span class="gensmall">{{ topic.reply }}</span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall">{{ topic.author.name }}</span>
+        <span class="gensmall"><router-link :to="'/annuaire/'+topic.author.id">{{ topic.author.name }}</router-link></span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
         <span class="gensmall">{{ topic.view }}</span>
@@ -39,14 +39,14 @@
         nowrap="nowrap"
       >
         {{ formatDate(topic.last_msg.date) }}<br />
-        <a href="/annuaire/5">{{ topic.last_msg.author.name }}</a>
+        <router-link :to="'annuaire/'+topic.last_msg.author.id">{{ topic.last_msg.author.name }}</router-link>
         &nbsp;»&nbsp;
-        <a href="/topic/938277"
+        <router-link :to="$route.params.id+'/'+topic.id+'#'+topic.last_msg.msgid"
           ><img draggable="false" 
             :src="require(`@/assets/img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
-        /></a>
+        /></router-link>
       </td>
     </tr>
     <tr v-if="separator">
