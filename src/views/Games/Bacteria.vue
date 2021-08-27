@@ -4,64 +4,106 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.link")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.link") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.internalMessagingLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myGroupsLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myFriendsLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" 
+            ><img
+              draggable="false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.notSmartLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" 
+            ><img
+              draggable="false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.shoppingLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
           >
         </div> </Card
       ><br />
       <Rules />
     </template>
     <Card filename="bacteria.gif" justified>
-      <div class="centered">
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false"  alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Records</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false"  alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Meilleurs</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false"  alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Pires</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false"  alt="Caret" src="@/assets/img/icons/caret.png" />&nbsp;Les Groupes</a>
-        <a href="#tutorial" class="btn-sm pink-bg">
-          <img draggable="false"  alt="Help icon" src="@/assets/img/icons/help.png" />&nbsp;Comment
-          jouer&nbsp;?
-        </a>
+      <div class="flex centered hstack">
+        <router-link to="#records" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            alt="Caret"
+            src="@/assets/img/icons/caret.png"
+          />&nbsp;Les Records</router-link
+        >
+        <router-link to="#best" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            alt="Caret"
+            src="@/assets/img/icons/caret.png"
+          />&nbsp;Les Meilleurs</router-link
+        >
+        <router-link to="#worst" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            alt="Caret"
+            src="@/assets/img/icons/caret.png"
+          />&nbsp;Les Pires</router-link
+        >
+        <router-link to="#groups" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            alt="Caret"
+            src="@/assets/img/icons/caret.png"
+          />&nbsp;Les Groupes</router-link
+        >
+        <router-link to="#tutorial" class="btn-sm pink-bg">
+          <img
+            draggable="false"
+            alt="Help icon"
+            src="@/assets/img/icons/help.png"
+          />&nbsp;Comment jouer&nbsp;?
+        </router-link>
       </div>
       <br />
-      <img draggable="false" 
+      <img
+        draggable="false"
         src="@/assets/img/games/bacteria/preview.gif"
         alt="A game of bacteria"
         title="A game of bacteria"
@@ -81,7 +123,7 @@
       <br />
     </Card>
     <br />
-    <Card>
+    <Card id="records">
       <template #header>Records !</template>
       <template #subtitle
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -98,7 +140,7 @@
       <b>match nuls</b><br />
       <div class="fullwidth light">Gucci avec 11 match nuls !</div>
     </Card>
-    <br /><Card>
+    <br /><Card id="best">
       <template #header>Les 20 plus acharnés de Bacteria !</template>
       <template #subtitle
         >Des heures de phagocytage acharné pour en arriver la...</template
@@ -125,7 +167,7 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card>
+    <br /><Card id="worst">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br />
@@ -148,13 +190,9 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card>
-      <template #header>Les 10 meilleurs groupes de Bacteria !
-</template>
-      <template #subtitle
-        >Plus on est de fous...</template
-      >
-
+    <br /><Card id="groups">
+      <template #header>Les 10 meilleurs groupes de Bacteria !</template>
+      <template #subtitle>Plus on est de fous...</template>
       <table class="score fullwidth">
         <thead>
           <tr>

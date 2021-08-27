@@ -7,8 +7,8 @@
       ><br />{{ format(message.date, "PPP à pp") }}
     </td>
     <td class="msg-body justified">
-      <div class="head flex centered">
-        <a :href="'#'+message.id">
+      <div class="head flex centered">·
+        <router-link :to="'#'+message.id">
           <img
             draggable="false"
             alt="Voir le dernier message"
@@ -17,7 +17,7 @@
               require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
           />
-        </a>
+        </router-link>
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         <img
           alt="Quote button"

@@ -11,11 +11,8 @@ const routes = [
   {
     path: "/tchat",
     name: "Tchat",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Tchat.vue"),
+      import("../views/Tchat.vue"),
     meta: { title: "Chapatiz Retro | Tchat" },
   },
   {
@@ -82,7 +79,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   scrollBehavior(to) {
     if (to.hash) {
       return {

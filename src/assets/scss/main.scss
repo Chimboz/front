@@ -1,6 +1,7 @@
 // Setting useful variables
 :root {
   --main: 0;
+  --gap: 2px;
 }
 
 // Reseting
@@ -143,6 +144,19 @@ th, td {
 }
 
 // Custom classes
+.hstack {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: calc(-1 * var(--gap));
+  margin-right: calc(-1 * var(--gap));
+}
+
+.hstack > * {
+  margin-right: var(--gap);
+  margin-bottom: var(--gap);
+}
+
 .pink {
   color: #ff3399;
 }

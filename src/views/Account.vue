@@ -406,7 +406,7 @@ input[type="text"] {
   border: 2px solid;
   border-color: #369 #39c #39c #369;
   box-shadow: inset 1px 1px 2px #3699;
-  padding: 2px;
+  padding: 2px 6px;
   border-radius: 6px;
   background: #c8deef;
 }
