@@ -14,6 +14,10 @@
   >
   <br />
   <table class="bbs">
+    <colgroup>
+      <col width="100" />
+      <col width="100%" />
+    </colgroup>
     <thead>
       <tr>
         <th valign="top" colspan="2" height="25" nowrap="nowrap">

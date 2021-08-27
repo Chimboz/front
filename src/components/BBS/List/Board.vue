@@ -5,6 +5,14 @@
   >
   <br />
   <table class="bbs">
+    <colgroup>
+      <col width="60" />
+      <col width="100%" />
+      <col width="60" />
+      <col width="100" />
+      <col width="60" />
+      <col width="100" />
+    </colgroup>
     <thead>
       <tr>
         <th colspan="2" valign="top" height="25" nowrap="nowrap">Sujets</th>

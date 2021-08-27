@@ -8,7 +8,7 @@
     }"
   >
     <div class="loader" :style="{ width: progress + '%' }">
-      <div class="light"></div>
+      <div class="light animated"></div>
     </div>
     <div class="glow"></div>
   </div>

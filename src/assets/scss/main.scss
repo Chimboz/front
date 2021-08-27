@@ -122,6 +122,14 @@ p {
   padding-bottom: 6px;
 }
 
+table {
+  table-layout: fixed;
+}
+
+th, td {
+  overflow: hidden;
+}
+
 // App width
 #app {
   width: 100%;
@@ -185,8 +193,11 @@ p {
   text-align: center;
 }
 
-.jitter {
+.animated {
   will-change: transform;
+}
+
+.jitter {
   transform: rotateZ(-25deg);
 }
 
@@ -243,25 +254,25 @@ table.bbs {
 }
 .bbs td:nth-child(3),
 .bbs td:nth-child(4),
-.bbs th:nth-child(3),
-.bbs th:nth-child(4) {
+.bbs th:nth-child(2),
+.bbs th:nth-child(3) {
   display: none;
 }
 
 @media (min-width: 600px) {
   .bbs td:nth-child(3),
   .bbs td:nth-child(4),
-  .bbs th:nth-child(3),
-  .bbs th:nth-child(4) {
+  .bbs th:nth-child(2),
+  .bbs th:nth-child(3) {
     display: table-cell;
   }
 }
 
-.topic .icon, .bbs .icon {
-  padding: 10px;
+// Atomic classes
+.pointer {
+  cursor: pointer;
 }
 
-// Atomic classes
 .flex {
   display: flex;
 }
