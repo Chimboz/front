@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://chapatizretro.com"><img alt="Chapatiz Retro" src="src/assets/img/logo.svg" /></a><br>
-  <a href="https://chzretro-front.web.app"><img alt="Deployment to Firebase" src="https://img.shields.io/github/workflow/status/tigriz/chzretro-front/Deploy%20to%20Firebase%20Hosting%20on%20PR?label=preview&logo=firebase"></a><br>
+  <a href="https://chzretro-front.web.app"><img alt="Deployment to Firebase" src="https://img.shields.io/github/workflow/status/tigriz/chzretro-front/Deploy%20to%20Firebase%20Hosting%20on%20merge?label=preview&logo=firebase"></a><br>
   <a href="http://www.gnu.org/licenses/gpl-3.0" target="_blank"><img alt="License GPL v3" src="https://img.shields.io/badge/license-GPL%20v3-blue.svg" /></a>
   <img alt="Package version" src="https://img.shields.io/github/package-json/v/tigriz/chzretro-front" />
   <a href="https://github.com/Tigriz/chzretro-front/actions/workflows/codeql-analysis.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/tigriz/chzretro-front/CodeQL?label=quality"></a>
