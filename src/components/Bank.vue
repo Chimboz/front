@@ -14,9 +14,9 @@
         draggable="false"
         oncontextmenu="return false"
         class="coin"
-        v-for="n in Math.min(Math.floor(credits / 5), 180)"
+        v-for="n in Math.min(Math.floor(credits / 10), 360)"
         :style="coinsPosition[n]"
-        :class="{ drop: n <= Math.min(Math.floor(coins / 5), 180) }"
+        :class="{ drop: n <= Math.min(Math.floor(coins / 10), 360) }"
         :id="n"
         :key="n"
         :src="require(`@/assets/img/credits/coins/${n % 7}.svg`)"
@@ -47,7 +47,7 @@ export default {
   },
 
   mounted: function () {
-    for (let i = 8; i <= Math.min(Math.floor(this.credits / 5), 180); i++) {
+    for (let i = 8; i <= Math.min(Math.floor(this.credits / 10), 360); i++) {
       const left =
         +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-2, 2);
       const top = +this.coinsPosition[i - 8].top.slice(0, -2) - 4;
@@ -123,7 +123,7 @@ export default {
       );
     },
     tween() {
-      if (this.coins >= this.credits || this.coins > 900)
+      if (this.coins >= this.credits || this.coins > 1800)
         return;
       this.coins++;
       if (this.coins < this.credits)
@@ -149,8 +149,6 @@ export default {
 .coin {
   position: absolute;
   display: none;
-  top: 5px;
-  left: 5px;
 }
 
 .drop {
