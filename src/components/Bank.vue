@@ -14,9 +14,10 @@
         draggable="false"
         oncontextmenu="return false"
         class="coin"
-        v-for="n in Math.floor(credits / 5)"
+        v-for="n in Math.min(Math.floor(credits / 5), 180)"
         :style="coinsPosition[n]"
-        :class="{ drop: n <= Math.floor(coins / 5) }"
+        :class="{ drop: n <= coins }"
+        :id="n"
         :key="n"
         :src="require(`@/assets/img/credits/coins/${n % 7}.svg`)"
       />
@@ -46,12 +47,65 @@ export default {
   },
 
   mounted: function () {
-    requestAnimationFrame(this.tween);
+    for (let i = 8; i <= Math.min(Math.floor(this.credits / 5), 180); i++) {
+      const left =
+        +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-2, 2);
+      const top = +this.coinsPosition[i - 8].top.slice(0, -2) - 4;
+      const filter = this.coinsPosition[i % 8].filter;
+      this.coinsPosition.push({
+        left: left + "px",
+        top: top + "px",
+        filter: filter,
+      });
+    }
+    setTimeout(() => requestAnimationFrame(this.tween), 1300);
   },
   data() {
     return {
-      coins: 0,
-      coinsPosition: [],
+      coins: 7,
+      coinsPosition: [
+        {
+          left: this.randomInt(24, 40) + "px",
+          top: this.randomInt(60, 63) + "px",
+          filter: "brightness(.7)",
+        },
+        {
+          left: this.randomInt(48, 78) + "px",
+          top: this.randomInt(60, 63) + "px",
+          filter: "brightness(.7)",
+        },
+
+        {
+          left: this.randomInt(86, 102) + "px",
+          top: this.randomInt(69, 72) + "px",
+          filter: "brightness(.8)",
+        },
+        {
+          left: this.randomInt(24, 40) + "px",
+          top: this.randomInt(69, 72) + "px",
+          filter: "brightness(.8)",
+        },
+        {
+          left: this.randomInt(48, 78) + "px",
+          top: this.randomInt(76, 78) + "px",
+          filter: "brightness(.9)",
+        },
+        {
+          left: this.randomInt(24, 40) + "px",
+          top: this.randomInt(85, 88) + "px",
+          filter: "brightness(1)",
+        },
+        {
+          left: this.randomInt(48, 78) + "px",
+          top: this.randomInt(85, 88) + "px",
+          filter: "brightness(1)",
+        },
+        {
+          left: this.randomInt(86, 102) + "px",
+          top: this.randomInt(85, 88) + "px",
+          filter: "brightness(1)",
+        },
+      ],
     };
   },
   props: {
@@ -69,24 +123,21 @@ export default {
       );
     },
     tween() {
-      if (this.credits == this.coins) return;
+      if (this.coins >= Math.floor(this.credits / 5) || this.coins > 180)
+        return;
       this.coins++;
-      this.coinsPosition.push({
-        left: this.randomInt(24, 102) + "px",
-        top: this.randomInt(16, 88) + "px",
-      });
-      if (this.coins < this.credits) requestAnimationFrame(this.tween);
+      if (this.coins <= Math.floor(this.credits / 5))
+        requestAnimationFrame(this.tween);
     },
   },
 };
 </script>
 <style lang="scss" scoped>
 .bank {
-  position: relative;
-}
-.bank {
   background: url(../assets/img/credits/bg.svg);
+  position: relative;
   background-size: contain;
+  overflow: hidden;
 }
 
 .bank object {
@@ -98,6 +149,8 @@ export default {
 .coin {
   position: absolute;
   display: none;
+  top: 5px;
+  left: 5px;
 }
 
 .drop {
