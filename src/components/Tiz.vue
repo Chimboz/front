@@ -1,6 +1,6 @@
 <template>
   <div class="tiz">
-    <img draggable="false"   alt="Tiz avatar" class="avatar" src="../assets/img/tiz/tiz.svg" />
+    <img draggable="false" oncontextmenu="return false"   alt="Tiz avatar" class="avatar" src="../assets/img/tiz/tiz.svg" />
     <div class="shadow"></div>
   </div>
 </template>

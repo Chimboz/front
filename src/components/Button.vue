@@ -2,7 +2,7 @@
   <button class="btn flex" :style="cssVars">
     <slot name="prepend"></slot>
     <img
-      draggable="false"
+      draggable="false" oncontextmenu="return false"
       v-if="icon"
       class="btn-icon"
       :src="require(`@/assets/img/icons/buttons/${icon}`)"

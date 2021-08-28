@@ -108,6 +108,9 @@ img[src*="puce"] {
 
 img {
   user-select: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   vertical-align: middle;
 }
 

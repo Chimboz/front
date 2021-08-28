@@ -5,56 +5,56 @@
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.link") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
@@ -67,35 +67,35 @@
       <div class="flex centered hstack">
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             alt="Caret"
             src="@/assets/img/icons/caret.png"
           />&nbsp;Les Records</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             alt="Caret"
             src="@/assets/img/icons/caret.png"
           />&nbsp;Les Meilleurs</router-link
         >
         <router-link to="#worst" class="btn-sm blue-bg"
           ><img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             alt="Caret"
             src="@/assets/img/icons/caret.png"
           />&nbsp;Les Pires</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             alt="Caret"
             src="@/assets/img/icons/caret.png"
           />&nbsp;Les Groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             alt="Help icon"
             src="@/assets/img/icons/help.png"
           />&nbsp;Comment jouer&nbsp;?
@@ -103,7 +103,7 @@
       </div>
       <br />
       <img
-        draggable="false"
+        draggable="false" oncontextmenu="return false"
         src="@/assets/img/games/bacteria/preview.gif"
         alt="A game of bacteria"
         title="A game of bacteria"

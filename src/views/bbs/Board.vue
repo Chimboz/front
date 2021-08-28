@@ -4,44 +4,44 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" 
+            ><img draggable="false" oncontextmenu="return false" 
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" 
+            ><img draggable="false" oncontextmenu="return false" 
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -51,49 +51,49 @@
     <Board :topics="data"> </Board>
     <br />
     <Card
-      ><img draggable="false" 
+      ><img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_new.svg"
         alt="Nouveaux messages"
         title="Nouveaux messages"
       />
       Nouveaux messages<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_new_hot.svg"
         alt="Nouveaux messages [ Populaire ]"
         title="Nouveaux messages [ Populaire ]"
       />
       Nouveaux messages [ Populaire ]<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_new_lock.svg"
         alt="Nouveaux messages [ Verrouillé ]"
         title="Nouveaux messages [ Verrouillé ]"
       />
       Nouveaux messages [ Verrouillé ]<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder.svg"
         alt="Pas de nouveaux messages"
         title="Pas de nouveaux messages"
       />
       Pas de nouveaux messages<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_hot.svg"
         alt="Pas de nouveaux messages [ Populaire ]"
         title="Pas de nouveaux messages [ Populaire ]"
       />
       Pas de nouveaux messages [ Populaire ]<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_lock.svg"
         alt="Pas de nouveaux messages [ Verrouillé ]"
         title="Pas de nouveaux messages [ Verrouillé ]"
       />
       Pas de nouveaux messages [ Verrouillé ]<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_announce.svg"
         alt="Annonce"
         title="Annonce"
       />
       Annonce<br />
-      <img draggable="false" 
+      <img draggable="false" oncontextmenu="return false" 
         src="@/assets/img/bbs/folder_sticky.svg"
         alt="Post-it"
         title="Post-it"

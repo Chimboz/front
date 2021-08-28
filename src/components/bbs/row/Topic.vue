@@ -2,7 +2,7 @@
   <tbody>
     <tr class="topic">
       <td class="row1" align="center" valign="middle" height="50">
-        <img draggable="false" 
+        <img draggable="false" oncontextmenu="return false" 
           class="icon"
           :src="
             require(`@/assets/img/bbs/folder${topic.new ? '_new' : ''}${
@@ -42,7 +42,7 @@
         <User :user="topic.last_msg.author"/>
         &nbsp;»&nbsp;
         <router-link :to="$route.params.id+'/'+topic.id+'#'+topic.last_msg.msgid"
-          ><img draggable="false" 
+          ><img draggable="false" oncontextmenu="return false" 
             :src="require(`@/assets/img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"

@@ -7,7 +7,7 @@
       <div class="head flex centered">
         <router-link :to="'#' + message.id">
           <img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             alt="Voir le dernier message"
             title="Voir le dernier message"
             :src="

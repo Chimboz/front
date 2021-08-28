@@ -18,7 +18,7 @@
     <tr class="bbs">
       <td align="center" valign="middle" height="50">
         <img
-          draggable="false"
+          draggable="false" oncontextmenu="return false"
           :src="
             require(`@/assets/img/bbs/folder${bbs.new ? '_new' : ''}${
               bbs.locked ? '_lock' : ''
@@ -54,7 +54,7 @@
         &nbsp;»&nbsp;
         <router-link :to="'/bbs/'+bbs.id+'/'+bbs.last_msg.topicid+'#'+bbs.last_msg.msgid"
           ><img
-            draggable="false"
+            draggable="false" oncontextmenu="return false"
             :src="require(`@/assets/img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"

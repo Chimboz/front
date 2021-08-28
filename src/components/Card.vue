@@ -3,8 +3,8 @@
     :class="{ justified: justified }"
     :style="cssVars"
   >
-    <img draggable="false"  alt="Card header" v-if="filename" :src="require(`@/assets/img/cards/header/${filename}`)" />
-    <img draggable="false"  alt="Card header" v-else-if="top" src="@/assets/img/cards/header/default.gif" />
+    <img draggable="false" oncontextmenu="return false"  alt="Card header" v-if="filename" :src="require(`@/assets/img/cards/header/${filename}`)" />
+    <img draggable="false" oncontextmenu="return false"  alt="Card header" v-else-if="top" src="@/assets/img/cards/header/default.gif" />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)"><slot name="subtop"></slot></StrokeText>
     </div>
@@ -22,7 +22,7 @@
         <slot></slot>
       </main>
     </div>
-    <img draggable="false"  alt="Card footer" v-if="bot" src="@/assets/img/cards/footer/default.gif" />
+    <img draggable="false" oncontextmenu="return false"  alt="Card footer" v-if="bot" src="@/assets/img/cards/footer/default.gif" />
   </div>
 </template>
 

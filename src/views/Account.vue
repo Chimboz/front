@@ -7,7 +7,7 @@
             {{ $t("currentLevel") }}
             <div class="number">
               <img
-                draggable="false"
+                draggable="false" oncontextmenu="return false"
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -18,56 +18,56 @@
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.link") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
@@ -100,36 +100,36 @@
             <div class="arrows flex">
               <button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
-                <img draggable="false" alt="Puce" src="@/assets/img/puce.svg" />
+                <img draggable="false" oncontextmenu="return false" alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
             <div
@@ -162,36 +162,36 @@
             <div class="arrows flex">
               <button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
-                <img draggable="false" alt="Puce" src="@/assets/img/puce.svg" />
+                <img draggable="false" oncontextmenu="return false" alt="Puce" src="@/assets/img/puce.svg" />
               </button>
             </div>
           </div>
@@ -199,7 +199,7 @@
             <div>
               <button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
@@ -207,7 +207,7 @@
                 /></button
               ><br /><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
@@ -215,21 +215,21 @@
                 /></button
               ><button id="random">
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Random button"
                   title="Randomize look"
                   src="@/assets/img/home/chaparadio/stop.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
                 <img
-                  draggable="false"
+                  draggable="false" oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
@@ -241,21 +241,21 @@
           <div class="gender">
             <button>
               <img
-                draggable="false"
+                draggable="false" oncontextmenu="return false"
                 alt="Male gender"
                 title="Male gender"
                 src="@/assets/img/sex/male.svg"
               /></button
             ><button>
               <img
-                draggable="false"
+                draggable="false" oncontextmenu="return false"
                 alt="Female gender"
                 title="Female gender"
                 src="@/assets/img/sex/female.svg"
               /></button
             ><button>
               <img
-                draggable="false"
+                draggable="false" oncontextmenu="return false"
                 alt="Unknown gender"
                 title="Unknown gender"
                 src="@/assets/img/sex/unknown.svg"
@@ -298,7 +298,7 @@
         <Button green
           ><template #prepend
             ><img
-              draggable="false"
+              draggable="false" oncontextmenu="return false"
               alt="Arrow icon"
               class="arrow jitter"
               src="@/assets/img/arrow.svg" /></template

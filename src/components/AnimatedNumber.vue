@@ -1,5 +1,5 @@
 <template>
-  <img draggable="false"  :alt="digit"
+  <img draggable="false" oncontextmenu="return false"  :alt="digit"
                 v-for="digit in displayNumber.toString(10)"
                 :key="digit.index"
                 :src="require(`@/assets/img/numbers/${digit}.svg`)"
