@@ -39,7 +39,7 @@ import Button from "@/components/Button.vue";
 import AnimatedNumber from "@/components/AnimatedNumber.vue";
 
 export default {
-  name: "Shop",
+  name: "Bank",
   components: {
     Button,
     AnimatedNumber,
