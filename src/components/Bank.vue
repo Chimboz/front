@@ -82,7 +82,7 @@ export default {
 }
 .bank {
   background: url(../assets/img/credits/bg.svg);
-  background-size: cover;
+  background-size: contain;
 }
 
 .bank object {
