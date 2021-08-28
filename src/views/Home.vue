@@ -43,24 +43,7 @@
           {{ $t('friends.online', data.friends) }}</router-link
         ></Card
       ><br />
-      <Card yellow>
-        <template #button>
-          <Button yellow icon="register.svg">{{ $t('credit.title', data.credits) }}</Button>
-        </template>
-        <object
-          type="image/svg+xml"
-          :data="require('@/assets/img/credits/bank.svg')"
-          class="fullwidth"
-        ></object>
-        <router-link to="/bank">
-          {{ $t('credit.youGot') }}<br />
-          <AnimatedNumber :number="data.credits" /><br />
-          {{ $t('credit', data.credits) }} </router-link
-        ><br /><br />
-        <router-link to="/reflooz" class="btn-route"
-          ><Button orange icon="register.svg">Reflooz</Button></router-link
-        ></Card
-      ></template
+      <Bank :credits="data.credits"/></template
     >
     <img draggable="false" oncontextmenu="return false"  src="@/assets/img/home/announces/summer.png" style="max-width: 100%" /><br />
     <Card filename="lottery.png" v-if="data.lottery">
@@ -150,7 +133,7 @@
 <script>
 import Card from "@/components/Card.vue";
 import Button from "@/components/Button.vue";
-import AnimatedNumber from "@/components/AnimatedNumber.vue";
+import Bank from "@/components/Bank.vue";
 import Container from "@/components/Container.vue";
 
 export default {
@@ -158,7 +141,7 @@ export default {
   components: {
     Card,
     Container,
-    AnimatedNumber,
+    Bank,
     Button,
   },
   data() {

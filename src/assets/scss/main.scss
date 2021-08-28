@@ -130,10 +130,6 @@ table {
 }
 
 // App width
-#app {
-  width: 100%;
-}
-
 @media (min-width: 800px) {
   #app {
     width: 800px;
@@ -144,7 +140,6 @@ table {
 // Custom classes
 .hstack {
   flex-wrap: wrap;
-  justify-content: center;
   width: 100%;
   margin-bottom: calc(-1 * var(--gap));
   margin-right: calc(-1 * var(--gap));

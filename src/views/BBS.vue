@@ -40,7 +40,7 @@
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
-          <router-link to="/bite" class="list"
+          <router-link to="/shop" class="list"
             ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link

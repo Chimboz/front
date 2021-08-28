@@ -68,12 +68,18 @@ const routes = [
     component: () => import("../views/bbs/Topic.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
+  {
+    path: "/shop",
+    name: "Shop", // TODO
+    component: () => import("../views/Shop.vue"),
+    meta: { title: "Chapatiz Retro | Magasin" },
+  },
   // 404
   {
     path: "/:pathMatch(.*)*",
-    name: "404",
+    name: "Not Found",
     component: () => import("../views/NotFound.vue"),
-    meta: { title: "Chapatiz Retro | Not Found" },
+    meta: { title: "Chapatiz Retro | Erreur" },
   },
 ];
 

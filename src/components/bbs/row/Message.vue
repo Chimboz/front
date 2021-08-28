@@ -1,20 +1,23 @@
 <template>
   <tr :id="message.id">
     <td class="info" width="100" valign="top">
-      <Tiz /><br /><User :user="message.author"/><br />{{ format(message.date, "PPP à pp") }}
+      <Tiz /><br /><User :user="message.author" /><br />{{
+        format(message.date, "PPP à pp")
+      }}
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
         <router-link :to="'#' + message.id">
           <img
-            draggable="false" oncontextmenu="return false"
+            draggable="false"
+            oncontextmenu="return false"
             alt="Voir le dernier message"
             title="Voir le dernier message"
             :src="
               require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
-          />&nbsp;
-        </router-link>
+          /> </router-link
+        >&nbsp;
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         &nbsp;
         <img
@@ -46,7 +49,7 @@ export default {
   name: "Message",
   components: {
     Tiz,
-    User
+    User,
   },
   props: {
     message: {
