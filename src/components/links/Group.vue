@@ -1,6 +1,10 @@
 <template>
-    <router-link :to="'groups/'+group.id" :style="{color: group.color}">{{ group.name }}</router-link>
+  <div>
+    <router-link :to="'/groups/' + group.id" :style="{ color: group.color }">{{
+      group.name
+    }}</router-link>
     <div v-if="separator">,&nbsp;</div>
+  </div>
 </template>
 <script>
 export default {
@@ -18,3 +22,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+div {
+  display: inline;
+}
+</style>

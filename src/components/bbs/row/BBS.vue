@@ -50,7 +50,7 @@
       </td>
       <td align="center" valign="middle" nowrap="nowrap">
         {{ formatDate(bbs.last_msg.date) }}<br />
-        <router-link :to="'/annuaire/'+bbs.last_msg.author.id">{{ bbs.last_msg.author.name }}</router-link>
+        <User :user="bbs.last_msg.author"/>
         &nbsp;»&nbsp;
         <router-link :to="'/bbs/'+bbs.id+'/'+bbs.last_msg.topicid+'#'+bbs.last_msg.msgid"
           ><img
@@ -70,14 +70,16 @@
 </template>
 
 <script>
-import Group from "@components/links/Group.vue";
+import Group from "@/components/links/Group.vue";
+import User from "@/components/links/User.vue";
 import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
   name: "BBS Row",
-  omponents: {
+  components: {
     Group,
+    User
   },
   data() {
     return {

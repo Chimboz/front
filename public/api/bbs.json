@@ -10,13 +10,14 @@
         "mods": [
           {
             "name": "Les Créateurs",
-            "id": 1
+            "id": 1,
+            "color": "#900"
           }
         ],
         "topics": 2,
         "messages": 2,
         "last_msg": {
-          "author": { "name": "Owned", "id": 2 },
+          "author": { "name": "Owned", "id": 2, "color": "#900" },
           "date": 1626723644981,
           "topicid": 1,
           "msgid": 1
@@ -30,11 +31,13 @@
         "mods": [
           {
             "name": "Les Créateurs",
-            "id": 1
+            "id": 1,
+            "color": "#900"
           },
           {
             "name": "Les Modos BBS",
-            "id": 2
+            "id": 2,
+            "color": "#326496"
           }
         ],
         "topics": 2,
@@ -66,11 +69,13 @@
           },
           {
             "name": "Les Modos BBS",
-            "id": 2
+            "id": 2,
+            "color": "#326496"
           },
           {
             "name": "Les Animateurs",
-            "id": 4
+            "id": 4,
+            "color": "#f30"
           }
         ],
         "topics": 1,
