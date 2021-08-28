@@ -4,7 +4,7 @@
     <router-link to="/bbs" class="pink">BBS</router-link></span
   >
   <br />
-  <table class="bbs">
+  <table class="bbs board">
     <colgroup>
       <col width="60" />
       <col width="100%" />
