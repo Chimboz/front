@@ -183,7 +183,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .pack-preview {
   margin-top: -50px;
 }
@@ -206,7 +206,7 @@ h3 {
 .menu div {
   position: relative;
   flex-wrap: wrap;
-  max-height: 390px;
+  max-height: 406px;
   overflow-y: auto;
   padding: 6px 0;
 }
@@ -224,22 +224,8 @@ h3 {
   z-index: 1;
   content: "";
   width: 100%;
-  height: 390px;
+  height: 406px;
 }
-
-/*
-.menu:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, #b40026, transparent);
-  animation: opacity 0.3s linear infinite alternate;
-  z-index: 1;
-  border-radius: 50%/20%;
-}*/
 
 .pack {
   max-width: calc(25% - var(--gap));
