@@ -78,7 +78,7 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import BBSList from "@/components/BBS/List/BBS.vue";
+import BBSList from "@/components/bbs/list/BBS.vue";
 import Container from "@/components/Container.vue";
 
 export default {
@@ -86,7 +86,7 @@ export default {
   components: {
     BBSList,
     Container,
-    Card,
+    Card
   },
   data() {
     return {

@@ -24,7 +24,10 @@
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img draggable="false" 
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
             ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
@@ -32,7 +35,10 @@
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img draggable="false" 
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
             ><img draggable="false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
@@ -42,21 +48,70 @@
         </div>
       </Card></template
     >
-    <Topic :messages="data"> </Topic>
+    <Board :topics="data"> </Board>
     <br />
-    <Card></Card>
+    <Card
+      ><img draggable="false" 
+        src="@/assets/img/bbs/folder_new.svg"
+        alt="Nouveaux messages"
+        title="Nouveaux messages"
+      />
+      Nouveaux messages<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder_new_hot.svg"
+        alt="Nouveaux messages [ Populaire ]"
+        title="Nouveaux messages [ Populaire ]"
+      />
+      Nouveaux messages [ Populaire ]<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder_new_lock.svg"
+        alt="Nouveaux messages [ Verrouillé ]"
+        title="Nouveaux messages [ Verrouillé ]"
+      />
+      Nouveaux messages [ Verrouillé ]<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder.svg"
+        alt="Pas de nouveaux messages"
+        title="Pas de nouveaux messages"
+      />
+      Pas de nouveaux messages<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder_hot.svg"
+        alt="Pas de nouveaux messages [ Populaire ]"
+        title="Pas de nouveaux messages [ Populaire ]"
+      />
+      Pas de nouveaux messages [ Populaire ]<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder_lock.svg"
+        alt="Pas de nouveaux messages [ Verrouillé ]"
+        title="Pas de nouveaux messages [ Verrouillé ]"
+      />
+      Pas de nouveaux messages [ Verrouillé ]<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder_announce.svg"
+        alt="Annonce"
+        title="Annonce"
+      />
+      Annonce<br />
+      <img draggable="false" 
+        src="@/assets/img/bbs/folder_sticky.svg"
+        alt="Post-it"
+        title="Post-it"
+      />
+      Post-it</Card
+    >
   </Container>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
-import Topic from "@/components/BBS/List/Topic.vue";
+import Board from "@/components/bbs/list/Board.vue";
 import Container from "@/components/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    Topic,
+    Board,
     Container,
     Card,
   },
@@ -68,7 +123,8 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    const url = "/api/topic.json";
+    //const url = "/api/bbs_agora.json";
+    const url = "/api/bbs_agora.json";
     next((vm) => {
       vm.axios
         .get(url)
@@ -77,7 +133,6 @@ export default {
             vm.data = res.data;
             vm.loading = false;
           } else {
-            // Didn't like the result, redirect
             next("/bbs");
           }
         })
@@ -88,7 +143,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/topic.json").then((res)=>res.data);
+      this.data = await this.axios.get("/api/bbs_agora.json").then((res)=>res.data);
     } catch (error) {
       this.error = error.toString();
     }

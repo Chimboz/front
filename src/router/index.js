@@ -29,19 +29,19 @@ const routes = [
   {
     path: "/games/bacteria",
     name: "Bacteria",
-    component: () => import("../views/Games/Bacteria.vue"),
+    component: () => import("../views/games/Bacteria.vue"),
     meta: { title: "Chapatiz Retro | Bacteria" },
   },
   {
     path: "/games/patojdur",
     name: "Patojdur",
-    component: () => import("../views/Games/Patojdur.vue"),
+    component: () => import("../views/games/Patojdur.vue"),
     meta: { title: "Chapatiz Retro | Patojdur" },
   },
   {
     path: "/games/mazo",
     name: "Mazo",
-    component: () => import("../views/Games/Mazo.vue"),
+    component: () => import("../views/games/Mazo.vue"),
     meta: { title: "Chapatiz Retro | Mazo" },
   },
   {
@@ -59,13 +59,13 @@ const routes = [
   {
     path: "/bbs/:id",
     name: "BBS machin", // TODO
-    component: () => import("../views/BBS/Board.vue"),
+    component: () => import("../views/bbs/Board.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   {
     path: "/bbs/:id/:topic",
     name: "BBS machin truc", // TODO
-    component: () => import("../views/BBS/Topic.vue"),
+    component: () => import("../views/bbs/Topic.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   // 404

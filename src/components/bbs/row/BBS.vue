@@ -37,16 +37,9 @@
         </span>
         <span class="genmed">{{ bbs.desc }}<br /> </span
         ><span class="gensmall"
-          >Modérateur
-          <div v-for="mod in bbs.mods" :key="mod.id" style="display: inline">
-            <router-link :to="'groups/' + mod.id">{{ mod.name }}</router-link>
-            <div
-              v-if="bbs.mods.indexOf(mod) != bbs.mods.length - 1"
-              style="display: inline"
-            >
-              ,&nbsp;
-            </div>
-          </div></span
+          >Modérateurs&nbsp;:
+          <Group v-for="(mod, index) in bbs.mods" :key="mod.id" :group="mod" :separator="index != bbs.mods.length - 1" style="display: inline" />
+            </span
         >
       </td>
       <td align="center" valign="middle">
@@ -77,11 +70,15 @@
 </template>
 
 <script>
+import Group from "@components/links/Group.vue";
 import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
   name: "BBS Row",
+  omponents: {
+    Group,
+  },
   data() {
     return {
       hide: false,

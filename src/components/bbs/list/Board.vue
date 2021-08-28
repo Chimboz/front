@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Topic from "../Row/Topic.vue";
+import Topic from "../row/Topic.vue";
 
 export default {
   name: "Board",

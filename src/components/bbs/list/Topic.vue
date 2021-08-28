@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Message from "../Row/Message.vue";
+import Message from "../row/Message.vue";
 
 export default {
   name: "Topic",

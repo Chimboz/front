@@ -1,0 +1,20 @@
+<template>
+    <router-link :to="'groups/'+group.id" :style="{color: group.color}">{{ group.name }}</router-link>
+    <div v-if="separator">,&nbsp;</div>
+</template>
+<script>
+export default {
+  name: "Group",
+  props: {
+    group: {
+      required: false,
+      type: Object,
+    },
+    separator: {
+      required: false,
+      default: false,
+      type: Boolean,
+    },
+  },
+};
+</script>

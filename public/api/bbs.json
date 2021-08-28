@@ -61,7 +61,8 @@
         "mods": [
           {
             "name": "Les Créateurs",
-            "id": 1
+            "id": 1,
+            "color": "#900"
           },
           {
             "name": "Les Modos BBS",

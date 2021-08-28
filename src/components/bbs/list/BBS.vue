@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import BBSRow from "../Row/BBS.vue";
+import BBSRow from "../row/BBS.vue";
 
 export default {
   name: "BBSList",
