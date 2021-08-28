@@ -5,10 +5,14 @@
     </template>
     <div class="bank fullwidth">
       <object
+        draggable="false"
+        oncontextmenu="return false"
         type="image/svg+xml"
         :data="require('@/assets/img/credits/door.svg')"
       ></object>
       <img
+        draggable="false"
+        oncontextmenu="return false"
         class="coin"
         v-for="n in Math.floor(credits / 5)"
         :style="coinsPosition[n]"

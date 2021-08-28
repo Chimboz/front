@@ -72,41 +72,79 @@
     >
     <Card yellow filename="shop.svg">
       <template #header></template>
-      <img class="fullwidth pack-preview" src="@/assets/img/shop/cabin.svg" />
+      <img
+        draggable="false"
+        oncontextmenu="return false"
+        class="fullwidth pack-preview"
+        src="@/assets/img/shop/cabin.svg"
+      />
       <h3>Les dernières fringues</h3>
-      <div class="menu flex hstack">
-        <img class="pack flex animated" src="@/assets/img/packs/1.jpg" /><img
-          class="pack flex animated"
-          src="@/assets/img/packs/1.jpg"
-        /><img class="pack flex animated" src="@/assets/img/packs/1.jpg" /><img
-          class="pack flex animated"
-          src="@/assets/img/packs/1.jpg"
-        /><img class="pack flex animated" src="@/assets/img/packs/1.jpg" /><img
-          class="pack flex animated"
-          src="@/assets/img/packs/1.jpg"
-        /><img class="pack flex animated" src="@/assets/img/packs/1.jpg" /><img
-          class="pack flex animated"
-          src="@/assets/img/packs/1.jpg"
-        /><img class="pack flex animated" src="@/assets/img/packs/1.jpg" /><img class="pack flex animated" src="@/assets/img/packs/1.jpg" />
+      <div class="menu flex">
+        <div class="flex hstack">
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            class="pack flex animated"
+            src="@/assets/img/packs/1.jpg"
+          />
+        </div>
       </div>
     </Card>
-    <template #right-column
-      ><Bank :credits="data.credits"/></template
-    >
+    <template #right-column><Bank :credits="data.credits" /></template>
   </Container>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
 import Container from "@/components/Container.vue";
-import Bank from "@/components/Bank.vue"
+import Bank from "@/components/Bank.vue";
 
 export default {
   name: "Shop",
   components: {
     Container,
     Card,
-    Bank
+    Bank,
   },
   data() {
     return {
@@ -158,14 +196,50 @@ h3 {
   font-size: 18px;
   line-height: 14px;
   text-align: left;
+  margin-bottom: 6px;
 }
 
 .menu {
+  position: relative;
+}
+
+.menu div {
+  position: relative;
   flex-wrap: wrap;
-  margin: 6px 0;
   max-height: 390px;
   overflow-y: auto;
+  padding: 6px 0;
 }
+
+.menu:before {
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    #fff4d5,
+    transparent 12px,
+    transparent calc(100% - 12px),
+    #fff4d5
+  );
+  position: absolute;
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 390px;
+}
+
+/*
+.menu:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #b40026, transparent);
+  animation: opacity 0.3s linear infinite alternate;
+  z-index: 1;
+  border-radius: 50%/20%;
+}*/
 
 .pack {
   max-width: calc(25% - var(--gap));
