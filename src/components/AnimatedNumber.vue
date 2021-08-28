@@ -1,9 +1,12 @@
 <template>
-  <img draggable="false" oncontextmenu="return false"  :alt="digit"
-                v-for="digit in displayNumber.toString(10)"
-                :key="digit.index"
-                :src="require(`@/assets/img/numbers/${digit}.svg`)"
-              />
+  <img
+    draggable="false"
+    oncontextmenu="return false"
+    :alt="digit"
+    v-for="digit in displayNumber.toString(10)"
+    :key="digit.index"
+    :src="require(`@/assets/img/numbers/${digit}.svg`)"
+  />
 </template>
 
 <script>
@@ -23,10 +26,7 @@ export default {
 
   methods: {
     tween() {
-      if (this.number == this.displayNumber) {
-        return;
-      }
-
+      if (this.number == this.displayNumber) return;
       this.displayNumber++;
       if (this.displayNumber < this.number) requestAnimationFrame(this.tween);
     },

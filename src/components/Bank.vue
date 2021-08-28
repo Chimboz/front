@@ -16,7 +16,7 @@
         class="coin"
         v-for="n in Math.min(Math.floor(credits / 5), 180)"
         :style="coinsPosition[n]"
-        :class="{ drop: n <= coins }"
+        :class="{ drop: n <= Math.min(Math.floor(coins / 5), 180) }"
         :id="n"
         :key="n"
         :src="require(`@/assets/img/credits/coins/${n % 7}.svg`)"
@@ -58,7 +58,7 @@ export default {
         filter: filter,
       });
     }
-    setTimeout(() => requestAnimationFrame(this.tween), 1300);
+    requestAnimationFrame(this.tween)
   },
   data() {
     return {
@@ -123,10 +123,10 @@ export default {
       );
     },
     tween() {
-      if (this.coins >= Math.floor(this.credits / 5) || this.coins > 180)
+      if (this.coins >= this.credits || this.coins > 900)
         return;
       this.coins++;
-      if (this.coins <= Math.floor(this.credits / 5))
+      if (this.coins < this.credits)
         requestAnimationFrame(this.tween);
     },
   },
