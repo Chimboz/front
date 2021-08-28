@@ -1,10 +1,7 @@
 <template>
   <tr :id="message.id">
     <td class="info" width="100" valign="top">
-      <Tiz /><br /><a :href="'/annuaire/' + message.author.id">{{
-        message.author.name
-      }}</a
-      ><br />{{ format(message.date, "PPP à pp") }}
+      <Tiz /><br /><User :user="message.author"/><br />{{ format(message.date, "PPP à pp") }}
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
@@ -38,6 +35,7 @@
 
 <script>
 import Tiz from "@/components/Tiz.vue";
+import User from "@/components/links/User.vue";
 import Marked from "marked";
 import DOMPurify from "dompurify";
 import { format } from "date-fns";
@@ -47,6 +45,7 @@ export default {
   name: "Message",
   components: {
     Tiz,
+    User
   },
   props: {
     message: {

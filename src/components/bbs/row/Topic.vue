@@ -26,7 +26,7 @@
         <span class="gensmall">{{ topic.reply }}</span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall"><router-link :to="'/annuaire/'+topic.author.id">{{ topic.author.name }}</router-link></span>
+        <span class="gensmall"><User :user="topic.author"/></span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
         <span class="gensmall">{{ topic.view }}</span>
@@ -39,7 +39,7 @@
         nowrap="nowrap"
       >
         {{ formatDate(topic.last_msg.date) }}<br />
-        <router-link :to="'annuaire/'+topic.last_msg.author.id">{{ topic.last_msg.author.name }}</router-link>
+        <User :user="topic.last_msg.author"/>
         &nbsp;»&nbsp;
         <router-link :to="$route.params.id+'/'+topic.id+'#'+topic.last_msg.msgid"
           ><img draggable="false" 
@@ -58,11 +58,15 @@
 </template>
 
 <script>
+import User from "@/components/links/User.vue";
 import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
   name: "Topic",
+  components: {
+    User
+  },
   props: {
     topic: {
       required: true,
