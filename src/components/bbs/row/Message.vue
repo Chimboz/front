@@ -13,9 +13,10 @@
             :src="
               require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
-          />
+          />&nbsp;
         </router-link>
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
+        &nbsp;
         <img
           alt="Quote button"
           src="https://chapatizretro.com/data/content/images/bbs/icon_quote.png"
