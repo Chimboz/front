@@ -2,17 +2,19 @@
   <div class="header">
     <router-link to="/"
       ><img
-        draggable="false" oncontextmenu="return false"
+        draggable="false"
+        oncontextmenu="return false"
         alt="Logo Chapatiz Retro"
         id="logo"
         src="../assets/img/logo.svg"
     /></router-link>
     <div class="login flex centered">
       <div style="margin-top: -10px">
-        <p id="username">{{ username }}</p>
+        <User :user="user" id="username" style="display: inherit" />
         <button id="connect" class="flex centered">
           <img
-            draggable="false" oncontextmenu="return false"
+            draggable="false"
+            oncontextmenu="return false"
             alt="Disconnect icon"
             class="chz-icon"
             src="../assets/img/login/disconnect.svg"
@@ -26,7 +28,8 @@
     <router-link to="/"
       ><button class="nav-btn flex centered">
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Home icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/home.svg"
@@ -36,7 +39,8 @@
     <router-link to="/tchat"
       ><button class="nav-btn flex centered">
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Tchat icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/tchat.svg"
@@ -45,7 +49,8 @@
           <StrokeText>{{ $t("playing.button") }}</StrokeText>
         </div>
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Arrow icon"
           class="arrow jitter"
           src="@/assets/img/arrow.svg"
@@ -54,7 +59,8 @@
     <router-link to="/account"
       ><button class="nav-btn flex centered">
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Account icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/account.svg"
@@ -67,7 +73,8 @@
     <router-link to="/games"
       ><button class="nav-btn flex centered">
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Games icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/games.svg"
@@ -80,7 +87,8 @@
     <router-link to="/members"
       ><button class="nav-btn flex centered">
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Member icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/members.svg"
@@ -93,7 +101,8 @@
     <router-link to="/bbs"
       ><button class="nav-btn flex centered">
         <img
-          draggable="false" oncontextmenu="return false"
+          draggable="false"
+          oncontextmenu="return false"
           alt="Community icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/community.svg"
@@ -108,19 +117,24 @@
 
 <script>
 import Tiz from "@/components/Tiz.vue";
+import User from "@/components/links/User.vue";
 import StrokeText from "@/components/StrokeText.vue";
 
 export default {
   name: "Navbar",
   props: {
-    username: {
-      type: String,
-      default: "Tigriz",
+    user: {
+      required: true,
+      type: Object,
+      default: function () {
+        return { name: "Visiteur", color: "#900", id: 3 };
+      },
     },
   },
   components: {
     Tiz,
     StrokeText,
+    User,
   },
 };
 </script>
@@ -254,7 +268,8 @@ export default {
   border-color: #ff6600 #973500 #973500 #973500;
 }
 
-#nav a:first-child .nav-btn:hover, #nav a:first-child .nav-btn:active,
+#nav a:first-child .nav-btn:hover,
+#nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
@@ -332,6 +347,10 @@ a:hover {
 
   a:not(:first-child) .nav-btn {
     padding: 0 20px;
+  }
+
+  .nav-btn:hover .arrow {
+    filter: saturate(1.2);
   }
 
   .arrow {
