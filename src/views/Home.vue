@@ -213,8 +213,6 @@ export default {
   methods: {
     handle({currentTarget}) {
       this.$refs.handle.src = require("@/assets/img/lottery/down.svg");
-      console.log(currentTarget)
-      
       setTimeout(
         () => {
           this.$refs.handle.src = require("@/assets/img/lottery/up.svg");
@@ -271,6 +269,6 @@ export default {
 
 .handle {
   margin-left: calc(-4% - 16px);
-  margin-top: -13px;
+  margin-top: -16px;
 }
 </style>
