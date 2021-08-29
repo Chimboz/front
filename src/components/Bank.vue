@@ -123,7 +123,7 @@ export default {
       );
     },
     tween() {
-      if (this.coins >= this.credits || this.coins > 1800)
+      if (this.coins >= this.credits || this.coins > 1760)
         return;
       this.coins++;
       if (this.coins < this.credits)
