@@ -1,5 +1,6 @@
 <template>
   <img
+    :class="{ win: this.elapsed > this.duration }"
     draggable="false"
     oncontextmenu="return false"
     :alt="digit"
@@ -18,7 +19,6 @@ export default {
       start: 0,
       previousTimeStamp: Date.now(),
       elapsed: 0,
-      iteration: 0
     };
   },
   props: {
@@ -39,24 +39,47 @@ export default {
         Math.ceil(min)
       );
     },
-    tween(timestamp) {
+    bezier(time, startValue, change, duration) {
+      time /= duration / 2;
+      if (time < 1) {
+        return (change / 2) * time * time + startValue;
+      }
+
+      time--;
+      return (-change / 2) * (time * (time - 2) - 1) + startValue;
+    },
+    async sleep(duration) {
+      return new Promise((res) => setTimeout(res, duration));
+    },
+    async tween(timestamp) {
       if (this.start === 0) this.start = timestamp;
       this.elapsed = timestamp - this.start;
 
-      if (
-        this.previousTimeStamp !== timestamp &&
-        Math.floor(this.elapsed / 100) !==
-          Math.floor((this.previousTimeStamp - this.start) / 100)
-      ) {
+      if (this.previousTimeStamp !== timestamp) {
         const random = this.randomInt(this.min, this.max);
         this.displayNumber = random < 10 ? "0" + random : random.toString();
       }
 
       if (this.elapsed < this.duration) {
         this.previousTimeStamp = timestamp;
-        setTimeout(requestAnimationFrame(this.tween), this.elapsed * 100);
+        await this.sleep(this.bezier(this.elapsed, 0, 10, this.duration) * 50);
+        requestAnimationFrame(this.tween);
       } else this.displayNumber = this.value.toString();
     },
   },
 };
 </script>
+<style scoped>
+.win {
+  animation: glow 1s infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+</style>

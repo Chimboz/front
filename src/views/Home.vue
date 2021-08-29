@@ -79,7 +79,7 @@
       /></template>
       {{ $t("lottery.firstLine") }}<br />
       {{ $t("lottery.secondLine") }}<br /><br />
-      <RandomNumber :max="30" :value="20" :duration="2000" />
+      <RandomNumber :max="30" :value="20" :duration="5000" />
       <br /><br />
       <Button orange @click="handle"
         ><template #prepend
