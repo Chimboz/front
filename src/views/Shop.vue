@@ -85,47 +85,47 @@
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/1.jpg"
+            src="@/assets/img/packs/2.svg"
           />
         </div>
       </div>
