@@ -87,6 +87,7 @@
             draggable="false"
             oncontextmenu="return false"
             alt="Lottery handle"
+            class="handle"
             ref="handle"
             src="@/assets/img/lottery/up.svg" /></template
         >Jouer</Button
@@ -210,12 +211,18 @@ export default {
     };
   },
   methods: {
-    handle() {
+    handle({currentTarget}) {
       this.$refs.handle.src = require("@/assets/img/lottery/down.svg");
+      console.log(currentTarget)
+      
       setTimeout(
-        () => (this.$refs.handle.src = require("@/assets/img/lottery/up.svg")),
+        () => {
+          this.$refs.handle.src = require("@/assets/img/lottery/up.svg");
+          currentTarget.disabled = true
+        },
         200
       );
+      
     },
   },
   beforeRouteEnter(to, from, next) {
@@ -260,5 +267,10 @@ export default {
 
 .friends div {
   transform: translate3d(0, 210%, 0);
+}
+
+.handle {
+  margin-left: calc(-4% - 16px);
+  margin-top: -13px;
 }
 </style>

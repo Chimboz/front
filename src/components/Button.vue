@@ -118,6 +118,10 @@ export default {
   border-width: 2px 5px;
 }
 
+.btn:disabled {
+  filter:grayscale(1) !important;
+}
+
 .btn-text {
   overflow: hidden;
   font-size: 18px;
