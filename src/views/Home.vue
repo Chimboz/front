@@ -4,10 +4,12 @@
       ><Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
-            {{ $t('currentLevel') }}
+            {{ $t("currentLevel") }}
             <div class="number">
-              <img draggable="false" oncontextmenu="return false" 
-              :alt="number"
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/${number}.svg`)"
@@ -17,46 +19,85 @@
         <router-link to="/mi">
           <div class="messages">
             <div>
-              <img draggable="false" oncontextmenu="return false" 
-              :alt="number"
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                :alt="number"
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img draggable="false" oncontextmenu="return false"  alt="Messages" src="@/assets/img/home/messages.png" class="fullwidth" />
+            <img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Messages"
+              src="@/assets/img/home/messages.png"
+              class="fullwidth"
+            />
           </div>
-          {{ $t('mi.message', data.messages) }}</router-link
+          {{ $t("mi.message", data.messages) }}</router-link
         >
         <router-link to="/friends">
           <div class="friends">
             <div>
-              <img draggable="false" oncontextmenu="return false" 
-              :alt="number"
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                :alt="number"
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
                 :src="require(`@/assets/img/numbers/pink/${number}.svg`)"
               />
             </div>
-            <img draggable="false" oncontextmenu="return false"  alt="Friends" src="@/assets/img/home/friends.png" class="fullwidth" />
+            <img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Friends"
+              src="@/assets/img/home/friends.png"
+              class="fullwidth"
+            />
           </div>
-          {{ $t('friends.online', data.friends) }}</router-link
+          {{ $t("friends.online", data.friends) }}</router-link
         ></Card
       ><br />
-      <Bank :credits="data.credits"/></template
-    >
-    <img draggable="false" oncontextmenu="return false"  src="@/assets/img/home/announces/summer.png" style="max-width: 100%" /><br />
+      <Bank :credits="data.credits"
+    /></template>
+    <img
+      draggable="false"
+      oncontextmenu="return false"
+      src="@/assets/img/home/announces/summer.png"
+      style="max-width: 100%"
+    /><br />
     <Card filename="lottery.png" v-if="data.lottery">
       <template #header
-        ><img draggable="false" oncontextmenu="return false"  src="@/assets/img/home/header_hello.png" style="width: 100%"
+        ><img
+          draggable="false"
+          oncontextmenu="return false"
+          src="@/assets/img/home/header_hello.png"
+          style="width: 100%"
       /></template>
-      {{ $t('lottery.firstLine') }}<br />
-      {{ $t('lottery.secondLine') }}</Card
+      {{ $t("lottery.firstLine") }}<br />
+      {{ $t("lottery.secondLine") }}<br /><br />
+      <RandomNumber :max="30" :value="20" :duration="2000" />
+      <br /><br />
+      <Button orange @click="handle"
+        ><template #prepend
+          ><img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Lottery handle"
+            ref="handle"
+            src="@/assets/img/lottery/up.svg" /></template
+        >Jouer</Button
+      ></Card
     ><br />
     <Card yellow justified>
       <template #subtop>Chapaniouz</template>
       <template #header
-        ><img draggable="false" oncontextmenu="return false" 
+        ><img
+          draggable="false"
+          oncontextmenu="return false"
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="float: left; margin: 0 17px 17px 0"
@@ -75,15 +116,21 @@
     <Card>
       <template #subtop>Chaparazzi</template>
       <div class="gallery flex">
-        <img draggable="false" oncontextmenu="return false" 
+        <img
+          draggable="false"
+          oncontextmenu="return false"
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
-        /><img draggable="false" oncontextmenu="return false" 
+        /><img
+          draggable="false"
+          oncontextmenu="return false"
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
-        /><img draggable="false" oncontextmenu="return false" 
+        /><img
+          draggable="false"
+          oncontextmenu="return false"
           src="@/assets/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
@@ -95,33 +142,42 @@
         <template #header
           ><router-link to="/connecteds"
             ><h1>{{ data.connected }}</h1>
-            {{ $t('connecteds', data.connected) }}</router-link
+            {{ $t("connecteds", data.connected) }}</router-link
           ></template
         >
-        {{ data.members }} {{ $t('members', data.members) }}  <br />
-        {{ data.last24 }} {{ $t('members.past', data.last24) }} </Card
+        {{ data.members }} {{ $t("members", data.members) }} <br />
+        {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
       <Card blue>
         <template #button>
-          <Button icon="register.svg">{{ $t('help.button') }}</Button>
+          <Button icon="register.svg">{{ $t("help.button") }}</Button>
         </template>
 
         <router-link to="/help"
-          ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg"/>{{ $t('help.tip') }}</router-link
+          ><img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Puce"
+            src="@/assets/img/puce.svg"
+          />{{ $t("help.tip") }}</router-link
         ></Card
       ><br />
       <Card yellow filename="packs.png">
         <template #button>
           <Button yellow icon="register.svg">Pack</Button>
         </template>
-        <img draggable="false" oncontextmenu="return false" 
-        alt="Pack supporter"
+        <img
+          draggable="false"
+          oncontextmenu="return false"
+          alt="Pack supporter"
           src="@/assets/img/packs/2.jpg"
           style="max-width: 100%"
         /><br /><br />
         <Button yellow icon="register.svg" class="fullwidth">Item</Button><br />
-        <img draggable="false" oncontextmenu="return false" 
-        alt="Item eskimok"
+        <img
+          draggable="false"
+          oncontextmenu="return false"
+          alt="Item eskimok"
           src="@/assets/img/packs/1.jpg"
           style="max-width: 100%"
         />
@@ -133,6 +189,7 @@
 <script>
 import Card from "@/components/Card.vue";
 import Button from "@/components/Button.vue";
+import RandomNumber from "@/components/RandomNumber.vue";
 import Bank from "@/components/Bank.vue";
 import Container from "@/components/Container.vue";
 
@@ -143,6 +200,7 @@ export default {
     Container,
     Bank,
     Button,
+    RandomNumber,
   },
   data() {
     return {
@@ -150,6 +208,15 @@ export default {
       error: null,
       loading: true,
     };
+  },
+  methods: {
+    handle() {
+      this.$refs.handle.src = require("@/assets/img/lottery/down.svg");
+      setTimeout(
+        () => (this.$refs.handle.src = require("@/assets/img/lottery/up.svg")),
+        200
+      );
+    },
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/home.json";
@@ -172,7 +239,9 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/home.json").then((res)=>res.data);
+      this.data = await this.axios
+        .get("/api/home.json")
+        .then((res) => res.data);
     } catch (error) {
       this.error = error.toString();
     }
