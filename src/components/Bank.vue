@@ -16,7 +16,6 @@
         class="coin"
         v-for="(_,n) in Math.min(Math.floor(credits / 10), 176)"
         :style="coinsPosition[n]"
-        :id="n"
         :class="{ drop: n <= Math.min(Math.floor(coins / 10), 176) }"
         :key="n"
         :src="require(`@/assets/img/credits/coin.svg`)"
@@ -49,7 +48,7 @@ export default {
   mounted: function () {
     for (let i = 8; i <= Math.min(Math.floor(this.credits / 10), 360); i++) {
       const left =
-        +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-2, 2);
+        +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-3, 3);
       const top = +this.coinsPosition[i - 8].top.slice(0, -2) - 4;
       const filter = this.coinsPosition[i % 8].filter;
       this.coinsPosition.push({
