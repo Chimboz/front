@@ -41,17 +41,11 @@ export default {
     },
     bezier(time, startValue, change, duration) {
       time /= duration / 2;
-      if (time < 1) {
-        return (change / 2) * time * time + startValue;
-      }
-
+      if (time < 1) return (change / 2) * time * time + startValue;
       time--;
       return (-change / 2) * (time * (time - 2) - 1) + startValue;
     },
-    async sleep(duration) {
-      return new Promise((res) => setTimeout(res, duration));
-    },
-    async tween(timestamp) {
+    tween(timestamp) {
       if (this.start === 0) this.start = timestamp;
       this.elapsed = timestamp - this.start;
 
@@ -62,8 +56,10 @@ export default {
 
       if (this.elapsed < this.duration) {
         this.previousTimeStamp = timestamp;
-        await this.sleep(this.bezier(this.elapsed, 0, 10, this.duration) * 50);
-        requestAnimationFrame(this.tween);
+        setTimeout(
+          () => requestAnimationFrame(this.tween),
+          this.bezier(this.elapsed, 0, 10, this.duration) * 50
+        );
       } else this.displayNumber = this.value.toString();
     },
   },
