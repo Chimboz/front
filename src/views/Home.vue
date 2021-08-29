@@ -170,7 +170,7 @@
           draggable="false"
           oncontextmenu="return false"
           alt="Pack supporter"
-          src="@/assets/img/packs/2.jpg"
+          src="@/assets/img/packs/pack.svg"
           style="max-width: 100%"
         /><br /><br />
         <Button yellow icon="register.svg" class="fullwidth">Item</Button><br />
@@ -178,7 +178,7 @@
           draggable="false"
           oncontextmenu="return false"
           alt="Item eskimok"
-          src="@/assets/img/packs/1.jpg"
+          src="@/assets/img/packs/pack.svg"
           style="max-width: 100%"
         />
       </Card>

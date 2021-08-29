@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg990"
+   width="180"
+   height="340"
+   viewBox="0 0 180 340"
+   sodipodi:docname="reflect.svg"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs994" />
+  <sodipodi:namedview
+     id="namedview992"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="21.499999"
+     inkscape:cy="178.99999"
+     inkscape:current-layer="g6751" />
+  <g
+     id="g10240"
+     inkscape:label="pack"
+     style="display:inline;opacity:1;fill:#52758b;fill-opacity:1"
+     transform="translate(-102.38778,-136.51575)">
+    <g
+       id="g6751"
+       inkscape:label="egg">
+      <path
+         style="opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 237.22627,326.31784 c -1.94187,-7.6287 11.13598,-16.15297 14.55581,-5.63005 6.73168,20.7136 -11.2591,18.58129 -14.55581,5.63005 z"
+         id="path25040"
+         sodipodi:nodetypes="sss"
+         inkscape:label="reflect2" />
+      <path
+         style="opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 194.98385,268.61701 c 11.29647,3.28827 25.88746,17.74927 29.07006,20.30487 8.85192,7.10801 12.13575,-0.62095 9.58349,-7.78054 -10.58475,-29.69226 -32.01329,-31.70541 -32.01329,-31.70541 -17.26243,0.18902 -16.46397,16.32151 -6.64026,19.18108 z"
+         id="path24923"
+         sodipodi:nodetypes="sssss"
+         inkscape:label="reflect1" />
+    </g>
+  </g>
+</svg>

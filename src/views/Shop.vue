@@ -85,47 +85,47 @@
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           /><img
             draggable="false"
             oncontextmenu="return false"
             class="pack flex animated"
-            src="@/assets/img/packs/2.svg"
+            src="@/assets/img/packs/pack.svg"
           />
         </div>
       </div>
@@ -206,7 +206,7 @@ h3 {
 .menu div {
   position: relative;
   flex-wrap: wrap;
-  max-height: 406px;
+  max-height: 404px;
   overflow-y: auto;
   padding: 6px 0;
 }
@@ -224,7 +224,7 @@ h3 {
   z-index: 1;
   content: "";
   width: 100%;
-  height: 406px;
+  height: 404px;
 }
 
 .pack {
