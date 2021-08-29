@@ -18,7 +18,7 @@
         :style="coinsPosition[n]"
         :class="{ drop: n <= Math.min(Math.floor(coins / 10), 360) }"
         :key="n"
-        :src="require(`@/assets/img/credits/coins/${n % 7}.svg`)"
+        :src="require(`@/assets/img/credits/coin.svg`)"
       />
     </div>
 
