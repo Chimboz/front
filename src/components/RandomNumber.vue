@@ -58,7 +58,7 @@ export default {
         this.previousTimeStamp = timestamp;
         setTimeout(
           () => requestAnimationFrame(this.tween),
-          this.bezier(this.elapsed, 0, 10, this.duration) * 50
+          this.bezier(this.elapsed, 0, 500, this.duration)
         );
       } else this.displayNumber = this.value.toString();
     },
