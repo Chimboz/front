@@ -81,51 +81,21 @@
       <h3>Les dernières fringues</h3>
       <div class="menu flex">
         <div class="flex hstack">
-          <img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            class="pack flex animated"
-            src="@/assets/img/packs/pack.svg"
+          <Pack header="summer.png" footer="summer.png" /><Pack
+            header="summer.png"
+            footer="summer.png"
+          /><Pack header="summer.png" footer="summer.png" /><Pack
+            header="summer.png"
+            footer="summer.png"
+          /><Pack header="summer.png" footer="summer.png" /><Pack
+            header="summer.png"
+            footer="summer.png"
+          /><Pack header="summer.png" footer="summer.png" /><Pack
+            header="summer.png"
+            footer="summer.png"
+          /><Pack header="summer.png" footer="summer.png" /><Pack
+            header="summer.png"
+            footer="summer.png"
           />
         </div>
       </div>
@@ -138,6 +108,7 @@
 import Card from "@/components/Card.vue";
 import Container from "@/components/Container.vue";
 import Bank from "@/components/Bank.vue";
+import Pack from "@/components/Pack.vue";
 
 export default {
   name: "Shop",
@@ -145,6 +116,7 @@ export default {
     Container,
     Card,
     Bank,
+    Pack,
   },
   data() {
     return {
@@ -203,7 +175,7 @@ h3 {
   position: relative;
 }
 
-.menu div {
+.menu > div {
   position: relative;
   flex-wrap: wrap;
   max-height: 404px;
@@ -225,20 +197,5 @@ h3 {
   content: "";
   width: 100%;
   height: 404px;
-}
-
-.pack {
-  max-width: calc(25% - var(--gap));
-  flex: 1 0 0%;
-}
-
-.pack:hover {
-  animation: pack-hover 1s forwards;
-}
-
-@keyframes pack-hover {
-  5% {
-    transform: translateY(-10px);
-  }
 }
 </style>
