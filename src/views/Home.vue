@@ -167,21 +167,9 @@
         <template #button>
           <Button yellow icon="register.svg">Pack</Button>
         </template>
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Pack supporter"
-          src="@/assets/img/packs/pack.svg"
-          style="max-width: 100%"
-        /><br /><br />
+        <Pack header="summer.png" footer="summer.png" /><br /><br />
         <Button yellow icon="register.svg" class="fullwidth">Item</Button><br />
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Item eskimok"
-          src="@/assets/img/packs/pack.svg"
-          style="max-width: 100%"
-        />
+        <Pack header="summer.png" footer="summer.png" />
       </Card>
     </template>
   </Container>
@@ -192,6 +180,7 @@ import Card from "@/components/Card.vue";
 import Button from "@/components/Button.vue";
 import RandomNumber from "@/components/RandomNumber.vue";
 import Bank from "@/components/Bank.vue";
+import Pack from "@/components/Pack.vue";
 import Container from "@/components/Container.vue";
 
 export default {
@@ -202,6 +191,7 @@ export default {
     Bank,
     Button,
     RandomNumber,
+    Pack,
   },
   data() {
     return {
@@ -211,16 +201,12 @@ export default {
     };
   },
   methods: {
-    handle({currentTarget}) {
+    handle({ currentTarget }) {
       this.$refs.handle.src = require("@/assets/img/lottery/down.svg");
-      setTimeout(
-        () => {
-          this.$refs.handle.src = require("@/assets/img/lottery/up.svg");
-          currentTarget.disabled = true
-        },
-        200
-      );
-      
+      setTimeout(() => {
+        this.$refs.handle.src = require("@/assets/img/lottery/up.svg");
+        currentTarget.disabled = true;
+      }, 200);
     },
   },
   beforeRouteEnter(to, from, next) {

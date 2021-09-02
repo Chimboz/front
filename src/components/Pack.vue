@@ -6,7 +6,6 @@
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       viewBox="0 0 180 340"
-      xmlns:v="https://vecta.io/nano"
     >
       <g fill="#52758b">
         <g fill-rule="evenodd">
@@ -116,7 +115,6 @@ export default {
 
 <style lang="scss" scoped>
 .pack {
-  max-width: calc(25% - var(--gap));
   position: relative;
 }
 
