@@ -16,18 +16,18 @@
       </tr>
     </thead>
 
-    <BBSRow v-for="category in boards" :key="category" :category="category">
-    </BBSRow>
+    <Category v-for="category in boards" :key="category" :category="category">
+    </Category>
   </table>
 </template>
 
 <script>
-import BBSRow from "../row/BBS.vue";
+import Category from "../row/Category.vue";
 
 export default {
-  name: "BBSList",
+  name: "BBS",
   components: {
-    BBSRow,
+    Category,
   },
   props: {
     boards: {

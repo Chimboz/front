@@ -38,7 +38,7 @@
         height="50"
         nowrap="nowrap"
       >
-        {{ formatDate(topic.last_msg.date) }}<br />
+        {{ formatDate }}<br />
         <User :user="topic.last_msg.author"/>
         &nbsp;»&nbsp;
         <router-link :to="$route.params.id+'/'+topic.id+'#'+topic.last_msg.msgid"
@@ -78,9 +78,9 @@ export default {
       type: Boolean,
     },
   },
-  methods: {
-    formatDate(date) {
-      return formatDistance(new Date(date), new Date(), {
+  computed: {
+    formatDate() {
+      return formatDistance(new Date(this.topic.last_msg.date), new Date(), {
         locale: fr,
         addSuffix: true,
       });

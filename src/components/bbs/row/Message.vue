@@ -2,7 +2,7 @@
   <tr :id="message.id">
     <td class="info" width="100" valign="top">
       <Tiz /><br /><User :user="message.author" /><br />{{
-        format(message.date, "PPP à pp")
+        formatDate
       }}
     </td>
     <td class="msg-body justified">
@@ -26,7 +26,7 @@
         />
       </div>
       <hr style="margin: 2px 0" />
-      <div class="content" v-html="formatMd(message.content)"></div>
+      <div class="content" v-html="formatMessage"></div>
       <div class="signature" v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>
       </div>
@@ -67,11 +67,8 @@ export default {
       this.scrollTo(this.$route.hash);
     }
   },
-  methods: {
-    scrollTo(anchor) {
-      location.href = anchor;
-    },
-    formatMd(message) {
+  computed: {
+    formatMessage() {
       Marked.setOptions({
         renderer: new Marked.Renderer(),
         highlight: function (code, lang) {
@@ -88,13 +85,18 @@ export default {
         smartypants: false,
         xhtml: false,
       });
-      return DOMPurify.sanitize(Marked(message));
+      return DOMPurify.sanitize(Marked(this.message.content));
     },
-    format(date, pattern) {
-      return format(new Date(date), pattern, {
+    formatDate() {
+      return format(new Date(this.message.date), "PPP à pp", {
         locale: fr,
         addSuffix: true,
       });
+    },
+  },
+  methods: {
+    scrollTo(anchor) {
+      location.href = anchor;
     },
   },
 };

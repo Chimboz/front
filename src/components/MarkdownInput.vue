@@ -15,7 +15,7 @@
       <tr id="reply" v-if="message">
         <td class="info" width="100" valign="top">
           <Tiz /><br /><User :user="{ id: 1, name: 'Tigriz' }" /><br />{{
-            format(Date.now(), "PPP à pp")
+            formatDate
           }}
         </td>
         <td class="msg-body justified">
@@ -37,7 +37,7 @@
             />
           </div>
           <hr style="margin: 2px 0" />
-          <div class="content" v-html="formatMd(message)"></div>
+          <div class="content" v-html="formatMessage"></div>
           <div class="signature" v-if="message.signature">
             <i><br />"{{ message.author.signature }}"</i>
           </div>
@@ -113,11 +113,8 @@ export default {
       type: Object,
     },
   },
-  methods: {
-    scrollTo(anchor) {
-      location.href = anchor;
-    },
-    formatMd(message) {
+  computed: {
+    formatMessage() {
       Marked.setOptions({
         renderer: new Marked.Renderer(),
         highlight: function (code, lang) {
@@ -134,13 +131,18 @@ export default {
         smartypants: false,
         xhtml: false,
       });
-      return DOMPurify.sanitize(Marked(message));
+      return DOMPurify.sanitize(Marked(this.message));
     },
-    format(date, pattern) {
-      return format(new Date(date), pattern, {
+    formatDate() {
+      return format(Date.now(), "PPP à pp", {
         locale: fr,
         addSuffix: true,
       });
+    },
+  },
+  methods: {
+    scrollTo(anchor) {
+      location.href = anchor;
     },
   },
 };

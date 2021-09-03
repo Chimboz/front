@@ -76,7 +76,7 @@ import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
-  name: "BBS Row",
+  name: "Category",
   components: {
     Group,
     User
