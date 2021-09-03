@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="'/annuaire/' + user.id" :style="{ color: user.color }">{{
+    <router-link :to="'/member/' + user.id" :style="{ color: user.color }">{{
       user.name
     }}</router-link>
     <div v-if="separator">,&nbsp;</div>

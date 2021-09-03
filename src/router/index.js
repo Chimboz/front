@@ -74,6 +74,12 @@ const routes = [
     component: () => import("../views/Shop.vue"),
     meta: { title: "Chapatiz Retro | Magasin" },
   },
+  {
+    path: "/member/:id",
+    name: "Member",
+    component: () => import("../views/members/Member.vue"),
+    meta: { title: "Chapatiz Retro | Membre" },
+  },
   // 404
   {
     path: "/:pathMatch(.*)*",

@@ -1,0 +1,117 @@
+<template>
+  <Container>
+    <template #left-column
+      ><Card blue top>
+        <div class="flex col fullwidth">
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.link") }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
+          >
+          <router-link to="/bite" class="list"
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
+          >
+        </div> </Card
+      ><br />
+      <Rules />
+    </template>
+    <Card>
+      <Tiz />
+    </Card>
+    <template #right-column
+      ><Card blue top>
+        <template #header> Records ! </template>
+        <template #subtitle
+          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+        >
+        parties jouées:
+        <br />
+        fredazur avec 22665 parties jouées ! <br />
+        <br />
+        parties gagnées: <br />
+        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
+        <br />
+        parties perdues: <br />
+        fredazur avec 20763 parties perdues ! <br />
+        <br />
+        match nuls: <br />
+        20CeNt avec 1077 match nuls ! <br /> </Card
+    ></template>
+  </Container>
+</template>
+
+<script>
+import Card from "@/components/Card.vue";
+import Rules from "@/components/Rules.vue";
+import Tiz from "@/components/Tiz.vue";
+import Container from "@/components/Container.vue";
+
+export default {
+  name: "Members",
+  components: {
+    Card,
+    Container,
+    Rules,
+    Tiz,
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+</style>
