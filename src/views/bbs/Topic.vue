@@ -4,47 +4,75 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.link")
-            }}</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.link") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.internalMessagingLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myGroupsLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myFriendsLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;Forum</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.notSmartLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.shoppingLink")
-            }}</router-link
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Puce"
+              src="@/assets/img/puce.svg"
+            />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
           >
         </div>
       </Card></template
     >
     <Topic :messages="data"> </Topic>
     <br />
-    <Card></Card>
+    <MarkdownInput />
   </Container>
 </template>
 
@@ -52,6 +80,7 @@
 import Card from "@/components/Card.vue";
 import Topic from "@/components/bbs/list/Topic.vue";
 import Container from "@/components/Container.vue";
+import MarkdownInput from "@/components/MarkdownInput.vue";
 
 export default {
   name: "BBS",
@@ -59,6 +88,7 @@ export default {
     Topic,
     Container,
     Card,
+    MarkdownInput,
   },
   data() {
     return {
@@ -88,7 +118,9 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/topic.json").then((res)=>res.data);
+      this.data = await this.axios
+        .get("/api/topic.json")
+        .then((res) => res.data);
     } catch (error) {
       this.error = error.toString();
     }
