@@ -382,7 +382,7 @@ export default {
 
 input[type="text"] {
   text-align: center;
-  font-family: "Pixelated Verdana";
+  font-family: "Pixelated Verdana 12";
   font-weight: bold;
   font-size: 13.3333px;
   color: #2a5380;

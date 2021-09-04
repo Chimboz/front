@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Pixelated Verdana';
+    font-family: 'Pixelated Verdana 12';
     src: url('../fonts/pixelated_verdana_12pt.woff2') format('woff2'),
         url('../fonts/pixelated_verdana_12pt.woff') format('woff');
     font-weight: normal;
@@ -8,9 +8,18 @@
 }
 
 @font-face {
-    font-family: 'Pixelated Verdana';
+    font-family: 'Pixelated Verdana 12';
     src: url('../fonts/pixelated_verdana_bold_12pt.woff2') format('woff2'),
         url('../fonts/pixelated_verdana_bold_12pt.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixelated Verdana 10';
+    src: url('../fonts/pixelated_verdana_bold_10pt.woff2') format('woff2'),
+        url('../fonts/pixelated_verdana_bold_10pt.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;

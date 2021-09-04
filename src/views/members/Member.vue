@@ -243,8 +243,8 @@ export default {
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelated Verdana";
-  font-size: 13.3333px;
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
   flex-wrap: wrap;
   justify-content: center;
   width: 50px;
@@ -255,8 +255,8 @@ export default {
 }
 
 .online {
-  font-family: "Pixelated Verdana";
-  font-size: 13.3px;
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
   color: #fff;
   justify-content: center;
   width: 100%;

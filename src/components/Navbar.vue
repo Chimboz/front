@@ -169,7 +169,7 @@ export default {
 }
 
 #username {
-  font-family: "Pixelated Verdana";
+  font-family: "Pixelated Verdana 12";
   font-weight: bold;
   font-size: 1.4em;
   padding: 0 8px 8px 0;
@@ -178,7 +178,7 @@ export default {
 }
 
 #connect {
-  font-family: "Pixelated Verdana";
+  font-family: "Pixelated Verdana 12";
   border-radius: 100px;
   padding: 3px;
   margin-right: -20px;
