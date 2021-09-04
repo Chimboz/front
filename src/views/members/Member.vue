@@ -71,12 +71,18 @@
       ><br />
       <Rules />
     </template>
+    <span class="pink justified">
+      <router-link to="/bbs" class="pink"
+        >» Retour à l'annuaire</router-link
+      > </span
+    ><br />
     <Card class="member">
       <div class="member-header">
         <Tiz />
-        <div class="flex column">
-        <StrokeText class="pseudo">Tigriz</StrokeText>
-        "Nitens lux machin"</div>
+        <div class="flex column" style="position: relative">
+          <StrokeText class="pseudo">Tigriz</StrokeText>
+          "Nitens lux machin"
+        </div>
       </div>
       <div class="member-body">
         <div class="member-portrait"><Tiz /></div>
@@ -143,7 +149,17 @@ export default {
   },
 };
 </script>
-
+<style lang="scss">
+.member .card {
+  background: linear-gradient(
+    to bottom,
+    #5a9bbf,
+    #d5e6f3,
+    var(--main-card-color) calc(100% - 12px),
+    var(--dark-card-color) 100%
+  );
+}
+</style>
 <style lang="scss" scoped>
 .member {
   overflow: hidden;
@@ -159,10 +175,11 @@ export default {
   color: #fff;
   font-size: 20px;
   text-shadow: 2px 1px #0008;
+  min-height: 90px;
 }
 
 .member-header .tiz {
-  margin-top: -10%;
+  margin-top: -5%;
   float: left;
   width: 33%;
   margin-bottom: -100%;
@@ -185,6 +202,8 @@ export default {
   text-align: left;
   z-index: 1;
   position: relative;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .member-portrait {
@@ -194,10 +213,5 @@ export default {
 
 .member-section {
   background: #a9cbe4;
-}
-
-.member div {
-  border-radius: 8px;
-  padding: 8px;
 }
 </style>
