@@ -1,5 +1,9 @@
 <template>
-  <div class="header">
+  <div
+    class="header"
+    :style="{
+      background: 'url(' + require('@/assets/img/navbar/hours/'+this.date.getHours()+'.svg') + ')' }"
+  >
     <router-link to="/"
       ><img
         draggable="false"
@@ -122,6 +126,11 @@ import StrokeText from "@/components/StrokeText.vue";
 
 export default {
   name: "Navbar",
+  data() {
+    return {
+      date: new Date(),
+    };
+  },
   props: {
     user: {
       required: true,
@@ -143,10 +152,8 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  height: 70px;
-  background: url(../assets/img/navbar/navbar_old.svg);
-  //box-shadow: inset 0 -10px 5px -5px #76bde8;
-  border-radius: 0 0 25% 25%;
+  height: 78px;
+  //box-shadow: inset 0px 0px 10px 5px #6090be;
 }
 
 #logo {
