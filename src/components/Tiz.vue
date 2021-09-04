@@ -1,6 +1,12 @@
 <template>
   <div class="tiz">
-    <img draggable="false" oncontextmenu="return false"   alt="Tiz avatar" class="avatar" src="../assets/img/tiz/tiz.svg" />
+    <img
+      draggable="false"
+      oncontextmenu="return false"
+      alt="Tiz avatar"
+      class="avatar"
+      src="../assets/img/tiz/tiz.svg"
+    />
     <div class="shadow"></div>
   </div>
 </template>
@@ -73,11 +79,11 @@ export default {
   margin: auto;
 }
 
-.tiz .avatar {
-  width: -webkit-fill-available;
+.avatar {
+  width: auto;
 }
 
-.tiz .shadow {
+.shadow {
   margin-top: -8px;
   height: 10px;
   border-radius: 100%;

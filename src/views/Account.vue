@@ -372,6 +372,10 @@ export default {
   z-index: 3;
   margin-bottom: 4px;
 }
+
+.cabin-scene .avatar {
+  width: 100%
+}
 </style>
 
 <style lang="scss" scoped>
