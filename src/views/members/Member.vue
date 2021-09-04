@@ -85,7 +85,11 @@
         </div>
       </div>
       <div class="member-body">
-        <div class="member-portrait"><Tiz /></div>
+        <div class="member-portrait"><Tiz /><div class="online flex centered tchat"><img
+            draggable="false"
+            oncontextmenu="return false"
+            src="@/assets/img/tiz/tiz_shape.svg"
+          />&nbsp;<b>En ligne</b></div></div>
         <p>
           Marié avec
           <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis 76
@@ -230,6 +234,7 @@ export default {
 .member-portrait {
   float: right;
   background: #fff;
+  width: 100px;
 }
 
 .member-section {
@@ -247,5 +252,24 @@ export default {
   border: 1px solid #6090be;
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
+}
+
+.online {
+  font-family: "Pixelated Verdana";
+  font-size: 13.3px;
+  color: #fff;
+  justify-content: center;
+  width: 100%;
+  height: 26px;
+  background:linear-gradient(to bottom, #0193ca, #2d4a97);
+  border-radius: 10px;
+}
+
+.online.tchat{
+  background:linear-gradient(to bottom, #81cb00, #40972d);
+}
+
+.online img {
+  height: 20px;
 }
 </style>
