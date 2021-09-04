@@ -2,7 +2,7 @@
   <div
     class="header"
     :style="{
-      background: 'url(' + require('@/assets/img/navbar/hours/'+this.date.getHours()+'.svg') + ')' }"
+      'background-image': 'url(' + require('@/assets/img/navbar/hours/'+this.date.getHours()+'.svg') + ')' }"
   >
     <router-link to="/"
       ><img
@@ -153,6 +153,7 @@ export default {
   width: 100%;
   height: 78px;
   background-position: center;
+  background-size: cover;
   //border-radius: 99px;
   //box-shadow: inset 0px 0px 10px 5px #6090be;
 }
