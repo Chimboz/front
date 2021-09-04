@@ -98,8 +98,29 @@
           <Group :group="{ id: '2', name: 'L\'Eglise', color: '#000' }" />, La
           Chatterie
         </p>
-        <p>Vérification du nom : tigriz, TIGRIZ</p>
-        <p>Signe astrologique : dragon rouge de terre</p>
+        <div class="icon flex centered">
+          Chimbo
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            src="@/assets/img/sex/male.svg"
+          />
+        </div>
+        &nbsp;
+        <div class="icon flex centered">
+          Niveau<br /><img
+            draggable="false"
+            oncontextmenu="return false"
+            src="@/assets/img/numbers/2.svg"
+          /><img
+            draggable="false"
+            oncontextmenu="return false"
+            src="@/assets/img/numbers/5.svg"
+          />
+        </div>
+        <br /><br />
+        <p>Vérification du nom : <b>tigriz, TIGRIZ</b></p>
+        <p>Signe astrologique : <b>dragon rouge de terre</b></p>
       </div>
       <div class="member-section">
         Classement : 25ème 19 parties, 10 gagnées, 9 perdues, 0 nulles 40 points
@@ -213,5 +234,18 @@ export default {
 
 .member-section {
   background: #a9cbe4;
+}
+
+.icon {
+  display: inline-flex;
+  font-family: "Pixelated Verdana";
+  font-size: 13.3333px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #6090be;
+  background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
+  border-radius: 4px;
 }
 </style>
