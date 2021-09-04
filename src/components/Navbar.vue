@@ -148,11 +148,12 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .header {
   width: 100%;
   height: 78px;
+  background-position: center;
+  //border-radius: 99px;
   //box-shadow: inset 0px 0px 10px 5px #6090be;
 }
 
