@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="member-body">
-        <div class="member-portrait"><Tiz /><div class="online flex centered tchat"><img
+        <div class="member-portrait"><Tiz class="portrait"/><div class="online flex centered tchat"><img
             draggable="false"
             oncontextmenu="return false"
             src="@/assets/img/tiz/tiz_shape.svg"
@@ -220,6 +220,13 @@ export default {
   text-shadow: -1px 3px #f39;
   height: 35px;
   overflow: visible;
+}
+
+.portrait {
+  background: url(../../assets/img/member/portrait.png);
+  height: 112px;
+  width: 104px;
+  overflow: hidden;
 }
 
 .member-section,
