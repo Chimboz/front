@@ -74,8 +74,9 @@
     <Card class="member">
       <div class="member-header">
         <Tiz />
+        <div class="flex column">
         <StrokeText class="pseudo">Tigriz</StrokeText>
-        "Nitens lux machin"
+        "Nitens lux machin"</div>
       </div>
       <div class="member-body">
         <div class="member-portrait"><Tiz /></div>
@@ -130,7 +131,7 @@ import StrokeText from "@/components/StrokeText.vue";
 import Container from "@/components/Container.vue";
 
 export default {
-  name: "Members",
+  name: "Member",
   components: {
     Card,
     Container,
@@ -144,30 +145,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.member {
+  overflow: hidden;
+}
+
 .member-body {
   background: #eff5fa;
+  clear: both;
 }
 
 .member-header {
   font-family: "Chimboz Heavy";
   color: #fff;
   font-size: 20px;
+  text-shadow: 2px 1px #0008;
 }
 
 .member-header .tiz {
+  margin-top: -10%;
   float: left;
-  width: 10%;
-  max-width: 150px;
-  transform: rotate(-15deg);
-  position: absolute;
+  width: 33%;
+  margin-bottom: -100%;
+
+  transform: rotate(-5deg);
 }
 
 .pseudo {
   font-size: 35px;
   fill: #fff;
   stroke: #f39;
-  stroke-width: 5;
-  text-shadow: -3px 3px #f39;
+  stroke-width: 3;
+  text-shadow: -1px 3px #f39;
   height: 35px;
   overflow: visible;
 }
