@@ -11,7 +11,7 @@ export default {
   name: "User",
   props: {
     user: {
-      required: false,
+      required: true,
       type: Object,
     },
     separator: {

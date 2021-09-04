@@ -71,8 +71,32 @@
       ><br />
       <Rules />
     </template>
-    <Card>
-      <Tiz />
+    <Card class="member">
+      <div class="member-header">
+        <Tiz />
+        <StrokeText class="pseudo">Tigriz</StrokeText>
+        "Nitens lux machin"
+      </div>
+      <div class="member-body">
+        <div class="member-portrait"><Tiz /></div>
+        <p>
+          Marié avec
+          <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis 76
+          jours
+        </p>
+        <p>Intérêts : Musique, informatique, mathématiques, Sayaka</p>
+        <p>Page perso : http://last.fm/user/Tigriz</p>
+        <p>
+          Inscrit aux groupes :
+          <Group :group="{ id: '2', name: 'L\'Eglise', color: '#000' }" />, La
+          Chatterie
+        </p>
+        <p>Vérification du nom : tigriz, TIGRIZ</p>
+        <p>Signe astrologique : dragon rouge de terre</p>
+      </div>
+      <div class="member-section">
+        Classement : 25ème 19 parties, 10 gagnées, 9 perdues, 0 nulles 40 points
+      </div>
     </Card>
     <template #right-column
       ><Card blue top>
@@ -100,6 +124,9 @@
 import Card from "@/components/Card.vue";
 import Rules from "@/components/Rules.vue";
 import Tiz from "@/components/Tiz.vue";
+import User from "@/components/links/User.vue";
+import Group from "@/components/links/Group.vue";
+import StrokeText from "@/components/StrokeText.vue";
 import Container from "@/components/Container.vue";
 
 export default {
@@ -109,9 +136,60 @@ export default {
     Container,
     Rules,
     Tiz,
+    User,
+    Group,
+    StrokeText,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.member-body {
+  background: #eff5fa;
+}
+
+.member-header {
+  font-family: "Chimboz Heavy";
+  color: #fff;
+  font-size: 20px;
+}
+
+.member-header .tiz {
+  float: left;
+  width: 10%;
+  max-width: 150px;
+  transform: rotate(-15deg);
+  position: absolute;
+}
+
+.pseudo {
+  font-size: 35px;
+  fill: #fff;
+  stroke: #f39;
+  stroke-width: 5;
+  text-shadow: -3px 3px #f39;
+  height: 35px;
+  overflow: visible;
+}
+
+.member-section,
+.member-body {
+  text-align: left;
+  z-index: 1;
+  position: relative;
+}
+
+.member-portrait {
+  float: right;
+  background: #fff;
+}
+
+.member-section {
+  background: #a9cbe4;
+}
+
+.member div {
+  border-radius: 8px;
+  padding: 8px;
+}
 </style>
