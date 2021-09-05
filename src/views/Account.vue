@@ -16,62 +16,7 @@
             </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;{{ $t("myAccount.link") }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;Forum</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;MajMin</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img
-              draggable="false" oncontextmenu="return false"
-              alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
-          >
+          <SideNavEntries></SideNavEntries>
         </div></Card
       ><br />
       <Bank :credits="data.credits"/></template
@@ -313,6 +258,7 @@ import Tiz from "@/components/Tiz.vue";
 import Emotes from "@/components/Emotes.vue";
 import Bank from "@/components/Bank.vue";
 import Container from "@/components/Container.vue";
+import SideNavEntries from "@/components/SideNavEntries.vue";
 
 export default {
   name: "Account",
@@ -323,6 +269,7 @@ export default {
     Container,
     Tiz,
     Emotes,
+    SideNavEntries,
   },
   data() {
     return {
