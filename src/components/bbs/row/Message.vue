@@ -1,9 +1,15 @@
 <template>
   <tr :id="message.id">
     <td class="info" width="100" valign="top">
-      <Tiz /><br /><User :user="message.author" /><br />{{
-        formatDate
-      }}
+      <Tiz
+        :avatar="message.author.look.avatar"
+        :hat="message.author.look.hat"
+        :body="message.author.look.body"
+        :shoes="message.author.look.shoes"
+        :item0="message.author.look.item0"
+        :item1="message.author.look.item1"
+        :item2="message.author.look.item2"
+      /><br /><User :user="message.author" /><br />{{ formatDate }}
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
