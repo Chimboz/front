@@ -2,9 +2,9 @@
   "username": "Owned",
   "look": {
     "avatar": 0,
-    "hat": 2,
-    "body": 2,
-    "shoes": 2,
+    "hat": 120,
+    "body": 12,
+    "shoes": 20,
     "item0": 2,
     "item1": 2,
     "item2": 2
