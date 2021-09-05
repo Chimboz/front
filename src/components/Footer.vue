@@ -6,13 +6,13 @@
       ><img draggable="false" oncontextmenu="return false" 
         alt="Twitter follow"
         title="Twitter follow"
-        src="https://img.shields.io/twitter/follow/ChapatizRetro?color=blue&label=Twitter&logo=twitter&style=flat" /></a
+        src="https://img.shields.io/twitter/follow/ChapatizRetro?color=blue&amp;label=Twitter&amp;logo=twitter&amp;style=flat" /></a
     >&nbsp;
     <a href="https://discord.gg/aYph9u8" target="_blank"
       ><img draggable="false" oncontextmenu="return false" 
         alt="Discord server"
         title="Discord server"
-        src="https://img.shields.io/discord/765491519536496660?label=discord&logo=discord&logoColor=fff" /></a
+        src="https://img.shields.io/discord/765491519536496660?label=discord&amp;logo=discord&amp;logoColor=fff" /></a
     >&nbsp;
     <a href="http://www.gnu.org/licenses/gpl-3.0" target="_blank"
       ><img draggable="false" oncontextmenu="return false" 
