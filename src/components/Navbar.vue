@@ -2,7 +2,11 @@
   <div
     class="header"
     :style="{
-      'background-image': 'url(' + require('@/assets/img/navbar/hours/'+this.date.getHours()+'.svg') + ')' }"
+      'background-image':
+        'url(' +
+        require('@/assets/img/navbar/hours/' + this.date.getHours() + '.svg') +
+        ')',
+    }"
   >
     <router-link to="/"
       ><img
@@ -145,9 +149,11 @@ export default {
     StrokeText,
     User,
   },
+  created() {
+    document.body.className = "h"+this.date.getHours();
+  },
 };
 </script>
-
 <style lang="scss" scoped>
 .header {
   width: 100%;
