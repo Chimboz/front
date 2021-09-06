@@ -92,7 +92,7 @@
           :item1="data.look.item1"
           :item2="data.look.item2"
         />
-        <div class="flex column">
+        <div class="flex column" style="z-index: 1; position: relative">
           <StrokeText class="pseudo">{{ this.data.name }}</StrokeText>
           <div class="sentence">"{{ this.data.phrase_pref }}"</div>
         </div>
@@ -317,7 +317,7 @@ export default {
 
 .member-header .tiz {
   float: left;
-  margin: 10% auto -100% 12%;
+  margin: 40px auto -100% 12%;
   transform: rotate(-5deg) scale(3);
 }
 
