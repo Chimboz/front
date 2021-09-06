@@ -8,43 +8,59 @@
         alt="Tiz avatar"
       />
       <img
-        v-if="shoes > 1"
+        v-if="shoes > 0"
         class="item shoe1"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/shoe/${this.shoes}.svg`"
       />
       <img
-        v-if="shoes > 1"
+        v-if="shoes > 0"
         class="item shoe2"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/shoe/${this.shoes}.svg`"
       />
       <img
-        v-if="body > 1"
+        v-if="body > 0"
         class="item body"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/body/${this.body}.svg`"
       />
       <img
-        v-if="hat > 1"
+        v-if="hat > 0"
         class="item hat"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/hat/${this.hat}.svg`"
       />
       <img
         v-if="emote > 0"
         class="item emote"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/emote/${this.emote}.svg`"
       />
       <img
-        v-if="item2 > 1"
+        v-if="item2 > 0"
         class="item item2"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/item2/${this.item2}.svg`"
       />
       <img
-        v-if="item1 > 1"
+        v-if="item1 > 0"
         class="item item1"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/item1/${this.item1}.svg`"
       />
       <img
-        v-if="item0 > 1"
+        v-if="item0 > 0"
         class="item item0"
+        draggable="false"
+        oncontextmenu="return false"
         :src="`/avatar/item0/${this.item0}.svg`"
       />
     </div>
@@ -138,48 +154,55 @@ export default {
 
 .item {
   position: absolute;
+  pointer-events: none;
 }
 
 .shoe1 {
-  top: 25.2px;
-  left: -7.7px;
-  transform: scale(0.85);
+  top: 25.3px;
+  left: -7px;
+  transform: scale(0.75);
 }
 
 .shoe2 {
-  top: 25.2px;
-  left: 16.3px;
-  transform: scale(-0.85, 0.85);
+  top: 24.9px;
+  left: 14.7px;
+  transform: scale(-0.75, 0.75);
 }
 
 .hat {
-  top: -46.8px;
-  left: -15.7px;
+  top: -44.4px;
+  left: -18.6px;
+  transform: scale(0.85);
 }
 
 .body {
-  top: -19.7px;
-  left: -19.7px;
+  top: -21.3px;
+  left: -20px;
+  transform: scale(0.91);
 }
 
 .item2 {
-  top: -44px;
-  left: -9.5px;
+  top: -41px;
+  left: -10px;
+  transform: scale(0.91);
 }
 
 .item1 {
-  top: -11px;
-  left: -8.7px;
+  top: -10px;
+  left: -10.5px;
+  transform: scale(0.91);
 }
 
 .item0 {
-  top: -14px;
-  left: -2px;
+top: -13.9px;
+  left: -2.5px;
+  transform: scale(.91);
 }
 
 .emote {
-  top: -56px;
-  left: -56px;
+  top: -53.7px;
+  left: -55.2px;
+  transform: scale(0.91);
 }
 
 .hat,

@@ -2,12 +2,12 @@
   "username": "Owned",
   "look": {
     "avatar": 0,
-    "emote": 4,
-    "hat": 120,
-    "body": 12,
-    "shoes": 20,
+    "emote": 1,
+    "hat": 9,
+    "body": 1,
+    "shoes": 1,
     "item0": 2,
-    "item1": 2,
+    "item1": 10,
     "item2": 2
   },
   "items": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
