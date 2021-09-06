@@ -340,10 +340,14 @@
                 v-for="(_, category) of this.data.items"
                 :key="category"
                 class="item"
-                :class="{active: this.chest[category]}"
-                @click="this.chest = { [category]: this.data.items[category] }; this.class"
+                :class="{ active: this.chest[category] }"
+                @click="
+                  this.chest[category] && Object.keys(this.chest).length == 1
+                    ? (this.chest = this.data.items)
+                    : (this.chest = { [category]: this.data.items[category] })
+                "
               >
-                <img :src="require(`@/assets/img/picto/${category}.svg`)" />
+                <img :src="require(`@/assets/img/icons/${category}.svg`)" />
               </div>
             </div>
             <div class="chest">
@@ -355,14 +359,17 @@
               >
                 <div
                   class="item"
-                  :class="{ active: this.data.look[name] == item }"
+                  :class="{
+                    active: this.data.look[name] == item,
+                    cancel: item == 1,
+                  }"
                   v-for="item of category"
-                  :id="item"
                   :key="item"
                   @click="this.data.look[name] = item"
                   @mouseover="this.info = name + ' ' + item"
                 >
-                  <img :src="`/avatar/${name}/${item}.svg`" />
+                  <img v-if="item == 1" src="@/assets/img/icons/cross.svg" />
+                  <img v-else :src="`/avatar/${name}/${item}.svg`" />
                 </div>
               </div>
             </div>
@@ -750,10 +757,19 @@ button {
   overflow: hidden;
 }
 
+.item img[src*="cross"] {
+  transform: translate(0px, 0px);
+}
+
+.item.cancel {
+  display: inline-flex;
+}
+
 .category-selection .item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
 }
 
 .info {

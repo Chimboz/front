@@ -112,6 +112,10 @@ export default {
 .content img {
   max-width: 100%;
 }
+
+.content ul, .content ol {
+  padding-left: 18px;
+}
 </style>
 <style lang="scss" scoped>
 td {
