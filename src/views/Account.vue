@@ -422,8 +422,8 @@ export default {
 .cabin-scene .tiz {
   position: relative;
   z-index: 3;
-  margin-bottom: 4px;
-  transform: scale(2);
+  margin-bottom: 25px;
+  transform: scale(1.8);
 }
 </style>
 
