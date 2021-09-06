@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="58.65px" width="49.15px" xmlns="http://www.w3.org/2000/svg">
-  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 24.1, 18.1)">
-    <use height="4.8" transform="matrix(1.0, 0.0, 0.0, 1.0, -12.65, 14.8)" width="24.8" xlink:href="#shape0"/>
-  </g>
-  <defs>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 12.65, -14.8)">
-      <path d="M6.8 16.7 Q6.95 16.05 8.05 15.5 L10.45 19.15 9.0 19.55 Q8.05 19.55 7.3 18.55 6.55 17.55 6.8 16.7" fill="#11cc59" fill-rule="evenodd" stroke="none"/>
-      <path d="M10.35 14.8 Q12.1 14.75 12.15 16.3 12.2 17.8 10.85 18.85 L10.45 19.15 8.05 15.5 Q8.5 15.2 9.05 15.05 L10.35 14.8" fill="#f00000" fill-rule="evenodd" stroke="none"/>
-      <path d="M-10.9 14.8 L-9.55 15.1 -11.4 18.9 Q-12.65 17.8 -12.65 16.35 -12.6 14.75 -10.9 14.8" fill="#11cc59" fill-rule="evenodd" stroke="none"/>
-      <path d="M-7.3 16.75 Q-7.05 17.6 -7.8 18.55 -8.6 19.55 -9.55 19.6 -10.5 19.6 -11.4 18.9 L-9.55 15.1 Q-7.6 15.7 -7.3 16.75" fill="#f00000" fill-rule="evenodd" stroke="none"/>
-    </g>
-  </defs>
-</svg>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="58.65" width="49.15" xmlns="http://www.w3.org/2000/svg"><use height="4.8" transform="translate(11.45 32.9)" width="24.8" xlink:href="#a"/><defs><g id="a" fill-rule="evenodd"><path d="M6.8 16.7q.15-.65 1.25-1.2l2.4 3.65-1.45.4q-.95 0-1.7-1t-.5-1.85" fill="#11cc59" transform="translate(12.65 -14.8)"/><path d="M10.35 14.8q1.75-.05 1.8 1.5.05 1.5-1.3 2.55l-.4.3-2.4-3.65q.45-.3 1-.45l1.3-.25" fill="#f00000" transform="translate(12.65 -14.8)"/><path d="m-10.9 14.8 1.35.3-1.85 3.8q-1.25-1.1-1.25-2.55.05-1.6 1.75-1.55" fill="#11cc59" transform="translate(12.65 -14.8)"/><path d="M-7.3 16.75q.25.85-.5 1.8-.8 1-1.75 1.05-.95 0-1.85-.7l1.85-3.8q1.95.6 2.25 1.65" fill="#f00000" transform="translate(12.65 -14.8)"/></g></defs></svg>
