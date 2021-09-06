@@ -269,7 +269,11 @@
             </div>
           </div>
           <div class="gender">
-            <button>
+            <button
+              @mouseenter="this.gender = 'Chimbo'"
+              @mouseleave="this.gender = this.data.gender"
+              @click="this.data.gender = 'Chimbo'"
+            >
               <img
                 draggable="false"
                 oncontextmenu="return false"
@@ -277,7 +281,11 @@
                 title="Male gender"
                 src="@/assets/img/sex/male.svg"
               /></button
-            ><button>
+            ><button
+              @mouseenter="this.gender = 'Chimbette'"
+              @mouseleave="this.gender = this.data.gender"
+              @click="this.data.gender = 'Chimbette'"
+            >
               <img
                 draggable="false"
                 oncontextmenu="return false"
@@ -285,7 +293,11 @@
                 title="Female gender"
                 src="@/assets/img/sex/female.svg"
               /></button
-            ><button>
+            ><button
+              @mouseenter="this.gender = 'Inconnu'"
+              @mouseleave="this.gender = this.data.gender"
+              @click="this.data.gender = 'Inconnu'"
+            >
               <img
                 draggable="false"
                 oncontextmenu="return false"
@@ -295,6 +307,8 @@
               />
             </button>
           </div>
+          <br />
+          <div class="gender">{{ this.gender }}</div>
         </div>
         <div class="right-acc flex">
           <div class="nav-acc flex">
@@ -322,12 +336,15 @@
           </div>
           <div id="inventory" :class="{ active: !profile }">
             <div class="category-selection">
-              <div class="item" @click="this.chest={hat: this.data.items.hat}"><img src="@/assets/img/picto/hat.svg" /></div>
-              <div class="item" @click="this.chest={body: this.data.items.body}"><img src="@/assets/img/picto/body.svg" /></div>
-              <div class="item" @click="this.chest={shoe: this.data.items.shoe}"><img src="@/assets/img/picto/shoe.svg" /></div>
-              <div class="item" @click="this.chest={item0: this.data.items.item0}"><img src="@/assets/img/picto/item0.svg" /></div>
-              <div class="item" @click="this.chest={item1: this.data.items.item1}"><img src="@/assets/img/picto/item1.svg" /></div>
-              <div class="item" @click="this.chest={item2: this.data.items.item2}"><img src="@/assets/img/picto/item2.svg" /></div>
+              <div
+                v-for="(_, category) of this.data.items"
+                :key="category"
+                class="item"
+                :class="{active: this.chest[category]}"
+                @click="this.chest = { [category]: this.data.items[category] }; this.class"
+              >
+                <img :src="require(`@/assets/img/picto/${category}.svg`)" />
+              </div>
             </div>
             <div class="chest">
               <div
@@ -413,6 +430,7 @@ export default {
       loading: true,
       info: "",
       chest: {},
+      gender: "Inconnu",
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -423,7 +441,8 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.chest = vm.data.items;
+            vm.chest = res.data.items;
+            vm.gender = res.data.gender;
             vm.loading = false;
           } else {
             next("/");
@@ -440,6 +459,7 @@ export default {
       .then((res) => {
         this.data = res.data;
         this.chest = res.data.items;
+        this.gender = res.data.gender;
         this.loading = false;
       })
       .catch((error) => (this.error = error.toString()));
@@ -464,9 +484,9 @@ export default {
 
 input[type="text"] {
   text-align: center;
-  font-family: "Pixelated Verdana 12";
+  font-family: "Pixelated Verdana 10";
   font-weight: bold;
-  font-size: 13.3333px;
+  font-size: 10px;
   color: #2a5380;
   border: 2px solid;
   border-color: #369 #39c #39c #369;
@@ -737,6 +757,11 @@ button {
 }
 
 .info {
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2px;
   width: 100%;
   height: 50px;
@@ -758,5 +783,11 @@ button {
 
 .item.active img {
   margin: -2px;
+}
+
+.gender {
+  font-family: "Chimboz Heavy";
+  color: #fff;
+  font-size: 15px;
 }
 </style>
