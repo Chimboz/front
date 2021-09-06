@@ -145,11 +145,13 @@ export default {
 
 .avatar {
   position: relative;
+  z-index: 1
 }
 
 .shadow {
-  margin: 43.45px auto auto auto;
-  width: 38px;
+  position: absolute;
+  margin: 43px 3px auto 3px;
+  width: 37.45px;
   height: 10px;
   border-radius: 100%;
   background: #0005;

@@ -209,12 +209,9 @@ export default {
 }
 
 .member-header .tiz {
-  margin-top: -5%;
   float: left;
-  width: 33%;
-  margin-bottom: -100%;
-
-  transform: rotate(-5deg);
+  margin: 10% auto -100% 10%;
+  transform: rotate(-5deg) scale(3);
 }
 
 .pseudo {
