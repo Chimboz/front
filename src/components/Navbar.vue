@@ -177,7 +177,7 @@ export default {
 #username {
   font-family: "Pixelated Verdana 12";
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 16px;
   padding: 0 8px 8px 0;
   color: #069;
   text-shadow: 0 0 5px #fff, 0 0 5px #fff;
@@ -185,13 +185,13 @@ export default {
 
 #connect {
   font-family: "Pixelated Verdana 12";
+  font-size: 16px;
   border-radius: 100px;
   padding: 3px;
   margin-right: -20px;
   border: none;
   background: white;
   width: 130px;
-  letter-spacing: 0.3px;
 }
 
 #connect .chz-icon {

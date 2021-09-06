@@ -364,7 +364,7 @@ export default {
 .icon {
   display: inline-flex;
   font-family: "Pixelated Verdana 12";
-  font-size: 13.3333px;
+  font-size: 16px;
   flex-wrap: wrap;
   justify-content: center;
   width: 50px;

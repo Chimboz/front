@@ -713,7 +713,7 @@ button {
 
 // Chest
 .chest {
-  max-height: 262px;
+  max-height: 177px;
   overflow-y: auto;
 }
 .category {
