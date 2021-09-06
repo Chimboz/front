@@ -255,8 +255,8 @@ export default {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #ffe4f5,
-    #ff1fb0 50%,
-    #b30048 50%,
+    #ff1fb0 49%,
+    #b30048 51%,
     #f0009c
   );
   border-radius: 10px;
@@ -289,8 +289,8 @@ export default {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #fff2ea 0%,
-    #ff7214 50%,
-    #ce4800 50%,
+    #ff7214 49%,
+    #ce4800 51%,
     #ff6600
   );
 }
@@ -331,8 +331,8 @@ a:hover {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #ff6600,
-    #ce4800 50%,
-    #ff7214 50%,
+    #ce4800 49%,
+    #ff7214 51%,
     #fff2ea
   ) !important;
 }

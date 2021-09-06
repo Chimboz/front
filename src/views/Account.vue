@@ -321,16 +321,24 @@
             </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
-            <div class="category-selecter"></div>
+            <div class="category-selection">
+              <div class="item" @click="this.chest={hat: this.data.items.hat}"><img src="@/assets/img/picto/hat.svg" /></div>
+              <div class="item" @click="this.chest={body: this.data.items.body}"><img src="@/assets/img/picto/body.svg" /></div>
+              <div class="item" @click="this.chest={shoe: this.data.items.shoe}"><img src="@/assets/img/picto/shoe.svg" /></div>
+              <div class="item" @click="this.chest={item0: this.data.items.item0}"><img src="@/assets/img/picto/item0.svg" /></div>
+              <div class="item" @click="this.chest={item1: this.data.items.item1}"><img src="@/assets/img/picto/item1.svg" /></div>
+              <div class="item" @click="this.chest={item2: this.data.items.item2}"><img src="@/assets/img/picto/item2.svg" /></div>
+            </div>
             <div class="chest">
               <div
                 class="category"
-                v-for="(category, name) of this.data.items"
+                v-for="(category, name) of this.chest"
                 :key="name"
                 :class="[name]"
               >
                 <div
                   class="item"
+                  :class="{ active: this.data.look[name] == item }"
                   v-for="item of category"
                   :id="item"
                   :key="item"
@@ -341,7 +349,7 @@
                 </div>
               </div>
             </div>
-            <div class="desc">{{ this.info }}</div>
+            <div class="info">{{ this.info }}</div>
           </div>
         </div>
       </div>
@@ -404,6 +412,7 @@ export default {
       error: null,
       loading: true,
       info: "",
+      chest: {},
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -414,9 +423,9 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
+            vm.chest = vm.data.items;
             vm.loading = false;
           } else {
-            // Didn't like the result, redirect
             next("/");
           }
         })
@@ -426,13 +435,14 @@ export default {
     });
   },
   async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios
-        .get("/api/profile.json")
-        .then((res) => res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+    this.axios
+      .get("/api/profile.json")
+      .then((res) => {
+        this.data = res.data;
+        this.chest = res.data.items;
+        this.loading = false;
+      })
+      .catch((error) => (this.error = error.toString()));
   },
 };
 </script>
@@ -683,65 +693,70 @@ button {
 
 // Chest
 .chest {
-  max-height: 300px;
+  max-height: 262px;
   overflow-y: auto;
 }
 .category {
   display: initial;
 }
 
-.hat .item {
-  background: #f00;
-}
-
-.body .item {
-  background: #ff0;
-}
-
-.shoe .item {
-  background: #0f0;
-}
-
-.item0 .item {
-  background: #0ff;
-}
-
-.item1 .item {
-  background: #00f;
-}
-
-.item2 .item {
-  background: #f0f;
-}
-
 .hat img {
-  transform: translate(-18px, -31px);
+  transform: translate(-19px, -35px);
 }
 
 .body img {
-  transform: translate(-23px, -24px);
+  transform: translate(-21px, -24px);
 }
 
 .item0 img {
-  transform: translate(-5px, -12px);
+  transform: translate(-3px, -12px);
 }
 
 .item1 img {
-  transform: translate(-14px, -20px);
+  transform: translate(-12px, -20px);
 }
 
 .item2 img {
-  transform: translate(-13px, -58px);
+  transform: translate(-11px, -58px);
 }
 
 .item {
   margin: 1px;
   display: inline-block;
-  background: red;
+  background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
   height: 40px;
   width: 40px;
-  border-radius: 4px;
-  border: 2px solid #fff8;
+  border-radius: 12px;
   overflow: hidden;
+}
+
+.category-selection .item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  margin-top: 2px;
+  width: 100%;
+  height: 50px;
+  background: radial-gradient(
+    ellipse 200% 200% at -5% 0%,
+    #dbf0fd,
+    #dbf0fd 49%,
+    #a7dbfc 51%,
+    #e0f4fc
+  );
+  border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 1px 2px #0005;
+}
+
+.item.active {
+  border: 2px solid #fff;
+}
+
+.item.active img {
+  margin: -2px;
 }
 </style>
