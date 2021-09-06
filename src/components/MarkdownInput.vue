@@ -162,4 +162,8 @@ td input {
   resize: vertical;
   font-size: 11px;
 }
+
+title {
+  flex: 1
+}
 </style>
