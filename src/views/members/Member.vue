@@ -189,10 +189,6 @@ export default {
     var(--dark-card-color) 100%
   );
 }
-
-.member-header .avatar {
-  width: 100%;
-}
 </style>
 <style lang="scss" scoped>
 .member {

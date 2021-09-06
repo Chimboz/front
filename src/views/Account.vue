@@ -368,13 +368,8 @@ export default {
 <style lang="scss">
 .cabin-scene .tiz {
   position: relative;
-  width: 75%;
   z-index: 3;
   margin-bottom: 4px;
-}
-
-.cabin-scene .avatar {
-  width: 100%
 }
 </style>
 

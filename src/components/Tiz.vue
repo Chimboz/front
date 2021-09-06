@@ -6,7 +6,6 @@
         draggable="false"
         oncontextmenu="return false"
         alt="Tiz avatar"
-        class="avatar"
       />
       <img
         v-if="shoes > 1"
@@ -127,7 +126,6 @@ export default {
 }
 
 .avatar {
-  width: auto;
   position: relative;
 }
 
