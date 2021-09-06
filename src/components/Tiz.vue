@@ -2,12 +2,6 @@
   <div class="tiz">
     <div class="avatar">
       <img
-        src="@/assets/img/tiz/tiz.svg"
-        draggable="false"
-        oncontextmenu="return false"
-        alt="Tiz avatar"
-      />
-      <img
         v-if="shoes > 0"
         class="item shoe1"
         draggable="false"
@@ -29,18 +23,18 @@
         :src="`/avatar/body/${this.body}.svg`"
       />
       <img
-        v-if="hat > 0"
-        class="item hat"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/hat/${this.hat}.svg`"
-      />
-      <img
         v-if="emote > 0"
         class="item emote"
         draggable="false"
         oncontextmenu="return false"
         :src="`/avatar/emote/${this.emote}.svg`"
+      />
+      <img
+        src="/avatar/hands.svg"
+        draggable="false"
+        class="item hands"
+        oncontextmenu="return false"
+        alt="Tiz avatar"
       />
       <img
         v-if="item2 > 0"
@@ -50,18 +44,25 @@
         :src="`/avatar/item2/${this.item2}.svg`"
       />
       <img
-        v-if="item0 > 0"
-        class="item item0"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/item0/${this.item0}.svg`"
-      />
-      <img
         v-if="item1 > 0"
         class="item item1"
         draggable="false"
         oncontextmenu="return false"
         :src="`/avatar/item1/${this.item1}.svg`"
+      />
+      <img
+        v-if="hat > 0"
+        class="item hat"
+        draggable="false"
+        oncontextmenu="return false"
+        :src="`/avatar/hat/${this.hat}.svg`"
+      />
+      <img
+        v-if="item0 > 0"
+        class="item item0"
+        draggable="false"
+        oncontextmenu="return false"
+        :src="`/avatar/item0/${this.item0}.svg`"
       />
     </div>
     <div class="shadow"></div>
@@ -99,37 +100,37 @@ export default {
     emote: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
     hat: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
     body: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
     shoes: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
     item0: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
     item1: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
     item2: {
       //required: true,
       type: Number,
-      default: 0,
+      default: 1,
     },
   },
 };
@@ -137,8 +138,9 @@ export default {
 
 <style lang="scss" scoped>
 .tiz {
-  width: min-content;
   margin: auto;
+  width: 43.45px;
+  height: 56px;
 }
 
 .avatar {
@@ -146,7 +148,8 @@ export default {
 }
 
 .shadow {
-  margin-top: -8px;
+  margin: 43.45px auto auto auto;
+  width: 38px;
   height: 10px;
   border-radius: 100%;
   background: #0005;
@@ -155,6 +158,11 @@ export default {
 .item {
   position: absolute;
   pointer-events: none;
+}
+
+.hands {
+  left: 0;
+  top: 0;
 }
 
 .shoe1 {
@@ -210,19 +218,20 @@ export default {
 .item0,
 .item1,
 .item2,
-.emote {
-  //animation: bump 1.56s 3s infinite;
+.emote,
+.hands {
+  //animation: bump 4s infinite;
 }
 
 @keyframes bump {
-  90% {
-    transform: translateY(0px);
+  96% {
+    margin-top: 0px;
   }
-  95% {
-    transform: translateY(-5px);
+  98% {
+    margin-top: -5px;
   }
   100% {
-    transform: translateY(0px);
+    margin-top: 0px;
   }
 }
 </style>
