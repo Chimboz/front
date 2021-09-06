@@ -15,55 +15,57 @@
         oncontextmenu="return false"
         :src="`/avatar/shoe/${this.shoes}.svg`"
       />
-      <img
-        v-if="body > 0"
-        class="item body"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/body/${this.body}.svg`"
-      />
-      <img
-        v-if="emote > 0"
-        class="item emote"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/emote/${this.emote}.svg`"
-      />
-      <img
-        src="/avatar/hands.svg"
-        draggable="false"
-        class="item hands"
-        oncontextmenu="return false"
-        alt="Tiz avatar"
-      />
-      <img
-        v-if="item2 > 0"
-        class="item item2"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/item2/${this.item2}.svg`"
-      />
-      <img
-        v-if="item1 > 0"
-        class="item item1"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/item1/${this.item1}.svg`"
-      />
-      <img
-        v-if="hat > 0"
-        class="item hat"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/hat/${this.hat}.svg`"
-      />
-      <img
-        v-if="item0 > 0"
-        class="item item0"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/item0/${this.item0}.svg`"
-      />
+      <div class="body-parts">
+        <img
+          v-if="body > 0"
+          class="item body"
+          draggable="false"
+          oncontextmenu="return false"
+          :src="`/avatar/body/${this.body}.svg`"
+        />
+        <img
+          v-if="emote > 0"
+          class="item emote"
+          draggable="false"
+          oncontextmenu="return false"
+          :src="`/avatar/emote/${this.emote}.svg`"
+        />
+        <img
+          src="/avatar/hands.svg"
+          draggable="false"
+          class="item hands"
+          oncontextmenu="return false"
+          alt="Tiz avatar"
+        />
+        <img
+          v-if="item2 > 0"
+          class="item item2"
+          draggable="false"
+          oncontextmenu="return false"
+          :src="`/avatar/item2/${this.item2}.svg`"
+        />
+        <img
+          v-if="item1 > 0"
+          class="item item1"
+          draggable="false"
+          oncontextmenu="return false"
+          :src="`/avatar/item1/${this.item1}.svg`"
+        />
+        <img
+          v-if="hat > 0"
+          class="item hat"
+          draggable="false"
+          oncontextmenu="return false"
+          :src="`/avatar/hat/${this.hat}.svg`"
+        />
+        <img
+          v-if="item0 > 0"
+          class="item item0"
+          draggable="false"
+          oncontextmenu="return false"
+          :src="`/avatar/item0/${this.item0}.svg`"
+        />
+      </div>
     </div>
     <div class="shadow"></div>
   </div>
@@ -145,7 +147,7 @@ export default {
 
 .avatar {
   position: relative;
-  z-index: 1
+  z-index: 1;
 }
 
 .shadow {
@@ -215,25 +217,19 @@ export default {
   transform: scale(0.91);
 }
 
-.hat,
-.body,
-.item0,
-.item1,
-.item2,
-.emote,
-.hands {
-  //animation: bump 4s infinite;
+.body-parts {
+  animation: bump 4s infinite;
 }
 
 @keyframes bump {
   96% {
-    margin-top: 0px;
+    transform: translateY(0px)
   }
   98% {
-    margin-top: -5px;
+    transform: translateY(-5px)
   }
   100% {
-    margin-top: 0px;
+    transform: translateY(0px)
   }
 }
 </style>
