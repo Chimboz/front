@@ -500,6 +500,7 @@ h3 {
   height: 140px;
   width: 100px;
   align-items: flex-end;
+  justify-content: center;
   margin: 0 -12px;
 }
 

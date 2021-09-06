@@ -29,7 +29,7 @@
           />{{ $t("logout.button") }}
         </button>
       </div>
-      <Tiz style="margin: 0" />
+      <Tiz style="margin-right: 17px" />
     </div>
   </div>
   <div id="nav" class="flex">

@@ -140,6 +140,10 @@ export default {
 
 <style lang="scss" scoped>
 .tiz {
+  position: relative;
+}
+
+.avatar {
   margin: auto;
   width: 43.45px;
   height: 56px;
@@ -151,8 +155,7 @@ export default {
 }
 
 .shadow {
-  position: absolute;
-  margin: 43px 3px auto 3px;
+  margin: -13px auto auto auto;
   width: 37.45px;
   height: 10px;
   border-radius: 100%;
