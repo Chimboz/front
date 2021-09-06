@@ -12,6 +12,7 @@
       "color": "#900",
       "look": {
         "avatar": 0,
+        "emote": 1,
         "hat": 120,
         "body": 12,
         "shoes": 20,
@@ -34,6 +35,7 @@
       "signature": "Bite",
       "look": {
         "avatar": 0,
+        "emote": 4,
         "hat": 120,
         "body": 200,
         "shoes": 20,

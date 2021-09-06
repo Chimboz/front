@@ -3,6 +3,7 @@
     <td class="info" width="100" valign="top">
       <Tiz
         :avatar="message.author.look.avatar"
+        :emote="message.author.look.emote"
         :hat="message.author.look.hat"
         :body="message.author.look.body"
         :shoes="message.author.look.shoes"
