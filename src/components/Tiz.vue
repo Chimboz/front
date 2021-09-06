@@ -50,18 +50,18 @@
         :src="`/avatar/item2/${this.item2}.svg`"
       />
       <img
-        v-if="item1 > 0"
-        class="item item1"
-        draggable="false"
-        oncontextmenu="return false"
-        :src="`/avatar/item1/${this.item1}.svg`"
-      />
-      <img
         v-if="item0 > 0"
         class="item item0"
         draggable="false"
         oncontextmenu="return false"
         :src="`/avatar/item0/${this.item0}.svg`"
+      />
+      <img
+        v-if="item1 > 0"
+        class="item item1"
+        draggable="false"
+        oncontextmenu="return false"
+        :src="`/avatar/item1/${this.item1}.svg`"
       />
     </div>
     <div class="shadow"></div>
@@ -194,9 +194,9 @@ export default {
 }
 
 .item0 {
-top: -13.9px;
+  top: -13.9px;
   left: -2.5px;
-  transform: scale(.91);
+  transform: scale(0.91);
 }
 
 .emote {
