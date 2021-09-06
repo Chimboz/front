@@ -1,5 +1,5 @@
 <template>
-  <div class="tiz">
+  <div class="tiz animated">
     <div class="avatar">
       <img
         v-if="shoes > 0"
@@ -227,13 +227,13 @@ export default {
 
 @keyframes bump {
   96% {
-    top: 0px;
+    transform: translateY(0);
   }
   98% {
-    top: -5px;
+    transform: translateY(-5px);
   }
   100% {
-    top: 0px;
+    transform: translateY(0);
   }
 }
 </style>
