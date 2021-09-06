@@ -82,7 +82,16 @@
       v-if="this.data && this.data.astro && this.data.name && this.data.status"
     >
       <div class="member-header">
-        <Tiz />
+        <Tiz
+          :avatar="data.look.avatar"
+          :emote="data.look.emote"
+          :hat="data.look.hat"
+          :body="data.look.body"
+          :shoes="data.look.shoes"
+          :item0="data.look.item0"
+          :item1="data.look.item1"
+          :item2="data.look.item2"
+        />
         <div class="flex column">
           <StrokeText class="pseudo">{{ this.data.name }}</StrokeText>
           <div class="sentence">"{{ this.data.phrase_pref }}"</div>
@@ -90,7 +99,18 @@
       </div>
       <div class="member-body">
         <div class="member-portrait centered">
-          <div class="portrait flex"><Tiz /></div>
+          <div class="portrait flex">
+            <Tiz
+              :avatar="data.look.avatar"
+              :emote="data.look.emote"
+              :hat="data.look.hat"
+              :body="data.look.body"
+              :shoes="data.look.shoes"
+              :item0="data.look.item0"
+              :item1="data.look.item1"
+              :item2="data.look.item2"
+            />
+          </div>
           <div v-if="!this.data.status.connected">
             Dernière visite le <b>{{ formatDate }}</b>
           </div>
@@ -120,7 +140,12 @@
             }}<span v-if="index < this.data.centres.length - 1">, </span></b
           >
         </p>
-        <p>Page perso : <a target="_blank" :href="this.data.website">{{this.data.website}}</a></p>
+        <p>
+          Page perso :
+          <a target="_blank" :href="this.data.website">{{
+            this.data.website
+          }}</a>
+        </p>
         <p>
           Inscrit aux groupes :
           <Group
