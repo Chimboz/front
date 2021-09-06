@@ -128,64 +128,66 @@
             <b>{{ this.data.status.room }}</b>
           </div>
         </div>
-        <p>
-          Marié avec
-          <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis 76
-          jours
-        </p>
-        <p>
-          Intérêts :
-          <b v-for="(interest, index) of this.data.centres" :key="index"
-            >{{ interest
-            }}<span v-if="index < this.data.centres.length - 1">, </span></b
-          >
-        </p>
-        <p>
-          Page perso :
-          <a target="_blank" :href="this.data.website">{{
-            this.data.website
-          }}</a>
-        </p>
-        <p>
-          Inscrit aux groupes :
-          <Group
-            v-for="(group, index) of this.data.groups"
-            :group="group"
-            :key="group.id"
-            :separator="index < this.data.groups.length - 1"
-          />
-        </p>
-        <div class="icon flex centered">
-          Chimbo
-          <img
-            draggable="false"
-            oncontextmenu="return false"
-            src="@/assets/img/sex/male.svg"
-          />
+        <div class="member-text">
+          <p>
+            Marié avec
+            <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis
+            76 jours
+          </p>
+          <p>
+            Intérêts :
+            <b v-for="(interest, index) of this.data.centres" :key="index"
+              >{{ interest
+              }}<span v-if="index < this.data.centres.length - 1">, </span></b
+            >
+          </p>
+          <p>
+            Page perso :
+            <a target="_blank" :href="this.data.website">{{
+              this.data.website
+            }}</a>
+          </p>
+          <p>
+            Inscrit aux groupes :
+            <Group
+              v-for="(group, index) of this.data.groups"
+              :group="group"
+              :key="group.id"
+              :separator="index < this.data.groups.length - 1"
+            />
+          </p>
+          <div class="icon flex centered">
+            Chimbo
+            <img
+              draggable="false"
+              oncontextmenu="return false"
+              src="@/assets/img/sex/male.svg"
+            />
+          </div>
+          &nbsp;
+          <div class="icon flex centered">
+            Niveau<br /><img
+              draggable="false"
+              oncontextmenu="return false"
+              src="@/assets/img/numbers/2.svg"
+            /><img
+              draggable="false"
+              oncontextmenu="return false"
+              src="@/assets/img/numbers/5.svg"
+            />
+          </div>
+          <br /><br />
+          <p>
+            Vérification du nom :
+            <b
+              >{{ this.data.name.toLowerCase() }},
+              {{ this.data.name.toUpperCase() }}</b
+            >
+          </p>
+          <p>
+            Signe astrologik : <b>{{ this.data.astro }}</b>
+          </p>
         </div>
-        &nbsp;
-        <div class="icon flex centered">
-          Niveau<br /><img
-            draggable="false"
-            oncontextmenu="return false"
-            src="@/assets/img/numbers/2.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            src="@/assets/img/numbers/5.svg"
-          />
-        </div>
-        <br /><br />
-        <p>
-          Vérification du nom :
-          <b
-            >{{ this.data.name.toLowerCase() }},
-            {{ this.data.name.toUpperCase() }}</b
-          >
-        </p>
-        <p>
-          Signe astrologik : <b>{{ this.data.astro }}</b>
-        </p>
       </div>
       <div class="member-section">
         Classement : 25ème 19 parties, 10 gagnées, 9 perdues, 0 nulles 40 points
@@ -339,6 +341,7 @@ export default {
   background: url(../../assets/img/member/portrait.png);
   height: 112px;
   width: 104px;
+  margin-bottom: 6px;
   overflow: hidden;
 }
 
@@ -348,13 +351,18 @@ export default {
   z-index: 1;
   position: relative;
   border-radius: 8px;
-  padding: 8px;
+}
+
+.member-section,
+.member-text {
+  padding: 6px;
 }
 
 .member-portrait {
   float: right;
   background: #fff;
-  width: 100px;
+  border-radius: 8px;
+  padding: 6px;
 }
 
 .member-section {
