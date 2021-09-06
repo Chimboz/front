@@ -218,18 +218,19 @@ export default {
 }
 
 .body-parts {
+  position: relative;
   animation: bump 4s infinite;
 }
 
 @keyframes bump {
   96% {
-    transform: translateY(0px)
+    top: 0px;
   }
   98% {
-    transform: translateY(-5px)
+    top: -5px;
   }
   100% {
-    transform: translateY(0px)
+    top: 0px;
   }
 }
 </style>
