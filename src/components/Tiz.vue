@@ -2,18 +2,18 @@
   <div class="tiz animated">
     <div class="avatar">
       <img
-        v-if="shoes > 0"
+        v-if="shoe > 0"
         class="item shoe1"
         draggable="false"
         oncontextmenu="return false"
-        :src="`/avatar/shoe/${this.shoes}.svg`"
+        :src="`/avatar/shoe/${this.shoe}.svg`"
       />
       <img
-        v-if="shoes > 0"
+        v-if="shoe > 0"
         class="item shoe2"
         draggable="false"
         oncontextmenu="return false"
-        :src="`/avatar/shoe/${this.shoes}.svg`"
+        :src="`/avatar/shoe/${this.shoe}.svg`"
       />
       <div class="body-parts">
         <img
@@ -114,7 +114,7 @@ export default {
       type: Number,
       default: 1,
     },
-    shoes: {
+    shoe: {
       //required: true,
       type: Number,
       default: 1,
@@ -230,7 +230,7 @@ export default {
     transform: translateY(0);
   }
   98% {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
   100% {
     transform: translateY(0);

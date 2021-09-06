@@ -135,7 +135,7 @@
                   draggable="false"
                   oncontextmenu="return false"
                   alt="Puce"
-                  @click="data.look.shoes--"
+                  @click="data.look.shoe--"
                   src="@/assets/img/puce.svg"
                 />
               </button>
@@ -157,7 +157,7 @@
                 :emote="data.look.emote"
                 :hat="data.look.hat"
                 :body="data.look.body"
-                :shoes="data.look.shoes"
+                :shoe="data.look.shoe"
                 :item0="data.look.item0"
                 :item1="data.look.item1"
                 :item2="data.look.item2"
@@ -215,7 +215,7 @@
                   oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
-                  @click="data.look.shoes++"
+                  @click="data.look.shoe++"
                 />
               </button>
             </div>
@@ -321,9 +321,27 @@
             </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
-            <div class="category"></div>
-            <div class="chest"></div>
-            <div class="desc"></div>
+            <div class="category-selecter"></div>
+            <div class="chest">
+              <div
+                class="category"
+                v-for="(category, name) of this.data.items"
+                :key="name"
+                :class="[name]"
+              >
+                <div
+                  class="item"
+                  v-for="item of category"
+                  :id="item"
+                  :key="item"
+                  @click="this.data.look[name] = item"
+                  @mouseover="this.info = name + ' ' + item"
+                >
+                  <img :src="`/avatar/${name}/${item}.svg`" />
+                </div>
+              </div>
+            </div>
+            <div class="desc">{{ this.info }}</div>
           </div>
         </div>
       </div>
@@ -385,6 +403,7 @@ export default {
       data: null,
       error: null,
       loading: true,
+      info: "",
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -660,5 +679,69 @@ button {
       #ff99cc 62%
     );
   }
+}
+
+// Chest
+.chest {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.category {
+  display: initial;
+}
+
+.hat .item {
+  background: #f00;
+}
+
+.body .item {
+  background: #ff0;
+}
+
+.shoe .item {
+  background: #0f0;
+}
+
+.item0 .item {
+  background: #0ff;
+}
+
+.item1 .item {
+  background: #00f;
+}
+
+.item2 .item {
+  background: #f0f;
+}
+
+.hat img {
+  transform: translate(-18px, -31px);
+}
+
+.body img {
+  transform: translate(-23px, -24px);
+}
+
+.item0 img {
+  transform: translate(-5px, -12px);
+}
+
+.item1 img {
+  transform: translate(-14px, -20px);
+}
+
+.item2 img {
+  transform: translate(-13px, -58px);
+}
+
+.item {
+  margin: 1px;
+  display: inline-block;
+  background: red;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  border: 2px solid #fff8;
+  overflow: hidden;
 }
 </style>

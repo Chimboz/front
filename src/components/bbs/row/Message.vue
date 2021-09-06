@@ -6,7 +6,7 @@
         :emote="message.author.look.emote"
         :hat="message.author.look.hat"
         :body="message.author.look.body"
-        :shoes="message.author.look.shoes"
+        :shoe="message.author.look.shoe"
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"

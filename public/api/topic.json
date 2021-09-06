@@ -15,7 +15,7 @@
         "emote": 1,
         "hat": 120,
         "body": 12,
-        "shoes": 2,
+        "shoe": 2,
         "item0": 2,
         "item1": 5,
         "item2": 3
@@ -38,7 +38,7 @@
         "emote": 4,
         "hat": 120,
         "body": 200,
-        "shoes": 20,
+        "shoe": 20,
         "item0": 2,
         "item1": 2,
         "item2": 2
