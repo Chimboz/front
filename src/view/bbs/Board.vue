@@ -3,20 +3,7 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <router-link to="/bite"
-            class="list"
-            v-for="(entry, i) of sideNavEntries"
-            :key="i"
-          >
-            <img
-              src="@/asset/img/puce.svg"
-              alt="Puce"
-              draggable="false"
-              @contextmenu.prevent
-            >&nbsp;{{
-              entry.labelKey ? $t(entry.labelKey) : entry.label
-            }}
-          </router-link>
+          <SideNavEntries></SideNavEntries>
         </div>
       </Card></template
     >
@@ -42,24 +29,6 @@ import Card from "@/component/Card.vue";
 import Board from "@/component/bbs/list/Board.vue";
 import Container from "@/component/Container.vue";
 
-const sideNavEntries = [{
-  labelKey: "myAccount.link"
-}, {
-  labelKey: "myAccount.internalMessagingLink"
-}, {
-  labelKey: "myAccount.myGroupsLink"
-}, {
-  labelKey: "myAccount.myFriendsLink"
-}, {
-  label: "Forum"
-}, {
-  labelKey: "myAccount.notSmartLink"
-}, {
-  label: "MajMin"
-}, {
-  labelKey: "myAccount.shoppingLink"
-}]
-  
 const iconDescriptions = [{
   src: require("@/asset/img/bbs/folder_new.svg"),
   label: "Nouveaux messages"
@@ -98,7 +67,6 @@ export default {
       data: [],
       error: null,
       loading: true,
-      sideNavEntries,
       iconDescriptions,
     };
   },

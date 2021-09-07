@@ -1,52 +1,12 @@
 <template>
   <Container>
-    <template #left-column
-      ><Card blue top>
+    <template #left-column>
+      <Card blue top>
         <div class="flex col fullwidth">
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
-              $t("myAccount.link")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
-              $t("myAccount.internalMessagingLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myGroupsLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myFriendsLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent 
-              alt="Puce"
-              src="@/asset/img/puce.svg"
-            />&nbsp;Forum</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
-              $t("myAccount.notSmartLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent 
-              alt="Puce"
-              src="@/asset/img/puce.svg"
-            />&nbsp;MajMin</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
-              $t("myAccount.shoppingLink")
-            }}</router-link
-          >
-        </div> </Card
-      ><br />
+          <SideNavEntries></SideNavEntries>
+        </div>
+      </Card>
+      <br />
       <Rules />
     </template>
     <Card filename="bacteria.gif" justified>
