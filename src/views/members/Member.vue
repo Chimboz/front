@@ -157,7 +157,7 @@
             />
           </p>
           <div class="icon flex centered">
-            Chimbo
+            Chapato
             <img
               draggable="false"
               oncontextmenu="return false"
