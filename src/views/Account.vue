@@ -636,6 +636,7 @@ button {
   width: 40px;
   border-radius: 12px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .item img[src*="cross"] {
