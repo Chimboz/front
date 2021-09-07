@@ -270,8 +270,10 @@
                   @click="this.data.look[name] = item"
                   @mouseover="this.info = name + ' ' + item"
                 >
-                  <img v-if="item == 1" src="@/assets/img/icons/cross.svg" />
-                  <img v-else :src="`/avatar/${name}/${item}.svg`" />
+                  <img draggable="false"
+                      oncontextmenu="return false" v-if="item == 1" src="@/assets/img/icons/cross.svg" />
+                  <img draggable="false"
+                      oncontextmenu="return false" v-else :src="`/avatar/${name}/${item}.svg`" />
                 </button>
               </div>
             </div>
