@@ -13,8 +13,8 @@ Please see [project kanban](https://github.com/Tigriz/chzretro-front/projects/1)
 
 # Conventions
 
-Folder name are singular (excepted `locales` because vue-i18n hardcoded it).  
-Route are plural if they have subroutes (`/games`).  
+Folders' name is singular (excepted `locales` because vue-i18n hardcoded it).  
+Routes are plural if they have subroutes (`/games`).  
 Replace whitespaces " " with **underscores "_"** in filenames.  
 Vue files (`*.vue`) begin with an uppercase letter.
 
