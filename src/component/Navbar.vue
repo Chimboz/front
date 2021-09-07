@@ -46,15 +46,17 @@
     ></router-link>
     <router-link to="/tchat"
       ><button class="nav-btn flex centered">
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Tchat icon"
-          class="nav-icon"
-          src="@/asset/img/navbar/icon/tchat.svg"
-        />
         <div class="nav-text">
-          <StrokeText>{{ $t("playing.button") }}</StrokeText>
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Tchat icon"
+            class="nav-icon"
+            src="@/asset/img/navbar/icon/tchat.svg"
+          />
+          <StrokeText style="z-index: 1" class="btn-label">{{
+            $t("playing.button")
+          }}</StrokeText>
         </div>
         <img
           draggable="false"
@@ -66,57 +68,65 @@
     ></router-link>
     <router-link to="/account"
       ><button class="nav-btn flex centered">
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Account icon"
-          class="nav-icon"
-          src="@/asset/img/navbar/icon/account.svg"
-        />
         <div class="nav-text">
-          <StrokeText>{{ $t("myAccount.button") }}</StrokeText>
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Account icon"
+            class="nav-icon"
+            src="@/asset/img/navbar/icon/account.svg"
+          />
+          <StrokeText style="z-index: 1" class="btn-label">{{
+            $t("myAccount.button")
+          }}</StrokeText>
         </div>
       </button></router-link
     >
     <router-link to="/games"
       ><button class="nav-btn flex centered">
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Games icon"
-          class="nav-icon"
-          src="@/asset/img/navbar/icon/games.svg"
-        />
         <div class="nav-text">
-          <StrokeText>{{ $t("games.button") }}</StrokeText>
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Games icon"
+            class="nav-icon"
+            src="@/asset/img/navbar/icon/games.svg"
+          />
+          <StrokeText style="z-index: 1" class="btn-label">{{
+            $t("games.button")
+          }}</StrokeText>
         </div>
       </button></router-link
     >
     <router-link to="/members"
       ><button class="nav-btn flex centered">
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Member icon"
-          class="nav-icon"
-          src="@/asset/img/navbar/icon/members.svg"
-        />
         <div class="nav-text">
-          <StrokeText>{{ $t("members.button") }}</StrokeText>
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Member icon"
+            class="nav-icon"
+            src="@/asset/img/navbar/icon/members.svg"
+          />
+          <StrokeText style="z-index: 1" class="btn-label">{{
+            $t("members.button")
+          }}</StrokeText>
         </div>
       </button></router-link
     >
     <router-link to="/bbs"
       ><button class="nav-btn flex centered">
-        <img
-          draggable="false"
-          oncontextmenu="return false"
-          alt="Community icon"
-          class="nav-icon"
-          src="@/asset/img/navbar/icon/community.svg"
-        />
         <div class="nav-text">
-          <StrokeText>{{ $t("community.button") }}</StrokeText>
+          <img
+            draggable="false"
+            oncontextmenu="return false"
+            alt="Community icon"
+            class="nav-icon"
+            src="@/asset/img/navbar/icon/community.svg"
+          />
+          <StrokeText style="z-index: 1" class="btn-label">{{
+            $t("community.button")
+          }}</StrokeText>
         </div>
       </button></router-link
     >
@@ -150,7 +160,7 @@ export default {
     User,
   },
   created() {
-    document.body.className = "h"+this.date.getHours();
+    document.body.className = "h" + this.date.getHours();
   },
 };
 </script>
@@ -337,21 +347,26 @@ a:hover {
   ) !important;
 }
 
-.nav-text,
+.nav-text {
+  font-family: "Chimboz Heavy";
+  font-weight: normal;
+  font-size: 18px;
+  height: 100%;
+  fill: #fff;
+  stroke: #ae0050;
+  stroke-width: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-label,
 .arrow {
   display: none;
 }
 
 @media (min-width: 600px) {
-  .nav-text {
-    font-family: "Chimboz Heavy";
-    font-weight: normal;
-    font-size: 18px;
-    height: 100%;
-    fill: #fff;
-    stroke: #ae0050;
-    stroke-width: 3;
-    display: block;
+  .btn-label {
+    display: inherit;
   }
 
   .nav-btn:hover .nav-text,
