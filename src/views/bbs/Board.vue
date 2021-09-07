@@ -3,48 +3,20 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.link")
-            }}</router-link
+          <router-link to="/bite"
+            class="list"
+            v-for="(entry, i) of sideNavEntries"
+            :key="i"
           >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.internalMessagingLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myGroupsLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myFriendsLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false" 
-              alt="Puce"
+            <img
               src="@/assets/img/puce.svg"
-            />&nbsp;Forum</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.notSmartLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false" 
               alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;MajMin</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.shoppingLink")
-            }}</router-link
-          >
+              draggable="false"
+              @contextmenu.prevent
+            >&nbsp;{{
+              entry.labelKey ? $t(entry.labelKey) : entry.label
+            }}
+          </router-link>
         </div>
       </Card></template
     >
@@ -70,6 +42,23 @@ import Card from "@/components/Card.vue";
 import Board from "@/components/bbs/list/Board.vue";
 import Container from "@/components/Container.vue";
 
+const sideNavEntries = [{
+  labelKey: "myAccount.link"
+}, {
+  labelKey: "myAccount.internalMessagingLink"
+}, {
+  labelKey: "myAccount.myGroupsLink"
+}, {
+  labelKey: "myAccount.myFriendsLink"
+}, {
+  label: "Forum"
+}, {
+  labelKey: "myAccount.notSmartLink"
+}, {
+  label: "MajMin"
+}, {
+  labelKey: "myAccount.shoppingLink"
+  
 const iconDescriptions = [{
   src: require("@/assets/img/bbs/folder_new.svg"),
   label: "Nouveaux messages"
@@ -108,6 +97,7 @@ export default {
       data: [],
       error: null,
       loading: true,
+      sideNavEntries,
       iconDescriptions,
     };
   },
