@@ -646,6 +646,10 @@ button {
   display: inline-flex;
 }
 
+.category-selection, .chest {
+  text-align: left;
+}
+
 .category-selection .item {
   display: inline-flex;
   align-items: center;
