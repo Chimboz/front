@@ -19,14 +19,25 @@
     <div class="login flex centered">
       <div style="margin-top: -10px">
         <User :user="user" id="username" style="display: inherit" />
-        <button id="connect" class="flex centered">
+        <button id="connect" class="flex centered" @click="logout" v-if="authenticated">
           <img
             draggable="false"
             @contextmenu.prevent
             alt="Disconnect icon"
             class="chz-icon"
             src="../asset/img/login/disconnect.svg"
-          />{{ $t("logout.button") }}
+          />
+          {{ $t("logout.button") }}
+        </button>
+        <button id="connect" class="flex centered" @click="login" v-else>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Disconnect icon"
+            class="chz-icon"
+            src="../asset/img/login/disconnect.svg"
+          />
+          Se connecter
         </button>
       </div>
       <Tiz style="margin-right: 17px" />
@@ -137,6 +148,7 @@
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import StrokeText from "@/component/StrokeText.vue";
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: "Navbar",
@@ -154,10 +166,23 @@ export default {
       },
     },
   },
+  computed: {
+    ...mapGetters("auth", [
+      "authenticated"
+    ])
+  },
   components: {
     Tiz,
     StrokeText,
     User,
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("auth/login")
+    },
+    logout() {
+      this.$store.dispatch("auth/logout")
+    },
   },
   created() {
     document.body.className = "h" + this.date.getHours();
