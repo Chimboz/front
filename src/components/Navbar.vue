@@ -2,7 +2,11 @@
   <div
     class="header"
     :style="{
-      'background-image': 'url(' + require('@/assets/img/navbar/hours/'+this.date.getHours()+'.svg') + ')' }"
+      'background-image':
+        'url(' +
+        require('@/assets/img/navbar/hours/' + this.date.getHours() + '.svg') +
+        ')',
+    }"
   >
     <router-link to="/"
       ><img
@@ -25,7 +29,7 @@
           />{{ $t("logout.button") }}
         </button>
       </div>
-      <Tiz style="margin: 0" />
+      <Tiz style="margin-right: 17px" />
     </div>
   </div>
   <div id="nav" class="flex">
@@ -145,9 +149,11 @@ export default {
     StrokeText,
     User,
   },
+  created() {
+    document.body.className = "h"+this.date.getHours();
+  },
 };
 </script>
-
 <style lang="scss" scoped>
 .header {
   width: 100%;
@@ -171,7 +177,7 @@ export default {
 #username {
   font-family: "Pixelated Verdana 12";
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 16px;
   padding: 0 8px 8px 0;
   color: #069;
   text-shadow: 0 0 5px #fff, 0 0 5px #fff;
@@ -179,13 +185,13 @@ export default {
 
 #connect {
   font-family: "Pixelated Verdana 12";
+  font-size: 16px;
   border-radius: 100px;
   padding: 3px;
   margin-right: -20px;
   border: none;
   background: white;
   width: 130px;
-  letter-spacing: 0.3px;
 }
 
 #connect .chz-icon {
@@ -249,8 +255,8 @@ export default {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #ffe4f5,
-    #ff1fb0 50%,
-    #b30048 50%,
+    #ff1fb0 49%,
+    #b30048 51%,
     #f0009c
   );
   border-radius: 10px;
@@ -283,8 +289,8 @@ export default {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #fff2ea 0%,
-    #ff7214 50%,
-    #ce4800 50%,
+    #ff7214 49%,
+    #ce4800 51%,
     #ff6600
   );
 }
@@ -325,8 +331,8 @@ a:hover {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
     #ff6600,
-    #ce4800 50%,
-    #ff7214 50%,
+    #ce4800 49%,
+    #ff7214 51%,
     #fff2ea
   ) !important;
 }

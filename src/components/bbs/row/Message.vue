@@ -1,9 +1,16 @@
 <template>
   <tr :id="message.id">
     <td class="info" width="100" valign="top">
-      <Tiz /><br /><User :user="message.author" /><br />{{
-        formatDate
-      }}
+      <Tiz
+        :avatar="message.author.look.avatar"
+        :emote="message.author.look.emote"
+        :hat="message.author.look.hat"
+        :body="message.author.look.body"
+        :shoe="message.author.look.shoe"
+        :item0="message.author.look.item0"
+        :item1="message.author.look.item1"
+        :item2="message.author.look.item2"
+      /><br /><User :user="message.author" /><br />{{ formatDate }}
     </td>
     <td class="msg-body justified">
       <div class="head flex centered">
@@ -104,6 +111,10 @@ export default {
 <style lang="scss">
 .content img {
   max-width: 100%;
+}
+
+.content ul, .content ol {
+  padding-left: 18px;
 }
 </style>
 <style lang="scss" scoped>

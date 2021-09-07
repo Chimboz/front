@@ -7,7 +7,8 @@
             {{ $t("currentLevel") }}
             <div class="number">
               <img
-                draggable="false" oncontextmenu="return false"
+                draggable="false"
+                oncontextmenu="return false"
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -18,64 +19,72 @@
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.link") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Puce"
               src="@/assets/img/puce.svg"
             />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
           >
         </div></Card
       ><br />
-      <Bank :credits="data.credits"/></template
-    >
+      <Bank :credits="data.credits"
+    /></template>
     <Card blue>
       <div class="container-acc flex">
         <div class="left-acc flex">
@@ -83,36 +92,52 @@
             <div class="arrows flex">
               <button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.item0--"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.hat--"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.item1--"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.body--"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.item2--"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
-                <img draggable="false" oncontextmenu="return false" alt="Puce" src="@/assets/img/puce.svg" />
+                <img
+                  draggable="false"
+                  oncontextmenu="return false"
+                  alt="Puce"
+                  @click="data.look.shoe--"
+                  src="@/assets/img/puce.svg"
+                />
               </button>
             </div>
             <div
@@ -129,9 +154,10 @@
             >
               <Tiz
                 :avatar="data.look.avatar"
+                :emote="data.look.emote"
                 :hat="data.look.hat"
                 :body="data.look.body"
-                :shoes="data.look.shoes"
+                :shoe="data.look.shoe"
                 :item0="data.look.item0"
                 :item1="data.look.item1"
                 :item2="data.look.item2"
@@ -145,36 +171,52 @@
             <div class="arrows flex">
               <button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.item0++"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.hat++"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.item1++"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.body++"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
+                  @click="data.look.item2++"
                   src="@/assets/img/puce.svg"
                 /></button
               ><button>
-                <img draggable="false" oncontextmenu="return false" alt="Puce" src="@/assets/img/puce.svg" />
+                <img
+                  draggable="false"
+                  oncontextmenu="return false"
+                  alt="Puce"
+                  src="@/assets/img/puce.svg"
+                  @click="data.look.shoe++"
+                />
               </button>
             </div>
           </div>
@@ -182,7 +224,8 @@
             <div>
               <button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: rotate(-90deg)"
@@ -190,7 +233,8 @@
                 /></button
               ><br /><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   style="transform: scaleX(-1)"
@@ -198,21 +242,24 @@
                 /></button
               ><button id="random">
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Random button"
                   title="Randomize look"
                   src="@/assets/img/home/chaparadio/stop.svg"
                 /></button
               ><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
               ><br /><button>
                 <img
-                  draggable="false" oncontextmenu="return false"
+                  draggable="false"
+                  oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
                   :class="{ pushed: down }"
@@ -222,29 +269,46 @@
             </div>
           </div>
           <div class="gender">
-            <button>
+            <button
+              @mouseenter="this.gender = 'Chimbo'"
+              @mouseleave="this.gender = this.data.gender"
+              @click="this.data.gender = 'Chimbo'"
+            >
               <img
-                draggable="false" oncontextmenu="return false"
+                draggable="false"
+                oncontextmenu="return false"
                 alt="Male gender"
                 title="Male gender"
                 src="@/assets/img/sex/male.svg"
               /></button
-            ><button>
+            ><button
+              @mouseenter="this.gender = 'Chimbette'"
+              @mouseleave="this.gender = this.data.gender"
+              @click="this.data.gender = 'Chimbette'"
+            >
               <img
-                draggable="false" oncontextmenu="return false"
+                draggable="false"
+                oncontextmenu="return false"
                 alt="Female gender"
                 title="Female gender"
                 src="@/assets/img/sex/female.svg"
               /></button
-            ><button>
+            ><button
+              @mouseenter="this.gender = 'Inconnu'"
+              @mouseleave="this.gender = this.data.gender"
+              @click="this.data.gender = 'Inconnu'"
+            >
               <img
-                draggable="false" oncontextmenu="return false"
+                draggable="false"
+                oncontextmenu="return false"
                 alt="Unknown gender"
                 title="Unknown gender"
                 src="@/assets/img/sex/unknown.svg"
               />
             </button>
           </div>
+          <br />
+          <div class="gender">{{ this.gender }}</div>
         </div>
         <div class="right-acc flex">
           <div class="nav-acc flex">
@@ -271,9 +335,45 @@
             </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
-            <div class="category"></div>
-            <div class="chest"></div>
-            <div class="desc"></div>
+            <div class="category-selection">
+              <div
+                v-for="(_, category) of this.data.items"
+                :key="category"
+                class="item"
+                :class="{ active: this.chest[category] }"
+                @click="
+                  this.chest[category] && Object.keys(this.chest).length == 1
+                    ? (this.chest = this.data.items)
+                    : (this.chest = { [category]: this.data.items[category] })
+                "
+              >
+                <img :src="require(`@/assets/img/icons/${category}.svg`)" />
+              </div>
+            </div>
+            <div class="chest">
+              <div
+                class="category"
+                v-for="(category, name) of this.chest"
+                :key="name"
+                :class="[name]"
+              >
+                <div
+                  class="item"
+                  :class="{
+                    active: this.data.look[name] == item,
+                    cancel: item == 1,
+                  }"
+                  v-for="item of category"
+                  :key="item"
+                  @click="this.data.look[name] = item"
+                  @mouseover="this.info = name + ' ' + item"
+                >
+                  <img v-if="item == 1" src="@/assets/img/icons/cross.svg" />
+                  <img v-else :src="`/avatar/${name}/${item}.svg`" />
+                </div>
+              </div>
+            </div>
+            <div class="info">{{ this.info }}</div>
           </div>
         </div>
       </div>
@@ -281,7 +381,8 @@
         <Button green
           ><template #prepend
             ><img
-              draggable="false" oncontextmenu="return false"
+              draggable="false"
+              oncontextmenu="return false"
               alt="Arrow icon"
               class="arrow jitter"
               src="@/assets/img/arrow.svg" /></template
@@ -334,6 +435,9 @@ export default {
       data: null,
       error: null,
       loading: true,
+      info: "",
+      chest: {},
+      gender: "Inconnu",
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -344,9 +448,10 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
+            vm.chest = res.data.items;
+            vm.gender = res.data.gender;
             vm.loading = false;
           } else {
-            // Didn't like the result, redirect
             next("/");
           }
         })
@@ -356,11 +461,15 @@ export default {
     });
   },
   async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios.get("/api/profile.json").then((res)=>res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+    this.axios
+      .get("/api/profile.json")
+      .then((res) => {
+        this.data = res.data;
+        this.chest = res.data.items;
+        this.gender = res.data.gender;
+        this.loading = false;
+      })
+      .catch((error) => (this.error = error.toString()));
   },
 };
 </script>
@@ -368,13 +477,9 @@ export default {
 <style lang="scss">
 .cabin-scene .tiz {
   position: relative;
-  width: 75%;
   z-index: 3;
-  margin-bottom: 4px;
-}
-
-.cabin-scene .avatar {
-  width: 100%
+  margin-bottom: 25px;
+  transform: scale(1.8);
 }
 </style>
 
@@ -386,9 +491,9 @@ export default {
 
 input[type="text"] {
   text-align: center;
-  font-family: "Pixelated Verdana 12";
+  font-family: "Pixelated Verdana 10";
   font-weight: bold;
-  font-size: 13.3333px;
+  font-size: 10px;
   color: #2a5380;
   border: 2px solid;
   border-color: #369 #39c #39c #369;
@@ -451,6 +556,7 @@ h3 {
   height: 140px;
   width: 100px;
   align-items: flex-end;
+  justify-content: center;
   margin: 0 -12px;
 }
 
@@ -610,5 +716,94 @@ button {
       #ff99cc 62%
     );
   }
+}
+
+// Chest
+.chest {
+  max-height: 177px;
+  overflow-y: auto;
+}
+.category {
+  display: initial;
+}
+
+.hat img {
+  transform: translate(-19px, -35px);
+}
+
+.body img {
+  transform: translate(-21px, -24px);
+}
+
+.item0 img {
+  transform: translate(-3px, -12px);
+}
+
+.item1 img {
+  transform: translate(-12px, -20px);
+}
+
+.item2 img {
+  transform: translate(-11px, -58px);
+}
+
+.item {
+  margin: 1px;
+  display: inline-block;
+  background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.item img[src*="cross"] {
+  transform: translate(0px, 0px);
+}
+
+.item.cancel {
+  display: inline-flex;
+}
+
+.category-selection .item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.info {
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  width: 100%;
+  height: 50px;
+  background: radial-gradient(
+    ellipse 200% 200% at -5% 0%,
+    #dbf0fd,
+    #dbf0fd 49%,
+    #a7dbfc 51%,
+    #e0f4fc
+  );
+  border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 1px 2px #0005;
+}
+
+.item.active {
+  border: 2px solid #fff;
+}
+
+.item.active img {
+  margin: -2px;
+}
+
+.gender {
+  font-family: "Chimboz Heavy";
+  color: #fff;
+  font-size: 15px;
 }
 </style>

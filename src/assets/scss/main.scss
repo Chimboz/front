@@ -24,8 +24,16 @@ body {
   background-color: #6090be;
   background-repeat: repeat-x;
   background-attachment: scroll;
-  background-image: url(../img/navbar/background.gif);
+  background-image: url(../img/navbar/background/9.png);
+  background-position: 0 -1px;
   overflow-x: hidden;
+}
+
+@for $i from 0 through 23 {
+  .h#{$i} {
+    background-image: url(../img/navbar/background/#{$i}.png);
+    
+  }
 }
 
 // Custom scrollbar (chromium based browsers)s
