@@ -25,9 +25,9 @@
 
 .column {
   text-align: center;
-  padding: 12px;
   flex-direction: column;
   align-items: stretch;
+  padding: 12px;
 }
 
 .side-column > div {
@@ -50,32 +50,31 @@
   order: 2;
 }
 
+@media (min-width: 636px) {
+  .side-column {
+    padding: 0
+  }
+  
+  .main-column {
+    flex: 1 0 0%;
+    order: 0;
+    padding: 0 12px;
+    min-width: 468px
+  }
+
+  .left-column {
+    order: 0;
+  }
+}
+
 @media (min-width: 800px) {
   .side-column {
     width: 154px;
     order: 0;
   }
 
-  .left-column {
-    margin-right: 12px;
-  }
-
-  .right-column {
-    margin-left: 12px;
-  }
-
   .row {
     flex-direction: row;
-  }
-
-  .column {
-    padding: 0 !important;
-  }
-
-  .main-column {
-    flex: 1 0 0%;
-    order: 0;
-    min-width: 0
   }
 }
 </style>
