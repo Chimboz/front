@@ -653,6 +653,10 @@ button {
   vertical-align: middle;
 }
 
+.category-selection .item.active img {
+  filter:brightness(9)
+}
+
 .info {
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
