@@ -17,8 +17,7 @@
             </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries></SideNavEntries>
-        </div></Card
+          <SideNavEntries></SideNavEntries></div></Card
       ><br />
       <Bank :credits="data.credits"
     /></template>
@@ -27,52 +26,23 @@
         <div class="left-acc flex">
           <div class="cabin flex centered">
             <div class="arrows flex">
-              <button>
+              <button
+                v-for="(category, name) of this.data.items"
+                :key="name"
+                :disabled="
+                  data.items[name].indexOf(data.look[name]) < 1
+                "
+                @click="
+                  data.look[name] =
+                    this.data.items[name][
+                      data.items[name].indexOf(data.look[name]) - 1
+                    ]
+                "
+              >
                 <img
                   draggable="false"
                   oncontextmenu="return false"
                   alt="Puce"
-                  @click="data.look.item0--"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.hat--"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.item1--"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.body--"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.item2--"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.shoe--"
                   src="@/assets/img/puce.svg"
                 />
               </button>
@@ -106,53 +76,25 @@
               <div class="circle"></div>
             </div>
             <div class="arrows flex">
-              <button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.item0++"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.hat++"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.item1++"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.body++"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  oncontextmenu="return false"
-                  alt="Puce"
-                  @click="data.look.item2++"
-                  src="@/assets/img/puce.svg"
-                /></button
-              ><button>
+              <button
+                v-for="(category, name) of this.data.items"
+                :key="name"
+                :disabled="
+                  data.items[name].indexOf(data.look[name]) >
+                  data.items[name].length - 2
+                "
+                @click="
+                  data.look[name] =
+                    this.data.items[name][
+                      data.items[name].indexOf(data.look[name]) + 1
+                    ]
+                "
+              >
                 <img
                   draggable="false"
                   oncontextmenu="return false"
                   alt="Puce"
                   src="@/assets/img/puce.svg"
-                  @click="data.look.shoe++"
                 />
               </button>
             </div>

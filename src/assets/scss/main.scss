@@ -145,6 +145,10 @@ table {
   }
 }
 
+*:disabled {
+  filter:grayscale(1) !important;
+}
+
 // Custom classes
 .hstack {
   flex-wrap: wrap;
