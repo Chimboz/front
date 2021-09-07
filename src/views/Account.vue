@@ -147,9 +147,9 @@
           </div>
           <div class="gender">
             <button
-              @mouseenter="this.gender = 'Chimbo'"
+              @mouseenter="this.gender = 'Chapato'"
               @mouseleave="this.gender = this.data.gender"
-              @click="this.data.gender = 'Chimbo'"
+              @click="this.data.gender = 'Chapato'"
             >
               <img
                 draggable="false"
@@ -159,9 +159,9 @@
                 src="@/assets/img/sex/male.svg"
               /></button
             ><button
-              @mouseenter="this.gender = 'Chimbette'"
+              @mouseenter="this.gender = 'Chapata'"
               @mouseleave="this.gender = this.data.gender"
-              @click="this.data.gender = 'Chimbette'"
+              @click="this.data.gender = 'Chapata'"
             >
               <img
                 draggable="false"
@@ -171,9 +171,9 @@
                 src="@/assets/img/sex/female.svg"
               /></button
             ><button
-              @mouseenter="this.gender = 'Inconnu'"
+              @mouseenter="this.gender = 'Chapati'"
               @mouseleave="this.gender = this.data.gender"
-              @click="this.data.gender = 'Inconnu'"
+              @click="this.data.gender = 'Chapati'"
             >
               <img
                 draggable="false"
@@ -212,29 +212,51 @@
             </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
-            <div class="category-selection">
-              <button
-                v-for="(_, category) of this.data.items"
-                :key="category"
-                class="item"
-                :class="{ active: this.chest[category] }"
-                @click="
-                  this.chest[category] && Object.keys(this.chest).length == 1
-                    ? (this.chest = this.data.items)
-                    : (this.chest = { [category]: this.data.items[category] })
-                "
-              >
-                <img
-                  :src="
-                    require(`@/assets/img/icons/item_category/${category}.svg`)
-                  "
+            <div class="category-selection" v-if="this.data.items">
+              <div v-for="(_, category) of this.data.items" :key="category" oncontextmenu="return false">
+                <input
+                  type="checkbox"
+                  class="category-checkbox"
+                  :id="category"
+                  :value="category"
+                  v-model="this.checked"
+                  hidden
                 />
-              </button>
+                <label :for="category" @contextmenu="this.checked.includes(category) && this.checked.length == 1
+                    ? this.checked= ['item0', 'hat', 'item1', 'body', 'item2', 'shoe']
+                    : this.checked = [`${category}`]"
+                  ><div class="item pointer" oncontextmenu="return false">
+                    <img
+                      draggable="false"
+                      oncontextmenu="return false"
+                      :src="
+                        require(`@/assets/img/icons/item_category/${category}.svg`)
+                      "
+                    /></div
+                ></label>
+              </div>
             </div>
             <div class="chest">
               <div
                 class="category"
-                v-for="(category, name) of this.chest"
+                v-for="(category, name) of {
+                  item0: this.checked.includes('item0')
+                    ? this.data.items.item0
+                    : [],
+                  hat: this.checked.includes('hat') ? this.data.items.hat : [],
+                  item1: this.checked.includes('item1')
+                    ? this.data.items.item1
+                    : [],
+                  body: this.checked.includes('body')
+                    ? this.data.items.body
+                    : [],
+                  item2: this.checked.includes('item2')
+                    ? this.data.items.item2
+                    : [],
+                  shoe: this.checked.includes('shoe')
+                    ? this.data.items.shoe
+                    : [],
+                }"
                 :key="name"
                 :class="[name]"
               >
@@ -327,7 +349,7 @@ export default {
       error: null,
       loading: true,
       info: "",
-      chest: {},
+      checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
       gender: "Inconnu",
     };
   },
@@ -339,7 +361,6 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.chest = res.data.items;
             vm.gender = res.data.gender;
             vm.loading = false;
           } else {
@@ -356,7 +377,6 @@ export default {
       .get("/api/profile.json")
       .then((res) => {
         this.data = res.data;
-        this.chest = res.data.items;
         this.gender = res.data.gender;
         this.loading = false;
       })
@@ -653,14 +673,14 @@ h3 {
   text-align: left;
 }
 
-.category-selection .item {
+.category-selection div {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
 }
 
-.category-selection .item.active img {
+.category-checkbox:checked + label img {
   filter: brightness(9);
 }
 
@@ -685,11 +705,13 @@ h3 {
   box-shadow: 0 2px 1px 2px #0005;
 }
 
-.item.active {
+.item.active,
+.category-checkbox:checked + label .item {
   border: 2px solid #fff;
 }
 
-.item.active img {
+.item.active img,
+.category-checkbox:checked + label img {
   margin: -2px;
 }
 
