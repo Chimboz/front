@@ -1,6 +1,9 @@
 <template>
   <div class="row flex">
-    <div v-if="$slots['left-column']" class="side-column left-column column flex">
+    <div
+      v-if="$slots['left-column']"
+      class="side-column left-column column flex"
+    >
       <slot name="left-column"></slot>
     </div>
     <div class="main-column column flex">
@@ -18,6 +21,7 @@
 
 <style lang="scss">
 .row {
+  padding: 0 12px;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,7 +31,7 @@
   text-align: center;
   flex-direction: column;
   align-items: stretch;
-  padding: 12px;
+  box-sizing: content-box;
 }
 
 .side-column > div {
@@ -40,28 +44,31 @@
 
 .main-column {
   width: 100%;
+  padding-bottom: 12px;
 }
 
 .left-column {
   order: 1;
+  padding-right: 12px;
 }
 
 .right-column {
   order: 2;
+  padding-left: 12px;
 }
 
-@media (min-width: 636px) {
-  .side-column {
-    padding: 0
-  }
-  
-  .main-column {
-    flex: 1 0 0%;
-    order: 0;
-    padding: 0 12px;
-    min-width: 468px
-  }
+.main-column {
+  width: 100%;
+}
 
+@media (min-width: 508px) {
+  .main-column {
+    min-width: 468px;
+    flex: 1 0 0%;
+  }
+}
+
+@media (min-width: 674px) {
   .left-column {
     order: 0;
   }
@@ -74,6 +81,7 @@
   }
 
   .row {
+    padding: 0;
     flex-direction: row;
   }
 }
