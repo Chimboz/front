@@ -224,7 +224,11 @@
                     : (this.chest = { [category]: this.data.items[category] })
                 "
               >
-                <img :src="require(`@/assets/img/icons/${category}.svg`)" />
+                <img
+                  :src="
+                    require(`@/assets/img/icons/item_category/${category}.svg`)
+                  "
+                />
               </button>
             </div>
             <div class="chest">
@@ -237,7 +241,7 @@
                 <button
                   class="item"
                   :class="{
-                    active: this.data.look[name] == item
+                    active: this.data.look[name] == item,
                   }"
                   v-for="item of category"
                   :key="item"
@@ -263,7 +267,16 @@
               class="arrow jitter"
               src="@/assets/img/arrow.svg" /></template
           >Sauver</Button
-        ><Button>Fiche</Button>
+        ><Button
+          ><template #prepend
+            ><img
+              draggable="false"
+              oncontextmenu="return false"
+              alt="Profile icon"
+              height="24"
+              src="@/assets/img/icons/profile.svg" /></template
+          >Fiche</Button
+        >
       </div>
     </Card>
     <template #right-column>
@@ -453,8 +466,8 @@ h3 {
   display: unset;
 }
 
-.nav-acc .active {
-  color: red;
+.nav-acc .btn {
+  margin: 4px;
 }
 
 .cabin-scene:before {
