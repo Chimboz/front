@@ -327,7 +327,6 @@ import Tiz from "@/component/Tiz.vue";
 import Emotes from "@/component/Emotes.vue";
 import Bank from "@/component/Bank.vue";
 import Container from "@/component/Container.vue";
-import SideNavEntries from "@/component/SideNavEntries.vue";
 
 export default {
   name: "Account",
@@ -338,7 +337,6 @@ export default {
     Container,
     Tiz,
     Emotes,
-    SideNavEntries,
   },
   data() {
     return {

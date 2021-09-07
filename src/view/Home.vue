@@ -1,7 +1,7 @@
 <template>
   <Container v-if="data">
-    <template #left-column
-      ><Card blue top>
+    <template #left-column>
+      <Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
             {{ $t("currentLevel") }}
@@ -14,8 +14,9 @@
                 :key="number.index"
                 :src="require(`@/asset/img/number/${number}.svg`)"
               />
-            </div></div
-        ></router-link>
+            </div>
+          </div>
+        </router-link>
         <router-link to="/mi">
           <div class="messages">
             <div>
@@ -36,8 +37,8 @@
               class="fullwidth"
             />
           </div>
-          {{ $t("mi.message", data.messages) }}</router-link
-        >
+          {{ $t("mi.message", data.messages) }}
+        </router-link>
         <router-link to="/friends">
           <div class="friends">
             <div>
@@ -58,25 +59,28 @@
               class="fullwidth"
             />
           </div>
-          {{ $t("friends.online", data.friends) }}</router-link
-        ></Card
-      ><br />
-      <Bank :credits="data.credits"
-    /></template>
+          {{ $t("friends.online", data.friends) }}
+        </router-link>
+      </Card>
+      <br />
+      <Bank :credits="data.credits" />
+    </template>
     <img
       draggable="false"
       @contextmenu.prevent
       src="/announce/summer.png"
       style="max-width: 100%"
-    /><br />
+    />
+    <br />
     <Card filename="lottery.png" v-if="data.lottery">
-      <template #header
-        ><img
+      <template #header>
+        <img
           draggable="false"
           @contextmenu.prevent
           src="@/asset/img/home/header_hello.png"
           style="width: 100%"
-      /></template>
+        />
+      </template>
       {{ $t("lottery.firstLine") }}<br />
       {{ $t("lottery.secondLine") }}<br /><br />
       <RandomNumber :max="30" :value="20" :duration="5000" />
