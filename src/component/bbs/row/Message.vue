@@ -17,7 +17,7 @@
         <router-link :to="'#' + message.id">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Voir le dernier message"
             title="Voir le dernier message"
             :src="

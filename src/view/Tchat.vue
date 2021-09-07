@@ -1,9 +1,9 @@
 <template>
   <Container>
     <Card blue>
-      <img draggable="false" oncontextmenu="return false"  alt="Download now on F-Droid" title="Download now on F-Droid" src="@/asset/img/appstore/fdroid-fr.svg" />
-      <img draggable="false" oncontextmenu="return false"  alt="Download now on Google Play Store" title="Download now on Google Play Store" src="@/asset/img/appstore/google-fr.svg" />
-      <img draggable="false" oncontextmenu="return false"  alt="Download now on Apple Store" title="Download now on Apple Store" src="@/asset/img/appstore/apple-bk-fr.svg" />
+      <img draggable="false" @contextmenu.prevent  alt="Download now on F-Droid" title="Download now on F-Droid" src="@/asset/img/appstore/fdroid-fr.svg" />
+      <img draggable="false" @contextmenu.prevent  alt="Download now on Google Play Store" title="Download now on Google Play Store" src="@/asset/img/appstore/google-fr.svg" />
+      <img draggable="false" @contextmenu.prevent  alt="Download now on Apple Store" title="Download now on Apple Store" src="@/asset/img/appstore/apple-bk-fr.svg" />
     </Card>
   </Container>
 </template>

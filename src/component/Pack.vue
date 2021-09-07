@@ -2,7 +2,7 @@
   <div class="pack flex animated pointer">
     <svg
       draggable="false"
-      oncontextmenu="return false"
+      @contextmenu.prevent
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       viewBox="0 0 180 340"

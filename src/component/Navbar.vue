@@ -11,7 +11,7 @@
     <router-link to="/"
       ><img
         draggable="false"
-        oncontextmenu="return false"
+        @contextmenu.prevent
         alt="Logo Chapatiz Retro"
         id="logo"
         src="../asset/img/logo.svg"
@@ -22,7 +22,7 @@
         <button id="connect" class="flex centered">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Disconnect icon"
             class="chz-icon"
             src="../asset/img/login/disconnect.svg"
@@ -37,7 +37,7 @@
       ><button class="nav-btn flex centered">
         <img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           alt="Home icon"
           class="nav-icon"
           src="@/asset/img/navbar/icon/home.svg"
@@ -49,7 +49,7 @@
         <div class="nav-text">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Tchat icon"
             class="nav-icon"
             src="@/asset/img/navbar/icon/tchat.svg"
@@ -60,7 +60,7 @@
         </div>
         <img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           alt="Arrow icon"
           class="arrow jitter"
           src="@/asset/img/arrow.svg"
@@ -71,7 +71,7 @@
         <div class="nav-text">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Account icon"
             class="nav-icon"
             src="@/asset/img/navbar/icon/account.svg"
@@ -87,7 +87,7 @@
         <div class="nav-text">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Games icon"
             class="nav-icon"
             src="@/asset/img/navbar/icon/games.svg"
@@ -103,7 +103,7 @@
         <div class="nav-text">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Member icon"
             class="nav-icon"
             src="@/asset/img/navbar/icon/members.svg"
@@ -119,7 +119,7 @@
         <div class="nav-text">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Community icon"
             class="nav-icon"
             src="@/asset/img/navbar/icon/community.svg"

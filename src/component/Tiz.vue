@@ -5,14 +5,14 @@
         v-if="shoe > 0"
         class="item shoe1"
         draggable="false"
-        oncontextmenu="return false"
+        @contextmenu.prevent
         :src="`/avatar/shoe/${this.shoe}.svg`"
       />
       <img
         v-if="shoe > 0"
         class="item shoe2"
         draggable="false"
-        oncontextmenu="return false"
+        @contextmenu.prevent
         :src="`/avatar/shoe/${this.shoe}.svg`"
       />
       <div class="body-parts">
@@ -20,49 +20,49 @@
           v-if="body > 0"
           class="item body"
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           :src="`/avatar/body/${this.body}.svg`"
         />
         <img
           v-if="emote > 0"
           class="item emote"
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           :src="`/avatar/emote/${this.emote}.svg`"
         />
         <img
           src="/avatar/hands.svg"
           draggable="false"
           class="item hands"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           alt="Tiz avatar"
         />
         <img
           v-if="item2 > 0"
           class="item item2"
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           :src="`/avatar/item2/${this.item2}.svg`"
         />
         <img
           v-if="item1 > 0"
           class="item item1"
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           :src="`/avatar/item1/${this.item1}.svg`"
         />
         <img
           v-if="hat > 0"
           class="item hat"
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           :src="`/avatar/hat/${this.hat}.svg`"
         />
         <img
           v-if="item0 > 0"
           class="item item0"
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           :src="`/avatar/item0/${this.item0}.svg`"
         />
       </div>

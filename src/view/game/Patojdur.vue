@@ -4,44 +4,44 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false" 
+            ><img draggable="false" @contextmenu.prevent 
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false" 
+            ><img draggable="false" @contextmenu.prevent 
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -51,17 +51,17 @@
     </template>
     <Card filename="bacteria.gif" justified>
       <div class="centered">
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" oncontextmenu="return false"  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Records</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" oncontextmenu="return false"  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Meilleurs</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" oncontextmenu="return false"  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Pires</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" oncontextmenu="return false"  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Groupes</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Records</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Meilleurs</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Pires</a>
+        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Groupes</a>
         <a href="#tutorial" class="btn-sm pink-bg">
-          <img draggable="false" oncontextmenu="return false"  alt="Help icon" src="@/asset/img/icon/help.png" />&nbsp;Comment
+          <img draggable="false" @contextmenu.prevent  alt="Help icon" src="@/asset/img/icon/help.png" />&nbsp;Comment
           jouer&nbsp;?
         </a>
       </div>
       <br />
-      <img draggable="false" oncontextmenu="return false" 
+      <img draggable="false" @contextmenu.prevent 
         src="@/asset/img/game/bacteria/preview.gif"
         alt="A game of bacteria"
         title="A game of bacteria"

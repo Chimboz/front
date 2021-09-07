@@ -2,7 +2,7 @@
   <img
     :class="{ win: this.elapsed > this.duration }"
     draggable="false"
-    oncontextmenu="return false"
+    @contextmenu.prevent
     :alt="digit"
     v-for="digit in displayNumber"
     :key="digit.index"

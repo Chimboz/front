@@ -8,7 +8,7 @@
             <div class="number">
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -39,7 +39,7 @@
               >
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                 />
@@ -90,7 +90,7 @@
               >
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                 />
@@ -102,7 +102,7 @@
               <button>
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   style="transform: rotate(-90deg)"
@@ -111,7 +111,7 @@
               ><br /><button>
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   style="transform: scaleX(-1)"
@@ -120,7 +120,7 @@
               ><button id="random">
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Random button"
                   title="Randomize look"
                   src="@/asset/img/home/chaparadio/stop.svg"
@@ -128,7 +128,7 @@
               ><button>
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   :class="{ pushed: right }"
@@ -136,7 +136,7 @@
               ><br /><button>
                 <img
                   draggable="false"
-                  oncontextmenu="return false"
+                  @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   :class="{ pushed: down }"
@@ -153,7 +153,7 @@
             >
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
                 src="@/asset/img/gender/male.svg"
@@ -165,7 +165,7 @@
             >
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
                 src="@/asset/img/gender/female.svg"
@@ -177,7 +177,7 @@
             >
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 alt="Unknown gender"
                 title="Unknown gender"
                 src="@/asset/img/gender/unknown.svg"
@@ -213,7 +213,7 @@
           </div>
           <div id="inventory" :class="{ active: !profile }">
             <div class="category-selection" v-if="this.data.items">
-              <div v-for="(_, category) of this.data.items" :key="category" oncontextmenu="return false">
+              <div v-for="(_, category) of this.data.items" :key="category" @contextmenu.prevent>
                 <input
                   type="checkbox"
                   class="category-checkbox"
@@ -225,10 +225,10 @@
                 <label :for="category" @contextmenu="this.checked.includes(category) && this.checked.length == 1
                     ? this.checked= ['item0', 'hat', 'item1', 'body', 'item2', 'shoe']
                     : this.checked = [`${category}`]"
-                  ><div class="item pointer" oncontextmenu="return false">
+                  ><div class="item pointer" @contextmenu.prevent>
                     <img
                       draggable="false"
-                      oncontextmenu="return false"
+                      @contextmenu.prevent
                       :src="
                         require(`@/asset/img/icon/item_category/${category}.svg`)
                       "
@@ -271,9 +271,9 @@
                   @mouseover="this.info = name + ' ' + item"
                 >
                   <img draggable="false"
-                      oncontextmenu="return false" v-if="item == 1" src="@/asset/img/icon/cross.svg" />
+                      @contextmenu.prevent v-if="item == 1" src="@/asset/img/icon/cross.svg" />
                   <img draggable="false"
-                      oncontextmenu="return false" v-else :src="`/avatar/${name}/${item}.svg`" />
+                      @contextmenu.prevent v-else :src="`/avatar/${name}/${item}.svg`" />
                 </button>
               </div>
             </div>
@@ -286,7 +286,7 @@
           ><template #prepend
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Arrow icon"
               class="arrow jitter"
               src="@/asset/img/arrow.svg" /></template
@@ -295,7 +295,7 @@
           ><template #prepend
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Profile icon"
               height="24"
               src="@/asset/img/icon/profile.svg" /></template

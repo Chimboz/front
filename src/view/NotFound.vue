@@ -2,7 +2,7 @@
   <Container>
     <template #left-column></template>
     <Card red>
-      <img draggable="false" oncontextmenu="return false"  alt="Error icon" src="@/asset/img/icon/error.gif"><b>Erreur, la page que vous cherchez n'existe pas.</b>
+      <img draggable="false" @contextmenu.prevent  alt="Error icon" src="@/asset/img/icon/error.gif"><b>Erreur, la page que vous cherchez n'existe pas.</b>
     </Card>
     <template #right-column></template>
   </Container>

@@ -6,7 +6,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.link") }}</router-link
@@ -14,7 +14,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
@@ -22,7 +22,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
@@ -30,7 +30,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
@@ -38,7 +38,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;Forum</router-link
@@ -46,7 +46,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
@@ -54,7 +54,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;MajMin</router-link
@@ -62,7 +62,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
@@ -76,7 +76,7 @@
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
           />&nbsp;Les Records</router-link
@@ -84,7 +84,7 @@
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
           />&nbsp;Les Meilleurs</router-link
@@ -92,7 +92,7 @@
         <router-link to="#worst" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
           />&nbsp;Les Pires</router-link
@@ -100,7 +100,7 @@
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
           />&nbsp;Les Groupes</router-link
@@ -108,7 +108,7 @@
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Help icon"
             src="@/asset/img/icon/help.png"
           />&nbsp;Comment jouer&nbsp;?
@@ -117,7 +117,7 @@
       <br />
       <img
         draggable="false"
-        oncontextmenu="return false"
+        @contextmenu.prevent
         src="@/asset/img/game/bacteria/preview.gif"
         alt="A game of bacteria"
         title="A game of bacteria"

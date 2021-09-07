@@ -4,38 +4,38 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.link")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.internalMessagingLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.myGroupsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.myFriendsLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;Forum</router-link
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;Forum</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.notSmartLink")
             }}</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;MajMin</router-link
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;MajMin</router-link
           >
           <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
+            ><img draggable="false" @contextmenu.prevent  alt="Puce" src="@/asset/img/puce.svg" />&nbsp;{{
               $t("myAccount.shoppingLink")
             }}</router-link
           >
@@ -44,7 +44,7 @@
       <Rules />
     </template>
     <Card filename="bacteria_blue.jpg" blue justified>
-      <img draggable="false" oncontextmenu="return false" 
+      <img draggable="false" @contextmenu.prevent 
         src="@/asset/img/game/bacteria/visuel.jpg"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
@@ -58,13 +58,13 @@
       <br />
       <router-link class="btn-sm pink-bg" to="/games/bacteria"
         >
-          <img draggable="false" oncontextmenu="return false"  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
+          <img draggable="false" @contextmenu.prevent  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
         </router-link
       >
     </Card>
     <br />
     <Card filename="patojdur_blue.gif" blue justified>
-      <img draggable="false" oncontextmenu="return false" 
+      <img draggable="false" @contextmenu.prevent 
         src="@/asset/img/game/patojdur/visuel.jpg"
         alt="Patojdur"
         style="float: left; margin-right: 17px"
@@ -78,13 +78,13 @@
       <br />
       <router-link class="btn-sm pink-bg" to="/games/patojdur"
         >
-          <img draggable="false" oncontextmenu="return false"  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
+          <img draggable="false" @contextmenu.prevent  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
         </router-link
       >
     </Card>
     <br />
     <Card filename="mazo_blue.gif" blue justified>
-      <img draggable="false" oncontextmenu="return false" 
+      <img draggable="false" @contextmenu.prevent 
         src="@/asset/img/game/mazo/visuel.jpg"
         alt="Mazo"
         style="float: left; margin-right: 17px"
@@ -98,7 +98,7 @@
       <br />
       <router-link class="btn-sm pink-bg" to="/games/mazo"
         >
-          <img draggable="false" oncontextmenu="return false"  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
+          <img draggable="false" @contextmenu.prevent  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
         </router-link
       >
     </Card>

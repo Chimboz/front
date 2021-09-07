@@ -8,7 +8,7 @@
             <div class="number">
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -21,7 +21,7 @@
             <div>
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 :alt="number"
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
@@ -30,7 +30,7 @@
             </div>
             <img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Messages"
               src="@/asset/img/home/messages.png"
               class="fullwidth"
@@ -43,7 +43,7 @@
             <div>
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 :alt="number"
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
@@ -52,7 +52,7 @@
             </div>
             <img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Friends"
               src="@/asset/img/home/friends.png"
               class="fullwidth"
@@ -65,7 +65,7 @@
     /></template>
     <img
       draggable="false"
-      oncontextmenu="return false"
+      @contextmenu.prevent
       src="/announce/summer.png"
       style="max-width: 100%"
     /><br />
@@ -73,7 +73,7 @@
       <template #header
         ><img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           src="@/asset/img/home/header_hello.png"
           style="width: 100%"
       /></template>
@@ -85,7 +85,7 @@
         ><template #prepend
           ><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Lottery handle"
             class="handle"
             ref="handle"
@@ -98,7 +98,7 @@
       <template #header
         ><img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           src="@/asset/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="float: left; margin: 0 17px 17px 0"
@@ -119,19 +119,19 @@
       <div class="gallery flex">
         <img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           src="@/asset/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
         /><img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           src="@/asset/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
         /><img
           draggable="false"
-          oncontextmenu="return false"
+          @contextmenu.prevent
           src="@/asset/img/home/chimboking.gif"
           alt="Chimboking portrait"
           style="margin: auto"
@@ -157,7 +157,7 @@
         <router-link to="/help"
           ><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             alt="Puce"
             src="@/asset/img/puce.svg"
           />{{ $t("help.tip") }}</router-link

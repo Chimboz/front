@@ -23,7 +23,7 @@
             <router-link to="#reply">
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 alt="Voir le dernier message"
                 title="Voir le dernier message"
                 src="@/asset/img/bbs/msg_new.svg"

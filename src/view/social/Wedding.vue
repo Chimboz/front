@@ -6,7 +6,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.link") }}</router-link
@@ -14,7 +14,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.internalMessagingLink") }}</router-link
@@ -22,7 +22,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myGroupsLink") }}</router-link
@@ -30,7 +30,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.myFriendsLink") }}</router-link
@@ -38,7 +38,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;Forum</router-link
@@ -46,7 +46,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.notSmartLink") }}</router-link
@@ -54,7 +54,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;MajMin</router-link
@@ -62,7 +62,7 @@
           <router-link to="/bite" class="list"
             ><img
               draggable="false"
-              oncontextmenu="return false"
+              @contextmenu.prevent
               alt="Puce"
               src="@/asset/img/puce.svg"
             />&nbsp;{{ $t("myAccount.shoppingLink") }}</router-link
@@ -121,7 +121,7 @@
             >
               <img
                 draggable="false"
-                oncontextmenu="return false"
+                @contextmenu.prevent
                 src="@/asset/img/tiz/tiz_shape.svg"
               />&nbsp;<b>En ligne</b>
             </div>
@@ -159,7 +159,7 @@
           Chimbo
           <img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             src="@/asset/img/gender/male.svg"
           />
         </div>
@@ -167,11 +167,11 @@
         <div class="icon flex centered">
           Niveau<br /><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             src="@/asset/img/number/2.svg"
           /><img
             draggable="false"
-            oncontextmenu="return false"
+            @contextmenu.prevent
             src="@/asset/img/number/5.svg"
           />
         </div>

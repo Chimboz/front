@@ -6,7 +6,7 @@
     <div class="bank fullwidth">
       <img
         draggable="false"
-        oncontextmenu="return false"
+        @contextmenu.prevent
         class="coin"
         v-for="(_,n) in Math.min(Math.floor(credits / 10), 176)"
         :style="coinsPosition[n]"
@@ -16,7 +16,7 @@
       />
       <object
         draggable="false"
-        oncontextmenu="return false"
+        @contextmenu.prevent
         type="image/svg+xml"
         :data="require('@/asset/img/bank/door.svg')"
       ></object>
