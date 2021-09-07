@@ -58,6 +58,7 @@ const sideNavEntries = [{
   label: "MajMin"
 }, {
   labelKey: "myAccount.shoppingLink"
+}]
   
 const iconDescriptions = [{
   src: require("@/assets/img/bbs/folder_new.svg"),
