@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Pixelated Verdana 12";
+  src: url("../font/pixelated_verdana_12pt.woff2") format("woff2"),
+    url("../font/pixelated_verdana_12pt.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixelated Verdana 12";
+  src: url("../font/pixelated_verdana_bold_12pt.woff2") format("woff2"),
+    url("../font/pixelated_verdana_bold_12pt.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixelated Verdana 10";
+  src: url("../font/pixelated_verdana_bold_10pt.woff2") format("woff2"),
+    url("../font/pixelated_verdana_bold_10pt.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chimboz Heavy";
+  src: url("../font/chimbozheavy.woff2") format("woff2"),
+    url("../font/chimbozheavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chimboz Heavy";
+  src: url("../font/chimbozheavy_bold.woff2") format("woff2"),
+    url("../font/chimbozheavy_bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jagger SF";
+  src: url("../font/jagger_sf.woff2") format("woff2"),
+    url("../font/jagger_sf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/Helvetica-BoldOblique.woff2") format("woff2"),
+    url("../font/Helvetica-BoldOblique.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/Helvetica.woff2") format("woff2"),
+    url("../font/Helvetica.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/Helvetica-Bold.woff2") format("woff2"),
+    url("../font/Helvetica-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/Helvetica-Oblique.woff2") format("woff2"),
+    url("../font/Helvetica-Oblique.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: fallback;
+}
