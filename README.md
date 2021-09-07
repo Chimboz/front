@@ -9,17 +9,18 @@
 
 # Contributions
 
-Please see [project kanban](https://github.com/Tigriz/chzretro-front/projects/1), to-do tasks
+Please see [project kanban](https://github.com/Tigriz/chzretro-front/projects/1), to-do tasks.
 
 # Conventions
 
-Folder name are singular (**locales** excepted because vue-i18n is hardcoded)
-Routes are plural (/games)
+Folder name are singular (**locales** excepted because vue-i18n is hardcoded).  
+Routes are plural (/games).  
 Replace whitespaces " " with **underscores "_"**.
 
 # Branches
 
-One branch per feature
+One branch per feature.
+Fork and PR are appreciated.
 
 # Project setup
 
@@ -49,7 +50,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Dependencies
-- Bbob
+- Marked
 - Axios
 - date-fns
 - mitt
