@@ -76,60 +76,118 @@
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <Card class="member">
+    <Card
+      class="member"
+      :class="[this.data.gender]"
+      v-if="this.data && this.data.astro && this.data.name && this.data.status"
+    >
       <div class="member-header">
-        <Tiz />
-        <div class="flex column" style="position: relative">
-          <StrokeText class="pseudo">Tigriz</StrokeText>
-          "Nitens lux machin"
+        <Tiz
+          :avatar="data.look.avatar"
+          :emote="data.look.emote"
+          :hat="data.look.hat"
+          :body="data.look.body"
+          :shoe="data.look.shoe"
+          :item0="data.look.item0"
+          :item1="data.look.item1"
+          :item2="data.look.item2"
+        />
+        <div class="flex column" style="z-index: 1; position: relative">
+          <StrokeText class="pseudo">{{ this.data.name }}</StrokeText>
+          <div class="sentence">"{{ this.data.phrase_pref }}"</div>
         </div>
       </div>
       <div class="member-body">
-        <div class="member-portrait">
-          <div class="portrait flex"><Tiz /></div>
-          <div class="online flex centered tchat">
+        <div class="member-portrait centered">
+          <div class="portrait flex">
+            <Tiz
+              :avatar="data.look.avatar"
+              :emote="data.look.emote"
+              :hat="data.look.hat"
+              :body="data.look.body"
+              :shoe="data.look.shoe"
+              :item0="data.look.item0"
+              :item1="data.look.item1"
+              :item2="data.look.item2"
+            />
+          </div>
+          <div v-if="!this.data.status.connected">
+            Dernière visite le <b>{{ formatDate }}</b>
+          </div>
+          <div v-else>
+            <div
+              class="online flex centered"
+              :class="{ tchat: this.data.status.room }"
+            >
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                src="@/assets/img/tiz/tiz_shape.svg"
+              />&nbsp;<b>En ligne</b>
+            </div>
+            <b>{{ this.data.status.room }}</b>
+          </div>
+        </div>
+        <div class="member-text">
+          <p>
+            Marié avec
+            <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis
+            76 jours
+          </p>
+          <p>
+            Intérêts :
+            <b v-for="(interest, index) of this.data.centres" :key="index"
+              >{{ interest
+              }}<span v-if="index < this.data.centres.length - 1">, </span></b
+            >
+          </p>
+          <p>
+            Page perso :
+            <a target="_blank" :href="this.data.website">{{
+              this.data.website
+            }}</a>
+          </p>
+          <p>
+            Inscrit aux groupes :
+            <Group
+              v-for="(group, index) of this.data.groups"
+              :group="group"
+              :key="group.id"
+              :separator="index < this.data.groups.length - 1"
+            />
+          </p>
+          <div class="icon flex centered">
+            Chimbo
             <img
               draggable="false"
               oncontextmenu="return false"
-              src="@/assets/img/tiz/tiz_shape.svg"
-            />&nbsp;<b>En ligne</b>
+              src="@/assets/img/sex/male.svg"
+            />
           </div>
+          &nbsp;
+          <div class="icon flex centered">
+            Niveau<br /><img
+              draggable="false"
+              oncontextmenu="return false"
+              src="@/assets/img/numbers/2.svg"
+            /><img
+              draggable="false"
+              oncontextmenu="return false"
+              src="@/assets/img/numbers/5.svg"
+            />
+          </div>
+          <br /><br />
+          <p>
+            Vérification du nom :
+            <b
+              >{{ this.data.name.toLowerCase() }},
+              {{ this.data.name.toUpperCase() }}</b
+            >
+          </p>
+          <p>
+            Signe astrologik : <b>{{ this.data.astro }}</b>
+          </p>
         </div>
-        <p>
-          Marié avec
-          <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis 76
-          jours
-        </p>
-        <p>Intérêts : Musique, informatique, mathématiques, Sayaka</p>
-        <p>Page perso : http://last.fm/user/Tigriz</p>
-        <p>
-          Inscrit aux groupes :
-          <Group :group="{ id: '2', name: 'L\'Eglise', color: '#000' }" />, La
-          Chatterie
-        </p>
-        <div class="icon flex centered">
-          Chimbo
-          <img
-            draggable="false"
-            oncontextmenu="return false"
-            src="@/assets/img/sex/male.svg"
-          />
-        </div>
-        &nbsp;
-        <div class="icon flex centered">
-          Niveau<br /><img
-            draggable="false"
-            oncontextmenu="return false"
-            src="@/assets/img/numbers/2.svg"
-          /><img
-            draggable="false"
-            oncontextmenu="return false"
-            src="@/assets/img/numbers/5.svg"
-          />
-        </div>
-        <br /><br />
-        <p>Vérification du nom : <b>tigriz, TIGRIZ</b></p>
-        <p>Signe astrologique : <b>dragon rouge de terre</b></p>
       </div>
       <div class="member-section">
         Classement : 25ème 19 parties, 10 gagnées, 9 perdues, 0 nulles 40 points
@@ -165,9 +223,18 @@ import User from "@/components/links/User.vue";
 import Group from "@/components/links/Group.vue";
 import StrokeText from "@/components/StrokeText.vue";
 import Container from "@/components/Container.vue";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
 
 export default {
   name: "Member",
+  data() {
+    return {
+      data: {},
+      error: null,
+      loading: true,
+    };
+  },
   components: {
     Card,
     Container,
@@ -177,26 +244,64 @@ export default {
     Group,
     StrokeText,
   },
+  computed: {
+    formatDate() {
+      return format(new Date(this.data.status.date), "PPP à p", {
+        locale: fr,
+        addSuffix: true,
+      });
+    },
+  },
+  beforeRouteEnter(to, from, next) {
+    const url = "/api/member.json";
+    next((vm) => {
+      vm.axios
+        .get(url)
+        .then((res) => {
+          if (res) {
+            vm.data = res.data;
+            vm.loading = false;
+          } else {
+            // Didn't like the result, redirect
+            next("/");
+          }
+        })
+        .catch((error) => {
+          vm.error = error.toString();
+        });
+    });
+  },
+  async beforeRouteUpdate() {
+    try {
+      this.data = await this.axios
+        .get("/api/member.json")
+        .then((res) => res.data);
+    } catch (error) {
+      this.error = error.toString();
+    }
+  },
 };
 </script>
 <style lang="scss">
-.member .card {
-  background: linear-gradient(
-    to bottom,
-    #5a9bbf,
-    #d5e6f3,
-    var(--main-card-color) calc(100% - 12px),
-    var(--dark-card-color) 100%
-  );
+.card {
+  background-size: cover;
+}
+.male .card {
+  background-image: url(../../assets/img/member/header_mec.gif);
 }
 
-.member-header .avatar {
-  width: 100%;
+.female .card {
+  background-image: url(../../assets/img/member/header_fille.gif);
 }
 </style>
 <style lang="scss" scoped>
 .member {
   overflow: hidden;
+}
+
+.sentence {
+  margin-left: 33%;
+  text-align: left;
 }
 
 .member-body {
@@ -213,15 +318,14 @@ export default {
 }
 
 .member-header .tiz {
-  margin-top: -5%;
   float: left;
-  width: 33%;
-  margin-bottom: -100%;
-
-  transform: rotate(-5deg);
+  margin: 40px auto -100% 12%;
+  transform: rotate(-5deg) scale(3);
 }
 
 .pseudo {
+  margin-left: 33%;
+  width: 67%;
   font-size: 35px;
   fill: #fff;
   stroke: #f39;
@@ -232,9 +336,12 @@ export default {
 }
 
 .portrait {
+  justify-content: center;
+  align-items: center;
   background: url(../../assets/img/member/portrait.png);
   height: 112px;
   width: 104px;
+  margin-bottom: 6px;
   overflow: hidden;
 }
 
@@ -244,13 +351,18 @@ export default {
   z-index: 1;
   position: relative;
   border-radius: 8px;
-  padding: 8px;
+}
+
+.member-section,
+.member-text {
+  padding: 6px;
 }
 
 .member-portrait {
   float: right;
   background: #fff;
-  width: 100px;
+  border-radius: 8px;
+  padding: 6px;
 }
 
 .member-section {
@@ -259,8 +371,8 @@ export default {
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelated Verdana 12";
-  font-size: 13.3333px;
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
   flex-wrap: wrap;
   justify-content: center;
   width: 50px;

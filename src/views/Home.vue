@@ -81,7 +81,7 @@
       {{ $t("lottery.secondLine") }}<br /><br />
       <RandomNumber :max="30" :value="20" :duration="5000" />
       <br /><br />
-      <Button orange @click="handle"
+      <Button orange @click="handle" class="btn-loto"
         ><template #prepend
           ><img
             draggable="false"
@@ -239,6 +239,11 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.btn-loto .btn-text {
+  margin-left: 16px;
+}
+</style>
 
 <style lang="scss" scoped>
 .gallery {

@@ -3,103 +3,37 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.link")
-            }}</router-link
+          <router-link to="/bite"
+            class="list"
+            v-for="(entry, i) of sideNavEntries"
+            :key="i"
           >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.internalMessagingLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myGroupsLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.myFriendsLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false" 
-              alt="Puce"
+            <img
               src="@/assets/img/puce.svg"
-            />&nbsp;Forum</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.notSmartLink")
-            }}</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false" 
               alt="Puce"
-              src="@/assets/img/puce.svg"
-            />&nbsp;MajMin</router-link
-          >
-          <router-link to="/bite" class="list"
-            ><img draggable="false" oncontextmenu="return false"  alt="Puce" src="@/assets/img/puce.svg" />&nbsp;{{
-              $t("myAccount.shoppingLink")
-            }}</router-link
-          >
+              draggable="false"
+              @contextmenu.prevent
+            >&nbsp;{{
+              entry.labelKey ? $t(entry.labelKey) : entry.label
+            }}
+          </router-link>
         </div>
       </Card></template
     >
     <Board :topics="data"> </Board>
     <br />
-    <Card
-      ><img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_new.svg"
-        alt="Nouveaux messages"
-        title="Nouveaux messages"
-      />
-      Nouveaux messages<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_new_hot.svg"
-        alt="Nouveaux messages [ Populaire ]"
-        title="Nouveaux messages [ Populaire ]"
-      />
-      Nouveaux messages [ Populaire ]<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_new_lock.svg"
-        alt="Nouveaux messages [ Verrouillé ]"
-        title="Nouveaux messages [ Verrouillé ]"
-      />
-      Nouveaux messages [ Verrouillé ]<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder.svg"
-        alt="Pas de nouveaux messages"
-        title="Pas de nouveaux messages"
-      />
-      Pas de nouveaux messages<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_hot.svg"
-        alt="Pas de nouveaux messages [ Populaire ]"
-        title="Pas de nouveaux messages [ Populaire ]"
-      />
-      Pas de nouveaux messages [ Populaire ]<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_lock.svg"
-        alt="Pas de nouveaux messages [ Verrouillé ]"
-        title="Pas de nouveaux messages [ Verrouillé ]"
-      />
-      Pas de nouveaux messages [ Verrouillé ]<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_announce.svg"
-        alt="Annonce"
-        title="Annonce"
-      />
-      Annonce<br />
-      <img draggable="false" oncontextmenu="return false" 
-        src="@/assets/img/bbs/folder_sticky.svg"
-        alt="Post-it"
-        title="Post-it"
-      />
-      Post-it</Card
-    >
+    <Card>
+      <div v-for="(description, i) in iconDescriptions" :key="i">
+        <img
+          :src="description.src"
+          :alt="description.label"
+          :title="description.label"
+          draggable="false"
+          @contextmenu.prevent
+        >
+        {{ description.label }}
+      </div>
+    </Card>
   </Container>
 </template>
 
@@ -107,6 +41,49 @@
 import Card from "@/components/Card.vue";
 import Board from "@/components/bbs/list/Board.vue";
 import Container from "@/components/Container.vue";
+
+const sideNavEntries = [{
+  labelKey: "myAccount.link"
+}, {
+  labelKey: "myAccount.internalMessagingLink"
+}, {
+  labelKey: "myAccount.myGroupsLink"
+}, {
+  labelKey: "myAccount.myFriendsLink"
+}, {
+  label: "Forum"
+}, {
+  labelKey: "myAccount.notSmartLink"
+}, {
+  label: "MajMin"
+}, {
+  labelKey: "myAccount.shoppingLink"
+  
+const iconDescriptions = [{
+  src: require("@/assets/img/bbs/folder_new.svg"),
+  label: "Nouveaux messages"
+}, {
+  src: require("@/assets/img/bbs/folder_new_hot.svg"),
+  label: "Nouveaux messages [ Populaire ]"
+}, {
+  src: require("@/assets/img/bbs/folder_new_lock.svg"),
+  label: "Nouveaux messages [ Verrouillé ]",
+}, {
+  src: require("@/assets/img/bbs/folder.svg"),
+  label: "Pas de nouveaux messages"
+}, {
+  src: require("@/assets/img/bbs/folder_hot.svg"),
+  label: "Pas de nouveaux messages [ Populaire ]"
+}, {
+  src: require("@/assets/img/bbs/folder_lock.svg"),
+  label: "Pas de nouveaux messages [ Verrouillé ]"
+}, {
+  src: require("@/assets/img/bbs/folder_announce.svg"),
+  label: "Annonce"
+}, {
+  src: require("@/assets/img/bbs/folder_sticky.svg"),
+  label: "Post-it"
+}]
 
 export default {
   name: "BBS",
@@ -120,6 +97,8 @@ export default {
       data: [],
       error: null,
       loading: true,
+      sideNavEntries,
+      iconDescriptions,
     };
   },
   beforeRouteEnter(to, from, next) {

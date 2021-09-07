@@ -1,0 +1,41 @@
+{
+  "name": "Owned",
+  "gender": "male",
+  "astro": "bite en bois",
+  "id": 2,
+  "look": {
+    "avatar": 0,
+    "emote": 1,
+    "hat": 9,
+    "body": 1,
+    "shoe": 1,
+    "item0": 2,
+    "item1": 10,
+    "item2": 2
+  },
+  "groups": [
+    {
+      "name": "Les Créateurs",
+      "id": 1,
+      "color": "#900"
+    },
+    {
+      "name": "Chibrax",
+      "id": 2,
+      "color": "#009"
+    }
+  ],
+  "items": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  "credits": 469,
+  "level": 25,
+  "status": {
+    "connected": true,
+    "room": "La Colline Sacrée",
+    "date": 1630075662000
+  },
+  "phrase_pref": "Nitens lux😂😂😂, horrenda procella, tenebris aeternis involuta",
+  "centres": ["Musique", "informatique", "mathématiques", "Sayaka"],
+  "website": "http://last.fm/user/Tigriz",
+  "emote": "zzz",
+  "ppt": 469
+}

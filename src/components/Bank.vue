@@ -4,12 +4,6 @@
       <Button yellow icon="register.svg">{{ $t("credit.title") }}</Button>
     </template>
     <div class="bank fullwidth">
-      <object
-        draggable="false"
-        oncontextmenu="return false"
-        type="image/svg+xml"
-        :data="require('@/assets/img/credits/door.svg')"
-      ></object>
       <img
         draggable="false"
         oncontextmenu="return false"
@@ -20,6 +14,12 @@
         :key="n"
         :src="require(`@/assets/img/credits/coin.svg`)"
       />
+      <object
+        draggable="false"
+        oncontextmenu="return false"
+        type="image/svg+xml"
+        :data="require('@/assets/img/credits/door.svg')"
+      ></object>
     </div>
 
     <router-link to="/bank">
@@ -140,7 +140,6 @@ export default {
 }
 
 .bank object {
-  z-index: 1;
   position: inherit;
   width: 100%;
 }
