@@ -32,7 +32,6 @@ body {
 @for $i from 0 through 23 {
   .h#{$i} {
     background-image: url(../img/navbar/background/#{$i}.png);
-    
   }
 }
 
@@ -146,7 +145,14 @@ table {
 }
 
 *:disabled {
-  filter:grayscale(1) !important;
+  filter: grayscale(1) !important;
+  cursor: not-allowed !important;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
 }
 
 // Custom classes
@@ -292,12 +298,13 @@ table.bbs {
   display: table-cell !important;
 }
 
-.board col:nth-child(4){
+.board col:nth-child(4) {
   display: table-column;
 }
 
 @media (min-width: 600px) {
-  .bbs td, .bbs th {
+  .bbs td,
+  .bbs th {
     display: table-cell !important;
   }
 

@@ -29,9 +29,7 @@
               <button
                 v-for="(category, name) of this.data.items"
                 :key="name"
-                :disabled="
-                  data.items[name].indexOf(data.look[name]) < 1
-                "
+                :disabled="data.items[name].indexOf(data.look[name]) < 1"
                 @click="
                   data.look[name] =
                     this.data.items[name][
@@ -215,7 +213,7 @@
           </div>
           <div id="inventory" :class="{ active: !profile }">
             <div class="category-selection">
-              <div
+              <button
                 v-for="(_, category) of this.data.items"
                 :key="category"
                 class="item"
@@ -227,7 +225,7 @@
                 "
               >
                 <img :src="require(`@/assets/img/icons/${category}.svg`)" />
-              </div>
+              </button>
             </div>
             <div class="chest">
               <div
@@ -236,11 +234,10 @@
                 :key="name"
                 :class="[name]"
               >
-                <div
+                <button
                   class="item"
                   :class="{
-                    active: this.data.look[name] == item,
-                    cancel: item == 1,
+                    active: this.data.look[name] == item
                   }"
                   v-for="item of category"
                   :key="item"
@@ -249,7 +246,7 @@
                 >
                   <img v-if="item == 1" src="@/assets/img/icons/cross.svg" />
                   <img v-else :src="`/avatar/${name}/${item}.svg`" />
-                </div>
+                </button>
               </div>
             </div>
             <div class="info">{{ this.info }}</div>
@@ -511,11 +508,6 @@ h3 {
   transform: scaleX(-1);
 }
 
-button {
-  background: none;
-  border: 0;
-}
-
 .arrows button:nth-child(2n) img {
   height: 30px;
 }
@@ -636,18 +628,15 @@ button {
   width: 40px;
   border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
+  vertical-align: middle;
 }
 
 .item img[src*="cross"] {
   transform: translate(0px, 0px);
 }
 
-.item.cancel {
-  display: inline-flex;
-}
-
-.category-selection, .chest {
+.category-selection,
+.chest {
   text-align: left;
 }
 
@@ -659,7 +648,7 @@ button {
 }
 
 .category-selection .item.active img {
-  filter:brightness(9)
+  filter: brightness(9);
 }
 
 .info {
