@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import ProgressBar from "@/components/ProgressBar.vue";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
+import ProgressBar from "@/component/ProgressBar.vue";
+import Navbar from "@/component/Navbar.vue";
+import Footer from "@/component/Footer.vue";
 
 export default {
   name: "Home",

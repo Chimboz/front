@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../view/Home.vue";
 
 const routes = [
   {
@@ -11,86 +11,86 @@ const routes = [
   {
     path: "/tchat",
     name: "Tchat",
-    component: () => import("../views/Tchat.vue"),
+    component: () => import("../view/Tchat.vue"),
     meta: { title: "Chapatiz Retro | Tchat" },
   },
   {
     path: "/account",
     name: "Account",
-    component: () => import("../views/Account.vue"),
+    component: () => import("../view/Account.vue"),
     meta: { title: "Chapatiz Retro | Mon compte" },
   },
   {
     path: "/games",
     name: "Games",
-    component: () => import("../views/Games.vue"),
+    component: () => import("../view/Games.vue"),
     meta: { title: "Chapatiz Retro | Jeux" },
   },
   {
     path: "/games/bacteria",
     name: "Bacteria",
-    component: () => import("../views/games/Bacteria.vue"),
+    component: () => import("../view/game/Bacteria.vue"),
     meta: { title: "Chapatiz Retro | Bacteria" },
   },
   {
     path: "/games/patojdur",
     name: "Patojdur",
-    component: () => import("../views/games/Patojdur.vue"),
+    component: () => import("../view/game/Patojdur.vue"),
     meta: { title: "Chapatiz Retro | Patojdur" },
   },
   {
     path: "/games/mazo",
     name: "Mazo",
-    component: () => import("../views/games/Mazo.vue"),
+    component: () => import("../view/game/Mazo.vue"),
     meta: { title: "Chapatiz Retro | Mazo" },
   },
   {
     path: "/members",
     name: "Members",
-    component: () => import("../views/Members.vue"),
+    component: () => import("../view/Members.vue"),
     meta: { title: "Chapatiz Retro | Membres" },
   },
   {
     path: "/bbs",
     name: "BBS",
-    component: () => import("../views/BBS.vue"),
+    component: () => import("../view/BBS.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   {
     path: "/bbs/:id",
     name: "BBS machin", // TODO
-    component: () => import("../views/bbs/Board.vue"),
+    component: () => import("../view/bbs/Board.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   {
     path: "/bbs/:id/:topic",
     name: "BBS machin truc", // TODO
-    component: () => import("../views/bbs/Topic.vue"),
+    component: () => import("../view/bbs/Topic.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   {
     path: "/shop",
     name: "Shop", // TODO
-    component: () => import("../views/Shop.vue"),
+    component: () => import("../view/Shop.vue"),
     meta: { title: "Chapatiz Retro | Magasin" },
   },
   {
     path: "/member/:id",
     name: "Member",
-    component: () => import("../views/members/Member.vue"),
+    component: () => import("../view/social/Member.vue"),
     meta: { title: "Chapatiz Retro | Membre" },
   },
   {
     path: "/wedding",
     name: "Wedding",
-    component: () => import("../views/members/Wedding.vue"),
+    component: () => import("../view/social/Wedding.vue"),
     meta: { title: "Chapatiz Retro | Mariage" },
   },
   // 404
   {
     path: "/:pathMatch(.*)*",
     name: "Not Found",
-    component: () => import("../views/NotFound.vue"),
+    component: () => import("../view/NotFound.vue"),
     meta: { title: "Chapatiz Retro | Erreur" },
   },
 ];
