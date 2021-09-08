@@ -51,13 +51,13 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Dependencies
-- Marked
-- Axios
-- date-fns
-- mitt
-- vue-i18n
 - vue-router
 - vuex
+- vue-i18n
+- axios
+- date-fns
+- marked
+- mitt
 
 # Useful tools
 ## VS Extensions
