@@ -116,7 +116,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const guestOnly = ["Login"];
-  const userOnly = ["Account"];
+  const userOnly = ["Account", "Home"];
   if (store.getters["auth/authenticated"]) {
     if (guestOnly.includes(to.name)) next({ name: "Not Found" });
     else next();
