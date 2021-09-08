@@ -145,7 +145,7 @@
     <template #right-column
       ><Card blue top>
         <template #header
-          ><router-link to="/connecteds"
+          ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
             {{ $t("connecteds", data.connected) }}</router-link
           ></template
