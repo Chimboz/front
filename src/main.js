@@ -6,20 +6,20 @@ import router from "./router";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import store from "./store/index.js";
-import mitt from 'mitt';
+import mitt from "mitt";
 import i18n from "./i18n";
 import SideNavEntries from "@/component/SideNavEntries.vue";
 
 // https://www.epiloge.com/how-to-add-dynamic-meta-tags-to-your-vuejs-app-for-google-seo-0fa058
 
-const eventBus = mitt()
+const eventBus = mitt();
 const app = createApp(App)
   .use(i18n)
   .use(router)
   .use(VueAxios, axios)
   .use(store)
 
-app.config.globalProperties.eventBus = eventBus
+app.config.globalProperties.eventBus = eventBus;
 
 app.component("SideNavEntries", SideNavEntries);
 

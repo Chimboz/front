@@ -146,7 +146,7 @@
           <div class="gender">
             <button
               class="pink-icon"
-              :class="{active: this.data.gender == 'Chapato'}"
+              :class="{ active: this.data.gender == 'Chapato' }"
               @mouseenter="this.gender = 'Chapato'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapato'"
@@ -160,7 +160,7 @@
               /></button
             ><button
               class="pink-icon"
-              :class="{active: this.data.gender == 'Chapata'}"
+              :class="{ active: this.data.gender == 'Chapata' }"
               @mouseenter="this.gender = 'Chapata'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapata'"
@@ -174,7 +174,7 @@
               /></button
             ><button
               class="pink-icon"
-              :class="{active: this.data.gender == 'Chapati'}"
+              :class="{ active: this.data.gender == 'Chapati' }"
               @mouseenter="this.gender = 'Chapati'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapati'"
@@ -295,11 +295,12 @@
                     v-if="item == 1"
                     src="@/asset/img/icon/cross.svg"
                   />
-                  <img
+                  <VLazyImage
                     draggable="false"
                     @contextmenu.prevent
                     v-else
                     :src="`/avatar/${name}/${item}.svg`"
+                    :src-placeholder="require('@/asset/img/loading.svg')"
                   />
                 </button>
               </div>
@@ -354,6 +355,7 @@ import Tiz from "@/component/Tiz.vue";
 import Emotes from "@/component/Emotes.vue";
 import Bank from "@/component/Bank.vue";
 import Container from "@/component/Container.vue";
+import VLazyImage from "v-lazy-image";
 
 export default {
   name: "Account",
@@ -364,6 +366,7 @@ export default {
     Container,
     Tiz,
     Emotes,
+    VLazyImage,
   },
   data() {
     return {
@@ -691,8 +694,13 @@ h3 {
   vertical-align: middle;
 }
 
-.item img[src*="cross"] {
+.item img[src*="cross"],
+.item img[src*="loading"] {
   transform: translate(0px, 0px);
+}
+
+.item img[src*="loading"] {
+  width: 100%;
 }
 
 .category-selection,
