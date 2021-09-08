@@ -4,12 +4,11 @@
       ><Card blue top>
         <div class="flex col fullwidth">
           <SideNavEntries></SideNavEntries>
-        </div>
-      </Card></template
-    >
+        </div> </Card
+    ></template>
     <Topic :messages="data"> </Topic>
     <br />
-    <MarkdownInput />
+    <MarkdownInput v-if="authenticated" />
   </Container>
 </template>
 
@@ -18,6 +17,7 @@ import Card from "@/component/Card.vue";
 import Topic from "@/component/bbs/list/Topic.vue";
 import Container from "@/component/Container.vue";
 import MarkdownInput from "@/component/MarkdownInput.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "BBS",
@@ -33,6 +33,9 @@ export default {
       error: null,
       loading: true,
     };
+  },
+  computed: {
+    ...mapGetters("auth", ["authenticated"]),
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/topic.json";
