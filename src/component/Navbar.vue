@@ -31,7 +31,7 @@
             alt="Disconnect icon"
             src="../asset/img/icon/login/disconnect.svg"
           />
-          {{ $t("logout.button") }}
+          {{ $t("navbar.logout") }}
         </button>
         <button id="connect" class="flex centered" @click="login" v-else>
           <img
@@ -40,7 +40,7 @@
             alt="Connect icon"
             src="../asset/img/icon/login/connect.svg"
           />
-          {{ $t("login.button")}}
+          {{ $t("navbar.login")}}
         </button>
       </div>
       <Tiz style="margin-right: 17px" />
@@ -69,7 +69,7 @@
             src="@/asset/img/navbar/icon/tchat.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("playing.button")
+            $t("navbar.play")
           }}</StrokeText>
         </div>
         <img
@@ -91,7 +91,7 @@
             src="@/asset/img/navbar/icon/account.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("myAccount.button")
+            $t("navbar.account")
           }}</StrokeText>
         </div>
       </button></router-link
@@ -107,7 +107,7 @@
             src="@/asset/img/navbar/icon/games.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("games.button")
+            $t("navbar.games")
           }}</StrokeText>
         </div>
       </button></router-link
@@ -123,7 +123,7 @@
             src="@/asset/img/navbar/icon/members.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("members.button")
+            $t("navbar.members")
           }}</StrokeText>
         </div>
       </button></router-link
@@ -139,7 +139,7 @@
             src="@/asset/img/navbar/icon/community.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("community.button")
+            $t("navbar.community")
           }}</StrokeText>
         </div>
       </button></router-link

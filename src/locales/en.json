@@ -1,6 +1,6 @@
 {
   "mi": { "message": "message | messages" },
-  "currentLevel": "Level",
+  "level": "Level",
   "friends": { "online": "friend online | friends online" },
   "credit": "credit | credits",
   "lottery": {
@@ -10,14 +10,19 @@
   "connecteds": "player online | players online",
   "members": {
     "text": "member | members",
-    "past": "past since 24h.",
-    "button": "Members"
+    "past": "past since 24h."
   },
   "help": { "button": "Help", "tip": "Lost ? Need help ? Click here !" },
-  "logout": { "button": "Sign out" },
-  "playing": { "button": "Play!" },
+  "navbar": {
+    "logout": "Sign out",
+    "login": "Sign in",
+    "play": "Play!",
+    "account": "My account",
+    "games": "Games",
+    "members": "Members",
+    "community": "Community"
+  },
   "myAccount": {
-    "button": "My account",
     "link": "My account",
     "internalMessagingLink": "ChapatizMessenger",
     "myGroupsLink": "My groups",
@@ -28,10 +33,5 @@
     "shoppingLink": "Shopping",
     "profileSection": "Profile",
     "invSection": "Inventory"
-  },
-  "games": { "button": "Games" },
-  "community": { "button": "Community" },
-  "login": {
-    "button": "Sign in"
   }
 }

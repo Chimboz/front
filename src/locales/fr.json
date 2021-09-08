@@ -1,7 +1,11 @@
 {
-  "mi": { "message": "message | messages" },
-  "currentLevel": "Niveau",
-  "friends": { "online": "ami connecté | amis connectés" },
+  "mi": {
+    "message": "message | messages"
+  },
+  "level": "Niveau",
+  "friends": {
+    "online": "ami connecté | amis connectés"
+  },
   "credit": "pépette | pépettes",
   "lottery": {
     "firstLine": "Tu peux gagner jusqu'à 30 pépettes",
@@ -10,14 +14,22 @@
   "connecteds": "connecté | connectés",
   "members": {
     "text": "membre | membres",
-    "past": "passé depuis 24h. | passés depuis 24h.",
-    "button": "Membres"
+    "past": "passé depuis 24h. | passés depuis 24h."
   },
-  "help": { "button": "Aide", "tip": "Perdu ? Besoin d'aide ? Clique ici !" },
-  "logout": { "button": "Se déconnecter" },
-  "playing": { "button": "Jouer !" },
+  "help": {
+    "button": "Aide",
+    "tip": "Perdu ? Besoin d'aide ? Clique ici !"
+  },
+  "navbar": {
+    "logout": "Se déconnecter",
+    "login": "Se connecter",
+    "play": "Jouer&nbsp;!",
+    "account": "Mon compte",
+    "members": "Membres",
+    "games": "Jeux",
+    "community": "Communauté"
+  },
   "myAccount": {
-    "button": "Mon compte",
     "link": "Mon compte",
     "internalMessagingLink": "ChapatizMessenger",
     "myGroupsLink": "Mes groupes",
@@ -28,10 +40,5 @@
     "shoppingLink": "Magasin",
     "profileSection": "Profil",
     "invSection": "Inventaire"
-  },
-  "games": { "button": "Jeux" },
-  "community": { "button": "Communauté" },
-  "login": {
-    "button": "Se connecter"
   }
 }

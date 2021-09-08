@@ -4,7 +4,7 @@
       ><Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
-            {{ $t("currentLevel") }}
+            {{ $t("level") }}
             <div class="number">
               <img
                 draggable="false"
