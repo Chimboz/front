@@ -20,7 +20,7 @@
       <div style="margin-top: -10px">
         <User :user="user" id="username" style="display: inherit" />
         <router-link
-          to="login"
+          :to="this.$route.path == '/' ? '/login' : this.$route.path"
           id="connect"
           class="flex centered"
           @click="logout"
@@ -35,7 +35,7 @@
           {{ $t("navbar.logout") }}
         </router-link>
         <router-link
-          to="/"
+          to="/login"
           id="connect"
           class="flex centered"
           @click="login"
@@ -185,9 +185,6 @@ export default {
     User,
   },
   methods: {
-    login() {
-      this.$store.dispatch("auth/login");
-    },
     logout() {
       this.$store.dispatch("auth/logout");
     },
