@@ -146,7 +146,7 @@
           <div class="gender">
             <button
               class="pink-icon"
-              :class="{active: this.gender == 'Chapato'}"
+              :class="{active: this.data.gender == 'Chapato'}"
               @mouseenter="this.gender = 'Chapato'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapato'"
@@ -160,7 +160,7 @@
               /></button
             ><button
               class="pink-icon"
-              :class="{active: this.gender == 'Chapata'}"
+              :class="{active: this.data.gender == 'Chapata'}"
               @mouseenter="this.gender = 'Chapata'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapata'"
@@ -174,7 +174,7 @@
               /></button
             ><button
               class="pink-icon"
-              :class="{active: this.gender == 'Chapati'}"
+              :class="{active: this.data.gender == 'Chapati'}"
               @mouseenter="this.gender = 'Chapati'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapati'"
