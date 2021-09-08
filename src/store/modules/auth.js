@@ -17,7 +17,7 @@ export default {
   },
   actions: {
     login({ commit }) {
-      commit("setUser", {})
+      commit("setUser", { "name": "Tigriz", "id": 3})
     },
     logout ({ commit }) {
       commit("setUser", null)

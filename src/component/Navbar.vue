@@ -19,7 +19,8 @@
     <div class="login flex centered">
       <div style="margin-top: -10px">
         <User :user="user" id="username" style="display: inherit" />
-        <button
+        <router-link
+          to="login"
           id="connect"
           class="flex centered"
           @click="logout"
@@ -32,16 +33,22 @@
             src="../asset/img/icon/login/disconnect.svg"
           />
           {{ $t("navbar.logout") }}
-        </button>
-        <button id="connect" class="flex centered" @click="login" v-else>
+        </router-link>
+        <router-link
+          to="/"
+          id="connect"
+          class="flex centered"
+          @click="login"
+          v-else
+        >
           <img
             draggable="false"
             @contextmenu.prevent
             alt="Connect icon"
             src="../asset/img/icon/login/connect.svg"
           />
-          {{ $t("navbar.login")}}
-        </button>
+          {{ $t("navbar.login") }}
+        </router-link>
       </div>
       <Tiz style="margin-right: 17px" />
     </div>
@@ -222,11 +229,13 @@ export default {
 #connect {
   font-family: "Pixelated Verdana 12";
   font-size: 16px;
+  font-weight: normal;
+  color: #000;
   border-radius: 100px;
   padding: 3px;
   margin-right: -20px;
   border: none;
-  background: white;
+  background: #fff;
   width: 130px;
 }
 
