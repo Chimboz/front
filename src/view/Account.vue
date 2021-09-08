@@ -664,19 +664,23 @@ h3 {
 }
 
 .hat img {
-  transform: translate(-19px, -35px);
+  transform: translate(-18.5px, -35px);
 }
 
 .body img {
-  transform: translate(-21px, -24px);
+  transform: translate(-22px, -24px);
+}
+
+.shoe img {
+  transform: translate(-2px, 0px);
 }
 
 .item0 img {
-  transform: translate(-3px, -12px);
+  transform: translate(-4px, -11px);
 }
 
 .item1 img {
-  transform: translate(-12px, -20px);
+  transform: translate(-11px, -20px);
 }
 
 .item2 img {

@@ -185,7 +185,7 @@ export default {
 }
 
 .hat {
-  top: -44.4px;
+  top: -44px;
   left: -18.6px;
   transform: scale(0.85);
 }
@@ -197,20 +197,20 @@ export default {
 }
 
 .item2 {
-  top: -41px;
+  top: -42px;
   left: -10px;
   transform: scale(0.91);
 }
 
 .item1 {
-  top: -10px;
-  left: -10.5px;
+  top: -10.65px;
+  left: -10.65px;
   transform: scale(0.91);
 }
 
 .item0 {
   top: -13.9px;
-  left: -2.5px;
+  left: -2.4px;
   transform: scale(0.91);
 }
 
