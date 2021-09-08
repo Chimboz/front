@@ -80,12 +80,14 @@
           sont activés
         </td>
         <td>
-          <input type="checkbox" /> Désactiver les BBCodes, smileys et liens<br /><input
-            type="checkbox"
-            checked
-          />
-          Attacher ma signature (les signatures peuvent être modifiées sur le
-          tchat)
+          <input type="checkbox" id="bbcode" />
+          <label for="bbcode"
+            >&#32;Désactiver les BBCodes, smileys et liens</label
+          ><br /><input type="checkbox" checked id="signature" />
+          <label for="signature"
+            >&#32;Attacher ma signature (les signatures peuvent être modifiées
+            sur le tchat)</label
+          >
         </td>
       </tr>
       <tr>
@@ -155,7 +157,7 @@ td {
   padding: 6px;
   vertical-align: top;
 }
-td input {
+td input:not([type="checkbox"]) {
   width: 100%;
 }
 
