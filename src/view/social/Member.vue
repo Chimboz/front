@@ -99,7 +99,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/gender/male.svg"
+              src="@/asset/img/icon/gender/male.svg"
             />
           </div>
           &nbsp;

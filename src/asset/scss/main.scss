@@ -156,6 +156,32 @@ button {
 }
 
 // Custom classes
+.pink-icon::before {
+  content: "";
+  position: absolute;
+  width: 23.452px;
+  height: 23.45px;
+  background-image: url(../img/icon/bg_pink.svg);
+  background-position: center;
+}
+
+.pink-icon img {
+  position: relative;
+}
+
+.pink-icon:active::before {
+  transform: rotate(180deg);
+}
+
+.pink-icon {
+  border-radius: 100%;
+  border: 2px solid transparent;
+}
+
+.pink-icon.active {
+  border: 2px solid #fff;
+}
+
 .hstack {
   flex-wrap: wrap;
   width: 100%;

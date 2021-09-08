@@ -31,10 +31,9 @@
                 :key="name"
                 :disabled="data.items[name].indexOf(data.look[name]) < 1"
                 @click="
-                  data.look[name] =
-                    this.data.items[name][
-                      data.items[name].indexOf(data.look[name]) - 1
-                    ]
+                  data.look[name] = this.data.items[name][
+                    data.items[name].indexOf(data.look[name]) - 1
+                  ]
                 "
               >
                 <img
@@ -79,13 +78,12 @@
                 :key="name"
                 :disabled="
                   data.items[name].indexOf(data.look[name]) >
-                  data.items[name].length - 2
+                    data.items[name].length - 2
                 "
                 @click="
-                  data.look[name] =
-                    this.data.items[name][
-                      data.items[name].indexOf(data.look[name]) + 1
-                    ]
+                  data.look[name] = this.data.items[name][
+                    data.items[name].indexOf(data.look[name]) + 1
+                  ]
                 "
               >
                 <img
@@ -147,6 +145,8 @@
           </div>
           <div class="gender">
             <button
+              class="pink-icon"
+              :class="{active: this.gender == 'Chapato'}"
               @mouseenter="this.gender = 'Chapato'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapato'"
@@ -156,9 +156,11 @@
                 @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
-                src="@/asset/img/gender/male.svg"
+                src="@/asset/img/icon/gender/male.svg"
               /></button
             ><button
+              class="pink-icon"
+              :class="{active: this.gender == 'Chapata'}"
               @mouseenter="this.gender = 'Chapata'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapata'"
@@ -168,9 +170,11 @@
                 @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
-                src="@/asset/img/gender/female.svg"
+                src="@/asset/img/icon/gender/female.svg"
               /></button
             ><button
+              class="pink-icon"
+              :class="{active: this.gender == 'Chapati'}"
               @mouseenter="this.gender = 'Chapati'"
               @mouseleave="this.gender = this.data.gender"
               @click="this.data.gender = 'Chapati'"
@@ -180,7 +184,7 @@
                 @contextmenu.prevent
                 alt="Unknown gender"
                 title="Unknown gender"
-                src="@/asset/img/gender/unknown.svg"
+                src="@/asset/img/icon/gender/unknown.svg"
               />
             </button>
           </div>
@@ -213,7 +217,11 @@
           </div>
           <div id="inventory" :class="{ active: !profile }">
             <div class="category-selection" v-if="this.data.items">
-              <div v-for="(_, category) of this.data.items" :key="category" @contextmenu.prevent>
+              <div
+                v-for="(_, category) of this.data.items"
+                :key="category"
+                @contextmenu.prevent
+              >
                 <input
                   type="checkbox"
                   class="category-checkbox"
@@ -222,9 +230,20 @@
                   v-model="this.checked"
                   hidden
                 />
-                <label :for="category" @contextmenu="this.checked.includes(category) && this.checked.length == 1
-                    ? this.checked= ['item0', 'hat', 'item1', 'body', 'item2', 'shoe']
-                    : this.checked = [`${category}`]"
+                <label
+                  :for="category"
+                  @contextmenu="
+                    this.checked.includes(category) && this.checked.length == 1
+                      ? (this.checked = [
+                          'item0',
+                          'hat',
+                          'item1',
+                          'body',
+                          'item2',
+                          'shoe',
+                        ])
+                      : (this.checked = [`${category}`])
+                  "
                   ><div class="item pointer" @contextmenu.prevent>
                     <img
                       draggable="false"
@@ -270,10 +289,18 @@
                   @click="this.data.look[name] = item"
                   @mouseover="this.info = name + ' ' + item"
                 >
-                  <img draggable="false"
-                      @contextmenu.prevent v-if="item == 1" src="@/asset/img/icon/cross.svg" />
-                  <img draggable="false"
-                      @contextmenu.prevent v-else :src="`/avatar/${name}/${item}.svg`" />
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    v-if="item == 1"
+                    src="@/asset/img/icon/cross.svg"
+                  />
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    v-else
+                    :src="`/avatar/${name}/${item}.svg`"
+                  />
                 </button>
               </div>
             </div>
@@ -289,7 +316,7 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow jitter"
-              src="@/asset/img/arrow.svg" /></template
+              src="@/asset/img/arrow.svg"/></template
           >Sauver</Button
         ><Button
           ><template #prepend
@@ -298,7 +325,7 @@
               @contextmenu.prevent
               alt="Profile icon"
               height="24"
-              src="@/asset/img/icon/profile.svg" /></template
+              src="@/asset/img/icon/profile.svg"/></template
           >Fiche</Button
         >
       </div>

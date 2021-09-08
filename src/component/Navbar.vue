@@ -19,13 +19,17 @@
     <div class="login flex centered">
       <div style="margin-top: -10px">
         <User :user="user" id="username" style="display: inherit" />
-        <button id="connect" class="flex centered" @click="logout" v-if="authenticated">
+        <button
+          id="connect"
+          class="flex centered"
+          @click="logout"
+          v-if="authenticated"
+        >
           <img
             draggable="false"
             @contextmenu.prevent
             alt="Disconnect icon"
-            class="chz-icon"
-            src="../asset/img/login/disconnect.svg"
+            src="../asset/img/icon/login/disconnect.svg"
           />
           {{ $t("logout.button") }}
         </button>
@@ -33,11 +37,10 @@
           <img
             draggable="false"
             @contextmenu.prevent
-            alt="Disconnect icon"
-            class="chz-icon"
-            src="../asset/img/login/disconnect.svg"
+            alt="Connect icon"
+            src="../asset/img/icon/login/connect.svg"
           />
-          Se connecter
+          {{ $t("login.button")}}
         </button>
       </div>
       <Tiz style="margin-right: 17px" />
@@ -148,7 +151,7 @@
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import StrokeText from "@/component/StrokeText.vue";
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Navbar",
@@ -161,15 +164,13 @@ export default {
     user: {
       required: true,
       type: Object,
-      default: function () {
+      default: function() {
         return { name: "Visiteur", color: "#900", id: 3 };
       },
     },
   },
   computed: {
-    ...mapGetters("auth", [
-      "authenticated"
-    ])
+    ...mapGetters("auth", ["authenticated"]),
   },
   components: {
     Tiz,
@@ -178,10 +179,10 @@ export default {
   },
   methods: {
     login() {
-      this.$store.dispatch("auth/login")
+      this.$store.dispatch("auth/login");
     },
     logout() {
-      this.$store.dispatch("auth/logout")
+      this.$store.dispatch("auth/logout");
     },
   },
   created() {
@@ -229,7 +230,7 @@ export default {
   width: 130px;
 }
 
-#connect .chz-icon {
+#connect img {
   padding-right: 4px;
 }
 

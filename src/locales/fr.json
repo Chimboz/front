@@ -18,7 +18,7 @@
   "games.button": "Jeux",
   "members.button": "Membres",
   "community.button": "Communauté",
-  "myAccount.link" : "Mon compte",
+  "myAccount.link": "Mon compte",
   "myAccount.internalMessagingLink": "ChapatizMessenger",
   "myAccount.myGroupsLink": "Mes groupes",
   "myAccount.friendsList": "Amis",
@@ -27,5 +27,8 @@
   "myAccount.notSmartLink": "Pamalin",
   "myAccount.shoppingLink": "Magasin",
   "myAccount.profileSection": "Profil",
-  "myAccount.invSection": "Inventaire"
+  "myAccount.invSection": "Inventaire",
+  "login": {
+    "button": "Se connecter"
+  }
 }
