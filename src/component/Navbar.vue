@@ -88,7 +88,7 @@
         /></button
     ></router-link>
     <router-link to="/account"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" :disabled="!authenticated">
         <div class="nav-text">
           <img
             draggable="false"

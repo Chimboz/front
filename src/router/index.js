@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../view/Home.vue";
-import store from "@/store"
+import store from "@/store";
 
 const routes = [
   {
@@ -87,7 +87,7 @@ const routes = [
     component: () => import("../view/social/Wedding.vue"),
     meta: { title: "Chapatiz Retro | Mariage" },
   },
-  
+
   {
     path: "/login",
     name: "Login",
@@ -121,8 +121,15 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'Login' && !store.getters["auth/authenticated"]) next({ name: 'Login' })
-  else next()
-})
+  const guestOnly = ["Login"];
+  const userOnly = ["Account"];
+  if (store.getters["auth/authenticated"]) {
+    if (guestOnly.includes(to.name)) next({ name: "Not Found" });
+    next();
+  } else {
+    if (userOnly.includes(to.name)) next({ name: "Login" });
+    next();
+  }
+});
 
 export default router;
