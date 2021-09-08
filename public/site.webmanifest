@@ -50,7 +50,6 @@
     ],
     "theme_color": "#6090be",
     "background_color": "#6090be",
-    "start_url": "https://chapatizretro.com",
     "display": "standalone",
     "orientation": "portrait"
 }
