@@ -87,8 +87,8 @@
           src="@/asset/img/arrow.svg"
         /></button
     ></a>
-    <router-link to="/account"
-      ><button class="nav-btn flex centered" :disabled="!authenticated">
+    <router-link v-if="authenticated" to="/account"
+      ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
             draggable="false"
