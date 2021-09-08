@@ -2,7 +2,11 @@
   "mi": { "message": "message | messages" },
   "level": "Level",
   "friends": { "online": "friend online | friends online" },
-  "credit": "credit | credits",
+  "credit": {
+    "text":"credit | credits",
+    "youGot": "You currently have",
+    "title": "Credit | Credits"
+  },
   "lottery": {
     "firstLine": "You can earn up to 30 credits",
     "secondLine": "Click on the button to earn credits"

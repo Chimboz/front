@@ -6,7 +6,11 @@
   "friends": {
     "online": "ami connecté | amis connectés"
   },
-  "credit": "pépette | pépettes",
+  "credit": {
+    "text":"pépette | pépettes",
+    "youGot": "Tu as actuellement",
+    "title": "Pépette | Pépettes"
+  },
   "lottery": {
     "firstLine": "Tu peux gagner jusqu'à 30 pépettes",
     "secondLine": "Clique sur le bouton pour gagner des pépettes"

@@ -25,7 +25,7 @@
     <router-link to="/bank">
       {{ $t("credit.youGot") }}<br />
       <AnimatedNumber :number="credits" /><br />
-      {{ $t("credit", credits) }} </router-link
+      {{ $t("credit.text", credits) }} </router-link
     ><br /><br />
     <router-link to="/reflooz" class="btn-route"
       ><Button orange icon="register.svg">Reflooz</Button></router-link
