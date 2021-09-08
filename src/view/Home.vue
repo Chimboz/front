@@ -167,7 +167,7 @@
           />{{ $t("help.tip") }}</router-link
         ></Card
       ><br />
-      <Card yellow filename="packs.png">
+      <Card yellow filename="packs.png" class="packs">
         <template #button>
           <Button yellow icon="register.svg">Pack</Button>
         </template>
@@ -246,6 +246,15 @@ export default {
 <style lang="scss">
 .btn-loto .btn-text {
   margin-left: 16px;
+}
+
+.packs .card-btn {
+  background: linear-gradient(
+    to bottom,
+    #7aaaf0,
+    #7aaaf0 50%,
+    var(--main-card-color) 50%
+  );
 }
 </style>
 

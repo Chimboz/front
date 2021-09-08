@@ -9,7 +9,7 @@
       <template #subtop>Login</template>
       <div class="flex centered login-form">
         <form>
-          Cliquez sur Envoyer, il n'y a pas d'authentification encore.<br>
+          Cliquez sur Envoyer, il n'y a pas d'authentification encore.<br />
           <input type="text" /><br />
           <input type="password" />
           <router-link to="/" @click="login"
@@ -44,7 +44,7 @@
           />{{ $t("help.tip") }}</router-link
         ></Card
       ><br />
-      <Card yellow filename="packs.png">
+      <Card yellow filename="packs.png" class="packs">
         <template #button>
           <Button yellow icon="register.svg">Pack</Button>
         </template>
@@ -110,6 +110,16 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.packs .card-btn {
+  background: linear-gradient(
+    to bottom,
+    #7aaaf0,
+    #7aaaf0 50%,
+    var(--main-card-color) 50%
+  );
+}
+</style>
 <style lang="scss" scoped>
 .login-form {
   justify-content: center;
