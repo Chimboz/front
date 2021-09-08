@@ -1,8 +1,9 @@
 <template>
   <div>
-    <router-link :to="'/member/' + user.id" :style="{ color: user.color }">{{
+    <router-link v-if="user.id" :to="'/member/' + user.id" :style="{ color: user.color }">{{
       user.name
     }}</router-link>
+    <div v-else>{{user.name}}</div>
     <div v-if="separator">,&nbsp;</div>
   </div>
 </template>

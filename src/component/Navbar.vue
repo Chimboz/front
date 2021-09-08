@@ -169,10 +169,10 @@ export default {
   },
   props: {
     user: {
-      required: true,
+      required: false,
       type: Object,
       default: function() {
-        return { name: "Visiteur", color: "#900", id: 3 };
+        return { name: "Visiteur" };
       },
     },
   },
