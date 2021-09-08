@@ -61,8 +61,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Useful tools
 # VS Extensions
-[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) formatter
-[i18n ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally): a <u>**must-have**</u>  if you're doing i18n
+[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) formatter  
+[i18n ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally): a **<ins>must-have</ins>**  if you're doing i18n
 
 ## SVG
 [SVG Animation editor](http://anigen.org/versions/0_8_1/)  
