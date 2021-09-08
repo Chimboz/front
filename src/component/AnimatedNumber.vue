@@ -20,7 +20,7 @@ export default {
     };
   },
 
-  mounted: function () {
+  mounted() {
     requestAnimationFrame(this.tween);
   },
 

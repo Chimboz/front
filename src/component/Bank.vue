@@ -45,7 +45,7 @@ export default {
     Card,
   },
 
-  mounted: function () {
+  mounted() {
     for (let i = 8; i <= Math.min(Math.floor(this.credits / 10), 360); i++) {
       const left =
         +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-3, 3);

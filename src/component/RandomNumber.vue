@@ -28,7 +28,7 @@ export default {
     duration: { default: 2000, type: Number, required: true },
   },
 
-  mounted: function () {
+  mounted() {
     requestAnimationFrame(this.tween);
   },
 
