@@ -196,6 +196,5 @@ export default {
 
 .resize {
   overflow: visible;
-  width: 25.5px;
 }
 </style>

@@ -163,10 +163,12 @@ button {
   height: 23.45px;
   background-image: url(../img/icon/bg_pink.svg);
   background-position: center;
+  background-size: cover;
 }
 
 .pink-icon img {
   position: relative;
+  height: 23.45px;
 }
 
 .pink-icon:active::before {
@@ -176,6 +178,8 @@ button {
 .pink-icon {
   border-radius: 100%;
   border: 2px solid transparent;
+  width: 27.452px;
+  height: 27.45px;
 }
 
 .pink-icon.active {
