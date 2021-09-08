@@ -60,7 +60,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - vuex
 
 # Useful tools
-# VS Extensions
+## VS Extensions
 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) formatter  
 [i18n ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally): a **<ins>must-have</ins>**  if you're doing i18n
 
