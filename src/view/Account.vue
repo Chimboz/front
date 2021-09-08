@@ -146,10 +146,10 @@
           <div class="gender">
             <button
               class="pink-icon"
-              :class="{ active: this.data.gender == 'Chapato' }"
-              @mouseenter="this.gender = 'Chapato'"
-              @mouseleave="this.gender = this.data.gender"
-              @click="this.data.gender = 'Chapato'"
+              :class="{ active: data.gender == 'Chapato' }"
+              @mouseenter="gender = 'Chapato'"
+              @mouseleave="gender = data.gender"
+              @click="data.gender = 'Chapato'"
             >
               <img
                 draggable="false"
@@ -160,10 +160,10 @@
               /></button
             ><button
               class="pink-icon"
-              :class="{ active: this.data.gender == 'Chapata' }"
-              @mouseenter="this.gender = 'Chapata'"
-              @mouseleave="this.gender = this.data.gender"
-              @click="this.data.gender = 'Chapata'"
+              :class="{ active: data.gender == 'Chapata' }"
+              @mouseenter="gender = 'Chapata'"
+              @mouseleave="gender = data.gender"
+              @click="data.gender = 'Chapata'"
             >
               <img
                 draggable="false"
@@ -174,10 +174,10 @@
               /></button
             ><button
               class="pink-icon"
-              :class="{ active: this.data.gender == 'Chapati' }"
-              @mouseenter="this.gender = 'Chapati'"
-              @mouseleave="this.gender = this.data.gender"
-              @click="this.data.gender = 'Chapati'"
+              :class="{ active: data.gender == 'Chapati' }"
+              @mouseenter="gender = 'Chapati'"
+              @mouseleave="gender = data.gender"
+              @click="data.gender = 'Chapati'"
             >
               <img
                 draggable="false"
@@ -216,44 +216,38 @@
             </ol>
           </div>
           <div id="inventory" :class="{ active: !profile }">
-            <div class="category-selection" v-if="this.data.items">
-              <div
-                v-for="(_, category) of this.data.items"
+            <div class="category-selection" v-if="data.items" @contextmenu.prevent>
+              <button
+                v-for="(_, category) of data.items"
                 :key="category"
-                @contextmenu.prevent
+                :class="{ active: checked.includes(category) }"
+                @click="
+                  checked.includes(category) && checked.length == 1
+                    ? (checked = [
+                        'item0',
+                        'hat',
+                        'item1',
+                        'body',
+                        'item2',
+                        'shoe',
+                      ])
+                    : (checked = [`${category}`])
+                "
+                @contextmenu.prevent="
+                  checked.includes(category)
+                    ? checked.splice(checked.indexOf(category), 1)
+                    : checked.push(category)
+                "
+                class="item pointer"
               >
-                <input
-                  type="checkbox"
-                  class="category-checkbox"
-                  :id="category"
-                  :value="category"
-                  v-model="this.checked"
-                  hidden
-                />
-                <label
-                  :for="category"
-                  @contextmenu="
-                    this.checked.includes(category) && this.checked.length == 1
-                      ? (this.checked = [
-                          'item0',
-                          'hat',
-                          'item1',
-                          'body',
-                          'item2',
-                          'shoe',
-                        ])
-                      : (this.checked = [`${category}`])
+                <img
+                  draggable="false"
+                  @contextmenu.prevent
+                  :src="
+                    require(`@/asset/img/icon/item_category/${category}.svg`)
                   "
-                  ><div class="item pointer" @contextmenu.prevent>
-                    <img
-                      draggable="false"
-                      @contextmenu.prevent
-                      :src="
-                        require(`@/asset/img/icon/item_category/${category}.svg`)
-                      "
-                    /></div
-                ></label>
-              </div>
+                />
+              </button>
             </div>
             <div class="chest">
               <div
@@ -719,7 +713,7 @@ h3 {
   vertical-align: middle;
 }
 
-.category-checkbox:checked + label img {
+.category-selection .item.active img {
   filter: brightness(9);
 }
 
@@ -744,13 +738,11 @@ h3 {
   box-shadow: 0 2px 1px 2px #0005;
 }
 
-.item.active,
-.category-checkbox:checked + label .item {
+.item.active {
   border: 2px solid #fff;
 }
 
-.item.active img,
-.category-checkbox:checked + label img {
+.item.active img {
   margin: -2px;
 }
 
