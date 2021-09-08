@@ -14,9 +14,16 @@
     <tbody>
       <tr id="reply" v-if="message">
         <td class="info" width="100" valign="top">
-          <Tiz /><br /><User :user="{ id: 1, name: 'Tigriz' }" /><br />{{
-            formatDate
-          }}
+          <Tiz
+            :avatar="user ? user.look.avatar : 0"
+            :emote="user ? user.look.emote : 1"
+            :hat="user ? user.look.hat : 1"
+            :body="user ? user.look.body : 1"
+            :shoe="user ? user.look.shoe : 1"
+            :item0="user ? user.look.item0 : 1"
+            :item1="user ? user.look.item1 : 1"
+            :item2="user ? user.look.item2 : 1"
+          /><br /><User :user="user" /><br />{{ formatDate }}
         </td>
         <td class="msg-body justified">
           <div class="head flex centered">
@@ -97,6 +104,7 @@ import Marked from "marked";
 import DOMPurify from "dompurify";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
+import { mapState } from "vuex";
 
 export default {
   name: "MarkdownInput",
@@ -107,17 +115,12 @@ export default {
       title: "",
     };
   },
-  props: {
-    user: {
-      required: true,
-      type: Object,
-    },
-  },
   computed: {
+    ...mapState("auth", ["user"]),
     formatMessage() {
       Marked.setOptions({
         renderer: new Marked.Renderer(),
-        highlight: function (code, lang) {
+        highlight: function(code, lang) {
           const hljs = require("highlight.js");
           const language = hljs.getLanguage(lang) ? lang : "plaintext";
           return hljs.highlight(code, { language }).value;
