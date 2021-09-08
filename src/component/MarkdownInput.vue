@@ -63,15 +63,20 @@
           Votre saisie ne doit pas contenir plus de 60000 caractère(s).
         </td>
         <td>
-          <button><b>B</b></button><button><i>i</i></button
-          ><button><u>u</u></button>
+          <button @click="format('**')"><b>B</b></button
+          ><button @click="format('*')"><i>i</i></button
+          ><button @click="format('<u>')">
+            <u>u</u>
+          </button>
         </td>
       </tr>
       <tr>
         <td>
           <Emotes />
         </td>
-        <td><textarea class="message-input" v-model="message" /></td>
+        <td>
+          <textarea v-model="message" @select="selected" />
+        </td>
       </tr>
       <tr>
         <td>
@@ -115,6 +120,8 @@ export default {
     return {
       message: "",
       title: "",
+      selectionStart: 0,
+      selectionEnd: 0,
     };
   },
   computed: {
@@ -149,6 +156,20 @@ export default {
     scrollTo(anchor) {
       location.href = anchor;
     },
+    selected(e) {
+      this.selectionStart = e.target.selectionStart;
+      this.selectionEnd = e.target.selectionEnd;
+    },
+    format(pattern) {
+      this.message =
+        this.message.substring(0, this.selectionStart) +
+        pattern +
+        this.message.substring(this.selectionStart, this.selectionEnd) +
+        (/<[a-z0-9]+>/.test(pattern)
+          ? pattern.substring(0, 1) + "/" + pattern.substring(1)
+          : pattern) +
+        this.message.substring(this.selectionEnd);
+    },
   },
 };
 </script>
@@ -161,7 +182,7 @@ td input:not([type="checkbox"]) {
   width: 100%;
 }
 
-.message-input {
+textarea {
   width: 100%;
   min-height: 240px;
   resize: vertical;
@@ -170,5 +191,14 @@ td input:not([type="checkbox"]) {
 
 .title {
   flex: 1;
+}
+
+button {
+  display: inline-flex;
+  border: 2px solid black;
+  padding: 5px;
+  height: 24px;
+  border-radius: 99px;
+  align-items: center;
 }
 </style>
