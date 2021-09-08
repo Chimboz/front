@@ -150,7 +150,7 @@
             {{ $t("connecteds", data.connected) }}</router-link
           ></template
         >
-        {{ data.members }} {{ $t("members", data.members) }} <br />
+        {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
       <Card blue>
