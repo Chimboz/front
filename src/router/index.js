@@ -125,10 +125,10 @@ router.beforeEach((to, from, next) => {
   const userOnly = ["Account"];
   if (store.getters["auth/authenticated"]) {
     if (guestOnly.includes(to.name)) next({ name: "Not Found" });
-    next();
+    else next();
   } else {
     if (userOnly.includes(to.name)) next({ name: "Login" });
-    next();
+    else next();
   }
 });
 
