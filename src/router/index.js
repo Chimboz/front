@@ -10,12 +10,6 @@ const routes = [
     meta: { title: "Chapatiz Retro" },
   },
   {
-    path: "/tchat",
-    name: "Tchat",
-    component: () => import("../view/Tchat.vue"),
-    meta: { title: "Chapatiz Retro | Tchat" },
-  },
-  {
     path: "/account",
     name: "Account",
     component: () => import("../view/Account.vue"),

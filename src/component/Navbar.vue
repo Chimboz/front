@@ -65,7 +65,7 @@
           style="margin: 5px; padding: 2px"
         /></button
     ></router-link>
-    <router-link to="/tchat"
+    <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -86,7 +86,7 @@
           class="arrow jitter"
           src="@/asset/img/arrow.svg"
         /></button
-    ></router-link>
+    ></a>
     <router-link to="/account"
       ><button class="nav-btn flex centered" :disabled="!authenticated">
         <div class="nav-text">
