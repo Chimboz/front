@@ -1,9 +1,13 @@
 {
-  "mi": { "message": "message | messages" },
+  "mi": {
+    "message": "message | messages"
+  },
   "level": "Level",
-  "friends": { "online": "friend online | friends online" },
+  "friends": {
+    "online": "friend online | friends online"
+  },
   "credit": {
-    "text":"credit | credits",
+    "text": "credit | credits",
     "youGot": "You currently have",
     "title": "Credit | Credits"
   },
@@ -16,7 +20,10 @@
     "text": "member | members",
     "past": "past since 24h."
   },
-  "help": { "button": "Help", "tip": "Lost ? Need help ? Click here !" },
+  "help": {
+    "button": "Help",
+    "tip": "Lost ? Need help ? Click here !"
+  },
   "navbar": {
     "logout": "Sign out",
     "login": "Sign in",
@@ -37,5 +44,10 @@
     "shoppingLink": "Shopping",
     "profileSection": "Profile",
     "invSection": "Inventory"
+  },
+  "formatting": {
+    "bold": "Bold",
+    "italic": "Italic",
+    "underline": "Underline"
   }
 }

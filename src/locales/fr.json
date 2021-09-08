@@ -7,7 +7,7 @@
     "online": "ami connecté | amis connectés"
   },
   "credit": {
-    "text":"pépette | pépettes",
+    "text": "pépette | pépettes",
     "youGot": "Tu as actuellement",
     "title": "Pépette | Pépettes"
   },
@@ -44,5 +44,10 @@
     "shoppingLink": "Magasin",
     "profileSection": "Profil",
     "invSection": "Inventaire"
+  },
+  "formatting": {
+    "bold": "Gras",
+    "italic": "Italique",
+    "underline": "Souligné"
   }
 }

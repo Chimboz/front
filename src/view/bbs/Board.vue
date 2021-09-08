@@ -71,8 +71,7 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    //const url = "/api/bbs_agora.json";
-    const url = "/api/bbs_agora.json";
+    const url = "/api/forum.json";
     next((vm) => {
       vm.axios
         .get(url)
@@ -91,7 +90,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/bbs_agora.json").then((res)=>res.data);
+      this.data = await this.axios.get("/api/forum.json").then((res)=>res.data);
     } catch (error) {
       this.error = error.toString();
     }

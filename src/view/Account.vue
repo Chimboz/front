@@ -313,7 +313,7 @@
               class="arrow jitter"
               src="@/asset/img/arrow.svg"/></template
           >Sauver</Button
-        ><Button
+        ><router-link :to="`/member/${data.id}`"> <Button 
           ><template #prepend
             ><img
               draggable="false"
@@ -322,7 +322,7 @@
               height="24"
               src="@/asset/img/icon/profile.svg"/></template
           >Fiche</Button
-        >
+        ></router-link>
       </div>
     </Card>
     <template #right-column>
@@ -378,7 +378,7 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    const url = "/api/profile.json";
+    const url = "/api/account.json";
     next((vm) => {
       vm.axios
         .get(url)
@@ -398,7 +398,7 @@ export default {
   },
   async beforeRouteUpdate() {
     this.axios
-      .get("/api/profile.json")
+      .get("/api/account.json")
       .then((res) => {
         this.data = res.data;
         this.gender = res.data.gender;
