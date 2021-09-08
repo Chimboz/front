@@ -17,7 +17,7 @@
     <Card
       class="member"
       :class="[this.data.gender]"
-      v-if="this.data && this.data.astro && this.data.name && this.data.status"
+      v-if="this.data && this.data.look"
     >
       <div class="member-header">
         <Tiz
