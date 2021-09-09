@@ -5,8 +5,8 @@ import mitt from "mitt";
 import i18n from "./i18n";
 import App from "./App.vue";
 import api from "./module/api.js";
-import "./asset/scss/fonts.css";
-import "./asset/scss/main.scss";
+import "./asset/css/fonts.css";
+import "./asset/css/main.scss";
 import SideNavEntries from "./component/SideNavEntries.vue";
 
 // https://www.epiloge.com/how-to-add-dynamic-meta-tags-to-your-vuejs-app-for-google-seo-0fa058
