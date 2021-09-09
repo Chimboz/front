@@ -49,5 +49,11 @@
     "bold": "Bold",
     "italic": "Italic",
     "underline": "Underline"
+  },
+  "error": {
+    "unknown": "Unknown error.",
+    "notfound": "Error, unknown API route.",
+    "default": "Error, requested page does not exist.",
+    "connected": "You are already signed in!"
   }
 }

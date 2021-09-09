@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../view/Home.vue";
+import Home from "@/view/Home.vue";
 import store from "@/store";
 
 const routes = [
@@ -91,8 +91,8 @@ const routes = [
   // 404
   {
     path: "/:pathMatch(.*)*",
-    name: "Not Found",
-    component: () => import("../view/NotFound.vue"),
+    name: "Error",
+    component: () => import("../view/Error.vue"),
     meta: { title: "Chapatiz Retro | Erreur" },
   },
 ];
@@ -118,7 +118,9 @@ router.beforeEach((to, from, next) => {
   const guestOnly = ["Login"];
   const userOnly = ["Account", "Home"];
   if (store.getters["auth/authenticated"]) {
-    if (guestOnly.includes(to.name)) next({ name: "Not Found" });
+    if (guestOnly.includes(to.name))
+      router.push({ name: "Error", params: { message: "error.connected" } })
+      //next();
     else next();
   } else {
     if (userOnly.includes(to.name)) next({ name: "Login" });
