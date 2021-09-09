@@ -78,7 +78,7 @@ export default {
     formatMessage() {
       Marked.setOptions({
         renderer: new Marked.Renderer(),
-        highlight: function (code, lang) {
+        highlight: function(code, lang) {
           const hljs = require("highlight.js");
           const language = hljs.getLanguage(lang) ? lang : "plaintext";
           return hljs.highlight(code, { language }).value;
@@ -116,19 +116,20 @@ export default {
 
 .markdown-body [type="checkbox"]:not(:checked):before,
 .markdown-body [type="checkbox"]:checked:before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 1em;
   height: 1em;
   border: 1px solid #0005;
-  background: #FFF;
-  border-radius: .2em;
+  background: #fff;
+  border-radius: 0.2em;
 }
 
 .markdown-body [type="checkbox"]:checked:before {
-background:#0366d6
+  background: #0075ff;
+  border: 1px solid transparent;
 }
 
 // Markdown lists and checkboxes
