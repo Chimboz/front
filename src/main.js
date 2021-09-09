@@ -7,6 +7,8 @@ import App from "./App.vue";
 import api from "./module/api.js";
 import "./asset/css/fonts.css";
 import "./asset/css/main.scss";
+import "./asset/css/markdown.css";
+import "highlight.js/scss/github-dark-dimmed.scss"
 import SideNavEntries from "./component/SideNavEntries.vue";
 
 // https://www.epiloge.com/how-to-add-dynamic-meta-tags-to-your-vuejs-app-for-google-seo-0fa058

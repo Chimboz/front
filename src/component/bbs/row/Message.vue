@@ -12,7 +12,7 @@
         :item2="message.author.look.item2"
       /><br /><User :user="message.author" /><br />{{ formatDate }}
     </td>
-    <td class="msg-body justified">
+    <td class="justified">
       <div class="head flex centered">
         <router-link :to="'#' + message.id">
           <img
@@ -33,7 +33,7 @@
         />
       </div>
       <hr style="margin: 2px 0" />
-      <div class="content" v-html="formatMessage"></div>
+      <div class="markdown-body content" v-html="formatMessage"></div>
       <div class="signature" v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>
       </div>
@@ -109,12 +109,32 @@ export default {
 };
 </script>
 <style lang="scss">
-.content img {
-  max-width: 100%;
+// Custom checkboxes
+.markdown-body [type="checkbox"]:disabled {
+  filter: none !important;
 }
 
-.content ul, .content ol {
-  padding-left: 18px;
+.markdown-body [type="checkbox"]:not(:checked):before,
+.markdown-body [type="checkbox"]:checked:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #0005;
+  background: #FFF;
+  border-radius: .2em;
+}
+
+.markdown-body [type="checkbox"]:checked:before {
+background:#0366d6
+}
+
+// Markdown lists and checkboxes
+.markdown-body li input[type="checkbox"] {
+  margin-left: -16px;
+  position: absolute;
 }
 </style>
 <style lang="scss" scoped>

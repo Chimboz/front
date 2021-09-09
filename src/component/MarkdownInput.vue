@@ -25,7 +25,7 @@
             :item2="user ? user.look.item2 : 1"
           /><br /><User :user="user" /><br />{{ formatDate }}
         </td>
-        <td class="msg-body justified">
+        <td class="justified">
           <div class="head flex centered">
             <router-link to="#reply">
               <img
@@ -44,7 +44,7 @@
             />
           </div>
           <hr style="margin: 2px 0" />
-          <div class="content" v-html="formatMessage"></div>
+          <div class="markdown-body content" v-html="formatMessage"></div>
           <div class="signature" v-if="message.signature">
             <i><br />"{{ message.author.signature }}"</i>
           </div>
@@ -62,7 +62,7 @@
           <b>Corps du message&nbsp;:</b><br />
           Votre saisie ne doit pas contenir plus de 60000 caractère(s).
         </td>
-        <td>
+        <td class="hstack">
           <button @click="format('**')"><b>B</b></button
           ><button @click="format('*')"><i>i</i></button
           ><button @click="format('<u>')">
@@ -75,7 +75,12 @@
           <Emotes />
         </td>
         <td>
-          <textarea v-model="message" @select="selected" />
+          <textarea
+            ref="message"
+            v-model="message"
+            @focus="focusHandler"
+            @select="selectionHandler"
+          />
         </td>
       </tr>
       <tr>
@@ -120,8 +125,7 @@ export default {
     return {
       message: "",
       title: "",
-      selectionStart: 0,
-      selectionEnd: 0,
+      selectionRange: [0, 0],
     };
   },
   computed: {
@@ -156,19 +160,35 @@ export default {
     scrollTo(anchor) {
       location.href = anchor;
     },
-    selected(e) {
-      this.selectionStart = e.target.selectionStart;
-      this.selectionEnd = e.target.selectionEnd;
+    focusHandler() {
+      if (this.selectionRange[1] !== 0) {
+        this.select();
+      }
+    },
+    selectionHandler(e) {
+      this.selectionRange = [
+        e.currentTarget.selectionStart,
+        e.currentTarget.selectionEnd,
+      ];
+    },
+    select() {
+      this.$refs["message"].setSelectionRange(
+        this.selectionRange[0],
+        this.selectionRange[1]
+      );
+    },
+    behaviour(fct) {
+      return true;
     },
     format(pattern) {
       this.message =
-        this.message.substring(0, this.selectionStart) +
+        this.message.substring(0, this.selectionRange[0]) +
         pattern +
-        this.message.substring(this.selectionStart, this.selectionEnd) +
+        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
         (/<[a-z0-9]+>/.test(pattern)
           ? pattern.substring(0, 1) + "/" + pattern.substring(1)
           : pattern) +
-        this.message.substring(this.selectionEnd);
+        this.message.substring(this.selectionRange[1]);
     },
   },
 };
@@ -195,10 +215,19 @@ textarea {
 
 button {
   display: inline-flex;
-  border: 2px solid black;
+  border: 4px solid #d5e6f3;
+  background-color: #f0009c;
   padding: 5px;
-  height: 24px;
-  border-radius: 99px;
+  color: #fff;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 12px 8px;
   align-items: center;
+  justify-content: center;
+}
+
+button:hover,
+button:active {
+  background-color: #ff6600;
 }
 </style>
