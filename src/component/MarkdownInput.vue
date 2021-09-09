@@ -62,12 +62,164 @@
           <b>Corps du message&nbsp;:</b><br />
           Votre saisie ne doit pas contenir plus de 60000 caractère(s).
         </td>
-        <td class="hstack">
-          <button @click="format('**')"><b>B</b></button
-          ><button @click="format('*')"><i>i</i></button
-          ><button @click="format('<u>')">
-            <u>u</u>
-          </button>
+        <td class="markdown-body" style="vertical-align: middle;">
+          <div class="flex hstack">
+            <button @click="format('**')"><b>B</b></button
+            ><button @click="format('*')"><i>i</i></button
+            ><button @click="format('<u>')">
+              <u>u</u>
+            </button>
+            <button @click="format('<s>')">
+              <s>s</s>
+            </button>
+            <select>
+              <option
+                style="color: black;background-color: #fafafa;"
+                value="#444444"
+              >
+                Couleur
+              </option>
+              <option
+                style="color: #cecece;background-color: #fafafa;"
+                value="#CECECE"
+              >
+                Gris triste
+              </option>
+              <option
+                style="color: #999999;background-color: #fafafa;"
+                value="#999999"
+              >
+                Gris divorce
+              </option>
+              <option
+                style="color: #ff0000;background-color: #fafafa;"
+                value="#FF0000"
+              >
+                Rouge
+              </option>
+              <option
+                style="color: #cc6600;background-color: #fafafa;"
+                value="#CC6600"
+              >
+                Chocolat
+              </option>
+              <option
+                style="color: #fe9e01;background-color: #fafafa;"
+                value="#FE9E01"
+              >
+                Orange
+              </option>
+              <option
+                style="color: #ffff00;background-color: #fafafa;"
+                value="#FFFF00"
+              >
+                Jaune
+              </option>
+              <option
+                style="color: #ade76b;background-color: #fafafa;"
+                value="#ADE76B"
+              >
+                Vert
+              </option>
+              <option
+                style="color: #66cc00;background-color: #fafafa;"
+                value="#66CC00"
+              >
+                Gilvert
+              </option>
+              <option
+                style="color: #018352;background-color: #fafafa;"
+                value="#018352"
+              >
+                Pelouse
+              </option>
+              <option
+                style="color: #9412fe;background-color: #fafafa;"
+                value="#9412FE"
+              >
+                Violet du marié
+              </option>
+              <option
+                style="color: #376da8;background-color: #fafafa;"
+                value="#376DA8"
+              >
+                Bleu
+              </option>
+              <option
+                style="color: #6699cc;background-color: #fafafa;"
+                value="#6699CC"
+              >
+                Bleu Chimbo
+              </option>
+              <option
+                style="color: #fe81c0;background-color: #fafafa;"
+                value="#FE81C0"
+              >
+                Rose Dupatta
+              </option>
+              <option
+                style="color: #ff3399;background-color: #fafafa;"
+                value="#FF3399"
+              >
+                Rose Chimbo
+              </option>
+              <option
+                style="color: #e40173;background-color: #fafafa;"
+                value="#E40173"
+              >
+                Gurujiolet
+              </option>
+              <option
+                style="color: white;background-color: #fafafa;"
+                value="#FFFFFF"
+              >
+                Blanc
+              </option>
+              <option
+                style="color: black;background-color: #fafafa;"
+                value="#000000"
+              >
+                Noir
+              </option>
+            </select>
+            <select>
+              <option value="7">Trop minuscule</option>
+              <option value="9" selected="selected">Taille</option>
+              <option value="12">Grand</option>
+              <option value="18">Fat</option>
+              <option value="24">Trop trop gros</option>
+            </select>
+            <button @click="format('<u>')">
+              <a>Link</a>
+            </button>
+            <button @click="format('<u>')">
+              <img
+                src="@/asset/img/logo.svg"
+                height="22"
+                style="background: none"
+              />
+            </button>
+            <button @click="format('<u>')">
+              1. List
+            </button>
+            <button @click="format('<u>')">
+              • List
+            </button>
+            <button @click="format('<u>')">
+              <blockquote style="margin-bottom: 0; color: #fff">
+                Quote
+              </blockquote>
+            </button>
+            <button @click="format('<u>')">
+              <kbd>Key</kbd>
+            </button>
+            <button @click="format('<u>')">
+              <code>Code</code>
+            </button>
+            <button @click="format('<u>')">
+              <pre style="padding: 1px; margin: 0">Code block</pre>
+            </button>
+          </div>
         </td>
       </tr>
       <tr>
@@ -213,21 +365,24 @@ textarea {
   flex: 1;
 }
 
-button {
+button,
+select {
   display: inline-flex;
   border: 4px solid #d5e6f3;
   background-color: #f0009c;
-  padding: 5px;
   color: #fff;
-  height: 26px;
-  min-width: 26px;
+  padding: 0 4px;
+  height: 30px;
+  min-width: 30px;
   border-radius: 12px 8px;
   align-items: center;
   justify-content: center;
 }
 
 button:hover,
-button:active {
+button:active,
+select:hover,
+select:active {
   background-color: #ff6600;
 }
 </style>
