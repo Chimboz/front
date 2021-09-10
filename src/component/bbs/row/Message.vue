@@ -1,6 +1,6 @@
 <template>
   <tr :id="message.id">
-    <td class="info" width="100" valign="top">
+    <td class="info" valign="top">
       <Tiz
         :avatar="message.author.look.avatar"
         :emote="message.author.look.emote"
@@ -10,7 +10,7 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><br /><User :user="message.author" /><br />{{ formatDate }}
+      /><br /><User :user="message.author" ellipsis/><br /><span class="date">{{ formatDate }}</span>
     </td>
     <td class="justified">
       <div class="head flex centered">
@@ -147,6 +147,12 @@ td {
 
 .head {
   flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .info .date {
+    display: none;
+  }
 }
 
 .title {

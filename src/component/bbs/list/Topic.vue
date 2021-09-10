@@ -15,7 +15,7 @@
   <br />
   <table class="bbs">
     <colgroup>
-      <col width="100" />
+      <col class="info" />
       <col width="100%" />
     </colgroup>
     <thead>
@@ -55,5 +55,15 @@ export default {
 <style lang="scss" scoped>
 .ellipsis {
   color: #ff3399;
+}
+
+.info {
+  width: 56px;
+}
+
+@media (min-width: 800px) {
+  .info {
+    width: 100px;
+  }
 }
 </style>
