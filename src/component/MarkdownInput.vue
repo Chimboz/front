@@ -312,8 +312,13 @@ export default {
     scrollTo(anchor) {
       location.href = anchor;
     },
-    resetSelection() {
-      this.selectionRange = [0, 0];
+    resetSelection(length) {
+      this.selectionRange = [
+        this.selectionRange[1] + length,
+        this.selectionRange[1] + length,
+      ];
+      this.$refs.message.focus();
+      //this.select()
     },
     focusHandler() {
       this.$refs.message.focus();
@@ -345,7 +350,11 @@ export default {
             ? pattern.substring(0, 1) + "/" + pattern.substring(1)
             : pattern)
       );
-      this.resetSelection();
+      this.resetSelection(
+        pattern.length * 2 +
+          pattern.length +
+          (/<[a-z0-9]+>/.test(pattern) ? 1 : 0)
+      );
     },
     formatLink(image) {
       this.$refs.message.setRangeText(
@@ -364,18 +373,19 @@ export default {
       this.focusHandler();
     },
     formatMultiline(pattern) {
-      this.$refs.message.setRangeText(
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
         (this.message.charAt(this.selectionRange[0] - 1) == "\n" ||
         this.selectionRange[0] == 0
           ? pattern
           : "\n" + pattern) +
-          this.message
-            .substring(this.selectionRange[0], this.selectionRange[1])
-            .split(/\r?\n/)
-            .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
-          "\n\n"
-      );
-      this.resetSelection();
+        this.message
+          .substring(this.selectionRange[0], this.selectionRange[1])
+          .split(/\r?\n/)
+          .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
+        "\n" +
+        this.message.substring(this.selectionRange[1]);
+      this.resetSelection(0);
     },
     formatColor(hex) {
       this.$refs.message.setRangeText(
@@ -386,7 +396,7 @@ export default {
           ) +
           "</span>"
       );
-      this.resetSelection();
+      this.resetSelection(35);
     },
   },
 };
@@ -396,8 +406,11 @@ td {
   padding: 6px;
   vertical-align: top;
 }
-td input:not([type="checkbox"]) {
+td input:not([type="checkbox"]), td textarea {
   width: 100%;
+  border: 4px solid #d5e6f3;
+  padding: 4px;
+  border-radius: 12px 8px;
 }
 
 textarea {
