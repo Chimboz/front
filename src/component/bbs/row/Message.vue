@@ -10,13 +10,12 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><User :user="message.author" ellipsis /><span
-        class="date"
-        >{{ formatDate }}</span
-      >
+      /><User :user="message.author" ellipsis /><span class="date">{{
+        formatDate
+      }}</span>
     </td>
     <td class="justified">
-      <h2 class="head flex centered info-sm">
+      <h2 class="head flex centered info-sm ellipsis">
         <Tiz
           :avatar="message.author.look.avatar"
           :emote="message.author.look.emote"
@@ -27,8 +26,10 @@
           :item1="message.author.look.item1"
           :item2="message.author.look.item2"
         />
-        <User :user="message.author" />&nbsp;le&nbsp;
-        <span class="date">{{ formatDate }}</span>
+        <div class="ellipsis">
+          <User :user="message.author" />&nbsp;le&nbsp;
+          <span class="date">{{ formatDate }}</span>
+        </div>
       </h2>
       <div class="head flex centered">
         <router-link :to="'#' + message.id">
@@ -170,12 +171,12 @@ td {
   flex-wrap: wrap;
 }
 
-.info {
-  display: none !important;
+.info-sm {
+  flex-wrap: nowrap;
 }
 
-.info-sm {
-  overflow: hidden;
+.info {
+  display: none !important;
 }
 
 @media (min-width: 800px) {
