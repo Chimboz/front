@@ -72,7 +72,17 @@
             <button @click="format('<s>')">
               <s>s</s>
             </button>
-            <select>
+            <button @click="format('<a>')">
+              <a href="#" @click.prevent>a</a>
+            </button>
+            <button @click="format('<u>')">
+              <img
+                src="@/asset/img/favicon.svg"
+                height="22"
+                style="background: none"
+              />
+            </button>
+            <select @change="(event) => formatColor(event.target.value)">
               <option
                 style="color: black;background-color: #fafafa;"
                 value="#444444"
@@ -182,41 +192,31 @@
                 Noir
               </option>
             </select>
-            <select>
-              <option value="7">Trop minuscule</option>
-              <option value="9" selected="selected">Taille</option>
-              <option value="12">Grand</option>
-              <option value="18">Fat</option>
-              <option value="24">Trop trop gros</option>
+            <select @change="(event) => formatMultiline(event.target.value)">
+              <option value="##### ">Trop minuscule</option>
+              <option value="#### " selected="selected">Taille</option>
+              <option value="### ">Grand</option>
+              <option value="## ">Fat</option>
+              <option value="# ">Trop trop gros</option>
             </select>
-            <button @click="format('<u>')">
-              <a>Link</a>
-            </button>
-            <button @click="format('<u>')">
-              <img
-                src="@/asset/img/logo.svg"
-                height="22"
-                style="background: none"
-              />
-            </button>
-            <button @click="format('<u>')">
-              1. List
-            </button>
-            <button @click="format('<u>')">
-              • List
-            </button>
-            <button @click="format('<u>')">
+            <button @click="formatMultiline('> ')">
               <blockquote style="margin-bottom: 0; color: #fff">
                 Quote
               </blockquote>
             </button>
-            <button @click="format('<u>')">
+            <button @click="formatMultiline('1. ')">
+              1. List
+            </button>
+            <button @click="formatMultiline('- ')">
+              • List
+            </button>
+            <button @click="format('<kbd>')">
               <kbd>Key</kbd>
             </button>
-            <button @click="format('<u>')">
+            <button @click="format('`')">
               <code>Code</code>
             </button>
-            <button @click="format('<u>')">
+            <button @click="format('\n```\n')">
               <pre style="padding: 1px; margin: 0">Code block</pre>
             </button>
           </div>
@@ -340,6 +340,28 @@ export default {
         (/<[a-z0-9]+>/.test(pattern)
           ? pattern.substring(0, 1) + "/" + pattern.substring(1)
           : pattern) +
+        this.message.substring(this.selectionRange[1]);
+    },
+    formatMultiline(pattern) {
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
+        (this.message.charAt(this.selectionRange[0] - 1) == "\n" ||
+        this.selectionRange[0] == 0
+          ? pattern
+          : "\n" + pattern) +
+        this.message
+          .substring(this.selectionRange[0], this.selectionRange[1])
+          .split(/\r?\n/)
+          .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
+        "\n\n" +
+        this.message.substring(this.selectionRange[1]);
+    },
+    formatColor(hex) {
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
+        `<span style="color:${hex}">` +
+        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        "</span>" +
         this.message.substring(this.selectionRange[1]);
     },
   },
