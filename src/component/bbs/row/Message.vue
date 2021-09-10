@@ -113,6 +113,7 @@ export default {
 .markdown-body [type="checkbox"]:disabled {
   width: 0;
   height: 0;
+  filter: none !important;
 }
 
 .markdown-body [type="checkbox"]:not(:checked):before,
