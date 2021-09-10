@@ -10,7 +10,7 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><br /><User :user="message.author" ellipsis /><br /><span
+      /><User :user="message.author" ellipsis /><span
         class="date"
         >{{ formatDate }}</span
       >
