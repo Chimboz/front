@@ -15,7 +15,7 @@
   <br />
   <table class="bbs">
     <colgroup>
-      <col class="info" />
+      <col class="info" width="100" />
       <col width="100%" />
     </colgroup>
     <thead>
@@ -58,12 +58,12 @@ export default {
 }
 
 .info {
-  width: 56px;
+  display: none !important;
 }
 
 @media (min-width: 800px) {
   .info {
-    width: 100px;
+    display: table-column !important;
   }
 }
 </style>

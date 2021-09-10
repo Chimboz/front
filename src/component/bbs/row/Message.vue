@@ -10,9 +10,26 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><br /><User :user="message.author" ellipsis/><br /><span class="date">{{ formatDate }}</span>
+      /><br /><User :user="message.author" ellipsis /><br /><span
+        class="date"
+        >{{ formatDate }}</span
+      >
     </td>
     <td class="justified">
+      <h2 class="head flex centered info-sm">
+        <Tiz
+          :avatar="message.author.look.avatar"
+          :emote="message.author.look.emote"
+          :hat="message.author.look.hat"
+          :body="message.author.look.body"
+          :shoe="message.author.look.shoe"
+          :item0="message.author.look.item0"
+          :item1="message.author.look.item1"
+          :item2="message.author.look.item2"
+        />
+        <User :user="message.author" />&nbsp;le&nbsp;
+        <span class="date">{{ formatDate }}</span>
+      </h2>
       <div class="head flex centered">
         <router-link :to="'#' + message.id">
           <img
@@ -139,6 +156,10 @@ export default {
   margin-left: -16px;
   position: absolute;
 }
+
+.info-sm .tiz {
+  margin-bottom: -25px;
+}
 </style>
 <style lang="scss" scoped>
 td {
@@ -149,8 +170,20 @@ td {
   flex-wrap: wrap;
 }
 
-@media (max-width: 800px) {
-  .info .date {
+.info {
+  display: none !important;
+}
+
+.info-sm {
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  .info {
+    display: table-cell !important;
+  }
+
+  .info-sm {
     display: none;
   }
 }

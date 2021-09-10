@@ -381,7 +381,7 @@ export default {
           : "\n" + pattern) +
         this.message
           .substring(this.selectionRange[0], this.selectionRange[1])
-          .split(/\r?\n/)
+          .split("\n")
           .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
         "\n" +
         this.message.substring(this.selectionRange[1]);
@@ -406,7 +406,8 @@ td {
   padding: 6px;
   vertical-align: top;
 }
-td input:not([type="checkbox"]), td textarea {
+td input:not([type="checkbox"]),
+td textarea {
   width: 100%;
   border: 4px solid #d5e6f3;
   padding: 4px;
