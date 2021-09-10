@@ -5,6 +5,8 @@
         Salut
       </Card>
     </template>
+    <Demo />
+    <br>
     <Card>
       <template #subtop>Login</template>
       <div class="flex centered login-form">
@@ -58,6 +60,7 @@
 <script>
 import Button from "@/component/Button.vue";
 import Card from "@/component/Card.vue";
+import Demo from "@/component/Demo.vue";
 import Pack from "@/component/Pack.vue";
 import Container from "@/component/Container.vue";
 
@@ -68,6 +71,7 @@ export default {
     Container,
     Card,
     Pack,
+    Demo,
   },
   data() {
     return {
