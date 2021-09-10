@@ -111,7 +111,8 @@ export default {
 <style lang="scss">
 // Custom checkboxes
 .markdown-body [type="checkbox"]:disabled {
-  filter: none !important;
+  width: 0;
+  height: 0;
 }
 
 .markdown-body [type="checkbox"]:not(:checked):before,
