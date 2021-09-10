@@ -72,10 +72,10 @@
             <button @click="format('<s>')">
               <s>s</s>
             </button>
-            <button @click="format('<a>')">
+            <button @click="formatLink(false)">
               <a href="#" @click.prevent>a</a>
             </button>
-            <button @click="format('<u>')">
+            <button @click="formatLink(true)">
               <img
                 src="@/asset/img/favicon.svg"
                 height="22"
@@ -312,10 +312,15 @@ export default {
     scrollTo(anchor) {
       location.href = anchor;
     },
+    resetSelection() {
+      this.selectionRange = [0, 0];
+    },
     focusHandler() {
-      if (this.selectionRange[1] !== 0) {
-        this.select();
-      }
+      this.$refs.message.focus();
+      this.$refs.message.setSelectionRange(
+        this.selectionRange[0],
+        this.selectionRange[1]
+      );
     },
     selectionHandler(e) {
       this.selectionRange = [
@@ -324,45 +329,64 @@ export default {
       ];
     },
     select() {
-      this.$refs["message"].setSelectionRange(
+      this.$refs.message.setSelectionRange(
         this.selectionRange[0],
         this.selectionRange[1]
       );
     },
-    behaviour(fct) {
-      return true;
-    },
     format(pattern) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      this.$refs.message.setRangeText(
         pattern +
-        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
-        (/<[a-z0-9]+>/.test(pattern)
-          ? pattern.substring(0, 1) + "/" + pattern.substring(1)
-          : pattern) +
-        this.message.substring(this.selectionRange[1]);
+          this.message.substring(
+            this.selectionRange[0],
+            this.selectionRange[1]
+          ) +
+          (/<[a-z0-9]+>/.test(pattern)
+            ? pattern.substring(0, 1) + "/" + pattern.substring(1)
+            : pattern)
+      );
+      this.resetSelection();
+    },
+    formatLink(image) {
+      this.$refs.message.setRangeText(
+        `${image ? "!" : ""}[${this.message.substring(
+          this.selectionRange[0],
+          this.selectionRange[1]
+        )}](${this.message.substring(
+          this.selectionRange[0],
+          this.selectionRange[1]
+        )})`
+      );
+      this.selectionRange = [
+        this.selectionRange[0] + 1 + +image,
+        this.selectionRange[1] + 1 + +image,
+      ];
+      this.focusHandler();
     },
     formatMultiline(pattern) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      this.$refs.message.setRangeText(
         (this.message.charAt(this.selectionRange[0] - 1) == "\n" ||
         this.selectionRange[0] == 0
           ? pattern
           : "\n" + pattern) +
-        this.message
-          .substring(this.selectionRange[0], this.selectionRange[1])
-          .split(/\r?\n/)
-          .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
-        "\n\n" +
-        this.message.substring(this.selectionRange[1]);
+          this.message
+            .substring(this.selectionRange[0], this.selectionRange[1])
+            .split(/\r?\n/)
+            .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
+          "\n\n"
+      );
+      this.resetSelection();
     },
     formatColor(hex) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      this.$refs.message.setRangeText(
         `<span style="color:${hex}">` +
-        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
-        "</span>" +
-        this.message.substring(this.selectionRange[1]);
+          this.message.substring(
+            this.selectionRange[0],
+            this.selectionRange[1]
+          ) +
+          "</span>"
+      );
+      this.resetSelection();
     },
   },
 };
