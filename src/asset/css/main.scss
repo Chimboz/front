@@ -297,7 +297,8 @@ table.bbs {
   background: #c9dfef;
   padding: 6px 0;
 }
-.bbs th {
+
+.bbs > thead > tr > th {
   height: 24px;
   background-image: linear-gradient(
     to bottom,
@@ -308,23 +309,23 @@ table.bbs {
   border-bottom: 1px solid #a2bdd1;
 }
 
-.bbs col:nth-child(3),
-.bbs col:nth-child(4),
-.bbs td:nth-child(3),
-.bbs td:nth-child(4),
-.bbs th:nth-child(2),
-.bbs th:nth-child(3) {
+.bbs > colgroup > col:nth-child(3),
+.bbs > colgroup > col:nth-child(4),
+.bbs > tbody > tr > td:nth-child(3),
+.bbs > tbody > tr > td:nth-child(4),
+.bbs > thead > tr > th:nth-child(2),
+.bbs > thead > tr > th:nth-child(3) {
   display: none;
 }
 
-.board col:nth-child(5),
-.board td:nth-child(5),
-.board th:nth-child(4) {
+.board > colgroup > tr > col:nth-child(5),
+.board > tbody > tr > td:nth-child(5),
+.board > thead > tr > th:nth-child(4) {
   display: none;
 }
 
-.board td:nth-child(4),
-.board th:nth-child(3) {
+.board > tbody > tr > td:nth-child(4),
+.board > thead > tr > th:nth-child(3) {
   display: table-cell !important;
 }
 
@@ -333,12 +334,12 @@ table.bbs {
 }
 
 @media (min-width: 600px) {
-  .bbs td,
-  .bbs th {
+  .bbs > tbody > tr > td,
+  .bbs > thead > tr > th {
     display: table-cell !important;
   }
 
-  .bbs col {
+  .bbs > colgroup > col {
     display: table-column !important;
   }
 }

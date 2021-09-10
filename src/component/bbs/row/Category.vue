@@ -1,5 +1,5 @@
 <template>
-  <tbody>
+  <thead>
     <tr
       class="category justified pointer"
       @click="hide = !hide"
@@ -9,7 +9,7 @@
         <a>{{ category.category }}</a>
       </th>
     </tr>
-  </tbody>
+  </thead>
   <tbody
     v-for="(bbs, index) in category.bbs"
     :key="bbs.id"
