@@ -1,4 +1,32 @@
 <template>
+  <table class="bbs" v-if="message">
+    <colgroup>
+      <col width="100" class="info" />
+      <col width="100%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th valign="top" colspan="2" height="25" nowrap="nowrap">
+          Prévisualisation
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <Message
+        :message="{
+          author: this.user,
+          content: this.message,
+          date: Date.now(),
+          id: 'reply',
+          new: true,
+          signature: this.signature,
+          title: this.title,
+        }"
+        :separator="false"
+      />
+    </tbody>
+  </table>
+  <br />
   <table class="bbs">
     <colgroup>
       <col width="100" />
@@ -12,47 +40,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr id="reply" v-if="message">
-        <td class="info" width="100" valign="top">
-          <Tiz
-            :avatar="user ? user.look.avatar : 0"
-            :emote="user ? user.look.emote : 1"
-            :hat="user ? user.look.hat : 1"
-            :body="user ? user.look.body : 1"
-            :shoe="user ? user.look.shoe : 1"
-            :item0="user ? user.look.item0 : 1"
-            :item1="user ? user.look.item1 : 1"
-            :item2="user ? user.look.item2 : 1"
-          /><br /><User :user="user" /><br />{{ formatDate }}
-        </td>
-        <td class="justified">
-          <div class="head flex centered">
-            <router-link to="#reply">
-              <img
-                draggable="false"
-                @contextmenu.prevent
-                alt="Voir le dernier message"
-                title="Voir le dernier message"
-                src="@/asset/img/bbs/msg_new.svg"
-              /> </router-link
-            >&nbsp;
-            <h4 class="ellipsis justified title">{{ title }}</h4>
-            &nbsp;
-            <img
-              alt="Quote button"
-              src="https://chapatizretro.com/data/content/images/bbs/icon_quote.png"
-            />
-          </div>
-          <hr style="margin: 2px 0" />
-          <div class="markdown-body content" v-html="formatMessage"></div>
-          <div class="signature" v-if="message.signature">
-            <i><br />"{{ message.author.signature }}"</i>
-          </div>
-        </td>
-      </tr>
-      <tr v-if="message">
-        <td colspan="2"><hr style="margin: 6px" /></td>
-      </tr>
       <tr>
         <td><b>Sujet</b></td>
         <td><input type="text" v-model="title" /></td>
@@ -245,7 +232,7 @@
           <input type="checkbox" id="bbcode" />
           <label for="bbcode"
             >&#32;Désactiver les BBCodes, smileys et liens</label
-          ><br /><input type="checkbox" checked id="signature" />
+          ><br /><input type="checkbox" id="signature" v-model="signature" />
           <label for="signature"
             >&#32;Attacher ma signature (les signatures peuvent être modifiées
             sur le tchat)</label
@@ -263,6 +250,7 @@
 <script>
 import Tiz from "@/component/Tiz.vue";
 import Emotes from "@/component/Emotes.vue";
+import Message from "@/component/bbs/row/Message.vue";
 import User from "@/component/link/User.vue";
 import Marked from "marked";
 import DOMPurify from "dompurify";
@@ -272,11 +260,12 @@ import { mapState } from "vuex";
 
 export default {
   name: "MarkdownInput",
-  components: { Tiz, User, Emotes },
+  components: { Tiz, User, Emotes, Message },
   data() {
     return {
       message: "",
       title: "",
+      signature: true,
       selectionRange: [0, 0],
     };
   },
@@ -412,6 +401,7 @@ td textarea {
   border: 4px solid #d5e6f3;
   padding: 4px;
   border-radius: 12px 8px;
+  box-shadow: 0 1px #355668;
 }
 
 textarea {
@@ -437,6 +427,7 @@ select {
   border-radius: 12px 8px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px #355668;
 }
 
 button:hover,
@@ -444,5 +435,15 @@ button:active,
 select:hover,
 select:active {
   background-color: #ff6600;
+}
+
+.info {
+  display: none !important;
+}
+
+@media (min-width: 800px) {
+  .info {
+    display: table-column !important;
+  }
 }
 </style>

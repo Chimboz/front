@@ -20,6 +20,7 @@ export default {
       commit("setUser", {
         name: "Tigriz",
         id: 3,
+        signature: "Nitens lux, horrenda procella, tenebris aeternis involuta",
         color: "#900",
         role: 100,
         look: {
