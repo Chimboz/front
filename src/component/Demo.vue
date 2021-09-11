@@ -52,7 +52,7 @@
           required
           type="email"
           name="email"
-          minlength="5"
+          minlength="6"
           autocomplete="email"
           inputmode="email"
           id="email"
