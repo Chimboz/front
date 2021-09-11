@@ -37,18 +37,25 @@
         <br />
         <input
           type="text"
-          name="username"
+          name="pseudo"
+          id="pseudo"
           class="btn-md"
           :placeholder="$t('placeholder.username')"
         />
         <input
-          type="text"
-          name="mail"
+          type="email"
+          name="email"
+          id="email"
           class="btn-md"
           :placeholder="$t('placeholder.mail')"
         /><br />
-        <input name="password" type="password" class="btn-md" />
-        <input name="password" type="password" class="btn-md" /><br />
+        <input name="password" type="password" id="password" class="btn-md" />
+        <input
+          name="password_confirm"
+          type="password"
+          id="password_confirm"
+          class="btn-md"
+        /><br />
         <div class="flex">
           <Button red @click="section = 0">Annuler</Button>
           <Button green
@@ -68,11 +75,17 @@
         <br />
         <input
           name="username"
+          id="username"
           type="text"
           class="btn-md"
           :placeholder="$t('placeholder.username')"
         />
-        <input name="password" type="password" class="btn-md" /><br />
+        <input
+          name="password"
+          type="password"
+          id="password"
+          class="btn-md"
+        /><br />
         <div class="flex">
           <Button red @click="section = 0">Annuler</Button>
           <Button
@@ -214,7 +227,7 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   height: 200%;
   transform: translateX(-700%) var(--rotate);
   background: #fffa;
-  animation: shine 5s infinite linear;
+  animation: shine 7s infinite linear;
 }
 
 @keyframes shine {
