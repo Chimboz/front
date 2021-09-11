@@ -270,6 +270,7 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
 
   .#{$category}:hover, .#{$category}.active {
     background: url(../asset/img/demo/#{$category}_hover.svg);
+    border-image: url(../asset/img/demo/#{$category}.svg);
   }
 }
 
