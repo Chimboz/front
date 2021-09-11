@@ -42,7 +42,6 @@
           maxlength="15"
           pattern="[A-Za-z0-9\@\.\_\-]{3,15}"
           name="username"
-          id="username"
           type="text"
           class="btn-md"
           autocomplete="username"
@@ -55,7 +54,6 @@
           minlength="6"
           autocomplete="email"
           inputmode="email"
-          id="email"
           class="btn-md"
           :placeholder="$t('placeholder.mail')"
         /><br />
@@ -64,7 +62,6 @@
           name="password"
           type="password"
           :placeholder="$t('placeholder.password')"
-          id="password"
           class="btn-md"
         />
         <input
@@ -72,7 +69,6 @@
           name="password_confirm"
           type="password"
           :placeholder="$t('placeholder.password_confirm')"
-          id="password_confirm"
           class="btn-md"
         />
         <div class="flex">
@@ -107,7 +103,6 @@
             minlength="3"
             maxlength="15"
             name="username"
-            id="username"
             type="text"
             pattern="[\w\.\-_@]{3,15}"
             class="btn-md"
@@ -120,7 +115,6 @@
             type="password"
             :placeholder="$t('placeholder.password')"
             autocomplete="current-password"
-            id="password"
             class="btn-md"
           />
         </div>
@@ -128,7 +122,6 @@
           <input
             type="text"
             name="token"
-            id="token"
             inputmode="numeric"
             autocomplete="one-time-code"
             minlength="6"
