@@ -58,5 +58,8 @@
   },
   "format": {
     "language": "langage"
+  },
+  "placeholder": {
+    "username": "Pseudo"
   }
 }

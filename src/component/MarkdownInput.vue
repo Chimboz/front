@@ -42,7 +42,7 @@
     <tbody>
       <tr>
         <td><b>Sujet</b></td>
-        <td><input type="text" v-model="title" /></td>
+        <td><input class="btn-md" type="text" v-model="title" /></td>
       </tr>
       <tr>
         <td>
@@ -51,25 +51,28 @@
         </td>
         <td class="markdown-body" style="vertical-align: middle;">
           <div class="flex hstack">
-            <button @click="format('**')"><b>B</b></button
-            ><button @click="format('*')"><i>i</i></button
-            ><button @click="format('<u>')">
+            <button class="btn-md" @click="format('**')"><b>B</b></button
+            ><button class="btn-md" @click="format('*')"><i>i</i></button
+            ><button class="btn-md" @click="format('<u>')">
               <u>u</u>
             </button>
-            <button @click="format('<s>')">
+            <button class="btn-md" @click="format('<s>')">
               <s>s</s>
             </button>
-            <button @click="formatLink(false)">
+            <button class="btn-md" @click="formatLink(false)">
               <a href="#" @click.prevent>a</a>
             </button>
-            <button @click="formatLink(true)">
+            <button class="btn-md" @click="formatLink(true)">
               <img
                 src="@/asset/img/favicon.svg"
                 height="22"
                 style="background: none"
               />
             </button>
-            <select @change="(event) => formatColor(event.target.value)">
+            <select
+              class="btn-md"
+              @change="(event) => formatColor(event.target.value)"
+            >
               <option
                 style="color: black;background-color: #fafafa;"
                 value="#444444"
@@ -179,31 +182,34 @@
                 Noir
               </option>
             </select>
-            <select @change="(event) => formatMultiline(event.target.value)">
+            <select
+              class="btn-md"
+              @change="(event) => formatMultiline(event.target.value)"
+            >
               <option value="##### ">Trop minuscule</option>
               <option value="#### " selected="selected">Taille</option>
               <option value="### ">Grand</option>
               <option value="## ">Fat</option>
               <option value="# ">Trop trop gros</option>
             </select>
-            <button @click="formatMultiline('> ')">
+            <button class="btn-md" @click="formatMultiline('> ')">
               <blockquote style="margin-bottom: 0; color: #fff">
                 Quote
               </blockquote>
             </button>
-            <button @click="formatMultiline('1. ')">
+            <button class="btn-md" @click="formatMultiline('1. ')">
               1. List
             </button>
-            <button @click="formatMultiline('- ')">
+            <button class="btn-md" @click="formatMultiline('- ')">
               • List
             </button>
-            <button @click="format('<kbd>')">
+            <button class="btn-md" @click="format('<kbd>')">
               <kbd>Key</kbd>
             </button>
-            <button @click="format('`')">
+            <button class="btn-md" @click="format('`')">
               <code>Code</code>
             </button>
-            <button @click="formatCode()">
+            <button class="btn-md" @click="formatCode()">
               <pre style="padding: 2px; margin: 0">Code block</pre>
             </button>
           </div>
@@ -215,6 +221,7 @@
         </td>
         <td>
           <textarea
+            class="btn-md"
             ref="message"
             v-model="message"
             @focus="focusHandler"
@@ -414,14 +421,6 @@ td {
   padding: 6px;
   vertical-align: top;
 }
-td input:not([type="checkbox"]),
-td textarea {
-  width: 100%;
-  border: 4px solid #d5e6f3;
-  padding: 4px;
-  border-radius: 12px 8px;
-  box-shadow: 0 1px #355668;
-}
 
 textarea {
   width: 100%;
@@ -432,28 +431,6 @@ textarea {
 
 .title {
   flex: 1;
-}
-
-button,
-select {
-  display: inline-flex;
-  border: 4px solid #d5e6f3;
-  background-color: #f0009c;
-  color: #fff;
-  padding: 0 4px;
-  height: 30px;
-  min-width: 30px;
-  border-radius: 12px 8px;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px #355668;
-}
-
-button:hover,
-button:active,
-select:hover,
-select:active {
-  background-color: #ff6600;
 }
 
 .preview {

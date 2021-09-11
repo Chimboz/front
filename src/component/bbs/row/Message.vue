@@ -27,7 +27,7 @@
           :item2="message.author.look.item2"
         />
         <div class="ellipsis">
-          <User :user="message.author" />&nbsp;le&nbsp;
+          <User :user="message.author" />&nbsp;le
           <span class="date">{{ formatDate }}</span>
         </div>
       </h2>

@@ -6,16 +6,28 @@
       </Card>
     </template>
     <Demo />
-    <br>
+    <br />
     <Card>
       <template #subtop>Login</template>
       <div class="flex centered login-form">
         <form>
-          Cliquez sur Envoyer, il n'y a pas d'authentification encore.<br />
-          <input type="text" /><br />
-          <input type="password" />
+          <input
+            type="text"
+            class="btn-md"
+            :placeholder="$t('placeholder.username')"
+          /><br /><br />
+          <input type="password" class="btn-md" /><br /><br />
           <router-link to="/" @click="login"
-            ><Button green>Envoyer</Button></router-link
+            ><Button green
+              ><template #prepend
+                ><img
+                  draggable="false"
+                  @contextmenu.prevent
+                  alt="Arrow icon"
+                  class="arrow jitter"
+                  src="@/asset/img/arrow.svg"/></template
+              >Envoyer</Button
+            ></router-link
           >
         </form>
       </div>
@@ -125,6 +137,10 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+.arrow {
+  filter: hue-rotate(135deg) saturate(1.5) !important;
+}
+
 .login-form {
   justify-content: center;
 }
