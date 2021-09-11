@@ -11,32 +11,6 @@
       </Card>
     </template>
     <Demo />
-    <br />
-    <Card>
-      <template #subtop>Login</template>
-      <div class="flex centered login-form">
-        <form>
-          <input
-            type="text"
-            class="btn-md"
-            :placeholder="$t('placeholder.username')"
-          /><br /><br />
-          <input type="password" class="btn-md" /><br /><br />
-          <router-link to="/" @click="login"
-            ><Button green
-              ><template #prepend
-                ><img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Arrow icon"
-                  class="arrow jitter"
-                  src="@/asset/img/arrow.svg"/></template
-              >Envoyer</Button
-            ></router-link
-          >
-        </form>
-      </div>
-    </Card>
 
     <template #right-column
       ><Card blue top>

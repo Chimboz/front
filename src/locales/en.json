@@ -60,6 +60,7 @@
     "language": "language"
   },
   "placeholder": {
-    "username": "Username"
+    "username": "Username",
+    "mail": "Mail"
   }
 }
