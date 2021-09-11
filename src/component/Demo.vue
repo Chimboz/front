@@ -36,6 +36,7 @@
       <form class="section1" v-if="section == 1">
         <br />
         <input
+        required
           type="text"
           name="pseudo"
           id="pseudo"
@@ -43,14 +44,15 @@
           :placeholder="$t('placeholder.username')"
         />
         <input
+        required
           type="email"
           name="email"
           id="email"
           class="btn-md"
           :placeholder="$t('placeholder.mail')"
         /><br />
-        <input name="password" type="password" id="password" class="btn-md" />
-        <input
+        <input required name="password" type="password" id="password" class="btn-md" />
+        <input required
           name="password_confirm"
           type="password"
           id="password_confirm"
@@ -73,14 +75,14 @@
       </form>
       <form class="section2" v-if="section == 2">
         <br />
-        <input
+        <input required
           name="username"
           id="username"
           type="text"
           class="btn-md"
           :placeholder="$t('placeholder.username')"
         />
-        <input
+        <input required
           name="password"
           type="password"
           id="password"
