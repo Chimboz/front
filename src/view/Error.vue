@@ -7,7 +7,13 @@
         @contextmenu.prevent
         alt="Error icon"
         src="@/asset/img/icon/warning.svg"
-      /><b>&nbsp;{{ $t(this.$route.params.message) }}</b>
+      /><b
+        >&nbsp;{{
+          this.$route.params.message
+            ? $t(this.$route.params.message)
+            : $t("error.default")
+        }}</b
+      >
     </Card>
     <template #right-column></template>
   </Container>
