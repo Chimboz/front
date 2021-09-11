@@ -3,12 +3,12 @@
     <div class="foreground">
       <div class="demo">
         <div class="demo-btn hstack">
-          <button class="home"></button>
-          <button class="mode"></button>
-          <button class="tchat"></button>
-          <button class="wedding"></button>
-          <button class="group"></button>
-          <button class="bacteria"></button>
+          <button class="home" @click="demo = 0" :class="{ active: demo == 0 }"></button>
+          <button class="mode" @click="demo = 1" :class="{ active: demo == 1 }"></button>
+          <button class="tchat" @click="demo = 2" :class="{ active: demo == 2 }"></button>
+          <button class="wedding" @click="demo = 3" :class="{ active: demo == 3 }"></button>
+          <button class="group" @click="demo = 4" :class="{ active: demo == 4 }"></button>
+          <button class="bacteria" @click="demo = 5" :class="{ active: demo == 5 }"></button>
           <button class="empty"></button>
           <button class="empty"></button>
           <button class="empty"></button>
@@ -16,8 +16,30 @@
           <button class="empty"></button>
         </div>
         <div class="demo-picture">
-          <div class="demo-info">Test</div>
-          <img src="@/asset/img/demo/demo.svg" />
+          <section :class="{ display: demo == 0 }">
+            <div class="demo-info">Bienvenue sur l'archipel</div>
+            <img src="@/asset/img/demo/0.png" />
+          </section>
+          <section :class="{ display: demo == 1 }">
+            <div class="demo-info">Crée ton style</div>
+            <img src="@/asset/img/demo/1.png" />
+          </section>
+          <section :class="{ display: demo == 2 }">
+            <div class="demo-info">Discute avec tes amis</div>
+            <img src="@/asset/img/demo/2.png" />
+          </section>
+          <section :class="{ display: demo == 3 }">
+            <div class="demo-info">Fais ta vie virtuelle</div>
+            <img src="@/asset/img/demo/3.png" />
+          </section>
+          <section :class="{ display: demo == 4 }">
+            <div class="demo-info">Rejoins des groupes</div>
+            <img src="@/asset/img/demo/4.png" />
+          </section>
+          <section :class="{ display: demo == 5 }">
+            <div class="demo-info">Affronte les joueurs dans des mini-jeux</div>
+            <img src="@/asset/img/demo/5.png" />
+          </section>
         </div>
       </div>
       <section class="section0" v-if="section == 0">
@@ -160,7 +182,11 @@ export default {
   data() {
     return {
       section: 0,
+      demo: 0,
     };
+  },
+  mounted() {
+    setInterval(() => (this.demo = (this.demo + 1) % 6), 7000);
   },
   methods: {
     login() {
@@ -242,7 +268,7 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
     border-image: url(../asset/img/demo/#{$category}_hover.svg);
   }
 
-  .#{$category}:hover {
+  .#{$category}:hover, .#{$category}.active {
     background: url(../asset/img/demo/#{$category}_hover.svg);
   }
 }
@@ -256,7 +282,29 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   --rotate: rotate(30deg);
 }
 
-.demo-picture::after {
+.demo-picture section {
+  display: none;
+}
+
+section.display {
+  display: block;
+}
+
+.demo-picture section::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    ellipse 120% 100% at 50% 15%,
+    #fff0,
+    #fff4 49%,
+    #fff8 51%,
+    #fff4
+  );
+}
+
+.demo-picture section::after {
   position: absolute;
   content: "";
   opacity: 0;
@@ -288,6 +336,11 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   transform: translateY(-100%);
   transition: 0.5s;
   width: 100%;
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
+  text-shadow: 0 0 2px #f0009c;
+  color: #fff;
+  height: 45.25px;
   text-align: left;
   padding: 12px;
   background: url(../asset/img/demo/info.svg);
