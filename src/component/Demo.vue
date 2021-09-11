@@ -20,9 +20,8 @@
           <img src="@/asset/img/demo/demo.svg" />
         </div>
       </div>
-
       <section class="section0" v-if="section == 0">
-        <Button green @click="section = 1"
+        <br /><Button green @click="section = 1"
           ><template #prepend
             ><img
               draggable="false"
@@ -31,23 +30,25 @@
               class="arrow jitter"
               src="@/asset/img/arrow.svg"/></template
           >S'inscrire</Button
-        >
-        <Button blue @click="section = 2">Se connecter</Button>
+        ><br />
+        <Button @click="section = 2">Se connecter</Button>
       </section>
-      <section class="section1" v-if="section == 1">
+      <form class="section1" v-if="section == 1">
         <br />
         <input
           type="text"
+          name="username"
           class="btn-md"
           :placeholder="$t('placeholder.username')"
         />
         <input
           type="text"
+          name="mail"
           class="btn-md"
           :placeholder="$t('placeholder.mail')"
         /><br />
-        <input type="password" class="btn-md" />
-        <input type="password" class="btn-md" /><br />
+        <input name="password" type="password" class="btn-md" />
+        <input name="password" type="password" class="btn-md" /><br />
         <div class="flex">
           <Button red @click="section = 0">Annuler</Button>
           <Button green
@@ -61,19 +62,24 @@
             >S'inscrire</Button
           >
         </div>
-      </section>
-      <section class="section2" v-if="section == 2">
+      </form>
+      <form class="section2" v-if="section == 2">
         <br />
         <input
+          name="username"
           type="text"
           class="btn-md"
           :placeholder="$t('placeholder.username')"
         />
-        <input type="password" class="btn-md" /><br />
+        <input name="password" type="password" class="btn-md" /><br />
         <div class="flex">
           <Button red @click="section = 0">Annuler</Button>
-          <router-link to="/" @click="login"
-          ><Button green
+          <Button
+            green
+            @click="
+              login();
+              this.$router.push('/');
+            "
             ><template #prepend
               ><img
                 draggable="false"
@@ -82,10 +88,9 @@
                 class="arrow jitter"
                 src="@/asset/img/arrow.svg"/></template
             >Se connecter</Button
-          ></router-link
-        >
+          >
         </div>
-      </section>
+      </form>
     </div>
     <span class="try pointer"
       >Je veux juste visiter&nbsp;&nbsp;<img src="@/asset/img/puce.svg"
@@ -221,14 +226,14 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   filter: hue-rotate(135deg) saturate(1.5) !important;
 }
 
-.foreground section input {
+.foreground form input {
   width: calc(50% - 8px);
-  margin: 4px;
+  margin: 0 4px;
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
 }
 
-.foreground section .btn {
+.foreground form .btn {
   margin: 4px;
 }
 </style>
