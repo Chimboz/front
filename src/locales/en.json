@@ -61,6 +61,8 @@
   },
   "placeholder": {
     "username": "Username",
-    "mail": "Mail"
+    "mail": "Mail",
+    "password": "Password",
+    "password_confirm": "Confirm"
   }
 }

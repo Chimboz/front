@@ -61,6 +61,8 @@
   },
   "placeholder": {
     "username": "Pseudo",
-    "mail": "Courriel"
+    "mail": "Courriel",
+    "password": "Mot de passe",
+    "password_confirm": "Confirmation"
   }
 }

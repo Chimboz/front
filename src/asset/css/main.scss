@@ -246,6 +246,15 @@ textarea.btn-md:focus {
   background-color: #ff6600;
 }
 
+
+.input:valid:not(:placeholder-shown) {
+  border-color: #53af35 !important;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: #f11818;
+}
+
 .btn-sm {
   border-radius: 99px;
   font-weight: bold;

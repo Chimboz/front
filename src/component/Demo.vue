@@ -33,33 +33,50 @@
         ><br />
         <Button @click="section = 2">Se connecter</Button>
       </section>
-      <form class="section1" v-if="section == 1">
+      <form class="section1" v-if="section == 1" autocomplete="on">
         <br />
         <input
-        required
+          required
+          autofocus
+          minlength="3"
+          maxlength="15"
+          pattern="[A-Za-z0-9\@\.\_\-]{3,15}"
+          name="username"
+          id="username"
           type="text"
-          name="pseudo"
-          id="pseudo"
           class="btn-md"
+          autocomplete="username"
           :placeholder="$t('placeholder.username')"
         />
         <input
-        required
+          required
           type="email"
           name="email"
+          minlength="5"
+          autocomplete="email"
+          inputmode="email"
           id="email"
           class="btn-md"
           :placeholder="$t('placeholder.mail')"
         /><br />
-        <input required name="password" type="password" id="password" class="btn-md" />
-        <input required
+        <input
+          required
+          name="password"
+          type="password"
+          :placeholder="$t('placeholder.password')"
+          id="password"
+          class="btn-md"
+        />
+        <input
+          required
           name="password_confirm"
           type="password"
+          :placeholder="$t('placeholder.password_confirm')"
           id="password_confirm"
           class="btn-md"
-        /><br />
+        />
         <div class="flex">
-          <Button red @click="section = 0">Annuler</Button>
+          <Button red @click="section = 0" type="button">Annuler</Button>
           <Button green
             ><template #prepend
               ><img
@@ -73,30 +90,56 @@
           >
         </div>
       </form>
-      <form class="section2" v-if="section == 2">
+      <form
+        class="section2"
+        v-if="section == 2"
+        autocomplete="on"
+        @submit="
+          login();
+          this.$router.push('/');
+        "
+      >
         <br />
-        <input required
-          name="username"
-          id="username"
-          type="text"
-          class="btn-md"
-          :placeholder="$t('placeholder.username')"
-        />
-        <input required
-          name="password"
-          type="password"
-          id="password"
-          class="btn-md"
-        /><br />
+        <div>
+          <input
+            required
+            autofocus
+            minlength="3"
+            maxlength="15"
+            name="username"
+            id="username"
+            type="text"
+            pattern="[\w\.\-_@]{3,15}"
+            class="btn-md"
+            autocomplete="username"
+            :placeholder="$t('placeholder.username')"
+          />
+          <input
+            required
+            name="password"
+            type="password"
+            :placeholder="$t('placeholder.password')"
+            autocomplete="current-password"
+            id="password"
+            class="btn-md"
+          />
+        </div>
+        <div style="display: none">
+          <input
+            type="text"
+            name="token"
+            id="token"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            minlength="6"
+            pattern="[0-9]{6}"
+            maxlength="6"
+            class="btn-md"
+          />
+        </div>
         <div class="flex">
-          <Button red @click="section = 0">Annuler</Button>
-          <Button
-            type="submit"
-            green
-            @click="
-              login();
-              this.$router.push('/');
-            "
+          <Button red @click="section = 0" type="button">Annuler</Button>
+          <Button type="submit" green
             ><template #prepend
               ><img
                 draggable="false"
@@ -269,7 +312,7 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
 
 .foreground form input {
   width: calc(50% - 8px);
-  margin: 0 4px;
+  margin: 2px;
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
 }
