@@ -55,5 +55,8 @@
     "notfound": "La route demandée par l'API n'existe pas.",
     "default": "Erreur, la page que vous cherchez n'existe pas.",
     "connected": "Vous êtes déjà connecté&nbsp;!"
+  },
+  "format": {
+    "language": "langage"
   }
 }

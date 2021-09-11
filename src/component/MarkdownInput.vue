@@ -1,5 +1,5 @@
 <template>
-  <table class="bbs" v-if="message">
+  <table class="bbs preview" :class="{ display: this.message }">
     <colgroup>
       <col width="100" class="info" />
       <col width="100%" />
@@ -203,8 +203,8 @@
             <button @click="format('`')">
               <code>Code</code>
             </button>
-            <button @click="format('\n```\n')">
-              <pre style="padding: 1px; margin: 0">Code block</pre>
+            <button @click="formatCode()">
+              <pre style="padding: 2px; margin: 0">Code block</pre>
             </button>
           </div>
         </td>
@@ -340,9 +340,7 @@ export default {
             : pattern)
       );
       this.resetSelection(
-        pattern.length * 2 +
-          pattern.length +
-          (/<[a-z0-9]+>/.test(pattern) ? 1 : 0)
+        pattern.length * 2 + (/<[a-z0-9]+>/.test(pattern) ? 1 : 0)
       );
     },
     formatLink(image) {
@@ -361,20 +359,41 @@ export default {
       ];
       this.focusHandler();
     },
+    formatCode() {
+      this.$refs.message.setRangeText(
+        "\n```" +
+          this.$t("format.language") +
+          "\n" +
+          this.message.substring(
+            this.selectionRange[0],
+            this.selectionRange[1]
+          ) +
+          "\n```\n"
+      );
+      this.selectionRange = [
+        this.selectionRange[0] + 4,
+        this.selectionRange[0] + 4 + this.$t("format.language").length,
+      ];
+      this.focusHandler();
+    },
     formatMultiline(pattern) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      this.$refs.message.setRangeText(
         (this.message.charAt(this.selectionRange[0] - 1) == "\n" ||
         this.selectionRange[0] == 0
           ? pattern
           : "\n" + pattern) +
-        this.message
-          .substring(this.selectionRange[0], this.selectionRange[1])
-          .split("\n")
-          .reduce((prev, curr) => `${prev}\n${pattern} ${curr}`) +
-        "\n" +
-        this.message.substring(this.selectionRange[1]);
-      this.resetSelection(0);
+          this.message
+            .substring(this.selectionRange[0], this.selectionRange[1])
+            .split("\n")
+            .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
+          "\n"
+      );
+      this.resetSelection(
+        pattern.length *
+          this.message
+            .substring(this.selectionRange[0], this.selectionRange[1])
+            .split("\n").length
+      );
     },
     formatColor(hex) {
       this.$refs.message.setRangeText(
@@ -435,6 +454,14 @@ button:active,
 select:hover,
 select:active {
   background-color: #ff6600;
+}
+
+.preview {
+  display: none;
+}
+
+.preview.display {
+  display: table;
 }
 
 .info {
