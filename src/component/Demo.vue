@@ -54,6 +54,7 @@
           <Button green
             ><template #prepend
               ><img
+                type="submit"
                 draggable="false"
                 @contextmenu.prevent
                 alt="Arrow icon"
@@ -75,6 +76,7 @@
         <div class="flex">
           <Button red @click="section = 0">Annuler</Button>
           <Button
+            type="submit"
             green
             @click="
               login();
