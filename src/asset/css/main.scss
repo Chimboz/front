@@ -247,8 +247,8 @@ textarea.btn-md:focus {
 }
 
 
-.input:valid:not(:placeholder-shown) {
-  border-color: #53af35 !important;
+input:valid:not(:placeholder-shown) {
+  border-color: #53af35;
 }
 
 input:invalid:not(:placeholder-shown) {
