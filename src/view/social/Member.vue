@@ -127,6 +127,7 @@
           </p>
         </div>
       </div>
+      <br />
       <div class="member-section">
         Classement : 25ème 19 parties, 10 gagnées, 9 perdues, 0 nulles 40 points
       </div>

@@ -215,7 +215,7 @@ export default {
   text-shadow: 0 0 4px #f0009c;
   text-transform: lowercase;
   font-size: 18px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .try:hover img {
