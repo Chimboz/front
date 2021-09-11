@@ -202,6 +202,30 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   overflow: hidden;
   position: relative;
   border-radius: 8px;
+  --rotate: rotate(30deg);
+}
+
+.demo-picture::after {
+  position: absolute;
+  content: "";
+  opacity: 0;
+  top: -75%;
+  width: 20%;
+  height: 200%;
+  transform: translateX(-700%) var(--rotate);
+  background: #fffa;
+  animation: shine 5s infinite linear;
+}
+
+@keyframes shine {
+  5% {
+    opacity: 1;
+    transform: translateX(150%) var(--rotate);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(150%) var(--rotate);
+  }
 }
 
 .demo-picture:hover .demo-info {
