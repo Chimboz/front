@@ -22,308 +22,356 @@
       <Bank :credits="data.credits"
     /></template>
     <Card blue>
-      <div class="container-acc flex">
-        <div class="left-acc flex">
-          <div class="cabin flex centered">
-            <div class="arrows flex">
-              <button
-                v-for="(category, name) of this.data.items"
-                :key="name"
-                :disabled="data.items[name].indexOf(data.look[name]) < 1"
-                @click="
-                  data.look[name] = this.data.items[name][
-                    data.items[name].indexOf(data.look[name]) - 1
-                  ]
-                "
-              >
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                />
-              </button>
-            </div>
-            <div
-              class="cabin-scene flex"
-              tabindex="0"
-              @keydown.up="up = true"
-              @keyup.up="up = false"
-              @keydown.down="down = true"
-              @keyup.down="down = false"
-              @keydown.left="left = true"
-              @keyup.left="left = false"
-              @keydown.right="right = true"
-              @keyup.right="right = false"
-            >
-              <Tiz
-                :avatar="data.look.avatar"
-                :emote="data.look.emote"
-                :hat="data.look.hat"
-                :body="data.look.body"
-                :shoe="data.look.shoe"
-                :item0="data.look.item0"
-                :item1="data.look.item1"
-                :item2="data.look.item2"
-                :up="up"
-                :down="down"
-                :left="left"
-                :right="right"
-              />
-              <div class="circle"></div>
-            </div>
-            <div class="arrows flex">
-              <button
-                v-for="(category, name) of this.data.items"
-                :key="name"
-                :disabled="
-                  data.items[name].indexOf(data.look[name]) >
-                    data.items[name].length - 2
-                "
-                @click="
-                  data.look[name] = this.data.items[name][
-                    data.items[name].indexOf(data.look[name]) + 1
-                  ]
-                "
-              >
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="controls">
-            <div>
-              <button>
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  style="transform: rotate(-90deg)"
-                  :class="{ pushed: up }"
-                /></button
-              ><br /><button>
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  style="transform: scaleX(-1)"
-                  :class="{ pushed: left }"
-                /></button
-              ><button id="random">
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Random button"
-                  title="Randomize look"
-                  src="@/asset/img/home/chaparadio/stop.svg"
-                /></button
-              ><button>
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  :class="{ pushed: right }"
-                /></button
-              ><br /><button>
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  :class="{ pushed: down }"
-                  style="transform: rotate(-90deg) scaleX(-1)"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="gender">
-            <button
-              class="pink-icon"
-              :class="{ active: data.gender == 'Chapato' }"
-              @mouseenter="gender = 'Chapato'"
-              @mouseleave="gender = data.gender"
-              @click="data.gender = 'Chapato'"
-            >
-              <img
-                draggable="false"
-                @contextmenu.prevent
-                alt="Male gender"
-                title="Male gender"
-                src="@/asset/img/icon/gender/male.svg"
-              /></button
-            ><button
-              class="pink-icon"
-              :class="{ active: data.gender == 'Chapata' }"
-              @mouseenter="gender = 'Chapata'"
-              @mouseleave="gender = data.gender"
-              @click="data.gender = 'Chapata'"
-            >
-              <img
-                draggable="false"
-                @contextmenu.prevent
-                alt="Female gender"
-                title="Female gender"
-                src="@/asset/img/icon/gender/female.svg"
-              /></button
-            ><button
-              class="pink-icon"
-              :class="{ active: data.gender == 'Chapati' }"
-              @mouseenter="gender = 'Chapati'"
-              @mouseleave="gender = data.gender"
-              @click="data.gender = 'Chapati'"
-            >
-              <img
-                draggable="false"
-                @contextmenu.prevent
-                alt="Unknown gender"
-                title="Unknown gender"
-                src="@/asset/img/icon/gender/unknown.svg"
-              />
-            </button>
-          </div>
-          <br />
-          <div class="gender">{{ this.gender }}</div>
-        </div>
-        <div class="right-acc flex">
-          <div class="nav-acc flex">
-            <Button :class="{ active: profile }" @click="profile = true">{{
-              $t("myAccount.profileSection")
-            }}</Button
-            ><Button :class="{ active: !profile }" @click="profile = false">{{
-              $t("myAccount.invSection")
-            }}</Button>
-          </div>
-          <div id="profile" :class="{ active: profile }">
-            <Emotes />
-            <br />
-            <h3 class="justified">Ta phrase préférée</h3>
-            <input type="text" v-model="data.phrase_pref" />
-            <h3 class="justified">Ta page perso</h3>
-            <input type="text" v-model="data.website" />
-            <h3 class="justified">centres d'intéret</h3>
-            <ol>
-              <li><input type="text" v-model="data.centres[0]" /></li>
-              <li><input type="text" v-model="data.centres[1]" /></li>
-              <li><input type="text" v-model="data.centres[2]" /></li>
-              <li><input type="text" v-model="data.centres[3]" /></li>
-            </ol>
-          </div>
-          <div id="inventory" :class="{ active: !profile }">
-            <div class="category-selection" v-if="data.items" @contextmenu.prevent>
-              <button
-                v-for="(_, category) of data.items"
-                :key="category"
-                :class="{ active: checked.includes(category) }"
-                @click="
-                  checked.includes(category) && checked.length == 1
-                    ? (checked = [
-                        'item0',
-                        'hat',
-                        'item1',
-                        'body',
-                        'item2',
-                        'shoe',
-                      ])
-                    : (checked = [`${category}`])
-                "
-                @contextmenu.prevent="
-                  checked.includes(category)
-                    ? checked.splice(checked.indexOf(category), 1)
-                    : checked.push(category)
-                "
-                class="item pointer"
-              >
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  :src="
-                    require(`@/asset/img/icon/item_category/${category}.svg`)
-                  "
-                />
-              </button>
-            </div>
-            <div class="chest">
-              <div
-                class="category"
-                v-for="(category, name) of {
-                  item0: this.checked.includes('item0')
-                    ? this.data.items.item0
-                    : [],
-                  hat: this.checked.includes('hat') ? this.data.items.hat : [],
-                  item1: this.checked.includes('item1')
-                    ? this.data.items.item1
-                    : [],
-                  body: this.checked.includes('body')
-                    ? this.data.items.body
-                    : [],
-                  item2: this.checked.includes('item2')
-                    ? this.data.items.item2
-                    : [],
-                  shoe: this.checked.includes('shoe')
-                    ? this.data.items.shoe
-                    : [],
-                }"
-                :key="name"
-                :class="[name]"
-              >
+      <form @submit.prevent="submit">
+        <div class="container-acc flex">
+          <div class="left-acc flex">
+            <div class="cabin flex centered">
+              <div class="arrows flex">
                 <button
-                  class="item"
-                  :class="{
-                    active: this.data.look[name] == item,
-                  }"
-                  v-for="item of category"
-                  :key="item"
-                  @click="this.data.look[name] = item"
-                  @mouseover="this.info = name + ' ' + item"
+                  v-for="(category, name) of this.data.items"
+                  :key="name"
+                  :disabled="data.items[name].indexOf(data.look[name]) < 1"
+                  @click="
+                    data.look[name] = this.data.items[name][
+                      data.items[name].indexOf(data.look[name]) - 1
+                    ]
+                  "
                 >
                   <img
                     draggable="false"
                     @contextmenu.prevent
-                    v-if="item == 1"
-                    src="@/asset/img/icon/cross.svg"
+                    alt="Puce"
+                    src="@/asset/img/puce.svg"
                   />
-                  <VLazyImage
+                </button>
+              </div>
+              <div
+                class="cabin-scene flex"
+                tabindex="0"
+                @keydown.up="up = true"
+                @keyup.up="up = false"
+                @keydown.down="down = true"
+                @keyup.down="down = false"
+                @keydown.left="left = true"
+                @keyup.left="left = false"
+                @keydown.right="right = true"
+                @keyup.right="right = false"
+              >
+                <Tiz
+                  :avatar="data.look.avatar"
+                  :emote="data.look.emote"
+                  :hat="data.look.hat"
+                  :body="data.look.body"
+                  :shoe="data.look.shoe"
+                  :item0="data.look.item0"
+                  :item1="data.look.item1"
+                  :item2="data.look.item2"
+                  :up="up"
+                  :down="down"
+                  :left="left"
+                  :right="right"
+                />
+                <div class="circle"></div>
+              </div>
+              <div class="arrows flex">
+                <button
+                  v-for="(category, name) of this.data.items"
+                  :key="name"
+                  :disabled="
+                    data.items[name].indexOf(data.look[name]) >
+                      data.items[name].length - 2
+                  "
+                  @click="
+                    data.look[name] = this.data.items[name][
+                      data.items[name].indexOf(data.look[name]) + 1
+                    ]
+                  "
+                >
+                  <img
                     draggable="false"
                     @contextmenu.prevent
-                    v-else
-                    :src="`/avatar/${name}/${item}.svg`"
-                    :src-placeholder="require('@/asset/img/loading.svg')"
+                    alt="Puce"
+                    src="@/asset/img/puce.svg"
                   />
                 </button>
               </div>
             </div>
-            <div class="info">{{ this.info }}</div>
+            <div class="controls">
+              <div>
+                <button>
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Puce"
+                    src="@/asset/img/puce.svg"
+                    style="transform: rotate(-90deg)"
+                    :class="{ pushed: up }"
+                  /></button
+                ><br /><button>
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Puce"
+                    src="@/asset/img/puce.svg"
+                    style="transform: scaleX(-1)"
+                    :class="{ pushed: left }"
+                  /></button
+                ><button id="random">
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Random button"
+                    title="Randomize look"
+                    src="@/asset/img/home/chaparadio/stop.svg"
+                  /></button
+                ><button>
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Puce"
+                    src="@/asset/img/puce.svg"
+                    :class="{ pushed: right }"
+                  /></button
+                ><br /><button>
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Puce"
+                    src="@/asset/img/puce.svg"
+                    :class="{ pushed: down }"
+                    style="transform: rotate(-90deg) scaleX(-1)"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="gender">
+              <button
+                class="pink-icon"
+                :class="{ active: data.gender == 'Chapato' }"
+                @mouseenter="gender = 'Chapato'"
+                @mouseleave="gender = data.gender"
+                @click="data.gender = 'Chapato'"
+              >
+                <img
+                  draggable="false"
+                  @contextmenu.prevent
+                  alt="Male gender"
+                  title="Male gender"
+                  src="@/asset/img/icon/gender/male.svg"
+                /></button
+              ><button
+                class="pink-icon"
+                :class="{ active: data.gender == 'Chapata' }"
+                @mouseenter="gender = 'Chapata'"
+                @mouseleave="gender = data.gender"
+                @click="data.gender = 'Chapata'"
+              >
+                <img
+                  draggable="false"
+                  @contextmenu.prevent
+                  alt="Female gender"
+                  title="Female gender"
+                  src="@/asset/img/icon/gender/female.svg"
+                /></button
+              ><button
+                class="pink-icon"
+                :class="{ active: data.gender == 'Chapati' }"
+                @mouseenter="gender = 'Chapati'"
+                @mouseleave="gender = data.gender"
+                @click="data.gender = 'Chapati'"
+              >
+                <img
+                  draggable="false"
+                  @contextmenu.prevent
+                  alt="Unknown gender"
+                  title="Unknown gender"
+                  src="@/asset/img/icon/gender/unknown.svg"
+                />
+              </button>
+            </div>
+            <br />
+            <div class="gender">{{ this.gender }}</div>
+          </div>
+          <div class="right-acc flex">
+            <div class="nav-acc flex">
+              <Button :class="{ active: profile }" @click="profile = true">{{
+                $t("myAccount.profileSection")
+              }}</Button
+              ><Button :class="{ active: !profile }" @click="profile = false">{{
+                $t("myAccount.invSection")
+              }}</Button>
+            </div>
+            <div id="profile" :class="{ active: profile }">
+              <Emotes />
+              <br />
+              <h3 class="justified">Ta phrase préférée</h3>
+              <input
+                minlength="0"
+                maxlength="30"
+                type="text"
+                v-model="data.phrase_pref"
+              />
+              <h3 class="justified">Ta page perso</h3>
+              <input
+                minlength="0"
+                maxlength="30"
+                type="text"
+                v-model="data.website"
+              />
+              <h3 class="justified">centres d'intéret</h3>
+              <ol>
+                <li>
+                  <input
+                    minlength="0"
+                    maxlength="30"
+                    type="text"
+                    v-model="data.centres[0]"
+                  />
+                </li>
+                <li>
+                  <input
+                    minlength="0"
+                    maxlength="30"
+                    type="text"
+                    v-model="data.centres[1]"
+                  />
+                </li>
+                <li>
+                  <input
+                    minlength="0"
+                    maxlength="30"
+                    type="text"
+                    v-model="data.centres[2]"
+                  />
+                </li>
+                <li>
+                  <input
+                    minlength="0"
+                    maxlength="30"
+                    type="text"
+                    v-model="data.centres[3]"
+                  />
+                </li>
+              </ol>
+            </div>
+            <div id="inventory" :class="{ active: !profile }">
+              <div
+                class="category-selection"
+                v-if="data.items"
+                @contextmenu.prevent
+              >
+                <button
+                  v-for="(_, category) of data.items"
+                  :key="category"
+                  :class="{ active: checked.includes(category) }"
+                  @click="
+                    checked.includes(category) && checked.length == 1
+                      ? (checked = [
+                          'item0',
+                          'hat',
+                          'item1',
+                          'body',
+                          'item2',
+                          'shoe',
+                        ])
+                      : (checked = [`${category}`])
+                  "
+                  @contextmenu.prevent="
+                    checked.includes(category)
+                      ? checked.splice(checked.indexOf(category), 1)
+                      : checked.push(category)
+                  "
+                  class="item pointer"
+                >
+                  <img
+                    draggable="false"
+                    @contextmenu.prevent
+                    :src="
+                      require(`@/asset/img/icon/item_category/${category}.svg`)
+                    "
+                  />
+                </button>
+              </div>
+              <div class="chest">
+                <div
+                  class="category"
+                  v-for="(category, name) of {
+                    item0: this.checked.includes('item0')
+                      ? this.data.items.item0
+                      : [],
+                    hat: this.checked.includes('hat')
+                      ? this.data.items.hat
+                      : [],
+                    item1: this.checked.includes('item1')
+                      ? this.data.items.item1
+                      : [],
+                    body: this.checked.includes('body')
+                      ? this.data.items.body
+                      : [],
+                    item2: this.checked.includes('item2')
+                      ? this.data.items.item2
+                      : [],
+                    shoe: this.checked.includes('shoe')
+                      ? this.data.items.shoe
+                      : [],
+                  }"
+                  :key="name"
+                  :class="[name]"
+                >
+                  <button
+                    class="item"
+                    :class="{
+                      active: this.data.look[name] == item,
+                    }"
+                    v-for="item of category"
+                    :key="item"
+                    @click="this.data.look[name] = item"
+                    @mouseover="this.info = name + ' ' + item"
+                  >
+                    <img
+                      draggable="false"
+                      @contextmenu.prevent
+                      v-if="item == 1"
+                      src="@/asset/img/icon/cross.svg"
+                    />
+                    <VLazyImage
+                      draggable="false"
+                      @contextmenu.prevent
+                      v-else
+                      :src="`/avatar/${name}/${item}.svg`"
+                      :src-placeholder="require('@/asset/img/loading.svg')"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div class="info">{{ this.info }}</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="flex btn-menu">
-        <Button green
-          ><template #prepend
-            ><img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Arrow icon"
-              class="arrow jitter"
-              src="@/asset/img/arrow.svg"/></template
-          >Sauver</Button
-        ><router-link :to="`/member/${data.id}`"> <Button 
-          ><template #prepend
-            ><img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Profile icon"
-              height="24"
-              src="@/asset/img/icon/profile.svg"/></template
-          >Fiche</Button
-        ></router-link>
-      </div>
+        <div class="flex btn-menu">
+          <Button green type="submit"
+            ><template #prepend
+              ><img
+                draggable="false"
+                @contextmenu.prevent
+                alt="Arrow icon"
+                class="arrow green jitter"
+                src="@/asset/img/arrow.svg"/></template
+            >Sauver</Button
+          ><router-link :to="`/member/${data.id}`">
+            <Button
+              ><template #prepend
+                ><img
+                  draggable="false"
+                  @contextmenu.prevent
+                  alt="Profile icon"
+                  height="24"
+                  src="@/asset/img/icon/profile.svg"/></template
+              >Fiche</Button
+            ></router-link
+          >
+        </div>
+      </form>
     </Card>
     <template #right-column>
       <Card blue filename="messages.gif"> </Card><br />
@@ -376,6 +424,11 @@ export default {
       checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
       gender: "Inconnu",
     };
+  },
+  methods: {
+    submit() {
+      console.log("Envoyé!");
+    },
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/account.json";
@@ -613,10 +666,6 @@ h3 {
     flex-direction: row;
     align-items: inherit;
   }
-}
-
-.arrow {
-  filter: hue-rotate(135deg) saturate(1.5) !important;
 }
 
 @keyframes blink {

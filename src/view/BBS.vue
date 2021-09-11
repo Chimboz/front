@@ -10,28 +10,45 @@
     <BBSList :boards="data"></BBSList>
     <br />
     <Card
-      ><div class="symbol-info flex centered">
-        <img draggable="false" @contextmenu.prevent 
-          alt="BBS Verrouillé (nouveaux messages)"
-          title="BBS Verrouillé (nouveaux messages)"
-          src="@/asset/img/bbs/folder_new_lock.svg"
-        />&nbsp;Verrouillé nouveaux messages&nbsp;<br />
-        <img draggable="false" @contextmenu.prevent 
-          alt="BBS Verrouillé"
-          title="BBS Verrouillé"
-          src="@/asset/img/bbs/folder_lock.svg"
-        />&nbsp;Verrouillé&nbsp;<br />
-        <img draggable="false" @contextmenu.prevent 
-          alt="Nouveaux messages"
-          title="Nouveaux messages"
-          src="@/asset/img/bbs/folder_new.svg"
-        />&nbsp;Nouveaux messages&nbsp;<br />
-        <img draggable="false" @contextmenu.prevent 
-          alt="Pas de nouveaux messages"
-          title="Pas de nouveaux messages"
-          src="@/asset/img/bbs/folder.svg"
-        />&nbsp;Pas de nouveaux messages&nbsp;<br /></div
-    ></Card>
+      ><div class="columns">
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="BBS Verrouillé (nouveaux messages)"
+            title="BBS Verrouillé (nouveaux messages)"
+            src="@/asset/img/bbs/folder_new_lock.svg"
+          />&nbsp;Verrouillé nouveaux messages&nbsp;
+        </div>
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="BBS Verrouillé"
+            title="BBS Verrouillé"
+            src="@/asset/img/bbs/folder_lock.svg"
+          />&nbsp;Verrouillé&nbsp;
+        </div>
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Nouveaux messages"
+            title="Nouveaux messages"
+            src="@/asset/img/bbs/folder_new.svg"
+          />&nbsp;Nouveaux messages&nbsp;
+        </div>
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Pas de nouveaux messages"
+            title="Pas de nouveaux messages"
+            src="@/asset/img/bbs/folder.svg"
+          />&nbsp;Pas de nouveaux messages&nbsp;
+        </div>
+      </div></Card
+    >
   </Container>
 </template>
 
@@ -45,7 +62,7 @@ export default {
   components: {
     BBSList,
     Container,
-    Card
+    Card,
   },
   data() {
     return {
@@ -75,7 +92,7 @@ export default {
   },
   async beforeRouteUpdate() {
     try {
-      this.data = await this.axios.get("/api/bbs.json").then((res)=>res.data);
+      this.data = await this.axios.get("/api/bbs.json").then((res) => res.data);
     } catch (error) {
       this.error = error.toString();
     }
@@ -86,5 +103,21 @@ export default {
 .symbol-info {
   flex-direction: row;
   justify-content: center;
+}
+
+.columns {
+  column-count: 1;
+}
+
+@media (min-width: 400px) {
+  .columns {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 600px) {
+  .columns {
+    column-count: 3;
+  }
 }
 </style>

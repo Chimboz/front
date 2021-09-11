@@ -98,10 +98,6 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
-.arrow {
-  filter: hue-rotate(135deg) saturate(1.5) !important;
-}
-
 .login-form {
   justify-content: center;
 }

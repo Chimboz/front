@@ -27,7 +27,7 @@
               draggable="false"
               @contextmenu.prevent
               alt="Arrow icon"
-              class="arrow jitter"
+              class="arrow green jitter"
               src="@/asset/img/arrow.svg"/></template
           >S'inscrire</Button
         ><br />
@@ -80,7 +80,7 @@
                 draggable="false"
                 @contextmenu.prevent
                 alt="Arrow icon"
-                class="arrow jitter"
+                class="arrow green jitter"
                 src="@/asset/img/arrow.svg"/></template
             >S'inscrire</Button
           >
@@ -90,7 +90,7 @@
         class="section2"
         v-if="section == 2"
         autocomplete="on"
-        @submit="
+        @submit.prevent="
           login();
           this.$router.push('/');
         "
@@ -138,7 +138,7 @@
                 draggable="false"
                 @contextmenu.prevent
                 alt="Arrow icon"
-                class="arrow jitter"
+                class="arrow green jitter"
                 src="@/asset/img/arrow.svg"/></template
             >Se connecter</Button
           >
@@ -297,10 +297,6 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
 .demo-picture img {
   width: 100%;
   max-width: 457px;
-}
-
-.arrow {
-  filter: hue-rotate(135deg) saturate(1.5) !important;
 }
 
 .foreground form input {
