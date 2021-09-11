@@ -7,7 +7,7 @@
         </div>
       </Card>
       <br />
-      <Rules />
+      <Rules bot />
     </template>
     <span class="pink justified">
       <router-link to="/bbs" class="pink"
@@ -155,7 +155,7 @@
 
 <script>
 import Card from "@/component/Card.vue";
-import Rules from "@/component/Rules.vue";
+import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";

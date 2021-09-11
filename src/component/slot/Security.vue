@@ -1,12 +1,12 @@
 <template>
-    <Card blue bot>Ne donne jamais ton mot de passe, à personne&nbsp;!<br><Button icon="rules.svg" class="fullwidth">Règles</Button></Card>
+    <Card blue>Choisis un bon mot de passe et ne le donne à personne<br><Button icon="rules.svg" class="fullwidth">Règles</Button></Card>
 </template>
 <script>
 import Card from "@/component/Card.vue";
 import Button from "@/component/Button.vue";
 
 export default {
-  name: "Rules",
+  name: "Security",
   components: {
     Card,
     Button,

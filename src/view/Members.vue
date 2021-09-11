@@ -7,7 +7,7 @@
         </div>
       </Card>
       <br />
-      <Rules />
+      <Rules bot />
     </template>
     <Card filename="new.gif" blue>
       <div class="flex" style="justify-content: space-evenly">
@@ -65,7 +65,7 @@
 
 <script>
 import Card from "@/component/Card.vue";
-import Rules from "@/component/Rules.vue";
+import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import Container from "@/component/Container.vue";
 

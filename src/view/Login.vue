@@ -1,8 +1,13 @@
 <template>
   <Container v-if="data">
     <template #left-column>
-      <Card blue top>
-        Salut
+      <Rules top /><br />
+      <Security />
+      <Card yellow filename="packs.png" class="packs">
+        <template #button>
+          <Button yellow icon="register.svg">Pack</Button>
+        </template>
+        <Pack header="summer.png" footer="summer.png" /><br /><br />
       </Card>
     </template>
     <Demo />
@@ -44,28 +49,6 @@
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
-      <Card blue>
-        <template #button>
-          <Button icon="register.svg">{{ $t("help.button") }}</Button>
-        </template>
-
-        <router-link to="/help"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Puce"
-            src="@/asset/img/puce.svg"
-          />{{ $t("help.tip") }}</router-link
-        ></Card
-      ><br />
-      <Card yellow filename="packs.png" class="packs">
-        <template #button>
-          <Button yellow icon="register.svg">Pack</Button>
-        </template>
-        <Pack header="summer.png" footer="summer.png" /><br /><br />
-        <Button yellow icon="register.svg" class="fullwidth">Item</Button><br />
-        <Pack header="summer.png" footer="summer.png" />
-      </Card>
     </template>
   </Container>
 </template>
@@ -75,6 +58,8 @@ import Card from "@/component/Card.vue";
 import Demo from "@/component/Demo.vue";
 import Pack from "@/component/Pack.vue";
 import Container from "@/component/Container.vue";
+import Rules from "@/component/slot/Rules.vue";
+import Security from "@/component/slot/Security.vue";
 
 export default {
   name: "Login",
@@ -84,6 +69,8 @@ export default {
     Card,
     Pack,
     Demo,
+    Rules,
+    Security,
   },
   data() {
     return {
