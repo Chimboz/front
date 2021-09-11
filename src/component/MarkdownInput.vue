@@ -259,10 +259,6 @@ import Tiz from "@/component/Tiz.vue";
 import Emotes from "@/component/Emotes.vue";
 import Message from "@/component/bbs/row/Message.vue";
 import User from "@/component/link/User.vue";
-import Marked from "marked";
-import DOMPurify from "dompurify";
-import { format } from "date-fns";
-import { fr } from "date-fns/locale";
 import { mapState } from "vuex";
 
 export default {
@@ -278,31 +274,6 @@ export default {
   },
   computed: {
     ...mapState("auth", ["user"]),
-    formatMessage() {
-      Marked.setOptions({
-        renderer: new Marked.Renderer(),
-        highlight: function(code, lang) {
-          const hljs = require("highlight.js");
-          const language = hljs.getLanguage(lang) ? lang : "plaintext";
-          return hljs.highlight(code, { language }).value;
-        },
-        langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
-        pedantic: false,
-        gfm: true,
-        breaks: true,
-        sanitize: false,
-        smartLists: true,
-        smartypants: false,
-        xhtml: false,
-      });
-      return DOMPurify.sanitize(Marked(this.message));
-    },
-    formatDate() {
-      return format(Date.now(), "PPP à pp", {
-        locale: fr,
-        addSuffix: true,
-      });
-    },
   },
   methods: {
     scrollTo(anchor) {

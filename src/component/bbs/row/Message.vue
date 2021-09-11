@@ -94,8 +94,22 @@ export default {
   },
   computed: {
     formatMessage() {
+      const renderer = new Marked.Renderer();
+      const linkRenderer = renderer.link;
+      renderer.link = (href, title, text) => {
+        const localLink = href.startsWith(
+          `${location.protocol}//${location.hostname}`
+        );
+        const html = linkRenderer.call(renderer, href, title, text);
+        return localLink
+          ? html
+          : html.replace(
+              /^<a /,
+              `<a target="_blank" rel="noreferrer noopener nofollow" `
+            );
+      };
       Marked.setOptions({
-        renderer: new Marked.Renderer(),
+        renderer: renderer,
         highlight: function(code, lang) {
           const hljs = require("highlight.js");
           const language = hljs.getLanguage(lang) ? lang : "plaintext";
@@ -110,7 +124,49 @@ export default {
         smartypants: false,
         xhtml: false,
       });
-      return DOMPurify.sanitize(Marked(this.message.content));
+
+      return DOMPurify.sanitize(Marked(this.message.content), {
+        ALLOWED_TAGS: [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h6",
+          "p",
+          "span",
+          "ul",
+          "ol",
+          "li",
+          "blockquote",
+          "pre",
+          "code",
+          "hr",
+          "table",
+          "br",
+          "kbd",
+          "strong",
+          "em",
+          "s",
+          "a",
+          "input",
+          "thead",
+          "tbody",
+          "tr",
+          "th",
+          "td",
+          "img",
+        ],
+        ALLOWED_ATTR: [
+          "style",
+          "class",
+          "type",
+          "disabled",
+          "checked",
+          "src",
+          "href",
+          "target"
+        ],
+      });
     },
     formatDate() {
       return format(new Date(this.message.date), "PPP à pp", {
