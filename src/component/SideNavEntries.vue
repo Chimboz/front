@@ -1,9 +1,11 @@
 <template>
-  <div v-if="section">
+  <div>
     <router-link
       :to="entry.url"
       class="list"
-      v-for="(entry, i) of sideNavEntries.filter((entry)=> entry.section == section)"
+      v-for="(entry, i) of sideNavEntries.filter(
+        (entry) => entry.section == this.section
+      )"
       :key="i"
     >
       <img
@@ -16,6 +18,13 @@
   </div>
 </template>
 <script setup>
+const props = defineProps({
+  section: {
+    required: true,
+    type: String,
+  },
+});
+
 const sideNavEntries = [
   {
     label: "section.account",
@@ -118,15 +127,4 @@ const sideNavEntries = [
     section: "community",
   },
 ];
-</script>
-<script>
-export default {
-  name: "SideNavEntries",
-  props: {
-    section: {
-      required: true,
-      type: String,
-    },
-  },
-};
 </script>
