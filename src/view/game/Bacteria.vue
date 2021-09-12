@@ -113,6 +113,12 @@
       <br />
       (Pour voir les détails, laisse ta souris sans cliquer sur [détail])<br />
       <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+          <col width="40" />
+          <col width="100%" />
+        </colgroup>
         <thead>
           <tr>
             <th>#</th>
@@ -123,10 +129,17 @@
         </thead>
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index }}</td>
+            <td>{{ index + 1 }}</td>
             <td><user :user="rank.user" /></td>
             <td>{{ rank.score }}</td>
-            <td>{{ rank.win }}/{{ rank.draw }}/{{ rank.lose }}</td>
+            <td>
+              <Tooltip>
+                <template #tooltip
+                  >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</template
+                >
+                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
+              </Tooltip>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -136,6 +149,12 @@
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br />
       <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+          <col width="40" />
+          <col width="100%" />
+        </colgroup>
         <thead>
           <tr>
             <th>#</th>
@@ -146,10 +165,17 @@
         </thead>
         <tbody>
           <tr v-for="(rank, index) in data.worst" :key="index">
-            <td>{{ index }}</td>
+            <td>{{ index + 1 }}</td>
             <td><user :user="rank.user" /></td>
             <td>{{ rank.score }}</td>
-            <td>{{ rank.win }}/{{ rank.draw }}/{{ rank.lose }}</td>
+            <td>
+              <Tooltip>
+                <template #tooltip
+                  >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</template
+                >
+                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
+              </Tooltip>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -167,7 +193,7 @@
         </thead>
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
-            <td>{{ index }}</td>
+            <td>{{ index + 1 }}</td>
             <td><group :group="rank.group" /></td>
             <td>{{ rank.score }}</td>
           </tr>
@@ -208,8 +234,10 @@
 import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Container from "@/component/Container.vue";
-import User from "../../component/link/User.vue";
-import Group from "../../component/link/Group.vue";
+import User from "@/component/link/User.vue";
+import Group from "@/component/link/Group.vue";
+import Progress from "@/component/Progress.vue";
+import Tooltip from "@/component/Tooltip.vue";
 
 export default {
   name: "Games",
@@ -219,6 +247,8 @@ export default {
     Rules,
     User,
     Group,
+    Progress,
+    Tooltip,
   },
   data() {
     return {

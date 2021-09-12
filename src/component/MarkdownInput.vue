@@ -237,7 +237,6 @@
             <textarea
               placeholder="Message"
               required
-              autofocus
               minlength="3"
               autocorrect="on"
               spellcheck="true"

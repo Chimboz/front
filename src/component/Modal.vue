@@ -7,7 +7,7 @@
         @contextmenu.prevent
         src="@/asset/img/icon/warning_modal.svg"
       />
-      <p>Some text in the Modal..</p>
+      <p>{{ $t(message) }}</p>
       <button class="pink-icon ok" @click="close = true">
         <img
           draggable="false"
@@ -25,6 +25,13 @@ export default {
     return {
       close: false,
     };
+  },
+  props: {
+    message: {
+      required: true,
+      default: "error.default",
+      type: String,
+    },
   },
 };
 </script>
