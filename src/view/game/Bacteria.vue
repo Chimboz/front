@@ -3,7 +3,7 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="games"/>
+          <SideNavEntries section="games" />
         </div> </Card
       ><br />
       <Rules bot />
@@ -80,18 +80,30 @@
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
       >
       <b>parties jouées</b><br />
-      <div class="fullwidth light">Chapaking avec 537 parties jouées !</div>
+      <div class="fullwidth light">
+        <user :user="data.records.played.user" /> avec
+        {{ data.records.played.record }} parties jouées&nbsp;!
+      </div>
       <br />
       <b>parties gagnées</b><br />
-      <div class="fullwidth light">Meyriu avec 224 parties gagnées !</div>
+      <div class="fullwidth light">
+        <user :user="data.records.won.user" /> avec
+        {{ data.records.won.record }} parties gagnées&nbsp;!
+      </div>
       <br />
       <b>parties perdues</b><br />
-      <div class="fullwidth light">Froidasse avec 302 parties perdues !</div>
+      <div class="fullwidth light">
+        <user :user="data.records.lost.user" /> avec
+        {{ data.records.lost.record }} parties perdues&nbsp;!
+      </div>
       <br />
       <b>match nuls</b><br />
-      <div class="fullwidth light">Gucci avec 11 match nuls !</div>
+      <div class="fullwidth light">
+        <user :user="data.records.drawn.user" /> avec
+        {{ data.records.drawn.record }} match nuls&nbsp;!
+      </div>
     </Card>
-    <br /><Card id="best">
+    <br /><Card id="best" v-if="data">
       <template #header>Les 20 plus acharnés de Bacteria !</template>
       <template #subtitle
         >Des heures de phagocytage acharné pour en arriver la...</template
@@ -105,19 +117,20 @@
             <th>#</th>
             <th>Membre</th>
             <th>Score</th>
-            <th>Niveau</th>
             <th>Détail</th>
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="player in best"
-            :key="player.id"
-          ></tr>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ index }}</td>
+            <td><user :user="rank.user" /></td>
+            <td>{{ rank.score }}</td>
+            <td>{{ rank.win }}/{{ rank.draw }}/{{ rank.lose }}</td>
+          </tr>
         </tbody>
       </table>
     </Card>
-    <br /><Card id="worst">
+    <br /><Card id="worst" v-if="data">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br />
@@ -127,19 +140,20 @@
             <th>#</th>
             <th>Membre</th>
             <th>Score</th>
-            <th>Niveau</th>
             <th>Détail</th>
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="player in worst"
-            :key="player.id"
-          ></tr>
+          <tr v-for="(rank, index) in data.worst" :key="index">
+            <td>{{ index }}</td>
+            <td><user :user="rank.user" /></td>
+            <td>{{ rank.score }}</td>
+            <td>{{ rank.win }}/{{ rank.draw }}/{{ rank.lose }}</td>
+          </tr>
         </tbody>
       </table>
     </Card>
-    <br /><Card id="groups">
+    <br /><Card id="groups" v-if="data">
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="score fullwidth">
@@ -151,10 +165,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="group in groups"
-            :key="group.id"
-          ></tr>
+          <tr v-for="(rank, index) in data.groups" :key="index">
+            <td>{{ index }}</td>
+            <td><group :group="rank.group" /></td>
+            <td>{{ rank.score }}</td>
+          </tr>
         </tbody>
       </table>
     </Card>
@@ -192,6 +207,8 @@
 import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Container from "@/component/Container.vue";
+import User from "../../component/link/User.vue";
+import Group from "../../component/link/Group.vue";
 
 export default {
   name: "Games",
@@ -199,6 +216,38 @@ export default {
     Card,
     Container,
     Rules,
+    User,
+    Group,
+  },
+  data() {
+    return {
+      data: null,
+    };
+  },
+  beforeRouteEnter(to, from, next) {
+    const url = "/api/bacteria.json";
+    next((vm) => {
+      vm.axios
+        .get(url)
+        .then((res) => {
+          if (res) {
+            vm.data = res.data;
+          } else {
+            next("/");
+          }
+        })
+        .catch((error) => {
+          console.log(error.toString());
+        });
+    });
+  },
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/bacteria.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
   },
 };
 </script>
@@ -209,8 +258,12 @@ export default {
   padding: 2px 0;
 }
 
-tr:nth-child(2n + 1) {
+tbody tr:nth-child(2n + 1) {
   background: #eef5fa;
+}
+
+tr td:first-child {
+  font-weight: bold;
 }
 
 .hstack {

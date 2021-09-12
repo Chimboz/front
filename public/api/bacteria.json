@@ -1,0 +1,132 @@
+{
+  "records": {
+    "played": {
+        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+        "record": 200
+    },
+    "won": {
+        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+        "record": 200
+    },
+    "lost": {
+        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+        "record": 200
+    },
+    "drawn": {
+        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+        "record": 200
+    }
+  },
+  "best": [
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    }
+  ],
+  "worst": [
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    }
+  ],
+  "groups": [
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    }
+  ]
+}
