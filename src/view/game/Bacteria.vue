@@ -74,7 +74,7 @@
       <br />
     </Card>
     <br />
-    <Card id="records">
+    <Card id="records" v-if="data">
       <template #header>Records !</template>
       <template #subtitle
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
