@@ -17,11 +17,11 @@
             </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries></SideNavEntries></div></Card
+          <SideNavEntries section="account" /></div></Card
       ><br />
       <Bank :credits="data.credits"
     /></template>
-    <Cabin :data="data"/>
+    <Cabin :data="data" />
     <template #right-column>
       <Card blue filename="messages.gif"> </Card><br />
       <Card blue filename="forum.gif"> </Card><br /><Card blue>
@@ -46,7 +46,6 @@ import Button from "@/component/Button.vue";
 import Bank from "@/component/Bank.vue";
 import Container from "@/component/Container.vue";
 
-
 export default {
   name: "Account",
   components: {
@@ -54,7 +53,7 @@ export default {
     Button,
     Bank,
     Container,
-    Cabin
+    Cabin,
   },
   data() {
     return {

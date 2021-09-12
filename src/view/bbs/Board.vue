@@ -3,7 +3,7 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries></SideNavEntries>
+          <SideNavEntries section="community"/>
         </div> </Card
     ></template>
     <Board :topics="data"> </Board>

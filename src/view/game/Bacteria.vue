@@ -3,7 +3,7 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries></SideNavEntries>
+          <SideNavEntries section="games"/>
         </div> </Card
       ><br />
       <Rules bot />
@@ -111,9 +111,8 @@
         </thead>
         <tbody>
           <tr
-            v-for="message in messages"
-            :key="message.id"
-            :message="message"
+            v-for="player in best"
+            :key="player.id"
           ></tr>
         </tbody>
       </table>
@@ -134,9 +133,8 @@
         </thead>
         <tbody>
           <tr
-            v-for="message in messages"
-            :key="message.id"
-            :message="message"
+            v-for="player in worst"
+            :key="player.id"
           ></tr>
         </tbody>
       </table>
@@ -154,9 +152,8 @@
         </thead>
         <tbody>
           <tr
-            v-for="message in messages"
-            :key="message.id"
-            :message="message"
+            v-for="group in groups"
+            :key="group.id"
           ></tr>
         </tbody>
       </table>

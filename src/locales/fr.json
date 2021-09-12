@@ -65,5 +65,25 @@
     "mail": "Courriel",
     "password": "Mot de passe",
     "password_confirm": "Confirmation"
+  },
+  "section": {
+    "account": "Mon compte",
+    "messenger": "Ma messagerie",
+    "groups": "Groupes",
+    "friends": "Mes amis",
+    "forum": "Forum",
+    "password": "Pamalin",
+    "capitalization": "MajMin",
+    "shop": "Boutique",
+    "bacteria": "Bacteria",
+    "patojdur": "Patojdur",
+    "mazo": "Mazo",
+    "members": "Membres",
+    "book": "Annuaire",
+    "wedding": "Mariages",
+    "popularity": "Popularité",
+    "encyclopedia": "Encyclopédie",
+    "games": "Jeux",
+    "community": "Communauté"
   }
 }

@@ -65,5 +65,25 @@
     "mail": "Mail",
     "password": "Password",
     "password_confirm": "Confirm"
+  },
+  "section": {
+    "account": "Account",
+    "messenger": "Messenger",
+    "groups": "Groups",
+    "friends": "Friends",
+    "forum": "Forum",
+    "password": "Notsmart",
+    "capitalization": "LowUpp",
+    "shop": "Shop",
+    "bacteria": "Bacteria",
+    "patojdur": "Wide Wade",
+    "mazo": "Mazo",
+    "members": "Members",
+    "book": "Book",
+    "wedding": "Weddings",
+    "popularity": "Popularity",
+    "encyclopedia": "Encyclopedia",
+    "games": "Games",
+    "community": "Community"
   }
 }
