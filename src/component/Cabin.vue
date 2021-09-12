@@ -235,7 +235,6 @@
           <div id="inventory" v-else>
             <div
               class="category-selection"
-              v-if="data.items"
               @contextmenu.prevent
             >
               <button

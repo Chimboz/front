@@ -51,37 +51,20 @@ export default {
       data: null,
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/home.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error.toString());
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/home.json")
-      .then((res) => {
-        this.data = res.data;
-      })
-      .catch((error) => console.log(error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/members.json");
+    this.data = req.data;
   },
   methods: {
     login() {
       this.$store.dispatch("auth/login");
     },
   },
-
 };
 </script>
 <style lang="scss">

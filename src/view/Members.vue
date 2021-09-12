@@ -1,9 +1,9 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="members"/>
+          <SideNavEntries section="members" />
         </div>
       </Card>
       <br />
@@ -12,7 +12,8 @@
     <Card filename="new.gif" blue>
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
-      </div><br />
+      </div>
+      <br />
       Les derniers membres qui ont rejoint l'archipel !
 
       <br />
@@ -22,7 +23,7 @@
     </Card>
     <br />
     <Card filename="popularity.gif" blue>
-      <div  class="flex" style="justify-content: space-evenly">
+      <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
       <br />
@@ -33,7 +34,7 @@
     </Card>
     <br />
     <Card filename="wedding.gif" blue>
-      <div  class="flex"  style="justify-content: space-evenly">
+      <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
       <br />
@@ -62,12 +63,12 @@
     ></template>
   </Container>
 </template>
-
 <script>
 import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import Container from "@/component/Container.vue";
+import api from "@/module/api.js";
 
 export default {
   name: "Members",
@@ -82,33 +83,16 @@ export default {
       data: null,
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/members.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error.toString());
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/members.json")
-      .then((res) => {
-        this.data = res.data;
-      })
-      .catch((error) => console.log(error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/members.json");
+    this.data = req.data;
   },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

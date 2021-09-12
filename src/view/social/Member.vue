@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
@@ -181,30 +181,14 @@ export default {
       data: null,
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/member.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error.toString());
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/member.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/member.json")
-      .then((res) => {
-        this.data = res.data;
-      })
-      .catch((error) => console.log(error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/member.json");
+    this.data = req.data;
   },
   computed: {
     formatDate() {

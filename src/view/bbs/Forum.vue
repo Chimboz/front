@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
@@ -81,35 +81,19 @@ export default {
   },
   data() {
     return {
-      data: [],
+      data: null,
       iconDescriptions,
       post: false,
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/forum.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error.toString());
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/forum.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/forum.json")
-      .then((res) => {
-        this.data = res.data;
-      })
-      .catch((error) => console.log(error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/forum.json");
+    this.data = req.data;
   },
 };
 </script>

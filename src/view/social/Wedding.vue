@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
@@ -66,30 +66,14 @@ export default {
       data: null,
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/wedding.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error.toString());
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/wedding.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/wedding.json")
-      .then((res) => {
-        this.data = res.data;
-      })
-      .catch((error) => console.log(error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/wedding.json");
+    this.data = req.data;
   },
   computed: {
     formatDate() {

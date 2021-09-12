@@ -58,8 +58,6 @@ export default {
   data() {
     return {
       data: null,
-      error: null,
-      loading: true,
     };
   },
   methods: {
@@ -67,32 +65,14 @@ export default {
       console.log("Envoyé!");
     },
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/account.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-            vm.loading = false;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          vm.error = error.toString();
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/account.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/account.json")
-      .then((res) => {
-        this.data = res.data;
-        this.loading = false;
-      })
-      .catch((error) => (this.error = error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/account.json");
+    this.data = req.data;
   },
 };
 </script>

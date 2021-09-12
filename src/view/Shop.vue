@@ -1,9 +1,9 @@
 <template>
-  <Container>
+  <Container v-if="data">
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="community"/>
+          <SideNavEntries section="community" />
         </div>
       </Card>
     </template>
@@ -37,10 +37,9 @@
         </div>
       </div>
     </Card>
-    <template #right-column><Bank :credits="data.credits" /></template>
+    <template #right-column><Bank :credits="data.credits"/></template>
   </Container>
 </template>
-
 <script>
 import Card from "@/component/Card.vue";
 import Container from "@/component/Container.vue";
@@ -60,30 +59,14 @@ export default {
       data: null,
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const url = "/api/shop.json";
-    next((vm) => {
-      vm.axios
-        .get(url)
-        .then((res) => {
-          if (res) {
-            vm.data = res.data;
-          } else {
-            next("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error.toString());
-        });
-    });
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/shop.json").then((res) => (vm.data = res.data))
+    );
   },
-  beforeRouteUpdate() {
-    this.axios
-      .get("/api/shop.json")
-      .then((res) => {
-        this.data = res.data;
-      })
-      .catch((error) => console.log(error.toString()));
+  async beforeRouteUpdate() {
+    const req = await api.get("/api/shop.json");
+    this.data = req.data;
   },
 };
 </script>

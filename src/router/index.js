@@ -54,7 +54,7 @@ const routes = [
   {
     path: "/bbs/:id",
     name: "BBS machin", // TODO
-    component: () => import("../view/bbs/Board.vue"),
+    component: () => import("../view/bbs/Forum.vue"),
     meta: { title: "Chapatiz Retro | BBS" },
   },
   {
@@ -117,11 +117,11 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const guestOnly = ["Login"];
   const userOnly = ["Account", "Home"];
-  if (to.path == "/tchat") router.push({ name: "Error", params: { message: "error.tchat" } })
+  if (to.path == "/tchat")
+    router.push({ name: "Error", params: { message: "error.tchat" } });
   if (store.getters["auth/authenticated"]) {
     if (guestOnly.includes(to.name))
-      router.push({ name: "Error", params: { message: "error.connected" } })
-      //next();
+      router.push({ name: "Error", params: { message: "error.connected" } });
     else next();
   } else {
     if (userOnly.includes(to.name)) next({ name: "Login" });
