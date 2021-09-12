@@ -76,6 +76,8 @@
               </button>
               <button class="btn-md" @click="formatLink(true)">
                 <img
+                  draggable="false"
+                  @contextmenu.prevent
                   src="@/asset/img/favicon.svg"
                   height="22"
                   style="background: none"

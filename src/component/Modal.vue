@@ -1,6 +1,5 @@
 <template>
-  <div class="modal">
-    <!-- Modal content -->
+  <div class="modal" v-if="!close">
     <div class="modal-content">
       <img
         style="float: left"
@@ -9,12 +8,26 @@
         src="@/asset/img/icon/warning_modal.svg"
       />
       <p>Some text in the Modal..</p>
-      <button class="pink-icon">
-        ok
+      <button class="pink-icon ok" @click="close = true">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/icon/ok.svg"
+        />
       </button>
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: "Modal",
+  data() {
+    return {
+      close: false,
+    };
+  },
+};
+</script>
 <style lang="scss" scoped>
 .modal {
   position: fixed;
@@ -29,6 +42,7 @@
 
 .modal-content {
   background-color: #69c;
+  position: relative;
   margin: 15% auto;
   padding: 20px;
   color: #fff;
@@ -37,5 +51,11 @@
   border-radius: 6px;
   width: 362px;
   height: 103px;
+}
+
+.ok {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
 }
 </style>

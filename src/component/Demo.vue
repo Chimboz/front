@@ -42,27 +42,51 @@
         <div class="demo-picture">
           <section :class="{ display: demo == 0 }">
             <div class="demo-info">Bienvenue sur l'archipel</div>
-            <img src="@/asset/img/demo/0.png" />
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              src="@/asset/img/demo/0.png"
+            />
           </section>
           <section :class="{ display: demo == 1 }">
             <div class="demo-info">Crée ton style</div>
-            <img src="@/asset/img/demo/1.png" />
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              src="@/asset/img/demo/1.png"
+            />
           </section>
           <section :class="{ display: demo == 2 }">
             <div class="demo-info">Discute avec tes amis</div>
-            <img src="@/asset/img/demo/2.png" />
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              src="@/asset/img/demo/2.png"
+            />
           </section>
           <section :class="{ display: demo == 3 }">
             <div class="demo-info">Fais ta vie virtuelle</div>
-            <img src="@/asset/img/demo/3.png" />
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              src="@/asset/img/demo/3.png"
+            />
           </section>
           <section :class="{ display: demo == 4 }">
             <div class="demo-info">Rejoins des groupes</div>
-            <img src="@/asset/img/demo/4.png" />
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              src="@/asset/img/demo/4.png"
+            />
           </section>
           <section :class="{ display: demo == 5 }">
             <div class="demo-info">Affronte les joueurs dans des mini-jeux</div>
-            <img src="@/asset/img/demo/5.png" />
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              src="@/asset/img/demo/5.png"
+            />
           </section>
         </div>
       </div>
@@ -192,7 +216,10 @@
       </form>
     </div>
     <a href="/tchat" class="try pointer"
-      >Je veux juste visiter&nbsp;&nbsp;<img src="@/asset/img/puce.svg"
+      >Je veux juste visiter&nbsp;&nbsp;<img
+        draggable="false"
+        @contextmenu.prevent
+        src="@/asset/img/puce.svg"
     /></a>
   </div>
 </template>
