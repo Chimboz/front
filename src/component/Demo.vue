@@ -3,12 +3,36 @@
     <div class="foreground">
       <div class="demo">
         <div class="demo-btn hstack">
-          <button class="home" @click="demo = 0" :class="{ active: demo == 0 }"></button>
-          <button class="mode" @click="demo = 1" :class="{ active: demo == 1 }"></button>
-          <button class="tchat" @click="demo = 2" :class="{ active: demo == 2 }"></button>
-          <button class="wedding" @click="demo = 3" :class="{ active: demo == 3 }"></button>
-          <button class="group" @click="demo = 4" :class="{ active: demo == 4 }"></button>
-          <button class="bacteria" @click="demo = 5" :class="{ active: demo == 5 }"></button>
+          <button
+            class="home"
+            @click="demo = 0"
+            :class="{ active: demo == 0 }"
+          ></button>
+          <button
+            class="mode"
+            @click="demo = 1"
+            :class="{ active: demo == 1 }"
+          ></button>
+          <button
+            class="tchat"
+            @click="demo = 2"
+            :class="{ active: demo == 2 }"
+          ></button>
+          <button
+            class="wedding"
+            @click="demo = 3"
+            :class="{ active: demo == 3 }"
+          ></button>
+          <button
+            class="group"
+            @click="demo = 4"
+            :class="{ active: demo == 4 }"
+          ></button>
+          <button
+            class="bacteria"
+            @click="demo = 5"
+            :class="{ active: demo == 5 }"
+          ></button>
           <button class="empty"></button>
           <button class="empty"></button>
           <button class="empty"></button>
@@ -167,9 +191,9 @@
         </div>
       </form>
     </div>
-    <span class="try pointer"
+    <a href="/tchat" class="try pointer"
       >Je veux juste visiter&nbsp;&nbsp;<img src="@/asset/img/puce.svg"
-    /></span>
+    /></a>
   </div>
 </template>
 <script>
@@ -211,6 +235,8 @@ export default {
   justify-content: center;
   align-items: center;
   font-family: "Chimboz Heavy";
+  font-weight: normal;
+  text-decoration: none;
   color: #fff;
   text-shadow: 0 0 4px #f0009c;
   text-transform: lowercase;
@@ -268,7 +294,8 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
     border-image: url(../asset/img/demo/#{$category}_hover.svg);
   }
 
-  .#{$category}:hover, .#{$category}.active {
+  .#{$category}:hover,
+  .#{$category}.active {
     background: url(../asset/img/demo/#{$category}_hover.svg);
     border-image: url(../asset/img/demo/#{$category}.svg);
   }

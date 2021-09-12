@@ -409,7 +409,6 @@ export default {
 input[type="text"] {
   text-align: center;
   font-family: "Pixelated Verdana 10";
-  font-weight: bold;
   font-size: 10px;
   color: #2a5380;
   border: 2px solid;

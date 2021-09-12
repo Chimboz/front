@@ -54,7 +54,8 @@
     "unknown": "Erreur inconnue.",
     "notfound": "La route demandée par l'API n'existe pas.",
     "default": "Erreur, la page que vous cherchez n'existe pas.",
-    "connected": "Vous êtes déjà connecté&nbsp;!"
+    "connected": "Vous êtes déjà connecté&nbsp;!",
+    "tchat": "Erreur, le tchat n'est pas actif."
   },
   "format": {
     "language": "langage"

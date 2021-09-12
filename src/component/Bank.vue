@@ -51,10 +51,12 @@ export default {
         +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-3, 3);
       const top = +this.coinsPosition[i - 8].top.slice(0, -2) - 4;
       const filter = this.coinsPosition[i % 8].filter;
+      const transform = this.coinsPosition[i % 8].transform;
       this.coinsPosition.push({
         left: left + "px",
         top: top + "px",
         filter: filter,
+        transform: transform
       });
     }
     requestAnimationFrame(this.tween)
@@ -67,42 +69,50 @@ export default {
           left: this.randomInt(33, 52) + "px",
           top: this.randomInt(65, 69) + "px",
           filter: "brightness(.7)",
+          transform: "scale(.8)"
         },
         {
           left: this.randomInt(74, 96) + "px",
           top: this.randomInt(65, 69) + "px",
           filter: "brightness(.7)",
+          transform: "scale(.8)"
         },
 
         {
           left: this.randomInt(22, 32) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
+          transform: "scale(.9)"
         },
         {
           left: this.randomInt(56, 68) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
+          transform: "scale(.9)"
         },
         {
           left: this.randomInt(92, 102) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
+          transform: "scale(.9)"
         },
         {
           left: this.randomInt(22, 32) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
+          transform: "scale(1)"
         },
         {
           left: this.randomInt(56, 68) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
+          transform: "scale(1)"
         },
         {
           left: this.randomInt(92, 102) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
+          transform: "scale(1)"
         },
       ],
     };
