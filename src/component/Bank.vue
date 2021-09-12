@@ -8,7 +8,7 @@
         draggable="false"
         @contextmenu.prevent
         class="coin"
-        v-for="(_,n) in Math.min(Math.floor(credits / 10), 176)"
+        v-for="(_, n) in Math.min(Math.floor(credits / 10), 176)"
         :style="coinsPosition[n]"
         :class="{ drop: n <= Math.min(Math.floor(coins / 10), 176) }"
         :key="n"
@@ -56,10 +56,10 @@ export default {
         left: left + "px",
         top: top + "px",
         filter: filter,
-        transform: transform
+        transform: transform,
       });
     }
-    requestAnimationFrame(this.tween)
+    requestAnimationFrame(this.tween);
   },
   data() {
     return {
@@ -69,50 +69,50 @@ export default {
           left: this.randomInt(33, 52) + "px",
           top: this.randomInt(65, 69) + "px",
           filter: "brightness(.7)",
-          transform: "scale(.8)"
+          transform: "scale(.8)",
         },
         {
           left: this.randomInt(74, 96) + "px",
           top: this.randomInt(65, 69) + "px",
           filter: "brightness(.7)",
-          transform: "scale(.8)"
+          transform: "scale(.8)",
         },
 
         {
           left: this.randomInt(22, 32) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
-          transform: "scale(.9)"
+          transform: "scale(.9)",
         },
         {
           left: this.randomInt(56, 68) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
-          transform: "scale(.9)"
+          transform: "scale(.9)",
         },
         {
           left: this.randomInt(92, 102) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
-          transform: "scale(.9)"
+          transform: "scale(.9)",
         },
         {
           left: this.randomInt(22, 32) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
-          transform: "scale(1)"
+          transform: "scale(1)",
         },
         {
           left: this.randomInt(56, 68) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
-          transform: "scale(1)"
+          transform: "scale(1)",
         },
         {
           left: this.randomInt(92, 102) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
-          transform: "scale(1)"
+          transform: "scale(1)",
         },
       ],
     };
@@ -132,11 +132,9 @@ export default {
       );
     },
     tween() {
-      if (this.coins >= this.credits || this.coins > 1760)
-        return;
+      if (this.coins >= this.credits || this.coins > 1760) return;
       this.coins++;
-      if (this.coins < this.credits)
-        requestAnimationFrame(this.tween);
+      if (this.coins < this.credits) requestAnimationFrame(this.tween);
     },
   },
 };

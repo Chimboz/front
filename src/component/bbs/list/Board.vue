@@ -23,7 +23,12 @@
       </tr>
     </thead>
 
-    <Topic v-for="(topic, index) in topics" :key="topic.id" :topic="topic"  :separator="index != topics.length-1" />
+    <Topic
+      v-for="(topic, index) in topics"
+      :key="topic.id"
+      :topic="topic"
+      :separator="index != topics.length - 1"
+    />
   </table>
 </template>
 

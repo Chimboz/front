@@ -164,7 +164,7 @@ export default {
           "checked",
           "src",
           "href",
-          "target"
+          "target",
         ],
       });
     },

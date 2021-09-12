@@ -18,7 +18,11 @@
     /></router-link>
     <div class="login flex centered">
       <div style="margin-top: -10px">
-        <User :user="user||{name:'Visiteur'}" id="username" style="display: inherit" />
+        <User
+          :user="user || { name: 'Visiteur' }"
+          id="username"
+          style="display: inherit"
+        />
         <router-link
           :to="this.$route.path == '/' ? '/login' : this.$route.path"
           id="connect"
@@ -50,16 +54,17 @@
           {{ $t("navbar.login") }}
         </router-link>
       </div>
-      <Tiz style="margin-right: 17px" 
-      :avatar="user?user.look.avatar:0"
-                :emote="user?user.look.emote:1"
-                :hat="user?user.look.hat:1"
-                :body="user?user.look.body:1"
-                :shoe="user?user.look.shoe:1"
-                :item0="user?user.look.item0:1"
-                :item1="user?user.look.item1:1"
-                :item2="user?user.look.item2:1"
-                />
+      <Tiz
+        style="margin-right: 17px"
+        :avatar="user ? user.look.avatar : 0"
+        :emote="user ? user.look.emote : 1"
+        :hat="user ? user.look.hat : 1"
+        :body="user ? user.look.body : 1"
+        :shoe="user ? user.look.shoe : 1"
+        :item0="user ? user.look.item0 : 1"
+        :item1="user ? user.look.item1 : 1"
+        :item2="user ? user.look.item2 : 1"
+      />
     </div>
   </div>
   <div id="nav" class="flex">

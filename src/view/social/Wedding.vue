@@ -37,6 +37,7 @@
         20CeNt avec 1077 match nuls ! <br /> </Card
     ></template>
   </Container>
+  <modal />
 </template>
 
 <script>
@@ -49,6 +50,7 @@ import StrokeText from "@/component/StrokeText.vue";
 import Container from "@/component/Container.vue";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
+import Modal from "../../component/Modal.vue";
 
 export default {
   name: "Member",
@@ -60,6 +62,7 @@ export default {
     User,
     Group,
     StrokeText,
+    Modal,
   },
   data() {
     return {

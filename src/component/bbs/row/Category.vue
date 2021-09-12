@@ -18,7 +18,8 @@
     <tr class="bbs">
       <td align="center" valign="middle" height="50">
         <img
-          draggable="false" @contextmenu.prevent
+          draggable="false"
+          @contextmenu.prevent
           :src="
             require(`@/asset/img/bbs/folder${bbs.new ? '_new' : ''}${
               bbs.locked ? '_lock' : ''
@@ -38,9 +39,14 @@
         <span class="genmed">{{ bbs.desc }}<br /> </span
         ><span class="gensmall"
           >Modérateurs&nbsp;:
-          <Group v-for="(mod, index) in bbs.mods" :key="mod.id" :group="mod" :separator="index != bbs.mods.length - 1" style="display: inline" />
-            </span
-        >
+          <Group
+            v-for="(mod, index) in bbs.mods"
+            :key="mod.id"
+            :group="mod"
+            :separator="index != bbs.mods.length - 1"
+            style="display: inline"
+          />
+        </span>
       </td>
       <td align="center" valign="middle">
         <span class="gensmall">{{ bbs.topics }}</span>
@@ -50,11 +56,20 @@
       </td>
       <td align="center" valign="middle" nowrap="nowrap">
         {{ formatDate(bbs.last_msg.date) }}<br />
-        <User :user="bbs.last_msg.author"/>
+        <User :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
-        <router-link :to="'/bbs/'+bbs.id+'/'+bbs.last_msg.topicid+'#'+bbs.last_msg.msgid"
+        <router-link
+          :to="
+            '/bbs/' +
+              bbs.id +
+              '/' +
+              bbs.last_msg.topicid +
+              '#' +
+              bbs.last_msg.msgid
+          "
           ><img
-            draggable="false" @contextmenu.prevent
+            draggable="false"
+            @contextmenu.prevent
             :src="require(`@/asset/img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
@@ -79,7 +94,7 @@ export default {
   name: "Category",
   components: {
     Group,
-    User
+    User,
   },
   data() {
     return {

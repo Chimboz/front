@@ -233,10 +233,7 @@
             </ol>
           </div>
           <div id="inventory" v-else>
-            <div
-              class="category-selection"
-              @contextmenu.prevent
-            >
+            <div class="category-selection" @contextmenu.prevent>
               <button
                 v-for="(_, category) of data.items"
                 :key="category"

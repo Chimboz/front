@@ -20,7 +20,6 @@ export default {
 };
 </script>
 
-
 <style>
 #app {
   -webkit-font-smoothing: antialiased;

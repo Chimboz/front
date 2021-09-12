@@ -3,7 +3,7 @@
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="games"/>
+          <SideNavEntries section="games" />
         </div>
       </Card>
       <br />
@@ -11,17 +11,51 @@
     </template>
     <Card filename="bacteria.gif" justified>
       <div class="centered">
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Records</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Meilleurs</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Pires</a>
-        <a href="#tutorial" class="btn-sm blue-bg"><img draggable="false" @contextmenu.prevent  alt="Caret" src="@/asset/img/icon/caret.png" />&nbsp;Les Groupes</a>
+        <a href="#tutorial" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Les Records</a
+        >
+        <a href="#tutorial" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Les Meilleurs</a
+        >
+        <a href="#tutorial" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Les Pires</a
+        >
+        <a href="#tutorial" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Les Groupes</a
+        >
         <a href="#tutorial" class="btn-sm pink-bg">
-          <img draggable="false" @contextmenu.prevent  alt="Help icon" src="@/asset/img/icon/help.png" />&nbsp;Comment
-          jouer&nbsp;?
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Help icon"
+            src="@/asset/img/icon/help.png"
+          />&nbsp;Comment jouer&nbsp;?
         </a>
       </div>
       <br />
-      <img draggable="false" @contextmenu.prevent 
+      <img
+        draggable="false"
+        @contextmenu.prevent
         src="@/asset/img/game/bacteria/preview.gif"
         alt="A game of bacteria"
         title="A game of bacteria"
@@ -109,11 +143,8 @@
       </table>
     </Card>
     <br /><Card>
-      <template #header>Les 10 meilleurs groupes de Bacteria !
-</template>
-      <template #subtitle
-        >Plus on est de fous...</template
-      >
+      <template #header>Les 10 meilleurs groupes de Bacteria ! </template>
+      <template #subtitle>Plus on est de fous...</template>
 
       <table class="score fullwidth">
         <thead>

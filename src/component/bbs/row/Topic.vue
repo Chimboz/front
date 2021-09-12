@@ -2,7 +2,9 @@
   <tbody>
     <tr class="topic">
       <td class="row1" align="center" valign="middle" height="50">
-        <img draggable="false" @contextmenu.prevent 
+        <img
+          draggable="false"
+          @contextmenu.prevent
           class="icon"
           :src="
             require(`@/asset/img/bbs/folder${topic.new ? '_new' : ''}${
@@ -39,10 +41,13 @@
         nowrap="nowrap"
       >
         {{ formatDate }}<br />
-        <User :user="topic.last_msg.author"/>
+        <User :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
-        <router-link :to="$route.params.id+'/'+topic.id+'#'+topic.last_msg.msgid"
-          ><img draggable="false" @contextmenu.prevent 
+        <router-link
+          :to="$route.params.id + '/' + topic.id + '#' + topic.last_msg.msgid"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
             :src="require(`@/asset/img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
@@ -65,7 +70,7 @@ import { fr } from "date-fns/locale";
 export default {
   name: "Topic",
   components: {
-    User
+    User,
   },
   props: {
     topic: {

@@ -14,11 +14,7 @@
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <Card
-      class="member"
-      :class="[this.data.gender]"
-      v-if="data"
-    >
+    <Card class="member" :class="[this.data.gender]" v-if="data">
       <div class="member-header">
         <Tiz
           :avatar="data.look.avatar"

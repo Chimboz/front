@@ -3,14 +3,16 @@
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="games"/>
+          <SideNavEntries section="games" />
         </div>
       </Card>
       <br />
       <Rules bot />
     </template>
     <Card filename="bacteria_blue.jpg" blue justified>
-      <img draggable="false" @contextmenu.prevent 
+      <img
+        draggable="false"
+        @contextmenu.prevent
         src="@/asset/img/game/bacteria/visuel.jpg"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
@@ -22,15 +24,19 @@
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
       Stratégie incontournable sur l'archipel !<br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/games/bacteria"
-        >
-          <img draggable="false" @contextmenu.prevent  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
-        </router-link
-      >
+      <router-link class="btn-sm pink-bg" to="/games/bacteria">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/icon/help.png"
+        />&nbsp;Comment jouer&nbsp;?
+      </router-link>
     </Card>
     <br />
     <Card filename="patojdur_blue.gif" blue justified>
-      <img draggable="false" @contextmenu.prevent 
+      <img
+        draggable="false"
+        @contextmenu.prevent
         src="@/asset/img/game/patojdur/visuel.jpg"
         alt="Patojdur"
         style="float: left; margin-right: 17px"
@@ -42,15 +48,19 @@
       haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/games/patojdur"
-        >
-          <img draggable="false" @contextmenu.prevent  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
-        </router-link
-      >
+      <router-link class="btn-sm pink-bg" to="/games/patojdur">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/icon/help.png"
+        />&nbsp;Comment jouer&nbsp;?
+      </router-link>
     </Card>
     <br />
     <Card filename="mazo_blue.gif" blue justified>
-      <img draggable="false" @contextmenu.prevent 
+      <img
+        draggable="false"
+        @contextmenu.prevent
         src="@/asset/img/game/mazo/visuel.jpg"
         alt="Mazo"
         style="float: left; margin-right: 17px"
@@ -62,11 +72,13 @@
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
       patience, pour rivaliser avec les meilleurs !<br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/games/mazo"
-        >
-          <img draggable="false" @contextmenu.prevent  src="@/asset/img/icon/help.png" />&nbsp;Comment jouer&nbsp;?
-        </router-link
-      >
+      <router-link class="btn-sm pink-bg" to="/games/mazo">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/icon/help.png"
+        />&nbsp;Comment jouer&nbsp;?
+      </router-link>
     </Card>
     <template #right-column
       ><Card blue top>

@@ -1,12 +1,23 @@
 <template>
-  <div
-    :class="{ justified: justified }"
-    :style="cssVars"
-  >
-    <img draggable="false" @contextmenu.prevent  alt="Card header" v-if="filename" :src="require(`@/asset/img/card/header/${filename}`)" />
-    <img draggable="false" @contextmenu.prevent  alt="Card header" v-else-if="top" src="@/asset/img/card/header/default.gif" />
+  <div :class="{ justified: justified }" :style="cssVars">
+    <img
+      draggable="false"
+      @contextmenu.prevent
+      alt="Card header"
+      v-if="filename"
+      :src="require(`@/asset/img/card/header/${filename}`)"
+    />
+    <img
+      draggable="false"
+      @contextmenu.prevent
+      alt="Card header"
+      v-else-if="top"
+      src="@/asset/img/card/header/default.gif"
+    />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
-      <StrokeText style="transform: translateX(-40%)"><slot name="subtop"></slot></StrokeText>
+      <StrokeText style="transform: translateX(-40%)"
+        ><slot name="subtop"></slot
+      ></StrokeText>
     </div>
     <div v-if="$slots['button']" class="card-btn">
       <slot name="button"></slot>
@@ -22,7 +33,13 @@
         <slot></slot>
       </main>
     </div>
-    <img draggable="false" @contextmenu.prevent  alt="Card footer" v-if="bot" src="@/asset/img/card/footer/default.gif" />
+    <img
+      draggable="false"
+      @contextmenu.prevent
+      alt="Card footer"
+      v-if="bot"
+      src="@/asset/img/card/footer/default.gif"
+    />
   </div>
 </template>
 
@@ -103,7 +120,7 @@ export default {
           "--main-subtop-color": "#99cdef",
           "--dark-subtop-color": "#628499",
         };
-        if (this.lightblue)
+      if (this.lightblue)
         return {
           "--light-card-color": "#aadcfc",
           "--main-card-color": "#6ebef0",
@@ -116,7 +133,7 @@ export default {
           "--main-subtop-color": "#99cdef",
           "--dark-subtop-color": "#628499",
         };
-        if (this.red)
+      if (this.red)
         return {
           "--light-card-color": "#ff9e9e",
           "--main-card-color": "#FF5454",
@@ -222,7 +239,7 @@ img + .card {
   );
   stroke: var(--title-subtop-color);
   fill: #fff;
-  stroke-width: 3
+  stroke-width: 3;
 }
 
 .justified .card {
