@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="section">
     <router-link
       :to="entry.url"
       class="list"
