@@ -3,7 +3,7 @@
     <router-link
       :to="entry.url"
       class="list"
-      v-for="(entry, i) of sideNavEntries.filter((entry)=> entry.section == this.section)"
+      v-for="(entry, i) of sideNavEntries.filter((entry)=> entry.section == section)"
       :key="i"
     >
       <img
