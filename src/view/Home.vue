@@ -1,8 +1,8 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column>
       <Card blue top>
-        <router-link to="/levels">
+        <router-link to="/levels" v-if="data">
           <div class="level fullwidth">
             {{ $t("level") }}
             <div class="number">
@@ -17,7 +17,7 @@
             </div>
           </div>
         </router-link>
-        <router-link to="/mi">
+        <router-link to="/mi" v-if="data">
           <div class="messages">
             <div>
               <img
@@ -39,7 +39,7 @@
           </div>
           {{ $t("mi.message", data.messages) }}
         </router-link>
-        <router-link to="/friends">
+        <router-link to="/friends" v-if="data">
           <div class="friends">
             <div>
               <img
@@ -63,7 +63,7 @@
         </router-link>
       </Card>
       <br />
-      <Bank :credits="data.credits" />
+      <Bank v-if="data" :credits="data.credits" />
     </template>
     <img
       draggable="false"
@@ -72,7 +72,7 @@
       style="max-width: 100%"
     />
     <br />
-    <Card filename="lottery.png" v-if="data.lottery">
+    <Card filename="lottery.png" v-if="data && data.lottery">
       <template #header>
         <img
           draggable="false"
@@ -143,7 +143,7 @@
       </div>
     </Card>
     <template #right-column
-      ><Card blue top>
+      ><Card blue top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>

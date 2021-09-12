@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
@@ -17,7 +17,7 @@
     <Card
       class="member"
       :class="[this.data.gender]"
-      v-if="this.data && this.data.look"
+      v-if="data"
     >
       <div class="member-header">
         <Tiz

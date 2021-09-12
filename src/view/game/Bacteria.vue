@@ -1,5 +1,5 @@
 <template>
-    <Container v-if="data">
+    <Container>
       <template #left-column
         ><Card blue top>
           <div class="flex col fullwidth">
@@ -74,7 +74,7 @@
         <br />
       </Card>
       <br />
-      <Card id="records">
+      <Card id="records" v-if="data">
         <template #header>Records !</template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -103,7 +103,7 @@
           {{ data.records.drawn.record }} match nuls&nbsp;!
         </div>
       </Card>
-      <br /><Card id="best">
+      <br /><Card id="best" v-if="data">
         <template #header>Les 20 plus acharnés de Bacteria !</template>
         <template #subtitle
           >Des heures de phagocytage acharné pour en arriver la...</template
@@ -131,7 +131,7 @@
           </tbody>
         </table>
       </Card>
-      <br /><Card id="worst">
+      <br /><Card id="worst" v-if="data">
         <template #header>Les 20 pires brèles de Bacteria ! </template>
         <template #subtitle>Les meilleurs... en partant du bas !</template>
         (Pour voir la catastrophe, laisse ta souris sans cliquer sur
@@ -155,7 +155,7 @@
           </tbody>
         </table>
       </Card>
-      <br /><Card id="groups">
+      <br /><Card id="groups" v-if="data">
         <template #header>Les 10 meilleurs groupes de Bacteria !</template>
         <template #subtitle>Plus on est de fous...</template>
         <table class="score fullwidth">

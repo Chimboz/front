@@ -1,12 +1,12 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
         </div> </Card
     ></template>
-    <Topic :messages="data"> </Topic>
+    <Topic v-if="data" :messages="data"> </Topic>
     <br />
     <MarkdownInput v-if="authenticated" />
   </Container>

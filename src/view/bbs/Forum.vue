@@ -1,12 +1,12 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community"/>
         </div> </Card
     ></template>
-    <Board :topics="data"> </Board>
+    <Board v-if="data" :topics="data"> </Board>
     <br />
     <button style="text-align: left">
       <img v-if="!post" @click="post = true" src="@/asset/img/bbs/post.gif" />

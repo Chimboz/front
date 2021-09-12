@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column>
       <Rules top /><br />
       <Security />
@@ -13,7 +13,7 @@
     <Demo />
 
     <template #right-column
-      ><Card blue top>
+      ><Card blue top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>

@@ -1,11 +1,11 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column
       ><Card blue top>
         <router-link to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
-            <div class="number">
+            <div class="number" v-if="data">
               <img
                 draggable="false"
                 @contextmenu.prevent
@@ -19,9 +19,9 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="account" /></div></Card
       ><br />
-      <Bank :credits="data.credits"
+      <Bank v-if="data" :credits="data.credits"
     /></template>
-    <Cabin :data="data" />
+    <Cabin v-if="data" :data="data" />
     <template #right-column>
       <Card blue filename="messages.gif"> </Card><br />
       <Card blue filename="forum.gif"> </Card><br /><Card blue>

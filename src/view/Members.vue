@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">

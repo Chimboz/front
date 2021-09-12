@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
@@ -7,7 +7,7 @@
         </div>
       </Card>
     </template>
-    <BBSList :boards="data"></BBSList>
+    <BBSList v-if="data" :boards="data"></BBSList>
     <br />
     <Card
       ><div class="columns">
