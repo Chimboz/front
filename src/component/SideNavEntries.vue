@@ -1,10 +1,10 @@
 <template>
-  <div v-if="section">
+  <div>
     <router-link
       :to="entry.url"
       class="list"
       v-for="(entry, i) of sideNavEntries.filter(
-        (entry) => entry.section == this.section
+        (entry) => entry.section == props.section
       )"
       :key="i"
     >
