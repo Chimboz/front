@@ -3,7 +3,7 @@
     <template #left-column
       ><Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="community"/>
+          <SideNavEntries section="community" />
         </div> </Card
     ></template>
     <Topic :messages="data"> </Topic>
@@ -30,12 +30,7 @@ export default {
   data() {
     return {
       data: [],
-      error: null,
-      loading: true,
     };
-  },
-  computed: {
-    ...mapGetters("auth", ["authenticated"]),
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/topic.json";
@@ -45,25 +40,25 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.loading = false;
           } else {
-            // Didn't like the result, redirect
-            next("/bbs");
+            next("/");
           }
         })
         .catch((error) => {
-          vm.error = error.toString();
+          console.log(error.toString());
         });
     });
   },
-  async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios
-        .get("/api/topic.json")
-        .then((res) => res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/topic.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
+  },
+  computed: {
+    ...mapGetters("auth", ["authenticated"]),
   },
 };
 </script>

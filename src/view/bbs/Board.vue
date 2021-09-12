@@ -82,8 +82,6 @@ export default {
   data() {
     return {
       data: [],
-      error: null,
-      loading: true,
       iconDescriptions,
       post: false,
     };
@@ -96,24 +94,22 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.loading = false;
           } else {
-            next("/bbs");
+            next("/");
           }
         })
         .catch((error) => {
-          vm.error = error.toString();
+          console.log(error.toString());
         });
     });
   },
-  async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios
-        .get("/api/forum.json")
-        .then((res) => res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/forum.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
   },
 };
 </script>

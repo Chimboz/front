@@ -85,7 +85,7 @@ export default {
         });
     });
   },
-  async beforeRouteUpdate() {
+  beforeRouteUpdate() {
     this.axios
       .get("/api/account.json")
       .then((res) => {

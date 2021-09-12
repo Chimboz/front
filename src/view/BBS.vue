@@ -3,7 +3,7 @@
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="community"/>
+          <SideNavEntries section="community" />
         </div>
       </Card>
     </template>
@@ -67,8 +67,6 @@ export default {
   data() {
     return {
       data: [],
-      error: null,
-      loading: true,
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -79,23 +77,22 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.loading = false;
           } else {
-            // Didn't like the result, redirect
             next("/");
           }
         })
         .catch((error) => {
-          vm.error = error.toString();
+          console.log(error.toString());
         });
     });
   },
-  async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios.get("/api/bbs.json").then((res) => res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/bbs.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
   },
 };
 </script>

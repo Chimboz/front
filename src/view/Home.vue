@@ -93,7 +93,7 @@
             alt="Lottery handle"
             class="handle"
             ref="handle"
-            src="@/asset/img/lottery/up.svg" /></template
+            src="@/asset/img/lottery/up.svg"/></template
         >Jouer</Button
       ></Card
     ><br />
@@ -200,18 +200,7 @@ export default {
   data() {
     return {
       data: null,
-      error: null,
-      loading: true,
     };
-  },
-  methods: {
-    handle({ currentTarget }) {
-      this.$refs.handle.src = require("@/asset/img/lottery/down.svg");
-      setTimeout(() => {
-        this.$refs.handle.src = require("@/asset/img/lottery/up.svg");
-        currentTarget.disabled = true;
-      }, 200);
-    },
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/home.json";
@@ -221,25 +210,31 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.loading = false;
           } else {
-            // Didn't like the result, redirect
             next("/");
           }
         })
         .catch((error) => {
-          vm.error = error.toString();
+          console.log(error.toString());
         });
     });
   },
-  async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios
-        .get("/api/home.json")
-        .then((res) => res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/home.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
+  },
+  methods: {
+    handle({ currentTarget }) {
+      this.$refs.handle.src = require("@/asset/img/lottery/down.svg");
+      setTimeout(() => {
+        this.$refs.handle.src = require("@/asset/img/lottery/up.svg");
+        currentTarget.disabled = true;
+      }, 200);
+    },
   },
 };
 </script>

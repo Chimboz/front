@@ -49,14 +49,7 @@ export default {
   data() {
     return {
       data: null,
-      error: null,
-      loading: true,
     };
-  },
-  methods: {
-    login() {
-      this.$store.dispatch("auth/login");
-    },
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/home.json";
@@ -66,25 +59,29 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.loading = false;
           } else {
             next("/");
           }
         })
         .catch((error) => {
-          vm.error = error.toString();
+          console.log(error.toString());
         });
     });
   },
-  async beforeRouteUpdate() {
+  beforeRouteUpdate() {
     this.axios
       .get("/api/home.json")
       .then((res) => {
         this.data = res.data;
-        this.loading = false;
       })
-      .catch((error) => (this.error = error.toString()));
+      .catch((error) => console.log(error.toString()));
   },
+  methods: {
+    login() {
+      this.$store.dispatch("auth/login");
+    },
+  },
+
 };
 </script>
 <style lang="scss">

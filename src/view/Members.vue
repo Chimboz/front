@@ -77,6 +77,36 @@ export default {
     Rules,
     Tiz,
   },
+  data() {
+    return {
+      data: null,
+    };
+  },
+  beforeRouteEnter(to, from, next) {
+    const url = "/api/members.json";
+    next((vm) => {
+      vm.axios
+        .get(url)
+        .then((res) => {
+          if (res) {
+            vm.data = res.data;
+          } else {
+            next("/");
+          }
+        })
+        .catch((error) => {
+          console.log(error.toString());
+        });
+    });
+  },
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/members.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
+  },
 };
 </script>
 

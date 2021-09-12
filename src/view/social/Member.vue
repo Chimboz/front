@@ -3,7 +3,7 @@
     <template #left-column>
       <Card blue top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="members"/>
+          <SideNavEntries section="members" />
         </div>
       </Card>
       <br />
@@ -167,13 +167,6 @@ import { fr } from "date-fns/locale";
 
 export default {
   name: "Member",
-  data() {
-    return {
-      data: {},
-      error: null,
-      loading: true,
-    };
-  },
   components: {
     Card,
     Container,
@@ -183,13 +176,10 @@ export default {
     Group,
     StrokeText,
   },
-  computed: {
-    formatDate() {
-      return format(new Date(this.data.status.date), "PPP à p", {
-        locale: fr,
-        addSuffix: true,
-      });
-    },
+  data() {
+    return {
+      data: null,
+    };
   },
   beforeRouteEnter(to, from, next) {
     const url = "/api/member.json";
@@ -199,25 +189,30 @@ export default {
         .then((res) => {
           if (res) {
             vm.data = res.data;
-            vm.loading = false;
           } else {
-            // Didn't like the result, redirect
             next("/");
           }
         })
         .catch((error) => {
-          vm.error = error.toString();
+          console.log(error.toString());
         });
     });
   },
-  async beforeRouteUpdate() {
-    try {
-      this.data = await this.axios
-        .get("/api/member.json")
-        .then((res) => res.data);
-    } catch (error) {
-      this.error = error.toString();
-    }
+  beforeRouteUpdate() {
+    this.axios
+      .get("/api/member.json")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((error) => console.log(error.toString()));
+  },
+  computed: {
+    formatDate() {
+      return format(new Date(this.data.status.date), "PPP à p", {
+        locale: fr,
+        addSuffix: true,
+      });
+    },
   },
 };
 </script>
