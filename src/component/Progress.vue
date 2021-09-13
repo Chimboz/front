@@ -42,20 +42,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@keyframes progress-bar-stripes {
-  from {
-    background-position: 49px 0;
-  }
-  to {
-    background-position: 0 0;
-  }
-}
-
 .progress {
   height: 6px;
   width: 100%;
   overflow: hidden;
-  background-color: #f5f5f5;
   border-radius: 9px;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -64,29 +54,13 @@ export default {
   float: left;
   width: 0%;
   height: 100%;
-  color: #fff;
-  text-align: center;
   background-color: #fff;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   transition: width 0.6s ease;
 }
 
-.progress-bar {
-  background-image: url(../asset/img/progress.svg);
-  background-size: 49px 16px;
-}
-
-.progress-bar.active,
-.progress.active .progress-bar {
-  animation: progress-bar-stripes 2s linear infinite;
-}
-
 .progress-bar-win {
   background-color: #53af35;
-}
-
-.progress-striped .progress-bar-win {
-  background-image: url(../asset/img/progress.svg)
 }
 
 .progress-bar-lose {
