@@ -57,7 +57,7 @@ export default {
     );
   },
   async beforeRouteUpdate() {
-    const req = await api.get("/api/members.json");
+    const req = await this.$api.get("/api/members.json");
     this.data = req.data;
   },
   methods: {

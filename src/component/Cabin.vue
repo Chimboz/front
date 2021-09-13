@@ -377,7 +377,6 @@ export default {
   props: {
     data: {
       required: true,
-      default: {},
       type: Object,
     },
   },

@@ -68,7 +68,6 @@ import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import Container from "@/component/Container.vue";
-import api from "@/module/api.js";
 
 export default {
   name: "Members",
@@ -89,7 +88,7 @@ export default {
     );
   },
   async beforeRouteUpdate() {
-    const req = await api.get("/api/members.json");
+    const req = await this.$api.get("/api/members.json");
     this.data = req.data;
   },
 };

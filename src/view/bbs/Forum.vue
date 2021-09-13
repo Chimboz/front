@@ -92,7 +92,7 @@ export default {
     );
   },
   async beforeRouteUpdate() {
-    const req = await api.get("/api/forum.json");
+    const req = await this.$api.get("/api/forum.json");
     this.data = req.data;
   },
 };

@@ -295,16 +295,14 @@
   </form>
 </template>
 <script>
-import Tiz from "@/component/Tiz.vue";
 import Emotes from "@/component/Emotes.vue";
 import Message from "@/component/bbs/row/Message.vue";
-import User from "@/component/link/User.vue";
 import { mapState } from "vuex";
 import Button from "./Button.vue";
 
 export default {
   name: "MarkdownInput",
-  components: { Tiz, User, Emotes, Button, Message },
+  components: { Emotes, Button, Message },
   data() {
     return {
       message: "",
