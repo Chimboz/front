@@ -6,11 +6,12 @@
           <div class="cabin flex centered">
             <div class="arrows flex">
               <button
+                type="button"
                 v-for="(category, name) of this.data.items"
                 :key="name"
                 :disabled="data.items[name].indexOf(data.look[name]) < 1"
                 @click="
-                  data.look[name] = this.data.items[name][
+                  dataMutated.look[name] = this.data.items[name][
                     data.items[name].indexOf(data.look[name]) - 1
                   ]
                 "
@@ -53,6 +54,7 @@
             </div>
             <div class="arrows flex">
               <button
+                type="button"
                 v-for="(category, name) of this.data.items"
                 :key="name"
                 :disabled="
@@ -60,7 +62,7 @@
                     data.items[name].length - 2
                 "
                 @click="
-                  data.look[name] = this.data.items[name][
+                  dataMutated.look[name] = this.data.items[name][
                     data.items[name].indexOf(data.look[name]) + 1
                   ]
                 "
@@ -76,7 +78,7 @@
           </div>
           <div class="controls">
             <div>
-              <button>
+              <button type="button">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -85,7 +87,7 @@
                   style="transform: rotate(-90deg)"
                   :class="{ pushed: up }"
                 /></button
-              ><br /><button>
+              ><br /><button type="button">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -94,7 +96,7 @@
                   style="transform: scaleX(-1)"
                   :class="{ pushed: left }"
                 /></button
-              ><button id="random">
+              ><button type="button" id="random">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -102,7 +104,7 @@
                   title="Randomize look"
                   src="@/asset/img/home/chaparadio/stop.svg"
                 /></button
-              ><button>
+              ><button type="button">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -110,7 +112,7 @@
                   src="@/asset/img/puce.svg"
                   :class="{ pushed: right }"
                 /></button
-              ><br /><button>
+              ><br /><button type="button">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -124,11 +126,12 @@
           </div>
           <div class="gender">
             <button
+              type="button"
               class="pink-icon"
               :class="{ active: data.gender == 'Chapato' }"
               @mouseenter="gender = 'Chapato'"
               @mouseleave="gender = data.gender"
-              @click="data.gender = 'Chapato'"
+              @click="dataMutated.gender = 'Chapato'"
             >
               <img
                 draggable="false"
@@ -138,11 +141,12 @@
                 src="@/asset/img/icon/gender/male.svg"
               /></button
             ><button
+              type="button"
               class="pink-icon"
               :class="{ active: data.gender == 'Chapata' }"
               @mouseenter="gender = 'Chapata'"
               @mouseleave="gender = data.gender"
-              @click="data.gender = 'Chapata'"
+              @click="dataMutated.gender = 'Chapata'"
             >
               <img
                 draggable="false"
@@ -152,11 +156,12 @@
                 src="@/asset/img/icon/gender/female.svg"
               /></button
             ><button
+              type="button"
               class="pink-icon"
               :class="{ active: data.gender == 'Chapati' }"
               @mouseenter="gender = 'Chapati'"
               @mouseleave="gender = data.gender"
-              @click="data.gender = 'Chapati'"
+              @click="dataMutated.gender = 'Chapati'"
             >
               <img
                 draggable="false"
@@ -172,12 +177,17 @@
         </div>
         <div class="right-acc flex">
           <div class="nav-acc flex">
-            <Button :class="{ active: profile }" @click="profile = true">{{
-              $t("myAccount.profileSection")
-            }}</Button
-            ><Button :class="{ active: !profile }" @click="profile = false">{{
-              $t("myAccount.invSection")
-            }}</Button>
+            <Button
+              type="button"
+              :class="{ active: profile }"
+              @click="profile = true"
+              >{{ $t("myAccount.profileSection") }}</Button
+            ><Button
+              type="button"
+              :class="{ active: !profile }"
+              @click="profile = false"
+              >{{ $t("myAccount.invSection") }}</Button
+            >
           </div>
           <div id="profile" v-if="profile">
             <Emotes />
@@ -187,14 +197,14 @@
               minlength="0"
               maxlength="30"
               type="text"
-              v-model="data.phrase_pref"
+              v-model="dataMutated.phrase_pref"
             />
             <h3 class="justified">Ta page perso</h3>
             <input
               minlength="0"
               maxlength="30"
               type="text"
-              v-model="data.website"
+              v-model="dataMutated.website"
             />
             <h3 class="justified">centres d'intéret</h3>
             <ol>
@@ -203,7 +213,7 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="data.centres[0]"
+                  v-model="dataMutated.centres[0]"
                 />
               </li>
               <li>
@@ -211,7 +221,7 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="data.centres[1]"
+                  v-model="dataMutated.centres[1]"
                 />
               </li>
               <li>
@@ -219,7 +229,7 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="data.centres[2]"
+                  v-model="dataMutated.centres[2]"
                 />
               </li>
               <li>
@@ -227,7 +237,7 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="data.centres[3]"
+                  v-model="dataMutated.centres[3]"
                 />
               </li>
             </ol>
@@ -235,6 +245,7 @@
           <div id="inventory" v-else>
             <div class="category-selection" @contextmenu.prevent>
               <button
+                type="button"
                 v-for="(_, category) of data.items"
                 :key="category"
                 :class="{ active: checked.includes(category) }"
@@ -291,14 +302,15 @@
                 :class="[name]"
               >
                 <button
+                  type="button"
                   class="item"
                   :class="{
                     active: this.data.look[name] == item,
                   }"
                   v-for="item of category"
                   :key="item"
-                  @click="this.data.look[name] = item"
-                  @mouseover="this.info = name + ' ' + item"
+                  @click="dataMutated.look[name] = item"
+                  @mouseover="info = name + ' ' + item"
                 >
                   <img
                     draggable="false"
@@ -331,7 +343,7 @@
               src="@/asset/img/arrow.svg"/></template
           >Sauver</Button
         ><router-link :to="`/member/${data.id}`">
-          <Button
+          <Button type="button"
             ><template #prepend
               ><img
                 draggable="false"
@@ -378,6 +390,11 @@ export default {
     data: {
       required: true,
       type: Object,
+    },
+  },
+  computed: {
+    dataMutated() {
+      return this.data;
     },
   },
   methods: {
