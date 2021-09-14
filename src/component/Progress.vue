@@ -60,7 +60,7 @@ export default {
 }
 
 .progress-bar-win {
-  background-color: #53af35;
+  background-color: #5b3;
 }
 
 .progress-bar-lose {
