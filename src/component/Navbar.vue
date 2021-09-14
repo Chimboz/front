@@ -267,7 +267,7 @@ export default {
   border-width: 2px 1px;
   border-style: solid;
   border-color: #f0009c #f0009c #a10069 #f0009c;
-  box-shadow: 0 2px 2px #0006;
+  box-shadow: 0 2px 1px #0006;
 }
 
 #nav a:not(:first-child) {

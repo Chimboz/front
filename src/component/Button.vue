@@ -113,7 +113,7 @@ export default {
   border-color: var(--button-color-4) var(--button-color-4)
     var(--button-color-5) var(--button-color-4);
 
-  box-shadow: 0 2px 2px #0006;
+  box-shadow: 0 2px 1px #0006;
   filter: brightness(1);
   border-radius: 10px;
   border-width: 2px 5px;
