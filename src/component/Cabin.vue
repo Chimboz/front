@@ -10,11 +10,7 @@
                 v-for="(category, name) of this.data.items"
                 :key="name"
                 :disabled="data.items[name].indexOf(data.look[name]) < 1"
-                @click="
-                  dataMutated.look[name] = this.data.items[name][
-                    data.items[name].indexOf(data.look[name]) - 1
-                  ]
-                "
+                @click="$emit('previousItem', name)"
               >
                 <img
                   draggable="false"
@@ -61,11 +57,7 @@
                   data.items[name].indexOf(data.look[name]) >
                     data.items[name].length - 2
                 "
-                @click="
-                  dataMutated.look[name] = this.data.items[name][
-                    data.items[name].indexOf(data.look[name]) + 1
-                  ]
-                "
+                @click="$emit('nextItem', name)"
               >
                 <img
                   draggable="false"
@@ -131,7 +123,7 @@
               :class="{ active: data.gender == 'Chapato' }"
               @mouseenter="gender = 'Chapato'"
               @mouseleave="gender = data.gender"
-              @click="dataMutated.gender = 'Chapato'"
+              @click="$emit(changeGender, 'Chapato')"
             >
               <img
                 draggable="false"
@@ -146,7 +138,7 @@
               :class="{ active: data.gender == 'Chapata' }"
               @mouseenter="gender = 'Chapata'"
               @mouseleave="gender = data.gender"
-              @click="dataMutated.gender = 'Chapata'"
+              @click="$emit(changeGender, 'Chapata')"
             >
               <img
                 draggable="false"
@@ -161,7 +153,7 @@
               :class="{ active: data.gender == 'Chapati' }"
               @mouseenter="gender = 'Chapati'"
               @mouseleave="gender = data.gender"
-              @click="dataMutated.gender = 'Chapati'"
+              @click="$emit(changeGender, 'Chapati')"
             >
               <img
                 draggable="false"
@@ -197,14 +189,16 @@
               minlength="0"
               maxlength="30"
               type="text"
-              v-model="dataMutated.phrase_pref"
+              :value="motto"
+              @input="$emit('update:motto', $event.target.value)"
             />
             <h3 class="justified">Ta page perso</h3>
             <input
               minlength="0"
               maxlength="30"
               type="text"
-              v-model="dataMutated.website"
+              :value="website"
+              @input="$emit('update:website', $event.target.value)"
             />
             <h3 class="justified">centres d'intéret</h3>
             <ol>
@@ -213,7 +207,8 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="dataMutated.centres[0]"
+                  :value="centrea"
+                  @input="$emit('update:centrea', $event.target.value)"
                 />
               </li>
               <li>
@@ -221,7 +216,8 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="dataMutated.centres[1]"
+                  :value="centreb"
+                  @input="$emit('update:centreb', $event.target.value)"
                 />
               </li>
               <li>
@@ -229,7 +225,8 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="dataMutated.centres[2]"
+                  :value="centrec"
+                  @input="$emit('update:centrec', $event.target.value)"
                 />
               </li>
               <li>
@@ -237,7 +234,8 @@
                   minlength="0"
                   maxlength="30"
                   type="text"
-                  v-model="dataMutated.centres[3]"
+                  :value="centred"
+                  @input="$emit('update:centred', $event.target.value)"
                 />
               </li>
             </ol>
@@ -309,7 +307,7 @@
                   }"
                   v-for="item of category"
                   :key="item"
-                  @click="dataMutated.look[name] = item"
+                  @click="$emit('updateItem', name, item)"
                   @mouseover="info = name + ' ' + item"
                 >
                   <img
@@ -391,11 +389,12 @@ export default {
       required: true,
       type: Object,
     },
-  },
-  computed: {
-    dataMutated() {
-      return this.data;
-    },
+    motto: { type: String },
+    website: { type: String },
+    centrea: { type: String },
+    centreb: { type: String },
+    centrec: { type: String },
+    centred: { type: String },
   },
   methods: {
     submit() {

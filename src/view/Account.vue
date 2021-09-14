@@ -21,7 +21,29 @@
       ><br />
       <Bank v-if="data" :credits="data.credits"
     /></template>
-    <Cabin v-if="data" :data="data" />
+    <Cabin
+      v-if="data"
+      v-model:data="data"
+      @update-item="(name, item) => (data.look[name] = item)"
+      @previous-item="
+        (name) =>
+          (data.look[name] =
+            data.items[name][data.items[name].indexOf(data.look[name]) - 1])
+      "
+      @next-item="
+        (name) =>
+          (data.look[name] = this.data.items[name][
+            data.items[name].indexOf(data.look[name]) + 1
+          ])
+      "
+      @change-gender="(gender) => (data.gender = gender)"
+      v-model:motto="data.motto"
+      v-model:website="data.website"
+      v-model:centrea="data.centres[0]"
+      v-model:centreb="data.centres[1]"
+      v-model:centrec="data.centres[2]"
+      v-model:centred="data.centres[3]"
+    />
     <template #right-column>
       <Card blue filename="messages.gif"> </Card><br />
       <Card blue filename="forum.gif"> </Card><br /><Card blue>

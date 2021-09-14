@@ -28,7 +28,7 @@
         />
         <div class="flex column" style="z-index: 1; position: relative">
           <StrokeText class="pseudo">{{ this.data.name }}</StrokeText>
-          <div class="sentence">"{{ this.data.phrase_pref }}"</div>
+          <div class="sentence">"{{ this.data.motto }}"</div>
         </div>
       </div>
       <div class="member-body">
