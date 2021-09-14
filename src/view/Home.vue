@@ -253,5 +253,6 @@ export default {
 .handle {
   margin-left: calc(-4% - 16px);
   margin-top: -16px;
+  border-image: url(../asset/img/lottery/down.svg)
 }
 </style>

@@ -74,6 +74,25 @@
       <br />
     </Card>
     <br />
+    <Card id="tutorial" justified>
+      <template #header>Comment jouer&nbsp;!</template>
+
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        src="@/asset/img/game/bacteria/preview.gif"
+        alt="A game of bacteria"
+        title="A game of bacteria"
+        style="float: left; margin-right: 17px; border: 3px solid #6699cc"
+      />
+      Il y a 2 endroits pour jouer: Bacteria débutants et Bacteria Pro Si tu ne
+      sais pas comment y aller demande ton chemin !<br />
+      <br />
+      Pour jouer c'est simple, va dans une cabine, elle s'allume si elle
+      t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
+      partie démarre ! Attention: Les visiteurs ne peuvent jouer qu'en Bacteria
+      débutants, les cabines de Bacteria Pro sont réservées aux membres ! </Card
+    ><br />
     <Card id="records" v-if="data">
       <template #header>Records !</template>
       <template #subtitle
@@ -201,17 +220,47 @@
       </table>
     </Card>
     <template #right-column
-      ><Card filename="ensavoirplus.gif" top lightblue>
+      ><Card filename="ensavoirplus.gif" top lightblue justified>
         Toutes les infos, les techniques, news.<br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+        />
         BBS de Bacteria<br />
         <br />
         Lis l'histoire sur Bacteria écrite par Kunu.<br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+        />
         Bacteria Sanctuary.<br />
         <br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+        />
         424187 membres joueurs de Bacteria.<br />
         <br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+        />
         12591547 parties ont été jouées.<br />
         <br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+        />
         8684 parties hier.<br />
         <br />
         Niveau des joueurs<br />

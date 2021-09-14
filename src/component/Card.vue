@@ -31,6 +31,7 @@
       <br v-if="$slots['header'] && $slots.default" />
       <main>
         <slot></slot>
+        <div style="clear:both"></div>
       </main>
     </div>
     <img
@@ -260,5 +261,6 @@ img + .card {
 
 .card h2 {
   color: var(--title-card-color);
+  text-align: center;
 }
 </style>

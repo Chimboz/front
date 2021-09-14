@@ -28,6 +28,12 @@ const routes = [
     meta: { title: "Chapatiz Retro | Bacteria" },
   },
   {
+    path: "/games/bacteria/story",
+    name: "Bacteria Story",
+    component: () => import("../view/game/bacteria/Story.vue"),
+    meta: { title: "Chapatiz Retro | Histoire de Bacteria" },
+  },
+  {
     path: "/games/patojdur",
     name: "Patojdur",
     component: () => import("../view/game/Patojdur.vue"),
