@@ -123,7 +123,7 @@ export default {
       if (this.lightblue)
         return {
           "--light-card-color": "#aadcfc",
-          "--main-card-color": "#6ebef0",
+          "--main-card-color": "#a4c4e3",
           "--dark-card-color": "#5aa1cd",
           "--shadow-card-color": "#355668",
           "--title-card-color": "#096EA8",

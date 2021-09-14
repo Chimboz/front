@@ -59,11 +59,11 @@ export default {
         };
       if (this.orange)
         return {
-          "--button-color-1": "#fff2ea",
-          "--button-color-2": "#ff7214",
-          "--button-color-3": "#ce4800",
-          "--button-color-4": "#ff6600",
-          "--button-color-5": "#973500",
+          "--button-color-1": "#fec9b4",
+          "--button-color-2": "#ff7b00",
+          "--button-color-3": "#d15503",
+          "--button-color-4": "#f80",
+          "--button-color-5": "#9f3400",
         };
       if (this.red)
         return {
@@ -82,11 +82,11 @@ export default {
           "--button-color-5": "#154301",
         };
       return {
-        "--button-color-1": "#ffe4f5",
-        "--button-color-2": "#ff1fb0",
-        "--button-color-3": "#b30048",
-        "--button-color-4": "#f0009c",
-        "--button-color-5": "#ae0050",
+        "--button-color-1": "#fe9ae0",
+        "--button-color-2": "#ff00a6",
+        "--button-color-3": "#c10276",
+        "--button-color-4": "#ff009c",
+        "--button-color-5": "#a10069",
       };
     },
   },

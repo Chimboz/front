@@ -201,7 +201,7 @@
       </table>
     </Card>
     <template #right-column
-      ><Card filename="ensavoirplus.gif" top>
+      ><Card filename="ensavoirplus.gif" top lightblue>
         Toutes les infos, les techniques, news.<br />
         BBS de Bacteria<br />
         <br />

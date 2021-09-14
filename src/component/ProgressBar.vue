@@ -107,7 +107,7 @@ export default {
 }
 
 .loader {
-  background: #f0009c;
+  background: #ff009c;
   display: inline-block;
   height: 100%;
   width: 50%;
@@ -120,7 +120,7 @@ export default {
   float: right;
   height: 100%;
   width: 20%;
-  background-image: linear-gradient(to right, #f0009c, #fff, #f0009c);
+  background-image: linear-gradient(to right, #ff009c, #fff, #ff009c);
   animation: loading-animation 2s ease-in infinite;
 }
 

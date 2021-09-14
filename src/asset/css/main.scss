@@ -58,16 +58,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ff6600;
+  background-color: #f80;
 }
 
 // Custom selection
 ::selection {
-  background-color: #ff6600;
+  background-color: #f80;
   color: #fff;
-  text-shadow: 1px 0 0 #ce4800, -1px 0 0 #ce4800, 0 1px 0 #ce4800,
-    0 -1px 0 #ce4800, 0.7px 0.7px #ce4800, -0.7px -0.7px 0 #ce4800,
-    0.7px -0.7px 0 #ce4800, -0.7px 0.7px 0 #ce4800;
+  text-shadow: 1px 0 0 #d15503, -1px 0 0 #d15503, 0 1px 0 #d15503,
+    0 -1px 0 #d15503, 0.7px 0.7px #d15503, -0.7px -0.7px 0 #d15503,
+    0.7px -0.7px 0 #d15503, -0.7px 0.7px 0 #d15503;
 }
 
 // Default tags
@@ -225,14 +225,14 @@ textarea.btn-md {
   border-radius: 12px 8px;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px #b30048;
+  box-shadow: 0 1px #c10276;
 }
 
 .btn-md:hover,
 .btn-md:active, input:not([type="checkbox"]).btn-md:focus,
 textarea.btn-md:focus {
-  border-color: #ff6600;
-  box-shadow: 0 1px #ce4800;
+  border-color: #f80;
+  box-shadow: 0 1px #d15503;
 }
 
 select.btn-md {

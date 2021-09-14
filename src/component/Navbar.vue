@@ -257,16 +257,16 @@ export default {
   height: 25px;
   background-image: linear-gradient(
     to bottom,
-    #ffe4f5 0%,
-    #ff1fb0 50%,
-    #b30048 50%,
-    #f0009c
+    #fe9ae0 0%,
+    #ff00a6 50%,
+    #c10276 50%,
+    #ff009c
   );
   padding: 0 4%;
   font-size: 18px;
   border-width: 2px 1px;
   border-style: solid;
-  border-color: #f0009c #ae0050 #ae0050 #ae0050;
+  border-color: #f0009c #f0009c #a10069 #f0009c;
   box-shadow: 0 2px 2px #0006;
 }
 
@@ -288,7 +288,7 @@ export default {
 
 .nav-icon {
   height: 100%;
-  filter: saturate(1.5) hue-rotate(-45deg);
+  filter: saturate(1.5) hue-rotate(308deg);
 }
 
 .nav-btn:hover .nav-icon,
@@ -302,10 +302,10 @@ export default {
   border-left-color: #f0009c;
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    #ffe4f5,
-    #ff1fb0 49%,
-    #b30048 51%,
-    #f0009c
+    #fe9ae0,
+    #ff00a6 49%,
+    #c10276 51%,
+    #ff009c
   );
   border-radius: 10px;
   border-width: 2px 5px;
@@ -322,13 +322,13 @@ export default {
 #nav a.router-link-exact-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
-    #fff2ea,
-    #ff7214 50%,
-    #ce4800 50%,
-    #ff6600
+    #fec9b4,
+    #ff7b00 50%,
+    #d15503 50%,
+    #fc8536
   );
   color: #fff !important;
-  border-color: #ff6600 #973500 #973500 #973500;
+  border-color: #f80 #f80 #9f3400 #f80;
 }
 
 #nav a:first-child .nav-btn:hover,
@@ -336,10 +336,10 @@ export default {
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    #fff2ea 0%,
-    #ff7214 49%,
-    #ce4800 51%,
-    #ff6600
+    #fec9b4 0%,
+    #ff7b00 49%,
+    #d15503 51%,
+    #f80
   );
 }
 
@@ -349,7 +349,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn,
 #nav a:nth-child(2).router-link-exact-active .nav-btn {
-  border-left-color: #ff6600;
+  border-left-color: #f80;
 }
 
 #nav a:last-child .nav-btn:hover,
@@ -358,7 +358,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:last-child.router-link-exact-active .nav-btn,
 #nav a:first-child.router-link-exact-active .nav-btn {
-  border-right-color: #ff6600;
+  border-right-color: #f80;
 }
 
 a:hover {
@@ -368,20 +368,20 @@ a:hover {
 .nav-btn:active {
   background-image: linear-gradient(
     to top,
-    #fff2ea,
-    #ff7214 50%,
-    #ce4800 50%,
-    #ff6600
+    #fec9b4,
+    #ff7b00 50%,
+    #d15503 50%,
+    #f80
   ) !important;
 }
 
 #nav a:first-child .nav-btn:active {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    #ff6600,
-    #ce4800 49%,
-    #ff7214 51%,
-    #fff2ea
+    #f80,
+    #d15503 49%,
+    #ff7b00 51%,
+    #fec9b4
   ) !important;
 }
 
@@ -391,7 +391,7 @@ a:hover {
   font-size: 18px;
   height: 100%;
   fill: #fff;
-  stroke: #ae0050;
+  stroke: #a10069;
   stroke-width: 3;
   display: flex;
   justify-content: center;
@@ -410,7 +410,7 @@ a:hover {
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
   #nav a.router-link-exact-active .nav-text {
-    stroke: #ce4800;
+    stroke: #d15503;
   }
 
   a:not(:first-child) .nav-btn {
