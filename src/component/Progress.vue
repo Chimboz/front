@@ -64,7 +64,7 @@ export default {
 }
 
 .progress-bar-lose {
-  background-color: #f11818;
+  background-color: #fb0d0d;
 }
 
 </style>

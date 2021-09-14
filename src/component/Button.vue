@@ -67,19 +67,19 @@ export default {
         };
       if (this.red)
         return {
-          "--button-color-1": "#ffe0e0",
-          "--button-color-2": "#f11818",
-          "--button-color-3": "#c90303",
-          "--button-color-4": "#ff0000",
-          "--button-color-5": "#ac0000",
+          "--button-color-1": "#ffe6e6",
+          "--button-color-2": "#fb0d0d",
+          "--button-color-3": "#d10303",
+          "--button-color-4": "#ff2d2d",
+          "--button-color-5": "#a10000",
         };
       if (this.green)
         return {
-          "--button-color-1": "#f6fbf5",
-          "--button-color-2": "#53af35",
-          "--button-color-3": "#206501",
-          "--button-color-4": "#279b00",
-          "--button-color-5": "#154301",
+          "--button-color-1": "#efe",
+          "--button-color-2": "#5b3",
+          "--button-color-3": "#371",
+          "--button-color-4": "#3a0",
+          "--button-color-5": "#350",
         };
       return {
         "--button-color-1": "#fe9ae0",
