@@ -38,7 +38,7 @@ export default {
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.$api.get("/api/topic.json");
+    const req = await this.api.get("/api/topic.json");
     this.data = req.data;
   },
   computed: {

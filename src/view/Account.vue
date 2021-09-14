@@ -93,7 +93,7 @@ export default {
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.$api.get("/api/account.json");
+    const req = await this.api.get("/api/account.json");
     this.data = req.data;
   },
 };

@@ -67,7 +67,7 @@ export default {
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.$api.get("/api/wedding.json");
+    const req = await this.api.get("/api/wedding.json");
     this.data = req.data;
   },
   computed: {
