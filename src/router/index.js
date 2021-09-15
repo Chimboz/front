@@ -52,6 +52,30 @@ const routes = [
     meta: { title: "Chapatiz Retro | Membres" },
   },
   {
+    path: "/member/:id",
+    name: "Member",
+    component: () => import("../view/social/Member.vue"),
+    meta: { title: "Chapatiz Retro | Membre" },
+  },
+  {
+    path: "/wedding",
+    name: "Wedding",
+    component: () => import("../view/social/Wedding.vue"),
+    meta: { title: "Chapatiz Retro | Mariage" },
+  },
+  {
+    path: "/groups",
+    name: "Groups",
+    component: () => import("../view/social/Groups.vue"),
+    meta: { title: "Chapatiz Retro | Groupes" },
+  },
+  {
+    path: "/group/:id",
+    name: "Group",
+    component: () => import("../view/social/Group.vue"),
+    meta: { title: "Chapatiz Retro | Groupe" },
+  },
+  {
     path: "/bbs",
     name: "BBS",
     component: () => import("../view/BBS.vue"),
@@ -75,19 +99,6 @@ const routes = [
     component: () => import("../view/Shop.vue"),
     meta: { title: "Chapatiz Retro | Magasin" },
   },
-  {
-    path: "/member/:id",
-    name: "Member",
-    component: () => import("../view/social/Member.vue"),
-    meta: { title: "Chapatiz Retro | Membre" },
-  },
-  {
-    path: "/wedding",
-    name: "Wedding",
-    component: () => import("../view/social/Wedding.vue"),
-    meta: { title: "Chapatiz Retro | Mariage" },
-  },
-
   {
     path: "/login",
     name: "Login",

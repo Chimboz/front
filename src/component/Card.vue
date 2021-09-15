@@ -26,7 +26,7 @@
       <h2>
         <slot name="header"></slot>
       </h2>
-      <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em>
+      <em v-if="$slots['subtitle']" style="text-align:center">"<slot name="subtitle"></slot>"</em>
       <br v-if="$slots['subtitle'] && $slots.default" />
       <br v-if="$slots['header'] && $slots.default" />
       <main>

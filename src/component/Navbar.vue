@@ -23,8 +23,7 @@
           id="username"
           style="display: inherit"
         />
-        <router-link
-          :to="this.$route.path == '/' ? '/login' : this.$route.path"
+        <a
           id="connect"
           class="flex centered"
           @click="logout"
@@ -37,7 +36,7 @@
             src="../asset/img/icon/login/disconnect.svg"
           />
           {{ $t("navbar.logout") }}
-        </router-link>
+        </a>
         <router-link
           to="/login"
           id="connect"
@@ -193,6 +192,8 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");
+      this.$router.push(this.$route.path == '/' ? '/login' : this.$route.path)
+      
     },
   },
   created() {
