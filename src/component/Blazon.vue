@@ -70,12 +70,12 @@ object #color {
 }
 .top {
   position: absolute;
-  top: 30px;
-  left: 17px;
+  top: 0px;
+  left: 12px;
 }
 .bot {
   position: absolute;
-  top: 5px;
-  left: 13px;
+  top: 28px;
+  left: 16.5px;
 }
 </style>

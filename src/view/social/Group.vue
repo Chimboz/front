@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <Card filename="group.gif" blue>
-      <blazon shape=4 top=10 bot=12 />
+      <blazon shape=1 top=7 bot=6 colora="#376da8"/>
     </Card>
     <template #right-column
       ><Card blue top>

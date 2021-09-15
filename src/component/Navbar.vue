@@ -75,7 +75,7 @@
           alt="Home icon"
           class="nav-icon"
           src="@/asset/img/navbar/icon/home.svg"
-          style="margin: 5px; padding: 2px"
+          style="margin: 4px; padding: 1px"
         /></button
     ></router-link>
     <a target="_blank" href="/tchat"
@@ -302,7 +302,7 @@ export default {
   border-right-color: #f0009c;
   border-left-color: #f0009c;
   background-image: radial-gradient(
-    ellipse 120% 100% at 50% 15%,
+    ellipse 120% 100% at 50% 0%,
     #fe9ae0,
     #ff00a6 49%,
     #c10276 51%,
@@ -336,7 +336,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
-    ellipse 120% 100% at 50% 15%,
+    ellipse 120% 100% at 50% 0%,
     #fec9b4 0%,
     #ff7b00 49%,
     #d15503 51%,
@@ -378,7 +378,7 @@ a:hover {
 
 #nav a:first-child .nav-btn:active {
   background-image: radial-gradient(
-    ellipse 120% 100% at 50% 15%,
+    ellipse 120% 100% at 50% 0%,
     #f80,
     #d15503 49%,
     #ff7b00 51%,
