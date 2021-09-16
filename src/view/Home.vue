@@ -34,6 +34,8 @@
               @contextmenu.prevent
               alt="Messages"
               src="@/asset/img/home/messages.png"
+              width="154"
+              height="67"
               class="fullwidth"
             />
           </div>
@@ -56,6 +58,8 @@
               @contextmenu.prevent
               alt="Friends"
               src="@/asset/img/home/friends.png"
+              width="154"
+              height="67"
               class="fullwidth"
             />
           </div>
@@ -69,6 +73,8 @@
       draggable="false"
       @contextmenu.prevent
       src="/announce/summer.png"
+      width="468"
+      height="213"
       style="max-width: 100%"
     />
     <br />
@@ -77,6 +83,8 @@
         <img
           draggable="false"
           @contextmenu.prevent
+          width="434"
+          height="87"
           src="@/asset/img/home/header_hello.png"
           style="width: 100%"
         />

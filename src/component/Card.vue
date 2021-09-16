@@ -4,6 +4,8 @@
       draggable="false"
       @contextmenu.prevent
       alt="Card header"
+            width="468"
+      height="77"
       v-if="filename"
       :src="require(`@/asset/img/card/header/${filename}`)"
     />
@@ -13,6 +15,8 @@
       alt="Card header"
       v-else-if="top"
       src="@/asset/img/card/header/default.gif"
+      width="154"
+      height="42"
     />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)"
@@ -26,7 +30,9 @@
       <h2>
         <slot name="header"></slot>
       </h2>
-      <em v-if="$slots['subtitle']" style="text-align:center">"<slot name="subtitle"></slot>"</em>
+      <em v-if="$slots['subtitle']" style="text-align:center"
+        >"<slot name="subtitle"></slot>"</em
+      >
       <br v-if="$slots['subtitle'] && $slots.default" />
       <br v-if="$slots['header'] && $slots.default" />
       <main>
@@ -40,6 +46,8 @@
       alt="Card footer"
       v-if="bot"
       src="@/asset/img/card/footer/default.gif"
+      width="154"
+      height="44"
     />
   </div>
 </template>

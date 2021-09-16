@@ -15,6 +15,8 @@
         :src="require(`@/asset/img/bank/coin.svg`)"
       />
       <object
+        width="154"
+        height="124"
         draggable="false"
         @contextmenu.prevent
         type="image/svg+xml"
