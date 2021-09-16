@@ -69,6 +69,8 @@
       draggable="false"
       @contextmenu.prevent
       src="/announce/summer.png"
+      width="468"
+      height="213"
       style="max-width: 100%"
     />
     <br />
@@ -78,6 +80,8 @@
           draggable="false"
           @contextmenu.prevent
           src="@/asset/img/home/header_hello.png"
+          width="600"
+          height="120"
           style="width: 100%"
         />
       </template>
@@ -253,6 +257,6 @@ export default {
 .handle {
   margin-left: calc(-4% - 16px);
   margin-top: -16px;
-  border-image: url(../asset/img/lottery/down.svg)
+  border-image: url(../asset/img/lottery/down.svg);
 }
 </style>

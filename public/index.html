@@ -4,24 +4,51 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta property="og:title" content="Chapatiz Retro" />
-    <meta property="og:description" content="ChapatizRetro.com est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !" />
+    <meta
+      property="og:description"
+      content="ChapatizRetro.com est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+    />
     <meta property="og:image" content="/android-chrome-192x192.png?v=1.0" />
     <meta property="og:image:width" content="192" />
     <meta property="og:image:height" content="192" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1.1">
-    <link rel="manifest" href="/site.webmanifest?v=1.1">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.1" color="#6090be">
-    <link rel="shortcut icon" href="/favicon.ico?v=1.1">
-    <meta name="apple-mobile-web-app-title" content="Chapatiz Retro">
-    <meta name="application-name" content="Chapatiz Retro">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=1.1">
-    <meta name="theme-color" content="#6090be">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=1.1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=1.1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="194x194"
+      href="/favicon-194x194.png?v=1.1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-chrome-192x192.png?v=1.1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=1.1"
+    />
+    <link rel="manifest" href="/site.webmanifest?v=1.1" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.1" color="#6090be" />
+    <link rel="shortcut icon" href="/favicon.ico?v=1.1" />
+    <meta name="apple-mobile-web-app-title" content="Chapatiz Retro" />
+    <meta name="application-name" content="Chapatiz Retro" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=1.1" />
+    <meta name="theme-color" content="#6090be" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script type="text/javascript">
       globalThis.timerStart = Date.now();
@@ -45,6 +72,7 @@
         $img.src =
           "https://img.shields.io/badge/loadtime-" + loadTime + "ms-blue";
         $img.alt = "Loadtime " + loadTime + "ms";
+        $img.height = 20;
         $img.title = $img.alt;
         document.getElementById("loadtime").appendChild($img);
       });
