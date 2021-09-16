@@ -6,6 +6,8 @@
       alt="Card header"
       v-if="filename"
       :src="require(`@/asset/img/card/header/${filename}`)"
+      width="468"
+      height="77"
     />
     <img
       draggable="false"
@@ -13,6 +15,8 @@
       alt="Card header"
       v-else-if="top"
       src="@/asset/img/card/header/default.gif"
+      width="154"
+      height="42"
     />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)"
@@ -40,6 +44,8 @@
       alt="Card footer"
       v-if="bot"
       src="@/asset/img/card/footer/default.gif"
+      width="154"
+      height="44"
     />
   </div>
 </template>
