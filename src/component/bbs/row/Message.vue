@@ -69,6 +69,7 @@ import Marked from "marked";
 import DOMPurify from "dompurify";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
+import katex from "katex/dist/katex.mjs";
 
 export default {
   name: "Message",
@@ -108,6 +109,28 @@ export default {
               `<a target="_blank" rel="noreferrer noopener nofollow" `
             );
       };
+
+      function mathsExpression(expr) {
+        if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
+          expr = expr.substr(2, expr.length - 4);
+          return katex.renderToString(expr, { displayMode: true });
+        } else if (expr.match(/^\$[\s\S]*\$$/)) {
+          expr = expr.substr(1, expr.length - 2);
+          return katex.renderToString(expr, { displayMode: false });
+        }
+      }
+
+      const rendererCodespan = renderer.codespan;
+      renderer.codespan = function(text) {
+        const math = mathsExpression(text);
+
+        if (math) {
+          return math;
+        }
+
+        return rendererCodespan(text);
+      };
+
       Marked.setOptions({
         renderer: renderer,
         highlight: function(code, lang) {
@@ -155,6 +178,8 @@ export default {
           "th",
           "td",
           "img",
+          "svg",
+          "path"
         ],
         ALLOWED_ATTR: [
           "style",
@@ -165,6 +190,10 @@ export default {
           "src",
           "href",
           "target",
+          "viewBox",
+          "d",
+          "xmlns",
+          "preserveAspectRatio"
         ],
       });
     },
@@ -216,6 +245,10 @@ export default {
 
 .info-sm .tiz {
   margin-bottom: -25px;
+}
+
+.katex {
+  font-size: 2em !important;
 }
 </style>
 <style lang="scss" scoped>
