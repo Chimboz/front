@@ -186,11 +186,9 @@ import RandomNumber from "@/component/RandomNumber.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 import Container from "@/component/Container.vue";
-import smoothReflow from 'vue-smooth-reflow'
 
 export default {
   name: "Home",
-  mixins: [smoothReflow],
   components: {
     Card,
     Container,
@@ -202,12 +200,8 @@ export default {
   data() {
     return {
       data: null,
-      children: '<Dynamic value>'
     };
   },
-   mounted(){
-        this.$smoothReflow()
-    },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/home.json").then((res) => (vm.data = res.data))
