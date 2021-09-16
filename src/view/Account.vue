@@ -12,6 +12,8 @@
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
+                width="19"
+                height="21"
                 :src="require(`@/asset/img/number/${number}.svg`)"
               />
             </div></div></router-link

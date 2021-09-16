@@ -12,6 +12,8 @@
                 :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
+                width="19"
+                height="21"
                 :src="require(`@/asset/img/number/${number}.svg`)"
               />
             </div>
@@ -26,6 +28,8 @@
                 :alt="number"
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
+                width="19"
+                height="21"
                 :src="require(`@/asset/img/number/pink/${number}.svg`)"
               />
             </div>
@@ -50,6 +54,8 @@
                 :alt="number"
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
+                width="19"
+                height="21"
                 :src="require(`@/asset/img/number/pink/${number}.svg`)"
               />
             </div>
@@ -75,7 +81,7 @@
       src="/announce/summer.png"
       width="468"
       height="213"
-      style="max-width: 100%"
+      style="width: 100%"
     />
     <br />
     <Card filename="lottery.png" v-if="data && data.lottery">

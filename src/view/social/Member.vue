@@ -103,10 +103,14 @@
             Niveau<br /><img
               draggable="false"
               @contextmenu.prevent
+              width="19"
+              height="21"
               src="@/asset/img/number/2.svg"
             /><img
               draggable="false"
               @contextmenu.prevent
+              width="19"
+              height="21"
               src="@/asset/img/number/5.svg"
             />
           </div>

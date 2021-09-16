@@ -6,6 +6,8 @@
         draggable="false"
         @contextmenu.prevent
         alt="Error icon"
+        width="39"
+        height="32"
         src="@/asset/img/icon/warning.svg"
       /><b
         >&nbsp;{{
