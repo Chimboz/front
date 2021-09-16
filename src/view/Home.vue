@@ -69,8 +69,6 @@
       draggable="false"
       @contextmenu.prevent
       src="/announce/summer.png"
-      width="468"
-      height="213"
       style="max-width: 100%"
     />
     <br />
@@ -80,8 +78,6 @@
           draggable="false"
           @contextmenu.prevent
           src="@/asset/img/home/header_hello.png"
-          width="600"
-          height="120"
           style="width: 100%"
         />
       </template>
@@ -190,9 +186,11 @@ import RandomNumber from "@/component/RandomNumber.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 import Container from "@/component/Container.vue";
+import smoothReflow from 'vue-smooth-reflow'
 
 export default {
   name: "Home",
+  mixins: [smoothReflow],
   components: {
     Card,
     Container,
@@ -204,8 +202,12 @@ export default {
   data() {
     return {
       data: null,
+      children: '<Dynamic value>'
     };
   },
+   mounted(){
+        this.$smoothReflow()
+    },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/home.json").then((res) => (vm.data = res.data))

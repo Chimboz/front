@@ -5,8 +5,6 @@
     :alt="digit"
     v-for="digit in displayNumber.toString(10)"
     :key="digit.index"
-    width="19"
-    height="21"
     :src="require(`@/asset/img/number/${digit}.svg`)"
   />
 </template>
