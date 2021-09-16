@@ -248,7 +248,7 @@ export default {
 }
 
 .katex {
-  font-size: 2em !important;
+  font-size: 18px;
 }
 </style>
 <style lang="scss" scoped>
