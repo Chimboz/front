@@ -181,7 +181,7 @@
           />{{ $t("help.tip") }}</router-link
         ></Card
       ><br />
-      <Card yellow filename="packs.png" class="packs">
+      <Card yellow filename="packs.png" width=154 height=96 class="packs">
         <template #button>
           <Button yellow icon="register.svg">Pack</Button>
         </template>

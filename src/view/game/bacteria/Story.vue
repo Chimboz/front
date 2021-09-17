@@ -214,7 +214,7 @@
       jamais retrouvé son chemin, et qu'il vient encore hanter parfois les
       endroits bien sombres... </Card
     ><template #right-column
-      ><Card filename="ensavoirplus.gif" top lightblue class="justified">
+      ><Card filename="ensavoirplus.gif" width=154 height=34 top lightblue class="justified">
         Toutes les infos, les techniques, news.<br />
         <img
           src="@/asset/img/puce.svg"

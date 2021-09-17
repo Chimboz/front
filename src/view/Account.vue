@@ -47,8 +47,8 @@
       v-model:centred="data.centres[3]"
     />
     <template #right-column>
-      <Card blue filename="messages.gif"> </Card><br />
-      <Card blue filename="forum.gif"> </Card><br /><Card blue>
+      <Card blue filename="messages.gif" width=154 height=56> </Card><br />
+      <Card blue filename="forum.gif" width=154 height=45> </Card><br /><Card blue>
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>
         </template>

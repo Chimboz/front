@@ -220,7 +220,7 @@
       </table>
     </Card>
     <template #right-column
-      ><Card filename="ensavoirplus.gif" top lightblue justified>
+      ><Card filename="ensavoirplus.gif" width=154 height=34 top lightblue justified>
         Toutes les infos, les techniques, news.<br />
         <img
           src="@/asset/img/puce.svg"

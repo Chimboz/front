@@ -4,8 +4,8 @@
       draggable="false"
       @contextmenu.prevent
       alt="Card header"
-            width="468"
-      height="77"
+      :width="width"
+      :height="height"
       v-if="filename"
       :src="require(`@/asset/img/card/header/${filename}`)"
     />
@@ -64,6 +64,16 @@ export default {
     filename: {
       required: false,
       type: String,
+    },
+    width: {
+      required: false,
+      default: 468,
+      type: Number,
+    },
+    height: {
+      required: false,
+      default: 77,
+      type: Number,
     },
     yellow: {
       required: false,
