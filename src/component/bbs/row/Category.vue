@@ -20,8 +20,6 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          width="37"
-          height="26"
           :src="
             require(`@/asset/img/bbs/folder${bbs.new ? '_new' : ''}${
               bbs.locked ? '_lock' : ''

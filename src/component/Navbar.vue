@@ -75,7 +75,7 @@
           alt="Home icon"
           class="nav-icon"
           src="@/asset/img/navbar/icon/home.svg"
-          style="margin: 4px; padding: 1px"
+          style="margin: 2px; padding: 1px"
         /></button
     ></router-link>
     <a target="_blank" href="/tchat"
