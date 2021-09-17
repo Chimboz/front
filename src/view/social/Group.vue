@@ -9,8 +9,8 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="group.gif" height=70 blue>
-      <blazon shape=1 top=7 bot=6 colora="#376da8"/>
+    <Card filename="group.gif" height="70" blue>
+      <blazon shape="1" top="7" bot="6" colora="#376da8" />
     </Card>
     <template #right-column
       ><Card blue top>
@@ -38,10 +38,10 @@ import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import Container from "@/component/Container.vue";
-import Blazon from '../../component/Blazon.vue';
+import Blazon from "../../component/Blazon.vue";
 
 export default {
-  name: "Members",
+  name: "Group",
   components: {
     Card,
     Container,

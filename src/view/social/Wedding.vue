@@ -49,7 +49,7 @@ import { fr } from "date-fns/locale";
 import Modal from "../../component/Modal.vue";
 
 export default {
-  name: "Member",
+  name: "Wedding",
   components: {
     Card,
     Container,

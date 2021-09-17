@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="group.gif" height=70 blue justified>
+    <Card filename="group.gif" height="70" blue justified>
       Envie de former un vrai gang avec tes potes ? Rejoindre une guilde de
       guerriers Bacteria ? Un fan club de ta star préférée avec tes copines ?
       Marre des faux groupes qui sont en réalité de simples messages de forum
@@ -77,16 +77,18 @@
 <script>
 import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
+import Group from "@/component/link/Group.vue";
 import Tiz from "@/component/Tiz.vue";
 import Container from "@/component/Container.vue";
 
 export default {
-  name: "Members",
+  name: "Groups",
   components: {
     Card,
     Container,
     Rules,
     Tiz,
+    Group,
   },
   data() {
     return {

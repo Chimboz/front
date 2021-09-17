@@ -28,7 +28,7 @@ export default {
   },
   props: {
     message: {
-      required: true,
+      required: false,
       default: "error.default",
       type: String,
     },

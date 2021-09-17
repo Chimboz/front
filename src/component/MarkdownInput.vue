@@ -80,7 +80,7 @@
                   @contextmenu.prevent
                   src="@/asset/img/favicon.svg"
                   height="22"
-                  style="background: none"
+                  style="height: 100%"
                 />
               </button>
               <select

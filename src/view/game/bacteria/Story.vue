@@ -214,7 +214,14 @@
       jamais retrouvé son chemin, et qu'il vient encore hanter parfois les
       endroits bien sombres... </Card
     ><template #right-column
-      ><Card filename="ensavoirplus.gif" width=154 height=34 top lightblue class="justified">
+      ><Card
+        filename="ensavoirplus.gif"
+        width="154"
+        height="34"
+        top
+        lightblue
+        class="justified"
+      >
         Toutes les infos, les techniques, news.<br />
         <img
           src="@/asset/img/puce.svg"
@@ -273,15 +280,18 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue"
-import Container from "@/component/Container.vue"
-import SideNavEntries from "@/component/SideNavEntries.vue"
-import Rules from "@/component/slot/Rules.vue"
+import Card from "@/component/Card.vue";
+import Container from "@/component/Container.vue";
+import SideNavEntries from "@/component/SideNavEntries.vue";
+import Rules from "@/component/slot/Rules.vue";
 
 export default {
-    name:"Story",
-    components: {
-        Card, Container, SideNavEntries, Rules
-    }
-}
+  name: "Story",
+  components: {
+    Card,
+    Container,
+    SideNavEntries,
+    Rules,
+  },
+};
 </script>
