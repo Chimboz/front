@@ -30,11 +30,10 @@
       <h2>
         <slot name="header"></slot>
       </h2>
-      <em v-if="$slots['subtitle']" style="text-align:center"
-        >"<slot name="subtitle"></slot>"</em
+      <div style="text-align:center">
+        <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em></div
       >
-      <br v-if="$slots['subtitle'] && $slots.default" />
-      <br v-if="$slots['header'] && $slots.default" />
+      <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
       <main>
         <slot></slot>
         <div style="clear:both"></div>
@@ -58,44 +57,44 @@ import StrokeText from "@/component/StrokeText.vue";
 export default {
   name: "Card",
   components: {
-    StrokeText,
+    StrokeText
   },
   props: {
     filename: {
       required: false,
-      type: String,
+      type: String
     },
     width: {
       required: false,
       default: 468,
-      type: Number,
+      type: Number
     },
     height: {
       required: false,
       default: 77,
-      type: Number,
+      type: Number
     },
     color: {
       required: false,
       validator(value) {
         return ["yellow", "blue", "lightblue", "red"].includes(value);
-      },
+      }
     },
     justified: {
       required: false,
       type: Boolean,
-      default: false,
+      default: false
     },
     bot: {
       required: false,
       type: Boolean,
-      default: false,
+      default: false
     },
     top: {
       required: false,
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     cssVars() {
@@ -111,7 +110,7 @@ export default {
             "--shadow-subtop-color": "#a38c47",
             "--light-subtop-color": "#fff7d7",
             "--main-subtop-color": "#ffe5a3",
-            "--dark-subtop-color": "#a38c47",
+            "--dark-subtop-color": "#a38c47"
           };
         case "blue":
           return {
@@ -124,7 +123,7 @@ export default {
             "--shadow-subtop-color": "#1b4166",
             "--light-subtop-color": "#c4e8ff",
             "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499",
+            "--dark-subtop-color": "#628499"
           };
         case "lightblue":
           return {
@@ -137,7 +136,7 @@ export default {
             "--shadow-subtop-color": "#1b4166",
             "--light-subtop-color": "#c4e8ff",
             "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499",
+            "--dark-subtop-color": "#628499"
           };
         case "red":
           return {
@@ -150,7 +149,7 @@ export default {
             "--shadow-subtop-color": "#1b4166",
             "--light-subtop-color": "#c4e8ff",
             "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499",
+            "--dark-subtop-color": "#628499"
           };
         default:
           return {
@@ -163,11 +162,11 @@ export default {
             "--shadow-subtop-color": "#1b4166",
             "--light-subtop-color": "#c4e8ff",
             "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499",
+            "--dark-subtop-color": "#628499"
           };
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">
