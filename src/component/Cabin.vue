@@ -380,7 +380,7 @@ export default {
       left: false,
       info: "",
       checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
-      gender: "Inconnu"
+      gender: this.data.gender
     };
   },
   props: {
