@@ -5,7 +5,7 @@
       'background-image':
         'url(' +
         require('@/asset/img/navbar/svg/' + this.date.getHours() + '.svg') +
-        ')',
+        ')'
     }"
   >
     <router-link to="/"
@@ -23,7 +23,7 @@
           id="username"
           style="display: inherit"
         />
-        <a
+        <button
           id="connect"
           class="flex centered"
           @click="logout"
@@ -36,22 +36,23 @@
             src="../asset/img/icon/login/disconnect.svg"
           />
           {{ $t("navbar.logout") }}
-        </a>
-        <router-link
-          to="/login"
-          id="connect"
-          class="flex centered"
-          @click="login"
-          v-else
+        </button>
+        <button v-else>
+          <router-link
+            to="/login"
+            id="connect"
+            class="flex centered"
+            @click="login"
+          >
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Connect icon"
+              src="../asset/img/icon/login/connect.svg"
+            />
+            {{ $t("navbar.login") }}
+          </router-link></button
         >
-          <img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Connect icon"
-            src="../asset/img/icon/login/connect.svg"
-          />
-          {{ $t("navbar.login") }}
-        </router-link>
       </div>
       <Tiz
         style="margin-right: 17px"
@@ -75,8 +76,7 @@
           alt="Home icon"
           class="nav-icon"
           src="@/asset/img/navbar/icon/home.svg"
-          style="margin: 2px; padding: 1px"
-        /></button
+          style="margin: 2px; padding: 1px"/></button
     ></router-link>
     <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered">
@@ -97,8 +97,7 @@
           @contextmenu.prevent
           alt="Arrow icon"
           class="arrow jitter"
-          src="@/asset/img/arrow.svg"
-        /></button
+          src="@/asset/img/arrow.svg"/></button
     ></a>
     <router-link v-if="authenticated" to="/account"
       ><button class="nav-btn flex centered">
@@ -177,28 +176,27 @@ export default {
   name: "Navbar",
   data() {
     return {
-      date: new Date(),
+      date: new Date()
     };
   },
   computed: {
     ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"]),
+    ...mapState("auth", ["user"])
   },
   components: {
     Tiz,
     StrokeText,
-    User,
+    User
   },
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");
-      this.$router.push(this.$route.path == '/' ? '/login' : this.$route.path)
-      
-    },
+      this.$router.push(this.$route.path == "/" ? "/login" : this.$route.path);
+    }
   },
   created() {
     document.body.className = "h" + this.date.getHours();
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
