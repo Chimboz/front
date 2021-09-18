@@ -9,8 +9,8 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="group.gif" :height="70" blue>
-      <blazon :shape="0" :top="7" :bot="6" colora="#376da8" colorb="#f0f" />
+    <Card filename="group.gif" :height="70" color="blue">
+      <blazon :shape="0" :top="7" :bot="26" colora="#376da8" colorb="#eee" />
     </Card>
     <template #right-column
       ><Card color="blue" top>
