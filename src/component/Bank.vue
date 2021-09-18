@@ -10,7 +10,7 @@
         class="coin"
         v-for="(_, n) in Math.min(Math.floor(credits / 10), 176)"
         :style="coinsPosition[n]"
-        :class="{ drop: n <= Math.min(Math.floor(coins / 10), 176) }"
+        v-show="n <= Math.min(Math.floor(coins / 10), 176)"
         :key="n"
         :src="require(`@/asset/img/bank/coin.svg`)"
       />
@@ -156,10 +156,5 @@ export default {
 
 .coin {
   position: absolute;
-  display: none;
-}
-
-.drop {
-  display: inherit;
 }
 </style>
