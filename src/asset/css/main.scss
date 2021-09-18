@@ -125,20 +125,21 @@ img {
   height: auto;
 }
 
-table {
-  border-spacing: 0;
-}
-
-tr {
-  background: #fff;
-}
-
 p {
   padding-bottom: 6px;
 }
 
 table {
   table-layout: fixed;
+  border-spacing: 0;
+}
+
+tbody {
+  background: #fff;
+}
+
+table:not(.bbs) tr:nth-child(2n + 1) {
+  background: #004e8422 !important;
 }
 
 // App width

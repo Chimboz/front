@@ -329,10 +329,6 @@ export default {
   padding: 2px 0;
 }
 
-tbody tr:nth-child(2n + 1) {
-  background: #eef5fa;
-}
-
 tr td:first-child {
   font-weight: bold;
 }
