@@ -15,17 +15,16 @@
                 width="19"
                 height="21"
                 :src="require(`@/asset/img/number/${number}.svg`)"
-              />
-            </div></div></router-link
+              /> </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries section="account" /></div></Card
+          <SideNavEntries section="account"/></div></Card
       ><br />
       <Bank v-if="data" :credits="data.credits"
     /></template>
     <Cabin
       v-if="data"
-      v-model:data="data"
+      :data="data"
       @update-item="(name, item) => (data.look[name] = item)"
       @previous-item="
         (name) =>
@@ -80,17 +79,17 @@ export default {
     Button,
     Bank,
     Container,
-    Cabin,
+    Cabin
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   methods: {
     submit() {
       console.log("Envoyé!");
-    },
+    }
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -100,6 +99,6 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/account.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
