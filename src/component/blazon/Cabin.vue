@@ -194,7 +194,6 @@ export default {
 .left-blz {
   flex-direction: column;
   justify-content: center;
-  height: calc(150% + 1px);
 }
 
 .right-blz {
