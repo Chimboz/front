@@ -103,6 +103,10 @@
                 :class="[name]"
               >
                 <button
+                  :style="{
+                    background:
+                      name == 'primary' || name == 'secondary' ? item : ''
+                  }"
                   type="button"
                   class="item"
                   :class="{
@@ -113,16 +117,11 @@
                   @click="$emit('updateItem', name, item)"
                   @mouseover="info = name + ' ' + item"
                 >
-                  <reflection v-if="name == 'shape'" :id="item" />
-                  <bot
-                    v-if="name == 'bot'"
-                    :id="item"
-                    :color="data.blazon.primary"
-                  />
-                  <top
-                    v-if="name == 'top'"
-                    :id="item"
-                    :color="data.blazon.primary"
+                  <img
+                    v-if="name != 'primary' && name != 'secondary'"
+                    draggable="false"
+                    @contextmenu.prevent
+                    :src="`/blazon/${name}/${item}.svg`"
                   />
                 </button>
               </div>
@@ -137,18 +136,12 @@
 <script>
 import Card from "@/component/Card.vue";
 import Blazon from "@/component/blazon/Blazon.vue";
-import Reflection from "./Reflection.vue";
-import Top from "./Top.vue";
-import Bot from "./Bot.vue";
 
 export default {
   name: "Cabin",
   components: {
     Card,
-    Blazon,
-    Reflection,
-    Top,
-    Bot
+    Blazon
   },
   data() {
     return {
@@ -264,28 +257,17 @@ export default {
   display: initial;
 }
 
-.hat img {
-  transform: translate(-18.5px, -35px);
+.top img {
+  width: 100%;
 }
 
-.body img {
-  transform: translate(-22px, -24px);
+.bot img {
+  width: 100%;
+  transform: translateX(3px)
 }
 
-.shoe img {
-  transform: translate(-2px, 0px);
-}
-
-.item0 img {
-  transform: translate(-4px, -11px);
-}
-
-.item1 img {
-  transform: translate(-11px, -20px);
-}
-
-.item2 img {
-  transform: translate(-11px, -58px);
+.shape img {
+  width: 100%;
 }
 
 .item {
