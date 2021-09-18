@@ -339,6 +339,10 @@ export default {
   margin: -2px;
 }
 
+.chest .item.active img {
+  width: calc(100% + 4px);
+}
+
 .gender {
   font-family: "Chimboz Heavy";
   color: #fff;
