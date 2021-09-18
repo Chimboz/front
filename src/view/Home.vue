@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <router-link to="/levels" v-if="data">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -99,7 +99,7 @@
       {{ $t("lottery.secondLine") }}<br /><br />
       <RandomNumber :max="30" :value="20" :duration="5000" />
       <br /><br />
-      <Button orange @click="handle" class="btn-loto"
+      <Button color="orange" @click="handle" class="btn-loto"
         ><template #prepend
           ><img
             draggable="false"
@@ -111,7 +111,7 @@
         >Jouer</Button
       ></Card
     ><br />
-    <Card yellow justified>
+    <Card color="yellow" justified>
       <template #subtop>Chapaniouz</template>
       <template #header
         ><img
@@ -157,7 +157,7 @@
       </div>
     </Card>
     <template #right-column
-      ><Card blue top v-if="data">
+      ><Card color="blue" top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -167,7 +167,7 @@
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
-      <Card blue>
+      <Card color="blue">
         <template #button>
           <Button icon="register.svg">{{ $t("help.button") }}</Button>
         </template>
@@ -181,12 +181,12 @@
           />{{ $t("help.tip") }}</router-link
         ></Card
       ><br />
-      <Card yellow filename="packs.png" width="154" height="96" class="packs">
+      <Card color="yellow" filename="packs.png" :width="154" :height="96" class="packs">
         <template #button>
-          <Button yellow icon="register.svg">Pack</Button>
+          <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
         <Pack header="summer.png" footer="summer.png" /><br /><br />
-        <Button yellow icon="register.svg" class="fullwidth">Item</Button><br />
+        <Button color="yellow" icon="register.svg" class="fullwidth">Item</Button><br />
         <Pack header="summer.png" footer="summer.png" />
       </Card>
     </template>

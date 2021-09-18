@@ -1,13 +1,13 @@
 <template>
   <Container v-if="data">
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
         </div>
       </Card>
     </template>
-    <Card yellow filename="shop.svg" height="109">
+    <Card color="yellow" filename="shop.svg" :height="109">
       <template #header></template>
       <img
         draggable="false"

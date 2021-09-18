@@ -91,7 +91,7 @@
         </div>
       </div>
       <section class="section0" v-if="section == 0">
-        <br /><Button green @click="section = 1"
+        <br /><Button color="green" @click="section = 1"
           ><template #prepend
             ><img
               draggable="false"
@@ -142,8 +142,8 @@
           class="btn-md"
         />
         <div class="flex">
-          <Button red @click="section = 0" type="button">Annuler</Button>
-          <Button green
+          <Button color="red" @click="section = 0" type="button">Annuler</Button>
+          <Button color="green"
             ><template #prepend
               ><img
                 type="submit"
@@ -201,8 +201,8 @@
           />
         </div>
         <div class="flex">
-          <Button red @click="section = 0" type="button">Annuler</Button>
-          <Button type="submit" green
+          <Button color="red" @click="section = 0" type="button">Annuler</Button>
+          <Button type="submit" color="green"
             ><template #prepend
               ><img
                 draggable="false"

@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
@@ -133,7 +133,7 @@
       </div>
     </Card>
     <template #right-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template

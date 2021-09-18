@@ -1,7 +1,7 @@
 <template>
-  <Card yellow>
+  <Card color="yellow">
     <template #button>
-      <Button yellow icon="register.svg">{{ $t("credit.title") }}</Button>
+      <Button color="yellow" icon="register.svg">{{ $t("credit.title") }}</Button>
     </template>
     <div class="bank fullwidth">
       <img
@@ -30,7 +30,7 @@
       {{ $t("credit.text", credits) }} </router-link
     ><br /><br />
     <router-link to="/reflooz" class="btn-route"
-      ><Button orange icon="register.svg">Reflooz</Button></router-link
+      ><Button color="orange" icon="register.svg">Reflooz</Button></router-link
     ></Card
   >
 </template>

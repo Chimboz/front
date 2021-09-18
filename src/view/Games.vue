@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
         </div>
@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="bacteria_blue.jpg" height="74" blue justified>
+    <Card filename="bacteria_blue.jpg" :height="74" color="blue" justified>
       <img
         draggable="false"
         @contextmenu.prevent
@@ -33,7 +33,7 @@
       </router-link>
     </Card>
     <br />
-    <Card filename="patojdur_blue.gif" height="56" blue justified>
+    <Card filename="patojdur_blue.gif" :height="56" color="blue" justified>
       <img
         draggable="false"
         @contextmenu.prevent
@@ -57,7 +57,7 @@
       </router-link>
     </Card>
     <br />
-    <Card filename="mazo_blue.gif" height="52" blue justified>
+    <Card filename="mazo_blue.gif" :height="52" color="blue" justified>
       <img
         draggable="false"
         @contextmenu.prevent
@@ -81,7 +81,7 @@
       </router-link>
     </Card>
     <template #right-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template

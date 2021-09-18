@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <router-link to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -47,15 +47,17 @@
       v-model:centred="data.centres[3]"
     />
     <template #right-column>
-      <Card blue filename="messages.gif" width="154" height="56"> </Card><br />
-      <Card blue filename="forum.gif" width="154" height="45"> </Card
-      ><br /><Card blue>
+      <Card color="blue" filename="messages.gif" :width="154" :height="56">
+      </Card
+      ><br />
+      <Card color="blue" filename="forum.gif" :width="154" :height="45"> </Card
+      ><br /><Card color="blue">
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>
         </template>
       </Card>
       <br />
-      <Card blue>
+      <Card color="blue">
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.groupsList") }}</Button>
         </template>

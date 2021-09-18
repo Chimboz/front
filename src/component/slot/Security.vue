@@ -1,5 +1,5 @@
 <template>
-  <Card blue
+  <Card color="blue"
     >Choisis un bon mot de passe et ne le donne à personne<br /><Button
       icon="rules.svg"
       class="fullwidth"

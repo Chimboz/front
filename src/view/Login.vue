@@ -3,9 +3,9 @@
     <template #left-column>
       <Rules top /><br />
       <Security />
-      <Card yellow filename="packs.png" width="154" height="96" class="packs">
+      <Card color="yellow" filename="packs.png" :width="154" :height="96" class="packs">
         <template #button>
-          <Button yellow icon="register.svg">Pack</Button>
+          <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
         <Pack header="summer.png" footer="summer.png" /><br /><br />
       </Card>
@@ -13,7 +13,7 @@
     <Demo />
 
     <template #right-column
-      ><Card blue top v-if="data">
+      ><Card color="blue" top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>

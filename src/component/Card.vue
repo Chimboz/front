@@ -75,25 +75,11 @@ export default {
       default: 77,
       type: Number,
     },
-    yellow: {
+    color: {
       required: false,
-      type: Boolean,
-      default: false,
-    },
-    blue: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
-    lightblue: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
-    red: {
-      required: false,
-      type: Boolean,
-      default: false,
+      validator(value) {
+        return ["yellow", "blue", "lightblue", "red"].includes(value);
+      },
     },
     justified: {
       required: false,
@@ -113,70 +99,73 @@ export default {
   },
   computed: {
     cssVars() {
-      if (this.yellow)
-        return {
-          "--light-card-color": "#fff",
-          "--main-card-color": "#fff4d5",
-          "--dark-card-color": "#ddcb9b",
-          "--shadow-card-color": "#5c341f",
-          "--title-card-color": "#726338",
-          "--title-subtop-color": "#963d00",
-          "--shadow-subtop-color": "#a38c47",
-          "--light-subtop-color": "#fff7d7",
-          "--main-subtop-color": "#ffe5a3",
-          "--dark-subtop-color": "#a38c47",
-        };
-      if (this.blue)
-        return {
-          "--light-card-color": "#aadcfc",
-          "--main-card-color": "#6ebef0",
-          "--dark-card-color": "#5aa1cd",
-          "--shadow-card-color": "#355668",
-          "--title-card-color": "#096EA8",
-          "--title-subtop-color": "#004b7d",
-          "--shadow-subtop-color": "#1b4166",
-          "--light-subtop-color": "#c4e8ff",
-          "--main-subtop-color": "#99cdef",
-          "--dark-subtop-color": "#628499",
-        };
-      if (this.lightblue)
-        return {
-          "--light-card-color": "#aadcfc",
-          "--main-card-color": "#a4c4e3",
-          "--dark-card-color": "#5aa1cd",
-          "--shadow-card-color": "#355668",
-          "--title-card-color": "#096EA8",
-          "--title-subtop-color": "#004b7d",
-          "--shadow-subtop-color": "#1b4166",
-          "--light-subtop-color": "#c4e8ff",
-          "--main-subtop-color": "#99cdef",
-          "--dark-subtop-color": "#628499",
-        };
-      if (this.red)
-        return {
-          "--light-card-color": "#ff9e9e",
-          "--main-card-color": "#FF5454",
-          "--dark-card-color": "#e00c0c",
-          "--shadow-card-color": "#5078a0",
-          "--title-card-color": "#096EA8",
-          "--title-subtop-color": "#004b7d",
-          "--shadow-subtop-color": "#1b4166",
-          "--light-subtop-color": "#c4e8ff",
-          "--main-subtop-color": "#99cdef",
-          "--dark-subtop-color": "#628499",
-        };
-      return {
-        "--light-card-color": "#f2f8fc",
-        "--main-card-color": "#d5e6f3",
-        "--dark-card-color": "#a5cbe9",
-        "--shadow-card-color": "#18486a",
-        "--title-card-color": "#004e84",
-        "--title-subtop-color": "#004b7d",
-        "--shadow-subtop-color": "#1b4166",
-        "--light-subtop-color": "#c4e8ff",
-        "--main-subtop-color": "#99cdef",
-        "--dark-subtop-color": "#628499",
-      };
+      switch (this.color) {
+        case "yellow":
+          return {
+            "--light-card-color": "#fff",
+            "--main-card-color": "#fff4d5",
+            "--dark-card-color": "#ddcb9b",
+            "--shadow-card-color": "#5c341f",
+            "--title-card-color": "#726338",
+            "--title-subtop-color": "#963d00",
+            "--shadow-subtop-color": "#a38c47",
+            "--light-subtop-color": "#fff7d7",
+            "--main-subtop-color": "#ffe5a3",
+            "--dark-subtop-color": "#a38c47",
+          };
+        case "blue":
+          return {
+            "--light-card-color": "#aadcfc",
+            "--main-card-color": "#6ebef0",
+            "--dark-card-color": "#5aa1cd",
+            "--shadow-card-color": "#355668",
+            "--title-card-color": "#096EA8",
+            "--title-subtop-color": "#004b7d",
+            "--shadow-subtop-color": "#1b4166",
+            "--light-subtop-color": "#c4e8ff",
+            "--main-subtop-color": "#99cdef",
+            "--dark-subtop-color": "#628499",
+          };
+        case "lightblue":
+          return {
+            "--light-card-color": "#aadcfc",
+            "--main-card-color": "#a4c4e3",
+            "--dark-card-color": "#5aa1cd",
+            "--shadow-card-color": "#355668",
+            "--title-card-color": "#096EA8",
+            "--title-subtop-color": "#004b7d",
+            "--shadow-subtop-color": "#1b4166",
+            "--light-subtop-color": "#c4e8ff",
+            "--main-subtop-color": "#99cdef",
+            "--dark-subtop-color": "#628499",
+          };
+        case "red":
+          return {
+            "--light-card-color": "#ff9e9e",
+            "--main-card-color": "#FF5454",
+            "--dark-card-color": "#e00c0c",
+            "--shadow-card-color": "#5078a0",
+            "--title-card-color": "#096EA8",
+            "--title-subtop-color": "#004b7d",
+            "--shadow-subtop-color": "#1b4166",
+            "--light-subtop-color": "#c4e8ff",
+            "--main-subtop-color": "#99cdef",
+            "--dark-subtop-color": "#628499",
+          };
+        default:
+          return {
+            "--light-card-color": "#f2f8fc",
+            "--main-card-color": "#d5e6f3",
+            "--dark-card-color": "#a5cbe9",
+            "--shadow-card-color": "#18486a",
+            "--title-card-color": "#004e84",
+            "--title-subtop-color": "#004b7d",
+            "--shadow-subtop-color": "#1b4166",
+            "--light-subtop-color": "#c4e8ff",
+            "--main-subtop-color": "#99cdef",
+            "--dark-subtop-color": "#628499",
+          };
+      }
     },
   },
 };

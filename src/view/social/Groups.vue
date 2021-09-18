@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="group.gif" height="70" blue justified>
+    <Card filename="group.gif" :height="70" color="blue" justified>
       Envie de former un vrai gang avec tes potes ? Rejoindre une guilde de
       guerriers Bacteria ? Un fan club de ta star préférée avec tes copines ?
       Marre des faux groupes qui sont en réalité de simples messages de forum
@@ -21,7 +21,7 @@
       par le chef du groupe... A toi de faire tes preuves !
     </Card>
     <br />
-    <Card blue justified v-if="data">
+    <Card color="blue" justified v-if="data">
       <template #header>Les Groupes Officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
@@ -54,7 +54,7 @@
       </table>
     </Card>
     <template #right-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template

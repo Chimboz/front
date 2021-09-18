@@ -1,5 +1,5 @@
 <template>
-  <Card blue :bot="bot" :top="top"
+  <Card color="blue" :bot="bot" :top="top"
     >Ne donne jamais ton mot de passe, à personne&nbsp;!<br /><Button
       icon="rules.svg"
       class="fullwidth"

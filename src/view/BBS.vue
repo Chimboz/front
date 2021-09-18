@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
         </div>

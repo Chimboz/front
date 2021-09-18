@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="new.gif" height="70" blue>
+    <Card filename="new.gif" :height="70" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -22,7 +22,7 @@
       >
     </Card>
     <br />
-    <Card filename="popularity.gif" height="75" blue>
+    <Card filename="popularity.gif" :height="75" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -33,7 +33,7 @@
       <router-link to="/popu">Voir la page popularité</router-link>
     </Card>
     <br />
-    <Card filename="wedding.gif" blue>
+    <Card filename="wedding.gif" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -43,7 +43,7 @@
       <router-link to="/wedding">Voir la page des mariages</router-link>
     </Card>
     <template #right-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template

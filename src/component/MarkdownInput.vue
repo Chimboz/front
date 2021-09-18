@@ -22,7 +22,6 @@
           signature: this.signature,
           title: this.title,
         }"
-        :separator="false"
       />
     </tbody>
   </table>
@@ -278,7 +277,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <Button type="submit" green
+            <Button type="submit" color="green"
               ><template #prepend
                 ><img
                   draggable="false"

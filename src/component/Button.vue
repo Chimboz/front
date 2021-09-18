@@ -26,68 +26,57 @@ export default {
       required: false,
       type: String,
     },
-    red: {
+    color: {
       required: false,
-      type: Boolean,
-      default: false,
-    },
-    green: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
-    yellow: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
-    orange: {
-      required: false,
-      type: Boolean,
-      default: false,
+      validator(value) {
+        return ["red", "green", "yellow", "orange"].includes(value);
+      },
     },
   },
   computed: {
     cssVars() {
-      if (this.yellow)
-        return {
-          "--button-color-1": "#fff3b5",
-          "--button-color-2": "#ffb907",
-          "--button-color-3": "#e58900",
-          "--button-color-4": "#ffb700",
-          "--button-color-5": "#bb5c1d",
-        };
-      if (this.orange)
-        return {
-          "--button-color-1": "#fec9b4",
-          "--button-color-2": "#ff7b00",
-          "--button-color-3": "#d15503",
-          "--button-color-4": "#f80",
-          "--button-color-5": "#9f3400",
-        };
-      if (this.red)
-        return {
-          "--button-color-1": "#ffe6e6",
-          "--button-color-2": "#fb0d0d",
-          "--button-color-3": "#d10303",
-          "--button-color-4": "#ff2d2d",
-          "--button-color-5": "#a10000",
-        };
-      if (this.green)
-        return {
-          "--button-color-1": "#efe",
-          "--button-color-2": "#5b3",
-          "--button-color-3": "#371",
-          "--button-color-4": "#3a0",
-          "--button-color-5": "#350",
-        };
-      return {
-        "--button-color-1": "#fe9ae0",
-        "--button-color-2": "#ff00a6",
-        "--button-color-3": "#c10276",
-        "--button-color-4": "#ff009c",
-        "--button-color-5": "#a10069",
-      };
+      switch (this.color) {
+        case "yellow":
+          return {
+            "--button-color-1": "#fff3b5",
+            "--button-color-2": "#ffb907",
+            "--button-color-3": "#e58900",
+            "--button-color-4": "#ffb700",
+            "--button-color-5": "#bb5c1d",
+          };
+        case "orange":
+          return {
+            "--button-color-1": "#fec9b4",
+            "--button-color-2": "#ff7b00",
+            "--button-color-3": "#d15503",
+            "--button-color-4": "#f80",
+            "--button-color-5": "#9f3400",
+          };
+        case "red":
+          return {
+            "--button-color-1": "#ffe6e6",
+            "--button-color-2": "#fb0d0d",
+            "--button-color-3": "#d10303",
+            "--button-color-4": "#ff2d2d",
+            "--button-color-5": "#a10000",
+          };
+        case "green":
+          return {
+            "--button-color-1": "#efe",
+            "--button-color-2": "#5b3",
+            "--button-color-3": "#371",
+            "--button-color-4": "#3a0",
+            "--button-color-5": "#350",
+          };
+        default:
+          return {
+            "--button-color-1": "#fe9ae0",
+            "--button-color-2": "#ff00a6",
+            "--button-color-3": "#c10276",
+            "--button-color-4": "#ff009c",
+            "--button-color-5": "#a10069",
+          };
+      }
     },
   },
 };

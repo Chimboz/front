@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column></template>
-    <Card red>
+    <Card color="red">
       <img
         draggable="false"
         @contextmenu.prevent

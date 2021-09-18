@@ -1,5 +1,5 @@
 <template>
-  <Card blue>
+  <Card color="blue">
     <form @submit.prevent="submit">
       <div class="container-acc flex">
         <div class="left-acc flex">
@@ -334,7 +334,7 @@
         </div>
       </div>
       <div class="flex btn-menu">
-        <Button green type="submit"
+        <Button color="green" type="submit"
           ><template #prepend
             ><img
               draggable="false"

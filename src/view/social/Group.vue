@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card blue top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
@@ -9,11 +9,11 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="group.gif" height="70" blue>
-      <blazon shape="1" top="7" bot="6" colora="#376da8" />
+    <Card filename="group.gif" :height="70" blue>
+      <blazon :shape="0" :top="7" :bot="6" colora="#376da8" colorb="#f0f" />
     </Card>
     <template #right-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <template #header> Records ! </template>
         <template #subtitle
           >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -37,7 +37,7 @@
 import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Container from "@/component/Container.vue";
-import Blazon from "../../component/Blazon.vue";
+import Blazon from "../../component/blazon/Blazon.vue";
 
 export default {
   name: "Group",

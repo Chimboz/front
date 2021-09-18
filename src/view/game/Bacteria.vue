@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column
-      ><Card blue top>
+      ><Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
         </div> </Card
@@ -222,8 +222,8 @@
     <template #right-column
       ><Card
         filename="ensavoirplus.gif"
-        width="154"
-        height="34"
+        :width="154"
+        :height="34"
         top
         lightblue
         justified
