@@ -130,7 +130,6 @@
       Les 10 premiers du classement remportent le
       <b>casque Bacteria</b>.<br />
       <br />
-      (Pour voir les détails, laisse ta souris sans cliquer sur [détail])<br />
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
@@ -166,7 +165,6 @@
     <br /><Card id="worst" v-if="data">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
-      (Pour voir la catastrophe, laisse ta souris sans cliquer sur [détail])<br />
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
@@ -225,7 +223,7 @@
         :width="154"
         :height="34"
         top
-        lightblue
+        color="lightblue"
         justified
       >
         Toutes les infos, les techniques, news.<br />
