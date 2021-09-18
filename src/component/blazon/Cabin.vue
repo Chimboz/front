@@ -165,11 +165,6 @@ export default {
     centreb: { type: String },
     centrec: { type: String },
     centred: { type: String }
-  },
-  methods: {
-    submit() {
-      console.log("Envoyé!");
-    }
   }
 };
 </script>
