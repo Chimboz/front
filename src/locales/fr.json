@@ -84,6 +84,8 @@
     "popularity": "Popularité",
     "encyclopedia": "Encyclopédie",
     "games": "Jeux",
-    "community": "Communauté"
+    "community": "Communauté",
+    "devlog": "Journal de dev",
+    "documentation": "Documentation"
   }
 }
