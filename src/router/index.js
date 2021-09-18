@@ -76,6 +76,12 @@ const routes = [
     meta: { title: "Chapatiz Retro | Groupe" },
   },
   {
+    path: "/group/edit/:id",
+    name: "Group Edit",
+    component: () => import("../view/social/group/Edit.vue"),
+    meta: { title: "Chapatiz Retro | Edition de groupe" },
+  },
+  {
     path: "/bbs",
     name: "BBS",
     component: () => import("../view/BBS.vue"),

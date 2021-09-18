@@ -60,7 +60,7 @@
 </template>
 <script>
 export default {
-    name:"BotItem",
+    name:"Bot",
     props: {
         id: {
             type: Number,

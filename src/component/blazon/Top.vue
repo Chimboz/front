@@ -22,7 +22,7 @@
 </template>
 <script>
 export default {
-    name:"TopItem",
+    name:"Top",
     props: {
         id: {
             type: Number,

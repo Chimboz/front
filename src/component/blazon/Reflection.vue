@@ -14,16 +14,6 @@ export default {
             type: Number,
             required: true,
             default: 1
-        },
-        colora: {
-            type: String,
-            required: true,
-            default: "#fff"
-        },
-        colorb: {
-            type: String,
-            required: true,
-            default: "#fff"
         }
     }
 }

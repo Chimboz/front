@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <Card filename="group.gif" :height="70" color="blue">
-      <blazon :shape="0" :top="7" :bot="26" colora="#376da8" colorb="#eee" />
+      <blazon :shape="4" :top="7" :bot="26" primary="#376da8" secondary="#eee" />
     </Card>
     <template #right-column
       ><Card color="blue" top>

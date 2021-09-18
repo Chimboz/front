@@ -1,32 +1,32 @@
 <template>
   <div class="blazon">
-    <background :colora="colora" :colorb="colorb" :id="shape" />
-    <div class="top"><top-item :color="colora" :id="top" /></div>
-    <div class="bot"><bot-item :color="colora" :id="bot" class="bot" /></div>
+    <background :primary="primary" :secondary="secondary" :id="shape" />
+    <div class="top"><top :color="primary" :id="top" /></div>
+    <div class="bot"><bot :color="primary" :id="bot" /></div>
     <div class="reflection"><reflection :id="shape" /></div>
   </div>
 </template>
 <script>
 import Background from "./Background.vue";
 import Reflection from "./Reflection.vue";
-import TopItem from "./TopItem.vue";
-import BotItem from "./BotItem.vue";
+import Top from "./Top.vue";
+import Bot from "./Bot.vue";
 
 export default {
   name: "Blazon",
   components: {
     Background,
     Reflection,
-    TopItem,
-    BotItem,
+    Top,
+    Bot,
   },
   props: {
-    colora: {
+    primary: {
       required: true,
       type: String,
       default: "#fff",
     },
-    colorb: {
+    secondary: {
       required: true,
       type: String,
       default: "#fff",

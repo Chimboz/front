@@ -77,8 +77,7 @@
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   style="transform: rotate(-90deg)"
-                  :class="{ pushed: up }"
-                /></button
+                  :class="{ pushed: up }"/></button
               ><br /><button type="button">
                 <img
                   draggable="false"
@@ -86,24 +85,21 @@
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   style="transform: scaleX(-1)"
-                  :class="{ pushed: left }"
-                /></button
+                  :class="{ pushed: left }"/></button
               ><button type="button" id="random">
                 <img
                   draggable="false"
                   @contextmenu.prevent
                   alt="Random button"
                   title="Randomize look"
-                  src="@/asset/img/home/chaparadio/stop.svg"
-                /></button
+                  src="@/asset/img/home/chaparadio/stop.svg"/></button
               ><button type="button">
                 <img
                   draggable="false"
                   @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
-                  :class="{ pushed: right }"
-                /></button
+                  :class="{ pushed: right }"/></button
               ><br /><button type="button">
                 <img
                   draggable="false"
@@ -130,8 +126,7 @@
                 @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
-                src="@/asset/img/icon/gender/male.svg"
-              /></button
+                src="@/asset/img/icon/gender/male.svg"/></button
             ><button
               type="button"
               class="pink-icon"
@@ -145,8 +140,7 @@
                 @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
-                src="@/asset/img/icon/gender/female.svg"
-              /></button
+                src="@/asset/img/icon/gender/female.svg"/></button
             ><button
               type="button"
               class="pink-icon"
@@ -258,7 +252,7 @@
                         'item1',
                         'body',
                         'item2',
-                        'shoe',
+                        'shoe'
                       ])
                     : (checked = [`${category}`])
                 "
@@ -297,7 +291,7 @@
                     : [],
                   shoe: this.checked.includes('shoe')
                     ? this.data.items.shoe
-                    : [],
+                    : []
                 }"
                 :key="name"
                 :class="[name]"
@@ -306,7 +300,7 @@
                   type="button"
                   class="item"
                   :class="{
-                    active: this.data.look[name] == item,
+                    active: this.data.look[name] == item
                   }"
                   v-for="item of category"
                   :key="item"
@@ -374,7 +368,7 @@ export default {
     Button,
     Tiz,
     Emotes,
-    VLazyImage,
+    VLazyImage
   },
   data() {
     return {
@@ -386,26 +380,26 @@ export default {
       left: false,
       info: "",
       checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
-      gender: "Inconnu",
+      gender: "Inconnu"
     };
   },
   props: {
     data: {
       required: true,
-      type: Object,
+      type: Object
     },
     motto: { type: String },
     website: { type: String },
     centrea: { type: String },
     centreb: { type: String },
     centrec: { type: String },
-    centred: { type: String },
+    centred: { type: String }
   },
   methods: {
     submit() {
       console.log("Envoyé!");
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">
@@ -490,6 +484,10 @@ h3 {
   align-items: flex-end;
   justify-content: center;
   margin: 0 -12px;
+}
+
+.cabin {
+  justify-content: center;
 }
 
 #profile,
