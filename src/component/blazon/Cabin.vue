@@ -335,11 +335,11 @@ export default {
   border: 2px solid #fff;
 }
 
-.item.active img {
+.item.active img, .item.active svg {
   margin: -2px;
 }
 
-.chest .item.active img {
+.chest .item.active img, .chest .item.active svg {
   width: calc(100% + 4px);
 }
 
