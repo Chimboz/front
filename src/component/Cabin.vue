@@ -123,7 +123,7 @@
               :class="{ active: data.gender == 'Chapato' }"
               @mouseenter="gender = 'Chapato'"
               @mouseleave="gender = data.gender"
-              @click="$emit(changeGender, 'Chapato')"
+              @click="$emit('changeGender', gender)"
             >
               <img
                 draggable="false"
@@ -138,7 +138,7 @@
               :class="{ active: data.gender == 'Chapata' }"
               @mouseenter="gender = 'Chapata'"
               @mouseleave="gender = data.gender"
-              @click="$emit(changeGender, 'Chapata')"
+              @click="$emit('changeGender', gender)"
             >
               <img
                 draggable="false"
@@ -153,7 +153,7 @@
               :class="{ active: data.gender == 'Chapati' }"
               @mouseenter="gender = 'Chapati'"
               @mouseleave="gender = data.gender"
-              @click="$emit(changeGender, 'Chapati')"
+              @click="$emit('changeGender', gender)"
             >
               <img
                 draggable="false"
@@ -172,16 +172,19 @@
             <Button
               type="button"
               :class="{ active: profile }"
-              @click="profile = true"
+              @click="profile = !profile"
               >{{ $t("myAccount.profileSection") }}</Button
             ><Button
               type="button"
               :class="{ active: !profile }"
-              @click="profile = false"
+              @click="
+                profile = !profile;
+                loadInventory = true;
+              "
               >{{ $t("myAccount.invSection") }}</Button
             >
           </div>
-          <div id="profile" v-if="profile">
+          <div id="profile" v-show="profile">
             <Emotes />
             <br />
             <h3 class="justified">Ta phrase préférée</h3>
@@ -240,7 +243,7 @@
               </li>
             </ol>
           </div>
-          <div id="inventory" v-else>
+          <div id="inventory" v-if="loadInventory" v-show="!profile">
             <div class="category-selection" @contextmenu.prevent>
               <button
                 type="button"
@@ -376,6 +379,7 @@ export default {
   data() {
     return {
       profile: true,
+      loadInventory: false,
       up: false,
       down: false,
       right: false,

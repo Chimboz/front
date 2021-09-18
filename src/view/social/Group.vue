@@ -36,7 +36,6 @@
 <script>
 import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
-import Tiz from "@/component/Tiz.vue";
 import Container from "@/component/Container.vue";
 import Blazon from "../../component/Blazon.vue";
 
@@ -46,7 +45,6 @@ export default {
     Card,
     Container,
     Rules,
-    Tiz,
     Blazon,
   },
   data() {

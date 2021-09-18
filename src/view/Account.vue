@@ -38,7 +38,7 @@
             data.items[name].indexOf(data.look[name]) + 1
           ])
       "
-      @change-gender="(gender) => (data.gender = gender)"
+      @change-gender="(gender) => (this.data.gender = gender)"
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"

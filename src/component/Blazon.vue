@@ -33,12 +33,12 @@ export default {
     colora: {
       required: true,
       type: String,
-      default: 1,
+      default: "#fff",
     },
     colorb: {
       required: true,
       type: String,
-      default: 1,
+      default: "#fff",
     },
     shape: {
       required: true,
