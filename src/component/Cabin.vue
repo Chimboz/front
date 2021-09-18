@@ -452,6 +452,7 @@ h3 {
 
 .right-acc {
   flex-direction: column;
+  width: 100%;
 }
 
 .controls button {

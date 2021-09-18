@@ -191,6 +191,7 @@ export default {
 
 .right-blz {
   flex-direction: column;
+  width: 100%;
 }
 
 .cabin {
@@ -263,7 +264,7 @@ export default {
 
 .bot img {
   width: 100%;
-  transform: translateX(3px)
+  transform: translateX(3px);
 }
 
 .shape img {
