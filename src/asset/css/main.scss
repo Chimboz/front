@@ -117,6 +117,14 @@ img[src*="puce"] {
   height: 17px;
 }
 
+img[src*="/emoticon/"] {
+  object-fit: none;
+  height: 26px;
+  width: 26px;
+  object-position: 62% 86%;
+  border: 1px solid black !important;
+}
+
 img {
   user-select: none;
   -webkit-user-select: none;
@@ -235,7 +243,8 @@ textarea.btn-md {
 }
 
 .btn-md:hover,
-.btn-md:active, input:not([type="checkbox"]).btn-md:focus,
+.btn-md:active,
+input:not([type="checkbox"]).btn-md:focus,
 textarea.btn-md:focus {
   border-color: #f80;
   box-shadow: 0 1px #d15503;
@@ -245,11 +254,13 @@ select.btn-md {
   background: #fff;
 }
 
-input:valid:not(:placeholder-shown), textarea:valid:not(:placeholder-shown) {
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
   border-color: #5b3;
 }
 
-input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) {
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
   border-color: #fb0d0d;
 }
 
