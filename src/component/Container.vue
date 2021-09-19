@@ -39,17 +39,17 @@
 
 .main-column {
   width: 100%;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .left-column {
   order: 1;
-  padding-right: 12px;
+  margin-right: 12px;
 }
 
 .right-column {
   order: 2;
-  padding-left: 12px;
+  margin-left: 12px;
 }
 
 @media (min-width: 508px) {
