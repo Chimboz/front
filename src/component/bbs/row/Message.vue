@@ -65,28 +65,26 @@
 <script>
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
-import Marked from "marked";
-import DOMPurify from "dompurify";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import katex from "katex/dist/katex.mjs";
+import messageRender from "@/module/messageRender.js";
 
 export default {
   name: "Message",
   components: {
     Tiz,
-    User,
+    User
   },
   props: {
     message: {
       required: true,
-      type: Object,
+      type: Object
     },
     separator: {
       required: false,
       default: true,
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   mounted() {
     if (this.$route.hash) {
@@ -95,120 +93,20 @@ export default {
   },
   computed: {
     formatMessage() {
-      const renderer = new Marked.Renderer();
-      const linkRenderer = renderer.link;
-      renderer.link = (href, title, text) => {
-        const localLink = href.startsWith(
-          `${location.protocol}//${location.hostname}`
-        );
-        const html = linkRenderer.call(renderer, href, title, text);
-        return localLink
-          ? html
-          : html.replace(
-              /^<a /,
-              `<a target="_blank" rel="noreferrer noopener nofollow" `
-            );
-      };
-
-      function mathsExpression(expr) {
-        if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
-          expr = expr.substr(2, expr.length - 4);
-          return katex.renderToString(expr, { displayMode: true });
-        } else if (expr.match(/^\$[\s\S]*\$$/)) {
-          expr = expr.substr(1, expr.length - 2);
-          return katex.renderToString(expr, { displayMode: false });
-        }
-      }
-
-      const rendererCodespan = renderer.codespan;
-      renderer.codespan = function(text) {
-        const math = mathsExpression(text);
-
-        if (math) {
-          return math;
-        }
-
-        return rendererCodespan(text);
-      };
-
-      Marked.setOptions({
-        renderer: renderer,
-        highlight: function(code, lang) {
-          const hljs = require("highlight.js");
-          const language = hljs.getLanguage(lang) ? lang : "plaintext";
-          return hljs.highlight(code, { language }).value;
-        },
-        langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
-        pedantic: false,
-        gfm: true,
-        breaks: true,
-        sanitize: false,
-        smartLists: true,
-        smartypants: false,
-        xhtml: false,
-      });
-
-      return DOMPurify.sanitize(Marked(this.message.content), {
-        ALLOWED_TAGS: [
-          "h1",
-          "h2",
-          "h3",
-          "h4",
-          "h6",
-          "p",
-          "span",
-          "ul",
-          "ol",
-          "li",
-          "blockquote",
-          "pre",
-          "code",
-          "hr",
-          "table",
-          "br",
-          "kbd",
-          "strong",
-          "em",
-          "s",
-          "a",
-          "input",
-          "thead",
-          "tbody",
-          "tr",
-          "th",
-          "td",
-          "img",
-          "svg",
-          "path"
-        ],
-        ALLOWED_ATTR: [
-          "style",
-          "class",
-          "type",
-          "disabled",
-          "checked",
-          "src",
-          "href",
-          "target",
-          "viewBox",
-          "d",
-          "xmlns",
-          "preserveAspectRatio"
-        ],
-      });
+      return messageRender(this.message.content);
     },
     formatDate() {
       return format(new Date(this.message.date), "PPP à pp", {
         locale: fr,
-        addSuffix: true,
+        addSuffix: true
       });
-    },
+    }
   },
   methods: {
     scrollTo(anchor) {
       location.href = anchor;
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">
