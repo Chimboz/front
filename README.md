@@ -20,7 +20,7 @@ Vue files (`*.vue`) begin with an uppercase letter and use PascalCase.
 
 # Branches
 
-One branch per feature.
+One branch per feature.  
 Fork and PR are appreciated.
 
 # Project setup
@@ -58,6 +58,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - date-fns
 - marked
 - mitt
+- katex
+- highlight.js
+- v-lazy-image
 
 # Useful tools
 ## VS Extensions
@@ -67,9 +70,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## SVG
 [SVG Animation editor](http://anigen.org/versions/0_8_1/)  
 [SVG Path editor](https://yqnn.github.io/svg-path-editor/)  
-[Inkscape](https://inkscape.org/)  
+[Inkscape](https://inkscape.org/)
 
 ## Vue doc
 [Vue](https://v3.vuejs.org/)  
-[Router](https://next.router.vuejs.org/)  
+[Vue Router](https://next.router.vuejs.org/)  
 [Vuex](https://next.vuex.vuejs.org/)  
+[Vue Meta](https://vue-meta.nuxtjs.org/)
