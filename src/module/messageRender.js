@@ -107,6 +107,7 @@ const messageRender = function(string) {
     ALLOWED_ATTR: [
       "style",
       "class",
+      "alt",
       "type",
       "disabled",
       "checked",

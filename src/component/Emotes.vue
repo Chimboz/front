@@ -4,7 +4,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/icon/emote/default.svg"
+        src="@/asset/img/icon/emote/neutral.svg"
       />
     </button>
     <button type="button" class="pink-icon">
