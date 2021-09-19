@@ -4,7 +4,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="[SECTION]" />
+          <SideNavEntries section="Template" />
         </div> </Card
       ><br />
       <Rules top />
@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  name: "Login",
+  name: "Template",
   components: {},
   data() {
     return {
@@ -26,11 +26,11 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/Template.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/members.json");
+    const req = await this.api.get("/api/Template.json");
     this.data = req.data;
   }
 };
