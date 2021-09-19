@@ -18,8 +18,7 @@
     </div>
   </div>
 </template>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .row {
   padding: 0 12px;
   width: 100%;
@@ -34,11 +33,7 @@
   box-sizing: content-box;
 }
 
-.side-column > div {
-  width: min-content;
-}
-
-.side-column .card {
+.side-column {
   width: 154px;
 }
 
@@ -57,10 +52,6 @@
   padding-left: 12px;
 }
 
-.main-column {
-  width: 100%;
-}
-
 @media (min-width: 508px) {
   .main-column {
     min-width: 468px;
@@ -76,7 +67,6 @@
 
 @media (min-width: 800px) {
   .side-column {
-    width: 154px;
     order: 0;
   }
 

@@ -41,9 +41,7 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
-import Container from "@/component/Container.vue";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import Modal from "../../component/Modal.vue";
@@ -51,8 +49,6 @@ import Modal from "../../component/Modal.vue";
 export default {
   name: "Wedding",
   components: {
-    Card,
-    Container,
     Rules,
     Modal,
   },

@@ -151,13 +151,11 @@
   </Card>
 </template>
 <script>
-import Card from "@/component/Card.vue";
 import Blazon from "@/component/blazon/Blazon.vue";
 
 export default {
   name: "Cabin",
   components: {
-    Card,
     Blazon
   },
   data() {

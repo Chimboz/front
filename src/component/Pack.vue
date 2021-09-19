@@ -62,13 +62,11 @@
       </g>
       <rect
         width="166"
-        height="64.527"
+        height="64"
         x="7"
-        y="268.473"
-        ry="32.263"
+        y="269"
+        ry="32"
         fill="url(#footer)"
-        fill-rule="evenodd"
-        paint-order="stroke fill markers"
       />
       <defs>
         <pattern
@@ -77,7 +75,12 @@
           width="100%"
           height="100%"
         >
-          <image :href="`/pack/footer/${footer}`" />
+          <image
+            :href="`/pack/footer/${footer}`"
+            width="180"
+            height="340"
+            preserveAspectRatio="xMidYMid slice"
+          />
         </pattern>
         <pattern
           id="header"
@@ -85,7 +88,11 @@
           width="100%"
           height="100%"
         >
-          <image :href="`/pack/header/${header}`" />
+          <image
+            :href="`/pack/header/${header}`"
+            height="100"
+            preserveAspectRatio="xMidYMid slice"
+          />
         </pattern>
       </defs>
     </svg>
@@ -103,13 +110,13 @@ export default {
   props: {
     header: {
       required: true,
-      type: String,
+      type: String
     },
     footer: {
       required: true,
-      type: String,
-    },
-  },
+      type: String
+    }
+  }
 };
 </script>
 

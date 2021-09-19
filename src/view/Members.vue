@@ -64,16 +64,12 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
-import Container from "@/component/Container.vue";
 
 export default {
   name: "Members",
   components: {
-    Card,
-    Container,
     Rules,
     Tiz,
   },

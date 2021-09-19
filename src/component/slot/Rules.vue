@@ -8,15 +8,8 @@
   >
 </template>
 <script>
-import Card from "@/component/Card.vue";
-import Button from "@/component/Button.vue";
-
 export default {
   name: "Rules",
-  components: {
-    Card,
-    Button,
-  },
   props: {
     bot: {
       required: false,

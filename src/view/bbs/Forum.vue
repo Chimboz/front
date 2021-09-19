@@ -31,59 +31,55 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import Board from "@/component/bbs/list/Board.vue";
-import Container from "@/component/Container.vue";
 import MarkdownInput from "../../component/MarkdownInput.vue";
 
 const iconDescriptions = [
   {
     src: require("@/asset/img/bbs/folder_new.svg"),
-    label: "Nouveaux messages",
+    label: "Nouveaux messages"
   },
   {
     src: require("@/asset/img/bbs/folder_new_hot.svg"),
-    label: "Nouveaux messages [ Populaire ]",
+    label: "Nouveaux messages [ Populaire ]"
   },
   {
     src: require("@/asset/img/bbs/folder_new_lock.svg"),
-    label: "Nouveaux messages [ Verrouillé ]",
+    label: "Nouveaux messages [ Verrouillé ]"
   },
   {
     src: require("@/asset/img/bbs/folder.svg"),
-    label: "Pas de nouveaux messages",
+    label: "Pas de nouveaux messages"
   },
   {
     src: require("@/asset/img/bbs/folder_hot.svg"),
-    label: "Pas de nouveaux messages [ Populaire ]",
+    label: "Pas de nouveaux messages [ Populaire ]"
   },
   {
     src: require("@/asset/img/bbs/folder_lock.svg"),
-    label: "Pas de nouveaux messages [ Verrouillé ]",
+    label: "Pas de nouveaux messages [ Verrouillé ]"
   },
   {
     src: require("@/asset/img/bbs/folder_announce.svg"),
-    label: "Annonce",
+    label: "Annonce"
   },
   {
     src: require("@/asset/img/bbs/folder_sticky.svg"),
-    label: "Post-it",
-  },
+    label: "Post-it"
+  }
 ];
 
 export default {
   name: "BBS",
   components: {
     Board,
-    Container,
-    Card,
-    MarkdownInput,
+    MarkdownInput
   },
   data() {
     return {
       data: null,
       iconDescriptions,
-      post: false,
+      post: false
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -94,7 +90,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/forum.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>

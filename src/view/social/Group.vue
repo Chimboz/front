@@ -34,16 +34,12 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
-import Container from "@/component/Container.vue";
 import Blazon from "../../component/blazon/Blazon.vue";
 
 export default {
   name: "Group",
   components: {
-    Card,
-    Container,
     Rules,
     Blazon,
   },

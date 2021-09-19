@@ -148,7 +148,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><user :user="rank.user"/></td>
             <td>{{ rank.score }}</td>
             <td>
               <Tooltip>
@@ -183,7 +183,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.worst" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><user :user="rank.user"/></td>
             <td>{{ rank.score }}</td>
             <td>
               <Tooltip>
@@ -211,7 +211,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><group :group="rank.group" /></td>
+            <td><group :group="rank.group"/></td>
             <td>{{ rank.score }}</td>
           </tr>
         </tbody>
@@ -285,9 +285,7 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
-import Container from "@/component/Container.vue";
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
 import Progress from "@/component/Progress.vue";
@@ -296,17 +294,15 @@ import Tooltip from "@/component/Tooltip.vue";
 export default {
   name: "Games",
   components: {
-    Card,
-    Container,
     Rules,
     User,
     Group,
     Progress,
-    Tooltip,
+    Tooltip
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -317,7 +313,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/bacteria.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
 

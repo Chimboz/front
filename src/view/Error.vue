@@ -22,14 +22,7 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
-import Container from "@/component/Container.vue";
-
 export default {
   name: "Error",
-  components: {
-    Card,
-    Container,
-  },
 };
 </script>

@@ -355,8 +355,6 @@
   </Card>
 </template>
 <script>
-import Card from "@/component/Card.vue";
-import Button from "@/component/Button.vue";
 import Tiz from "@/component/Tiz.vue";
 import Emotes from "@/component/Emotes.vue";
 import VLazyImage from "v-lazy-image";
@@ -364,8 +362,6 @@ import VLazyImage from "v-lazy-image";
 export default {
   name: "Cabin",
   components: {
-    Card,
-    Button,
     Tiz,
     Emotes,
     VLazyImage

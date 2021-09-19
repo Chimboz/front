@@ -224,12 +224,9 @@
   </div>
 </template>
 <script>
-import Button from "@/component/Button.vue";
+
 export default {
   name: "Message",
-  components: {
-    Button,
-  },
   data() {
     return {
       section: 0,

@@ -67,18 +67,12 @@
 
 <script>
 import Cabin from "@/component/Cabin.vue";
-import Card from "@/component/Card.vue";
-import Button from "@/component/Button.vue";
 import Bank from "@/component/Bank.vue";
-import Container from "@/component/Container.vue";
 
 export default {
   name: "Account",
   components: {
-    Card,
-    Button,
     Bank,
-    Container,
     Cabin
   },
   data() {

@@ -297,11 +297,10 @@
 import Emotes from "@/component/Emotes.vue";
 import Message from "@/component/bbs/row/Message.vue";
 import { mapState } from "vuex";
-import Button from "./Button.vue";
 
 export default {
   name: "MarkdownInput",
-  components: { Emotes, Button, Message },
+  components: { Emotes, Message },
   data() {
     return {
       message: "",

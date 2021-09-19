@@ -13,9 +13,7 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import Topic from "@/component/bbs/list/Topic.vue";
-import Container from "@/component/Container.vue";
 import MarkdownInput from "@/component/MarkdownInput.vue";
 import { mapGetters } from "vuex";
 
@@ -23,8 +21,6 @@ export default {
   name: "BBS",
   components: {
     Topic,
-    Container,
-    Card,
     MarkdownInput,
   },
   data() {

@@ -53,20 +53,16 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import BBSList from "@/component/bbs/list/BBS.vue";
-import Container from "@/component/Container.vue";
 
 export default {
   name: "BBS",
   components: {
-    BBSList,
-    Container,
-    Card,
+    BBSList
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -77,7 +73,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/bbs.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
 <style lang="scss">

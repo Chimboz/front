@@ -41,16 +41,12 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue";
-import Container from "@/component/Container.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 
 export default {
   name: "Shop",
   components: {
-    Container,
-    Card,
     Bank,
     Pack,
   },

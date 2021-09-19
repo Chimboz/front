@@ -47,7 +47,7 @@
         <tbody>
           <tr v-for="(group, index) in data.official" :key="index">
             <td>{{ group.index }}</td>
-            <td><group :group="group" /></td>
+            <td><group :group="group"/></td>
             <td>{{ group.genre }}</td>
           </tr>
         </tbody>
@@ -75,22 +75,18 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Group from "@/component/link/Group.vue";
-import Container from "@/component/Container.vue";
 
 export default {
   name: "Groups",
   components: {
-    Card,
-    Container,
     Rules,
-    Group,
+    Group
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -101,7 +97,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/members.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
 

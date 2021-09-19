@@ -1,9 +1,16 @@
+<!-- This component is only meant to be copy pasted -->
 <template>
   <Container>
     <template #left-column>
       <Rules top /><br />
       <Security />
-      <Card color="yellow" filename="packs.png" :width="154" :height="96" class="packs">
+      <Card
+        color="yellow"
+        filename="packs.png"
+        :width="154"
+        :height="96"
+        class="packs"
+      >
         <template #button>
           <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
@@ -27,22 +34,15 @@
   </Container>
 </template>
 <script>
-import Demo from "@/component/Demo.vue";
-import Pack from "@/component/Pack.vue";
-import Rules from "@/component/slot/Rules.vue";
-import Security from "@/component/slot/Security.vue";
+
 
 export default {
   name: "Login",
   components: {
-    Pack,
-    Demo,
-    Rules,
-    Security,
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -53,26 +53,8 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/members.json");
     this.data = req.data;
-  },
-  methods: {
-    login() {
-      this.$store.dispatch("auth/login");
-    },
-  },
+  }
 };
 </script>
-<style lang="scss">
-.packs .card-btn {
-  background: linear-gradient(
-    to bottom,
-    #7aaaf0,
-    #7aaaf0 50%,
-    var(--main-card-color) 50%
-  );
-}
-</style>
-<style lang="scss" scoped>
-.login-form {
-  justify-content: center;
-}
-</style>
+<style lang="scss"></style>
+<style lang="scss" scoped></style>

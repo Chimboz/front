@@ -8,15 +8,8 @@
   >
 </template>
 <script>
-import Card from "@/component/Card.vue";
-import Button from "@/component/Button.vue";
-
 export default {
   name: "Security",
-  components: {
-    Card,
-    Button,
-  },
 };
 </script>
 <style lang="scss" scoped></style>

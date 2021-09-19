@@ -28,17 +28,13 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue";
 import Cabin from "@/component/blazon/Cabin.vue";
-import Container from "@/component/Container.vue";
 import Rules from "@/component/slot/Rules.vue"
 
 export default {
   name: "Edit",
   components: {
-    Card,
     Cabin,
-    Container,
     Rules
   },
   data() {

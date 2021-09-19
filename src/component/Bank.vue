@@ -35,16 +35,12 @@
   >
 </template>
 <script>
-import Card from "@/component/Card.vue";
-import Button from "@/component/Button.vue";
 import AnimatedNumber from "@/component/AnimatedNumber.vue";
 
 export default {
   name: "Bank",
   components: {
-    Button,
     AnimatedNumber,
-    Card,
   },
 
   mounted() {

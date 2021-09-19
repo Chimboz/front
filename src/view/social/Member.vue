@@ -155,21 +155,17 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
 import StrokeText from "@/component/StrokeText.vue";
-import Container from "@/component/Container.vue";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
   name: "Member",
   components: {
-    Card,
-    Container,
     Rules,
     Tiz,
     User,

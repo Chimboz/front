@@ -194,17 +194,13 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
 import Rules from "@/component/slot/Rules.vue";
-import Container from "@/component/Container.vue";
 
 export default {
   name: "Games",
   components: {
-    Card,
-    Container,
-    Rules,
-  },
+    Rules
+  }
 };
 </script>
 

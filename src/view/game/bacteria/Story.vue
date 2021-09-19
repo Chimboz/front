@@ -280,18 +280,14 @@
   </Container>
 </template>
 <script>
-import Card from "@/component/Card.vue";
-import Container from "@/component/Container.vue";
 import SideNavEntries from "@/component/SideNavEntries.vue";
 import Rules from "@/component/slot/Rules.vue";
 
 export default {
   name: "Story",
   components: {
-    Card,
-    Container,
     SideNavEntries,
-    Rules,
-  },
+    Rules
+  }
 };
 </script>

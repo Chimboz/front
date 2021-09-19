@@ -11,6 +11,10 @@ import "./asset/css/markdown.css";
 import "highlight.js/scss/github-dark-dimmed.scss";
 import "katex/dist/katex.min.css";
 import SideNavEntries from "./component/SideNavEntries.vue";
+import Container from "./component/Container.vue";
+import Card from "./component/Card.vue";
+import Button from "./component/Button.vue";
+
 
 // https://www.epiloge.com/how-to-add-dynamic-meta-tags-to-your-vuejs-app-for-google-seo-0fa058
 
@@ -24,6 +28,9 @@ app.config.globalProperties.eventBus = eventBus;
 app.config.globalProperties.api = api;
 
 app.component("SideNavEntries", SideNavEntries);
+app.component("Container", Container);
+app.component("Card", Card);
+app.component("Button", Button);
 
 app.mount("#app");
 

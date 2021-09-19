@@ -194,20 +194,14 @@
 </template>
 
 <script>
-import Card from "@/component/Card.vue";
-import Button from "@/component/Button.vue";
 import RandomNumber from "@/component/RandomNumber.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
-import Container from "@/component/Container.vue";
 
 export default {
   name: "Home",
   components: {
-    Card,
-    Container,
     Bank,
-    Button,
     RandomNumber,
     Pack,
   },
