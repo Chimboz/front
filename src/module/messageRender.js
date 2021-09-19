@@ -1,4 +1,8 @@
-const message = function(string) {
+import Marked from "marked";
+import DOMPurify from "dompurify";
+import katex from "katex/dist/katex.mjs";
+
+const messageRender = function(string) {
   const renderer = new Marked.Renderer();
   const linkRenderer = renderer.link;
 
@@ -38,6 +42,16 @@ const message = function(string) {
     return rendererCodespan(text);
   };
 
+  // Custom emotes
+  string = string.replace(
+    /(:(\w)+:)/g,
+    (match) =>
+      `![${match.substring(1, match.length - 1)}](/emoticon/${match.substring(
+        1,
+        match.length - 1
+      )}.svg)`
+  );
+
   // Marked options
   Marked.setOptions({
     renderer: renderer,
@@ -57,7 +71,7 @@ const message = function(string) {
   });
 
   // DOMPurify
-  return DOMPurify.sanitize(Marked(this.message.content), {
+  return DOMPurify.sanitize(Marked(string), {
     ALLOWED_TAGS: [
       "h1",
       "h2",
@@ -107,4 +121,4 @@ const message = function(string) {
   });
 };
 
-export default message;
+export default messageRender;
