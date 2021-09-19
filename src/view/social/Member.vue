@@ -155,7 +155,6 @@
 </template>
 
 <script>
-import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
@@ -166,15 +165,14 @@ import { fr } from "date-fns/locale";
 export default {
   name: "Member",
   components: {
-    Rules,
     Tiz,
     User,
     Group,
-    StrokeText,
+    StrokeText
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -190,10 +188,10 @@ export default {
     formatDate() {
       return format(new Date(this.data.status.date), "PPP à p", {
         locale: fr,
-        addSuffix: true,
+        addSuffix: true
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">

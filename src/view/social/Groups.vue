@@ -75,13 +75,11 @@
   </Container>
 </template>
 <script>
-import Rules from "@/component/slot/Rules.vue";
 import Group from "@/component/link/Group.vue";
 
 export default {
   name: "Groups",
   components: {
-    Rules,
     Group
   },
   data() {

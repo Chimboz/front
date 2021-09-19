@@ -14,7 +14,7 @@ import SideNavEntries from "./component/SideNavEntries.vue";
 import Container from "./component/Container.vue";
 import Card from "./component/Card.vue";
 import Button from "./component/Button.vue";
-
+import Rules from "./component/slot/Rules.vue";
 
 // https://www.epiloge.com/how-to-add-dynamic-meta-tags-to-your-vuejs-app-for-google-seo-0fa058
 
@@ -31,6 +31,7 @@ app.component("SideNavEntries", SideNavEntries);
 app.component("Container", Container);
 app.component("Card", Card);
 app.component("Button", Button);
+app.component("Rules", Rules);
 
 app.mount("#app");
 

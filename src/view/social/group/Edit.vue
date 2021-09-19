@@ -29,13 +29,11 @@
 </template>
 <script>
 import Cabin from "@/component/blazon/Cabin.vue";
-import Rules from "@/component/slot/Rules.vue"
 
 export default {
   name: "Edit",
   components: {
-    Cabin,
-    Rules
+    Cabin
   },
   data() {
     return {

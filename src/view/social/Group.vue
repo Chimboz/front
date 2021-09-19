@@ -10,7 +10,13 @@
       <Rules bot />
     </template>
     <Card filename="group.gif" :height="70" color="blue">
-      <blazon :shape="4" :top="7" :bot="26" primary="#376da8" secondary="#eee" />
+      <blazon
+        :shape="4"
+        :top="7"
+        :bot="26"
+        primary="#376da8"
+        secondary="#eee"
+      />
     </Card>
     <template #right-column
       ><Card color="blue" top>
@@ -34,18 +40,16 @@
   </Container>
 </template>
 <script>
-import Rules from "@/component/slot/Rules.vue";
 import Blazon from "../../component/blazon/Blazon.vue";
 
 export default {
   name: "Group",
   components: {
-    Rules,
-    Blazon,
+    Blazon
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -56,7 +60,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/members.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
 

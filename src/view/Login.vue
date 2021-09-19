@@ -3,7 +3,13 @@
     <template #left-column>
       <Rules top /><br />
       <Security />
-      <Card color="yellow" filename="packs.png" :width="154" :height="96" class="packs">
+      <Card
+        color="yellow"
+        filename="packs.png"
+        :width="154"
+        :height="96"
+        class="packs"
+      >
         <template #button>
           <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
@@ -29,7 +35,6 @@
 <script>
 import Demo from "@/component/Demo.vue";
 import Pack from "@/component/Pack.vue";
-import Rules from "@/component/slot/Rules.vue";
 import Security from "@/component/slot/Security.vue";
 
 export default {
@@ -37,12 +42,11 @@ export default {
   components: {
     Pack,
     Demo,
-    Rules,
-    Security,
+    Security
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -57,8 +61,8 @@ export default {
   methods: {
     login() {
       this.$store.dispatch("auth/login");
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">

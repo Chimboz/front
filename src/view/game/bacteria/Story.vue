@@ -281,13 +281,11 @@
 </template>
 <script>
 import SideNavEntries from "@/component/SideNavEntries.vue";
-import Rules from "@/component/slot/Rules.vue";
 
 export default {
   name: "Story",
   components: {
-    SideNavEntries,
-    Rules
+    SideNavEntries
   }
 };
 </script>

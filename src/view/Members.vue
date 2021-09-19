@@ -64,18 +64,16 @@
   </Container>
 </template>
 <script>
-import Rules from "@/component/slot/Rules.vue";
 import Tiz from "@/component/Tiz.vue";
 
 export default {
   name: "Members",
   components: {
-    Rules,
-    Tiz,
+    Tiz
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -86,7 +84,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/members.json");
     this.data = req.data;
-  },
+  }
 };
 </script>
 

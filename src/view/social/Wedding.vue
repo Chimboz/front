@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import Rules from "@/component/slot/Rules.vue";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import Modal from "../../component/Modal.vue";
@@ -49,12 +48,11 @@ import Modal from "../../component/Modal.vue";
 export default {
   name: "Wedding",
   components: {
-    Rules,
-    Modal,
+    Modal
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -70,10 +68,10 @@ export default {
     formatDate() {
       return format(new Date(this.data.status.date), "PPP à p", {
         locale: fr,
-        addSuffix: true,
+        addSuffix: true
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">

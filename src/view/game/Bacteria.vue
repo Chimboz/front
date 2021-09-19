@@ -285,7 +285,6 @@
 </template>
 
 <script>
-import Rules from "@/component/slot/Rules.vue";
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
 import Progress from "@/component/Progress.vue";
@@ -294,7 +293,6 @@ import Tooltip from "@/component/Tooltip.vue";
 export default {
   name: "Games",
   components: {
-    Rules,
     User,
     Group,
     Progress,

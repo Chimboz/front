@@ -194,13 +194,8 @@
 </template>
 
 <script>
-import Rules from "@/component/slot/Rules.vue";
-
 export default {
-  name: "Games",
-  components: {
-    Rules
-  }
+  name: "Mazo"
 };
 </script>
 
