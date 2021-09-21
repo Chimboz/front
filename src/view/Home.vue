@@ -181,16 +181,27 @@
           />{{ $t("help.tip") }}</router-link
         ></Card
       ><br />
-      <Card color="yellow" filename="packs.png" :width="154" :height="96" class="packs">
+      <Card
+        color="yellow"
+        filename="packs.png"
+        :width="154"
+        :height="96"
+        class="packs"
+      >
         <template #button>
           <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
         <Pack header="summer.png" footer="summer.png" /><br /><br />
-        <Button color="yellow" icon="register.svg" class="fullwidth">Item</Button><br />
+        <Button color="yellow" icon="register.svg" class="fullwidth"
+          >Item</Button
+        ><br />
         <Pack header="summer.png" footer="summer.png" />
       </Card>
     </template>
   </Container>
+  <metainfo>
+    <template #title="{ content }">Chapatizᵣₑₜᵣₒ {{ $t(content) }}</template>
+  </metainfo>
 </template>
 
 <script>
@@ -203,11 +214,11 @@ export default {
   components: {
     Bank,
     RandomNumber,
-    Pack,
+    Pack
   },
   data() {
     return {
-      data: null,
+      data: null
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -226,8 +237,31 @@ export default {
         this.$refs.handle.src = require("@/asset/img/lottery/up.svg");
         currentTarget.disabled = true;
       }, 200);
-    },
+    }
   },
+  metaInfo: {
+    title: "title.home",
+    meta: [
+      {
+        name: "description",
+        content:
+          "ChapatizRetro.com est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+      },
+      {
+        property: "og:title",
+        content: "Chapatiz Retro, accueil"
+      },
+      {
+        property: "og:description",
+        content: "Chapatiz Retro, accueil"
+      },
+      { property: "og:site_name", content: "Chapatiz Retro" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "/announce/summer.png" },
+      /*{ property: "og:image:width", content: "192" },
+      { property: "og:image:height", content: "192" }*/
+    ]
+  }
 };
 </script>
 <style lang="scss">

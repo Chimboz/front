@@ -87,5 +87,8 @@
     "community": "Communauté",
     "devlog": "Journal de dev",
     "documentation": "Documentation"
+  },
+  "title": {
+    "home": "Accueil"
   }
 }

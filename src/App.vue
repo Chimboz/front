@@ -11,12 +11,12 @@ import Navbar from "@/component/Navbar.vue";
 import Footer from "@/component/Footer.vue";
 
 export default {
-  name: "Home",
+  name: "App",
   components: {
     Navbar,
     Footer,
-    ProgressBar,
-  },
+    ProgressBar
+  }
 };
 </script>
 

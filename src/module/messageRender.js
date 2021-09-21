@@ -108,6 +108,7 @@ const messageRender = function(string) {
       "style",
       "class",
       "alt",
+      "rel",
       "type",
       "disabled",
       "checked",

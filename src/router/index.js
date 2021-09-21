@@ -6,118 +6,99 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
-    meta: { title: "Chapatizᵣₑₜᵣₒ" },
+    component: Home
   },
   {
     path: "/account",
     name: "Account",
-    component: () => import("../view/Account.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Mon compte" },
+    component: () => import("../view/Account.vue")
   },
   {
     path: "/games",
     name: "Games",
-    component: () => import("../view/Games.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Jeux" },
+    component: () => import("../view/Games.vue")
   },
   {
     path: "/games/bacteria",
     name: "Bacteria",
-    component: () => import("../view/game/Bacteria.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Bacteria" },
+    component: () => import("../view/game/Bacteria.vue")
   },
   {
     path: "/games/bacteria/story",
     name: "Bacteria Story",
-    component: () => import("../view/game/bacteria/Story.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Histoire de Bacteria" },
+    component: () => import("../view/game/bacteria/Story.vue")
   },
   {
     path: "/games/patojdur",
     name: "Patojdur",
-    component: () => import("../view/game/Patojdur.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Patojdur" },
+    component: () => import("../view/game/Patojdur.vue")
   },
   {
     path: "/games/mazo",
     name: "Mazo",
-    component: () => import("../view/game/Mazo.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Mazo" },
+    component: () => import("../view/game/Mazo.vue")
   },
   {
     path: "/members",
     name: "Members",
-    component: () => import("../view/Members.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Membres" },
+    component: () => import("../view/Members.vue")
   },
   {
     path: "/member/:id",
     name: "Member",
-    component: () => import("../view/social/Member.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Membre" },
+    component: () => import("../view/social/Member.vue")
   },
   {
     path: "/wedding",
     name: "Wedding",
-    component: () => import("../view/social/Wedding.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Mariage" },
+    component: () => import("../view/social/Wedding.vue")
   },
   {
     path: "/groups",
     name: "Groups",
-    component: () => import("../view/social/Groups.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Groupes" },
+    component: () => import("../view/social/Groups.vue")
   },
   {
     path: "/group/:id",
     name: "Group",
-    component: () => import("../view/social/Group.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Groupe" },
+    component: () => import("../view/social/Group.vue")
   },
   {
     path: "/group/edit/:id",
     name: "Group Edit",
-    component: () => import("../view/social/group/Edit.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Edition de groupe" },
+    component: () => import("../view/social/group/Edit.vue")
   },
   {
     path: "/bbs",
     name: "BBS",
-    component: () => import("../view/BBS.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ BBS" },
+    component: () => import("../view/BBS.vue")
   },
   {
     path: "/bbs/:id",
     name: "BBS machin", // TODO
-    component: () => import("../view/bbs/Forum.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ BBS" },
+    component: () => import("../view/bbs/Forum.vue")
   },
   {
     path: "/bbs/:id/:topic",
     name: "BBS machin truc", // TODO
-    component: () => import("../view/bbs/Topic.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ BBS" },
+    component: () => import("../view/bbs/Topic.vue")
   },
   {
     path: "/shop",
     name: "Shop", // TODO
-    component: () => import("../view/Shop.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Magasin" },
+    component: () => import("../view/Shop.vue")
   },
   {
     path: "/login",
     name: "Login",
-    component: () => import("../view/Login.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Se connecter" },
+    component: () => import("../view/Login.vue")
   },
   // 404
   {
     path: "/:pathMatch(.*)*",
     name: "Error",
-    component: () => import("../view/Error.vue"),
-    meta: { title: "Chapatizᵣₑₜᵣₒ Erreur" },
-  },
+    component: () => import("../view/Error.vue")
+  }
 ];
 
 const router = createRouter({
@@ -129,12 +110,12 @@ const router = createRouter({
     if (to.hash) {
       return {
         el: to.hash,
-        behavior: "smooth",
+        behavior: "smooth"
       };
     }
     return { top: 0, behavior: "smooth" };
   },
-  routes,
+  routes
 });
 
 router.beforeEach((to, from, next) => {
