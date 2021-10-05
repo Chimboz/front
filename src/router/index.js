@@ -93,6 +93,11 @@ const routes = [
     name: "Login",
     component: () => import("../view/Login.vue")
   },
+  {
+    path: "/tchat",
+    name: "Tchat",
+    component: () => import("../view/Tchat.vue")
+  },
   // 404
   {
     path: "/:pathMatch(.*)*",
@@ -121,8 +126,6 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const guestOnly = ["Login"];
   const userOnly = ["Account", "Home"];
-  if (to.path == "/tchat")
-    router.push({ name: "Error", params: { message: "error.tchat" } });
   if (store.getters["auth/authenticated"]) {
     if (guestOnly.includes(to.name))
       router.push({ name: "Error", params: { message: "error.connected" } });
