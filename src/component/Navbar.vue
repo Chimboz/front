@@ -76,9 +76,9 @@
           alt="Home icon"
           class="nav-icon"
           src="@/asset/img/navbar/icon/home.svg"
-          style="margin: 2px; padding: 1px"/></button
+          style="margin: 2px; padding: 1px" /></button
     ></router-link>
-    <router-link to="/tchat"
+    <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -97,8 +97,8 @@
           @contextmenu.prevent
           alt="Arrow icon"
           class="arrow jitter"
-          src="@/asset/img/arrow.svg"/></button
-    ></router-link>
+          src="@/asset/img/arrow.svg" /></button
+    ></a>
     <router-link v-if="authenticated" to="/account"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
