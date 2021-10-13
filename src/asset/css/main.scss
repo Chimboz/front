@@ -225,6 +225,37 @@ textarea.btn-md {
   padding: 4px;
 }
 
+// Custom checkboxes
+.markdown-body [type="checkbox"]:disabled {
+  width: 0;
+  height: 0;
+  filter: none !important;
+}
+
+.markdown-body [type="checkbox"]:not(:checked):before,
+.markdown-body [type="checkbox"]:checked:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #0005;
+  background: #fff;
+  border-radius: 0.2em;
+}
+
+.markdown-body [type="checkbox"]:checked:before {
+  background: #0075ff;
+  border: 1px solid transparent;
+}
+
+// Markdown lists and checkboxes
+.markdown-body li input[type="checkbox"] {
+  margin-left: -16px;
+  position: absolute;
+}
+
 .btn-md {
   display: inline-flex;
   border: 4px solid #f0009c;

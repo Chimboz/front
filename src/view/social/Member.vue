@@ -26,9 +26,9 @@
           :item1="data.look.item1"
           :item2="data.look.item2"
         />
-        <div class="flex column" style="z-index: 1; position: relative">
+        <div class="flex col" style="z-index: 1; position: relative">
           <StrokeText class="pseudo">{{ this.data.name }}</StrokeText>
-          <div class="sentence">"{{ this.data.motto }}"</div>
+          <div class="motto">"{{ this.data.motto }}"</div>
         </div>
       </div>
       <div class="member-body">
@@ -211,7 +211,7 @@ export default {
   overflow: hidden;
 }
 
-.sentence {
+.motto {
   margin-left: 33%;
   text-align: left;
 }
@@ -289,6 +289,7 @@ export default {
   justify-content: center;
   width: 50px;
   height: 50px;
+  line-height: 10px;
   border: 1px solid #6090be;
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;

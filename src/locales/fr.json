@@ -90,5 +90,11 @@
   },
   "title": {
     "home": "Accueil"
+  },
+  "group": {
+    "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",
+    "leader": {
+      "empire": "Empereur de l'empire"
+    }
   }
 }

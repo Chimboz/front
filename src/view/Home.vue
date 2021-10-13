@@ -257,7 +257,7 @@ export default {
       },
       { property: "og:site_name", content: "Chapatiz Retro" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
+      { property: "og:image", content: "/announce/summer.png" }
       /*{ property: "og:image:width", content: "192" },
       { property: "og:image:height", content: "192" }*/
     ]

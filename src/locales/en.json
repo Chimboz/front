@@ -90,5 +90,10 @@
   },
   "title": {
     "home": "Home"
+  },
+  "group": {
+    "leader": {
+      "empire": "Emperor of the empire"
+    }
   }
 }
