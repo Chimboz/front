@@ -12,11 +12,11 @@
     <Card filename="group.gif" :height="70" color="blue" v-if="data">
       <div class="group-header">
         <blazon
-          :shape="4"
-          :top="7"
-          :bot="26"
-          primary="#376da8"
-          secondary="#eee"
+          :shape="data.blazon.shape"
+          :top="data.blazon.top"
+          :bot="data.blazon.bot"
+          :primary="data.blazon.primary"
+          :secondary="data.blazon.secondary"
         />
         <div class="flex col">
           <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
