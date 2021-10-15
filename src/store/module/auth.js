@@ -2,18 +2,18 @@ export default {
   namespaced: true,
   state() {
     return {
-      user: null,
+      user: null
     };
   },
   getters: {
     authenticated(state) {
       return state.user !== null;
-    },
+    }
   },
   mutations: {
     setUser(state, user) {
       state.user = user;
-    },
+    }
   },
   actions: {
     login({ commit }) {
@@ -31,12 +31,13 @@ export default {
           shoe: 7,
           item0: 17,
           item1: 1,
-          item2: 1,
+          item2: 1
         },
+        notifications: 5
       });
     },
     logout({ commit }) {
       commit("setUser", null);
-    },
-  },
+    }
+  }
 };

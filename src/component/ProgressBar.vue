@@ -4,7 +4,7 @@
     :class="{
       'loading-container': true,
       loading: isLoading,
-      visible: isVisible,
+      visible: isVisible
     }"
   >
     <div class="loader" :style="{ width: progress + '%' }">
@@ -14,8 +14,6 @@
   </div>
 </template>
 <script>
-import random from "lodash.random";
-
 // Assume that loading will complete under this amount of time.
 const defaultDuration = 4000;
 // How frequently to update
@@ -34,7 +32,7 @@ export default {
     isLoading: true, // Once loading is done, start fading away
     isVisible: false, // Once animate finish, set display: none
     progress: startingPoint,
-    timeoutId: undefined,
+    timeoutId: undefined
   }),
 
   mounted() {
@@ -50,6 +48,13 @@ export default {
       this.loop();
     },
 
+    random(min, max) {
+      return (
+        Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+        Math.ceil(min)
+      );
+    },
+
     loop() {
       if (this.timeoutId) {
         clearTimeout(this.timeoutId);
@@ -60,12 +65,13 @@ export default {
       const size =
         (endingPoint - startingPoint) / (defaultDuration / defaultInterval);
       const p = Math.round(
-        this.progress + random(size * (1 - variation), size * (1 + variation))
+        this.progress +
+          this.random(size * (1 - variation), size * (1 + variation))
       );
       this.progress = Math.min(p, endingPoint);
       this.timeoutId = setTimeout(
         this.loop,
-        random(
+        this.random(
           defaultInterval * (1 - variation),
           defaultInterval * (1 + variation)
         )
@@ -81,8 +87,8 @@ export default {
           this.isVisible = false;
         }
       }, 2000);
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

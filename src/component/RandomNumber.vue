@@ -20,14 +20,14 @@ export default {
       displayNumber: this.max.toString(),
       start: 0,
       previousTimeStamp: Date.now(),
-      elapsed: 0,
+      elapsed: 0
     };
   },
   props: {
     min: { default: 0, type: Number, required: false },
     max: { type: Number, required: true },
     value: { type: Number, required: true },
-    duration: { default: 2000, type: Number, required: true },
+    duration: { default: 2000, type: Number, required: true }
   },
 
   mounted() {
@@ -63,8 +63,8 @@ export default {
           this.bezier(this.elapsed, 0, 500, this.duration)
         );
       } else this.displayNumber = this.value.toString();
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

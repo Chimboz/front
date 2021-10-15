@@ -72,7 +72,7 @@ export default {
     #7aaaf0,
     #7aaaf0 50%,
     var(--main-card-color) 50%
-  );
+  ) !important;
 }
 </style>
 <style lang="scss" scoped>

@@ -89,7 +89,14 @@
     "documentation": "Documentation"
   },
   "title": {
-    "home": "Home"
+    "home": "Home",
+    "games": "Games",
+    "shop": "Shop",
+    "members": "Members",
+    "login": "Log in",
+    "error": "Error",
+    "bbs": "BBS",
+    "account": "Account"
   },
   "group": {
     "leader": {

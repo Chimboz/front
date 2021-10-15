@@ -78,7 +78,7 @@
     <img
       draggable="false"
       @contextmenu.prevent
-      src="/announce/summer.png"
+      src="/announce/img.png"
       width="468"
       height="213"
       style="width: 100%"
@@ -199,9 +199,6 @@
       </Card>
     </template>
   </Container>
-  <metainfo>
-    <template #title="{ content }">Chapatizᵣₑₜᵣₒ {{ $t(content) }}</template>
-  </metainfo>
 </template>
 
 <script>
@@ -275,7 +272,7 @@ export default {
     #7aaaf0,
     #7aaaf0 50%,
     var(--main-card-color) 50%
-  );
+  ) !important;
 }
 </style>
 

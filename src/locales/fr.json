@@ -89,7 +89,14 @@
     "documentation": "Documentation"
   },
   "title": {
-    "home": "Accueil"
+    "home": "Accueil",
+    "games": "Jeux",
+    "shop": "Boutique",
+    "members": "Membres",
+    "login": "Se connecter",
+    "error": "Erreur",
+    "bbs": "BBS",
+    "account": "Mon compte"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",
