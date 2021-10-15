@@ -42,14 +42,14 @@ import Message from "../row/Message.vue";
 export default {
   name: "Topic",
   components: {
-    Message,
+    Message
   },
   props: {
     messages: {
       required: true,
-      type: Array,
-    },
-  },
+      type: Array
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
