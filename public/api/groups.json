@@ -1,0 +1,17 @@
+{
+  "official": [
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" }
+  ],
+  "new": [
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" }
+  ],
+  "best": [
+    { "id": 1, "name": "Salut", "score": 3 },
+    { "id": 1, "name": "Salut", "score": 6 },
+    { "id": 1, "name": "Salut", "score": 9 }
+  ]
+}

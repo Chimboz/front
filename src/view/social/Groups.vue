@@ -22,7 +22,7 @@
     </Card>
     <br />
     <Card color="blue" justified v-if="data">
-      <template #header>Les Groupes Officiels</template>
+      <template #header>Groupes officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
         <b>chapatizretro.com</b>.</template
@@ -44,34 +44,29 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nom du Groupe</th>
-            <th>Genre</th>
+            <th>Nom du groupe</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.official" :key="index">
-            <td>{{ group.index }}</td>
+            <td
+              ><b>{{ group.id }}</b></td
+            >
             <td><group :group="group"/></td>
-            <td>{{ group.genre }}</td>
+            <td>{{ group.type }}</td>
           </tr>
         </tbody>
       </table>
     </Card>
     <br />
-    <Card color="blue" justified v-if="data">
-      <template #header>Les Groupes Officiels</template>
+    <Card color="blue" v-if="data">
+      <template #header>Groupes de membre</template>
       <template #subtitle
-        >Ce sont les groupes qui participent directement à
-        <b>chapatizretro.com</b>.</template
+        >Les 20 derniers groupes créés par les membres</template
       >
-      Les membres de ces groupes sont nommés par
-      <router-link to="/group/1">les créateurs du site</router-link>, et se
-      voient attribuer des rubriques à modérer (<router-link to="photos"
-        >albums</router-link
-      >, <router-link to="faq">faq</router-link>,
-      <router-link to="bbs">BBS</router-link>...)ou même un poste sur le chat
-      (<router-link to="/group/3">modos officiels</router-link>,
-      <router-link to="/group/9">aideurs officiels</router-link>). <br /><br />
+      Les membres de ces groupes sont designés par
+      <b>le créateur du groupe</b>... <br /><br />
       <table class="groups fullwidth">
         <colgroup>
           <col width="30" />
@@ -81,34 +76,32 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nom du Groupe</th>
-            <th>Genre</th>
+            <th>Nom du groupe</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.official" :key="index">
-            <td>{{ group.index }}</td>
+          <tr v-for="(group, index) in data.new" :key="index">
+            <td
+              ><b>{{ group.id }}</b></td
+            >
             <td><group :group="group"/></td>
-            <td>{{ group.genre }}</td>
+            <td>{{ group.type }}</td>
           </tr>
         </tbody>
       </table>
     </Card>
     <br />
-    <Card color="blue" justified v-if="data">
-      <template #header>Les Groupes Officiels</template>
+    <Card color="blue" v-if="data">
+      <template #header>Classement général des groupes, par jeu</template>
       <template #subtitle
-        >Ce sont les groupes qui participent directement à
-        <b>chapatizretro.com</b>.</template
-      >
-      Les membres de ces groupes sont nommés par
-      <router-link to="/group/1">les créateurs du site</router-link>, et se
-      voient attribuer des rubriques à modérer (<router-link to="photos"
-        >albums</router-link
-      >, <router-link to="faq">faq</router-link>,
-      <router-link to="bbs">BBS</router-link>...)ou même un poste sur le chat
-      (<router-link to="/group/3">modos officiels</router-link>,
-      <router-link to="/group/9">aideurs officiels</router-link>). <br /><br />
+        >Les 10 meilleurs groupes, tous les jeux réunis
+      </template>
+      Le nombre de points correspond au classement général.<br />
+      Par exemple, si un groupe est classé
+      <b>10ème à Bactéria, 2ème à Patojdur, et 7ème à Popularité</b>, leur
+      nombre de points sera <b>10+2+7</b> soit <b>19 points</b>. Cela signifie
+      que moins un groupe a des points, plus il est fort !<br /><br />
       <table class="groups fullwidth">
         <colgroup>
           <col width="30" />
@@ -118,15 +111,17 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nom du Groupe</th>
-            <th>Genre</th>
+            <th>Nom du groupe</th>
+            <th>Score</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.official" :key="index">
-            <td>{{ group.index }}</td>
+          <tr v-for="(group, index) in data.best" :key="index">
+            <td
+              ><b>{{ group.id }}</b></td
+            >
             <td><group :group="group"/></td>
-            <td>{{ group.genre }}</td>
+            <td>{{ group.score }}</td>
           </tr>
         </tbody>
       </table>
@@ -173,11 +168,11 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/groups.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/members.json");
+    const req = await this.api.get("/api/groups.json");
     this.data = req.data;
   },
   metaInfo: {

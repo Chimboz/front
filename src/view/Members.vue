@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card header="new.gif" bg="new.gif" :height="70" color="blue">
+    <Card header="new.gif" bg="new.png" :height="70" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -22,7 +22,7 @@
       >
     </Card>
     <br />
-    <Card header="popularity.gif" bg="popularity.gif" :height="75" color="blue">
+    <Card header="popularity.gif" bg="popularity.png" :height="75" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -33,7 +33,7 @@
       <router-link to="/popu">Voir la page popularité</router-link>
     </Card>
     <br />
-    <Card header="wedding.gif" bg="wedding.gif" color="blue">
+    <Card header="wedding.gif" bg="wedding.png" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>

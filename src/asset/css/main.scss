@@ -137,8 +137,12 @@ table {
   border-spacing: 0;
 }
 
-tbody {
+.bbs tbody {
   background: #fff;
+}
+
+tbody {
+  background: #fff4;
 }
 
 table:not(.bbs) tr:nth-child(2n + 1) {
