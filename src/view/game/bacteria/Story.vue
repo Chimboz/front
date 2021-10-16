@@ -215,7 +215,7 @@
       endroits bien sombres... </Card
     ><template #right-column
       ><Card
-        filename="ensavoirplus.gif"
+        header="ensavoirplus.gif"
         :width="154"
         :height="34"
         top

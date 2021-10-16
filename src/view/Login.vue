@@ -5,7 +5,7 @@
       <Security />
       <Card
         color="yellow"
-        filename="packs.png"
+        header="packs.png"
         :width="154"
         :height="96"
         class="packs"

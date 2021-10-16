@@ -84,7 +84,7 @@
       style="width: 100%"
     />
     <br />
-    <Card filename="lottery.png" v-if="data && data.lottery">
+    <Card header="lottery.png" v-if="data && data.lottery">
       <template #header>
         <img
           draggable="false"
@@ -183,7 +183,7 @@
       ><br />
       <Card
         color="yellow"
-        filename="packs.png"
+        header="packs.png"
         :width="154"
         :height="96"
         class="packs"

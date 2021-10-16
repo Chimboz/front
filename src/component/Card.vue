@@ -6,8 +6,8 @@
       alt="Card header"
       :width="width"
       :height="height"
-      v-if="filename"
-      :src="require(`@/asset/img/card/header/${filename}`)"
+      v-if="header"
+      :src="require(`@/asset/img/card/header/${header}`)"
     />
     <img
       draggable="false"
@@ -27,16 +27,20 @@
       <slot name="button"></slot>
     </div>
     <div class="card" :class="{ bot: bot }">
-      <h2>
-        <slot name="header"></slot>
-      </h2>
-      <div style="text-align:center">
-        <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em></div
-      >
-      <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
-      <main>
-        <slot></slot>
-      </main>
+      <div class="card-bg" :style="this.bg ? inlineBg : {}">
+        <h2>
+          <slot name="header"></slot>
+        </h2>
+        <div style="text-align:center">
+          <em v-if="$slots['subtitle']"
+            >"<slot name="subtitle"></slot>"</em
+          ></div
+        >
+        <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
+        <main>
+          <slot></slot>
+        </main>
+      </div>
     </div>
     <img
       draggable="false"
@@ -59,7 +63,11 @@ export default {
     StrokeText
   },
   props: {
-    filename: {
+    header: {
+      required: false,
+      type: String
+    },
+    bg: {
       required: false,
       type: String
     },
@@ -164,6 +172,14 @@ export default {
             "--dark-subtop-color": "#628499"
           };
       }
+    },
+    bgImage() {
+      return require("@/asset/img/card/background/" + this.bg);
+    },
+    inlineBg() {
+      return {
+        backgroundImage: `url(${this.bgImage})`
+      };
     }
   }
 };
@@ -178,7 +194,6 @@ export default {
 .card {
   border-radius: 12px;
   width: 100%;
-  padding: 17px;
   height: auto;
   text-align: center;
   background-color: #d5e6f3;
@@ -219,7 +234,7 @@ img + .card,
   );
 }
 
-img + .card {
+img + .card .card-bg {
   padding-top: 5px;
 }
 
@@ -273,5 +288,10 @@ main:after {
   content: "";
   clear: both;
   display: table;
+}
+
+.card-bg {
+  background-repeat: repeat-x;
+  padding: 17px;
 }
 </style>

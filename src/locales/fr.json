@@ -96,7 +96,8 @@
     "login": "Se connecter",
     "error": "Erreur",
     "bbs": "BBS",
-    "account": "Mon compte"
+    "account": "Mon compte",
+    "groups": "Groupes"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",

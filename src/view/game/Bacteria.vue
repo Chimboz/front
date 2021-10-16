@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card filename="bacteria.gif" justified>
+    <Card header="bacteria.gif" justified bg="bacteria.gif">
       <div class="flex centered hstack">
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
@@ -219,7 +219,7 @@
     </Card>
     <template #right-column
       ><Card
-        filename="ensavoirplus.gif"
+        header="ensavoirplus.gif"
         :width="154"
         :height="34"
         top

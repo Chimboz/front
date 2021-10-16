@@ -9,7 +9,13 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="bacteria_blue.jpg" :height="74" color="blue" justified>
+    <Card
+      header="bacteria_blue.jpg"
+      :height="74"
+      color="blue"
+      justified
+      bg="bacteria_blue.gif"
+    >
       <img
         draggable="false"
         @contextmenu.prevent
@@ -33,7 +39,13 @@
       </router-link>
     </Card>
     <br />
-    <Card filename="patojdur_blue.gif" :height="56" color="blue" justified>
+    <Card
+      header="patojdur_blue.gif"
+      :height="56"
+      color="blue"
+      justified
+      bg="patojdur_blue.gif"
+    >
       <img
         draggable="false"
         @contextmenu.prevent
@@ -57,7 +69,13 @@
       </router-link>
     </Card>
     <br />
-    <Card filename="mazo_blue.gif" :height="52" color="blue" justified>
+    <Card
+      header="mazo_blue.gif"
+      :height="52"
+      color="blue"
+      justified
+      bg="mazo_blue.gif"
+    >
       <img
         draggable="false"
         @contextmenu.prevent

@@ -7,7 +7,7 @@
         </div>
       </Card>
     </template>
-    <Card color="yellow" filename="shop.svg" :height="109">
+    <Card color="yellow" header="shop.svg" :height="109">
       <template #header></template>
       <img
         draggable="false"

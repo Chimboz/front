@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="group.gif" :height="70" color="blue" v-if="data">
+    <Card header="group.gif" :height="70" color="blue" v-if="data">
       <div class="group-header">
         <blazon
           :shape="data.blazon.shape"

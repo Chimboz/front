@@ -96,7 +96,8 @@
     "login": "Log in",
     "error": "Error",
     "bbs": "BBS",
-    "account": "Account"
+    "account": "Account",
+    "groups": "Groups"
   },
   "group": {
     "leader": {

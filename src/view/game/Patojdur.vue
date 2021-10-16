@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card filename="bacteria.gif" justified>
+    <Card header="bacteria.gif" justified>
       <div class="centered">
         <a href="#tutorial" class="btn-sm blue-bg"
           ><img
@@ -164,7 +164,7 @@
       </table>
     </Card>
     <template #right-column
-      ><Card filename="ensavoirplus.gif" top>
+      ><Card header="ensavoirplus.gif" top>
         Toutes les infos, les techniques, news.<br />
         BBS de Bacteria<br />
         <br />
