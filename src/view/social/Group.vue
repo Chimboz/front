@@ -37,11 +37,12 @@
         <b
           >{{
             Math.round(
-              ((data.members.length / data.size) * 100 + Number.EPSILON) * 100
+              (((data.members.length + 1) / data.size) * 100 + Number.EPSILON) *
+                100
             ) / 100
           }}%</b
         >
-        (<b>{{ data.members.length }}</b
+        (<b>{{ data.members.length + 1 }}</b
         >/<b>{{ data.size }}</b
         >)<br /><br />
         Membres du groupe:
