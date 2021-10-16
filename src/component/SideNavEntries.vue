@@ -1,21 +1,20 @@
 <template>
-  <div>
-    <router-link
-      :to="entry.url"
-      class="list"
-      v-for="(entry, i) of sideNavEntries.filter(
-        (entry) => entry.section == props.section
-      )"
-      :key="i"
-    >
+  <router-link
+    :to="entry.url"
+    v-for="(entry, i) of sideNavEntries.filter(
+      (entry) => entry.section == props.section
+    )"
+    :key="i"
+  >
+    <div class="list">
       <img
         src="@/asset/img/puce.svg"
         alt="Puce"
         draggable="false"
         @contextmenu.prevent
       />&nbsp;{{ $t(entry.label) }}
-    </router-link>
-  </div>
+    </div>
+  </router-link>
 </template>
 <script setup>
 import { defineProps } from "vue";
@@ -140,3 +139,10 @@ const sideNavEntries = [
   }
 ];
 </script>
+<style lang="scss" scoped>
+.router-link-active .list {
+  background: transparent
+    linear-gradient(to right, #ff00a6a0, #ff00a6 10%, #ff00a6 90%, #ff00a6a0) !important;
+  color: #fff;
+}
+</style>

@@ -321,7 +321,7 @@ textarea:invalid:not(:placeholder-shown) {
   padding: 2px 10px;
 }
 
-.card .list:nth-child(2n + 1) {
+.card a:nth-child(2n + 1) .list {
   background: #a8dfff
     linear-gradient(
       to right,

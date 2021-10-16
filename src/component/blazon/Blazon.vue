@@ -1,7 +1,7 @@
 <template>
   <div class="blazon">
     <img src="@/asset/img/group/ribbons.svg" class="ribbons" />
-    <div class="blazon">
+    <div class="blazon-body">
       <background :primary="primary" :secondary="secondary" :id="shape" />
       <div class="top"><top :color="primary" :id="top"/></div>
       <div class="bot"><bot :color="primary" :id="bot"/></div>
@@ -53,7 +53,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.blazon {
+.blazon,
+.blazon-body {
   position: relative;
 }
 

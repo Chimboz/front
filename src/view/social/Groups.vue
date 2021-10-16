@@ -9,7 +9,13 @@
       <br />
       <Rules bot />
     </template>
-    <Card header="group.gif" bg="group.gif" :height="70" color="blue" justified>
+    <Card
+      header="group.gif"
+      bg="groups.gif"
+      :height="70"
+      color="blue"
+      justified
+    >
       Envie de former un vrai gang avec tes potes ? Rejoindre une guilde de
       guerriers Bacteria ? Un fan club de ta star préférée avec tes copines ?
       Marre des faux groupes qui sont en réalité de simples messages de forum
