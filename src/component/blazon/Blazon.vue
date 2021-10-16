@@ -1,9 +1,12 @@
 <template>
   <div class="blazon">
-    <background :primary="primary" :secondary="secondary" :id="shape" />
-    <div class="top"><top :color="primary" :id="top" /></div>
-    <div class="bot"><bot :color="primary" :id="bot" /></div>
-    <div class="reflection"><reflection :id="shape" /></div>
+    <img src="@/asset/img/group/ribbons.svg" class="ribbons" />
+    <div class="blazon">
+      <background :primary="primary" :secondary="secondary" :id="shape" />
+      <div class="top"><top :color="primary" :id="top"/></div>
+      <div class="bot"><bot :color="primary" :id="bot"/></div>
+      <div class="reflection"><reflection :id="shape"/></div>
+    </div>
   </div>
 </template>
 <script>
@@ -18,41 +21,46 @@ export default {
     Background,
     Reflection,
     Top,
-    Bot,
+    Bot
   },
   props: {
     primary: {
       required: true,
       type: String,
-      default: "#fff",
+      default: "#fff"
     },
     secondary: {
       required: true,
       type: String,
-      default: "#fff",
+      default: "#fff"
     },
     shape: {
       required: true,
       type: Number,
-      default: 1,
+      default: 1
     },
     top: {
       required: true,
       type: Number,
-      default: 1,
+      default: 1
     },
     bot: {
       required: true,
       type: Number,
-      default: 1,
-    },
-  },
+      default: 1
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
 .blazon {
   position: relative;
-  text-align: left;
+}
+
+.ribbons {
+  position: absolute;
+  left: -7px;
+  top: -4px;
 }
 
 .reflection,

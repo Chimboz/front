@@ -234,7 +234,7 @@ img + .card,
   );
 }
 
-img + .card .card-bg {
+img + .card > .card-bg {
   padding-top: 5px;
 }
 

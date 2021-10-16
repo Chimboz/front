@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card header="group.gif" :height="70" color="blue" v-if="data">
+    <Card header="group.gif" :height="70" color="blue" v-if="data" justified>
       <div class="group-header">
         <blazon
           :shape="data.blazon.shape"
@@ -20,10 +20,15 @@
         />
         <div class="flex col">
           <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
-          <div class="motto">"{{ this.data.motto }}"</div>
-        </div>
+          <div class="motto">"{{ this.data.motto }}"</div> </div
+        ><img
+          v-if="this.data.official"
+          src="@/asset/img/group/official.svg"
+          style="float: right"
+        />
       </div>
-      <div class="markdown-body description" v-html="formatDescription"></div>
+      <div class="markdown-body description" v-html="formatDescription"></div
+      ><br />
       <Card v-if="data" class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
         <User :user="data.leader" />
@@ -68,6 +73,39 @@
           :src="require(`@/asset/img/group/${this.data.status}.png`)"
         />
       </Card>
+      <br />
+      Groupe no. <b>{{ this.data.id }}</b> créé le
+      <b>vendredi 09 juin 2006 à 12h23 (1929 jours)</b><br />
+      <br />
+      <Card v-if="data" class="justified"
+        ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
+          >Bacteria</b
+        ><br /><br />
+        Classé : <b>{{ this.data.bacteria.rank }}</b
+        >/<b>{{ this.data.bacteria.total }}</b> avec
+        <b>{{ this.data.bacteria.points }}</b> points.</Card
+      ><br />
+      <Card v-if="data" class="justified"
+        ><img src="@/asset/img/group/patojdur.gif" style="float: left" /><b
+          >Patojdur</b
+        ><br /><br />
+        Classé : <b>{{ this.data.patojdur.rank }}</b
+        >/<b>{{ this.data.patojdur.total }}</b> avec
+        <b>{{ this.data.patojdur.points }}</b> points.</Card
+      ><br />
+      <Card v-if="data" class="justified"
+        ><img src="@/asset/img/group/popularity.gif" style="float: left" /><b
+          >Popularity</b
+        ><br /><br />
+        Classé : <b>{{ this.data.popularity.rank }}</b
+        >/<b>{{ this.data.popularity.total }}</b> avec
+        <b>{{ this.data.popularity.points }}</b> points.</Card
+      ><br />
+      <Card v-if="data" class="justified">
+        Classement général : <b>{{ this.data.global.rank }}</b
+        >/<b>{{ this.data.global.total }}</b> avec
+        <b>{{ this.data.global.points }}</b> points.</Card
+      >
     </Card>
     <template #right-column
       ><Card color="blue" v-if="data">
