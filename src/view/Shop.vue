@@ -37,7 +37,7 @@
         </div>
       </div>
     </Card>
-    <template #right-column><Bank :credits="data.credits"/></template>
+    <template #right-column><Bank /></template>
   </Container>
 </template>
 <script>

@@ -20,7 +20,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="account"/></div></Card
       ><br />
-      <Bank v-if="data" :credits="data.credits"
+      <Bank
     /></template>
     <Cabin
       v-if="data"

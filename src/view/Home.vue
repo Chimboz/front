@@ -73,7 +73,7 @@
         </router-link>
       </Card>
       <br />
-      <Bank v-if="data" :credits="data.credits" />
+      <Bank />
     </template>
     <img
       draggable="false"

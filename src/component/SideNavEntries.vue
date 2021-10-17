@@ -143,6 +143,9 @@ const sideNavEntries = [
 .router-link-active .list {
   background: transparent
     linear-gradient(to right, #ff00a6a0, #ff00a6 10%, #ff00a6 90%, #ff00a6a0) !important;
+}
+
+.router-link-active {
   color: #fff;
 }
 </style>
