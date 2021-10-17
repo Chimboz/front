@@ -34,7 +34,7 @@ export default {
     this.data = req.data;
   },
   metaInfo: {
-    title: "title.template",
+    title: "section.template",
     meta: [
       {
         name: "description",

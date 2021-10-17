@@ -1,7 +1,7 @@
 <template>
   <div class="tooltip">
     <slot></slot>
-    <span class="tooltiptext btn-md"><slot name="tooltip"></slot></span>
+    <span class="tooltiptext"><slot name="tooltip"></slot></span>
   </div>
 </template>
 
@@ -15,17 +15,19 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
-  background-color: #fff;
+  background-color: #78aadb;
+  color: #fff;
   text-align: center;
-  padding: 5px 0;
+  padding: 0 5px;
+  border-radius: 99px;
+  pointer-events: none;
 
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
   bottom: 100%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -25%;
 }
 
 .tooltip:hover .tooltiptext {

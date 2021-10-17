@@ -237,7 +237,7 @@ export default {
     }
   },
   metaInfo: {
-    title: "title.home",
+    title: "section.home",
     meta: [
       {
         name: "description",

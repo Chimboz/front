@@ -191,6 +191,29 @@ export default {
         addSuffix: true
       });
     }
+  },
+  metaInfo: {
+    title: "section.member",
+    meta: [
+      {
+        name: "description",
+        content:
+          "ChapatizRetro.com est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+      },
+      {
+        property: "og:title",
+        content: "Chapatiz Retro, accueil"
+      },
+      {
+        property: "og:description",
+        content: "Chapatiz Retro, accueil"
+      },
+      { property: "og:site_name", content: "Chapatiz Retro" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "/announce/summer.png" },
+      { property: "og:image:width", content: "192" },
+      { property: "og:image:height", content: "192" }
+    ]
   }
 };
 </script>

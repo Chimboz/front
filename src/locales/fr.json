@@ -86,18 +86,15 @@
     "games": "Jeux",
     "community": "Communauté",
     "devlog": "Journal de dev",
-    "documentation": "Documentation"
-  },
-  "title": {
+    "documentation": "Documentation",
     "home": "Accueil",
-    "games": "Jeux",
-    "shop": "Boutique",
-    "members": "Membres",
-    "login": "Se connecter",
     "error": "Erreur",
+    "login": "Se connecter",
+    "topic": "Sujet",
     "bbs": "BBS",
-    "account": "Mon compte",
-    "groups": "Groupes"
+    "group": "Groupe",
+    "member": "Membre",
+    "groupedit": "Édition de groupe"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",

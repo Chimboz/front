@@ -86,18 +86,15 @@
     "games": "Games",
     "community": "Community",
     "devlog": "Devlog",
-    "documentation": "Documentation"
-  },
-  "title": {
+    "documentation": "Documentation",
     "home": "Home",
-    "games": "Games",
-    "shop": "Shop",
-    "members": "Members",
-    "login": "Log in",
     "error": "Error",
+    "login": "Log in",
+    "topic": "Topic",
     "bbs": "BBS",
-    "account": "Account",
-    "groups": "Groups"
+    "group": "Group",
+    "member": "Member",
+    "groupedit": "Group edit"
   },
   "group": {
     "leader": {

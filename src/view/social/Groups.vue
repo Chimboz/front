@@ -182,7 +182,7 @@ export default {
     this.data = req.data;
   },
   metaInfo: {
-    title: "title.groups",
+    title: "section.groups",
     meta: [
       {
         name: "description",

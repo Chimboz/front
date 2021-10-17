@@ -75,7 +75,7 @@ export default {
     this.data = req.data;
   },
   metaInfo: {
-    title: "title.bbs",
+    title: "section.bbs",
     meta: [
       {
         name: "description",

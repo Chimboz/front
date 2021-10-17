@@ -25,7 +25,7 @@
 export default {
   name: "Error",
   metaInfo: {
-    title: "title.error",
+    title: "section.error",
     meta: [
       {
         name: "description",

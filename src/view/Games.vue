@@ -124,7 +124,7 @@
 export default {
   name: "Games",
   metaInfo: {
-    title: "title.games",
+    title: "section.games",
     meta: [
       {
         name: "description",

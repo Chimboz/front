@@ -58,7 +58,7 @@
         src="@/asset/img/game/bacteria/preview.gif"
         alt="A game of bacteria"
         title="A game of bacteria"
-        style="float: left; margin-right: 17px; border: 3px solid #6699cc"
+        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
       />
       <br />
       Bacteria est le jeu ancestral de notre île. Depuis des milliers d'années,
@@ -80,10 +80,12 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/preview.gif"
+        src="@/asset/img/game/bacteria/howto.png"
         alt="A game of bacteria"
+        width="200"
+        height="134"
         title="A game of bacteria"
-        style="float: left; margin-right: 17px; border: 3px solid #6699cc"
+        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
       />
       Il y a 2 endroits pour jouer: Bacteria débutants et Bacteria Pro Si tu ne
       sais pas comment y aller demande ton chemin !<br />
@@ -153,7 +155,14 @@
             <td>
               <Tooltip>
                 <template #tooltip
-                  >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</template
+                  ><img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Caret"
+                    src="@/asset/img/icon/caret.png"
+                  />&nbsp;<b
+                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
+                  ></template
                 >
                 <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
               </Tooltip>
@@ -188,7 +197,14 @@
             <td>
               <Tooltip>
                 <template #tooltip
-                  >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</template
+                  ><img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Caret"
+                    src="@/asset/img/icon/caret.png"
+                  />&nbsp;<b
+                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
+                  ></template
                 >
                 <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
               </Tooltip>
@@ -201,6 +217,11 @@
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+          <col width="40" />
+        </colgroup>
         <thead>
           <tr>
             <th>#</th>
@@ -311,6 +332,29 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/bacteria.json");
     this.data = req.data;
+  },
+  metaInfo: {
+    title: "section.bacteria",
+    meta: [
+      {
+        name: "description",
+        content:
+          "ChapatizRetro.com est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+      },
+      {
+        property: "og:title",
+        content: "Chapatiz Retro, accueil"
+      },
+      {
+        property: "og:description",
+        content: "Chapatiz Retro, accueil"
+      },
+      { property: "og:site_name", content: "Chapatiz Retro" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "/announce/summer.png" },
+      { property: "og:image:width", content: "192" },
+      { property: "og:image:height", content: "192" }
+    ]
   }
 };
 </script>
