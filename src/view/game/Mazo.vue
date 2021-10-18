@@ -8,15 +8,15 @@
       ><br />
       <Rules bot />
     </template>
-    <Card header="bacteria.gif" justified bg="bacteria.gif">
+    <Card header="mazo.gif" justified bg="mazo.gif">
       <div class="flex centered hstack">
-        <router-link to="#records" class="btn-sm blue-bg"
+        <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Records</router-link
+          />&nbsp;Le gameplay</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
@@ -25,22 +25,6 @@
             alt="Caret"
             src="@/asset/img/icon/caret.png"
           />&nbsp;Les Meilleurs</router-link
-        >
-        <router-link to="#worst" class="btn-sm blue-bg"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Caret"
-            src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Pires</router-link
-        >
-        <router-link to="#groups" class="btn-sm blue-bg"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Caret"
-            src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
@@ -55,82 +39,67 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/preview.gif"
-        alt="A game of bacteria"
-        title="A game of bacteria"
-        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
+        src="@/asset/img/game/mazo/preview.gif"
+        alt="Un coup gagnant"
+        title="Un coup gagnant"
+        style="float: left; margin-right: 16px"
       />
       <br />
-      Bacteria est le jeu ancestral de notre île. Depuis des milliers d'années,
-      des membres dédient leur vie à s'entraîner à cet art si complexe et
-      profond.
-      <br />
-      Des millions de combats ont déjà eu lieu, et encore plus de parties sont à
-      venir.
-      <br />
-      Retrouve sur cette page le
-      <a href="#top">classement des champions</a> et toute les infos dont tu as
-      besoin, pour devenir toi aussi, un <b>guerrier Bacteria</b> .<br />
+      <b>MaZo</b> est un pur jeu de hasard/chance style roulette-russe !
+      <br /><br />
+      Le principe est simple: gagner le plus de fois possibles !<br />
+      Contrairement à des jeux comme
+      <router-link to="bacteria">Bacteria</router-link> ou
+      <router-link to="patojdur">Patojdur</router-link> qui demandent des
+      semaines d'entrainement pour devenir pro et atteindre le haut du
+      classement, <b>MaZo</b> est un jeu ou tu peux devenir 1er du classement en
+      quelques minutes... ou passer des premières places à dernier du classement
+      en un seul coup !!! <b>>)</b> <br /><br />
+      Qui s'arrêtera à temps ? Qui continuera une fois de trop ? @@ A toi de
+      bien gérer, et... bonne chance ;)<br /><br />
+      Les 3 premiers du classement gagnent un casque MaZo, les classés de la 4e
+      à la 10e place gagnent un item trêfle.
+
       <br />
     </Card>
     <br />
     <Card id="tutorial" justified>
       <template #header>Comment jouer&nbsp;!</template>
-
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        src="@/asset/img/game/bacteria/howto.png"
-        alt="A game of bacteria"
-        width="200"
-        title="A game of bacteria"
-        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
-      />
-      Il y a 2 endroits pour jouer: Bacteria débutants et Bacteria Pro Si tu ne
-      sais pas comment y aller demande ton chemin !<br />
-      <br />
-      Pour jouer c'est simple, va dans une cabine, elle s'allume si elle
-      t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
-      partie démarre ! Attention: Les visiteurs ne peuvent jouer qu'en Bacteria
-      débutants, les cabines de Bacteria Pro sont réservées aux membres ! </Card
-    ><br />
-    <Card id="records" v-if="data">
-      <template #header>Records !</template>
       <template #subtitle
-        >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+        >Attention : les visiteurs ne peuvent pas jouer !</template
       >
-      <b>parties jouées</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.played.user" /> avec
-        {{ data.records.played.record }} parties jouées&nbsp;!
-      </div>
+      MaZo ! se joue où tu veux, quand tu veux...<br />
       <br />
-      <b>parties gagnées</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.won.user" /> avec
-        {{ data.records.won.record }} parties gagnées&nbsp;!
-      </div>
+      Tout seul la nuit dans un coin sombre et reculé de la forêt bleue, tôt le
+      matin dans l'eau à Kopakabana, après chaque 18/20 en Maths &lt;:D, à
+      l'accueil à plusieurs encouragé par des dizaines de tiz en délire, de la
+      main gauche, avec une cuillere de nutella dans la bouche...<br />
       <br />
-      <b>parties perdues</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.lost.user" /> avec
-        {{ data.records.lost.record }} parties perdues&nbsp;!
-      </div>
+      C'est comme tu le sens, n'oublie jamais: un coup de travers et tu perds
+      !!! </Card
+    ><br />
+    <Card id="gameplay" justified>
+      <template #header>Game Play</template>
+      MaZo (toujours en version béta - version de test - pour le moment) se joue
+      avec une commande de chat: tape !mazo pour jouer un coup, c'est tout !<br />
       <br />
-      <b>match nuls</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.drawn.user" /> avec
-        {{ data.records.drawn.record }} match nuls&nbsp;!
-      </div>
+      Tu as une chance sur deux de gagner.<br />
+      Chaque fois que tu gagnes, ton score MaZo augmente d'un point.<br />
+      Chaque fois que tu perds, ton score... reviens à zéro ! :')<br />
+      <br />
+      Alors ? Est ce que tu vas savoir t'arrêter à temps ? &lt;&lt;<br />
+      <br />
+      Notes:<br />
+      - Tu as toujours une chance sur deux de gagner/perdre quelque soit le
+      score, ce n'est pas plus difficile avec un gros score.<br />
+      - Chaque coup est du pur hasard, il n'y a pas de moment meilleur, c'est
+      quand tu le sens.<br />
+      - Le temps que met à s'afficher le résultat n'indique pas un bon/mauvais
+      coup.<br />
     </Card>
     <br /><Card id="best" v-if="data">
-      <template #header>Les 20 plus acharnés de Bacteria !</template>
-      <template #subtitle
-        >Des heures de phagocytage acharné pour en arriver la...</template
-      >
-      Les 10 premiers du classement remportent le
-      <b>casque Bacteria</b>.<br />
-      <br />
+      <template #header>Les 20 plus mazo de l'Archipel</template>
+      <template #subtitle>Continuera ? Continuera pas ? &lt;:D</template>
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
@@ -143,100 +112,22 @@
             <th>#</th>
             <th>Membre</th>
             <th>Score</th>
-            <th>Détail</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td>
-              <Tooltip>
-                <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    src="@/asset/img/icon/caret.png"
-                  />&nbsp;<b
-                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
-                  ></template
-                >
-                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
-              </Tooltip>
-            </td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
+            <td>{{ formatDate(rank.date) }}</td>
           </tr>
         </tbody>
       </table>
     </Card>
-    <br /><Card id="worst" v-if="data">
-      <template #header>Les 20 pires brèles de Bacteria ! </template>
-      <template #subtitle>Les meilleurs... en partant du bas !</template>
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-          <col width="40" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Membre</th>
-            <th>Score</th>
-            <th>Détail</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.worst" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td>
-              <Tooltip>
-                <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    src="@/asset/img/icon/caret.png"
-                  />&nbsp;<b
-                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
-                  ></template
-                >
-                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
-              </Tooltip>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </Card>
-    <br /><Card id="groups" v-if="data">
-      <template #header>Les 10 meilleurs groupes de Bacteria !</template>
-      <template #subtitle>Plus on est de fous...</template>
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-          <col width="40" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Groupe</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.groups" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td><group :group="rank.group"/></td>
-            <td>{{ rank.score }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </Card>
+
     <template #right-column
       ><Card
         header="ensavoirplus.gif"
@@ -246,90 +137,47 @@
         color="lightblue"
         justified
       >
-        Toutes les infos, les techniques, news.<br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        BBS de Bacteria<br />
+        <img src="@/asset/img/icon/caret.gif" /> MaZo est actuellement en
+        version beta (version de test)<br />
         <br />
-        Lis l'histoire sur Bacteria écrite par Kunu.<br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        Bacteria Sanctuary.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        424187 membres joueurs de Bacteria.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        12591547 parties ont été jouées.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        8684 parties hier.<br />
-        <br />
-        Niveau des joueurs<br />
-        <br />
-        # Membres %<br />
-        0 180500 42.55%<br />
-        1 220717 52.03%<br />
-        2 13356 3.15%<br />
-        3 5305 1.25%<br />
-        4 3067 0.72%<br />
-        5 1045 0.25%<br />
-        6 197 0.05%<br />
-        7 0 0%
-      </Card></template
-    >
+        <img src="@/asset/img/icon/caret.gif" /> MaZo (beta) est accessible
+        uniquement pour les membres de niveau 15 et plus.<br /><br />
+        <img src="@/asset/img/icon/caret.gif" />Le classement est mis à jour
+        toutes les 10 minutes.<br /> </Card
+    ></template>
   </Container>
 </template>
 
 <script>
 import User from "@/component/link/User.vue";
-import Group from "@/component/link/Group.vue";
-import Progress from "@/component/Progress.vue";
-import Tooltip from "@/component/Tooltip.vue";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
 
 export default {
   name: "Games",
   components: {
-    User,
-    Group,
-    Progress,
-    Tooltip
+    User
   },
   data() {
     return {
       data: null
     };
   },
+  methods: {
+    formatDate(date) {
+      return format(new Date(date), "PPP à pp", {
+        locale: fr,
+        addSuffix: true
+      });
+    }
+  },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/mazo.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/bacteria.json");
+    const req = await this.api.get("/api/mazo.json");
     this.data = req.data;
   },
   metaInfo: {

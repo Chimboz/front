@@ -25,19 +25,19 @@ export default {
     win: {
       required: true,
       type: Number,
-      default: 33.3,
+      default: 33.3
     },
     draw: {
       required: true,
       type: Number,
-      default: 33.3,
+      default: 33.3
     },
     lose: {
       required: true,
       type: Number,
-      default: 33.3,
-    },
-  },
+      default: 33.3
+    }
+  }
 };
 </script>
 
@@ -65,6 +65,6 @@ export default {
 
 .progress-bar-lose {
   background-color: #fb0d0d;
+  border-radius: 0 9px 9px 0;
 }
-
 </style>
