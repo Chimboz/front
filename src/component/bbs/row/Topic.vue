@@ -65,31 +65,31 @@
 <script>
 import User from "@/component/link/User.vue";
 import { formatDistance } from "date-fns";
-import { fr } from "date-fns/locale";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Topic",
   components: {
-    User,
+    User
   },
   props: {
     topic: {
       required: true,
-      type: Object,
+      type: Object
     },
     separator: {
       required: false,
       default: true,
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   computed: {
     formatDate() {
       return formatDistance(new Date(this.topic.last_msg.date), new Date(), {
-        locale: fr,
-        addSuffix: true,
+        locale: window.__localeId__,
+        addSuffix: true
       });
-    },
-  },
+    }
+  }
 };
 </script>

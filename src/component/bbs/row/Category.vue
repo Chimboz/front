@@ -88,33 +88,33 @@
 import Group from "@/component/link/Group.vue";
 import User from "@/component/link/User.vue";
 import { formatDistance } from "date-fns";
-import { fr } from "date-fns/locale";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Category",
   components: {
     Group,
-    User,
+    User
   },
   data() {
     return {
-      hide: false,
+      hide: false
     };
   },
   props: {
     category: {
       required: true,
-      type: Object,
-    },
+      type: Object
+    }
   },
   methods: {
     formatDate(date) {
       return formatDistance(new Date(date), new Date(), {
-        locale: fr,
-        addSuffix: true,
+        locale: window.__localeId__,
+        addSuffix: true
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

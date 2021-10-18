@@ -66,7 +66,7 @@
 import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import { format } from "date-fns";
-import { fr } from "date-fns/locale";
+import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
 
 export default {
@@ -96,8 +96,8 @@ export default {
       return messageRender(this.message.content);
     },
     formatDate() {
-      return format(new Date(this.message.date), "PPP à pp", {
-        locale: fr,
+      return format(new Date(this.message.date), "PPpp", {
+        locale: window.__localeId__,
         addSuffix: true
       });
     }

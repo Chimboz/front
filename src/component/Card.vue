@@ -270,13 +270,16 @@ img + .card > .card-bg {
 .bot {
   border-radius: 12px 12px 0 0;
   display: block;
-  padding-bottom: 5px;
   background-image: linear-gradient(
     to bottom,
     var(--light-card-color) 0px,
     var(--main-card-color) 12px,
     var(--main-card-color) 100%
   );
+}
+
+.bot .card-bg {
+  padding-bottom: 5px;
 }
 
 .card h2 {

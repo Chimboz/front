@@ -160,7 +160,7 @@ import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
 import StrokeText from "@/component/StrokeText.vue";
 import { format } from "date-fns";
-import { fr } from "date-fns/locale";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Member",
@@ -186,8 +186,8 @@ export default {
   },
   computed: {
     formatDate() {
-      return format(new Date(this.data.status.date), "PPP à p", {
-        locale: fr,
+      return format(new Date(this.data.status.date), "Pp", {
+        locale: window.__localeId__,
         addSuffix: true
       });
     }

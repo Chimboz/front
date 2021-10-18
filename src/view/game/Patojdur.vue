@@ -8,8 +8,56 @@
       ><br />
       <Rules bot />
     </template>
-    <Card header="bacteria.gif" justified bg="bacteria.gif">
+    <Card header="patojdur.gif" justified bg="patojdur.gif">
       <div class="flex centered hstack">
+        <router-link to="#gameplay" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Le gameplay</router-link
+        >
+        <router-link to="#modes" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Les modes</router-link
+        >
+        <router-link to="#races" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Les courses</router-link
+        >
+        <router-link to="#yesterday" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Champion du jour</router-link
+        >
+        <router-link to="#today" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Classement du Jour</router-link
+        >
+        <router-link to="#general" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;Classement Général</router-link
+        >
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
             draggable="false"
@@ -18,29 +66,21 @@
             src="@/asset/img/icon/caret.png"
           />&nbsp;Les Records</router-link
         >
-        <router-link to="#best" class="btn-sm blue-bg"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Caret"
-            src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Meilleurs</router-link
-        >
-        <router-link to="#worst" class="btn-sm blue-bg"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Caret"
-            src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Pires</router-link
-        >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Groupes</router-link
+          />&nbsp;Groupe</router-link
+        >
+        <router-link to="#minifak" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+          />&nbsp;MiniFaK</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
@@ -55,81 +95,109 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/preview.gif"
+        src="@/asset/img/game/patojdur/preview.jpg"
         alt="A game of bacteria"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
       />
+      Patojdur est un jeu de style course-labyrinthe qui consiste à traverser à
+      la nage les marécages le plus vite possible. A toi d’éviter les roseaux,
+      les nénuphars et les plantes aquatiques, trouver les bons courants afin de
+      faire le meilleur chrono du jour ou de battre le record de la course !
       <br />
-      Bacteria est le jeu ancestral de notre île. Depuis des milliers d'années,
-      des membres dédient leur vie à s'entraîner à cet art si complexe et
-      profond.
       <br />
-      Des millions de combats ont déjà eu lieu, et encore plus de parties sont à
-      venir.
-      <br />
-      Retrouve sur cette page le
-      <a href="#top">classement des champions</a> et toute les infos dont tu as
-      besoin, pour devenir toi aussi, un <b>guerrier Bacteria</b> .<br />
-      <br />
+      Les grenouilles seront là pour t’encourager ou se moquer de toi, mais seul
+      ton courage et ta persévérance te permettront de devenir le meilleur
+      patojeur !
     </Card>
     <br />
     <Card id="tutorial" justified>
-      <template #header>Comment jouer&nbsp;!</template>
-
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        src="@/asset/img/game/bacteria/howto.png"
-        alt="A game of bacteria"
-        width="200"
-        title="A game of bacteria"
-        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
-      />
-      Il y a 2 endroits pour jouer: Bacteria débutants et Bacteria Pro Si tu ne
-      sais pas comment y aller demande ton chemin !<br />
+      <template #header>Comment jouer&nbsp;?</template>
+      <b>Attention : les visiteurs ne peuvent pas jouer !</b><br />
+      Il faut te rendre dans les marécages, demande ton chemin si tu ne sais pas
+      comment y aller.<br />
+      Va ensuite te placer sur un des emplacements tout à gauche de la mare, et
+      attends ton tour ! (Les grenouilles n'autorisent que 5 Patojeurs en même
+      temps, sécurité oblige).<br />
+      Quand ton tour arrive, tu te retrouves dans l'eau, court chargement,
+      compte à rebours (3, 2, 1, GO !) et voilà, à toi de traverser la mare en
+      nageant le plus vite possible !<br />
       <br />
-      Pour jouer c'est simple, va dans une cabine, elle s'allume si elle
-      t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
-      partie démarre ! Attention: Les visiteurs ne peuvent jouer qu'en Bacteria
-      débutants, les cabines de Bacteria Pro sont réservées aux membres ! </Card
+      Bonne Chance ! tu en auras besoin, la concurrence sera rude ! La victoire
+      au millième près !</Card
+    ><br />
+    <Card id="gameplay" justified>
+      <template #header>Game Play</template>
+      Patojdur se joue aux touches directionnelles (les flèches).<br />
+      Avance dans la direction de ton choix (haut, bas, droite ou gauche), quand
+      tu fais du sur-place, c'est que tu es bloqué, essaye une autre direction !
+      Les obstacles ne sont pas forcément visibles !<br />
+      Les bulles te téléportent dans des endroits plus ou moins avantageux, à
+      toi de trouver les bonnes !<br />
+      Pas de note esthétique ! Le gagnant du jour est celui qui aura traversé le
+      marécage le plus rapidement !<br />
+      <br />
+      <br />
+      Départ Boost : Pour obtenir un départ boost, tu dois effectuer la bonne
+      combinaison de touches durant le compte à rebours.<br />
+      <br />
+      Un bonne combinaison est constituée de 5 touches, seules les touches
+      directionnelles (les flèches) sont utilisées.<br />
+      <br />
+      Exemple d'une combinaison (fausse) : Flèche Gauche, Flèche Gauche, Flèche
+      Droite, Flèche Haut, Flèche Droite. (GGDHD)<br />
+      <br />
+      Indice : pour Burnin'Flak, la bonne combinaison commence par Flèche
+      Gauche, Flèche Haut... (GH...)</Card
+    ><br />
+    <Card id="modes" justified>
+      <template #header>Les modes</template>
+      Pour le moment, seul le mode single est accessible.</Card
+    ><br />
+    <Card id="races" justified>
+      <template #header>Les Courses</template>
+      10 courses différentes, plus ou moins difficiles. Chaque jour une course
+      différente, un classement différent !<br />
+      <br />
+      Durant la phase de test de Patojdur, seule la course n°1 (Burnin'Flak) est
+      accessible.</Card
     ><br />
     <Card id="records" v-if="data">
       <template #header>Records !</template>
-      <template #subtitle
-        >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-      >
-      <b>parties jouées</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.played.user" /> avec
-        {{ data.records.played.record }} parties jouées&nbsp;!
-      </div>
-      <br />
-      <b>parties gagnées</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.won.user" /> avec
-        {{ data.records.won.record }} parties gagnées&nbsp;!
-      </div>
-      <br />
-      <b>parties perdues</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.lost.user" /> avec
-        {{ data.records.lost.record }} parties perdues&nbsp;!
-      </div>
-      <br />
-      <b>match nuls</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.drawn.user" /> avec
-        {{ data.records.drawn.record }} match nuls&nbsp;!
-      </div>
+      <template #subtitle>Ce jour là, il a comme volé sur l'eau...</template>
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="20%" />
+          <col width="20%" />
+          <col width="30%" />
+          <col width="30%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Record</th>
+            <th>Membre</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.record" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td><user :user="rank.user"/></td>
+            <td>{{ rank.score }}</td>
+            <td>test<br />test</td>
+          </tr>
+        </tbody>
+      </table>
     </Card>
-    <br /><Card id="best" v-if="data">
-      <template #header>Les 20 plus acharnés de Bacteria !</template>
+    <br /><Card id="yesterday" v-if="data">
+      <template #header>Les Champions du Jour !</template>
       <template #subtitle
-        >Des heures de phagocytage acharné pour en arriver la...</template
+        >Hier, ils ont cloué le bec des grenouilles... et des autres membres
+        !</template
       >
       Les 10 premiers du classement remportent le
-      <b>casque Bacteria</b>.<br />
+      <b>casque Patojdur</b> pour la journée.<br />
       <br />
       <table class="score fullwidth">
         <colgroup>
@@ -147,32 +215,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
+          <tr v-for="(rank, index) in data.champions" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
             <td>{{ rank.score }}</td>
-            <td>
-              <Tooltip>
-                <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    src="@/asset/img/icon/caret.png"
-                  />&nbsp;<b
-                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
-                  ></template
-                >
-                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
-              </Tooltip>
-            </td>
+            <td> </td>
           </tr>
         </tbody>
       </table>
     </Card>
-    <br /><Card id="worst" v-if="data">
-      <template #header>Les 20 pires brèles de Bacteria ! </template>
-      <template #subtitle>Les meilleurs... en partant du bas !</template>
+    <br /><Card id="general" v-if="data">
+      <template #header
+        >Classement Général Single {{ data.day - 1 }}e journée</template
+      >
+      <template #subtitle>2 heures par jour minimum dans la mare...</template>
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
@@ -193,27 +249,42 @@
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
             <td>{{ rank.score }}</td>
-            <td>
-              <Tooltip>
-                <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    src="@/asset/img/icon/caret.png"
-                  />&nbsp;<b
-                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
-                  ></template
-                >
-                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
-              </Tooltip>
-            </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table> </Card
+    ><br /><Card id="today" v-if="data">
+      <template #header
+        >{{ data.day }}e Journée ! {{ data.players }} Patojeurs !</template
+      >
+      La {{ data.day }}e journée de course est en cours !
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+          <col width="40" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Membre</th>
+            <th>Score</th>
+            <th>Détail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.worst" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td><user :user="rank.user"/></td>
+            <td>{{ rank.score }}</td>
+            <td> </td>
           </tr>
         </tbody>
       </table>
     </Card>
     <br /><Card id="groups" v-if="data">
-      <template #header>Les 10 meilleurs groupes de Bacteria !</template>
+      <template #header>Classement des groupes !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="score fullwidth">
         <colgroup>
@@ -246,77 +317,40 @@
         color="lightblue"
         justified
       >
-        Toutes les infos, les techniques, news.<br />
         <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
           draggable="false"
           @contextmenu.prevent
         />
-        BBS de Bacteria<br />
+        BBS de Patojdur<br />
         <br />
-        Lis l'histoire sur Bacteria écrite par Kunu.<br />
         <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
           draggable="false"
           @contextmenu.prevent
         />
-        Bacteria Sanctuary.<br />
-        <br />
+        Hier, il y a eu 644 Patojeurs.<br /><br />
         <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />
-        424187 membres joueurs de Bacteria.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        12591547 parties ont été jouées.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        8684 parties hier.<br />
-        <br />
-        Niveau des joueurs<br />
-        <br />
-        # Membres %<br />
-        0 180500 42.55%<br />
-        1 220717 52.03%<br />
-        2 13356 3.15%<br />
-        3 5305 1.25%<br />
-        4 3067 0.72%<br />
-        5 1045 0.25%<br />
-        6 197 0.05%<br />
-        7 0 0%
-      </Card></template
-    >
+        />Aujourd'hui, il y a 451 Patojeurs.<br /> </Card
+    ></template>
   </Container>
 </template>
 
 <script>
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
-import Progress from "@/component/Progress.vue";
-import Tooltip from "@/component/Tooltip.vue";
 
 export default {
   name: "Games",
   components: {
     User,
-    Group,
-    Progress,
-    Tooltip
+    Group
   },
   data() {
     return {

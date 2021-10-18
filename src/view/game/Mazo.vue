@@ -137,13 +137,28 @@
         color="lightblue"
         justified
       >
-        <img src="@/asset/img/icon/caret.gif" /> MaZo est actuellement en
-        version beta (version de test)<br />
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        MaZo est actuellement en version beta (version de test)<br />
         <br />
-        <img src="@/asset/img/icon/caret.gif" /> MaZo (beta) est accessible
-        uniquement pour les membres de niveau 15 et plus.<br /><br />
-        <img src="@/asset/img/icon/caret.gif" />Le classement est mis à jour
-        toutes les 10 minutes.<br /> </Card
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        MaZo (beta) est accessible uniquement pour les membres de niveau 15 et
+        plus.<br /><br />
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />Le classement est mis à jour toutes les 10 minutes.<br /> </Card
     ></template>
   </Container>
 </template>
@@ -151,7 +166,7 @@
 <script>
 import User from "@/component/link/User.vue";
 import { format } from "date-fns";
-import { fr } from "date-fns/locale";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Games",
@@ -165,8 +180,8 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return format(new Date(date), "PPP à pp", {
-        locale: fr,
+      return format(new Date(date), "Pp", {
+        locale: window.__localeId__,
         addSuffix: true
       });
     }

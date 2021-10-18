@@ -39,17 +39,12 @@ const sideNavEntries = [
   },
   {
     label: "section.groups",
-    url: "/groups",
+    url: "/groups/manage",
     section: "account"
   },
   {
     label: "section.friends",
     url: "/friends",
-    section: "account"
-  },
-  {
-    label: "section.forum",
-    url: "/bbs",
     section: "account"
   },
   {
@@ -60,11 +55,6 @@ const sideNavEntries = [
   {
     label: "section.capitalization",
     url: "/majmin",
-    section: "account"
-  },
-  {
-    label: "section.shop",
-    url: "/shop",
     section: "account"
   },
   {

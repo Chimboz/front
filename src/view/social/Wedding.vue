@@ -42,7 +42,7 @@
 
 <script>
 import { format } from "date-fns";
-import { fr } from "date-fns/locale";
+import { fr, enGB } from "date-fns/locale";
 import Modal from "../../component/Modal.vue";
 
 export default {
@@ -66,8 +66,8 @@ export default {
   },
   computed: {
     formatDate() {
-      return format(new Date(this.data.status.date), "PPP à p", {
-        locale: fr,
+      return format(new Date(this.data.status.date), "Pp", {
+        locale: window.__localeId__,
         addSuffix: true
       });
     }
