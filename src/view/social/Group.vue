@@ -161,7 +161,7 @@ export default {
     this.data = req.data;
   },
   metaInfo: {
-    title: $t("section.group"),
+    title: "section.group",
     meta: [
       {
         name: "description",

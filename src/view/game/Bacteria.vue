@@ -16,6 +16,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
           />&nbsp;Les Records</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
@@ -24,6 +25,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
           />&nbsp;Les Meilleurs</router-link
         >
         <router-link to="#worst" class="btn-sm blue-bg"
@@ -32,6 +34,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
           />&nbsp;Les Pires</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
@@ -40,6 +43,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
           />&nbsp;Les Groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
@@ -160,6 +164,7 @@
                     @contextmenu.prevent
                     alt="Caret"
                     src="@/asset/img/icon/caret.png"
+                    style="image-rendering: pixelated"
                   />&nbsp;<b
                     >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
                   ></template
@@ -202,6 +207,7 @@
                     @contextmenu.prevent
                     alt="Caret"
                     src="@/asset/img/icon/caret.png"
+                    style="image-rendering: pixelated"
                   />&nbsp;<b
                     >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
                   ></template
