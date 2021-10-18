@@ -64,17 +64,17 @@ const sideNavEntries = [
   },
   {
     label: "section.bacteria",
-    url: "/games/bacteria",
+    url: "/game/bacteria",
     section: "games"
   },
   {
     label: "section.patojdur",
-    url: "/games/patojdur",
+    url: "/game/patojdur",
     section: "games"
   },
   {
     label: "section.mazo",
-    url: "/games/mazo",
+    url: "/game/mazo",
     section: "games"
   },
   {

@@ -22,7 +22,12 @@
       >
     </Card>
     <br />
-    <Card header="popularity.gif" bg="popularity.png" :height="75" color="blue">
+    <Card
+      header="popularity_blue.gif"
+      bg="popularity_blue.png"
+      :height="75"
+      color="blue"
+    >
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>
@@ -33,7 +38,7 @@
       <router-link to="/popu">Voir la page popularité</router-link>
     </Card>
     <br />
-    <Card header="wedding.gif" bg="wedding.png" color="blue">
+    <Card header="wedding_blue.gif" bg="wedding_blue.png" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <Tiz /><Tiz /><Tiz />
       </div>

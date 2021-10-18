@@ -19,22 +19,22 @@ const routes = [
     component: () => import("../view/Games.vue")
   },
   {
-    path: "/games/bacteria",
+    path: "/game/bacteria",
     name: "Bacteria",
     component: () => import("../view/game/Bacteria.vue")
   },
   {
-    path: "/games/bacteria/story",
+    path: "/game/bacteria/story",
     name: "Bacteria Story",
     component: () => import("../view/game/bacteria/Story.vue")
   },
   {
-    path: "/games/patojdur",
+    path: "/game/patojdur",
     name: "Patojdur",
     component: () => import("../view/game/Patojdur.vue")
   },
   {
-    path: "/games/mazo",
+    path: "/game/mazo",
     name: "Mazo",
     component: () => import("../view/game/Mazo.vue")
   },
@@ -52,6 +52,11 @@ const routes = [
     path: "/wedding",
     name: "Wedding",
     component: () => import("../view/social/Wedding.vue")
+  },
+  {
+    path: "/popularity",
+    name: "Popularity",
+    component: () => import("../view/social/Popularity.vue")
   },
   {
     path: "/groups",
