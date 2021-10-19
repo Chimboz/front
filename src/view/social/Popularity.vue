@@ -1,41 +1,42 @@
 <template>
   <Container>
-    <template #left-column
-      ><Card color="blue" top>
+    <template #left-column>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="games" />
-        </div> </Card
-      ><br />
+          <SideNavEntries section="members" />
+        </div>
+      </Card>
+      <br />
       <Rules bot />
     </template>
     <Card header="popularity.gif" justified bg="popularity.gif">
       <div class="flex centered hstack">
-        <router-link to="#records" class="btn-sm blue-bg"
+        <router-link to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Records</router-link
+          />&nbsp;Classement du jour</router-link
         >
-        <router-link to="#best" class="btn-sm blue-bg"
+        <router-link to="#general" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Meilleurs</router-link
+          />&nbsp;Classement général</router-link
         >
-        <router-link to="#worst" class="btn-sm blue-bg"
+        <router-link to="#yesterday" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Pires</router-link
+          />&nbsp;Champions du jour</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
@@ -44,205 +45,270 @@
             alt="Caret"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Groupes</router-link
+          />&nbsp;Classement des groupes</router-link
         >
-        <router-link to="#tutorial" class="btn-sm pink-bg">
+        <router-link to="#vote" class="btn-sm blue-bg">
           <img
             draggable="false"
             @contextmenu.prevent
-            alt="Help icon"
-            src="@/asset/img/icon/help.png"
-          />&nbsp;Comment jouer&nbsp;?
-        </router-link>
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
+          />&nbsp;Voter</router-link
+        >
       </div>
       <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        src="@/asset/img/game/bacteria/preview.gif"
-        alt="A game of bacteria"
-        title="A game of bacteria"
-        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
-      />
-      Bacteria est le jeu ancestral de notre île. Depuis des milliers d'années,
-      des membres dédient leur vie à s'entraîner à cet art si complexe et
-      profond.
-      <br />
-      Des millions de combats ont déjà eu lieu, et encore plus de parties sont à
-      venir.
-      <br />
-      Retrouve sur cette page le
-      <a href="#top">classement des champions</a> et toute les infos dont tu as
-      besoin, pour devenir toi aussi, un <b>guerrier Bacteria</b> .<br />
-      <br />
-    </Card>
-    <br />
-    <Card id="tutorial" justified>
-      <template #header>Comment jouer&nbsp;!</template>
 
+      Il te prend la tête et tu as envie de lui faire sentir ? <br />
+      Tu ne peux plus la voir et tu veux que tout le monde le sache ? <br />
+      Cette fille est trop cool et ceux qui ne l'aiment pas ne la connaissent
+      pas ! <br />
+      Ce mec et son groupe assurent grave et tu as envie de le lui prouver ?
+      <br />
+      <br />
+      Viens tous les jours régler tes comptes ou soutenir tes amis sur
+      popularité ! <br />
+      Vote POUR elle et sa cote remonte, vote CONTRE lui et il descend en flêche
+      ! <br />
+      <br />
+      Les + Populaire du jour gagne les lunettes pour la journée, les 3 +
+      Populaires du jour gagnent une auréole pour la journée, le - Aimé gagne
+      une crotte pour la journée !
+    </Card>
+    <br /><Card id="today" v-if="data">
+      <template #header>Classement du Jour !</template>
+      Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
+      quelqu'un !<br />
+      <br />
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/howto.png"
-        alt="A game of bacteria"
-        width="200"
-        height="134"
-        title="A game of bacteria"
-        style="float: left; margin-right: 16px; border: 3px solid #6699cc"
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
       />
-      Il y a 2 endroits pour jouer: Bacteria débutants et Bacteria Pro Si tu ne
-      sais pas comment y aller demande ton chemin !<br />
-      <br />
-      Pour jouer c'est simple, va dans une cabine, elle s'allume si elle
-      t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
-      partie démarre ! Attention: Les visiteurs ne peuvent jouer qu'en Bacteria
-      débutants, les cabines de Bacteria Pro sont réservées aux membres ! </Card
-    ><br />
-    <Card id="records" v-if="data">
-      <template #header>Records !</template>
-      <template #subtitle
-        >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-      >
-      <b>parties jouées</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.played.user" /> avec
-        {{ data.records.played.record }} parties jouées&nbsp;!
-      </div>
-      <br />
-      <b>parties gagnées</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.won.user" /> avec
-        {{ data.records.won.record }} parties gagnées&nbsp;!
-      </div>
-      <br />
-      <b>parties perdues</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.lost.user" /> avec
-        {{ data.records.lost.record }} parties perdues&nbsp;!
-      </div>
-      <br />
-      <b>match nuls</b><br />
-      <div class="fullwidth light">
-        <user :user="data.records.drawn.user" /> avec
-        {{ data.records.drawn.record }} match nuls&nbsp;!
-      </div>
-    </Card>
-    <br /><Card id="best" v-if="data">
-      <template #header>Les 20 plus acharnés de Bacteria !</template>
-      <template #subtitle
-        >Des heures de phagocytage acharné pour en arriver la...</template
-      >
-      Les 10 premiers du classement remportent le
-      <b>casque Bacteria</b>.<br />
-      <br />
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
-          <col width="40" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
           <col width="100%" />
         </colgroup>
         <thead>
           <tr>
-            <th>#</th>
+            <th>Pts</th>
             <th>Membre</th>
-            <th>Score</th>
-            <th>Détail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </Card>
+    <br />
+    <Card id="yesterday" v-if="data">
+      <template #header>Champions du Jour !</template>
+      <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table> </Card
+    ><br />
+    <Card id="general" v-if="data">
+      <template #header>Classement Général !</template>
+      <template #subtitle
+        >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
+      >
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td>
-              <Tooltip>
-                <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    src="@/asset/img/icon/caret.png"
-                    style="image-rendering: pixelated"
-                  />&nbsp;<b
-                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
-                  ></template
-                >
-                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
-              </Tooltip>
-            </td>
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br /><Card id="worst" v-if="data">
-      <template #header>Les 20 pires brèles de Bacteria ! </template>
-      <template #subtitle>Les meilleurs... en partant du bas !</template>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
-          <col width="100%" />
-          <col width="40" />
+          <col width="30" />
           <col width="100%" />
         </colgroup>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
+            <th>Pts</th>
             <th>Membre</th>
-            <th>Score</th>
-            <th>Détail</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.worst" :key="index">
+          <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td>
-              <Tooltip>
-                <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    src="@/asset/img/icon/caret.png"
-                    style="image-rendering: pixelated"
-                  />&nbsp;<b
-                    >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
-                  ></template
-                >
-                <Progress :win="rank.win" :draw="rank.draw" :lose="rank.lose" />
-              </Tooltip>
-            </td>
           </tr>
         </tbody>
       </table>
     </Card>
     <br /><Card id="groups" v-if="data">
-      <template #header>Les 10 meilleurs groupes de Bacteria !</template>
+      <template #header>Classement des Groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
+          <col width="30" />
           <col width="100%" />
-          <col width="40" />
         </colgroup>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Groupe</th>
-            <th>Score</th>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.groups" :key="index">
+          <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><group :group="rank.group"/></td>
-            <td>{{ rank.score }}</td>
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
           </tr>
         </tbody>
       </table>
-    </Card>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table> </Card
+    ><br />
+    <Card id="vote"
+      ><template #header>Voter Pour/Contre un membre !</template> Un membre
+      t'ennuie ? Descends le !<br />
+      Tu trouves un membre sympa ? Donne lui ta voix !</Card
+    >
     <template #right-column
       ><Card
         header="ensavoirplus.gif"
