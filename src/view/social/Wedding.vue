@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="data">
+  <Container>
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
@@ -9,46 +9,371 @@
       <br />
       <Rules bot />
     </template>
-    <span class="pink justified">
-      <router-link to="/bbs" class="pink"
-        >» Retour à l'annuaire</router-link
-      > </span
-    ><br />
-    <Card>
-      Mariage
-    </Card>
-    <template #right-column
-      ><Card color="blue" top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+    <Card header="wedding.gif" justified bg="wedding.gif">
+      <div class="flex centered hstack">
+        <router-link to="#today" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
+          />&nbsp;Les mariages du jour</router-link
         >
-        parties jouées:
+        <router-link to="#general" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
+          />&nbsp;Les divorces</router-link
+        >
+        <router-link to="#yesterday" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
+          />&nbsp;Ceux qui tiennent</router-link
+        >
+        <router-link to="#groups" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
+          />&nbsp;Ceux qui ont tenu</router-link
+        >
+        <router-link to="#groups" class="btn-sm blue-bg"
+          ><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Caret"
+            src="@/asset/img/icon/caret.png"
+            style="image-rendering: pixelated"
+          />&nbsp;Archives</router-link
+        >
+        <router-link to="#tutorial" class="btn-sm pink-bg">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Help icon"
+            src="@/asset/img/icon/help.png"
+          />&nbsp;Comment ça marche&nbsp;?
+        </router-link>
+      </div>
+    </Card>
+    <br /><Card id="today" v-if="data">
+      <template #header>Classement du Jour !</template>
+      Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
+      quelqu'un !<br />
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </Card>
+    <br />
+    <Card id="yesterday" v-if="data">
+      <template #header>Champions du Jour !</template>
+      <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table> </Card
+    ><br />
+    <Card id="general" v-if="data">
+      <template #header>Classement Général !</template>
+      <template #subtitle
+        >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
+      >
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </Card>
+    <br /><Card id="groups" v-if="data">
+      <template #header>Classement des Groupes ! </template>
+      <template #subtitle>Plus on est de fous...</template>
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/star.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Star"
+        src="@/asset/img/social/popularity/poop.gif"
+      />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="30" />
+          <col width="100%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pts</th>
+            <th>Membre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(rank, index) in data.best" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ rank.points }}</td>
+            <td><user :user="rank.user"/></td>
+          </tr>
+        </tbody>
+      </table> </Card
+    ><br />·
+    <Card id="vote"
+      ><template #header>Voter Pour/Contre un membre !</template> Un membre
+      t'ennuie ? Descends le !<br />
+      Tu trouves un membre sympa ? Donne lui ta voix !</Card
+    >
+    <template #right-column
+      ><Card
+        header="ensavoirplus.gif"
+        :width="154"
+        :height="34"
+        top
+        color="lightblue"
+        justified
+      >
+        Toutes les infos, les techniques, news.<br />
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        BBS de Bacteria<br />
         <br />
-        fredazur avec 22665 parties jouées ! <br />
+        Lis l'histoire sur Bacteria écrite par Kunu.<br />
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        Bacteria Sanctuary.<br />
         <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        424187 membres joueurs de Bacteria.<br />
         <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        12591547 parties ont été jouées.<br />
         <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
+        <img
+          src="@/asset/img/icon/caret.gif"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+        />
+        8684 parties hier.<br />
+        <br />
+        Niveau des joueurs<br />
+        <br />
+        # Membres %<br />
+        0 180500 42.55%<br />
+        1 220717 52.03%<br />
+        2 13356 3.15%<br />
+        3 5305 1.25%<br />
+        4 3067 0.72%<br />
+        5 1045 0.25%<br />
+        6 197 0.05%<br />
+        7 0 0%
+      </Card></template
+    >
   </Container>
-  <modal />
 </template>
 
 <script>
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
-import Modal from "../../component/Modal.vue";
+import User from "@/component/link/User.vue";
 
 export default {
-  name: "Wedding",
+  name: "Games",
   components: {
-    Modal
+    User
   },
   data() {
     return {
@@ -57,20 +382,12 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/wedding.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/wedding.json");
+    const req = await this.api.get("/api/bacteria.json");
     this.data = req.data;
-  },
-  computed: {
-    formatDate() {
-      return format(new Date(this.data.status.date), "Pp", {
-        locale: window.__localeId__,
-        addSuffix: true
-      });
-    }
   },
   metaInfo: {
     title: "section.wedding",
@@ -97,116 +414,18 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.card {
-  background-size: cover;
-}
-.male .card {
-  background-image: url(../../asset/img/member/header_mec.gif);
-}
 
-.female .card {
-  background-image: url(../../asset/img/member/header_fille.gif);
-}
-</style>
 <style lang="scss" scoped>
-.member {
-  overflow: hidden;
+.fullwidth.light {
+  background: #eef5fa;
+  padding: 2px 0;
 }
 
-.sentence {
-  margin-left: 33%;
-  text-align: left;
+tr td:first-child {
+  font-weight: bold;
 }
 
-.member-body {
-  background: #eff5fa;
-  clear: both;
-}
-
-.member-header {
-  font-family: "Chimboz Heavy";
-  color: #fff;
-  font-size: 20px;
-  text-shadow: 2px 1px #0008;
-  min-height: 90px;
-}
-
-.member-header .tiz {
-  float: left;
-  margin: 40px auto -100% 12%;
-  transform: rotate(-5deg) scale(3);
-}
-
-.pseudo {
-  margin-left: 33%;
-  width: 67%;
-  font-size: 35px;
-  fill: #fff;
-  stroke: #f39;
-  stroke-width: 3;
-  text-shadow: -1px 3px #f39;
-  height: 35px;
-  overflow: visible;
-}
-
-.portrait {
+.hstack {
   justify-content: center;
-  align-items: center;
-  background: url(../../asset/img/member/portrait.png);
-  height: 112px;
-  width: 104px;
-  overflow: hidden;
-}
-
-.member-section,
-.member-body {
-  text-align: left;
-  z-index: 1;
-  position: relative;
-  border-radius: 8px;
-  padding: 8px;
-}
-
-.member-portrait {
-  float: right;
-  background: #fff;
-  width: 100px;
-}
-
-.member-section {
-  background: #a9cbe4;
-}
-
-.icon {
-  display: inline-flex;
-  font-family: "Pixelated Verdana 10";
-  font-size: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: 1px solid #6090be;
-  background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
-  border-radius: 4px;
-}
-
-.online {
-  font-family: "Pixelated Verdana 10";
-  font-size: 10px;
-  color: #fff;
-  justify-content: center;
-  width: 100%;
-  height: 26px;
-  background: linear-gradient(to bottom, #0193ca, #2d4a97);
-  border-radius: 10px;
-}
-
-.online.tchat {
-  background: linear-gradient(to bottom, #81cb00, #40972d);
-}
-
-.online img {
-  height: 20px;
 }
 </style>

@@ -280,6 +280,7 @@ img + .card > .card-bg {
 
 .bot .card-bg {
   padding-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .card h2 {
@@ -296,5 +297,6 @@ main:after {
 .card-bg {
   background-repeat: repeat-x;
   padding: 17px;
+  margin-bottom: 12px;
 }
 </style>

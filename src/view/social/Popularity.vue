@@ -303,7 +303,7 @@
           </tr>
         </tbody>
       </table> </Card
-    ><br />
+    ><br />·
     <Card id="vote"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
@@ -379,16 +379,12 @@
 <script>
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
-import Progress from "@/component/Progress.vue";
-import Tooltip from "@/component/Tooltip.vue";
 
 export default {
   name: "Games",
   components: {
     User,
-    Group,
-    Progress,
-    Tooltip
+    Group
   },
   data() {
     return {
@@ -405,7 +401,7 @@ export default {
     this.data = req.data;
   },
   metaInfo: {
-    title: "section.bacteria",
+    title: "section.popularity",
     meta: [
       {
         name: "description",
