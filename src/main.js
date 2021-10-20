@@ -1,10 +1,10 @@
 import { createApp } from "vue";
 import router from "./router";
 import store from "./store";
-import mitt from "mitt";
 import i18n from "./i18n";
 import App from "./App.vue";
-import api from "./module/api.js";
+import eventBus from "./module/eventBus";
+import api from "./module/api";
 import { createMetaManager, plugin as metaPlugin } from "vue-meta";
 import "./asset/css/fonts.css";
 import "./asset/css/main.scss";
@@ -26,7 +26,6 @@ const app = createApp(App)
   .use(metaManager)
   .use(metaPlugin);
 
-const eventBus = mitt();
 app.config.globalProperties.eventBus = eventBus;
 app.config.globalProperties.api = api;
 

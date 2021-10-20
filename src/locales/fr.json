@@ -55,7 +55,8 @@
     "notfound": "La route demandée par l'API n'existe pas.",
     "default": "Erreur, la page que vous cherchez n'existe pas.",
     "connected": "Vous êtes déjà connecté&nbsp;!",
-    "tchat": "Erreur, le tchat n'est pas actif."
+    "tchat": "Erreur, le tchat n'est pas actif.",
+    "login": "Erreur, vous devez être connecté pour effectuer cette action."
   },
   "format": {
     "language": "langage"

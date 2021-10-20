@@ -3,6 +3,7 @@
   <Navbar />
   <router-view />
   <Footer />
+  <Modal />
   <metainfo>
     <template #title="{ content }"
       >{{
@@ -18,6 +19,7 @@
 import ProgressBar from "@/component/ProgressBar.vue";
 import Navbar from "@/component/Navbar.vue";
 import Footer from "@/component/Footer.vue";
+import Modal from "@/component/Modal.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -25,7 +27,8 @@ export default {
   components: {
     Navbar,
     Footer,
-    ProgressBar
+    ProgressBar,
+    Modal
   },
   computed: {
     ...mapState("auth", ["user"])

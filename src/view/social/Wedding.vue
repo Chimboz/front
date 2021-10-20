@@ -347,11 +347,11 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/wedding.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/bacteria.json");
+    const req = await this.api.get("/api/wedding.json");
     this.data = req.data;
   },
   metaInfo: {

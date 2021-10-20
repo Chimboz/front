@@ -55,7 +55,8 @@
     "notfound": "Error, unknown API route.",
     "default": "Error, requested page does not exist.",
     "connected": "You are already signed in!",
-    "tchat": "Error, tchat is unavailable."
+    "tchat": "Error, tchat is unavailable.",
+    "login": "Error, you must be logged to do this."
   },
   "format": {
     "language": "language"

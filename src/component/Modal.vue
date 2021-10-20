@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" v-if="!close">
+  <div class="modal" v-if="isVisible">
     <div class="modal-content">
       <img
         style="float: left"
@@ -8,7 +8,7 @@
         src="@/asset/img/icon/warning_modal.svg"
       />
       <p>{{ $t(message) }}</p>
-      <button class="pink-icon ok" @click="close = true">
+      <button class="pink-icon ok" @click="isVisible = false">
         <img
           draggable="false"
           @contextmenu.prevent
@@ -23,16 +23,20 @@ export default {
   name: "Modal",
   data() {
     return {
-      close: false,
+      isVisible: false,
+      message: "error.default"
     };
   },
-  props: {
-    message: {
-      required: false,
-      default: "error.default",
-      type: String,
-    },
+  mounted() {
+    this.eventBus.on("error", (err) => this.error(err));
   },
+  methods: {
+    error(err) {
+      this.isVisible = true;
+      console.log(err);
+      this.message = err.message;
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
