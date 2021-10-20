@@ -1,5 +1,5 @@
 <template>
-  <Card color="blue" :bot="bot" :top="top">
+  <Card class="rules" color="blue" :bot="bot" :top="top">
     <div class="rule-container fullwidth">
       <div
         ><img src="@/asset/img/icon/rules.svg" /><div class="rule-number">{{
@@ -48,6 +48,10 @@ export default {
     #1fabff 50%,
     var(--main-card-color) 50%
   ) !important;
+}
+
+.rules .card-bg {
+  padding-top: 0;
 }
 </style>
 <style lang="scss" scoped>
