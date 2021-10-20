@@ -244,7 +244,8 @@ export default {
 </script>
 <style lang="scss">
 .card {
-  background-size: cover;
+  background-size: contain;
+  background-repeat: repeat-x;
 }
 .male .card {
   background-image: url(../../asset/img/member/header_mec.gif);
