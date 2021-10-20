@@ -2,45 +2,94 @@ import Marked from "marked";
 import DOMPurify from "dompurify";
 import katex from "katex/dist/katex.mjs";
 
-const messageRender = function(string) {
-  const renderer = new Marked.Renderer();
-  const linkRenderer = renderer.link;
+const allowed_uri = ["http", "https"];
+const allowed_images = [
+  "i.imgur.com",
+  "image.noelshack.com",
+  "chzretro-front.web.app",
+  "localhost"
+];
+const allowed_embed = ["www.youtube.com"];
+const allowed_properties = [
+  "color",
+  "top",
+  "margin-left",
+  "margin-right",
+  "top",
+  "height"
+];
+const allow_css_functions = false;
+const allowed_tags = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h6",
+  "p",
+  "span",
+  "ul",
+  "ol",
+  "li",
+  "blockquote",
+  "pre",
+  "code",
+  "hr",
+  "table",
+  "br",
+  "kbd",
+  "strong",
+  "em",
+  "s",
+  "a",
+  "input",
+  "thead",
+  "tbody",
+  "tr",
+  "th",
+  "td",
+  "img",
+  "svg",
+  "path",
+  "iframe"
+];
+const allowed_attr = [
+  "style",
+  "class",
+  "alt",
+  "rel",
+  "type",
+  "disabled",
+  "checked",
+  "src",
+  "href",
+  "target",
+  "viewBox",
+  "d",
+  "xmlns",
+  "preserveAspectRatio"
+];
 
-  // Target _blank on links
-  renderer.link = (href, title, text) => {
-    const localLink = href.startsWith(
-      `${location.protocol}//${location.hostname}`
-    );
-    const html = linkRenderer.call(renderer, href, title, text);
-    return localLink
-      ? html
-      : html.replace(
-          /^<a /,
-          `<a target="_blank" rel="noreferrer noopener nofollow" `
-        );
+const markedRender = function(string) {
+  const renderer = new Marked.Renderer();
+
+  const rendererCodespan = renderer.codespan;
+  renderer.codespan = function(text) {
+    const math = mathsExpression(text);
+    if (math) return math;
+
+    return rendererCodespan(text);
   };
 
   // KaTeX
   function mathsExpression(expr) {
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
       expr = expr.substr(2, expr.length - 4);
-      return katex.renderToString(expr, { displayMode: true });
+      return katex.renderToString(expr, { displayMode: true, maxSize: 2 });
     } else if (expr.match(/^\$[\s\S]*\$$/)) {
       expr = expr.substr(1, expr.length - 2);
-      return katex.renderToString(expr, { displayMode: false });
+      return katex.renderToString(expr, { displayMode: false, maxSize: 2 });
     }
   }
-
-  const rendererCodespan = renderer.codespan;
-  renderer.codespan = function(text) {
-    const math = mathsExpression(text);
-
-    if (math) {
-      return math;
-    }
-
-    return rendererCodespan(text);
-  };
 
   // Custom emotes
   string = string.replace(
@@ -70,57 +119,125 @@ const messageRender = function(string) {
     xhtml: false
   });
 
-  // DOMPurify
-  return DOMPurify.sanitize(Marked(string), {
-    ALLOWED_TAGS: [
-      "h1",
-      "h2",
-      "h3",
-      "h4",
-      "h6",
-      "p",
-      "span",
-      "ul",
-      "ol",
-      "li",
-      "blockquote",
-      "pre",
-      "code",
-      "hr",
-      "table",
-      "br",
-      "kbd",
-      "strong",
-      "em",
-      "s",
-      "a",
-      "input",
-      "thead",
-      "tbody",
-      "tr",
-      "th",
-      "td",
-      "img",
-      "svg",
-      "path"
-    ],
-    ALLOWED_ATTR: [
-      "style",
-      "class",
-      "alt",
-      "rel",
-      "type",
-      "disabled",
-      "checked",
-      "src",
-      "href",
-      "target",
-      "viewBox",
-      "d",
-      "xmlns",
-      "preserveAspectRatio"
-    ]
+  return Marked(string);
+};
+
+const dompurifyRender = function(string) {
+  // Allowed URI schemes
+  var regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
+
+  /**
+   *  Take CSS property-value pairs and validate against allow-list,
+   *  then add the styles to an array of property-value pairs
+   */
+  function validateStyles(output, styles) {
+    // Validate regular CSS properties
+    for (var prop in styles) {
+      if (typeof styles[prop] === "string") {
+        if (styles[prop] && allowed_properties.indexOf(prop) > -1) {
+          if (allow_css_functions || !/\w+\(/.test(styles[prop])) {
+            output.push(prop + ":" + styles[prop] + ";");
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * Take CSS rules and analyze them, create string wrapper to
+   * apply them to the DOM later on. Note that only selector rules
+   * are supported right now
+   */
+  function addCSSRules(output, cssRules) {
+    for (var index = cssRules.length - 1; index >= 0; index--) {
+      var rule = cssRules[index];
+      // check for rules with selector
+      if (rule.type == 1 && rule.selectorText) {
+        output.push(rule.selectorText + "{");
+        if (rule.style) {
+          validateStyles(output, rule.style);
+        }
+        output.push("}");
+      }
+    }
+  }
+
+  // Add a hook to enforce CSS element sanitization
+  DOMPurify.addHook("uponSanitizeElement", function(node, data) {
+    if (data.tagName === "style") {
+      var output = [];
+      addCSSRules(output, node.sheet.cssRules);
+      node.textContent = output.join("\n");
+    }
   });
+
+  // Add a hook to enforce CSS attribute sanitization
+  DOMPurify.addHook("afterSanitizeAttributes", function(node) {
+    // Sanitizing anchors
+    if (node.hasAttribute("href")) {
+      var anchor = document.createElement("a");
+      anchor.href = node.getAttribute("href");
+      node.setAttribute("target", "_blank");
+      node.setAttribute("rel", "noreferrer noopener nofollow");
+      if (anchor.protocol && !anchor.protocol.match(regex_uri)) {
+        node.removeAttribute("href");
+      }
+    }
+
+    // Whitelist images
+    if (node.hasAttribute("src")) {
+      var anchor = document.createElement("a");
+      anchor.href = node.getAttribute("src");
+      if (anchor.hostname && !allowed_images.includes(anchor.hostname)) {
+        node.removeAttribute("src");
+      }
+    }
+
+    // Custom embeds
+
+    // Sanitizing CSS
+    // Nasty hack to fix baseURI + CSS problems in Chrome
+    if (!node.ownerDocument.baseURI) {
+      var base = document.createElement("base");
+      base.href = document.baseURI;
+      node.ownerDocument.head.appendChild(base);
+    }
+    // Check all style attribute values and validate them
+    if (node.hasAttribute("style")) {
+      var output = [];
+      validateStyles(output, node.style);
+      // re-add styles in case any are left
+      if (output.length) {
+        node.setAttribute("style", output.join(""));
+      } else {
+        node.removeAttribute("style");
+      }
+    }
+  });
+
+  return DOMPurify.sanitize(string, {
+    ALLOWED_TAGS: allowed_tags,
+    ALLOWED_ATTR: allowed_attr
+  });
+};
+
+const messageRender = function(string) {
+  const result = dompurifyRender(markedRender(string));
+
+  // Custom embeds
+  var DOM = document.createElement("div");
+  DOM.innerHTML = result;
+  for (let el of DOM.querySelectorAll("a")) {
+    if (allowed_embed.includes(el.hostname)) {
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", el.getAttribute("href"));
+      iframe.setAttribute("allowfullscreen", true);
+      console.log(el);
+      el.parentNode.replaceChild(iframe, el);
+    }
+  }
+
+  return DOM.innerHTML;
 };
 
 export default messageRender;

@@ -113,10 +113,6 @@ export default {
 .info-sm .tiz {
   margin-bottom: -25px;
 }
-
-.katex {
-  font-size: 18px;
-}
 </style>
 <style lang="scss" scoped>
 td {

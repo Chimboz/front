@@ -149,6 +149,10 @@ table:not(.bbs) tr:nth-child(2n + 1) {
   background: #004e8422 !important;
 }
 
+iframe {
+  border: 0;
+}
+
 // App width
 @media (min-width: 800px) {
   #app {
@@ -258,10 +262,6 @@ textarea.btn-md {
 .markdown-body li input[type="checkbox"] {
   margin-left: -16px;
   position: absolute;
-}
-
-.katex {
-  font-size: 18px !important;
 }
 
 .btn-md {
