@@ -9,7 +9,7 @@ const allowed_images = [
   "chzretro-front.web.app",
   "localhost"
 ];
-const allowed_embed = ["www.youtube.com"];
+const youtube = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/gi;
 const allowed_properties = [
   "color",
   "top",
@@ -227,9 +227,14 @@ const messageRender = function(string) {
   var DOM = document.createElement("div");
   DOM.innerHTML = result;
   for (let el of DOM.querySelectorAll("a")) {
-    if (allowed_embed.includes(el.hostname)) {
+    if (el.href.match(youtube)) {
       var iframe = document.createElement("iframe");
-      iframe.setAttribute("src", el.getAttribute("href"));
+      iframe.setAttribute(
+        "src",
+        el
+          .getAttribute("href")
+          .replace(youtube, `https://youtube.com/embed/$5$6`)
+      );
       iframe.setAttribute("allowfullscreen", true);
       console.log(el);
       el.parentNode.replaceChild(iframe, el);
