@@ -101,5 +101,8 @@
     "leader": {
       "empire": "Emperor of the empire"
     }
+  },
+  "rules": {
+    "rule0": "Never give your password, to nobody!"
   }
 }

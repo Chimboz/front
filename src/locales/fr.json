@@ -102,5 +102,13 @@
     "leader": {
       "empire": "Empereur de l'empire"
     }
+  },
+  "rules": {
+    "rule0": "Ne donne jamais ton mot de passe, à personne !",
+    "rule1": "Ne donne jamais d'informations personnelles, n'en demande jamais",
+    "rule2": "Reste toujours calme, poli, correct et respectueux",
+    "rule3": "Ne tente pas de hack, de vol de compte, de choses illégales",
+    "rule4": "Evite la publicité ou les convictions abusives",
+    "rule5": "N'incite jamais les autres à faire des choses contraires aux règles d'or"
   }
 }
