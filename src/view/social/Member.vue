@@ -14,7 +14,7 @@
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <Card class="member" :class="[this.data.gender]" v-if="data">
+    <Card class="member" :class="[this.data.gender]" v-if="data" justified>
       <div class="member-header">
         <Tiz
           :avatar="data.look.avatar"
@@ -90,6 +90,7 @@
               :separator="index < this.data.groups.length - 1"
             />
           </p>
+          <br />
           <div class="icon flex centered">
             Chapato
             <img
@@ -129,8 +130,32 @@
       </div>
       <br />
       <div class="member-section">
-        Classement : 25ème 19 parties, 10 gagnées, 9 perdues, 0 nulles 40 points
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/member/bacteria_mec.gif"
+          style="float:left"
+        />
+        Classement : 25ème<br />19 parties, 10 gagnées, 9 perdues, 0 nulles 40
+        points
       </div>
+      <br />
+      <div class="member-section">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/member/bacteria_mec.gif"
+          style="float:left"
+        />
+        Classement : 25ème<br />19 parties, 10 gagnées, 9 perdues, 0 nulles 40
+        points </div
+      ><br />
+      <div class="member-section registration">
+        Membre n°3<br />
+        Dans la communauté depuis le 16 Mars 2021 à 14h16 (218 jours)
+      </div>
+      <br />
+      Messages sur le forum : 92
     </Card>
     <template #right-column
       ><Card color="blue" top>
@@ -282,7 +307,6 @@ export default {
 
 .member-section,
 .member-body {
-  text-align: left;
   z-index: 1;
   position: relative;
   border-radius: 8px;
@@ -302,6 +326,8 @@ export default {
 
 .member-section {
   background: #a9cbe4;
+  display: flex;
+  align-items: center;
 }
 
 .icon {
@@ -335,5 +361,9 @@ export default {
 
 .online img {
   height: 20px;
+}
+
+.registration {
+  padding: 12px;
 }
 </style>
