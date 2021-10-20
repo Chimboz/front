@@ -67,59 +67,22 @@
       </div>
     </Card>
     <br /><Card id="today" v-if="data">
-      <template #header>Classement du Jour !</template>
-      Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
-      quelqu'un !<br />
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
+      <template #header>Le dernier Mariage</template>
+      Le lundi 15 octobre 2007 à 05h41, 68665e mariage.
+      <br /><br />
+      <div class="wedding">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          alt="Star"
+          src="@/asset/img/social/wedding/wedding.svg"/>
+        <Tiz class="witness witness1"/> <Tiz class="married married1"/>
+        <Tiz class="married married2"/> <Tiz class="witness witness2"/></div
+      ><br />
+      Tous nos voeux de bonheur à <br />
+      Ludovic151 et mica2<br />
+      qui ont été mariés par Guruji en présence de<br />
+      foxy974 et missbad67.
     </Card>
     <br />
     <Card id="yesterday" v-if="data">
@@ -369,11 +332,13 @@
 
 <script>
 import User from "@/component/link/User.vue";
+import Tiz from "../../component/Tiz.vue";
 
 export default {
   name: "Games",
   components: {
-    User
+    User,
+    Tiz
   },
   data() {
     return {
@@ -427,5 +392,38 @@ tr td:first-child {
 
 .hstack {
   justify-content: center;
+}
+
+.wedding {
+  position: relative;
+}
+
+.witness,
+.married {
+  position: absolute;
+}
+
+.witness {
+  top: 165px;
+}
+
+.married {
+  top: 175px;
+}
+
+.witness1 {
+  left: 100px;
+}
+
+.witness2 {
+  left: 275px;
+}
+
+.married1 {
+  left: 150px;
+}
+
+.married2 {
+  left: 225px;
 }
 </style>
