@@ -236,7 +236,6 @@ const messageRender = function(string) {
           .replace(youtube, `https://youtube.com/embed/$5$6`)
       );
       iframe.setAttribute("allowfullscreen", true);
-      console.log(el);
       el.parentNode.replaceChild(iframe, el);
     }
   }

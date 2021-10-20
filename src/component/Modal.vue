@@ -33,7 +33,6 @@ export default {
   methods: {
     error(err) {
       this.isVisible = true;
-      console.log(err);
       this.message = err.message;
     }
   }
