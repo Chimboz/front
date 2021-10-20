@@ -2,7 +2,7 @@
   <Card color="yellow" v-if="authenticated">
     <template #button>
       <Button color="yellow" icon="register.svg">{{
-        $t("credit.title")
+        $t("credit.title", user.credits)
       }}</Button>
     </template>
     <div class="bank fullwidth">

@@ -144,7 +144,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/member/bacteria_mec.gif"
+          src="@/asset/img/member/patojdur_mec.gif"
           style="float:left"
         />
         Classement : 25ème<br />19 parties, 10 gagnées, 9 perdues, 0 nulles 40
