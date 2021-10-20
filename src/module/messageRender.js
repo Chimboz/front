@@ -49,8 +49,7 @@ const allowed_tags = [
   "td",
   "img",
   "svg",
-  "path",
-  "iframe"
+  "path"
 ];
 const allowed_attr = [
   "style",
