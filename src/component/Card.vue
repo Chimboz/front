@@ -297,6 +297,6 @@ main:after {
 .card-bg {
   background-repeat: repeat-x;
   padding: 17px;
-  margin-bottom: 12px;
+  border-radius: 12px;
 }
 </style>
