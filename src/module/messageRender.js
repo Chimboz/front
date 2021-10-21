@@ -18,7 +18,7 @@ const allowed_properties = [
   "top",
   "height"
 ];
-const allow_css_functions = false;
+const allow_css_functions = true;
 const allowed_tags = [
   "h1",
   "h2",
