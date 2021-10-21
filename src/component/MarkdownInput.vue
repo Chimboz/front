@@ -20,8 +20,9 @@
           id: 'reply',
           new: true,
           signature: this.signature,
-          title: this.title,
+          title: this.title
         }"
+        :separator="false"
       />
     </tbody>
   </table>
@@ -307,18 +308,18 @@ export default {
       title: "",
       signature: true,
       markdown: false,
-      selectionRange: [0, 0],
+      selectionRange: [0, 0]
     };
   },
   props: {
     isTopic: {
       required: false,
       default: false,
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   computed: {
-    ...mapState("auth", ["user"]),
+    ...mapState("auth", ["user"])
   },
   methods: {
     submit() {
@@ -330,7 +331,7 @@ export default {
     resetSelection(length) {
       this.selectionRange = [
         this.selectionRange[1] + length,
-        this.selectionRange[1] + length,
+        this.selectionRange[1] + length
       ];
       this.$refs.message.focus();
     },
@@ -344,7 +345,7 @@ export default {
     selectionHandler(e) {
       this.selectionRange = [
         e.currentTarget.selectionStart,
-        e.currentTarget.selectionEnd,
+        e.currentTarget.selectionEnd
       ];
     },
     select() {
@@ -380,7 +381,7 @@ export default {
       );
       this.selectionRange = [
         this.selectionRange[0] + 1 + +image,
-        this.selectionRange[1] + 1 + +image,
+        this.selectionRange[1] + 1 + +image
       ];
       this.focusHandler();
     },
@@ -397,7 +398,7 @@ export default {
       );
       this.selectionRange = [
         this.selectionRange[0] + 4,
-        this.selectionRange[0] + 4 + this.$t("format.language").length,
+        this.selectionRange[0] + 4 + this.$t("format.language").length
       ];
       this.focusHandler();
     },
@@ -430,8 +431,8 @@ export default {
           "</span>"
       );
       this.resetSelection(35);
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
