@@ -6,7 +6,9 @@
           rule + 1
         }}</div></div
       >
-      <div class="rule">{{ $t("rules.rule" + rule) }}</div>
+      <div class="rule"
+        ><b>{{ $t("rules.rule" + rule) }}</b></div
+      >
     </div>
     <div class="btn-rules fullwidth"
       ><Button icon="rules.svg">Règles</Button></div
