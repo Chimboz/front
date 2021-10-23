@@ -6,6 +6,8 @@
           <SideNavEntries section="community" />
         </div>
       </Card>
+      <br />
+      <Rules bot />
     </template>
     <BBSList v-if="data" :boards="data"></BBSList>
     <br />
@@ -15,19 +17,19 @@
           <img
             draggable="false"
             @contextmenu.prevent
-            alt="BBS Verrouillé (nouveaux messages)"
-            title="BBS Verrouillé (nouveaux messages)"
+            :alt="$t('bbs.lock_new')"
+            :title="$t('bbs.lock_new')"
             src="@/asset/img/bbs/folder_new_lock.svg"
-          />&nbsp;Verrouillé nouveaux messages&nbsp;
+          />&nbsp;{{ $t("bbs.lock_new") }}&nbsp;
         </div>
         <div>
           <img
             draggable="false"
             @contextmenu.prevent
-            alt="BBS Verrouillé"
-            title="BBS Verrouillé"
+            :alt="$t('bbs.lock')"
+            title="$t('bbs.lock')"
             src="@/asset/img/bbs/folder_lock.svg"
-          />&nbsp;Verrouillé&nbsp;
+          />&nbsp;{{ $t("bbs.lock") }}&nbsp;
         </div>
         <div>
           <img

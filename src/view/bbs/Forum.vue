@@ -5,7 +5,9 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
         </div> </Card
-    ></template>
+      ><br />
+      <Rules bot
+    /></template>
     <Board v-if="data" :topics="data"> </Board>
     <br />
     <button style="text-align: left">

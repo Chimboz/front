@@ -5,7 +5,9 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
         </div> </Card
-    ></template>
+      ><br />
+      <Rules bot
+    /></template>
     <Topic v-if="data" :messages="data"> </Topic>
     <br />
     <MarkdownInput v-if="authenticated" />

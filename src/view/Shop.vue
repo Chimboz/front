@@ -4,8 +4,9 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
-        </div>
-      </Card>
+        </div> </Card
+      ><br />
+      <Rules bot />
     </template>
     <Card color="yellow" header="shop.svg" :height="109">
       <template #header></template>

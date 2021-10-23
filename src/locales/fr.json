@@ -110,5 +110,9 @@
     "rule3": "Ne tente pas de hack, de vol de compte, de choses illégales",
     "rule4": "Evite la publicité ou les convictions abusives",
     "rule5": "N'incite jamais les autres à faire des choses contraires aux règles d'or"
+  },
+  "bbs": {
+    "lock_new": "BBS Verrouillé (nouveaux messages)",
+    "lock": "BBS Verrouillé"
   }
 }
