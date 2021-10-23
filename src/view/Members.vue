@@ -17,9 +17,7 @@
       Les derniers membres qui ont rejoint l'archipel !
 
       <br />
-      <router-link to="/annuaire"
-        >Voir la liste des nouveaux arrivants</router-link
-      >
+      <router-link to="/book">Voir la liste des nouveaux arrivants</router-link>
     </Card>
     <br />
     <Card
@@ -35,7 +33,7 @@
       Les membres les plus populaire de l'archipel !
 
       <br />
-      <router-link to="/popu">Voir la page popularité</router-link>
+      <router-link to="/popularity">Voir la page popularité</router-link>
     </Card>
     <br />
     <Card header="wedding_blue.gif" bg="wedding_blue.png" color="blue">
