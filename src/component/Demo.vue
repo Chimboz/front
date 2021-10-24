@@ -110,7 +110,7 @@
           autofocus
           minlength="3"
           maxlength="15"
-          pattern="[A-Za-z0-9\@\.\_\-]{3,15}"
+          pattern="[\w\.\-_@]{3,15}"
           name="username"
           type="text"
           class="btn-md"
@@ -142,7 +142,9 @@
           class="btn-md"
         />
         <div class="flex">
-          <Button color="red" @click="section = 0" type="button">Annuler</Button>
+          <Button color="red" @click="section = 0" type="button"
+            >Annuler</Button
+          >
           <Button color="green"
             ><template #prepend
               ><img
@@ -201,7 +203,9 @@
           />
         </div>
         <div class="flex">
-          <Button color="red" @click="section = 0" type="button">Annuler</Button>
+          <Button color="red" @click="section = 0" type="button"
+            >Annuler</Button
+          >
           <Button type="submit" color="green"
             ><template #prepend
               ><img
@@ -224,13 +228,12 @@
   </div>
 </template>
 <script>
-
 export default {
   name: "Message",
   data() {
     return {
       section: 0,
-      demo: 0,
+      demo: 0
     };
   },
   mounted() {
@@ -239,8 +242,8 @@ export default {
   methods: {
     login() {
       this.$store.dispatch("auth/login");
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
