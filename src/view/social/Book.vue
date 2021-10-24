@@ -56,7 +56,7 @@
           <tr v-for="(member, index) in data.members" :key="index">
             <td>{{ member.id }}</td>
             <td><user :user="member"/></td>
-            <td>{{ member.date }}</td>
+            <td>{{ formatDate(member.date) }}</td>
           </tr>
         </tbody>
       </table>
@@ -90,6 +90,8 @@
 <script>
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Games",
@@ -106,6 +108,12 @@ export default {
     search() {
       let id = 1;
       this.$router.push(`/member/${id}`);
+    },
+    formatDate(date) {
+      return format(new Date(date), "Pp", {
+        locale: window.__localeId__,
+        addSuffix: true
+      });
     }
   },
   async beforeRouteEnter(to, from, next) {
