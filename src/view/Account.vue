@@ -46,8 +46,36 @@
       v-model:centred="data.centres[3]"
     />
     <template #right-column>
-      <Card color="blue" header="messages.gif" :width="154" :height="56">
-        test </Card
+      <Card
+        color="blue"
+        header="messages.gif"
+        :width="154"
+        :height="56"
+        v-if="data"
+      >
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.pm
+            .reduce((prev, curr) => +prev + +curr.new, 0)
+            .toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <div v-for="message of this.data.pm" :key="message.author.id">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :src="
+              require(`@/asset/img/bbs/msg${message.new ? '_new' : ''}.svg`)
+            "
+            alt="Voir le dernier message"
+            title="Voir le dernier message"
+          /><user :user="message.author" />
+        </div> </Card
       ><br />
       <Card color="blue" header="forum.gif" :width="154" :height="45"> </Card
       ><br /><Card color="blue">
@@ -68,13 +96,16 @@
 <script>
 import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
+import User from "../component/link/User.vue";
 
 export default {
   name: "Account",
   components: {
     Bank,
-    Cabin
+    Cabin,
+    User
   },
+
   data() {
     return {
       data: null
