@@ -37,7 +37,7 @@
         ></div
       ></Card
     ><br />
-    <Card
+    <Card v-if="data"
       ><template #header>Les 10 derniers membres</template>
       <table class="score fullwidth">
         <colgroup>
@@ -53,10 +53,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.id }}</td>
-            <td><user :user="rank.user"/></td>
-            <td>{{ rank.date }}</td>
+          <tr v-for="(member, index) in data.members" :key="index">
+            <td>{{ member.id }}</td>
+            <td><user :user="member"/></td>
+            <td>{{ member.date }}</td>
           </tr>
         </tbody>
       </table>
@@ -110,11 +110,11 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/book.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/bacteria.json");
+    const req = await this.api.get("/api/book.json");
     this.data = req.data;
   },
   metaInfo: {
