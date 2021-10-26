@@ -22,6 +22,7 @@
       ><br />
       <Bank
     /></template>
+
     <Cabin
       v-if="data"
       :data="data"
@@ -45,6 +46,7 @@
       v-model:centrec="data.centres[2]"
       v-model:centred="data.centres[3]"
     />
+
     <template #right-column>
       <Card
         color="blue"
@@ -53,29 +55,39 @@
         :height="56"
         v-if="data"
       >
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.pm
-            .reduce((prev, curr) => +prev + +curr.new, 0)
-            .toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
-        <div v-for="message of this.data.pm" :key="message.author.id">
+        <div class="pm-number">
           <img
             draggable="false"
             @contextmenu.prevent
-            :src="
-              require(`@/asset/img/bbs/msg${message.new ? '_new' : ''}.svg`)
-            "
-            alt="Voir le dernier message"
-            title="Voir le dernier message"
-          /><user :user="message.author" />
-        </div> </Card
+            :alt="number"
+            v-for="number in data.pm
+              .reduce((prev, curr) => prev + +curr.new, 0)
+              .toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/pink/${number}.svg`)"
+        /></div>
+        <router-link
+          v-for="message of this.data.pm"
+          :key="message.author.id"
+          :to="`/messenger/${message.author.id}`"
+          :class="{ active: message.new }"
+        >
+          <div class="list fullwidth col pm"
+            ><div>
+              <img
+                draggable="false"
+                @contextmenu.prevent
+                :src="
+                  require(`@/asset/img/bbs/msg${message.new ? '_new' : ''}.svg`)
+                "
+                alt="Voir le dernier message"
+                title="Voir le dernier message"/>&nbsp;<user
+                :user="message.author"/></div
+            ><div>{{ formatDate(message.date) }}</div>
+          </div>
+        </router-link></Card
       ><br />
       <Card color="blue" header="forum.gif" :width="154" :height="45"> </Card
       ><br /><Card color="blue">
@@ -97,6 +109,8 @@
 import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
 import User from "../component/link/User.vue";
+import { formatDistance } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Account",
@@ -114,6 +128,12 @@ export default {
   methods: {
     submit() {
       console.log("Envoyé!");
+    },
+    formatDate(date) {
+      return formatDistance(new Date(date), new Date(), {
+        locale: window.__localeId__,
+        addSuffix: true
+      });
     }
   },
   async beforeRouteEnter(to, from, next) {
@@ -150,3 +170,18 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.pm-number {
+  transform: translate(30px, -21px);
+  margin-top: -21px;
+}
+
+.pm {
+  padding: 2px 10px;
+  align-items: flex-start;
+}
+
+.active .pm div:first-child {
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 1px #fff);
+}
+</style>

@@ -332,6 +332,17 @@ textarea:invalid:not(:placeholder-shown) {
     );
 }
 
+.router-link-active .list,
+.active .list {
+  background: transparent
+    linear-gradient(to right, #ff00a6a0, #ff00a6 10%, #ff00a6 90%, #ff00a6a0) !important;
+}
+
+.router-link-active,
+.active {
+  color: #fff;
+}
+
 #loadtime {
   text-align: center;
 }
