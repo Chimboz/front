@@ -9,14 +9,14 @@
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
-    "@intlify/vue-i18n-loader": "^3.2.0",
-    "axios": "^0.23.0",
+    "@intlify/vue-i18n-loader": "^3.3.0",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "date-fns": "^2.22.1",
     "dompurify": "^2.3.1",
     "highlight.js": "^11.3.1",
-    "katex": "^0.13.18",
-    "marked": "^3.0.2",
+    "katex": "^0.13.20",
+    "marked": "^3.0.8",
     "mitt": "^3.0.0",
     "v-lazy-image": "^2.0.1",
     "vue": "^3.0.0",
