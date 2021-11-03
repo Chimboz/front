@@ -124,7 +124,32 @@
           </div>
         </router-link></Card
       ><br />
-      <Card color="blue" header="forum.gif" :width="154" :height="45"> </Card
+      <Card
+        color="blue"
+        header="forum.gif"
+        :width="154"
+        :height="45"
+        v-if="data"
+      >
+        <router-link
+          v-for="message of data.forum"
+          :key="message.id"
+          :to="`/bbs/${message.forum.id}/${message.topic.id}#${message.id}`"
+        >
+          <div class="list fullwidth col" style="align-items: flex-start"
+            ><div>
+              <img
+                draggable="false"
+                @contextmenu.prevent
+                src="@/asset/img/bbs/msg.svg"
+                alt="Voir le dernier message"
+                title="Voir le dernier message"
+              />&nbsp;<router-link :to="`/bbs/${message.forum.id}`">{{
+                message.forum.name
+              }}</router-link></div
+            ><div>{{ message.topic.title }}</div>
+          </div>
+        </router-link> </Card
       ><br /><Card color="blue" v-if="data">
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>

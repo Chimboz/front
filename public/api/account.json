@@ -1081,8 +1081,8 @@
     {
       "title": "test",
       "date": 1626723644981,
-      "topicid": 1,
-      "msgid": 1,
+      "topic": { "id": 1, "title": "salut" },
+      "id": 1,
       "forum": {
         "name": "Agora",
         "id": 2
@@ -1091,8 +1091,8 @@
     {
       "title": "test",
       "date": 1626723644981,
-      "topicid": 1,
-      "msgid": 1,
+      "topic": { "id": 1, "title": "salut" },
+      "id": 1,
       "forum": {
         "name": "Agora",
         "id": 2
@@ -1101,8 +1101,8 @@
     {
       "title": "test",
       "date": 1626723644981,
-      "topicid": 1,
-      "msgid": 1,
+      "topic": { "id": 1, "title": "salut" },
+      "id": 1,
       "forum": {
         "name": "Agora",
         "id": 2
