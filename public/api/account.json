@@ -1120,15 +1120,20 @@
     {
       "user": { "name": "Owned", "id": 2, "color": "#900" },
       "status": {
-        "connected": false,
-        "room": "La Colline Sacrée",
-        "date": 1630075662000
+        "connected": false
       }
     },
     {
       "user": { "name": "Owned", "id": 2, "color": "#900" },
       "status": {
         "connected": true
+      }
+    },
+    {
+      "user": { "name": "Owned", "id": 2, "color": "#900" },
+      "status": {
+        "connected": true,
+        "room": "La Colline Sacrée"
       }
     }
   ],

@@ -46,7 +46,42 @@
       v-model:centrec="data.centres[2]"
       v-model:centred="data.centres[3]"
     />
-
+    <Card
+      header="bacteria_blue.jpg"
+      :height="74"
+      color="blue"
+      justified
+      bg="bacteria_blue.gif"
+    >
+      Actuellement en position : sur 120 joueurs classés<br />
+      <br />
+      Score : 40 point(s)<br />
+      <br />
+      Nombre de parties jouées : 23, nombre de parties gagnées : 10,<br />
+      nombre de parties perdues : 12, nombre de match nul : 1
+    </Card>
+    <br />
+    <Card
+      header="patojdur_blue.gif"
+      :height="56"
+      color="blue"
+      justified
+      bg="patojdur_blue.gif"
+    >
+      Actuellement en position : 40 sur 88 joueurs classés<br />
+      Score : 2 point(s)
+    </Card>
+    <br />
+    <Card
+      header="mazo_blue.gif"
+      :height="52"
+      color="blue"
+      justified
+      bg="mazo_blue.gif"
+    >
+      Actuellement en position : 40 sur 88 joueurs classés<br />
+      Score : 2 point(s)
+    </Card>
     <template #right-column>
       <Card
         color="blue"
@@ -90,16 +125,55 @@
         </router-link></Card
       ><br />
       <Card color="blue" header="forum.gif" :width="154" :height="45"> </Card
-      ><br /><Card color="blue">
+      ><br /><Card color="blue" v-if="data">
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>
         </template>
+        <router-link
+          v-for="friend of this.data.friends.sort(
+            (a, b) =>
+              b.status.connected +
+              (b.status.room ? 1 : 0) -
+              a.status.connected -
+              (a.status.room ? 1 : 0)
+          )"
+          :key="friend.user.id"
+          :to="'/member/' + friend.user.id"
+        >
+          <div
+            class="list fullwidth flex-centered"
+            style="justify-content: flex-start"
+            ><img
+              v-if="friend.status.connected && friend.status.room"
+              src="@/asset/img/icon/account/online_tchat.png"
+            /><img
+              v-else-if="friend.status.connected"
+              src="@/asset/img/icon/account/online.png"
+            /><img
+              v-else
+              src="@/asset/img/icon/account/offline.png"
+            />&nbsp;<div class="flex col" style="align-items: flex-start"
+              ><user :user="friend.user" /> {{ friend.status.room }}</div
+            ></div
+          ></router-link
+        >
       </Card>
       <br />
-      <Card color="blue">
+      <Card color="blue" v-if="data">
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.groupsList") }}</Button>
         </template>
+        <router-link
+          v-for="group of this.data.groups"
+          :key="group.id"
+          :to="'/group/' + group.id"
+        >
+          <div class="list fullwidth"
+            ><img
+              v-if="group.owner"
+              src="@/asset/img/icon/account/offline.png"/>&nbsp;<group
+              :group="group"/></div
+        ></router-link>
       </Card>
     </template>
   </Container>
@@ -109,6 +183,7 @@
 import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
 import User from "../component/link/User.vue";
+import Group from "../component/link/Group.vue";
 import { formatDistance } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
@@ -117,7 +192,8 @@ export default {
   components: {
     Bank,
     Cabin,
-    User
+    User,
+    Group
   },
 
   data() {
