@@ -1,4 +1,4 @@
-import Marked from "marked";
+import { marked } from "marked";
 import DOMPurify from "dompurify";
 import katex from "katex/dist/katex.mjs";
 
@@ -69,7 +69,7 @@ const allowed_attr = [
 ];
 
 const markedRender = function(string) {
-  const renderer = new Marked.Renderer();
+  const renderer = new marked.Renderer();
 
   const rendererCodespan = renderer.codespan;
   renderer.codespan = function(text) {
@@ -100,8 +100,8 @@ const markedRender = function(string) {
       )}.svg)`
   );
 
-  // Marked options
-  Marked.setOptions({
+  // marked options
+  marked.setOptions({
     renderer: renderer,
     highlight: function(code, lang) {
       const hljs = require("highlight.js");
@@ -118,7 +118,7 @@ const markedRender = function(string) {
     xhtml: false
   });
 
-  return Marked(string);
+  return marked(string);
 };
 
 const dompurifyRender = function(string) {
