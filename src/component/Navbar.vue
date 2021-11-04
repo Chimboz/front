@@ -12,7 +12,7 @@
       ><img
         draggable="false"
         @contextmenu.prevent
-        alt="Logo Chapatiz Retro"
+        alt="Logo Chimboz"
         id="logo"
         src="../asset/img/logo.svg"
     /></router-link>

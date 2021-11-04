@@ -35,7 +35,7 @@
   },
   "myAccount": {
     "link": "Mon compte",
-    "internalMessagingLink": "ChapatizMessenger",
+    "internalMessagingLink": "Messenger",
     "myGroupsLink": "Mes groupes",
     "friendsList": "Amis",
     "groupsList": "Groupes",

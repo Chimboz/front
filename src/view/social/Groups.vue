@@ -31,7 +31,7 @@
       <template #header>Groupes officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
-        <b>chapatizretro.com</b>.</template
+        <b>chimboz.fr</b>.</template
       >
       Les membres de ces groupes sont nommés par
       <router-link to="/group/1">les créateurs du site</router-link>, et se
@@ -187,17 +187,17 @@ export default {
       {
         name: "description",
         content:
-          "ChapatizRetro.com est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
       },
       {
         property: "og:title",
-        content: "Chapatiz Retro, accueil"
+        content: "Chimboz, accueil"
       },
       {
         property: "og:description",
-        content: "Chapatiz Retro, accueil"
+        content: "Chimboz, accueil"
       },
-      { property: "og:site_name", content: "Chapatiz Retro" },
+      { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },

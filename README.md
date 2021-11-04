@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://chapatizretro.com"><img alt="Chapatiz Retro" src="src/asset/img/logo.svg" /></a><br>
+  <a href="https://chimboz.fr"><img alt="Chimboz" src="src/asset/img/logo.svg" /></a><br>
   <a href="https://chzretro-front.web.app"><img alt="Deployment to Firebase" src="https://img.shields.io/github/workflow/status/tigriz/chzretro-front/Deploy%20to%20Firebase%20Hosting%20on%20merge?label=preview&logo=firebase"></a><br>
   <a href="http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html" target="_blank"><img alt="License CeCILL v2.1" src="https://img.shields.io/badge/license-CeCILL%20v2.1-informational" /></a>
   <img alt="Package version" src="https://img.shields.io/github/package-json/v/tigriz/chzretro-front" />
