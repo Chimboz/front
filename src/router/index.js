@@ -74,6 +74,11 @@ const routes = [
     component: () => import("../view/social/Group.vue")
   },
   {
+    path: "/groups/manage",
+    name: "Group Manage",
+    component: () => import("../view/social/group/Manage.vue")
+  },
+  {
     path: "/group/edit/:id",
     name: "Group Edit",
     component: () => import("../view/social/group/Edit.vue")
