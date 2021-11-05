@@ -103,6 +103,15 @@
     }
   },
   "rules": {
-    "rule0": "Never give your password, to anyone!"
+    "rule0": "Never give your password, to anyone!",
+    "rule1": "Never give private informations, nor ask for",
+    "rule2": "Keep calm, stay polite, correct and respectful",
+    "rule3": "Do not try to hack, steal account or do illegal things",
+    "rule4": "Avoid advertising too much",
+    "rule5": "Never incite others to do something against the golden rules"
+  },
+  "bbs": {
+    "lock_new": "BBS Locked (new messages)",
+    "lock": "BBS Locked"
   }
 }

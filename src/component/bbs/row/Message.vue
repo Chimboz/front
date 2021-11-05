@@ -47,7 +47,7 @@
         &nbsp;
         <img
           alt="Quote button"
-          src="https://chimboz.fr/data/content/images/bbs/icon_quote.png"
+          src="@/asset/img/bbs/lang_english/icon_quote.gif"
         />
       </div>
       <hr style="margin: 2px 0" />

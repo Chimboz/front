@@ -5,9 +5,7 @@
       >BBS</router-link
     ></span
   >
-  <router-link
-    :to="'/topic/' + $route.params.id + '/' + $route.params.topic + '/1'"
-    class="pink"
+  <router-link :to="'1'" class="pink"
     ><h1 class="justified ellipsis" v-if="messages[0]">
       {{ messages[0].title }}
     </h1></router-link

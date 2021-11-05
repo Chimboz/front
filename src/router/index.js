@@ -90,12 +90,12 @@ const routes = [
   },
   {
     path: "/forum/:id/:page?",
-    name: "BBS machin", // TODO
+    name: "Forum",
     component: () => import("../view/bbs/Forum.vue")
   },
   {
     path: "/topic/:id/:topic/:page?",
-    name: "BBS machin truc", // TODO
+    name: "Topic",
     component: () => import("../view/bbs/Topic.vue")
   },
   {
