@@ -1150,5 +1150,28 @@
       "color": "#000",
       "owner": true
     }
-  ]
+  ],
+  "bacteria": {
+    "rank": 1,
+    "players": 120,
+    "score": 120,
+    "stats": {
+      "win": 5,
+      "draw": 5,
+      "lose": 5
+    }
+  },
+  "patojdur": {
+    "rank": 1,
+    "players": 120,
+    "score": 120,
+    "stats": {
+      "best": 28200
+    }
+  },
+  "mazo": {
+    "rank": 1,
+    "players": 120,
+    "score": 20
+  }
 }

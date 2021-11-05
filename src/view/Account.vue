@@ -52,13 +52,22 @@
       color="blue"
       justified
       bg="bacteria_blue.gif"
+      v-if="data"
     >
-      Actuellement en position : sur 120 joueurs classés<br />
+      Actuellement en position : {{ data.bacteria.rank }} sur
+      {{ data.bacteria.players }} joueurs classés<br />
       <br />
-      Score : 40 point(s)<br />
+      Score : {{ data.bacteria.score }} point(s)<br />
       <br />
-      Nombre de parties jouées : 23, nombre de parties gagnées : 10,<br />
-      nombre de parties perdues : 12, nombre de match nul : 1
+      Nombre de parties jouées :
+      {{
+        data.bacteria.stats.win +
+          data.bacteria.stats.draw +
+          data.bacteria.stats.lose
+      }}
+      , nombre de parties gagnées : {{ data.bacteria.stats.win }},<br />
+      nombre de parties perdues : {{ data.bacteria.stats.lose }}, nombre de
+      match nul : {{ data.bacteria.stats.draw }}
     </Card>
     <br />
     <Card
@@ -67,9 +76,12 @@
       color="blue"
       justified
       bg="patojdur_blue.gif"
+      v-if="data"
     >
-      Actuellement en position : 40 sur 88 joueurs classés<br />
-      Score : 2 point(s)
+      Actuellement en position : {{ data.patojdur.rank }} sur
+      {{ data.patojdur.players }} joueurs classés<br />
+      Score : {{ data.patojdur.score }} point(s)<br />
+      Record : {{ data.patojdur.stats.best }}
     </Card>
     <br />
     <Card
@@ -78,9 +90,11 @@
       color="blue"
       justified
       bg="mazo_blue.gif"
+      v-if="data"
     >
-      Actuellement en position : 40 sur 88 joueurs classés<br />
-      Score : 2 point(s)
+      Actuellement en position : {{ data.mazo.rank }} sur
+      {{ data.mazo.players }} joueurs classés<br />
+      Score : {{ data.mazo.score }} point(s)
     </Card>
     <template #right-column>
       <Card
@@ -138,16 +152,18 @@
         >
           <div class="list fullwidth col" style="align-items: flex-start"
             ><div>
-              <img
+              <router-link :to="`/bbs/${message.forum.id}`">{{
+                message.forum.name
+              }}</router-link></div
+            ><div
+              ><img
                 draggable="false"
                 @contextmenu.prevent
                 src="@/asset/img/bbs/msg.svg"
                 alt="Voir le dernier message"
                 title="Voir le dernier message"
-              />&nbsp;<router-link :to="`/bbs/${message.forum.id}`">{{
-                message.forum.name
-              }}</router-link></div
-            ><div>{{ message.topic.title }}</div>
+              />&nbsp;{{ message.topic.title }}</div
+            >
           </div>
         </router-link> </Card
       ><br /><Card color="blue" v-if="data">
