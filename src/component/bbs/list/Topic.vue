@@ -5,7 +5,9 @@
       >BBS</router-link
     ></span
   >
-  <router-link to="1" class="pink"
+  <router-link
+    :to="'/topic/' + $route.params.id + '/' + $route.params.topic + '/1'"
+    class="pink"
     ><h1 class="justified ellipsis" v-if="messages[0]">
       {{ messages[0].title }}
     </h1></router-link
@@ -19,8 +21,20 @@
     <thead>
       <tr>
         <th valign="top" colspan="2" height="25" nowrap="nowrap">
-          <router-link to="1" class="pink">Page 1</router-link>
-          <router-link to="2" class="pink">Page 2</router-link>
+          <router-link
+            :to="
+              '/topic/' + $route.params.id + '/' + $route.params.topic + '/1'
+            "
+            class="pink"
+            >Page 1</router-link
+          >
+          <router-link
+            :to="
+              '/topic/' + $route.params.id + '/' + $route.params.topic + '/2'
+            "
+            class="pink"
+            >Page 2</router-link
+          >
         </th>
       </tr>
     </thead>
