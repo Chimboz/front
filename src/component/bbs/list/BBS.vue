@@ -25,15 +25,15 @@
 import Category from "../row/Category.vue";
 
 export default {
-  name: "BBS",
+  name: "BBS List",
   components: {
-    Category,
+    Category
   },
   props: {
     boards: {
       required: true,
-      type: Array,
-    },
-  },
+      type: Array
+    }
+  }
 };
 </script>

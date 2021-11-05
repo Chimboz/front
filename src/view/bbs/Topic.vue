@@ -8,21 +8,21 @@
       ><br />
       <Rules bot
     /></template>
-    <Topic v-if="data" :messages="data"> </Topic>
+    <TopicList v-if="data" :messages="data" />
     <br />
     <MarkdownInput v-if="authenticated" />
   </Container>
 </template>
 
 <script>
-import Topic from "@/component/bbs/list/Topic.vue";
+import TopicList from "@/component/bbs/list/Topic.vue";
 import MarkdownInput from "@/component/MarkdownInput.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "BBS",
+  name: "Topic",
   components: {
-    Topic,
+    TopicList,
     MarkdownInput
   },
   data() {
@@ -39,9 +39,9 @@ export default {
         .then((res) => (vm.data = res.data))
     );
   },
-  async beforeRouteUpdate() {
+  async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get(
-      `/api/topic/${this.$route.params.page ? this.$route.params.page : 1}.json`
+      `/api/topic/${to.params.page ? to.params.page : 1}.json`
     );
     this.data = req.data;
     next();

@@ -38,7 +38,7 @@
 import Topic from "../row/Topic.vue";
 
 export default {
-  name: "Board",
+  name: "Board List",
   components: {
     Topic
   },

@@ -75,7 +75,7 @@ import { formatDistance } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 export default {
-  name: "Topic",
+  name: "Topic Row",
   components: {
     User
   },

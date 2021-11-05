@@ -8,7 +8,7 @@
       ><br />
       <Rules bot
     /></template>
-    <Board v-if="data" :topics="data"> </Board>
+    <ForumList v-if="data" :topics="data" />
     <br />
     <button style="text-align: left">
       <img v-if="!post" @click="post = true" src="@/asset/img/bbs/post.gif" />
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import Board from "@/component/bbs/list/Board.vue";
+import ForumList from "@/component/bbs/list/Forum.vue";
 import MarkdownInput from "../../component/MarkdownInput.vue";
 
 const iconDescriptions = [
@@ -72,9 +72,9 @@ const iconDescriptions = [
 ];
 
 export default {
-  name: "BBS",
+  name: "Forum",
   components: {
-    Board,
+    ForumList,
     MarkdownInput
   },
   data() {

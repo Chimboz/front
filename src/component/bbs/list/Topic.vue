@@ -5,7 +5,7 @@
       >BBS</router-link
     ></span
   >
-  <router-link :to="'1'" class="pink"
+  <router-link to="1" class="pink"
     ><h1 class="justified ellipsis" v-if="messages[0]">
       {{ messages[0].title }}
     </h1></router-link
@@ -19,7 +19,8 @@
     <thead>
       <tr>
         <th valign="top" colspan="2" height="25" nowrap="nowrap">
-          « Sujet Précédent Sujet Suivant »
+          <router-link to="1" class="pink">Page 1</router-link>
+          <router-link to="2" class="pink">Page 2</router-link>
         </th>
       </tr>
     </thead>
@@ -38,7 +39,7 @@
 import Message from "../row/Message.vue";
 
 export default {
-  name: "Topic",
+  name: "Topic List",
   components: {
     Message
   },
