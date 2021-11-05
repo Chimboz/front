@@ -89,12 +89,12 @@ const routes = [
     component: () => import("../view/BBS.vue")
   },
   {
-    path: "/bbs/:id",
+    path: "/forum/:id/:page?",
     name: "BBS machin", // TODO
     component: () => import("../view/bbs/Forum.vue")
   },
   {
-    path: "/bbs/:id/:topic",
+    path: "/topic/:id/:topic/:page?",
     name: "BBS machin truc", // TODO
     component: () => import("../view/bbs/Topic.vue")
   },

@@ -337,8 +337,8 @@ textarea:invalid:not(:placeholder-shown) {
     linear-gradient(to right, #ff00a6a0, #ff00a6 10%, #ff00a6 90%, #ff00a6a0) !important;
 }
 
-.router-link-active,
-.active {
+.card .router-link-active,
+.card .active {
   color: #fff;
 }
 

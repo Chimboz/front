@@ -1,0 +1,30 @@
+[
+  {
+    "title": "2e page",
+    "id": 1,
+    "reply": 2,
+    "view": 123456,
+    "locked": true,
+    "new": false,
+    "author": { "name": "Tigriz", "id": 3 },
+    "last_msg": {
+      "author": { "name": "Owned", "id": 2, "color": "#900" },
+      "date": 1626534039650,
+      "msgid": 1
+    }
+  },
+  {
+    "title": "Page validée?",
+    "id": 4,
+    "reply": 3,
+    "view": 65432,
+    "locked": false,
+    "new": true,
+    "author": { "name": "Tigriz", "id": 3, "color": "#900" },
+    "last_msg": {
+      "author": { "name": "Owned", "id": 2 },
+      "date": 1626554039650,
+      "msgid": 5
+    }
+  }
+]

@@ -18,7 +18,7 @@
       <td class="row1" width="100%" height="50" align="left">
         <span class="forumlink">
           <router-link
-            :to="$route.params.id + '/' + topic.id"
+            :to="'/topic/' + $route.params.id + '/' + topic.id"
             class="forumlink"
             >{{ topic.title }}</router-link
           >
@@ -44,7 +44,14 @@
         <User :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link
-          :to="$route.params.id + '/' + topic.id + '#' + topic.last_msg.msgid"
+          :to="
+            '/topic/' +
+              $route.params.id +
+              '/' +
+              topic.id +
+              '#' +
+              topic.last_msg.msgid
+          "
           ><img
             draggable="false"
             @contextmenu.prevent

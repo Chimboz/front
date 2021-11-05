@@ -32,11 +32,17 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/topic.json").then((res) => (vm.data = res.data))
+      vm.api
+        .get(
+          `/api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json`
+        )
+        .then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/topic.json");
+    const req = await this.api.get(
+      `/api/topic/${this.$route.params.page ? this.$route.params.page : 1}.json`
+    );
     this.data = req.data;
   },
   computed: {

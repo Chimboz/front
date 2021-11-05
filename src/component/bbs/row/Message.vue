@@ -14,7 +14,7 @@
         formatDate
       }}</span>
     </td>
-    <td class="justified">
+    <td class="justified" valign="top">
       <h2 class="head flex centered info-sm ellipsis">
         <Tiz
           :avatar="message.author.look.avatar"

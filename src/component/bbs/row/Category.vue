@@ -31,7 +31,7 @@
       </td>
       <td align="left" width="100%">
         <span class="forumlink">
-          <router-link :to="'/bbs/' + bbs.id" class="forumlink pink">{{
+          <router-link :to="'/forum/' + bbs.id" class="forumlink pink">{{
             bbs.name
           }}</router-link
           ><br />
@@ -60,7 +60,7 @@
         &nbsp;»&nbsp;
         <router-link
           :to="
-            '/bbs/' +
+            '/topic/' +
               bbs.id +
               '/' +
               bbs.last_msg.topicid +

@@ -1,7 +1,9 @@
 <template>
   <span class="pink justified">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link to="/bbs" class="pink">BBS</router-link></span
+    <router-link :to="'/forum/' + $route.params.id" class="pink"
+      >BBS</router-link
+    ></span
   >
   <br />
   <table class="bbs board">
@@ -38,13 +40,13 @@ import Topic from "../row/Topic.vue";
 export default {
   name: "Board",
   components: {
-    Topic,
+    Topic
   },
   props: {
     topics: {
       required: true,
-      type: Array,
-    },
-  },
+      type: Array
+    }
+  }
 };
 </script>

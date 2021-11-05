@@ -117,26 +117,30 @@
             height="21"
             :src="require(`@/asset/img/number/pink/${number}.svg`)"
         /></div>
-        <router-link
-          v-for="message of this.data.pm"
-          :key="message.author.id"
-          :to="`/messenger/${message.author.id}`"
-          :class="{ active: message.new }"
-        >
-          <div class="list fullwidth col pm"
-            ><div>
-              <img
-                draggable="false"
-                @contextmenu.prevent
-                :src="
-                  require(`@/asset/img/bbs/msg${message.new ? '_new' : ''}.svg`)
-                "
-                alt="Voir le dernier message"
-                title="Voir le dernier message"/>&nbsp;<user
-                :user="message.author"/></div
-            ><div>{{ formatDate(message.date) }}</div>
-          </div>
-        </router-link></Card
+        <div style="margin-top: -21px">
+          <router-link
+            v-for="message of this.data.pm"
+            :key="message.author.id"
+            :to="`/messenger/${message.author.id}`"
+            :class="{ active: message.new }"
+          >
+            <div class="list fullwidth col pm"
+              ><div>
+                <img
+                  draggable="false"
+                  @contextmenu.prevent
+                  :src="
+                    require(`@/asset/img/bbs/msg${
+                      message.new ? '_new' : ''
+                    }.svg`)
+                  "
+                  alt="Voir le dernier message"
+                  title="Voir le dernier message"/>&nbsp;<user
+                  :user="message.author"/></div
+              ><div>{{ formatDate(message.date) }}</div>
+            </div>
+          </router-link></div
+        ></Card
       ><br />
       <Card
         color="blue"
@@ -289,8 +293,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .pm-number {
-  transform: translate(30px, -21px);
-  margin-top: -21px;
+  transform: translate(30px, -42px);
 }
 
 .pm {
