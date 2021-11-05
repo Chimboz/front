@@ -6,6 +6,7 @@
         class="item shoe1"
         draggable="false"
         @contextmenu.prevent
+        @error.prevent="(e) => (e.target.style.display = 'none')"
         :src="`/avatar/shoe/${this.shoe}.svg`"
       />
       <img
@@ -13,6 +14,7 @@
         class="item shoe2"
         draggable="false"
         @contextmenu.prevent
+        @error.prevent="(e) => (e.target.style.display = 'none')"
         :src="`/avatar/shoe/${this.shoe}.svg`"
       />
       <div class="body-parts">
@@ -21,6 +23,7 @@
           class="item body"
           draggable="false"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/body/${this.body}.svg`"
         />
         <img
@@ -28,6 +31,7 @@
           class="item emote"
           draggable="false"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/emote/${this.emote}.svg`"
         />
         <img
@@ -35,6 +39,7 @@
           draggable="false"
           class="item hands"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           alt="Tiz avatar"
         />
         <img
@@ -42,6 +47,7 @@
           class="item item2"
           draggable="false"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/item2/${this.item2}.svg`"
         />
         <img
@@ -49,6 +55,7 @@
           class="item item1"
           draggable="false"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/item1/${this.item1}.svg`"
         />
         <img
@@ -56,6 +63,7 @@
           class="item hat"
           draggable="false"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/hat/${this.hat}.svg`"
         />
         <img
@@ -63,6 +71,7 @@
           class="item item0"
           draggable="false"
           @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/item0/${this.item0}.svg`"
         />
       </div>
@@ -77,64 +86,64 @@ export default {
     up: {
       required: false,
       type: Boolean,
-      default: false,
+      default: false
     },
     down: {
       required: false,
       type: Boolean,
-      default: false,
+      default: false
     },
     left: {
       required: false,
       type: Boolean,
-      default: false,
+      default: false
     },
     right: {
       required: false,
       type: Boolean,
-      default: false,
+      default: false
     },
     avatar: {
       required: false,
       type: Number,
-      default: 0,
+      default: 0
     },
     emote: {
       required: false,
       type: Number,
-      default: 1,
+      default: 1
     },
     hat: {
       required: false,
       type: Number,
-      default: 1,
+      default: 1
     },
     body: {
       required: false,
       type: Number,
-      default: 1,
+      default: 1
     },
     shoe: {
       required: false,
       type: Number,
-      default: 1,
+      default: 1
     },
     item0: {
       required: false,
       type: Number,
-      default: 1,
+      default: 1
     },
     item1: {
       required: false,
       type: Number,
-      default: 1,
+      default: 1
     },
     item2: {
       required: false,
       type: Number,
-      default: 1,
-    },
-  },
+      default: 1
+    }
+  }
 };
 </script>
 
