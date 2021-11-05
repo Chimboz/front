@@ -194,6 +194,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/mazo.json");
     this.data = req.data;
+    next();
   },
   metaInfo: {
     title: "section.mazo",

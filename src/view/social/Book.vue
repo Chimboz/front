@@ -124,6 +124,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/book.json");
     this.data = req.data;
+    next();
   },
   metaInfo: {
     title: "section.popularity",

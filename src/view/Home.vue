@@ -226,6 +226,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/home.json");
     this.data = req.data;
+    next();
   },
   methods: {
     handle({ currentTarget }) {

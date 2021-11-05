@@ -98,6 +98,7 @@ export default {
       `/api/forum/${this.$route.params.page ? this.$route.params.page : 1}.json`
     );
     this.data = req.data;
+    next();
   },
   metaInfo: {
     title: "section.forum",

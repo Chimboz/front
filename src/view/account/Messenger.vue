@@ -31,6 +31,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/messenger.json");
     this.data = req.data;
+    next();
   }
 };
 </script>

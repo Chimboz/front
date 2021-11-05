@@ -180,6 +180,7 @@ export default {
   async beforeRouteUpdate() {
     const req = await this.api.get("/api/groups.json");
     this.data = req.data;
+    next();
   },
   metaInfo: {
     title: "section.groups",
