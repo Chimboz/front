@@ -44,10 +44,15 @@ export default {
 <style lang="scss" scoped>
 .page {
   font-size: 13px;
-  margin: 0 5px;
+  padding: 5px;
+}
+
+.page:hover {
+  background: #0002;
 }
 
 .page.router-link-active {
   color: #096ea880;
+  background: #fff8;
 }
 </style>
