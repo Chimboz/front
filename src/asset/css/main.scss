@@ -16,6 +16,10 @@
 }
 
 // Default font and colors
+html {
+  zoom: 125%;
+}
+
 body {
   font-family: Helvetica, "Helvetica Fallback", sans-serif;
   font-weight: normal;
@@ -27,7 +31,6 @@ body {
   background-image: url(../img/navbar/background/9.png);
   background-position: 0 -1px;
   overflow-x: hidden;
-  zoom: 125%;
 }
 
 @for $i from 0 through 23 {
