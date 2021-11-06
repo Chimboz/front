@@ -16,6 +16,7 @@ import Container from "./component/Container.vue";
 import Card from "./component/Card.vue";
 import Button from "./component/Button.vue";
 import Rules from "./component/slot/Rules.vue";
+import './registerServiceWorker'
 
 const metaManager = createMetaManager();
 
