@@ -106,14 +106,12 @@
             @contextmenu.prevent
             alt="Lottery handle"
             class="handle"
-            ref="handle"
             src="@/asset/img/lottery/up.svg"
             v-if="lottery"/><img
             draggable="false"
             @contextmenu.prevent
             alt="Lottery handle"
             class="handle"
-            ref="handle"
             src="@/asset/img/lottery/down.svg"
             v-else/></template
         >Jouer</Button
@@ -136,29 +134,22 @@
       <div class="news-date">{{ data.news.author }}, {{ formatDate }}</div>
     </Card>
     <br />
-    <Card>
+    <Card v-if="data">
       <template #subtop>Chaparazzi</template>
       <div class="gallery flex">
-        <div>
+        <div
+          class="flex col photo"
+          v-for="photo of data.gallery"
+          :key="photo.name"
+          style="margin: auto"
+        >
           <img
             draggable="false"
             @contextmenu.prevent
-            src="@/asset/img/home/chimboking.gif"
-            alt="Chimboking portrait"
-            style="margin: auto"/></div
-        ><img
-          draggable="false"
-          @contextmenu.prevent
-          src="@/asset/img/home/chimboking.gif"
-          alt="Chimboking portrait"
-          style="margin: auto"
-        /><img
-          draggable="false"
-          @contextmenu.prevent
-          src="@/asset/img/home/chimboking.gif"
-          alt="Chimboking portrait"
-          style="margin: auto"
-        />
+            :src="`gallery/${photo.name}`"
+            :alt="photo.name"
+          /><b>{{ formatDatePhotos(photo.date) }}</b></div
+        >
       </div>
     </Card>
     <template #right-column
@@ -231,6 +222,12 @@ export default {
       currentTarget.disabled = true;
       const req = await this.api.get("/api/lottery.json");
       this.gain = req.data.gain;
+    },
+    formatDatePhotos() {
+      return format(new Date(this.data.news.date), "PP", {
+        locale: window.__localeId__,
+        addSuffix: true
+      });
     }
   },
   computed: {
@@ -293,6 +290,14 @@ export default {
 
 .gallery {
   flex-wrap: wrap;
+}
+
+.gallery .photo {
+  width: 30%;
+}
+
+.gallery .photo img {
+  border: 1px solid #6090be;
 }
 
 .messages div {

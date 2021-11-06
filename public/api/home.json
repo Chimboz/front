@@ -54,5 +54,10 @@
         }
       ]
     }
+  ],
+  "gallery": [
+    { "name": "howto.png", "date": 1636186085492 },
+    { "name": "howto.png", "date": 1636186085492 },
+    { "name": "howto.png", "date": 1636186085492 }
   ]
 }

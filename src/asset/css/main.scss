@@ -16,8 +16,10 @@
 }
 
 // Default font and colors
-html {
-  zoom: 125%;
+@media (min-width: 1000px) {
+  html {
+    zoom: 125%;
+  }
 }
 
 body {

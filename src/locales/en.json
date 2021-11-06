@@ -103,12 +103,12 @@
     }
   },
   "rules": {
-    "rule0": "Never give your password, to anyone!",
-    "rule1": "Never give private informations, nor ask for",
-    "rule2": "Keep calm, stay polite, correct and respectful",
-    "rule3": "Do not try to hack, steal account or do illegal things",
-    "rule4": "Avoid advertising too much",
-    "rule5": "Never incite others to do something against the golden rules"
+    "rule0": "Don't ever give your password to anyone!",
+    "rule1": "Don't ever disclose your personal information or ask anyone theirs!",
+    "rule2": "Always be calm, polite, nice and respectful of others.",
+    "rule3": "Don't attempt to hack, steal accounts or get into illegal activities.",
+    "rule4": "Avoid propaganda, publicity and offensive behavior.",
+    "rule5": "Don't encourage others to disobey the Golden Rules."
   },
   "bbs": {
     "lock_new": "BBS Locked (new messages)",

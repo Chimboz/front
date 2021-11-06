@@ -66,10 +66,6 @@
         :item0="looks[0].item0"
         :item1="looks[0].item1"
         :item2="looks[0].item2"
-        :up="up"
-        :down="down"
-        :left="left"
-        :right="right"
       /><Tiz
         v-if="looks[1]"
         class="male"
@@ -81,10 +77,6 @@
         :item0="looks[1].item0"
         :item1="looks[1].item1"
         :item2="looks[1].item2"
-        :up="up"
-        :down="down"
-        :left="left"
-        :right="right"
       />
     </div>
   </div>
