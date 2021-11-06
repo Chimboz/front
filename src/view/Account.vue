@@ -198,7 +198,8 @@
               v-else
               src="@/asset/img/icon/account/offline.png"
             />&nbsp;<div class="flex col" style="align-items: flex-start"
-              ><user :user="friend.user" /> {{ friend.status.room }}</div
+              ><user :user="friend.user" />
+              {{ friend.status.connected ? friend.status.room : "" }}</div
             ></div
           ></router-link
         >

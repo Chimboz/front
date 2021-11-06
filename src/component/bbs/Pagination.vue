@@ -1,16 +1,43 @@
 <template>
-  <router-link
-    :to="'/topic/' + $route.params.id + '/' + $route.params.topic + '/1'"
+  <span
+    v-for="page of [...Array(total).keys()]"
+    :key="page + 1"
     class="pink"
-    >Page 1</router-link
-  >
-  <router-link
-    :to="'/topic/' + $route.params.id + '/' + $route.params.topic + '/2'"
-    class="pink"
-    >Page 2</router-link
+    :class="{ active: page + 1 == current }"
+    @click.prevent="$router.push(callback(page + 1))"
+    >{{ page + 1 }}&nbsp;</span
   >
 </template>
 <script>
-export default {};
+export default {
+  name: "Pagination",
+  props: {
+    current: { default: 0, type: Number, required: true },
+    total: { required: true, type: Number },
+    callback: { required: true, type: Function, default: (page) => page }
+  },
+
+  data() {
+    return {
+      displayNumber: 0
+    };
+  },
+
+  mounted() {
+    requestAnimationFrame(this.tween);
+  },
+
+  methods: {
+    tween() {
+      if (this.number == this.displayNumber) return;
+      this.displayNumber++;
+      if (this.displayNumber < this.number) requestAnimationFrame(this.tween);
+    }
+  }
+};
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+span {
+  cursor: pointer;
+}
+</style>

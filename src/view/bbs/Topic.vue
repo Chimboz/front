@@ -8,7 +8,7 @@
       ><br />
       <Rules bot
     /></template>
-    <TopicList v-if="data" :messages="data" />
+    <TopicList v-if="data" :topic="data" />
     <br />
     <MarkdownInput v-if="authenticated" />
   </Container>
