@@ -32,5 +32,12 @@ module.exports = {
       enableInSFC: true
     }
   },
-  transpileDependencies: ["vue-meta"]
+  transpileDependencies: ["vue-meta"],
+  pwa: {
+    name: "Chimboz",
+    themeColor: "#f0009c",
+    msTileColor: "#f0009c",
+    appleMobileWebAppCapable: "yes",
+    appleMobileWebAppStatusBarStyle: "black-translucent"
+  }
 };
