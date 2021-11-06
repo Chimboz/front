@@ -1,11 +1,10 @@
 <template>
-  <span
-    v-for="page of [...Array(total).keys()]"
+  <router-link
+    v-for="page of array"
     :key="page + 1"
-    class="pink"
-    :class="{ active: page + 1 == current }"
-    @click.prevent="$router.push(callback(page + 1))"
-    >{{ page + 1 }}&nbsp;</span
+    class="page"
+    :to="callback(page + 1)"
+    >{{ page + 1 }}</router-link
   >
 </template>
 <script>
@@ -33,11 +32,22 @@ export default {
       this.displayNumber++;
       if (this.displayNumber < this.number) requestAnimationFrame(this.tween);
     }
+  },
+  computed: {
+    array() {
+      if (this.total < 4) return [...Array(this.total).keys()];
+      else return [...Array(3).keys(), this.total];
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
-span {
-  cursor: pointer;
+.page {
+  font-size: 13px;
+  margin: 0 5px;
+}
+
+.page.router-link-active {
+  color: #096ea880;
 }
 </style>
