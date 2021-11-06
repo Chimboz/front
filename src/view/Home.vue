@@ -78,7 +78,7 @@
     <img
       draggable="false"
       @contextmenu.prevent
-      src="/announce/img.png"
+      src="/announce/img.svg"
       width="468"
       height="213"
       style="width: 100%"
