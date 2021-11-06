@@ -139,13 +139,14 @@
     <Card>
       <template #subtop>Chaparazzi</template>
       <div class="gallery flex">
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          src="@/asset/img/home/chimboking.gif"
-          alt="Chimboking portrait"
-          style="margin: auto"
-        /><img
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            src="@/asset/img/home/chimboking.gif"
+            alt="Chimboking portrait"
+            style="margin: auto"/></div
+        ><img
           draggable="false"
           @contextmenu.prevent
           src="@/asset/img/home/chimboking.gif"
@@ -177,15 +178,16 @@
         :width="154"
         :height="96"
         class="packs"
+        v-if="data"
       >
         <template #button>
           <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
-        <Pack header="summer.png" footer="summer.png" /><br /><br />
+        <Pack name="supporter" :looks="data.shop[0].looks" /><br /><br />
         <Button color="yellow" icon="register.svg" class="fullwidth"
           >Item</Button
         ><br />
-        <Pack header="summer.png" footer="summer.png" />
+        <Pack name="eskimok" :looks="data.shop[1].looks" />
       </Card>
     </template>
   </Container>

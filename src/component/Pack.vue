@@ -8,11 +8,11 @@
     >
       <path
         d="m63.793 7.664-5.223.008c-4.95.008-12.23 4.93-12.23 10.068v11.758c0 5.114 4.532 12.248 12.387 12.386h38.362c8.909 0 12.204-8.826 12.26-12.261V17.666c0-6.12-8.063-9.924-12.135-9.924l-4.902.088c0-3.975-1.727-6.273-4.191-7.536h60.809c4.388 0 6.682 3.24 6.682 6.682v74.667c0 5.398-3.452 8.162-8.162 8.162-14.054 0-48.13-5.886-72.312-5.82-22.627.064-52.674 6.71-67.63 5.82-4.787 0-7.508-4.64-7.508-7.508V7.547C0 2.256 4.972 0 7.547 0h60.004c-1.992 1.599-3.715 3.36-3.757 7.665Z"
-        fill="url(#header)"
+        :fill="`url(#header_${name})`"
       />
       <defs>
         <pattern
-          id="header"
+          :id="`header_${name}`"
           patternUnits="userSpaceOnUse"
           width="100%"
           height="100%"
@@ -20,7 +20,7 @@
           y="0"
         >
           <image
-            :href="`/pack/header/${header}`"
+            :href="`/pack/header/${name}.png`"
             x="0"
             y="0"
             width="155.612"
@@ -37,17 +37,17 @@
     >
       <path
         d="M32 0h102c17.728 0 32 14.272 32 32s-14.272 32-32 32H32C14.272 64 0 49.728 0 32S14.272 0 32 0Z"
-        fill="url(#footer)"
+        :fill="`url(#footer_${name})`"
       />
       <defs>
         <pattern
-          id="footer"
+          :id="`footer_${name}`"
           patternUnits="userSpaceOnUse"
           width="100%"
           height="100%"
         >
           <image
-            :href="`/pack/footer/${footer}`"
+            :href="`/pack/footer/${name}.png`"
             width="166"
             height="64"
             preserveAspectRatio="xMidYMid slice"
@@ -56,7 +56,36 @@
       </defs>
     </svg>
     <div class="pack-content flex">
-      <Tiz class="female" /><Tiz class="male" />
+      <Tiz
+        class="female"
+        :avatar="looks[0].avatar"
+        :emote="looks[0].emote"
+        :hat="looks[0].hat"
+        :body="looks[0].body"
+        :shoe="looks[0].shoe"
+        :item0="looks[0].item0"
+        :item1="looks[0].item1"
+        :item2="looks[0].item2"
+        :up="up"
+        :down="down"
+        :left="left"
+        :right="right"
+      /><Tiz
+        v-if="looks[1]"
+        class="male"
+        :avatar="looks[1].avatar"
+        :emote="looks[1].emote"
+        :hat="looks[1].hat"
+        :body="looks[1].body"
+        :shoe="looks[1].shoe"
+        :item0="looks[1].item0"
+        :item1="looks[1].item1"
+        :item2="looks[1].item2"
+        :up="up"
+        :down="down"
+        :left="left"
+        :right="right"
+      />
     </div>
   </div>
 </template>
@@ -67,13 +96,13 @@ export default {
   name: "Pack",
   components: { Tiz },
   props: {
-    header: {
+    name: {
       required: true,
       type: String
     },
-    footer: {
+    looks: {
       required: true,
-      type: String
+      type: Array
     }
   }
 };
