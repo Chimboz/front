@@ -24,7 +24,6 @@
         <form @submit.prevent="search()" class="flex"
           ><input
             required
-            autofocus
             minlength="3"
             maxlength="15"
             pattern="[\w\.\-_@]{3,15}"

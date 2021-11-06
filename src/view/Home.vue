@@ -80,7 +80,6 @@
       @contextmenu.prevent
       src="/announce/img.svg"
       width="468"
-      height="213"
       style="width: 100%"
     />
     <br />
@@ -121,7 +120,7 @@
       ></Card
     >
     <br />
-    <Card color="yellow" justified>
+    <Card color="yellow" justified v-if="data">
       <template #subtop>Chapaniouz</template>
       <template #header
         ><img
@@ -131,15 +130,10 @@
           alt="Chimboking portrait"
           style="float: left; margin: 0 17px 17px 0"
         />
-        Changelog du 12/07/2021
+        {{ data.news.title }}
       </template>
-
-      - La salle En route vers Kopakabana est désormais ouverte ! L'ambiance
-      change selon l'heure (heure de Paris)<br />
-      - La salle Patojdur est désormais ouverte !<br />
-      - Le jeu Patojdur est opérationnel avec son classement (il manque
-      l'animation de nage)<br />
-      VIDEZ VOTRE CACHE<br />
+      <div class="markdown-body" v-html="formatMessage"></div>
+      <div class="news-date">{{ data.news.author }}, {{ formatDate }}</div>
     </Card>
     <br />
     <Card>
@@ -201,6 +195,9 @@
 import RandomNumber from "@/component/RandomNumber.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
+import messageRender from "@/module/messageRender.js";
 
 export default {
   name: "Home",
@@ -232,6 +229,17 @@ export default {
       currentTarget.disabled = true;
       const req = await this.api.get("/api/lottery.json");
       this.gain = req.data.gain;
+    }
+  },
+  computed: {
+    formatMessage() {
+      return messageRender(this.data.news.content);
+    },
+    formatDate() {
+      return format(new Date(this.data.news.date), "PPpp", {
+        locale: window.__localeId__,
+        addSuffix: true
+      });
     }
   },
   metaInfo: {
@@ -275,6 +283,12 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.news-date {
+  color: #a69052;
+  font-style: italic;
+  text-align: right;
+}
+
 .gallery {
   flex-wrap: wrap;
 }
