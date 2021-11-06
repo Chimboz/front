@@ -95,10 +95,11 @@
           style="width: 100%"
         />
       </template>
-      {{ $t("lottery.firstLine") }}<br />
-      {{ $t("lottery.secondLine") }}<br /><br />
-      <RandomNumber :max="30" :value="20" :duration="5000" />
-      <br /><br />
+      <div v-if="lottery">
+        {{ $t("lottery.firstLine") }}<br />
+        {{ $t("lottery.secondLine") }}</div
+      ><RandomNumber v-else :max="30" :value="gain" :duration="5000" />
+      <br /><br v-if="!lottery" />
       <Button color="orange" @click="handle" class="btn-loto"
         ><template #prepend
           ><img
@@ -107,10 +108,19 @@
             alt="Lottery handle"
             class="handle"
             ref="handle"
-            src="@/asset/img/lottery/up.svg"/></template
+            src="@/asset/img/lottery/up.svg"
+            v-if="lottery"/><img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Lottery handle"
+            class="handle"
+            ref="handle"
+            src="@/asset/img/lottery/down.svg"
+            v-else/></template
         >Jouer</Button
       ></Card
-    ><br />
+    >
+    <br />
     <Card color="yellow" justified>
       <template #subtop>Chapaniouz</template>
       <template #header
@@ -167,20 +177,6 @@
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
-      <Card color="blue">
-        <template #button>
-          <Button icon="register.svg">{{ $t("help.button") }}</Button>
-        </template>
-
-        <router-link to="/help"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Puce"
-            src="@/asset/img/puce.svg"
-          />{{ $t("help.tip") }}</router-link
-        ></Card
-      ><br />
       <Card
         color="yellow"
         header="packs.png"
@@ -215,7 +211,9 @@ export default {
   },
   data() {
     return {
-      data: null
+      data: null,
+      lottery: true,
+      gain: 0
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -229,12 +227,11 @@ export default {
     next();
   },
   methods: {
-    handle({ currentTarget }) {
-      this.$refs.handle.src = require("@/asset/img/lottery/down.svg");
-      setTimeout(() => {
-        this.$refs.handle.src = require("@/asset/img/lottery/up.svg");
-        currentTarget.disabled = true;
-      }, 200);
+    async handle({ currentTarget }) {
+      this.lottery = false;
+      currentTarget.disabled = true;
+      const req = await this.api.get("/api/lottery.json");
+      this.gain = req.data.gain;
     }
   },
   metaInfo: {
