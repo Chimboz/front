@@ -99,30 +99,90 @@
       </router-link>
     </Card>
     <template #right-column
-      ><Card color="blue" top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
+      ><Card color="blue" header="games.gif" v-if="data">
+        <div class="fullwidth">
+          <img src="@/asset/img/game/bacteria/head.gif" />
+          <img src="@/asset/img/game/bacteria/bg.gif" />
+          <Tiz
+            style="margin-top: -66px; margin-bottom: 13px;"
+            :avatar="data.bacteria.user.look.avatar"
+            :emote="data.bacteria.user.look.emote"
+            :hat="data.bacteria.user.look.hat"
+            :body="data.bacteria.user.look.body"
+            :shoe="data.bacteria.user.look.shoe"
+            :item0="data.bacteria.user.look.item0"
+            :item1="data.bacteria.user.look.item1"
+            :item2="data.bacteria.user.look.item2"
+          />
+          <div class="game-champion">
+            <user :user="data.bacteria.user" /><br />est champion Bacteria
+            !</div
+          >
+          <img src="@/asset/img/game/patojdur/head.gif" />
+          <img src="@/asset/img/game/patojdur/bg.gif" />
+          <Tiz
+            style="margin-top: -66px; margin-bottom: 13px;"
+            :avatar="data.patojdur.user.look.avatar"
+            :emote="data.patojdur.user.look.emote"
+            :hat="data.patojdur.user.look.hat"
+            :body="data.patojdur.user.look.body"
+            :shoe="data.patojdur.user.look.shoe"
+            :item0="data.patojdur.user.look.item0"
+            :item1="data.patojdur.user.look.item1"
+            :item2="data.patojdur.user.look.item2"
+          />
+          <div class="game-champion">
+            <user :user="data.patojdur.user" /><br />est champion Patojdur
+            !</div
+          >
+          <img src="@/asset/img/game/mazo/head.gif" />
+          <img src="@/asset/img/game/mazo/bg.gif" />
+          <Tiz
+            style="margin-top: -66px; margin-bottom: 13px;"
+            :avatar="data.mazo.user.look.avatar"
+            :emote="data.mazo.user.look.emote"
+            :hat="data.mazo.user.look.hat"
+            :body="data.mazo.user.look.body"
+            :shoe="data.mazo.user.look.shoe"
+            :item0="data.mazo.user.look.item0"
+            :item1="data.mazo.user.look.item1"
+            :item2="data.mazo.user.look.item2"
+          />
+          <div class="game-champion">
+            <user :user="data.mazo.user" /><br />est un des meilleurs Mazoteurs
+            du moment !</div
+          >
+        </div></Card
+      ></template
+    >
   </Container>
 </template>
 
 <script>
+import User from "@/component/link/User.vue";
+import Tiz from "@/component/Tiz.vue";
+
 export default {
   name: "Games",
+  components: {
+    User,
+    Tiz
+  },
+  data() {
+    return {
+      data: null
+    };
+  },
+  async beforeRouteEnter(to, from, next) {
+    next((vm) =>
+      vm.api.get("/api/games.json").then((res) => (vm.data = res.data))
+    );
+  },
+  async beforeRouteUpdate() {
+    const req = await this.api.get("/api/games.json");
+    this.data = req.data;
+    next();
+  },
   metaInfo: {
     title: "section.games",
     meta: [
@@ -148,3 +208,9 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.game-champion {
+  background: linear-gradient(to bottom, #58a8db, #6ebef0);
+  margin-bottom: 6px;
+}
+</style>

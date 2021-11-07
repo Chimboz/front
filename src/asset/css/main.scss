@@ -16,6 +16,7 @@
 }
 
 // Default font and colors
+// Zoom in large screen
 @media (min-width: 1000px) {
   html {
     zoom: 125%;
@@ -31,7 +32,7 @@ body {
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-image: url(../img/navbar/background/9.png);
-  background-position: 0 -1px;
+  background-position: 0 -0.8px;
   overflow-x: hidden;
 }
 
