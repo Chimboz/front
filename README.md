@@ -15,7 +15,7 @@ Please see [project kanban](https://github.com/Tigriz/chzretro-front/projects/1)
 
 Folders' name is singular (excepted `locales` because vue-i18n hardcoded it).  
 Routes are plural if they have subroutes (`/games`).  
-Use snake*case for files : replace whitespaces " " with \*\*underscores "*"\*_ in filenames.  
+Use snake*case for files : replace whitespaces " " with **underscores** "*" in filenames.  
 Vue files (`_.vue`) begin with an uppercase letter and use PascalCase.
 
 # Branches
@@ -52,16 +52,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Dependencies
 
-- vue-router
-- vuex
-- vue-i18n
 - axios
 - date-fns
+- dompurify
+- highlight.js
+- katex
 - marked
 - mitt
-- katex
-- highlight.js
 - v-lazy-image
+- vue-i18n
+- vue-meta
+- vue-router
+- vuex
 
 # Useful tools
 
