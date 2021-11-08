@@ -1,1 +1,191 @@
-{}
+{
+  "new": [
+    {
+      "name": "Chapaking",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": 1,
+        "hat": 7,
+        "body": 17,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Chapaking",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": 1,
+        "hat": 7,
+        "body": 17,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Chapaking",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": 1,
+        "hat": 7,
+        "body": 17,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    }
+  ],
+  "popularity": [
+    {
+      "name": "Chimboking",
+      "id": 1,
+      "score": 5,
+      "look": {
+        "avatar": 0,
+        "emote": 1,
+        "hat": 7,
+        "body": 17,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Chimboking",
+      "id": 1,
+      "score": 3,
+      "look": {
+        "avatar": 0,
+        "emote": 1,
+        "hat": 7,
+        "body": 17,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Chimboking",
+      "id": 1,
+      "score": 2,
+      "look": {
+        "avatar": 0,
+        "emote": 1,
+        "hat": 7,
+        "body": 17,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    }
+  ],
+  "wedding": [
+    {
+      "user1": {
+        "name": "Chimboking",
+        "id": 1,
+        "score": 5,
+        "look": {
+          "avatar": 0,
+          "emote": 1,
+          "hat": 7,
+          "body": 17,
+          "shoe": 7,
+          "item0": 17,
+          "item1": 1,
+          "item2": 1
+        }
+      },
+      "user2": {
+        "name": "Chimboqueen",
+        "id": 1,
+        "score": 5,
+        "look": {
+          "avatar": 0,
+          "emote": 1,
+          "hat": 7,
+          "body": 17,
+          "shoe": 7,
+          "item0": 17,
+          "item1": 1,
+          "item2": 1
+        }
+      }
+    },
+    {
+      "user1": {
+        "name": "Chimboking",
+        "id": 1,
+        "score": 5,
+        "look": {
+          "avatar": 0,
+          "emote": 1,
+          "hat": 7,
+          "body": 17,
+          "shoe": 7,
+          "item0": 17,
+          "item1": 1,
+          "item2": 1
+        }
+      },
+      "user2": {
+        "name": "Chimboqueen",
+        "id": 1,
+        "score": 5,
+        "look": {
+          "avatar": 0,
+          "emote": 1,
+          "hat": 7,
+          "body": 17,
+          "shoe": 7,
+          "item0": 17,
+          "item1": 1,
+          "item2": 1
+        }
+      }
+    },
+    {
+      "user1": {
+        "name": "Chimboking",
+        "id": 1,
+        "score": 5,
+        "look": {
+          "avatar": 0,
+          "emote": 1,
+          "hat": 7,
+          "body": 17,
+          "shoe": 7,
+          "item0": 17,
+          "item1": 1,
+          "item2": 1
+        }
+      },
+      "user2": {
+        "name": "Chimboqueen",
+        "id": 1,
+        "score": 5,
+        "look": {
+          "avatar": 0,
+          "emote": 1,
+          "hat": 7,
+          "body": 17,
+          "shoe": 7,
+          "item0": 17,
+          "item1": 1,
+          "item2": 1
+        }
+      }
+    }
+  ]
+}

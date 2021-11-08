@@ -9,9 +9,24 @@
       <br />
       <Rules bot />
     </template>
-    <Card header="new.gif" bg="new.png" :height="70" color="blue">
+    <Card header="new.gif" bg="new.png" :height="70" color="blue" v-if="data">
       <div class="flex" style="justify-content: space-evenly">
-        <Tiz /><Tiz /><Tiz />
+        <div v-for="user of data.new" :key="user.id" class="flex col"
+          ><Tiz
+            :avatar="user.look.avatar"
+            :emote="user.look.emote"
+            :hat="user.look.hat"
+            :body="user.look.body"
+            :shoe="user.look.shoe"
+            :item0="user.look.item0"
+            :item1="user.look.item1"
+            :item2="user.look.item2"
+          />
+          <user :user="user" />
+          <span
+            >Membre n°<b>{{ user.id }}</b></span
+          ></div
+        >
       </div>
       <br />
       Les derniers membres qui ont rejoint l'archipel !
@@ -25,9 +40,25 @@
       bg="popularity_blue.png"
       :height="75"
       color="blue"
+      v-if="data"
     >
       <div class="flex" style="justify-content: space-evenly">
-        <Tiz /><Tiz /><Tiz />
+        <div v-for="user of data.popularity" :key="user.id" class="flex col"
+          ><Tiz
+            :avatar="user.look.avatar"
+            :emote="user.look.emote"
+            :hat="user.look.hat"
+            :body="user.look.body"
+            :shoe="user.look.shoe"
+            :item0="user.look.item0"
+            :item1="user.look.item1"
+            :item2="user.look.item2"
+          />
+          <user :user="user" />
+          <span
+            >Avec <b>{{ user.score }}</b> points</span
+          ></div
+        >
       </div>
       <br />
       Les membres les plus populaire de l'archipel !
@@ -36,9 +67,40 @@
       <router-link to="/popularity">Voir la page popularité</router-link>
     </Card>
     <br />
-    <Card header="wedding_blue.gif" bg="wedding_blue.png" color="blue">
+    <Card
+      header="wedding_blue.gif"
+      bg="wedding_blue.png"
+      color="blue"
+      v-if="data"
+    >
       <div class="flex" style="justify-content: space-evenly">
-        <Tiz /><Tiz /><Tiz />
+        <div
+          v-for="couple of data.wedding"
+          :key="couple.user1.id"
+          class="flex col"
+          ><div class="flex" style="justify-content: center"
+            ><Tiz
+              :avatar="couple.user1.look.avatar"
+              :emote="couple.user1.look.emote"
+              :hat="couple.user1.look.hat"
+              :body="couple.user1.look.body"
+              :shoe="couple.user1.look.shoe"
+              :item0="couple.user1.look.item0"
+              :item1="couple.user1.look.item1"
+              :item2="couple.user1.look.item2"/><Tiz
+              :avatar="couple.user1.look.avatar"
+              :emote="couple.user1.look.emote"
+              :hat="couple.user1.look.hat"
+              :body="couple.user1.look.body"
+              :shoe="couple.user1.look.shoe"
+              :item0="couple.user1.look.item0"
+              :item1="couple.user1.look.item1"
+              :item2="couple.user1.look.item2"
+          /></div>
+          <span>
+            <user :user="couple.user1"/> &amp;
+            <user :user="couple.user2"/></span
+        ></div>
       </div>
       <br />
       Les derniers mariages célébrés par Guruji
@@ -50,7 +112,7 @@
         <template #button>
           <Button icon="register.svg">Chercher</Button>
         </template>
-        <form @submit.prevent="search()" class="flex"
+        <form @submit.prevent="search()" class="flex fullwidth"
           ><input
             required
             minlength="3"
@@ -67,16 +129,15 @@
             style="font-family: 'Chimboz Heavy'"
             >go</button
           ></form
-        ><br /><form @submit.prevent="search()" class="flex"
+        ><br /><form @submit.prevent="search()" class="flex fullwidth"
           ><input
             required
             minlength="3"
             maxlength="15"
-            pattern="[\w\.\-_@]{3,15}"
-            name="username"
+            name="group"
             type="text"
             class="btn-md"
-            autocomplete="username"
+            autocomplete="group"
             :placeholder="$t('placeholder.group')"
           /><button
             type="submit"
@@ -91,11 +152,13 @@
 </template>
 <script>
 import Tiz from "@/component/Tiz.vue";
+import User from "../component/link/User.vue";
 
 export default {
   name: "Members",
   components: {
-    Tiz
+    Tiz,
+    User
   },
   data() {
     return {
