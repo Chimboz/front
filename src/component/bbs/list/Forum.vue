@@ -31,16 +31,27 @@
       :topic="topic"
       :separator="index != forum.topics.length - 1"
     />
+    <tr>
+      <th valign="bottom" colspan="6" height="25" nowrap="nowrap">
+        <pagination
+          :current="this.$route.params.page ? +this.$route.params.page : 1"
+          :total="forum.pages"
+          :callback="(page) => '/bbs/' + $route.params.id + '/' + page"
+        />
+      </th>
+    </tr>
   </table>
 </template>
 
 <script>
 import Topic from "../row/Topic.vue";
+import Pagination from "@/component/bbs/Pagination.vue";
 
 export default {
   name: "Board List",
   components: {
-    Topic
+    Topic,
+    Pagination
   },
   props: {
     forum: {

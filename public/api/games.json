@@ -1,13 +1,13 @@
 {
   "bacteria": {
     "user": {
-      "name": "Chapaking",
+      "name": "bacteria",
       "id": 1,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 1,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -17,13 +17,13 @@
   },
   "patojdur": {
     "user": {
-      "name": "Chapaking",
+      "name": "patojdur",
       "id": 1,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 2,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -33,13 +33,13 @@
   },
   "mazo": {
     "user": {
-      "name": "Chapaking",
+      "name": "mazo",
       "id": 1,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 3,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
