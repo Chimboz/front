@@ -1,11 +1,11 @@
 <template>
   <span class="pink justified" style="text-align: left">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link :to="'/bbs/' + $route.params.id" class="pink"
-      >BBS</router-link
-    ></span
+    <router-link v-if="topic" :to="'/bbs/' + topic.forum.id" class="pink">{{
+      topic.forum.name
+    }}</router-link></span
   >
-  <router-link :to="'/topic/' + $route.params.topic + '/1'" class="pink"
+  <router-link :to="'/topic/' + $route.params.topic" class="pink"
     ><h1 class="justified ellipsis" v-if="topic.messages[0]">
       {{ topic.messages[0].title }}
     </h1></router-link

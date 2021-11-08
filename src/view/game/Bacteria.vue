@@ -245,11 +245,11 @@
     </Card>
     <template #right-column
       ><Card
-        header="ensavoirplus.gif"
+        header="ensavoirplus_blue.gif"
         :width="154"
         :height="34"
         top
-        color="lightblue"
+        color="blue"
         justified
       >
         Toutes les infos, les techniques, news.<br />
@@ -334,7 +334,7 @@ export default {
       vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
     );
   },
-  async beforeRouteUpdate() {
+  async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get("/api/bacteria.json");
     this.data = req.data;
     next();

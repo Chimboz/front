@@ -65,7 +65,8 @@
     "username": "Username",
     "mail": "Mail",
     "password": "Password",
-    "password_confirm": "Confirm"
+    "password_confirm": "Confirm",
+    "group": "Group"
   },
   "section": {
     "account": "Account",

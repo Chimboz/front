@@ -46,24 +46,47 @@
       <router-link to="/wedding">Voir la page des mariages</router-link>
     </Card>
     <template #right-column
-      ><Card color="blue" top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
+      ><Card color="blue">
+        <template #button>
+          <Button icon="register.svg">Chercher</Button>
+        </template>
+        <form @submit.prevent="search()" class="flex"
+          ><input
+            required
+            minlength="3"
+            maxlength="15"
+            pattern="[\w\.\-_@]{3,15}"
+            name="username"
+            type="text"
+            class="btn-md"
+            autocomplete="username"
+            :placeholder="$t('placeholder.username')"
+          /><button
+            type="submit"
+            class="btn-md"
+            style="font-family: 'Chimboz Heavy'"
+            >go</button
+          ></form
+        ><br /><form @submit.prevent="search()" class="flex"
+          ><input
+            required
+            minlength="3"
+            maxlength="15"
+            pattern="[\w\.\-_@]{3,15}"
+            name="username"
+            type="text"
+            class="btn-md"
+            autocomplete="username"
+            :placeholder="$t('placeholder.group')"
+          /><button
+            type="submit"
+            class="btn-md"
+            style="font-family: 'Chimboz Heavy'"
+            >go</button
+          ></form
+        ></Card
+      ><br
+    /></template>
   </Container>
 </template>
 <script>
@@ -79,12 +102,17 @@ export default {
       data: null
     };
   },
+  methods: {
+    search() {
+      console.log("Envoyé!");
+    }
+  },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
     );
   },
-  async beforeRouteUpdate() {
+  async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get("/api/members.json");
     this.data = req.data;
     next();

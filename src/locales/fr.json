@@ -65,7 +65,8 @@
     "username": "Pseudo",
     "mail": "Courriel",
     "password": "Mot de passe",
-    "password_confirm": "Confirmation"
+    "password_confirm": "Confirmation",
+    "group": "Groupe"
   },
   "section": {
     "account": "Mon compte",

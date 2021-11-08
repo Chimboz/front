@@ -10,7 +10,7 @@
     /></template>
     <TopicList v-if="data" :topic="data" />
     <br />
-    <MarkdownInput v-if="authenticated" />
+    <MarkdownInput v-if="authenticated && data && !data.locked" />
   </Container>
 </template>
 

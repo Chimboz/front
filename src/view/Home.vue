@@ -211,7 +211,7 @@ export default {
       vm.api.get("/api/home.json").then((res) => (vm.data = res.data))
     );
   },
-  async beforeRouteUpdate() {
+  async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get("/api/home.json");
     this.data = req.data;
     next();

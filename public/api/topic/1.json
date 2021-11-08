@@ -1,5 +1,10 @@
 {
   "pages": 2,
+  "forum": {
+    "name": "Agora",
+    "id": 2
+  },
+  "locked": false,
   "messages": [
     {
       "title": "Qui valide ?",

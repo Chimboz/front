@@ -8,7 +8,7 @@
       ><br />
       <Rules bot
     /></template>
-    <ForumList v-if="data" :topics="data" />
+    <ForumList v-if="data" :forum="data" />
     <br />
     <button style="text-align: left">
       <img v-if="!post" @click="post = true" src="@/asset/img/bbs/post.gif" />
@@ -93,9 +93,9 @@ export default {
         .then((res) => (vm.data = res.data))
     );
   },
-  async beforeRouteUpdate() {
+  async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get(
-      `/api/forum/${this.$route.params.page ? this.$route.params.page : 1}.json`
+      `/api/forum/${to.params.page ? to.params.page : 1}.json`
     );
     this.data = req.data;
     next();

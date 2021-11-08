@@ -1,9 +1,9 @@
 <template>
   <span class="pink justified">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link :to="'/bbs/' + $route.params.id" class="pink"
-      >BBS</router-link
-    ></span
+    <router-link :to="'/bbs/' + $route.params.id" class="pink">{{
+      forum.name
+    }}</router-link></span
   >
   <br />
   <table class="bbs board">
@@ -26,10 +26,10 @@
     </thead>
 
     <Topic
-      v-for="(topic, index) in topics"
+      v-for="(topic, index) in forum.topics"
       :key="topic.id"
       :topic="topic"
-      :separator="index != topics.length - 1"
+      :separator="index != forum.topics.length - 1"
     />
   </table>
 </template>
@@ -43,9 +43,9 @@ export default {
     Topic
   },
   props: {
-    topics: {
+    forum: {
       required: true,
-      type: Array
+      type: Object
     }
   }
 };
