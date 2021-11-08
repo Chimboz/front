@@ -88,14 +88,14 @@
               :item0="couple.user1.look.item0"
               :item1="couple.user1.look.item1"
               :item2="couple.user1.look.item2"/><Tiz
-              :avatar="couple.user1.look.avatar"
-              :emote="couple.user1.look.emote"
-              :hat="couple.user1.look.hat"
-              :body="couple.user1.look.body"
-              :shoe="couple.user1.look.shoe"
-              :item0="couple.user1.look.item0"
-              :item1="couple.user1.look.item1"
-              :item2="couple.user1.look.item2"
+              :avatar="couple.user2.look.avatar"
+              :emote="couple.user2.look.emote"
+              :hat="couple.user2.look.hat"
+              :body="couple.user2.look.body"
+              :shoe="couple.user2.look.shoe"
+              :item0="couple.user2.look.item0"
+              :item1="couple.user2.look.item1"
+              :item2="couple.user2.look.item2"
           /></div>
           <span>
             <user :user="couple.user1"/> &amp;

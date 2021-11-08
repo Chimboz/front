@@ -7,7 +7,7 @@
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 12,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -15,13 +15,13 @@
       }
     },
     {
-      "name": "Chapaking",
+      "name": "Chapaking1",
       "id": 1,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 14,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -29,13 +29,13 @@
       }
     },
     {
-      "name": "Chapaking",
+      "name": "Chapaking2",
       "id": 1,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 13,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -60,14 +60,14 @@
       }
     },
     {
-      "name": "Chimboking",
+      "name": "Chimboking1",
       "id": 1,
       "score": 3,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 15,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -75,14 +75,14 @@
       }
     },
     {
-      "name": "Chimboking",
+      "name": "Chimboking2",
       "id": 1,
       "score": 2,
       "look": {
         "avatar": 0,
         "emote": 1,
         "hat": 7,
-        "body": 17,
+        "body": 16,
         "shoe": 7,
         "item0": 17,
         "item1": 1,
@@ -93,14 +93,14 @@
   "wedding": [
     {
       "user1": {
-        "name": "Chimboking",
+        "name": "Chimboking7",
         "id": 1,
         "score": 5,
         "look": {
           "avatar": 0,
           "emote": 1,
           "hat": 7,
-          "body": 17,
+          "body": 18,
           "shoe": 7,
           "item0": 17,
           "item1": 1,
@@ -115,7 +115,7 @@
           "avatar": 0,
           "emote": 1,
           "hat": 7,
-          "body": 17,
+          "body": 24,
           "shoe": 7,
           "item0": 17,
           "item1": 1,
@@ -125,14 +125,14 @@
     },
     {
       "user1": {
-        "name": "Chimboking",
+        "name": "Chimboking8",
         "id": 1,
         "score": 5,
         "look": {
           "avatar": 0,
           "emote": 1,
           "hat": 7,
-          "body": 17,
+          "body": 23,
           "shoe": 7,
           "item0": 17,
           "item1": 1,
@@ -140,14 +140,14 @@
         }
       },
       "user2": {
-        "name": "Chimboqueen",
+        "name": "Chimboqueen2",
         "id": 1,
         "score": 5,
         "look": {
           "avatar": 0,
           "emote": 1,
           "hat": 7,
-          "body": 17,
+          "body": 22,
           "shoe": 7,
           "item0": 17,
           "item1": 1,
@@ -157,14 +157,14 @@
     },
     {
       "user1": {
-        "name": "Chimboking",
+        "name": "Chimboking9",
         "id": 1,
         "score": 5,
         "look": {
           "avatar": 0,
           "emote": 1,
           "hat": 7,
-          "body": 17,
+          "body": 21,
           "shoe": 7,
           "item0": 17,
           "item1": 1,
@@ -172,14 +172,14 @@
         }
       },
       "user2": {
-        "name": "Chimboqueen",
+        "name": "Chimboqueen3",
         "id": 1,
         "score": 5,
         "look": {
           "avatar": 0,
           "emote": 1,
           "hat": 7,
-          "body": 17,
+          "body": 20,
           "shoe": 7,
           "item0": 17,
           "item1": 1,
