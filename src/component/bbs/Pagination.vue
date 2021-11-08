@@ -36,7 +36,18 @@ export default {
   computed: {
     array() {
       if (this.total < 4) return [...Array(this.total).keys()];
-      else return [...Array(3).keys(), this.total];
+      else
+        return [
+          ...new Set([
+            ...Array(3).keys(),
+            this.current - 2,
+            this.current - 1,
+            this.current,
+            this.total - 3,
+            this.total - 2,
+            this.total - 1
+          ])
+        ];
     }
   }
 };
