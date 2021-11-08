@@ -38,12 +38,7 @@
           {{ $t("navbar.logout") }}
         </button>
         <button v-else>
-          <router-link
-            to="/login"
-            id="connect"
-            class="flex centered"
-            @click="login"
-          >
+          <router-link to="/login" id="connect" class="flex centered">
             <img
               draggable="false"
               @contextmenu.prevent

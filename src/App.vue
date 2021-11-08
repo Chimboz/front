@@ -7,9 +7,11 @@
   <metainfo>
     <template #title="{ content }"
       >{{
-        user.notifications
-          .toString()
-          .replace(/[0-9]/g, (c) => "⁰¹²³⁴⁵⁶⁷⁸⁹".charAt(c))
+        user
+          ? user.notifications
+              .toString()
+              .replace(/[0-9]/g, (c) => "⁰¹²³⁴⁵⁶⁷⁸⁹".charAt(c))
+          : ""
       }}Chimboz {{ $t(content) }}</template
     >
   </metainfo>

@@ -223,8 +223,8 @@ export default {
       const req = await this.api.get("/api/lottery.json");
       this.gain = req.data.gain;
     },
-    formatDatePhotos() {
-      return format(new Date(this.data.news.date), "PP", {
+    formatDatePhotos(date) {
+      return format(new Date(date), "PP", {
         locale: window.__localeId__,
         addSuffix: true
       });

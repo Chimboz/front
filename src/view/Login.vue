@@ -1,25 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Rules top /><br />
-      <Security />
-      <Card
-        color="yellow"
-        header="packs.png"
-        :width="154"
-        :height="96"
-        class="packs"
-      >
-        <template #button>
-          <Button color="yellow" icon="register.svg">Pack</Button>
-        </template>
-        <Pack header="summer.png" footer="summer.png" /><br /><br />
-      </Card>
-    </template>
-    <Demo />
-
-    <template #right-column
-      ><Card color="blue" top v-if="data">
+      <Card color="blue" top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -29,6 +11,97 @@
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
+      <Card
+        color="yellow"
+        header="packs.png"
+        :width="154"
+        :height="96"
+        class="packs"
+        v-if="data"
+      >
+        <template #button>
+          <Button color="yellow" icon="register.svg">Pack</Button>
+        </template>
+        <Pack name="supporter" :looks="data.shop.looks" />
+      </Card>
+      <br />
+    </template>
+    <Demo />
+    <br />
+    <Card v-if="data">
+      <template #subtop>Chaparazzi</template>
+      <div class="gallery flex">
+        <div
+          class="flex col photo"
+          v-for="photo of data.gallery"
+          :key="photo.name"
+          style="margin: auto"
+        >
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :src="`gallery/${photo.name}`"
+            :alt="photo.name"
+          /><b>{{ formatDatePhotos(photo.date) }}</b></div
+        >
+      </div>
+    </Card>
+    <template #right-column>
+      <Card color="blue" header="games.gif" v-if="data">
+        <div class="fullwidth">
+          <img src="@/asset/img/game/bacteria/head.gif" />
+          <img src="@/asset/img/game/bacteria/bg.gif" />
+          <Tiz
+            style="margin-top: -66px; margin-bottom: 13px;"
+            :avatar="data.bacteria.user.look.avatar"
+            :emote="data.bacteria.user.look.emote"
+            :hat="data.bacteria.user.look.hat"
+            :body="data.bacteria.user.look.body"
+            :shoe="data.bacteria.user.look.shoe"
+            :item0="data.bacteria.user.look.item0"
+            :item1="data.bacteria.user.look.item1"
+            :item2="data.bacteria.user.look.item2"
+          />
+          <div class="game-champion">
+            <user :user="data.bacteria.user" /><br />est champion Bacteria
+            !</div
+          >
+          <img src="@/asset/img/game/patojdur/head.gif" />
+          <img src="@/asset/img/game/patojdur/bg.gif" />
+          <Tiz
+            style="margin-top: -66px; margin-bottom: 13px;"
+            :avatar="data.patojdur.user.look.avatar"
+            :emote="data.patojdur.user.look.emote"
+            :hat="data.patojdur.user.look.hat"
+            :body="data.patojdur.user.look.body"
+            :shoe="data.patojdur.user.look.shoe"
+            :item0="data.patojdur.user.look.item0"
+            :item1="data.patojdur.user.look.item1"
+            :item2="data.patojdur.user.look.item2"
+          />
+          <div class="game-champion">
+            <user :user="data.patojdur.user" /><br />est champion Patojdur
+            !</div
+          >
+          <img src="@/asset/img/game/mazo/head.gif" />
+          <img src="@/asset/img/game/mazo/bg.gif" />
+          <Tiz
+            style="margin-top: -66px; margin-bottom: 13px;"
+            :avatar="data.mazo.user.look.avatar"
+            :emote="data.mazo.user.look.emote"
+            :hat="data.mazo.user.look.hat"
+            :body="data.mazo.user.look.body"
+            :shoe="data.mazo.user.look.shoe"
+            :item0="data.mazo.user.look.item0"
+            :item1="data.mazo.user.look.item1"
+            :item2="data.mazo.user.look.item2"
+          />
+          <div class="game-champion">
+            <user :user="data.mazo.user" /><br />est un des meilleurs Mazoteurs
+            du moment !</div
+          >
+        </div></Card
+      >
     </template>
   </Container>
 </template>
@@ -36,13 +109,19 @@
 import Demo from "@/component/Demo.vue";
 import Pack from "@/component/Pack.vue";
 import Security from "@/component/slot/Security.vue";
+import User from "@/component/link/User.vue";
+import Tiz from "@/component/Tiz.vue";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Login",
   components: {
     Pack,
     Demo,
-    Security
+    Security,
+    Tiz,
+    User
   },
   data() {
     return {
@@ -51,17 +130,23 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/login.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate() {
-    const req = await this.api.get("/api/members.json");
+    const req = await this.api.get("/api/login.json");
     this.data = req.data;
     next();
   },
   methods: {
     login() {
       this.$store.dispatch("auth/login");
+    },
+    formatDatePhotos(date) {
+      return format(new Date(date), "PP", {
+        locale: window.__localeId__,
+        addSuffix: true
+      });
     }
   },
   metaInfo: {
@@ -102,5 +187,22 @@ export default {
 <style lang="scss" scoped>
 .login-form {
   justify-content: center;
+}
+
+.game-champion {
+  background: linear-gradient(to bottom, #58a8db, #6ebef0);
+  margin-bottom: 6px;
+}
+
+.gallery {
+  flex-wrap: wrap;
+}
+
+.gallery .photo {
+  width: 30%;
+}
+
+.gallery .photo img {
+  border: 1px solid #6090be;
 }
 </style>
