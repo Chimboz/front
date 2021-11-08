@@ -19,22 +19,22 @@ const routes = [
     component: () => import("../view/Games.vue")
   },
   {
-    path: "/game/bacteria",
+    path: "/games/bacteria",
     name: "Bacteria",
     component: () => import("../view/game/Bacteria.vue")
   },
   {
-    path: "/game/bacteria/story",
+    path: "/games/bacteria/story",
     name: "Bacteria Story",
     component: () => import("../view/game/bacteria/Story.vue")
   },
   {
-    path: "/game/patojdur",
+    path: "/games/patojdur",
     name: "Patojdur",
     component: () => import("../view/game/Patojdur.vue")
   },
   {
-    path: "/game/mazo",
+    path: "/games/mazo",
     name: "Mazo",
     component: () => import("../view/game/Mazo.vue")
   },
@@ -49,7 +49,7 @@ const routes = [
     component: () => import("../view/social/Book.vue")
   },
   {
-    path: "/member/:id",
+    path: "/book/:id",
     name: "Member",
     component: () => import("../view/social/Member.vue")
   },
@@ -69,7 +69,7 @@ const routes = [
     component: () => import("../view/social/Groups.vue")
   },
   {
-    path: "/group/:id",
+    path: "/groups/:id",
     name: "Group",
     component: () => import("../view/social/Group.vue")
   },
@@ -79,7 +79,7 @@ const routes = [
     component: () => import("../view/social/group/Manage.vue")
   },
   {
-    path: "/group/edit/:id",
+    path: "/groups/edit/:id",
     name: "Group Edit",
     component: () => import("../view/social/group/Edit.vue")
   },
@@ -89,12 +89,12 @@ const routes = [
     component: () => import("../view/BBS.vue")
   },
   {
-    path: "/forum/:id/:page?",
+    path: "/bbs/:id/:page?",
     name: "Forum",
     component: () => import("../view/bbs/Forum.vue")
   },
   {
-    path: "/topic/:id/:topic/:page?",
+    path: "/topic/:topic/:page?",
     name: "Topic",
     component: () => import("../view/bbs/Topic.vue")
   },

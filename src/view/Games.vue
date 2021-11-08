@@ -30,7 +30,7 @@
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
       Stratégie incontournable sur l'archipel !<br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/game/bacteria">
+      <router-link class="btn-sm pink-bg" to="/games/bacteria">
         <img
           draggable="false"
           @contextmenu.prevent
@@ -60,7 +60,7 @@
       haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/game/patojdur">
+      <router-link class="btn-sm pink-bg" to="/games/patojdur">
         <img
           draggable="false"
           @contextmenu.prevent
@@ -90,7 +90,7 @@
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
       patience, pour rivaliser avec les meilleurs !<br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/game/mazo">
+      <router-link class="btn-sm pink-bg" to="/games/mazo">
         <img
           draggable="false"
           @contextmenu.prevent

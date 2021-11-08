@@ -183,7 +183,7 @@
               (a.status.room ? 1 : 0)
           )"
           :key="friend.user.id"
-          :to="'/member/' + friend.user.id"
+          :to="'/book/' + friend.user.id"
         >
           <div
             class="list fullwidth flex-centered"
@@ -212,7 +212,7 @@
         <router-link
           v-for="group of this.data.groups"
           :key="group.id"
-          :to="'/group/' + group.id"
+          :to="'/groups/' + group.id"
         >
           <div class="list fullwidth"
             ><img

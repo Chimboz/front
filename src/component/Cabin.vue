@@ -337,7 +337,7 @@
               class="arrow green jitter"
               src="@/asset/img/arrow.svg"/></template
           >Sauver</Button
-        ><router-link :to="`/member/${data.id}`">
+        ><router-link :to="`/book/${data.id}`">
           <Button type="button"
             ><template #prepend
               ><img

@@ -106,7 +106,7 @@ export default {
   methods: {
     search() {
       let id = 1;
-      this.$router.push(`/member/${id}`);
+      this.$router.push(`/book/${id}`);
     },
     formatDate(date) {
       return format(new Date(date), "Pp", {

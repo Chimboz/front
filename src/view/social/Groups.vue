@@ -34,13 +34,13 @@
         <b>chimboz.fr</b>.</template
       >
       Les membres de ces groupes sont nommés par
-      <router-link to="/group/1">les créateurs du site</router-link>, et se
+      <router-link to="/groups/1">les créateurs du site</router-link>, et se
       voient attribuer des rubriques à modérer (<router-link to="photos"
         >albums</router-link
       >, <router-link to="faq">faq</router-link>,
       <router-link to="bbs">BBS</router-link>...)ou même un poste sur le chat
-      (<router-link to="/group/3">modos officiels</router-link>,
-      <router-link to="/group/9">aideurs officiels</router-link>). <br /><br />
+      (<router-link to="/groups/3">modos officiels</router-link>,
+      <router-link to="/groups/9">aideurs officiels</router-link>). <br /><br />
       <table class="groups fullwidth">
         <colgroup>
           <col width="30" />

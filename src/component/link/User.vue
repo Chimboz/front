@@ -2,7 +2,7 @@
   <div :class="{ ellipsis: ellipsis }">
     <router-link
       v-if="user.id"
-      :to="'/member/' + user.id"
+      :to="'/book/' + user.id"
       :style="{ color: user.color }"
       >{{ user.name }}</router-link
     >
@@ -16,19 +16,19 @@ export default {
   props: {
     user: {
       required: true,
-      type: Object,
+      type: Object
     },
     separator: {
       required: false,
       default: false,
-      type: Boolean,
+      type: Boolean
     },
     ellipsis: {
       required: false,
       default: false,
-      type: Boolean,
-    },
-  },
+      type: Boolean
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

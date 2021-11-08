@@ -31,7 +31,7 @@
       </td>
       <td align="left" width="100%">
         <span class="forumlink">
-          <router-link :to="'/forum/' + bbs.id" class="forumlink pink">{{
+          <router-link :to="'/bbs/' + bbs.id" class="forumlink pink">{{
             bbs.name
           }}</router-link
           ><br />
@@ -59,14 +59,7 @@
         <User :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link
-          :to="
-            '/topic/' +
-              bbs.id +
-              '/' +
-              bbs.last_msg.topicid +
-              '#' +
-              bbs.last_msg.msgid
-          "
+          :to="'/topic/' + bbs.last_msg.topicid + '#' + bbs.last_msg.msgid"
           ><img
             draggable="false"
             @contextmenu.prevent

@@ -1,13 +1,11 @@
 <template>
   <span class="pink justified" style="text-align: left">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link :to="'/forum/' + $route.params.id" class="pink"
+    <router-link :to="'/bbs/' + $route.params.id" class="pink"
       >BBS</router-link
     ></span
   >
-  <router-link
-    :to="'/topic/' + $route.params.id + '/' + $route.params.topic + '/1'"
-    class="pink"
+  <router-link :to="'/topic/' + $route.params.topic + '/1'" class="pink"
     ><h1 class="justified ellipsis" v-if="topic.messages[0]">
       {{ topic.messages[0].title }}
     </h1></router-link
@@ -24,15 +22,7 @@
           <pagination
             :current="this.$route.params.page ? +this.$route.params.page : 1"
             :total="topic.pages"
-            :callback="
-              (page) =>
-                '/topic/' +
-                $route.params.id +
-                '/' +
-                $route.params.topic +
-                '/' +
-                page
-            "
+            :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
           />
         </th>
       </tr>
@@ -50,15 +40,7 @@
         <pagination
           :current="this.$route.params.page ? +this.$route.params.page : 1"
           :total="topic.pages"
-          :callback="
-            (page) =>
-              '/topic/' +
-              $route.params.id +
-              '/' +
-              $route.params.topic +
-              '/' +
-              page
-          "
+          :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
         />
       </th>
     </tr>

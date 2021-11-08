@@ -1,7 +1,7 @@
 <template>
   <span class="pink justified">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link :to="'/forum/' + $route.params.id" class="pink"
+    <router-link :to="'/bbs/' + $route.params.id" class="pink"
       >BBS</router-link
     ></span
   >
