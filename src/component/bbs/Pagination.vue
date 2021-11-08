@@ -48,11 +48,15 @@ export default {
 }
 
 .page:hover {
-  background: #0002;
+  background: #fff8;
 }
 
 .page.router-link-active {
   color: #096ea880;
-  background: #fff8;
+  background: #096ea820;
+}
+
+.page:hover {
+  text-decoration: none;
 }
 </style>
