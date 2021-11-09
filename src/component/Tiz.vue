@@ -1,5 +1,5 @@
 <template>
-  <div class="tiz animated">
+  <div class="tiz animated" @contextmenu.prevent>
     <div class="avatar">
       <img
         v-if="shoe > 0"

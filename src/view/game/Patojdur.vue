@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card header="patojdur.gif" justified bg="patojdur.gif">
+    <Card header="patojdur.gif" justified bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
@@ -48,7 +48,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Classement du Jour</router-link
+          />&nbsp;Classement du jour</router-link
         >
         <router-link to="#general" class="btn-sm blue-bg"
           ><img
@@ -56,7 +56,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Classement Général</router-link
+          />&nbsp;Classement général</router-link
         >
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
@@ -64,7 +64,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Records</router-link
+          />&nbsp;Les records</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
@@ -72,15 +72,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Groupe</router-link
-        >
-        <router-link to="#minifak" class="btn-sm blue-bg"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Caret"
-            src="@/asset/img/icon/caret.png"
-          />&nbsp;MiniFaK</router-link
+          />&nbsp;Les groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
@@ -127,7 +119,7 @@
       au millième près !</Card
     ><br />
     <Card id="gameplay" justified>
-      <template #header>Game Play</template>
+      <template #header>Gameplay</template>
       Patojdur se joue aux touches directionnelles (les flèches).<br />
       Avance dans la direction de ton choix (haut, bas, droite ou gauche), quand
       tu fais du sur-place, c'est que tu es bloqué, essaye une autre direction !
@@ -155,7 +147,7 @@
       Pour le moment, seul le mode single est accessible.</Card
     ><br />
     <Card id="races" justified>
-      <template #header>Les Courses</template>
+      <template #header>Les courses</template>
       10 courses différentes, plus ou moins difficiles. Chaque jour une course
       différente, un classement différent !<br />
       <br />
@@ -191,7 +183,7 @@
       </table>
     </Card>
     <br /><Card id="yesterday" v-if="data">
-      <template #header>Les Champions du Jour !</template>
+      <template #header>Les champions du jour !</template>
       <template #subtitle
         >Hier, ils ont cloué le bec des grenouilles... et des autres membres
         !</template
@@ -226,7 +218,7 @@
     </Card>
     <br /><Card id="general" v-if="data">
       <template #header
-        >Classement Général Single {{ data.day - 1 }}e journée</template
+        >Classement général single {{ data.day - 1 }}e journée</template
       >
       <template #subtitle>2 heures par jour minimum dans la mare...</template>
       <table class="score fullwidth">
@@ -255,7 +247,7 @@
       </table> </Card
     ><br /><Card id="today" v-if="data">
       <template #header
-        >{{ data.day }}e Journée ! {{ data.players }} Patojeurs !</template
+        >{{ data.day }}e journée ! {{ data.players }} patojeurs !</template
       >
       La {{ data.day }}e journée de course est en cours !
       <table class="score fullwidth">
@@ -318,7 +310,7 @@
         justified
       >
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -326,14 +318,14 @@
         BBS de Patojdur<br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
         />
         Hier, il y a eu 644 Patojeurs.<br /><br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent

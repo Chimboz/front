@@ -20,6 +20,8 @@
         draggable="false"
         @contextmenu.prevent
         src="@/asset/img/game/bacteria/visuel.jpg"
+        width="150"
+        height="150"
         alt="Bacteria"
         style="float: left; margin-right: 17px"
       />
@@ -34,6 +36,8 @@
         <img
           draggable="false"
           @contextmenu.prevent
+          width="14"
+          height="13"
           src="@/asset/img/icon/help.png"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
@@ -51,6 +55,8 @@
         @contextmenu.prevent
         src="@/asset/img/game/patojdur/visuel.jpg"
         alt="Patojdur"
+        width="150"
+        height="150"
         style="float: left; margin-right: 17px"
       />
       <h4>La course la plus humide du web !</h4>
@@ -64,6 +70,8 @@
         <img
           draggable="false"
           @contextmenu.prevent
+          width="14"
+          height="13"
           src="@/asset/img/icon/help.png"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
@@ -80,6 +88,8 @@
         draggable="false"
         @contextmenu.prevent
         src="@/asset/img/game/mazo/visuel.jpg"
+        width="150"
+        height="150"
         alt="Mazo"
         style="float: left; margin-right: 17px"
       />
@@ -94,15 +104,35 @@
         <img
           draggable="false"
           @contextmenu.prevent
+          width="14"
+          height="13"
           src="@/asset/img/icon/help.png"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </Card>
     <template #right-column
-      ><Card color="blue" header="games.gif" v-if="data">
+      ><Card
+        color="blue"
+        header="games.gif"
+        v-if="data"
+        :width="154"
+        :height="49"
+      >
         <div class="fullwidth">
-          <img src="@/asset/img/game/bacteria/head.gif" />
-          <img src="@/asset/img/game/bacteria/bg.gif" />
+          <img
+            src="@/asset/img/game/bacteria/head.gif"
+            width="154"
+            height="50"
+            draggable="false"
+            @contextmenu.prevent
+          />
+          <img
+            src="@/asset/img/game/bacteria/bg.gif"
+            width="154"
+            height="84"
+            draggable="false"
+            @contextmenu.prevent
+          />
           <Tiz
             style="margin-top: -66px; margin-bottom: 13px;"
             :avatar="data.bacteria.user.look.avatar"
@@ -118,8 +148,20 @@
             <user :user="data.bacteria.user" /><br />est champion Bacteria
             !</div
           >
-          <img src="@/asset/img/game/patojdur/head.gif" />
-          <img src="@/asset/img/game/patojdur/bg.gif" />
+          <img
+            src="@/asset/img/game/patojdur/head.gif"
+            width="154"
+            height="50"
+            draggable="false"
+            @contextmenu.prevent
+          />
+          <img
+            src="@/asset/img/game/patojdur/bg.gif"
+            width="154"
+            height="84"
+            draggable="false"
+            @contextmenu.prevent
+          />
           <Tiz
             style="margin-top: -66px; margin-bottom: 13px;"
             :avatar="data.patojdur.user.look.avatar"
@@ -135,8 +177,20 @@
             <user :user="data.patojdur.user" /><br />est champion Patojdur
             !</div
           >
-          <img src="@/asset/img/game/mazo/head.gif" />
-          <img src="@/asset/img/game/mazo/bg.gif" />
+          <img
+            src="@/asset/img/game/mazo/head.gif"
+            width="154"
+            height="50"
+            draggable="false"
+            @contextmenu.prevent
+          />
+          <img
+            src="@/asset/img/game/mazo/bg.gif"
+            width="154"
+            height="84"
+            draggable="false"
+            @contextmenu.prevent
+          />
           <Tiz
             style="margin-top: -66px; margin-bottom: 13px;"
             :avatar="data.mazo.user.look.avatar"

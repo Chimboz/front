@@ -216,12 +216,12 @@
       endroits bien sombres... </Card
     ><template #right-column
       ><Card
-        header="ensavoirplus.gif"
+        header="ensavoirplus_blue.gif"
         :width="154"
-        :height="34"
+        :height="46"
         top
-        color="lightblue"
-        class="justified"
+        color="blue"
+        justified
       >
         Toutes les infos, les techniques, news.<br />
         <img
@@ -229,53 +229,17 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />
-        BBS de Bacteria<br />
+        />&nbsp;<router-link to="/bbs/5">BBS de Bacteria</router-link><br />
         <br />
-        Lis l'histoire sur Bacteria écrite par Kunu.<br />
+        Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
           src="@/asset/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />
-        Bacteria Sanctuary.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        424187 membres joueurs de Bacteria.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        12591547 parties ont été jouées.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Puce"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        8684 parties hier.<br />
-        <br />
-        Niveau des joueurs<br />
-        <br />
-        # Membres %<br />
-        0 180500 42.55%<br />
-        1 220717 52.03%<br />
-        2 13356 3.15%<br />
-        3 5305 1.25%<br />
-        4 3067 0.72%<br />
-        5 1045 0.25%<br />
-        6 197 0.05%<br />
-        7 0 0%
+        />&nbsp;<router-link to="bacteria/story"
+          >Bacteria Sanctuary</router-link
+        >
       </Card></template
     >
   </Container>

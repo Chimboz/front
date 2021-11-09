@@ -1,5 +1,5 @@
 <template>
-  <div class="pack flex animated pointer">
+  <div class="pack flex animated pointer" @contextmenu.prevent>
     <img src="@/asset/img/pack/sleeve.svg" style="width: 100%" />
     <svg
       viewBox="0 0 155.612 89.887"

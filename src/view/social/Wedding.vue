@@ -274,7 +274,7 @@
       >
         Toutes les infos, les techniques, news.<br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -283,7 +283,7 @@
         <br />
         Lis l'histoire sur Bacteria écrite par Kunu.<br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -291,7 +291,7 @@
         Bacteria Sanctuary.<br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -299,7 +299,7 @@
         424187 membres joueurs de Bacteria.<br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -307,7 +307,7 @@
         12591547 parties ont été jouées.<br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent

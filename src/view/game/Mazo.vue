@@ -138,7 +138,7 @@
         justified
       >
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -146,7 +146,7 @@
         MaZo est actuellement en version beta (version de test)<br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -154,7 +154,7 @@
         MaZo (beta) est accessible uniquement pour les membres de niveau 15 et
         plus.<br /><br />
         <img
-          src="@/asset/img/icon/caret.gif"
+          src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent

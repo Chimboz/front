@@ -11,9 +11,13 @@
     <ForumList v-if="data" :forum="data" />
     <br />
     <button style="text-align: left">
-      <img v-if="!post" @click="post = true" src="@/asset/img/bbs/post.gif" />
+      <img
+        v-if="!post && data && !data.locked"
+        @click="post = true"
+        src="@/asset/img/bbs/post.gif"
+      />
     </button>
-    <markdown-input isTopic v-if="post" />
+    <markdown-input isTopic v-if="post && data && !data.locked" />
     <br />
     <Card>
       <div class="columns">

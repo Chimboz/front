@@ -106,15 +106,19 @@
             @contextmenu.prevent
             alt="Lottery handle"
             class="handle"
+            height="33"
+            width="16"
             src="@/asset/img/lottery/up.svg"
             v-if="lottery"/><img
             draggable="false"
             @contextmenu.prevent
             alt="Lottery handle"
             class="handle"
+            height="33"
+            width="16"
             src="@/asset/img/lottery/down.svg"
             v-else/></template
-        >Jouer</Button
+        >Ma loterie</Button
       ></Card
     >
     <br />
@@ -125,6 +129,8 @@
           draggable="false"
           @contextmenu.prevent
           src="@/asset/img/home/chimboking.gif"
+          width="130"
+          height="70"
           alt="Chimboking portrait"
           style="float: left; margin: 0 17px 17px 0"
         />
@@ -148,6 +154,7 @@
             @contextmenu.prevent
             :src="`gallery/${photo.name}`"
             :alt="photo.name"
+            width="130"
           /><b>{{ formatDatePhotos(photo.date) }}</b></div
         >
       </div>

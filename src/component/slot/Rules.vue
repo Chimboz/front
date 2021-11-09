@@ -2,9 +2,13 @@
   <Card class="rules" color="blue" :bot="bot" :top="top">
     <div class="rule-container fullwidth">
       <div
-        ><img src="@/asset/img/icon/rules.svg" /><div class="rule-number">{{
-          rule + 1
-        }}</div></div
+        ><img
+          draggable="false"
+          @contextmenu.prevent
+          width="36"
+          height="22"
+          src="@/asset/img/icon/rules.svg"
+        /><div class="rule-number">{{ rule + 1 }}</div></div
       >
       <div class="rule"
         ><b>{{ $t("rules.rule" + rule) }}</b></div

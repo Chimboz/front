@@ -1,21 +1,26 @@
 {
   "records": {
     "played": {
-        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-        "record": 200
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
     },
     "won": {
-        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-        "record": 200
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
     },
     "lost": {
-        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-        "record": 200
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
     },
     "drawn": {
-        "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-        "record": 200
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
     }
+  },
+  "stats": {
+    "player": 12345,
+    "games": 67890,
+    "yesterday": 500
   },
   "best": [
     {

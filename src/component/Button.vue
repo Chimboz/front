@@ -19,19 +19,19 @@ import StrokeText from "@/component/StrokeText.vue";
 export default {
   name: "Button",
   components: {
-    StrokeText,
+    StrokeText
   },
   props: {
     icon: {
       required: false,
-      type: String,
+      type: String
     },
     color: {
       required: false,
       validator(value) {
         return ["red", "green", "yellow", "orange"].includes(value);
-      },
-    },
+      }
+    }
   },
   computed: {
     cssVars() {
@@ -42,7 +42,7 @@ export default {
             "--button-color-2": "#ffb907",
             "--button-color-3": "#e58900",
             "--button-color-4": "#ffb700",
-            "--button-color-5": "#bb5c1d",
+            "--button-color-5": "#bb5c1d"
           };
         case "orange":
           return {
@@ -50,7 +50,7 @@ export default {
             "--button-color-2": "#ff7b00",
             "--button-color-3": "#d15503",
             "--button-color-4": "#f80",
-            "--button-color-5": "#9f3400",
+            "--button-color-5": "#9f3400"
           };
         case "red":
           return {
@@ -58,7 +58,7 @@ export default {
             "--button-color-2": "#fb0d0d",
             "--button-color-3": "#d10303",
             "--button-color-4": "#ff2d2d",
-            "--button-color-5": "#a10000",
+            "--button-color-5": "#a10000"
           };
         case "green":
           return {
@@ -66,7 +66,7 @@ export default {
             "--button-color-2": "#5b3",
             "--button-color-3": "#371",
             "--button-color-4": "#3a0",
-            "--button-color-5": "#350",
+            "--button-color-5": "#350"
           };
         default:
           return {
@@ -74,11 +74,11 @@ export default {
             "--button-color-2": "#ff00a6",
             "--button-color-3": "#c10276",
             "--button-color-4": "#ff009c",
-            "--button-color-5": "#a10069",
+            "--button-color-5": "#a10069"
           };
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

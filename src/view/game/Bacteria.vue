@@ -15,41 +15,51 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
+            width="3"
+            height="6"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Records</router-link
+          />&nbsp;Les records</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
+            width="3"
+            height="6"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Meilleurs</router-link
+          />&nbsp;Les meilleurs</router-link
         >
         <router-link to="#worst" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
+            width="3"
+            height="6"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Pires</router-link
+          />&nbsp;Les pires</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
+            width="3"
+            height="6"
             src="@/asset/img/icon/caret.png"
             style="image-rendering: pixelated"
-          />&nbsp;Les Groupes</router-link
+          />&nbsp;Les groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
             @contextmenu.prevent
+            width="14"
+            height="13"
             alt="Help icon"
             src="@/asset/img/icon/help.png"
           />&nbsp;Comment jouer&nbsp;?
@@ -60,6 +70,8 @@
         draggable="false"
         @contextmenu.prevent
         src="@/asset/img/game/bacteria/preview.gif"
+        width="206"
+        height="197"
         alt="A game of bacteria"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
@@ -78,7 +90,7 @@
     </Card>
     <br />
     <Card id="tutorial" justified>
-      <template #header>Comment jouer&nbsp;!</template>
+      <template #header>Comment jouer&nbsp;?</template>
 
       <img
         draggable="false"
@@ -90,13 +102,15 @@
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
       />
-      Il y a 2 endroits pour jouer: Bacteria débutants et Bacteria Pro Si tu ne
-      sais pas comment y aller demande ton chemin !<br />
+      Il y a 2 endroits pour jouer: <b>Bacteria débutants</b> et
+      <b>Bacteria Pro</b> Si tu ne sais pas comment y aller demande ton chemin
+      !<br />
       <br />
       Pour jouer c'est simple, va dans une cabine, elle s'allume si elle
       t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
-      partie démarre ! Attention: Les visiteurs ne peuvent jouer qu'en Bacteria
-      débutants, les cabines de Bacteria Pro sont réservées aux membres ! </Card
+      partie démarre !<br /><b>Attention</b>&nbsp;: Les visiteurs ne peuvent
+      jouer qu'en <b>Bacteria débutants</b>, les cabines de
+      <b>Bacteria Pro</b> sont réservées aux membres ! </Card
     ><br />
     <Card id="records" v-if="data">
       <template #header>Records !</template>
@@ -162,6 +176,8 @@
                     draggable="false"
                     @contextmenu.prevent
                     alt="Caret"
+                    width="3"
+                    height="6"
                     src="@/asset/img/icon/caret.png"
                     style="image-rendering: pixelated"
                   />&nbsp;<b
@@ -205,6 +221,8 @@
                     draggable="false"
                     @contextmenu.prevent
                     alt="Caret"
+                    width="3"
+                    height="6"
                     src="@/asset/img/icon/caret.png"
                     style="image-rendering: pixelated"
                   />&nbsp;<b
@@ -247,64 +265,50 @@
       ><Card
         header="ensavoirplus_blue.gif"
         :width="154"
-        :height="34"
+        :height="46"
         top
+        v-if="data"
         color="blue"
         justified
       >
         Toutes les infos, les techniques, news.<br />
         <img
-          src="@/asset/img/icon/caret.gif"
-          alt="Caret"
+          src="@/asset/img/puce.svg"
+          alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />
-        BBS de Bacteria<br />
+        />&nbsp;<router-link to="/bbs/5">BBS de Bacteria</router-link><br />
         <br />
-        Lis l'histoire sur Bacteria écrite par Kunu.<br />
+        Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
-          src="@/asset/img/icon/caret.gif"
-          alt="Caret"
+          src="@/asset/img/puce.svg"
+          alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />
-        Bacteria Sanctuary.<br />
-        <br />
-        <img
-          src="@/asset/img/icon/caret.gif"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        424187 membres joueurs de Bacteria.<br />
+        />&nbsp;<router-link to="bacteria/story">Bacteria Sanctuary</router-link
+        ><br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
-          alt="Caret"
+          src="@/asset/img/puce.svg"
+          alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />
-        12591547 parties ont été jouées.<br />
+        />&nbsp;<b>{{ data.stats.player }}</b> membres joueurs de
+        <b>Bacteria</b>.<br />
         <br />
         <img
-          src="@/asset/img/icon/caret.gif"
-          alt="Caret"
+          src="@/asset/img/puce.svg"
+          alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />
-        8684 parties hier.<br />
+        />&nbsp;<b>{{ data.stats.games }}</b> parties ont été jouées.<br />
         <br />
-        Niveau des joueurs<br />
-        <br />
-        # Membres %<br />
-        0 180500 42.55%<br />
-        1 220717 52.03%<br />
-        2 13356 3.15%<br />
-        3 5305 1.25%<br />
-        4 3067 0.72%<br />
-        5 1045 0.25%<br />
-        6 197 0.05%<br />
-        7 0 0%
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+        />&nbsp;<b>{{ data.stats.yesterday }}</b> parties hier.
       </Card></template
     >
   </Container>
