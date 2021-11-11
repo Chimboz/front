@@ -52,7 +52,7 @@
       color="blue"
       justified
       bg="bacteria_blue.gif"
-      v-if="data"
+      v-if="data && data.bacteria"
     >
       Actuellement en position : {{ data.bacteria.rank }} sur
       {{ data.bacteria.players }} joueurs classés<br />
@@ -76,7 +76,7 @@
       color="blue"
       justified
       bg="patojdur_blue.gif"
-      v-if="data"
+      v-if="data && data.patojdur"
     >
       Actuellement en position : {{ data.patojdur.rank }} sur
       {{ data.patojdur.players }} joueurs classés<br />
@@ -90,7 +90,7 @@
       color="blue"
       justified
       bg="mazo_blue.gif"
-      v-if="data"
+      v-if="data && data.mazo"
     >
       Actuellement en position : {{ data.mazo.rank }} sur
       {{ data.mazo.players }} joueurs classés<br />
@@ -149,27 +149,30 @@
         :height="45"
         v-if="data"
       >
-        <router-link
-          v-for="message of data.forum"
-          :key="message.id"
-          :to="`/bbs/${message.forum.id}/${message.topic.id}#${message.id}`"
-        >
-          <div class="list fullwidth col" style="align-items: flex-start"
-            ><div>
-              <router-link :to="`/bbs/${message.forum.id}`">{{
-                message.forum.name
-              }}</router-link></div
-            ><div
-              ><img
-                draggable="false"
-                @contextmenu.prevent
-                src="@/asset/img/bbs/msg.svg"
-                alt="Voir le dernier message"
-                title="Voir le dernier message"
-              />&nbsp;{{ message.topic.title }}</div
-            >
-          </div>
-        </router-link> </Card
+        <stroke-text class="forum-title">Forum</stroke-text>
+        <div style="margin-top: -16px">
+          <router-link
+            v-for="message of data.forum"
+            :key="message.id"
+            :to="`/bbs/${message.forum.id}/${message.topic.id}#${message.id}`"
+          >
+            <div class="list fullwidth col" style="align-items: flex-start"
+              ><div>
+                <router-link :to="`/bbs/${message.forum.id}`">{{
+                  message.forum.name
+                }}</router-link></div
+              ><div
+                ><img
+                  draggable="false"
+                  @contextmenu.prevent
+                  src="@/asset/img/bbs/msg.svg"
+                  alt="Voir le dernier message"
+                  title="Voir le dernier message"
+                />&nbsp;{{ message.topic.title }}</div
+              >
+            </div>
+          </router-link>
+        </div></Card
       ><br /><Card color="blue" v-if="data">
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>
@@ -209,17 +212,21 @@
         <template #button>
           <Button icon="register.svg">{{ $t("myAccount.groupsList") }}</Button>
         </template>
-        <router-link
-          v-for="group of this.data.groups"
-          :key="group.id"
-          :to="'/groups/' + group.id"
-        >
-          <div class="list fullwidth"
-            ><img
-              v-if="group.owner"
-              src="@/asset/img/icon/account/offline.png"/>&nbsp;<group
-              :group="group"/></div
-        ></router-link>
+        <table class="fullwidth">
+          <colgroup>
+            <col width="22" />
+            <col width="100%" />
+          </colgroup>
+          <tbody>
+            <tr v-for="group of this.data.groups" :key="group.id"
+              ><td height="22"
+                ><img
+                  v-if="group.owner"
+                  src="@/asset/img/icon/account/offline.png"/></td
+              ><td style="text-align: left"><group :group="group"/></td>
+            </tr>
+          </tbody>
+        </table>
       </Card>
     </template>
   </Container>
@@ -230,6 +237,7 @@ import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
 import User from "../component/link/User.vue";
 import Group from "../component/link/Group.vue";
+import StrokeText from "../component/StrokeText.vue";
 import { formatDistance } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
@@ -239,6 +247,7 @@ export default {
     Bank,
     Cabin,
     User,
+    StrokeText,
     Group
   },
 
@@ -305,5 +314,15 @@ export default {
 
 .active .pm div:first-child {
   filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 1px #fff);
+}
+
+.forum-title {
+  font-family: "Chimboz Heavy";
+  height: 16px;
+  font-size: 18px;
+  fill: #fff;
+  stroke: #a10069;
+  stroke-width: 4;
+  transform: translateY(-40px);
 }
 </style>
