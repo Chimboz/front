@@ -10,6 +10,7 @@
         draggable="false"
         @contextmenu.prevent
         class="coin"
+        alt="Coin"
         v-for="(_, n) in Math.min(Math.floor(user.credits / 10), 176)"
         :style="coinsPosition[n]"
         v-show="n <= Math.min(Math.floor(coins / 10), 176)"

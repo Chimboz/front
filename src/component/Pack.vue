@@ -1,6 +1,6 @@
 <template>
   <div class="pack flex animated pointer" @contextmenu.prevent>
-    <img src="@/asset/img/pack/sleeve.svg" style="width: 100%" />
+    <img src="@/asset/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
     <svg
       viewBox="0 0 155.612 89.887"
       xmlns="http://www.w3.org/2000/svg"

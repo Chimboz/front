@@ -2,7 +2,10 @@
   <footer>
     <hr />
     <br />
-    <a href="https://twitter.com/ChimbozOfficial" target="_blank"
+    <a
+      href="https://twitter.com/ChimbozOfficial"
+      target="_blank"
+      rel="noopener noreferrer"
       ><img
         draggable="false"
         @contextmenu.prevent
@@ -10,7 +13,10 @@
         title="Twitter follow"
         src="https://img.shields.io/twitter/follow/ChimbozOfficial?color=blue&amp;label=Twitter&amp;logo=twitter&amp;style=flat"/></a
     >&nbsp;
-    <a href="https://discord.gg/aYph9u8" target="_blank"
+    <a
+      href="https://discord.gg/aYph9u8"
+      target="_blank"
+      rel="noopener noreferrer"
       ><img
         draggable="false"
         @contextmenu.prevent
@@ -21,6 +27,7 @@
     <a
       href="http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html"
       target="_blank"
+      rel="noopener noreferrer"
       ><img
         loading="lazy"
         draggable="false"
@@ -29,7 +36,10 @@
         src="https://img.shields.io/badge/license-CeCILL%20v2.1-informational"
         @contextmenu.prevent/></a
     >&nbsp;
-    <a href="https://github.com/Tigriz/chzretro-front" target="_blank"
+    <a
+      href="https://github.com/Tigriz/chzretro-front"
+      target="_blank"
+      rel="noopener noreferrer"
       ><img
         draggable="false"
         @contextmenu.prevent

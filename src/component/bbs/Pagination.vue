@@ -20,12 +20,12 @@ export default {
       return [
         ...new Set([
           ...Array(this.total < 3 ? this.total : 3).keys(),
-          this.current - 2 > 1 ? this.current - 2 : 1,
-          this.current - 1 > 1 ? this.current - 1 : 1,
-          this.current > 1 ? this.current : 1,
-          this.total - 3 > 1 ? this.total - 3 : 1,
-          this.total - 2 > 1 ? this.total - 2 : 1,
-          this.total - 1 > 1 ? this.total - 1 : 1
+          this.current - 2 > 0 ? this.current - 2 : 0,
+          this.current - 1,
+          this.current < this.total - 1 ? this.current : 0,
+          this.total - 3 > 0 ? this.total - 3 : 0,
+          this.total - 2 > 0 ? this.total - 2 : 0,
+          this.total - 1
         ])
       ];
     }

@@ -6,6 +6,7 @@
       @contextmenu.prevent
       v-if="icon"
       class="btn-icon"
+      alt="Button icon"
       :src="require(`@/asset/img/icon/button/${icon}`)"
     />
     <div class="btn-text">

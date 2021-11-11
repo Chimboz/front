@@ -4,6 +4,7 @@
       <img
         v-if="shoe > 0"
         class="item shoe1"
+        alt="Shoe"
         draggable="false"
         @contextmenu.prevent
         @error.prevent="(e) => (e.target.style.display = 'none')"
@@ -13,6 +14,7 @@
         v-if="shoe > 0"
         class="item shoe2"
         draggable="false"
+        alt="Shoe"
         @contextmenu.prevent
         @error.prevent="(e) => (e.target.style.display = 'none')"
         :src="`/avatar/shoe/${this.shoe}.svg`"
@@ -22,6 +24,7 @@
           v-if="body > 0"
           class="item body"
           draggable="false"
+          alt="Body"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/body/${this.body}.svg`"
@@ -30,6 +33,7 @@
           v-if="emote > 0"
           class="item emote"
           draggable="false"
+          alt="Emote"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/emote/${this.emote}.svg`"
@@ -40,12 +44,13 @@
           class="item hands"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          alt="Tiz avatar"
+          alt="Hands"
         />
         <img
           v-if="item2 > 0"
           class="item item2"
           draggable="false"
+          alt="Item 2"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/item2/${this.item2}.svg`"
@@ -54,6 +59,7 @@
           v-if="item1 > 0"
           class="item item1"
           draggable="false"
+          alt="Item 1"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/item1/${this.item1}.svg`"
@@ -62,6 +68,7 @@
           v-if="hat > 0"
           class="item hat"
           draggable="false"
+          alt="Hat"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/hat/${this.hat}.svg`"
@@ -70,6 +77,7 @@
           v-if="item0 > 0"
           class="item item0"
           draggable="false"
+          alt="Item 0"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
           :src="`/avatar/item0/${this.item0}.svg`"
