@@ -17,8 +17,12 @@
         "topics": 2,
         "messages": 2,
         "last_msg": {
-          "author": { "name": "Owned", "id": 2, "color": "#900" },
-          "date": 1626723644981,
+          "author": {
+            "name": "Owneddddddddddddddddd",
+            "id": 2,
+            "color": "#900"
+          },
+          "date": 0,
           "topicid": 1,
           "msgid": 1
         }

@@ -54,7 +54,7 @@
       <td align="center" valign="middle">
         <span class="gensmall">{{ bbs.messages }}</span>
       </td>
-      <td align="center" valign="middle" nowrap="nowrap">
+      <td align="center" valign="middle">
         {{ formatDate(bbs.last_msg.date) }}<br />
         <User :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;

@@ -31,13 +31,7 @@
       <td class="row2" align="center" valign="middle" height="50">
         <span class="gensmall">{{ topic.view }}</span>
       </td>
-      <td
-        class="row2"
-        align="center"
-        valign="middle"
-        height="50"
-        nowrap="nowrap"
-      >
+      <td class="row2" align="center" valign="middle" height="50">
         {{ formatDate }}<br />
         <User :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
