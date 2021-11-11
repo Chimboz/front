@@ -305,6 +305,7 @@ export default {
 
 .gallery .photo img {
   border: 1px solid #6090be;
+  width: 100%;
 }
 
 .messages div {
