@@ -79,6 +79,7 @@
       draggable="false"
       @contextmenu.prevent
       src="/announce/img.svg"
+      alt="Announcement"
       width="468"
       style="width: 100%"
     />
@@ -87,6 +88,7 @@
       <template #header>
         <img
           draggable="false"
+          alt="Lottery Hello"
           @contextmenu.prevent
           width="434"
           height="87"
