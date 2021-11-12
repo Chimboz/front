@@ -97,8 +97,7 @@ export default {
     },
     formatDate() {
       return format(new Date(this.message.date), "PPpp", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },

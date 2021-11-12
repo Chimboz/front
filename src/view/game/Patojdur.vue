@@ -109,8 +109,8 @@
       Il faut te rendre dans les marécages, demande ton chemin si tu ne sais pas
       comment y aller.<br />
       Va ensuite te placer sur un des emplacements tout à gauche de la mare, et
-      attends ton tour ! (Les grenouilles n'autorisent que 5 Patojeurs en même
-      temps, sécurité oblige).<br />
+      attends ton tour ! (Les grenouilles n'autorisent que 5 <b>Patojeurs</b> en
+      même temps, sécurité oblige).<br />
       Quand ton tour arrive, tu te retrouves dans l'eau, court chargement,
       compte à rebours (3, 2, 1, GO !) et voilà, à toi de traverser la mare en
       nageant le plus vite possible !<br />
@@ -120,7 +120,7 @@
     ><br />
     <Card id="gameplay" justified>
       <template #header>Gameplay</template>
-      Patojdur se joue aux touches directionnelles (les flèches).<br />
+      <b>Patojdur</b> se joue aux touches directionnelles (les flèches).<br />
       Avance dans la direction de ton choix (haut, bas, droite ou gauche), quand
       tu fais du sur-place, c'est que tu es bloqué, essaye une autre direction !
       Les obstacles ne sont pas forcément visibles !<br />
@@ -130,29 +130,29 @@
       marécage le plus rapidement !<br />
       <br />
       <br />
-      Départ Boost : Pour obtenir un départ boost, tu dois effectuer la bonne
-      combinaison de touches durant le compte à rebours.<br />
+      <b>Départ Boost</b> : Pour obtenir un départ <b>boost</b>, tu dois
+      effectuer la bonne combinaison de touches durant le compte à rebours.<br />
       <br />
-      Un bonne combinaison est constituée de 5 touches, seules les touches
-      directionnelles (les flèches) sont utilisées.<br />
+      Un bonne combinaison est constituée de <b>5 touches</b>, seules les
+      touches directionnelles (les flèches) sont utilisées.<br />
       <br />
       Exemple d'une combinaison (fausse) : Flèche Gauche, Flèche Gauche, Flèche
       Droite, Flèche Haut, Flèche Droite. (GGDHD)<br />
       <br />
-      Indice : pour Burnin'Flak, la bonne combinaison commence par Flèche
-      Gauche, Flèche Haut... (GH...)</Card
+      <b>Indice</b> : pour <b>Burnin'Flak</b>, la bonne combinaison commence par
+      Flèche Gauche, Flèche Haut... (GH...)</Card
     ><br />
     <Card id="modes" justified>
       <template #header>Les modes</template>
-      Pour le moment, seul le mode single est accessible.</Card
+      Pour le moment, seul le mode <b>single</b> est accessible.</Card
     ><br />
     <Card id="races" justified>
       <template #header>Les courses</template>
-      10 courses différentes, plus ou moins difficiles. Chaque jour une course
-      différente, un classement différent !<br />
+      <b>10 courses différentes</b>, plus ou moins difficiles. Chaque jour une
+      course différente, un classement différent !<br />
       <br />
-      Durant la phase de test de Patojdur, seule la course n°1 (Burnin'Flak) est
-      accessible.</Card
+      Durant la phase de test de <b>Patojdur</b>, seule la course n°1
+      (<b>Burnin'Flak</b>) est accessible.</Card
     ><br />
     <Card id="records" v-if="data">
       <template #header>Records !</template>
@@ -174,10 +174,15 @@
         </thead>
         <tbody>
           <tr v-for="(rank, index) in data.record" :key="index">
-            <td>{{ index + 1 }}</td>
+            <td>{{ rank.race }}</td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td>test<br />test</td>
+            <td style="text-align: right"
+              ><b>{{ formatDate(rank.date) }}</b
+              ><br /><i>{{ rank.day }}e journée</i></td
+            >
           </tr>
         </tbody>
       </table>
@@ -195,23 +200,25 @@
         <colgroup>
           <col width="30" />
           <col width="100%" />
-          <col width="40" />
-          <col width="100%" />
+          <col width="60" />
+          <col width="60" />
         </colgroup>
         <thead>
           <tr>
             <th>#</th>
             <th>Membre</th>
-            <th>Score</th>
-            <th>Détail</th>
+            <th>Temps</th>
+            <th>Heure</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.champions" :key="index">
+          <tr v-for="(rank, index) in data.yesterday" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td> </td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
+            <td>{{ formatHour(rank.date) }}</td>
           </tr>
         </tbody>
       </table>
@@ -226,51 +233,55 @@
           <col width="30" />
           <col width="100%" />
           <col width="40" />
-          <col width="100%" />
+          <col width="40" />
         </colgroup>
         <thead>
           <tr>
             <th>#</th>
             <th>Membre</th>
-            <th>Score</th>
-            <th>Détail</th>
+            <th>Points</th>
+            <th>Classé</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.worst" :key="index">
+          <tr v-for="(rank, index) in data.general" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td> </td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
+            <td>{{ rank.races }}</td>
           </tr>
         </tbody>
       </table> </Card
     ><br /><Card id="today" v-if="data">
       <template #header
-        >{{ data.day }}e journée ! {{ data.players }} patojeurs !</template
+        >{{ data.day }}e journée ! {{ data.stats.today }} patojeurs !</template
       >
       La {{ data.day }}e journée de course est en cours !
       <table class="score fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
-          <col width="40" />
-          <col width="100%" />
+          <col width="60" />
+          <col width="60" />
         </colgroup>
         <thead>
           <tr>
             <th>#</th>
             <th>Membre</th>
-            <th>Score</th>
-            <th>Détail</th>
+            <th>Temps</th>
+            <th>Heure</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.worst" :key="index">
+          <tr v-for="(rank, index) in data.today" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
-            <td> </td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
+            <td>{{ formatHour(rank.date) }}</td>
           </tr>
         </tbody>
       </table>
@@ -295,19 +306,22 @@
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
             <td><group :group="rank.group"/></td>
-            <td>{{ rank.score }}</td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
           </tr>
         </tbody>
       </table>
     </Card>
     <template #right-column
       ><Card
-        header="ensavoirplus.gif"
+        header="ensavoirplus_blue.gif"
         :width="154"
-        :height="34"
+        :height="46"
         top
-        color="lightblue"
+        color="blue"
         justified
+        v-if="data"
       >
         <img
           src="@/asset/img/puce.svg"
@@ -323,13 +337,13 @@
           draggable="false"
           @contextmenu.prevent
         />
-        Hier, il y a eu 644 Patojeurs.<br /><br />
+        Hier, il y a eu {{ data.stats.yesterday }} Patojeurs.<br /><br />
         <img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />Aujourd'hui, il y a 451 Patojeurs.<br /> </Card
+        />Aujourd'hui, il y a {{ data.stats.today }} Patojeurs.<br /> </Card
     ></template>
   </Container>
 </template>
@@ -337,6 +351,8 @@
 <script>
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Games",
@@ -349,13 +365,25 @@ export default {
       data: null
     };
   },
+  methods: {
+    formatDate(date) {
+      return format(new Date(date), "Pp", {
+        locale: window.__localeId__
+      });
+    },
+    formatHour(date) {
+      return format(new Date(date), "p", {
+        locale: window.__localeId__
+      });
+    }
+  },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/patojdur.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/bacteria.json");
+    const req = await this.api.get("/api/patojdur.json");
     this.data = req.data;
     next();
   },

@@ -144,8 +144,7 @@ export default {
     },
     formatDatePhotos(date) {
       return format(new Date(date), "PP", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },

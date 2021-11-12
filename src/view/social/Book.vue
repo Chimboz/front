@@ -110,8 +110,7 @@ export default {
     },
     formatDate(date) {
       return format(new Date(date), "Pp", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },

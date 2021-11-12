@@ -168,7 +168,9 @@
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
             <td>
               <Tooltip>
                 <template #tooltip
@@ -213,7 +215,9 @@
           <tr v-for="(rank, index) in data.worst" :key="index">
             <td>{{ index + 1 }}</td>
             <td><user :user="rank.user"/></td>
-            <td>{{ rank.score }}</td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
             <td>
               <Tooltip>
                 <template #tooltip
@@ -256,7 +260,9 @@
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
             <td><group :group="rank.group"/></td>
-            <td>{{ rank.score }}</td>
+            <td
+              ><b>{{ rank.score }}</b></td
+            >
           </tr>
         </tbody>
       </table>

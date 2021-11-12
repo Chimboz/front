@@ -213,8 +213,7 @@ export default {
   computed: {
     formatDate() {
       return format(new Date(this.data.status.date), "Pp", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },

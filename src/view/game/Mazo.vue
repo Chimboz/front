@@ -24,7 +24,7 @@
             @contextmenu.prevent
             alt="Caret"
             src="@/asset/img/icon/caret.png"
-          />&nbsp;Les Meilleurs</router-link
+          />&nbsp;Les meilleurs</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
@@ -56,7 +56,7 @@
       quelques minutes... ou passer des premières places à dernier du classement
       en un seul coup !!! <b>>)</b> <br /><br />
       Qui s'arrêtera à temps ? Qui continuera une fois de trop ? @@ A toi de
-      bien gérer, et... bonne chance ;)<br /><br />
+      bien gérer, et... bonne chance <b>;)</b><br /><br />
       Les 3 premiers du classement gagnent un casque MaZo, les classés de la 4e
       à la 10e place gagnent un item trêfle.
 
@@ -68,28 +68,29 @@
       <template #subtitle
         >Attention : les visiteurs ne peuvent pas jouer !</template
       >
-      MaZo ! se joue où tu veux, quand tu veux...<br />
+      <b>MaZo !</b> se joue où tu veux, quand tu veux...<br />
       <br />
       Tout seul la nuit dans un coin sombre et reculé de la forêt bleue, tôt le
-      matin dans l'eau à Kopakabana, après chaque 18/20 en Maths &lt;:D, à
-      l'accueil à plusieurs encouragé par des dizaines de tiz en délire, de la
+      matin dans l'eau à Kopakabana, après chaque 18/20 en Maths <b>&lt;:D</b>,
+      à l'accueil à plusieurs encouragé par des dizaines de tiz en délire, de la
       main gauche, avec une cuillere de nutella dans la bouche...<br />
       <br />
       C'est comme tu le sens, n'oublie jamais: un coup de travers et tu perds
       !!! </Card
     ><br />
     <Card id="gameplay" justified>
-      <template #header>Game Play</template>
-      MaZo (toujours en version béta - version de test - pour le moment) se joue
-      avec une commande de chat: tape !mazo pour jouer un coup, c'est tout !<br />
+      <template #header>Gameplay</template>
+      <b>MaZo</b> (toujours en version béta - version de test - pour le moment)
+      se joue avec une commande de chat: tape <b>!mazo</b> pour jouer un coup,
+      c'est tout&nbsp;!<br />
       <br />
       Tu as une chance sur deux de gagner.<br />
-      Chaque fois que tu gagnes, ton score MaZo augmente d'un point.<br />
-      Chaque fois que tu perds, ton score... reviens à zéro ! :')<br />
+      Chaque fois que tu gagnes, ton score <b>MaZo</b> augmente d'un point.<br />
+      Chaque fois que tu perds, ton score... reviens à zéro ! <b>:')</b><br />
       <br />
-      Alors ? Est ce que tu vas savoir t'arrêter à temps ? &lt;&lt;<br />
+      Alors ? Est ce que tu vas savoir t'arrêter à temps ? <b>&lt;&lt;</b><br />
       <br />
-      Notes:<br />
+      <b>Notes&nbsp;:</b><br />
       - Tu as toujours une chance sur deux de gagner/perdre quelque soit le
       score, ce n'est pas plus difficile avec un gros score.<br />
       - Chaque coup est du pur hasard, il n'y a pas de moment meilleur, c'est
@@ -130,11 +131,11 @@
 
     <template #right-column
       ><Card
-        header="ensavoirplus.gif"
+        header="ensavoirplus_blue.gif"
         :width="154"
         :height="34"
         top
-        color="lightblue"
+        color="blue"
         justified
       >
         <img
@@ -142,23 +143,22 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />
-        MaZo est actuellement en version beta (version de test)<br />
+        /><b> MaZo</b> est actuellement en version beta (version de test)<br />
         <br />
         <img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />
-        MaZo (beta) est accessible uniquement pour les membres de niveau 15 et
-        plus.<br /><br />
+        /><b> MaZo (beta)</b> est accessible uniquement pour les membres de
+        <b>niveau 15</b> et plus.<br /><br />
         <img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />Le classement est mis à jour toutes les 10 minutes.<br /> </Card
+        />
+        Le classement est mis à jour toutes les <b>10 minutes.</b><br /> </Card
     ></template>
   </Container>
 </template>
@@ -181,8 +181,7 @@ export default {
   methods: {
     formatDate(date) {
       return format(new Date(date), "Pp", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },

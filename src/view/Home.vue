@@ -234,8 +234,7 @@ export default {
     },
     formatDatePhotos(date) {
       return format(new Date(date), "PP", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },
@@ -245,8 +244,7 @@ export default {
     },
     formatDate() {
       return format(new Date(this.data.news.date), "PPpp", {
-        locale: window.__localeId__,
-        addSuffix: true
+        locale: window.__localeId__
       });
     }
   },

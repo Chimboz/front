@@ -96,39 +96,20 @@
   "groups": [
     {
       "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "id": 3,
-      "color": "#f0f",
-      "score": 2712,
-      "win": 100,
-      "draw": 50,
-      "lose": 50
+      "score": 2712
     },
     {
       "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "id": 3,
-      "color": "#f0f",
-      "score": 2712,
-      "win": 100,
-      "draw": 50,
-      "lose": 50
+      "score": 2712
     },
     {
       "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "id": 3,
-      "color": "#f0f",
-      "score": 2712,
-      "win": 100,
-      "draw": 50,
-      "lose": 50
+
+      "score": 2712
     },
     {
       "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "id": 3,
-      "color": "#f0f",
-      "score": 2712,
-      "win": 100,
-      "draw": 50,
-      "lose": 50
+      "score": 2712
     }
   ]
 }
