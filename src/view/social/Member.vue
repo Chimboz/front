@@ -90,9 +90,12 @@
           </p>
           <p>
             Page perso :
-            <a target="_blank" :href="this.data.website">{{
-              this.data.website
-            }}</a>
+            <a
+              target="_blank"
+              rel="noreferrer noopennr nofollower"
+              :href="this.data.website"
+              >{{ this.data.website }}</a
+            >
           </p>
           <p>
             Inscrit aux groupes :
@@ -115,23 +118,26 @@
             <img
               draggable="false"
               @contextmenu.prevent
+              :alt="
+                data.gender.charAt(0).toUpperCase() +
+                  data.gender.slice(1) +
+                  ' gender'
+              "
               :src="require(`@/asset/img/icon/gender/${data.gender}.svg`)"
             />
           </div>
           &nbsp;
           <div class="icon flex centered">
-            Niveau<br /><img
+            Niveau<br />
+            <img
               draggable="false"
               @contextmenu.prevent
+              :alt="digit"
+              v-for="digit in data.level.toString(10)"
+              :key="digit.index"
               width="19"
               height="21"
-              src="@/asset/img/number/2.svg"
-            /><img
-              draggable="false"
-              @contextmenu.prevent
-              width="19"
-              height="21"
-              src="@/asset/img/number/5.svg"
+              :src="require(`@/asset/img/number/${digit}.svg`)"
             />
           </div>
           <br /><br />
