@@ -1,6 +1,7 @@
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 import katex from "katex/dist/katex.mjs";
+import hljs from "highlight.js";
 
 const allowed_uri = ["http", "https"];
 const allowed_images = [
@@ -103,8 +104,7 @@ const markedRender = function(string) {
   // marked options
   marked.setOptions({
     renderer: renderer,
-    highlight: function(code, lang) {
-      const hljs = require("highlight.js");
+    highlight: (code, lang) => {
       const language = hljs.getLanguage(lang) ? lang : "plaintext";
       return hljs.highlight(code, { language }).value;
     },
