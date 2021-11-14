@@ -10,6 +10,8 @@
       <img
         src="@/asset/img/puce.svg"
         alt="Puce"
+        width="17"
+        height="17"
         draggable="false"
         @contextmenu.prevent
       />&nbsp;{{ $t(entry.label) }}

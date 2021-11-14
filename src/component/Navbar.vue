@@ -13,6 +13,8 @@
         draggable="false"
         @contextmenu.prevent
         alt="Logo Chimboz"
+        width="240"
+        height="70"
         id="logo"
         src="../asset/img/logo.svg"
     /></router-link>
@@ -33,6 +35,8 @@
             draggable="false"
             @contextmenu.prevent
             alt="Disconnect icon"
+            width="11"
+            height="11"
             src="../asset/img/icon/login/disconnect.svg"
           />
           {{ $t("navbar.logout") }}
@@ -43,6 +47,8 @@
               draggable="false"
               @contextmenu.prevent
               alt="Connect icon"
+              width="11"
+              height="11"
               src="../asset/img/icon/login/connect.svg"
             />
             {{ $t("navbar.login") }}
@@ -71,6 +77,8 @@
           alt="Home icon"
           class="nav-icon"
           src="@/asset/img/navbar/icon/home.svg"
+          width="19"
+          height="19"
           style="margin: 2px; padding: 1px"/></button
     ></router-link>
     <a target="_blank" href="/tchat"
@@ -82,6 +90,8 @@
             alt="Tchat icon"
             class="nav-icon"
             src="@/asset/img/navbar/icon/tchat.svg"
+            width="28"
+            height="21"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.play")
@@ -92,6 +102,8 @@
           @contextmenu.prevent
           alt="Arrow icon"
           class="arrow jitter"
+          width="40"
+          height="33"
           src="@/asset/img/arrow.svg"/></button
     ></a>
     <router-link v-if="authenticated" to="/account"
@@ -102,6 +114,8 @@
             @contextmenu.prevent
             alt="Account icon"
             class="nav-icon"
+            width="21"
+            height="21"
             src="@/asset/img/navbar/icon/account.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
@@ -118,6 +132,8 @@
             @contextmenu.prevent
             alt="Games icon"
             class="nav-icon"
+            width="20"
+            height="21"
             src="@/asset/img/navbar/icon/games.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
@@ -134,6 +150,8 @@
             @contextmenu.prevent
             alt="Member icon"
             class="nav-icon"
+            width="21"
+            height="21"
             src="@/asset/img/navbar/icon/members.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
@@ -150,6 +168,8 @@
             @contextmenu.prevent
             alt="Community icon"
             class="nav-icon"
+            width="21"
+            height="21"
             src="@/asset/img/navbar/icon/community.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{

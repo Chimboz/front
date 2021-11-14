@@ -70,8 +70,8 @@
         draggable="false"
         @contextmenu.prevent
         src="@/asset/img/game/bacteria/preview.gif"
-        width="206"
-        height="197"
+        width="200"
+        height="191"
         alt="A game of bacteria"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
@@ -97,8 +97,8 @@
         @contextmenu.prevent
         src="@/asset/img/game/bacteria/howto.png"
         alt="A game of bacteria"
-        width="200"
-        height="134"
+        width="194"
+        height="128"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
       />

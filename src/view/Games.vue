@@ -22,7 +22,7 @@
         src="@/asset/img/game/bacteria/visuel.jpg"
         width="150"
         height="150"
-        alt="Bacteria"
+        alt="Bacteria preview"
         style="float: left; margin-right: 17px"
       />
       <h4>Le jeu culte de l'archipel</h4>
@@ -39,6 +39,7 @@
           width="14"
           height="13"
           src="@/asset/img/icon/help.png"
+          alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </Card>
@@ -54,7 +55,7 @@
         draggable="false"
         @contextmenu.prevent
         src="@/asset/img/game/patojdur/visuel.jpg"
-        alt="Patojdur"
+        alt="Patojdur preview"
         width="150"
         height="150"
         style="float: left; margin-right: 17px"
@@ -72,6 +73,7 @@
           @contextmenu.prevent
           width="14"
           height="13"
+          alt="Help icon"
           src="@/asset/img/icon/help.png"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
@@ -90,7 +92,7 @@
         src="@/asset/img/game/mazo/visuel.jpg"
         width="150"
         height="150"
-        alt="Mazo"
+        alt="Mazo preview"
         style="float: left; margin-right: 17px"
       />
       <h4>Fais bosser ta bonne étoile !</h4>
@@ -107,6 +109,7 @@
           width="14"
           height="13"
           src="@/asset/img/icon/help.png"
+          alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </Card>
@@ -121,6 +124,7 @@
         <div class="fullwidth">
           <img
             src="@/asset/img/game/bacteria/head.gif"
+            alt="Bacteria header"
             width="154"
             height="50"
             draggable="false"
@@ -128,6 +132,7 @@
           />
           <img
             src="@/asset/img/game/bacteria/bg.gif"
+            alt="Bacteria background"
             width="154"
             height="84"
             draggable="false"
@@ -150,6 +155,7 @@
           >
           <img
             src="@/asset/img/game/patojdur/head.gif"
+            alt="Patojdur header"
             width="154"
             height="50"
             draggable="false"
@@ -157,6 +163,7 @@
           />
           <img
             src="@/asset/img/game/patojdur/bg.gif"
+            alt="Patojdur background"
             width="154"
             height="84"
             draggable="false"
@@ -179,6 +186,7 @@
           >
           <img
             src="@/asset/img/game/mazo/head.gif"
+            alt="Mazo header"
             width="154"
             height="50"
             draggable="false"
@@ -186,6 +194,7 @@
           />
           <img
             src="@/asset/img/game/mazo/bg.gif"
+            alt="Mazo background"
             width="154"
             height="84"
             draggable="false"

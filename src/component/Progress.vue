@@ -3,16 +3,19 @@
     <div
       class="progress-bar active progress-bar-win"
       role="progressbar"
+      aria-label="Win progress bar"
       :style="`width:${(win * 100) / (win + draw + lose)}%`"
     ></div>
     <div
       class="progress-bar progress-bar-light"
       role="progressbar"
+      aria-label="Draw progress bar"
       :style="`width:${(draw * 100) / (win + draw + lose)}%`"
     ></div>
     <div
       class="progress-bar active progress-bar-lose"
       role="progressbar"
+      aria-label="Lose progress bar"
       :style="`width:${(lose * 100) / (win + draw + lose)}%`"
     ></div>
   </div>
