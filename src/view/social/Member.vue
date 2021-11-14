@@ -106,7 +106,11 @@
           <br />
           <div class="icon flex centered">
             <span v-if="data.gender == 'male'">Chimbo</span>
-            <span v-else-if="data.gender == 'female'">Chimbette</span>
+            <span
+              v-else-if="data.gender == 'female'"
+              style="overflow-wrap: anywhere;"
+              >Chimbette</span
+            >
             <span v-else>Chimbi</span>
             <img
               draggable="false"
