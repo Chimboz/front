@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <span class="pink justified">
-      <router-link to="/bbs" class="pink"
+      <router-link to="/book" class="pink"
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
