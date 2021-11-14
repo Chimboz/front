@@ -173,11 +173,14 @@
         <template #button>
           <Button color="yellow" icon="register.svg">Pack</Button>
         </template>
-        <Pack name="supporter" :looks="data.shop[0].looks" /><br /><br />
+        <Pack
+          :name="data.shop[0].pack"
+          :looks="data.shop[0].looks"
+        /><br /><br />
         <Button color="yellow" icon="register.svg" class="fullwidth"
           >Item</Button
         ><br />
-        <Pack name="eskimok" :looks="data.shop[1].looks" />
+        <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
       </Card>
     </template>
   </Container>
