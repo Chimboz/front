@@ -85,17 +85,7 @@
     />
     <br />
     <Card header="lottery.png" v-if="data && data.lottery">
-      <template #header>
-        <img
-          draggable="false"
-          alt="Lottery Hello"
-          @contextmenu.prevent
-          width="434"
-          height="87"
-          src="@/asset/img/home/header_hello.png"
-          style="width: 100%"
-        />
-      </template>
+      <template #header> </template>
       <div v-if="lottery">
         {{ $t("lottery.firstLine") }}<br />
         {{ $t("lottery.secondLine") }}</div

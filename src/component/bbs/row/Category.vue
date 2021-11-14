@@ -80,7 +80,7 @@
 <script>
 import Group from "@/component/link/Group.vue";
 import User from "@/component/link/User.vue";
-import { formatDistance } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 export default {
@@ -102,7 +102,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return formatDistance(new Date(date), new Date(), {
+      return formatDistanceToNow(new Date(date), {
         locale: window.__localeId__,
         addSuffix: true
       });

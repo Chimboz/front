@@ -78,6 +78,7 @@
                 <img
                   draggable="false"
                   @contextmenu.prevent
+                  alt="Image embed"
                   src="@/asset/img/favicon.svg"
                   height="22"
                   style="height: 100%"

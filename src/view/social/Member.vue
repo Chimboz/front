@@ -46,7 +46,7 @@
             />
           </div>
           <div v-if="!this.data.status.connected">
-            Dernière visite le <b>{{ formatDate }}</b>
+            Dernière visite le <b>{{ formatDate(data.status.date) }}</b>
           </div>
           <div v-else>
             <div
@@ -56,6 +56,7 @@
               <img
                 draggable="false"
                 @contextmenu.prevent
+                alt="Online"
                 src="@/asset/img/tiz/tiz_shape.svg"
               />&nbsp;<b>En ligne</b>
             </div>
@@ -63,11 +64,23 @@
           </div>
         </div>
         <div class="member-text">
-          <p>
-            Marié avec
-            <User :user="{ id: '2', name: 'Tigriz', color: '#f0f' }" /> depuis
-            76 jours
-          </p>
+          <p
+            ><img
+              src="@/asset/img/member/wedding.png"
+              alt="Wedding icon"
+              draggable="false"
+              @contextmenu.prevent
+            />&nbsp;
+            <span v-if="data.wedding">
+              <router-link :to="'/wedding/' + data.wedding.id"
+                >Marié</router-link
+              >
+              avec
+              <User :user="data.wedding.user" /> depuis
+              {{ formatDistance(data.wedding.date) }} jours
+            </span>
+            <span v-else><b>Célibataire</b></span></p
+          >
           <p>
             Intérêts :
             <b v-for="(interest, index) of this.data.centres" :key="index"
@@ -92,11 +105,13 @@
           </p>
           <br />
           <div class="icon flex centered">
-            Chapato
+            <span v-if="data.gender == 'male'">Chimbo</span>
+            <span v-else-if="data.gender == 'female'">Chimbette</span>
+            <span v-else>Chimbi</span>
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/icon/gender/male.svg"
+              :src="require(`@/asset/img/icon/gender/${data.gender}.svg`)"
             />
           </div>
           &nbsp;
@@ -129,53 +144,80 @@
         </div>
       </div>
       <br />
-      <div class="member-section">
+      <div class="member-section" v-if="data.bacteria">
         <img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/member/bacteria_mec.gif"
+          :src="require(`@/asset/img/member/${data.gender}/bacteria.svg`)"
+          alt="Bacteria"
           style="float:left"
         />
-        Classement : 25ème<br />19 parties, 10 gagnées, 9 perdues, 0 nulles 40
-        points
-      </div>
-      <br />
-      <div class="member-section">
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          src="@/asset/img/member/patojdur_mec.gif"
-          style="float:left"
-        />
-        Classement : 25ème<br />19 parties, 10 gagnées, 9 perdues, 0 nulles 40
-        points </div
-      ><br />
-      <div class="member-section registration">
-        Membre n°3<br />
-        Dans la communauté depuis le 16 Mars 2021 à 14h16 (218 jours)
-      </div>
-      <br />
-      Messages sur le forum : 92
-    </Card>
-    <template #right-column
-      ><Card color="blue" top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
+        <span
+          >Classement : <b>{{ data.bacteria.rank }}</b
+          >ème<br /><b>{{
+            data.bacteria.win + data.bacteria.lose + data.bacteria.draw
+          }}</b>
+          parties, <b>{{ data.bacteria.win }}</b> gagnées,
+          <b>{{ data.bacteria.lose }}</b> perdues,
+          <b>{{ data.bacteria.draw }}</b> nulles<br /><b>{{
+            data.bacteria.score
+          }}</b>
+          points</span
         >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
-    ></template>
+      </div>
+      <br v-if="data.bacteria" />
+      <div class="member-section" v-if="data.patojdur">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :src="require(`@/asset/img/member/${data.gender}/patojdur.svg`)"
+          alt="Patojdur"
+          style="float:left"
+        />
+        <span
+          >Classement : <b>{{ data.patojdur.rank }}</b
+          >ème avec <b>{{ data.patojdur.score }}</b> points<br />Aujourd'hui
+          <b>{{ data.patojdur.today.rank }}</b
+          >ème avec <b>{{ data.patojdur.today.score }}</b> <br />Hier
+          <b>{{ data.patojdur.yesterday.rank }}</b
+          >ème avec <b>{{ data.patojdur.yesterday.score }}</b></span
+        > </div
+      ><br v-if="data.patojdur" />
+      <div class="member-section" v-if="data.popularity">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :src="require(`@/asset/img/member/${data.gender}/popularity.svg`)"
+          alt="Patojdur"
+          style="float:left"
+        />
+        <span
+          >Classement : <b>{{ data.popularity.rank }}</b
+          >ème avec <b>{{ data.popularity.score }}</b> points<br />Aujourd'hui
+          <b>{{ data.popularity.today.rank }}</b
+          >ème avec <b>{{ data.popularity.today.score }}</b> points<br />Hier
+          <b>{{ data.popularity.yesterday.rank }}</b
+          >ème avec <b>{{ data.popularity.yesterday.score }}</b> points</span
+        > </div
+      ><br v-if="data.popularity" />
+      <div class="member-section registration">
+        <span
+          >Membre n°<b>{{ $route.params.id }}</b
+          ><br />
+          Dans la communauté depuis le
+          <b>{{ formatDate(data.register) }}</b> (<b>{{
+            formatDistance(data.register)
+          }}</b>
+          jours)</span
+        >
+      </div>
+      <br />
+      Messages sur le forum :
+      <router-link :to="'bbs/author/' + $route.params.id">{{
+        data.forum
+      }}</router-link>
+    </Card>
+    <template #right-column></template>
   </Container>
 </template>
 
@@ -184,7 +226,7 @@ import Tiz from "@/component/Tiz.vue";
 import User from "@/component/link/User.vue";
 import Group from "@/component/link/Group.vue";
 import StrokeText from "@/component/StrokeText.vue";
-import { format } from "date-fns";
+import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 export default {
@@ -210,9 +252,14 @@ export default {
     this.data = req.data;
     next();
   },
-  computed: {
-    formatDate() {
-      return format(new Date(this.data.status.date), "Pp", {
+  methods: {
+    formatDate(date) {
+      return format(new Date(date), "Pp", {
+        locale: window.__localeId__
+      });
+    },
+    formatDistance(date) {
+      return differenceInCalendarDays(new Date(), new Date(date), {
         locale: window.__localeId__
       });
     }
@@ -247,12 +294,15 @@ export default {
   background-size: contain;
   background-repeat: repeat-x;
 }
-.male .card {
-  background-image: url(../../asset/img/member/header_mec.gif);
+.male .card,
+.unknown .card {
+  background-image: url(../../asset/img/member/male/header.gif);
+  background-color: #d5e6f3;
 }
 
 .female .card {
-  background-image: url(../../asset/img/member/header_fille.gif);
+  background-image: url(../../asset/img/member/female/header.gif);
+  background-color: #ff96da;
 }
 </style>
 <style lang="scss" scoped>
@@ -323,12 +373,16 @@ export default {
   background: #fff;
   border-radius: 8px;
   padding: 6px;
+  width: 116px;
 }
 
 .member-section {
   background: #a9cbe4;
   display: flex;
   align-items: center;
+}
+.female .member-section {
+  background: #f481cc;
 }
 
 .icon {
@@ -343,6 +397,10 @@ export default {
   border: 1px solid #6090be;
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
+}
+
+.member-section img {
+  padding-right: 6px;
 }
 
 .online {

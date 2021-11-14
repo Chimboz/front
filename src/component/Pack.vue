@@ -20,7 +20,7 @@
           y="0"
         >
           <image
-            :href="`/pack/header/${name}.png`"
+            :href="`/pack/header/${name}.webp`"
             x="0"
             y="0"
             width="155.612"
@@ -47,7 +47,7 @@
           height="100%"
         >
           <image
-            :href="`/pack/footer/${name}.png`"
+            :href="`/pack/footer/${name}.webp`"
             width="166"
             height="64"
             preserveAspectRatio="xMidYMid slice"

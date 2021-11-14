@@ -116,8 +116,8 @@
             <button
               type="button"
               class="pink-icon"
-              :class="{ active: data.gender == 'Chapato' }"
-              @mouseenter="gender = 'Chapato'"
+              :class="{ active: data.gender == 'Chimbo' }"
+              @mouseenter="gender = 'Chimbo'"
               @mouseleave="gender = data.gender"
               @click="$emit('changeGender', gender)"
             >
@@ -130,8 +130,8 @@
             ><button
               type="button"
               class="pink-icon"
-              :class="{ active: data.gender == 'Chapata' }"
-              @mouseenter="gender = 'Chapata'"
+              :class="{ active: data.gender == 'Chimbette' }"
+              @mouseenter="gender = 'Chimbette'"
               @mouseleave="gender = data.gender"
               @click="$emit('changeGender', gender)"
             >
@@ -144,8 +144,8 @@
             ><button
               type="button"
               class="pink-icon"
-              :class="{ active: data.gender == 'Chapati' }"
-              @mouseenter="gender = 'Chapati'"
+              :class="{ active: data.gender == 'Chimbi' }"
+              @mouseenter="gender = 'Chimbi'"
               @mouseleave="gender = data.gender"
               @click="$emit('changeGender', gender)"
             >

@@ -5,6 +5,7 @@
         ><img
           draggable="false"
           @contextmenu.prevent
+          alt="Rules icon"
           width="36"
           height="22"
           src="@/asset/img/icon/rules.svg"
