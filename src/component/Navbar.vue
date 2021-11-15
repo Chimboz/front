@@ -35,8 +35,6 @@
             draggable="false"
             @contextmenu.prevent
             alt="Disconnect icon"
-            width="11"
-            height="11"
             src="../asset/img/icon/login/disconnect.svg"
           />
           {{ $t("navbar.logout") }}
@@ -47,8 +45,6 @@
               draggable="false"
               @contextmenu.prevent
               alt="Connect icon"
-              width="11"
-              height="11"
               src="../asset/img/icon/login/connect.svg"
             />
             {{ $t("navbar.login") }}
