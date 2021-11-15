@@ -59,318 +59,338 @@
       </div>
       <br />
 
-      Il te prend la tête et tu as envie de lui faire sentir ? <br />
-      Tu ne peux plus la voir et tu veux que tout le monde le sache ? <br />
+      Il te prend la tête et tu as envie de lui faire sentir&nbsp;? <br />
+      Tu ne peux plus la voir et tu veux que tout le monde le sache&nbsp;?
+      <br />
       Cette fille est trop cool et ceux qui ne l'aiment pas ne la connaissent
-      pas ! <br />
-      Ce mec et son groupe assurent grave et tu as envie de le lui prouver ?
+      pas&nbsp;! <br />
+      Ce mec et son groupe assurent grave et tu as envie de le lui
+      prouver&nbsp;?
       <br />
       <br />
-      Viens tous les jours régler tes comptes ou soutenir tes amis sur
-      popularité ! <br />
+      Viens tous les jours régler tes comptes ou soutenir tes amis avec la
+      popularité&nbsp;! <br />
       Vote POUR elle et sa cote remonte, vote CONTRE lui et il descend en flêche
       ! <br />
       <br />
-      Les + Populaire du jour gagne les lunettes pour la journée, les 3 +
-      Populaires du jour gagnent une auréole pour la journée, le - Aimé gagne
+      Le + populaire du jour gagne les lunettes pour la journée, les 3 +
+      populaires du jour gagnent une auréole pour la journée, le - aimé gagne
       une crotte pour la journée !
     </Card>
     <br /><Card id="today" v-if="data">
-      <template #header>Classement du Jour !</template>
+      <template #header>Classement du jour !</template>
       Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
       quelqu'un !<br />
       <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="grid fullwidth">
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/star.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.today.best" :key="rank.user.id">
+                <td>{{ rank.score }}</td>
+                <td><user :user="rank.user"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/poop.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.today.worst" :key="rank.user.id">
+                <td>{{ rank.score }}</td>
+                <td><user :user="rank.user"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </Card>
     <br />
     <Card id="yesterday" v-if="data">
-      <template #header>Champions du Jour !</template>
+      <template #header>Champions du jour !</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table> </Card
+
+      <div class="grid fullwidth">
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/star.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.yesterday.best" :key="rank.user.id">
+                <td>{{ rank.score }}</td>
+                <td><user :user="rank.user"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/poop.gif"
+          />
+          <table class="score">
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.yesterday.worst" :key="rank.user.id">
+                <td>{{ rank.score }}</td>
+                <td><user :user="rank.user"/></td>
+              </tr>
+            </tbody>
+          </table> </div></div></Card
     ><br />
     <Card id="general" v-if="data">
-      <template #header>Classement Général !</template>
+      <template #header>Classement général !</template>
       <template #subtitle
         >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
       >
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="grid fullwidth">
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/star.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.general.best" :key="rank.user.id">
+                <td>{{ rank.score }}</td>
+                <td><user :user="rank.user"/></td>
+              </tr>
+            </tbody>
+          </table> </div
+        ><div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/poop.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.general.worst" :key="rank.user.id">
+                <td>{{ rank.score }}</td>
+                <td><user :user="rank.user"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </Card>
     <br /><Card id="groups" v-if="data">
-      <template #header>Classement des Groupes ! </template>
+      <template #header>Classement des groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table> </Card
+      <div class="grid fullwidth">
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/star.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.groups.best" :key="rank.group.id">
+                <td>{{ rank.score }}</td>
+                <td><group :group="rank.group"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            alt="Star"
+            src="@/asset/img/social/popularity/poop.gif"
+          />
+          <table>
+            <colgroup>
+              <col width="30" />
+              <col width="100%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Pts</th>
+                <th>Membre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="rank in data.groups.worst" :key="rank.group.id">
+                <td>{{ rank.score }}</td>
+                <td><group :group="rank.group"/></td>
+              </tr>
+            </tbody>
+          </table> </div></div></Card
     ><br />·
     <Card id="vote"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
-      Tu trouves un membre sympa ? Donne lui ta voix !</Card
-    >
+      Tu trouves un membre sympa ? Donne lui ta voix !
+      <br /><br />
+      <form @submit.prevent="vote()" class="flex">
+        <select class="btn-md" required>
+          <option value="for">Pour</option
+          ><option value="against">Contre</option></select
+        ><input
+          required
+          minlength="3"
+          maxlength="15"
+          name="group"
+          type="text"
+          class="btn-md"
+          autocomplete="group"
+          :placeholder="$t('placeholder.username')"
+        /><button
+          type="submit"
+          class="btn-md"
+          style="font-family: 'Chimboz Heavy'"
+          >go</button
+        ></form
+      >
+    </Card>
     <template #right-column
       ><Card
-        header="ensavoirplus.gif"
+        header="ensavoirplus_blue.gif"
         :width="154"
-        :height="34"
+        :height="46"
         top
-        color="lightblue"
+        color="blue"
         justified
+        v-if="data"
       >
-        Toutes les infos, les techniques, news.<br />
         <img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />
-        BBS de Bacteria<br />
-        <br />
-        Lis l'histoire sur Bacteria écrite par Kunu.<br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        Bacteria Sanctuary.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        424187 membres joueurs de Bacteria.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        12591547 parties ont été jouées.<br />
+          height="17"
+          width="17"
+        />&nbsp;Hier
+        <b>{{ data.stats.yesterday.for + data.stats.yesterday.against }}</b>
+        votes.<br />
+        <b>POUR&nbsp;: {{ data.stats.yesterday.for }}</b> ({{
+          (
+            (data.stats.yesterday.for * 100) /
+            (data.stats.yesterday.for + data.stats.yesterday.against)
+          ).toFixed(2)
+        }}%)<br />
+        <b>CONTRE&nbsp;: {{ data.stats.yesterday.against }}</b> ({{
+          (
+            (data.stats.yesterday.against * 100) /
+            (data.stats.yesterday.for + data.stats.yesterday.against)
+          ).toFixed(2)
+        }}%)<br />
         <br />
         <img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />
-        8684 parties hier.<br />
-        <br />
-        Niveau des joueurs<br />
-        <br />
-        # Membres %<br />
-        0 180500 42.55%<br />
-        1 220717 52.03%<br />
-        2 13356 3.15%<br />
-        3 5305 1.25%<br />
-        4 3067 0.72%<br />
-        5 1045 0.25%<br />
-        6 197 0.05%<br />
-        7 0 0%
+          height="17"
+          width="17"
+        />Aujourd'hui
+        <b>{{ data.stats.today.for + data.stats.today.against }}</b>
+        votes.<br />
+        <b>POUR: {{ data.stats.today.for }}</b> ({{
+          (
+            (data.stats.today.for * 100) /
+            (data.stats.today.for + data.stats.today.against)
+          ).toFixed(0)
+        }}%)<br />
+        <b>CONTRE: {{ data.stats.today.against }}</b> ({{
+          (
+            (data.stats.today.against * 100) /
+            (data.stats.today.for + data.stats.today.against)
+          ).toFixed(0)
+        }}%)
       </Card></template
     >
   </Container>
@@ -391,13 +411,18 @@ export default {
       data: null
     };
   },
+  methods: {
+    vote() {
+      console.log("Envoyé!");
+    }
+  },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/popularity.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/bacteria.json");
+    const req = await this.api.get("/api/popularity.json");
     this.data = req.data;
     next();
   },
@@ -428,13 +453,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fullwidth.light {
-  background: #eef5fa;
-  padding: 2px 0;
+.grid {
+  display: grid;
+  grid-template: 100% / 50% 50%;
 }
 
-tr td:first-child {
+th,
+td {
   font-weight: bold;
+  text-align: center;
 }
 
 .hstack {

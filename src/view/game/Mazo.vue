@@ -143,6 +143,8 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         /><b> MaZo</b> est actuellement en version beta (version de test)<br />
         <br />
         <img
@@ -150,6 +152,8 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         /><b> MaZo (beta)</b> est accessible uniquement pour les membres de
         <b>niveau 15</b> et plus.<br /><br />
         <img
@@ -157,6 +161,8 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />
         Le classement est mis à jour toutes les <b>10 minutes.</b><br /> </Card
     ></template>
