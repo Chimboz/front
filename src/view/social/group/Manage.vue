@@ -16,127 +16,96 @@
       color="blue"
       justified
     >
-      Envie de former un vrai gang avec tes potes ? Rejoindre une guilde de
-      guerriers Bacteria ? Un fan club de ta star préférée avec tes copines ?
-      Marre des faux groupes qui sont en réalité de simples messages de forum
-      ?<br />
+      <template #header>Gérer mes groupes</template>
+      Sur cette page, tu peux tout faire et tout savoir sur tes groupes...<br />
       <br />
-      Pour choisir ton clan, c'est ici ! Si tu disposes d'un niveau suffisant,
-      tu peux rejoindre un ou des groupes ; et même en créer. Pour certains
-      groupes, ton entrée est immédiate, pour d'autres tu devras être approuvé
-      par le chef du groupe... A toi de faire tes preuves !
+      Ils n'étaient en fait qu'une bande de nazes ? Désinscris-toi ! Alors, le
+      gang de tes rêves t'as pris ? Découvre-le tout de suite ! Envie de fonder
+      ton propre club ? Si tu as un super niveau, go !
     </Card>
     <br />
     <Card color="blue" justified v-if="data">
-      <template #header>Groupes officiels</template>
+      <template #header>Mes inscriptions</template>
       <template #subtitle
-        >Ce sont les groupes qui participent directement à
-        <b>chimboz.fr</b>.</template
+        >Faire partie de ce groupe c'est ce qu'y a de plus classe...</template
       >
-      Les membres de ces groupes sont nommés par
-      <router-link to="/groups/1">les créateurs du site</router-link>, et se
-      voient attribuer des rubriques à modérer (<router-link to="photos"
-        >albums</router-link
-      >, <router-link to="faq">faq</router-link>,
-      <router-link to="bbs">BBS</router-link>...)ou même un poste sur le chat
-      (<router-link to="/groups/3">modos officiels</router-link>,
-      <router-link to="/groups/9">aideurs officiels</router-link>). <br /><br />
       <table class="groups fullwidth">
         <colgroup>
-          <col width="30" />
           <col width="100%" />
-          <col width="40" />
+          <col width="150" />
         </colgroup>
         <thead>
           <tr>
-            <th>#</th>
             <th>Nom du groupe</th>
-            <th>Type</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.official" :key="index">
-            <td
-              ><b>{{ group.id }}</b></td
-            >
+          <tr v-for="(group, index) in data.member" :key="index">
             <td><group :group="group"/></td>
-            <td>{{ group.type }}</td>
+            <td>[<a @click.prevent="false">Se désinscrire</a>]</td>
           </tr>
         </tbody>
       </table>
     </Card>
     <br />
     <Card color="blue" v-if="data">
-      <template #header>Groupes de membre</template>
-      <template #subtitle
-        >Les 20 derniers groupes créés par les membres</template
-      >
-      Les membres de ces groupes sont designés par
-      <b>le créateur du groupe</b>... <br /><br />
+      <template #header>Mes demandes en attente </template>
+      <template #subtitle>Tout vient à point à qui sait attendre !</template>
       <table class="groups fullwidth">
         <colgroup>
-          <col width="30" />
           <col width="100%" />
-          <col width="40" />
+          <col width="150" />
         </colgroup>
         <thead>
           <tr>
-            <th>#</th>
             <th>Nom du groupe</th>
-            <th>Type</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.new" :key="index">
-            <td
-              ><b>{{ group.id }}</b></td
-            >
+          <tr v-for="(group, index) in data.pending" :key="index">
             <td><group :group="group"/></td>
-            <td>{{ group.type }}</td>
+            <td>[<a @click.prevent="false">Annuler</a>]</td>
           </tr>
         </tbody>
       </table>
     </Card>
     <br />
     <Card color="blue" v-if="data">
-      <template #header>Classement général des groupes, par jeu</template>
+      <template #header>Mes groupes </template>
       <template #subtitle
-        >Les 10 meilleurs groupes, tous les jeux réunis
+        >Ils étaient bien sûr les meilleurs groupes de la communauté...
       </template>
-      Le nombre de points correspond au classement général.<br />
-      Par exemple, si un groupe est classé
-      <b>10ème à Bactéria, 2ème à Patojdur, et 7ème à Popularité</b>, leur
-      nombre de points sera <b>10+2+7</b> soit <b>19 points</b>. Cela signifie
-      que moins un groupe a des points, plus il est fort !<br /><br />
       <table class="groups fullwidth">
         <colgroup>
-          <col width="30" />
           <col width="100%" />
-          <col width="40" />
+          <col width="150" />
         </colgroup>
         <thead>
           <tr>
-            <th>#</th>
             <th>Nom du groupe</th>
-            <th>Score</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.best" :key="index">
-            <td
-              ><b>{{ group.id }}</b></td
-            >
+          <tr v-for="(group, index) in data.owner" :key="index">
             <td><group :group="group"/></td>
-            <td>{{ group.score }}</td>
+            <td>[<a @click.prevent="false">Gérer</a>]</td>
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br />
-    <Card v-if="data">
-      <template #header>Moi et mes groupes</template>
-
-      <router-link to="/groups/manage">Gérer mes groupes</router-link>
+      <br />
+      <router-link to="/groups/create"
+        ><img
+          src="@/asset/img/puce.svg"
+          alt="Puce"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        />&nbsp;Créer un nouveau groupe</router-link
+      >
     </Card>
     <template #right-column
       ><Card color="blue" top>
@@ -174,11 +143,11 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/groups.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/manage.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/groups.json");
+    const req = await this.api.get("/api/manage.json");
     this.data = req.data;
     next();
   },

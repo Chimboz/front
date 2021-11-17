@@ -1,0 +1,17 @@
+{
+  "member": [
+    { "id": 1, "name": "Salut" },
+    { "id": 1, "name": "Salut" },
+    { "id": 1, "name": "Salut" }
+  ],
+  "pending": [
+    { "id": 1, "name": "Salut" },
+    { "id": 1, "name": "Salut" },
+    { "id": 1, "name": "Salut" }
+  ],
+  "owner": [
+    { "id": 1, "name": "Salut" },
+    { "id": 1, "name": "Salut" },
+    { "id": 1, "name": "Salut" }
+  ]
+}

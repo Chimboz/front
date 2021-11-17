@@ -67,7 +67,7 @@
       </div>
     </Card>
     <br /><Card id="today" v-if="data">
-      <template #header>Le dernier Mariage</template>
+      <template #header>Le dernier mariage</template>
       Le lundi 15 octobre 2007 à 05h41, 68665e mariage.
       <br /><br />
       <div class="wedding">
@@ -86,7 +86,7 @@
     </Card>
     <br />
     <Card id="yesterday" v-if="data">
-      <template #header>Champions du Jour !</template>
+      <template #header>Tous les mariages depuis 24 heures</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
       <img
         draggable="false"

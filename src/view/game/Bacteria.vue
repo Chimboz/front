@@ -283,6 +283,8 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />&nbsp;<router-link to="/bbs/5">BBS de Bacteria</router-link><br />
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
@@ -291,6 +293,8 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />&nbsp;<router-link to="bacteria/story">Bacteria Sanctuary</router-link
         ><br />
         <br />
@@ -299,6 +303,8 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />&nbsp;<b>{{ data.stats.player }}</b> membres joueurs de
         <b>Bacteria</b>.<br />
         <br />
@@ -307,6 +313,8 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />&nbsp;<b>{{ data.stats.games }}</b> parties ont été jouées.<br />
         <br />
         <img
@@ -314,6 +322,8 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />&nbsp;<b>{{ data.stats.yesterday }}</b> parties hier.
       </Card></template
     >
