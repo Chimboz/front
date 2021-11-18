@@ -91,7 +91,10 @@
         <tbody>
           <tr v-for="(group, index) in data.owner" :key="index">
             <td><group :group="group"/></td>
-            <td>[<a @click.prevent="false">Gérer</a>]</td>
+            <td
+              >[<router-link :to="'/groups/edit/' + group.id">Gérer</router-link
+              >]</td
+            >
           </tr>
         </tbody>
       </table>

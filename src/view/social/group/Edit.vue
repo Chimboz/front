@@ -9,6 +9,26 @@
       <br />
       <Rules bot />
     </template>
+    <Card header="group.gif" :height="70" color="blue" v-if="data" justified>
+      <div class="group-header">
+        <blazon
+          :shape="data.blazon.shape"
+          :top="data.blazon.top"
+          :bot="data.blazon.bot"
+          :primary="data.blazon.primary"
+          :secondary="data.blazon.secondary"
+        />
+        <div class="flex col">
+          <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
+          <div class="motto">"{{ this.data.motto }}"</div> </div
+        ><img
+          v-if="this.data.official"
+          src="@/asset/img/group/official.svg"
+          style="float: right"
+        />
+      </div>
+    </Card>
+    <br />
     <Cabin
       v-if="data"
       :data="data"
@@ -25,15 +45,52 @@
           ])
       "
     />
+    <br />
+    <Card color="blue" v-if="data">
+      <input
+        :required="isTopic"
+        :minlength="isTopic ? '3' : '0'"
+        maxlength="100"
+        name="title"
+        class="btn-md"
+        type="text"
+        v-model="data.motto"
+        placeholder="Titre"/>
+      <textarea
+        placeholder="Message"
+        required
+        minlength="3"
+        autocorrect="on"
+        spellcheck="true"
+        maxlength="60000"
+        class="btn-md description"
+        v-model="data.description"
+        @focus="focusHandler"
+        @select="selectionHandler"/>
+      <input
+        :required="isTopic"
+        :minlength="isTopic ? '3' : '0'"
+        maxlength="100"
+        name="title"
+        class="btn-md"
+        type="text"
+        v-model="data.localisation"
+        placeholder="Titre"
+    /></Card>
+    <template #right-column>
+      <Card color="blue" top> </Card>
+    </template>
   </Container>
 </template>
 <script>
 import Cabin from "@/component/blazon/Cabin.vue";
+import StrokeText from "@/component/StrokeText.vue";
 
 export default {
   name: "Edit",
   components: {
-    Cabin
+    Cabin,
+    StrokeText
   },
   data() {
     return {
@@ -76,3 +133,51 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.blazon {
+  float: left;
+}
+.motto {
+  text-align: left;
+  padding: 0 6px;
+}
+
+.group-name {
+  height: 28px;
+  font-size: 28px;
+  fill: #fff;
+  stroke: #f39;
+  stroke-width: 4;
+}
+
+.description {
+  text-align: left;
+}
+
+.group-header {
+  font-family: "Chimboz Heavy";
+  color: #3c556f;
+  font-size: 16px;
+  min-height: 90px;
+}
+
+.icon {
+  display: inline-flex;
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  line-height: 10px;
+  border: 1px solid #6090be;
+  background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.description {
+  resize: vertical;
+  min-height: 240px;
+}
+</style>

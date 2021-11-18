@@ -264,7 +264,7 @@ img + .card > .card-bg {
 }
 
 .justified .card {
-  text-align: justify;
+  text-align: left;
 }
 
 .bot {
