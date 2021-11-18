@@ -48,16 +48,14 @@
     <br />
     <Card color="blue" v-if="data">
       <input
-        :required="isTopic"
-        :minlength="isTopic ? '3' : '0'"
         maxlength="100"
         name="title"
         class="btn-md"
         type="text"
         v-model="data.motto"
-        placeholder="Titre"/>
+        placeholder="Motto"/>
       <textarea
-        placeholder="Message"
+        placeholder="Description"
         required
         minlength="3"
         autocorrect="on"
@@ -68,14 +66,12 @@
         @focus="focusHandler"
         @select="selectionHandler"/>
       <input
-        :required="isTopic"
-        :minlength="isTopic ? '3' : '0'"
         maxlength="100"
         name="title"
         class="btn-md"
         type="text"
         v-model="data.localisation"
-        placeholder="Titre"
+        placeholder="Localisation"
     /></Card>
     <template #right-column>
       <Card color="blue" top> </Card>
