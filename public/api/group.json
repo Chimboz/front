@@ -15,6 +15,7 @@
   },
   "motto": "Nitens lux, horrenda procella, tenebris aeternis involuta",
   "leader": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+  "date": 1637270964892,
   "members": [
     { "name": "Meyriu", "id": 115 },
     { "name": "test", "id": 1 }

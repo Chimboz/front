@@ -75,8 +75,8 @@
         />
       </Card>
       <br />
-      Groupe no. <b>{{ this.data.id }}</b> créé le
-      <b>vendredi 09 juin 2006 à 12h23 (1929 jours)</b><br />
+      Groupe no. <b>{{ this.$route.params.id }}</b> créé le
+      <b>{{ formatDate }} ({{ formatDistance }} jours)</b><br />
       <br />
       <Card v-if="data" class="justified"
         ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
@@ -133,6 +133,8 @@ import Blazon from "@/component/blazon/Blazon.vue";
 import StrokeText from "@/component/StrokeText.vue";
 import messageRender from "@/module/messageRender.js";
 import User from "@/component/link/User.vue";
+import { format, differenceInCalendarDays } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Group",
@@ -149,6 +151,16 @@ export default {
   computed: {
     formatDescription() {
       return messageRender(this.data.description);
+    },
+    formatDate() {
+      return format(new Date(this.data.date), "Pp", {
+        locale: window.__localeId__
+      });
+    },
+    formatDistance() {
+      return differenceInCalendarDays(new Date(), new Date(this.data.date), {
+        locale: window.__localeId__
+      });
     }
   },
   async beforeRouteEnter(to, from, next) {

@@ -20,12 +20,7 @@
         />
         <div class="flex col">
           <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
-          <div class="motto">"{{ this.data.motto }}"</div> </div
-        ><img
-          v-if="this.data.official"
-          src="@/asset/img/group/official.svg"
-          style="float: right"
-        />
+        </div>
       </div>
     </Card>
     <br />
@@ -47,32 +42,76 @@
     />
     <br />
     <Card color="blue" v-if="data">
-      <input
-        maxlength="100"
-        name="title"
-        class="btn-md"
-        type="text"
-        v-model="data.motto"
-        placeholder="Motto"/>
-      <textarea
-        placeholder="Description"
-        required
-        minlength="3"
-        autocorrect="on"
-        spellcheck="true"
-        maxlength="60000"
-        class="btn-md description"
-        v-model="data.description"
-        @focus="focusHandler"
-        @select="selectionHandler"/>
-      <input
-        maxlength="100"
-        name="title"
-        class="btn-md"
-        type="text"
-        v-model="data.localisation"
-        placeholder="Localisation"
-    /></Card>
+      <form>
+        <input
+          maxlength="100"
+          name="title"
+          class="btn-md"
+          type="text"
+          v-model="data.motto"
+          placeholder="Motto"
+        /><br /><br />
+        <textarea
+          placeholder="Description"
+          required
+          minlength="3"
+          autocorrect="on"
+          spellcheck="true"
+          maxlength="60000"
+          class="btn-md description"
+          v-model="data.description"
+          @focus="focusHandler"
+          @select="selectionHandler"
+        /><br /><br />
+        <input
+          maxlength="100"
+          name="title"
+          class="btn-md"
+          type="text"
+          v-model="data.localisation"
+          placeholder="Localisation"
+        /><br /><br />
+        <Button color="green" type="submit"
+          ><template #prepend
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Arrow icon"
+              class="arrow green jitter"
+              src="@/asset/img/arrow.svg"/></template
+          >Sauver</Button
+        ></form
+      ></Card
+    ><br />
+    <Card v-if="data" class="justified"
+      ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
+        >Bacteria</b
+      ><br /><br />
+      Classé : <b>{{ this.data.bacteria.rank }}</b
+      >/<b>{{ this.data.bacteria.total }}</b> avec
+      <b>{{ this.data.bacteria.points }}</b> points.</Card
+    ><br />
+    <Card v-if="data" class="justified"
+      ><img src="@/asset/img/group/patojdur.gif" style="float: left" /><b
+        >Patojdur</b
+      ><br /><br />
+      Classé : <b>{{ this.data.patojdur.rank }}</b
+      >/<b>{{ this.data.patojdur.total }}</b> avec
+      <b>{{ this.data.patojdur.points }}</b> points.</Card
+    ><br />
+    <Card v-if="data" class="justified"
+      ><img src="@/asset/img/group/popularity.gif" style="float: left" /><b
+        >Popularity</b
+      ><br /><br />
+      Classé : <b>{{ this.data.popularity.rank }}</b
+      >/<b>{{ this.data.popularity.total }}</b> avec
+      <b>{{ this.data.popularity.points }}</b> points.</Card
+    ><br />
+    <Card v-if="data" class="justified">
+      Classement général : <b>{{ this.data.global.rank }}</b
+      >/<b>{{ this.data.global.total }}</b> avec
+      <b>{{ this.data.global.points }}</b> points.</Card
+    >
     <template #right-column>
       <Card color="blue" top> </Card>
     </template>
@@ -80,13 +119,15 @@
 </template>
 <script>
 import Cabin from "@/component/blazon/Cabin.vue";
+import Blazon from "@/component/blazon/Blazon.vue";
 import StrokeText from "@/component/StrokeText.vue";
 
 export default {
   name: "Edit",
   components: {
     Cabin,
-    StrokeText
+    StrokeText,
+    Blazon
   },
   data() {
     return {

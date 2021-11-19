@@ -184,7 +184,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.blazon {
+.cabin .blazon {
   transform: scale(1.5);
 }
 </style>
@@ -333,11 +333,13 @@ export default {
   border: 2px solid #fff;
 }
 
-.item.active img, .item.active svg {
+.item.active img,
+.item.active svg {
   margin: -2px;
 }
 
-.chest .item.active img, .chest .item.active svg {
+.chest .item.active img,
+.chest .item.active svg {
   width: calc(100% + 4px);
 }
 
