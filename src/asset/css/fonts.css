@@ -87,3 +87,12 @@
   font-style: italic;
   font-display: fallback;
 }
+
+@font-face {
+  font-family: "Pixelade";
+  src: url("../font/Pixelade.woff2") format("woff2"),
+    url("../font/Pixelade.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

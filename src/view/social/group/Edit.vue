@@ -200,13 +200,11 @@ export default {
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelated Verdana 10";
-  font-size: 10px;
-  flex-wrap: wrap;
+  font-family: "Pixelade";
+  font-size: 13px;
   justify-content: center;
   width: 50px;
   height: 50px;
-  line-height: 10px;
   border: 1px solid #6090be;
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;

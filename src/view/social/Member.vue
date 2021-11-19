@@ -107,14 +107,10 @@
             />
           </p>
           <br />
-          <div class="icon flex centered">
-            <span v-if="data.gender == 'male'">Chimbo</span>
-            <span
-              v-else-if="data.gender == 'female'"
-              style="overflow-wrap: anywhere;"
-              >Chimbette</span
-            >
-            <span v-else>Chimbi</span>
+          <div class="icon flex centered col">
+            <div v-if="data.gender == 'male'">Chimbo</div>
+            <div v-else-if="data.gender == 'female'">Chimbette</div>
+            <div v-else>Chimbi</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -127,18 +123,20 @@
             />
           </div>
           &nbsp;
-          <div class="icon flex centered">
-            Niveau<br />
-            <img
-              draggable="false"
-              @contextmenu.prevent
-              :alt="digit"
-              v-for="digit in data.level.toString(10)"
-              :key="digit.index"
-              width="19"
-              height="21"
-              :src="require(`@/asset/img/number/${digit}.svg`)"
-            />
+          <div class="icon flex centered col">
+            <div>Niveau</div>
+            <div>
+              <img
+                draggable="false"
+                @contextmenu.prevent
+                :alt="digit"
+                v-for="digit in data.level.toString(10)"
+                :key="digit.index"
+                width="19"
+                height="21"
+                :src="require(`@/asset/img/number/${digit}.svg`)"
+              />
+            </div>
           </div>
           <br /><br />
           <p>
@@ -397,13 +395,11 @@ export default {
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelated Verdana 10";
-  font-size: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+  font-family: "Pixelade";
+  font-size: 13px;
+  justify-content: space-evenly;
   width: 50px;
   height: 50px;
-  line-height: 10px;
   border: 1px solid #6090be;
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
