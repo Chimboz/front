@@ -9,13 +9,16 @@
       <br />
       <Rules bot />
     </template>
-    <Card justified v-if="data"
+    <Card v-if="data"
       ><template #subtop>Sur le tchat</template
-      ><span v-for="user in data.tchat" :key="user.id"
-        ><user :user="user" /> ({{ user.room }})
+      ><span
+        v-for="user in data.tchat"
+        :key="user.id"
+        style="display: inline-block"
+        ><user :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span></Card
     ><br />
-    <Card justified v-if="data"
+    <Card v-if="data"
       ><template #subtop>Sur le site</template
       ><span v-for="(user, index) in data.site" :key="user.id"
         ><user :user="user" :separator="index < data.tchat.length - 1"/></span
