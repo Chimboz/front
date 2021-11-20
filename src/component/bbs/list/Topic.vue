@@ -32,7 +32,7 @@
         v-for="(message, index) in topic.messages"
         :key="message.id"
         :message="message"
-        :separator="index != topic.messages.length - 1"
+        :separator="index < topic.messages.length - 1"
       />
     </tbody>
     <tr>

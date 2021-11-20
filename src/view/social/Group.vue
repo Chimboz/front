@@ -153,7 +153,7 @@ export default {
       return messageRender(this.data.description);
     },
     formatDate() {
-      return format(new Date(this.data.date), "Pp", {
+      return format(new Date(this.data.date), "PPp", {
         locale: window.__localeId__
       });
     },

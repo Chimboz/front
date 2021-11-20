@@ -236,7 +236,7 @@ export default {
       return messageRender(this.data.news.content);
     },
     formatDate() {
-      return format(new Date(this.data.news.date), "PPpp", {
+      return format(new Date(this.data.news.date), "PPp", {
         locale: window.__localeId__
       });
     }

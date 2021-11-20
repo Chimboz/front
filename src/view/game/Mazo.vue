@@ -186,7 +186,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return format(new Date(date), "Pp", {
+      return format(new Date(date), "PPp", {
         locale: window.__localeId__
       });
     }

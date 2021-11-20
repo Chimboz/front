@@ -328,8 +328,7 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />
-        BBS de Patojdur<br />
+        />&nbsp;<router-link to="bbs/6">BBS de Patojdur</router-link><br />
         <br />
         <img
           src="@/asset/img/puce.svg"
@@ -343,7 +342,8 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />Aujourd'hui, il y a {{ data.stats.today }} Patojeurs.<br /> </Card
+        />&nbsp;Aujourd'hui, il y a
+        {{ data.stats.today }} Patojeurs.<br /> </Card
     ></template>
   </Container>
 </template>
@@ -367,7 +367,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return format(new Date(date), "Pp", {
+      return format(new Date(date), "PPp", {
         locale: window.__localeId__
       });
     },

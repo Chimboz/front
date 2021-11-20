@@ -15,12 +15,13 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: #78aadb;
-  color: #fff;
+  background-color: #fff4d5;
+  color: #726338;
   text-align: center;
-  padding: 0 5px;
-  border-radius: 99px;
   pointer-events: none;
+  padding: 2px 6px;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 2px #5c341f90;
 
   /* Position the tooltip */
   position: absolute;

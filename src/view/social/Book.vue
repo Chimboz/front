@@ -109,7 +109,7 @@ export default {
       this.$router.push(`/book/${id}`);
     },
     formatDate(date) {
-      return format(new Date(date), "Pp", {
+      return format(new Date(date), "PPp", {
         locale: window.__localeId__
       });
     }

@@ -174,15 +174,7 @@
             <td>
               <Tooltip>
                 <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    width="3"
-                    height="6"
-                    src="@/asset/img/icon/caret.png"
-                    style="image-rendering: pixelated"
-                  />&nbsp;<b
+                  ><b
                     >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
                   ></template
                 >
@@ -221,15 +213,7 @@
             <td>
               <Tooltip>
                 <template #tooltip
-                  ><img
-                    draggable="false"
-                    @contextmenu.prevent
-                    alt="Caret"
-                    width="3"
-                    height="6"
-                    src="@/asset/img/icon/caret.png"
-                    style="image-rendering: pixelated"
-                  />&nbsp;<b
+                  ><b
                     >W{{ rank.win }}/D{{ rank.draw }}/L{{ rank.lose }}</b
                   ></template
                 >

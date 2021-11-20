@@ -84,6 +84,11 @@ const routes = [
     component: () => import("../view/social/group/Edit.vue")
   },
   {
+    path: "/online",
+    name: "Online",
+    component: () => import("../view/social/Online.vue")
+  },
+  {
     path: "/bbs",
     name: "BBS",
     component: () => import("../view/BBS.vue")
@@ -135,7 +140,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const guestOnly = ["Login"];
-  const userOnly = ["Account", "Home"];
+  const userOnly = ["Account", "Home", "Group Manage", "Group Edit"];
   if (to.path == "/tchat")
     router.push({ name: "Error", params: { message: "error.tchat" } });
   if (store.getters["auth/authenticated"]) {
