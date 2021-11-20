@@ -96,7 +96,8 @@
     "bbs": "BBS",
     "group": "Group",
     "member": "Member",
-    "groupedit": "Group edit"
+    "groupedit": "Group edit",
+    "online": "Online"
   },
   "group": {
     "leader": {

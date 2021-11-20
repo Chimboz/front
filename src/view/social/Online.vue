@@ -80,7 +80,7 @@ export default {
     next();
   },
   metaInfo: {
-    title: "section.popularity",
+    title: "section.online",
     meta: [
       {
         name: "description",

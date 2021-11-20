@@ -96,7 +96,8 @@
     "bbs": "BBS",
     "group": "Groupe",
     "member": "Membre",
-    "groupedit": "Édition de groupe"
+    "groupedit": "Édition de groupe",
+    "online": "En ligne"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",
