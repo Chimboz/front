@@ -3,8 +3,10 @@
     <img src="@/asset/img/group/ribbons.svg" class="ribbons" />
     <div class="blazon-body">
       <background :primary="primary" :secondary="secondary" :id="shape" />
-      <div class="top"><top :color="primary" :id="top"/></div>
-      <div class="bot"><bot :color="primary" :id="bot"/></div>
+      <div class="top" v-if="top != 0"><top :color="primary" :id="top"/></div>
+      <div class="bot" :class="{ lone: top == 0 }"
+        ><bot :color="primary" :id="bot"
+      /></div>
       <div class="reflection"><reflection :id="shape"/></div>
     </div>
   </div>
@@ -80,5 +82,11 @@ export default {
 .bot {
   top: 31.6px;
   left: 16.6px;
+}
+
+.bot.lone {
+  transform: scale(1.2);
+  top: 18.4px;
+  left: 17.4px;
 }
 </style>
