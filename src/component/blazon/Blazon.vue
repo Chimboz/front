@@ -3,8 +3,8 @@
     <img src="@/asset/img/group/ribbons.svg" class="ribbons" />
     <div class="blazon-body">
       <background :primary="primary" :secondary="secondary" :id="shape" />
-      <div class="top" v-if="top != 0"><top :color="primary" :id="top"/></div>
-      <div class="bot" :class="{ lone: top == 0 }"
+      <div class="top" v-if="top != -1"><top :color="primary" :id="top"/></div>
+      <div class="bot" :class="{ lone: top == -1 }"
         ><bot :color="primary" :id="bot"
       /></div>
       <div class="reflection"><reflection :id="shape"/></div>

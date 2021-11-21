@@ -135,10 +135,17 @@
                     />
                   </svg>
                   <img
-                    v-else
                     draggable="false"
                     @contextmenu.prevent
+                    v-else-if="item == -1"
+                    src="@/asset/img/icon/cross.svg"
+                  />
+                  <VLazyImage
+                    draggable="false"
+                    @contextmenu.prevent
+                    v-else
                     :src="`/blazon/${name}/${item}.svg`"
+                    :src-placeholder="require('@/asset/img/loading.svg')"
                   />
                 </button>
               </div>
@@ -152,11 +159,13 @@
 </template>
 <script>
 import Blazon from "@/component/blazon/Blazon.vue";
+import VLazyImage from "v-lazy-image";
 
 export default {
   name: "Cabin",
   components: {
-    Blazon
+    Blazon,
+    VLazyImage
   },
   data() {
     return {
@@ -173,13 +182,7 @@ export default {
     data: {
       required: true,
       type: Object
-    },
-    motto: { type: String },
-    website: { type: String },
-    centrea: { type: String },
-    centreb: { type: String },
-    centrec: { type: String },
-    centred: { type: String }
+    }
   }
 };
 </script>
@@ -290,6 +293,7 @@ export default {
 .item img[src*="cross"],
 .item img[src*="loading"] {
   transform: translate(0px, 0px);
+  width: unset;
 }
 
 .category-selection,
