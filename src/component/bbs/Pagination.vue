@@ -27,7 +27,7 @@ export default {
           this.total - 2 > 0 ? this.total - 2 : 0,
           this.total - 1
         ])
-      ];
+      ].sort();
     }
   }
 };
