@@ -6,6 +6,7 @@ import App from "./App.vue";
 import eventBus from "./module/eventBus";
 import api from "./module/api";
 import { createMetaManager, plugin as metaPlugin } from "vue-meta";
+import "modern-normalize/modern-normalize.css";
 import "./asset/css/fonts.css";
 import "./asset/css/main.scss";
 import "./asset/css/markdown.css";
@@ -16,7 +17,7 @@ import Container from "./component/Container.vue";
 import Card from "./component/Card.vue";
 import Button from "./component/Button.vue";
 import Rules from "./component/slot/Rules.vue";
-import './registerServiceWorker'
+import "./registerServiceWorker";
 
 const metaManager = createMetaManager();
 

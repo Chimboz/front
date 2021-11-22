@@ -72,7 +72,7 @@
               @contextmenu.prevent
             />&nbsp;
             <span v-if="data.wedding">
-              <router-link :to="'/wedding/' + data.wedding.id"
+              <router-link :to="'/weddings/' + data.wedding.id"
                 >Marié</router-link
               >
               avec

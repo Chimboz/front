@@ -4,11 +4,9 @@
   --gap: 2px;
 }
 
-// Reseting
+// Reseting margins
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 *:focus {
@@ -25,7 +23,6 @@
 
 body {
   font-family: Helvetica, "Helvetica Fallback", sans-serif;
-  font-weight: normal;
   font-size: 12px;
   color: #284555;
   background-color: #6090be;

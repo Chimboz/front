@@ -76,193 +76,52 @@
           @contextmenu.prevent
           alt="Star"
           src="@/asset/img/social/wedding/wedding.svg"/>
-        <Tiz class="witness witness1"/> <Tiz class="married married1"/>
-        <Tiz class="married married2"/> <Tiz class="witness witness2"/></div
+        <Tiz
+          class="witness witness1"
+          :avatar="data.last.witness1.look.avatar"
+          :emote="data.last.witness1.look.emote"
+          :hat="data.last.witness1.look.hat"
+          :body="data.last.witness1.look.body"
+          :shoe="data.last.witness1.look.shoe"
+          :item0="data.last.witness1.look.item0"
+          :item1="data.last.witness1.look.item1"
+          :item2="data.last.witness1.look.item2"/>
+        <Tiz
+          class="married married1"
+          :avatar="data.last.married1.look.avatar"
+          :emote="data.last.married1.look.emote"
+          :hat="data.last.married1.look.hat"
+          :body="data.last.married1.look.body"
+          :shoe="data.last.married1.look.shoe"
+          :item0="data.last.married1.look.item0"
+          :item1="data.last.married1.look.item1"
+          :item2="data.last.married1.look.item2"/>
+        <Tiz
+          class="married married2"
+          :avatar="data.last.married2.look.avatar"
+          :emote="data.last.married2.look.emote"
+          :hat="data.last.married2.look.hat"
+          :body="data.last.married2.look.body"
+          :shoe="data.last.married2.look.shoe"
+          :item0="data.last.married2.look.item0"
+          :item1="data.last.married2.look.item1"
+          :item2="data.last.married2.look.item2"/>
+        <Tiz
+          class="witness witness2"
+          :avatar="data.last.witness2.look.avatar"
+          :emote="data.last.witness2.look.emote"
+          :hat="data.last.witness2.look.hat"
+          :body="data.last.witness2.look.body"
+          :shoe="data.last.witness2.look.shoe"
+          :item0="data.last.witness2.look.item0"
+          :item1="data.last.witness2.look.item1"
+          :item2="data.last.witness2.look.item2"/></div
       ><br />
       Tous nos voeux de bonheur à <br />
       Ludovic151 et mica2<br />
       qui ont été mariés par Guruji en présence de<br />
       foxy974 et missbad67.
     </Card>
-    <br />
-    <Card id="yesterday" v-if="data">
-      <template #header>Tous les mariages depuis 24 heures</template>
-      <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table> </Card
-    ><br />
-    <Card id="general" v-if="data">
-      <template #header>Classement Général !</template>
-      <template #subtitle
-        >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
-      >
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-    </Card>
-    <br /><Card id="groups" v-if="data">
-      <template #header>Classement des Groupes ! </template>
-      <template #subtitle>Plus on est de fous...</template>
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/star.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        alt="Star"
-        src="@/asset/img/social/popularity/poop.gif"
-      />
-      <table class="score fullwidth">
-        <colgroup>
-          <col width="30" />
-          <col width="30" />
-          <col width="100%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Pts</th>
-            <th>Membre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
-            <td>{{ index + 1 }}</td>
-            <td>{{ rank.points }}</td>
-            <td><user :user="rank.user"/></td>
-          </tr>
-        </tbody>
-      </table> </Card
-    ><br />·
-    <Card id="vote"
-      ><template #header>Voter Pour/Contre un membre !</template> Un membre
-      t'ennuie ? Descends le !<br />
-      Tu trouves un membre sympa ? Donne lui ta voix !</Card
-    >
     <template #right-column
       ><Card
         header="ensavoirplus.gif"
@@ -333,6 +192,8 @@
 <script>
 import User from "@/component/link/User.vue";
 import Tiz from "../../component/Tiz.vue";
+import { format, differenceInCalendarDays } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Games",
@@ -347,13 +208,25 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/wedding.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/weddings.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/wedding.json");
+    const req = await this.api.get("/api/weddings.json");
     this.data = req.data;
     next();
+  },
+  methods: {
+    formatDate(date) {
+      return format(new Date(date), "PPp", {
+        locale: window.__localeId__
+      });
+    },
+    formatDistance(date) {
+      return differenceInCalendarDays(new Date(), new Date(date), {
+        locale: window.__localeId__
+      });
+    }
   },
   metaInfo: {
     title: "section.wedding",

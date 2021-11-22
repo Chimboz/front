@@ -275,6 +275,10 @@ export default {
   transform: translateX(3px);
 }
 
+.top img {
+  transform: translateY(-3px);
+}
+
 .chest .item img {
   width: 100%;
 }
@@ -293,7 +297,7 @@ export default {
 .item img[src*="cross"],
 .item img[src*="loading"] {
   transform: translate(0px, 0px);
-  width: unset;
+  width: unset !important;
 }
 
 .category-selection,

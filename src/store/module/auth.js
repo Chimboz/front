@@ -26,7 +26,7 @@ export default {
         credits: 469,
         look: {
           avatar: 0,
-          emote: 1,
+          emote: "zzz",
           hat: 7,
           body: 17,
           shoe: 7,

@@ -19,7 +19,7 @@
       "looks": [
         {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 56,
           "body": 48,
           "shoe": 28,
@@ -29,7 +29,7 @@
         },
         {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 57,
           "body": 49,
           "shoe": 29,
@@ -44,7 +44,7 @@
       "looks": [
         {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 277,
           "body": 1,
           "shoe": 1,

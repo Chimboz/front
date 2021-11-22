@@ -5,7 +5,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 1,
         "shoe": 7,
@@ -21,7 +21,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 2,
         "shoe": 7,
@@ -37,7 +37,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 3,
         "shoe": 7,

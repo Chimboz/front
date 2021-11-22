@@ -7,7 +7,7 @@
     "looks": [
       {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 56,
         "body": 48,
         "shoe": 28,
@@ -17,7 +17,7 @@
       },
       {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 57,
         "body": 49,
         "shoe": 29,
@@ -38,7 +38,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 17,
         "shoe": 7,
@@ -54,7 +54,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 17,
         "shoe": 7,
@@ -70,7 +70,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 17,
         "shoe": 7,

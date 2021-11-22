@@ -19,7 +19,7 @@
         "color": "#900",
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 17,
           "shoe": 7,
@@ -42,7 +42,7 @@
         "signature": "Nitens lux, horrenda procella, tenebris aeternis involuta",
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 17,
           "shoe": 7,

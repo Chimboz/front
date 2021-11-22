@@ -94,7 +94,7 @@ const sideNavEntries = [
   },
   {
     label: "section.wedding",
-    url: "/wedding",
+    url: "/weddings",
     section: "members"
   },
   {

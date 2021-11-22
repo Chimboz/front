@@ -50,7 +50,8 @@ const allowed_tags = [
   "td",
   "img",
   "svg",
-  "path"
+  "path",
+  "u"
 ];
 const allowed_attr = [
   "style",

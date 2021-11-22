@@ -30,7 +30,6 @@
           :src="`/avatar/body/${this.body}.svg`"
         />
         <img
-          v-if="emote > 0"
           class="item emote"
           draggable="false"
           alt="Emote"
@@ -118,8 +117,8 @@ export default {
     },
     emote: {
       required: false,
-      type: Number,
-      default: 1
+      type: String,
+      default: "neutral"
     },
     hat: {
       required: false,

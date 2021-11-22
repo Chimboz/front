@@ -105,7 +105,7 @@
       <br />
       Les derniers mariages célébrés par Guruji
       <br />
-      <router-link to="/wedding">Voir la page des mariages</router-link>
+      <router-link to="/weddings">Voir la page des mariages</router-link>
     </Card>
     <template #right-column
       ><Card color="blue">

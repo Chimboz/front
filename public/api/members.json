@@ -5,7 +5,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 12,
         "shoe": 7,
@@ -19,7 +19,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 14,
         "shoe": 7,
@@ -33,7 +33,7 @@
       "id": 1,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 13,
         "shoe": 7,
@@ -50,7 +50,7 @@
       "score": 5,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 17,
         "shoe": 7,
@@ -65,7 +65,7 @@
       "score": 3,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 15,
         "shoe": 7,
@@ -80,7 +80,7 @@
       "score": 2,
       "look": {
         "avatar": 0,
-        "emote": 1,
+        "emote": "neutral",
         "hat": 7,
         "body": 16,
         "shoe": 7,
@@ -98,7 +98,7 @@
         "score": 5,
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 18,
           "shoe": 7,
@@ -113,7 +113,7 @@
         "score": 5,
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 24,
           "shoe": 7,
@@ -130,7 +130,7 @@
         "score": 5,
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 23,
           "shoe": 7,
@@ -145,7 +145,7 @@
         "score": 5,
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 22,
           "shoe": 7,
@@ -162,7 +162,7 @@
         "score": 5,
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 21,
           "shoe": 7,
@@ -177,7 +177,7 @@
         "score": 5,
         "look": {
           "avatar": 0,
-          "emote": 1,
+          "emote": "neutral",
           "hat": 7,
           "body": 20,
           "shoe": 7,

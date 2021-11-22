@@ -1,5 +1,5 @@
 <template>
-  <table class="bbs preview" :class="{ display: this.message }">
+  <table class="bbs preview" :class="{ display: this.preview }">
     <colgroup>
       <col width="100" class="info" />
       <col width="100%" />
@@ -15,7 +15,7 @@
       <Message
         :message="{
           author: this.user,
-          content: this.message,
+          content: this.preview,
           date: Date.now(),
           id: 'reply',
           new: true,
@@ -26,7 +26,7 @@
       />
     </tbody>
   </table>
-  <br v-if="this.message" />
+  <br v-if="this.preview" />
   <form @submit.prevent="submit">
     <table class="bbs input">
       <colgroup>
@@ -63,18 +63,20 @@
           </td>
           <td class="markdown-body" style="vertical-align: middle;">
             <div class="flex hstack">
-              <button class="btn-md" @click="format('**')"><b>B</b></button
-              ><button class="btn-md" @click="format('*')"><i>i</i></button
-              ><button class="btn-md" @click="format('<u>')">
+              <button type="button" class="btn-md" @click="format('**')"
+                ><b>B</b></button
+              ><button type="button" class="btn-md" @click="format('*')"
+                ><i>i</i></button
+              ><button type="button" class="btn-md" @click="format('<u>')">
                 <u>u</u>
               </button>
-              <button class="btn-md" @click="format('<s>')">
+              <button type="button" class="btn-md" @click="format('<s>')">
                 <s>s</s>
               </button>
-              <button class="btn-md" @click="formatLink(false)">
+              <button type="button" class="btn-md" @click="formatLink(false)">
                 <a href="#" @click.prevent>a</a>
               </button>
-              <button class="btn-md" @click="formatLink(true)">
+              <button type="button" class="btn-md" @click="formatLink(true)">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -207,24 +209,36 @@
                 <option value="## ">Fat</option>
                 <option value="# ">Trop trop gros</option>
               </select>
-              <button class="btn-md" @click="formatMultiline('> ')">
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('> ')"
+              >
                 <blockquote style="margin-bottom: 0">
                   Quote
                 </blockquote>
               </button>
-              <button class="btn-md" @click="formatMultiline('1. ')">
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('1. ')"
+              >
                 1. List
               </button>
-              <button class="btn-md" @click="formatMultiline('- ')">
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('- ')"
+              >
                 • List
               </button>
-              <button class="btn-md" @click="format('<kbd>')">
+              <button type="button" class="btn-md" @click="format('<kbd>')">
                 <kbd>Key</kbd>
               </button>
-              <button class="btn-md" @click="format('`')">
+              <button type="button" class="btn-md" @click="format('`')">
                 <code>Code</code>
               </button>
-              <button class="btn-md" @click="formatCode()">
+              <button type="button" class="btn-md" @click="formatCode()">
                 <pre style="padding: 2px;margin: 0;color: #fff">Code block</pre>
               </button>
             </div>
@@ -244,51 +258,29 @@
               maxlength="60000"
               class="btn-md"
               ref="message"
-              v-model="message"
+              v-model.lazy="message"
               @focus="focusHandler"
               @select="selectionHandler"
             />
           </td>
         </tr>
         <tr>
-          <td>
-            <b>Options&nbsp;:</b><br />
-            Les BBCodes sont activés [img] est activé [url] est activé Les
-            smileys sont activés
-          </td>
-          <td>
-            <input
-              type="checkbox"
-              id="markdown"
-              name="markdown"
-              v-model="markdown"
-            />
-            <label for="markdown"
-              >&#32;Désactiver le Markdown et les smileys</label
-            ><br /><input
-              type="checkbox"
-              id="signature"
-              name="signature"
-              v-model="signature"
-            />
-            <label for="signature"
-              >&#32;Attacher ma signature (les signatures peuvent être modifiées
-              sur le tchat)</label
-            >
-          </td>
-        </tr>
-        <tr>
           <td colspan="2">
-            <Button type="submit" color="green"
-              ><template #prepend
-                ><img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Arrow icon"
-                  class="arrow jitter green"
-                  src="@/asset/img/arrow.svg"/></template
-              >Envoyer</Button
-            >
+            <div class="flex">
+              <Button type="button" @click.prevent="this.preview = this.message"
+                >Prévisualiser</Button
+              >
+              <Button type="submit" color="green"
+                ><template #prepend
+                  ><img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Arrow icon"
+                    class="arrow jitter green"
+                    src="@/asset/img/arrow.svg"/></template
+                >Envoyer</Button
+              >
+            </div>
           </td>
         </tr>
       </tbody>
@@ -307,6 +299,7 @@ export default {
     return {
       message: "",
       title: "",
+      preview: "",
       signature: true,
       markdown: false,
       selectionRange: [0, 0]
