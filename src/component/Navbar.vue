@@ -54,7 +54,7 @@
       <Tiz
         style="margin-right: 17px"
         :avatar="user ? user.look.avatar : 0"
-        :emote="user ? user.look.emote : 1"
+        :emote="user ? user.look.emote : 'neutral'"
         :hat="user ? user.look.hat : 1"
         :body="user ? user.look.body : 1"
         :shoe="user ? user.look.shoe : 1"

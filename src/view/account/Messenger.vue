@@ -3,13 +3,12 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="messenger" />
+          <SideNavEntries section="account" />
         </div> </Card
       ><br />
       <Rules top />
       <Security />
     </template>
-    <Demo />
 
     <template #right-column><Card color="blue" top> </Card> </template>
   </Container>

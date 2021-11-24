@@ -162,7 +162,8 @@
         />
         <span
           >Classement : <b>{{ data.bacteria.rank }}</b
-          >ème<br /><b>{{
+          ><sup v-if="data.bacteria.rank == 1">er</sup><sup v-else>ème</sup
+          ><br /><b>{{
             data.bacteria.win + data.bacteria.lose + data.bacteria.draw
           }}</b>
           parties, <b>{{ data.bacteria.win }}</b> gagnées,
@@ -184,11 +185,16 @@
         />
         <span
           >Classement : <b>{{ data.patojdur.rank }}</b
-          >ème avec <b>{{ data.patojdur.score }}</b> points<br />Aujourd'hui
+          ><sup v-if="data.patojdur.rank == 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.patojdur.score }}</b> points<br />Aujourd'hui
           <b>{{ data.patojdur.today.rank }}</b
-          >ème avec <b>{{ data.patojdur.today.score }}</b> <br />Hier
-          <b>{{ data.patojdur.yesterday.rank }}</b
-          >ème avec <b>{{ data.patojdur.yesterday.score }}</b></span
+          ><sup v-if="data.patojdur.today.rank == 1">er</sup
+          ><sup v-else>ème</sup> avec <b>{{ data.patojdur.today.score }}</b>
+          <br />Hier <b>{{ data.patojdur.yesterday.rank }}</b
+          ><sup v-if="data.patojdur.yesterday.rank == 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.patojdur.yesterday.score }}</b></span
         > </div
       ><br v-if="data.patojdur" />
       <div class="member-section" v-if="data.popularity">
@@ -201,11 +207,17 @@
         />
         <span
           >Classement : <b>{{ data.popularity.rank }}</b
-          >ème avec <b>{{ data.popularity.score }}</b> points<br />Aujourd'hui
+          ><sup v-if="data.popularity.rank == 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.score }}</b> points<br />Aujourd'hui
           <b>{{ data.popularity.today.rank }}</b
-          >ème avec <b>{{ data.popularity.today.score }}</b> points<br />Hier
+          ><sup v-if="data.popularity.today.rank == 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.today.score }}</b> points<br />Hier
           <b>{{ data.popularity.yesterday.rank }}</b
-          >ème avec <b>{{ data.popularity.yesterday.score }}</b> points</span
+          ><sup v-if="data.popularity.yesterday.rank == 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.yesterday.score }}</b> points</span
         > </div
       ><br v-if="data.popularity" />
       <div class="member-section registration">

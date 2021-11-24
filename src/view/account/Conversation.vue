@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="conversation" />
+          <SideNavEntries section="account" />
         </div> </Card
       ><br />
       <Rules top />

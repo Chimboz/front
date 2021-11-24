@@ -43,7 +43,11 @@
         <tbody>
           <tr v-for="(group, index) in data.member" :key="index">
             <td><group :group="group"/></td>
-            <td>[<a @click.prevent="false">Se désinscrire</a>]</td>
+            <td
+              >[<a @click.prevent="leave(group.id)" style="cursor:pointer"
+                >Se désinscrire</a
+              >]</td
+            >
           </tr>
         </tbody>
       </table>
@@ -66,7 +70,11 @@
         <tbody>
           <tr v-for="(group, index) in data.pending" :key="index">
             <td><group :group="group"/></td>
-            <td>[<a @click.prevent="false">Annuler</a>]</td>
+            <td
+              >[<a @click.prevent="cancel(group.id)" style="cursor:pointer"
+                >Annuler</a
+              >]</td
+            >
           </tr>
         </tbody>
       </table>
@@ -111,23 +119,235 @@
       >
     </Card>
     <template #right-column
-      ><Card color="blue" top>
-        <template #header> Records ! </template>
-        <template #subtitle
-          >Dans le bon ou le mauvais, ce sont les meilleurs !</template
-        >
-        parties jouées:
-        <br />
-        fredazur avec 22665 parties jouées ! <br />
-        <br />
-        parties gagnées: <br />
-        AleXxX_DeViLMaN avec 15171 parties gagnées ! <br />
-        <br />
-        parties perdues: <br />
-        fredazur avec 20763 parties perdues ! <br />
-        <br />
-        match nuls: <br />
-        20CeNt avec 1077 match nuls ! <br /> </Card
+      ><Card color="blue" header="ensavoirplus_blue.gif" v-if="data">
+        <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
+        <div style="text-align: left">
+          <img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Group : <b>{{ data.stats.type.group }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.group / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Klub : <b>{{ data.stats.type.klub }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.klub / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Clan : <b>{{ data.stats.type.clan }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.clan / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Ekip : <b>{{ data.stats.type.ekip }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.ekip / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Skwat : <b>{{ data.stats.type.skwat }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.skwat / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Guild : <b>{{ data.stats.type.guild }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.guild / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Alliance : <b>{{ data.stats.type.alliance }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.alliance / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Empire : <b>{{ data.stats.type.empire }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.empire / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Sekt : <b>{{ data.stats.type.sekt }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.sekt / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Skool : <b>{{ data.stats.type.skool }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.skool / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Hord : <b>{{ data.stats.type.hord }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.hord / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Meute : <b>{{ data.stats.type.meute }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.meute / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Gang : <b>{{ data.stats.type.gang }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.gang / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Triad : <b>{{ data.stats.type.triad }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.triad / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as
+          besoin d'avoir un certain
+          <router-link to="/levels">niveau</router-link>.<br /><br />
+          <img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />Le nombre de groupes que tu peux rejoindre tel que décrit dans le
+          <router-link to="/levels">tableau des niveaux</router-link>, comprend
+          uniquement les <b>groupes des membres</b>, les
+          <b>Groupes Officiels</b> ne sont pas comptés.</div
+        ><br /><img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"/>
+        Projecteur sur : <br /><group :group="data.random"/></Card
     ></template>
   </Container>
 </template>
@@ -143,6 +363,14 @@ export default {
     return {
       data: null
     };
+  },
+  methods: {
+    cancel(id) {
+      console.log("Annulé " + id);
+    },
+    leave(id) {
+      console.log("Quitté " + id);
+    }
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>

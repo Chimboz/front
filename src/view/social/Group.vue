@@ -34,14 +34,7 @@
         <User :user="data.leader" />
         <br /><br />
         Occupation du groupe:
-        <b
-          >{{
-            Math.round(
-              (((data.members.length + 1) / data.size) * 100 + Number.EPSILON) *
-                100
-            ) / 100
-          }}%</b
-        >
+        <b>{{ (((data.members.length + 1) / data.size) * 100).toFixed(0) }}%</b>
         (<b>{{ data.members.length + 1 }}</b
         >/<b>{{ data.size }}</b
         >)<br /><br />
@@ -54,21 +47,21 @@
         /><br /><br />
         Localisation : <b>{{ data.localisation }}</b
         ><br /><br />
-        <div class="icon flex centered">
-          Niveau moyen
-          <img
-            draggable="false"
-            @contextmenu.prevent
-            width="19"
-            height="21"
-            src="@/asset/img/number/2.svg"
-          /><img
-            draggable="false"
-            @contextmenu.prevent
-            width="19"
-            height="21"
-            src="@/asset/img/number/5.svg"
-          />
+        <div class="icon flex col centered">
+          <div style="line-height: 10px">Niveau moyen</div>
+          <div
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              width="19"
+              height="21"
+              src="@/asset/img/number/2.svg"/><img
+              draggable="false"
+              @contextmenu.prevent
+              width="19"
+              height="21"
+              src="@/asset/img/number/5.svg"
+          /></div>
         </div>
         &nbsp;<img
           :src="require(`@/asset/img/group/${this.data.status}.png`)"
