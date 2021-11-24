@@ -2,27 +2,26 @@ export const routes = [
   {
     path: "/",
     name: "Home",
-    component: () => import("../view/Home.vue")
+    component: () => import("../view/Home.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/account",
     name: "Account",
-    component: () => import("../view/Account.vue")
+    component: () => import("../view/Account.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/messenger",
     name: "Messenger",
-    component: () => import("../view/account/Messenger.vue")
+    component: () => import("../view/account/Messenger.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/messenger/:id",
     name: "Conversation",
     component: () => import("../view/account/Conversation.vue"),
-    meta: {
-      sitemap: {
-        slugs: [1]
-      }
-    }
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/games",
@@ -97,17 +96,20 @@ export const routes = [
   {
     path: "/groups/manage",
     name: "Group Manage",
-    component: () => import("../view/social/group/Manage.vue")
+    component: () => import("../view/social/group/Manage.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/groups/edit/:id",
     name: "Group Edit",
     component: () => import("../view/social/group/Edit.vue"),
-    meta: {
-      sitemap: {
-        slugs: [1]
-      }
-    }
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
+    path: "/groups/create",
+    name: "Group Create",
+    component: () => import("../view/social/group/Create.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/online",

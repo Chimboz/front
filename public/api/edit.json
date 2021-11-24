@@ -19,6 +19,10 @@
     { "name": "Meyriu", "id": 115 },
     { "name": "test", "id": 1 }
   ],
+  "demands": [
+    { "name": "bite", "id": 115 },
+    { "name": "sein", "id": 1 }
+  ],
   "localisation": "Tchat",
   "bacteria": {
     "rank": 1,

@@ -140,7 +140,17 @@
     <Card v-if="data">
       <template #header>Moi et mes groupes</template>
 
-      <router-link to="/groups/manage">Gérer mes groupes</router-link>
+      <router-link to="/groups/manage"
+        ><img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        />
+        Gérer mes groupes</router-link
+      >
     </Card>
     <template #right-column
       ><Card color="blue" header="ensavoirplus_blue.gif" v-if="data">

@@ -21,7 +21,15 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const guestOnly = ["Login"];
-  const userOnly = ["Account", "Home", "Group Manage", "Group Edit"];
+  const userOnly = [
+    "Account",
+    "Home",
+    "Messenger",
+    "Conversation",
+    "Group Manage",
+    "Group Edit",
+    "Group Create"
+  ];
   if (to.path == "/tchat")
     router.push({ name: "Error", params: { message: "error.tchat" } });
   if (store.getters["auth/authenticated"]) {

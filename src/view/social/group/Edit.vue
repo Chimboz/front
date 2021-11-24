@@ -18,30 +18,16 @@
           :primary="data.blazon.primary"
           :secondary="data.blazon.secondary"
         />
-        <div class="flex col">
-          <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
+        <div class="flex col centered">
+          <StrokeText class="group-name">{{ data.name }}</StrokeText>
+          Groupe n°{{ data.id }}<br />
+          Créé le {{ formatDate(data.date) }}
         </div>
       </div>
     </Card>
     <br />
-    <Cabin
-      v-if="data"
-      :data="data"
-      @update-item="(name, item) => (data.blazon[name] = item)"
-      @previous-item="
-        (name) =>
-          (data.blazon[name] =
-            data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
-      "
-      @next-item="
-        (name) =>
-          (data.blazon[name] = this.data.items[name][
-            data.items[name].indexOf(data.blazon[name]) + 1
-          ])
-      "
-    />
-    <br />
     <Card color="blue" v-if="data">
+      <template #header>Informations</template>
       <form>
         <input
           maxlength="100"
@@ -70,7 +56,54 @@
           type="text"
           v-model="data.localisation"
           placeholder="Localisation"
-        /><br /><br />
+        />
+        <br /><br />
+        <input
+          type="radio"
+          name="status"
+          id="open"
+          value="open"
+          :checked="data.status == 'open'"
+        /><label for="open"
+          ><img
+            src="@/asset/img/group/open.png"
+            width="50"
+            height="50"
+            alt="Open"
+            draggable="false"
+            @contextmenu.prevent
+        /></label>
+        <input
+          type="radio"
+          name="status"
+          id="demand"
+          value="demand"
+          :checked="data.status == 'demand'"
+        /><label for="demand"
+          ><img
+            src="@/asset/img/group/demand.png"
+            width="50"
+            height="50"
+            alt="Demand"
+            draggable="false"
+            @contextmenu.prevent
+        /></label>
+        <input
+          type="radio"
+          name="status"
+          id="close"
+          value="close"
+          :checked="data.status == 'close'"
+        /><label for="close"
+          ><img
+            src="@/asset/img/group/close.png"
+            width="50"
+            height="50"
+            alt="Close"
+            draggable="false"
+            @contextmenu.prevent
+        /></label>
+        <br /><br />
         <Button color="green" type="submit"
           ><template #prepend
             ><img
@@ -82,6 +115,49 @@
           >Sauver</Button
         ></form
       ></Card
+    ><br />
+    <Card color="blue" v-if="data">
+      <template #header>Membres</template>
+      <div
+        style="display: inline-block"
+        v-for="user of this.data.members"
+        :key="user.id"
+      >
+        <User :user="user" :separator="false"/><img
+          @click.prevent="removeMember(user.id)"
+          src="@/asset/img/icon/login/disconnect.svg"
+          width="11"
+          height="11"
+          alt="Close"
+          draggable="false"
+          style="cursor: pointer; margin: 0 2px"
+          @contextmenu.prevent
+      /></div> </Card
+    ><br />
+    <Card color="blue" v-if="data">
+      <template #header>Demandes</template>
+      <div
+        style="display: inline-block"
+        v-for="user of this.data.demands"
+        :key="user.id"
+      >
+        <User :user="user" :separator="false"/><img
+          @click.prevent="acceptDemand(user.id)"
+          src="@/asset/img/icon/login/connect.svg"
+          width="11"
+          height="11"
+          alt="Close"
+          draggable="false"
+          style="cursor: pointer; margin: 0 2px"
+          @contextmenu.prevent/><img
+          @click.prevent="rejectDemand(user.id)"
+          src="@/asset/img/icon/login/disconnect.svg"
+          width="11"
+          height="11"
+          alt="Close"
+          draggable="false"
+          style="cursor: pointer; margin: 0 2px"
+          @contextmenu.prevent/></div></Card
     ><br />
     <Card v-if="data" class="justified"
       ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
@@ -111,30 +187,35 @@
       Classement général : <b>{{ this.data.global.rank }}</b
       >/<b>{{ this.data.global.total }}</b> avec
       <b>{{ this.data.global.points }}</b> points.</Card
+    ><br /><Card
+      ><a @click.prevent="this.delete()" style="color:red;cursor:pointer"
+        >Supprimer le groupe</a
+      ></Card
     >
-    <template #right-column>
-      <Card color="blue" top> </Card>
-    </template>
+    <template #right-column> </template>
   </Container>
 </template>
 <script>
 import Cabin from "@/component/blazon/Cabin.vue";
+import User from "@/component/link/User.vue";
 import Blazon from "@/component/blazon/Blazon.vue";
 import StrokeText from "@/component/StrokeText.vue";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Edit",
   components: {
     Cabin,
     StrokeText,
-    Blazon
+    Blazon,
+    User
   },
   data() {
     return {
       data: null
     };
   },
-
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/edit.json").then((res) => (vm.data = res.data))
@@ -144,6 +225,25 @@ export default {
     const req = await this.api.get("/api/edit.json");
     this.data = req.data;
     next();
+  },
+  methods: {
+    formatDate() {
+      return format(new Date(this.data.date), "PPp", {
+        locale: window.__localeId__
+      });
+    },
+    delete() {
+      console.log("Suppression");
+    },
+    removeMember(id) {
+      console.log("Suppression du membre " + id);
+    },
+    acceptDemand(id) {
+      console.log("Acceptation du membre " + id);
+    },
+    rejectDemand(id) {
+      console.log("Rejection du membre " + id);
+    }
   },
   metaInfo: {
     title: "section.groupedit",
@@ -214,5 +314,17 @@ export default {
 .description {
   resize: vertical;
   min-height: 240px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+input:checked + label {
+  filter: brightness(1.2);
 }
 </style>
