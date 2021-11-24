@@ -22,6 +22,10 @@
   },
 };
 */
+
+require = require("esm")(module);
+const { routes } = require("./src/router/routes.js");
+
 module.exports = {
   lintOnSave: false,
   pluginOptions: {
@@ -30,6 +34,11 @@ module.exports = {
       fallbackLocale: "fr",
       localeDir: "locales",
       enableInSFC: true
+    },
+    sitemap: {
+      outputDir: "public",
+      baseURL: "https://chimboz.fr",
+      routes
     }
   },
   transpileDependencies: ["vue-meta"],
