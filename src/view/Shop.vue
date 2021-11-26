@@ -8,32 +8,62 @@
       ><br />
       <Rules bot />
     </template>
-    <Card color="yellow" header="shop.svg" :height="109">
-      <template #header></template>
-      <img
-        draggable="false"
-        @contextmenu.prevent
-        class="fullwidth pack-preview"
-        src="@/asset/img/shop/cabin.svg"
-      />
+    <Card
+      color="yellow"
+      header="shop.svg"
+      :height="109"
+      v-if="data"
+      style="position: relative"
+    >
+      <div class="preview fullwidth flex">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          class=" pack-preview"
+          src="@/asset/img/shop/cabin.svg"
+        />
+        <div class="preview-tiz flex centered">
+          <Tiz
+            :avatar="shown.looks[0].avatar"
+            :emote="shown.looks[0].emote"
+            :hat="shown.looks[0].hat"
+            :body="shown.looks[0].body"
+            :shoe="shown.looks[0].shoe"
+            :item0="shown.looks[0].item0"
+            :item1="shown.looks[0].item1"
+            :item2="shown.looks[0].item2"
+          />
+          <Tiz
+            v-if="shown.looks.length == 2"
+            :avatar="shown.looks[1].avatar"
+            :emote="shown.looks[1].emote"
+            :hat="shown.looks[1].hat"
+            :body="shown.looks[1].body"
+            :shoe="shown.looks[1].shoe"
+            :item0="shown.looks[1].item0"
+            :item1="shown.looks[1].item1"
+            :item2="shown.looks[1].item2"
+          />
+        </div>
+        <div class="preview-description flex centered">
+          <div>
+            <div class="preview-price">
+              <img src="@/asset/img/shop/circle.svg" style="float: right" />
+              {{ shown.cost }}
+            </div>
+            {{ shown.name }}
+          </div>
+        </div>
+      </div>
       <h3>Les dernières fringues</h3>
       <div class="menu flex">
         <div class="flex hstack">
-          <Pack header="summer.png" footer="summer.png" /><Pack
-            header="summer.png"
-            footer="summer.png"
-          /><Pack header="summer.png" footer="summer.png" /><Pack
-            header="summer.png"
-            footer="summer.png"
-          /><Pack header="summer.png" footer="summer.png" /><Pack
-            header="summer.png"
-            footer="summer.png"
-          /><Pack header="summer.png" footer="summer.png" /><Pack
-            header="summer.png"
-            footer="summer.png"
-          /><Pack header="summer.png" footer="summer.png" /><Pack
-            header="summer.png"
-            footer="summer.png"
+          <Pack
+            @click.prevent="show(pack)"
+            v-for="pack of data"
+            :key="pack.name"
+            :name="pack.name"
+            :looks="pack.looks"
           />
         </div>
       </div>
@@ -44,26 +74,38 @@
 <script>
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
+import Tiz from "@/component/Tiz.vue";
 
 export default {
   name: "Shop",
   components: {
     Bank,
-    Pack
+    Pack,
+    Tiz
   },
   data() {
     return {
-      data: null
+      data: null,
+      shown: null
     };
+  },
+  methods: {
+    show(pack) {
+      this.shown = pack;
+    }
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/shop.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/shop.json").then((res) => {
+        vm.data = res.data;
+        vm.shown = res.data[0];
+      })
     );
   },
   async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get("/api/shop.json");
     this.data = req.data;
+    this.shown = this.data[0];
     next();
   },
   metaInfo: {
@@ -98,7 +140,14 @@ export default {
 </style>
 <style lang="scss" scoped>
 .pack-preview {
-  margin-top: -50px;
+  width: 100%;
+  margin-top: -40px;
+  margin-right: -100%;
+  float: right;
+}
+
+.pack-preview::after {
+  clear: both;
 }
 
 h3 {
@@ -124,19 +173,27 @@ h3 {
   padding: 6px 0;
 }
 
-.menu:before {
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    #fff4d5,
-    transparent 12px,
-    transparent calc(100% - 12px),
-    #fff4d5
-  );
-  position: absolute;
-  z-index: 1;
-  content: "";
+.preview {
   width: 100%;
-  height: 404px;
+}
+
+.preview-tiz {
+  width: 46%;
+  justify-content: center;
+}
+
+.preview-price {
+}
+
+.preview-tiz .tiz {
+  transform: scale(1.8);
+}
+
+.preview-tiz .tiz:first-child {
+  z-index: 1;
+}
+
+.preview-tiz .tiz:nth-child(2) {
+  transform: scale(1.6);
 }
 </style>

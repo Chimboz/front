@@ -258,6 +258,7 @@
               maxlength="60000"
               class="btn-md"
               ref="message"
+              style="font-family:monospace; padding: 12px"
               v-model.lazy="message"
               @focus="focusHandler"
               @select="selectionHandler"
