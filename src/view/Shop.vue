@@ -44,14 +44,27 @@
             :item1="shown.looks[1].item1"
             :item2="shown.looks[1].item2"
           />
+          <div class="preview-price">
+            <img
+              src="@/asset/img/shop/circle.svg"
+              width="58"
+              height="57"
+              draggable="false"
+              @contextmenu.prevent
+              alt="Shop price"
+            />
+            <span>{{ shown.cost }}p.</span>
+          </div>
         </div>
-        <div class="preview-description flex centered">
+        <div class="preview-description">
           <div>
-            <div class="preview-price">
-              <img src="@/asset/img/shop/circle.svg" style="float: right" />
-              {{ shown.cost }}
+            <div class="preview-infos">
+              <h3> Pack {{ shown.name }} </h3>
+              {{ shown.description }}<br /><br />
+              <button class="btn-shop" @click.prevent="buy()"
+                ><img src="@/asset/img/shop/dollar.png" /> Acheter</button
+              >
             </div>
-            {{ shown.name }}
           </div>
         </div>
       </div>
@@ -92,6 +105,9 @@ export default {
   methods: {
     show(pack) {
       this.shown = pack;
+    },
+    buy() {
+      console.log("Acheté " + this.shown.name);
     }
   },
   async beforeRouteEnter(to, from, next) {
@@ -180,9 +196,31 @@ h3 {
 .preview-tiz {
   width: 46%;
   justify-content: center;
+  position: relative;
 }
 
 .preview-price {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 58px;
+  height: 57px;
+}
+
+.preview-price span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+  font-family: "Impact";
+}
+
+.preview-infos {
+  width: 52%;
+  position: absolute;
+  text-align: left;
 }
 
 .preview-tiz .tiz {
@@ -195,5 +233,23 @@ h3 {
 
 .preview-tiz .tiz:nth-child(2) {
   transform: scale(1.6);
+}
+
+.btn-shop {
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-family: "Pixelated Verdana 10";
+  border: 1px solid;
+  border-color: #f0e0b8 #f0e0b8 #b4aa6e #f0e0b8;
+  color: #fff;
+  font-size: 11px;
+  background: linear-gradient(
+    to bottom,
+    #dfbe20,
+    #ceaf1e 49%,
+    #b59c2a 51%,
+    #e8d8a0
+  );
+  padding: 4px;
 }
 </style>

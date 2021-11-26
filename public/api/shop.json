@@ -1,6 +1,7 @@
 [
   {
     "name": "aloha1",
+    "description": "Salut à tous les amis",
     "cost": 100,
     "looks": [
       {
@@ -27,6 +28,7 @@
   },
   {
     "name": "aloha2",
+    "description": "Salut à tous les amis",
     "cost": 50,
     "looks": [
       {
@@ -43,188 +45,7 @@
   },
   {
     "name": "ete",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "farwest2",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "hippiz",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "mafia",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "noel",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "oldskool",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "bigbasta",
-    "cost": 100,
-    "looks": [
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 56,
-        "body": 48,
-        "shoe": 28,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      },
-      {
-        "avatar": 0,
-        "emote": "neutral",
-        "hat": 57,
-        "body": 49,
-        "shoe": 29,
-        "item0": 1,
-        "item1": 1,
-        "item2": 1
-      }
-    ]
-  },
-  {
-    "name": "bigbasta2",
+    "description": "Salut à tous les amis",
     "cost": 100,
     "looks": [
       {
