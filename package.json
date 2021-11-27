@@ -7,7 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
-    "sitemap": "vue-cli-service sitemap"
+    "sitemap": "vue-cli-service sitemap",
+    "docgen": "vuese gen",
+    "doc": "vuese serve --open"
   },
   "dependencies": {
     "@intlify/vue-i18n-loader": "^4.0.1",
@@ -63,5 +65,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "vuese": {
+    "outDir": "public/doc"
+  }
 }
