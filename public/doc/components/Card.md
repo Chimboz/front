@@ -5,14 +5,14 @@
 <!-- @vuese:Card:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
-|header|-|`String`|`false`|-|
-|bg|-|`String`|`false`|-|
-|width|-|`Number`|`false`|468|
-|height|-|`Number`|`false`|77|
-|color|-|—|`false`|-|
-|justified|-|`Boolean`|`false`|false|
-|bot|-|`Boolean`|`false`|false|
-|top|-|`Boolean`|`false`|false|
+|header|A header image, automatically prefixed by `/asset/img/card/header/`|`String`|`false`|-|
+|bg|A background image, automatically prefixed by `/asset/img/card/background/`|`String`|`false`|-|
+|width|Width of the header image|`Number`|`false`|468|
+|height|Height of the header image|`Number`|`false`|77|
+|color|`"yellow"`, `"blue"`, `"lightblue"`, `"red"`|`String`|`false`|-|
+|justified|Whether the text is left aligned|`Boolean`|`false`|false|
+|bot|Display a default footer image|`Boolean`|`false`|false|
+|top|Display a default header image|`Boolean`|`false`|false|
 
 <!-- @vuese:Card:props:end -->
 

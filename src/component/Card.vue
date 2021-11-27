@@ -31,7 +31,7 @@
         <h2>
           <slot name="header"></slot>
         </h2>
-        <div style="text-align:center">
+        <div style="text-align: center">
           <em v-if="$slots['subtitle']"
             >"<slot name="subtitle"></slot>"</em
           ></div
@@ -63,40 +63,49 @@ export default {
     StrokeText
   },
   props: {
+    // A header image, automatically prefixed by `/asset/img/card/header/`
     header: {
       required: false,
       type: String
     },
+    // A background image, automatically prefixed by `/asset/img/card/background/`
     bg: {
       required: false,
       type: String
     },
+    // Width of the header image
     width: {
       required: false,
       default: 468,
       type: Number
     },
+    // Height of the header image
     height: {
       required: false,
       default: 77,
       type: Number
     },
+    // `"yellow"`, `"blue"`, `"lightblue"`, `"red"`
     color: {
       required: false,
+      type: String,
       validator(value) {
         return ["yellow", "blue", "lightblue", "red"].includes(value);
       }
     },
+    // Whether the text is left aligned
     justified: {
       required: false,
       type: Boolean,
       default: false
     },
+    // Display a default footer image
     bot: {
       required: false,
       type: Boolean,
       default: false
     },
+    // Display a default header image
     top: {
       required: false,
       type: Boolean,
