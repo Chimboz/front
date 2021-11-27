@@ -9,7 +9,7 @@
 |bg|A background image, automatically prefixed by `/asset/img/card/background/`|`String`|`false`|-|
 |width|Width of the header image|`Number`|`false`|468|
 |height|Height of the header image|`Number`|`false`|77|
-|color|`"yellow"`, `"blue"`, `"lightblue"`, `"red"`|`String`|`false`|-|
+|color|Color of the card|`"yellow"`, `"blue"`, `"lightblue"`, `"red"`|`false`|-|
 |justified|Whether the text is left aligned|`Boolean`|`false`|false|
 |bot|Display a default footer image|`Boolean`|`false`|false|
 |top|Display a default header image|`Boolean`|`false`|false|

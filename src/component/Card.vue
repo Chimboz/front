@@ -85,9 +85,10 @@ export default {
       default: 77,
       type: Number
     },
-    // `"yellow"`, `"blue"`, `"lightblue"`, `"red"`
+    // Color of the card
     color: {
       required: false,
+      // `"yellow"`, `"blue"`, `"lightblue"`, `"red"`
       type: String,
       validator(value) {
         return ["yellow", "blue", "lightblue", "red"].includes(value);

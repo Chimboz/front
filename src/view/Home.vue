@@ -101,7 +101,7 @@
             height="33"
             width="16"
             src="@/asset/img/lottery/up.svg"
-            v-if="lottery"/><img
+            v-if="lottery" /><img
             draggable="false"
             @contextmenu.prevent
             alt="Lottery handle"
@@ -109,7 +109,7 @@
             height="33"
             width="16"
             src="@/asset/img/lottery/down.svg"
-            v-else/></template
+            v-else /></template
         >Ma loterie</Button
       ></Card
     >
