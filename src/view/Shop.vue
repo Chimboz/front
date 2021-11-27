@@ -19,7 +19,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          class=" pack-preview"
+          class="pack-preview"
           src="@/asset/img/shop/cabin.svg"
         />
         <div class="preview-tiz flex centered">
@@ -57,14 +57,13 @@
           </div>
         </div>
         <div class="preview-description">
-          <div>
-            <div class="preview-infos">
-              <h3> Pack {{ shown.name }} </h3>
-              {{ shown.description }}<br /><br />
-              <button class="btn-shop" @click.prevent="buy()"
-                ><img src="@/asset/img/shop/dollar.png" /> Acheter</button
-              >
-            </div>
+          <div class="preview-infos">
+            <br /><br />
+            <h3> Pack {{ shown.name }} </h3>
+            {{ shown.description }}<br /><br />
+            <button class="btn-shop" @click.prevent="buy()"
+              ><img src="@/asset/img/shop/dollar.png" /> Acheter</button
+            >
           </div>
         </div>
       </div>
@@ -108,6 +107,7 @@ export default {
     },
     buy() {
       console.log("Acheté " + this.shown.name);
+      this.eventBus.emit("error", { message: "success.buy" });
     }
   },
   async beforeRouteEnter(to, from, next) {
@@ -157,7 +157,7 @@ export default {
 <style lang="scss" scoped>
 .pack-preview {
   width: 100%;
-  margin-top: -40px;
+  margin-top: -30px;
   margin-right: -100%;
   float: right;
 }
@@ -207,11 +207,24 @@ h3 {
   height: 57px;
 }
 
+.preview-price img {
+  animation: spin linear 0.5s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-20deg);
+  }
+}
+
 .preview-price span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotateZ(-20deg);
   color: #fff;
   font-size: 20px;
   font-family: "Impact";

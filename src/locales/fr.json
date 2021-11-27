@@ -117,5 +117,8 @@
   "bbs": {
     "lock_new": "BBS Verrouillé (nouveaux messages)",
     "lock": "BBS Verrouillé"
+  },
+  "success": {
+    "buy": "Vous avez acheté avez succès !"
   }
 }
