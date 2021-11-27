@@ -121,11 +121,6 @@ const sideNavEntries = [
     label: "section.devlog",
     url: "/devlog",
     section: "community"
-  },
-  {
-    label: "section.documentation",
-    url: "/documentation",
-    section: "community"
   }
 ];
 </script>

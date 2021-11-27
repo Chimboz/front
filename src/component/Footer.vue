@@ -13,7 +13,7 @@
         title="Twitter follow"
         width="89"
         height="20"
-        src="https://img.shields.io/twitter/follow/ChimbozOfficial?color=blue&amp;label=Twitter&amp;logo=twitter&amp;style=flat"/></a
+        src="https://img.shields.io/twitter/follow/ChimbozOfficial?color=blue&amp;label=Twitter&amp;logo=twitter&amp;style=flat" /></a
     >&nbsp;
     <a
       href="https://discord.gg/aYph9u8"
@@ -26,7 +26,7 @@
         title="Discord server"
         width="127"
         height="20"
-        src="https://img.shields.io/discord/765491519536496660?label=discord&amp;logo=discord&amp;logoColor=fff"/></a
+        src="https://img.shields.io/discord/765491519536496660?label=discord&amp;logo=discord&amp;logoColor=fff" /></a
     >&nbsp;
     <a
       href="http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html"
@@ -40,7 +40,7 @@
         width="124"
         height="20"
         src="https://img.shields.io/badge/license-CeCILL%20v2.1-informational"
-        @contextmenu.prevent/></a
+        @contextmenu.prevent /></a
     >&nbsp;
     <a
       href="https://github.com/Tigriz/chzretro-front"
@@ -53,7 +53,17 @@
         title="Front version"
         width="96"
         height="20"
-        src="https://img.shields.io/github/package-json/v/tigriz/chzretro-front"
+        src="https://img.shields.io/github/package-json/v/tigriz/chzretro-front" /></a
+    >&nbsp;
+    <a href="/doc/#"
+      ><img
+        draggable="false"
+        @contextmenu.prevent
+        alt="Documentation"
+        title="Documentation"
+        width="96"
+        height="20"
+        src="https://img.shields.io/badge/-documentation-informational"
     /></a>
   </footer>
 </template>

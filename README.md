@@ -15,13 +15,17 @@ Please see [project kanban](https://github.com/Tigriz/chzretro-front/projects/1)
 
 Folders' name is singular (excepted `locales` because vue-i18n hardcoded it).  
 Routes are plural if they have subroutes (`/games`).  
-Use snake_case for files : replace whitespaces " " with **underscores** "\_" in filenames.  
-Vue files (`_.vue`) begin with an uppercase letter and use PascalCase.
+Use snake*case for files : replace whitespaces " " with **underscores** "\_" in filenames.  
+Vue files (`*.vue`) begin with an uppercase letter and use PascalCase.
 
 # Branches
 
 One branch per feature.  
 Fork and PR are appreciated.
+
+# Documentation
+
+To generate doc, you need vuese: `npm i -g @vuese/cli` then `npm run docgen`.
 
 # Project setup
 
