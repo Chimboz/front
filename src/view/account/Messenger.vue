@@ -11,7 +11,7 @@
     <Card color="yellow" v-if="data" justified
       ><template #subtop>Messagerie</template>
       <router-link
-        class="message fullwidth"
+        class="message fullwidth flex"
         v-for="message of data"
         :key="message.user.id"
         :to="'/messenger/' + message.user.id"
@@ -26,12 +26,14 @@
           :item1="message.user.look.item1"
           :item2="message.user.look.item2"
         />
-        <h3
-          ><user :user="message.user" /> &nbsp;<sub>{{
-            formatDate(message.date)
-          }}</sub></h3
-        >
-        <span class="content">{{ message.content.slice(0, 64) }}</span>
+        <div>
+          <h3
+            ><user :user="message.user" /><sub>{{
+              formatDate(message.date)
+            }}</sub></h3
+          >
+          <span class="content">{{ message.content.slice(0, 64) }}</span>
+        </div>
       </router-link>
     </Card>
     <template #right-column></template>
@@ -77,7 +79,6 @@ export default {
 <style lang="scss"></style>
 <style lang="scss" scoped>
 .message {
-  display: block;
   text-decoration: none;
   color: #284555;
   font-weight: normal;
@@ -86,15 +87,14 @@ export default {
 
 .message .tiz {
   float: left;
-  transform: scale(2);
-  border-radius: 100%;
+  transform: scale(2) translateY(15px);
+  border-radius: 0 100% 100% 0;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
-  margin-right: 50px;
+  margin: 0 20px;
 }
 
-.message::after {
+.message::after,
+.message .tiz::after {
   content: "";
   clear: both;
   display: table;
