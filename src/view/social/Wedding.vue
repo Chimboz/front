@@ -174,9 +174,11 @@
               <user :user="wedding.married2"
             /></td>
             <td
-              >n°<router-link :to="'/weddings/' + wedding.id">{{
-                wedding.id
-              }}</router-link></td
+              ><i
+                >n°<router-link :to="'/weddings/' + wedding.id">{{
+                  wedding.id
+                }}</router-link></i
+              ></td
             >
             <td>
               <b>{{ formatDistance(wedding.date, Date.now()) }}</b>
@@ -218,9 +220,11 @@
               <user :user="wedding.married2"
             /></td>
             <td
-              >n°<router-link :to="'/weddings/' + wedding.id">{{
-                wedding.id
-              }}</router-link></td
+              ><i
+                >n°<router-link :to="'/weddings/' + wedding.id">{{
+                  wedding.id
+                }}</router-link></i
+              ></td
             >
             <td>
               <b>{{ formatDistance(wedding.datebegin, wedding.dateend) }}</b>
@@ -259,9 +263,11 @@
               <user :user="wedding.married2"
             /></td>
             <td
-              >n°<router-link :to="'/weddings/' + wedding.id">{{
-                wedding.id
-              }}</router-link></td
+              ><i
+                >n°<router-link :to="'/weddings/' + wedding.id">{{
+                  wedding.id
+                }}</router-link></i
+              ></td
             >
             <td>
               <b>{{ formatDistance(wedding.datebegin, wedding.dateend) }}</b>

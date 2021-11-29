@@ -80,8 +80,7 @@
   ],
   "best": [
     {
-      "dateend": 1638180445679,
-      "datebegin": 1638180444679,
+      "date": 1638180445679,
       "id": 1,
       "married1": { "name": "marié", "id": 3, "color": "#f0f" },
       "married2": { "name": "marié", "id": 3, "color": "#f0f" }
