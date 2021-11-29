@@ -27,7 +27,7 @@
   "navbar": {
     "logout": "Se déconnecter",
     "login": "Se connecter",
-    "play": "Jouer&nbsp;!",
+    "play": "Jouer !",
     "account": "Mon compte",
     "members": "Membres",
     "games": "Jeux",
@@ -54,7 +54,7 @@
     "unknown": "Erreur inconnue.",
     "notfound": "La route demandée par l'API n'existe pas.",
     "default": "Erreur, la page que vous cherchez n'existe pas.",
-    "connected": "Vous êtes déjà connecté&nbsp;!",
+    "connected": "Vous êtes déjà connecté !",
     "tchat": "Erreur, le tchat n'est pas actif.",
     "login": "Erreur, vous devez être connecté pour effectuer cette action."
   },
@@ -67,7 +67,8 @@
     "password": "Mot de passe",
     "password_confirm": "Confirmation",
     "group": "Groupe",
-    "groupname": "Nom du groupe"
+    "groupname": "Nom du groupe",
+    "weddingid": "Numéro d'un mariage"
   },
   "section": {
     "account": "Mon compte",

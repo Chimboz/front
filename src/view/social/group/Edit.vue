@@ -111,7 +111,7 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
-              src="@/asset/img/arrow.svg"/></template
+              src="@/asset/img/arrow.svg" /></template
           >Sauver</Button
         ></form
       ></Card
@@ -123,9 +123,9 @@
         v-for="user of this.data.members"
         :key="user.id"
       >
-        <User :user="user" :separator="false"/><img
+        <User :user="user" :separator="false" /><img
           @click.prevent="removeMember(user.id)"
-          src="@/asset/img/icon/login/disconnect.svg"
+          src="@/asset/img/icon/failure.svg"
           width="11"
           height="11"
           alt="Close"
@@ -141,23 +141,23 @@
         v-for="user of this.data.demands"
         :key="user.id"
       >
-        <User :user="user" :separator="false"/><img
+        <User :user="user" :separator="false" /><img
           @click.prevent="acceptDemand(user.id)"
-          src="@/asset/img/icon/login/connect.svg"
+          src="@/asset/img/icon/success.svg"
           width="11"
           height="11"
           alt="Close"
           draggable="false"
           style="cursor: pointer; margin: 0 2px"
-          @contextmenu.prevent/><img
+          @contextmenu.prevent /><img
           @click.prevent="rejectDemand(user.id)"
-          src="@/asset/img/icon/login/disconnect.svg"
+          src="@/asset/img/icon/failure.svg"
           width="11"
           height="11"
           alt="Close"
           draggable="false"
           style="cursor: pointer; margin: 0 2px"
-          @contextmenu.prevent/></div></Card
+          @contextmenu.prevent /></div></Card
     ><br />
     <Card v-if="data" class="justified"
       ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
@@ -188,7 +188,7 @@
       >/<b>{{ this.data.global.total }}</b> avec
       <b>{{ this.data.global.points }}</b> points.</Card
     ><br /><Card
-      ><a @click.prevent="this.delete()" style="color:red;cursor:pointer"
+      ><a @click.prevent="this.delete()" style="color: red; cursor: pointer"
         >Supprimer le groupe</a
       ></Card
     >

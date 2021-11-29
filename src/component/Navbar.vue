@@ -35,7 +35,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Disconnect icon"
-            src="../asset/img/icon/login/disconnect.svg"
+            src="../asset/img/icon/failure.svg"
           />
           {{ $t("navbar.logout") }}
         </button>
@@ -45,7 +45,7 @@
               draggable="false"
               @contextmenu.prevent
               alt="Connect icon"
-              src="../asset/img/icon/login/connect.svg"
+              src="../asset/img/icon/success.svg"
             />
             {{ $t("navbar.login") }}
           </router-link></button
@@ -75,7 +75,7 @@
           src="@/asset/img/navbar/icon/home.svg"
           width="19"
           height="19"
-          style="margin: 2px; padding: 1px"/></button
+          style="margin: 2px; padding: 1px" /></button
     ></router-link>
     <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered">
@@ -100,7 +100,7 @@
           class="arrow jitter"
           width="40"
           height="33"
-          src="@/asset/img/arrow.svg"/></button
+          src="@/asset/img/arrow.svg" /></button
     ></a>
     <router-link v-if="authenticated" to="/account"
       ><button class="nav-btn flex centered">
@@ -245,7 +245,8 @@ export default {
   font-weight: normal;
   color: #000;
   border-radius: 100px;
-  padding: 3px;
+  padding: 4px;
+  line-height: 1;
   margin-right: -20px;
   border: none;
   background: #fff;

@@ -107,7 +107,7 @@ export default {
     },
     buy() {
       console.log("Acheté " + this.shown.name);
-      this.eventBus.emit("error", { message: "success.buy" });
+      this.eventBus.emit("success", { message: "success.buy" });
     }
   },
   async beforeRouteEnter(to, from, next) {

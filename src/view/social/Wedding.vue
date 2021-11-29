@@ -20,7 +20,7 @@
             style="image-rendering: pixelated"
           />&nbsp;Les mariages du jour</router-link
         >
-        <router-link to="#general" class="btn-sm blue-bg"
+        <router-link to="#divorce" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
@@ -29,7 +29,7 @@
             style="image-rendering: pixelated"
           />&nbsp;Les divorces</router-link
         >
-        <router-link to="#yesterday" class="btn-sm blue-bg"
+        <router-link to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
@@ -38,7 +38,7 @@
             style="image-rendering: pixelated"
           />&nbsp;Ceux qui tiennent</router-link
         >
-        <router-link to="#groups" class="btn-sm blue-bg"
+        <router-link to="#broken" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
@@ -47,35 +47,31 @@
             style="image-rendering: pixelated"
           />&nbsp;Ceux qui ont tenu</router-link
         >
-        <router-link to="#groups" class="btn-sm blue-bg"
-          ><img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Caret"
-            src="@/asset/img/icon/caret.png"
-            style="image-rendering: pixelated"
-          />&nbsp;Archives</router-link
-        >
-        <router-link to="#tutorial" class="btn-sm pink-bg">
-          <img
-            draggable="false"
-            @contextmenu.prevent
-            alt="Help icon"
-            src="@/asset/img/icon/help.png"
-          />&nbsp;Comment ça marche&nbsp;?
-        </router-link>
       </div>
+      <br />
+      Dans notre monde, on peut se faire beaucoup d'amis, il arrive même que
+      parfois, certaines relations aillent au-delà de l'amitié...<br />
+      <br />
+      Voilà pourquoi notre cher <b>Guruji</b> célèbre chaque <b>mercredi</b>,
+      <b>samedi</b> et <b>dimanche</b> de magnifiques mariages sur la colline
+      sacrée.<br />
+      Seuls les membres célibataires peuvent demander à se marier.<br />
+      Ceux qui veulent briser ces liens sacrés devront trouver la grotte du
+      Divorce et affronter la honte et la peur.<br />
+      <br />
+      Les 3 couples qui tiennent le plus gagnent les fringues des mariés.
     </Card>
-    <br /><Card id="today" v-if="data">
+    <br /><Card id="last" v-if="data">
       <template #header>Le dernier mariage</template>
-      Le lundi 15 octobre 2007 à 05h41, 68665e mariage.
-      <br /><br />
+      Le <b>{{ formatDate(data.last.date, "PPp") }}</b
+      >, <b>{{ data.last.id }}</b
+      ><sup>ème</sup> mariage. <br /><br />
       <div class="wedding">
         <img
           draggable="false"
           @contextmenu.prevent
           alt="Star"
-          src="@/asset/img/social/wedding/wedding.svg"/>
+          src="@/asset/img/social/wedding/wedding.svg" />
         <Tiz
           class="witness witness1"
           :avatar="data.last.witness1.look.avatar"
@@ -85,7 +81,7 @@
           :shoe="data.last.witness1.look.shoe"
           :item0="data.last.witness1.look.item0"
           :item1="data.last.witness1.look.item1"
-          :item2="data.last.witness1.look.item2"/>
+          :item2="data.last.witness1.look.item2" />
         <Tiz
           class="married married1"
           :avatar="data.last.married1.look.avatar"
@@ -95,7 +91,7 @@
           :shoe="data.last.married1.look.shoe"
           :item0="data.last.married1.look.item0"
           :item1="data.last.married1.look.item1"
-          :item2="data.last.married1.look.item2"/>
+          :item2="data.last.married1.look.item2" />
         <Tiz
           class="married married2"
           :avatar="data.last.married2.look.avatar"
@@ -105,7 +101,7 @@
           :shoe="data.last.married2.look.shoe"
           :item0="data.last.married2.look.item0"
           :item1="data.last.married2.look.item1"
-          :item2="data.last.married2.look.item2"/>
+          :item2="data.last.married2.look.item2" />
         <Tiz
           class="witness witness2"
           :avatar="data.last.witness2.look.avatar"
@@ -115,75 +111,248 @@
           :shoe="data.last.witness2.look.shoe"
           :item0="data.last.witness2.look.item0"
           :item1="data.last.witness2.look.item1"
-          :item2="data.last.witness2.look.item2"/></div
+          :item2="data.last.witness2.look.item2" /></div
       ><br />
       Tous nos voeux de bonheur à <br />
-      Ludovic151 et mica2<br />
-      qui ont été mariés par Guruji en présence de<br />
-      foxy974 et missbad67.
+      <user :user="data.last.married1" /> et
+      <user :user="data.last.married2" /><br />
+      qui ont été mariés par <b>Guruji</b> en présence de<br />
+      <user :user="data.last.witness1" /> et
+      <user :user="data.last.witness2" />. </Card
+    ><br />
+    <Card id="today" v-if="data">
+      <template #header
+        ><img src="@/asset/img/wedding/mariage2.gif" /><br />Tous les mariages
+        depuis 24 heures
+      </template>
+      Aujourd'hui, <b>{{ formatDate(Date.now(), "PP") }}</b
+      >, <b>{{ data.today.length }}</b> mariages ont été célébrés. <br /><br />
+      <div class="fullwidth" v-for="wedding of data.today" :key="wedding.id"
+        >Le <b>{{ formatDate(wedding.date, "PPp") }}</b
+        >,<br />
+        <user :user="wedding.married1" /> et
+        <user :user="wedding.married2" /> se sont mariés<br />
+        en présence de <user :user="wedding.witness1" /> et de
+        <user :user="wedding.witness2" /><br />
+        <i
+          ><router-link :to="'/weddings/' + wedding.id">{{
+            wedding.id
+          }}</router-link
+          ><sup>ème</sup> mariage</i
+        ></div
+      >
+    </Card>
+    <br />
+    <Card id="best" v-if="data">
+      <template #header
+        ><img src="@/asset/img/wedding/mariage2.gif" /><br />Les 20 mariages qui
+        tiennent&nbsp;!
+      </template>
+      <template #subtitle
+        >Ça commence pour un jour... ça fini pour toujours !</template
+      >
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+          <col width="50" />
+          <col width="50" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Couple</th>
+            <th>Mariage</th>
+            <th>Jours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(wedding, index) in data.best" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td
+              ><user :user="wedding.married1" /> et
+              <user :user="wedding.married2"
+            /></td>
+            <td
+              >n°<router-link :to="'/weddings/' + wedding.id">{{
+                wedding.id
+              }}</router-link></td
+            >
+            <td>
+              <b>{{ formatDistance(wedding.date, Date.now()) }}</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </Card>
+    <br />
+    <Card id="divorce" v-if="data">
+      <template #header
+        ><img src="@/asset/img/wedding/divorce2.gif" /><br />Les divorces depuis
+        24 heures
+      </template>
+      <template #subtitle
+        >Le mariage est virtuel mais la douleur est réelle&nbsp;!</template
+      >
+      <b>{{ data.divorce.length }}</b> couples ont été brisés&nbsp;!<br /><br />
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="100" />
+          <col width="100%" />
+          <col width="50" />
+          <col width="50" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Heure</th>
+            <th>Couple brisé</th>
+            <th>Mariage</th>
+            <th>Jours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(wedding, index) in data.divorce" :key="index">
+            <td>{{ formatDate(wedding.dateend, "p") }}</td>
+            <td
+              ><user :user="wedding.married1" /> a plaqué
+              <user :user="wedding.married2"
+            /></td>
+            <td
+              >n°<router-link :to="'/weddings/' + wedding.id">{{
+                wedding.id
+              }}</router-link></td
+            >
+            <td>
+              <b>{{ formatDistance(wedding.datebegin, wedding.dateend) }}</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </Card>
+    <br />
+    <Card id="broken" v-if="data">
+      <template #header
+        ><img src="@/asset/img/wedding/mariage2.gif" /><br />Les 20 mariages qui
+        ont tenu !
+      </template>
+      <template #subtitle>C'est fini... mais ça a duré !!! </template>
+      <table class="score fullwidth">
+        <colgroup>
+          <col width="30" />
+          <col width="100%" />
+          <col width="50" />
+          <col width="50" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Couple</th>
+            <th>Mariage</th>
+            <th>Jours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(wedding, index) in data.broken" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td
+              ><user :user="wedding.married1" /> et
+              <user :user="wedding.married2"
+            /></td>
+            <td
+              >n°<router-link :to="'/weddings/' + wedding.id">{{
+                wedding.id
+              }}</router-link></td
+            >
+            <td>
+              <b>{{ formatDistance(wedding.datebegin, wedding.dateend) }}</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </Card>
     <template #right-column
       ><Card
-        header="ensavoirplus.gif"
+        header="ensavoirplus_blue.gif"
         :width="154"
         :height="34"
         top
-        color="lightblue"
-        justified
+        v-if="data"
+        color="blue"
       >
-        Toutes les infos, les techniques, news.<br />
         <img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
+          height="17"
+          width="17"
         />
-        BBS de Bacteria<br />
-        <br />
-        Lis l'histoire sur Bacteria écrite par Kunu.<br />
+        En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
+        <br /><br />
         <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
+          src="@/asset/img/wedding/divorce.gif"
+          alt="Divorce"
           draggable="false"
           @contextmenu.prevent
-        />
-        Bacteria Sanctuary.<br />
-        <br />
+          width="56"
+          height="39"
+        /><br />
+        <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br /><br />
         <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
+          src="@/asset/img/wedding/mariage.gif"
+          alt="Wedding"
           draggable="false"
           @contextmenu.prevent
-        />
-        424187 membres joueurs de Bacteria.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
+          width="56"
+          height="39"
+        /><br />
+        En ce moment, <b>{{ data.stats.total - data.stats.divorce }}</b> couples
+        sont heureux, donc ça laisse
+        <b>{{
+          data.stats.members - (data.stats.total - data.stats.divorce) * 2
+        }}</b>
+        célibs !!! <br /><img
+          src="@/asset/img/wedding/mariage2.gif"
+          alt="Wedding"
           draggable="false"
           @contextmenu.prevent
-        />
-        12591547 parties ont été jouées.<br />
-        <br />
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-        />
-        8684 parties hier.<br />
-        <br />
-        Niveau des joueurs<br />
-        <br />
-        # Membres %<br />
-        0 180500 42.55%<br />
-        1 220717 52.03%<br />
-        2 13356 3.15%<br />
-        3 5305 1.25%<br />
-        4 3067 0.72%<br />
-        5 1045 0.25%<br />
-        6 197 0.05%<br />
-        7 0 0%
+          width="120"
+          height="54"
+          style="width: 100%"
+        /><br /><h3>Archive de tous les mariages</h3><br />
+        <form @submit.prevent="search()" class="flex fullwidth"
+          ><input
+            required
+            min="1"
+            :max="data.stats.total"
+            name="id"
+            type="number"
+            class="btn-md"
+            :placeholder="$t('placeholder.weddingid')"
+          /><button
+            type="submit"
+            class="btn-md"
+            style="font-family: 'Chimboz Heavy'"
+            >go</button
+          ></form
+        ><br /><form @submit.prevent="search()" class="flex fullwidth"
+          ><input
+            required
+            minlength="3"
+            maxlength="15"
+            pattern="[\w\.\-_@]{3,15}"
+            name="username"
+            type="text"
+            class="btn-md"
+            autocomplete="username"
+            :placeholder="$t('placeholder.username')"
+          /><button
+            type="submit"
+            class="btn-md"
+            style="font-family: 'Chimboz Heavy'"
+            >go</button
+          ></form
+        >
       </Card></template
     >
   </Container>
@@ -217,15 +386,18 @@ export default {
     next();
   },
   methods: {
-    formatDate(date) {
-      return format(new Date(date), "PPp", {
+    formatDate(date, formatPattern) {
+      return format(new Date(date), formatPattern, {
         locale: window.__localeId__
       });
     },
-    formatDistance(date) {
-      return differenceInCalendarDays(new Date(), new Date(date), {
+    formatDistance(datebegin, dateend) {
+      return differenceInCalendarDays(new Date(dateend), new Date(datebegin), {
         locale: window.__localeId__
       });
+    },
+    search() {
+      console.log("Envoyé!");
     }
   },
   metaInfo: {
@@ -299,5 +471,13 @@ tr td:first-child {
 
 .married2 {
   left: 225px;
+}
+
+#today .fullwidth {
+  padding: 6px;
+}
+
+#today .fullwidth:nth-child(2n + 1) {
+  background: #eef5fa;
 }
 </style>

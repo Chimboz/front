@@ -6,7 +6,7 @@
   },
   "last": {
     "date": 0,
-    "id": 1,
+    "id": 1234,
     "married1": {
       "name": "Tigriz",
       "id": 3,
@@ -73,33 +73,36 @@
       "date": 0,
       "id": 1,
       "married1": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "married2": { "name": "Tigriz", "id": 3, "color": "#f0f" }
+      "married2": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "witness1": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "witness2": { "name": "Tigriz", "id": 3, "color": "#f0f" }
     }
   ],
   "best": [
     {
-      "date": 0,
+      "dateend": 1638180445679,
+      "datebegin": 1638180444679,
       "id": 1,
-      "married1": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "married2": { "name": "Tigriz", "id": 3, "color": "#f0f" }
+      "married1": { "name": "marié", "id": 3, "color": "#f0f" },
+      "married2": { "name": "marié", "id": 3, "color": "#f0f" }
     }
   ],
   "divorce": [
     {
-      "wedding": 0,
-      "divorce": 1613483199357,
+      "dateend": 1638180445679,
+      "datebegin": 1638180444679,
       "id": 1,
-      "married1": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "married2": { "name": "Tigriz", "id": 3, "color": "#f0f" }
+      "married1": { "name": "divorce", "id": 3, "color": "#f0f" },
+      "married2": { "name": "plaqué", "id": 3, "color": "#f0f" }
     }
   ],
   "broken": [
     {
-      "wedding": 0,
-      "divorce": 1613483199357,
+      "dateend": 1638180445679,
+      "datebegin": 1638180444679,
       "id": 1,
-      "married1": { "name": "Tigriz", "id": 3, "color": "#f0f" },
-      "married2": { "name": "Tigriz", "id": 3, "color": "#f0f" }
+      "married1": { "name": "dommage", "id": 3, "color": "#f0f" },
+      "married2": { "name": "lol", "id": 3, "color": "#f0f" }
     }
   ]
 }
