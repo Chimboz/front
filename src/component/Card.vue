@@ -196,8 +196,8 @@ export default {
 </script>
 <style lang="scss">
 .fullwidth {
-  width: calc(100% + 34px) !important;
-  margin-left: -17px;
+  width: calc(100% + 32px) !important;
+  margin-left: -16px;
 }
 </style>
 <style lang="scss" scoped>
@@ -306,7 +306,7 @@ main:after {
 
 .card-bg {
   background-repeat: repeat-x;
-  padding: 17px;
+  padding: 16px;
   border-radius: 12px;
 }
 </style>

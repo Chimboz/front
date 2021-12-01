@@ -52,7 +52,7 @@
         >
       </div>
       <Tiz
-        style="margin-right: 17px"
+        style="margin-right: 16px"
         :avatar="user ? user.look.avatar : 0"
         :emote="user ? user.look.emote : 'neutral'"
         :hat="user ? user.look.hat : 1"

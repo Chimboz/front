@@ -124,7 +124,7 @@
           width="130"
           height="70"
           alt="Chimboking portrait"
-          style="float: left; margin: 0 17px 17px 0"
+          style="float: left; margin: 0 16px 16px 0"
         />
         {{ data.news.title }}
       </template>

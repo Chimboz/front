@@ -194,7 +194,7 @@ export default {
 }
 
 .content {
-  padding: 6px;
+  padding: 12px 12px 6px 12px;
   background: #fff;
   color: #fff;
   border-radius: 16px;

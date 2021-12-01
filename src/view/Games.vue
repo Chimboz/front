@@ -23,7 +23,7 @@
         width="150"
         height="150"
         alt="Bacteria preview"
-        style="float: left; margin-right: 17px"
+        style="float: left; margin-right: 16px"
       />
       <h4>Le jeu culte de l'archipel</h4>
       <br />
@@ -58,7 +58,7 @@
         alt="Patojdur preview"
         width="150"
         height="150"
-        style="float: left; margin-right: 17px"
+        style="float: left; margin-right: 16px"
       />
       <h4>La course la plus humide du web !</h4>
       <br />
@@ -93,7 +93,7 @@
         width="150"
         height="150"
         alt="Mazo preview"
-        style="float: left; margin-right: 17px"
+        style="float: left; margin-right: 16px"
       />
       <h4>Fais bosser ta bonne étoile !</h4>
       <br />
@@ -139,7 +139,7 @@
             @contextmenu.prevent
           />
           <Tiz
-            style="margin-top: -66px; margin-bottom: 13px;"
+            style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
             :emote="data.bacteria.user.look.emote"
             :hat="data.bacteria.user.look.hat"
@@ -170,7 +170,7 @@
             @contextmenu.prevent
           />
           <Tiz
-            style="margin-top: -66px; margin-bottom: 13px;"
+            style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
             :emote="data.patojdur.user.look.emote"
             :hat="data.patojdur.user.look.hat"
@@ -201,7 +201,7 @@
             @contextmenu.prevent
           />
           <Tiz
-            style="margin-top: -66px; margin-bottom: 13px;"
+            style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
             :emote="data.mazo.user.look.emote"
             :hat="data.mazo.user.look.hat"
