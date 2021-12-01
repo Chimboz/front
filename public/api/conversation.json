@@ -1,0 +1,79 @@
+{
+  "user": {
+    "name": "Tigriz",
+    "id": 3,
+    "color": "#f0f",
+    "look": {
+      "avatar": 0,
+      "emote": "zzz",
+      "hat": 7,
+      "body": 2,
+      "shoe": 7,
+      "item0": 17,
+      "item1": 1,
+      "item2": 1
+    }
+  },
+  "messages": [
+    { "content": "bite lol!", "date": 12345678 },
+    { "you": true, "content": "bite aussi par ici", "date": 12345678 }
+  ],
+  "recent": [
+    {
+      "name": "Tigriz",
+      "id": 3,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 2,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Tigrouz",
+      "id": 4,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 3,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Froidasse",
+      "id": 4,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 4,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    {
+      "name": "Owned",
+      "id": 4,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 5,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    }
+  ]
+}
