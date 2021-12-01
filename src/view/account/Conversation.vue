@@ -51,6 +51,22 @@
           <span class="content">{{ message.content }}</span>
         </div>
       </div>
+      <form @submit.prevent="search()" class="flex fullwidth"
+        ><input
+          required
+          minlength="3"
+          maxlength="15"
+          name="message"
+          type="text"
+          class="btn-md"
+          :placeholder="$t('placeholder.message')"
+        /><button
+          type="submit"
+          class="btn-md"
+          style="font-family: 'Chimboz Heavy'"
+          >➤</button
+        ></form
+      >
     </Card>
     <template #right-column
       ><Card color="yellow" v-if="data" justified

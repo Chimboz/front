@@ -68,7 +68,8 @@
     "password_confirm": "Confirm",
     "group": "Group",
     "groupname": "Group name",
-    "weddingid": "Wedding number"
+    "weddingid": "Wedding number",
+    "message": "Message"
   },
   "section": {
     "account": "Account",

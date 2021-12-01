@@ -68,7 +68,8 @@
     "password_confirm": "Confirmation",
     "group": "Groupe",
     "groupname": "Nom du groupe",
-    "weddingid": "Numéro d'un mariage"
+    "weddingid": "Numéro d'un mariage",
+    "message": "Message"
   },
   "section": {
     "account": "Mon compte",
