@@ -63,7 +63,7 @@
           name="message"
           type="text"
           class="btn-md"
-          v-model.lazy="message"
+          v-model="message"
           :placeholder="$t('placeholder.message')"
         /><button
           type="submit"
@@ -152,6 +152,7 @@ export default {
         content: this.message,
         date: Date.now()
       });
+      this.message = "";
     }
   },
   async beforeRouteEnter(to, from, next) {
