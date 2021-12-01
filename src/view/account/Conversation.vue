@@ -42,7 +42,7 @@
         >
           <div>
             <h3
-              ><user :user="data.user" /><span
+              ><user :user="data.user" />&nbsp;<span
                 style="float: right; font-weight: normal; font-size: 12px"
                 >{{ formatDate(message.date) }}</span
               ></h3
