@@ -6,7 +6,7 @@
           <SideNavEntries section="account" />
         </div> </Card
       ><br />
-      <Rules top />
+      <Rules bot />
     </template>
     <Card color="yellow" v-if="data" justified
       ><template #subtop>Messagerie</template>
@@ -16,21 +16,36 @@
         :key="message.user.id"
         :to="'/messenger/' + message.user.id"
       >
-        <Tiz
-          :avatar="message.user.look.avatar"
-          :emote="message.user.look.emote"
-          :hat="message.user.look.hat"
-          :body="message.user.look.body"
-          :shoe="message.user.look.shoe"
-          :item0="message.user.look.item0"
-          :item1="message.user.look.item1"
-          :item2="message.user.look.item2"
-        />
-        <div>
-          <h3
-            ><user :user="message.user" /><sub>{{
-              formatDate(message.date)
-            }}</sub></h3
+        <div
+          class="tiz-portrait"
+          :style="{ background: hashColor(message.user.name) }"
+        >
+          <Tiz
+            :avatar="message.user.look.avatar"
+            :emote="message.user.look.emote"
+            :hat="message.user.look.hat"
+            :body="message.user.look.body"
+            :shoe="message.user.look.shoe"
+            :item0="message.user.look.item0"
+            :item1="message.user.look.item1"
+            :item2="message.user.look.item2"
+          />
+        </div>
+        <div
+          class="flex col"
+          style="
+            justify-content: space-evenly;
+            padding: 6px;
+            width: calc(100% - 50px);
+          "
+        >
+          <div>
+            <h3
+              ><user :user="message.user" /><span
+                style="float: right; font-weight: normal; font-size: 12px"
+                >{{ formatDate(message.date) }}</span
+              ></h3
+            ></div
           >
           <span class="content">{{ message.content.slice(0, 64) }}</span>
         </div>
@@ -62,6 +77,18 @@ export default {
         locale: window.__localeId__,
         addSuffix: true
       });
+    },
+    hashColor(str) {
+      var hash = 0;
+      for (var i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      var colour = "#";
+      for (var i = 0; i < 3; i++) {
+        var value = (hash >> (i * 8)) & 0xff;
+        colour += ("00" + value.toString(16)).substr(-2);
+      }
+      return colour;
     }
   },
   async beforeRouteEnter(to, from, next) {
@@ -85,12 +112,18 @@ export default {
   overflow: hidden;
 }
 
-.message .tiz {
-  float: left;
-  transform: scale(2) translateY(15px);
-  border-radius: 0 100% 100% 0;
+.tiz-portrait {
+  margin: 6px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
   overflow: hidden;
-  margin: 0 20px;
+  float: left;
+  box-shadow: 0 1px 1px 1px #0005;
+}
+
+.message .tiz {
+  transform: scale(1.5) translateY(10px);
 }
 
 .message::after,
