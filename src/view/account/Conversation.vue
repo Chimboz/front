@@ -43,8 +43,8 @@
           >
             <div>
               <h3
-                ><user :user="data.user" />&nbsp;<span
-                  style="float: right; font-weight: normal; font-size: 12px"
+                ><user v-if="!message.you" :user="data.user" />&nbsp;<span
+                  style="font-weight: normal; font-size: 11px"
                   >{{ formatDate(message.date) }}</span
                 ></h3
               ></div
@@ -52,6 +52,7 @@
             <span
               class="content"
               v-html="messageRender(message.content)"
+              :style="{ background: hashColor(data.user.name) }"
             ></span>
           </div>
         </div>
@@ -195,6 +196,7 @@ export default {
 .content {
   padding: 6px;
   background: #fff;
+  color: #fff;
   border-radius: 16px;
   box-shadow: 0 1px 1px 1px #0005;
 }
@@ -207,5 +209,11 @@ export default {
   align-items: flex-end;
   width: 100% !important;
   text-align: right;
+}
+
+.message.you .content {
+  background: #fff !important;
+  mix-blend-mode: unset;
+  color: #284555;
 }
 </style>
