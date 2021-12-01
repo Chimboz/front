@@ -10,55 +10,60 @@
     </template>
     <Card color="yellow" v-if="data" justified
       ><template #subtop>{{ data.user.name }}</template>
-      <div
-        class="message fullwidth flex"
-        :class="{ you: message.you }"
-        v-for="(message, index) of data.messages"
-        :key="index"
-      >
+      <div class="messages fullwidth flex">
         <div
-          v-if="!message.you"
-          class="tiz-portrait"
-          :style="{ background: hashColor(data.user.name) }"
+          class="message flex"
+          :class="{ you: message.you }"
+          v-for="(message, index) of data.messages.slice().reverse()"
+          :key="index"
         >
-          <Tiz
-            :avatar="data.user.look.avatar"
-            :emote="data.user.look.emote"
-            :hat="data.user.look.hat"
-            :body="data.user.look.body"
-            :shoe="data.user.look.shoe"
-            :item0="data.user.look.item0"
-            :item1="data.user.look.item1"
-            :item2="data.user.look.item2"
-          />
-        </div>
-        <div
-          class="flex col message-content"
-          style="
-            justify-content: space-evenly;
-            padding: 6px;
-            width: calc(100% - 50px);
-          "
-        >
-          <div>
-            <h3
-              ><user :user="data.user" />&nbsp;<span
-                style="float: right; font-weight: normal; font-size: 12px"
-                >{{ formatDate(message.date) }}</span
-              ></h3
-            ></div
+          <div
+            v-if="!message.you"
+            class="tiz-portrait"
+            :style="{ background: hashColor(data.user.name) }"
           >
-          <span class="content">{{ message.content }}</span>
+            <Tiz
+              :avatar="data.user.look.avatar"
+              :emote="data.user.look.emote"
+              :hat="data.user.look.hat"
+              :body="data.user.look.body"
+              :shoe="data.user.look.shoe"
+              :item0="data.user.look.item0"
+              :item1="data.user.look.item1"
+              :item2="data.user.look.item2"
+            />
+          </div>
+          <div
+            class="flex col message-content"
+            style="
+              justify-content: space-evenly;
+              padding: 6px;
+              width: calc(100% - 50px);
+            "
+          >
+            <div>
+              <h3
+                ><user :user="data.user" />&nbsp;<span
+                  style="float: right; font-weight: normal; font-size: 12px"
+                  >{{ formatDate(message.date) }}</span
+                ></h3
+              ></div
+            >
+            <span
+              class="content"
+              v-html="messageRender(message.content)"
+            ></span>
+          </div>
         </div>
       </div>
-      <form @submit.prevent="search()" class="flex fullwidth"
+      <form @submit.prevent="send" class="flex fullwidth"
         ><input
           required
-          minlength="3"
-          maxlength="15"
+          minlength="1"
           name="message"
           type="text"
           class="btn-md"
+          v-model.lazy="message"
           :placeholder="$t('placeholder.message')"
         /><button
           type="submit"
@@ -69,7 +74,7 @@
       >
     </Card>
     <template #right-column
-      ><Card color="yellow" v-if="data" justified
+      ><Card color="yellow" v-if="data" justified class="recent"
         ><template #subtop>Messagerie</template>
         <div
           class="fullwidth flex"
@@ -107,16 +112,21 @@ import User from "../../component/link/User.vue";
 import Tiz from "../../component/Tiz.vue";
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import messageRender from "@/module/messageRender.js";
 
 export default {
   name: "Conversation",
   components: { User, Tiz },
   data() {
     return {
-      data: null
+      data: null,
+      message: ""
     };
   },
   methods: {
+    messageRender(message) {
+      return messageRender(message);
+    },
     formatDate(date) {
       return formatDistanceToNow(new Date(date), {
         locale: window.__localeId__,
@@ -134,6 +144,14 @@ export default {
         colour += ("00" + value.toString(16)).substr(-2);
       }
       return colour;
+    },
+    send() {
+      console.log("Envoyé " + this.message);
+      this.data.messages.push({
+        you: true,
+        content: this.message,
+        date: Date.now()
+      });
     }
   },
   async beforeRouteEnter(to, from, next) {
@@ -149,11 +167,20 @@ export default {
 };
 </script>
 <style lang="scss">
-.subtop svg {
+.recent .subtop {
+  padding-left: 0 !important;
+}
+.recent .subtop svg {
   transform: translateX(0) !important;
 }
 </style>
 <style lang="scss" scoped>
+.messages {
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
 .tiz-portrait {
   display: inline-block;
   margin: 6px;
@@ -167,7 +194,7 @@ export default {
 .content {
   padding: 6px;
   background: #fff;
-  border-radius: 99px;
+  border-radius: 16px;
   box-shadow: 0 1px 1px 1px #0005;
 }
 
@@ -178,5 +205,6 @@ export default {
 .message.you .message-content {
   align-items: flex-end;
   width: 100% !important;
+  text-align: right;
 }
 </style>
