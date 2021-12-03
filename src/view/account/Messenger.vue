@@ -8,8 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card color="yellow" v-if="data" justified
-      ><template #subtop>Messagerie</template>
+    <Card color="yellow" v-if="data" justified header="mi.svg">
       <router-link
         class="message fullwidth flex"
         v-for="message of data"
@@ -120,10 +119,6 @@ export default {
   overflow: hidden;
   float: left;
   box-shadow: 0 1px 1px 1px #0005;
-}
-
-.message .tiz {
-  transform: scale(1.5) translateY(10px);
 }
 
 .message::after,

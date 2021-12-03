@@ -45,10 +45,25 @@
         >&nbsp;
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         &nbsp;
-        <img
-          alt="Quote button"
-          src="@/asset/img/bbs/lang_english/icon_quote.gif"
-        />
+        <button class="btn-md font-ch" @click.prevent="quote(message.id)"
+          >Citer</button
+        >
+        <button
+          class="btn-md font-ch"
+          v-if="
+            (message.author.id === user.id &&
+              Date.now() - message.date < 600) ||
+            user.role > 50
+          "
+          @click.prevent="edit(message.id)"
+          >Editer</button
+        >
+        <button
+          class="btn-md danger font-ch"
+          v-if="message.author.id === user.id || user.role > 50"
+          @click.prevent="this.delete(message.id)"
+          >&times;</button
+        >
       </div>
       <hr style="margin: 2px 0" />
       <div class="markdown-body" v-html="formatMessage"></div>
@@ -68,6 +83,7 @@ import User from "@/component/link/User.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
+import { mapState } from "vuex";
 
 export default {
   name: "Message",
@@ -92,6 +108,7 @@ export default {
     }
   },
   computed: {
+    ...mapState("auth", ["user"]),
     formatMessage() {
       return messageRender(this.message.content);
     },
@@ -104,6 +121,15 @@ export default {
   methods: {
     scrollTo(anchor) {
       location.href = anchor;
+    },
+    edit(id) {
+      console.log("edit " + id);
+    },
+    delete(id) {
+      console.log("delete " + id);
+    },
+    quote(id) {
+      console.log("quote " + id);
     }
   }
 };

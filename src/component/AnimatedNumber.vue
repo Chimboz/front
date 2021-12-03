@@ -14,11 +14,14 @@
 <script>
 export default {
   name: "AnimatedNumber",
-  props: { number: { default: 0, type: Number } },
+  props: {
+    number: { default: 0, type: Number },
+    delay: { default: 5, type: Number, required: false }
+  },
 
   data() {
     return {
-      displayNumber: 0,
+      displayNumber: 0
     };
   },
 
@@ -28,10 +31,15 @@ export default {
 
   methods: {
     tween() {
-      if (this.number == this.displayNumber) return;
-      this.displayNumber++;
-      if (this.displayNumber < this.number) requestAnimationFrame(this.tween);
-    },
-  },
+      this.displayNumber += Math.max(
+        Math.floor(this.number / 60 / this.delay),
+        1
+      );
+      if (this.number <= this.displayNumber) {
+        this.displayNumber = this.number;
+        return;
+      } else requestAnimationFrame(this.tween);
+    }
+  }
 };
 </script>

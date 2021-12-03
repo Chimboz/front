@@ -114,7 +114,7 @@ const sideNavEntries = [
   },
   {
     label: "section.encyclopedia",
-    url: "/enclyclopedia",
+    url: "/encyclopedia",
     section: "community"
   },
   {

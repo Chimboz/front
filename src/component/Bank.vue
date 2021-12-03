@@ -30,7 +30,7 @@
 
     <router-link to="/bank">
       {{ $t("credit.youGot") }}<br />
-      <AnimatedNumber :number="user.credits" /><br />
+      <AnimatedNumber :number="user.credits" :delay="delay" /><br />
       {{ $t("credit.text", user.credits) }} </router-link
     ><br /><br />
     <router-link to="/reflooz" class="btn-route"
@@ -46,6 +46,9 @@ export default {
   name: "Bank",
   components: {
     AnimatedNumber
+  },
+  props: {
+    delay: { default: 5, type: Number, required: false }
   },
 
   mounted() {
@@ -134,7 +137,10 @@ export default {
     },
     tween() {
       if (this.coins >= this.user.credits || this.coins > 1760) return;
-      this.coins++;
+      this.coins += Math.max(
+        Math.floor(this.user.credits / 60 / this.delay),
+        1
+      );
       if (this.coins < this.user.credits) requestAnimationFrame(this.tween);
     }
   },

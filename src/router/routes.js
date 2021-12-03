@@ -156,6 +156,11 @@ export const routes = [
     component: () => import("../view/Shop.vue")
   },
   {
+    path: "/encyclopedia",
+    name: "Encyclopedia",
+    component: () => import("../view/Encyclopedia.vue")
+  },
+  {
     path: "/login",
     name: "Login",
     component: () => import("../view/Login.vue")

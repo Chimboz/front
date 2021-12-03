@@ -75,8 +75,13 @@
       >
     </Card>
     <template #right-column
-      ><Card color="yellow" v-if="data" justified class="recent"
-        ><template #subtop>Messagerie</template>
+      ><Card
+        color="yellow"
+        v-if="data"
+        justified
+        class="recent"
+        header="mi_sm.svg"
+      >
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"
@@ -168,14 +173,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.recent .subtop {
-  padding-left: 0 !important;
-}
-.recent .subtop svg {
-  transform: translateX(0) !important;
-}
-</style>
+
 <style lang="scss" scoped>
 .messages {
   max-height: 500px;

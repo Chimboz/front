@@ -23,7 +23,7 @@ export default {
         signature: "Nitens lux, horrenda procella, tenebris aeternis involuta",
         color: "#900",
         role: 100,
-        credits: 469,
+        credits: 1069,
         look: {
           avatar: 0,
           emote: "zzz",

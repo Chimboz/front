@@ -118,7 +118,7 @@ h2 {
 }
 
 img[src*="puce"] {
-  height: 16px;
+  height: 17px;
 }
 
 img[src*="/emoticon/"] {
@@ -467,6 +467,15 @@ table.bbs {
 }
 
 // Atomic classes
+.font-ch {
+  font-family: "Chimboz Heavy";
+}
+
+.danger {
+  background: #fb0d0d;
+  color: #fff;
+}
+
 .pointer {
   cursor: pointer;
 }
