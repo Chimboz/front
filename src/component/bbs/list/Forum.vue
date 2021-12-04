@@ -41,11 +41,18 @@
       </th>
     </tr>
   </table>
+  <br />
+  <div>
+    <button class="btn-md danger font-ch" @click.prevent="quote(message.id)"
+      >Verrouiller</button
+    >
+  </div>
 </template>
 
 <script>
 import Topic from "../row/Topic.vue";
 import Pagination from "@/component/bbs/Pagination.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "Board List",
@@ -58,6 +65,9 @@ export default {
       required: true,
       type: Object
     }
+  },
+  computed: {
+    ...mapState("auth", ["user"])
   }
 };
 </script>

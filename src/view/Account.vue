@@ -18,7 +18,7 @@
               /> </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries section="account"/></div></Card
+          <SideNavEntries section="account" /></div></Card
       ><br />
       <Bank
     /></template>
@@ -34,9 +34,10 @@
       "
       @next-item="
         (name) =>
-          (data.look[name] = this.data.items[name][
-            data.items[name].indexOf(data.look[name]) + 1
-          ])
+          (data.look[name] =
+            this.data.items[name][
+              data.items[name].indexOf(data.look[name]) + 1
+            ])
       "
       @change-gender="(gender) => (this.data.gender = gender)"
       v-model:motto="data.motto"
@@ -62,8 +63,8 @@
       Nombre de parties jouées :
       {{
         data.bacteria.stats.win +
-          data.bacteria.stats.draw +
-          data.bacteria.stats.lose
+        data.bacteria.stats.draw +
+        data.bacteria.stats.lose
       }}
       , nombre de parties gagnées : {{ data.bacteria.stats.win }},<br />
       nombre de parties perdues : {{ data.bacteria.stats.lose }}, nombre de
@@ -135,8 +136,8 @@
                     }.svg`)
                   "
                   alt="Voir le dernier message"
-                  title="Voir le dernier message"/>&nbsp;<user
-                  :user="message.author"/></div
+                  title="Voir le dernier message" />&nbsp;<user
+                  :user="message.author" /></div
               ><div>{{ formatDate(message.date) }}</div>
             </div>
           </router-link></div
@@ -153,8 +154,8 @@
         <div style="margin-top: -16px">
           <router-link
             v-for="message of data.forum"
-            :key="message.id"
-            :to="`/bbs/${message.forum.id}/${message.topic.id}#${message.id}`"
+            :key="message.message"
+            :to="`/topic/${message.id}/${message.page}#${message.message}`"
           >
             <div class="list fullwidth col" style="align-items: flex-start"
               ><div>
@@ -168,7 +169,7 @@
                   src="@/asset/img/bbs/msg.svg"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
-                />&nbsp;{{ message.topic.title }}</div
+                />&nbsp;{{ message.title }}</div
               >
             </div>
           </router-link>
@@ -222,8 +223,8 @@
               ><td height="22"
                 ><img
                   v-if="group.owner"
-                  src="@/asset/img/icon/account/offline.png"/></td
-              ><td style="text-align: left"><group :group="group"/></td>
+                  src="@/asset/img/icon/account/offline.png" /></td
+              ><td style="text-align: left"><group :group="group" /></td>
             </tr>
           </tbody>
         </table>

@@ -45,9 +45,19 @@
         >&nbsp;
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         &nbsp;
-        <button class="btn-md font-ch" @click.prevent="quote(message.id)"
+        <button
+          class="btn-md font-ch"
+          @click.prevent="
+            eventBus.emit(
+              'quote',
+              `**${this.message.author.name}** a écrit :\n${this.message.content}`.replace(
+                /^/gm,
+                '> '
+              )
+            )
+          "
           >Citer</button
-        >
+        >&nbsp;
         <button
           class="btn-md font-ch"
           v-if="
@@ -55,13 +65,13 @@
               Date.now() - message.date < 600) ||
             user.role > 50
           "
-          @click.prevent="edit(message.id)"
+          @click.prevent="edit"
           >Editer</button
-        >
+        >&nbsp;
         <button
           class="btn-md danger font-ch"
           v-if="message.author.id === user.id || user.role > 50"
-          @click.prevent="this.delete(message.id)"
+          @click.prevent="this.delete"
           >&times;</button
         >
       </div>
@@ -122,14 +132,14 @@ export default {
     scrollTo(anchor) {
       location.href = anchor;
     },
-    edit(id) {
-      console.log("edit " + id);
+    edit() {
+      console.log("edit " + this.message.id);
     },
-    delete(id) {
-      console.log("delete " + id);
+    delete() {
+      console.log("delete " + this.message.id);
     },
-    quote(id) {
-      console.log("quote " + id);
+    quote() {
+      console.log();
     }
   }
 };

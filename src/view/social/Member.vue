@@ -116,8 +116,8 @@
               @contextmenu.prevent
               :alt="
                 data.gender.charAt(0).toUpperCase() +
-                  data.gender.slice(1) +
-                  ' gender'
+                data.gender.slice(1) +
+                ' gender'
               "
               :src="require(`@/asset/img/icon/gender/${data.gender}.svg`)"
             />
@@ -158,7 +158,7 @@
           @contextmenu.prevent
           :src="require(`@/asset/img/member/${data.gender}/bacteria.svg`)"
           alt="Bacteria"
-          style="float:left"
+          style="float: left"
         />
         <span
           >Classement : <b>{{ data.bacteria.rank }}</b
@@ -181,7 +181,7 @@
           @contextmenu.prevent
           :src="require(`@/asset/img/member/${data.gender}/patojdur.svg`)"
           alt="Patojdur"
-          style="float:left"
+          style="float: left"
         />
         <span
           >Classement : <b>{{ data.patojdur.rank }}</b
@@ -203,7 +203,7 @@
           @contextmenu.prevent
           :src="require(`@/asset/img/member/${data.gender}/popularity.svg`)"
           alt="Patojdur"
-          style="float:left"
+          style="float: left"
         />
         <span
           >Classement : <b>{{ data.popularity.rank }}</b
@@ -233,11 +233,27 @@
       </div>
       <br />
       Messages sur le forum :
-      <router-link :to="'bbs/author/' + $route.params.id">{{
+      <router-link :to="'/bbs/author/' + $route.params.id">{{
         data.forum
       }}</router-link>
     </Card>
-    <template #right-column></template>
+    <template #right-column
+      ><Card top color="blue"
+        ><b
+          >Bannir ce membre
+          <form @submit.prevent="ban" class="flex">
+            <input
+              class="btn-md"
+              type="number"
+              min="1"
+              v-model.lazy="duration"
+              required
+            /><button type="submit" class="btn-md font-ch">go</button></form
+          >
+          jours</b
+        ></Card
+      ></template
+    >
   </Container>
 </template>
 
@@ -259,7 +275,8 @@ export default {
   },
   data() {
     return {
-      data: null
+      data: null,
+      duration: 1
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -282,6 +299,11 @@ export default {
       return differenceInCalendarDays(new Date(), new Date(date), {
         locale: window.__localeId__
       });
+    },
+    ban() {
+      console.log(
+        "Banni" + this.$route.params.id + " durée " + this.duration * 86400
+      );
     }
   },
   metaInfo: {

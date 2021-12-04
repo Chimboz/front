@@ -61,7 +61,7 @@
             <b>Corps du message&nbsp;:</b><br />
             Votre saisie ne doit pas contenir plus de 60000 caractère(s).
           </td>
-          <td class="markdown-body" style="vertical-align: middle;">
+          <td class="markdown-body" style="vertical-align: middle">
             <div class="flex hstack">
               <button type="button" class="btn-md" @click="format('**')"
                 ><b>B</b></button
@@ -91,109 +91,109 @@
                 @change="(event) => formatColor(event.target.value)"
               >
                 <option
-                  style="color: black;background-color: #fafafa;"
+                  style="color: black; background-color: #fafafa"
                   value="#444444"
                 >
                   Couleur
                 </option>
                 <option
-                  style="color: #cecece;background-color: #fafafa;"
+                  style="color: #cecece; background-color: #fafafa"
                   value="#CECECE"
                 >
                   Gris triste
                 </option>
                 <option
-                  style="color: #999999;background-color: #fafafa;"
+                  style="color: #999999; background-color: #fafafa"
                   value="#999999"
                 >
                   Gris divorce
                 </option>
                 <option
-                  style="color: #ff0000;background-color: #fafafa;"
+                  style="color: #ff0000; background-color: #fafafa"
                   value="#FF0000"
                 >
                   Rouge
                 </option>
                 <option
-                  style="color: #cc6600;background-color: #fafafa;"
+                  style="color: #cc6600; background-color: #fafafa"
                   value="#CC6600"
                 >
                   Chocolat
                 </option>
                 <option
-                  style="color: #fe9e01;background-color: #fafafa;"
+                  style="color: #fe9e01; background-color: #fafafa"
                   value="#FE9E01"
                 >
                   Orange
                 </option>
                 <option
-                  style="color: #ffff00;background-color: #fafafa;"
+                  style="color: #ffff00; background-color: #fafafa"
                   value="#FFFF00"
                 >
                   Jaune
                 </option>
                 <option
-                  style="color: #ade76b;background-color: #fafafa;"
+                  style="color: #ade76b; background-color: #fafafa"
                   value="#ADE76B"
                 >
                   Vert
                 </option>
                 <option
-                  style="color: #66cc00;background-color: #fafafa;"
+                  style="color: #66cc00; background-color: #fafafa"
                   value="#66CC00"
                 >
                   Gilvert
                 </option>
                 <option
-                  style="color: #018352;background-color: #fafafa;"
+                  style="color: #018352; background-color: #fafafa"
                   value="#018352"
                 >
                   Pelouse
                 </option>
                 <option
-                  style="color: #9412fe;background-color: #fafafa;"
+                  style="color: #9412fe; background-color: #fafafa"
                   value="#9412FE"
                 >
                   Violet du marié
                 </option>
                 <option
-                  style="color: #376da8;background-color: #fafafa;"
+                  style="color: #376da8; background-color: #fafafa"
                   value="#376DA8"
                 >
                   Bleu
                 </option>
                 <option
-                  style="color: #6699cc;background-color: #fafafa;"
+                  style="color: #6699cc; background-color: #fafafa"
                   value="#6699CC"
                 >
                   Bleu Chimbo
                 </option>
                 <option
-                  style="color: #fe81c0;background-color: #fafafa;"
+                  style="color: #fe81c0; background-color: #fafafa"
                   value="#FE81C0"
                 >
                   Rose Dupatta
                 </option>
                 <option
-                  style="color: #ff3399;background-color: #fafafa;"
+                  style="color: #ff3399; background-color: #fafafa"
                   value="#FF3399"
                 >
                   Rose Chimbo
                 </option>
                 <option
-                  style="color: #e40173;background-color: #fafafa;"
+                  style="color: #e40173; background-color: #fafafa"
                   value="#E40173"
                 >
                   Gurujiolet
                 </option>
                 <option
-                  style="color: white;background-color: #fafafa;"
+                  style="color: white; background-color: #fafafa"
                   value="#FFFFFF"
                 >
                   Blanc
                 </option>
                 <option
-                  style="color: black;background-color: #fafafa;"
+                  style="color: black; background-color: #fafafa"
                   value="#000000"
                 >
                   Noir
@@ -214,9 +214,7 @@
                 class="btn-md"
                 @click="formatMultiline('> ')"
               >
-                <blockquote style="margin-bottom: 0">
-                  Quote
-                </blockquote>
+                <blockquote style="margin-bottom: 0"> Quote </blockquote>
               </button>
               <button
                 type="button"
@@ -239,7 +237,9 @@
                 <code>Code</code>
               </button>
               <button type="button" class="btn-md" @click="formatCode()">
-                <pre style="padding: 2px;margin: 0;color: #fff">Code block</pre>
+                <pre style="padding: 2px; margin: 0; color: #fff">
+Code block</pre
+                >
               </button>
             </div>
           </td>
@@ -258,7 +258,7 @@
               maxlength="60000"
               class="btn-md"
               ref="message"
-              style="font-family:monospace; padding: 12px"
+              style="font-family: monospace; padding: 12px"
               v-model.lazy="message"
               @focus="focusHandler"
               @select="selectionHandler"
@@ -278,7 +278,7 @@
                     @contextmenu.prevent
                     alt="Arrow icon"
                     class="arrow jitter green"
-                    src="@/asset/img/arrow.svg"/></template
+                    src="@/asset/img/arrow.svg" /></template
                 >Envoyer</Button
               >
             </div>
@@ -296,6 +296,9 @@ import { mapState } from "vuex";
 export default {
   name: "MarkdownInput",
   components: { Emotes, Message },
+  mounted() {
+    this.eventBus.on("quote", (message) => (this.message += message));
+  },
   data() {
     return {
       message: "",

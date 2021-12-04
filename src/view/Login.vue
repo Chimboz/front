@@ -11,19 +11,21 @@
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
-      <Card
-        color="yellow"
-        header="packs.png"
-        :width="154"
-        :height="96"
-        class="packs"
-        v-if="data"
-      >
-        <template #button>
-          <Button color="yellow" icon="register.svg">Pack</Button>
-        </template>
-        <Pack name="supporter" :looks="data.shop.looks" />
-      </Card>
+      <router-link to="/shop">
+        <Card
+          color="yellow"
+          header="packs.png"
+          :width="154"
+          :height="96"
+          class="packs"
+          v-if="data"
+        >
+          <template #button>
+            <Button color="yellow" icon="register.svg">Pack</Button>
+          </template>
+          <Pack name="supporter" :looks="data.shop.looks" />
+        </Card>
+      </router-link>
       <br />
     </template>
     <Demo />
@@ -52,7 +54,7 @@
           <img src="@/asset/img/game/bacteria/head.gif" />
           <img src="@/asset/img/game/bacteria/bg.gif" />
           <Tiz
-            style="margin-top: -66px; margin-bottom: 13px;"
+            style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
             :emote="data.bacteria.user.look.emote"
             :hat="data.bacteria.user.look.hat"
@@ -69,7 +71,7 @@
           <img src="@/asset/img/game/patojdur/head.gif" />
           <img src="@/asset/img/game/patojdur/bg.gif" />
           <Tiz
-            style="margin-top: -66px; margin-bottom: 13px;"
+            style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
             :emote="data.patojdur.user.look.emote"
             :hat="data.patojdur.user.look.hat"
@@ -86,7 +88,7 @@
           <img src="@/asset/img/game/mazo/head.gif" />
           <img src="@/asset/img/game/mazo/bg.gif" />
           <Tiz
-            style="margin-top: -66px; margin-bottom: 13px;"
+            style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
             :emote="data.mazo.user.look.emote"
             :hat="data.mazo.user.look.hat"

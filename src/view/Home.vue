@@ -162,26 +162,28 @@
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
-      <Card
-        color="yellow"
-        header="packs.png"
-        :width="154"
-        :height="96"
-        class="packs"
-        v-if="data"
-      >
-        <template #button>
-          <Button color="yellow" icon="register.svg">Pack</Button>
-        </template>
-        <Pack
-          :name="data.shop[0].pack"
-          :looks="data.shop[0].looks"
-        /><br /><br />
-        <Button color="yellow" icon="register.svg" class="fullwidth"
-          >Item</Button
-        ><br />
-        <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
-      </Card>
+      <router-link to="/shop">
+        <Card
+          color="yellow"
+          header="packs.png"
+          :width="154"
+          :height="96"
+          class="packs"
+          v-if="data"
+        >
+          <template #button>
+            <Button color="yellow" icon="register.svg">Pack</Button>
+          </template>
+          <Pack
+            :name="data.shop[0].pack"
+            :looks="data.shop[0].looks"
+          /><br /><br />
+          <Button color="yellow" icon="register.svg" class="fullwidth"
+            >Item</Button
+          ><br />
+          <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
+        </Card>
+      </router-link>
     </template>
   </Container>
 </template>

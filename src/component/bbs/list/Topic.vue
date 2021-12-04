@@ -43,13 +43,25 @@
           :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
         />
       </th>
-    </tr>
-  </table>
+    </tr> </table
+  ><br />
+  <div>
+    <button class="btn-md font-ch" v-if="user.role > 50" @click.prevent="move"
+      >Déplacer</button
+    >&nbsp;
+    <button
+      class="btn-md danger font-ch"
+      v-if="user.role > 50"
+      @click.prevent="lock"
+      >Verrouiller</button
+    >
+  </div>
 </template>
 
 <script>
 import Pagination from "../Pagination.vue";
 import Message from "../row/Message.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "Topic List",
@@ -61,6 +73,17 @@ export default {
     topic: {
       required: true,
       type: Object
+    }
+  },
+  computed: {
+    ...mapState("auth", ["user"])
+  },
+  methods: {
+    lock() {
+      console.log("Lock " + this.$route.params.topic);
+    },
+    move() {
+      console.log("Move " + this.$route.params.topic);
     }
   }
 };
