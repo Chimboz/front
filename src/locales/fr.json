@@ -69,7 +69,10 @@
     "group": "Groupe",
     "groupname": "Nom du groupe",
     "weddingid": "Numéro d'un mariage",
-    "message": "Message"
+    "message": "Message",
+    "newpassword": "Nouveau mot de passe",
+    "confirmpassword": "Répéter le mot de passe",
+    "currentpassword": "Mot de passe actuel"
   },
   "section": {
     "account": "Mon compte",

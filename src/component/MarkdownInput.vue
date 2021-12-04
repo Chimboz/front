@@ -259,7 +259,7 @@ Code block</pre
               class="btn-md"
               ref="message"
               style="font-family: monospace; padding: 12px"
-              v-model.lazy="message"
+              v-model="message"
               @focus="focusHandler"
               @select="selectionHandler"
             />
@@ -271,7 +271,7 @@ Code block</pre
               <Button type="button" @click.prevent="this.preview = this.message"
                 >Prévisualiser</Button
               >
-              <Button type="submit" color="green"
+              <Button type="submit" color="green" v-if="mode == 'post'"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -280,6 +280,24 @@ Code block</pre
                     class="arrow jitter green"
                     src="@/asset/img/arrow.svg" /></template
                 >Envoyer</Button
+              >
+              <Button
+                type="button"
+                color="red"
+                v-if="mode == 'edit'"
+                @click="mode = 'post'"
+              >
+                Annuler</Button
+              >
+              <Button type="submit" color="green" v-if="mode == 'edit'"
+                ><template #prepend
+                  ><img
+                    draggable="false"
+                    @contextmenu.prevent
+                    alt="Arrow icon"
+                    class="arrow jitter green"
+                    src="@/asset/img/arrow.svg" /></template
+                >Editer</Button
               >
             </div>
           </td>
@@ -297,7 +315,15 @@ export default {
   name: "MarkdownInput",
   components: { Emotes, Message },
   mounted() {
-    this.eventBus.on("quote", (message) => (this.message += message));
+    this.eventBus.on("quote", (message) => {
+      this.message += message;
+      this.$refs.message.focus();
+    });
+    this.eventBus.on("edit", (message) => {
+      this.message = message;
+      this.mode = "edit";
+      this.$refs.message.focus();
+    });
   },
   data() {
     return {
@@ -306,7 +332,8 @@ export default {
       preview: "",
       signature: true,
       markdown: false,
-      selectionRange: [0, 0]
+      selectionRange: [0, 0],
+      mode: "post"
     };
   },
   props: {
@@ -321,7 +348,9 @@ export default {
   },
   methods: {
     submit() {
-      console.log("Envoyé!");
+      if (this.mode == "post") {
+        console.log("Envoyé!");
+      } else console.log("Edité!");
     },
     scrollTo(anchor) {
       location.href = anchor;

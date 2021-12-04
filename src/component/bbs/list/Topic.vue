@@ -54,6 +54,12 @@
       v-if="user.role > 50"
       @click.prevent="lock"
       >Verrouiller</button
+    >&nbsp;
+    <button
+      class="btn-md danger font-ch"
+      v-if="user.role > 50"
+      @click.prevent="this.delete"
+      >Supprimer</button
     >
   </div>
 </template>
@@ -81,6 +87,9 @@ export default {
   methods: {
     lock() {
       console.log("Lock " + this.$route.params.topic);
+    },
+    delete() {
+      console.log("Delete " + this.$route.params.topic);
     },
     move() {
       console.log("Move " + this.$route.params.topic);

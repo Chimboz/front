@@ -49,7 +49,7 @@ const sideNavEntries = [
   },
   {
     label: "section.password",
-    url: "/password",
+    url: "/notsmart",
     section: "account"
   },
   {

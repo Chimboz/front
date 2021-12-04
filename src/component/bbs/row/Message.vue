@@ -65,7 +65,7 @@
               Date.now() - message.date < 600) ||
             user.role > 50
           "
-          @click.prevent="edit"
+          @click.prevent="eventBus.emit('edit', this.message.content)"
           >Editer</button
         >&nbsp;
         <button

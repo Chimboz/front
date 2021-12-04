@@ -69,7 +69,10 @@
     "group": "Group",
     "groupname": "Group name",
     "weddingid": "Wedding number",
-    "message": "Message"
+    "message": "Message",
+    "confirmpassword": "Confirm password",
+    "newpassword": "New password",
+    "currentpassword": "Current password"
   },
   "section": {
     "account": "Account",

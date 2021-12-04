@@ -24,6 +24,12 @@ export const routes = [
     meta: { sitemap: { ignoreRoute: true } }
   },
   {
+    path: "/notsmart",
+    name: "Notsmart",
+    component: () => import("../view/account/Notsmart.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
     path: "/games",
     name: "Games",
     component: () => import("../view/Games.vue")
