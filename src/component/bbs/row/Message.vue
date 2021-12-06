@@ -1,7 +1,7 @@
 <template>
   <tr :id="message.id">
     <td class="info" valign="top">
-      <Tiz
+      <Avatar
         :avatar="message.author.look.avatar"
         :emote="message.author.look.emote"
         :hat="message.author.look.hat"
@@ -16,7 +16,7 @@
     </td>
     <td class="justified" valign="top">
       <h2 class="head flex centered info-sm ellipsis">
-        <Tiz
+        <Avatar
           :avatar="message.author.look.avatar"
           :emote="message.author.look.emote"
           :hat="message.author.look.hat"
@@ -88,8 +88,6 @@
 </template>
 
 <script>
-import Tiz from "@/component/Tiz.vue";
-import User from "@/component/link/User.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
@@ -97,10 +95,6 @@ import { mapState } from "vuex";
 
 export default {
   name: "Message",
-  components: {
-    Tiz,
-    User
-  },
   props: {
     message: {
       required: true,

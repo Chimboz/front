@@ -78,17 +78,11 @@
 </template>
 
 <script>
-import Group from "@/component/link/Group.vue";
-import User from "@/component/link/User.vue";
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Category",
-  components: {
-    Group,
-    User
-  },
   data() {
     return {
       hide: false

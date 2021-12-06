@@ -53,7 +53,7 @@
         <div class="fullwidth">
           <img src="@/asset/img/game/bacteria/head.gif" />
           <img src="@/asset/img/game/bacteria/bg.gif" />
-          <Tiz
+          <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
             :emote="data.bacteria.user.look.emote"
@@ -70,7 +70,7 @@
           >
           <img src="@/asset/img/game/patojdur/head.gif" />
           <img src="@/asset/img/game/patojdur/bg.gif" />
-          <Tiz
+          <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
             :emote="data.patojdur.user.look.emote"
@@ -87,7 +87,7 @@
           >
           <img src="@/asset/img/game/mazo/head.gif" />
           <img src="@/asset/img/game/mazo/bg.gif" />
-          <Tiz
+          <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
             :emote="data.mazo.user.look.emote"
@@ -110,9 +110,6 @@
 <script>
 import Demo from "@/component/Demo.vue";
 import Pack from "@/component/Pack.vue";
-import Security from "@/component/slot/Security.vue";
-import User from "@/component/link/User.vue";
-import Tiz from "@/component/Tiz.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
@@ -120,10 +117,7 @@ export default {
   name: "Login",
   components: {
     Pack,
-    Demo,
-    Security,
-    Tiz,
-    User
+    Demo
   },
   data() {
     return {

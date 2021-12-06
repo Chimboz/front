@@ -56,7 +56,7 @@
       </defs>
     </svg>
     <div class="pack-content flex">
-      <Tiz
+      <Avatar
         class="female"
         :avatar="looks[0].avatar"
         :emote="looks[0].emote"
@@ -66,7 +66,7 @@
         :item0="looks[0].item0"
         :item1="looks[0].item1"
         :item2="looks[0].item2"
-      /><Tiz
+      /><Avatar
         v-if="looks[1]"
         class="male"
         :avatar="looks[1].avatar"
@@ -82,11 +82,8 @@
   </div>
 </template>
 <script>
-import Tiz from "@/component/Tiz.vue";
-
 export default {
   name: "Pack",
-  components: { Tiz },
   props: {
     name: {
       required: true,

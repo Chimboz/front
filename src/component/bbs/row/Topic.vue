@@ -26,7 +26,7 @@
         <span class="gensmall">{{ topic.reply }}</span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall"><User :user="topic.author"/></span>
+        <span class="gensmall"><User :user="topic.author" /></span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
         <span class="gensmall">{{ topic.view }}</span>
@@ -54,15 +54,11 @@
 </template>
 
 <script>
-import User from "@/component/link/User.vue";
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Topic Row",
-  components: {
-    User
-  },
   props: {
     topic: {
       required: true,

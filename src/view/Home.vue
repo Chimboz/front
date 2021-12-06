@@ -189,7 +189,7 @@
 </template>
 
 <script>
-import RandomNumber from "@/component/RandomNumber.vue";
+import RandomNumber from "@/component/core/RandomNumber.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 import { format } from "date-fns";

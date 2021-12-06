@@ -9,6 +9,19 @@
       <Rules bot />
     </template>
     <Card color="yellow" v-if="data" justified header="mi.svg">
+      <div class="flex">
+        <input
+          required
+          minlength="3"
+          maxlength="15"
+          pattern="[\w\.\-_@]{3,15}"
+          name="username"
+          type="text"
+          class="btn-md"
+          autocomplete="username"
+          :placeholder="$t('placeholder.username')"
+        /><button type="button" class="btn-md font-ch">go</button></div
+      >
       <router-link
         class="message fullwidth flex"
         v-for="message of data"
@@ -19,7 +32,7 @@
           class="tiz-portrait"
           :style="{ background: hashColor(message.user.name) }"
         >
-          <Tiz
+          <Avatar
             :avatar="message.user.look.avatar"
             :emote="message.user.look.emote"
             :hat="message.user.look.hat"
@@ -54,17 +67,11 @@
   </Container>
 </template>
 <script>
-import User from "../../component/link/User.vue";
-import Tiz from "../../component/Tiz.vue";
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 export default {
   name: "Messenger",
-  components: {
-    User,
-    Tiz
-  },
   data() {
     return {
       data: null

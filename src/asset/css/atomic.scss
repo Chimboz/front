@@ -1,0 +1,32 @@
+.font-ch {
+  font-family: "Chimboz Heavy";
+}
+
+.danger {
+  background: #fb0d0d;
+  color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.centered {
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.centered {
+  text-align: center;
+}
+
+.justified {
+  text-align: justify;
+}

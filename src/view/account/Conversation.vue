@@ -22,7 +22,7 @@
             class="tiz-portrait"
             :style="{ background: hashColor(data.user.name) }"
           >
-            <Tiz
+            <Avatar
               :avatar="data.user.look.avatar"
               :emote="data.user.look.emote"
               :hat="data.user.look.hat"
@@ -66,12 +66,7 @@
           class="btn-md"
           v-model="message"
           :placeholder="$t('placeholder.message')"
-        /><button
-          type="submit"
-          class="btn-md"
-          style="font-family: 'Chimboz Heavy'"
-          >➤</button
-        ></form
+        /><button type="submit" class="btn-md font-ch">➤</button></form
       >
     </Card>
     <template #right-column
@@ -96,7 +91,7 @@
               class="tiz-portrait"
               :style="{ background: hashColor(user.name) }"
             >
-              <Tiz
+              <Avatar
                 :avatar="user.look.avatar"
                 :emote="user.look.emote"
                 :hat="user.look.hat"
@@ -114,15 +109,12 @@
   </Container>
 </template>
 <script>
-import User from "../../component/link/User.vue";
-import Tiz from "../../component/Tiz.vue";
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
 
 export default {
   name: "Conversation",
-  components: { User, Tiz },
   data() {
     return {
       data: null,

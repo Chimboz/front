@@ -39,7 +39,7 @@
   >
 </template>
 <script>
-import AnimatedNumber from "@/component/AnimatedNumber.vue";
+import AnimatedNumber from "@/component/core/AnimatedNumber.vue";
 import { mapGetters, mapState } from "vuex";
 
 export default {

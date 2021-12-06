@@ -32,7 +32,7 @@
               @keydown.right="right = true"
               @keyup.right="right = false"
             >
-              <Tiz
+              <Avatar
                 :avatar="data.look.avatar"
                 :emote="data.look.emote"
                 :hat="data.look.hat"
@@ -55,7 +55,7 @@
                 :key="name"
                 :disabled="
                   data.items[name].indexOf(data.look[name]) >
-                    data.items[name].length - 2
+                  data.items[name].length - 2
                 "
                 @click="$emit('nextItem', name)"
               >
@@ -77,7 +77,7 @@
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   style="transform: rotate(-90deg)"
-                  :class="{ pushed: up }"/></button
+                  :class="{ pushed: up }" /></button
               ><br /><button type="button">
                 <img
                   draggable="false"
@@ -85,21 +85,21 @@
                   alt="Puce"
                   src="@/asset/img/puce.svg"
                   style="transform: scaleX(-1)"
-                  :class="{ pushed: left }"/></button
+                  :class="{ pushed: left }" /></button
               ><button type="button" id="random">
                 <img
                   draggable="false"
                   @contextmenu.prevent
                   alt="Random button"
                   title="Randomize look"
-                  src="@/asset/img/home/chaparadio/stop.svg"/></button
+                  src="@/asset/img/home/chaparadio/stop.svg" /></button
               ><button type="button">
                 <img
                   draggable="false"
                   @contextmenu.prevent
                   alt="Puce"
                   src="@/asset/img/puce.svg"
-                  :class="{ pushed: right }"/></button
+                  :class="{ pushed: right }" /></button
               ><br /><button type="button">
                 <img
                   draggable="false"
@@ -126,7 +126,7 @@
                 @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
-                src="@/asset/img/icon/gender/male.svg"/></button
+                src="@/asset/img/icon/gender/male.svg" /></button
             ><button
               type="button"
               class="pink-icon"
@@ -140,7 +140,7 @@
                 @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
-                src="@/asset/img/icon/gender/female.svg"/></button
+                src="@/asset/img/icon/gender/female.svg" /></button
             ><button
               type="button"
               class="pink-icon"
@@ -335,7 +335,7 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
-              src="@/asset/img/arrow.svg"/></template
+              src="@/asset/img/arrow.svg" /></template
           >Sauver</Button
         ><router-link :to="`/book/${data.id}`">
           <Button type="button"
@@ -346,7 +346,7 @@
                 alt="Profile icon"
                 style="height: 24px"
                 height="24"
-                src="@/asset/img/icon/profile.svg"/></template
+                src="@/asset/img/icon/profile.svg" /></template
             >Fiche</Button
           ></router-link
         >
@@ -355,14 +355,12 @@
   </Card>
 </template>
 <script>
-import Tiz from "@/component/Tiz.vue";
-import Emotes from "@/component/Emotes.vue";
+import Emotes from "@/component/core/Emotes.vue";
 import VLazyImage from "v-lazy-image";
 
 export default {
   name: "Cabin",
   components: {
-    Tiz,
     Emotes,
     VLazyImage
   },
