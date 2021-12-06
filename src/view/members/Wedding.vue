@@ -122,8 +122,8 @@
     ><br />
     <Card id="today" v-if="data">
       <template #header
-        ><img src="@/asset/img/wedding/mariage2.gif" /><br />Tous les mariages
-        depuis 24 heures
+        ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Tous les
+        mariages depuis 24 heures
       </template>
       Aujourd'hui, <b>{{ formatDate(Date.now(), "PP") }}</b
       >, <b>{{ data.today.length }}</b> mariages ont été célébrés. <br /><br />
@@ -145,8 +145,8 @@
     <br />
     <Card id="best" v-if="data">
       <template #header
-        ><img src="@/asset/img/wedding/mariage2.gif" /><br />Les 20 mariages qui
-        tiennent&nbsp;!
+        ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Les 20
+        mariages qui tiennent&nbsp;!
       </template>
       <template #subtitle
         >Ça commence pour un jour... ça fini pour toujours !</template
@@ -190,8 +190,8 @@
     <br />
     <Card id="divorce" v-if="data">
       <template #header
-        ><img src="@/asset/img/wedding/divorce2.gif" /><br />Les divorces depuis
-        24 heures
+        ><img src="@/asset/img/social/wedding/divorce2.gif" /><br />Les divorces
+        depuis 24 heures
       </template>
       <template #subtitle
         >Le mariage est virtuel mais la douleur est réelle&nbsp;!</template
@@ -236,8 +236,8 @@
     <br />
     <Card id="broken" v-if="data">
       <template #header
-        ><img src="@/asset/img/wedding/mariage2.gif" /><br />Les 20 mariages qui
-        ont tenu !
+        ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Les 20
+        mariages qui ont tenu !
       </template>
       <template #subtitle>C'est fini... mais ça a duré !!! </template>
       <table class="score fullwidth">
@@ -296,7 +296,7 @@
         En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
         <br /><br />
         <img
-          src="@/asset/img/wedding/divorce.gif"
+          src="@/asset/img/social/wedding/divorce.gif"
           alt="Divorce"
           draggable="false"
           @contextmenu.prevent
@@ -305,7 +305,7 @@
         /><br />
         <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br /><br />
         <img
-          src="@/asset/img/wedding/mariage.gif"
+          src="@/asset/img/social/wedding/mariage.gif"
           alt="Wedding"
           draggable="false"
           @contextmenu.prevent
@@ -318,7 +318,7 @@
           data.stats.members - (data.stats.total - data.stats.divorce) * 2
         }}</b>
         célibs !!! <br /><img
-          src="@/asset/img/wedding/mariage2.gif"
+          src="@/asset/img/social/wedding/mariage2.gif"
           alt="Wedding"
           draggable="false"
           @contextmenu.prevent

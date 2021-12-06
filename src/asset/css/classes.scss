@@ -79,25 +79,25 @@
   display: inline-flex;
   padding: 2px 6px;
   margin: 0 1px;
-  max-height: 30px;
+  max-height: 22px;
   border-radius: 6px;
   align-items: center;
   justify-content: center;
   border: 0px;
   background: #fff;
-  box-shadow: inset 1px 1px 2px #3699;
+  box-shadow: inset 1px 1px 1px #3699, inset -1px -1px 1px #3693;
 }
 
 input:valid:not(:placeholder-shown),
 textarea:valid:not(:placeholder-shown) {
-  box-shadow: inset 1px 1px 2px #5b39;
+  box-shadow: inset 1px 1px 1px #5b39, inset -1px -1px 1px #5b33;
 }
 
 .btn-md:hover,
 .btn-md:active,
 input:not([type="checkbox"]).btn-md:focus,
 textarea.btn-md:focus {
-  box-shadow: inset 1px 1px 2px #f809;
+  box-shadow: inset 1px 1px 1px #f809, inset -1px -1px 1px #f803;
 }
 
 textarea.btn-md {

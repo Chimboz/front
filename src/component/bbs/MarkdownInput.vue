@@ -57,10 +57,7 @@
           </td>
         </tr>
         <tr>
-          <td>
-            <b>Corps du message&nbsp;:</b><br />
-            Votre saisie ne doit pas contenir plus de 60000 caractère(s).
-          </td>
+          <td><b>Mise en forme</b></td>
           <td class="markdown-body" style="vertical-align: middle">
             <div class="flex hstack">
               <button type="button" class="btn-md" @click="format('**')"
@@ -317,12 +314,12 @@ export default {
   mounted() {
     this.eventBus.on("quote", (message) => {
       this.message += message;
-      this.$refs.message.focus();
+      if (this.$refs.message) this.$refs.message.focus();
     });
     this.eventBus.on("edit", (message) => {
       this.message = message;
       this.mode = "edit";
-      this.$refs.message.focus();
+      if (this.$refs.message) this.$refs.message.focus();
     });
   },
   data() {
