@@ -335,7 +335,7 @@
             type="number"
             class="btn-md"
             :placeholder="$t('placeholder.weddingid')"
-          /><button type="submit" class="btn-md font-ch">go</button></form
+          /><button type="submit" class="btn-action">go</button></form
         ><br /><form @submit.prevent="search()" class="flex fullwidth"
           ><input
             required
@@ -347,7 +347,7 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-md font-ch">go</button></form
+          /><button type="submit" class="btn-action">go</button></form
         >
       </Card></template
     >

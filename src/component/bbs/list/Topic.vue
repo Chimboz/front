@@ -45,21 +45,32 @@
       </th>
     </tr> </table
   ><br />
-  <div>
-    <button class="btn-md font-ch" v-if="user.role > 50" @click.prevent="move"
-      >Déplacer</button
+  <div style="text-align: end">
+    <button class="btn-action" v-if="user.role > 50" @click.prevent="move"
+      ><img
+        src="@/asset/img/bbs/icon/arrow.svg"
+        width="10"
+        height="12"
+        draggable="false"
+        alt="Arrow"
+        @contextmenu.prevent
+      />&nbsp;Déplacer</button
+    >&nbsp;
+    <button class="btn-action" v-if="user.role > 50" @click.prevent="lock"
+      ><img
+        src="@/asset/img/bbs/icon/lock.svg"
+        width="9"
+        height="12"
+        draggable="false"
+        alt="Lock"
+        @contextmenu.prevent
+      />&nbsp;Verrouiller</button
     >&nbsp;
     <button
-      class="btn-md danger font-ch"
-      v-if="user.role > 50"
-      @click.prevent="lock"
-      >Verrouiller</button
-    >&nbsp;
-    <button
-      class="btn-md danger font-ch"
+      class="btn-action"
       v-if="user.role > 50"
       @click.prevent="this.delete"
-      >Supprimer</button
+      >&times;&nbsp;Supprimer</button
     >
   </div>
 </template>

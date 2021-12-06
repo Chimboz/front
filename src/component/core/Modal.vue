@@ -29,7 +29,7 @@
         src="@/asset/img/icon/failure.svg"
       />
       <p>{{ $t(message) }}</p>
-      <button class="pink-icon ok" @click="isVisible = false">
+      <button class="btn-pink ok" @click="isVisible = false">
         <img
           draggable="false"
           @contextmenu.prevent

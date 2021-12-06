@@ -46,7 +46,7 @@
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         &nbsp;
         <button
-          class="btn-md font-ch"
+          class="btn-action"
           @click.prevent="
             eventBus.emit(
               'quote',
@@ -56,20 +56,34 @@
               )
             )
           "
-          >Citer</button
+          ><img
+            src="@/asset/img/bbs/icon/bubble.svg"
+            width="14"
+            height="12"
+            draggable="false"
+            alt="Bubble"
+            @contextmenu.prevent
+          />&nbsp;Citer</button
         >&nbsp;
         <button
-          class="btn-md font-ch"
+          class="btn-action"
           v-if="
             (message.author.id === user.id &&
               Date.now() - message.date < 600) ||
             user.role > 50
           "
           @click.prevent="eventBus.emit('edit', this.message.content)"
-          >Editer</button
+          ><img
+            src="@/asset/img/bbs/icon/pen.svg"
+            width="12"
+            height="12"
+            draggable="false"
+            alt="Pen"
+            @contextmenu.prevent
+          />&nbsp;Éditer</button
         >&nbsp;
         <button
-          class="btn-md danger font-ch"
+          class="btn-action"
           v-if="message.author.id === user.id || user.role > 50"
           @click.prevent="this.delete"
           >&times;</button

@@ -105,3 +105,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Cocon";
+  src: url("../font/cocon.woff2") format("woff2"),
+    url("../font/cocon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

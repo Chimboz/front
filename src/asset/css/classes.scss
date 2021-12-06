@@ -1,5 +1,5 @@
-// Custom classes
-.pink-icon::before {
+// Pink icon
+.btn-pink::before {
   content: "";
   position: absolute;
   width: 23.452px;
@@ -9,26 +9,27 @@
   background-size: cover;
 }
 
-.pink-icon img {
+.btn-pink img {
   position: relative;
   height: 23.45px;
 }
 
-.pink-icon:active::before {
+.btn-pink:active::before {
   transform: rotate(180deg);
 }
 
-.pink-icon {
+.btn-pink {
   border-radius: 100%;
   border: 2px solid transparent;
   width: 27.452px;
   height: 27.45px;
 }
 
-.pink-icon.active {
+.btn-pink.active {
   border: 2px solid #fff;
 }
 
+// Horizontal stack
 .hstack {
   flex-wrap: wrap;
   width: 100%;
@@ -39,24 +40,6 @@
 .hstack > * {
   margin-right: var(--gap);
   margin-bottom: var(--gap);
-}
-
-.pink {
-  color: #ff3399;
-}
-
-.pink-bg {
-  background: #f12490;
-}
-
-.blue-bg {
-  background: #78aadb;
-}
-
-input:not([type="checkbox"]).btn-md,
-textarea.btn-md {
-  width: 100%;
-  padding: 4px;
 }
 
 // Custom checkboxes
@@ -90,9 +73,12 @@ textarea.btn-md {
   position: absolute;
 }
 
+// Custom buttons
+// Button medium
 .btn-md {
   display: inline-flex;
   padding: 2px 6px;
+  margin: 0 1px;
   max-height: 30px;
   border-radius: 6px;
   align-items: center;
@@ -127,6 +113,33 @@ textarea:invalid:not(:placeholder-shown) {
   border-color: #fb0d0d;
 }
 
+input:not([type="checkbox"]).btn-md,
+textarea.btn-md {
+  width: 100%;
+  padding: 4px;
+}
+
+// Button action
+.btn-action {
+  border-radius: 4px;
+  padding: 0 4px;
+  background: linear-gradient(to bottom, #fff, #eee);
+  border: 1px solid #06699b;
+  font-family: "Cocon";
+  text-transform: lowercase;
+  color: #06699b;
+  text-decoration: none !important;
+  margin: 0 1px;
+}
+.btn-action:hover {
+  border-color: #f80;
+  color: #f80;
+}
+.btn-action img {
+  vertical-align: top;
+}
+
+// Button small
 .btn-sm {
   border-radius: 99px;
   font-weight: bold;
@@ -137,12 +150,7 @@ textarea:invalid:not(:placeholder-shown) {
   align-items: center;
 }
 
-.ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
+// SideNav
 .card .list {
   display: flex;
   align-items: center;
@@ -173,6 +181,12 @@ textarea:invalid:not(:placeholder-shown) {
 
 #loadtime {
   text-align: center;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .flex-centered {
@@ -224,6 +238,7 @@ button:hover .arrow {
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }
 
+// BBS
 table.bbs {
   width: 100%;
   border-spacing: 0;

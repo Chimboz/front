@@ -42,9 +42,16 @@
     </tr>
   </table>
   <br />
-  <div>
-    <button class="btn-md danger font-ch" @click.prevent="quote(message.id)"
-      >Verrouiller</button
+  <div style="text-align: end">
+    <button class="btn-action" @click.prevent="quote(message.id)"
+      ><img
+        src="@/asset/img/bbs/icon/lock.svg"
+        width="9"
+        height="12"
+        draggable="false"
+        alt="Lock"
+        @contextmenu.prevent
+      />&nbsp;Verrouiller</button
     >
   </div>
 </template>

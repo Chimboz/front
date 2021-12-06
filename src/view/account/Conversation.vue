@@ -66,7 +66,7 @@
           class="btn-md"
           v-model="message"
           :placeholder="$t('placeholder.message')"
-        /><button type="submit" class="btn-md font-ch">➤</button></form
+        /><button type="submit" class="btn-action">➤</button></form
       >
     </Card>
     <template #right-column

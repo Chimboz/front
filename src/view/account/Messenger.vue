@@ -20,7 +20,7 @@
           class="btn-md"
           autocomplete="username"
           :placeholder="$t('placeholder.username')"
-        /><button type="button" class="btn-md font-ch">go</button></div
+        /><button type="button" class="btn-action">go</button></div
       >
       <router-link
         class="message fullwidth flex"

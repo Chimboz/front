@@ -32,7 +32,7 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-md go">go</button></form
+          /><button type="submit" class="btn-action">go</button></form
         ></div
       ></Card
     ><br />
@@ -156,10 +156,5 @@ tr td:first-child {
 
 .hstack {
   justify-content: center;
-}
-
-.go {
-  font-family: Chimboz Heavy;
-  background: #fff;
 }
 </style>

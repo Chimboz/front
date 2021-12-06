@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'neutral')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'neutral')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -8,7 +8,7 @@
         src="@/asset/img/icon/emote/neutral.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'yo')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'yo')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -16,7 +16,7 @@
         src="@/asset/img/icon/emote/yo.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'lol')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'lol')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -24,7 +24,7 @@
         src="@/asset/img/icon/emote/lol.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'sad')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'sad')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -32,7 +32,7 @@
         src="@/asset/img/icon/emote/sad.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'cry')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'cry')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -40,7 +40,7 @@
         src="@/asset/img/icon/emote/cry.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'angry')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'angry')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -48,7 +48,7 @@
         src="@/asset/img/icon/emote/angry.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'wink')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'wink')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -56,7 +56,7 @@
         src="@/asset/img/icon/emote/wink.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'korbak')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'korbak')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -64,7 +64,7 @@
         src="@/asset/img/icon/emote/korbak.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'tongue')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'tongue')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -72,7 +72,7 @@
         src="@/asset/img/icon/emote/tongue.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'luv')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'luv')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -80,7 +80,7 @@
         src="@/asset/img/icon/emote/luv.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'oh')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'oh')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -90,7 +90,7 @@
     </button>
     <button
       type="button"
-      class="resize pink-icon"
+      class="resize btn-pink"
       @click="$emit('emote', 'zzz')"
     >
       <img
@@ -102,7 +102,7 @@
     </button>
     <button
       type="button"
-      class="resize pink-icon"
+      class="resize btn-pink"
       @click="$emit('emote', 'flag')"
     >
       <img
@@ -112,7 +112,7 @@
         src="@/asset/img/icon/emote/flag.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'neko')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'neko')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -120,11 +120,7 @@
         src="@/asset/img/icon/emote/neko.svg"
       />
     </button>
-    <button
-      type="button"
-      class="pink-icon"
-      @click="$emit('emote', 'irritated')"
-    >
+    <button type="button" class="btn-pink" @click="$emit('emote', 'irritated')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -132,7 +128,7 @@
         src="@/asset/img/icon/emote/irritated.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'left')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'left')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -140,7 +136,7 @@
         src="@/asset/img/icon/emote/left.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'focused')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'focused')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -148,7 +144,7 @@
         src="@/asset/img/icon/emote/focused.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'vv')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'vv')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -156,7 +152,7 @@
         src="@/asset/img/icon/emote/vv.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'shameful')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'shameful')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -164,7 +160,7 @@
         src="@/asset/img/icon/emote/shameful.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'oops')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'oops')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -172,7 +168,7 @@
         src="@/asset/img/icon/emote/oops.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'kawai')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'kawai')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -180,7 +176,7 @@
         src="@/asset/img/icon/emote/kawai.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'parano')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'parano')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -188,7 +184,7 @@
         src="@/asset/img/icon/emote/parano.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'crazy')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'crazy')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -196,7 +192,7 @@
         src="@/asset/img/icon/emote/crazy.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'fearful')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'fearful')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -204,7 +200,7 @@
         src="@/asset/img/icon/emote/fearful.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'smirk')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'smirk')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -212,7 +208,7 @@
         src="@/asset/img/icon/emote/smirk.svg"
       />
     </button>
-    <button type="button" class="pink-icon" @click="$emit('emote', 'croon')">
+    <button type="button" class="btn-pink" @click="$emit('emote', 'croon')">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -228,7 +224,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.pink-icon {
+.btn-pink {
   display: inline;
 }
 

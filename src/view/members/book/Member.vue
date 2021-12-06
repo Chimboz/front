@@ -248,7 +248,7 @@
               min="1"
               v-model.lazy="duration"
               required
-            /><button type="submit" class="btn-md font-ch">go</button></form
+            /><button type="submit" class="btn-action">go</button></form
           >
           jours</b
         ></Card

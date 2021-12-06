@@ -115,7 +115,7 @@
           <div class="gender">
             <button
               type="button"
-              class="pink-icon"
+              class="btn-pink"
               :class="{ active: data.gender == 'Chimbo' }"
               @mouseenter="gender = 'Chimbo'"
               @mouseleave="gender = data.gender"
@@ -129,7 +129,7 @@
                 src="@/asset/img/icon/gender/male.svg" /></button
             ><button
               type="button"
-              class="pink-icon"
+              class="btn-pink"
               :class="{ active: data.gender == 'Chimbette' }"
               @mouseenter="gender = 'Chimbette'"
               @mouseleave="gender = data.gender"
@@ -143,7 +143,7 @@
                 src="@/asset/img/icon/gender/female.svg" /></button
             ><button
               type="button"
-              class="pink-icon"
+              class="btn-pink"
               :class="{ active: data.gender == 'Chimbi' }"
               @mouseenter="gender = 'Chimbi'"
               @mouseleave="gender = data.gender"

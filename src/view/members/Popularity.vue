@@ -328,7 +328,7 @@
           class="btn-md"
           autocomplete="group"
           :placeholder="$t('placeholder.username')"
-        /><button type="submit" class="btn-md font-ch">go</button></form
+        /><button type="submit" class="btn-action">go</button></form
       >
     </Card>
     <template #right-column

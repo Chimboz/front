@@ -2,7 +2,7 @@
   <router-link
     v-for="page of array"
     :key="page + 1"
-    class="page"
+    class="btn-action"
     :to="callback(page + 1)"
     >{{ page + 1 }}</router-link
   >
@@ -33,21 +33,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.page {
-  font-size: 13px;
-  padding: 5px;
-}
-
-.page:hover {
-  background: #fff8;
-}
-
-.page.router-link-active {
-  color: #096ea880;
-  background: #096ea820;
-}
-
-.page:hover {
-  text-decoration: none;
+.btn-action:not(.router-link-active) {
+  border: unset;
 }
 </style>
