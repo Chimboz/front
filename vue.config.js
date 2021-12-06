@@ -1,6 +1,6 @@
 // Import using require for sitemap plugin
 require = require("esm")(module);
-const { routes } = require("./src/router/routes.js");
+const { routes } = require("./src/module/router/routes.js");
 
 module.exports = {
   lintOnSave: false,

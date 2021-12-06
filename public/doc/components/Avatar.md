@@ -1,8 +1,8 @@
-# Tiz
+# Avatar
 
 ## Props
 
-<!-- @vuese:Tiz:props:start -->
+<!-- @vuese:Avatar:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
 |up|-|`Boolean`|`false`|false|
@@ -18,6 +18,6 @@
 |item1|-|`Number`|`false`|1|
 |item2|-|`Number`|`false`|1|
 
-<!-- @vuese:Tiz:props:end -->
+<!-- @vuese:Avatar:props:end -->
 
 
