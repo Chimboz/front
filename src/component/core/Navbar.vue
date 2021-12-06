@@ -181,6 +181,8 @@
 import StrokeText from "@/component/core/StrokeText.vue";
 import { mapGetters, mapState } from "vuex";
 
+// @vuese
+// @group Core
 export default {
   name: "Navbar",
   data() {

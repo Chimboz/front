@@ -308,6 +308,8 @@ import Emotes from "@/component/core/Emotes.vue";
 import Message from "@/component/bbs/row/Message.vue";
 import { mapState } from "vuex";
 
+// @vuese
+// @group BBS
 export default {
   name: "MarkdownInput",
   components: { Emotes, Message },

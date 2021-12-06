@@ -141,6 +141,9 @@
   </Container>
 </template>
 <script>
+// @vuese
+// @group View/Members
+// Members page
 export default {
   name: "Members",
   data() {

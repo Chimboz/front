@@ -352,8 +352,11 @@
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Games
+// Patojdur (Wide Wade) page
 export default {
-  name: "Games",
+  name: "Patojdur",
   data() {
     return {
       data: null

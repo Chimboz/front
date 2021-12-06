@@ -98,7 +98,7 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
-              src="@/asset/img/arrow.svg"/></template
+              src="@/asset/img/arrow.svg" /></template
           >S'inscrire</Button
         ><br />
         <Button @click="section = 2">Se connecter</Button>
@@ -153,7 +153,7 @@
                 @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
-                src="@/asset/img/arrow.svg"/></template
+                src="@/asset/img/arrow.svg" /></template
             >S'inscrire</Button
           >
         </div>
@@ -213,7 +213,7 @@
                 @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
-                src="@/asset/img/arrow.svg"/></template
+                src="@/asset/img/arrow.svg" /></template
             >Se connecter</Button
           >
         </div>
@@ -228,8 +228,10 @@
   </div>
 </template>
 <script>
+// @vuese
+// @group Default
 export default {
-  name: "Message",
+  name: "Demo",
   data() {
     return {
       section: 0,

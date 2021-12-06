@@ -16,6 +16,9 @@
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 
+// @vuese
+// @group View/Community
+// Encyclopedia page
 export default {
   name: "Encyclopedia",
   components: {

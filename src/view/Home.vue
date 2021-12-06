@@ -196,6 +196,9 @@ import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
 
+// @vuese
+// @group View
+// Home page
 export default {
   name: "Home",
   components: {

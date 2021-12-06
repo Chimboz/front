@@ -11,6 +11,8 @@
   </div>
 </template>
 <script>
+// @vuese
+// @group Core/Global/Link
 export default {
   name: "User",
   props: {

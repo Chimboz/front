@@ -19,6 +19,9 @@ import TopicList from "@/component/bbs/list/Topic.vue";
 import MarkdownInput from "@/component/bbs/MarkdownInput.vue";
 import { mapGetters } from "vuex";
 
+// @vuese
+// @group View/Community/BBS
+// Topic page
 export default {
   name: "Topic",
   components: {

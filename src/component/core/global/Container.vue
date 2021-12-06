@@ -18,6 +18,13 @@
     </div>
   </div>
 </template>
+<script>
+// @vuese
+// @group Core/Global
+export default {
+  name: "Container"
+};
+</script>
 <style lang="scss" scoped>
 .row {
   padding: 0 12px;

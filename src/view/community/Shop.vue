@@ -87,6 +87,9 @@
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 
+// @vuese
+// @group View/Community
+// Shop page
 export default {
   name: "Shop",
   components: {

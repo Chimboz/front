@@ -80,6 +80,8 @@ import Pagination from "../Pagination.vue";
 import Message from "../row/Message.vue";
 import { mapState } from "vuex";
 
+// @vuese
+// @group BBS/List
 export default {
   name: "Topic List",
   components: {

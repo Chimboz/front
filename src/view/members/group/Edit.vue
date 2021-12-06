@@ -202,6 +202,9 @@ import StrokeText from "@/component/core/StrokeText.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Members/Group
+// Group edition page
 export default {
   name: "Edit",
   components: {

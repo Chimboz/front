@@ -262,6 +262,9 @@ import StrokeText from "@/component/core/StrokeText.vue";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Members/Book
+// Member page
 export default {
   name: "Member",
   components: {

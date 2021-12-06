@@ -34,7 +34,7 @@
                 :key="name"
                 :disabled="
                   data.items[name].indexOf(data.blazon[name]) >
-                    data.items[name].length - 2
+                  data.items[name].length - 2
                 "
                 @click="$emit('nextItem', name)"
               >
@@ -161,6 +161,8 @@
 import Blazon from "@/component/blazon/Blazon.vue";
 import VLazyImage from "v-lazy-image";
 
+// @vuese
+// @group Blazon
 export default {
   name: "Cabin",
   components: {

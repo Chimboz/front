@@ -358,6 +358,8 @@
 import Emotes from "@/component/core/Emotes.vue";
 import VLazyImage from "v-lazy-image";
 
+// @vuese
+// @group Default
 export default {
   name: "Cabin",
   components: {

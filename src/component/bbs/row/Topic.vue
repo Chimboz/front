@@ -57,6 +57,8 @@
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group BBS/Row
 export default {
   name: "Topic Row",
   props: {

@@ -358,8 +358,11 @@
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Members
+// Wedding page
 export default {
-  name: "Games",
+  name: "Wedding",
   data() {
     return {
       data: null

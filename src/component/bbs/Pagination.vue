@@ -8,6 +8,8 @@
   >
 </template>
 <script>
+// @vuese
+// @group BBS
 export default {
   name: "Pagination",
   props: {

@@ -87,64 +87,79 @@
   </div>
 </template>
 <script>
+// @vuese
+// @group Core/Global
+// Main component for showing avatars. Handle movements and emotes too.
 export default {
   name: "Avatar",
   props: {
+    // Up animation
     up: {
       required: false,
       type: Boolean,
       default: false
     },
+    // Down animation
     down: {
       required: false,
       type: Boolean,
       default: false
     },
+    // Left animation
     left: {
       required: false,
       type: Boolean,
       default: false
     },
+    // Right animation
     right: {
       required: false,
       type: Boolean,
       default: false
     },
+    // Avatar type
     avatar: {
       required: false,
       type: Number,
       default: 0
     },
+    // Emote
     emote: {
       required: false,
       type: String,
       default: "neutral"
     },
+    // Hat item
     hat: {
       required: false,
       type: Number,
       default: 1
     },
+    // Body item
     body: {
       required: false,
       type: Number,
       default: 1
     },
+    // Shoe item
     shoe: {
       required: false,
       type: Number,
       default: 1
     },
+    // Item0 (glasses, masks) item
     item0: {
       required: false,
       type: Number,
       default: 1
     },
+    // Item1 (bags, beards) item
     item1: {
       required: false,
       type: Number,
       default: 1
     },
+    // Item2 (necklaces, badges) item
     item2: {
       required: false,
       type: Number,
@@ -153,7 +168,6 @@ export default {
   }
 };
 </script>
-
 <style lang="scss" scoped>
 .tiz {
   position: relative;

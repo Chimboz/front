@@ -61,6 +61,9 @@
   </Container>
 </template>
 <script>
+// @vuese
+// @group View/Account
+// Notsmart page
 export default {
   name: "Notsmart",
   methods: {

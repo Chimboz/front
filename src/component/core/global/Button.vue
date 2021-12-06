@@ -17,6 +17,8 @@
 <script>
 import StrokeText from "@/component/core/StrokeText.vue";
 
+// @vuese
+// @group Core/Global
 export default {
   name: "Button",
   components: {

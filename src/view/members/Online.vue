@@ -51,6 +51,9 @@
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Members
+// Online page
 export default {
   name: "Online",
   data() {

@@ -222,6 +222,9 @@
 </template>
 
 <script>
+// @vuese
+// @group View/Games
+// Games page
 export default {
   name: "Games",
   data() {

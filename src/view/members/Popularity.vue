@@ -392,8 +392,11 @@
 </template>
 
 <script>
+// @vuese
+// @group View/Members
+// Popularity page
 export default {
-  name: "Games",
+  name: "Popularity",
   data() {
     return {
       data: null

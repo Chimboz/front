@@ -22,6 +22,9 @@
 </template>
 
 <script>
+// @vuese
+// @group View
+// Error page. You can define an error message using route parameter `message`.
 export default {
   name: "Error",
   metaInfo: {

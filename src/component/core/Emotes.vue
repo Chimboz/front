@@ -219,6 +219,8 @@
   </div>
 </template>
 <script>
+// @vuese
+// @group Core
 export default {
   name: "Emotes"
 };

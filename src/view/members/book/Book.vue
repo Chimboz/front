@@ -90,8 +90,11 @@
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Members/Book
+// Book page
 export default {
-  name: "Games",
+  name: "Book",
   data() {
     return {
       data: null

@@ -4,7 +4,13 @@
     <span class="tooltiptext"><slot name="tooltip"></slot></span>
   </div>
 </template>
-
+<script>
+// @vuese
+// @group Core
+export default {
+  name: "Tooltip"
+};
+</script>
 <style lang="scss" scoped>
 .tooltip {
   position: relative;

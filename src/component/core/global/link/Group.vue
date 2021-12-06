@@ -7,6 +7,8 @@
   </div>
 </template>
 <script>
+// @vuese
+// @group Core/Global/Link
 export default {
   name: "Group",
   props: {

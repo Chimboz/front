@@ -22,6 +22,8 @@
 </template>
 
 <script>
+// @vuese
+// @group Core
 export default {
   name: "Progress",
   props: {

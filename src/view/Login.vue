@@ -113,6 +113,9 @@ import Pack from "@/component/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View
+// Login page
 export default {
   name: "Login",
   components: {

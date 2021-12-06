@@ -57,6 +57,9 @@
 <script>
 import BBSList from "@/component/bbs/list/BBS.vue";
 
+// @vuese
+// @group View/Community/BBS
+// BBS page
 export default {
   name: "BBS",
   components: {

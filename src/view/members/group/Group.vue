@@ -128,6 +128,9 @@ import messageRender from "@/module/messageRender.js";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Members/Group
+// Group view page
 export default {
   name: "Group",
   components: {

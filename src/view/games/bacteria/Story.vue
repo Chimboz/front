@@ -245,6 +245,9 @@
   </Container>
 </template>
 <script>
+// @vuese
+// @group View/Games/Bacteria
+// Bacteria's story page
 export default {
   name: "Story"
 };

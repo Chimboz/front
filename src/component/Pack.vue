@@ -82,6 +82,8 @@
   </div>
 </template>
 <script>
+// @vuese
+// @group Default
 export default {
   name: "Pack",
   props: {

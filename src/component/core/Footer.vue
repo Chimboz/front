@@ -67,6 +67,13 @@
     /></a>
   </footer>
 </template>
+<script>
+// @vuese
+// @group Core
+export default {
+  name: "Footer"
+};
+</script>
 
 <style lang="scss" scoped>
 footer {

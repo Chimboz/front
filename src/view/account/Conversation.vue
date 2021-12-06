@@ -113,6 +113,9 @@ import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
 
+// @vuese
+// @group View/Account
+// Conversation page (view for 1-to-1 messaging)
 export default {
   name: "Conversation",
   data() {

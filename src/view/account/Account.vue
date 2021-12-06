@@ -240,6 +240,9 @@ import StrokeText from "@/component/core/StrokeText.vue";
 import { formatDistanceToNow } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Account
+// Account page
 export default {
   name: "Account",
   components: {

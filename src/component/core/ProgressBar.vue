@@ -25,6 +25,8 @@ const startingPoint = 0;
 // Limiting how far the progress bar will get to before loading is complete
 const endingPoint = 90;
 
+// @vuese
+// @group Core
 export default {
   name: "ProgressBar",
 

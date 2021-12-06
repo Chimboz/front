@@ -352,8 +352,11 @@
   </Container>
 </template>
 <script>
+// @vuese
+// @group View/Members/Group
+// Groups management page
 export default {
-  name: "Groups",
+  name: "Manage",
   data() {
     return {
       data: null

@@ -21,6 +21,8 @@
   </Card>
 </template>
 <script>
+// @vuese
+// @group Core/Global
 export default {
   name: "Rules",
   data() {

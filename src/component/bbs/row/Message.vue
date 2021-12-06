@@ -107,6 +107,8 @@ import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
 import { mapState } from "vuex";
 
+// @vuese
+// @group BBS/Row
 export default {
   name: "Message",
   props: {

@@ -173,8 +173,11 @@
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
+// @vuese
+// @group View/Games
+// Mazo page
 export default {
-  name: "Games",
+  name: "Mazo",
   data() {
     return {
       data: null

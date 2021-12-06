@@ -3,11 +3,11 @@
     <img src="@/asset/img/group/ribbons.svg" class="ribbons" />
     <div class="blazon-body">
       <background :primary="primary" :secondary="secondary" :id="shape" />
-      <div class="top" v-if="top != -1"><top :color="primary" :id="top"/></div>
+      <div class="top" v-if="top != -1"><top :color="primary" :id="top" /></div>
       <div class="bot" :class="{ lone: top == -1 }"
         ><bot :color="primary" :id="bot"
       /></div>
-      <div class="reflection"><reflection :id="shape"/></div>
+      <div class="reflection"><reflection :id="shape" /></div>
     </div>
   </div>
 </template>
@@ -17,6 +17,8 @@ import Reflection from "./Reflection.vue";
 import Top from "./Top.vue";
 import Bot from "./Bot.vue";
 
+// @vuese
+// @group Blazon
 export default {
   name: "Blazon",
   components: {

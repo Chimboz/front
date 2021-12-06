@@ -40,41 +40,9 @@
 import ForumList from "@/component/bbs/list/Forum.vue";
 import MarkdownInput from "@/component/bbs/MarkdownInput.vue";
 
-const iconDescriptions = [
-  {
-    src: require("@/asset/img/bbs/folder_new.svg"),
-    label: "Nouveaux messages"
-  },
-  {
-    src: require("@/asset/img/bbs/folder_new_hot.svg"),
-    label: "Nouveaux messages [ Populaire ]"
-  },
-  {
-    src: require("@/asset/img/bbs/folder_new_lock.svg"),
-    label: "Nouveaux messages [ Verrouillé ]"
-  },
-  {
-    src: require("@/asset/img/bbs/folder.svg"),
-    label: "Pas de nouveaux messages"
-  },
-  {
-    src: require("@/asset/img/bbs/folder_hot.svg"),
-    label: "Pas de nouveaux messages [ Populaire ]"
-  },
-  {
-    src: require("@/asset/img/bbs/folder_lock.svg"),
-    label: "Pas de nouveaux messages [ Verrouillé ]"
-  },
-  {
-    src: require("@/asset/img/bbs/folder_announce.svg"),
-    label: "Annonce"
-  },
-  {
-    src: require("@/asset/img/bbs/folder_sticky.svg"),
-    label: "Post-it"
-  }
-];
-
+// @vuese
+// @group View/Community/BBS
+// Forum page
 export default {
   name: "Forum",
   components: {
@@ -84,7 +52,40 @@ export default {
   data() {
     return {
       data: null,
-      iconDescriptions,
+      iconDescriptions: [
+        {
+          src: require("@/asset/img/bbs/folder_new.svg"),
+          label: "Nouveaux messages"
+        },
+        {
+          src: require("@/asset/img/bbs/folder_new_hot.svg"),
+          label: "Nouveaux messages [ Populaire ]"
+        },
+        {
+          src: require("@/asset/img/bbs/folder_new_lock.svg"),
+          label: "Nouveaux messages [ Verrouillé ]"
+        },
+        {
+          src: require("@/asset/img/bbs/folder.svg"),
+          label: "Pas de nouveaux messages"
+        },
+        {
+          src: require("@/asset/img/bbs/folder_hot.svg"),
+          label: "Pas de nouveaux messages [ Populaire ]"
+        },
+        {
+          src: require("@/asset/img/bbs/folder_lock.svg"),
+          label: "Pas de nouveaux messages [ Verrouillé ]"
+        },
+        {
+          src: require("@/asset/img/bbs/folder_announce.svg"),
+          label: "Annonce"
+        },
+        {
+          src: require("@/asset/img/bbs/folder_sticky.svg"),
+          label: "Post-it"
+        }
+      ],
       post: false
     };
   },

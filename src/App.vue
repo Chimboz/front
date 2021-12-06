@@ -24,6 +24,10 @@ import Footer from "@/component/core/Footer.vue";
 import Modal from "@/component/core/Modal.vue";
 import { mapState } from "vuex";
 
+// @vuese
+// @group View
+// App root component, template for all pages.
+// Use Navbar, ProgressBar, Footer and an hidden Modal that can be used to display various messages
 export default {
   name: "App",
   components: {
@@ -40,7 +44,7 @@ export default {
       {
         name: "description",
         content:
-          "chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
       },
       {
         property: "og:title",

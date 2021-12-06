@@ -318,8 +318,11 @@
 import Progress from "@/component/core/Progress.vue";
 import Tooltip from "@/component/core/Tooltip.vue";
 
+// @vuese
+// @group View/Games
+// Bacteria page
 export default {
-  name: "Games",
+  name: "Bacteria",
   components: {
     Progress,
     Tooltip

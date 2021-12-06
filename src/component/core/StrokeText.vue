@@ -17,7 +17,9 @@
   </svg>
 </template>
 <script>
+// @vuese
+// @group Core
 export default {
-  name: "StrokeText",
+  name: "StrokeText"
 };
 </script>
