@@ -243,7 +243,7 @@ Code block</pre
         </tr>
         <tr>
           <td>
-            <Emotes />
+            <Emotes @emote="(emote) => (message += `:${emote}:`)" />
           </td>
           <td>
             <textarea

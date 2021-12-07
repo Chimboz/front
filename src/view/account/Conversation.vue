@@ -109,7 +109,7 @@
   </Container>
 </template>
 <script>
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/module/messageRender.js";
 
@@ -129,7 +129,7 @@ export default {
       return messageRender(message);
     },
     formatDate(date) {
-      return formatDistanceToNow(new Date(date), {
+      return formatDistanceToNowStrict(new Date(date), {
         locale: window.__localeId__,
         addSuffix: true
       });

@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 // @vuese
@@ -74,7 +74,7 @@ export default {
   },
   computed: {
     formatDate() {
-      return formatDistanceToNow(new Date(this.topic.last_msg.date), {
+      return formatDistanceToNowStrict(new Date(this.topic.last_msg.date), {
         locale: window.__localeId__,
         addSuffix: true
       });

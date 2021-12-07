@@ -179,7 +179,7 @@
             >
           </div>
           <div id="profile" v-show="profile">
-            <Emotes />
+            <Emotes @emote="(emote) => $emit('emote', emote)" />
             <br />
             <h3 class="justified">Ta phrase préférée</h3>
             <input
@@ -337,7 +337,7 @@
               class="arrow green jitter"
               src="@/asset/img/arrow.svg" /></template
           >Sauver</Button
-        ><router-link :to="`/book/${data.id}`">
+        ><router-link :to="`/book/${data.id}`" style="margin-left: 6px">
           <Button type="button"
             ><template #prepend
               ><img
@@ -433,10 +433,6 @@ li::marker {
 
 .left-acc {
   flex-direction: column;
-}
-
-.btn-menu .btn {
-  margin: 4px;
 }
 
 h3 {
@@ -582,7 +578,7 @@ h3 {
   );
   border-radius: 100%;
   position: absolute;
-  animation: blink 0.3s infinite;
+  animation: blink 0.3s infinite step-end;
   z-index: 2;
 }
 

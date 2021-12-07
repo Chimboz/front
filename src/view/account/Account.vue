@@ -27,6 +27,7 @@
       v-if="data"
       :data="data"
       @update-item="(name, item) => (data.look[name] = item)"
+      @emote="(emote) => (data.look.emote = emote)"
       @previous-item="
         (name) =>
           (data.look[name] =
@@ -237,7 +238,7 @@
 import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
 import StrokeText from "@/component/core/StrokeText.vue";
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 // @vuese
@@ -261,7 +262,7 @@ export default {
       console.log("Envoyé!");
     },
     formatDate(date) {
-      return formatDistanceToNow(new Date(date), {
+      return formatDistanceToNowStrict(new Date(date), {
         locale: window.__localeId__,
         addSuffix: true
       });

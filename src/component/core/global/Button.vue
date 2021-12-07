@@ -19,6 +19,7 @@ import StrokeText from "@/component/core/StrokeText.vue";
 
 // @vuese
 // @group Core/Global
+// A default button
 export default {
   name: "Button",
   components: {
@@ -31,6 +32,8 @@ export default {
     },
     color: {
       required: false,
+      // `"red"`, `"green"`, `"yellow"`, `"orange"`
+      type: String,
       validator(value) {
         return ["red", "green", "yellow", "orange"].includes(value);
       }
@@ -109,6 +112,10 @@ export default {
   filter: brightness(1);
   border-radius: 10px;
   border-width: 2px 5px;
+}
+
+.btn + .btn {
+  margin-left: 6px;
 }
 
 .btn-text {

@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 
 // @vuese
@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return formatDistanceToNow(new Date(date), {
+      return formatDistanceToNowStrict(new Date(date), {
         locale: window.__localeId__,
         addSuffix: true
       });
