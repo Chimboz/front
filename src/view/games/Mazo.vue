@@ -172,6 +172,7 @@
 <script>
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Games
@@ -186,7 +187,7 @@ export default {
   methods: {
     formatDate(date) {
       return format(new Date(date), "PPp", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     }
   },

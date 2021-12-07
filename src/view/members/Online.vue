@@ -50,6 +50,7 @@
 <script>
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
@@ -64,7 +65,7 @@ export default {
   computed: {
     formatDate() {
       return format(new Date(this.data.record.date), "PPp", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     }
   },

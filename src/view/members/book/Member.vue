@@ -261,6 +261,7 @@
 import StrokeText from "@/component/core/StrokeText.vue";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Book
@@ -289,12 +290,12 @@ export default {
   methods: {
     formatDate(date) {
       return format(new Date(date), "PPp", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     },
     formatDistance(date) {
       return differenceInCalendarDays(new Date(), new Date(date), {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     },
     ban() {

@@ -492,10 +492,6 @@ h3 {
   width: 100%;
 }
 
-.nav-acc .btn {
-  margin: 4px;
-}
-
 .cabin-scene:before {
   background: linear-gradient(to bottom, #240026, transparent);
   position: absolute;
@@ -728,5 +724,9 @@ h3 {
   font-family: "Chimboz Heavy";
   color: #fff;
   font-size: 15px;
+}
+
+ol {
+  padding-inline-start: 0;
 }
 </style>

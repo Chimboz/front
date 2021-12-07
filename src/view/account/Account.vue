@@ -240,6 +240,7 @@ import Bank from "@/component/Bank.vue";
 import StrokeText from "@/component/core/StrokeText.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Account
@@ -263,7 +264,7 @@ export default {
     },
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
-        locale: window.__localeId__,
+        locale: locales[navigator.language.split("-")[0]],
         addSuffix: true
       });
     }

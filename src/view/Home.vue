@@ -194,6 +194,7 @@ import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 import messageRender from "@/module/messageRender.js";
 
 // @vuese
@@ -232,7 +233,7 @@ export default {
     },
     formatDatePhotos(date) {
       return format(new Date(date), "PP", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     }
   },
@@ -242,7 +243,7 @@ export default {
     },
     formatDate() {
       return format(new Date(this.data.news.date), "PPp", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     }
   },

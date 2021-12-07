@@ -104,6 +104,7 @@
 <script>
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 import messageRender from "@/module/messageRender.js";
 import { mapState } from "vuex";
 
@@ -134,7 +135,7 @@ export default {
     },
     formatDate() {
       return format(new Date(this.message.date), "PPpp", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     }
   },

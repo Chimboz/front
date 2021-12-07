@@ -69,6 +69,7 @@
 <script>
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Account
@@ -83,7 +84,7 @@ export default {
   methods: {
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
-        locale: window.__localeId__,
+        locale: locales[navigator.language.split("-")[0]],
         addSuffix: true
       });
     },

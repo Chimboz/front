@@ -90,20 +90,7 @@
           </section>
         </div>
       </div>
-      <section class="section0" v-if="section == 0">
-        <br /><Button color="green" @click="section = 1"
-          ><template #prepend
-            ><img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Arrow icon"
-              class="arrow green jitter"
-              src="@/asset/img/arrow.svg" /></template
-          >S'inscrire</Button
-        ><br />
-        <Button @click="section = 2">Se connecter</Button>
-      </section>
-      <form class="section1" v-if="section == 1" autocomplete="on">
+      <form v-if="section == 0" autocomplete="on">
         <br />
         <input
           required
@@ -142,9 +129,7 @@
           class="btn-md"
         />
         <div class="flex">
-          <Button color="red" @click="section = 0" type="button"
-            >Annuler</Button
-          >
+          <Button @click="section = 1" type="button">Se connecter</Button>
           <Button color="green"
             ><template #prepend
               ><img
@@ -159,8 +144,7 @@
         </div>
       </form>
       <form
-        class="section2"
-        v-if="section == 2"
+        v-if="section == 1"
         autocomplete="on"
         @submit.prevent="
           login();
@@ -203,9 +187,7 @@
           />
         </div>
         <div class="flex">
-          <Button color="red" @click="section = 0" type="button"
-            >Annuler</Button
-          >
+          <Button @click="section = 0" type="button">S'inscrire</Button>
           <Button type="submit" color="green"
             ><template #prepend
               ><img
@@ -234,7 +216,7 @@ export default {
   name: "Demo",
   data() {
     return {
-      section: 0,
+      section: 1,
       demo: 0
     };
   },

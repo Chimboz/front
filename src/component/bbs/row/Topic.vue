@@ -56,6 +56,7 @@
 <script>
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group BBS/Row
@@ -75,7 +76,7 @@ export default {
   computed: {
     formatDate() {
       return formatDistanceToNowStrict(new Date(this.topic.last_msg.date), {
-        locale: window.__localeId__,
+        locale: locales[navigator.language.split("-")[0]],
         addSuffix: true
       });
     }

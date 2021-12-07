@@ -1,6 +1,5 @@
 // Setting useful variables
 :root {
-  --main: 0;
   --gap: 2px;
 }
 
@@ -9,6 +8,7 @@
   margin: 0;
 }
 
+// Fix for focused black lines in Chrome
 *:focus {
   outline: none;
 }
@@ -39,7 +39,7 @@ body {
   }
 }
 
-// Custom scrollbar (chromium based browsers)s
+// Custom scrollbar (chromium based browsers)
 ::-webkit-scrollbar {
   width: 16px;
   height: 16px;

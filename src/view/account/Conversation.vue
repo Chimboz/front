@@ -111,6 +111,7 @@
 <script>
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 import messageRender from "@/module/messageRender.js";
 
 // @vuese
@@ -130,7 +131,7 @@ export default {
     },
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
-        locale: window.__localeId__,
+        locale: locales[navigator.language.split("-")[0]],
         addSuffix: true
       });
     },

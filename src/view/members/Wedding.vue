@@ -357,6 +357,7 @@
 <script>
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
@@ -381,12 +382,12 @@ export default {
   methods: {
     formatDate(date, formatPattern) {
       return format(new Date(date), formatPattern, {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     },
     formatDistance(datebegin, dateend) {
       return differenceInCalendarDays(new Date(dateend), new Date(datebegin), {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     },
     search() {

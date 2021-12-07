@@ -112,6 +112,7 @@ import Demo from "@/component/Demo.vue";
 import Pack from "@/component/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View
@@ -143,7 +144,7 @@ export default {
     },
     formatDatePhotos(date) {
       return format(new Date(date), "PP", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     }
   },

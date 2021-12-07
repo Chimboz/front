@@ -201,6 +201,7 @@ import Blazon from "@/component/blazon/Blazon.vue";
 import StrokeText from "@/component/core/StrokeText.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Group
@@ -230,7 +231,7 @@ export default {
   methods: {
     formatDate() {
       return format(new Date(this.data.date), "PPp", {
-        locale: window.__localeId__
+        locale: locales[navigator.language.split("-")[0]]
       });
     },
     delete() {
