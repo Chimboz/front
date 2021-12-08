@@ -232,7 +232,6 @@ export default {
   font-family: "Pixelated Verdana 12";
   font-weight: bold;
   font-size: 16px;
-  padding: 0 8px 8px 0;
   color: #069;
   text-shadow: 0 0 5px #fff, 0 0 5px #fff;
 }
@@ -243,7 +242,7 @@ export default {
   font-weight: normal;
   color: #000;
   border-radius: 100px;
-  padding: 4px;
+  padding: 2px;
   line-height: 1;
   margin-right: -20px;
   border: none;

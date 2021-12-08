@@ -45,7 +45,7 @@
       </th>
     </tr> </table
   ><br />
-  <div style="text-align: end">
+  <div style="text-align: end" v-if="authenticated">
     <button class="btn-action" v-if="user.role > 50" @click.prevent="move"
       ><img
         src="@/asset/img/bbs/icon/arrow.svg"
@@ -78,7 +78,7 @@
 <script>
 import Pagination from "../Pagination.vue";
 import Message from "../row/Message.vue";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 // @vuese
 // @group BBS/List
@@ -95,6 +95,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters("auth", ["authenticated"]),
     ...mapState("auth", ["user"])
   },
   methods: {

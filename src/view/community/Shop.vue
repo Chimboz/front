@@ -61,7 +61,7 @@
             <br /><br />
             <h3> Pack {{ shown.name }} </h3>
             {{ shown.description }}<br /><br />
-            <button class="btn-shop" @click.prevent="buy()"
+            <button class="btn-shop" @click.prevent="buy()" v-if="authenticated"
               ><img src="@/asset/img/shop/dollar.png" /> Acheter</button
             >
           </div>
@@ -86,6 +86,7 @@
 <script>
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
+import { mapGetters } from "vuex";
 
 // @vuese
 // @group View/Community
@@ -101,6 +102,9 @@ export default {
       data: null,
       shown: null
     };
+  },
+  computed: {
+    ...mapGetters("auth", ["authenticated"])
   },
   methods: {
     show(pack) {

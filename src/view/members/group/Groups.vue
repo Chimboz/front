@@ -137,7 +137,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data">
+    <Card v-if="authenticated">
       <template #header>Moi et mes groupes</template>
 
       <router-link to="/groups/manage"
@@ -386,6 +386,8 @@
   </Container>
 </template>
 <script>
+import { mapGetters } from "vuex";
+
 // @vuese
 // @group View/Members/Group
 // Groups page
@@ -395,6 +397,9 @@ export default {
     return {
       data: null
     };
+  },
+  computed: {
+    ...mapGetters("auth", ["authenticated"])
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>

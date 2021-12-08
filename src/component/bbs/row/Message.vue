@@ -45,49 +45,51 @@
         >&nbsp;
         <h4 class="ellipsis justified title">{{ message.title }}</h4>
         &nbsp;
-        <button
-          class="btn-action"
-          @click.prevent="
-            eventBus.emit(
-              'quote',
-              `**${this.message.author.name}** a écrit :\n${this.message.content}`.replace(
-                /^/gm,
-                '> '
+        <div v-if="authenticated">
+          <button
+            class="btn-action"
+            @click.prevent="
+              eventBus.emit(
+                'quote',
+                `**${this.message.author.name}** a écrit :\n${this.message.content}`.replace(
+                  /^/gm,
+                  '> '
+                )
               )
-            )
-          "
-          ><img
-            src="@/asset/img/bbs/icon/bubble.svg"
-            width="14"
-            height="12"
-            draggable="false"
-            alt="Bubble"
-            @contextmenu.prevent
-          />&nbsp;Citer</button
-        >&nbsp;
-        <button
-          class="btn-action"
-          v-if="
-            (message.author.id === user.id &&
-              Date.now() - message.date < 600) ||
-            user.role > 50
-          "
-          @click.prevent="eventBus.emit('edit', this.message.content)"
-          ><img
-            src="@/asset/img/bbs/icon/pen.svg"
-            width="12"
-            height="12"
-            draggable="false"
-            alt="Pen"
-            @contextmenu.prevent
-          />&nbsp;Éditer</button
-        >&nbsp;
-        <button
-          class="btn-action"
-          v-if="message.author.id === user.id || user.role > 50"
-          @click.prevent="this.delete"
-          >&times;</button
-        >
+            "
+            ><img
+              src="@/asset/img/bbs/icon/bubble.svg"
+              width="14"
+              height="12"
+              draggable="false"
+              alt="Bubble"
+              @contextmenu.prevent
+            />&nbsp;Citer</button
+          >&nbsp;
+          <button
+            class="btn-action"
+            v-if="
+              (message.author.id === user.id &&
+                Date.now() - message.date < 600) ||
+              user.role > 50
+            "
+            @click.prevent="eventBus.emit('edit', this.message.content)"
+            ><img
+              src="@/asset/img/bbs/icon/pen.svg"
+              width="12"
+              height="12"
+              draggable="false"
+              alt="Pen"
+              @contextmenu.prevent
+            />&nbsp;Éditer</button
+          >&nbsp;
+          <button
+            class="btn-action"
+            v-if="message.author.id === user.id || user.role > 50"
+            @click.prevent="this.delete"
+            >&times;</button
+          >
+        </div>
       </div>
       <hr style="margin: 2px 0" />
       <div class="markdown-body" v-html="formatMessage"></div>
@@ -106,7 +108,7 @@ import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
 import messageRender from "@/module/messageRender.js";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 // @vuese
 // @group BBS/Row
@@ -129,6 +131,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters("auth", ["authenticated"]),
     ...mapState("auth", ["user"]),
     formatMessage() {
       return messageRender(this.message.content);

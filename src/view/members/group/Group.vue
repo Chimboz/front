@@ -107,16 +107,16 @@
         <div class="justified">
           <img
             :src="require(`@/asset/img/group/${this.data.status}.png`)"
-            style="float: left"
+            style="float: left; margin-right: 4px"
           />
           {{ $t(`group.${this.data.status}`) }}
-          <br />
-          <br />
-          Seulement <b>les membres</b> peuvent joindre un groupe. <br />Si tu es
-          déjà un membre,
-          <router-link to="login">connecte toi</router-link> pour accéder aux
-          inscriptions des groupes.</div
-        >
+          <div v-if="authenticated"
+            ><br />
+            <a @click.prevent="join" style="cursor: pointer"
+              >Rejoindre ce groupe</a
+            ></div
+          >
+        </div>
       </Card></template
     >
   </Container>
@@ -127,6 +127,7 @@ import StrokeText from "@/component/core/StrokeText.vue";
 import messageRender from "@/module/messageRender.js";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { mapGetters } from "vuex";
 const locales = { fr, enGB };
 
 // @vuese
@@ -144,6 +145,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters("auth", ["authenticated"]),
     formatDescription() {
       return messageRender(this.data.description);
     },
@@ -156,6 +158,11 @@ export default {
       return differenceInCalendarDays(new Date(), new Date(this.data.date), {
         locale: locales[navigator.language.split("-")[0]]
       });
+    }
+  },
+  methods: {
+    join() {
+      console.log("Rejoins " + this.$route.params.id);
     }
   },
   async beforeRouteEnter(to, from, next) {

@@ -309,8 +309,8 @@
               </tr>
             </tbody>
           </table> </div></div></Card
-    ><br />·
-    <Card id="vote"
+    ><br />
+    <Card id="vote" v-if="authenticated"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
@@ -392,6 +392,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 // @vuese
 // @group View/Members
 // Popularity page
@@ -406,6 +408,9 @@ export default {
     vote() {
       console.log("Envoyé!");
     }
+  },
+  computed: {
+    ...mapGetters("auth", ["authenticated"])
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
