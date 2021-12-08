@@ -8,7 +8,7 @@
         v-if="type == 'error'"
         width="46"
         height="35"
-        src="@/asset/img/icon/warning_modal.svg"
+        src="@/asset/img/icon/warning2.svg"
       />
       <img
         style="float: left"
@@ -28,12 +28,44 @@
         height="46"
         src="@/asset/img/icon/failure.svg"
       />
+      <img
+        style="float: left"
+        draggable="false"
+        @contextmenu.prevent
+        v-if="type == 'confirmation'"
+        width="46"
+        height="42"
+        src="@/asset/img/icon/confirmation.svg"
+      />
       <p>{{ $t(message) }}</p>
-      <button class="btn-pink ok" @click="isVisible = false">
+      <button
+        class="btn-pink ok"
+        @click="request"
+        style="filter: hue-rotate(180deg)"
+        v-if="type == 'confirmation'"
+      >
         <img
           draggable="false"
           @contextmenu.prevent
           src="@/asset/img/icon/ok.svg"
+        />
+      </button>
+      <button class="btn-pink ok" @click="isVisible = false" v-else>
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/icon/ok.svg"
+        />
+      </button>
+      <button
+        class="btn-pink ko"
+        @click="isVisible = false"
+        v-if="type == 'confirmation'"
+      >
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          src="@/asset/img/icon/ko.svg"
         />
       </button>
     </div>
@@ -48,7 +80,8 @@ export default {
     return {
       isVisible: false,
       message: "error.default",
-      type: "error"
+      type: "error",
+      callback: ""
     };
   },
   mounted() {
@@ -77,6 +110,15 @@ export default {
       this.isVisible = true;
       this.type = "confirmation";
       this.message = req.message;
+      this.callback = req.callback;
+    },
+    async request() {
+      const req = await this.api.get(this.callback);
+      if (req.data.success) {
+        this.success({ message: "success.buy" });
+      } else {
+        this.failure({ message: "failure.buy" });
+      }
     }
   }
 };
@@ -114,5 +156,12 @@ export default {
   position: absolute;
   bottom: 4px;
   right: 4px;
+}
+
+.ko {
+  position: absolute;
+  bottom: 4px;
+  right: 30px;
+  filter: hue-rotate(45deg);
 }
 </style>

@@ -108,7 +108,10 @@ export default {
     },
     buy() {
       console.log("Acheté " + this.shown.name);
-      this.eventBus.emit("success", { message: "success.buy" });
+      this.eventBus.emit("confirmation", {
+        message: "success.buy",
+        callback: "/api/success.json"
+      });
     }
   },
   async beforeRouteEnter(to, from, next) {
