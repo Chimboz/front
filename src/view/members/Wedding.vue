@@ -438,6 +438,12 @@ tr td:first-child {
   position: relative;
 }
 
+@media (max-width: 500px) {
+  .wedding {
+    display: none;
+  }
+}
+
 .witness,
 .married {
   position: absolute;
