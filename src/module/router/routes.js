@@ -168,7 +168,8 @@ export const routes = [
     children: [
       {
         path: ":id",
-        component: () => import("../../component/Item.vue")
+        component: () => import("../../component/Item.vue"),
+        meta: { sitemap: { ignoreRoute: true } }
       }
     ]
   },
