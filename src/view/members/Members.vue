@@ -12,7 +12,13 @@
     <Card header="new.gif" bg="new.png" :height="70" color="blue" v-if="data">
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.new" :key="user.id" class="flex col"
-          ><Avatar
+          ><img
+            src="@/asset/img/member/spotlight.svg"
+            draggable="false"
+            @contextmenu.prevent
+            height="93"
+            width="100"
+          /><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -44,7 +50,13 @@
     >
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.popularity" :key="user.id" class="flex col"
-          ><Avatar
+          ><img
+            src="@/asset/img/member/spotlight.svg"
+            draggable="false"
+            @contextmenu.prevent
+            height="93"
+            width="100"
+          /><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -78,7 +90,13 @@
           v-for="couple of data.wedding"
           :key="couple.user1.id"
           class="flex col"
-          ><div class="flex" style="justify-content: center"
+          style="align-items: center"
+          ><img
+            src="@/asset/img/member/spotlight.svg"
+            draggable="false"
+            @contextmenu.prevent
+            height="93"
+            width="100" /><div class="flex" style="justify-content: center"
             ><Avatar
               :avatar="couple.user1.look.avatar"
               :emote="couple.user1.look.emote"
@@ -191,5 +209,8 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img[src*="spotlight"] {
+  margin-bottom: -70px;
+}
+</style>

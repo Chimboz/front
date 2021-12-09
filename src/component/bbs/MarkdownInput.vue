@@ -354,19 +354,9 @@ export default {
     scrollTo(anchor) {
       location.href = anchor;
     },
-    resetSelection(length) {
-      this.selectionRange = [
-        this.selectionRange[1] + length,
-        this.selectionRange[1] + length
-      ];
-      this.$refs.message.focus();
-    },
     focusHandler() {
       this.$refs.message.focus();
-      this.$refs.message.setSelectionRange(
-        this.selectionRange[0],
-        this.selectionRange[1]
-      );
+      this.select();
     },
     selectionHandler(e) {
       this.selectionRange = [
@@ -381,47 +371,38 @@ export default {
       );
     },
     format(pattern) {
-      this.$refs.message.setRangeText(
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
         pattern +
-          this.message.substring(
-            this.selectionRange[0],
-            this.selectionRange[1]
-          ) +
-          (/<[a-z0-9]+>/.test(pattern)
-            ? pattern.substring(0, 1) + "/" + pattern.substring(1)
-            : pattern)
-      );
-      this.resetSelection(
-        pattern.length * 2 + (/<[a-z0-9]+>/.test(pattern) ? 1 : 0)
-      );
+        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        (/<[a-z0-9]+>/.test(pattern)
+          ? pattern.substring(0, 1) + "/" + pattern.substring(1)
+          : pattern) +
+        this.message.substring(this.selectionRange[1]);
+      this.focusHandler();
     },
     formatLink(image) {
-      this.$refs.message.setRangeText(
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
         `${image ? "!" : ""}[${this.message.substring(
           this.selectionRange[0],
           this.selectionRange[1]
         )}](${this.message.substring(
           this.selectionRange[0],
           this.selectionRange[1]
-        )})`
-      );
-      this.selectionRange = [
-        this.selectionRange[0] + 1 + +image,
-        this.selectionRange[1] + 1 + +image
-      ];
+        )})` +
+        this.message.substring(this.selectionRange[1]);
       this.focusHandler();
     },
     formatCode() {
-      this.$refs.message.setRangeText(
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
         "\n```" +
-          this.$t("format.language") +
-          "\n" +
-          this.message.substring(
-            this.selectionRange[0],
-            this.selectionRange[1]
-          ) +
-          "\n```\n"
-      );
+        this.$t("format.language") +
+        "\n" +
+        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        "\n```\n" +
+        this.message.substring(this.selectionRange[1]);
       this.selectionRange = [
         this.selectionRange[0] + 4,
         this.selectionRange[0] + 4 + this.$t("format.language").length
@@ -429,34 +410,28 @@ export default {
       this.focusHandler();
     },
     formatMultiline(pattern) {
-      this.$refs.message.setRangeText(
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
         (this.message.charAt(this.selectionRange[0] - 1) == "\n" ||
         this.selectionRange[0] == 0
           ? pattern
           : "\n" + pattern) +
-          this.message
-            .substring(this.selectionRange[0], this.selectionRange[1])
-            .split("\n")
-            .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
-          "\n"
-      );
-      this.resetSelection(
-        pattern.length *
-          this.message
-            .substring(this.selectionRange[0], this.selectionRange[1])
-            .split("\n").length
-      );
+        this.message
+          .substring(this.selectionRange[0], this.selectionRange[1])
+          .split("\n")
+          .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
+        "\n" +
+        this.message.substring(this.selectionRange[1]);
+      this.focusHandler();
     },
     formatColor(hex) {
-      this.$refs.message.setRangeText(
+      this.message =
+        this.message.substring(0, this.selectionRange[0]) +
         `<span style="color:${hex}">` +
-          this.message.substring(
-            this.selectionRange[0],
-            this.selectionRange[1]
-          ) +
-          "</span>"
-      );
-      this.resetSelection(35);
+        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        "</span>" +
+        this.message.substring(this.selectionRange[1]);
+      this.focusHandler();
     }
   }
 };
