@@ -1,0 +1,10 @@
+{
+  "id": 3,
+  "name": "Troisième item",
+  "rarity": "rare",
+  "type": "body",
+  "owner": [
+    { "name": "Owned", "id": 3, "color": "#f0f" },
+    { "name": "Slim", "id": 3, "color": "#f0f" }
+  ]
+}

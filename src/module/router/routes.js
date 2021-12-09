@@ -164,7 +164,13 @@ export const routes = [
   {
     path: "/encyclopedia",
     name: "Encyclopedia",
-    component: () => import("../../view/community/Encyclopedia.vue")
+    component: () => import("../../view/community/Encyclopedia.vue"),
+    children: [
+      {
+        path: ":id",
+        component: () => import("../../component/Item.vue")
+      }
+    ]
   },
   {
     path: "/login",
