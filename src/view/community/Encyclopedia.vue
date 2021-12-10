@@ -10,7 +10,7 @@
     </template>
     <router-view></router-view>
     <Card color="yellow" v-if="data">
-      <div class="encyclopedia" @scroll.passive="scroll">
+      <div class="encyclopedia" @scroll.passive="onScroll">
         <div v-for="item of data" :key="item.id" class="item-wrapper">
           <Tooltip>
             <template #tooltip
@@ -54,25 +54,15 @@ export default {
   data() {
     return {
       data: null,
-      page: 0,
-      lastScrollUpdate: 0
+      page: 0
     };
   },
   methods: {
-    async scroll(e) {
-      let scrollBar = e.target;
-      if (
-        scrollBar.scrollTop + scrollBar.clientHeight >=
-        scrollBar.scrollHeight - 20
-      ) {
-        var t = new Date().getTime();
-        if (t - this.lastScrollUpdate > 1000) {
-          this.lastScrollUpdate = t;
-          const req = await this.api.get(
-            `/api/encyclopedia/${++this.page}.json`
-          );
-          this.data = this.data.concat(req.data);
-        }
+    onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
+      if (scrollTop + clientHeight >= scrollHeight) {
+        this.api.get(`/api/encyclopedia/${++this.page}.json`).then((res) => {
+          this.data = this.data.concat(res.data);
+        });
       }
     }
   },
