@@ -237,7 +237,6 @@
 <script>
 import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
-import StrokeText from "@/component/core/StrokeText.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -249,8 +248,7 @@ export default {
   name: "Account",
   components: {
     Bank,
-    Cabin,
-    StrokeText
+    Cabin
   },
 
   data() {

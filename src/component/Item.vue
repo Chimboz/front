@@ -1,16 +1,23 @@
 <template>
-  <Card v-if="data"
-    >{{ $route.params.id }}<br />{{ data.name }}<br />{{ data.type }}<br />{{
-      data.rarity
+  <Card v-if="data">
+    <img :src="`/avatar/${data.type}/${data.id}.svg`" style="float: left" />
+    {{ $route.params.id }}<br />
+    <StrokeText class="item-name">{{ data.name }}</StrokeText
+    ><br />{{ data.type }}<br />{{ data.rarity
     }}<user v-for="user of data.owner" :key="user.id" :user="user"
   /></Card>
   <br />
 </template>
 <script>
+import StrokeText from "@/component/core/StrokeText.vue";
+
 // @vuese
 // @group Default
 export default {
   name: "Item",
+  components: {
+    StrokeText
+  },
   data() {
     return {
       data: null
@@ -30,3 +37,12 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.item-name {
+  fill: #fff;
+  stroke: #f39;
+  stroke-width: 3;
+  font-family: "Chimboz Heavy";
+  height: 50px;
+}
+</style>

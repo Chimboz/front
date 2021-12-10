@@ -294,7 +294,7 @@
                     : []
                 }"
                 :key="name"
-                :class="[name]"
+                :class="name"
               >
                 <button
                   type="button"

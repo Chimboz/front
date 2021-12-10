@@ -10,31 +10,37 @@
     </template>
     <router-view></router-view>
     <Card color="yellow" v-if="data">
-      <router-link
-        v-for="item of data"
-        :key="item.id"
-        :to="'/encyclopedia/' + item.id"
-      >
-        <button
-          type="button"
-          class="item"
-          :class="{
-            active: $route.params.id == item.id
-          }"
-        >
-          <VLazyImage
-            draggable="false"
-            @contextmenu.prevent
-            :src="`/avatar/${item.type}/${item.id}.svg`"
-            :src-placeholder="require('@/asset/img/loading.svg')"
-          /> </button
-      ></router-link>
+      <div class="encyclopedia" @scroll.passive="scroll">
+        <div v-for="item of data" :key="item.id" class="item-wrapper">
+          <Tooltip>
+            <template #tooltip
+              ><b>{{ item.name }}</b></template
+            >
+            <router-link :to="'/encyclopedia/' + item.id">
+              <button
+                type="button"
+                class="item"
+                :class="[
+                  item.type,
+                  $route.params.id == item.id ? 'active' : false
+                ]"
+              >
+                <VLazyImage
+                  draggable="false"
+                  @contextmenu.prevent
+                  :src="`/avatar/${item.type}/${item.id}.svg`"
+                  :src-placeholder="require('@/asset/img/loading.svg')"
+                /> </button></router-link
+          ></Tooltip>
+        </div>
+      </div>
     </Card>
     <template #right-column></template>
   </Container>
 </template>
 <script>
 import VLazyImage from "v-lazy-image";
+import Tooltip from "@/component/core/Tooltip.vue";
 
 // @vuese
 // @group View/Community
@@ -42,33 +48,44 @@ import VLazyImage from "v-lazy-image";
 export default {
   name: "Encyclopedia",
   components: {
-    VLazyImage
+    VLazyImage,
+    Tooltip
   },
   data() {
     return {
       data: null,
-      shown: null
+      page: 0,
+      lastScrollUpdate: 0
     };
   },
   methods: {
-    show(pack) {
-      this.shown = pack;
-    },
-    buy() {
-      console.log("Acheté " + this.shown.name);
-      this.eventBus.emit("success", { message: "success.buy" });
+    async scroll(e) {
+      let scrollBar = e.target;
+      if (
+        scrollBar.scrollTop + scrollBar.clientHeight >=
+        scrollBar.scrollHeight - 20
+      ) {
+        var t = new Date().getTime();
+        if (t - this.lastScrollUpdate > 1000) {
+          this.lastScrollUpdate = t;
+          const req = await this.api.get(
+            `/api/encyclopedia/${++this.page}.json`
+          );
+          this.data = this.data.concat(req.data);
+        }
+      }
     }
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/encyclopedia.json").then((res) => {
+      vm.api.get(`/api/encyclopedia/${vm.page}.json`).then((res) => {
         vm.data = res.data;
         vm.shown = res.data[0];
       })
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/encyclopedia.json");
+    const req = await this.api.get(`/api/encyclopedia/${this.page}.json`);
     this.data = req.data;
     this.shown = this.data[0];
     next();
@@ -99,9 +116,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+// Encyclopedia container
+.encyclopedia {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// Loading circle
+.item img[src*="loading"] {
+  transform: unset;
+  width: 100%;
+}
+
+.item-wrapper {
+  display: inline-block;
+}
+
+// Items
 .item {
   margin: 1px;
-  display: inline-block;
   background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
   height: 60px;
   width: 60px;
@@ -111,34 +145,34 @@ export default {
 }
 
 .item.active {
-  border: 2px solid #fff;
+  border: 3px solid #fff;
 }
 
 .item.active img {
-  margin: -2px;
+  margin: -3px;
 }
 
 .hat img {
-  transform: translate(-18.5px, -35px);
+  transform: translate(-3px, -31px) scale(1.5);
 }
 
 .body img {
-  transform: translate(-22px, -24px);
+  transform: translate(-11px, -15px) scale(1.5);
 }
 
 .shoe img {
-  transform: translate(-2px, 0px);
+  transform: translate(-4px, 0px) scale(1.5);
 }
 
 .item0 img {
-  transform: translate(-4px, -11px);
+  transform: translate(-0.5px, -4px) scale(1.5);
 }
 
 .item1 img {
-  transform: translate(-11px, -20px);
+  transform: translate(2px, -17px) scale(1.5);
 }
 
 .item2 img {
-  transform: translate(-11px, -58px);
+  transform: translate(4px, -64px) scale(1.5);
 }
 </style>

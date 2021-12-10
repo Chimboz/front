@@ -16,7 +16,6 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  height: 12px;
 }
 
 .tooltip .tooltiptext {
@@ -27,14 +26,15 @@ export default {
   pointer-events: none;
   padding: 2px 6px;
   border-radius: 6px;
-  box-shadow: inset 1px 1px 2px #5c341f90;
+  box-shadow: inset 1px 1px 1px #5c341f90, inset 1px 1px 1px #5c341f30;
 
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
-  margin-left: -25%;
+  margin-left: -50px;
+  width: 100px;
 }
 
 .tooltip:hover .tooltiptext {
