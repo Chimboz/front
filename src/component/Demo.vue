@@ -156,8 +156,11 @@
           <input
             required
             autofocus
+            minlength="2"
+            maxlength="15"
             name="username"
             type="text"
+            pattern="[\w\.\-_@]{2,15}"
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
