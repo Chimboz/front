@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
-      if (scrollTop + clientHeight >= scrollHeight) {
+      if (scrollTop + clientHeight >= scrollHeight - 60) {
         this.isLoading = true;
         this.api.get(`/api/encyclopedia/${++this.page}.json`).then(
           (res) => {
