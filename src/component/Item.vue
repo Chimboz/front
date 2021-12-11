@@ -1,9 +1,10 @@
 <template>
   <Card v-if="data">
+    <StrokeText class="item-name">{{ data.name }}</StrokeText>
     <img :src="`/avatar/${data.type}/${data.id}.svg`" style="float: left" />
-    {{ $route.params.id }}<br />
-    <StrokeText class="item-name">{{ data.name }}</StrokeText
-    ><br />{{ data.type }}<br />{{ data.rarity
+
+    id n°{{ $route.params.id }}<br />
+    <br />{{ data.type }}<br />{{ data.rarity
     }}<user v-for="user of data.owner" :key="user.id" :user="user"
   /></Card>
   <br />
@@ -43,6 +44,7 @@ export default {
   stroke: #f39;
   stroke-width: 3;
   font-family: "Chimboz Heavy";
-  height: 50px;
+  font-size: 26px;
+  height: 26px;
 }
 </style>

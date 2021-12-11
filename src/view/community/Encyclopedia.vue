@@ -11,7 +11,7 @@
     <router-view></router-view>
     <Card color="yellow" v-if="data">
       <div class="encyclopedia" @scroll.passive="onScroll">
-        <div v-for="item of data" :key="item.id" class="item-wrapper">
+        <div v-for="item of data" :key="item" class="item-wrapper">
           <Tooltip>
             <template #tooltip
               ><b>{{ item.name }}</b></template
@@ -61,7 +61,7 @@ export default {
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
       if (scrollTop + clientHeight >= scrollHeight) {
         this.api.get(`/api/encyclopedia/${++this.page}.json`).then((res) => {
-          this.data = this.data.concat(res.data);
+          this.data = [...new Set([...this.data, ...res.data])];
         });
       }
     }
@@ -73,13 +73,13 @@ export default {
         vm.shown = res.data[0];
       })
     );
-  },
+  } /*
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(`/api/encyclopedia/${this.page}.json`);
+    const req = await this.api.get(`/api/encyclopedia/0.json`);
     this.data = req.data;
     this.shown = this.data[0];
     next();
-  },
+  },*/,
   metaInfo: {
     title: "section.shop",
     meta: [
