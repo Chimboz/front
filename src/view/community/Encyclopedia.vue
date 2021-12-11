@@ -22,6 +22,7 @@
                 class="item"
                 :class="[
                   item.type,
+                  item.rarity,
                   $route.params.id == item.id ? 'active' : false
                 ]"
               >
@@ -159,6 +160,22 @@ export default {
   border-radius: 12px;
   overflow: hidden;
   vertical-align: middle;
+}
+
+.item.rare {
+  background: #69c;
+}
+
+.item.mythic {
+  background: #9412fe;
+}
+
+.item.legendary {
+  background: #fc0;
+}
+
+.item.unique {
+  background: #c00;
 }
 
 .item.active {

@@ -10,7 +10,7 @@
       :x="justified ? '0%' : '50%'"
       y="75%"
       paint-order="stroke"
-      :text-anchor="justified ? 'right' : 'middle'"
+      :text-anchor="justified ? 'left' : 'middle'"
     >
       <slot></slot>
     </text>
