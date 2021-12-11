@@ -1,10 +1,22 @@
 {
-  "id": 3,
-  "name": "Deuxième item",
-  "rarity": "rare",
-  "type": "body",
+  "id": 2,
+  "name": "Lunettes bleues",
+  "rarity": "mythic",
+  "type": "item0",
   "owner": [
-    { "name": "Owned", "id": 3, "color": "#f0f" },
-    { "name": "Slim", "id": 3, "color": "#f0f" }
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "slim", "id": 3 }, "quantity": 4 }
   ]
 }

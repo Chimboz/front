@@ -9,7 +9,7 @@
       <Rules bot />
     </template>
     <router-view></router-view>
-    <Card color="yellow" v-if="data">
+    <Card color="yellow" v-if="data" style="position: relative">
       <div class="encyclopedia" @scroll.passive="onScroll">
         <div v-for="item of data" :key="item" class="item-wrapper">
           <Tooltip>
@@ -33,6 +33,14 @@
                 /> </button></router-link
           ></Tooltip>
         </div>
+        <div v-if="isLoading" class="spinner-loading"
+          ><img
+            src="@/asset/img/loading.svg"
+            draggable="false"
+            width="200"
+            height="200"
+            @contextmenu.prevent
+        /></div>
       </div>
     </Card>
     <template #right-column></template>
@@ -54,15 +62,21 @@ export default {
   data() {
     return {
       data: null,
-      page: 0
+      page: 0,
+      isLoading: false
     };
   },
   methods: {
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
       if (scrollTop + clientHeight >= scrollHeight) {
-        this.api.get(`/api/encyclopedia/${++this.page}.json`).then((res) => {
-          this.data = [...new Set([...this.data, ...res.data])];
-        });
+        this.isLoading = true;
+        this.api.get(`/api/encyclopedia/${++this.page}.json`).then(
+          (res) => {
+            this.data = [...new Set([...this.data, ...res.data])];
+            this.isLoading = false;
+          },
+          () => (this.isLoading = false)
+        );
       }
     }
   },
@@ -111,6 +125,19 @@ export default {
   max-height: 450px;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.spinner-loading {
+  background: #0003;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
 }
 
 // Loading circle

@@ -7,10 +7,10 @@
   >
     <text
       stroke-linecap="round"
-      x="50%"
+      :x="justified ? '0%' : '50%'"
       y="75%"
       paint-order="stroke"
-      text-anchor="middle"
+      :text-anchor="justified ? 'right' : 'middle'"
     >
       <slot></slot>
     </text>
@@ -20,6 +20,13 @@
 // @vuese
 // @group Core
 export default {
-  name: "StrokeText"
+  name: "StrokeText",
+  props: {
+    justified: {
+      required: false,
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>

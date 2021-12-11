@@ -20,8 +20,8 @@ export default {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: #fff4d5;
-  color: #726338;
+  background-color: #ff9;
+  color: #900;
   text-align: center;
   pointer-events: none;
   padding: 2px 6px;

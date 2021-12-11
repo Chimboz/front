@@ -27,7 +27,7 @@
           :item2="data.look.item2"
         />
         <div class="flex col" style="z-index: 1; position: relative">
-          <StrokeText class="pseudo">{{ this.data.name }}</StrokeText>
+          <StrokeText class="pseudo" justified>{{ this.data.name }}</StrokeText>
           <div class="motto">"{{ this.data.motto }}"</div>
         </div>
       </div>
