@@ -1,15 +1,15 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card
+    <GlobalCard
       header="group.gif"
       bg="groups.gif"
       :height="70"
@@ -22,9 +22,9 @@
       Ils n'étaient en fait qu'une bande de nazes ? Désinscris-toi ! Alors, le
       gang de tes rêves t'as pris ? Découvre-le tout de suite ! Envie de fonder
       ton propre club ? Si tu as un super niveau, go !
-    </Card>
+    </GlobalCard>
     <br />
-    <Card color="blue" justified v-if="data">
+    <GlobalCard color="blue" justified v-if="data">
       <template #header>Mes inscriptions</template>
       <template #subtitle
         >Faire partie de ce groupe c'est ce qu'y a de plus classe...</template
@@ -42,7 +42,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.member" :key="index">
-            <td><group :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td
               >[<a @click.prevent="leave(group.id)" style="cursor: pointer"
                 >Se désinscrire</a
@@ -51,9 +51,9 @@
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card color="blue" v-if="data">
+    <GlobalCard color="blue" v-if="data">
       <template #header>Mes demandes en attente </template>
       <template #subtitle>Tout vient à point à qui sait attendre !</template>
       <table class="groups fullwidth">
@@ -69,7 +69,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.pending" :key="index">
-            <td><group :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td
               >[<a @click.prevent="cancel(group.id)" style="cursor: pointer"
                 >Annuler</a
@@ -78,9 +78,9 @@
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card color="blue" v-if="data">
+    <GlobalCard color="blue" v-if="data">
       <template #header>Mes groupes </template>
       <template #subtitle
         >Ils étaient bien sûr les meilleurs groupes de la communauté...
@@ -98,7 +98,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.owner" :key="index">
-            <td><group :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td
               >[<router-link :to="'/groups/edit/' + group.id">Gérer</router-link
               >]</td
@@ -117,9 +117,9 @@
           width="17"
         />&nbsp;Créer un nouveau groupe</router-link
       >
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card color="blue" header="ensavoirplus_blue.gif" v-if="data">
+      ><GlobalCard color="blue" header="ensavoirplus_blue.gif" v-if="data">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div style="text-align: left">
           <img
@@ -347,9 +347,9 @@
           @contextmenu.prevent
           height="17"
           width="17" />
-        Projecteur sur : <br /><group :group="data.random" /></Card
+        Projecteur sur : <br /><GroupLink :group="data.random" /></GlobalCard
     ></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 // @vuese

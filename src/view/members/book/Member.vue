@@ -1,22 +1,27 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
     <span class="pink justified">
       <router-link to="/book" class="pink"
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <Card class="member" :class="[this.data.gender]" v-if="data" justified>
+    <GlobalCard
+      class="member"
+      :class="[this.data.gender]"
+      v-if="data"
+      justified
+    >
       <div class="member-header">
-        <Avatar
+        <GlobalAvatar
           :avatar="data.look.avatar"
           :emote="data.look.emote"
           :hat="data.look.hat"
@@ -34,7 +39,7 @@
       <div class="member-body">
         <div class="member-portrait centered">
           <div class="portrait flex">
-            <Avatar
+            <GlobalAvatar
               :avatar="data.look.avatar"
               :emote="data.look.emote"
               :hat="data.look.hat"
@@ -76,7 +81,7 @@
                 >Marié</router-link
               >
               avec
-              <User :user="data.wedding.user" /> depuis
+              <UserLink :user="data.wedding.user" /> depuis
               {{ formatDistance(data.wedding.date) }} jours
             </span>
             <span v-else><b>Célibataire</b></span></p
@@ -99,7 +104,7 @@
           </p>
           <p>
             Inscrit aux groupes :
-            <Group
+            <GroupLink
               v-for="(group, index) of this.data.groups"
               :group="group"
               :key="group.id"
@@ -236,9 +241,9 @@
       <router-link :to="'/bbs/author/' + $route.params.id">{{
         data.forum
       }}</router-link>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card top color="blue"
+      ><GlobalCard top color="blue"
         ><b
           >Bannir ce membre
           <form @submit.prevent="ban" class="flex">
@@ -251,10 +256,10 @@
             /><button type="submit" class="btn-action">go</button></form
           >
           jours</b
-        ></Card
+        ></GlobalCard
       ></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

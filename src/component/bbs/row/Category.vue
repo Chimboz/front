@@ -39,7 +39,7 @@
         <span class="genmed">{{ bbs.desc }}<br /> </span
         ><span class="gensmall"
           >Modérateurs&nbsp;:
-          <Group
+          <GroupLink
             v-for="(mod, index) in bbs.mods"
             :key="mod.id"
             :group="mod"
@@ -56,7 +56,7 @@
       </td>
       <td align="center" valign="middle">
         {{ formatDate(bbs.last_msg.date) }}<br />
-        <User :user="bbs.last_msg.author" />
+        <UserLink :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link
           :to="'/topic/' + bbs.last_msg.topicid + '#' + bbs.last_msg.msgid"

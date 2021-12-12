@@ -1,15 +1,15 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card
+    <GlobalCard
       header="bacteria_blue.jpg"
       :height="74"
       color="blue"
@@ -42,9 +42,9 @@
           alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card
+    <GlobalCard
       header="patojdur_blue.gif"
       :height="56"
       color="blue"
@@ -77,9 +77,9 @@
           src="@/asset/img/icon/help.png"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card
+    <GlobalCard
       header="mazo_blue.gif"
       :height="52"
       color="blue"
@@ -112,9 +112,9 @@
           alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         color="blue"
         header="games.gif"
         v-if="data"
@@ -138,7 +138,7 @@
             draggable="false"
             @contextmenu.prevent
           />
-          <Avatar
+          <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
             :emote="data.bacteria.user.look.emote"
@@ -150,7 +150,7 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <user :user="data.bacteria.user" /><br />est champion Bacteria
+            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria
             !</div
           >
           <img
@@ -169,7 +169,7 @@
             draggable="false"
             @contextmenu.prevent
           />
-          <Avatar
+          <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
             :emote="data.patojdur.user.look.emote"
@@ -181,7 +181,7 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <user :user="data.patojdur.user" /><br />est champion Patojdur
+            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur
             !</div
           >
           <img
@@ -200,7 +200,7 @@
             draggable="false"
             @contextmenu.prevent
           />
-          <Avatar
+          <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
             :emote="data.mazo.user.look.emote"
@@ -212,13 +212,13 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <user :user="data.mazo.user" /><br />est un des meilleurs Mazoteurs
-            du moment !</div
+            <UserLink :user="data.mazo.user" /><br />est un des meilleurs
+            Mazoteurs du moment !</div
           >
-        </div></Card
+        </div></GlobalCard
       ></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

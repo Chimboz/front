@@ -1,17 +1,17 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column
-      ><Card color="blue" top>
+      ><GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot
+      <GlobalRules bot
     /></template>
     <TopicList v-if="data" :topic="data" />
     <br />
     <MarkdownInput v-if="authenticated && data && !data.locked" />
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

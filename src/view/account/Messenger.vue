@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="account" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card color="yellow" v-if="data" justified header="mi.svg">
+    <GlobalCard color="yellow" v-if="data" justified header="mi.svg">
       <div class="flex">
         <input
           required
@@ -32,7 +32,7 @@
           class="tiz-portrait"
           :style="{ background: hashColor(message.user.name) }"
         >
-          <Avatar
+          <GlobalAvatar
             :avatar="message.user.look.avatar"
             :emote="message.user.look.emote"
             :hat="message.user.look.hat"
@@ -53,7 +53,7 @@
         >
           <div>
             <h3
-              ><user :user="message.user" /><span
+              ><UserLink :user="message.user" /><span
                 style="float: right; font-weight: normal; font-size: 12px"
                 >{{ formatDate(message.date) }}</span
               ></h3
@@ -62,9 +62,9 @@
           <span class="content">{{ message.content.slice(0, 64) }}</span>
         </div>
       </router-link>
-    </Card>
+    </GlobalCard>
     <template #right-column></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import { formatDistanceToNowStrict } from "date-fns";

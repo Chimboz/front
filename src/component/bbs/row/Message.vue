@@ -1,7 +1,7 @@
 <template>
   <tr :id="message.id">
     <td class="info" valign="top">
-      <Avatar
+      <GlobalAvatar
         :avatar="message.author.look.avatar"
         :emote="message.author.look.emote"
         :hat="message.author.look.hat"
@@ -10,13 +10,13 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><User :user="message.author" ellipsis /><span class="date">{{
+      /><UserLink :user="message.author" ellipsis /><span class="date">{{
         formatDate
       }}</span>
     </td>
     <td class="justified" valign="top">
       <h2 class="head flex centered info-sm ellipsis">
-        <Avatar
+        <GlobalAvatar
           :avatar="message.author.look.avatar"
           :emote="message.author.look.emote"
           :hat="message.author.look.hat"
@@ -27,7 +27,7 @@
           :item2="message.author.look.item2"
         />
         <div class="ellipsis">
-          <User :user="message.author" />&nbsp;le
+          <UserLink :user="message.author" />&nbsp;le
           <span class="date">{{ formatDate }}</span>
         </div>
       </h2>

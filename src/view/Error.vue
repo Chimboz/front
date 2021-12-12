@@ -1,7 +1,7 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column></template>
-    <Card color="red">
+    <GlobalCard color="red">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -16,9 +16,9 @@
             : $t("error.default")
         }}</b
       >
-    </Card>
+    </GlobalCard>
     <template #right-column></template>
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

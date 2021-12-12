@@ -1,9 +1,9 @@
 <template>
-  <Card color="yellow" v-if="authenticated">
+  <GlobalCard color="yellow" v-if="authenticated">
     <template #button>
-      <Button color="yellow" icon="register.svg">{{
+      <GlobalButton color="yellow" icon="register.svg">{{
         $t("credit.title", user.credits)
-      }}</Button>
+      }}</GlobalButton>
     </template>
     <div class="bank fullwidth">
       <img
@@ -34,8 +34,10 @@
       {{ $t("credit.text", user.credits) }} </router-link
     ><br /><br />
     <router-link to="/reflooz" class="btn-route"
-      ><Button color="orange" icon="register.svg">Reflooz</Button></router-link
-    ></Card
+      ><GlobalButton color="orange" icon="register.svg"
+        >Reflooz</GlobalButton
+      ></router-link
+    ></GlobalCard
   >
 </template>
 <script>

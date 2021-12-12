@@ -265,10 +265,12 @@ Code block</pre
         <tr>
           <td colspan="2">
             <div class="flex">
-              <Button type="button" @click.prevent="this.preview = this.message"
-                >Prévisualiser</Button
+              <GlobalButton
+                type="button"
+                @click.prevent="this.preview = this.message"
+                >Prévisualiser</GlobalButton
               >
-              <Button type="submit" color="green" v-if="mode == 'post'"
+              <GlobalButton type="submit" color="green" v-if="mode == 'post'"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -276,17 +278,17 @@ Code block</pre
                     alt="Arrow icon"
                     class="arrow jitter green"
                     src="@/asset/img/arrow.svg" /></template
-                >Envoyer</Button
+                >Envoyer</GlobalButton
               >
-              <Button
+              <GlobalButton
                 type="button"
                 color="red"
                 v-if="mode == 'edit'"
                 @click="mode = 'post'"
               >
-                Annuler</Button
+                Annuler</GlobalButton
               >
-              <Button type="submit" color="green" v-if="mode == 'edit'"
+              <GlobalButton type="submit" color="green" v-if="mode == 'edit'"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -294,7 +296,7 @@ Code block</pre
                     alt="Arrow icon"
                     class="arrow jitter green"
                     src="@/asset/img/arrow.svg" /></template
-                >Editer</Button
+                >Editer</GlobalButton
               >
             </div>
           </td>

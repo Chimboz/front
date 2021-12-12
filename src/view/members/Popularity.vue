@@ -1,15 +1,15 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="popularity.gif" justified bg="popularity.gif">
+    <GlobalCard header="popularity.gif" justified bg="popularity.gif">
       <div class="flex centered hstack">
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
@@ -76,8 +76,8 @@
       Le + populaire du jour gagne les lunettes pour la journée, les 3 +
       populaires du jour gagnent une auréole pour la journée, le - aimé gagne
       une crotte pour la journée !
-    </Card>
-    <br /><Card id="today" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="today" v-if="data">
       <template #header>Classement du jour !</template>
       Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
       quelqu'un !<br />
@@ -104,7 +104,7 @@
             <tbody>
               <tr v-for="rank in data.today.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><user :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -130,15 +130,15 @@
             <tbody>
               <tr v-for="rank in data.today.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><user :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="yesterday" v-if="data">
+    <GlobalCard id="yesterday" v-if="data">
       <template #header>Champions du jour !</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
 
@@ -164,7 +164,7 @@
             <tbody>
               <tr v-for="rank in data.yesterday.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><user :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -190,12 +190,12 @@
             <tbody>
               <tr v-for="rank in data.yesterday.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><user :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
-          </table> </div></div></Card
+          </table> </div></div></GlobalCard
     ><br />
-    <Card id="general" v-if="data">
+    <GlobalCard id="general" v-if="data">
       <template #header>Classement général !</template>
       <template #subtitle
         >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
@@ -222,7 +222,7 @@
             <tbody>
               <tr v-for="rank in data.general.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><user :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table> </div
@@ -247,14 +247,14 @@
             <tbody>
               <tr v-for="rank in data.general.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><user :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </Card>
-    <br /><Card id="groups" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="groups" v-if="data">
       <template #header>Classement des groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
       <div class="grid fullwidth">
@@ -279,7 +279,7 @@
             <tbody>
               <tr v-for="rank in data.groups.best" :key="rank.group.id">
                 <td>{{ rank.score }}</td>
-                <td><group :group="rank.group" /></td>
+                <td><GroupLink :group="rank.group" /></td>
               </tr>
             </tbody>
           </table>
@@ -305,12 +305,12 @@
             <tbody>
               <tr v-for="rank in data.groups.worst" :key="rank.group.id">
                 <td>{{ rank.score }}</td>
-                <td><group :group="rank.group" /></td>
+                <td><GroupLink :group="rank.group" /></td>
               </tr>
             </tbody>
-          </table> </div></div></Card
+          </table> </div></div></GlobalCard
     ><br />
-    <Card id="vote" v-if="authenticated"
+    <GlobalCard id="vote" v-if="authenticated"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
@@ -330,9 +330,9 @@
           :placeholder="$t('placeholder.username')"
         /><button type="submit" class="btn-action">go</button></form
       >
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="46"
@@ -386,9 +386,9 @@
             (data.stats.today.for + data.stats.today.against)
           ).toFixed(0)
         }}%)
-      </Card></template
+      </GlobalCard></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

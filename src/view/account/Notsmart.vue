@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="account" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card color="yellow" justified>
+    <GlobalCard color="yellow" justified>
       <template #subtop>Pamalin</template>
       On t'a dit que tu allais avoir des nouvelles fringues, que tu allais
       pouvoir devenir modo, que tu allais gagner des points ou un niveau, et tu
@@ -42,7 +42,7 @@
           class="btn-md"
         />
         <br />
-        <Button type="submit" color="green"
+        <GlobalButton type="submit" color="green"
           ><template #prepend
             ><img
               draggable="false"
@@ -50,15 +50,15 @@
               alt="Arrow icon"
               class="arrow jitter green"
               src="@/asset/img/arrow.svg" /></template
-          >Envoyer</Button
+          >Envoyer</GlobalButton
         ></form
       >
       <br />
       Par contre, si tu as donné ton mot de passe de compte e-mail, tu es le
       dernier des pamalins et nous ne pouvons plus rien pour toi ...
-    </Card>
+    </GlobalCard>
     <template #right-column></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 // @vuese

@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column
-      ><Card color="blue" top>
+      ><GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="bacteria.gif" justified bg="bacteria.gif">
+    <GlobalCard header="bacteria.gif" justified bg="bacteria.gif">
       <template #header>Histoire de Bacteria</template>
       Chimbi n'était pas un chimbo comme les autres. Il était tout blanc, rond
       comme un oeuf, et n'avait ni cornes, ni chapeau, ni casque de guerrier
@@ -213,9 +213,9 @@
       Quant à Chimborgne, on ne sait où il est. Certains disent qu'il est tombé
       dans les marécages, d'autres qu'il s'est perdu dans la forêt et n'a plus
       jamais retrouvé son chemin, et qu'il vient encore hanter parfois les
-      endroits bien sombres... </Card
+      endroits bien sombres... </GlobalCard
     ><template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="46"
@@ -240,9 +240,9 @@
         />&nbsp;<router-link to="bacteria/story"
           >Bacteria Sanctuary</router-link
         >
-      </Card></template
+      </GlobalCard></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 // @vuese

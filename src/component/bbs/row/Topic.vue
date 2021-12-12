@@ -26,14 +26,14 @@
         <span class="gensmall">{{ topic.reply }}</span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall"><User :user="topic.author" /></span>
+        <span class="gensmall"><UserLink :user="topic.author" /></span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
         <span class="gensmall">{{ topic.view }}</span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
         {{ formatDate }}<br />
-        <User :user="topic.last_msg.author" />
+        <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link :to="'/topic/' + topic.id + '#' + topic.last_msg.msgid"
           ><img

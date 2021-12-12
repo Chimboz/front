@@ -1,23 +1,23 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="book.png" justified color="yellow">
+    <GlobalCard header="book.png" justified color="yellow">
       <div style="float: right; margin-top: -80px; width: 50%">
         Tu cherches à en savoir plus sur un copain ou une nouvelle rencontre
         ?<br />
         <br />
         Ici tu peux chercher des infos sur tous les membres de la communauté.
       </div>
-    </Card>
-    <br /><Card>
+    </GlobalCard>
+    <br /><GlobalCard>
       <img style="float: left" src="@/asset/img/book/srch.gif" />
       <div style="display: inline-block">
         <h1>Rechercher un membre</h1>
@@ -34,9 +34,9 @@
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">go</button></form
         ></div
-      ></Card
+      ></GlobalCard
     ><br />
-    <Card v-if="data"
+    <GlobalCard v-if="data"
       ><template #header>Les 10 derniers membres</template>
       <table class="score fullwidth">
         <colgroup>
@@ -54,14 +54,14 @@
         <tbody>
           <tr v-for="(member, index) in data.members" :key="index">
             <td>{{ member.id }}</td>
-            <td><user :user="member" /></td>
+            <td><UserLink :user="member" /></td>
             <td>{{ formatDate(member.date) }}</td>
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus.gif"
         :width="154"
         :height="34"
@@ -81,9 +81,9 @@
         Fille(s) : 20<br />
         Garçon(s) : 30<br />
         Inconnu(s) : 287
-      </Card></template
+      </GlobalCard></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

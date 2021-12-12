@@ -43,14 +43,14 @@ app.config.globalProperties.eventBus = eventBus; // Event hub
 app.config.globalProperties.api = api; // Custom Axios API fetcher
 
 // Registering global components
-app.component("Avatar", Avatar);
-app.component("Button", Button);
-app.component("Card", Card);
-app.component("Container", Container);
-app.component("Group", Group);
-app.component("Rules", Rules);
+app.component("GlobalAvatar", Avatar);
+app.component("GlobalButton", Button);
+app.component("GlobalCard", Card);
+app.component("GlobalContainer", Container);
+app.component("GroupLink", Group);
+app.component("GlobalRules", Rules);
 app.component("SideNavEntries", SideNavEntries);
-app.component("User", User);
+app.component("UserLink", User);
 
 app.mount("#app");
 

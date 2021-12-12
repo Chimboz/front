@@ -1,15 +1,15 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="wedding.gif" justified bg="wedding.gif">
+    <GlobalCard header="wedding.gif" justified bg="wedding.gif">
       <div class="flex centered hstack">
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
@@ -60,8 +60,8 @@
       Divorce et affronter la honte et la peur.<br />
       <br />
       Les 3 couples qui tiennent le plus gagnent les fringues des mariés.
-    </Card>
-    <br /><Card id="last" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="last" v-if="data">
       <template #header>Le dernier mariage</template>
       Le <b>{{ formatDate(data.last.date, "PPp") }}</b
       >, <b>{{ data.last.id }}</b
@@ -72,7 +72,7 @@
           @contextmenu.prevent
           alt="Star"
           src="@/asset/img/social/wedding/wedding.svg" />
-        <Avatar
+        <GlobalAvatar
           class="witness witness1"
           :avatar="data.last.witness1.look.avatar"
           :emote="data.last.witness1.look.emote"
@@ -82,7 +82,7 @@
           :item0="data.last.witness1.look.item0"
           :item1="data.last.witness1.look.item1"
           :item2="data.last.witness1.look.item2" />
-        <Avatar
+        <GlobalAvatar
           class="married married1"
           :avatar="data.last.married1.look.avatar"
           :emote="data.last.married1.look.emote"
@@ -92,7 +92,7 @@
           :item0="data.last.married1.look.item0"
           :item1="data.last.married1.look.item1"
           :item2="data.last.married1.look.item2" />
-        <Avatar
+        <GlobalAvatar
           class="married married2"
           :avatar="data.last.married2.look.avatar"
           :emote="data.last.married2.look.emote"
@@ -102,7 +102,7 @@
           :item0="data.last.married2.look.item0"
           :item1="data.last.married2.look.item1"
           :item2="data.last.married2.look.item2" />
-        <Avatar
+        <GlobalAvatar
           class="witness witness2"
           :avatar="data.last.witness2.look.avatar"
           :emote="data.last.witness2.look.emote"
@@ -114,13 +114,13 @@
           :item2="data.last.witness2.look.item2" /></div
       ><br />
       Tous nos voeux de bonheur à <br />
-      <user :user="data.last.married1" /> et
-      <user :user="data.last.married2" /><br />
+      <UserLink :user="data.last.married1" /> et
+      <UserLink :user="data.last.married2" /><br />
       qui ont été mariés par <b>Guruji</b> en présence de<br />
-      <user :user="data.last.witness1" /> et
-      <user :user="data.last.witness2" />. </Card
+      <UserLink :user="data.last.witness1" /> et
+      <UserLink :user="data.last.witness2" />. </GlobalCard
     ><br />
-    <Card id="today" v-if="data">
+    <GlobalCard id="today" v-if="data">
       <template #header
         ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Tous les
         mariages depuis 24 heures
@@ -130,10 +130,10 @@
       <div class="fullwidth" v-for="wedding of data.today" :key="wedding.id"
         >Le <b>{{ formatDate(wedding.date, "PPp") }}</b
         >,<br />
-        <user :user="wedding.married1" /> et
-        <user :user="wedding.married2" /> se sont mariés<br />
-        en présence de <user :user="wedding.witness1" /> et de
-        <user :user="wedding.witness2" /><br />
+        <UserLink :user="wedding.married1" /> et
+        <UserLink :user="wedding.married2" /> se sont mariés<br />
+        en présence de <UserLink :user="wedding.witness1" /> et de
+        <UserLink :user="wedding.witness2" /><br />
         <i
           ><router-link :to="'/weddings/' + wedding.id">{{
             wedding.id
@@ -141,9 +141,9 @@
           ><sup>ème</sup> mariage</i
         ></div
       >
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="best" v-if="data">
+    <GlobalCard id="best" v-if="data">
       <template #header
         ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Les 20
         mariages qui tiennent&nbsp;!
@@ -170,8 +170,8 @@
           <tr v-for="(wedding, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
             <td
-              ><user :user="wedding.married1" /> et
-              <user :user="wedding.married2"
+              ><UserLink :user="wedding.married1" /> et
+              <UserLink :user="wedding.married2"
             /></td>
             <td
               ><i
@@ -186,9 +186,9 @@
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="divorce" v-if="data">
+    <GlobalCard id="divorce" v-if="data">
       <template #header
         ><img src="@/asset/img/social/wedding/divorce2.gif" /><br />Les divorces
         depuis 24 heures
@@ -216,8 +216,8 @@
           <tr v-for="(wedding, index) in data.divorce" :key="index">
             <td>{{ formatDate(wedding.dateend, "p") }}</td>
             <td
-              ><user :user="wedding.married1" /> a plaqué
-              <user :user="wedding.married2"
+              ><UserLink :user="wedding.married1" /> a plaqué
+              <UserLink :user="wedding.married2"
             /></td>
             <td
               ><i
@@ -232,9 +232,9 @@
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="broken" v-if="data">
+    <GlobalCard id="broken" v-if="data">
       <template #header
         ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Les 20
         mariages qui ont tenu !
@@ -259,8 +259,8 @@
           <tr v-for="(wedding, index) in data.broken" :key="index">
             <td>{{ index + 1 }}</td>
             <td
-              ><user :user="wedding.married1" /> et
-              <user :user="wedding.married2"
+              ><UserLink :user="wedding.married1" /> et
+              <UserLink :user="wedding.married2"
             /></td>
             <td
               ><i
@@ -275,9 +275,9 @@
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="34"
@@ -349,9 +349,9 @@
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">go</button></form
         >
-      </Card></template
+      </GlobalCard></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

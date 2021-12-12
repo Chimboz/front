@@ -1,5 +1,5 @@
 <template>
-  <Card color="blue">
+  <GlobalCard color="blue">
     <form @submit.prevent="submit">
       <div class="container-acc flex">
         <div class="left-acc flex">
@@ -32,7 +32,7 @@
               @keydown.right="right = true"
               @keyup.right="right = false"
             >
-              <Avatar
+              <GlobalAvatar
                 :avatar="data.look.avatar"
                 :emote="data.look.emote"
                 :hat="data.look.hat"
@@ -163,19 +163,19 @@
         </div>
         <div class="right-acc flex">
           <div class="nav-acc flex">
-            <Button
+            <GlobalButton
               type="button"
               :class="{ active: profile }"
               @click="profile = !profile"
-              >{{ $t("myAccount.profileSection") }}</Button
-            ><Button
+              >{{ $t("myAccount.profileSection") }}</GlobalButton
+            ><GlobalButton
               type="button"
               :class="{ active: !profile }"
               @click="
                 profile = !profile;
                 loadInventory = true;
               "
-              >{{ $t("myAccount.invSection") }}</Button
+              >{{ $t("myAccount.invSection") }}</GlobalButton
             >
           </div>
           <div id="profile" v-show="profile">
@@ -328,7 +328,7 @@
         </div>
       </div>
       <div class="flex btn-menu">
-        <Button color="green" type="submit"
+        <GlobalButton color="green" type="submit"
           ><template #prepend
             ><img
               draggable="false"
@@ -336,9 +336,9 @@
               alt="Arrow icon"
               class="arrow green jitter"
               src="@/asset/img/arrow.svg" /></template
-          >Sauver</Button
+          >Sauver</GlobalButton
         ><router-link :to="`/book/${data.id}`" style="margin-left: 6px">
-          <Button type="button"
+          <GlobalButton type="button"
             ><template #prepend
               ><img
                 draggable="false"
@@ -347,12 +347,12 @@
                 style="height: 24px"
                 height="24"
                 src="@/asset/img/icon/profile.svg" /></template
-            >Fiche</Button
+            >Fiche</GlobalButton
           ></router-link
         >
       </div>
     </form>
-  </Card>
+  </GlobalCard>
 </template>
 <script>
 import Emotes from "@/component/core/Emotes.vue";

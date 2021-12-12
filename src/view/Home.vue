@@ -1,7 +1,7 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <router-link to="/levels" v-if="data">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -71,7 +71,7 @@
           </div>
           {{ $t("friends.online", data.friends) }}
         </router-link>
-      </Card>
+      </GlobalCard>
       <br />
       <Bank />
     </template>
@@ -84,14 +84,14 @@
       style="width: 100%"
     />
     <br />
-    <Card header="lottery.png" v-if="data && data.lottery">
+    <GlobalCard header="lottery.png" v-if="data && data.lottery">
       <template #header> </template>
       <div v-if="lottery">
         {{ $t("lottery.firstLine") }}<br />
         {{ $t("lottery.secondLine") }}</div
       ><RandomNumber v-else :max="30" :value="gain" :duration="5000" />
       <br /><br v-if="!lottery" />
-      <Button color="orange" @click="handle" class="btn-loto"
+      <GlobalButton color="orange" @click="handle" class="btn-loto"
         ><template #prepend
           ><img
             draggable="false"
@@ -110,11 +110,11 @@
             width="16"
             src="@/asset/img/lottery/down.svg"
             v-else /></template
-        >Ma loterie</Button
-      ></Card
+        >Ma loterie</GlobalButton
+      ></GlobalCard
     >
     <br />
-    <Card color="yellow" justified v-if="data">
+    <GlobalCard color="yellow" justified v-if="data">
       <template #subtop>Chapaniouz</template>
       <template #header
         ><img
@@ -130,9 +130,9 @@
       </template>
       <div class="markdown-body" v-html="formatMessage"></div>
       <div class="news-date">{{ data.news.author }}, {{ formatDate }}</div>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card v-if="data">
+    <GlobalCard v-if="data">
       <template #subtop>Chaparazzi</template>
       <div class="gallery flex">
         <div
@@ -150,9 +150,9 @@
           /><b>{{ formatDatePhotos(photo.date) }}</b></div
         >
       </div>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card color="blue" top v-if="data">
+      ><GlobalCard color="blue" top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -160,10 +160,10 @@
           ></template
         >
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
-        {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
+        {{ data.last24 }} {{ $t("members.past", data.last24) }} </GlobalCard
       ><br />
       <router-link to="/shop">
-        <Card
+        <GlobalCard
           color="yellow"
           header="packs.png"
           :width="154"
@@ -172,20 +172,20 @@
           v-if="data"
         >
           <template #button>
-            <Button color="yellow" icon="register.svg">Pack</Button>
+            <GlobalButton color="yellow" icon="register.svg">Pack</GlobalButton>
           </template>
           <Pack
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
           /><br /><br />
-          <Button color="yellow" icon="register.svg" class="fullwidth"
-            >Item</Button
+          <GlobalButton color="yellow" icon="register.svg" class="fullwidth"
+            >Item</GlobalButton
           ><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
-        </Card>
+        </GlobalCard>
       </router-link>
     </template>
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

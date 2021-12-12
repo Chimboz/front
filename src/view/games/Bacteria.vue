@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column
-      ><Card color="blue" top>
+      ><GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="bacteria.gif" justified bg="bacteria.gif">
+    <GlobalCard header="bacteria.gif" justified bg="bacteria.gif">
       <div class="flex centered hstack">
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
@@ -87,9 +87,9 @@
       <a href="#top">classement des champions</a> et toute les infos dont tu as
       besoin, pour devenir toi aussi, un <b>guerrier Bacteria</b> .<br />
       <br />
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="tutorial" justified>
+    <GlobalCard id="tutorial" justified>
       <template #header>Comment jouer&nbsp;?</template>
 
       <img
@@ -110,38 +110,38 @@
       t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
       partie démarre !<br /><b>Attention</b>&nbsp;: Les visiteurs ne peuvent
       jouer qu'en <b>Bacteria débutants</b>, les cabines de
-      <b>Bacteria Pro</b> sont réservées aux membres ! </Card
+      <b>Bacteria Pro</b> sont réservées aux membres ! </GlobalCard
     ><br />
-    <Card id="records" v-if="data">
+    <GlobalCard id="records" v-if="data">
       <template #header>Records !</template>
       <template #subtitle
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
       >
       <b>parties jouées</b><br />
       <div class="fullwidth light">
-        <user :user="data.records.played.user" /> avec
+        <UserLink :user="data.records.played.user" /> avec
         {{ data.records.played.record }} parties jouées&nbsp;!
       </div>
       <br />
       <b>parties gagnées</b><br />
       <div class="fullwidth light">
-        <user :user="data.records.won.user" /> avec
+        <UserLink :user="data.records.won.user" /> avec
         {{ data.records.won.record }} parties gagnées&nbsp;!
       </div>
       <br />
       <b>parties perdues</b><br />
       <div class="fullwidth light">
-        <user :user="data.records.lost.user" /> avec
+        <UserLink :user="data.records.lost.user" /> avec
         {{ data.records.lost.record }} parties perdues&nbsp;!
       </div>
       <br />
       <b>match nuls</b><br />
       <div class="fullwidth light">
-        <user :user="data.records.drawn.user" /> avec
+        <UserLink :user="data.records.drawn.user" /> avec
         {{ data.records.drawn.record }} match nuls&nbsp;!
       </div>
-    </Card>
-    <br /><Card id="best" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="best" v-if="data">
       <template #header>Les 20 plus acharnés de Bacteria !</template>
       <template #subtitle
         >Des heures de phagocytage acharné pour en arriver la...</template
@@ -167,7 +167,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
@@ -184,8 +184,8 @@
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br /><Card id="worst" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="worst" v-if="data">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       <table class="score fullwidth">
@@ -206,7 +206,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.worst" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
@@ -223,8 +223,8 @@
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br /><Card id="groups" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="groups" v-if="data">
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="score fullwidth">
@@ -243,16 +243,16 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><group :group="rank.group" /></td>
+            <td><GroupLink :group="rank.group" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="46"
@@ -309,9 +309,9 @@
           height="17"
           width="17"
         />&nbsp;<b>{{ data.stats.yesterday }}</b> parties hier.
-      </Card></template
+      </GlobalCard></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

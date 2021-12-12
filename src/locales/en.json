@@ -116,7 +116,8 @@
     "rule2": "Always be calm, polite, nice and respectful of others.",
     "rule3": "Don't attempt to hack, steal accounts or get into illegal activities.",
     "rule4": "Avoid propaganda, publicity and offensive behavior.",
-    "rule5": "Don't encourage others to disobey the Golden Rules."
+    "rule5": "Don't encourage others to disobey the Golden Rules.",
+    "rule": "Rule"
   },
   "bbs": {
     "lock_new": "BBS Locked (new messages)",

@@ -1,17 +1,17 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
     <BBSList v-if="data" :boards="data"></BBSList>
     <br />
-    <Card
+    <GlobalCard
       ><div class="columns">
         <div>
           <img
@@ -49,9 +49,9 @@
             src="@/asset/img/bbs/folder.svg"
           />&nbsp;Pas de nouveaux messages&nbsp;
         </div>
-      </div></Card
+      </div></GlobalCard
     >
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

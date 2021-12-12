@@ -1,15 +1,15 @@
 <template>
-  <Container v-if="data">
+  <GlobalContainer v-if="data">
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
     <router-view></router-view>
-    <Card color="yellow" v-if="data" style="position: relative">
+    <GlobalCard color="yellow" v-if="data" style="position: relative">
       <div class="encyclopedia" @scroll.passive="onScroll">
         <div v-for="item of data" :key="item" class="item-wrapper">
           <Tooltip>
@@ -43,9 +43,9 @@
             @contextmenu.prevent
         /></div>
       </div>
-    </Card>
+    </GlobalCard>
     <template #right-column></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import VLazyImage from "v-lazy-image";

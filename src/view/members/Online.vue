@@ -1,30 +1,32 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card v-if="data"
+    <GlobalCard v-if="data"
       ><template #subtop>Sur le tchat</template
       ><span
         v-for="user in data.tchat"
         :key="user.id"
         style="display: inline-block"
-        ><user :user="user" />&nbsp;({{ user.room }})&nbsp;
-      </span></Card
+        ><UserLink :user="user" />&nbsp;({{ user.room }})&nbsp;
+      </span></GlobalCard
     ><br />
-    <Card v-if="data"
+    <GlobalCard v-if="data"
       ><template #subtop>Sur le site</template
       ><span v-for="(user, index) in data.site" :key="user.id"
-        ><user :user="user" :separator="index < data.tchat.length - 1" /></span
-    ></Card>
+        ><UserLink
+          :user="user"
+          :separator="index < data.tchat.length - 1" /></span
+    ></GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="34"
@@ -43,9 +45,9 @@
         />Le record de connectés est de <b>{{ data.record.online }}</b> le
         <b>{{ formatDate }}</b
         >.
-      </Card></template
+      </GlobalCard></template
     >
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import { format } from "date-fns";

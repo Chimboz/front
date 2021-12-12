@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="account" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card color="yellow" v-if="data" justified
+    <GlobalCard color="yellow" v-if="data" justified
       ><template #subtop>{{ data.user.name }}</template>
       <div class="messages fullwidth flex">
         <div
@@ -22,7 +22,7 @@
             class="tiz-portrait"
             :style="{ background: hashColor(data.user.name) }"
           >
-            <Avatar
+            <GlobalAvatar
               :avatar="data.user.look.avatar"
               :emote="data.user.look.emote"
               :hat="data.user.look.hat"
@@ -43,7 +43,7 @@
           >
             <div>
               <h3
-                ><user v-if="!message.you" :user="data.user" />&nbsp;<span
+                ><UserLink v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
                   >{{ formatDate(message.date) }}</span
                 ></h3
@@ -68,9 +68,9 @@
           :placeholder="$t('placeholder.message')"
         /><button type="submit" class="btn-action">➤</button></form
       >
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         color="yellow"
         v-if="data"
         justified
@@ -91,7 +91,7 @@
               class="tiz-portrait"
               :style="{ background: hashColor(user.name) }"
             >
-              <Avatar
+              <GlobalAvatar
                 :avatar="user.look.avatar"
                 :emote="user.look.emote"
                 :hat="user.look.hat"
@@ -104,9 +104,9 @@
             </div>
           </router-link>
         </div>
-      </Card>
+      </GlobalCard>
     </template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import { formatDistanceToNowStrict } from "date-fns";

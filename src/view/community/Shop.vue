@@ -1,14 +1,14 @@
 <template>
-  <Container v-if="data">
+  <GlobalContainer v-if="data">
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="community" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card
+    <GlobalCard
       color="yellow"
       header="shop.svg"
       :height="109"
@@ -23,7 +23,7 @@
           src="@/asset/img/shop/cabin.svg"
         />
         <div class="preview-tiz flex centered">
-          <Avatar
+          <GlobalAvatar
             :avatar="shown.looks[0].avatar"
             :emote="shown.looks[0].emote"
             :hat="shown.looks[0].hat"
@@ -33,7 +33,7 @@
             :item1="shown.looks[0].item1"
             :item2="shown.looks[0].item2"
           />
-          <Avatar
+          <GlobalAvatar
             v-if="shown.looks.length == 2"
             :avatar="shown.looks[1].avatar"
             :emote="shown.looks[1].emote"
@@ -79,9 +79,9 @@
           />
         </div>
       </div>
-    </Card>
+    </GlobalCard>
     <template #right-column><Bank /></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import Bank from "@/component/Bank.vue";

@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column
-      ><Card color="blue" top>
+      ><GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="patojdur.gif" justified bg="patojdur.gif" :height="77">
+    <GlobalCard header="patojdur.gif" justified bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
@@ -101,9 +101,9 @@
       Les grenouilles seront là pour t’encourager ou se moquer de toi, mais seul
       ton courage et ta persévérance te permettront de devenir le meilleur
       patojeur !
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="tutorial" justified>
+    <GlobalCard id="tutorial" justified>
       <template #header>Comment jouer&nbsp;?</template>
       <b>Attention : les visiteurs ne peuvent pas jouer !</b><br />
       Il faut te rendre dans les marécages, demande ton chemin si tu ne sais pas
@@ -116,9 +116,9 @@
       nageant le plus vite possible !<br />
       <br />
       Bonne Chance ! tu en auras besoin, la concurrence sera rude ! La victoire
-      au millième près !</Card
+      au millième près !</GlobalCard
     ><br />
-    <Card id="gameplay" justified>
+    <GlobalCard id="gameplay" justified>
       <template #header>Gameplay</template>
       <b>Patojdur</b> se joue aux touches directionnelles (les flèches).<br />
       Avance dans la direction de ton choix (haut, bas, droite ou gauche), quand
@@ -140,21 +140,21 @@
       Droite, Flèche Haut, Flèche Droite. (GGDHD)<br />
       <br />
       <b>Indice</b> : pour <b>Burnin'Flak</b>, la bonne combinaison commence par
-      Flèche Gauche, Flèche Haut... (GH...)</Card
+      Flèche Gauche, Flèche Haut... (GH...)</GlobalCard
     ><br />
-    <Card id="modes" justified>
+    <GlobalCard id="modes" justified>
       <template #header>Les modes</template>
-      Pour le moment, seul le mode <b>single</b> est accessible.</Card
+      Pour le moment, seul le mode <b>single</b> est accessible.</GlobalCard
     ><br />
-    <Card id="races" justified>
+    <GlobalCard id="races" justified>
       <template #header>Les courses</template>
       <b>10 courses différentes</b>, plus ou moins difficiles. Chaque jour une
       course différente, un classement différent !<br />
       <br />
       Durant la phase de test de <b>Patojdur</b>, seule la course n°1
-      (<b>Burnin'Flak</b>) est accessible.</Card
+      (<b>Burnin'Flak</b>) est accessible.</GlobalCard
     ><br />
-    <Card id="records" v-if="data">
+    <GlobalCard id="records" v-if="data">
       <template #header>Records !</template>
       <template #subtitle>Ce jour là, il a comme volé sur l'eau...</template>
       <table class="score fullwidth">
@@ -178,7 +178,7 @@
             <td
               ><b>{{ rank.score }}</b></td
             >
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td style="text-align: right"
               ><b>{{ formatDate(rank.date) }}</b
               ><br /><i>{{ rank.day }}e journée</i></td
@@ -186,8 +186,8 @@
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br /><Card id="yesterday" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="yesterday" v-if="data">
       <template #header>Les champions du jour !</template>
       <template #subtitle
         >Hier, ils ont cloué le bec des grenouilles... et des autres membres
@@ -214,7 +214,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.yesterday" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
@@ -222,8 +222,8 @@
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br /><Card id="general" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="general" v-if="data">
       <template #header
         >Classement général single {{ data.day - 1 }}e journée</template
       >
@@ -246,15 +246,15 @@
         <tbody>
           <tr v-for="(rank, index) in data.general" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
             <td>{{ rank.races }}</td>
           </tr>
         </tbody>
-      </table> </Card
-    ><br /><Card id="today" v-if="data">
+      </table> </GlobalCard
+    ><br /><GlobalCard id="today" v-if="data">
       <template #header
         >{{ data.day }}e journée ! {{ data.stats.today }} patojeurs !</template
       >
@@ -277,7 +277,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.today" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
@@ -285,8 +285,8 @@
           </tr>
         </tbody>
       </table>
-    </Card>
-    <br /><Card id="groups" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="groups" v-if="data">
       <template #header>Classement des groupes !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="score fullwidth">
@@ -305,16 +305,16 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><group :group="rank.group" /></td>
+            <td><GroupLink :group="rank.group" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="46"
@@ -343,9 +343,9 @@
           draggable="false"
           @contextmenu.prevent
         />&nbsp;Aujourd'hui, il y a
-        {{ data.stats.today }} Patojeurs.<br /> </Card
+        {{ data.stats.today }} Patojeurs.<br /> </GlobalCard
     ></template>
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>

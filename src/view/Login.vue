@@ -1,7 +1,7 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top v-if="data">
+      <GlobalCard color="blue" top v-if="data">
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -9,10 +9,10 @@
           ></template
         >
         {{ data.members }} {{ $t("members.text", data.members) }} <br />
-        {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
+        {{ data.last24 }} {{ $t("members.past", data.last24) }} </GlobalCard
       ><br />
       <router-link to="/shop">
-        <Card
+        <GlobalCard
           color="yellow"
           header="packs.png"
           :width="154"
@@ -21,16 +21,16 @@
           v-if="data"
         >
           <template #button>
-            <Button color="yellow" icon="register.svg">Pack</Button>
+            <GlobalButton color="yellow" icon="register.svg">Pack</GlobalButton>
           </template>
           <Pack name="supporter" :looks="data.shop.looks" />
-        </Card>
+        </GlobalCard>
       </router-link>
       <br />
     </template>
     <Demo />
     <br />
-    <Card v-if="data">
+    <GlobalCard v-if="data">
       <template #subtop>Chaparazzi</template>
       <div class="gallery flex">
         <div
@@ -47,13 +47,13 @@
           /><b>{{ formatDatePhotos(photo.date) }}</b></div
         >
       </div>
-    </Card>
+    </GlobalCard>
     <template #right-column>
-      <Card color="blue" header="games.gif" v-if="data">
+      <GlobalCard color="blue" header="games.gif" v-if="data">
         <div class="fullwidth">
           <img src="@/asset/img/game/bacteria/head.gif" />
           <img src="@/asset/img/game/bacteria/bg.gif" />
-          <Avatar
+          <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
             :emote="data.bacteria.user.look.emote"
@@ -65,12 +65,12 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <user :user="data.bacteria.user" /><br />est champion Bacteria
+            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria
             !</div
           >
           <img src="@/asset/img/game/patojdur/head.gif" />
           <img src="@/asset/img/game/patojdur/bg.gif" />
-          <Avatar
+          <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
             :emote="data.patojdur.user.look.emote"
@@ -82,12 +82,12 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <user :user="data.patojdur.user" /><br />est champion Patojdur
+            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur
             !</div
           >
           <img src="@/asset/img/game/mazo/head.gif" />
           <img src="@/asset/img/game/mazo/bg.gif" />
-          <Avatar
+          <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
             :emote="data.mazo.user.look.emote"
@@ -99,13 +99,13 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <user :user="data.mazo.user" /><br />est un des meilleurs Mazoteurs
-            du moment !</div
+            <UserLink :user="data.mazo.user" /><br />est un des meilleurs
+            Mazoteurs du moment !</div
           >
-        </div></Card
+        </div></GlobalCard
       >
     </template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import Demo from "@/component/Demo.vue";

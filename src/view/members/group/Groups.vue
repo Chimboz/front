@@ -1,15 +1,15 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card
+    <GlobalCard
       header="group.gif"
       bg="groups.gif"
       :height="70"
@@ -25,9 +25,9 @@
       tu peux rejoindre un ou des groupes ; et même en créer. Pour certains
       groupes, ton entrée est immédiate, pour d'autres tu devras être approuvé
       par le chef du groupe... A toi de faire tes preuves !
-    </Card>
+    </GlobalCard>
     <br />
-    <Card color="blue" justified v-if="data">
+    <GlobalCard color="blue" justified v-if="data">
       <template #header>Groupes officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
@@ -59,14 +59,14 @@
             <td
               ><b>{{ group.id }}</b></td
             >
-            <td><group :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>{{ group.type }}</td>
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card color="blue" v-if="data">
+    <GlobalCard color="blue" v-if="data">
       <template #header>Groupes de membre</template>
       <template #subtitle
         >Les 20 derniers groupes créés par les membres</template
@@ -91,14 +91,14 @@
             <td
               ><b>{{ group.id }}</b></td
             >
-            <td><group :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>{{ group.type }}</td>
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card color="blue" v-if="data">
+    <GlobalCard color="blue" v-if="data">
       <template #header>Classement général des groupes, par jeu</template>
       <template #subtitle
         >Les 10 meilleurs groupes, tous les jeux réunis
@@ -130,14 +130,14 @@
             <td
               ><b>{{ group.id }}</b></td
             >
-            <td><group :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>{{ group.score }}</td>
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card v-if="authenticated">
+    <GlobalCard v-if="authenticated">
       <template #header>Moi et mes groupes</template>
 
       <router-link to="/groups/manage"
@@ -151,9 +151,9 @@
         />
         Gérer mes groupes</router-link
       >
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card color="blue" header="ensavoirplus_blue.gif" v-if="data">
+      ><GlobalCard color="blue" header="ensavoirplus_blue.gif" v-if="data">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div style="text-align: left">
           <img
@@ -381,9 +381,9 @@
           @contextmenu.prevent
           height="17"
           width="17" />
-        Projecteur sur : <br /><group :group="data.random" /></Card
+        Projecteur sur : <br /><GroupLink :group="data.random" /></GlobalCard
     ></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 import { mapGetters } from "vuex";

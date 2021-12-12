@@ -1,7 +1,7 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column
-      ><Card color="blue" top>
+      ><GlobalCard color="blue" top>
         <router-link to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -18,7 +18,7 @@
               /> </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries section="account" /></div></Card
+          <SideNavEntries section="account" /></div></GlobalCard
       ><br />
       <Bank
     /></template>
@@ -48,7 +48,7 @@
       v-model:centrec="data.centres[2]"
       v-model:centred="data.centres[3]"
     />
-    <Card
+    <GlobalCard
       header="bacteria_blue.jpg"
       :height="74"
       color="blue"
@@ -70,9 +70,9 @@
       , nombre de parties gagnées : {{ data.bacteria.stats.win }},<br />
       nombre de parties perdues : {{ data.bacteria.stats.lose }}, nombre de
       match nul : {{ data.bacteria.stats.draw }}
-    </Card>
+    </GlobalCard>
     <br />
-    <Card
+    <GlobalCard
       header="patojdur_blue.gif"
       :height="56"
       color="blue"
@@ -84,9 +84,9 @@
       {{ data.patojdur.players }} joueurs classés<br />
       Score : {{ data.patojdur.score }} point(s)<br />
       Record : {{ data.patojdur.stats.best }}
-    </Card>
+    </GlobalCard>
     <br />
-    <Card
+    <GlobalCard
       header="mazo_blue.gif"
       :height="52"
       color="blue"
@@ -97,9 +97,9 @@
       Actuellement en position : {{ data.mazo.rank }} sur
       {{ data.mazo.players }} joueurs classés<br />
       Score : {{ data.mazo.score }} point(s)
-    </Card>
+    </GlobalCard>
     <template #right-column>
-      <Card
+      <GlobalCard
         color="blue"
         header="messages.gif"
         :width="154"
@@ -137,21 +137,21 @@
                     }.svg`)
                   "
                   alt="Voir le dernier message"
-                  title="Voir le dernier message" />&nbsp;<user
+                  title="Voir le dernier message" />&nbsp;<UserLink
                   :user="message.author" /></div
               ><div>{{ formatDate(message.date) }}</div>
             </div>
           </router-link></div
-        ></Card
+        ></GlobalCard
       ><br />
-      <Card
+      <GlobalCard
         color="blue"
         header="forum.gif"
         :width="154"
         :height="45"
         v-if="data"
       >
-        <stroke-text class="forum-title">Forum</stroke-text>
+        <StrokeText class="forum-title">Forum</StrokeText>
         <div style="margin-top: -16px">
           <router-link
             v-for="message of data.forum"
@@ -174,10 +174,12 @@
               >
             </div>
           </router-link>
-        </div></Card
-      ><br /><Card color="blue" v-if="data">
+        </div></GlobalCard
+      ><br /><GlobalCard color="blue" v-if="data">
         <template #button>
-          <Button icon="register.svg">{{ $t("myAccount.friendsList") }}</Button>
+          <GlobalButton icon="register.svg">{{
+            $t("myAccount.friendsList")
+          }}</GlobalButton>
         </template>
         <router-link
           v-for="friend of this.data.friends.sort(
@@ -203,16 +205,18 @@
               v-else
               src="@/asset/img/icon/account/offline.png"
             />&nbsp;<div class="flex col" style="align-items: flex-start"
-              ><user :user="friend.user" />
+              ><UserLink :user="friend.user" />
               {{ friend.status.connected ? friend.status.room : "" }}</div
             ></div
           ></router-link
         >
-      </Card>
+      </GlobalCard>
       <br />
-      <Card color="blue" v-if="data">
+      <GlobalCard color="blue" v-if="data">
         <template #button>
-          <Button icon="register.svg">{{ $t("myAccount.groupsList") }}</Button>
+          <GlobalButton icon="register.svg">{{
+            $t("myAccount.groupsList")
+          }}</GlobalButton>
         </template>
         <table class="fullwidth">
           <colgroup>
@@ -225,18 +229,19 @@
                 ><img
                   v-if="group.owner"
                   src="@/asset/img/icon/account/offline.png" /></td
-              ><td style="text-align: left"><group :group="group" /></td>
+              ><td style="text-align: left"><GroupLink :group="group" /></td>
             </tr>
           </tbody>
         </table>
-      </Card>
+      </GlobalCard>
     </template>
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>
 import Cabin from "@/component/Cabin.vue";
 import Bank from "@/component/Bank.vue";
+import StrokeText from "@/component/core/StrokeText.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -248,7 +253,8 @@ export default {
   name: "AccountView",
   components: {
     Bank,
-    Cabin
+    Cabin,
+    StrokeText
   },
 
   data() {

@@ -129,8 +129,10 @@
           class="btn-md"
         />
         <div class="flex">
-          <Button @click="section = 1" type="button">Se connecter</Button>
-          <Button color="green"
+          <GlobalButton @click="section = 1" type="button"
+            >Se connecter</GlobalButton
+          >
+          <GlobalButton color="green"
             ><template #prepend
               ><img
                 type="submit"
@@ -139,7 +141,7 @@
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/asset/img/arrow.svg" /></template
-            >S'inscrire</Button
+            >S'inscrire</GlobalButton
           >
         </div>
       </form>
@@ -187,8 +189,10 @@
           />
         </div>
         <div class="flex">
-          <Button @click="section = 0" type="button">S'inscrire</Button>
-          <Button type="submit" color="green"
+          <GlobalButton @click="section = 0" type="button"
+            >S'inscrire</GlobalButton
+          >
+          <GlobalButton type="submit" color="green"
             ><template #prepend
               ><img
                 draggable="false"
@@ -196,7 +200,7 @@
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/asset/img/arrow.svg" /></template
-            >Se connecter</Button
+            >Se connecter</GlobalButton
           >
         </div>
       </form>

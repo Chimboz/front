@@ -1,5 +1,5 @@
 <template>
-  <Card v-if="data" style="position: relative">
+  <GlobalCard v-if="data" style="position: relative">
     <StrokeText justified class="item-name" :class="data.rarity">{{
       data.name
     }}</StrokeText>
@@ -33,7 +33,7 @@
           ><tr><th>Membre</th><th>Quantité</th></tr></thead
         ><tbody
           ><tr v-for="owner of data.owner" :key="owner.user.id"
-            ><td><user :user="owner.user" /></td
+            ><td><UserLink :user="owner.user" /></td
             ><td
               ><b>{{ owner.quantity }}</b></td
             ></tr
@@ -41,7 +41,7 @@
         ></table
       ></div
     >
-  </Card>
+  </GlobalCard>
   <br />
 </template>
 <script>

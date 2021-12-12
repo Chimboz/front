@@ -1,5 +1,5 @@
 <template>
-  <Card class="rules" color="blue" :bot="bot" :top="top">
+  <GlobalCard class="rules" color="blue" :bot="bot" :top="top">
     <div class="rule-container fullwidth">
       <div
         ><img
@@ -16,9 +16,9 @@
       >
     </div>
     <div class="btn-rules fullwidth"
-      ><Button icon="rules.svg">Règles</Button></div
+      ><GlobalButton icon="rules.svg">Règles</GlobalButton></div
     >
-  </Card>
+  </GlobalCard>
 </template>
 <script>
 // @vuese

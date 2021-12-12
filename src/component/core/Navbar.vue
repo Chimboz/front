@@ -20,7 +20,7 @@
     /></router-link>
     <div class="login flex centered">
       <div style="margin-top: -10px">
-        <User
+        <UserLink
           :user="user || { name: 'Visiteur' }"
           id="username"
           style="display: inherit"
@@ -51,7 +51,7 @@
           </router-link></button
         >
       </div>
-      <Avatar
+      <GlobalAvatar
         style="margin-right: 16px"
         :avatar="user ? user.look.avatar : 0"
         :emote="user ? user.look.emote : 'neutral'"

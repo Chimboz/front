@@ -1,15 +1,21 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column>
-      <Card color="blue" top>
+      <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="members" />
         </div>
-      </Card>
+      </GlobalCard>
       <br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="new.gif" bg="new.png" :height="70" color="blue" v-if="data">
+    <GlobalCard
+      header="new.gif"
+      bg="new.png"
+      :height="70"
+      color="blue"
+      v-if="data"
+    >
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.new" :key="user.id" class="flex col"
           ><img
@@ -18,7 +24,7 @@
             @contextmenu.prevent
             height="93"
             width="100"
-          /><Avatar
+          /><GlobalAvatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -28,7 +34,7 @@
             :item1="user.look.item1"
             :item2="user.look.item2"
           />
-          <user :user="user" />
+          <UserLink :user="user" />
           <span
             >Membre n°<b>{{ user.id }}</b></span
           ></div
@@ -39,9 +45,9 @@
 
       <br />
       <router-link to="/book">Voir la liste des nouveaux arrivants</router-link>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card
+    <GlobalCard
       header="popularity_blue.gif"
       bg="popularity_blue.png"
       :height="75"
@@ -56,7 +62,7 @@
             @contextmenu.prevent
             height="93"
             width="100"
-          /><Avatar
+          /><GlobalAvatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -66,7 +72,7 @@
             :item1="user.look.item1"
             :item2="user.look.item2"
           />
-          <user :user="user" />
+          <UserLink :user="user" />
           <span
             >Avec <b>{{ user.score }}</b> points</span
           ></div
@@ -77,9 +83,9 @@
 
       <br />
       <router-link to="/popularity">Voir la page popularité</router-link>
-    </Card>
+    </GlobalCard>
     <br />
-    <Card
+    <GlobalCard
       header="wedding_blue.gif"
       bg="wedding_blue.png"
       color="blue"
@@ -97,7 +103,7 @@
             @contextmenu.prevent
             height="93"
             width="100" /><div class="flex" style="justify-content: center"
-            ><Avatar
+            ><GlobalAvatar
               :avatar="couple.user1.look.avatar"
               :emote="couple.user1.look.emote"
               :hat="couple.user1.look.hat"
@@ -105,7 +111,7 @@
               :shoe="couple.user1.look.shoe"
               :item0="couple.user1.look.item0"
               :item1="couple.user1.look.item1"
-              :item2="couple.user1.look.item2" /><Avatar
+              :item2="couple.user1.look.item2" /><GlobalAvatar
               :avatar="couple.user2.look.avatar"
               :emote="couple.user2.look.emote"
               :hat="couple.user2.look.hat"
@@ -116,19 +122,19 @@
               :item2="couple.user2.look.item2"
           /></div>
           <span>
-            <user :user="couple.user1" /> &amp;
-            <user :user="couple.user2" /></span
+            <UserLink :user="couple.user1" /> &amp;
+            <UserLink :user="couple.user2" /></span
         ></div>
       </div>
       <br />
       Les derniers mariages célébrés par Guruji
       <br />
       <router-link to="/weddings">Voir la page des mariages</router-link>
-    </Card>
+    </GlobalCard>
     <template #right-column
-      ><Card color="blue">
+      ><GlobalCard color="blue">
         <template #button>
-          <Button icon="register.svg">Chercher</Button>
+          <GlobalButton icon="register.svg">Chercher</GlobalButton>
         </template>
         <form @submit.prevent="search()" class="flex fullwidth"
           ><input
@@ -153,10 +159,10 @@
             autocomplete="group"
             :placeholder="$t('placeholder.group')"
           /><button type="submit" class="btn-action">go</button></form
-        ></Card
+        ></GlobalCard
       ><br
     /></template>
-  </Container>
+  </GlobalContainer>
 </template>
 <script>
 // @vuese

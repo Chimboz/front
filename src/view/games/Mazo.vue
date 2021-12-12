@@ -1,14 +1,14 @@
 <template>
-  <Container>
+  <GlobalContainer>
     <template #left-column
-      ><Card color="blue" top>
+      ><GlobalCard color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="games" />
-        </div> </Card
+        </div> </GlobalCard
       ><br />
-      <Rules bot />
+      <GlobalRules bot />
     </template>
-    <Card header="mazo.gif" justified bg="mazo.gif">
+    <GlobalCard header="mazo.gif" justified bg="mazo.gif">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
@@ -61,9 +61,9 @@
       à la 10e place gagnent un item trêfle.
 
       <br />
-    </Card>
+    </GlobalCard>
     <br />
-    <Card id="tutorial" justified>
+    <GlobalCard id="tutorial" justified>
       <template #header>Comment jouer&nbsp;!</template>
       <template #subtitle
         >Attention : les visiteurs ne peuvent pas jouer !</template
@@ -76,9 +76,9 @@
       main gauche, avec une cuillere de nutella dans la bouche...<br />
       <br />
       C'est comme tu le sens, n'oublie jamais: un coup de travers et tu perds
-      !!! </Card
+      !!! </GlobalCard
     ><br />
-    <Card id="gameplay" justified>
+    <GlobalCard id="gameplay" justified>
       <template #header>Gameplay</template>
       <b>MaZo</b> (toujours en version béta - version de test - pour le moment)
       se joue avec une commande de chat: tape <b>!mazo</b> pour jouer un coup,
@@ -97,8 +97,8 @@
       quand tu le sens.<br />
       - Le temps que met à s'afficher le résultat n'indique pas un bon/mauvais
       coup.<br />
-    </Card>
-    <br /><Card id="best" v-if="data">
+    </GlobalCard>
+    <br /><GlobalCard id="best" v-if="data">
       <template #header>Les 20 plus mazo de l'Archipel</template>
       <template #subtitle>Continuera ? Continuera pas ? &lt;:D</template>
       <table class="score fullwidth">
@@ -119,7 +119,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><user :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td
               ><b>{{ rank.score }}</b></td
             >
@@ -127,10 +127,10 @@
           </tr>
         </tbody>
       </table>
-    </Card>
+    </GlobalCard>
 
     <template #right-column
-      ><Card
+      ><GlobalCard
         header="ensavoirplus_blue.gif"
         :width="154"
         :height="34"
@@ -164,9 +164,10 @@
           height="17"
           width="17"
         />
-        Le classement est mis à jour toutes les <b>10 minutes.</b><br /> </Card
+        Le classement est mis à jour toutes les <b>10 minutes.</b
+        ><br /> </GlobalCard
     ></template>
-  </Container>
+  </GlobalContainer>
 </template>
 
 <script>
