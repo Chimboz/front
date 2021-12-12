@@ -118,7 +118,7 @@ import messageRender from "@/module/messageRender.js";
 // @group View/Account
 // Conversation page (view for 1-to-1 messaging)
 export default {
-  name: "Conversation",
+  name: "ConversationView",
   data() {
     return {
       data: null,
@@ -141,7 +141,7 @@ export default {
         hash = str.charCodeAt(i) + ((hash << 5) - hash);
       }
       var colour = "#";
-      for (var i = 0; i < 3; i++) {
+      for (i = 0; i < 3; i++) {
         var value = (hash >> (i * 8)) & 0xff;
         colour += ("00" + value.toString(16)).substr(-2);
       }

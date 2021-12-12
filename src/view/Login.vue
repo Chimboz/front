@@ -118,7 +118,7 @@ const locales = { fr, enGB };
 // @group View
 // Login page
 export default {
-  name: "Login",
+  name: "LoginView",
   components: {
     Pack,
     Demo

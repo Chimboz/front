@@ -55,7 +55,7 @@ import Tooltip from "@/component/core/Tooltip.vue";
 // @group View/Community
 // Encyclopedia page
 export default {
-  name: "Encyclopedia",
+  name: "EncyclopediaView",
   components: {
     VLazyImage,
     Tooltip
@@ -96,7 +96,7 @@ export default {
     next();
   },*/,
   metaInfo: {
-    title: "section.shop",
+    title: "section.encyclopedia",
     meta: [
       {
         name: "description",

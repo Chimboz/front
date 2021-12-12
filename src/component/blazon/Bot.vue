@@ -63,7 +63,7 @@
 // @vuese
 // @group Blazon
 export default {
-    name:"Bot",
+    name:"BlazonBot",
     props: {
         id: {
             type: Number,

@@ -201,7 +201,7 @@ import messageRender from "@/module/messageRender.js";
 // @group View
 // Home page
 export default {
-  name: "Home",
+  name: "HomeView",
   components: {
     Bank,
     RandomNumber,

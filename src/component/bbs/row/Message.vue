@@ -113,7 +113,7 @@ import { mapGetters, mapState } from "vuex";
 // @vuese
 // @group BBS/Row
 export default {
-  name: "Message",
+  name: "MessageRow",
   props: {
     message: {
       required: true,

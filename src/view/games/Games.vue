@@ -226,7 +226,7 @@
 // @group View/Games
 // Games page
 export default {
-  name: "Games",
+  name: "GamesView",
   data() {
     return {
       data: null

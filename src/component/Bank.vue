@@ -45,7 +45,7 @@ import { mapGetters, mapState } from "vuex";
 // @vuese
 // @group Default
 export default {
-  name: "Bank",
+  name: "BankComponent",
   components: {
     AnimatedNumber
   },

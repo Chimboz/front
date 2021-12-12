@@ -245,7 +245,7 @@ const locales = { fr, enGB };
 // @group View/Account
 // Account page
 export default {
-  name: "Account",
+  name: "AccountView",
   components: {
     Bank,
     Cabin

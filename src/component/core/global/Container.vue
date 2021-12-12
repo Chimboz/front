@@ -22,7 +22,7 @@
 // @vuese
 // @group Core/Global
 export default {
-  name: "Container"
+  name: "GlobalContainer"
 };
 </script>
 <style lang="scss" scoped>

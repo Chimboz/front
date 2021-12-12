@@ -75,7 +75,7 @@
 // @vuese
 // @group Core
 export default {
-  name: "Modal",
+  name: "TheModal",
   data() {
     return {
       isVisible: false,

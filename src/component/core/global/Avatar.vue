@@ -91,7 +91,7 @@
 // @group Core/Global
 // Main component for showing avatars. Handle movements and emotes too.
 export default {
-  name: "Avatar",
+  name: "GlobalAvatar",
   props: {
     // Up animation
     up: {

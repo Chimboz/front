@@ -50,7 +50,7 @@ import StrokeText from "@/component/core/StrokeText.vue";
 // @vuese
 // @group Default
 export default {
-  name: "Item",
+  name: "EncyclopediaItem",
   components: {
     StrokeText
   },

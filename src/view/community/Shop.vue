@@ -92,7 +92,7 @@ import { mapGetters } from "vuex";
 // @group View/Community
 // Shop page
 export default {
-  name: "Shop",
+  name: "ShopView",
   components: {
     Bank,
     Pack

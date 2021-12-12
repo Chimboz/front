@@ -249,6 +249,6 @@
 // @group View/Games/Bacteria
 // Bacteria's story page
 export default {
-  name: "Story"
+  name: "StoryView"
 };
 </script>

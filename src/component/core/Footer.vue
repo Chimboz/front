@@ -71,7 +71,7 @@
 // @vuese
 // @group Core
 export default {
-  name: "Footer"
+  name: "TheFooter"
 };
 </script>
 

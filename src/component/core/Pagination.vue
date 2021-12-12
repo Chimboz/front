@@ -11,7 +11,7 @@
 // @vuese
 // @group BBS
 export default {
-  name: "Pagination",
+  name: "CorePagination",
   props: {
     current: { default: 0, type: Number, required: true },
     total: { required: true, type: Number },

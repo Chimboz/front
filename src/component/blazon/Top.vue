@@ -24,7 +24,7 @@
 // @vuese
 // @group Blazon
 export default {
-    name:"Top",
+    name:"BlazonTop",
     props: {
         id: {
             type: Number,

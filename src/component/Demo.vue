@@ -213,7 +213,7 @@
 // @vuese
 // @group Default
 export default {
-  name: "Demo",
+  name: "DemoComponent",
   data() {
     return {
       section: 1,

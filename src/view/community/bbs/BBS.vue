@@ -61,7 +61,7 @@ import BBSList from "@/component/bbs/list/BBS.vue";
 // @group View/Community/BBS
 // BBS page
 export default {
-  name: "BBS",
+  name: "BBSView",
   components: {
     BBSList
   },

@@ -196,7 +196,6 @@
   </Container>
 </template>
 <script>
-import Cabin from "@/component/blazon/Cabin.vue";
 import Blazon from "@/component/blazon/Blazon.vue";
 import StrokeText from "@/component/core/StrokeText.vue";
 import { format } from "date-fns";
@@ -207,9 +206,8 @@ const locales = { fr, enGB };
 // @group View/Members/Group
 // Group edition page
 export default {
-  name: "Edit",
+  name: "EditView",
   components: {
-    Cabin,
     StrokeText,
     Blazon
   },

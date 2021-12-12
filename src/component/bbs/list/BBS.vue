@@ -27,7 +27,7 @@ import Category from "../row/Category.vue";
 // @vuese
 // @group BBS/List
 export default {
-  name: "BBS List",
+  name: "BBSList",
   components: {
     Category
   },

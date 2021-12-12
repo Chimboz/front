@@ -267,7 +267,7 @@ const locales = { fr, enGB };
 // @group View/Members/Book
 // Member page
 export default {
-  name: "Member",
+  name: "MemberView",
   components: {
     StrokeText
   },

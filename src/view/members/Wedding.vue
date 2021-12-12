@@ -363,7 +363,7 @@ const locales = { fr, enGB };
 // @group View/Members
 // Wedding page
 export default {
-  name: "Wedding",
+  name: "WeddingView",
   data() {
     return {
       data: null

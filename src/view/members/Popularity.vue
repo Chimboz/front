@@ -398,7 +398,7 @@ import { mapGetters } from "vuex";
 // @group View/Members
 // Popularity page
 export default {
-  name: "Popularity",
+  name: "PopularityView",
   data() {
     return {
       data: null

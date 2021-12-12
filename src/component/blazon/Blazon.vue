@@ -20,7 +20,7 @@ import Bot from "./Bot.vue";
 // @vuese
 // @group Blazon
 export default {
-  name: "Blazon",
+  name: "CoreBlazon",
   components: {
     Background,
     Reflection,

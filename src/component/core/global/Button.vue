@@ -21,7 +21,7 @@ import StrokeText from "@/component/core/StrokeText.vue";
 // @group Core/Global
 // A default button
 export default {
-  name: "Button",
+  name: "GlobalButton",
   components: {
     StrokeText
   },

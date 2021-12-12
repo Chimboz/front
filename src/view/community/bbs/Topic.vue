@@ -23,7 +23,7 @@ import { mapGetters } from "vuex";
 // @group View/Community/BBS
 // Topic page
 export default {
-  name: "Topic",
+  name: "TopicView",
   components: {
     TopicList,
     MarkdownInput

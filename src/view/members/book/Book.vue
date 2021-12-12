@@ -95,7 +95,7 @@ const locales = { fr, enGB };
 // @group View/Members/Book
 // Book page
 export default {
-  name: "Book",
+  name: "BookView",
   data() {
     return {
       data: null

@@ -10,7 +10,7 @@
 // @vuese
 // @group Blazon
 export default {
-    name:"Background",
+    name:"BlazonBackground",
     props: {
         id: {
             type: Number,

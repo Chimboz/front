@@ -65,7 +65,7 @@
 // @group View/Account
 // Notsmart page
 export default {
-  name: "Notsmart",
+  name: "NotsmartView",
   methods: {
     changePassword() {
       console.log("Change password");

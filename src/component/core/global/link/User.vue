@@ -14,7 +14,7 @@
 // @vuese
 // @group Core/Global/Link
 export default {
-  name: "User",
+  name: "UserLink",
   props: {
     user: {
       required: true,

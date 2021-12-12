@@ -10,7 +10,8 @@ const allowed_images = [
   "chzretro-front.web.app",
   "localhost"
 ];
-const youtube = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/gi;
+const youtube =
+  /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
 const allowed_properties = [
   "color",
   "top",
@@ -70,11 +71,11 @@ const allowed_attr = [
   "preserveAspectRatio"
 ];
 
-const markedRender = function(string) {
+const markedRender = function (string) {
   const renderer = new marked.Renderer();
 
   const rendererCodespan = renderer.codespan;
-  renderer.codespan = function(text) {
+  renderer.codespan = function (text) {
     const math = mathsExpression(text);
     if (math) return math;
 
@@ -122,7 +123,7 @@ const markedRender = function(string) {
   return marked(string);
 };
 
-const dompurifyRender = function(string) {
+const dompurifyRender = function (string) {
   // Allowed URI schemes
   var regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
 
@@ -163,7 +164,7 @@ const dompurifyRender = function(string) {
   }
 
   // Add a hook to enforce CSS element sanitization
-  DOMPurify.addHook("uponSanitizeElement", function(node, data) {
+  DOMPurify.addHook("uponSanitizeElement", function (node, data) {
     if (data.tagName === "style") {
       var output = [];
       addCSSRules(output, node.sheet.cssRules);
@@ -172,10 +173,11 @@ const dompurifyRender = function(string) {
   });
 
   // Add a hook to enforce CSS attribute sanitization
-  DOMPurify.addHook("afterSanitizeAttributes", function(node) {
+  DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+    var anchor;
     // Sanitizing anchors
     if (node.hasAttribute("href")) {
-      var anchor = document.createElement("a");
+      anchor = document.createElement("a");
       anchor.href = node.getAttribute("href");
       node.setAttribute("target", "_blank");
       node.setAttribute("rel", "noreferrer noopener nofollow");
@@ -186,7 +188,7 @@ const dompurifyRender = function(string) {
 
     // Whitelist images
     if (node.hasAttribute("src")) {
-      var anchor = document.createElement("a");
+      anchor = document.createElement("a");
       anchor.href = node.getAttribute("src");
       if (anchor.hostname && !allowed_images.includes(anchor.hostname)) {
         node.removeAttribute("src");
@@ -221,7 +223,7 @@ const dompurifyRender = function(string) {
   });
 };
 
-const messageRender = function(string) {
+const messageRender = function (string) {
   const result = dompurifyRender(markedRender(string));
 
   // Custom embeds

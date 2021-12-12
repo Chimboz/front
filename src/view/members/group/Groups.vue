@@ -392,7 +392,7 @@ import { mapGetters } from "vuex";
 // @group View/Members/Group
 // Groups page
 export default {
-  name: "Groups",
+  name: "GroupsView",
   data() {
     return {
       data: null

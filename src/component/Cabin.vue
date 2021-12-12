@@ -361,7 +361,7 @@ import VLazyImage from "v-lazy-image";
 // @vuese
 // @group Default
 export default {
-  name: "Cabin",
+  name: "AvatarCabin",
   components: {
     Emotes,
     VLazyImage

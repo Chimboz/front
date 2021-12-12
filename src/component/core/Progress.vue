@@ -25,7 +25,7 @@
 // @vuese
 // @group Core
 export default {
-  name: "Progress",
+  name: "CoreProgress",
   props: {
     win: {
       required: true,

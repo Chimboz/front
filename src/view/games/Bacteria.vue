@@ -322,7 +322,7 @@ import Tooltip from "@/component/core/Tooltip.vue";
 // @group View/Games
 // Bacteria page
 export default {
-  name: "Bacteria",
+  name: "BacteriaView",
   components: {
     Progress,
     Tooltip

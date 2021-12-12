@@ -10,7 +10,7 @@
 // @vuese
 // @group Core/Global/Link
 export default {
-  name: "Group",
+  name: "GroupLink",
   props: {
     group: {
       required: false,

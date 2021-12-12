@@ -85,7 +85,7 @@
 // @vuese
 // @group Default
 export default {
-  name: "Pack",
+  name: "PackBlister",
   props: {
     name: {
       required: true,

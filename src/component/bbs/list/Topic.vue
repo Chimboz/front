@@ -76,14 +76,14 @@
 </template>
 
 <script>
-import Pagination from "../Pagination.vue";
+import Pagination from "../../core/Pagination.vue";
 import Message from "../row/Message.vue";
 import { mapGetters, mapState } from "vuex";
 
 // @vuese
 // @group BBS/List
 export default {
-  name: "Topic List",
+  name: "TopicList",
   components: {
     Message,
     Pagination

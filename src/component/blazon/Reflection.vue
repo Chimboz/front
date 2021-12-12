@@ -10,7 +10,7 @@
 // @vuese
 // @group Blazon
 export default {
-    name:"Reflection",
+    name:"BlazonReflection",
     props: {
         id: {
             type: Number,

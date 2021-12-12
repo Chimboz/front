@@ -57,18 +57,14 @@
 </template>
 <script>
 import Cabin from "@/component/blazon/Cabin.vue";
-import Blazon from "@/component/blazon/Blazon.vue";
-import StrokeText from "@/component/core/StrokeText.vue";
 
 // @vuese
 // @group View/Members/Group
 // Group creation page
 export default {
-  name: "Create",
+  name: "CreateView",
   components: {
-    Cabin,
-    StrokeText,
-    Blazon
+    Cabin
   },
   data() {
     return {

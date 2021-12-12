@@ -163,7 +163,7 @@
 // @group View/Members
 // Members page
 export default {
-  name: "Members",
+  name: "MembersView",
   data() {
     return {
       data: null

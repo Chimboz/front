@@ -8,7 +8,7 @@
 // @vuese
 // @group Core
 export default {
-  name: "Tooltip"
+  name: "CoreTooltip"
 };
 </script>
 <style lang="scss" scoped>

@@ -56,7 +56,7 @@ const locales = { fr, enGB };
 // @group View/Members
 // Online page
 export default {
-  name: "Online",
+  name: "OnlineView",
   data() {
     return {
       data: null

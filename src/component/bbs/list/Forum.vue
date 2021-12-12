@@ -58,13 +58,13 @@
 
 <script>
 import Topic from "../row/Topic.vue";
-import Pagination from "@/component/bbs/Pagination.vue";
+import Pagination from "../../core/Pagination.vue";
 import { mapState } from "vuex";
 
 // @vuese
 // @group BBS/List
 export default {
-  name: "Board List",
+  name: "ForumList",
   components: {
     Topic,
     Pagination

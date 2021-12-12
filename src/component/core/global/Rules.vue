@@ -24,7 +24,7 @@
 // @vuese
 // @group Core/Global
 export default {
-  name: "Rules",
+  name: "GlobalRules",
   data() {
     return {
       rule: 0

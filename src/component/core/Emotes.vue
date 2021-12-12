@@ -20,7 +20,7 @@
 // @vuese
 // @group Core
 export default {
-  name: "Emotes",
+  name: "CoreEmotes",
   data() {
     return {
       emotes: [

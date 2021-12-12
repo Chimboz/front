@@ -184,7 +184,7 @@ import { mapGetters, mapState } from "vuex";
 // @vuese
 // @group Core
 export default {
-  name: "Navbar",
+  name: "TheNavbar",
   data() {
     return {
       date: new Date()
