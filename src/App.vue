@@ -7,7 +7,7 @@
   <metainfo>
     <template #title="{ content }"
       >{{
-        user
+        user && user.notifications !== 0
           ? user.notifications
               .toString()
               .replace(/[0-9]/g, (c) => "⁰¹²³⁴⁵⁶⁷⁸⁹".charAt(c))

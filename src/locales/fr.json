@@ -103,7 +103,10 @@
     "group": "Groupe",
     "member": "Membre",
     "groupedit": "Édition de groupe",
-    "online": "En ligne"
+    "online": "En ligne",
+    "conversation": "Conversation",
+    "notsmart": "Pamalin",
+    "bacteriaStory": "Histoire de Bacteria"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",

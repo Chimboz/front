@@ -2,7 +2,6 @@
   <div class="modal" v-if="isVisible">
     <div class="modal-content">
       <img
-        style="float: left"
         draggable="false"
         @contextmenu.prevent
         v-if="type == 'error'"
@@ -11,7 +10,6 @@
         src="@/asset/img/icon/warning2.svg"
       />
       <img
-        style="float: left"
         draggable="false"
         @contextmenu.prevent
         v-if="type == 'success'"
@@ -20,7 +18,6 @@
         src="@/asset/img/icon/success.svg"
       />
       <img
-        style="float: left"
         draggable="false"
         @contextmenu.prevent
         v-if="type == 'failure'"
@@ -29,7 +26,6 @@
         src="@/asset/img/icon/failure.svg"
       />
       <img
-        style="float: left"
         draggable="false"
         @contextmenu.prevent
         v-if="type == 'confirmation'"
@@ -148,8 +144,9 @@ export default {
   height: 103px;
 }
 
-.modal-content img {
+.modal-content > img {
   margin-right: 12px;
+  float: left;
 }
 
 .ok {

@@ -103,7 +103,10 @@
     "group": "Group",
     "member": "Member",
     "groupedit": "Group edit",
-    "online": "Online"
+    "online": "Online",
+    "conversation": "Conversation",
+    "notsmart": "Notsmart",
+    "bacteriaStory": "Bacteria's Story"
   },
   "group": {
     "leader": {

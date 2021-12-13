@@ -344,7 +344,7 @@
                 draggable="false"
                 @contextmenu.prevent
                 alt="Profile icon"
-                style="height: 24px"
+                width="24"
                 height="24"
                 src="@/asset/img/icon/profile.svg" /></template
             >Fiche</GlobalButton

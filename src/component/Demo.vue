@@ -176,7 +176,8 @@
             class="btn-md"
           />
         </div>
-        <div style="display: none">
+        <!-- TODO: Two-Factor Authentication
+        <div>
           <input
             type="text"
             name="token"
@@ -187,7 +188,7 @@
             maxlength="6"
             class="btn-md"
           />
-        </div>
+        </div>-->
         <div class="flex">
           <GlobalButton @click="section = 0" type="button"
             >S'inscrire</GlobalButton

@@ -88,7 +88,7 @@
                 @change="(event) => formatColor(event.target.value)"
               >
                 <option
-                  style="color: black; background-color: #fafafa"
+                  style="color: #444444; background-color: #fafafa"
                   value="#444444"
                 >
                   Couleur
@@ -184,13 +184,13 @@
                   Gurujiolet
                 </option>
                 <option
-                  style="color: white; background-color: #fafafa"
+                  style="color: #fff; background-color: #fafafa"
                   value="#FFFFFF"
                 >
                   Blanc
                 </option>
                 <option
-                  style="color: black; background-color: #fafafa"
+                  style="color: #000; background-color: #fafafa"
                   value="#000000"
                 >
                   Noir

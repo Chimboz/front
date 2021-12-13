@@ -34,7 +34,7 @@ export default {
           item1: 1,
           item2: 1
         },
-        notifications: 5
+        notifications: 0
       });
     },
     logout({ commit }) {
