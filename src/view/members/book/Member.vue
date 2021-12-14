@@ -124,7 +124,11 @@
                 data.gender.slice(1) +
                 ' gender'
               "
-              :src="require(`@/asset/img/icon/gender/${data.gender}.svg`)"
+              height="16"
+              width="20"
+              :src="
+                require(`@/asset/img/member/${data.gender}/${data.gender}.svg`)
+              "
             />
           </div>
           &nbsp;
