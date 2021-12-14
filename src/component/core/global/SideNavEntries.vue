@@ -59,7 +59,7 @@ export default {
         },
         {
           label: "section.capitalization",
-          url: "/majmin",
+          url: "/lowupp",
           section: "account"
         },
         {

@@ -184,7 +184,7 @@
             <h3 class="justified">Ta phrase préférée</h3>
             <input
               minlength="0"
-              maxlength="30"
+              maxlength="200"
               type="text"
               :value="motto"
               @input="$emit('update:motto', $event.target.value)"
@@ -192,7 +192,7 @@
             <h3 class="justified">Ta page perso</h3>
             <input
               minlength="0"
-              maxlength="30"
+              maxlength="100"
               type="text"
               :value="website"
               @input="$emit('update:website', $event.target.value)"
@@ -202,7 +202,7 @@
               <li>
                 <input
                   minlength="0"
-                  maxlength="30"
+                  maxlength="100"
                   type="text"
                   :value="centrea"
                   @input="$emit('update:centrea', $event.target.value)"
@@ -211,7 +211,7 @@
               <li>
                 <input
                   minlength="0"
-                  maxlength="30"
+                  maxlength="100"
                   type="text"
                   :value="centreb"
                   @input="$emit('update:centreb', $event.target.value)"
@@ -220,7 +220,7 @@
               <li>
                 <input
                   minlength="0"
-                  maxlength="30"
+                  maxlength="100"
                   type="text"
                   :value="centrec"
                   @input="$emit('update:centrec', $event.target.value)"
@@ -229,7 +229,7 @@
               <li>
                 <input
                   minlength="0"
-                  maxlength="30"
+                  maxlength="100"
                   type="text"
                   :value="centred"
                   @input="$emit('update:centred', $event.target.value)"

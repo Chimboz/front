@@ -12,6 +12,11 @@ export const routes = [
     meta: { sitemap: { ignoreRoute: true } }
   },
   {
+    path: "/levels",
+    name: "Levels",
+    component: () => import("../../view/account/Levels.vue")
+  },
+  {
     path: "/messenger",
     name: "Messenger",
     component: () => import("../../view/account/Messenger.vue"),
@@ -24,9 +29,21 @@ export const routes = [
     meta: { sitemap: { ignoreRoute: true } }
   },
   {
+    path: "/friends",
+    name: "Friends",
+    component: () => import("../../view/account/Friends.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
     path: "/notsmart",
     name: "Notsmart",
     component: () => import("../../view/account/Notsmart.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
+    path: "/lowupp",
+    name: "LowUpp",
+    component: () => import("../../view/account/LowUpp.vue"),
     meta: { sitemap: { ignoreRoute: true } }
   },
   {

@@ -252,14 +252,14 @@ export default {
 
 .body-parts {
   position: relative;
-  animation: bump 4s infinite;
+  animation: bump 2.2s infinite;
 }
 
 @keyframes bump {
-  96% {
+  92% {
     transform: translateY(0);
   }
-  98% {
+  96% {
     transform: translateY(-3px);
   }
   100% {
