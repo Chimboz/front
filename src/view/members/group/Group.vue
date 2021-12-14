@@ -59,14 +59,12 @@
             ><img
               draggable="false"
               @contextmenu.prevent
+              :alt="digit"
+              v-for="digit in data.level.toString(10)"
+              :key="digit.index"
               width="19"
               height="21"
-              src="@/asset/img/number/2.svg" /><img
-              draggable="false"
-              @contextmenu.prevent
-              width="19"
-              height="21"
-              src="@/asset/img/number/5.svg"
+              :src="require(`@/asset/img/number/${digit}.svg`)"
           /></div>
         </div>
         &nbsp;<img

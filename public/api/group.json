@@ -2,6 +2,7 @@
   "name": "La Chatterie",
   "type": "empire",
   "id": 2,
+  "level": 99,
   "size": 20,
   "status": "open",
   "official": true,
