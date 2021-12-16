@@ -15,6 +15,18 @@
       v-if="data"
       style="position: relative"
     >
+      <audio autoplay>
+        <source src="@/asset/sound/shop/shop.mp3" type="audio/mpeg" />
+      </audio>
+      <audio autoplay>
+        <source src="@/asset/sound/shop/preview.mp3" type="audio/wav" />
+      </audio>
+      <audio ref="clickAudio">
+        <source src="@/asset/sound/shop/show.wav" type="audio/wav" />
+      </audio>
+      <audio ref="buyAudio">
+        <source src="@/asset/sound/shop/selected.mp3" type="audio/mpeg" />
+      </audio>
       <div class="preview fullwidth flex">
         <img
           draggable="false"
@@ -109,8 +121,10 @@ export default {
   methods: {
     show(pack) {
       this.shown = pack;
+      this.$refs.clickAudio.play();
     },
     buy() {
+      this.$refs.buyAudio.play();
       console.log("Acheté " + this.shown.name);
       this.eventBus.emit("confirmation", {
         message: "success.buy",

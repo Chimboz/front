@@ -1,5 +1,12 @@
 <template>
-  <div class="pack flex animated pointer" @contextmenu.prevent>
+  <div
+    class="pack flex animated pointer"
+    @contextmenu.prevent
+    @mouseenter="play"
+  >
+    <audio ref="audio">
+      <source src="@/asset/sound/shop/hover.mp3" type="audio/wav" />
+    </audio>
     <img src="@/asset/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
     <svg
       viewBox="0 0 155.612 89.887"
@@ -94,6 +101,11 @@ export default {
     looks: {
       required: true,
       type: Array
+    }
+  },
+  methods: {
+    play() {
+      this.$refs.audio.play();
     }
   }
 };
