@@ -19,7 +19,7 @@
     "dompurify": "^2.3.4",
     "highlight.js": "^11.4.0",
     "katex": "^0.15.2",
-    "marked": "^4.0.9",
+    "marked": "^4.0.10",
     "mitt": "^3.0.0",
     "modern-normalize": "^1.1.0",
     "register-service-worker": "^1.7.1",
