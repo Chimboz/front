@@ -11,32 +11,40 @@
     <GlobalCard color="yellow" v-if="data" justified
       ><template #subtop>Friends</template>
       <router-link
-        class="message flex"
-        v-for="user of data.recent"
-        :key="user.id"
-        :to="'/messenger/' + user.id"
+        class="friend"
+        v-for="friend of data"
+        :key="friend.user.id"
+        :to="'/book/' + friend.user.id"
       >
-        <div class="tiz-portrait" :style="{ background: hashColor(user.name) }">
+        <div class="tiz-portrait" :style="{ background: hashColor(friend.user.name) }">
           <GlobalAvatar
-            :avatar="user.look.avatar"
-            :emote="user.look.emote"
-            :hat="user.look.hat"
-            :body="user.look.body"
-            :shoe="user.look.shoe"
-            :item0="user.look.item0"
-            :item1="user.look.item1"
-            :item2="user.look.item2"
+            :avatar="friend.user.look.avatar"
+            :emote="friend.user.look.emote"
+            :hat="friend.user.look.hat"
+            :body="friend.user.look.body"
+            :shoe="friend.user.look.shoe"
+            :item0="friend.user.look.item0"
+            :item1="friend.user.look.item1"
+            :item2="friend.user.look.item2"
           />
         </div>
+        <UserLink :user="friend.user" class="ellipsis centered" />
       </router-link>
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="yellow" v-if="data" justified class="recent">
-        <div
-          class="fullwidth flex"
-          style="flex-wrap: wrap; justify-content: center"
+      ><GlobalCard color="blue" top>
+        <form @submit.prevent="addFriend()" class="flex fullwidth"
+          ><input
+            required
+            minlength="3"
+            maxlength="15"
+            name="user"
+            type="text"
+            class="btn-md"
+            autocomplete="user"
+            :placeholder="$t('placeholder.username')"
+          /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button></form
         >
-        </div>
       </GlobalCard>
     </template>
   </GlobalContainer>
@@ -45,23 +53,17 @@
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import messageRender from "@/module/messageRender.js";
-
 // @vuese
 // @group View/Account
-// Conversation page (view for 1-to-1 messaging)
+// Friends page
 export default {
   name: "FriendsView",
   data() {
     return {
       data: null,
-      message: ""
     };
   },
   methods: {
-    messageRender(message) {
-      return messageRender(message);
-    },
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
@@ -92,16 +94,16 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/conversation.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/friends.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/conversation.json");
+    const req = await this.api.get("/api/friends.json");
     this.data = req.data;
     next();
   },
   metaInfo: {
-    title: "section.conversation",
+    title: "section.friends",
     meta: [
       {
         name: "description",
@@ -127,11 +129,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.messages {
-  max-height: 500px;
-  overflow-y: auto;
-  display: flex;
+.friend {
+  display: inline-flex;
   flex-direction: column-reverse;
+  width: 62px;
 }
 .tiz-portrait {
   display: inline-block;

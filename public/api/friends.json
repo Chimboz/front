@@ -1,15 +1,65 @@
 [
   {
-    "friend": { "name": "Owned", "id": 2 },
-    "online": true,
-    "room": "Accueil"
+    "user": {
+      "name": "Owned",
+      "id": 2,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 12,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    "status": {
+      "connected": false,
+      "room": "La Colline Sacrée",
+      "date": 1630075662000
+    }
   },
   {
-    "friend": { "name": "Chapaking", "id": 1 },
-    "online": true
+    "user": {
+      "name": "Chapakinggggggggggg",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 10,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    "status": {
+      "connected": false,
+      "room": "La Colline Sacrée",
+      "date": 1630075662000
+    }
   },
   {
-    "friend": { "name": "ChAtEuX", "id": 9 },
-    "online": false
+    "user": {
+      "name": "ChAtEuX",
+      "id": 9,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 2,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    "status": {
+      "connected": false,
+      "room": "La Colline Sacrée",
+      "date": 1630075662000
+    }
   }
 ]

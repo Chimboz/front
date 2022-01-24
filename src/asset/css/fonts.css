@@ -5,6 +5,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
 }
 
 @font-face {
@@ -14,6 +16,8 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
 }
 
 @font-face {
@@ -23,6 +27,8 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
 }
 
 @font-face {
@@ -95,6 +101,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
 }
 
 @font-face {

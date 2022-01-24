@@ -160,8 +160,7 @@
             :placeholder="$t('placeholder.group')"
           /><button type="submit" class="btn-action">go</button></form
         ></GlobalCard
-      ><br
-    /></template>
+      ></template>
   </GlobalContainer>
 </template>
 <script>
