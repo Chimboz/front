@@ -7,9 +7,12 @@
           @contextmenu.prevent
           class="icon"
           :src="
-            require(`@/asset/img/bbs/folder${topic.new ? '_new' : ''}${
-              topic.locked ? '_lock' : ''
-            }.svg`)
+            require(`@/asset/img/bbs/folder${
+              topic.sticky ? '_sticky' : ''}${
+              topic.announce && !topic.sticky ? '_announce' : ''}${
+              topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
+              topic.reply > 10 && !topic.announce && !topic.sticky && !topic.locked ? '_hot' : ''}${
+              topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''}.svg`)
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
@@ -65,21 +68,21 @@ export default {
   props: {
     topic: {
       required: true,
-      type: Object
+      type: Object,
     },
     separator: {
       required: false,
       default: true,
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   computed: {
     formatDate() {
       return formatDistanceToNowStrict(new Date(this.topic.last_msg.date), {
         locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true
+        addSuffix: true,
       });
-    }
-  }
+    },
+  },
 };
 </script>
