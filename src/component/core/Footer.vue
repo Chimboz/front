@@ -53,7 +53,7 @@
         title="Front version"
         width="96"
         height="20"
-        src="https://img.shields.io/badge/version-v0.9.0-blue" /></a
+        src="https://img.shields.io/badge/version-v1.0.0-blue" /></a
     >&nbsp;
     <a href="/doc/#"
       ><img
