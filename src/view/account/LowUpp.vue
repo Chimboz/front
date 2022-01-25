@@ -10,7 +10,7 @@
     </template>
     <GlobalCard color="yellow" justified
       ><template #subtop>MajMin</template>
-      <form>
+      <form @submit.prevent="submit">
         <div class="centered">
         <button
           class="letter"
@@ -21,7 +21,17 @@
         >
           {{ letter }}
         </button></div>
-        <GlobalButton type="submit">Sauver</GlobalButton>
+        <br>
+        <GlobalButton color="green" type="submit"
+          ><template #prepend
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Arrow icon"
+              class="arrow green jitter"
+              src="@/asset/img/arrow.svg" /></template
+          >Sauver</GlobalButton
+        >
       </form>
     </GlobalCard>
     <template #right-column> </template>
@@ -54,6 +64,9 @@ export default {
         letter +
         this.pseudo.slice(index + 1);
     },
+    submit() {
+      console.log(`Envoyé ${this.pseudo}!`);
+    }
   },
   computed: {
     ...mapState("auth", ["user"]),
