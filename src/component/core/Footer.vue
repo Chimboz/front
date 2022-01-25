@@ -43,7 +43,7 @@
         @contextmenu.prevent /></a
     >&nbsp;
     <a
-      href="https://github.com/Tigriz/chzretro-front"
+      href="https://github.com/Chimboz"
       target="_blank"
       rel="noopener noreferrer"
       ><img
@@ -53,7 +53,7 @@
         title="Front version"
         width="96"
         height="20"
-        src="https://img.shields.io/github/package-json/v/tigriz/chzretro-front" /></a
+        src="https://img.shields.io/badge/version-v0.9.0-blue" /></a
     >&nbsp;
     <a href="/doc/#"
       ><img
