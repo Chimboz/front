@@ -42,3 +42,13 @@
 .justified {
   text-align: justify;
 }
+
+.reset-link {
+  text-decoration: none !important;
+  color: #284555;
+  font-weight: normal;
+}
+
+.reset-link:hover {
+  text-decoration: none !important;
+}

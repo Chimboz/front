@@ -15,7 +15,7 @@
       }
     },
     "status": {
-      "connected": false,
+      "connected": true,
       "room": "La Colline Sacrée",
       "date": 1630075662000
     }
@@ -36,8 +36,7 @@
       }
     },
     "status": {
-      "connected": false,
-      "room": "La Colline Sacrée",
+      "connected": true,
       "date": 1630075662000
     }
   },

@@ -16,7 +16,11 @@
         :key="friend.user.id"
         :to="'/book/' + friend.user.id"
       >
-        <div class="tiz-portrait" :style="{ background: hashColor(friend.user.name) }">
+        <UserLink :user="friend.user" class="ellipsis" />
+        <div
+          class="tiz-portrait"
+          :style="{ background: hashColor(friend.user.name) }"
+        >
           <GlobalAvatar
             :avatar="friend.user.look.avatar"
             :emote="friend.user.look.emote"
@@ -28,23 +32,41 @@
             :item2="friend.user.look.item2"
           />
         </div>
-        <UserLink :user="friend.user" class="ellipsis centered" />
+        <div class="reset-link">
+          <div v-if="!friend.status.connected">
+            Dernière visite le <b>{{ formatDate(friend.status.date) }}</b>
+          </div>
+          <div v-else>
+            <div
+              class="online flex centered"
+              :class="{ tchat: friend.status.room }"
+            >
+              <img
+                draggable="false"
+                @contextmenu.prevent
+                alt="Online"
+                src="@/asset/img/tiz/tiz_shape.svg"
+              />&nbsp;<b>En ligne</b>
+            </div>
+            <b>{{ friend.status.room }}</b>
+          </div>
+        </div>
       </router-link>
     </GlobalCard>
     <template #right-column
       ><GlobalCard color="blue" top>
-        <form @submit.prevent="addFriend()" class="flex fullwidth"
-          ><input
+        <form @submit.prevent="addFriend" class="flex fullwidth">
+          <input
             required
             minlength="3"
             maxlength="15"
-            name="user"
+            name="friend"
             type="text"
             class="btn-md"
-            autocomplete="user"
+            autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button></form
-        >
+          /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button>
+        </form>
       </GlobalCard>
     </template>
   </GlobalContainer>
@@ -67,7 +89,7 @@ export default {
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true
+        addSuffix: true,
       });
     },
     hashColor(str) {
@@ -82,15 +104,34 @@ export default {
       }
       return colour;
     },
-    send() {
-      console.log("Envoyé " + this.message);
-      this.data.messages.push({
-        you: true,
-        content: this.message,
-        date: Date.now()
-      });
-      this.message = "";
-    }
+    addFriend(form) {
+      for (let element of form.target.elements) {
+        if (element.name == "friend") {
+          console.log(`Ajouté ${element.value} en ami`);
+          this.data.push({
+            user: {
+              name: "Owned",
+              id: 2,
+              look: {
+                avatar: 0,
+                emote: "neutral",
+                hat: 7,
+                body: 12,
+                shoe: 7,
+                item0: 17,
+                item1: 1,
+                item2: 1,
+              },
+            },
+            status: {
+              connected: false,
+              room: "La Colline Sacrée",
+              date: 1630075662000,
+            },
+          });
+        }
+      }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -108,32 +149,35 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .friend {
   display: inline-flex;
-  flex-direction: column-reverse;
-  width: 62px;
+  flex-direction: column;
+  width: 70px;
+  text-align: center;
+  margin: 4px;
 }
+
 .tiz-portrait {
   display: inline-block;
   margin: 6px;
@@ -144,27 +188,22 @@ export default {
   box-shadow: 0 1px 1px 1px #0005;
 }
 
-.content {
-  padding: 12px 12px 6px 12px;
-  background: #fff;
+.online {
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
   color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 1px 1px 1px #0005;
+  justify-content: center;
+  width: 100%;
+  height: 26px;
+  background: linear-gradient(to bottom, #0193ca, #2d4a97);
+  border-radius: 10px;
 }
 
-.message .message-content {
-  align-items: flex-start;
+.online.tchat {
+  background: linear-gradient(to bottom, #81cb00, #40972d);
 }
 
-.message.you .message-content {
-  align-items: flex-end;
-  width: 100% !important;
-  text-align: right;
-}
-
-.message.you .content {
-  background: #fff !important;
-  mix-blend-mode: unset;
-  color: #284555;
+.online img {
+  height: 20px;
 }
 </style>
