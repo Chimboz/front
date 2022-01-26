@@ -10,48 +10,92 @@
     </template>
     <GlobalCard color="yellow" v-if="data" justified
       ><template #subtop>Friends</template>
-      <router-link
-        class="friend"
-        v-for="friend of data"
-        :key="friend.user.id"
-        :to="'/book/' + friend.user.id"
-      >
-        <UserLink :user="friend.user" class="ellipsis" />
-        <div
-          class="tiz-portrait"
-          :style="{ background: hashColor(friend.user.name) }"
+      <div class="friend" v-for="friend of data" :key="friend.user.id">
+        <router-link
+          :to="'/book/' + friend.user.id"
+          :class="{ pending: friend.status.hasOwnProperty('sent') }"
         >
-          <GlobalAvatar
-            :avatar="friend.user.look.avatar"
-            :emote="friend.user.look.emote"
-            :hat="friend.user.look.hat"
-            :body="friend.user.look.body"
-            :shoe="friend.user.look.shoe"
-            :item0="friend.user.look.item0"
-            :item1="friend.user.look.item1"
-            :item2="friend.user.look.item2"
-          />
-        </div>
-        <div class="reset-link">
-          <div v-if="!friend.status.connected">
-            Dernière visite le <b>{{ formatDate(friend.status.date) }}</b>
+          <UserLink :user="friend.user" class="ellipsis" />
+          <div
+            class="tiz-portrait"
+            :style="{ background: hashColor(friend.user.name) }"
+          >
+            <GlobalAvatar
+              :avatar="friend.user.look.avatar"
+              :emote="friend.user.look.emote"
+              :hat="friend.user.look.hat"
+              :body="friend.user.look.body"
+              :shoe="friend.user.look.shoe"
+              :item0="friend.user.look.item0"
+              :item1="friend.user.look.item1"
+              :item2="friend.user.look.item2"
+            />
           </div>
-          <div v-else>
-            <div
-              class="online flex centered"
-              :class="{ tchat: friend.status.room }"
-            >
-              <img
-                draggable="false"
-                @contextmenu.prevent
-                alt="Online"
-                src="@/asset/img/tiz/tiz_shape.svg"
-              />&nbsp;<b>En ligne</b>
-            </div>
-            <b>{{ friend.status.room }}</b>
-          </div>
+        </router-link>
+        <div v-if="friend.status.sent">
+          <a
+            @click.prevent="cancel(friend.user.id)"
+            style="color: red; cursor: pointer"
+            ><img
+              src="@/asset/img/icon/failure.svg"
+              width="11"
+              height="11"
+              alt="Close"
+              draggable="false"
+              style="margin: 0 2px"
+              @contextmenu.prevent
+            />Annuler</a
+          >
         </div>
-      </router-link>
+        <div
+          v-else-if="
+            friend.status.hasOwnProperty('sent') && !friend.status.sent
+          "
+        >
+          <a
+            @click.prevent="accept(friend.user.id)"
+            style="color: green; cursor: pointer"
+            ><img
+              src="@/asset/img/icon/success.svg"
+              width="11"
+              height="11"
+              alt="Close"
+              draggable="false"
+              style="margin: 0 2px"
+              @contextmenu.prevent
+            />Accepter</a
+          ><br /><a
+            @click.prevent="decline(friend.user.id)"
+            style="color: red; cursor: pointer"
+            ><img
+              src="@/asset/img/icon/failure.svg"
+              width="11"
+              height="11"
+              alt="Close"
+              draggable="false"
+              style="margin: 0 2px"
+              @contextmenu.prevent
+            />Décliner</a
+          >
+        </div>
+        <div v-else-if="!friend.status.connected">
+          Dernière visite le <b>{{ formatDate(friend.status.date) }}</b>
+        </div>
+        <div v-else>
+          <div
+            class="online flex centered"
+            :class="{ tchat: friend.status.room }"
+          >
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Online"
+              src="@/asset/img/tiz/tiz_shape.svg"
+            />&nbsp;<b>En ligne</b>
+          </div>
+          <b>{{ friend.status.room }}</b>
+        </div>
+      </div>
     </GlobalCard>
     <template #right-column
       ><GlobalCard color="blue" top>
@@ -104,6 +148,15 @@ export default {
       }
       return colour;
     },
+    cancel(id) {
+      console.log("Cancel " + id);
+    },
+    accept(id) {
+      console.log("Accept " + id);
+    },
+    decline(id) {
+      console.log("Decline " + id);
+    },
     addFriend(form) {
       for (let element of form.target.elements) {
         if (element.name == "friend") {
@@ -124,9 +177,7 @@ export default {
               },
             },
             status: {
-              connected: false,
-              room: "La Colline Sacrée",
-              date: 1630075662000,
+              sent: true,
             },
           });
         }
@@ -176,6 +227,10 @@ export default {
   width: 70px;
   text-align: center;
   margin: 4px;
+}
+
+.pending {
+  opacity: 0.5;
 }
 
 .tiz-portrait {

@@ -60,5 +60,43 @@
       "room": "La Colline Sacrée",
       "date": 1630075662000
     }
+  },
+  {
+    "user": {
+      "name": "Chelha",
+      "id": 2,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 5,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    "status": {
+      "sent": true
+    }
+  },
+  {
+    "user": {
+      "name": "Koko",
+      "id": 2,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 5,
+        "shoe": 7,
+        "item0": 17,
+        "item1": 1,
+        "item2": 1
+      }
+    },
+    "status": {
+      "sent": false
+    }
   }
 ]
