@@ -33,9 +33,7 @@
           </div>
         </router-link>
         <div v-if="friend.status.sent">
-          <a
-            @click.prevent="cancel(friend.user.id)"
-            style="color: red; cursor: pointer"
+          <a @click.prevent="cancel(friend)" style="color: red; cursor: pointer"
             ><img
               src="@/asset/img/icon/failure.svg"
               width="11"
@@ -53,7 +51,7 @@
           "
         >
           <a
-            @click.prevent="accept(friend.user.id)"
+            @click.prevent="accept(friend)"
             style="color: green; cursor: pointer"
             ><img
               src="@/asset/img/icon/success.svg"
@@ -65,7 +63,7 @@
               @contextmenu.prevent
             />Accepter</a
           ><br /><a
-            @click.prevent="decline(friend.user.id)"
+            @click.prevent="decline(friend)"
             style="color: red; cursor: pointer"
             ><img
               src="@/asset/img/icon/failure.svg"
@@ -148,14 +146,39 @@ export default {
       }
       return colour;
     },
-    cancel(id) {
-      console.log("Cancel " + id);
+    cancel(friend) {
+      console.log("Cancel " + friend.user.id);
+      // API Call returning true if friend removed
+      this.data.splice(this.data.indexOf(friend), 1);
     },
-    accept(id) {
-      console.log("Accept " + id);
+    accept(friend) {
+      console.log("Accept " + friend.user.id);
+      // API Call returning new friend infos (status)
+      this.data.splice(this.data.indexOf(friend), 1, {
+        user: {
+          name: "Owned",
+          id: 2,
+          look: {
+            avatar: 0,
+            emote: "neutral",
+            hat: 7,
+            body: 12,
+            shoe: 7,
+            item0: 17,
+            item1: 1,
+            item2: 1,
+          },
+        },
+        status: {
+          connected: true,
+          room: "La Colline Sacrée",
+          date: 1630075662000,
+        },
+      });
     },
-    decline(id) {
-      console.log("Decline " + id);
+    decline(friend) {
+      console.log("Decline " + friend.user.id);
+      this.data.splice(this.data.indexOf(friend), 1);
     },
     addFriend(form) {
       for (let element of form.target.elements) {
