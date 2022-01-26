@@ -11,8 +11,8 @@
               topic.sticky ? '_sticky' : ''}${
               topic.announce && !topic.sticky ? '_announce' : ''}${
               topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
-              topic.reply > 10 && !topic.announce && !topic.sticky && !topic.locked ? '_hot' : ''}${
-              topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''}.svg`)
+              topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''}${
+              topic.reply > 10 && !topic.announce && !topic.sticky && !topic.locked ? '_hot' : ''}.svg`)
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
