@@ -179,6 +179,12 @@ export const routes = [
     component: () => import("../../view/community/Shop.vue")
   },
   {
+    path: "/eraser",
+    name: "Eraser",
+    component: () => import("../../view/community/Eraser.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
     path: "/encyclopedia",
     name: "Encyclopedia",
     component: () => import("../../view/community/Encyclopedia.vue"),
