@@ -54,7 +54,7 @@
                 `**${this.message.author.name}** a écrit :\n${this.message.content}`.replace(
                   /^/gm,
                   '> '
-                )
+                )+'\n\n'
               )
             "
             ><img
