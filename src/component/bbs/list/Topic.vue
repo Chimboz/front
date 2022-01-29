@@ -70,7 +70,7 @@
       class="btn-action"
       v-if="user.role > 50"
       @click.prevent="this.delete"
-      >&times;&nbsp;Supprimer</button
+      >x&nbsp;Supprimer</button
     >
   </div>
 </template>

@@ -87,7 +87,7 @@
             class="btn-action"
             v-if="message.author.id === user.id || user.role > 50"
             @click.prevent="this.delete"
-            >&times;</button
+            >x</button
           >
         </div>
       </div>
