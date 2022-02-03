@@ -96,33 +96,3 @@ export default {
   }
 };
 </script>
-<style lang="scss"></style>
-<style lang="scss" scoped>
-.message {
-  text-decoration: none;
-  color: #284555;
-  font-weight: normal;
-  overflow: hidden;
-}
-
-.tiz-portrait {
-  margin: 6px;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  overflow: hidden;
-  float: left;
-  box-shadow: 0 1px 1px 1px #0005;
-}
-
-.message::after,
-.message .tiz::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.message:hover {
-  background: #fff6;
-}
-</style>
