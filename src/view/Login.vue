@@ -202,6 +202,6 @@ export default {
 }
 
 .gallery .photo img {
-  border: 1px solid #6090be;
+  border: 1px solid var(--main-bg);
 }
 </style>

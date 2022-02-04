@@ -319,14 +319,14 @@ export default {
 }
 
 .active .pm div:first-child {
-  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 1px #fff);
+  filter: drop-shadow(0 0 2px var(--light)) drop-shadow(0 0 1px var(--light));
 }
 
 .forum-title {
   font-family: "Chimboz Heavy";
   height: 16px;
-  font-size: 18px;
-  fill: #fff;
+  font-size: var(--lg-font-size);
+  fill: var(--light);
   stroke: #a10069;
   stroke-width: 4;
   transform: translateY(-40px);

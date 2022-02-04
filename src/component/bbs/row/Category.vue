@@ -111,7 +111,7 @@ export default {
 <style lang="scss" scoped>
 .category th {
   padding: 0 5px;
-  color: #6090be;
+  color: var(--main-bg);
 }
 
 .category a::before {

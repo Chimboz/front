@@ -212,8 +212,8 @@ export default {
 
 .content {
   padding: 12px 12px 6px 12px;
-  background: #fff;
-  color: #fff;
+  background: var(--light);
+  color: var(--light);
   border-radius: 16px;
   box-shadow: 0 1px 1px 1px #0005;
 }
@@ -229,7 +229,7 @@ export default {
 }
 
 .message.you .content {
-  background: #fff !important;
+  background: var(--light) !important;
   mix-blend-mode: unset;
   color: var(--dark);
 }

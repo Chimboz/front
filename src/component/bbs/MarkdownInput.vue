@@ -124,8 +124,8 @@
                   Orange
                 </option>
                 <option
-                  style="color: #ffff00; background-color: #fafafa"
-                  value="#FFFF00"
+                  style="color: var(--light)f00; background-color: #fafafa"
+                  value="var(--light)F00"
                 >
                   Jaune
                 </option>
@@ -184,8 +184,8 @@
                   Gurujiolet
                 </option>
                 <option
-                  style="color: #fff; background-color: #fafafa"
-                  value="#FFFFFF"
+                  style="color: var(--light); background-color: #fafafa"
+                  value="var(--light)FFF"
                 >
                   Blanc
                 </option>
@@ -234,7 +234,7 @@
                 <code>Code</code>
               </button>
               <button type="button" class="btn-md" @click="formatCode()">
-                <pre style="padding: 2px; margin: 0; color: #fff">
+                <pre style="padding: 2px; margin: 0; color: var(--light)">
 Code block</pre
                 >
               </button>

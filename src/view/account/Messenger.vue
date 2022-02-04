@@ -54,7 +54,7 @@
           <div>
             <h3
               ><UserLink :user="message.user" /><span
-                style="float: right; font-weight: normal; font-size: 12px"
+                style="float: right; font-weight: normal; font-size: var(--font-size)"
                 >{{ formatDate(message.date) }}</span
               ></h3
             ></div
@@ -163,6 +163,6 @@ export default {
 }
 
 .message:hover {
-  background: #fff6;
+  background: var(--light)6;
 }
 </style>

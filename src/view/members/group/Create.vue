@@ -171,7 +171,7 @@ export default {
 .group-name {
   height: 28px;
   font-size: 28px;
-  fill: #fff;
+  fill: var(--light);
   stroke: #f39;
   stroke-width: 4;
 }
@@ -194,7 +194,7 @@ export default {
   justify-content: center;
   width: 50px;
   height: 50px;
-  border: 1px solid #6090be;
+  border: 1px solid var(--main-bg);
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
   vertical-align: middle;

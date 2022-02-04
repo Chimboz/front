@@ -44,7 +44,7 @@ export default {
       switch (this.color) {
         case "yellow":
           return {
-            "--button-color-1": "#fff3b5",
+            "--button-color-1": "var(--light)",
             "--button-color-2": "#ffb907",
             "--button-color-3": "#e58900",
             "--button-color-4": "#ffb700",
@@ -79,7 +79,7 @@ export default {
             "--button-color-1": "#fe9ae0",
             "--button-color-2": "#ff00a6",
             "--button-color-3": "#c10276",
-            "--button-color-4": "#ff009c",
+            "--button-color-4": "var(--pink)",
             "--button-color-5": "#a10069"
           };
       }
@@ -89,7 +89,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .btn {
-  cursor: pointer;
+  cursor: var(--pointer);
   width: 100%;
   height: 25px;
   font-family: "Chimboz Heavy";
@@ -120,8 +120,8 @@ export default {
 
 .btn-text {
   overflow: hidden;
-  font-size: 18px;
-  fill: #fff;
+  font-size: var(--lg-font-size);
+  fill: var(--light);
   stroke-width: 3;
   stroke: var(--button-color-5);
   height: 100%;

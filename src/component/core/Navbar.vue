@@ -215,7 +215,7 @@ export default {
   background-position: center;
   background-size: cover;
   //border-radius: 99px;
-  //box-shadow: inset 0px 0px 10px 5px #6090be;
+  //box-shadow: inset 0px 0px 10px 5px var(--main-bg);
 }
 
 #logo {
@@ -233,7 +233,7 @@ export default {
   font-weight: bold;
   font-size: 16px;
   color: #069;
-  text-shadow: 0 0 5px #fff, 0 0 5px #fff;
+  text-shadow: 0 0 5px var(--light), 0 0 5px var(--light);
 }
 
 #connect {
@@ -246,7 +246,7 @@ export default {
   line-height: 1;
   margin-right: -20px;
   border: none;
-  background: #fff;
+  background: var(--light);
   width: 130px;
 }
 
@@ -261,20 +261,20 @@ export default {
 }
 
 .nav-btn {
-  cursor: pointer;
+  cursor: var(--pointer);
   height: 25px;
   background-image: linear-gradient(
     to bottom,
-    #fe9ae0 0%,
-    #ff00a6 50%,
-    #c10276 50%,
-    #ff009c
+    var(--light-pink) 0%,
+    var(--pink) 50%,
+    var(--dark-pink) 50%,
+    var(--pink)
   );
   padding: 0 4%;
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   border-width: 2px 1px;
   border-style: solid;
-  border-color: #f0009c #f0009c #a10069 #f0009c;
+  border-color: var(--pink) var(--pink) var(--dark-pink) var(--pink);
   box-shadow: 0 2px 1px #0006;
 }
 
@@ -283,13 +283,13 @@ export default {
 }
 
 #nav a:nth-child(2) .nav-btn {
-  border-left-color: #f0009c;
+  border-left-color: var(--pink);
   border-radius: 10px 0 0 10px;
   border-left-width: 5px;
 }
 
 #nav a:last-child .nav-btn {
-  border-right-color: #f0009c;
+  border-right-color: var(--pink);
   border-radius: 0 10px 10px 0;
   border-right-width: 5px;
 }
@@ -306,14 +306,14 @@ export default {
 }
 
 #nav a:first-child .nav-btn {
-  border-right-color: #f0009c;
-  border-left-color: #f0009c;
+  border-right-color: var(--pink);
+  border-left-color: var(--pink);
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     #fe9ae0,
     #ff00a6 49%,
     #c10276 51%,
-    #ff009c
+    var(--pink)
   );
   border-radius: 10px;
   border-width: 2px 5px;
@@ -330,13 +330,13 @@ export default {
 #nav a.router-link-exact-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
-    #fec9b4,
-    #ff7b00 50%,
-    #d15503 50%,
-    #fc8536
+    var(--light-orange),
+    var(--orange) 50%,
+    var(--dark-orange) 50%,
+    var(--orange)
   );
-  color: #fff !important;
-  border-color: var(--orange) var(--orange) #9f3400 var(--orange);
+  color: var(--light) !important;
+  border-color: var(--orange) var(--orange) var(--dark-orange) var(--orange);
 }
 
 #nav a:first-child .nav-btn:hover,
@@ -396,9 +396,9 @@ a:hover {
 .nav-text {
   font-family: "Chimboz Heavy";
   font-weight: normal;
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   height: 100%;
-  fill: #fff;
+  fill: var(--light);
   stroke: #a10069;
   stroke-width: 3;
   display: flex;

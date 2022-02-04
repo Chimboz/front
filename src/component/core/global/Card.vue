@@ -120,68 +120,38 @@ export default {
       switch (this.color) {
         case "yellow":
           return {
-            "--light-card-color": "#fff",
-            "--main-card-color": "#fff4d5",
-            "--dark-card-color": "#ddcb9b",
-            "--shadow-card-color": "#5c341f",
-            "--title-card-color": "#726338",
-            "--title-subtop-color": "#963d00",
-            "--shadow-subtop-color": "#a38c47",
-            "--light-subtop-color": "#fff7d7",
-            "--main-subtop-color": "#ffe5a3",
-            "--dark-subtop-color": "#a38c47"
+            "--selected-light-card-color": "var(--light-card-yellow-color)",
+            "--selected-main-card-color": "var(--main-card-yellow-color)",
+            "--selected-dark-card-color": "var(--dark-card-yellow-color)",
+            "--selected-title-color": "var(--title-yellow-color)",
           };
         case "blue":
           return {
-            "--light-card-color": "#aadcfc",
-            "--main-card-color": "#6ebef0",
-            "--dark-card-color": "#5aa1cd",
-            "--shadow-card-color": "#355668",
-            "--title-card-color": "#096EA8",
-            "--title-subtop-color": "#004b7d",
-            "--shadow-subtop-color": "#1b4166",
-            "--light-subtop-color": "#c4e8ff",
-            "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499"
+            "--selected-light-card-color": "var(--light-card-blue-color)",
+            "--selected-main-card-color": "var(--main-card-blue-color)",
+            "--selected-dark-card-color": "var(--dark-card-blue-color)",
+            "--selected-title-color": "var(--title-blue-color)",
           };
         case "lightblue":
           return {
-            "--light-card-color": "#aadcfc",
-            "--main-card-color": "#a4c4e3",
-            "--dark-card-color": "#5aa1cd",
-            "--shadow-card-color": "#355668",
-            "--title-card-color": "#096EA8",
-            "--title-subtop-color": "#004b7d",
-            "--shadow-subtop-color": "#1b4166",
-            "--light-subtop-color": "#c4e8ff",
-            "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499"
+            "--selected-light-card-color": "var(--light-card-lightblue-color)",
+            "--selected-main-card-color": "var(--main-card-lightblue-color)",
+            "--selected-dark-card-color": "var(--dark-card-lightblue-color)",
+            "--selected-title-color": "var(--title-lightblue-color)",
           };
         case "red":
           return {
-            "--light-card-color": "#ff9e9e",
-            "--main-card-color": "#FF5454",
-            "--dark-card-color": "#e00c0c",
-            "--shadow-card-color": "#5078a0",
-            "--title-card-color": "#096EA8",
-            "--title-subtop-color": "#004b7d",
-            "--shadow-subtop-color": "#1b4166",
-            "--light-subtop-color": "#c4e8ff",
-            "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499"
+            "--selected-light-card-color": "var(--light-card-red-color)",
+            "--selected-main-card-color": "var(--main-card-red-color)",
+            "--selected-dark-card-color": "var(--dark-card-red-color)",
+            "--selected-title-color": "var(--title-red-color)",
           };
         default:
           return {
-            "--light-card-color": "#f2f8fc",
-            "--main-card-color": "#d5e6f3",
-            "--dark-card-color": "#a5cbe9",
-            "--shadow-card-color": "#18486a",
-            "--title-card-color": "#004e84",
-            "--title-subtop-color": "#004b7d",
-            "--shadow-subtop-color": "#1b4166",
-            "--light-subtop-color": "#c4e8ff",
-            "--main-subtop-color": "#99cdef",
-            "--dark-subtop-color": "#628499"
+            "--selected-light-card-color": "var(--light-card-color)",
+            "--selected-main-card-color": "var(--main-card-color)",
+            "--selected-dark-card-color": "var(--dark-card-color)",
+            "--selected-title-color": "var(--title-color)",
           };
       }
     },
@@ -208,15 +178,15 @@ export default {
   width: 100%;
   height: auto;
   text-align: center;
-  background-color: #d5e6f3;
+  background-color: var(--light-blue);
   background-image: linear-gradient(
     to bottom,
-    var(--light-card-color) 0px,
-    var(--main-card-color) 12px,
-    var(--main-card-color) calc(100% - 12px),
-    var(--dark-card-color) 100%
+    var(--selected-light-card-color) 0px,
+    var(--selected-main-card-color) 12px,
+    var(--selected-main-card-color) calc(100% - 12px),
+    var(--selected-dark-card-color) 100%
   );
-  box-shadow: 0 1px var(--shadow-card-color);
+  box-shadow: 0 1px var(--dark);
 }
 
 img {
@@ -231,9 +201,9 @@ img + .card,
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
-    var(--main-card-color) 0px,
-    var(--main-card-color) calc(100% - 12px),
-    var(--dark-card-color) 100%
+    var(--selected-main-card-color) 0px,
+    var(--selected-main-card-color) calc(100% - 12px),
+    var(--selected-dark-card-color) 100%
   );
 }
 
@@ -242,7 +212,7 @@ img + .card,
     to bottom,
     transparent,
     transparent 50%,
-    var(--main-card-color) 50%
+    var(--selected-main-card-color) 50%
   );
 }
 
@@ -251,27 +221,20 @@ img + .card > .card-bg {
 }
 
 .subtop {
-  color: #fff;
+  color: var(--light);
   border-top: 1px solid;
   padding-left: 25px;
   font-family: "Chimboz Heavy";
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   line-height: 12px;
   text-align: left;
   height: 25px;
   border-radius: 12px 12px 0 0;
-  border-color: var(--shadow-subtop-color);
-  box-shadow: 0 -1px var(--shadow-card-color);
-  background-image: linear-gradient(
-    to bottom,
-    var(--shadow-subtop-color) 0px,
-    var(--light-subtop-color) 3px,
-    var(--main-subtop-color) 5px,
-    var(--main-subtop-color) calc(100% - 3px),
-    var(--dark-subtop-color) 100%
-  );
-  stroke: var(--title-subtop-color);
-  fill: #fff;
+  border-color: var(--dark);
+  box-shadow: 0 -1px var(--dark);
+  background: var(--selected-dark-card-color);
+  stroke: var(--selected-title-color);
+  fill: var(--light);
   stroke-width: 3;
 }
 
@@ -284,9 +247,9 @@ img + .card > .card-bg {
   display: block;
   background-image: linear-gradient(
     to bottom,
-    var(--light-card-color) 0px,
-    var(--main-card-color) 12px,
-    var(--main-card-color) 100%
+    var(--selected-light-card-color) 0px,
+    var(--selected-main-card-color) 12px,
+    var(--selected-main-card-color) 100%
   );
 }
 
@@ -296,7 +259,7 @@ img + .card > .card-bg {
 }
 
 .card h2 {
-  color: var(--title-card-color);
+  color: var(--selected-title-color);
   text-align: center;
 }
 

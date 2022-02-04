@@ -26,7 +26,7 @@
 }
 
 .btn-pink.active {
-  border: 2px solid #fff;
+  border: 2px solid var(--light);
 }
 
 // Horizontal stack
@@ -58,7 +58,7 @@
   width: 1em;
   height: 1em;
   border: 1px solid #0005;
-  background: #fff;
+  background: var(--light);
   border-radius: 0.2em;
 }
 
@@ -85,7 +85,7 @@
   align-items: center;
   justify-content: center;
   border: 0px;
-  background: #fff;
+  background: var(--light);
   box-shadow: inset 1px 1px 1px #3699, inset -1px -1px 1px #3693;
 }
 
@@ -106,7 +106,7 @@ textarea.btn-md {
 }
 
 select.btn-md {
-  background: #fff;
+  background: var(--light);
 }
 
 input:invalid:not(:placeholder-shown),
@@ -124,7 +124,7 @@ textarea.btn-md {
 .btn-action {
   border-radius: 4px;
   padding: 0 4px;
-  background: linear-gradient(to bottom, #fff, #eee);
+  background: linear-gradient(to bottom, var(--light), #eee);
   border: 1px solid #06699b;
   font-family: "Cocon";
   text-transform: lowercase;
@@ -147,7 +147,7 @@ textarea.btn-md {
   height: 15px;
   display: inline-flex;
   padding: 0 5px;
-  color: #fff;
+  color: var(--light);
   align-items: center;
 }
 
@@ -177,7 +177,7 @@ textarea.btn-md {
 
 .card .router-link-active,
 .card .active {
-  color: #fff;
+  color: var(--light);
 }
 
 #loadtime {

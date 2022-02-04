@@ -74,7 +74,7 @@ export default {
 }
 .rule {
   animation: opacity 3s infinite;
-  color: #fff;
+  color: var(--light);
 }
 
 .rule-number {

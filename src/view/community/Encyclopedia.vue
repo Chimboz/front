@@ -179,7 +179,7 @@ export default {
 }
 
 .item.active {
-  border: 3px solid #fff;
+  border: 3px solid var(--light);
 }
 
 .item.active img {

@@ -115,7 +115,7 @@ export default {
 }
 
 .loader {
-  background: #ff009c;
+  background: var(--pink);
   display: inline-block;
   height: 100%;
   width: 50%;
@@ -128,7 +128,7 @@ export default {
   float: right;
   height: 100%;
   width: 20%;
-  background-image: linear-gradient(to right, #ff009c, #fff, #ff009c);
+  background-image: linear-gradient(to right, var(--pink), var(--light), var(--pink));
   animation: loading-animation 2s ease-in infinite;
 }
 
@@ -138,7 +138,7 @@ export default {
   width: 30px;
   margin-left: -30px;
   border-radius: 0 0 5px 0;
-  box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px var(--light);
 }
 
 @keyframes loading-animation {

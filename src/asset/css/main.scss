@@ -13,23 +13,14 @@
   outline: none;
 }
 
-// Default font and colors
-// Zoom in large screen
-/*@media (min-width: 1000px) {
-  html {
-    zoom: 125%;
-  }
-}*/
-
 body {
   font-family: Helvetica, "Helvetica Fallback", sans-serif;
-  font-size: 12px;
-  color: var(--dark);
-  background-color: #6090be;
+  font-size: var(--font-size);
+  color: var(--text);
+  background-color: var(--main-bg);
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-image: url(../img/navbar/background/9.png);
-  background-position: 0 -0.8px;
   overflow-x: hidden;
 }
 
@@ -42,12 +33,11 @@ body {
 // Custom scrollbar (chromium based browsers)
 ::-webkit-scrollbar {
   width: 16px;
-  height: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #d5e6f3;
-  border-radius: 100px;
+  background-color: var(--light-blue);
+  border-radius: var(--round);
 }
 
 ::-webkit-scrollbar-corner {
@@ -55,10 +45,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 99px;
-  border: 4px solid transparent;
+  border-radius: var(--round);
+  border: var(--sm-gap) solid transparent;
   background-clip: content-box;
-  background-color: #f0009c;
+  background-color: var(--pink);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -68,17 +58,18 @@ body {
 // Custom selection
 ::selection {
   background-color: var(--orange);
-  color: #fff;
-  text-shadow: 1px 0 0 #d15503, -1px 0 0 #d15503, 0 1px 0 #d15503,
-    0 -1px 0 #d15503, 0.7px 0.7px #d15503, -0.7px -0.7px 0 #d15503,
-    0.7px -0.7px 0 #d15503, -0.7px 0.7px 0 #d15503;
+  color: var(--light);
+  text-shadow: 1px 0 0 var(--dark-orange), -1px 0 0 var(--dark-orange), 0 1px 0 var(--dark-orange),
+    0 -1px 0 var(--dark-orange), 0.7px 0.7px var(--dark-orange), -0.7px -0.7px 0 var(--dark-orange),
+    0.7px -0.7px 0 var(--dark-orange), -0.7px 0.7px 0 var(--dark-orange);
 }
 
 // Default tags
 a {
   text-decoration: none;
   font-weight: bold;
-  color: #096ea8;
+  color: var(--blue);
+  cursor: var(--pointer);
 }
 
 a:hover {
@@ -94,15 +85,15 @@ hr {
   background: linear-gradient(
     to right,
     transparent,
-    #a2bdd1 25%,
-    #a2bdd1 75%,
+    var(--light-blue) 25%,
+    var(--light-blue) 75%,
     transparent
   );
   border-image: linear-gradient(
       to right,
       transparent,
-      #d6e7f3 25%,
-      #d6e7f3 75%,
+      var(--main-bg) 25%,
+      var(--main-bg) 75%,
       transparent
     )
     1;
@@ -110,11 +101,11 @@ hr {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 h2 {
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 img[src*="puce"] {
@@ -150,11 +141,11 @@ table {
 }
 
 .bbs tbody {
-  background: #fff;
+  background: var(--light);
 }
 
 tbody {
-  background: #fff4;
+  background: var(--light)4;
 }
 
 table:not(.bbs) tr:nth-child(2n + 1) {
@@ -180,7 +171,7 @@ iframe {
 }
 
 button {
-  cursor: pointer;
+  cursor: var(--pointer);
   background: none;
   border: 0;
 }

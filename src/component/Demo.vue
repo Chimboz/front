@@ -237,7 +237,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .background {
-  background: #fff;
+  background: var(--light);
   border-radius: 12px;
   width: 100%;
   border-bottom: 2px solid #b6c6cd;
@@ -253,10 +253,10 @@ export default {
   font-family: "Chimboz Heavy";
   font-weight: normal;
   text-decoration: none;
-  color: #fff;
-  text-shadow: 0 0 4px #f0009c;
+  color: var(--light);
+  text-shadow: 0 0 4px var(--pink);
   text-transform: lowercase;
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   margin-top: 4px;
 }
 
@@ -274,7 +274,7 @@ export default {
   width: 100%;
   background: linear-gradient(to bottom, transparent, transparent 50%, #ffe6e6);
   border-radius: 12px;
-  border-bottom: 2px solid #fff7f7;
+  border-bottom: 2px solid var(--light)7f7;
   box-shadow: 0 2px #f3cac2, 0 4px #dfe7ea;
   display: flex;
   justify-content: center;
@@ -341,10 +341,10 @@ section.display {
   height: 100%;
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    #fff0,
-    #fff4 49%,
-    #fff8 51%,
-    #fff4
+    var(--light)0,
+    var(--light)4 49%,
+    var(--light)8 51%,
+    var(--light)4
   );
 }
 
@@ -356,7 +356,7 @@ section.display {
   width: 20%;
   height: 200%;
   transform: translateX(-700%) var(--rotate);
-  background: #fffa;
+  background: var(--light)a;
   animation: shine 7s infinite linear;
 }
 
@@ -382,8 +382,8 @@ section.display {
   width: 100%;
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
-  text-shadow: 0 0 2px #f0009c;
-  color: #fff;
+  text-shadow: 0 0 2px var(--pink);
+  color: var(--light);
   height: 45.25px;
   text-align: left;
   padding: 12px;

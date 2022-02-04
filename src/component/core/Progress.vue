@@ -59,7 +59,7 @@ export default {
   float: left;
   width: 0%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--light);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   transition: width 0.6s ease;
 }

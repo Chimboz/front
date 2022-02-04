@@ -346,7 +346,7 @@ export default {
 .male .card,
 .unknown .card {
   background-image: url(../../../asset/img/member/male/header.gif);
-  background-color: #d5e6f3;
+  background-color: var(--light-blue);
 }
 
 .female .card {
@@ -371,7 +371,7 @@ export default {
 
 .member-header {
   font-family: "Chimboz Heavy";
-  color: #fff;
+  color: var(--light);
   font-size: 20px;
   text-shadow: 2px 1px #0008;
   min-height: 90px;
@@ -387,7 +387,7 @@ export default {
   margin-left: 33%;
   width: 67%;
   font-size: 35px;
-  fill: #fff;
+  fill: var(--light);
   stroke: #f39;
   stroke-width: 3;
   text-shadow: -1px 3px #f39;
@@ -419,7 +419,7 @@ export default {
 
 .member-portrait {
   float: right;
-  background: #fff;
+  background: var(--light);
   border-radius: 8px;
   padding: 6px;
   width: 116px;
@@ -441,7 +441,7 @@ export default {
   justify-content: space-evenly;
   width: 50px;
   height: 50px;
-  border: 1px solid #6090be;
+  border: 1px solid var(--main-bg);
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
 }
@@ -453,7 +453,7 @@ export default {
 .online {
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
-  color: #fff;
+  color: var(--light);
   justify-content: center;
   width: 100%;
   height: 26px;

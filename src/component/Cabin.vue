@@ -68,50 +68,7 @@
               </button>
             </div>
           </div>
-          <div class="controls">
-            <div>
-              <button type="button">
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  style="transform: rotate(-90deg)"
-                  :class="{ pushed: up }" /></button
-              ><br /><button type="button">
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  style="transform: scaleX(-1)"
-                  :class="{ pushed: left }" /></button
-              ><button type="button" id="random">
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Random button"
-                  title="Randomize look"
-                  src="@/asset/img/home/chaparadio/stop.svg" /></button
-              ><button type="button">
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  :class="{ pushed: right }" /></button
-              ><br /><button type="button">
-                <img
-                  draggable="false"
-                  @contextmenu.prevent
-                  alt="Puce"
-                  src="@/asset/img/puce.svg"
-                  :class="{ pushed: down }"
-                  style="transform: rotate(-90deg) scaleX(-1)"
-                />
-              </button>
-            </div>
-          </div>
+          <br>
           <div class="gender">
             <button
               type="button"
@@ -427,7 +384,7 @@ input[type="text"] {
 
 li::marker {
   font-family: "Chimboz Heavy";
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   color: #2a5380;
 }
 
@@ -438,8 +395,8 @@ li::marker {
 h3 {
   font-family: "Chimboz Heavy";
   font-weight: normal;
-  color: #fff;
-  font-size: 18px;
+  color: var(--light);
+  font-size: var(--lg-font-size);
 }
 
 .right-acc {
@@ -562,15 +519,15 @@ h3 {
   width: 100%;
   height: 20%;
   background: radial-gradient(
-    #fff,
-    #fff 30%,
+    var(--light),
+    var(--light) 30%,
     #ff99cc 32%,
     #ff99cc 40%,
-    #fff 42%,
-    #fff 50%,
+    var(--light) 42%,
+    var(--light) 50%,
     #ff99cc 52%,
     #ff99cc 60%,
-    #fff 62%
+    var(--light) 62%
   );
   border-radius: 100%;
   position: absolute;
@@ -596,27 +553,27 @@ h3 {
 @keyframes blink {
   0% {
     background: radial-gradient(
-      #fff,
-      #fff 30%,
+      var(--light),
+      var(--light) 30%,
       #ff99cc 32%,
       #ff99cc 40%,
-      #fff 42%,
-      #fff 50%,
+      var(--light) 42%,
+      var(--light) 50%,
       #ff99cc 52%,
       #ff99cc 60%,
-      #fff 62%
+      var(--light) 62%
     );
   }
   50% {
     background: radial-gradient(
       #ff99cc,
       #ff99cc 30%,
-      #fff 32%,
-      #fff 40%,
+      var(--light) 32%,
+      var(--light) 40%,
       #ff99cc 42%,
       #ff99cc 50%,
-      #fff 52%,
-      #fff 60%,
+      var(--light) 52%,
+      var(--light) 60%,
       #ff99cc 62%
     );
   }
@@ -707,13 +664,13 @@ h3 {
     #a7dbfc 51%,
     #e0f4fc
   );
-  border: 2px solid #fff;
+  border: 2px solid var(--light);
   border-radius: 12px;
   box-shadow: 0 2px 1px 2px #0005;
 }
 
 .item.active {
-  border: 2px solid #fff;
+  border: 2px solid var(--light);
 }
 
 .item.active img {
@@ -722,7 +679,7 @@ h3 {
 
 .gender {
   font-family: "Chimboz Heavy";
-  color: #fff;
+  color: var(--light);
   font-size: 15px;
 }
 

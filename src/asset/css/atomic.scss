@@ -4,7 +4,7 @@
 
 .danger {
   background: #fb0d0d;
-  color: #fff;
+  color: var(--light);
 }
 
 .pink {
@@ -20,7 +20,7 @@
 }
 
 .pointer {
-  cursor: pointer;
+  cursor: var(--pointer);
 }
 
 .flex {

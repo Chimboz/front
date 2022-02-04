@@ -334,13 +334,13 @@ export default {
     #a7dbfc 51%,
     #e0f4fc
   );
-  border: 2px solid #fff;
+  border: 2px solid var(--light);
   border-radius: 12px;
   box-shadow: 0 2px 1px 2px #0005;
 }
 
 .item.active {
-  border: 2px solid #fff;
+  border: 2px solid var(--light);
 }
 
 .item.active img,
@@ -355,7 +355,7 @@ export default {
 
 .gender {
   font-family: "Chimboz Heavy";
-  color: #fff;
+  color: var(--light);
   font-size: 15px;
 }
 </style>

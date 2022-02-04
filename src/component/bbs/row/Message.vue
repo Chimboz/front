@@ -99,7 +99,7 @@
     </td>
   </tr>
   <tr v-if="separator">
-    <td colspan="2" style="background: #fff"><hr /></td>
+    <td colspan="2" style="background: var(--light)"><hr /></td>
   </tr>
 </template>
 

@@ -31,12 +31,12 @@ export default {
     primary: {
       required: true,
       type: String,
-      default: "#fff"
+      default: "var(--light)"
     },
     secondary: {
       required: true,
       type: String,
-      default: "#fff"
+      default: "var(--light)"
     },
     shape: {
       required: true,

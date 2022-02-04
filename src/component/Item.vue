@@ -75,7 +75,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .item-name {
-  fill: #fff;
+  fill: var(--light);
   stroke: #f39;
   stroke-width: 3;
   font-family: "Chimboz Heavy";

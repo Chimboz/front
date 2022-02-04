@@ -44,7 +44,7 @@
           <tr v-for="(group, index) in data.member" :key="index">
             <td><GroupLink :group="group" /></td>
             <td
-              >[<a @click.prevent="leave(group.id)" style="cursor: pointer"
+              >[<a @click.prevent="leave(group.id)" style="cursor: var(--pointer)"
                 >Se désinscrire</a
               >]</td
             >
@@ -71,7 +71,7 @@
           <tr v-for="(group, index) in data.pending" :key="index">
             <td><GroupLink :group="group" /></td>
             <td
-              >[<a @click.prevent="cancel(group.id)" style="cursor: pointer"
+              >[<a @click.prevent="cancel(group.id)" style="cursor: var(--pointer)"
                 >Annuler</a
               >]</td
             >
