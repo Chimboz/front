@@ -5,7 +5,7 @@
       'background-image':
         'url(' +
         require('@/asset/img/navbar/svg/' + this.date.getHours() + '.svg') +
-        ')'
+        ')',
     }"
   >
     <router-link to="/"
@@ -25,9 +25,14 @@
           id="username"
           style="display: inherit"
         />
+        <button class="centered theme-toggler" style="display: inline-flex" @click="toggleTheme">
+          <span v-if="userTheme=='dark-theme'">🌙</span>
+          <span v-else>☀️</span>
+        </button>
         <button
           id="connect"
-          class="flex centered"
+          class="centered"
+          style="display: inline-flex"
           @click="logout"
           v-if="authenticated"
         >
@@ -48,8 +53,8 @@
               src="@/asset/img/icon/success.svg"
             />
             {{ $t("navbar.login") }}
-          </router-link></button
-        >
+          </router-link>
+        </button>
       </div>
       <GlobalAvatar
         style="margin-right: 16px"
@@ -75,7 +80,8 @@
           src="@/asset/img/navbar/icon/home.svg"
           width="20"
           height="20"
-          style="margin: 2px; padding: 1px" /></button
+          style="margin: 2px; padding: 1px"
+        /></button
     ></router-link>
     <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered">
@@ -100,7 +106,8 @@
           class="arrow jitter"
           width="40"
           height="33"
-          src="@/asset/img/arrow.svg" /></button
+          src="@/asset/img/arrow.svg"
+        /></button
     ></a>
     <router-link v-if="authenticated" to="/account"
       ><button class="nav-btn flex centered">
@@ -187,25 +194,39 @@ export default {
   name: "TheNavbar",
   data() {
     return {
-      date: new Date()
+      date: new Date(),
+      userTheme: "light-theme"
     };
   },
   computed: {
     ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"])
+    ...mapState("auth", ["user"]),
   },
   components: {
-    StrokeText
+    StrokeText,
   },
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");
       this.$router.push(this.$route.path == "/" ? "/login" : this.$route.path);
-    }
+    },
+    setTheme(theme) {
+      localStorage.setItem("user-theme", theme);
+      this.userTheme = theme;
+      document.documentElement.className = theme;
+    },
+    toggleTheme() {
+      const activeTheme = localStorage.getItem("user-theme");
+      if (activeTheme === "light-theme") {
+        this.setTheme("dark-theme");
+      } else {
+        this.setTheme("light-theme");
+      }
+    },
   },
   created() {
     document.body.className = "h" + this.date.getHours();
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -236,12 +257,18 @@ export default {
   text-shadow: 0 0 5px var(--light), 0 0 5px var(--light);
 }
 
+.theme-toggler {
+  background: var(--light);
+  border-radius: var(--round);
+  font-size: var(--lg-font-size);
+}
+
 #connect {
   font-family: "Pixelated Verdana 12";
   font-size: 16px;
   font-weight: normal;
   color: #000;
-  border-radius: 100px;
+  border-radius: var(--round);
   padding: 2px;
   line-height: 1;
   margin-right: -20px;
