@@ -11,6 +11,7 @@ import api from "./module/api";
 import "./registerServiceWorker";
 // Internal CSS
 import "modern-normalize/modern-normalize.css"; // Reset
+import "./asset/css/var.scss";
 import "./asset/css/main.scss";
 import "./asset/css/fonts.css";
 import "./asset/css/classes.scss";

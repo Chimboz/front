@@ -336,7 +336,7 @@ export default {
     #fc8536
   );
   color: #fff !important;
-  border-color: #f80 #f80 #9f3400 #f80;
+  border-color: var(--orange) var(--orange) #9f3400 var(--orange);
 }
 
 #nav a:first-child .nav-btn:hover,
@@ -347,7 +347,7 @@ export default {
     #fec9b4 0%,
     #ff7b00 49%,
     #d15503 51%,
-    #f80
+    var(--orange)
   );
 }
 
@@ -357,7 +357,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn,
 #nav a:nth-child(2).router-link-exact-active .nav-btn {
-  border-left-color: #f80;
+  border-left-color: var(--orange);
 }
 
 #nav a:last-child .nav-btn:hover,
@@ -366,7 +366,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:last-child.router-link-exact-active .nav-btn,
 #nav a:first-child.router-link-exact-active .nav-btn {
-  border-right-color: #f80;
+  border-right-color: var(--orange);
 }
 
 a:hover {
@@ -379,14 +379,14 @@ a:hover {
     #fec9b4,
     #ff7b00 50%,
     #d15503 50%,
-    #f80
+    var(--orange)
   ) !important;
 }
 
 #nav a:first-child .nav-btn:active {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
-    #f80,
+    var(--orange),
     #d15503 49%,
     #ff7b00 51%,
     #fec9b4

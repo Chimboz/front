@@ -55,7 +55,7 @@ export default {
             "--button-color-1": "#fec9b4",
             "--button-color-2": "#ff7b00",
             "--button-color-3": "#d15503",
-            "--button-color-4": "#f80",
+            "--button-color-4": "var(--orange)",
             "--button-color-5": "#9f3400"
           };
         case "red":

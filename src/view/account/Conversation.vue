@@ -231,6 +231,6 @@ export default {
 .message.you .content {
   background: #fff !important;
   mix-blend-mode: unset;
-  color: #284555;
+  color: var(--dark);
 }
 </style>

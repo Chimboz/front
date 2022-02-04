@@ -98,7 +98,7 @@ textarea:valid:not(:placeholder-shown) {
 .btn-md:active,
 input:not([type="checkbox"]).btn-md:focus,
 textarea.btn-md:focus {
-  box-shadow: inset 1px 1px 1px #f809, inset -1px -1px 1px #f803;
+  box-shadow: inset 1px 1px 1px var(--orange)9, inset -1px -1px 1px var(--orange)3;
 }
 
 textarea.btn-md {
@@ -133,8 +133,8 @@ textarea.btn-md {
   margin: 0 1px;
 }
 .btn-action:hover {
-  border-color: #f80;
-  color: #f80;
+  border-color: var(--orange);
+  color: var(--orange);
 }
 .btn-action img {
   vertical-align: top;

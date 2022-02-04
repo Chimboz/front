@@ -24,7 +24,7 @@
 body {
   font-family: Helvetica, "Helvetica Fallback", sans-serif;
   font-size: 12px;
-  color: #284555;
+  color: var(--dark);
   background-color: #6090be;
   background-repeat: repeat-x;
   background-attachment: scroll;
@@ -62,12 +62,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f80;
+  background-color: var(--orange);
 }
 
 // Custom selection
 ::selection {
-  background-color: #f80;
+  background-color: var(--orange);
   color: #fff;
   text-shadow: 1px 0 0 #d15503, -1px 0 0 #d15503, 0 1px 0 #d15503,
     0 -1px 0 #d15503, 0.7px 0.7px #d15503, -0.7px -0.7px 0 #d15503,
