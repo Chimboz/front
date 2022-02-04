@@ -171,7 +171,7 @@ export default {
 .group-name {
   height: 28px;
   font-size: 28px;
-  fill: var(--light);
+  fill: var(--text-button);
   stroke: #f39;
   stroke-width: 4;
 }

@@ -3,20 +3,20 @@
 }
 
 .danger {
-  background: #fb0d0d;
+  background: var(--red);
   color: var(--light);
 }
 
 .pink {
-  color: #f39;
+  color: var(--pink);
 }
 
 .pink-bg {
-  background: #f12490;
+  background: var(--pink);
 }
 
 .blue-bg {
-  background: #78aadb;
+  background: var(--main-bg);
 }
 
 .pointer {

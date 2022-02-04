@@ -75,7 +75,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .item-name {
-  fill: var(--light);
+  fill: var(--text-button);
   stroke: #f39;
   stroke-width: 3;
   font-family: "Chimboz Heavy";

@@ -326,7 +326,7 @@ export default {
   font-family: "Chimboz Heavy";
   height: 16px;
   font-size: var(--lg-font-size);
-  fill: var(--light);
+  fill: var(--text-button);
   stroke: #a10069;
   stroke-width: 4;
   transform: translateY(-40px);

@@ -44,26 +44,6 @@ export default {
   computed: {
     ...mapState("auth", ["user"]),
   },
-  methods: {
-    setTheme(theme) {
-      localStorage.setItem("user-theme", theme);
-      this.userTheme = theme;
-      document.documentElement.className = theme;
-    },
-    getMediaPreference() {
-      const hasDarkPreference = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      if (hasDarkPreference) {
-        return "dark-theme";
-      } else {
-        return "light-theme";
-      }
-    },
-  },
-  mounted() {
-    this.setTheme("light-theme");
-  },
   metaInfo: {
     meta: [
       {

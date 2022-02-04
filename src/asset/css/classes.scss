@@ -142,7 +142,7 @@ textarea.btn-md {
 
 // Button small
 .btn-sm {
-  border-radius: 99px;
+  border-radius: var(--round);
   font-weight: bold;
   height: 15px;
   display: inline-flex;

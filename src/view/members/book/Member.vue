@@ -387,7 +387,7 @@ export default {
   margin-left: 33%;
   width: 67%;
   font-size: 35px;
-  fill: var(--light);
+  fill: var(--text-button);
   stroke: #f39;
   stroke-width: 3;
   text-shadow: -1px 3px #f39;

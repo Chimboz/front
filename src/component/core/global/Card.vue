@@ -90,10 +90,10 @@ export default {
     // Color of the card
     color: {
       required: false,
-      // `"yellow"`, `"blue"`, `"lightblue"`, `"red"`
+      // `"yellow"`, `"blue"`, `"red"`
       type: String,
       validator(value) {
-        return ["yellow", "blue", "lightblue", "red"].includes(value);
+        return ["yellow", "blue", "red"].includes(value);
       }
     },
     // Whether the text is left aligned
@@ -120,38 +120,27 @@ export default {
       switch (this.color) {
         case "yellow":
           return {
-            "--selected-light-card-color": "var(--light-card-yellow-color)",
-            "--selected-main-card-color": "var(--main-card-yellow-color)",
-            "--selected-dark-card-color": "var(--dark-card-yellow-color)",
-            "--selected-title-color": "var(--title-yellow-color)",
+            "--selected-main-card": "var(--main-card-yellow)",
+            "--selected-dark-card": "var(--dark-card-yellow)",
+            "--selected-title-card": "var(--title-card-yellow)",
           };
         case "blue":
           return {
-            "--selected-light-card-color": "var(--light-card-blue-color)",
-            "--selected-main-card-color": "var(--main-card-blue-color)",
-            "--selected-dark-card-color": "var(--dark-card-blue-color)",
-            "--selected-title-color": "var(--title-blue-color)",
-          };
-        case "lightblue":
-          return {
-            "--selected-light-card-color": "var(--light-card-lightblue-color)",
-            "--selected-main-card-color": "var(--main-card-lightblue-color)",
-            "--selected-dark-card-color": "var(--dark-card-lightblue-color)",
-            "--selected-title-color": "var(--title-lightblue-color)",
+            "--selected-main-card": "var(--main-card-blue)",
+            "--selected-dark-card": "var(--dark-card-blue)",
+            "--selected-title-card": "var(--title-card-blue)",
           };
         case "red":
           return {
-            "--selected-light-card-color": "var(--light-card-red-color)",
-            "--selected-main-card-color": "var(--main-card-red-color)",
-            "--selected-dark-card-color": "var(--dark-card-red-color)",
-            "--selected-title-color": "var(--title-red-color)",
+            "--selected-main-card": "var(--main-card-red)",
+            "--selected-dark-card": "var(--dark-card-red)",
+            "--selected-title-card": "var(--title-card-red)",
           };
         default:
           return {
-            "--selected-light-card-color": "var(--light-card-color)",
-            "--selected-main-card-color": "var(--main-card-color)",
-            "--selected-dark-card-color": "var(--dark-card-color)",
-            "--selected-title-color": "var(--title-color)",
+            "--selected-main-card": "var(--main-card)",
+            "--selected-dark-card": "var(--dark-card)",
+            "--selected-title-card": "var(--title-card)",
           };
       }
     },
@@ -181,10 +170,10 @@ export default {
   background-color: var(--light-blue);
   background-image: linear-gradient(
     to bottom,
-    var(--selected-light-card-color) 0px,
-    var(--selected-main-card-color) 12px,
-    var(--selected-main-card-color) calc(100% - 12px),
-    var(--selected-dark-card-color) 100%
+    var(--light) 0px,
+    var(--selected-main-card) 12px,
+    var(--selected-main-card) calc(100% - 12px),
+    var(--selected-dark-card) 100%
   );
   box-shadow: 0 1px var(--dark);
 }
@@ -201,9 +190,9 @@ img + .card,
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
-    var(--selected-main-card-color) 0px,
-    var(--selected-main-card-color) calc(100% - 12px),
-    var(--selected-dark-card-color) 100%
+    var(--selected-main-card) 0px,
+    var(--selected-main-card) calc(100% - 12px),
+    var(--selected-dark-card) 100%
   );
 }
 
@@ -212,7 +201,7 @@ img + .card,
     to bottom,
     transparent,
     transparent 50%,
-    var(--selected-main-card-color) 50%
+    var(--selected-main-card) 50%
   );
 }
 
@@ -232,9 +221,17 @@ img + .card > .card-bg {
   border-radius: 12px 12px 0 0;
   border-color: var(--dark);
   box-shadow: 0 -1px var(--dark);
-  background: var(--selected-dark-card-color);
-  stroke: var(--selected-title-color);
-  fill: var(--light);
+  background: var(--selected-dark-card);
+  background-image: linear-gradient(
+    to bottom,
+    var(--selected-dark-card) 0px,
+    var(--light) 3px,
+    var(--selected-dark-card) 5px,
+    var(--selected-dark-card) calc(100% - 3px),
+    var(--selected-title-card) 100%
+  );
+  stroke: var(--selected-title-card);
+  fill: var(--text-button);
   stroke-width: 3;
 }
 
@@ -247,9 +244,9 @@ img + .card > .card-bg {
   display: block;
   background-image: linear-gradient(
     to bottom,
-    var(--selected-light-card-color) 0px,
-    var(--selected-main-card-color) 12px,
-    var(--selected-main-card-color) 100%
+    var(--light) 0px,
+    var(--selected-main-card) 12px,
+    var(--selected-main-card) 100%
   );
 }
 
@@ -259,7 +256,7 @@ img + .card > .card-bg {
 }
 
 .card h2 {
-  color: var(--selected-title-color);
+  color: var(--selected-title-card);
   text-align: center;
 }
 

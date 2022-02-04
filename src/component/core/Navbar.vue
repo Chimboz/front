@@ -25,8 +25,12 @@
           id="username"
           style="display: inherit"
         />
-        <button class="centered theme-toggler" style="display: inline-flex" @click="toggleTheme">
-          <span v-if="userTheme=='dark-theme'">🌙</span>
+        <button
+          class="centered theme-toggler"
+          style="display: inline-flex"
+          @click="toggleTheme"
+        >
+          <span v-if="userTheme == 'dark-theme'">🌕</span>
           <span v-else>☀️</span>
         </button>
         <button
@@ -195,7 +199,7 @@ export default {
   data() {
     return {
       date: new Date(),
-      userTheme: "light-theme"
+      userTheme: "light-theme",
     };
   },
   computed: {
@@ -226,6 +230,7 @@ export default {
   },
   created() {
     document.body.className = "h" + this.date.getHours();
+    this.setTheme(localStorage.getItem("user-theme"));
   },
 };
 </script>
@@ -235,8 +240,6 @@ export default {
   height: 78px;
   background-position: center;
   background-size: cover;
-  //border-radius: 99px;
-  //box-shadow: inset 0px 0px 10px 5px var(--main-bg);
 }
 
 #logo {
@@ -261,11 +264,16 @@ export default {
   background: var(--light);
   border-radius: var(--round);
   font-size: var(--lg-font-size);
+  height: 30px;
+  width: 30px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #connect {
   font-family: "Pixelated Verdana 12";
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: normal;
   color: #000;
   border-radius: var(--round);
@@ -274,6 +282,8 @@ export default {
   margin-right: -20px;
   border: none;
   background: var(--light);
+  margin-left: var(--gap);
+  align-items: center;
   width: 130px;
 }
 
@@ -292,7 +302,7 @@ export default {
   height: 25px;
   background-image: linear-gradient(
     to bottom,
-    var(--light-pink) 0%,
+    var(--light) 0%,
     var(--pink) 50%,
     var(--dark-pink) 50%,
     var(--pink)
@@ -337,9 +347,9 @@ export default {
   border-left-color: var(--pink);
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
-    #fe9ae0,
-    #ff00a6 49%,
-    #c10276 51%,
+    var(--light),
+    var(--pink) 49%,
+    var(--dark-pink) 51%,
     var(--pink)
   );
   border-radius: 10px;
@@ -357,7 +367,7 @@ export default {
 #nav a.router-link-exact-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
-    var(--light-orange),
+    var(--light),
     var(--orange) 50%,
     var(--dark-orange) 50%,
     var(--orange)
@@ -371,9 +381,9 @@ export default {
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
-    #fec9b4 0%,
-    #ff7b00 49%,
-    #d15503 51%,
+    var(--light) 0%,
+    var(--orange) 49%,
+    var(--dark-orange) 51%,
     var(--orange)
   );
 }
@@ -403,9 +413,9 @@ a:hover {
 .nav-btn:active {
   background-image: linear-gradient(
     to top,
-    #fec9b4,
-    #ff7b00 50%,
-    #d15503 50%,
+    var(--light),
+    var(--orange) 50%,
+    var(--dark-orange) 50%,
     var(--orange)
   ) !important;
 }
@@ -414,9 +424,9 @@ a:hover {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--orange),
-    #d15503 49%,
-    #ff7b00 51%,
-    #fec9b4
+    var(--dark-orange) 49%,
+    var(--orange) 51%,
+    var(--light)
   ) !important;
 }
 
@@ -425,8 +435,8 @@ a:hover {
   font-weight: normal;
   font-size: var(--lg-font-size);
   height: 100%;
-  fill: var(--light);
-  stroke: #a10069;
+  fill: var(--text-button);
+  stroke: var(--dark-pink);
   stroke-width: 3;
   display: flex;
   justify-content: center;
@@ -445,7 +455,7 @@ a:hover {
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
   #nav a.router-link-exact-active .nav-text {
-    stroke: #d15503;
+    stroke: var(--dark-orange);
   }
 
   a:not(:first-child) .nav-btn {
