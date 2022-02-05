@@ -117,7 +117,7 @@ export default {
 }
 
 .content {
-  padding: 12px 12px 6px 12px;
+  padding: var(--gap) var(--gap) 6px var(--gap);
   background: var(--light);
   color: var(--light);
   border-radius: 16px;

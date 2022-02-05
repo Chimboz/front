@@ -251,7 +251,7 @@ export default {
 .login {
   text-align: right;
   justify-content: flex-end;
-  padding: 12px 14px 0 0;
+  padding: var(--gap) 14px 0 0;
 }
 
 #username {
@@ -355,7 +355,7 @@ export default {
   );
   border-radius: 10px;
   border-width: 2px 5px;
-  margin-right: 12px;
+  margin-right: var(--gap);
 }
 
 #nav {

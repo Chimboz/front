@@ -273,7 +273,7 @@ export default {
 .foreground {
   width: 100%;
   background: linear-gradient(to bottom, transparent, transparent 50%, #ffe6e6);
-  border-radius: 12px;
+  border-radius: var(--gap);
   border-bottom: 2px solid var(--light);
   box-shadow: 0 2px #f3cac2, 0 4px #dfe7ea;
   display: flex;
@@ -386,7 +386,7 @@ section.display {
   color: var(--light);
   height: 45.25px;
   text-align: left;
-  padding: 12px;
+  padding: var(--gap);
   background: url(../asset/img/demo/info.svg);
   background-size: cover;
 }
@@ -397,7 +397,7 @@ section.display {
 }
 
 .foreground form input {
-  width: calc(50% - 8px);
+  width: calc(50% - var(--md-gap));
   margin: 2px;
   font-family: "Pixelated Verdana 10";
   font-size: 10px;

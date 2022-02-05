@@ -257,7 +257,7 @@ Code block</pre
               maxlength="60000"
               class="btn-md"
               ref="message"
-              style="font-family: monospace; padding: 12px"
+              style="font-family: monospace; padding: var(--gap)"
               v-model="message"
               @focus="focusHandler"
               @select="selectionHandler"

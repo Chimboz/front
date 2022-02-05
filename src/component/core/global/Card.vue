@@ -170,8 +170,8 @@ export default {
   background-image: linear-gradient(
     to bottom,
     var(--light) 0px,
-    var(--selected-main-card) 12px,
-    var(--selected-main-card) calc(100% - 12px),
+    var(--selected-main-card) var(--gap),
+    var(--selected-main-card) calc(100% - var(--gap)),
     var(--selected-dark-card) 100%
   );
   box-shadow: 0 1px var(--dark);
@@ -180,6 +180,7 @@ export default {
 img {
   display: block;
   width: 100%;
+  border-radius: var(--gap) var(--gap) 0 0;
 }
 
 img + .card,
@@ -238,12 +239,12 @@ img + .card > .card-bg {
 }
 
 .bot {
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--gap) var(--gap) 0 0;
   display: block;
   background-image: linear-gradient(
     to bottom,
     var(--light) 0px,
-    var(--selected-main-card) 12px,
+    var(--selected-main-card) var(--gap),
     var(--selected-main-card) 100%
   );
 }
@@ -267,6 +268,6 @@ main:after {
 .card-bg {
   background-repeat: repeat-x;
   padding: 16px;
-  border-radius: 12px;
+  border-radius: var(--gap);
 }
 </style>

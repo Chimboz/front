@@ -145,7 +145,7 @@ export default {
 }
 
 .modal-content > img {
-  margin-right: 12px;
+  margin-right: var(--gap);
   float: left;
 }
 

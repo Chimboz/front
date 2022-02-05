@@ -240,8 +240,8 @@ button:hover .arrow {
 
 .level .number {
   display: flex;
-  border-radius: 12px / 8px;
-  padding: 8px;
+  border-radius: var(--gap) / var(--md-gap);
+  padding: var(--md-gap);
   font-size: 25px;
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }

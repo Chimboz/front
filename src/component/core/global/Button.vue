@@ -88,7 +88,7 @@ export default {
   );
   padding: 0 4%;
   align-items: center;
-  line-height: 12px;
+  line-height: var(--gap);
   border-style: solid;
   border-color: var(--selected-main-button) var(--selected-main-button)
     var(--selected-dark-button) var(--selected-main-button);
