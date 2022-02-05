@@ -4,7 +4,7 @@
 
     // Global style
     --font-family: Helvetica, "Helvetica Fallback", sans-serif;
-    --sm-gap: 4px;
+    --sm-gap: 2px;
     --md-gap: 8px;
     --gap: 12px;
     --margin: 16px;
@@ -21,7 +21,7 @@
     --light: #ffffff;
     --main-bg: #6090be;
     --blue: #096ea8;
-    --light-blue: #d5e6f3;
+    --light-blue: #a8dfff;
     --pink: #f0009c;
     --dark-pink: #c10276;
     --orange: #f80;
@@ -82,7 +82,83 @@
 }
 
 :root.dark-theme {
+    // Global style
+    --font-family: Helvetica, "Helvetica Fallback", sans-serif;
+    --sm-gap: 4px;
+    --md-gap: 8px;
+    --gap: 12px;
+    --margin: 16px;
+    --padding: 20px;
+    --font-size: 12px;
+    --lg-font-size: 18px;
+    --round: 99px;
+    --pointer: url(../img/pointer.svg), pointer;
 
+    // Colors
+    --text: #ffffff;
+    --text-button: rgb(192, 192, 192);
+    --dark: rgba(255, 255, 255, 0.4);
+    --light: #000000;
+    --main-bg: #142b41;
+    --blue: #71b9e2;
+    --light-blue: #092f4d;
+    --pink: hsl(321, 100%, 17%);
+    --dark-pink: hsl(324, 98%, 8%);
+    --orange: hsl(32, 100%, 20%);
+    --dark-orange: hsl(24, 97%, 12%);
+    --red: #860909;
+
+    // Colors BBS
+    --gris-triste: #CECECE;
+    --gris-divorce: #999;
+    --rouge: #f00;
+    --chocolat: #c60;
+    --chimborange: #FE9E01;
+    --jaune: #ff0;
+    --vert: #ADE76B;
+    --gilvert: #6c0;
+    --pelouse: #018352;
+    --violet-du-marie: #9412FE;
+    --bleu: #376DA8;
+    --bleu-chimbo: #6699CC;
+    --rose-dupatta: #FE81C0;
+    --rose-chimbo: #FF3399;
+    --gurujiolet: #E40173;
+    --blanc: var(--light);
+    --noir: #000;
+
+    // Cards
+    // Yellow
+    --main-card-yellow: hsl(44, 69%, 26%);
+    --dark-card-yellow: hsl(43, 100%, 12%);
+    --title-card-yellow: hsl(24, 100%, 0%);
+    // Blue
+    --main-card-blue: #3a6681;
+    --dark-card-blue: #29475a;
+    // Red
+    --main-card-red: #852b2b;
+    --dark-card-red: #6b0707;
+    // Default
+    --main-card: #839099;
+    --dark-card: #516675;
+    --title-card: #012d4b;
+
+    // Button
+    // Yellow
+      --main-button-yellow: #ffb907;
+      --dark-button-yellow: #e58900;
+    // Orange
+      --main-button-orange: var(--orange);
+      --dark-button-orange: var(--dark-orange);
+    // Red
+      --main-button-red: #fb0d0d;
+      --dark-button-red: #d10303;
+    // Green
+      --main-button-green: #5b3;
+      --dark-button-green: #371;
+    // Default
+      --main-button: var(--pink);
+      --dark-button: var(--dark-pink);
 }
 
 .dark-theme img:not(.item) {

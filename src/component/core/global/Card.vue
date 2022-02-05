@@ -163,11 +163,10 @@ export default {
 </style>
 <style lang="scss" scoped>
 .card {
-  border-radius: 12px;
+  border-radius: var(--gap);
   width: 100%;
   height: auto;
   text-align: center;
-  background-color: var(--light-blue);
   background-image: linear-gradient(
     to bottom,
     var(--light) 0px,
@@ -186,12 +185,12 @@ img {
 img + .card,
 .subtop + .card,
 .card-btn + .card {
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 var(--gap) var(--gap);
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
     var(--selected-main-card) 0px,
-    var(--selected-main-card) calc(100% - 12px),
+    var(--selected-main-card) calc(100% - var(--gap)),
     var(--selected-dark-card) 100%
   );
 }
@@ -206,19 +205,18 @@ img + .card,
 }
 
 img + .card > .card-bg {
-  padding-top: 5px;
+  padding-top: var(--md-gap);
 }
 
 .subtop {
   color: var(--light);
   border-top: 1px solid;
-  padding-left: 25px;
+  padding-left: var(--padding);
   font-family: "Chimboz Heavy";
   font-size: var(--lg-font-size);
-  line-height: 12px;
-  text-align: left;
+
   height: 25px;
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--gap) var(--gap) 0 0;
   border-color: var(--dark);
   box-shadow: 0 -1px var(--dark);
   background: var(--selected-dark-card);

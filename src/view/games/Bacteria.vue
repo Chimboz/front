@@ -370,8 +370,8 @@ export default {
 
 <style lang="scss" scoped>
 .fullwidth.light {
-  background: #eef5fa;
-  padding: 2px 0;
+  background: var(--light);
+  padding: var(--sm-gap) 0;
 }
 
 tr td:first-child {

@@ -4,7 +4,7 @@
     :style="{
       'background-image':
         'url(' +
-        require('@/asset/img/navbar/svg/' + this.date.getHours() + '.svg') +
+        require(`@/asset/img/navbar/svg/${this.date.getHours()}.svg`) +
         ')',
     }"
   >
@@ -217,6 +217,9 @@ export default {
     setTheme(theme) {
       localStorage.setItem("user-theme", theme);
       this.userTheme = theme;
+      if (theme === "dark-theme") this.date.setHours(0);
+      else this.date = new Date();
+      document.body.className = "h" + this.date.getHours();
       document.documentElement.className = theme;
     },
     toggleTheme() {
@@ -229,7 +232,6 @@ export default {
     },
   },
   created() {
-    document.body.className = "h" + this.date.getHours();
     this.setTheme(localStorage.getItem("user-theme"));
   },
 };
@@ -256,7 +258,7 @@ export default {
   font-family: "Pixelated Verdana 12";
   font-weight: bold;
   font-size: 16px;
-  color: #069;
+  color: var(--blue);
   text-shadow: 0 0 5px var(--light), 0 0 5px var(--light);
 }
 
@@ -275,7 +277,7 @@ export default {
   font-family: "Pixelated Verdana 12";
   font-size: 1.3rem;
   font-weight: normal;
-  color: #000;
+  color: var(--text);
   border-radius: var(--round);
   padding: 2px;
   line-height: 1;
@@ -292,9 +294,8 @@ export default {
 }
 
 #connect:hover {
-  background: #ade5f3;
+  background: var(--light-blue);
   font-weight: bold;
-  letter-spacing: 0;
 }
 
 .nav-btn {

@@ -78,13 +78,14 @@
 // Button medium
 .btn-md {
   display: inline-flex;
-  padding: 2px 6px;
+  padding: var(--sm-gap);
   margin: 0 1px;
   max-height: 22px;
   border-radius: 6px;
   align-items: center;
   justify-content: center;
   border: 0px;
+  color: var(--text);
   background: var(--light);
   box-shadow: inset 1px 1px 1px #3699, inset -1px -1px 1px #3693;
 }
@@ -98,7 +99,7 @@ textarea:valid:not(:placeholder-shown) {
 .btn-md:active,
 input:not([type="checkbox"]).btn-md:focus,
 textarea.btn-md:focus {
-  box-shadow: inset 1px 1px 1px var(--orange)9, inset -1px -1px 1px var(--orange)3;
+  box-shadow: inset 1px 1px 1px var(--orange), inset -1px -1px 1px var(--orange);
 }
 
 textarea.btn-md {
@@ -117,18 +118,18 @@ textarea:invalid:not(:placeholder-shown) {
 input:not([type="checkbox"]).btn-md,
 textarea.btn-md {
   width: 100%;
-  padding: 4px;
+  padding: var(--sm-gap);
 }
 
 // Button action
 .btn-action {
   border-radius: 4px;
   padding: 0 4px;
-  background: linear-gradient(to bottom, var(--light), #eee);
-  border: 1px solid #06699b;
+  background: linear-gradient(to bottom, var(--light), var(--light-blue));
+  border: 1px solid var(--blue);
   font-family: "Cocon";
   text-transform: lowercase;
-  color: #06699b;
+  color: var(--blue);
   text-decoration: none !important;
   margin: 0 1px;
 }
@@ -159,7 +160,7 @@ textarea.btn-md {
 }
 
 .card a:nth-child(2n + 1) .list {
-  background: #a8dfff
+  background: var(--light-blue)
     linear-gradient(
       to right,
       var(--main-card-blue),

@@ -36,11 +36,6 @@ export default {
     ProgressBar,
     Modal,
   },
-  data() {
-    return {
-      userTheme: "dark-theme",
-    };
-  },
   computed: {
     ...mapState("auth", ["user"]),
   },
