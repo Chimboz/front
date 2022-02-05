@@ -19,6 +19,7 @@ body {
   background-repeat: repeat-x;
   background-attachment: scroll;
   overflow-x: hidden;
+  background-position-y: -0.8px;
 }
 
 @for $i from 0 through 23 {

@@ -140,7 +140,7 @@ export default {
 <style lang="scss" scoped>
 .message {
   text-decoration: none;
-  color: var(--dark);
+  color: var(--text);
   font-weight: normal;
   overflow: hidden;
 }

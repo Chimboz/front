@@ -80,17 +80,17 @@
     --pointer: url(../img/pointer.svg), pointer;
 
     // Colors
-    --text: #ffffff;
-    --text-button: rgb(192, 192, 192);
+    --text: rgb(198, 209, 226);
+    --text-button: rgb(255, 255, 255);
     --dark: rgba(255, 255, 255, 0.4);
-    --light: #000000;
+    --light: rgb(36, 41, 85);
     --main-bg: #142b41;
     --blue: #71b9e2;
     --light-blue: #092f4d;
-    --pink: hsl(321, 100%, 17%);
-    --dark-pink: hsl(324, 98%, 8%);
-    --orange: hsl(32, 100%, 20%);
-    --dark-orange: hsl(24, 97%, 12%);
+    --pink: hsl(321, 100%, 37%);
+    --dark-pink: hsl(324, 98%, 28%);
+    --orange: hsl(32, 100%, 30%);
+    --dark-orange: hsl(24, 97%, 32%);
     --red: #860909;
 
     // Cards
@@ -131,6 +131,6 @@
     --dark-bbs: #143855;
 }
 
-.dark-theme img:not(.item) {
+.dark-theme img:not(.item, .v-lazy-image) {
     filter:  hue-rotate(90deg) saturate(2) grayscale(1)
 }
