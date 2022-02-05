@@ -3,6 +3,7 @@
     // mode(light)-class(button)-name(blue)-type(color)
 
     // Global style
+    --font-family: Helvetica, "Helvetica Fallback", sans-serif;
     --sm-gap: 4px;
     --md-gap: 8px;
     --gap: 12px;
@@ -25,7 +26,6 @@
     --dark-pink: #c10276;
     --orange: #f80;
     --dark-orange: #d15503;
-    --light-yellow: #fff4d5;
     --red: #fb0d0d;
 
     // Colors BBS
@@ -49,20 +49,16 @@
 
     // Cards
     // Yellow
-    --light-card-yellow: var(--light);
-    --main-card-yellow: var(--light-yellow);
+    --main-card-yellow: #fff4d5;
     --dark-card-yellow: #ffe5a3;
     --title-card-yellow: #963d00;
     // Blue
-    --light-card-blue: var(--light);
     --main-card-blue: #6ebef0;
     --dark-card-blue: #5aa1cd;
     // Red
-    --light-card-red: var(--light);
     --main-card-red: #FF5454;
     --dark-card-red: #e00c0c;
     // Default
-    --light-card: var(--light);
     --main-card: #d5e6f3;
     --dark-card: #a5cbe9;
     --title-card: #004b7d;
@@ -70,135 +66,25 @@
     // Button
     // Yellow
       --main-button-yellow: #ffb907;
-      --dark-button-color: #e58900;
+      --dark-button-yellow: #e58900;
     // Orange
-      --button-color-2: var(--orange);
-      --button-color-3: #d15503;
+      --main-button-orange: var(--orange);
+      --dark-button-orange: var(--dark-orange);
     // Red
-      --button-color-2: #fb0d0d;
-      --button-color-3: #d10303;
+      --main-button-red: #fb0d0d;
+      --dark-button-red: #d10303;
     // Green
-      --button-color-1: var(--light);
-      --button-color-2: #5b3;
-      --button-color-3: #371;
+      --main-button-green: #5b3;
+      --dark-button-green: #371;
     // Default
-      --button-color-2: var(--pink);
-      --button-color-3: var(--dark-pink);
+      --main-button: var(--pink);
+      --dark-button: var(--dark-pink);
 }
 
 :root.dark-theme {
 
-    // mode(light)-class(button)-name(blue)-type(color)
-
-    // Global style
-    --sm-gap: 4px;
-    --md-gap: 8px;
-    --gap: 12px;
-    --margin: 16px;
-    --padding: 20px;
-    --font-size: 12px;
-    --lg-font-size: 18px;
-    --round: 99px;
-    --pointer: url(../img/pointer.svg), pointer;
-
-    // Colors
-    --text: #284555;
-    --text-button: #fff;
-    --dark: #0006;
-    --light: #ffffff;
-    --main-bg: #6090be;
-    --blue: #096ea8;
-    --light-blue: #d5e6f3;
-    --light-pink: #fe9a9a;
-    --pink: #f00000;
-    --dark-pink: #c10202;
-    --light-orange: #b4feb4;
-    --orange: rgb(30, 255, 0);
-    --dark-orange: #03d10d;
-    --light-yellow: #fff4d5;
-    --red: #fb0d0d;
-
-    // Colors BBS
-    --gris-triste: #CECECE;
-    --gris-divorce: #999;
-    --rouge: #f00;
-    --chocolat: #c60;
-    --chimborange: #FE9E01;
-    --jaune: #ff0;
-    --vert: #ADE76B;
-    --gilvert: #6c0;
-    --pelouse: #018352;
-    --violet-du-marie: #9412FE;
-    --bleu: #376DA8;
-    --bleu-chimbo: #6699CC;
-    --rose-dupatta: #FE81C0;
-    --rose-chimbo: #FF3399;
-    --gurujiolet: #E40173;
-    --blanc: var(--light);
-    --noir: #000;
-
-    // Cards
-    // Yellow
-    --light-card-yellow-color: var(--light);
-    --main-card-yellow-color: var(--light-yellow);
-    --dark-card-yellow-color: #ffe5a3;
-    --title-yellow-color: #963d00;
-
-    // Blue
-    --light-card-blue-color: #aadcfc;
-    --main-card-blue-color: #6ebef0;
-    --dark-card-blue-color: #5aa1cd;
-
-    // Lightblue
-    --light-card-lightblue-color: #aadcfc;
-    --main-card-lightblue-color: #a4c4e3;
-    --dark-card-lightblue-color: #5aa1cd;
-
-    // Red
-    --light-card-red-color: #ff9e9e;
-    --main-card-red-color: #FF5454;
-    --dark-card-red-color: #e00c0c;
-
-    // Default
-    --light-card-color: #f2f8fc;
-    --main-card-color: var(--light-blue);
-    --dark-card-color: #a5cbe9;
-    --title-color: #004b7d;
-
-    // Button
-    // Yellow
-
-      --button-color-1: var(--light);
-      --button-color-2: #ffb907;
-      --button-color-3: #e58900;
-      --button-color-4: #ffb700;
-      --button-color-5: #bb5c1d;
-    // Orange
-      --button-color-1: #fec9b4;
-      --button-color-2: #ff7b00;
-      --button-color-3: #d15503;
-      --button-color-4: var(--orange);
-      --button-color-5: #9f3400;
-    // Red
-      --button-color-1: #ffe6e6;
-      --button-color-2: #fb0d0d;
-      --button-color-3: #d10303;
-      --button-color-4: #ff2d2d;
-      --button-color-5: #a10000;
-    // Green
-      --button-color-1: #efe;
-      --button-color-2: #5b3;
-      --button-color-3: #371;
-      --button-color-4: #3a0;
-      --button-color-5: #350;
-    // Default
-      --button-color-1: #fe9ae0;
-      --button-color-2: #ff00a6;
-      --button-color-3: #c10276;
-      --button-color-4: var(--pink);
-      --button-color-5: #a10069;
 }
 
-.dark-theme img {
+.dark-theme img:not(.item) {
     filter:  hue-rotate(90deg) saturate(2) grayscale(1)
 }

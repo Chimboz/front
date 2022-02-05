@@ -44,43 +44,28 @@ export default {
       switch (this.color) {
         case "yellow":
           return {
-            "--selected-button-color-1": "var(--light)",
-            "--selected-button-color-2": "#ffb907",
-            "--selected-button-color-3": "#e58900",
-            "--selected-button-color-4": "#ffb700",
-            "--selected-button-color-5": "#bb5c1d"
+            "--selected-main-button": "var(--main-button-yellow)",
+            "--selected-dark-button": "var(--dark-button-yellow)",
           };
         case "orange":
           return {
-            "--selected-button-color-1": "#fec9b4",
-            "--selected-button-color-2": "#ff7b00",
-            "--selected-button-color-3": "#d15503",
-            "--selected-button-color-4": "var(--orange)",
-            "--selected-button-color-5": "#9f3400"
+            "--selected-main-button": "var(--main-button-orange)",
+            "--selected-dark-button": "var(--dark-button-orange)",
           };
         case "red":
           return {
-            "--selected-button-color-1": "#ffe6e6",
-            "--selected-button-color-2": "#fb0d0d",
-            "--selected-button-color-3": "#d10303",
-            "--selected-button-color-4": "#ff2d2d",
-            "--selected-button-color-5": "#a10000"
+            "--selected-main-button": "var(--main-button-red)",
+            "--selected-dark-button": "var(--dark-button-red)",
           };
         case "green":
           return {
-            "--selected-button-color-1": "#efe",
-            "--selected-button-color-2": "#5b3",
-            "--selected-button-color-3": "#371",
-            "--selected-button-color-4": "#3a0",
-            "--selected-button-color-5": "#350"
+            "--selected-main-button": "var(--main-button-green)",
+            "--selected-dark-button": "var(--dark-button-green)",
           };
         default:
           return {
-            "--selected-button-color-1": "#fe9ae0",
-            "--selected-button-color-2": "#ff00a6",
-            "--selected-button-color-3": "#c10276",
-            "--selected-button-color-4": "var(--pink)",
-            "--selected-button-color-5": "#a10069"
+            "--selected-main-button": "var(--main-button)",
+            "--selected-dark-button": "var(--dark-button)",
           };
       }
     }
@@ -97,16 +82,16 @@ export default {
   background-image: linear-gradient(
     to bottom,
     var(--light) 0%,
-    var(--selected-button-color-2) 50%,
-    var(--selected-button-color-3) 50%,
-    var(--selected-button-color-4)
+    var(--selected-main-button) 50%,
+    var(--selected-dark-button) 50%,
+    var(--selected-main-button)
   );
   padding: 0 4%;
   align-items: center;
   line-height: 12px;
   border-style: solid;
-  border-color: var(--selected-button-color-4) var(--selected-button-color-4)
-    var(--selected-button-color-5) var(--selected-button-color-4);
+  border-color: var(--selected-main-button) var(--selected-main-button)
+    var(--selected-dark-button) var(--selected-main-button);
 
   box-shadow: 0 2px 1px #0006;
   filter: brightness(1);
@@ -123,7 +108,7 @@ export default {
   font-size: var(--lg-font-size);
   fill: var(--text-button);
   stroke-width: 3;
-  stroke: var(--selected-button-color-5);
+  stroke: var(--selected-dark-button);
   height: 100%;
   width: 100%;
 }
@@ -141,9 +126,9 @@ export default {
   background-image: linear-gradient(
     to top,
     var(--light) 0%,
-    var(--selected-button-color-2) 50%,
-    var(--selected-button-color-3) 50%,
-    var(--selected-button-color-4)
+    var(--selected-main-button) 50%,
+    var(--selected-dark-button) 50%,
+    var(--selected-main-button)
   );
 }
 </style>

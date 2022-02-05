@@ -162,17 +162,17 @@ textarea.btn-md {
   background: #a8dfff
     linear-gradient(
       to right,
-      #6ebef0a0,
+      var(--main-card-blue),
       transparent 10%,
       transparent 90%,
-      #6ebef0a0
+      var(--main-card-blue)
     );
 }
 
 .router-link-active .list,
 .active .list {
   background: transparent
-    linear-gradient(to right, #ff00a6a0, #ff00a6 10%, #ff00a6 90%, #ff00a6a0) !important;
+    linear-gradient(to right, var(--main-card-blue), var(--pink) 10%, var(--pink) 90%, var(--main-card-blue)) !important;
 }
 
 .card .router-link-active,
@@ -213,17 +213,17 @@ button:hover .arrow {
 .level {
   background: linear-gradient(
       to right,
-      #6ebef0a0,
+      var(--main-card-blue),
       transparent 10%,
       transparent 90%,
-      #6ebef0a0
+      var(--main-card-blue)
     ),
     linear-gradient(
       to bottom,
-      #6ebef0 15%,
+      var(--main-card-blue) 15%,
       #a8dfff 15%,
       #a8dfff 85%,
-      #6ebef0 85%
+      var(--main-card-blue) 85%
     );
   display: flex;
 

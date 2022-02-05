@@ -280,16 +280,16 @@ export default {
 .packs .card-btn {
   background: linear-gradient(
     to bottom,
-    #7aaaf0,
-    #7aaaf0 50%,
-    var(--main-card-color) 50%
+    var(--dark-card-blue),
+    var(--dark-card-blue) 50%,
+    var(--main-card-yellow) 50%
   ) !important;
 }
 </style>
 
 <style lang="scss" scoped>
 .news-date {
-  color: #a69052;
+  color: var(--title-card-yellow);
   font-style: italic;
   text-align: right;
 }
