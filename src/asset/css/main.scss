@@ -57,8 +57,9 @@ body {
 ::selection {
   background-color: var(--orange);
   color: var(--light);
-  text-shadow: 1px 0 0 var(--dark-orange), -1px 0 0 var(--dark-orange), 0 1px 0 var(--dark-orange),
-    0 -1px 0 var(--dark-orange), 0.7px 0.7px var(--dark-orange), -0.7px -0.7px 0 var(--dark-orange),
+  text-shadow: 1px 0 0 var(--dark-orange), -1px 0 0 var(--dark-orange),
+    0 1px 0 var(--dark-orange), 0 -1px 0 var(--dark-orange),
+    0.7px 0.7px var(--dark-orange), -0.7px -0.7px 0 var(--dark-orange),
     0.7px -0.7px 0 var(--dark-orange), -0.7px 0.7px 0 var(--dark-orange);
 }
 
@@ -96,6 +97,13 @@ hr {
     )
     1;
   height: 2px;
+}
+
+br {
+  content: " ";
+  display: block;
+  margin-top: var(--gap);
+  line-height: var(--gap);
 }
 
 h1 {
@@ -143,7 +151,7 @@ table {
 }
 
 tbody {
-  background: var(--light)4;
+  background: var(--light) 4;
 }
 
 table:not(.bbs) tr:nth-child(2n + 1) {

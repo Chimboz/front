@@ -618,7 +618,7 @@ h3 {
   background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
   height: 40px;
   width: 40px;
-  border-radius: var(--gap);
+  border-radius: var(--border-radius);
   overflow: hidden;
   vertical-align: middle;
 }
@@ -665,7 +665,7 @@ h3 {
     #e0f4fc
   );
   border: 2px solid var(--light);
-  border-radius: var(--gap);
+  border-radius: var(--border-radius);
   box-shadow: 0 2px 1px 2px #0005;
 }
 

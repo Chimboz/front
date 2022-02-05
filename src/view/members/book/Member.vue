@@ -399,7 +399,7 @@ export default {
   justify-content: center;
   align-items: center;
   background: url(../../../asset/img/member/portrait.png);
-  height: 1var(--gap);
+  height: 112px;
   width: 104px;
   margin-bottom: 6px;
   overflow: hidden;

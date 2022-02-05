@@ -67,7 +67,7 @@ export default {
 .rule-container {
   background: #1fabff linear-gradient(to bottom, #99dbfa, #1fabff 20%);
   box-shadow: inset 0 0 1px 4px #1fabff;
-  border-radius: var(--gap) var(--gap) 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   height: 120px;
   overflow: hidden;
   padding: var(--gap);

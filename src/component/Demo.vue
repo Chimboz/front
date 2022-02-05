@@ -238,7 +238,7 @@ export default {
 <style lang="scss" scoped>
 .background {
   background: var(--light);
-  border-radius: var(--gap);
+  border-radius: var(--border-radius);
   width: 100%;
   border-bottom: 2px solid #b6c6cd;
   box-shadow: 0 2px #3e6d7f;
@@ -273,7 +273,7 @@ export default {
 .foreground {
   width: 100%;
   background: linear-gradient(to bottom, transparent, transparent 50%, #ffe6e6);
-  border-radius: var(--gap);
+  border-radius: var(--border-radius);
   border-bottom: 2px solid var(--light);
   box-shadow: 0 2px #f3cac2, 0 4px #dfe7ea;
   display: flex;

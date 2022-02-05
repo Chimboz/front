@@ -163,15 +163,15 @@ export default {
 </style>
 <style lang="scss" scoped>
 .card {
-  border-radius: var(--gap);
+  border-radius: var(--border-radius);
   width: 100%;
   height: auto;
   text-align: center;
   background-image: linear-gradient(
     to bottom,
     var(--light) 0px,
-    var(--selected-main-card) var(--gap),
-    var(--selected-main-card) calc(100% - var(--gap)),
+    var(--selected-main-card) var(--border-radius),
+    var(--selected-main-card) calc(100% - var(--border-radius)),
     var(--selected-dark-card) 100%
   );
   box-shadow: 0 1px var(--dark);
@@ -180,18 +180,18 @@ export default {
 img {
   display: block;
   width: 100%;
-  border-radius: var(--gap) var(--gap) 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 img + .card,
 .subtop + .card,
 .card-btn + .card {
-  border-radius: 0 0 var(--gap) var(--gap);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
   display: inline-block;
   background-image: linear-gradient(
     to bottom,
     var(--selected-main-card) 0px,
-    var(--selected-main-card) calc(100% - var(--gap)),
+    var(--selected-main-card) calc(100% - var(--border-radius)),
     var(--selected-dark-card) 100%
   );
 }
@@ -212,12 +212,11 @@ img + .card > .card-bg {
 .subtop {
   color: var(--light);
   border-top: 1px solid;
-  padding-left: var(--padding);
+  padding-left: var(--gap);
   font-family: "Chimboz Heavy";
   font-size: var(--lg-font-size);
-
   height: 25px;
-  border-radius: var(--gap) var(--gap) 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   border-color: var(--dark);
   box-shadow: 0 -1px var(--dark);
   background: var(--selected-dark-card);
@@ -239,12 +238,12 @@ img + .card > .card-bg {
 }
 
 .bot {
-  border-radius: var(--gap) var(--gap) 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   display: block;
   background-image: linear-gradient(
     to bottom,
     var(--light) 0px,
-    var(--selected-main-card) var(--gap),
+    var(--selected-main-card) var(--border-radius),
     var(--selected-main-card) 100%
   );
 }
@@ -268,6 +267,6 @@ main:after {
 .card-bg {
   background-repeat: repeat-x;
   padding: 16px;
-  border-radius: var(--gap);
+  border-radius: var(--border-radius);
 }
 </style>

@@ -30,14 +30,13 @@
         />
       </td>
       <td align="left" width="100%">
-        <span class="forumlink">
+        <div class="forumlink">
           <router-link :to="'/bbs/' + bbs.id" class="forumlink pink">{{
             bbs.name
-          }}</router-link
-          ><br />
-        </span>
-        <span class="genmed">{{ bbs.desc }}<br /> </span
-        ><span class="gensmall"
+          }}</router-link>
+        </div>
+        <div class="genmed">{{ bbs.desc }}</div
+        ><div class="gensmall"
           >Modérateurs&nbsp;:
           <GroupLink
             v-for="(mod, index) in bbs.mods"
@@ -46,7 +45,7 @@
             :separator="index < bbs.mods.length - 1"
             style="display: inline"
           />
-        </span>
+        </div>
       </td>
       <td align="center" valign="middle">
         <span class="gensmall">{{ bbs.topics }}</span>
@@ -55,7 +54,7 @@
         <span class="gensmall">{{ bbs.messages }}</span>
       </td>
       <td align="center" valign="middle">
-        {{ formatDate(bbs.last_msg.date) }}<br />
+        <div>{{ formatDate(bbs.last_msg.date) }}</div>
         <UserLink :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link

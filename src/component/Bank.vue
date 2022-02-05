@@ -29,10 +29,10 @@
     </div>
 
     <router-link to="/bank">
-      {{ $t("credit.youGot") }}<br />
-      <AnimatedNumber :number="user.credits" :delay="delay" /><br />
-      {{ $t("credit.text", user.credits) }} </router-link
-    ><br /><br />
+      <div>{{ $t("credit.youGot") }}</div>
+      <AnimatedNumber :number="user.credits" :delay="delay" />
+      <div>{{ $t("credit.text", user.credits) }}</div></router-link
+    >
     <router-link to="/reflooz" class="btn-route"
       ><GlobalButton color="orange" icon="register.svg"
         >Reflooz</GlobalButton

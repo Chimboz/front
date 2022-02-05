@@ -87,7 +87,7 @@
     <GlobalCard header="lottery.png" v-if="data && data.lottery">
       <template #header> </template>
       <div v-if="lottery">
-        {{ $t("lottery.firstLine") }}<br />
+        <div>{{ $t("lottery.firstLine") }}</div>
         {{ $t("lottery.secondLine") }}</div
       ><RandomNumber v-else :max="30" :value="gain" :duration="5000" />
       <br /><br v-if="!lottery" />
@@ -159,8 +159,8 @@
             {{ $t("connecteds", data.connected) }}</router-link
           ></template
         >
-        {{ data.members }} {{ $t("members.text", data.members) }} <br />
-        {{ data.last24 }} {{ $t("members.past", data.last24) }} </GlobalCard
+        <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
+        <div>{{ data.last24 }} {{ $t("members.past", data.last24) }}</div></GlobalCard
       ><br />
       <router-link to="/shop">
         <GlobalCard
