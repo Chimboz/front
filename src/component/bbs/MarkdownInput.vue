@@ -73,7 +73,7 @@
               <button type="button" class="btn-md" @click="formatLink(false)">
                 <a href="#" @click.prevent>a</a>
               </button>
-              <button type="button" class="btn-md" @click="formatLink(true)">
+              <button type="button" class="btn-md" style="padding: 2px" @click="formatLink(true)">
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -85,112 +85,113 @@
               </button>
               <select
                 class="btn-md"
+                style="padding: 0"
                 @change="(event) => formatColor(event.target.value)"
               >
                 <option
-                  style="color: #444444; background-color: #fafafa"
+                  style="color: #444444"
                   value="#444444"
                 >
                   Couleur
                 </option>
                 <option
-                  style="color: #cecece; background-color: #fafafa"
+                  style="color: #cecece"
                   value="#CECECE"
                 >
                   Gris triste
                 </option>
                 <option
-                  style="color: #999999; background-color: #fafafa"
+                  style="color: #999999"
                   value="#999999"
                 >
                   Gris divorce
                 </option>
                 <option
-                  style="color: #ff0000; background-color: #fafafa"
+                  style="color: #ff0000"
                   value="#FF0000"
                 >
                   Rouge
                 </option>
                 <option
-                  style="color: #cc6600; background-color: #fafafa"
+                  style="color: #cc6600"
                   value="#CC6600"
                 >
                   Chocolat
                 </option>
                 <option
-                  style="color: #fe9e01; background-color: #fafafa"
+                  style="color: #fe9e01"
                   value="#FE9E01"
                 >
                   Orange
                 </option>
                 <option
-                  style="color: var(--light)f00; background-color: #fafafa"
+                  style="color: var(--light)f00"
                   value="var(--light)F00"
                 >
                   Jaune
                 </option>
                 <option
-                  style="color: #ade76b; background-color: #fafafa"
+                  style="color: #ade76b"
                   value="#ADE76B"
                 >
                   Vert
                 </option>
                 <option
-                  style="color: #66cc00; background-color: #fafafa"
+                  style="color: #66cc00"
                   value="#66CC00"
                 >
                   Gilvert
                 </option>
                 <option
-                  style="color: #018352; background-color: #fafafa"
+                  style="color: #018352"
                   value="#018352"
                 >
                   Pelouse
                 </option>
                 <option
-                  style="color: #9412fe; background-color: #fafafa"
+                  style="color: #9412fe"
                   value="#9412FE"
                 >
                   Violet du marié
                 </option>
                 <option
-                  style="color: #376da8; background-color: #fafafa"
+                  style="color: #376da8"
                   value="#376DA8"
                 >
                   Bleu
                 </option>
                 <option
-                  style="color: #6699cc; background-color: #fafafa"
+                  style="color: #6699cc"
                   value="#6699CC"
                 >
                   Bleu Chimbo
                 </option>
                 <option
-                  style="color: #fe81c0; background-color: #fafafa"
+                  style="color: #fe81c0"
                   value="#FE81C0"
                 >
                   Rose Dupatta
                 </option>
                 <option
-                  style="color: #ff3399; background-color: #fafafa"
+                  style="color: #ff3399"
                   value="#FF3399"
                 >
                   Rose Chimbo
                 </option>
                 <option
-                  style="color: #e40173; background-color: #fafafa"
+                  style="color: #e40173"
                   value="#E40173"
                 >
                   Gurujiolet
                 </option>
                 <option
-                  style="color: var(--light); background-color: #fafafa"
-                  value="var(--light)FFF"
+                  style="color: #FFFFFF"
+                  value="#FFFFFF"
                 >
                   Blanc
                 </option>
                 <option
-                  style="color: #000; background-color: #fafafa"
+                  style="color: #000"
                   value="#000000"
                 >
                   Noir
@@ -198,6 +199,7 @@
               </select>
               <select
                 class="btn-md"
+                style="padding: 0"
                 @change="(event) => formatMultiline(event.target.value)"
               >
                 <option value="##### ">Trop minuscule</option>

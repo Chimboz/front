@@ -112,10 +112,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.ellipsis {
-  color: #ff3399;
-}
-
 .info {
   display: none !important;
 }

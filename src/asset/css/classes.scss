@@ -33,13 +33,13 @@
 .hstack {
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: calc(-1 * var(--gap));
-  margin-right: calc(-1 * var(--gap));
+  margin-bottom: calc(-1 * var(--sm-gap));
+  margin-right: calc(-1 * var(--sm-gap));
 }
 
 .hstack > * {
-  margin-right: var(--gap);
-  margin-bottom: var(--gap);
+  margin-right: var(--sm-gap);
+  margin-bottom: var(--sm-gap);
 }
 
 // Custom checkboxes
@@ -78,21 +78,21 @@
 // Button medium
 .btn-md {
   display: inline-flex;
-  padding: var(--sm-gap);
+  padding: var(--md-gap);
   margin: 0 1px;
   max-height: 22px;
-  border-radius: 6px;
+  border-radius: var(--md-gap);
   align-items: center;
   justify-content: center;
   border: 0px;
   color: var(--text);
   background: var(--light);
-  box-shadow: inset 1px 1px 1px #3699, inset -1px -1px 1px #3693;
+  box-shadow: inset 1px 1px 1px var(--dark), inset -1px -1px 1px var(--dark);
 }
 
 input:valid:not(:placeholder-shown),
 textarea:valid:not(:placeholder-shown) {
-  box-shadow: inset 1px 1px 1px #5b39, inset -1px -1px 1px #5b33;
+  box-shadow: inset 1px 1px 1px var(--main-button-green), inset -1px -1px 1px var(--dark-button-green);
 }
 
 .btn-md:hover,
@@ -112,20 +112,20 @@ select.btn-md {
 
 input:invalid:not(:placeholder-shown),
 textarea:invalid:not(:placeholder-shown) {
-  border-color: #fb0d0d;
+  border-color: var(--red);
 }
 
 input:not([type="checkbox"]).btn-md,
 textarea.btn-md {
   width: 100%;
-  padding: var(--sm-gap);
+  padding: var(--md-gap);
 }
 
 // Button action
 .btn-action {
   border-radius: 4px;
   padding: 0 4px;
-  background: linear-gradient(to bottom, var(--light), var(--light-blue));
+  background: linear-gradient(to bottom, var(--light), var(--light-bbs));
   border: 1px solid var(--blue);
   font-family: "Cocon";
   text-transform: lowercase;
@@ -156,7 +156,7 @@ textarea.btn-md {
 .card .list {
   display: flex;
   align-items: center;
-  padding: 2px 10px;
+  padding: var(--sm-gap) var(--md-gap);
 }
 
 .card a:nth-child(2n + 1) .list {
@@ -173,7 +173,13 @@ textarea.btn-md {
 .router-link-active .list,
 .active .list {
   background: transparent
-    linear-gradient(to right, var(--main-card-blue), var(--pink) 10%, var(--pink) 90%, var(--main-card-blue)) !important;
+    linear-gradient(
+      to right,
+      var(--main-card-blue),
+      var(--pink) 10%,
+      var(--pink) 90%,
+      var(--main-card-blue)
+    ) !important;
 }
 
 .card .router-link-active,
@@ -246,7 +252,7 @@ table.bbs {
   border-spacing: 0;
   box-shadow: 0 0 3px#000;
   border-radius: 4px;
-  background: #c9dfef;
+  background: var(--light-bbs);
   padding: 6px 0;
 }
 
@@ -254,9 +260,9 @@ table.bbs {
   height: 24px;
   background-image: linear-gradient(
     to bottom,
-    #c9dfef 0px,
-    #c9dfef 50%,
-    #d6e7f3 100%
+    var(--light-bbs) 0px,
+    var(--light-bbs) 50%,
+    var(--dark-bbs) 100%
   );
   border-bottom: 1px solid #a2bdd1;
 }

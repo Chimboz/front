@@ -222,7 +222,7 @@ export default {
   data() {
     return {
       section: 1,
-      demo: 0
+      demo: 0,
     };
   },
   mounted() {
@@ -231,14 +231,14 @@ export default {
   methods: {
     login() {
       this.$store.dispatch("auth/login");
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 .background {
   background: var(--light);
-  border-radius: 12px;
+  border-radius: var(--gap);
   width: 100%;
   border-bottom: 2px solid #b6c6cd;
   box-shadow: 0 2px #3e6d7f;
@@ -254,10 +254,10 @@ export default {
   font-weight: normal;
   text-decoration: none;
   color: var(--light);
-  text-shadow: 0 0 4px var(--pink);
+  text-shadow: 0 0 var(--sm-gap) var(--pink);
   text-transform: lowercase;
   font-size: var(--lg-font-size);
-  margin-top: 4px;
+  margin-top: var(--sm-gap);
 }
 
 .try:hover img {
@@ -274,7 +274,7 @@ export default {
   width: 100%;
   background: linear-gradient(to bottom, transparent, transparent 50%, #ffe6e6);
   border-radius: 12px;
-  border-bottom: 2px solid var(--light)7f7;
+  border-bottom: 2px solid var(--light);
   box-shadow: 0 2px #f3cac2, 0 4px #dfe7ea;
   display: flex;
   justify-content: center;
@@ -291,9 +291,9 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   background: linear-gradient(to bottom, #4197cf, #bce4fe);
-  padding: 2px 2px 10px 2px;
-  margin-bottom: -8px;
-  border-radius: 8px 8px 0 0;
+  padding: var(--sm-gap) var(--sm-gap) var(--md-gap) var(--sm-gap);
+  margin-bottom: calc(-1 * var(--md-gap));
+  border-radius: var(--md-gap) var(--md-gap) 0 0;
 }
 
 .demo-btn button {
@@ -322,7 +322,7 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   background-size: cover;
   overflow: hidden;
   position: relative;
-  border-radius: 8px;
+  border-radius: var(--md-gap);
   --rotate: rotate(30deg);
 }
 
@@ -341,10 +341,10 @@ section.display {
   height: 100%;
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 15%,
-    var(--light)0,
-    var(--light)4 49%,
-    var(--light)8 51%,
-    var(--light)4
+    var(--light) 0,
+    var(--light) 4 49%,
+    var(--light) 8 51%,
+    var(--light) 4
   );
 }
 
@@ -356,7 +356,7 @@ section.display {
   width: 20%;
   height: 200%;
   transform: translateX(-700%) var(--rotate);
-  background: var(--light)a;
+  background: var(--light) a;
   animation: shine 7s infinite linear;
 }
 

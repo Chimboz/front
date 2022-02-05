@@ -12,7 +12,7 @@
     --font-size: 12px;
     --lg-font-size: 18px;
     --round: 99px;
-    --pointer: url(../img/pointer.svg), pointer;
+    --pointer: url(../img/pointer.svg) 4 2, pointer;
 
     // Colors
     --text: #284555;
@@ -27,25 +27,6 @@
     --orange: #f80;
     --dark-orange: #d15503;
     --red: #fb0d0d;
-
-    // Colors BBS
-    --gris-triste: #CECECE;
-    --gris-divorce: #999;
-    --rouge: #f00;
-    --chocolat: #c60;
-    --chimborange: #FE9E01;
-    --jaune: #ff0;
-    --vert: #ADE76B;
-    --gilvert: #6c0;
-    --pelouse: #018352;
-    --violet-du-marie: #9412FE;
-    --bleu: #376DA8;
-    --bleu-chimbo: #6699CC;
-    --rose-dupatta: #FE81C0;
-    --rose-chimbo: #FF3399;
-    --gurujiolet: #E40173;
-    --blanc: var(--light);
-    --noir: #000;
 
     // Cards
     // Yellow
@@ -79,6 +60,10 @@
     // Default
       --main-button: var(--pink);
       --dark-button: var(--dark-pink);
+
+      // BBS Table
+      --light-bbs: #c9dfef;
+      --dark-bbs: #d6e7f3;
 }
 
 :root.dark-theme {
@@ -107,25 +92,6 @@
     --orange: hsl(32, 100%, 20%);
     --dark-orange: hsl(24, 97%, 12%);
     --red: #860909;
-
-    // Colors BBS
-    --gris-triste: #CECECE;
-    --gris-divorce: #999;
-    --rouge: #f00;
-    --chocolat: #c60;
-    --chimborange: #FE9E01;
-    --jaune: #ff0;
-    --vert: #ADE76B;
-    --gilvert: #6c0;
-    --pelouse: #018352;
-    --violet-du-marie: #9412FE;
-    --bleu: #376DA8;
-    --bleu-chimbo: #6699CC;
-    --rose-dupatta: #FE81C0;
-    --rose-chimbo: #FF3399;
-    --gurujiolet: #E40173;
-    --blanc: var(--light);
-    --noir: #000;
 
     // Cards
     // Yellow
@@ -159,6 +125,10 @@
     // Default
       --main-button: var(--pink);
       --dark-button: var(--dark-pink);
+
+    // BBS Table
+    --light-bbs: #0c385f;
+    --dark-bbs: #143855;
 }
 
 .dark-theme img:not(.item) {

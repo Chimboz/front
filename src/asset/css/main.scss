@@ -43,7 +43,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: var(--round);
-  border: var(--sm-gap) solid transparent;
+  border: 4px solid transparent;
   background-clip: content-box;
   background-color: var(--pink);
 }
@@ -82,15 +82,15 @@ hr {
   background: linear-gradient(
     to right,
     transparent,
-    var(--light-blue) 25%,
-    var(--light-blue) 75%,
+    var(--light-bbs) 25%,
+    var(--light-bbs) 75%,
     transparent
   );
   border-image: linear-gradient(
       to right,
       transparent,
-      var(--main-bg) 25%,
-      var(--main-bg) 75%,
+      var(--dark-bbs) 25%,
+      var(--dark-bbs) 75%,
       transparent
     )
     1;
