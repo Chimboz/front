@@ -50,24 +50,12 @@ export default {
 };
 </script>
 <style lang="scss">
-.btn-rules {
-  background: linear-gradient(
-    to bottom,
-    #1fabff,
-    #1fabff 50%,
-    var(--main-card-color) 50%
-  ) !important;
-}
-
 .rules .card-bg {
   padding-top: 0;
 }
 </style>
 <style lang="scss" scoped>
 .rule-container {
-  background: #1fabff linear-gradient(to bottom, #99dbfa, #1fabff 20%);
-  box-shadow: inset 0 0 1px 4px #1fabff;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
   height: 120px;
   overflow: hidden;
   padding: var(--gap);

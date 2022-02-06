@@ -4,6 +4,7 @@
       draggable="false"
       @contextmenu.prevent
       alt="Card header"
+      class="card-header"
       :width="width"
       :height="height"
       v-if="header"
@@ -13,6 +14,7 @@
       draggable="false"
       @contextmenu.prevent
       alt="Card header"
+      class="card-header"
       v-else-if="top"
       src="@/asset/img/card/header/default.gif"
       width="154"
@@ -32,10 +34,8 @@
           <slot name="header"></slot>
         </h2>
         <div style="text-align: center">
-          <em v-if="$slots['subtitle']"
-            >"<slot name="subtitle"></slot>"</em
-          ></div
-        >
+          <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em>
+        </div>
         <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
         <main>
           <slot></slot>
@@ -62,30 +62,30 @@ import StrokeText from "@/component/core/StrokeText.vue";
 export default {
   name: "GlobalCard",
   components: {
-    StrokeText
+    StrokeText,
   },
   props: {
     // A header image, automatically prefixed by `/asset/img/card/header/`
     header: {
       required: false,
-      type: String
+      type: String,
     },
     // A background image, automatically prefixed by `/asset/img/card/background/`
     bg: {
       required: false,
-      type: String
+      type: String,
     },
     // Width of the header image
     width: {
       required: false,
       default: 468,
-      type: Number
+      type: Number,
     },
     // Height of the header image
     height: {
       required: false,
       default: 77,
-      type: Number
+      type: Number,
     },
     // Color of the card
     color: {
@@ -94,26 +94,26 @@ export default {
       type: String,
       validator(value) {
         return ["yellow", "blue", "red"].includes(value);
-      }
+      },
     },
     // Whether the text is left aligned
     justified: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     // Display a default footer image
     bot: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     // Display a default header image
     top: {
       required: false,
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     cssVars() {
@@ -149,18 +149,12 @@ export default {
     },
     inlineBg() {
       return {
-        backgroundImage: `url(${this.bgImage})`
+        backgroundImage: `url(${this.bgImage})`,
       };
-    }
-  }
+    },
+  },
 };
 </script>
-<style lang="scss">
-.fullwidth {
-  width: calc(100% + 2 * var(--gap)) !important;
-  margin-left: calc(-1 * var(--gap));
-}
-</style>
 <style lang="scss" scoped>
 .card {
   border-radius: var(--border-radius);
@@ -177,17 +171,15 @@ export default {
   box-shadow: 0 1px var(--dark);
 }
 
-img {
-  display: block;
-  width: 100%;
+.card-header {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  width: 100%;
 }
 
 img + .card,
 .subtop + .card,
 .card-btn + .card {
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  display: inline-block;
   background-image: linear-gradient(
     to bottom,
     var(--selected-main-card) 0px,
@@ -215,7 +207,7 @@ img + .card > .card-bg {
   padding-left: calc(2 * var(--gap));
   font-family: "Chimboz Heavy";
   font-size: var(--lg-font-size);
-  height: 25px;
+  height: calc(var(--gap) * 2);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   border-color: var(--dark);
   box-shadow: 0 -1px var(--dark);
@@ -231,6 +223,17 @@ img + .card > .card-bg {
   stroke: var(--selected-title-card);
   fill: var(--text-button);
   stroke-width: 3;
+}
+
+.card h2 {
+  color: var(--selected-title-card);
+  text-align: center;
+}
+
+.card-bg {
+  background-repeat: repeat-x;
+  padding: var(--gap);
+  border-radius: var(--border-radius);
 }
 
 .justified .card {
@@ -249,24 +252,12 @@ img + .card > .card-bg {
 }
 
 .bot .card-bg {
-  padding-bottom: 5px;
-  margin-bottom: 0;
-}
-
-.card h2 {
-  color: var(--selected-title-card);
-  text-align: center;
+  padding-bottom: 0;
 }
 
 main:after {
   content: "";
   clear: both;
   display: table;
-}
-
-.card-bg {
-  background-repeat: repeat-x;
-  padding: var(--gap);
-  border-radius: var(--border-radius);
 }
 </style>

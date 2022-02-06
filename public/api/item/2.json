@@ -1,8 +1,8 @@
 {
   "id": 2,
   "name": "Lunettes bleues",
-  "rarity": "mythic",
-  "type": "item0",
+  "rarity": "rare",
+  "type": "body",
   "owner": [
     { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
     { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },

@@ -61,6 +61,7 @@ export default {
 
 @media (min-width: 508px) {
   .main-column {
+    min-width: 468px;
     flex: 1 0 0%;
   }
 }

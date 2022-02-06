@@ -1,3 +1,8 @@
+.fullwidth {
+  width: calc(100% + 2 * var(--gap)) !important;
+  margin-left: calc(-1 * var(--gap));
+}
+
 // Pink icon
 .btn-pink::before {
   content: "";
@@ -70,7 +75,6 @@
 // Markdown lists and checkboxes
 .markdown-body li input[type="checkbox"] {
   margin-left: -16px;
-  margin-top: 2px;
   position: absolute;
 }
 

@@ -159,7 +159,6 @@ export default {
   background: url(../asset/img/bank/bg.svg);
   position: relative;
   background-size: contain;
-  overflow: hidden;
 }
 
 .bank object {

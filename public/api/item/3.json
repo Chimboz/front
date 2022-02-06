@@ -1,7 +1,7 @@
 {
   "id": 2,
   "name": "Deuxième item",
-  "rarity": "common",
+  "rarity": "mythic",
   "type": "body",
   "owner": [
     { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
