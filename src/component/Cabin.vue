@@ -21,7 +21,7 @@
               </button>
             </div>
             <div
-              class="cabin-scene flex"
+              class="cabin-scene relative flex"
               tabindex="0"
               @keydown.up="up = true"
               @keyup.up="up = false"
@@ -428,7 +428,6 @@ h3 {
 }
 
 .cabin-scene {
-  position: relative;
   height: 140px;
   width: 100px;
   align-items: flex-end;

@@ -38,7 +38,7 @@
           @contextmenu.prevent
           width="14"
           height="13"
-          src="@/asset/img/icon/help.png"
+          src="@/asset/img/icon/button/help.svg"
           alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
@@ -74,7 +74,7 @@
           width="14"
           height="13"
           alt="Help icon"
-          src="@/asset/img/icon/help.png"
+          src="@/asset/img/icon/button/help.svg"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </GlobalCard>
@@ -108,7 +108,7 @@
           @contextmenu.prevent
           width="14"
           height="13"
-          src="@/asset/img/icon/help.png"
+          src="@/asset/img/icon/button/help.svg"
           alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>

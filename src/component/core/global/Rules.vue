@@ -9,7 +9,7 @@
           width="36"
           height="22"
           src="@/asset/img/icon/rules.svg"
-        /><div class="rule-number">{{ rule + 1 }}</div></div
+        /><div class="rule-number"><b>{{ rule + 1 }}</b></div></div
       >
       <div class="rule"
         ><b>{{ $t("rules.rule" + rule) }}</b></div
@@ -67,7 +67,6 @@ export default {
 
 .rule-number {
   transform: translateY(-18px);
-  font-weight: bold;
 }
 
 @keyframes opacity {

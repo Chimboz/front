@@ -39,7 +39,7 @@
           <button class="empty"></button>
           <button class="empty"></button>
         </div>
-        <div class="demo-picture">
+        <div class="demo-picture relative">
           <section :class="{ display: demo == 0 }">
             <div class="demo-info">Bienvenue sur l'archipel</div>
             <img
@@ -113,7 +113,7 @@
           inputmode="email"
           class="btn-md"
           :placeholder="$t('placeholder.mail')"
-        /><br />
+        />
         <input
           required
           name="password"
@@ -321,7 +321,6 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
   background: url(../asset/img/demo/demo.svg);
   background-size: cover;
   overflow: hidden;
-  position: relative;
   border-radius: var(--md-gap);
   --rotate: rotate(30deg);
 }

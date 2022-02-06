@@ -43,7 +43,6 @@
             :key="mod.id"
             :group="mod"
             :separator="index < bbs.mods.length - 1"
-            style="display: inline"
           />
         </div>
       </td>

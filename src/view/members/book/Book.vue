@@ -62,7 +62,7 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus_blue.gif"
+        header="ensavoirplus.gif"
         :width="154"
         :height="34"
         top

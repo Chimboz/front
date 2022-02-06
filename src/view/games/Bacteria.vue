@@ -61,7 +61,7 @@
             width="14"
             height="13"
             alt="Help icon"
-            src="@/asset/img/icon/help.png"
+            src="@/asset/img/icon/button/help.svg"
           />&nbsp;Comment jouer&nbsp;?
         </router-link>
       </div>
@@ -253,7 +253,7 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus_blue.gif"
+        header="ensavoirplus.gif"
         :width="154"
         :height="46"
         top

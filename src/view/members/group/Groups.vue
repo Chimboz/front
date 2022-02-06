@@ -153,7 +153,7 @@
       >
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="blue" header="ensavoirplus_blue.gif" v-if="data">
+      ><GlobalCard color="blue" header="ensavoirplus.gif" v-if="data">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div style="text-align: left">
           <img

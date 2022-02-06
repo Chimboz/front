@@ -5,7 +5,7 @@
         $t("credit.title", user.credits)
       }}</GlobalButton>
     </template>
-    <div class="bank fullwidth">
+    <div class="bank relative fullwidth">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -157,7 +157,6 @@ export default {
 <style lang="scss" scoped>
 .bank {
   background: url(../asset/img/bank/bg.svg);
-  position: relative;
   background-size: contain;
 }
 

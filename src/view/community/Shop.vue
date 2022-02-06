@@ -16,7 +16,7 @@
       style="position: relative"
     >
       <audio autoplay>
-        <source src="@/asset/sound/shop/shop.mp3" type="audio/mpeg" />
+        <source src="@/asset/sound/shop/moving_stars.flac" type="audio/flac" />
       </audio>
       <audio autoplay>
         <source src="@/asset/sound/shop/preview.mp3" type="audio/wav" />
