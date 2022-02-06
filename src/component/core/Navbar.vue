@@ -322,13 +322,13 @@ export default {
 
 #nav a:nth-child(2) .nav-btn {
   border-left-color: var(--pink);
-  border-radius: 10px 0 0 10px;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
   border-left-width: 5px;
 }
 
 #nav a:last-child .nav-btn {
   border-right-color: var(--pink);
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   border-right-width: 5px;
 }
 
@@ -353,7 +353,7 @@ export default {
     var(--dark-pink) 51%,
     var(--pink)
   );
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   border-width: 2px 5px;
   margin-right: var(--gap);
 }

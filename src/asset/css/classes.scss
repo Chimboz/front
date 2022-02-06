@@ -106,10 +106,6 @@ textarea.btn-md {
   max-height: unset;
 }
 
-select.btn-md {
-  background: var(--light);
-}
-
 input:invalid:not(:placeholder-shown),
 textarea:invalid:not(:placeholder-shown) {
   border-color: var(--red);
@@ -123,7 +119,7 @@ textarea.btn-md {
 
 // Button action
 .btn-action {
-  border-radius: 4px;
+  border-radius: calc(var(--border-radius) / 3);
   padding: 0 4px;
   background: linear-gradient(to bottom, var(--light), var(--light-bbs));
   border: 1px solid var(--blue);
@@ -251,9 +247,9 @@ table.bbs {
   width: 100%;
   border-spacing: 0;
   box-shadow: 0 0 3px#000;
-  border-radius: 4px;
+  border-radius: calc(var(--border-radius) / 3);
   background: var(--light-bbs);
-  padding: 6px 0;
+  padding: calc(var(--gap) / 2) 0;
 }
 
 .bbs > thead > tr > th {

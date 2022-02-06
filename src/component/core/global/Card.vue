@@ -157,8 +157,8 @@ export default {
 </script>
 <style lang="scss">
 .fullwidth {
-  width: calc(100% + 32px) !important;
-  margin-left: -16px;
+  width: calc(100% + 2 * var(--gap)) !important;
+  margin-left: calc(-1 * var(--gap));
 }
 </style>
 <style lang="scss" scoped>
@@ -212,7 +212,7 @@ img + .card > .card-bg {
 .subtop {
   color: var(--light);
   border-top: 1px solid;
-  padding-left: var(--gap);
+  padding-left: calc(2 * var(--gap));
   font-family: "Chimboz Heavy";
   font-size: var(--lg-font-size);
   height: 25px;
@@ -266,7 +266,7 @@ main:after {
 
 .card-bg {
   background-repeat: repeat-x;
-  padding: 16px;
+  padding: var(--gap);
   border-radius: var(--border-radius);
 }
 </style>

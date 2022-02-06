@@ -95,7 +95,7 @@ export default {
 
   box-shadow: 0 2px 1px #0006;
   filter: brightness(1);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   border-width: 2px 5px;
 }
 
