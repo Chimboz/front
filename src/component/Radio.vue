@@ -43,8 +43,10 @@
 </template>
 
 <script>
+// @vuese
+// @group Default
 export default {
-  name: "Radio",
+  name: "RadioPlayer",
   props: {
     src: {
       type: String,
@@ -71,7 +73,7 @@ export default {
       this.pause();
       this.$refs.player.currentTime = 0;
     },
-    progress(event) {
+    progress() {
       this.$refs.progressBar.style.width =
         (this.$refs.player.currentTime / this.$refs.player.duration) * 100 +
         "%";
@@ -87,6 +89,10 @@ export default {
 
 .btn-radio {
   height: 26px;
+}
+
+.btn-radio:hover {
+  filter: brightness(1.1);
 }
 
 .progress-bar {
