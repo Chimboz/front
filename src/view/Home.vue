@@ -116,7 +116,7 @@
       ></GlobalCard
     >
     <br />
-    <Radio src="moving_stars.flac" />
+    <Radio src="track.flac" />
     <br>
     <GlobalCard color="yellow" justified v-if="data">
       <template #subtop>Chapaniouz</template>
@@ -178,13 +178,13 @@
           v-if="data"
         >
           <template #button>
-            <GlobalButton color="yellow" icon="register.svg">Pack</GlobalButton>
+            <GlobalButton color="yellow" icon="item.svg">Pack</GlobalButton>
           </template>
           <Pack
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
           /><br /><br />
-          <GlobalButton color="yellow" icon="register.svg" class="fullwidth"
+          <GlobalButton color="yellow" icon="item.svg" class="fullwidth"
             >Item</GlobalButton
           ><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />

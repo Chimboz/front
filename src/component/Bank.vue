@@ -1,7 +1,7 @@
 <template>
   <GlobalCard color="yellow" v-if="authenticated">
     <template #button>
-      <GlobalButton color="yellow" icon="register.svg">{{
+      <GlobalButton color="yellow" icon="credits.svg">{{
         $t("credit.title", user.credits)
       }}</GlobalButton>
     </template>
@@ -34,7 +34,7 @@
       <div>{{ $t("credit.text", user.credits) }}</div></router-link
     >
     <router-link to="/reflooz" class="btn-route"
-      ><GlobalButton color="orange" icon="register.svg"
+      ><GlobalButton color="orange" icon="reflooz.svg"
         >Reflooz</GlobalButton
       ></router-link
     ></GlobalCard

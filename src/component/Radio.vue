@@ -34,7 +34,7 @@
         @click.prevent="stop"
         src="@/asset/img/radio/stop.svg"
       />
-      <div class="progress">
+      <div class="progress pointer" @click.prevent="skip" ref="progress">
         <div class="progress-bar" ref="progressBar"></div>
       </div>
     </div>
@@ -51,7 +51,7 @@ export default {
     src: {
       type: String,
       required: true,
-      default: "track.flac",
+      default: "track.mp3",
     },
   },
   data() {
@@ -72,6 +72,9 @@ export default {
     stop() {
       this.pause();
       this.$refs.player.currentTime = 0;
+    },
+    skip(e){
+      this.$refs.player.currentTime = e.offsetX / this.$refs.progress.offsetWidth * this.$refs.player.duration;
     },
     progress() {
       this.$refs.progressBar.style.width =
