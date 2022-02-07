@@ -88,9 +88,11 @@
       <template #header> </template>
       <div v-if="lottery">
         <div>{{ $t("lottery.firstLine") }}</div>
-        {{ $t("lottery.secondLine") }}</div
-      ><RandomNumber v-else :max="30" :value="gain" :duration="5000" />
-      <br /><br v-if="!lottery" />
+        {{ $t("lottery.secondLine") }}
+      </div>
+      <RandomNumber v-else :max="30" :value="gain" :duration="5000" /> <br /><br
+        v-if="!lottery"
+      />
       <GlobalButton color="orange" @click="handle" class="btn-loto"
         ><template #prepend
           ><img
@@ -114,6 +116,8 @@
       ></GlobalCard
     >
     <br />
+    <Radio src="moving_stars.flac" />
+    <br>
     <GlobalCard color="yellow" justified v-if="data">
       <template #subtop>Chapaniouz</template>
       <template #header
@@ -147,8 +151,8 @@
             :src="`gallery/${photo.name}`"
             :alt="photo.name"
             width="130"
-          /><b>{{ formatDatePhotos(photo.date) }}</b></div
-        >
+          /><b>{{ formatDatePhotos(photo.date) }}</b>
+        </div>
       </div>
     </GlobalCard>
     <template #right-column
@@ -160,7 +164,9 @@
           ></template
         >
         <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
-        <div>{{ data.last24 }} {{ $t("members.past", data.last24) }}</div></GlobalCard
+        <div>
+          {{ data.last24 }} {{ $t("members.past", data.last24) }}
+        </div></GlobalCard
       ><br />
       <router-link to="/shop">
         <GlobalCard
@@ -189,6 +195,7 @@
 </template>
 
 <script>
+import Radio from "@/component/Radio.vue";
 import RandomNumber from "@/component/core/RandomNumber.vue";
 import Bank from "@/component/Bank.vue";
 import Pack from "@/component/Pack.vue";
@@ -205,13 +212,14 @@ export default {
   components: {
     Bank,
     RandomNumber,
-    Pack
+    Pack,
+    Radio,
   },
   data() {
     return {
       data: null,
       lottery: true,
-      gain: 0
+      gain: 0,
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -233,9 +241,9 @@ export default {
     },
     formatDatePhotos(date) {
       return format(new Date(date), "PP", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   computed: {
     formatMessage() {
@@ -243,9 +251,9 @@ export default {
     },
     formatDate() {
       return format(new Date(this.data.news.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   metaInfo: {
     title: "section.home",
@@ -253,23 +261,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss">

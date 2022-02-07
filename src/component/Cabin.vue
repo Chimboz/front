@@ -364,20 +364,15 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
-.container-acc {
-  flex-direction: column;
-  align-items: center;
-}
-
 input[type="text"] {
   text-align: center;
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
-  color: #2a5380;
+  color: var(--text);
   border: 2px solid;
-  border-color: #369 #39c #39c #369;
-  box-shadow: inset 1px 1px 2px #3699;
-  padding: 2px 6px;
+  border-color: var(--blue) var(--dark-card-blue) var(--dark-card-blue) var(--blue);
+  box-shadow: inset 1px 1px 2px var(--dark-card-blue);
+  padding: var(--sm-gap) var(--md-gap);
   border-radius: calc(var(--border-radius) / 2);
   background: var(--light);
 }

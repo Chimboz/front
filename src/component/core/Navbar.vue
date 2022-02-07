@@ -30,8 +30,20 @@
           style="display: inline-flex"
           @click="toggleTheme"
         >
-          <span v-if="userTheme == 'dark-theme'">🌕</span>
-          <span v-else>☀️</span>
+          <span v-if="userTheme == 'dark-theme'"
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Moon (dark mode)"
+              src="@/asset/img/icon/moon.svg"
+          /></span>
+          <span v-else
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Sun (light mode)"
+              src="@/asset/img/icon/sun.svg"
+          /></span>
         </button>
         <button
           id="connect"
@@ -265,12 +277,15 @@ export default {
 .theme-toggler {
   background: var(--light);
   border-radius: var(--round);
-  font-size: var(--lg-font-size);
-  height: 30px;
-  width: 30px;
+  height: calc(var(--font-size) * 2);
+  background: var(--dark);
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+
+.theme-toggler img {
+  height: calc(var(--font-size) * 2);
 }
 
 #connect {
