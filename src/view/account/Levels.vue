@@ -96,6 +96,9 @@ export default {
 .level {
   display: flex;
   justify-content: center;
+  background: linear-gradient(to bottom, var(--light), var(--dark-card-yellow));
+  border-radius: var(--border-radius);
+  color: var(--title-card-yellow);
 }
 
 .level-description {
