@@ -284,8 +284,8 @@
           </div>
         </div>
       </div>
-      <div class="flex btn-menu">
-        <GlobalButton color="green" type="submit"
+      <div class="flex centered btn-menu">
+        <GlobalButton color="green" type="submit" style="width: 150px"
           ><template #prepend
             ><img
               draggable="false"
@@ -295,7 +295,7 @@
               src="@/asset/img/arrow.svg" /></template
           >Sauver</GlobalButton
         ><router-link :to="`/book/${data.id}`" style="margin-left: 6px">
-          <GlobalButton type="button"
+          <GlobalButton type="button" style="width: 150px"
             ><template #prepend
               ><img
                 draggable="false"

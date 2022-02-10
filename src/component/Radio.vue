@@ -91,7 +91,8 @@ export default {
 }
 
 .btn-radio {
-  height: 26px;
+  height: var(--lg-font-size);
+  margin-left: var(--md-gap);
 }
 
 .btn-radio:hover {
@@ -107,6 +108,7 @@ export default {
 }
 
 .progress {
+  margin-left: var(--md-gap);
   display: flex;
   border-radius: var(--border-radius);
   flex: 1 0 0%;

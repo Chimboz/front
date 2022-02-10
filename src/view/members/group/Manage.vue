@@ -122,7 +122,7 @@
       ><GlobalCard color="blue" header="ensavoirplus.gif" v-if="data">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div style="text-align: left">
-          <img
+          <div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -136,7 +136,7 @@
             >({{
               ((data.stats.type.group / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -150,7 +150,7 @@
             >({{
               ((data.stats.type.klub / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -164,7 +164,7 @@
             >({{
               ((data.stats.type.clan / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -178,7 +178,7 @@
             >({{
               ((data.stats.type.ekip / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -192,7 +192,7 @@
             >({{
               ((data.stats.type.skwat / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -206,7 +206,7 @@
             >({{
               ((data.stats.type.guild / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -220,7 +220,7 @@
             >({{
               ((data.stats.type.alliance / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -234,7 +234,7 @@
             >({{
               ((data.stats.type.empire / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -248,7 +248,7 @@
             >({{
               ((data.stats.type.sekt / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -262,7 +262,7 @@
             >({{
               ((data.stats.type.skool / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -276,7 +276,7 @@
             >({{
               ((data.stats.type.hord / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -290,7 +290,7 @@
             >({{
               ((data.stats.type.meute / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -304,7 +304,7 @@
             >({{
               ((data.stats.type.gang / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><img
+          ></div><div><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -318,7 +318,7 @@
             >({{
               ((data.stats.type.triad / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br /><br /><img
+          ></div><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -339,15 +339,14 @@
           />Le nombre de groupes que tu peux rejoindre tel que décrit dans le
           <router-link to="/levels">tableau des niveaux</router-link>, comprend
           uniquement les <b>groupes des membres</b>, les
-          <b>Groupes Officiels</b> ne sont pas comptés.</div
-        ><br /><img
+          <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
           height="17"
           width="17" />
-        Projecteur sur : <br /><GroupLink :group="data.random" /></GlobalCard
+        Projecteur sur : <div><GroupLink :group="data.random" /></div></GlobalCard
     ></template>
   </GlobalContainer>
 </template>
