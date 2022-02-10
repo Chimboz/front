@@ -178,7 +178,7 @@ export default {
   width: 50%;
   height: 200%;
   transform: translateX(-300%) var(--rotate);
-  background: #fffa;
+  background: var(--light)a;
   animation: shine 5s infinite linear;
 }
 

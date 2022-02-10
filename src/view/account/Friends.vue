@@ -33,7 +33,7 @@
           </div>
         </router-link>
         <div v-if="friend.status.sent">
-          <a @click.prevent="cancel(friend)" style="color: red; cursor: pointer"
+          <a @click.prevent="cancel(friend)" style="color: red; cursor: var(--pointer)"
             ><img
               src="@/asset/img/icon/failure.svg"
               width="11"
@@ -52,7 +52,7 @@
         >
           <a
             @click.prevent="accept(friend)"
-            style="color: green; cursor: pointer"
+            style="color: green; cursor: var(--pointer)"
             ><img
               src="@/asset/img/icon/success.svg"
               width="11"
@@ -64,7 +64,7 @@
             />Accepter</a
           ><br /><a
             @click.prevent="decline(friend)"
-            style="color: red; cursor: pointer"
+            style="color: red; cursor: var(--pointer)"
             ><img
               src="@/asset/img/icon/failure.svg"
               width="11"
@@ -269,7 +269,7 @@ export default {
 .online {
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
-  color: #fff;
+  color: var(--light);
   justify-content: center;
   width: 100%;
   height: 26px;

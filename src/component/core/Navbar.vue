@@ -4,8 +4,8 @@
     :style="{
       'background-image':
         'url(' +
-        require('@/asset/img/navbar/svg/' + this.date.getHours() + '.svg') +
-        ')'
+        require(`@/asset/img/navbar/svg/${this.date.getHours()}.svg`) +
+        ')',
     }"
   >
     <router-link to="/"
@@ -26,8 +26,29 @@
           style="display: inherit"
         />
         <button
+          class="centered theme-toggler"
+          style="display: inline-flex"
+          @click="toggleTheme"
+        >
+          <span v-if="userTheme == 'dark-theme'"
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Moon (dark mode)"
+              src="@/asset/img/icon/moon.svg"
+          /></span>
+          <span v-else
+            ><img
+              draggable="false"
+              @contextmenu.prevent
+              alt="Sun (light mode)"
+              src="@/asset/img/icon/sun.svg"
+          /></span>
+        </button>
+        <button
           id="connect"
-          class="flex centered"
+          class="centered"
+          style="display: inline-flex"
           @click="logout"
           v-if="authenticated"
         >
@@ -48,8 +69,8 @@
               src="@/asset/img/icon/success.svg"
             />
             {{ $t("navbar.login") }}
-          </router-link></button
-        >
+          </router-link>
+        </button>
       </div>
       <GlobalAvatar
         style="margin-right: 16px"
@@ -75,7 +96,8 @@
           src="@/asset/img/navbar/icon/home.svg"
           width="20"
           height="20"
-          style="margin: 2px; padding: 1px" /></button
+          style="margin: 2px; padding: 1px"
+        /></button
     ></router-link>
     <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered">
@@ -100,7 +122,8 @@
           class="arrow jitter"
           width="40"
           height="33"
-          src="@/asset/img/arrow.svg" /></button
+          src="@/asset/img/arrow.svg"
+        /></button
     ></a>
     <router-link v-if="authenticated" to="/account"
       ><button class="nav-btn flex centered">
@@ -187,25 +210,42 @@ export default {
   name: "TheNavbar",
   data() {
     return {
-      date: new Date()
+      date: new Date(),
+      userTheme: "light-theme",
     };
   },
   computed: {
     ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"])
+    ...mapState("auth", ["user"]),
   },
   components: {
-    StrokeText
+    StrokeText,
   },
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");
       this.$router.push(this.$route.path == "/" ? "/login" : this.$route.path);
-    }
+    },
+    setTheme(theme) {
+      localStorage.setItem("user-theme", theme);
+      this.userTheme = theme;
+      if (theme === "dark-theme") this.date.setHours(0);
+      else this.date = new Date();
+      document.body.className = "h" + this.date.getHours();
+      document.documentElement.className = theme;
+    },
+    toggleTheme() {
+      const activeTheme = localStorage.getItem("user-theme");
+      if (activeTheme === "light-theme") {
+        this.setTheme("dark-theme");
+      } else {
+        this.setTheme("light-theme");
+      }
+    },
   },
   created() {
-    document.body.className = "h" + this.date.getHours();
-  }
+    this.setTheme(localStorage.getItem("user-theme"));
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -214,8 +254,6 @@ export default {
   height: 78px;
   background-position: center;
   background-size: cover;
-  //border-radius: 99px;
-  //box-shadow: inset 0px 0px 10px 5px #6090be;
 }
 
 #logo {
@@ -225,28 +263,44 @@ export default {
 .login {
   text-align: right;
   justify-content: flex-end;
-  padding: 12px 14px 0 0;
+  padding: var(--gap) 14px 0 0;
 }
 
 #username {
   font-family: "Pixelated Verdana 12";
   font-weight: bold;
   font-size: 16px;
-  color: #069;
-  text-shadow: 0 0 5px #fff, 0 0 5px #fff;
+  color: var(--blue);
+  text-shadow: 0 0 5px var(--light), 0 0 5px var(--light);
+}
+
+.theme-toggler {
+  background: var(--light);
+  border-radius: var(--round);
+  height: calc(var(--font-size) * 2);
+  background: var(--dark);
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-toggler img {
+  height: calc(var(--font-size) * 2);
 }
 
 #connect {
   font-family: "Pixelated Verdana 12";
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: normal;
-  color: #000;
-  border-radius: 100px;
+  color: var(--text);
+  border-radius: var(--round);
   padding: 2px;
   line-height: 1;
   margin-right: -20px;
   border: none;
-  background: #fff;
+  background: var(--light);
+  margin-left: var(--gap);
+  align-items: center;
   width: 130px;
 }
 
@@ -255,26 +309,25 @@ export default {
 }
 
 #connect:hover {
-  background: #ade5f3;
+  background: var(--light-blue);
   font-weight: bold;
-  letter-spacing: 0;
 }
 
 .nav-btn {
-  cursor: pointer;
+  cursor: var(--pointer);
   height: 25px;
   background-image: linear-gradient(
     to bottom,
-    #fe9ae0 0%,
-    #ff00a6 50%,
-    #c10276 50%,
-    #ff009c
+    var(--light) 0%,
+    var(--pink) 50%,
+    var(--dark-pink) 50%,
+    var(--pink)
   );
   padding: 0 4%;
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   border-width: 2px 1px;
   border-style: solid;
-  border-color: #f0009c #f0009c #a10069 #f0009c;
+  border-color: var(--pink) var(--pink) var(--dark-pink) var(--pink);
   box-shadow: 0 2px 1px #0006;
 }
 
@@ -283,14 +336,14 @@ export default {
 }
 
 #nav a:nth-child(2) .nav-btn {
-  border-left-color: #f0009c;
-  border-radius: 10px 0 0 10px;
+  border-left-color: var(--pink);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
   border-left-width: 5px;
 }
 
 #nav a:last-child .nav-btn {
-  border-right-color: #f0009c;
-  border-radius: 0 10px 10px 0;
+  border-right-color: var(--pink);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   border-right-width: 5px;
 }
 
@@ -306,18 +359,18 @@ export default {
 }
 
 #nav a:first-child .nav-btn {
-  border-right-color: #f0009c;
-  border-left-color: #f0009c;
+  border-right-color: var(--pink);
+  border-left-color: var(--pink);
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
-    #fe9ae0,
-    #ff00a6 49%,
-    #c10276 51%,
-    #ff009c
+    var(--light),
+    var(--pink) 49%,
+    var(--dark-pink) 51%,
+    var(--pink)
   );
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   border-width: 2px 5px;
-  margin-right: 12px;
+  margin-right: var(--gap);
 }
 
 #nav {
@@ -330,13 +383,13 @@ export default {
 #nav a.router-link-exact-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
-    #fec9b4,
-    #ff7b00 50%,
-    #d15503 50%,
-    #fc8536
+    var(--light),
+    var(--orange) 50%,
+    var(--dark-orange) 50%,
+    var(--orange)
   );
-  color: #fff !important;
-  border-color: #f80 #f80 #9f3400 #f80;
+  color: var(--light) !important;
+  border-color: var(--orange) var(--orange) var(--dark-orange) var(--orange);
 }
 
 #nav a:first-child .nav-btn:hover,
@@ -344,10 +397,10 @@ export default {
 #nav a:first-child.router-link-exact-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
-    #fec9b4 0%,
-    #ff7b00 49%,
-    #d15503 51%,
-    #f80
+    var(--light) 0%,
+    var(--orange) 49%,
+    var(--dark-orange) 51%,
+    var(--orange)
   );
 }
 
@@ -357,7 +410,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:first-child.router-link-exact-active .nav-btn,
 #nav a:nth-child(2).router-link-exact-active .nav-btn {
-  border-left-color: #f80;
+  border-left-color: var(--orange);
 }
 
 #nav a:last-child .nav-btn:hover,
@@ -366,7 +419,7 @@ export default {
 #nav a:first-child .nav-btn:active,
 #nav a:last-child.router-link-exact-active .nav-btn,
 #nav a:first-child.router-link-exact-active .nav-btn {
-  border-right-color: #f80;
+  border-right-color: var(--orange);
 }
 
 a:hover {
@@ -376,30 +429,30 @@ a:hover {
 .nav-btn:active {
   background-image: linear-gradient(
     to top,
-    #fec9b4,
-    #ff7b00 50%,
-    #d15503 50%,
-    #f80
+    var(--light),
+    var(--orange) 50%,
+    var(--dark-orange) 50%,
+    var(--orange)
   ) !important;
 }
 
 #nav a:first-child .nav-btn:active {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
-    #f80,
-    #d15503 49%,
-    #ff7b00 51%,
-    #fec9b4
+    var(--orange),
+    var(--dark-orange) 49%,
+    var(--orange) 51%,
+    var(--light)
   ) !important;
 }
 
 .nav-text {
   font-family: "Chimboz Heavy";
   font-weight: normal;
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   height: 100%;
-  fill: #fff;
-  stroke: #a10069;
+  fill: var(--text-button);
+  stroke: var(--dark-pink);
   stroke-width: 3;
   display: flex;
   justify-content: center;
@@ -418,7 +471,7 @@ a:hover {
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
   #nav a.router-link-exact-active .nav-text {
-    stroke: #d15503;
+    stroke: var(--dark-orange);
   }
 
   a:not(:first-child) .nav-btn {

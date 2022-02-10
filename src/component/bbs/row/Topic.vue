@@ -35,7 +35,7 @@
         <span class="gensmall">{{ topic.view }}</span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        {{ formatDate }}<br />
+        <div>{{ formatDate }}</div>
         <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link :to="'/topic/' + topic.id + '#' + topic.last_msg.msgid"

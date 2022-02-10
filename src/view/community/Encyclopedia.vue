@@ -138,7 +138,7 @@ export default {
   justify-content: center;
   top: 0;
   left: 0;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
 }
 
 // Loading circle
@@ -157,7 +157,7 @@ export default {
   background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
   height: 60px;
   width: 60px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   vertical-align: middle;
 }
@@ -179,7 +179,7 @@ export default {
 }
 
 .item.active {
-  border: 3px solid #fff;
+  border: 3px solid var(--light);
 }
 
 .item.active img {

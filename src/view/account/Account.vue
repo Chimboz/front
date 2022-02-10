@@ -15,7 +15,8 @@
                 width="19"
                 height="21"
                 :src="require(`@/asset/img/number/${number}.svg`)"
-              /> </div></div></router-link
+              />
+            </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
           <SideNavEntries section="account" /></div></GlobalCard
@@ -48,6 +49,7 @@
       v-model:centrec="data.centres[2]"
       v-model:centred="data.centres[3]"
     />
+    <br />
     <GlobalCard
       header="bacteria_blue.jpg"
       :height="74"
@@ -118,7 +120,8 @@
             width="19"
             height="21"
             :src="require(`@/asset/img/number/pink/${number}.svg`)"
-        /></div>
+          />
+        </div>
         <div style="margin-top: -21px">
           <router-link
             v-for="message of this.data.pm"
@@ -126,8 +129,8 @@
             :to="`/messenger/${message.author.id}`"
             :class="{ active: message.new }"
           >
-            <div class="list fullwidth col pm"
-              ><div>
+            <div class="list fullwidth col pm">
+              <div>
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -137,12 +140,13 @@
                     }.svg`)
                   "
                   alt="Voir le dernier message"
-                  title="Voir le dernier message" />&nbsp;<UserLink
-                  :user="message.author" /></div
-              ><div>{{ formatDate(message.date) }}</div>
+                  title="Voir le dernier message"
+                />&nbsp;<UserLink :user="message.author" />
+              </div>
+              <div>{{ formatDate(message.date) }}</div>
             </div>
-          </router-link></div
-        ></GlobalCard
+          </router-link>
+        </div></GlobalCard
       ><br />
       <GlobalCard
         color="blue"
@@ -158,20 +162,21 @@
             :key="message.message"
             :to="`/topic/${message.id}/${message.page}#${message.message}`"
           >
-            <div class="list fullwidth col" style="align-items: flex-start"
-              ><div>
+            <div class="list fullwidth col" style="align-items: flex-start">
+              <div>
                 <router-link :to="`/bbs/${message.forum.id}`">{{
                   message.forum.name
-                }}</router-link></div
-              ><div
-                ><img
+                }}</router-link>
+              </div>
+              <div>
+                <img
                   draggable="false"
                   @contextmenu.prevent
                   src="@/asset/img/bbs/msg.svg"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
-                />&nbsp;{{ message.title }}</div
-              >
+                />&nbsp;{{ message.title }}
+              </div>
             </div>
           </router-link>
         </div></GlobalCard
@@ -195,20 +200,19 @@
           <div
             class="list fullwidth flex-centered"
             style="justify-content: flex-start"
-            ><img
+          >
+            <img
               v-if="friend.status.connected && friend.status.room"
               src="@/asset/img/icon/account/online_tchat.png"
             /><img
               v-else-if="friend.status.connected"
               src="@/asset/img/icon/account/online.png"
-            /><img
-              v-else
-              src="@/asset/img/icon/account/offline.png"
-            />&nbsp;<div class="flex col" style="align-items: flex-start"
-              ><UserLink :user="friend.user" />
-              {{ friend.status.connected ? friend.status.room : "" }}</div
-            ></div
-          ></router-link
+            /><img v-else src="@/asset/img/icon/account/offline.png" />&nbsp;
+            <div class="flex col" style="align-items: flex-start">
+              <UserLink :user="friend.user" />
+              {{ friend.status.connected ? friend.status.room : "" }}
+            </div>
+          </div></router-link
         >
       </GlobalCard>
       <br />
@@ -224,12 +228,14 @@
             <col width="100%" />
           </colgroup>
           <tbody>
-            <tr v-for="group of this.data.groups" :key="group.id"
-              ><td height="22"
-                ><img
+            <tr v-for="group of this.data.groups" :key="group.id">
+              <td height="22">
+                <img
                   v-if="group.owner"
-                  src="@/asset/img/icon/account/offline.png" /></td
-              ><td style="text-align: left"><GroupLink :group="group" /></td>
+                  src="@/asset/img/icon/account/offline.png"
+                />
+              </td>
+              <td style="text-align: left"><GroupLink :group="group" /></td>
             </tr>
           </tbody>
         </table>
@@ -254,12 +260,12 @@ export default {
   components: {
     Bank,
     Cabin,
-    StrokeText
+    StrokeText,
   },
 
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
@@ -269,9 +275,9 @@ export default {
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true
+        addSuffix: true,
       });
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -289,23 +295,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -319,14 +325,14 @@ export default {
 }
 
 .active .pm div:first-child {
-  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 1px #fff);
+  filter: drop-shadow(0 0 2px var(--light)) drop-shadow(0 0 1px var(--light));
 }
 
 .forum-title {
   font-family: "Chimboz Heavy";
   height: 16px;
-  font-size: 18px;
-  fill: #fff;
+  font-size: var(--lg-font-size);
+  fill: var(--text-button);
   stroke: #a10069;
   stroke-width: 4;
   transform: translateY(-40px);

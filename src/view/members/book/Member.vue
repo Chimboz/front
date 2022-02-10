@@ -387,7 +387,7 @@ export default {
   margin-left: 33%;
   width: 67%;
   font-size: 35px;
-  fill: #fff;
+  fill: var(--text-button);
   stroke: #f39;
   stroke-width: 3;
   text-shadow: -1px 3px #f39;
@@ -409,7 +409,7 @@ export default {
 .member-body {
   z-index: 1;
   position: relative;
-  border-radius: 8px;
+  border-radius:var(--md-gap);
 }
 
 .member-section,
@@ -419,8 +419,8 @@ export default {
 
 .member-portrait {
   float: right;
-  background: #fff;
-  border-radius: 8px;
+  background: var(--light);
+  border-radius:var(--md-gap);
   padding: 6px;
   width: 116px;
 }
@@ -441,7 +441,7 @@ export default {
   justify-content: space-evenly;
   width: 50px;
   height: 50px;
-  border: 1px solid #6090be;
+  border: 1px solid var(--main-bg);
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
 }
@@ -453,7 +453,7 @@ export default {
 .online {
   font-family: "Pixelated Verdana 10";
   font-size: 10px;
-  color: #fff;
+  color: var(--light);
   justify-content: center;
   width: 100%;
   height: 26px;
@@ -470,6 +470,6 @@ export default {
 }
 
 .registration {
-  padding: 12px;
+  padding: var(--gap);
 }
 </style>

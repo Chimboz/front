@@ -1,0 +1,78 @@
+:root {
+  // mode(light)-class(button)-name(blue)-type(color)
+
+  // Global style
+  --font-family: Helvetica, "Helvetica Fallback", sans-serif;
+  --sm-gap: 2px;
+  --md-gap: calc(4 * var(--sm-gap));
+  --gap: calc(6 * var(--sm-gap));
+  --border-radius: 12px;
+  --padding: 20px;
+  --font-size: 12px;
+  --lg-font-size: 18px;
+  --round: 99px;
+  --pointer: url(../img/pointer.svg) 4 2, pointer;
+
+  // Colors
+  --text: #284555;
+  --text-button: #fff;
+  --dark: #0006;
+  --light: #fff;
+  --main-bg: #6090be;
+  --blue: #096ea8;
+  --light-blue: #a8dfff;
+  --pink: #f0009c;
+  --dark-pink: #c10276;
+  --orange: #f80;
+  --dark-orange: #d15503;
+  --red: #fb0d0d;
+
+  // Cards
+  // Yellow
+  --main-card-yellow: #fff4d5;
+  --dark-card-yellow: #ffe5a3;
+  --title-card-yellow: #963d00;
+  // Blue
+  --main-card-blue: #6ebef0;
+  --dark-card-blue: #5aa1cd;
+  // Red
+  --main-card-red: #ff5454;
+  --dark-card-red: #e00c0c;
+  // Default
+  --main-card: #d5e6f3;
+  --dark-card: #a5cbe9;
+  --title-card: #004b7d;
+
+  // Button
+  // Yellow
+  --main-button-yellow: #ffb907;
+  --dark-button-yellow: #e58900;
+  // Orange
+  --main-button-orange: var(--orange);
+  --dark-button-orange: var(--dark-orange);
+  // Red
+  --main-button-red: #fb0d0d;
+  --dark-button-red: #d10303;
+  // Green
+  --main-button-green: #5b3;
+  --dark-button-green: #371;
+  // Default
+  --main-button: var(--pink);
+  --dark-button: var(--dark-pink);
+
+  // BBS Table
+  --light-bbs: #c9dfef;
+  --dark-bbs: #d6e7f3;
+}
+
+:root.dark-theme {
+  // Colors
+  --text: #365d72;
+  --light: #0d1117;
+  --dark: #161b22;
+  --main-bg: #0d1117;
+
+  // BBS Table
+  --light-bbs: #0c385f;
+  --dark-bbs: #143855;
+}

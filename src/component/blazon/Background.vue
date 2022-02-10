@@ -20,12 +20,12 @@ export default {
         primary: {
             type: String,
             required: true,
-            default: "#fff"
+            default: "var(--light)"
         },
         secondary: {
             type: String,
             required: true,
-            default: "#fff"
+            default: "var(--light)"
         }
     }
 }

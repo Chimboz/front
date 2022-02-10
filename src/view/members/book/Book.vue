@@ -66,7 +66,7 @@
         :width="154"
         :height="34"
         top
-        color="lightblue"
+        color="blue"
         justified
       >
         348 membres en tout.<br />

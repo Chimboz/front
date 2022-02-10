@@ -77,7 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  margin-top: 12px;
+  margin-top: var(--gap);
   padding: 0 10px;
   text-align: center;
 }

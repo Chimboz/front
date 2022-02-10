@@ -217,5 +217,6 @@ export default {
 <style lang="scss" scoped>
 img[src*="spotlight"] {
   margin-bottom: -70px;
+  pointer-events: none;
 }
 </style>

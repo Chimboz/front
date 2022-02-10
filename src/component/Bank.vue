@@ -1,11 +1,11 @@
 <template>
   <GlobalCard color="yellow" v-if="authenticated">
     <template #button>
-      <GlobalButton color="yellow" icon="register.svg">{{
+      <GlobalButton color="yellow" icon="credits.svg">{{
         $t("credit.title", user.credits)
       }}</GlobalButton>
     </template>
-    <div class="bank fullwidth">
+    <div class="bank relative fullwidth">
       <img
         draggable="false"
         @contextmenu.prevent
@@ -29,12 +29,12 @@
     </div>
 
     <router-link to="/bank">
-      {{ $t("credit.youGot") }}<br />
-      <AnimatedNumber :number="user.credits" :delay="delay" /><br />
-      {{ $t("credit.text", user.credits) }} </router-link
-    ><br /><br />
+      <div>{{ $t("credit.youGot") }}</div>
+      <AnimatedNumber :number="user.credits" :delay="delay" />
+      <div>{{ $t("credit.text", user.credits) }}</div></router-link
+    >
     <router-link to="/reflooz" class="btn-route"
-      ><GlobalButton color="orange" icon="register.svg"
+      ><GlobalButton color="orange" icon="reflooz.svg"
         >Reflooz</GlobalButton
       ></router-link
     ></GlobalCard
@@ -157,9 +157,7 @@ export default {
 <style lang="scss" scoped>
 .bank {
   background: url(../asset/img/bank/bg.svg);
-  position: relative;
   background-size: contain;
-  overflow: hidden;
 }
 
 .bank object {

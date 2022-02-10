@@ -3,24 +3,28 @@
 }
 
 .danger {
-  background: #fb0d0d;
-  color: #fff;
+  background: var(--red);
+  color: var(--light);
 }
 
 .pink {
-  color: #f39;
+  color: var(--pink);
 }
 
 .pink-bg {
-  background: #f12490;
+  background: var(--pink);
 }
 
 .blue-bg {
-  background: #78aadb;
+  background: var(--main-bg);
 }
 
 .pointer {
-  cursor: pointer;
+  cursor: var(--pointer);
+}
+
+.w-100 {
+  width: 100%;
 }
 
 .flex {
@@ -41,4 +45,8 @@
 
 .justified {
   text-align: justify;
+}
+
+.relative {
+  position: relative;
 }

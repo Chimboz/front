@@ -16,7 +16,7 @@
       style="position: relative"
     >
       <audio autoplay>
-        <source src="@/asset/sound/shop/shop.mp3" type="audio/mpeg" />
+        <source src="@/asset/sound/shop/moving_stars.flac" type="audio/flac" />
       </audio>
       <audio autoplay>
         <source src="@/asset/sound/shop/preview.mp3" type="audio/wav" />
@@ -193,7 +193,7 @@ h3 {
   font-family: "Chimboz Heavy";
   font-weight: normal;
   color: #ff2fac;
-  font-size: 18px;
+  font-size: var(--lg-font-size);
   line-height: 14px;
   text-align: left;
   margin-bottom: 6px;
@@ -247,7 +247,7 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotateZ(-20deg);
-  color: #fff;
+  color: var(--light);
   font-size: 20px;
   font-family: "Impact";
 }
@@ -276,7 +276,7 @@ h3 {
   font-family: "Pixelated Verdana 10";
   border: 1px solid;
   border-color: #f0e0b8 #f0e0b8 #b4aa6e #f0e0b8;
-  color: #fff;
+  color: var(--light);
   font-size: 11px;
   background: linear-gradient(
     to bottom,

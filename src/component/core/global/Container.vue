@@ -27,7 +27,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .row {
-  padding: 0 12px;
+  padding: 0 var(--gap);
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
@@ -46,17 +46,17 @@ export default {
 
 .main-column {
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: var(--gap);
 }
 
 .left-column {
   order: 1;
-  margin-right: 12px;
+  margin-right: var(--gap);
 }
 
 .right-column {
   order: 2;
-  margin-left: 12px;
+  margin-left: var(--gap);
 }
 
 @media (min-width: 508px) {

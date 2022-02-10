@@ -73,7 +73,7 @@ export default {
         color: {
             type: String,
             required: true,
-            default: "#fff"
+            default: "var(--light)"
         }
     }
 }

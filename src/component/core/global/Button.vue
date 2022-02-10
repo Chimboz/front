@@ -44,43 +44,28 @@ export default {
       switch (this.color) {
         case "yellow":
           return {
-            "--button-color-1": "#fff3b5",
-            "--button-color-2": "#ffb907",
-            "--button-color-3": "#e58900",
-            "--button-color-4": "#ffb700",
-            "--button-color-5": "#bb5c1d"
+            "--selected-main-button": "var(--main-button-yellow)",
+            "--selected-dark-button": "var(--dark-button-yellow)",
           };
         case "orange":
           return {
-            "--button-color-1": "#fec9b4",
-            "--button-color-2": "#ff7b00",
-            "--button-color-3": "#d15503",
-            "--button-color-4": "#f80",
-            "--button-color-5": "#9f3400"
+            "--selected-main-button": "var(--main-button-orange)",
+            "--selected-dark-button": "var(--dark-button-orange)",
           };
         case "red":
           return {
-            "--button-color-1": "#ffe6e6",
-            "--button-color-2": "#fb0d0d",
-            "--button-color-3": "#d10303",
-            "--button-color-4": "#ff2d2d",
-            "--button-color-5": "#a10000"
+            "--selected-main-button": "var(--main-button-red)",
+            "--selected-dark-button": "var(--dark-button-red)",
           };
         case "green":
           return {
-            "--button-color-1": "#efe",
-            "--button-color-2": "#5b3",
-            "--button-color-3": "#371",
-            "--button-color-4": "#3a0",
-            "--button-color-5": "#350"
+            "--selected-main-button": "var(--main-button-green)",
+            "--selected-dark-button": "var(--dark-button-green)",
           };
         default:
           return {
-            "--button-color-1": "#fe9ae0",
-            "--button-color-2": "#ff00a6",
-            "--button-color-3": "#c10276",
-            "--button-color-4": "#ff009c",
-            "--button-color-5": "#a10069"
+            "--selected-main-button": "var(--main-button)",
+            "--selected-dark-button": "var(--dark-button)",
           };
       }
     }
@@ -89,28 +74,28 @@ export default {
 </script>
 <style lang="scss" scoped>
 .btn {
-  cursor: pointer;
+  cursor: var(--pointer);
   width: 100%;
   height: 25px;
   font-family: "Chimboz Heavy";
   font-weight: normal;
   background-image: linear-gradient(
     to bottom,
-    var(--button-color-1) 0%,
-    var(--button-color-2) 50%,
-    var(--button-color-3) 50%,
-    var(--button-color-4)
+    var(--light) 0%,
+    var(--selected-main-button) 50%,
+    var(--selected-dark-button) 50%,
+    var(--selected-main-button)
   );
   padding: 0 4%;
   align-items: center;
-  line-height: 12px;
+  line-height: var(--gap);
   border-style: solid;
-  border-color: var(--button-color-4) var(--button-color-4)
-    var(--button-color-5) var(--button-color-4);
+  border-color: var(--selected-main-button) var(--selected-main-button)
+    var(--selected-dark-button) var(--selected-main-button);
 
   box-shadow: 0 2px 1px #0006;
   filter: brightness(1);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   border-width: 2px 5px;
 }
 
@@ -120,10 +105,10 @@ export default {
 
 .btn-text {
   overflow: hidden;
-  font-size: 18px;
-  fill: #fff;
+  font-size: var(--lg-font-size);
+  fill: var(--text-button);
   stroke-width: 3;
-  stroke: var(--button-color-5);
+  stroke: var(--selected-dark-button);
   height: 100%;
   width: 100%;
 }
@@ -140,10 +125,10 @@ export default {
 .btn.active {
   background-image: linear-gradient(
     to top,
-    var(--button-color-1) 0%,
-    var(--button-color-2) 50%,
-    var(--button-color-3) 50%,
-    var(--button-color-4)
+    var(--light) 0%,
+    var(--selected-main-button) 50%,
+    var(--selected-dark-button) 50%,
+    var(--selected-main-button)
   );
 }
 </style>

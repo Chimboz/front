@@ -136,7 +136,7 @@
           height="11"
           alt="Close"
           draggable="false"
-          style="cursor: pointer; margin: 0 2px"
+          style="cursor: var(--pointer); margin: 0 2px"
           @contextmenu.prevent
       /></div> </GlobalCard
     ><br />
@@ -154,7 +154,7 @@
           height="11"
           alt="Close"
           draggable="false"
-          style="cursor: pointer; margin: 0 2px"
+          style="cursor: var(--pointer); margin: 0 2px"
           @contextmenu.prevent /><img
           @click.prevent="rejectDemand(user.id)"
           src="@/asset/img/icon/failure.svg"
@@ -162,7 +162,7 @@
           height="11"
           alt="Close"
           draggable="false"
-          style="cursor: pointer; margin: 0 2px"
+          style="cursor: var(--pointer); margin: 0 2px"
           @contextmenu.prevent /></div></GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
@@ -194,7 +194,7 @@
       >/<b>{{ this.data.global.total }}</b> avec
       <b>{{ this.data.global.points }}</b> points.</GlobalCard
     ><br /><GlobalCard
-      ><a @click.prevent="this.delete()" style="color: red; cursor: pointer"
+      ><a @click.prevent="this.delete()" style="color: red; cursor: var(--pointer)"
         >Supprimer le groupe</a
       ></GlobalCard
     >
@@ -288,7 +288,7 @@ export default {
 .group-name {
   height: 28px;
   font-size: 28px;
-  fill: #fff;
+  fill: var(--text-button);
   stroke: #f39;
   stroke-width: 4;
 }
@@ -311,7 +311,7 @@ export default {
   justify-content: center;
   width: 50px;
   height: 50px;
-  border: 1px solid #6090be;
+  border: 1px solid var(--main-bg);
   background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
   border-radius: 4px;
   vertical-align: middle;
@@ -327,7 +327,7 @@ input[type="radio"] {
 }
 
 label {
-  cursor: pointer;
+  cursor: var(--pointer);
 }
 
 input:checked + label {

@@ -136,16 +136,16 @@ export default {
   position: relative;
   margin: 15% auto;
   padding: 20px;
-  color: #fff;
+  color: var(--light);
   border: 2px solid;
   border-color: #7fbcff #184672 #184672 #7fbcff;
-  border-radius: 6px;
+  border-radius: calc(var(--border-radius) / 2);
   width: 362px;
   height: 103px;
 }
 
 .modal-content > img {
-  margin-right: 12px;
+  margin-right: var(--gap);
   float: left;
 }
 

@@ -8,7 +8,7 @@
             {{ $t("connecteds", data.connected) }}</router-link
           ></template
         >
-        {{ data.members }} {{ $t("members.text", data.members) }} <br />
+        <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </GlobalCard
       ><br />
       <router-link to="/shop">
@@ -202,6 +202,6 @@ export default {
 }
 
 .gallery .photo img {
-  border: 1px solid #6090be;
+  border: 1px solid var(--main-bg);
 }
 </style>

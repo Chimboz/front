@@ -1,0 +1,10 @@
+{
+  "id": 2,
+  "name": "Deuxième item",
+  "rarity": "unique",
+  "type": "body",
+  "owner": [
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "slim", "id": 3 }, "quantity": 4 }
+  ]
+}
