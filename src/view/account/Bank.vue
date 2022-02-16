@@ -15,6 +15,11 @@
           <col width="100%" />
           <col width="100" />
         </colgroup>
+        <thead style="background: var(--dark-card-yellow)">
+          <th class="centered">Date</th>
+          <th>Description</th>
+          <th style="text-align: right">Solde</th>
+        </thead>
         <tr
           v-for="line of data"
           :key="line.date"
@@ -116,16 +121,18 @@ export default {
 }
 
 .loss {
-  background: #fb0d0d33;
+  background: #fb0d0d33 !important;
 }
 
 .loss .sign {
-    color: var(--main-button-red);
+  color: var(--main-button-red);
 }
 
 .sign {
-    color: var(--main-button-green);
-    font-size: var(--lg-font-size);
-    font-family: "Jagger SF";
+  position: relative;
+  top: 4px;
+  color: var(--main-button-green);
+  font-size: var(--lg-font-size);
+  font-family: "Jagger SF";
 }
 </style>
