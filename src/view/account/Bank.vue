@@ -8,57 +8,74 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard color="yellow" v-if="data" justified
-      ><template #subtop>Niveaux</template>
-      <div>
-        <div v-for="rank of data" :key="rank.level">
-          <label :for="rank.level" class="pointer level"
-            ><img
+    <GlobalCard color="yellow" v-if="data" justified header="bank.gif">
+      <table class="fullwidth">
+        <colgroup>
+          <col width="100" />
+          <col width="100%" />
+          <col width="100" />
+        </colgroup>
+        <tr
+          v-for="line of data"
+          :key="line.date"
+          class="bank-line"
+          :class="{ loss: line.value < 0 }"
+        >
+          <td class="centered">
+            <b>{{ formatDate(line.date) }}</b>
+          </td>
+          <td>{{ line.description }}</td>
+          <td style="text-align: right">
+            <span class="sign" v-if="line.value < 0">-</span>
+            <span class="sign" v-else>+</span>
+            <img
               draggable="false"
               @contextmenu.prevent
               :alt="number"
-              v-for="number in rank.level.toString(10)"
+              v-for="number in Math.abs(line.value).toString(10)"
               :key="number.index"
               width="19"
               height="21"
               :src="require(`@/asset/img/number/${number}.svg`)"
-            />&nbsp;<b>{{ rank.name }}</b></label
-          >
-          <input type="radio" name="level" :id="rank.level" />
-          <div class="level-description flex centered">
-            <img :src="require('@/asset/img/level/' + rank.level + '.png')" />
-            <div
-              v-for="(line, index) of rank.content"
-              :key="rank + ' ' + index"
-            >
-              {{ line }}
-            </div>
-            <b>Membres ayant ce niveau :</b> {{rank.number}}
-          </div>
-        </div>
-      </div>
+            />
+          </td>
+        </tr>
+      </table>
     </GlobalCard>
-    <template #right-column> </template>
+    <template #right-column><Bank /></template>
   </GlobalContainer>
 </template>
 <script>
+import Bank from "@/component/Bank.vue";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
+
 // @vuese
 // @group View/Account
-// Levels page
+// Bank page
 export default {
   name: "LevelView",
+  components: { Bank },
   data() {
     return {
       data: null,
     };
   },
+  methods: {
+    formatDate(date) {
+      return format(new Date(date), "PPp", {
+        locale: locales[navigator.language.split("-")[0]],
+      });
+    },
+  },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
-      vm.api.get("/api/levels.json").then((res) => (vm.data = res.data))
+      vm.api.get("/api/bank.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/levels.json");
+    const req = await this.api.get("/api/bank.json");
     this.data = req.data;
     next();
   },
@@ -89,23 +106,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.level {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(to bottom, var(--light), var(--dark-card-yellow));
-  border-radius: var(--border-radius);
-  color: var(--title-card-yellow);
+.bank-line {
+  padding: var(--gap);
+  background: var(--dark-card-yellow);
 }
 
-.level-description {
-  display: none;
+.bank-line:not(.loss) {
+  background: #5b33 !important;
 }
 
-input[type="radio"] {
-  display: none;
+.loss {
+  background: #fb0d0d33;
 }
 
-input:checked + .level-description {
-  display: block;
+.loss .sign {
+    color: var(--main-button-red);
+}
+
+.sign {
+    color: var(--main-button-green);
+    font-size: var(--lg-font-size);
+    font-family: "Jagger SF";
 }
 </style>
