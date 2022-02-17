@@ -8,7 +8,7 @@ const allowed_images = [
   "i.imgur.com",
   "image.noelshack.com",
   "chzretro-front.web.app",
-  "localhost"
+  "localhost",
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
@@ -18,7 +18,7 @@ const allowed_properties = [
   "margin-left",
   "margin-right",
   "top",
-  "height"
+  "height",
 ];
 const allow_css_functions = true;
 const allowed_tags = [
@@ -52,7 +52,7 @@ const allowed_tags = [
   "img",
   "svg",
   "path",
-  "u"
+  "u",
 ];
 const allowed_attr = [
   "style",
@@ -68,7 +68,7 @@ const allowed_attr = [
   "viewBox",
   "d",
   "xmlns",
-  "preserveAspectRatio"
+  "preserveAspectRatio",
 ];
 
 const markedRender = function (string) {
@@ -84,12 +84,19 @@ const markedRender = function (string) {
 
   // KaTeX
   function mathsExpression(expr) {
+    let render = "Invalid LaTeX";
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
       expr = expr.substr(2, expr.length - 4);
-      return katex.renderToString(expr, { displayMode: true, maxSize: 2 });
+      try {
+        render = katex.renderToString(expr, { displayMode: true, maxSize: 2 });
+      } catch {}
+      return render;
     } else if (expr.match(/^\$[\s\S]*\$$/)) {
       expr = expr.substr(1, expr.length - 2);
-      return katex.renderToString(expr, { displayMode: false, maxSize: 2 });
+      try {
+        render = katex.renderToString(expr, { displayMode: false, maxSize: 2 });
+      } catch {}
+      return render;
     }
   }
 
@@ -117,7 +124,7 @@ const markedRender = function (string) {
     sanitize: false,
     smartLists: true,
     smartypants: false,
-    xhtml: false
+    xhtml: false,
   });
 
   return marked(string);
@@ -219,7 +226,7 @@ const dompurifyRender = function (string) {
 
   return DOMPurify.sanitize(string, {
     ALLOWED_TAGS: allowed_tags,
-    ALLOWED_ATTR: allowed_attr
+    ALLOWED_ATTR: allowed_attr,
   });
 };
 
