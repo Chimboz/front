@@ -1,9 +1,9 @@
 <template>
   <GlobalCard color="yellow" v-if="authenticated">
     <template #button>
-      <GlobalButton color="yellow" icon="credits.svg">{{
+      <router-link to="/bank"><GlobalButton color="yellow" icon="credits.svg">{{
         $t("credit.title", user.credits)
-      }}</GlobalButton>
+      }}</GlobalButton></router-link>
     </template>
     <div class="bank relative fullwidth">
       <img
