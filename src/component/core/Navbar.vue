@@ -3,9 +3,7 @@
     class="header"
     :style="{
       'background-image':
-        'url(' +
-        require(`@/asset/img/navbar/svg/${this.date.getHours()}.svg`) +
-        ')',
+        'url(' + require(`@/asset/img/navbar/svg/${date.getHours()}.svg`) + ')',
     }"
   >
     <router-link to="/"
@@ -191,7 +189,6 @@ export default {
   data() {
     return {
       date: new Date(),
-      userTheme: "light-theme",
     };
   },
   computed: {
@@ -206,7 +203,10 @@ export default {
       this.$store.dispatch("auth/logout");
       this.$router.push(this.$route.path == "/" ? "/login" : this.$route.path);
     },
-  }
+  },
+  created() {
+    document.body.className = "h" + this.date.getHours();
+  },
 };
 </script>
 <style lang="scss" scoped>
