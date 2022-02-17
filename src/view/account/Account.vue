@@ -269,9 +269,6 @@ export default {
     };
   },
   methods: {
-    submit() {
-      console.log("Envoyé!");
-    },
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],

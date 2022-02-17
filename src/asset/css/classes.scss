@@ -121,6 +121,11 @@ textarea.btn-md {
   padding: var(--md-gap);
 }
 
+// Button padding
+.btn + .btn {
+  margin-left: var(--md-gap);
+}
+
 // Button action
 .btn-action {
   border-radius: calc(var(--border-radius) / 3);

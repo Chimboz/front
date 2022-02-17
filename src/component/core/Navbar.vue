@@ -18,33 +18,13 @@
         id="logo"
         src="@/asset/img/logo.svg"
     /></router-link>
-    <div class="login flex centered">
+    <div class="login flex">
       <div style="margin-top: -10px">
         <UserLink
           :user="user || { name: 'Visiteur' }"
           id="username"
           style="display: inherit"
         />
-        <button
-          class="centered theme-toggler"
-          style="display: inline-flex"
-          @click="toggleTheme"
-        >
-          <span v-if="userTheme == 'dark-theme'"
-            ><img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Moon (dark mode)"
-              src="@/asset/img/icon/moon.svg"
-          /></span>
-          <span v-else
-            ><img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Sun (light mode)"
-              src="@/asset/img/icon/sun.svg"
-          /></span>
-        </button>
         <button
           id="connect"
           class="centered"
@@ -226,26 +206,7 @@ export default {
       this.$store.dispatch("auth/logout");
       this.$router.push(this.$route.path == "/" ? "/login" : this.$route.path);
     },
-    setTheme(theme) {
-      localStorage.setItem("user-theme", theme);
-      this.userTheme = theme;
-      if (theme === "dark-theme") this.date.setHours(0);
-      else this.date = new Date();
-      document.body.className = "h" + this.date.getHours();
-      document.documentElement.className = theme;
-    },
-    toggleTheme() {
-      const activeTheme = localStorage.getItem("user-theme");
-      if (activeTheme === "light-theme") {
-        this.setTheme("dark-theme");
-      } else {
-        this.setTheme("light-theme");
-      }
-    },
-  },
-  created() {
-    this.setTheme(localStorage.getItem("user-theme"));
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -264,6 +225,7 @@ export default {
   text-align: right;
   justify-content: flex-end;
   padding: var(--gap) 14px 0 0;
+  align-items: center;
 }
 
 #username {

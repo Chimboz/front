@@ -294,7 +294,7 @@
               class="arrow green jitter"
               src="@/asset/img/arrow.svg" /></template
           >Sauver</GlobalButton
-        ><router-link :to="`/book/${data.id}`" style="margin-left: 6px">
+        ><router-link :to="`/book/${data.id}`" class="btn">
           <GlobalButton type="button" style="width: 150px"
             ><template #prepend
               ><img

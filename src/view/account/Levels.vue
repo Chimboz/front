@@ -10,10 +10,15 @@
     </template>
     <GlobalCard color="yellow" v-if="data" justified
       ><template #subtop>Niveaux</template>
-      <div>
-        <div v-for="rank of data" :key="rank.level">
-          <label :for="rank.level" class="pointer level"
-            ><img
+      <div class="flex">
+        <div class="level-list">
+          <div
+            v-for="rank of data"
+            :key="rank.level"
+            class="pointer"
+            @click="selected = rank.level"
+          >
+            <img
               draggable="false"
               @contextmenu.prevent
               :alt="number"
@@ -22,19 +27,17 @@
               width="19"
               height="21"
               :src="require(`@/asset/img/number/${number}.svg`)"
-            />&nbsp;<b>{{ rank.name }}</b></label
-          >
-          <input type="radio" name="level" :id="rank.level" />
-          <div class="level-description flex centered">
-            <img :src="require('@/asset/img/level/' + rank.level + '.png')" />
-            <div
-              v-for="(line, index) of rank.content"
-              :key="rank + ' ' + index"
-            >
-              {{ line }}
-            </div>
-            <b>Membres ayant ce niveau :</b> {{rank.number}}
+            />&nbsp;<b>{{ rank.name }}</b>
           </div>
+        </div>
+        <div class="level-description flex centered">
+          <img
+            :src="require('@/asset/img/level/' + data[selected].level + '.png')"
+          />
+          <div v-for="(line, index) of data[selected].content" :key="index">
+            {{ line }}
+          </div>
+          <b>Membres ayant ce niveau :</b> {{ data[selected].number }}
         </div>
       </div>
     </GlobalCard>
@@ -50,6 +53,7 @@ export default {
   data() {
     return {
       data: null,
+      selected: 0,
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -63,7 +67,7 @@ export default {
     next();
   },
   metaInfo: {
-    title: "section.conversation",
+    title: "level",
     meta: [
       {
         name: "description",
@@ -89,23 +93,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.level {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(to bottom, var(--light), var(--dark-card-yellow));
+.level-list {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.level-list div {
+  background: var(--dark-card-yellow);
+  border: 2px solid var(--main-card-yellow);
+  padding: var(--gap);
   border-radius: var(--border-radius);
-  color: var(--title-card-yellow);
 }
 
 .level-description {
-  display: none;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-input:checked + .level-description {
-  display: block;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 0%;
 }
 </style>

@@ -99,10 +99,6 @@ export default {
   border-width: 2px 5px;
 }
 
-.btn + .btn {
-  margin-left: 6px;
-}
-
 .btn-text {
   overflow: hidden;
   font-size: var(--lg-font-size);

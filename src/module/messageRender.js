@@ -7,8 +7,7 @@ const allowed_uri = ["http", "https"];
 const allowed_images = [
   "i.imgur.com",
   "image.noelshack.com",
-  "chzretro-front.web.app",
-  "localhost",
+  "chimboz.fr"
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;

@@ -31,8 +31,6 @@
           </td>
           <td>{{ line.description }}</td>
           <td style="text-align: right">
-            <span class="sign" v-if="line.value < 0">-</span>
-            <span class="sign" v-else>+</span>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -41,7 +39,11 @@
               :key="number.index"
               width="19"
               height="21"
-              :src="require(`@/asset/img/number/${number}.svg`)"
+              :src="
+                require(`@/asset/img/number/${
+                  line.value < 0 ? 'pink/' : ''
+                }${number}.svg`)
+              "
             />
           </td>
         </tr>
