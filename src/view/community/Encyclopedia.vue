@@ -11,7 +11,13 @@
     <router-view></router-view>
     <GlobalCard color="yellow" v-if="data" style="position: relative">
       <div class="encyclopedia" @scroll.passive="onScroll">
-        <div v-for="item of data" :key="item" class="item-wrapper">
+        <div
+          v-for="item of data.filter(
+            (item) => checked.includes(item.type) && item.name.includes(search)
+          )"
+          :key="item"
+          class="item-wrapper"
+        >
           <Tooltip>
             <template #tooltip
               ><b>{{ item.name }}</b></template
@@ -23,7 +29,7 @@
                 :class="[
                   item.type,
                   item.rarity,
-                  $route.params.id == item.id ? 'active' : false
+                  $route.params.id == item.id ? 'active' : false,
                 ]"
               >
                 <VLazyImage
@@ -31,20 +37,79 @@
                   @contextmenu.prevent
                   :src="`/avatar/${item.type}/${item.id}.svg`"
                   :src-placeholder="require('@/asset/img/loading.svg')"
-                /> </button></router-link
+                /></button></router-link
           ></Tooltip>
         </div>
-        <div v-if="isLoading" class="spinner-loading"
-          ><img
+        <div v-if="isLoading" class="spinner-loading">
+          <img
             src="@/asset/img/loading.svg"
             draggable="false"
             width="200"
             height="200"
             @contextmenu.prevent
-        /></div>
+          />
+        </div>
       </div>
     </GlobalCard>
-    <template #right-column></template>
+    <template #right-column
+      ><GlobalCard
+        ><template #button>
+          <GlobalButton icon="help.svg">Chercher</GlobalButton>
+        </template>
+        <form @submit.prevent="search()" class="flex fullwidth">
+          <input
+            name="username"
+            type="text"
+            class="btn-md"
+            v-model="search"
+            :placeholder="$t('placeholder.item')"
+          /><button type="submit" class="btn-action">go</button>
+        </form>
+        <br />
+        <div class="category-selection" @contextmenu.prevent>
+          <button
+            type="button"
+            v-for="category of categories"
+            :key="category"
+            :class="{ active: checked.includes(category) }"
+            @click="
+              checked.includes(category) && checked.length == 1
+                ? (checked = [
+                    'body',
+                    'bot',
+                    'floor',
+                    'frame',
+                    'furniture',
+                    'hat',
+                    'item0',
+                    'item1',
+                    'item2',
+                    'pet',
+                    'power',
+                    'primary',
+                    'secondary',
+                    'shape',
+                    'shoe',
+                    'top',
+                    'wall',
+                  ])
+                : (checked = [`${category}`])
+            "
+            @contextmenu.prevent="
+              checked.includes(category)
+                ? checked.splice(checked.indexOf(category), 1)
+                : checked.push(category)
+            "
+            class="item pointer category"
+          >
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              :src="require(`@/asset/img/icon/item_category/${category}.svg`)"
+            />
+          </button>
+        </div> </GlobalCard
+    ></template>
   </GlobalContainer>
 </template>
 <script>
@@ -58,13 +123,52 @@ export default {
   name: "EncyclopediaView",
   components: {
     VLazyImage,
-    Tooltip
+    Tooltip,
   },
   data() {
     return {
       data: null,
+      categories: [
+        "body",
+        "bot",
+        "floor",
+        "frame",
+        "furniture",
+        "hat",
+        "item0",
+        "item1",
+        "item2",
+        "pet",
+        "power",
+        "primary",
+        "secondary",
+        "shape",
+        "shoe",
+        "top",
+        "wall",
+      ],
+      checked: [
+        "body",
+        "bot",
+        "floor",
+        "frame",
+        "furniture",
+        "hat",
+        "item0",
+        "item1",
+        "item2",
+        "pet",
+        "power",
+        "primary",
+        "secondary",
+        "shape",
+        "shoe",
+        "top",
+        "wall",
+      ],
+      search: "",
       page: 0,
-      isLoading: false
+      isLoading: false,
     };
   },
   methods: {
@@ -79,7 +183,7 @@ export default {
           () => (this.isLoading = false)
         );
       }
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -101,23 +205,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -160,6 +264,11 @@ export default {
   border-radius: var(--border-radius);
   overflow: hidden;
   vertical-align: middle;
+}
+
+.category {
+  height: 40px;
+  width: 40px;
 }
 
 .item.rare {

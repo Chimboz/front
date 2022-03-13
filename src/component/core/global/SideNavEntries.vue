@@ -58,6 +58,11 @@ export default {
           section: "account",
         },
         {
+          label: "section.eraser",
+          url: "/eraser",
+          section: "account",
+        },
+        {
           label: "section.capitalization",
           url: "/lowupp",
           section: "account",

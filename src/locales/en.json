@@ -72,7 +72,8 @@
     "message": "Message",
     "confirmpassword": "Confirm password",
     "newpassword": "New password",
-    "currentpassword": "Current password"
+    "currentpassword": "Current password",
+    "item": "Item"
   },
   "section": {
     "account": "Account",
@@ -106,7 +107,8 @@
     "online": "Online",
     "conversation": "Conversation",
     "notsmart": "Notsmart",
-    "bacteriaStory": "Bacteria's Story"
+    "bacteriaStory": "Bacteria's Story",
+    "eraser": "Eraser"
   },
   "group": {
     "leader": {

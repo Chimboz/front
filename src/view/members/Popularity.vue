@@ -59,23 +59,25 @@
       </div>
       <br />
 
-      Il te prend la tête et tu as envie de lui faire sentir&nbsp;? <br />
-      Tu ne peux plus la voir et tu veux que tout le monde le sache&nbsp;?
+      Il te <b>prend la tête</b> et tu as envie de lui faire sentir&nbsp;?
       <br />
-      Cette fille est trop cool et ceux qui ne l'aiment pas ne la connaissent
-      pas&nbsp;! <br />
-      Ce mec et son groupe assurent grave et tu as envie de le lui
+      Tu ne <b>peux plus la voir</b> et tu veux que tout le monde le
+      sache&nbsp;?
+      <br />
+      Cette fille est <b>trop cool</b> et ceux qui ne l'aiment pas ne la
+      connaissent pas&nbsp;! <br />
+      Ce mec et son groupe <b>assurent grave</b> et tu as envie de le lui
       prouver&nbsp;?
       <br />
       <br />
-      Viens tous les jours régler tes comptes ou soutenir tes amis avec la
-      popularité&nbsp;! <br />
-      Vote POUR elle et sa cote remonte, vote CONTRE lui et il descend en flêche
-      ! <br />
+      Viens tous les jours <b>régler tes comptes</b> ou <b>soutenir</b> tes amis
+      avec la <b>popularité</b>&nbsp;! <br />
+      Vote <b>POUR</b> elle et sa cote remonte, vote <b>CONTRE</b> lui et il
+      descend en flêche ! <br />
       <br />
-      Le + populaire du jour gagne les lunettes pour la journée, les 3 +
-      populaires du jour gagnent une auréole pour la journée, le - aimé gagne
-      une crotte pour la journée !
+      Le <b>+ populaire du jour</b> gagne les lunettes pour la journée, les 3
+      <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
+      <b>- aimé</b> gagne une crotte pour la journée !
     </GlobalCard>
     <br /><GlobalCard id="today" v-if="data">
       <template #header>Classement du jour !</template>
@@ -193,7 +195,8 @@
                 <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
-          </table> </div></div></GlobalCard
+          </table>
+        </div></div></GlobalCard
     ><br />
     <GlobalCard id="general" v-if="data">
       <template #header>Classement général !</template>
@@ -225,8 +228,9 @@
                 <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
-          </table> </div
-        ><div>
+          </table>
+        </div>
+        <div>
           <img
             draggable="false"
             @contextmenu.prevent
@@ -308,7 +312,8 @@
                 <td><GroupLink :group="rank.group" /></td>
               </tr>
             </tbody>
-          </table> </div></div></GlobalCard
+          </table>
+        </div></div></GlobalCard
     ><br />
     <GlobalCard id="vote" v-if="authenticated"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
@@ -317,8 +322,8 @@
       <br /><br />
       <form @submit.prevent="vote()" class="flex">
         <select class="btn-md" required>
-          <option value="for">Pour</option
-          ><option value="against">Contre</option></select
+          <option value="for">Pour</option>
+          <option value="against">Contre</option></select
         ><input
           required
           minlength="3"
@@ -328,8 +333,8 @@
           class="btn-md"
           autocomplete="group"
           :placeholder="$t('placeholder.username')"
-        /><button type="submit" class="btn-action">go</button></form
-      >
+        /><button type="submit" class="btn-action">go</button>
+      </form>
     </GlobalCard>
     <template #right-column
       ><GlobalCard
@@ -401,16 +406,16 @@ export default {
   name: "PopularityView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
     vote() {
       console.log("Envoyé!");
-    }
+    },
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"])
+    ...mapGetters("auth", ["authenticated"]),
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -428,23 +433,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 

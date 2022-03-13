@@ -75,7 +75,7 @@
         <GlobalAvatar
           class="witness witness1"
           :avatar="data.last.witness1.look.avatar"
-          :emote="data.last.witness1.look.emote"
+          emote="kawai"
           :hat="data.last.witness1.look.hat"
           :body="data.last.witness1.look.body"
           :shoe="data.last.witness1.look.shoe"
@@ -85,7 +85,7 @@
         <GlobalAvatar
           class="married married1"
           :avatar="data.last.married1.look.avatar"
-          :emote="data.last.married1.look.emote"
+          emote="luv"
           :hat="data.last.married1.look.hat"
           :body="data.last.married1.look.body"
           :shoe="data.last.married1.look.shoe"
@@ -95,7 +95,7 @@
         <GlobalAvatar
           class="married married2"
           :avatar="data.last.married2.look.avatar"
-          :emote="data.last.married2.look.emote"
+          emote="luv"
           :hat="data.last.married2.look.hat"
           :body="data.last.married2.look.body"
           :shoe="data.last.married2.look.shoe"
@@ -105,7 +105,7 @@
         <GlobalAvatar
           class="witness witness2"
           :avatar="data.last.witness2.look.avatar"
-          :emote="data.last.witness2.look.emote"
+          emote="kawai"
           :hat="data.last.witness2.look.hat"
           :body="data.last.witness2.look.body"
           :shoe="data.last.witness2.look.shoe"

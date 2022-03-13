@@ -72,7 +72,8 @@
     "message": "Message",
     "newpassword": "Nouveau mot de passe",
     "confirmpassword": "Répéter le mot de passe",
-    "currentpassword": "Mot de passe actuel"
+    "currentpassword": "Mot de passe actuel",
+    "item": "Item"
   },
   "section": {
     "account": "Mon compte",
@@ -106,7 +107,8 @@
     "online": "En ligne",
     "conversation": "Conversation",
     "notsmart": "Pamalin",
-    "bacteriaStory": "Histoire de Bacteria"
+    "bacteriaStory": "Histoire de Bacteria",
+    "eraser": "Effaceur"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",

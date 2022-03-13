@@ -10,8 +10,17 @@
     </template>
     <GlobalCard color="yellow" justified
       ><template #subtop>Effaceur</template>
+      <template #header>SOS pseudo moisi, changez de pseudo pour 200 pepettes !</template>
+      <img
+        src="@/asset/img/shop/effaceur.gif"
+        draggable="false"
+        @contextmenu.prevent
+      />
+      
+      <br />
       <form @submit.prevent="submit">
         <input
+          v-model="pseudo"
           required
           autofocus
           minlength="3"
@@ -24,22 +33,32 @@
           :placeholder="$t('placeholder.username')"
         />
         <br /><br />
-        <GlobalButton color="green" type="submit"
-          ><template #prepend
-            ><img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Arrow icon"
-              class="arrow green jitter"
-              src="@/asset/img/arrow.svg" /></template
-          >Sauver</GlobalButton
-        >
+        <div class="flex">
+          <GlobalButton type="button" @click="generatePseudo()"
+            >Générer un pseudo</GlobalButton
+          >
+          <GlobalButton color="green" type="submit"
+            ><template #prepend
+              ><img
+                draggable="false"
+                @contextmenu.prevent
+                alt="Arrow icon"
+                class="arrow green jitter"
+                src="@/asset/img/arrow.svg" /></template
+            >Sauver</GlobalButton
+          >
+        </div>
+        <br />
+        <b>Attention</b>, tu ne peux avoir qu'un seul pseudo à la fois. Si tu
+        possèdes déjà un pseudo et que tu en rachètes un, le nouveau remplacera
+        l'ancien.
       </form>
     </GlobalCard>
-    <template #right-column> </template>
+    <template #right-column><Bank /></template>
   </GlobalContainer>
 </template>
 <script>
+import Bank from "@/component/Bank.vue";
 import { mapState } from "vuex";
 
 // @vuese
@@ -47,32 +66,25 @@ import { mapState } from "vuex";
 // Eraser page
 export default {
   name: "EraserView",
+  components: { Bank },
   data() {
     return {
-      pseudo: "Test",
+      pseudo: "",
     };
   },
-  mounted() {
-    this.pseudo = this.user.name.slice();
-  },
   methods: {
-    changeCase(index) {
-      let letter;
-      if (this.pseudo[index].toUpperCase() == this.pseudo[index])
-        letter = this.pseudo[index].toLowerCase();
-      else letter = this.pseudo[index].toUpperCase();
-      this.pseudo =
-        this.pseudo.slice(0, index) + letter + this.pseudo.slice(index + 1);
-    },
     submit() {
       console.log(`Envoyé ${this.pseudo}!`);
+    },
+    generatePseudo() {
+      this.pseudo = "test";
     },
   },
   computed: {
     ...mapState("auth", ["user"]),
   },
   metaInfo: {
-    title: "section.capitalization",
+    title: "section.eraser",
     meta: [
       {
         name: "description",
