@@ -21,8 +21,8 @@
       <img style="float: left" src="@/asset/img/book/srch.gif" />
       <div style="display: inline-block">
         <h1>Rechercher un membre</h1>
-        <form @submit.prevent="search()" class="flex"
-          ><input
+        <form @submit.prevent="search()" class="flex">
+          <input
             required
             minlength="3"
             maxlength="15"
@@ -32,9 +32,9 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">go</button></form
-        ></div
-      ></GlobalCard
+          /><button type="submit" class="btn-action">go</button>
+        </form>
+      </div></GlobalCard
     ><br />
     <GlobalCard v-if="data"
       ><template #header>Les 10 derniers membres</template>
@@ -68,19 +68,73 @@
         top
         color="blue"
         justified
+        v-if="data"
       >
-        348 membres en tout.<br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        /><b>{{ data.total }}</b> membres en tout.<br />
         <br />
-        Nouveaux<br />
-        2 depuis 24h!<br />
-        53 depuis 1 mois!<br />
+        <b>Nouveaux</b><br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        /><b>{{ data.day }}</b> depuis 24h!<br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        /><b>{{ data.month }}</b> depuis 1 mois!<br />
         <br />
-        Les Genres<br />
-        <br />
-        Les Genres :<br />
-        Fille(s) : 20<br />
-        Garçon(s) : 30<br />
-        Inconnu(s) : 287
+        <b>Les Genres :</b><br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        />Fille(s) : <b>{{ data.female }}</b
+        >&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub
+        ><br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        />Garçon(s) : <b>{{ data.male }}</b
+        >&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub
+        ><br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        />Inconnu(s) : <b>{{ data.total - data.female - data.male }}</b
+        >&nbsp;
+        <sub
+          >({{
+            (
+              ((data.total - data.female - data.male) / data.total) *
+              100
+            ).toFixed(2)
+          }}%)</sub
+        >
       </GlobalCard></template
     >
   </GlobalContainer>
@@ -98,7 +152,7 @@ export default {
   name: "BookView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
@@ -108,9 +162,9 @@ export default {
     },
     formatDate(date) {
       return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -128,23 +182,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 

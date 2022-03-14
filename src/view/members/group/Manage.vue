@@ -43,11 +43,13 @@
         <tbody>
           <tr v-for="(group, index) in data.member" :key="index">
             <td><GroupLink :group="group" /></td>
-            <td
-              >[<a @click.prevent="leave(group.id)" style="cursor: var(--pointer)"
+            <td>
+              [<a
+                @click.prevent="leave(group.id)"
+                style="cursor: var(--pointer)"
                 >Se désinscrire</a
-              >]</td
-            >
+              >]
+            </td>
           </tr>
         </tbody>
       </table>
@@ -70,11 +72,13 @@
         <tbody>
           <tr v-for="(group, index) in data.pending" :key="index">
             <td><GroupLink :group="group" /></td>
-            <td
-              >[<a @click.prevent="cancel(group.id)" style="cursor: var(--pointer)"
+            <td>
+              [<a
+                @click.prevent="cancel(group.id)"
+                style="cursor: var(--pointer)"
                 >Annuler</a
-              >]</td
-            >
+              >]
+            </td>
           </tr>
         </tbody>
       </table>
@@ -99,10 +103,10 @@
         <tbody>
           <tr v-for="(group, index) in data.owner" :key="index">
             <td><GroupLink :group="group" /></td>
-            <td
-              >[<router-link :to="'/groups/edit/' + group.id">Gérer</router-link
-              >]</td
-            >
+            <td>
+              [<router-link :to="'/groups/edit/' + group.id">Gérer</router-link
+              >]
+            </td>
           </tr>
         </tbody>
       </table>
@@ -122,7 +126,7 @@
       ><GlobalCard color="blue" header="ensavoirplus.gif" v-if="data">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div style="text-align: left">
-          <div><img
+          <img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -136,7 +140,7 @@
             >({{
               ((data.stats.type.group / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -150,7 +154,7 @@
             >({{
               ((data.stats.type.klub / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -164,7 +168,7 @@
             >({{
               ((data.stats.type.clan / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -178,7 +182,8 @@
             >({{
               ((data.stats.type.ekip / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><img
+          ><br />
+          <img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -192,7 +197,7 @@
             >({{
               ((data.stats.type.skwat / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -206,7 +211,7 @@
             >({{
               ((data.stats.type.guild / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -220,7 +225,7 @@
             >({{
               ((data.stats.type.alliance / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -234,7 +239,7 @@
             >({{
               ((data.stats.type.empire / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -248,7 +253,7 @@
             >({{
               ((data.stats.type.sekt / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -262,7 +267,7 @@
             >({{
               ((data.stats.type.skool / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -276,7 +281,7 @@
             >({{
               ((data.stats.type.hord / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -290,7 +295,7 @@
             >({{
               ((data.stats.type.meute / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -304,7 +309,7 @@
             >({{
               ((data.stats.type.gang / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><div><img
+          ><br /><img
             src="@/asset/img/puce.svg"
             alt="Caret"
             draggable="false"
@@ -318,35 +323,36 @@
             >({{
               ((data.stats.type.triad / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ></div><br /><img
-            src="@/asset/img/puce.svg"
-            alt="Caret"
-            draggable="false"
-            @contextmenu.prevent
-            height="17"
-            width="17"
-          />
-          Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as
-          besoin d'avoir un certain
-          <router-link to="/levels">niveau</router-link>.<br /><br />
-          <img
-            src="@/asset/img/puce.svg"
-            alt="Caret"
-            draggable="false"
-            @contextmenu.prevent
-            height="17"
-            width="17"
-          />Le nombre de groupes que tu peux rejoindre tel que décrit dans le
-          <router-link to="/levels">tableau des niveaux</router-link>, comprend
-          uniquement les <b>groupes des membres</b>, les
-          <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
+          >
+        </div>
+        <br /><img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
           height="17"
           width="17" />
-        Projecteur sur : <div><GroupLink :group="data.random" /></div></GlobalCard
+        Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as besoin
+        d'avoir un certain
+        <router-link to="/levels">niveau</router-link>.<br /><br />
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17" />Le nombre de groupes que tu peux rejoindre tel que décrit
+        dans le <router-link to="/levels">tableau des niveaux</router-link>,
+        comprend uniquement les <b>groupes des membres</b>, les
+        <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17" />
+        Projecteur sur :
+        <div><GroupLink :group="data.random" /></div></GlobalCard
     ></template>
   </GlobalContainer>
 </template>
@@ -358,7 +364,7 @@ export default {
   name: "ManageView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
@@ -367,7 +373,7 @@ export default {
     },
     leave(id) {
       console.log("Quitté " + id);
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -385,23 +391,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 

@@ -63,16 +63,10 @@
   // BBS Table
   --light-bbs: #c9dfef;
   --dark-bbs: #d6e7f3;
-}
 
-:root.dark-theme {
-  // Colors
-  --text: #365d72;
-  --light: #0d1117;
-  --dark: #161b22;
-  --main-bg: #0d1117;
-
-  // BBS Table
-  --light-bbs: #0c385f;
-  --dark-bbs: #143855;
+  // Rarities
+  --rare: #69c;
+  --mythic: #9412fe;
+  --legendary: #fc0;
+  --unique: #c00;
 }

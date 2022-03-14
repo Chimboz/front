@@ -99,13 +99,6 @@ hr {
   height: 2px;
 }
 
-br {
-  content: " ";
-  display: block;
-  margin-top: var(--gap);
-  line-height: var(--gap);
-}
-
 h1 {
   font-size: 2rem;
 }
@@ -180,4 +173,21 @@ button {
   cursor: var(--pointer);
   background: none;
   border: 0;
+}
+
+// Item classes
+.item.rare {
+  background: linear-gradient(to bottom, var(--rare), var(--main-card)) !important;
+}
+
+.item.mythic {
+  background: linear-gradient(to bottom, var(--mythic), var(--main-card)) !important;
+}
+
+.item.legendary {
+  background: linear-gradient(to bottom, var(--legendary), var(--main-card)) !important;
+}
+
+.item.unique {
+  background: linear-gradient(to bottom, var(--unique), var(--main-card)) !important;
 }

@@ -249,14 +249,15 @@
                     : [],
                 }"
                 :key="name"
-                :class="name"
               >
                 <button
                   type="button"
                   class="item"
-                  :class="{
-                    active: this.data.look[name] == item.id,
-                  }"
+                  :class="[
+                    name,
+                    item.rarity,
+                    this.data.look[name] == item.id ? 'active': false,
+                  ]"
                   v-for="item of category"
                   :key="item.id"
                   @click="$emit('updateItem', name, item.id)"
@@ -604,10 +605,10 @@ h3 {
 }
 
 .item {
-  margin: 1px;
+  margin: calc(var(--sm-gap) / 2);
   position: relative;
   display: inline-block;
-  background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
+  background: linear-gradient(to bottom, var(--main-card-blue), var(--main-card));
   height: 40px;
   width: 40px;
   border-radius: var(--border-radius);
@@ -625,8 +626,9 @@ h3 {
 }
 
 .quantity {
-  border-radius: 12px;
+  pointer-events: none;
   position: absolute;
+  color: var(--light);
   z-index: 1;
   bottom: 0;
   right: 0;
@@ -639,6 +641,15 @@ h3 {
     to top,
     var(--selected-main-card),
     var(--selected-dark-card)
+  );
+}
+
+.active .quantity {
+  margin: 0 calc(-1 * var(--sm-gap)) calc(-1 * var(--sm-gap)) 0;
+  background-image: linear-gradient(
+    to bottom,
+    var(--selected-main-card),
+    var(--light)
   );
 }
 
@@ -671,7 +682,7 @@ h3 {
     ellipse 200% 200% at -5% 0%,
     #dbf0fd,
     #dbf0fd 49%,
-    #a7dbfc 51%,
+    var(--main-card) 51%,
     #e0f4fc
   );
   border: 2px solid var(--light);

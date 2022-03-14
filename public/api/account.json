@@ -14,10 +14,10 @@
   "items": {
     "hat": [
       { "id": 1, "name": "", "nb": 1 },
-      { "id": 2, "name": "Bonnet de marin", "nb": 1 },
-      { "id": 3, "name": "Toque orientale", "nb": 1 },
-      { "id": 4, "name": "Petites cornes blanches", "nb": 1 },
-      { "id": 5, "name": "Oreilles de lapin", "nb": 1 },
+      { "id": 2, "name": "Bonnet de marin", "nb": 1, "rarity": "rare" },
+      { "id": 3, "name": "Toque orientale", "nb": 1, "rarity": "mythic"},
+      { "id": 4, "name": "Petites cornes blanches", "nb": 1, "rarity": "legendary"},
+      { "id": 5, "name": "Oreilles de lapin", "nb": 1, "rarity": "unique" },
       { "id": 6, "name": "Noeud dans les cheveux", "nb": 1 },
       { "id": 7, "name": "Oreilles de chat soyeuses", "nb": 1 },
       { "id": 8, "name": "Cornes de taureau", "nb": 1 },
@@ -830,15 +830,18 @@
   },
   "patojdur": {
     "rank": 1,
-    "players": 120,
+    "players": 1200,
     "score": 120,
     "stats": {
-      "best": 28200
+      "record": 28000,
+      "best": 28200,
+      "today": 29000,
+      "yesterday": 30000
     }
   },
   "mazo": {
     "rank": 1,
-    "players": 120,
+    "players": 1234,
     "score": 20
   }
 }

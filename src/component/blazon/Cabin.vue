@@ -288,7 +288,7 @@ export default {
 .item {
   margin: 1px;
   display: inline-block;
-  background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
+  background: linear-gradient(to bottom, #85d1f1, var(--main-card));
   height: 40px;
   width: 40px;
   border-radius: var(--border-radius);
@@ -331,7 +331,7 @@ export default {
     ellipse 200% 200% at -5% 0%,
     #dbf0fd,
     #dbf0fd 49%,
-    #a7dbfc 51%,
+    var(--main-card) 51%,
     #e0f4fc
   );
   border: 2px solid var(--light);

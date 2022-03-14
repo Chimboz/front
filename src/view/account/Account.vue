@@ -50,56 +50,156 @@
       v-model:centred="data.centres[3]"
     />
     <br />
-    <GlobalCard
-      header="bacteria_blue.jpg"
-      :height="74"
-      color="blue"
-      justified
-      bg="bacteria_blue.gif"
-      v-if="data && data.bacteria"
-    >
-      Actuellement en position : {{ data.bacteria.rank }} sur
-      {{ data.bacteria.players }} joueurs classés<br />
-      <br />
-      Score : {{ data.bacteria.score }} point(s)<br />
-      <br />
-      Nombre de parties jouées :
-      {{
-        data.bacteria.stats.win +
-        data.bacteria.stats.draw +
-        data.bacteria.stats.lose
-      }}
-      , nombre de parties gagnées : {{ data.bacteria.stats.win }},<br />
-      nombre de parties perdues : {{ data.bacteria.stats.lose }}, nombre de
-      match nul : {{ data.bacteria.stats.draw }}
-    </GlobalCard>
-    <br />
-    <GlobalCard
-      header="patojdur_blue.gif"
-      :height="56"
-      color="blue"
-      justified
-      bg="patojdur_blue.gif"
-      v-if="data && data.patojdur"
-    >
-      Actuellement en position : {{ data.patojdur.rank }} sur
-      {{ data.patojdur.players }} joueurs classés<br />
-      Score : {{ data.patojdur.score }} point(s)<br />
-      Record : {{ data.patojdur.stats.best }}
-    </GlobalCard>
-    <br />
-    <GlobalCard
-      header="mazo_blue.gif"
-      :height="52"
-      color="blue"
-      justified
-      bg="mazo_blue.gif"
-      v-if="data && data.mazo"
-    >
-      Actuellement en position : {{ data.mazo.rank }} sur
-      {{ data.mazo.players }} joueurs classés<br />
-      Score : {{ data.mazo.score }} point(s)
-    </GlobalCard>
+    <div class="games">
+      <GlobalCard
+        header="bacteria.svg"
+        :height="74"
+        justified
+        v-if="data && data.bacteria"
+      >
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.bacteria.rank.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <b> sur </b>
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.bacteria.players.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        /><br />
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.bacteria.score.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <b> point(s)</b><br /><br />
+        <DoughnutChart
+          :chartData="statsBacteria"
+          :options="{
+            elements: {
+              arc: {
+                borderWidth: 0,
+              },
+            },
+          }"
+        />
+        <br />
+        <div class="centered">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in (
+              data.bacteria.stats.win +
+              data.bacteria.stats.draw +
+              data.bacteria.stats.lose
+            ).toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+          <b> parties</b>
+        </div>
+      </GlobalCard>
+      <GlobalCard
+        header="patojdur.svg"
+        :height="56"
+        justified
+        v-if="data && data.patojdur"
+      >
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.patojdur.rank.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <b> sur </b>
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.patojdur.players.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        /><br />
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.patojdur.score.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <b> point(s)</b>
+        <br /><br />
+        <BarChart :chartData="statsPatojdur" />
+      </GlobalCard>
+      <GlobalCard
+        header="mazo.svg"
+        :height="52"
+        justified
+        v-if="data && data.mazo"
+      >
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.mazo.rank.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <b> sur </b>
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.mazo.players.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <br />
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :alt="number"
+          v-for="number in data.mazo.score.toString(10)"
+          :key="number.index"
+          width="19"
+          height="21"
+          :src="require(`@/asset/img/number/${number}.svg`)"
+        />
+        <b> point(s)</b>
+      </GlobalCard>
+    </div>
     <template #right-column>
       <GlobalCard
         color="blue"
@@ -224,7 +324,7 @@
         </template>
         <table class="fullwidth">
           <colgroup>
-            <col width="22" />
+            <col width="30" />
             <col width="100%" />
           </colgroup>
           <tbody>
@@ -251,6 +351,27 @@ import StrokeText from "@/component/core/StrokeText.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
+import { DoughnutChart, BarChart } from "vue-chart-3";
+import {
+  Chart,
+  DoughnutController,
+  ArcElement,
+  Tooltip,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
+
+Chart.register(
+  DoughnutController,
+  ArcElement,
+  Tooltip,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale
+);
 
 // @vuese
 // @group View/Account
@@ -261,6 +382,8 @@ export default {
     Bank,
     Cabin,
     StrokeText,
+    DoughnutChart,
+    BarChart,
   },
 
   data() {
@@ -274,6 +397,39 @@ export default {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,
       });
+    },
+  },
+  computed: {
+    statsBacteria() {
+      return {
+        labels: ["Win", "Draw", "Lose"],
+        datasets: [
+          {
+            data: [
+              this.data.bacteria.stats.win,
+              this.data.bacteria.stats.draw,
+              this.data.bacteria.stats.lose,
+            ],
+            backgroundColor: ["#5b3", "#0002", "#fb0d0d"],
+          },
+        ],
+      };
+    },
+    statsPatojdur() {
+      return {
+        labels: ["Record", "Best", "Today", "Yesterday"],
+        datasets: [
+          {
+            data: [
+              this.data.patojdur.stats.record,
+              this.data.patojdur.stats.best,
+              this.data.patojdur.stats.today,
+              this.data.patojdur.stats.yesterday,
+            ],
+            backgroundColor: ["#fb0d0d", "#fc0", "#6ebef0", "#5aa1cd"],
+          },
+        ],
+      };
     },
   },
   async beforeRouteEnter(to, from, next) {
@@ -311,6 +467,11 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.games .card {
+  display: inline-block;
+}
+</style>
 <style lang="scss" scoped>
 .pm-number {
   transform: translate(30px, -42px);
@@ -333,5 +494,9 @@ export default {
   stroke: #a10069;
   stroke-width: 4;
   transform: translateY(-40px);
+}
+
+.games {
+  column-count: 3;
 }
 </style>

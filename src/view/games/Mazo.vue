@@ -30,6 +30,8 @@
           <img
             draggable="false"
             @contextmenu.prevent
+            width="14"
+            height="13"
             alt="Help icon"
             src="@/asset/img/icon/button/help.svg"
           />&nbsp;Comment jouer&nbsp;?

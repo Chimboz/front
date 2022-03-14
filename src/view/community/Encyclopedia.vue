@@ -66,7 +66,7 @@
           /><button type="submit" class="btn-action">go</button>
         </form>
         <br />
-        <div class="category-selection" @contextmenu.prevent>
+        <div class="category-selection fullwidth" @contextmenu.prevent>
           <button
             type="button"
             v-for="category of categories"
@@ -257,8 +257,8 @@ export default {
 
 // Items
 .item {
-  margin: 1px;
-  background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
+  margin: var(--sm-gap);
+  background: linear-gradient(to bottom, var(--main-card-blue), var(--main-card));
   height: 60px;
   width: 60px;
   border-radius: var(--border-radius);
@@ -269,22 +269,6 @@ export default {
 .category {
   height: 40px;
   width: 40px;
-}
-
-.item.rare {
-  background: #69c;
-}
-
-.item.mythic {
-  background: #9412fe;
-}
-
-.item.legendary {
-  background: #fc0;
-}
-
-.item.unique {
-  background: #c00;
 }
 
 .item.active {

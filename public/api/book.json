@@ -1,1 +1,8 @@
-{ "members": [{ "name": "Meyriu", "id": 115, "date": 1625534039650 }] }
+{
+  "total": 100,
+  "day": 10,
+  "month": 50,
+  "female": 33,
+  "male": 33,
+  "members": [{ "name": "Meyriu", "id": 115, "date": 1625534039650 }]
+}

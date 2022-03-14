@@ -71,10 +71,10 @@
         <div class="preview-description">
           <div class="preview-infos">
             <br /><br />
-            <h3> Pack {{ shown.name }} </h3>
+            <h3>Pack {{ shown.name }}</h3>
             {{ shown.description }}<br /><br />
-            <button class="btn-shop" @click.prevent="buy()" v-if="authenticated"
-              ><img src="@/asset/img/shop/dollar.png" /> Acheter</button
+            <GlobalButton color="yellow" icon="credits.svg" >
+              Acheter</GlobalButton
             >
           </div>
         </div>
@@ -107,16 +107,16 @@ export default {
   name: "ShopView",
   components: {
     Bank,
-    Pack
+    Pack,
   },
   data() {
     return {
       data: null,
-      shown: null
+      shown: null,
     };
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"])
+    ...mapGetters("auth", ["authenticated"]),
   },
   methods: {
     show(pack) {
@@ -128,9 +128,9 @@ export default {
       console.log("Acheté " + this.shown.name);
       this.eventBus.emit("confirmation", {
         message: "success.buy",
-        callback: "/api/success.json"
+        callback: "/api/success.json",
       });
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -152,23 +152,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss">

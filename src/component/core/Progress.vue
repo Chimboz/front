@@ -65,11 +65,11 @@ export default {
 }
 
 .progress-bar-win {
-  background-color: #5b3;
+  background-color: var(--main-button-green);
 }
 
 .progress-bar-lose {
-  background-color: #fb0d0d;
+  background-color: var(--main-button-red);
   border-radius: 0 9px 9px 0;
 }
 </style>
