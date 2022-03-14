@@ -93,30 +93,6 @@
 export default {
   name: "GlobalAvatar",
   props: {
-    // Up animation
-    up: {
-      required: false,
-      type: Boolean,
-      default: false
-    },
-    // Down animation
-    down: {
-      required: false,
-      type: Boolean,
-      default: false
-    },
-    // Left animation
-    left: {
-      required: false,
-      type: Boolean,
-      default: false
-    },
-    // Right animation
-    right: {
-      required: false,
-      type: Boolean,
-      default: false
-    },
     // Avatar type
     avatar: {
       required: false,

@@ -27,6 +27,7 @@
         v-for="message of data"
         :key="message.user.id"
         :to="'/messenger/' + message.user.id"
+        :class="{ active: message.new }"
       >
         <div
           class="tiz-portrait"
@@ -164,5 +165,9 @@ export default {
 
 .message:hover {
   background: var(--light)6;
+}
+
+.active {
+  background: var(--selected-dark-card);
 }
 </style>

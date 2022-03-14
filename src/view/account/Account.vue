@@ -159,8 +159,8 @@
         <div style="margin-top: -16px">
           <router-link
             v-for="message of data.forum"
-            :key="message.message"
-            :to="`/topic/${message.id}/${message.page}#${message.message}`"
+            :key="message.id"
+            :to="`/topic/${message.topic.id}/${message.topic.page}#${message.id}`"
           >
             <div class="list fullwidth col" style="align-items: flex-start">
               <div>
@@ -175,7 +175,7 @@
                   src="@/asset/img/bbs/msg.svg"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
-                />&nbsp;{{ message.title }}
+                />&nbsp;{{ message.topic.title }}
               </div>
             </div>
           </router-link>

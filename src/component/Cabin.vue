@@ -41,10 +41,6 @@
                 :item0="data.look.item0"
                 :item1="data.look.item1"
                 :item2="data.look.item2"
-                :up="up"
-                :down="down"
-                :left="left"
-                :right="right"
               />
               <div class="circle"></div>
             </div>
@@ -68,7 +64,7 @@
               </button>
             </div>
           </div>
-          <br>
+          <br />
           <div class="gender">
             <button
               type="button"
@@ -83,7 +79,8 @@
                 @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
-                src="@/asset/img/icon/gender/male.svg" /></button
+                src="@/asset/img/icon/gender/male.svg"
+              /></button
             ><button
               type="button"
               class="btn-pink"
@@ -97,7 +94,8 @@
                 @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
-                src="@/asset/img/icon/gender/female.svg" /></button
+                src="@/asset/img/icon/gender/female.svg"
+              /></button
             ><button
               type="button"
               class="btn-pink"
@@ -209,7 +207,7 @@
                         'item1',
                         'body',
                         'item2',
-                        'shoe'
+                        'shoe',
                       ])
                     : (checked = [`${category}`])
                 "
@@ -248,7 +246,7 @@
                     : [],
                   shoe: this.checked.includes('shoe')
                     ? this.data.items.shoe
-                    : []
+                    : [],
                 }"
                 :key="name"
                 :class="name"
@@ -257,12 +255,12 @@
                   type="button"
                   class="item"
                   :class="{
-                    active: this.data.look[name] == item
+                    active: this.data.look[name] == item.id,
                   }"
                   v-for="item of category"
-                  :key="item"
-                  @click="$emit('updateItem', name, item)"
-                  @mouseover="info = name + ' ' + item"
+                  :key="item.id"
+                  @click="$emit('updateItem', name, item.id)"
+                  @mouseover="info = item.name"
                 >
                   <img
                     draggable="false"
@@ -274,9 +272,10 @@
                     draggable="false"
                     @contextmenu.prevent
                     v-else
-                    :src="`/avatar/${name}/${item}.svg`"
+                    :src="`/avatar/${name}/${item.id}.svg`"
                     :src-placeholder="require('@/asset/img/loading.svg')"
                   />
+                  <div class="quantity">{{ item.nb }}</div>
                 </button>
               </div>
             </div>
@@ -321,38 +320,34 @@ export default {
   name: "AvatarCabin",
   components: {
     Emotes,
-    VLazyImage
+    VLazyImage,
   },
   data() {
     return {
       profile: true,
       loadInventory: false,
-      up: false,
-      down: false,
-      right: false,
-      left: false,
       info: "",
       checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
-      gender: this.data.gender
+      gender: this.data.gender,
     };
   },
   props: {
     data: {
       required: true,
-      type: Object
+      type: Object,
     },
     motto: { type: String },
     website: { type: String },
     centrea: { type: String },
     centreb: { type: String },
     centrec: { type: String },
-    centred: { type: String }
+    centred: { type: String },
   },
   methods: {
     submit() {
       console.log("Envoyé!");
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -370,7 +365,8 @@ input[type="text"] {
   font-size: 10px;
   color: var(--text);
   border: 2px solid;
-  border-color: var(--blue) var(--dark-card-blue) var(--dark-card-blue) var(--blue);
+  border-color: var(--blue) var(--dark-card-blue) var(--dark-card-blue)
+    var(--blue);
   box-shadow: inset 1px 1px 2px var(--dark-card-blue);
   padding: var(--sm-gap) var(--md-gap);
   border-radius: calc(var(--border-radius) / 2);
@@ -575,8 +571,9 @@ h3 {
 
 // Chest
 .chest {
-  max-height: 177px;
+  height: 180px;
   overflow-y: auto;
+  resize: vertical;
 }
 .category {
   display: initial;
@@ -608,6 +605,7 @@ h3 {
 
 .item {
   margin: 1px;
+  position: relative;
   display: inline-block;
   background: linear-gradient(to bottom, #85d1f1, #a7dbfc);
   height: 40px;
@@ -624,6 +622,24 @@ h3 {
 
 .item img[src*="loading"] {
   width: 100%;
+}
+
+.quantity {
+  border-radius: 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  padding: var(--sm-gap);
+  border-radius: var(--gap);
+  font-weight: bold;
+  font-family: "Pixelated Verdana 10";
+  font-size: 10px;
+  background-image: linear-gradient(
+    to top,
+    var(--selected-main-card),
+    var(--selected-dark-card)
+  );
 }
 
 .category-selection,

@@ -16,7 +16,8 @@
       }
     },
     "date": 0,
-    "content": "bite lol!"
+    "content": "bite lol!",
+    "new": true
   },
   {
     "user": {
@@ -35,7 +36,8 @@
       }
     },
     "date": 0,
-    "content": "bite lol!"
+    "content": "bite lol!",
+    "new": false
   },
   {
     "user": {
@@ -54,6 +56,7 @@
       }
     },
     "date": 0,
-    "content": "bite lol!"
+    "content": "bite lol!",
+    "new": false
   }
 ]

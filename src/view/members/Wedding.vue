@@ -436,9 +436,11 @@ tr td:first-child {
 
 .wedding {
   position: relative;
+  width: 400px;
+  margin: auto;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 464px) {
   .wedding {
     display: none;
   }

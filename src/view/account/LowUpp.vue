@@ -10,6 +10,14 @@
     </template>
     <GlobalCard color="yellow" justified
       ><template #subtop>MajMin</template>
+      <template #header>Changer de MajMiN</template>
+      <template #subtitle>Un bon MajMiN, c'est un plus pour ta reconnaissance dans la communauté...</template>
+      <b>Un MajMiN c'est quoi ?</b><br>
+Le MajMiN ( <b>Maj</b>uscules <b>Min</b>uscules ) c'est l'apparence de ton pseudo.<br>
+Par exemple, Andre et AnDRe c'est le même pseudo, c'est juste le MajMiN qui change.<br>
+<br>
+<b>Tu peux changer de MajMiN quand tu le souhaites.</b><br>
+Tu peux changer uniquement le MajMiN des lettres, tu ne peux pas en rajouter, tu ne peux pas en enlever, tu ne peux pas échanger une lettre par une autre.
       <form @submit.prevent="submit">
         <div class="centered">
         <button
