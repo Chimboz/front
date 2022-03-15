@@ -57,37 +57,44 @@
         justified
         v-if="data && data.bacteria"
       >
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.bacteria.rank.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.bacteria.rank.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
         <b> sur </b>
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.bacteria.players.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        /><br />
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.bacteria.score.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.bacteria.players.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
+        <br />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.bacteria.score.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
         <b> point(s)</b><br /><br />
         <DoughnutChart
           :chartData="statsBacteria"
@@ -101,20 +108,22 @@
         />
         <br />
         <div class="centered">
-          <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
-            v-for="number in (
-              data.bacteria.stats.win +
-              data.bacteria.stats.draw +
-              data.bacteria.stats.lose
-            ).toString(10)"
-            :key="number.index"
-            width="19"
-            height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
-          />
+          <div class="number">
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              :alt="number"
+              v-for="number in (
+                data.bacteria.stats.win +
+                data.bacteria.stats.draw +
+                data.bacteria.stats.lose
+              ).toString(10)"
+              :key="number.index"
+              width="19"
+              height="21"
+              :src="require(`@/asset/img/number/${number}.svg`)"
+            />
+          </div>
           <b> parties</b>
         </div>
       </GlobalCard>
@@ -124,40 +133,60 @@
         justified
         v-if="data && data.patojdur"
       >
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.patojdur.rank.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.patojdur.rank.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
         <b> sur </b>
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.patojdur.players.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        /><br />
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.patojdur.score.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.patojdur.players.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
+        <br />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.patojdur.score.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
         <b> point(s)</b>
         <br /><br />
-        <BarChart :chartData="statsPatojdur" />
+        <BarChart
+          :chartData="statsPatojdur"
+          :options="{
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              x: { display: false },
+              y: { min: this.data.patojdur.stats.record },
+            },
+          }"
+        />
       </GlobalCard>
       <GlobalCard
         header="mazo.svg"
@@ -165,27 +194,31 @@
         justified
         v-if="data && data.mazo"
       >
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.mazo.rank.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.mazo.rank.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
         <b> sur </b>
-        <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
-          v-for="number in data.mazo.players.toString(10)"
-          :key="number.index"
-          width="19"
-          height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
-        />
+        <div class="number">
+          <img
+            draggable="false"
+            @contextmenu.prevent
+            :alt="number"
+            v-for="number in data.mazo.players.toString(10)"
+            :key="number.index"
+            width="19"
+            height="21"
+            :src="require(`@/asset/img/number/${number}.svg`)"
+          />
+        </div>
         <br />
         <img
           draggable="false"
@@ -354,6 +387,7 @@ const locales = { fr, enGB };
 import { DoughnutChart, BarChart } from "vue-chart-3";
 import {
   Chart,
+  Legend,
   DoughnutController,
   ArcElement,
   Tooltip,
@@ -364,6 +398,7 @@ import {
 } from "chart.js";
 
 Chart.register(
+  Legend,
   DoughnutController,
   ArcElement,
   Tooltip,
@@ -410,23 +445,22 @@ export default {
               this.data.bacteria.stats.draw,
               this.data.bacteria.stats.lose,
             ],
-            backgroundColor: ["#5b3", "#0002", "#fb0d0d"],
+            backgroundColor: ["#5b3", "#fff", "#fb0d0d"],
           },
         ],
       };
     },
     statsPatojdur() {
       return {
-        labels: ["Record", "Best", "Today", "Yesterday"],
+        labels: ["Best", "Today", "Yesterday"],
         datasets: [
           {
             data: [
-              this.data.patojdur.stats.record,
               this.data.patojdur.stats.best,
               this.data.patojdur.stats.today,
               this.data.patojdur.stats.yesterday,
             ],
-            backgroundColor: ["#fb0d0d", "#fc0", "#6ebef0", "#5aa1cd"],
+            backgroundColor: ["#fc0", "#6ebef0", "#5aa1cd"],
           },
         ],
       };
@@ -498,5 +532,9 @@ export default {
 
 .games {
   column-count: 3;
+}
+
+.number {
+  display: inline-block;
 }
 </style>

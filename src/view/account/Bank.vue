@@ -83,7 +83,7 @@ import Bank from "@/component/Bank.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import { BarChart, LineChart } from "vue-chart-3";
+import { BarChart } from "vue-chart-3";
 import {
   Chart,
   Legend,
@@ -158,6 +158,7 @@ export default {
             label: "Total",
             data: [],
             backgroundColor: ["#ffb907"],
+            tension: 0.4
           },
         ],
       };
