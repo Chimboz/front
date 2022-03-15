@@ -73,7 +73,12 @@
             <br /><br />
             <h3>Pack {{ shown.name }}</h3>
             {{ shown.description }}<br /><br />
-            <GlobalButton color="yellow" icon="credits.svg" >
+            <GlobalButton
+              color="yellow"
+              icon="credits.svg"
+              @click.prevent="buy()"
+              v-if="authenticated"
+            >
               Acheter</GlobalButton
             >
           </div>

@@ -182,7 +182,7 @@
               },
             },
             scales: {
-              x: { display: false },
+              
               y: { min: this.data.patojdur.stats.record },
             },
           }"

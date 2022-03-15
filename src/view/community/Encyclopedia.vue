@@ -355,7 +355,7 @@ export default {
 }
 
 .item0 img {
-  transform: translate(-0.5px, -4px) scale(1.5);
+  transform: translate(1px, -4px) scale(1.5);
 }
 
 .item1 img {
