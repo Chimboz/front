@@ -21,7 +21,7 @@
           <th style="text-align: right">Solde</th>
         </thead>
         <tr
-          v-for="line of data"
+          v-for="line of data.logs"
           :key="line.date"
           class="bank-line"
           :class="{ loss: line.value < 0 }"
@@ -56,9 +56,24 @@
         @contextmenu.prevent
         height="17"
         width="17"
-      /><b> Balance sur 7 jours</b>
-      <br /><br>
-      <BarChart :chartData="bankData" />
+      /><b> Balance sur 7 jours</b> <br /><br />
+      <BarChart
+        :chartData="bankData"
+        :options="{
+          elements: {
+            line: { borderColor: '#ffb907' },
+            point: { borderColor: '#ffb907', backgroundColor: '#ffb907' },
+          },
+          scales: {
+            x: {
+              gridLines: {
+                offsetGridLines: false,
+              },
+              reverse: true,
+            },
+          },
+        }"
+      />
     </GlobalCard>
     <template #right-column><Bank /></template>
   </GlobalContainer>
@@ -68,17 +83,31 @@ import Bank from "@/component/Bank.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import { BarChart } from "vue-chart-3";
+import { BarChart, LineChart } from "vue-chart-3";
 import {
   Chart,
+  Legend,
   Tooltip,
   BarController,
   BarElement,
   CategoryScale,
   LinearScale,
+  LineController,
+  PointElement,
+  LineElement,
 } from "chart.js";
 
-Chart.register(Tooltip, BarController, BarElement, CategoryScale, LinearScale);
+Chart.register(
+  Tooltip,
+  Legend,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  LineController,
+  PointElement,
+  LineElement
+);
 
 // @vuese
 // @group View/Account
@@ -122,22 +151,33 @@ export default {
     bankData() {
       const dataset = {
         labels: [],
-        datasets: [{ data: [], backgroundColor: [] }],
+        datasets: [
+          { type: "bar", label: "Balance", data: [], backgroundColor: [] },
+          {
+            type: "line",
+            label: "Total",
+            data: [],
+            backgroundColor: ["#ffb907"],
+          },
+        ],
       };
-      for (const day of this.getDaysArray(
-        this.data[this.data.length - 1].date,
-        this.data[0].date
-      )) {
-        const data = this.data.filter((el) => this.sameDay(el.date, day));
+      let balance = this.data.balance;
+      let i = 0;
+      for (const day of this.getDaysArray().reverse()) {
+        const data = this.data.logs.filter((el) => this.sameDay(el.date, day));
         const value = 0;
         if (data.length == 1) value = data[0].value;
         if (data.length > 1)
           value = data.reduce((prev, curr) => prev.value + curr.value);
+        if (i > 0) balance -= dataset.datasets[0].data[i - 1];
         dataset.labels.push(this.formatDateStats(day));
         dataset.datasets[0].data.push(value);
-        dataset.datasets[0].backgroundColor.push(value > 0 ? "#5b3" : "#fb0d0d");
+        dataset.datasets[1].data.push(balance);
+        dataset.datasets[0].backgroundColor.push(
+          value > 0 ? "#5b3" : "#fb0d0d"
+        );
+        i++;
       }
-      console.log(dataset);
       return dataset;
     },
   },
@@ -152,7 +192,7 @@ export default {
     next();
   },
   metaInfo: {
-    title: "section.conversation",
+    title: "section.bank",
     meta: [
       {
         name: "description",
