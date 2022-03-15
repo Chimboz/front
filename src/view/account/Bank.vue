@@ -48,6 +48,17 @@
           </td>
         </tr>
       </table>
+      <br />
+      <img
+        src="@/asset/img/puce.svg"
+        alt="Puce"
+        draggable="false"
+        @contextmenu.prevent
+        height="17"
+        width="17"
+      /><b> Balance sur 7 jours</b>
+      <br /><br>
+      <BarChart :chartData="bankData" />
     </GlobalCard>
     <template #right-column><Bank /></template>
   </GlobalContainer>
@@ -57,13 +68,24 @@ import Bank from "@/component/Bank.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
+import { BarChart } from "vue-chart-3";
+import {
+  Chart,
+  Tooltip,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
+
+Chart.register(Tooltip, BarController, BarElement, CategoryScale, LinearScale);
 
 // @vuese
 // @group View/Account
 // Bank page
 export default {
   name: "LevelView",
-  components: { Bank },
+  components: { Bank, BarChart },
   data() {
     return {
       data: null,
@@ -74,6 +96,49 @@ export default {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
+    },
+    formatDateStats(date) {
+      return format(new Date(date), "PP", {
+        locale: locales[navigator.language.split("-")[0]],
+      });
+    },
+    sameDay(d1, d2) {
+      return (
+        new Date(d1).getFullYear() === new Date(d2).getFullYear() &&
+        new Date(d1).getMonth() === new Date(d2).getMonth() &&
+        new Date(d1).getDate() === new Date(d2).getDate()
+      );
+    },
+    getDaysArray() {
+      const e = new Date();
+      const s = new Date(e.getFullYear(), e.getMonth(), e.getDate() - 6);
+      for (var a = [], d = new Date(s); d <= e; d.setDate(d.getDate() + 1)) {
+        a.push(new Date(d));
+      }
+      return a;
+    },
+  },
+  computed: {
+    bankData() {
+      const dataset = {
+        labels: [],
+        datasets: [{ data: [], backgroundColor: [] }],
+      };
+      for (const day of this.getDaysArray(
+        this.data[this.data.length - 1].date,
+        this.data[0].date
+      )) {
+        const data = this.data.filter((el) => this.sameDay(el.date, day));
+        const value = 0;
+        if (data.length == 1) value = data[0].value;
+        if (data.length > 1)
+          value = data.reduce((prev, curr) => prev.value + curr.value);
+        dataset.labels.push(this.formatDateStats(day));
+        dataset.datasets[0].data.push(value);
+        dataset.datasets[0].backgroundColor.push(value > 0 ? "#5b3" : "#fb0d0d");
+      }
+      console.log(dataset);
+      return dataset;
     },
   },
   async beforeRouteEnter(to, from, next) {
