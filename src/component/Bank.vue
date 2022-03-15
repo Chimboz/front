@@ -168,4 +168,8 @@ export default {
 .coin {
   position: absolute;
 }
+
+.card .router-link-active {
+    color: var(--blue);
+}
 </style>
