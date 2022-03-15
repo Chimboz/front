@@ -4,11 +4,7 @@ import katex from "katex/dist/katex.mjs";
 import hljs from "highlight.js";
 
 const allowed_uri = ["http", "https"];
-const allowed_images = [
-  "i.imgur.com",
-  "image.noelshack.com",
-  "chimboz.fr"
-];
+const allowed_images = ["i.imgur.com", "image.noelshack.com", "chimboz.fr"];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
 const allowed_properties = [
@@ -88,13 +84,17 @@ const markedRender = function (string) {
       expr = expr.substr(2, expr.length - 4);
       try {
         render = katex.renderToString(expr, { displayMode: true, maxSize: 2 });
-      } catch {}
+      } catch {
+        console.warn("Incorrect LaTeX");
+      }
       return render;
     } else if (expr.match(/^\$[\s\S]*\$$/)) {
       expr = expr.substr(1, expr.length - 2);
       try {
         render = katex.renderToString(expr, { displayMode: false, maxSize: 2 });
-      } catch {}
+      } catch {
+        console.warn("Incorrect LaTeX");
+      }
       return render;
     }
   }

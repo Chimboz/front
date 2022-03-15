@@ -1,6 +1,6 @@
 {
   "name": "chimboz-front",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -29,20 +29,20 @@
     "vue-axios": "^3.4.0",
     "vue-chart-3": "^3.1.4",
     "vue-i18n": "^9.1.0",
-    "vue-meta": "^3.0.0-alpha.2",
+    "vue-meta": "^3.0.0-alpha.10",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.2",
     "vuex-persistedstate": "^4.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.15",
-    "@vue/cli-plugin-eslint": "^4.5.15",
-    "@vue/cli-plugin-pwa": "~4.5.0",
-    "@vue/cli-plugin-router": "^4.5.15",
-    "@vue/cli-service": "^4.5.15",
+    "@vue/cli-plugin-babel": "^5.0.1",
+    "@vue/cli-plugin-eslint": "^5.0.1",
+    "@vue/cli-plugin-pwa": "^5.0.1",
+    "@vue/cli-plugin-router": "^5.0.1",
+    "@vue/cli-service": "^5.0.1",
     "@vue/compiler-sfc": "^3.2.26",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
+    "@babel/eslint-parser": "^7.5.4",
+    "eslint": "^8.11.0",
     "eslint-plugin-vue": "^8.3.0",
     "sass": "^1.47.0",
     "sass-loader": "^10.2.0",
@@ -59,7 +59,7 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser"
     },
     "rules": {}
   },
