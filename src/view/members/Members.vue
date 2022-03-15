@@ -134,7 +134,7 @@
     <template #right-column
       ><GlobalCard color="blue">
         <template #button>
-          <GlobalButton icon="help.svg">Chercher</GlobalButton>
+          <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
         <form @submit.prevent="search()" class="flex fullwidth"
           ><input

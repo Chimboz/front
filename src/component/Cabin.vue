@@ -476,7 +476,7 @@ h3 {
 
 .arrows {
   flex-direction: column;
-  z-index: 3;
+  z-index: 4;
 }
 
 .arrows {
