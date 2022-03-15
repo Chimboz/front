@@ -5,10 +5,6 @@
 <!-- @vuese:GlobalAvatar:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
-|up|Up animation|`Boolean`|`false`|false|
-|down|Down animation|`Boolean`|`false`|false|
-|left|Left animation|`Boolean`|`false`|false|
-|right|Right animation|`Boolean`|`false`|false|
 |avatar|Avatar type|`Number`|`false`|0|
 |emote|Emote|`String`|`false`|"neutral"|
 |hat|Hat item|`Number`|`false`|1|
