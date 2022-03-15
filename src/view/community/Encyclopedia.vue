@@ -137,7 +137,10 @@
             type="button"
             v-for="rarity of rarities"
             :key="rarity"
-            :class="{ active: checkedRarities.includes(rarity) }"
+            :class="[
+              rarity,
+              checkedRarities.includes(rarity) ? 'active' : false,
+            ]"
             @click="
               checkedRarities.includes(rarity) && checkedRarities.length == 1
                 ? (checkedRarities = [
