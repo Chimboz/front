@@ -115,31 +115,31 @@ export default {
     body: {
       required: false,
       type: Number,
-      default: 1
+      default: 318
     },
     // Shoe item
     shoe: {
       required: false,
       type: Number,
-      default: 1
+      default: 606
     },
     // Item0 (glasses, masks) item
     item0: {
       required: false,
       type: Number,
-      default: 1
+      default: 792
     },
     // Item1 (bags, beards) item
     item1: {
       required: false,
       type: Number,
-      default: 1
+      default: 868
     },
     // Item2 (necklaces, badges) item
     item2: {
       required: false,
       type: Number,
-      default: 1
+      default: 938
     }
   }
 };

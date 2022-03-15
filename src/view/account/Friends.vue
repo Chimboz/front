@@ -33,7 +33,9 @@
           </div>
         </router-link>
         <div v-if="friend.status.sent">
-          <a @click.prevent="cancel(friend)" style="color: red; cursor: var(--pointer)"
+          <a
+            @click.prevent="cancel(friend)"
+            style="color: red; cursor: var(--pointer)"
             ><img
               src="@/asset/img/icon/failure.svg"
               width="11"
@@ -162,11 +164,11 @@ export default {
             avatar: 0,
             emote: "neutral",
             hat: 7,
-            body: 12,
-            shoe: 7,
-            item0: 17,
-            item1: 1,
-            item2: 1,
+            body: 334,
+            shoe: 612,
+            item0: 808,
+            item1: 868,
+            item2: 938,
           },
         },
         status: {
@@ -192,11 +194,11 @@ export default {
                 avatar: 0,
                 emote: "neutral",
                 hat: 7,
-                body: 12,
-                shoe: 7,
-                item0: 17,
-                item1: 1,
-                item2: 1,
+                body: 334,
+                shoe: 612,
+                item0: 808,
+                item1: 868,
+                item2: 938,
               },
             },
             status: {

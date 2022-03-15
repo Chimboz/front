@@ -7,11 +7,11 @@
       "avatar": 0,
       "emote": "zzz",
       "hat": 7,
-      "body": 2,
-      "shoe": 7,
-      "item0": 17,
-      "item1": 1,
-      "item2": 1
+      "body": 334,
+      "shoe": 612,
+      "item0": 808,
+      "item1": 868,
+      "item2": 938
     }
   },
   "messages": [
@@ -39,11 +39,11 @@
         "avatar": 0,
         "emote": "zzz",
         "hat": 7,
-        "body": 2,
-        "shoe": 7,
-        "item0": 17,
-        "item1": 1,
-        "item2": 1
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
       }
     },
     {
@@ -53,11 +53,11 @@
         "avatar": 0,
         "emote": "zzz",
         "hat": 7,
-        "body": 3,
-        "shoe": 7,
-        "item0": 17,
-        "item1": 1,
-        "item2": 1
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
       }
     },
     {
@@ -67,11 +67,11 @@
         "avatar": 0,
         "emote": "zzz",
         "hat": 7,
-        "body": 4,
-        "shoe": 7,
-        "item0": 17,
-        "item1": 1,
-        "item2": 1
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
       }
     },
     {
@@ -81,11 +81,11 @@
         "avatar": 0,
         "emote": "zzz",
         "hat": 7,
-        "body": 5,
-        "shoe": 7,
-        "item0": 17,
-        "item1": 1,
-        "item2": 1
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
       }
     }
   ]

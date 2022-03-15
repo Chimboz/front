@@ -39,7 +39,7 @@
           {{ $t("navbar.logout") }}
         </button>
         <button v-else>
-          <router-link to="/login" id="connect" class="flex centered">
+          <router-link to="/login" id="connect" class="flex">
             <img
               draggable="false"
               @contextmenu.prevent
@@ -55,11 +55,11 @@
         :avatar="user ? user.look.avatar : 0"
         :emote="user ? user.look.emote : 'neutral'"
         :hat="user ? user.look.hat : 1"
-        :body="user ? user.look.body : 1"
-        :shoe="user ? user.look.shoe : 1"
-        :item0="user ? user.look.item0 : 1"
-        :item1="user ? user.look.item1 : 1"
-        :item2="user ? user.look.item2 : 1"
+        :body="user ? user.look.body : 318"
+        :shoe="user ? user.look.shoe : 606"
+        :item0="user ? user.look.item0 : 792"
+        :item1="user ? user.look.item1 : 868"
+        :item2="user ? user.look.item2 : 938"
       />
     </div>
   </div>

@@ -20,22 +20,22 @@
         {
           "avatar": 0,
           "emote": "neutral",
-          "hat": 56,
-          "body": 48,
-          "shoe": 28,
-          "item0": 1,
-          "item1": 1,
-          "item2": 1
+          "hat": 7,
+          "body": 334,
+          "shoe": 612,
+          "item0": 808,
+          "item1": 868,
+          "item2": 938
         },
         {
           "avatar": 0,
           "emote": "neutral",
-          "hat": 57,
-          "body": 49,
-          "shoe": 29,
-          "item0": 1,
-          "item1": 1,
-          "item2": 1
+          "hat": 7,
+          "body": 334,
+          "shoe": 612,
+          "item0": 808,
+          "item1": 868,
+          "item2": 938
         }
       ]
     },
@@ -45,12 +45,12 @@
         {
           "avatar": 0,
           "emote": "neutral",
-          "hat": 277,
-          "body": 1,
-          "shoe": 1,
-          "item0": 1,
-          "item1": 1,
-          "item2": 1
+          "hat": 7,
+          "body": 334,
+          "shoe": 612,
+          "item0": 808,
+          "item1": 868,
+          "item2": 938
         }
       ]
     }

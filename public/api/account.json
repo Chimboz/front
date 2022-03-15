@@ -4,19 +4,24 @@
     "avatar": 0,
     "emote": "zzz",
     "hat": 7,
-    "body": 17,
-    "shoe": 7,
-    "item0": 17,
-    "item1": 1,
-    "item2": 1
+    "body": 334,
+    "shoe": 612,
+    "item0": 808,
+    "item1": 868,
+    "item2": 938
   },
   "id": 3,
   "items": {
     "hat": [
       { "id": 1, "name": "", "nb": 1 },
       { "id": 2, "name": "Bonnet de marin", "nb": 1, "rarity": "rare" },
-      { "id": 3, "name": "Toque orientale", "nb": 1, "rarity": "mythic"},
-      { "id": 4, "name": "Petites cornes blanches", "nb": 1, "rarity": "legendary"},
+      { "id": 3, "name": "Toque orientale", "nb": 1, "rarity": "mythic" },
+      {
+        "id": 4,
+        "name": "Petites cornes blanches",
+        "nb": 1,
+        "rarity": "legendary"
+      },
       { "id": 5, "name": "Oreilles de lapin", "nb": 1, "rarity": "unique" },
       { "id": 6, "name": "Noeud dans les cheveux", "nb": 1 },
       { "id": 7, "name": "Oreilles de chat soyeuses", "nb": 1 },
@@ -766,9 +771,9 @@
     {
       "id": 1,
       "topic": {
-        "title":"test",
+        "title": "test",
         "id": 2,
-        "page":3
+        "page": 3
       },
       "forum": {
         "name": "Agora",
