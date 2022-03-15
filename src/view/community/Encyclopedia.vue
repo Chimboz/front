@@ -13,7 +13,10 @@
       <div class="encyclopedia" @scroll.passive="onScroll">
         <div
           v-for="item of data.filter(
-            (item) => checked.includes(item.type) && item.name.includes(search)
+            (item) =>
+              checkedCategories.includes(item.type) &&
+              checkedRarities.includes(item.rarity) &&
+              item.name.includes(search)
           )"
           :key="item"
           class="item-wrapper"
@@ -52,7 +55,7 @@
       </div>
     </GlobalCard>
     <template #right-column
-      ><GlobalCard
+      ><GlobalCard justified
         ><template #button>
           <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
@@ -66,15 +69,24 @@
           /><button type="submit" class="btn-action">go</button>
         </form>
         <br />
-        <div class="category-selection fullwidth" @contextmenu.prevent>
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        /><b> Type d'item :</b>
+        <div class="fullwidth centered" @contextmenu.prevent>
           <button
             type="button"
             v-for="category of categories"
             :key="category"
-            :class="{ active: checked.includes(category) }"
+            :class="{ active: checkedCategories.includes(category) }"
             @click="
-              checked.includes(category) && checked.length == 1
-                ? (checked = [
+              checkedCategories.includes(category) &&
+              checkedCategories.length == 1
+                ? (checkedCategories = [
                     'body',
                     'bot',
                     'floor',
@@ -93,19 +105,61 @@
                     'top',
                     'wall',
                   ])
-                : (checked = [`${category}`])
+                : (checkedCategories = [`${category}`])
             "
             @contextmenu.prevent="
-              checked.includes(category)
-                ? checked.splice(checked.indexOf(category), 1)
-                : checked.push(category)
+              checkedCategories.includes(category)
+                ? checkedCategories.splice(
+                    checkedCategories.indexOf(category),
+                    1
+                  )
+                : checkedCategories.push(category)
             "
-            class="item pointer category"
+            class="item pointer filter"
           >
             <img
               draggable="false"
               @contextmenu.prevent
               :src="require(`@/asset/img/icon/item_category/${category}.svg`)"
+            />
+          </button>
+        </div>
+        <img
+          src="@/asset/img/puce.svg"
+          alt="Caret"
+          draggable="false"
+          @contextmenu.prevent
+          height="17"
+          width="17"
+        /><b> Rareté :</b>
+        <div class="fullwidth centered">
+          <button
+            type="button"
+            v-for="rarity of rarities"
+            :key="rarity"
+            :class="{ active: checkedRarities.includes(rarity) }"
+            @click="
+              checkedRarities.includes(rarity) && checkedRarities.length == 1
+                ? (checkedRarities = [
+                    'common',
+                    'rare',
+                    'mythic',
+                    'legendary',
+                    'unique',
+                  ])
+                : (checkedRarities = [`${rarity}`])
+            "
+            @contextmenu.prevent="
+              checkedRarities.includes(rarity)
+                ? checkedRarities.splice(checkedRarities.indexOf(rarity), 1)
+                : checkedRarities.push(rarity)
+            "
+            class="item pointer filter"
+          >
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              :src="require(`@/asset/img/icon/rarity/${rarity}.png`)"
             />
           </button>
         </div> </GlobalCard
@@ -147,7 +201,7 @@ export default {
         "top",
         "wall",
       ],
-      checked: [
+      checkedCategories: [
         "body",
         "bot",
         "floor",
@@ -166,6 +220,8 @@ export default {
         "top",
         "wall",
       ],
+      rarities: ["common", "rare", "mythic", "legendary", "unique"],
+      checkedRarities: ["common", "rare", "mythic", "legendary", "unique"],
       search: "",
       page: 0,
       isLoading: false,
@@ -258,7 +314,11 @@ export default {
 // Items
 .item {
   margin: var(--sm-gap);
-  background: linear-gradient(to bottom, var(--main-card-blue), var(--main-card));
+  background: linear-gradient(
+    to bottom,
+    var(--main-card-blue),
+    var(--main-card)
+  );
   height: 60px;
   width: 60px;
   border-radius: var(--border-radius);
@@ -266,7 +326,7 @@ export default {
   vertical-align: middle;
 }
 
-.category {
+.filter {
   height: 40px;
   width: 40px;
 }

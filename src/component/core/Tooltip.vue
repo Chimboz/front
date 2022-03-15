@@ -20,13 +20,13 @@ export default {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: #ff9;
-  color: #900;
+  background-color: var(--pink);
+  color: var(--light);
   text-align: center;
   pointer-events: none;
-  padding: 2px 6px;
-  border-radius: 6px;
-  box-shadow: inset 1px 1px 1px #5c341f90, inset 1px 1px 1px #5c341f30;
+  padding: var(--sm-gap) var(--md-gap);
+  border-radius: var(--border-radius);
+  box-shadow: inset 1px 1px 1px var(--dark-pink);
 
   /* Position the tooltip */
   position: absolute;
