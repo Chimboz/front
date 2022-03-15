@@ -85,7 +85,7 @@ const markedRender = function (string) {
       try {
         render = katex.renderToString(expr, { displayMode: true, maxSize: 2 });
       } catch {
-        console.warn("Incorrect LaTeX");
+        console.warn("Invalid LaTeX");
       }
       return render;
     } else if (expr.match(/^\$[\s\S]*\$$/)) {
@@ -93,7 +93,7 @@ const markedRender = function (string) {
       try {
         render = katex.renderToString(expr, { displayMode: false, maxSize: 2 });
       } catch {
-        console.warn("Incorrect LaTeX");
+        console.warn("Invalid LaTeX");
       }
       return render;
     }
