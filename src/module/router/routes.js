@@ -41,6 +41,12 @@ export const routes = [
     meta: { sitemap: { ignoreRoute: true } }
   },
   {
+    path: "/eraser",
+    name: "Eraser",
+    component: () => import("../../view/account/Eraser.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
     path: "/lowupp",
     name: "LowUpp",
     component: () => import("../../view/account/LowUpp.vue"),
@@ -49,7 +55,8 @@ export const routes = [
   {
     path: "/bank",
     name: "Bank",
-    component: () => import("../../view/account/Bank.vue")
+    component: () => import("../../view/account/Bank.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
   },
   {
     path: "/games",
@@ -184,12 +191,6 @@ export const routes = [
     component: () => import("../../view/community/Shop.vue")
   },
   {
-    path: "/eraser",
-    name: "Eraser",
-    component: () => import("../../view/community/Eraser.vue"),
-    meta: { sitemap: { ignoreRoute: true } }
-  },
-  {
     path: "/encyclopedia",
     name: "Encyclopedia",
     component: () => import("../../view/community/Encyclopedia.vue"),
@@ -200,6 +201,11 @@ export const routes = [
         meta: { sitemap: { ignoreRoute: true } }
       }
     ]
+  },
+  {
+    path: "/chaparazzi",
+    name: "Chaparazzi",
+    component: () => import("../../view/community/Chaparazzi.vue"),
   },
   {
     path: "/login",

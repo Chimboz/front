@@ -108,7 +108,9 @@
     "conversation": "Conversation",
     "notsmart": "Pamalin",
     "bacteriaStory": "Histoire de Bacteria",
-    "eraser": "Effaceur"
+    "eraser": "Effaceur",
+    "chaparazzi": "Chaparazzi",
+    "bank": "Banque"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",

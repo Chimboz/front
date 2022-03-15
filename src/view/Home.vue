@@ -117,7 +117,7 @@
     >
     <br />
     <Radio src="track.flac" />
-    <br>
+    <br />
     <GlobalCard color="yellow" justified v-if="data">
       <template #subtop>Chapaniouz</template>
       <template #header
@@ -137,7 +137,11 @@
     </GlobalCard>
     <br />
     <GlobalCard v-if="data">
-      <template #subtop>Chaparazzi</template>
+      <template #subtop
+        ><router-link to="/chaparazzi" class="chaparazzi-link"
+          >Chaparazzi</router-link
+        ></template
+      >
       <div class="gallery flex">
         <div
           class="flex col photo"
@@ -147,12 +151,24 @@
         >
           <img
             draggable="false"
-            @contextmenu.prevent
             :src="`gallery/${photo.name}`"
             :alt="photo.name"
             width="130"
           /><b>{{ formatDatePhotos(photo.date) }}</b>
         </div>
+      </div>
+      <div style="text-align: right">
+        <router-link to="/chaparazzi">
+          <img
+            src="@/asset/img/puce.svg"
+            alt="Puce"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Voir la galerie
+        </router-link>
       </div>
     </GlobalCard>
     <template #right-column
@@ -300,6 +316,15 @@ export default {
   color: var(--title-card-yellow);
   font-style: italic;
   text-align: right;
+}
+
+.chaparazzi-link {
+  font-weight: normal;
+  fill: var(--light);
+}
+
+.chaparazzi-link:hover {
+  text-decoration: none;
 }
 
 .gallery {

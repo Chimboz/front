@@ -127,6 +127,11 @@ export default {
           url: "/encyclopedia",
           section: "community",
         },
+        {
+          label: "section.chaparazzi",
+          url: "/chaparazzi",
+          section: "community",
+        },
       ],
     };
   },
