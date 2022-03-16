@@ -80,7 +80,7 @@
 </template>
 <script>
 import Bank from "@/component/Bank.vue";
-import { format } from "date-fns";
+import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
 import { BarChart } from "vue-chart-3";
@@ -127,24 +127,9 @@ export default {
       });
     },
     formatDateStats(date) {
-      return format(new Date(date), "PP", {
+      return format(new Date(date), "d MMM", {
         locale: locales[navigator.language.split("-")[0]],
       });
-    },
-    sameDay(d1, d2) {
-      return (
-        new Date(d1).getFullYear() === new Date(d2).getFullYear() &&
-        new Date(d1).getMonth() === new Date(d2).getMonth() &&
-        new Date(d1).getDate() === new Date(d2).getDate()
-      );
-    },
-    getDaysArray() {
-      const e = new Date();
-      const s = new Date(e.getFullYear(), e.getMonth(), e.getDate() - 6);
-      for (var a = [], d = new Date(s); d <= e; d.setDate(d.getDate() + 1)) {
-        a.push(new Date(d));
-      }
-      return a;
     },
   },
   computed: {
@@ -157,15 +142,19 @@ export default {
             label: "Total",
             data: [],
             backgroundColor: ["#ffb907"],
-            tension: 0.4
+            tension: 0.4,
           },
           { type: "bar", label: "Balance", data: [], backgroundColor: [] },
         ],
       };
       let balance = this.data.balance;
       let i = 0;
-      for (const day of this.getDaysArray().reverse()) {
-        const data = this.data.logs.filter((el) => this.sameDay(el.date, day));
+      const today = new Date();
+      for (const day of eachDayOfInterval({
+        start: subDays(today, 6),
+        end: today,
+      }).reverse()) {
+        const data = this.data.logs.filter((el) => isSameDay(el.date, day));
         const value = 0;
         if (data.length == 1) value = data[0].value;
         if (data.length > 1)
