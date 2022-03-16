@@ -1,1 +1,2277 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="100.8" width="132.65" xmlns="http://www.w3.org/2000/svg"><g transform="translate(77.75 73.55)"><use height="14" transform="translate(-12.25 -4.3)" width="24.45" xlink:href="#a"/><use height="14" transform="matrix(.75 0 0 .75 11.313 -14.063)" width="13.6" xlink:href="#b"/><use height="14" transform="translate(-25.25 -22.8)" width="13.6" xlink:href="#b"/><use height="14" transform="matrix(.75 0 0 .75 -20.038 -6.662)" width="13.6" xlink:href="#b"/></g><defs><use height="10.2" transform="translate(2.15 2.25) scale(.9375)" width="9.9" xlink:href="#c" id="b"/><use height="10.2" width="9.9" xlink:href="#d" id="c"/><path d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5" fill="#fff" fill-rule="evenodd" id="d"/><g id="a"><path d="M8 4.85.95 9.2l-5.4-2.5L8 4.85" fill="#fff" fill-rule="evenodd" transform="translate(12.25 4.3)"/><path d="M8 4.85-4.45 6.7l5.4 2.5L8 4.85" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 4.3)"/><path d="m9.4 5.7-2-1.8" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 4.3)"/><path d="M8.65-.15q3.5 1.8 3.55 2.8 0 .95-3.15.4l-4.2-.5q1.3-.2 2.3-1.4l.9-1.6.6.3m-8.5-1.8H.4Q.5-.2 1.55 1.15q.75.95 1.8 1.3L.9 2.3h-3.7l1.3-1.1Q-.5 0-.35-1.65v-.3h.5M-8-.4q.3.9.9 1.6.75.95 1.7 1.25l-2.75.4-4.1-.2q0-.95 3.7-2.75L-8-.4" fill="#6596cc" fill-opacity=".431" fill-rule="evenodd" transform="translate(12.25 4.3)"/><path d="m-8.2-3.15-.05.1-.05.25-.05.95.4 1.45.85 1.6q.8.95 1.75 1.25l1.05.2 1.55-.35q.7-.4 1.3-1.1.9-1.15 1.1-2.65v-.2l-.25-.4-2-1.1q-2.9-1.3-5.6 0" fill="#fff" fill-rule="evenodd" transform="translate(12.25 4.3)"/><path d="M-.35-1.65v.2m0 0q-.2 1.5-1.1 2.65-.6.7-1.3 1.1l-1.55.35-1.05-.2q-.95-.3-1.75-1.25l-.85-1.6-.4-1.45.05-.95.05-.25.05-.1" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 4.3)"/><path d="m-.6-2.05.25.4Zm-7.6-1.1q2.7-1.3 5.6 0l2 1.1m.4.6.2-1.2" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 4.3)"/><path d="M-4.05-3.15q.4-.55.95-.5.55-.05.95.5.4.5.4 1.35 0 .75-.4 1.3-.4.5-.95.5-.55 0-.95-.5-.4-.55-.35-1.3-.05-.85.35-1.35m.95.4-.3-.15-.35.15-.15.5.15.45.35.2.3-.2.2-.45-.2-.5" fill-rule="evenodd" transform="translate(12.25 4.3)"/><path d="m-3.1-2.75.2.5-.2.45-.3.2-.35-.2-.15-.45.15-.5.35-.15.3.15m3.9 1.1.25-.4q.95-.6 2-1.1 2.9-1.3 5.6 0l.05.1.05.25.05.95L8.4-.4l-.85 1.6q-.8.95-1.75 1.25l-1.05.2L3.2 2.3 1.9 1.2Q1 .05.8-1.45v-.2" fill="#fff" fill-rule="evenodd" transform="translate(12.25 4.3)"/><path d="M.8-1.65v.2m0 0Q1 .05 1.9 1.2l1.3 1.1 1.55.35 1.05-.2q.95-.3 1.75-1.25L8.4-.4l.4-1.45-.05-.95-.05-.25-.05-.1" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 4.3)"/><path d="m1.05-2.05-.25.4Zm7.6-1.1q-2.7-1.3-5.6 0-1.05.5-2 1.1m-.4.6-.2-1.2" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 4.3)"/><path d="M6.5-3.55q-.55-.05-.95.45-.4.55-.4 1.35t.4 1.3q.4.55.95.55.55 0 .95-.55.4-.5.4-1.3t-.4-1.35q-.4-.5-.95-.45m.65 1.8-.35.25q-.2-.05-.3-.25-.15-.15-.15-.4l.15-.5q.1-.2.3-.2l.35.2.15.5-.15.4" fill-rule="evenodd" transform="translate(12.25 4.3)"/><path d="m7.15-1.75.15-.4-.15-.5-.35-.2q-.2 0-.3.2l-.15.5q0 .25.15.4.1.2.3.25l.35-.25" fill="#fff" fill-rule="evenodd" transform="translate(12.25 4.3)"/></g></defs></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="100.8"
+   width="132.65"
+   version="1.1"
+   id="svg16740"
+   sodipodi:docname="croon.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview16742"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:current-layer="g16706" />
+  <g
+     transform="translate(77.75,73.55)"
+     id="g16706">
+    <use
+       height="14"
+       transform="translate(-12.25,-4.3)"
+       width="24.450001"
+       xlink:href="#a"
+       id="use16698"
+       x="0"
+       y="0" />
+  </g>
+  <defs
+     id="defs16738">
+    <use
+       height="10.2"
+       transform="translate(2.15 2.25) scale(.9375)"
+       width="9.9"
+       xlink:href="#c"
+       id="b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#d"
+       id="c" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="d" />
+    <g
+       id="a">
+      <path
+         d="M8 4.85.95 9.2l-5.4-2.5L8 4.85"
+         fill="#fff"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16711" />
+      <path
+         d="M8 4.85-4.45 6.7l5.4 2.5L8 4.85"
+         fill="none"
+         stroke="#333"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 4.3)"
+         id="path16713" />
+      <path
+         d="m9.4 5.7-2-1.8"
+         fill="none"
+         stroke="#666"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 4.3)"
+         id="path16715" />
+      <path
+         d="M8.65-.15q3.5 1.8 3.55 2.8 0 .95-3.15.4l-4.2-.5q1.3-.2 2.3-1.4l.9-1.6.6.3m-8.5-1.8H.4Q.5-.2 1.55 1.15q.75.95 1.8 1.3L.9 2.3h-3.7l1.3-1.1Q-.5 0-.35-1.65v-.3h.5M-8-.4q.3.9.9 1.6.75.95 1.7 1.25l-2.75.4-4.1-.2q0-.95 3.7-2.75L-8-.4"
+         fill="#6596cc"
+         fill-opacity=".431"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16717" />
+      <path
+         d="m-8.2-3.15-.05.1-.05.25-.05.95.4 1.45.85 1.6q.8.95 1.75 1.25l1.05.2 1.55-.35q.7-.4 1.3-1.1.9-1.15 1.1-2.65v-.2l-.25-.4-2-1.1q-2.9-1.3-5.6 0"
+         fill="#fff"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16719" />
+      <path
+         d="M-.35-1.65v.2m0 0q-.2 1.5-1.1 2.65-.6.7-1.3 1.1l-1.55.35-1.05-.2q-.95-.3-1.75-1.25l-.85-1.6-.4-1.45.05-.95.05-.25.05-.1"
+         fill="none"
+         stroke="#666"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 4.3)"
+         id="path16721" />
+      <path
+         d="m-.6-2.05.25.4Zm-7.6-1.1q2.7-1.3 5.6 0l2 1.1m.4.6.2-1.2"
+         fill="none"
+         stroke="#000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 4.3)"
+         id="path16723" />
+      <path
+         d="M-4.05-3.15q.4-.55.95-.5.55-.05.95.5.4.5.4 1.35 0 .75-.4 1.3-.4.5-.95.5-.55 0-.95-.5-.4-.55-.35-1.3-.05-.85.35-1.35m.95.4-.3-.15-.35.15-.15.5.15.45.35.2.3-.2.2-.45-.2-.5"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16725" />
+      <path
+         d="m-3.1-2.75.2.5-.2.45-.3.2-.35-.2-.15-.45.15-.5.35-.15.3.15m3.9 1.1.25-.4q.95-.6 2-1.1 2.9-1.3 5.6 0l.05.1.05.25.05.95L8.4-.4l-.85 1.6q-.8.95-1.75 1.25l-1.05.2L3.2 2.3 1.9 1.2Q1 .05.8-1.45v-.2"
+         fill="#fff"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16727" />
+      <path
+         d="M.8-1.65v.2m0 0Q1 .05 1.9 1.2l1.3 1.1 1.55.35 1.05-.2q.95-.3 1.75-1.25L8.4-.4l.4-1.45-.05-.95-.05-.25-.05-.1"
+         fill="none"
+         stroke="#666"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 4.3)"
+         id="path16729" />
+      <path
+         d="m1.05-2.05-.25.4Zm7.6-1.1q-2.7-1.3-5.6 0-1.05.5-2 1.1m-.4.6-.2-1.2"
+         fill="none"
+         stroke="#000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 4.3)"
+         id="path16731" />
+      <path
+         d="M6.5-3.55q-.55-.05-.95.45-.4.55-.4 1.35t.4 1.3q.4.55.95.55.55 0 .95-.55.4-.5.4-1.3t-.4-1.35q-.4-.5-.95-.45m.65 1.8-.35.25q-.2-.05-.3-.25-.15-.15-.15-.4l.15-.5q.1-.2.3-.2l.35.2.15.5-.15.4"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16733" />
+      <path
+         d="m7.15-1.75.15-.4-.15-.5-.35-.2q-.2 0-.3.2l-.15.5q0 .25.15.4.1.2.3.25l.35-.25"
+         fill="#fff"
+         fill-rule="evenodd"
+         transform="translate(12.25 4.3)"
+         id="path16735" />
+    </g>
+    <style
+       type="text/css"
+       id="style17246">#a0,#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12,#a13,#a14,#a15,#a16,#a17,#a18,#a19{visibility:hidden}</style>
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a0b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a0b"
+       id="a0a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a1b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a1b"
+       id="a1a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a2b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a2b"
+       id="a2a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a3b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a3b"
+       id="a3a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a4b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a4b"
+       id="a4a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a5b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a5b"
+       id="a5a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a6b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a6b"
+       id="a6a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a7b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a7b"
+       id="a7a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a8b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a8b"
+       id="a8a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a9b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a9b"
+       id="a9a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a10b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a10b"
+       id="a10a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a11b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a11b"
+       id="a11a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a12b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a12b"
+       id="a12a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a13b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a13b"
+       id="a13a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a14b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a14b"
+       id="a14a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a15b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a15b"
+       id="a15a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a16b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a16b"
+       id="a16a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a17b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a17b"
+       id="a17a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a18b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a18b"
+       id="a18a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="a19b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#a19b"
+       id="a19a" />
+    <style
+       type="text/css"
+       id="style17390">#a0,#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12,#a13,#a14,#a15,#a16,#a17,#a18,#a19{animation:0.8s linear ak infinite}#a0{animation-delay:0s}#a1{animation-delay:0.04s}#a2{animation-delay:0.08s}#a3{animation-delay:0.12s}#a4{animation-delay:0.16s}#a5{animation-delay:0.2s}#a6{animation-delay:0.24s}#a7{animation-delay:0.28s}#a8{animation-delay:0.32s}#a9{animation-delay:0.36s}#a10{animation-delay:0.4s}#a11{animation-delay:0.44s}#a12{animation-delay:0.48s}#a13{animation-delay:0.52s}#a14{animation-delay:0.56s}#a15{animation-delay:0.6s}#a16{animation-delay:0.64s}#a17{animation-delay:0.68s}#a18{animation-delay:0.72s}#a19{animation-delay:0.76s}@keyframes ak{0%,5.000000%{visibility:visible}5.000125%,100%{visibility:hidden}}</style>
+    <style
+       type="text/css"
+       id="style17582">#b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12,#b13,#b14,#b15,#b16,#b17,#b18,#b19{visibility:hidden}</style>
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b0b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b0b"
+       id="b0a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b1b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b1b"
+       id="b1a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b2b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b2b"
+       id="b2a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b3b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b3b"
+       id="b3a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b4b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b4b"
+       id="b4a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b5b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b5b"
+       id="b5a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b6b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b6b"
+       id="b6a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b7b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b7b"
+       id="b7a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b8b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b8b"
+       id="b8a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b9b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b9b"
+       id="b9a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b10b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b10b"
+       id="b10a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b11b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b11b"
+       id="b11a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b12b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b12b"
+       id="b12a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b13b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b13b"
+       id="b13a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b14b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b14b"
+       id="b14a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b15b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b15b"
+       id="b15a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b16b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b16b"
+       id="b16a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b17b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b17b"
+       id="b17a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b18b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b18b"
+       id="b18a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="b19b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#b19b"
+       id="b19a" />
+    <style
+       type="text/css"
+       id="style17726">#b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12,#b13,#b14,#b15,#b16,#b17,#b18,#b19{animation:0.8s linear bk infinite}#b0{animation-delay:0s}#b1{animation-delay:0.04s}#b2{animation-delay:0.08s}#b3{animation-delay:0.12s}#b4{animation-delay:0.16s}#b5{animation-delay:0.2s}#b6{animation-delay:0.24s}#b7{animation-delay:0.28s}#b8{animation-delay:0.32s}#b9{animation-delay:0.36s}#b10{animation-delay:0.4s}#b11{animation-delay:0.44s}#b12{animation-delay:0.48s}#b13{animation-delay:0.52s}#b14{animation-delay:0.56s}#b15{animation-delay:0.6s}#b16{animation-delay:0.64s}#b17{animation-delay:0.68s}#b18{animation-delay:0.72s}#b19{animation-delay:0.76s}@keyframes bk{0%,5.000000%{visibility:visible}5.000125%,100%{visibility:hidden}}</style>
+    <style
+       type="text/css"
+       id="style17918">#c0,#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15,#c16,#c17,#c18,#c19{visibility:hidden}</style>
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c0b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c0b"
+       id="c0a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c1b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c1b"
+       id="c1a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c2b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c2b"
+       id="c2a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c3b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c3b"
+       id="c3a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c4b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c4b"
+       id="c4a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c5b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c5b"
+       id="c5a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c6b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c6b"
+       id="c6a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c7b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c7b"
+       id="c7a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c8b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c8b"
+       id="c8a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c9b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c9b"
+       id="c9a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c10b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c10b"
+       id="c10a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c11b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c11b"
+       id="c11a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c12b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c12b"
+       id="c12a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c13b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c13b"
+       id="c13a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c14b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c14b"
+       id="c14a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c15b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c15b"
+       id="c15a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c16b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c16b"
+       id="c16a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c17b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c17b"
+       id="c17a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c18b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c18b"
+       id="c18a" />
+    <path
+       d="m3.9 4.3 3-4.3-1.05 4.95 4.05 3.3-4.8-1.4-1.9 3.35.2-4.1L0 3.8l3.9.5"
+       fill="#fff"
+       fill-rule="evenodd"
+       id="c19b" />
+    <use
+       height="10.2"
+       width="9.9"
+       xlink:href="#c19b"
+       id="c19a" />
+    <style
+       type="text/css"
+       id="style18062">#c0,#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15,#c16,#c17,#c18,#c19{animation:0.8s linear ck infinite}#c0{animation-delay:0s}#c1{animation-delay:0.04s}#c2{animation-delay:0.08s}#c3{animation-delay:0.12s}#c4{animation-delay:0.16s}#c5{animation-delay:0.2s}#c6{animation-delay:0.24s}#c7{animation-delay:0.28s}#c8{animation-delay:0.32s}#c9{animation-delay:0.36s}#c10{animation-delay:0.4s}#c11{animation-delay:0.44s}#c12{animation-delay:0.48s}#c13{animation-delay:0.52s}#c14{animation-delay:0.56s}#c15{animation-delay:0.6s}#c16{animation-delay:0.64s}#c17{animation-delay:0.68s}#c18{animation-delay:0.72s}#c19{animation-delay:0.76s}@keyframes ck{0%,5.000000%{visibility:visible}5.000125%,100%{visibility:hidden}}</style>
+  </defs>
+  <g
+     id="g17580"
+     transform="matrix(0.5104358,0,0,0.5104358,59.352919,68.550467)">
+    <g
+       id="a0">&gt;<use
+   height="10.2"
+   transform="matrix(0.9375,0,0,0.9375,2.15,2.25)"
+   width="9.8999996"
+   xlink:href="#a0a"
+   id="use17250"
+   x="0"
+   y="0" />
+<defs
+   id="defs17254">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17441" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a0b"
+     id="use17443"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a1">&gt;<use
+   height="10.2"
+   transform="matrix(1.0469,0,0,1.0469,1.6,1.7)"
+   width="9.8999996"
+   xlink:href="#a1a"
+   id="use17257"
+   x="0"
+   y="0" />
+<defs
+   id="defs17261">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17448" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a1b"
+     id="use17450"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a2">&gt;<use
+   height="10.2"
+   transform="matrix(1.1563,0,0,1.1563,1,1.1)"
+   width="9.8999996"
+   xlink:href="#a2a"
+   id="use17264"
+   x="0"
+   y="0" />
+<defs
+   id="defs17268">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17455" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a2b"
+     id="use17457"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a3">&gt;<use
+   height="10.2"
+   transform="matrix(1.2656,0,0,1.2656,0.5,0.55)"
+   width="9.8999996"
+   xlink:href="#a3a"
+   id="use17271"
+   x="0"
+   y="0" />
+<defs
+   id="defs17275">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17462" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a3b"
+     id="use17464"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a4">&gt;<use
+   height="10.2"
+   transform="scale(1.375)"
+   width="9.8999996"
+   xlink:href="#a4a"
+   id="use17278"
+   x="0"
+   y="0" />
+<defs
+   id="defs17282">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17469" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a4b"
+     id="use17471"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a5">&gt;<use
+   height="10.2"
+   transform="matrix(1.3167,0,0,1.3167,0.3,0.35)"
+   width="9.8999996"
+   xlink:href="#a5a"
+   id="use17285"
+   x="0"
+   y="0" />
+<defs
+   id="defs17289">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17476" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a5b"
+     id="use17478"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a6">&gt;<use
+   height="10.2"
+   transform="matrix(1.2583,0,0,1.2583,0.55,0.6)"
+   width="9.8999996"
+   xlink:href="#a6a"
+   id="use17292"
+   x="0"
+   y="0" />
+<defs
+   id="defs17296">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17483" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a6b"
+     id="use17485"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a7">&gt;<use
+   height="10.2"
+   transform="matrix(1.2,0,0,1.2,0.9,0.9)"
+   width="9.8999996"
+   xlink:href="#a7a"
+   id="use17299"
+   x="0"
+   y="0" />
+<defs
+   id="defs17303">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17490" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a7b"
+     id="use17492"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a8">&gt;<use
+   height="10.2"
+   transform="matrix(1.1417,0,0,1.1417,1.15,1.25)"
+   width="9.8999996"
+   xlink:href="#a8a"
+   id="use17306"
+   x="0"
+   y="0" />
+<defs
+   id="defs17310">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17497" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a8b"
+     id="use17499"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a9">&gt;<use
+   height="10.2"
+   transform="matrix(1.0833,0,0,1.0833,1.45,1.5)"
+   width="9.8999996"
+   xlink:href="#a9a"
+   id="use17313"
+   x="0"
+   y="0" />
+<defs
+   id="defs17317">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17504" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a9b"
+     id="use17506"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a10">&gt;<use
+   height="10.2"
+   transform="matrix(1.025,0,0,1.025,1.7,1.8)"
+   width="9.8999996"
+   xlink:href="#a10a"
+   id="use17320"
+   x="0"
+   y="0" />
+<defs
+   id="defs17324">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17511" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a10b"
+     id="use17513"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a11">&gt;<use
+   height="10.2"
+   transform="matrix(0.9667,0,0,0.9667,2,2.1)"
+   width="9.8999996"
+   xlink:href="#a11a"
+   id="use17327"
+   x="0"
+   y="0" />
+<defs
+   id="defs17331">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17518" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a11b"
+     id="use17520"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a12">&gt;<use
+   height="10.2"
+   transform="matrix(0.9083,0,0,0.9083,2.35,2.4)"
+   width="9.8999996"
+   xlink:href="#a12a"
+   id="use17334"
+   x="0"
+   y="0" />
+<defs
+   id="defs17338">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17525" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a12b"
+     id="use17527"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a13">&gt;<use
+   height="10.2"
+   transform="matrix(0.85,0,0,0.85,2.6,2.7)"
+   width="9.8999996"
+   xlink:href="#a13a"
+   id="use17341"
+   x="0"
+   y="0" />
+<defs
+   id="defs17345">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17532" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a13b"
+     id="use17534"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a14">&gt;<use
+   height="10.2"
+   transform="matrix(0.7917,0,0,0.7917,2.9,3)"
+   width="9.8999996"
+   xlink:href="#a14a"
+   id="use17348"
+   x="0"
+   y="0" />
+<defs
+   id="defs17352">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17539" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a14b"
+     id="use17541"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a15">&gt;<use
+   height="10.2"
+   transform="matrix(0.7333,0,0,0.7333,3.15,3.3)"
+   width="9.8999996"
+   xlink:href="#a15a"
+   id="use17355"
+   x="0"
+   y="0" />
+<defs
+   id="defs17359">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17546" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a15b"
+     id="use17548"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a16">&gt;<use
+   height="10.2"
+   transform="matrix(0.675,0,0,0.675,3.45,3.6)"
+   width="9.8999996"
+   xlink:href="#a16a"
+   id="use17362"
+   x="0"
+   y="0" />
+<defs
+   id="defs17366">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17553" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a16b"
+     id="use17555"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a17">&gt;<use
+   height="10.2"
+   transform="matrix(0.6167,0,0,0.6167,3.75,3.9)"
+   width="9.8999996"
+   xlink:href="#a17a"
+   id="use17369"
+   x="0"
+   y="0" />
+<defs
+   id="defs17373">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17560" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a17b"
+     id="use17562"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a18">&gt;<use
+   height="10.2"
+   transform="matrix(0.5583,0,0,0.5583,4.05,4.2)"
+   width="9.8999996"
+   xlink:href="#a18a"
+   id="use17376"
+   x="0"
+   y="0" />
+<defs
+   id="defs17380">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17567" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a18b"
+     id="use17569"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="a19">&gt;<use
+   height="10.2"
+   transform="matrix(0.5,0,0,0.5,4.3,4.5)"
+   width="9.8999996"
+   xlink:href="#a19a"
+   id="use17383"
+   x="0"
+   y="0" />
+<defs
+   id="defs17387">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17574" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#a19b"
+     id="use17576"
+     x="0"
+     y="0" />
+</defs>
+</g>
+  </g>
+  <g
+     id="g17916"
+     transform="matrix(0.68724935,0,0,0.68724935,54.610079,52.982764)">
+    <g
+       id="b0">&gt;<use
+   height="10.2"
+   transform="matrix(0.9375,0,0,0.9375,2.15,2.25)"
+   width="9.8999996"
+   xlink:href="#b0a"
+   id="use17586"
+   x="0"
+   y="0" />
+<defs
+   id="defs17590">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17777" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b0b"
+     id="use17779"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b1">&gt;<use
+   height="10.2"
+   transform="matrix(1.0469,0,0,1.0469,1.6,1.7)"
+   width="9.8999996"
+   xlink:href="#b1a"
+   id="use17593"
+   x="0"
+   y="0" />
+<defs
+   id="defs17597">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17784" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b1b"
+     id="use17786"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b2">&gt;<use
+   height="10.2"
+   transform="matrix(1.1563,0,0,1.1563,1,1.1)"
+   width="9.8999996"
+   xlink:href="#b2a"
+   id="use17600"
+   x="0"
+   y="0" />
+<defs
+   id="defs17604">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17791" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b2b"
+     id="use17793"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b3">&gt;<use
+   height="10.2"
+   transform="matrix(1.2656,0,0,1.2656,0.5,0.55)"
+   width="9.8999996"
+   xlink:href="#b3a"
+   id="use17607"
+   x="0"
+   y="0" />
+<defs
+   id="defs17611">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17798" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b3b"
+     id="use17800"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b4">&gt;<use
+   height="10.2"
+   transform="scale(1.375)"
+   width="9.8999996"
+   xlink:href="#b4a"
+   id="use17614"
+   x="0"
+   y="0" />
+<defs
+   id="defs17618">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17805" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b4b"
+     id="use17807"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b5">&gt;<use
+   height="10.2"
+   transform="matrix(1.3167,0,0,1.3167,0.3,0.35)"
+   width="9.8999996"
+   xlink:href="#b5a"
+   id="use17621"
+   x="0"
+   y="0" />
+<defs
+   id="defs17625">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17812" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b5b"
+     id="use17814"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b6">&gt;<use
+   height="10.2"
+   transform="matrix(1.2583,0,0,1.2583,0.55,0.6)"
+   width="9.8999996"
+   xlink:href="#b6a"
+   id="use17628"
+   x="0"
+   y="0" />
+<defs
+   id="defs17632">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17819" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b6b"
+     id="use17821"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b7">&gt;<use
+   height="10.2"
+   transform="matrix(1.2,0,0,1.2,0.9,0.9)"
+   width="9.8999996"
+   xlink:href="#b7a"
+   id="use17635"
+   x="0"
+   y="0" />
+<defs
+   id="defs17639">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17826" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b7b"
+     id="use17828"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b8">&gt;<use
+   height="10.2"
+   transform="matrix(1.1417,0,0,1.1417,1.15,1.25)"
+   width="9.8999996"
+   xlink:href="#b8a"
+   id="use17642"
+   x="0"
+   y="0" />
+<defs
+   id="defs17646">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17833" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b8b"
+     id="use17835"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b9">&gt;<use
+   height="10.2"
+   transform="matrix(1.0833,0,0,1.0833,1.45,1.5)"
+   width="9.8999996"
+   xlink:href="#b9a"
+   id="use17649"
+   x="0"
+   y="0" />
+<defs
+   id="defs17653">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17840" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b9b"
+     id="use17842"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b10">&gt;<use
+   height="10.2"
+   transform="matrix(1.025,0,0,1.025,1.7,1.8)"
+   width="9.8999996"
+   xlink:href="#b10a"
+   id="use17656"
+   x="0"
+   y="0" />
+<defs
+   id="defs17660">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17847" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b10b"
+     id="use17849"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b11">&gt;<use
+   height="10.2"
+   transform="matrix(0.9667,0,0,0.9667,2,2.1)"
+   width="9.8999996"
+   xlink:href="#b11a"
+   id="use17663"
+   x="0"
+   y="0" />
+<defs
+   id="defs17667">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17854" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b11b"
+     id="use17856"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b12">&gt;<use
+   height="10.2"
+   transform="matrix(0.9083,0,0,0.9083,2.35,2.4)"
+   width="9.8999996"
+   xlink:href="#b12a"
+   id="use17670"
+   x="0"
+   y="0" />
+<defs
+   id="defs17674">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17861" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b12b"
+     id="use17863"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b13">&gt;<use
+   height="10.2"
+   transform="matrix(0.85,0,0,0.85,2.6,2.7)"
+   width="9.8999996"
+   xlink:href="#b13a"
+   id="use17677"
+   x="0"
+   y="0" />
+<defs
+   id="defs17681">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17868" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b13b"
+     id="use17870"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b14">&gt;<use
+   height="10.2"
+   transform="matrix(0.7917,0,0,0.7917,2.9,3)"
+   width="9.8999996"
+   xlink:href="#b14a"
+   id="use17684"
+   x="0"
+   y="0" />
+<defs
+   id="defs17688">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17875" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b14b"
+     id="use17877"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b15">&gt;<use
+   height="10.2"
+   transform="matrix(0.7333,0,0,0.7333,3.15,3.3)"
+   width="9.8999996"
+   xlink:href="#b15a"
+   id="use17691"
+   x="0"
+   y="0" />
+<defs
+   id="defs17695">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17882" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b15b"
+     id="use17884"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b16">&gt;<use
+   height="10.2"
+   transform="matrix(0.675,0,0,0.675,3.45,3.6)"
+   width="9.8999996"
+   xlink:href="#b16a"
+   id="use17698"
+   x="0"
+   y="0" />
+<defs
+   id="defs17702">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17889" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b16b"
+     id="use17891"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b17">&gt;<use
+   height="10.2"
+   transform="matrix(0.6167,0,0,0.6167,3.75,3.9)"
+   width="9.8999996"
+   xlink:href="#b17a"
+   id="use17705"
+   x="0"
+   y="0" />
+<defs
+   id="defs17709">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17896" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b17b"
+     id="use17898"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b18">&gt;<use
+   height="10.2"
+   transform="matrix(0.5583,0,0,0.5583,4.05,4.2)"
+   width="9.8999996"
+   xlink:href="#b18a"
+   id="use17712"
+   x="0"
+   y="0" />
+<defs
+   id="defs17716">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17903" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b18b"
+     id="use17905"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="b19">&gt;<use
+   height="10.2"
+   transform="matrix(0.5,0,0,0.5,4.3,4.5)"
+   width="9.8999996"
+   xlink:href="#b19a"
+   id="use17719"
+   x="0"
+   y="0" />
+<defs
+   id="defs17723">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path17910" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#b19b"
+     id="use17912"
+     x="0"
+     y="0" />
+</defs>
+</g>
+  </g>
+  <g
+     id="g18252"
+     transform="matrix(0.51035199,0,0,0.51035199,90.680229,61.182985)">
+    <g
+       id="c0">&gt;<use
+   height="10.2"
+   transform="matrix(0.9375,0,0,0.9375,2.15,2.25)"
+   width="9.8999996"
+   xlink:href="#c0a"
+   id="use17922"
+   x="0"
+   y="0" />
+<defs
+   id="defs17926">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18113" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c0b"
+     id="use18115"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c1">&gt;<use
+   height="10.2"
+   transform="matrix(1.0469,0,0,1.0469,1.6,1.7)"
+   width="9.8999996"
+   xlink:href="#c1a"
+   id="use17929"
+   x="0"
+   y="0" />
+<defs
+   id="defs17933">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18120" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c1b"
+     id="use18122"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c2">&gt;<use
+   height="10.2"
+   transform="matrix(1.1563,0,0,1.1563,1,1.1)"
+   width="9.8999996"
+   xlink:href="#c2a"
+   id="use17936"
+   x="0"
+   y="0" />
+<defs
+   id="defs17940">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18127" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c2b"
+     id="use18129"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c3">&gt;<use
+   height="10.2"
+   transform="matrix(1.2656,0,0,1.2656,0.5,0.55)"
+   width="9.8999996"
+   xlink:href="#c3a"
+   id="use17943"
+   x="0"
+   y="0" />
+<defs
+   id="defs17947">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18134" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c3b"
+     id="use18136"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c4">&gt;<use
+   height="10.2"
+   transform="scale(1.375)"
+   width="9.8999996"
+   xlink:href="#c4a"
+   id="use17950"
+   x="0"
+   y="0" />
+<defs
+   id="defs17954">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18141" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c4b"
+     id="use18143"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c5">&gt;<use
+   height="10.2"
+   transform="matrix(1.3167,0,0,1.3167,0.3,0.35)"
+   width="9.8999996"
+   xlink:href="#c5a"
+   id="use17957"
+   x="0"
+   y="0" />
+<defs
+   id="defs17961">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18148" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c5b"
+     id="use18150"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c6">&gt;<use
+   height="10.2"
+   transform="matrix(1.2583,0,0,1.2583,0.55,0.6)"
+   width="9.8999996"
+   xlink:href="#c6a"
+   id="use17964"
+   x="0"
+   y="0" />
+<defs
+   id="defs17968">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18155" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c6b"
+     id="use18157"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c7">&gt;<use
+   height="10.2"
+   transform="matrix(1.2,0,0,1.2,0.9,0.9)"
+   width="9.8999996"
+   xlink:href="#c7a"
+   id="use17971"
+   x="0"
+   y="0" />
+<defs
+   id="defs17975">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18162" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c7b"
+     id="use18164"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c8">&gt;<use
+   height="10.2"
+   transform="matrix(1.1417,0,0,1.1417,1.15,1.25)"
+   width="9.8999996"
+   xlink:href="#c8a"
+   id="use17978"
+   x="0"
+   y="0" />
+<defs
+   id="defs17982">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18169" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c8b"
+     id="use18171"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c9">&gt;<use
+   height="10.2"
+   transform="matrix(1.0833,0,0,1.0833,1.45,1.5)"
+   width="9.8999996"
+   xlink:href="#c9a"
+   id="use17985"
+   x="0"
+   y="0" />
+<defs
+   id="defs17989">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18176" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c9b"
+     id="use18178"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c10">&gt;<use
+   height="10.2"
+   transform="matrix(1.025,0,0,1.025,1.7,1.8)"
+   width="9.8999996"
+   xlink:href="#c10a"
+   id="use17992"
+   x="0"
+   y="0" />
+<defs
+   id="defs17996">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18183" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c10b"
+     id="use18185"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c11">&gt;<use
+   height="10.2"
+   transform="matrix(0.9667,0,0,0.9667,2,2.1)"
+   width="9.8999996"
+   xlink:href="#c11a"
+   id="use17999"
+   x="0"
+   y="0" />
+<defs
+   id="defs18003">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18190" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c11b"
+     id="use18192"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c12">&gt;<use
+   height="10.2"
+   transform="matrix(0.9083,0,0,0.9083,2.35,2.4)"
+   width="9.8999996"
+   xlink:href="#c12a"
+   id="use18006"
+   x="0"
+   y="0" />
+<defs
+   id="defs18010">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18197" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c12b"
+     id="use18199"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c13">&gt;<use
+   height="10.2"
+   transform="matrix(0.85,0,0,0.85,2.6,2.7)"
+   width="9.8999996"
+   xlink:href="#c13a"
+   id="use18013"
+   x="0"
+   y="0" />
+<defs
+   id="defs18017">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18204" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c13b"
+     id="use18206"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c14">&gt;<use
+   height="10.2"
+   transform="matrix(0.7917,0,0,0.7917,2.9,3)"
+   width="9.8999996"
+   xlink:href="#c14a"
+   id="use18020"
+   x="0"
+   y="0" />
+<defs
+   id="defs18024">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18211" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c14b"
+     id="use18213"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c15">&gt;<use
+   height="10.2"
+   transform="matrix(0.7333,0,0,0.7333,3.15,3.3)"
+   width="9.8999996"
+   xlink:href="#c15a"
+   id="use18027"
+   x="0"
+   y="0" />
+<defs
+   id="defs18031">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18218" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c15b"
+     id="use18220"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c16">&gt;<use
+   height="10.2"
+   transform="matrix(0.675,0,0,0.675,3.45,3.6)"
+   width="9.8999996"
+   xlink:href="#c16a"
+   id="use18034"
+   x="0"
+   y="0" />
+<defs
+   id="defs18038">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18225" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c16b"
+     id="use18227"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c17">&gt;<use
+   height="10.2"
+   transform="matrix(0.6167,0,0,0.6167,3.75,3.9)"
+   width="9.8999996"
+   xlink:href="#c17a"
+   id="use18041"
+   x="0"
+   y="0" />
+<defs
+   id="defs18045">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18232" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c17b"
+     id="use18234"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c18">&gt;<use
+   height="10.2"
+   transform="matrix(0.5583,0,0,0.5583,4.05,4.2)"
+   width="9.8999996"
+   xlink:href="#c18a"
+   id="use18048"
+   x="0"
+   y="0" />
+<defs
+   id="defs18052">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18239" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c18b"
+     id="use18241"
+     x="0"
+     y="0" />
+</defs>
+</g>
+    <g
+       id="c19">&gt;<use
+   height="10.2"
+   transform="matrix(0.5,0,0,0.5,4.3,4.5)"
+   width="9.8999996"
+   xlink:href="#c19a"
+   id="use18055"
+   x="0"
+   y="0" />
+<defs
+   id="defs18059">
+  <path
+     d="M 3.9,4.3 6.9,0 5.85,4.95 9.9,8.25 5.1,6.85 3.2,10.2 3.4,6.1 0,3.8 3.9,4.3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     id="path18246" />
+  <use
+     height="10.2"
+     width="9.8999996"
+     xlink:href="#c19b"
+     id="use18248"
+     x="0"
+     y="0" />
+</defs>
+</g>
+  </g>
+</svg>

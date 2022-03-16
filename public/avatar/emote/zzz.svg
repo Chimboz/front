@@ -1,1 +1,3522 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="100.8" width="132.65" xmlns="http://www.w3.org/2000/svg"><g transform="translate(77.75 73.55)"><use height="6" transform="translate(-12.25 -2.75)" width="24.45" xlink:href="#a"/><use height="16.45" transform="translate(21 -24.8)" width="13.45" xlink:href="#b"/><use height="16.45" transform="translate(22.474 -1.3) scale(.4935)" width="13.45" xlink:href="#b"/><use height="16.45" transform="translate(37.204 -17.05) scale(.3636)" width="13.45" xlink:href="#b"/><use height="10.85" transform="translate(-1.55 3.3)" width="4.55" xlink:href="#c"/></g><defs><g id="a"><path d="M8.65-.15q3.5 1.8 3.55 2.8 0 .95-3.15.4L.9 2.3l-9.05.55-4.1-.2q0-.95 3.7-2.75Q-4.9-1.95.15-1.95q5-.05 8.5 1.8" fill="#6596cc" fill-opacity=".431" fill-rule="evenodd" transform="translate(12.25 2.75)"/><path d="m1.4-2.2.05.3.15.5.6.75q.6.5 1.4.65l.55.05Q5.3 0 6.1-.65q.65-.55.8-1.25v-.35m-13.1.1.05.25q.15.7.8 1.25.75.65 1.9.65l.65-.05q.75-.15 1.3-.6.6-.5.75-1.15v-.1l.05-.25" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.25 2.75)"/></g><g id="e" fill-rule="evenodd"><path d="M5.75-3.6-1.3 5.1H6v2.15H-4.45V4.9L2.3-3.45h-6v-2.2h9.45v2.05" fill="#c00" transform="translate(5.2 6.45)"/><path d="m5-4.4-7.05 8.7h7.3v2.15H-5.2V4.1l6.75-8.35h-6v-2.2H5v2.05" fill="#fc0" transform="translate(5.2 6.45)"/></g><g id="c" fill-rule="evenodd"><path d="M1.65 6.65q-.6.5-.6.95v.2l-1.5.15-.6-.3-.45-.95q-.2-1.5.35-2.75l.1-.2.35-.3.7-.15q2.05.4 1.75 2.55l-.1.8" fill="#333" transform="translate(1.55 -3.3)"/><path d="M1.05 7.8v-.2q0-.45.6-.95l.2-.1q.35-.1.55 1.45l.45 3.1q.3 1.6-.05 2.4-.4.8-1.1.6-.7-.2-.35-2.55.35-2.35-.3-3.75" fill="#6596cc" fill-opacity=".431" transform="translate(1.55 -3.3)"/></g><use height="13.7" transform="matrix(1.2 0 0 1.2 .01 .01)" width="11.2" xlink:href="#d" id="b"/><use height="13.7" width="11.2" xlink:href="#e" id="d"/></defs></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="100.8"
+   width="132.65"
+   version="1.1"
+   id="svg18886"
+   sodipodi:docname="zzz.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18888"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:current-layer="g18865" />
+  <g
+     transform="translate(77.75,73.55)"
+     id="g18865">
+    <use
+       height="6"
+       transform="translate(-12.25,-2.75)"
+       width="24.450001"
+       xlink:href="#a"
+       id="use18855"
+       x="0"
+       y="0" />
+    <use
+       height="10.85"
+       transform="translate(-1.55,3.3)"
+       width="4.5500002"
+       xlink:href="#c"
+       id="use18863"
+       x="0"
+       y="0" />
+  </g>
+  <defs
+     id="defs18884">
+    <g
+       id="a">
+      <path
+         d="M8.65-.15q3.5 1.8 3.55 2.8 0 .95-3.15.4L.9 2.3l-9.05.55-4.1-.2q0-.95 3.7-2.75Q-4.9-1.95.15-1.95q5-.05 8.5 1.8"
+         fill="#6596cc"
+         fill-opacity=".431"
+         fill-rule="evenodd"
+         transform="translate(12.25 2.75)"
+         id="path18867" />
+      <path
+         d="m1.4-2.2.05.3.15.5.6.75q.6.5 1.4.65l.55.05Q5.3 0 6.1-.65q.65-.55.8-1.25v-.35m-13.1.1.05.25q.15.7.8 1.25.75.65 1.9.65l.65-.05q.75-.15 1.3-.6.6-.5.75-1.15v-.1l.05-.25"
+         fill="none"
+         stroke="#666"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         transform="translate(12.25 2.75)"
+         id="path18869" />
+    </g>
+    <g
+       id="e"
+       fill-rule="evenodd">
+      <path
+         d="M5.75-3.6-1.3 5.1H6v2.15H-4.45V4.9L2.3-3.45h-6v-2.2h9.45v2.05"
+         fill="#c00"
+         transform="translate(5.2 6.45)"
+         id="path18872" />
+      <path
+         d="m5-4.4-7.05 8.7h7.3v2.15H-5.2V4.1l6.75-8.35h-6v-2.2H5v2.05"
+         fill="#fc0"
+         transform="translate(5.2 6.45)"
+         id="path18874" />
+    </g>
+    <g
+       id="c"
+       fill-rule="evenodd">
+      <path
+         d="M1.65 6.65q-.6.5-.6.95v.2l-1.5.15-.6-.3-.45-.95q-.2-1.5.35-2.75l.1-.2.35-.3.7-.15q2.05.4 1.75 2.55l-.1.8"
+         fill="#333"
+         transform="translate(1.55 -3.3)"
+         id="path18877" />
+      <path
+         d="M1.05 7.8v-.2q0-.45.6-.95l.2-.1q.35-.1.55 1.45l.45 3.1q.3 1.6-.05 2.4-.4.8-1.1.6-.7-.2-.35-2.55.35-2.35-.3-3.75"
+         fill="#6596cc"
+         fill-opacity=".431"
+         transform="translate(1.55 -3.3)"
+         id="path18879" />
+    </g>
+    <use
+       height="13.7"
+       transform="matrix(1.2 0 0 1.2 .01 .01)"
+       width="11.2"
+       xlink:href="#d"
+       id="b" />
+    <use
+       height="13.7"
+       width="11.2"
+       xlink:href="#e"
+       id="d" />
+    <style
+       type="text/css"
+       id="style20436">#a0,#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12,#a13,#a14,#a15,#a16,#a17,#a18,#a19,#a20,#a21,#a22,#a23,#a24,#a25,#a26,#a27,#a28,#a29,#a30,#a31,#a32,#a33{visibility:hidden}</style>
+    <g
+       id="a0sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a0shape0"
+         id="use20444" />
+    </g>
+    <g
+       id="a0shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20447" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20449" />
+    </g>
+    <g
+       id="a1sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a1shape0"
+         id="use20459" />
+    </g>
+    <g
+       id="a1shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20462" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20464" />
+    </g>
+    <g
+       id="a2sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a2shape0"
+         id="use20474" />
+    </g>
+    <g
+       id="a2shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20477" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20479" />
+    </g>
+    <g
+       id="a3sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a3shape0"
+         id="use20489" />
+    </g>
+    <g
+       id="a3shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20492" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20494" />
+    </g>
+    <g
+       id="a4sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a4shape0"
+         id="use20504" />
+    </g>
+    <g
+       id="a4shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20507" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20509" />
+    </g>
+    <g
+       id="a5sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a5shape0"
+         id="use20519" />
+    </g>
+    <g
+       id="a5shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20522" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20524" />
+    </g>
+    <g
+       id="a6sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a6shape0"
+         id="use20534" />
+    </g>
+    <g
+       id="a6shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20537" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20539" />
+    </g>
+    <g
+       id="a7sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a7shape0"
+         id="use20549" />
+    </g>
+    <g
+       id="a7shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20552" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20554" />
+    </g>
+    <g
+       id="a8sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a8shape0"
+         id="use20564" />
+    </g>
+    <g
+       id="a8shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20567" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20569" />
+    </g>
+    <g
+       id="a9sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a9shape0"
+         id="use20579" />
+    </g>
+    <g
+       id="a9shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20582" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20584" />
+    </g>
+    <g
+       id="a10sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a10shape0"
+         id="use20594" />
+    </g>
+    <g
+       id="a10shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20597" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20599" />
+    </g>
+    <g
+       id="a11sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a11shape0"
+         id="use20609" />
+    </g>
+    <g
+       id="a11shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20612" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20614" />
+    </g>
+    <g
+       id="a12sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a12shape0"
+         id="use20624" />
+    </g>
+    <g
+       id="a12shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20627" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20629" />
+    </g>
+    <g
+       id="a13sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#a13shape0"
+         id="use20639" />
+    </g>
+    <g
+       id="a13shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20642" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path20644" />
+    </g>
+    <style
+       type="text/css"
+       id="style20710">#a0,#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12,#a13,#a14,#a15,#a16,#a17,#a18,#a19,#a20,#a21,#a22,#a23,#a24,#a25,#a26,#a27,#a28,#a29,#a30,#a31,#a32,#a33{animation:1.36s linear ak infinite}#a0{animation-delay:0s}#a1{animation-delay:0.04s}#a2{animation-delay:0.08s}#a3{animation-delay:0.12s}#a4{animation-delay:0.16s}#a5{animation-delay:0.2s}#a6{animation-delay:0.24s}#a7{animation-delay:0.28s}#a8{animation-delay:0.32s}#a9{animation-delay:0.36s}#a10{animation-delay:0.4s}#a11{animation-delay:0.44s}#a12{animation-delay:0.48s}#a13{animation-delay:0.52s}#a14{animation-delay:0.56s}#a15{animation-delay:0.6s}#a16{animation-delay:0.64s}#a17{animation-delay:0.68s}#a18{animation-delay:0.72s}#a19{animation-delay:0.76s}#a20{animation-delay:0.8s}#a21{animation-delay:0.84s}#a22{animation-delay:0.88s}#a23{animation-delay:0.92s}#a24{animation-delay:0.96s}#a25{animation-delay:1s}#a26{animation-delay:1.04s}#a27{animation-delay:1.08s}#a28{animation-delay:1.12s}#a29{animation-delay:1.16s}#a30{animation-delay:1.2s}#a31{animation-delay:1.24s}#a32{animation-delay:1.28s}#a33{animation-delay:1.32s}@keyframes ak{0%,2.941176%{visibility:visible}2.941250%,100%{visibility:hidden}}</style>
+    <style
+       type="text/css"
+       id="style21028">#b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12,#b13,#b14,#b15,#b16,#b17,#b18,#b19,#b20,#b21,#b22,#b23,#b24,#b25,#b26,#b27,#b28,#b29,#b30,#b31,#b32,#b33{visibility:hidden}</style>
+    <g
+       id="b0sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b0shape0"
+         id="use21036" />
+    </g>
+    <g
+       id="b0shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21039" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21041" />
+    </g>
+    <g
+       id="b1sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b1shape0"
+         id="use21051" />
+    </g>
+    <g
+       id="b1shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21054" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21056" />
+    </g>
+    <g
+       id="b2sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b2shape0"
+         id="use21066" />
+    </g>
+    <g
+       id="b2shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21069" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21071" />
+    </g>
+    <g
+       id="b3sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b3shape0"
+         id="use21081" />
+    </g>
+    <g
+       id="b3shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21084" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21086" />
+    </g>
+    <g
+       id="b4sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b4shape0"
+         id="use21096" />
+    </g>
+    <g
+       id="b4shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21099" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21101" />
+    </g>
+    <g
+       id="b5sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b5shape0"
+         id="use21111" />
+    </g>
+    <g
+       id="b5shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21114" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21116" />
+    </g>
+    <g
+       id="b6sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b6shape0"
+         id="use21126" />
+    </g>
+    <g
+       id="b6shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21129" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21131" />
+    </g>
+    <g
+       id="b7sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b7shape0"
+         id="use21141" />
+    </g>
+    <g
+       id="b7shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21144" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21146" />
+    </g>
+    <g
+       id="b8sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b8shape0"
+         id="use21156" />
+    </g>
+    <g
+       id="b8shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21159" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21161" />
+    </g>
+    <g
+       id="b9sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b9shape0"
+         id="use21171" />
+    </g>
+    <g
+       id="b9shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21174" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21176" />
+    </g>
+    <g
+       id="b10sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b10shape0"
+         id="use21186" />
+    </g>
+    <g
+       id="b10shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21189" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21191" />
+    </g>
+    <g
+       id="b11sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b11shape0"
+         id="use21201" />
+    </g>
+    <g
+       id="b11shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21204" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21206" />
+    </g>
+    <g
+       id="b12sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b12shape0"
+         id="use21216" />
+    </g>
+    <g
+       id="b12shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21219" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21221" />
+    </g>
+    <g
+       id="b13sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#b13shape0"
+         id="use21231" />
+    </g>
+    <g
+       id="b13shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21234" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21236" />
+    </g>
+    <style
+       type="text/css"
+       id="style21302">#b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12,#b13,#b14,#b15,#b16,#b17,#b18,#b19,#b20,#b21,#b22,#b23,#b24,#b25,#b26,#b27,#b28,#b29,#b30,#b31,#b32,#b33{animation:1.36s linear bk infinite}#b0{animation-delay:0s}#b1{animation-delay:0.04s}#b2{animation-delay:0.08s}#b3{animation-delay:0.12s}#b4{animation-delay:0.16s}#b5{animation-delay:0.2s}#b6{animation-delay:0.24s}#b7{animation-delay:0.28s}#b8{animation-delay:0.32s}#b9{animation-delay:0.36s}#b10{animation-delay:0.4s}#b11{animation-delay:0.44s}#b12{animation-delay:0.48s}#b13{animation-delay:0.52s}#b14{animation-delay:0.56s}#b15{animation-delay:0.6s}#b16{animation-delay:0.64s}#b17{animation-delay:0.68s}#b18{animation-delay:0.72s}#b19{animation-delay:0.76s}#b20{animation-delay:0.8s}#b21{animation-delay:0.84s}#b22{animation-delay:0.88s}#b23{animation-delay:0.92s}#b24{animation-delay:0.96s}#b25{animation-delay:1s}#b26{animation-delay:1.04s}#b27{animation-delay:1.08s}#b28{animation-delay:1.12s}#b29{animation-delay:1.16s}#b30{animation-delay:1.2s}#b31{animation-delay:1.24s}#b32{animation-delay:1.28s}#b33{animation-delay:1.32s}@keyframes bk{0%,2.941176%{visibility:visible}2.941250%,100%{visibility:hidden}}</style>
+    <style
+       type="text/css"
+       id="style21620">#c0,#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15,#c16,#c17,#c18,#c19,#c20,#c21,#c22,#c23,#c24,#c25,#c26,#c27,#c28,#c29,#c30,#c31,#c32,#c33{visibility:hidden}</style>
+    <g
+       id="c0sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c0shape0"
+         id="use21628" />
+    </g>
+    <g
+       id="c0shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21631" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21633" />
+    </g>
+    <g
+       id="c1sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c1shape0"
+         id="use21643" />
+    </g>
+    <g
+       id="c1shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21646" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21648" />
+    </g>
+    <g
+       id="c2sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c2shape0"
+         id="use21658" />
+    </g>
+    <g
+       id="c2shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21661" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21663" />
+    </g>
+    <g
+       id="c3sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c3shape0"
+         id="use21673" />
+    </g>
+    <g
+       id="c3shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21676" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21678" />
+    </g>
+    <g
+       id="c4sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c4shape0"
+         id="use21688" />
+    </g>
+    <g
+       id="c4shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21691" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21693" />
+    </g>
+    <g
+       id="c5sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c5shape0"
+         id="use21703" />
+    </g>
+    <g
+       id="c5shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21706" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21708" />
+    </g>
+    <g
+       id="c6sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c6shape0"
+         id="use21718" />
+    </g>
+    <g
+       id="c6shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21721" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21723" />
+    </g>
+    <g
+       id="c7sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c7shape0"
+         id="use21733" />
+    </g>
+    <g
+       id="c7shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21736" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21738" />
+    </g>
+    <g
+       id="c8sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c8shape0"
+         id="use21748" />
+    </g>
+    <g
+       id="c8shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21751" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21753" />
+    </g>
+    <g
+       id="c9sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c9shape0"
+         id="use21763" />
+    </g>
+    <g
+       id="c9shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21766" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21768" />
+    </g>
+    <g
+       id="c10sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c10shape0"
+         id="use21778" />
+    </g>
+    <g
+       id="c10shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21781" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21783" />
+    </g>
+    <g
+       id="c11sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c11shape0"
+         id="use21793" />
+    </g>
+    <g
+       id="c11shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21796" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21798" />
+    </g>
+    <g
+       id="c12sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c12shape0"
+         id="use21808" />
+    </g>
+    <g
+       id="c12shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21811" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21813" />
+    </g>
+    <g
+       id="c13sprite0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <use
+         height="13.7"
+         transform="matrix(1.0, 0.0, 0.0, 1.0, -5.2, -6.45)"
+         width="11.2"
+         xlink:href="#c13shape0"
+         id="use21823" />
+    </g>
+    <g
+       id="c13shape0"
+       transform="matrix(1.0, 0.0, 0.0, 1.0, 5.2, 6.45)">
+      <path
+         d="M5.75 -3.6 L-1.3 5.1 6.0 5.1 6.0 7.25 -4.45 7.25 -4.45 4.9 2.3 -3.45 -3.7 -3.45 -3.7 -5.65 5.75 -5.65 5.75 -3.6"
+         fill="#cc0000"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21826" />
+      <path
+         d="M5.0 -4.4 L-2.05 4.3 5.25 4.3 5.25 6.45 -5.2 6.45 -5.2 4.1 1.55 -4.25 -4.45 -4.25 -4.45 -6.45 5.0 -6.45 5.0 -4.4"
+         fill="#ffcc00"
+         fill-rule="evenodd"
+         stroke="none"
+         id="path21828" />
+    </g>
+    <style
+       type="text/css"
+       id="style21894">#c0,#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15,#c16,#c17,#c18,#c19,#c20,#c21,#c22,#c23,#c24,#c25,#c26,#c27,#c28,#c29,#c30,#c31,#c32,#c33{animation:1.36s linear ck infinite}#c0{animation-delay:0s}#c1{animation-delay:0.04s}#c2{animation-delay:0.08s}#c3{animation-delay:0.12s}#c4{animation-delay:0.16s}#c5{animation-delay:0.2s}#c6{animation-delay:0.24s}#c7{animation-delay:0.28s}#c8{animation-delay:0.32s}#c9{animation-delay:0.36s}#c10{animation-delay:0.4s}#c11{animation-delay:0.44s}#c12{animation-delay:0.48s}#c13{animation-delay:0.52s}#c14{animation-delay:0.56s}#c15{animation-delay:0.6s}#c16{animation-delay:0.64s}#c17{animation-delay:0.68s}#c18{animation-delay:0.72s}#c19{animation-delay:0.76s}#c20{animation-delay:0.8s}#c21{animation-delay:0.84s}#c22{animation-delay:0.88s}#c23{animation-delay:0.92s}#c24{animation-delay:0.96s}#c25{animation-delay:1s}#c26{animation-delay:1.04s}#c27{animation-delay:1.08s}#c28{animation-delay:1.12s}#c29{animation-delay:1.16s}#c30{animation-delay:1.2s}#c31{animation-delay:1.24s}#c32{animation-delay:1.28s}#c33{animation-delay:1.32s}@keyframes ck{0%,2.941176%{visibility:visible}2.941250%,100%{visibility:hidden}}</style>
+  </defs>
+  <g
+     id="g21026"
+     transform="matrix(0.49234907,0,0,0.49234907,100.20405,72.252649)"
+     style="display:inline">
+    <g
+       id="a0">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20442">
+  <use
+     height="13.7"
+     transform="matrix(1.2,0,0,1.2,23.26,19.26)"
+     width="11.2"
+     xlink:href="#a0sprite0"
+     id="use20440"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20452">
+  <g
+     id="g20794"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a0shape0"
+       id="use20792"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20800"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20796" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20798" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a1">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20457">
+  <use
+     height="13.7"
+     transform="matrix(1.1231,0,0,1.1231,23.61,19.7562)"
+     width="11.2"
+     xlink:href="#a1sprite0"
+     id="use20455"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20467">
+  <g
+     id="g20808"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a1shape0"
+       id="use20806"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20814"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20810" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20812" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a2">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20472">
+  <use
+     height="13.7"
+     transform="matrix(1.0462,0,0,1.0462,24.01,20.2523)"
+     width="11.2"
+     xlink:href="#a2sprite0"
+     id="use20470"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20482">
+  <g
+     id="g20822"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a2shape0"
+       id="use20820"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20828"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20824" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20826" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a3">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20487">
+  <use
+     height="13.7"
+     transform="matrix(0.9692,0,0,0.9692,24.4601,20.7486)"
+     width="11.2"
+     xlink:href="#a3sprite0"
+     id="use20485"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20497">
+  <g
+     id="g20836"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a3shape0"
+       id="use20834"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20842"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20838" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20840" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a4">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20502">
+  <use
+     height="13.7"
+     transform="matrix(0.8923,0,0,0.8923,24.8601,21.2447)"
+     width="11.2"
+     xlink:href="#a4sprite0"
+     id="use20500"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20512">
+  <g
+     id="g20850"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a4shape0"
+       id="use20848"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20856"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20852" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20854" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a5">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20517">
+  <use
+     height="13.7"
+     transform="matrix(0.8154,0,0,0.8154,25.26,21.7408)"
+     width="11.2"
+     xlink:href="#a5sprite0"
+     id="use20515"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20527">
+  <g
+     id="g20864"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a5shape0"
+       id="use20862"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20870"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20866" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20868" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a6">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20532">
+  <use
+     height="13.7"
+     transform="matrix(0.7385,0,0,0.7385,25.66,22.2369)"
+     width="11.2"
+     xlink:href="#a6sprite0"
+     id="use20530"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20542">
+  <g
+     id="g20878"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a6shape0"
+       id="use20876"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20884"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20880" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20882" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a7">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20547">
+  <use
+     height="13.7"
+     transform="matrix(0.6615,0,0,0.6615,26.0601,22.7332)"
+     width="11.2"
+     xlink:href="#a7sprite0"
+     id="use20545"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20557">
+  <g
+     id="g20892"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a7shape0"
+       id="use20890"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20898"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20894" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20896" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a8">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20562">
+  <use
+     height="13.7"
+     transform="matrix(0.5846,0,0,0.5846,26.4101,23.2294)"
+     width="11.2"
+     xlink:href="#a8sprite0"
+     id="use20560"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20572">
+  <g
+     id="g20906"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a8shape0"
+       id="use20904"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20912"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20908" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20910" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a9">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20577">
+  <use
+     height="13.7"
+     transform="matrix(0.5077,0,0,0.5077,26.8601,23.7255)"
+     width="11.2"
+     xlink:href="#a9sprite0"
+     id="use20575"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20587">
+  <g
+     id="g20920"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a9shape0"
+       id="use20918"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20926"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20922" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20924" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a10">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20592">
+  <use
+     height="13.7"
+     transform="matrix(0.4308,0,0,0.4308,27.26,24.2215)"
+     width="11.2"
+     xlink:href="#a10sprite0"
+     id="use20590"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20602">
+  <g
+     id="g20934"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a10shape0"
+       id="use20932"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20940"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20936" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20938" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a11">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20607">
+  <use
+     height="13.7"
+     transform="matrix(0.3538,0,0,0.3538,27.6601,24.7178)"
+     width="11.2"
+     xlink:href="#a11sprite0"
+     id="use20605"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20617">
+  <g
+     id="g20948"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a11shape0"
+       id="use20946"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20954"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20950" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20952" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a12">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20622">
+  <use
+     height="13.7"
+     transform="matrix(0.2769,0,0,0.2769,28.06,25.2139)"
+     width="11.2"
+     xlink:href="#a12sprite0"
+     id="use20620"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20632">
+  <g
+     id="g20962"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a12shape0"
+       id="use20960"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20968"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20964" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20966" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a13">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20637">
+  <use
+     height="13.7"
+     transform="matrix(0.2,0,0,0.2,28.46,25.71)"
+     width="11.2"
+     xlink:href="#a13sprite0"
+     id="use20635"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs20647">
+  <g
+     id="g20976"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#a13shape0"
+       id="use20974"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g20982"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20978" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path20980" />
+  </g>
+</defs>
+</g>
+    <g
+       id="a14">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20650" />
+</g>
+    <g
+       id="a15">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20653" />
+</g>
+    <g
+       id="a16">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20656" />
+</g>
+    <g
+       id="a17">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20659" />
+</g>
+    <g
+       id="a18">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20662" />
+</g>
+    <g
+       id="a19">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20665" />
+</g>
+    <g
+       id="a20">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20668" />
+</g>
+    <g
+       id="a21">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20671" />
+</g>
+    <g
+       id="a22">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20674" />
+</g>
+    <g
+       id="a23">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20677" />
+</g>
+    <g
+       id="a24">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20680" />
+</g>
+    <g
+       id="a25">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20683" />
+</g>
+    <g
+       id="a26">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20686" />
+</g>
+    <g
+       id="a27">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20689" />
+</g>
+    <g
+       id="a28">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20692" />
+</g>
+    <g
+       id="a29">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20695" />
+</g>
+    <g
+       id="a30">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20698" />
+</g>
+    <g
+       id="a31">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20701" />
+</g>
+    <g
+       id="a32">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20704" />
+</g>
+    <g
+       id="a33">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g20707" />
+</g>
+  </g>
+  <g
+     id="g21618"
+     transform="matrix(0.36372203,0,0,0.36372203,114.94917,56.495676)"
+     style="display:inline">
+    <g
+       id="b0">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21034">
+  <use
+     height="13.7"
+     transform="matrix(1.2,0,0,1.2,23.26,19.26)"
+     width="11.2"
+     xlink:href="#b0sprite0"
+     id="use21032"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21044">
+  <g
+     id="g21386"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b0shape0"
+       id="use21384"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21392"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21388" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21390" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b1">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21049">
+  <use
+     height="13.7"
+     transform="matrix(1.1231,0,0,1.1231,23.61,19.7562)"
+     width="11.2"
+     xlink:href="#b1sprite0"
+     id="use21047"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21059">
+  <g
+     id="g21400"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b1shape0"
+       id="use21398"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21406"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21402" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21404" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b2">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21064">
+  <use
+     height="13.7"
+     transform="matrix(1.0462,0,0,1.0462,24.01,20.2523)"
+     width="11.2"
+     xlink:href="#b2sprite0"
+     id="use21062"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21074">
+  <g
+     id="g21414"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b2shape0"
+       id="use21412"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21420"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21416" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21418" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b3">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21079">
+  <use
+     height="13.7"
+     transform="matrix(0.9692,0,0,0.9692,24.4601,20.7486)"
+     width="11.2"
+     xlink:href="#b3sprite0"
+     id="use21077"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21089">
+  <g
+     id="g21428"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b3shape0"
+       id="use21426"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21434"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21430" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21432" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b4">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21094">
+  <use
+     height="13.7"
+     transform="matrix(0.8923,0,0,0.8923,24.8601,21.2447)"
+     width="11.2"
+     xlink:href="#b4sprite0"
+     id="use21092"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21104">
+  <g
+     id="g21442"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b4shape0"
+       id="use21440"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21448"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21444" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21446" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b5">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21109">
+  <use
+     height="13.7"
+     transform="matrix(0.8154,0,0,0.8154,25.26,21.7408)"
+     width="11.2"
+     xlink:href="#b5sprite0"
+     id="use21107"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21119">
+  <g
+     id="g21456"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b5shape0"
+       id="use21454"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21462"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21458" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21460" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b6">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21124">
+  <use
+     height="13.7"
+     transform="matrix(0.7385,0,0,0.7385,25.66,22.2369)"
+     width="11.2"
+     xlink:href="#b6sprite0"
+     id="use21122"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21134">
+  <g
+     id="g21470"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b6shape0"
+       id="use21468"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21476"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21472" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21474" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b7">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21139">
+  <use
+     height="13.7"
+     transform="matrix(0.6615,0,0,0.6615,26.0601,22.7332)"
+     width="11.2"
+     xlink:href="#b7sprite0"
+     id="use21137"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21149">
+  <g
+     id="g21484"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b7shape0"
+       id="use21482"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21490"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21486" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21488" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b8">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21154">
+  <use
+     height="13.7"
+     transform="matrix(0.5846,0,0,0.5846,26.4101,23.2294)"
+     width="11.2"
+     xlink:href="#b8sprite0"
+     id="use21152"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21164">
+  <g
+     id="g21498"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b8shape0"
+       id="use21496"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21504"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21500" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21502" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b9">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21169">
+  <use
+     height="13.7"
+     transform="matrix(0.5077,0,0,0.5077,26.8601,23.7255)"
+     width="11.2"
+     xlink:href="#b9sprite0"
+     id="use21167"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21179">
+  <g
+     id="g21512"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b9shape0"
+       id="use21510"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21518"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21514" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21516" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b10">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21184">
+  <use
+     height="13.7"
+     transform="matrix(0.4308,0,0,0.4308,27.26,24.2215)"
+     width="11.2"
+     xlink:href="#b10sprite0"
+     id="use21182"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21194">
+  <g
+     id="g21526"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b10shape0"
+       id="use21524"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21532"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21528" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21530" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b11">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21199">
+  <use
+     height="13.7"
+     transform="matrix(0.3538,0,0,0.3538,27.6601,24.7178)"
+     width="11.2"
+     xlink:href="#b11sprite0"
+     id="use21197"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21209">
+  <g
+     id="g21540"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b11shape0"
+       id="use21538"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21546"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21542" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21544" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b12">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21214">
+  <use
+     height="13.7"
+     transform="matrix(0.2769,0,0,0.2769,28.06,25.2139)"
+     width="11.2"
+     xlink:href="#b12sprite0"
+     id="use21212"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21224">
+  <g
+     id="g21554"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b12shape0"
+       id="use21552"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21560"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21556" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21558" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b13">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21229">
+  <use
+     height="13.7"
+     transform="matrix(0.2,0,0,0.2,28.46,25.71)"
+     width="11.2"
+     xlink:href="#b13sprite0"
+     id="use21227"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21239">
+  <g
+     id="g21568"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#b13shape0"
+       id="use21566"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21574"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21570" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21572" />
+  </g>
+</defs>
+</g>
+    <g
+       id="b14">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21242" />
+</g>
+    <g
+       id="b15">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21245" />
+</g>
+    <g
+       id="b16">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21248" />
+</g>
+    <g
+       id="b17">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21251" />
+</g>
+    <g
+       id="b18">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21254" />
+</g>
+    <g
+       id="b19">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21257" />
+</g>
+    <g
+       id="b20">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21260" />
+</g>
+    <g
+       id="b21">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21263" />
+</g>
+    <g
+       id="b22">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21266" />
+</g>
+    <g
+       id="b23">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21269" />
+</g>
+    <g
+       id="b24">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21272" />
+</g>
+    <g
+       id="b25">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21275" />
+</g>
+    <g
+       id="b26">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21278" />
+</g>
+    <g
+       id="b27">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21281" />
+</g>
+    <g
+       id="b28">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21284" />
+</g>
+    <g
+       id="b29">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21287" />
+</g>
+    <g
+       id="b30">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21290" />
+</g>
+    <g
+       id="b31">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21293" />
+</g>
+    <g
+       id="b32">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21296" />
+</g>
+    <g
+       id="b33">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21299" />
+</g>
+  </g>
+  <g
+     id="g22210"
+     transform="translate(98.75,48.75)"
+     style="display:inline">
+    <g
+       id="c0">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21626">
+  <use
+     height="13.7"
+     transform="matrix(1.2,0,0,1.2,23.26,19.26)"
+     width="11.2"
+     xlink:href="#c0sprite0"
+     id="use21624"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21636">
+  <g
+     id="g21978"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c0shape0"
+       id="use21976"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21984"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21980" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21982" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c1">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21641">
+  <use
+     height="13.7"
+     transform="matrix(1.1231,0,0,1.1231,23.61,19.7562)"
+     width="11.2"
+     xlink:href="#c1sprite0"
+     id="use21639"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21651">
+  <g
+     id="g21992"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c1shape0"
+       id="use21990"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g21998"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21994" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path21996" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c2">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21656">
+  <use
+     height="13.7"
+     transform="matrix(1.0462,0,0,1.0462,24.01,20.2523)"
+     width="11.2"
+     xlink:href="#c2sprite0"
+     id="use21654"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21666">
+  <g
+     id="g22006"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c2shape0"
+       id="use22004"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22012"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22008" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22010" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c3">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21671">
+  <use
+     height="13.7"
+     transform="matrix(0.9692,0,0,0.9692,24.4601,20.7486)"
+     width="11.2"
+     xlink:href="#c3sprite0"
+     id="use21669"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21681">
+  <g
+     id="g22020"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c3shape0"
+       id="use22018"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22026"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22022" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22024" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c4">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21686">
+  <use
+     height="13.7"
+     transform="matrix(0.8923,0,0,0.8923,24.8601,21.2447)"
+     width="11.2"
+     xlink:href="#c4sprite0"
+     id="use21684"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21696">
+  <g
+     id="g22034"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c4shape0"
+       id="use22032"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22040"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22036" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22038" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c5">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21701">
+  <use
+     height="13.7"
+     transform="matrix(0.8154,0,0,0.8154,25.26,21.7408)"
+     width="11.2"
+     xlink:href="#c5sprite0"
+     id="use21699"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21711">
+  <g
+     id="g22048"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c5shape0"
+       id="use22046"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22054"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22050" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22052" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c6">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21716">
+  <use
+     height="13.7"
+     transform="matrix(0.7385,0,0,0.7385,25.66,22.2369)"
+     width="11.2"
+     xlink:href="#c6sprite0"
+     id="use21714"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21726">
+  <g
+     id="g22062"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c6shape0"
+       id="use22060"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22068"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22064" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22066" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c7">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21731">
+  <use
+     height="13.7"
+     transform="matrix(0.6615,0,0,0.6615,26.0601,22.7332)"
+     width="11.2"
+     xlink:href="#c7sprite0"
+     id="use21729"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21741">
+  <g
+     id="g22076"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c7shape0"
+       id="use22074"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22082"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22078" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22080" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c8">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21746">
+  <use
+     height="13.7"
+     transform="matrix(0.5846,0,0,0.5846,26.4101,23.2294)"
+     width="11.2"
+     xlink:href="#c8sprite0"
+     id="use21744"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21756">
+  <g
+     id="g22090"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c8shape0"
+       id="use22088"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22096"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22092" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22094" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c9">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21761">
+  <use
+     height="13.7"
+     transform="matrix(0.5077,0,0,0.5077,26.8601,23.7255)"
+     width="11.2"
+     xlink:href="#c9sprite0"
+     id="use21759"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21771">
+  <g
+     id="g22104"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c9shape0"
+       id="use22102"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22110"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22106" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22108" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c10">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21776">
+  <use
+     height="13.7"
+     transform="matrix(0.4308,0,0,0.4308,27.26,24.2215)"
+     width="11.2"
+     xlink:href="#c10sprite0"
+     id="use21774"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21786">
+  <g
+     id="g22118"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c10shape0"
+       id="use22116"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22124"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22120" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22122" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c11">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21791">
+  <use
+     height="13.7"
+     transform="matrix(0.3538,0,0,0.3538,27.6601,24.7178)"
+     width="11.2"
+     xlink:href="#c11sprite0"
+     id="use21789"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21801">
+  <g
+     id="g22132"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c11shape0"
+       id="use22130"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22138"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22134" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22136" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c12">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21806">
+  <use
+     height="13.7"
+     transform="matrix(0.2769,0,0,0.2769,28.06,25.2139)"
+     width="11.2"
+     xlink:href="#c12sprite0"
+     id="use21804"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21816">
+  <g
+     id="g22146"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c12shape0"
+       id="use22144"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22152"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22148" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22150" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c13">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21821">
+  <use
+     height="13.7"
+     transform="matrix(0.2,0,0,0.2,28.46,25.71)"
+     width="11.2"
+     xlink:href="#c13sprite0"
+     id="use21819"
+     x="0"
+     y="0" />
+</g>
+<defs
+   id="defs21831">
+  <g
+     id="g22160"
+     transform="translate(5.2,6.45)">
+    <use
+       height="13.7"
+       transform="translate(-5.2,-6.45)"
+       width="11.2"
+       xlink:href="#c13shape0"
+       id="use22158"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g22166"
+     transform="translate(5.2,6.45)">
+    <path
+       d="M 5.75,-3.6 -1.3,5.1 H 6 V 7.25 H -4.45 V 4.9 L 2.3,-3.45 h -6 v -2.2 h 9.45 v 2.05"
+       fill="#cc0000"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22162" />
+    <path
+       d="m 5,-4.4 -7.05,8.7 h 7.3 V 6.45 H -5.2 V 4.1 l 6.75,-8.35 h -6 v -2.2 H 5 v 2.05"
+       fill="#ffcc00"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path22164" />
+  </g>
+</defs>
+</g>
+    <g
+       id="c14">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21834" />
+</g>
+    <g
+       id="c15">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21837" />
+</g>
+    <g
+       id="c16">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21840" />
+</g>
+    <g
+       id="c17">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21843" />
+</g>
+    <g
+       id="c18">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21846" />
+</g>
+    <g
+       id="c19">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21849" />
+</g>
+    <g
+       id="c20">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21852" />
+</g>
+    <g
+       id="c21">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21855" />
+</g>
+    <g
+       id="c22">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21858" />
+</g>
+    <g
+       id="c23">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21861" />
+</g>
+    <g
+       id="c24">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21864" />
+</g>
+    <g
+       id="c25">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21867" />
+</g>
+    <g
+       id="c26">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21870" />
+</g>
+    <g
+       id="c27">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21873" />
+</g>
+    <g
+       id="c28">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21876" />
+</g>
+    <g
+       id="c29">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21879" />
+</g>
+    <g
+       id="c30">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21882" />
+</g>
+    <g
+       id="c31">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21885" />
+</g>
+    <g
+       id="c32">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21888" />
+</g>
+    <g
+       id="c33">&gt;
+  <g
+   transform="translate(-23.25,-19.25)"
+   id="g21891" />
+</g>
+  </g>
+</svg>
