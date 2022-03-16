@@ -152,7 +152,6 @@ export default {
       const dataset = {
         labels: [],
         datasets: [
-          { type: "bar", label: "Balance", data: [], backgroundColor: [] },
           {
             type: "line",
             label: "Total",
@@ -160,6 +159,7 @@ export default {
             backgroundColor: ["#ffb907"],
             tension: 0.4
           },
+          { type: "bar", label: "Balance", data: [], backgroundColor: [] },
         ],
       };
       let balance = this.data.balance;
@@ -170,11 +170,11 @@ export default {
         if (data.length == 1) value = data[0].value;
         if (data.length > 1)
           value = data.reduce((prev, curr) => prev.value + curr.value);
-        if (i > 0) balance -= dataset.datasets[0].data[i - 1];
+        if (i > 0) balance -= dataset.datasets[1].data[i - 1];
         dataset.labels.push(this.formatDateStats(day));
-        dataset.datasets[0].data.push(value);
-        dataset.datasets[1].data.push(balance);
-        dataset.datasets[0].backgroundColor.push(
+        dataset.datasets[1].data.push(value);
+        dataset.datasets[0].data.push(balance);
+        dataset.datasets[1].backgroundColor.push(
           value > 0 ? "#5b3" : "#fb0d0d"
         );
         i++;
