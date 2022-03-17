@@ -24,6 +24,7 @@
         <form @submit.prevent="search()" class="flex">
           <input
             required
+            autofocus
             minlength="3"
             maxlength="15"
             pattern="[\w\.\-_@]{3,15}"
@@ -32,8 +33,21 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">go</button>
+            v-model="username"
+            v-on:keyup="onKeypressValue()"
+            v-on:keydown="onKeypressValue()"
+          />
+          <button type="submit" class="btn-md go">go</button>
         </form>
+        <div class="suggestions" v-if="suggestionsHere && this.username != ''">
+          <ul>
+            <li v-for="suggestion in suggestionsHere" :key="suggestion">
+              <router-link :to="'/book/' + suggestion.mid">{{
+                suggestion.pseudo
+              }}</router-link>
+            </li>
+          </ul>
+        </div>
       </div></GlobalCard
     ><br />
     <GlobalCard v-if="data"
@@ -153,9 +167,22 @@ export default {
   data() {
     return {
       data: null,
+      username: "",
+      suggestionsHere: null,
     };
   },
   methods: {
+    onKeypressValue() {
+      if (this.username != undefined && this.username != "") {
+        this.api
+          .get("api/test.json")
+          .then((res) => {
+            if (res.data && res.data.length > 0) {
+              this.suggestionsHere = res.data;
+            }
+          });
+      }
+    },
     search() {
       let id = 1;
       this.$router.push(`/book/${id}`);
@@ -214,5 +241,23 @@ tr td:first-child {
 
 .hstack {
   justify-content: center;
+}
+
+.suggestions{
+  background: var(--light);
+  box-shadow: 0 2px 4px var(--dark);
+  position: absolute;
+  cursor: default;
+}
+
+.suggestions ul {
+  padding: 0;
+}
+
+.suggestions li{
+  overflow: hidden;
+  display: list-item;
+  text-align:left;
+  padding: 4px 24px 4px 10px;
 }
 </style>
