@@ -266,7 +266,7 @@
                   <img
                     draggable="false"
                     @contextmenu.prevent
-                    v-if="item == 1"
+                    v-if="item.id == 1 || item.id == 792 || item.id == 868 || item.id == 938"
                     src="@/asset/img/icon/cross.svg"
                   />
                   <VLazyImage
