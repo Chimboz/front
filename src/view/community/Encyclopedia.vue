@@ -86,25 +86,7 @@
             @click="
               checkedCategories.includes(category) &&
               checkedCategories.length == 1
-                ? (checkedCategories = [
-                    'body',
-                    'bot',
-                    'floor',
-                    'frame',
-                    'furniture',
-                    'hat',
-                    'item0',
-                    'item1',
-                    'item2',
-                    'pet',
-                    'power',
-                    'primary',
-                    'secondary',
-                    'shape',
-                    'shoe',
-                    'top',
-                    'wall',
-                  ])
+                ? (checkedCategories = categories)
                 : (checkedCategories = [`${category}`])
             "
             @contextmenu.prevent="
@@ -143,13 +125,7 @@
             ]"
             @click="
               checkedRarities.includes(rarity) && checkedRarities.length == 1
-                ? (checkedRarities = [
-                    'common',
-                    'rare',
-                    'mythic',
-                    'legendary',
-                    'unique',
-                  ])
+                ? (checkedRarities = rarities)
                 : (checkedRarities = [`${rarity}`])
             "
             @contextmenu.prevent="
