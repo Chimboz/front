@@ -23,7 +23,7 @@
     </div>
     <div class="flex" style="align-items: flex-start">
       <img
-        :src="`/avatar/${data.type}/${data.id}.svg`"
+        :src="`/item/${data.type}/${data.id}.svg`"
         class="item-preview"
         draggable="false"
         @contextmenu.prevent

@@ -273,7 +273,7 @@
                     draggable="false"
                     @contextmenu.prevent
                     v-else
-                    :src="`/avatar/${name}/${item.id}.svg`"
+                    :src="`/item/${name}/${item.id}.svg`"
                     :src-placeholder="require('@/asset/img/loading.svg')"
                   />
                   <div class="quantity">{{ item.nb }}</div>

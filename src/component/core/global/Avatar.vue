@@ -8,7 +8,7 @@
         draggable="false"
         @contextmenu.prevent
         @error.prevent="(e) => (e.target.style.display = 'none')"
-        :src="`/avatar/shoe/${this.shoe}.svg`"
+        :src="`/item/shoe/${this.shoe}.svg`"
       />
       <img
         v-if="shoe > 0"
@@ -17,7 +17,7 @@
         alt="Shoe"
         @contextmenu.prevent
         @error.prevent="(e) => (e.target.style.display = 'none')"
-        :src="`/avatar/shoe/${this.shoe}.svg`"
+        :src="`/item/shoe/${this.shoe}.svg`"
       />
       <div class="body-parts">
         <img
@@ -27,7 +27,7 @@
           alt="Body"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          :src="`/avatar/body/${this.body}.svg`"
+          :src="`/item/body/${this.body}.svg`"
         />
         <img
           class="item emote"
@@ -52,7 +52,7 @@
           alt="Item 2"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          :src="`/avatar/item2/${this.item2}.svg`"
+          :src="`/item/item2/${this.item2}.svg`"
         />
         <img
           v-if="item1 > 0"
@@ -61,7 +61,7 @@
           alt="Item 1"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          :src="`/avatar/item1/${this.item1}.svg`"
+          :src="`/item/item1/${this.item1}.svg`"
         />
         <img
           v-if="hat > 0"
@@ -70,7 +70,7 @@
           alt="Hat"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          :src="`/avatar/hat/${this.hat}.svg`"
+          :src="`/item/hat/${this.hat}.svg`"
         />
         <img
           v-if="item0 > 0"
@@ -79,7 +79,7 @@
           alt="Item 0"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          :src="`/avatar/item0/${this.item0}.svg`"
+          :src="`/item/item0/${this.item0}.svg`"
         />
       </div>
     </div>

@@ -38,7 +38,7 @@
                 <VLazyImage
                   draggable="false"
                   @contextmenu.prevent
-                  :src="`/avatar/${item.type}/${item.id}.svg`"
+                  :src="`/item/${item.type}/${item.id}.svg`"
                   :src-placeholder="require('@/asset/img/loading.svg')"
                 /></button></router-link
           ></Tooltip>
@@ -188,6 +188,7 @@ export default {
       categories: [
         "body",
         "bot",
+        "etc",
         "floor",
         "frame",
         "furniture",
@@ -207,6 +208,7 @@ export default {
       checkedCategories: [
         "body",
         "bot",
+        "etc",
         "floor",
         "frame",
         "furniture",

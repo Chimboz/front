@@ -1,5 +1,5 @@
 [
-  { "id": 2, "name": "Bonnet de marin", "rarity": "common", "type": "hat" },
+  { "id": 1009, "name": "Bonnet de marin", "rarity": "common", "type": "etc" },
   { "id": 3, "name": "Toque orientale", "rarity": "common", "type": "hat" },
   {
     "id": 4,
