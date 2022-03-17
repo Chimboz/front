@@ -105,7 +105,7 @@
             width="100" /><div class="flex" style="justify-content: center"
             ><GlobalAvatar
               :avatar="couple.user1.look.avatar"
-              :emote="couple.user1.look.emote"
+              emote="luv"
               :hat="couple.user1.look.hat"
               :body="couple.user1.look.body"
               :shoe="couple.user1.look.shoe"
@@ -113,7 +113,7 @@
               :item1="couple.user1.look.item1"
               :item2="couple.user1.look.item2" /><GlobalAvatar
               :avatar="couple.user2.look.avatar"
-              :emote="couple.user2.look.emote"
+              emote="luv"
               :hat="couple.user2.look.hat"
               :body="couple.user2.look.body"
               :shoe="couple.user2.look.shoe"
