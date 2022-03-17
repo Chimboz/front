@@ -155,7 +155,7 @@ export default {
         end: today,
       }).reverse()) {
         const data = this.data.logs.filter((el) => isSameDay(el.date, day));
-        const value = 0;
+        let value = 0;
         if (data.length == 1) value = data[0].value;
         if (data.length > 1)
           value = data.reduce((prev, curr) => prev.value + curr.value);

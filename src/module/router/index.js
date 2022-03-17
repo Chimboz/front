@@ -24,6 +24,7 @@ router.beforeEach((to, from, next) => {
   const userOnly = [
     "Account",
     "Home",
+    "Admin",
     "Messenger",
     "Friends",
     "Notsmart",

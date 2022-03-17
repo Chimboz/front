@@ -6,6 +6,12 @@ export const routes = [
     meta: { sitemap: { ignoreRoute: true } }
   },
   {
+    path: "/admin",
+    name: "Admin",
+    component: () => import("../../view/Admin.vue"),
+    meta: { sitemap: { ignoreRoute: true } }
+  },
+  {
     path: "/account",
     name: "Account",
     component: () => import("../../view/account/Account.vue"),
