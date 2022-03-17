@@ -164,7 +164,7 @@ export default {
 }
 
 .message:hover {
-  background: var(--light)6;
+  background: var(--selected-dark-card);
 }
 
 .active {
