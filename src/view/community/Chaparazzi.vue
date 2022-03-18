@@ -10,12 +10,30 @@
     </template>
     <router-view></router-view>
     <GlobalCard color="yellow" v-if="data">
+      <div class="gallery">
+        <div v-for="image of data" :key="image.name" class="gallery-image">
+          <router-link :to="'/chaparazzi/' + image.name">
+            <VLazyImage
+              draggable="false"
+              @contextmenu.prevent
+              :src="`/gallery/${image.name}`"
+              :src-placeholder="require('@/asset/img/loading.svg')"
+            />
+          </router-link>
+          <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
+          <UserLink :user="image.author" /><br />
+          {{ formatDate(image.date) }}
+        </div>
+      </div>
     </GlobalCard>
   </GlobalContainer>
 </template>
 
 <script>
 import VLazyImage from "v-lazy-image";
+import { format } from "date-fns";
+import { fr, enGB } from "date-fns/locale";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View/Community
@@ -45,6 +63,11 @@ export default {
           () => (this.isLoading = false)
         );
       }
+    },
+    formatDate(date) {
+      return format(new Date(date), "PPp", {
+        locale: locales[navigator.language.split("-")[0]],
+      });
     },
   },
   async beforeRouteEnter(to, from, next) {
@@ -86,4 +109,13 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.gallery {
+  column-count: 3;
+}
+
+.gallery-image img {
+  width: 100%;
+  border: 1px solid var(--main-bg);
+}
+</style>
