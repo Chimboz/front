@@ -9,8 +9,8 @@
       <GlobalRules bot />
     </template>
     <router-view></router-view>
-    <GlobalCard color="yellow" v-if="data">
-      <div class="gallery">
+    <GlobalCard color="yellow" v-if="data" style="position: relative">
+      <div class="gallery" @scroll.passive="onScroll">
         <div v-for="image of data" :key="image.name" class="gallery-image">
           <router-link :to="'/chaparazzi/' + image.name">
             <VLazyImage
@@ -23,6 +23,15 @@
           <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
           <UserLink :user="image.author" /><br />
           {{ formatDate(image.date) }}
+        </div>
+        <div v-if="isLoading" class="spinner-loading">
+          <img
+            src="@/asset/img/loading.svg"
+            draggable="false"
+            width="200"
+            height="200"
+            @contextmenu.prevent
+          />
         </div>
       </div>
     </GlobalCard>
@@ -111,7 +120,27 @@ export default {
 </script>
 <style lang="scss" scoped>
 .gallery {
-  column-count: 3;
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.spinner-loading {
+  background: #0003;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  border-radius: var(--border-radius);
+}
+.gallery-image {
+  width: 33%;
+  padding: var(--md-gap);
+  display: inline-block;
 }
 
 .gallery-image img {
