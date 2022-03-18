@@ -183,5 +183,13 @@
   },
   "score": {
     "nth": "th"
-  }
+  },
+  "book": {
+    "description": "Want to find out more about your friend or someone else you've just met?<br /><br />Here you can search for infos on every member of the community.",
+    "search": "Search a member",
+    "last": "List of last 10 newly arrived members",
+    "registeredon": "Registered on"
+  },
+  "No": "No.",
+  "Pseudo": "Nick"
 }

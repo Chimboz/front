@@ -10,17 +10,16 @@
       <GlobalRules bot />
     </template>
     <GlobalCard header="book.png" justified color="yellow">
-      <div style="float: right; margin-top: -80px; width: 50%">
-        Tu cherches à en savoir plus sur un copain ou une nouvelle rencontre
-        ?<br />
-        <br />
-        Ici tu peux chercher des infos sur tous les membres de la communauté.
+      <div
+        style="float: right; margin-top: -80px; width: 50%; position: relative"
+      >
+        <span v-html="$t('book.description')"></span>
       </div>
     </GlobalCard>
     <br /><GlobalCard>
       <img style="float: left" src="@/asset/img/book/srch.gif" />
       <div style="display: inline-block">
-        <h1>Rechercher un membre</h1>
+        <h1>{{$t('book.search')}}</h1>
         <form @submit.prevent="search()" class="flex">
           <input
             required
@@ -37,7 +36,7 @@
             v-on:keyup="onKeypressValue()"
             v-on:keydown="onKeypressValue()"
           />
-          <button type="submit" class="btn-md go">go</button>
+          <button type="submit" class="btn-action">go</button>
         </form>
         <div class="suggestions" v-if="suggestionsHere && this.username != ''">
           <ul>
@@ -51,7 +50,7 @@
       </div></GlobalCard
     ><br />
     <GlobalCard v-if="data"
-      ><template #header>Les 10 derniers membres</template>
+      ><template #header>{{$t('book.last')}}</template>
       <table class="score fullwidth">
         <colgroup>
           <col width="10%" />
@@ -60,9 +59,9 @@
         </colgroup>
         <thead>
           <tr>
-            <th>N°</th>
-            <th>Pseudo</th>
-            <th>Inscrit le</th>
+            <th>{{$t("No")}}</th>
+            <th>{{$t("Pseudo")}}</th>
+            <th>{{$t("book.registeredon")}}</th>
           </tr>
         </thead>
         <tbody>
@@ -174,13 +173,11 @@ export default {
   methods: {
     onKeypressValue() {
       if (this.username != undefined && this.username != "") {
-        this.api
-          .get("api/test.json")
-          .then((res) => {
-            if (res.data && res.data.length > 0) {
-              this.suggestionsHere = res.data;
-            }
-          });
+        this.api.get("api/test.json").then((res) => {
+          if (res.data && res.data.length > 0) {
+            this.suggestionsHere = res.data;
+          }
+        });
       }
     },
     search() {
@@ -243,7 +240,7 @@ tr td:first-child {
   justify-content: center;
 }
 
-.suggestions{
+.suggestions {
   background: var(--light);
   box-shadow: 0 2px 4px var(--dark);
   position: absolute;
@@ -254,10 +251,10 @@ tr td:first-child {
   padding: 0;
 }
 
-.suggestions li{
+.suggestions li {
   overflow: hidden;
   display: list-item;
-  text-align:left;
+  text-align: left;
   padding: 4px 24px 4px 10px;
 }
 </style>

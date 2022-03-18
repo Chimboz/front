@@ -184,5 +184,13 @@
   },
   "score": {
     "nth": "ème"
-  }
+  },
+  "book": {
+    "description": "Tu cherches à en savoir plus sur un copain ou une nouvelle rencontre ?<br /><br />Ici tu peux chercher des infos sur tous les membres de la communauté.",
+    "search": "Rechercher un membre",
+    "last": "Les 10 derniers membres",
+    "registeredon": "Inscrit le"
+  },
+  "No": "N°",
+  "Pseudo": "Pseudo"
 }
