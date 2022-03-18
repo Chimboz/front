@@ -15,14 +15,10 @@
     "firstLine": "You can earn up to 30 credits",
     "secondLine": "Click on the button to earn credits"
   },
-  "connecteds": "player online | players online",
+  "online": "player online | players online",
   "members": {
     "text": "member | members",
     "past": "past since 24h."
-  },
-  "help": {
-    "button": "Help",
-    "tip": "Lost ? Need help ? Click here !"
   },
   "navbar": {
     "logout": "Sign out",
@@ -32,18 +28,6 @@
     "games": "Games",
     "members": "Members",
     "community": "Community"
-  },
-  "myAccount": {
-    "link": "My account",
-    "internalMessagingLink": "Messenger",
-    "myGroupsLink": "My groups",
-    "friendsList": "Friends",
-    "groupsList": "Groups",
-    "myFriendsLink": "My friends",
-    "notSmartLink": "NotSmart",
-    "shoppingLink": "Shopping",
-    "profileSection": "Profile",
-    "invSection": "Inventory"
   },
   "formatting": {
     "bold": "Bold",
@@ -111,7 +95,8 @@
     "eraser": "Eraser",
     "chaparazzi": "Chaparazzi",
     "bank": "Bank",
-    "admin": "Admin"
+    "admin": "Admin",
+    "chapaniouz": "Chapanews"
   },
   "group": {
     "leader": {
@@ -133,5 +118,70 @@
   },
   "success": {
     "buy": "You bought successfully !"
+  },
+  "champion": {
+    "bacteria": "is Bacteria champion!",
+    "patojdur": "is Wide Wade champion!",
+    "mazo": "is one of the best at Mazo right now!"
+  },
+  "button": {
+    "save": "Save",
+    "card": "Card",
+    "signin": "Sign in",
+    "register": "Register",
+    "lottery": "My lottery"
+  },
+  "profile": {
+    "friendsList": "Friends",
+    "groupsList": "Groups",
+    "profileSection": "Profile",
+    "invSection": "Inventory",
+    "motto": "Your motto",
+    "website": "Your website",
+    "interests": "Your interests"
+  },
+  "demo": {
+    "info1": "Welcome to the archipelago",
+    "info2": "Customise your character",
+    "info3": "Chat with your friends",
+    "info4": "Live your virtual life",
+    "info5": "Join groups",
+    "info6": "Compete with players in minigames",
+    "try": "I just want to try"
+  },
+  "chaparazzi": {
+    "more": "See the gallery"
+  },
+  "shop": {
+    "pack": "Pack",
+    "item": "Item"
+  },
+  "wedding": {
+    "section": {
+      "today": "Couples married today",
+      "divorces": "Couples divorced today",
+      "holding": "Those that are still going strong",
+      "held": "Those that lasted long",
+      "last": "Last marriage"
+    },
+    "description": "In our world, we can do lot of friends, it even sometimes happens that some go beyond friendship...<br /><br />That's why our dear <b>Guruji</b> celebrates each <b>wednesday</b>, <b>saturday</b> and <b>sunday</b> beautiful weddings on the holy hill.<br />Only members that are single can do marriage proposal.<br /> Those who want to break these sacred links should find the cave of Divorce and fight shame and fear.<br /><br />The 3 couples that lasted the longest will earn married clothes.",
+    "name": "marriage",
+    "wishes": "Our best wishes to",
+    "marriedbyguruji": "whose marriage was performed <b>Guruji</b> and witnessed by",
+    "title": {
+      "today": "Wedding ceremonies of the last 24 hours"
+    },
+    "celebrated": "marriages were celebrated",
+    "gotmarried": "got married",
+    "gotwitnessed": "and witnessed by",
+    "andof": "and of"
+  },
+  "date": {
+    "on": "on",
+    "Today": "Today",
+    "On": "On"
+  },
+  "score": {
+    "nth": "th"
   }
 }

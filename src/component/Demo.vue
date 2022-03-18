@@ -41,7 +41,7 @@
         </div>
         <div class="demo-picture relative">
           <section :class="{ display: demo == 0 }">
-            <div class="demo-info">Bienvenue sur l'archipel</div>
+            <div class="demo-info">{{$t("demo.info1")}}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -49,7 +49,7 @@
             />
           </section>
           <section :class="{ display: demo == 1 }">
-            <div class="demo-info">Crée ton style</div>
+            <div class="demo-info">{{$t("demo.info2")}}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -57,7 +57,7 @@
             />
           </section>
           <section :class="{ display: demo == 2 }">
-            <div class="demo-info">Discute avec tes amis</div>
+            <div class="demo-info">{{$t("demo.info3")}}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -65,7 +65,7 @@
             />
           </section>
           <section :class="{ display: demo == 3 }">
-            <div class="demo-info">Fais ta vie virtuelle</div>
+            <div class="demo-info">{{$t("demo.info4")}}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -73,7 +73,7 @@
             />
           </section>
           <section :class="{ display: demo == 4 }">
-            <div class="demo-info">Rejoins des groupes</div>
+            <div class="demo-info">{{$t("demo.info5")}}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -81,7 +81,7 @@
             />
           </section>
           <section :class="{ display: demo == 5 }">
-            <div class="demo-info">Affronte les joueurs dans des mini-jeux</div>
+            <div class="demo-info">{{$t("demo.info6")}}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -130,7 +130,7 @@
         />
         <div class="flex">
           <GlobalButton @click="section = 1" type="button"
-            >Se connecter</GlobalButton
+            >{{$t("button.signin")}}</GlobalButton
           >
           <GlobalButton color="green"
             ><template #prepend
@@ -141,7 +141,7 @@
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/asset/img/arrow.svg" /></template
-            >S'inscrire</GlobalButton
+            >{{$t("button.register")}}</GlobalButton
           >
         </div>
       </form>
@@ -191,7 +191,7 @@
         </div>-->
         <div class="flex">
           <GlobalButton @click="section = 0" type="button"
-            >S'inscrire</GlobalButton
+            >{{$t("button.register")}}</GlobalButton
           >
           <GlobalButton type="submit" color="green"
             ><template #prepend
@@ -201,13 +201,13 @@
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/asset/img/arrow.svg" /></template
-            >Se connecter</GlobalButton
+            >{{$t("button.signin")}}</GlobalButton
           >
         </div>
       </form>
     </div>
     <a href="/tchat" class="try pointer"
-      >Je veux juste visiter&nbsp;&nbsp;<img
+      >{{$t("demo.try")}}&nbsp;&nbsp;<img
         draggable="false"
         @contextmenu.prevent
         src="@/asset/img/puce.svg"

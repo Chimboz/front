@@ -122,7 +122,7 @@
               type="button"
               :class="{ active: profile }"
               @click="profile = !profile"
-              >{{ $t("myAccount.profileSection") }}</GlobalButton
+              >{{ $t("profile.profileSection") }}</GlobalButton
             ><GlobalButton
               type="button"
               :class="{ active: !profile }"
@@ -130,13 +130,13 @@
                 profile = !profile;
                 loadInventory = true;
               "
-              >{{ $t("myAccount.invSection") }}</GlobalButton
+              >{{ $t("profile.invSection") }}</GlobalButton
             >
           </div>
           <div id="profile" v-show="profile">
             <Emotes @emote="(emote) => $emit('emote', emote)" />
             <br />
-            <h3 class="justified">Ta phrase préférée</h3>
+            <h3 class="justified">{{$t("profile.motto")}}</h3>
             <input
               minlength="0"
               maxlength="200"
@@ -144,7 +144,7 @@
               :value="motto"
               @input="$emit('update:motto', $event.target.value)"
             />
-            <h3 class="justified">Ta page perso</h3>
+            <h3 class="justified">{{$t("profile.website")}}</h3>
             <input
               minlength="0"
               maxlength="100"
@@ -152,7 +152,7 @@
               :value="website"
               @input="$emit('update:website', $event.target.value)"
             />
-            <h3 class="justified">centres d'intéret</h3>
+            <h3 class="justified">{{$t("profile.interests")}}</h3>
             <ol>
               <li>
                 <input
@@ -293,7 +293,7 @@
               alt="Arrow icon"
               class="arrow green jitter"
               src="@/asset/img/arrow.svg" /></template
-          >Sauver</GlobalButton
+          >{{$t("button.save")}}</GlobalButton
         ><router-link :to="`/book/${data.id}`" class="btn">
           <GlobalButton type="button" style="width: 150px"
             ><template #prepend
@@ -304,7 +304,7 @@
                 width="24"
                 height="24"
                 src="@/asset/img/icon/profile.svg" /></template
-            >Fiche</GlobalButton
+            >{{$t("button.card")}}</GlobalButton
           ></router-link
         >
       </div>

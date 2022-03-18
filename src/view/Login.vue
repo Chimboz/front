@@ -5,7 +5,7 @@
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
-            {{ $t("connecteds", data.connected) }}</router-link
+            {{ $t("online", data.connected) }}</router-link
           ></template
         >
         <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
@@ -31,7 +31,7 @@
     <Demo />
     <br />
     <GlobalCard v-if="data">
-      <template #subtop>Chaparazzi</template>
+      <template #subtop>{{ $t("section.chaparazzi") }}</template>
       <div class="gallery flex">
         <div
           class="flex col photo"
@@ -44,8 +44,8 @@
             @contextmenu.prevent
             :src="`gallery/${photo.name}`"
             :alt="photo.name"
-          /><b>{{ formatDatePhotos(photo.date) }}</b></div
-        >
+          /><b>{{ formatDatePhotos(photo.date) }}</b>
+        </div>
       </div>
     </GlobalCard>
     <template #right-column>
@@ -65,9 +65,10 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria
-            !</div
-          >
+            <UserLink :user="data.bacteria.user" /><br />{{
+              $t("champion.bacteria")
+            }}
+          </div>
           <img src="@/asset/img/game/patojdur/head.gif" />
           <img src="@/asset/img/game/patojdur/bg.gif" />
           <GlobalAvatar
@@ -82,9 +83,8 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur
-            !</div
-          >
+            <UserLink :user="data.patojdur.user" /><br />{{$t("champion.patojdur")}}
+          </div>
           <img src="@/asset/img/game/mazo/head.gif" />
           <img src="@/asset/img/game/mazo/bg.gif" />
           <GlobalAvatar
@@ -99,9 +99,8 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.mazo.user" /><br />est un des meilleurs
-            Mazoteurs du moment !</div
-          >
+            <UserLink :user="data.mazo.user" /><br />{{$t("champion.mazo")}}
+          </div>
         </div></GlobalCard
       >
     </template>
@@ -121,11 +120,11 @@ export default {
   name: "LoginView",
   components: {
     Pack,
-    Demo
+    Demo,
   },
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -144,9 +143,9 @@ export default {
     },
     formatDatePhotos(date) {
       return format(new Date(date), "PP", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   metaInfo: {
     title: "section.login",
@@ -154,23 +153,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss">

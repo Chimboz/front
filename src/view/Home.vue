@@ -112,14 +112,14 @@
             width="16"
             src="@/asset/img/lottery/down.svg"
             v-else /></template
-        >Ma loterie</GlobalButton
+        >{{ $t("button.lottery") }}</GlobalButton
       ></GlobalCard
     >
     <br />
     <Radio src="track.flac" />
     <br />
     <GlobalCard color="yellow" justified v-if="data">
-      <template #subtop>Chapaniouz</template>
+      <template #subtop>{{ $t("section.chapaniouz") }}</template>
       <template #header
         ><img
           draggable="false"
@@ -138,9 +138,9 @@
     <br />
     <GlobalCard v-if="data">
       <template #subtop
-        ><router-link to="/chaparazzi" class="chaparazzi-link"
-          >Chaparazzi</router-link
-        ></template
+        ><router-link to="/chaparazzi" class="chaparazzi-link">{{
+          $t("section.chaparazzi")
+        }}</router-link></template
       >
       <div class="gallery flex">
         <div
@@ -167,7 +167,7 @@
             height="17"
             width="17"
           />
-          Voir la galerie
+          {{ $t("chaparazzi.more") }}
         </router-link>
       </div>
     </GlobalCard>
@@ -176,7 +176,7 @@
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
-            {{ $t("connecteds", data.connected) }}</router-link
+            {{ $t("online", data.connected) }}</router-link
           ></template
         >
         <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
@@ -194,14 +194,17 @@
           v-if="data"
         >
           <template #button>
-            <GlobalButton color="yellow" icon="item.svg">Pack</GlobalButton>
+            <GlobalButton color="yellow" icon="item.svg">{{
+              $t("shop.pack")
+            }}</GlobalButton>
           </template>
           <Pack
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
           /><br /><br />
-          <GlobalButton color="yellow" icon="item.svg" class="fullwidth"
-            >Item</GlobalButton
+          <GlobalButton color="yellow" icon="item.svg" class="fullwidth">{{
+            $t("shop.item")
+          }}</GlobalButton
           ><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
         </GlobalCard>

@@ -316,7 +316,7 @@
       ><br /><GlobalCard color="blue" v-if="data">
         <template #button>
           <GlobalButton icon="register.svg">{{
-            $t("myAccount.friendsList")
+            $t("profile.friendsList")
           }}</GlobalButton>
         </template>
         <router-link
@@ -352,7 +352,7 @@
       <GlobalCard color="blue" v-if="data">
         <template #button>
           <GlobalButton icon="register.svg">{{
-            $t("myAccount.groupsList")
+            $t("profile.groupsList")
           }}</GlobalButton>
         </template>
         <table class="fullwidth">

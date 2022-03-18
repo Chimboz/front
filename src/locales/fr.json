@@ -15,14 +15,10 @@
     "firstLine": "Tu peux gagner jusqu'à 30 pépettes",
     "secondLine": "Clique sur le bouton pour gagner des pépettes"
   },
-  "connecteds": "connecté | connectés",
+  "online": "connecté | connectés",
   "members": {
     "text": "membre | membres",
     "past": "passé depuis 24h. | passés depuis 24h."
-  },
-  "help": {
-    "button": "Aide",
-    "tip": "Perdu ? Besoin d'aide ? Clique ici !"
   },
   "navbar": {
     "logout": "Se déconnecter",
@@ -32,18 +28,6 @@
     "members": "Membres",
     "games": "Jeux",
     "community": "Communauté"
-  },
-  "myAccount": {
-    "link": "Mon compte",
-    "internalMessagingLink": "Messenger",
-    "myGroupsLink": "Mes groupes",
-    "friendsList": "Amis",
-    "groupsList": "Groupes",
-    "myFriendsLink": "Mes amis",
-    "notSmartLink": "Pamalin",
-    "shoppingLink": "Magasin",
-    "profileSection": "Profil",
-    "invSection": "Inventaire"
   },
   "formatting": {
     "bold": "Gras",
@@ -111,7 +95,8 @@
     "eraser": "Effaceur",
     "chaparazzi": "Chaparazzi",
     "bank": "Banque",
-    "admin": "Admin"
+    "admin": "Admin",
+    "chapaniouz": "Chapaniouz"
   },
   "group": {
     "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",
@@ -134,5 +119,70 @@
   },
   "success": {
     "buy": "Vous avez acheté avez succès !"
+  },
+  "champion": {
+    "bacteria": "est champion Baceria !",
+    "patojdur": "est champion Patojdur !",
+    "mazo": "est un des meilleurs Mazoteurs du moment !"
+  },
+  "button": {
+    "save": "Sauver",
+    "card": "Fiche",
+    "signin": "Se connecter",
+    "register": "S'inscrire",
+    "lottery": "Ma loterie"
+  },
+  "profile": {
+    "friendsList": "Amis",
+    "groupsList": "Groupes",
+    "profileSection": "Profil",
+    "invSection": "Inventaire",
+    "motto": "Ta phrase préférée",
+    "website": "Ta page perso",
+    "interests": "Tes centres d'intérêts"
+  },
+  "demo": {
+    "info1": "Bienvenue sur l'archipel",
+    "info2": "Crée ton style",
+    "info3": "Discute avec tes amis",
+    "info4": "Fais ta vie virtuelle",
+    "info5": "Rejoins des groupes",
+    "info6": "Affronte les joueurs dans des mini-jeux",
+    "try": "Je veux juste essayer"
+  },
+  "chaparazzi": {
+    "more": "Voir la galerie"
+  },
+  "shop": {
+    "pack": "Pack",
+    "item": "Item"
+  },
+  "wedding": {
+    "section": {
+      "today": "Les mariages du jour",
+      "divorces": "Les divorces",
+      "holding": "Ceux qui tiennent",
+      "held": "Ceux qui ont tenu",
+      "last": "Le dernier mariage"
+    },
+    "description": "Dans notre monde, on peut se faire beaucoup d'amis, il arrive même que parfois, certaines relations aillent au-delà de l'amitié...<br /><br />Voilà pourquoi notre cher <b>Guruji</b> célèbre chaque <b>mercredi</b>, <b>samedi</b> et <b>dimanche</b> de magnifiques mariages sur la colline sacrée.<br />Seuls les membres célibataires peuvent demander à se marier.<br /> Ceux qui veulent briser ces liens sacrés devront trouver la grotte du Divorce et affronter la honte et la peur.<br /><br />Les 3 couples qui tiennent le plus gagnent les fringues des mariés.",
+    "name": "mariage",
+    "wishes": "Tous nos voeux de bonheur à",
+    "marriedbyguruji": "qui ont été mariés par <b>Guruji</b> en présence de",
+    "title": {
+      "today": "Tous les mariages depuis 24 heures"
+    },
+    "celebrated": "mariages ont été célébrés",
+    "gotmarried": "se sont mariés",
+    "gotwitnessed": "en présence de",
+    "andof": "et de"
+  },
+  "date": {
+    "on": "le",
+    "Today": "Aujourd'hui",
+    "On": "Le"
+  },
+  "score": {
+    "nth": "ème"
   }
 }
