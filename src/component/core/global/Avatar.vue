@@ -1,8 +1,8 @@
 <template>
   <div class="tiz animated" @contextmenu.prevent>
-    <div class="avatar">
+    <div class="avatar" v-if="avatar === 0 || avatar === 2 || avatar === 6">
       <img
-        v-if="shoe > 0"
+        v-if="shoe > 0 && (avatar === 0 || avatar === 6)"
         class="item shoe1"
         alt="Shoe"
         draggable="false"
@@ -11,7 +11,7 @@
         :src="`/item/shoe/${this.shoe}.svg`"
       />
       <img
-        v-if="shoe > 0"
+        v-if="shoe > 0 && (avatar === 0 || avatar === 6)"
         class="item shoe2"
         draggable="false"
         alt="Shoe"
@@ -19,9 +19,47 @@
         @error.prevent="(e) => (e.target.style.display = 'none')"
         :src="`/item/shoe/${this.shoe}.svg`"
       />
-      <div class="body-parts">
+      <img
+        v-if="shoe == 0 && avatar === 6"
+        class="item shoe1"
+        alt="Shoe"
+        draggable="false"
+        @contextmenu.prevent
+        @error.prevent="(e) => (e.target.style.display = 'none')"
+        :src="`/avatar/6/shoe.svg`"
+      />
+      <img
+        v-if="shoe == 0 && avatar === 6"
+        class="item shoe2"
+        draggable="false"
+        alt="Shoe"
+        @contextmenu.prevent
+        @error.prevent="(e) => (e.target.style.display = 'none')"
+        :src="`/avatar/6/shoe.svg`"
+      />
+      <div class="body-parts" v-if="avatar === 6">
         <img
-          v-if="body > 0"
+          v-if="avatar === 6"
+          class="item body"
+          draggable="false"
+          alt="Body"
+          @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
+          :src="`/avatar/6/body.svg`"
+        />
+      </div>
+      <div class="body-parts" v-else>
+        <img
+          v-if="avatar === 2"
+          class="item body"
+          draggable="false"
+          alt="Body"
+          @contextmenu.prevent
+          @error.prevent="(e) => (e.target.style.display = 'none')"
+          :src="`/avatar/2/body.svg`"
+        />
+        <img
+          v-if="body > 0 && avatar === 0"
           class="item body"
           draggable="false"
           alt="Body"
@@ -35,10 +73,10 @@
           alt="Emote"
           @contextmenu.prevent
           @error.prevent="(e) => (e.target.style.display = 'none')"
-          :src="`/avatar/emote/${this.emote}.svg`"
+          :src="`/avatar/0/emote/${this.emote}.svg`"
         />
         <img
-          src="/avatar/hands.svg"
+          src="/avatar/0/hands.svg"
           draggable="false"
           class="item hands"
           @contextmenu.prevent
@@ -83,65 +121,90 @@
         />
       </div>
     </div>
+    <div v-if="avatar === 1 || avatar === 3 || avatar === 4 || avatar === 7">
+      <img
+        draggable="false"
+        alt="Body"
+        @contextmenu.prevent
+        @error.prevent="(e) => (e.target.style.display = 'none')"
+        :src="`/avatar/${avatar}/body.svg`"
+      />
+    </div>
+    <div v-if="avatar === 5" class="body-parts">
+      <img
+        draggable="false"
+        alt="Body"
+        style="margin-bottom: 30px"
+        @contextmenu.prevent
+        @error.prevent="(e) => (e.target.style.display = 'none')"
+        :src="`/avatar/${avatar}/body.svg`"
+      />
+    </div>
+    <Bacteria v-if="avatar == 8" />
     <div class="shadow"></div>
   </div>
 </template>
 <script>
+import Bacteria from "@/component/avatar/Bacteria.vue"
+
 // @vuese
 // @group Core/Global
 // Main component for showing avatars. Handle movements and emotes too.
 export default {
   name: "GlobalAvatar",
+  components: {
+    Bacteria
+  },
   props: {
     // Avatar type
     avatar: {
       required: false,
       type: Number,
-      default: 0
+      default: 0,
     },
     // Emote
     emote: {
       required: false,
       type: String,
-      default: "neutral"
+      default: "neutral",
     },
     // Hat item
     hat: {
       required: false,
       type: Number,
-      default: 1
+      default: 1,
     },
     // Body item
     body: {
       required: false,
       type: Number,
-      default: 318
+      default: 318,
     },
     // Shoe item
     shoe: {
       required: false,
       type: Number,
-      default: 606
+      default: 606,
     },
     // Item0 (glasses, masks) item
     item0: {
       required: false,
       type: Number,
-      default: 792
+      default: 792,
     },
     // Item1 (bags, beards) item
     item1: {
       required: false,
       type: Number,
-      default: 868
+      default: 868,
     },
     // Item2 (necklaces, badges) item
     item2: {
       required: false,
       type: Number,
-      default: 938
-    }
-  }
+      default: 938,
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

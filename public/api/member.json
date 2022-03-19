@@ -10,14 +10,14 @@
     "date": 1630075662000
   },
   "look": {
-    "avatar": 0,
+    "avatar": 8,
     "emote": "neutral",
     "hat": 7,
-          "body": 334,
-          "shoe": 612,
-          "item0": 808,
-          "item1": 868,
-          "item2": 938
+    "body": 334,
+    "shoe": 612,
+    "item0": 808,
+    "item1": 868,
+    "item2": 938
   },
   "bacteria": {
     "rank": 1,
