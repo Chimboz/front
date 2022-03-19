@@ -140,21 +140,15 @@
         :src="`/avatar/${avatar}/body.svg`"
       />
     </div>
-    <Bacteria v-if="avatar == 8" />
     <div class="shadow"></div>
   </div>
 </template>
 <script>
-import Bacteria from "@/component/avatar/Bacteria.vue"
-
 // @vuese
 // @group Core/Global
 // Main component for showing avatars. Handle movements and emotes too.
 export default {
   name: "GlobalAvatar",
-  components: {
-    Bacteria
-  },
   props: {
     // Avatar type
     avatar: {
