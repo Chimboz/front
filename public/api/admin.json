@@ -1,0 +1,23 @@
+[
+  {
+    "type": "Suppression",
+    "reason": "Racisme",
+    "author": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+    "moderator": { "name": "slim", "id": 3, "color": "#f00" },
+    "date": 1647884990963
+  },
+  {
+    "type": "Bannissement",
+    "reason": "Racisme",
+    "author": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+    "moderator": { "name": "slim", "id": 3, "color": "#f00" },
+    "date": 1647884590963
+  },
+  {
+    "type": "Reset",
+    "reason": "Racisme",
+    "author": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+    "moderator": { "name": "slim", "id": 3, "color": "#f00" },
+    "date": 1647884090963
+  }
+]

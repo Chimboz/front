@@ -239,22 +239,4 @@ tr td:first-child {
 .hstack {
   justify-content: center;
 }
-
-.suggestions {
-  background: var(--light);
-  box-shadow: 0 2px 4px var(--dark);
-  position: absolute;
-  cursor: default;
-}
-
-.suggestions ul {
-  padding: 0;
-}
-
-.suggestions li {
-  overflow: hidden;
-  display: list-item;
-  text-align: left;
-  padding: 4px 24px 4px 10px;
-}
 </style>

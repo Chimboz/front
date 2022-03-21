@@ -57,7 +57,9 @@
     "confirmpassword": "Confirm password",
     "newpassword": "New password",
     "currentpassword": "Current password",
-    "item": "Item"
+    "item": "Item",
+    "balance": "Balance",
+    "duration": "Duration"
   },
   "section": {
     "account": "Account",
@@ -191,5 +193,11 @@
     "registeredon": "Registered on"
   },
   "No": "No.",
-  "Pseudo": "Nick"
+  "Pseudo": "Nick",
+  "admin": {
+    "last": "Last sanctions log",
+    "modal": {
+      "ban": "Confirm member ban?"
+    }
+  }
 }

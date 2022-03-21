@@ -57,7 +57,9 @@
     "newpassword": "Nouveau mot de passe",
     "confirmpassword": "Répéter le mot de passe",
     "currentpassword": "Mot de passe actuel",
-    "item": "Item"
+    "item": "Item",
+    "balance": "Balance",
+    "duration": "Durée"
   },
   "section": {
     "account": "Mon compte",
@@ -192,5 +194,11 @@
     "registeredon": "Inscrit le"
   },
   "No": "N°",
-  "Pseudo": "Pseudo"
+  "Pseudo": "Pseudo",
+  "admin": {
+    "last": "Registre des dernières sanctions",
+    "modal": {
+      "ban": "Confirmer le bannissement de ce membre ?"
+    }
+  }
 }

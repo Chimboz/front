@@ -69,8 +69,8 @@
           </div>
         </div>
         <div class="member-text">
-          <p
-            ><img
+          <p>
+            <img
               src="@/asset/img/member/wedding.png"
               alt="Wedding icon"
               draggable="false"
@@ -84,8 +84,8 @@
               <UserLink :user="data.wedding.user" /> depuis
               {{ formatDistance(data.wedding.date) }} jours
             </span>
-            <span v-else><b>Célibataire</b></span></p
-          >
+            <span v-else><b>Célibataire</b></span>
+          </p>
           <p>
             Intérêts :
             <b v-for="(interest, index) of this.data.centres" :key="index"
@@ -204,8 +204,9 @@
           ><sup v-if="data.patojdur.yesterday.rank == 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.patojdur.yesterday.score }}</b></span
-        > </div
-      ><br v-if="data.patojdur" />
+        >
+      </div>
+      <br v-if="data.patojdur" />
       <div class="member-section" v-if="data.popularity">
         <img
           draggable="false"
@@ -227,8 +228,9 @@
           ><sup v-if="data.popularity.yesterday.rank == 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.popularity.yesterday.score }}</b> points</span
-        > </div
-      ><br v-if="data.popularity" />
+        >
+      </div>
+      <br v-if="data.popularity" />
       <div class="member-section registration">
         <span
           >Membre n°<b>{{ $route.params.id }}</b
@@ -247,20 +249,8 @@
       }}</router-link>
     </GlobalCard>
     <template #right-column
-      ><GlobalCard top color="blue"
-        ><b
-          >Bannir ce membre
-          <form @submit.prevent="ban" class="flex">
-            <input
-              class="btn-md"
-              type="number"
-              min="1"
-              v-model.lazy="duration"
-              required
-            /><button type="submit" class="btn-action">go</button></form
-          >
-          jours</b
-        ></GlobalCard
+      ><router-link v-if="user.role > 50" :to="'/admin/' + $route.params.id"
+        ><GlobalButton icon="rules.svg">Modérer</GlobalButton></router-link
       ></template
     >
   </GlobalContainer>
@@ -268,6 +258,7 @@
 
 <script>
 import StrokeText from "@/component/core/StrokeText.vue";
+import { mapState } from "vuex";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -278,13 +269,16 @@ const locales = { fr, enGB };
 export default {
   name: "MemberView",
   components: {
-    StrokeText
+    StrokeText,
   },
   data() {
     return {
       data: null,
-      duration: 1
+      duration: 1,
     };
+  },
+  computed: {
+    ...mapState("auth", ["user"]),
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -299,19 +293,19 @@ export default {
   methods: {
     formatDate(date) {
       return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
     },
     formatDistance(date) {
       return differenceInCalendarDays(new Date(), new Date(date), {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
     },
     ban() {
       console.log(
         "Banni" + this.$route.params.id + " durée " + this.duration * 86400
       );
-    }
+    },
   },
   metaInfo: {
     title: "section.member",
@@ -319,23 +313,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss">
@@ -409,7 +403,7 @@ export default {
 .member-body {
   z-index: 1;
   position: relative;
-  border-radius:var(--md-gap);
+  border-radius: var(--md-gap);
 }
 
 .member-section,
@@ -420,7 +414,7 @@ export default {
 .member-portrait {
   float: right;
   background: var(--light);
-  border-radius:var(--md-gap);
+  border-radius: var(--md-gap);
   padding: 6px;
   width: 116px;
 }

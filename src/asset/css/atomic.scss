@@ -31,6 +31,10 @@
   display: flex;
 }
 
+.inline {
+  display: inline-flex;
+}
+
 .flex.centered {
   align-items: center;
   justify-content: center;

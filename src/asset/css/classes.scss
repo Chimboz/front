@@ -307,6 +307,25 @@ table.bbs {
   }
 }
 
+// Suggestions
+.suggestions {
+  background: var(--light);
+  box-shadow: 0 2px 4px var(--dark);
+  position: absolute;
+  cursor: default;
+}
+
+.suggestions ul {
+  padding: 0;
+}
+
+.suggestions li {
+  overflow: hidden;
+  display: list-item;
+  text-align: left;
+  padding: var(--md-gap);
+}
+
 // Animations
 @keyframes jitter {
   0% {

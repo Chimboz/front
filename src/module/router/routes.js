@@ -10,6 +10,13 @@ export const routes = [
     name: "Admin",
     component: () => import("../../view/Admin.vue"),
     meta: { sitemap: { ignoreRoute: true } },
+    children: [
+      {
+        path: ":id",
+        component: () => import("../../component/AdminUser.vue"),
+        meta: { sitemap: { ignoreRoute: true } },
+      },
+    ],
   },
   {
     path: "/account",
