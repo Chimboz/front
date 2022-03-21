@@ -17,8 +17,8 @@ import "./asset/css/fonts.css";
 import "./asset/css/classes.scss";
 import "./asset/css/atomic.scss";
 import "./asset/css/markdown.css";
+import "./asset/css/code.scss";
 // Module CSS
-import "highlight.js/scss/github-dark-dimmed.scss";
 import "katex/dist/katex.min.css";
 // Globally registered components
 import Avatar from "./component/core/global/Avatar.vue";
