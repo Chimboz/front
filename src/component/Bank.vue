@@ -1,9 +1,11 @@
 <template>
   <GlobalCard color="yellow" v-if="authenticated">
     <template #button>
-      <router-link to="/bank"><GlobalButton color="yellow" icon="credits.svg">{{
-        $t("credit.title", user.credits)
-      }}</GlobalButton></router-link>
+      <router-link to="/bank"
+        ><GlobalButton color="yellow" icon="credits.svg">{{
+          $t("credit.title", user.credits)
+        }}</GlobalButton></router-link
+      >
     </template>
     <div class="bank relative fullwidth">
       <img
@@ -33,11 +35,11 @@
       <AnimatedNumber :number="user.credits" :delay="delay" />
       <div>{{ $t("credit.text", user.credits) }}</div></router-link
     >
-    <router-link to="/reflooz" class="btn-route"
+    <!--<router-link to="/reflooz" class="btn-route"
       ><GlobalButton color="orange" icon="reflooz.svg"
         >Reflooz</GlobalButton
       ></router-link
-    ></GlobalCard
+    >--></GlobalCard
   >
 </template>
 <script>
@@ -49,10 +51,10 @@ import { mapGetters, mapState } from "vuex";
 export default {
   name: "BankComponent",
   components: {
-    AnimatedNumber
+    AnimatedNumber,
   },
   props: {
-    delay: { default: 5, type: Number, required: false }
+    delay: { default: 5, type: Number, required: false },
   },
 
   mounted() {
@@ -71,7 +73,7 @@ export default {
         left: left + "px",
         top: top + "px",
         filter: filter,
-        transform: transform
+        transform: transform,
       });
     }
     requestAnimationFrame(this.tween);
@@ -84,52 +86,52 @@ export default {
           left: this.randomInt(33, 52) + "px",
           top: this.randomInt(65, 69) + "px",
           filter: "brightness(.7)",
-          transform: "scale(.8)"
+          transform: "scale(.8)",
         },
         {
           left: this.randomInt(74, 96) + "px",
           top: this.randomInt(65, 69) + "px",
           filter: "brightness(.7)",
-          transform: "scale(.8)"
+          transform: "scale(.8)",
         },
 
         {
           left: this.randomInt(22, 32) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
-          transform: "scale(.9)"
+          transform: "scale(.9)",
         },
         {
           left: this.randomInt(56, 68) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
-          transform: "scale(.9)"
+          transform: "scale(.9)",
         },
         {
           left: this.randomInt(92, 102) + "px",
           top: this.randomInt(77, 81) + "px",
           filter: "brightness(.85)",
-          transform: "scale(.9)"
+          transform: "scale(.9)",
         },
         {
           left: this.randomInt(22, 32) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
-          transform: "scale(1)"
+          transform: "scale(1)",
         },
         {
           left: this.randomInt(56, 68) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
-          transform: "scale(1)"
+          transform: "scale(1)",
         },
         {
           left: this.randomInt(92, 102) + "px",
           top: this.randomInt(88, 93) + "px",
           filter: "brightness(1)",
-          transform: "scale(1)"
-        }
-      ]
+          transform: "scale(1)",
+        },
+      ],
     };
   },
   methods: {
@@ -146,12 +148,12 @@ export default {
         1
       );
       if (this.coins < this.user.credits) requestAnimationFrame(this.tween);
-    }
+    },
   },
   computed: {
     ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"])
-  }
+    ...mapState("auth", ["user"]),
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -170,6 +172,6 @@ export default {
 }
 
 .card .router-link-active {
-    color: var(--blue);
+  color: var(--blue);
 }
 </style>
