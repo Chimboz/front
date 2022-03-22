@@ -34,6 +34,8 @@
             draggable="false"
             @contextmenu.prevent
             alt="Disconnect icon"
+            height="11"
+            width="11"
             src="@/asset/img/icon/failure.svg"
           />
           {{ $t("navbar.logout") }}
@@ -44,6 +46,8 @@
               draggable="false"
               @contextmenu.prevent
               alt="Connect icon"
+              height="11"
+              width="11"
               src="@/asset/img/icon/success.svg"
             />
             {{ $t("navbar.login") }}
@@ -267,7 +271,7 @@ export default {
 }
 
 #connect img {
-  padding-right: 4px;
+  margin-right: 4px;
 }
 
 #connect:hover {

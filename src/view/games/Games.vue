@@ -10,7 +10,7 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
-      header="bacteria_blue.jpg"
+      header="bacteria_blue.webp"
       :height="74"
       color="blue"
       justified
@@ -19,14 +19,14 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/visuel.jpg"
+        src="@/asset/img/game/bacteria/visuel.webp"
         width="150"
         height="150"
         alt="Bacteria preview"
         style="float: left; margin-right: 16px"
       />
-      <h4>Le jeu culte de l'archipel</h4>
-      <br />
+      <b>Le jeu culte de l'archipel</b>
+      <br /><br />
       Des millions des parties jouées, des centaines de milliers de joueurs !
       Depuis des millénaires, les Watas, bactéries rouges enflammée, affrontent
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
@@ -45,7 +45,7 @@
     </GlobalCard>
     <br />
     <GlobalCard
-      header="patojdur_blue.gif"
+      header="patojdur_blue.webp"
       :height="56"
       color="blue"
       justified
@@ -54,15 +54,15 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/patojdur/visuel.jpg"
+        src="@/asset/img/game/patojdur/visuel.webp"
         alt="Patojdur preview"
         width="150"
         height="150"
         style="float: left; margin-right: 16px"
       />
-      <h4>La course la plus humide du web !</h4>
+      <b>La course la plus humide du web !</b>
       <br />
-
+      <br />
       Viens affronter les plus rapides patojeurs dans une course d'obstacles
       haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br />
@@ -80,7 +80,7 @@
     </GlobalCard>
     <br />
     <GlobalCard
-      header="mazo_blue.gif"
+      header="mazo_blue.webp"
       :height="52"
       color="blue"
       justified
@@ -89,15 +89,15 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/mazo/visuel.jpg"
+        src="@/asset/img/game/mazo/visuel.webp"
         width="150"
         height="150"
         alt="Mazo preview"
         style="float: left; margin-right: 16px"
       />
-      <h4>Fais bosser ta bonne étoile !</h4>
+      <b>Fais bosser ta bonne étoile !</b>
       <br />
-
+      <br />
       Le premier jeu de hasard sur Chimboz ! Des millions de parties jouées, un
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
       patience, pour rivaliser avec les meilleurs !<br />
@@ -150,9 +150,8 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria
-            !</div
-          >
+            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria !
+          </div>
           <img
             src="@/asset/img/game/patojdur/head.gif"
             alt="Patojdur header"
@@ -181,9 +180,8 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur
-            !</div
-          >
+            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur !
+          </div>
           <img
             src="@/asset/img/game/mazo/head.gif"
             alt="Mazo header"
@@ -213,8 +211,8 @@
           />
           <div class="game-champion">
             <UserLink :user="data.mazo.user" /><br />est un des meilleurs
-            Mazoteurs du moment !</div
-          >
+            Mazoteurs du moment !
+          </div>
         </div></GlobalCard
       ></template
     >
@@ -229,7 +227,7 @@ export default {
   name: "GamesView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   async beforeRouteEnter(to, from, next) {
@@ -248,23 +246,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss" scoped>

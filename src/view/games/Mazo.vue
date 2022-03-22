@@ -8,14 +8,14 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard header="mazo.gif" justified bg="mazo.gif">
+    <GlobalCard header="mazo.webp" justified bg="mazo.gif">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
           />&nbsp;Le gameplay</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
@@ -23,7 +23,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
           />&nbsp;Les meilleurs</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
@@ -41,8 +41,10 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/mazo/preview.gif"
+        src="@/asset/img/game/mazo/preview.webp"
         alt="Un coup gagnant"
+        width="200"
+        height="145"
         title="Un coup gagnant"
         style="float: left; margin-right: 16px"
       />
@@ -122,9 +124,9 @@
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
             <td><UserLink :user="rank.user" /></td>
-            <td
-              ><b>{{ rank.score }}</b></td
-            >
+            <td>
+              <b>{{ rank.score }}</b>
+            </td>
             <td>{{ formatDate(rank.date) }}</td>
           </tr>
         </tbody>
@@ -133,7 +135,7 @@
 
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top
@@ -184,15 +186,15 @@ export default {
   name: "MazoView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
     formatDate(date) {
       return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -210,23 +212,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 

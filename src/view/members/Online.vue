@@ -27,7 +27,7 @@
     ></GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top

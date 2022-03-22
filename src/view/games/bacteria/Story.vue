@@ -216,7 +216,7 @@
       endroits bien sombres... </GlobalCard
     ><template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top

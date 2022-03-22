@@ -9,7 +9,7 @@
       <br />
       <GlobalRules bot />
     </template>
-    <GlobalCard header="book.png" justified color="yellow">
+    <GlobalCard header="book.webp" justified color="yellow">
       <div
         style="float: right; margin-top: -80px; width: 50%; position: relative"
       >
@@ -17,9 +17,15 @@
       </div>
     </GlobalCard>
     <br /><GlobalCard>
-      <img style="float: left" src="@/asset/img/book/srch.gif" />
+      <img
+        style="float: left"
+        src="@/asset/img/book/search.webp"
+        height="71"
+        width="107"
+        alt="Search icon"
+      />
       <div style="display: inline-block">
-        <h1>{{$t('book.search')}}</h1>
+        <h1>{{ $t("book.search") }}</h1>
         <form @submit.prevent="search()" class="flex">
           <input
             required
@@ -50,7 +56,7 @@
       </div></GlobalCard
     ><br />
     <GlobalCard v-if="data"
-      ><template #header>{{$t('book.last')}}</template>
+      ><template #header>{{ $t("book.last") }}</template>
       <table class="score fullwidth">
         <colgroup>
           <col width="10%" />
@@ -59,9 +65,9 @@
         </colgroup>
         <thead>
           <tr>
-            <th>{{$t("No")}}</th>
-            <th>{{$t("Pseudo")}}</th>
-            <th>{{$t("book.registeredon")}}</th>
+            <th>{{ $t("No") }}</th>
+            <th>{{ $t("Pseudo") }}</th>
+            <th>{{ $t("book.registeredon") }}</th>
           </tr>
         </thead>
         <tbody>
@@ -75,7 +81,7 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top

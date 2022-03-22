@@ -16,7 +16,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;Classement du jour</router-link
         >
@@ -25,7 +25,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;Classement général</router-link
         >
@@ -34,7 +34,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;Champions du jour</router-link
         >
@@ -43,7 +43,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;Classement des groupes</router-link
         >
@@ -52,7 +52,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;Voter</router-link
         >
@@ -338,7 +338,7 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top

@@ -336,11 +336,13 @@
           >
             <img
               v-if="friend.status.connected && friend.status.room"
+              alt="Online on tchat"
               src="@/asset/img/icon/account/online_tchat.png"
             /><img
               v-else-if="friend.status.connected"
+              alt="Online on website"
               src="@/asset/img/icon/account/online.png"
-            /><img v-else src="@/asset/img/icon/account/offline.png" />&nbsp;
+            /><img v-else alt="Offline" src="@/asset/img/icon/account/offline.png" />&nbsp;
             <div class="flex col" style="align-items: flex-start">
               <UserLink :user="friend.user" />
               {{ friend.status.connected ? friend.status.room : "" }}
@@ -365,7 +367,10 @@
               <td height="22">
                 <img
                   v-if="group.owner"
-                  src="@/asset/img/icon/account/offline.png"
+                  alt="Group owner"
+                  width="22"
+                  height="22"
+                  src="@/asset/img/icon/account/leader.svg"
                 />
               </td>
               <td style="text-align: left"><GroupLink :group="group" /></td>

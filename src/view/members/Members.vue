@@ -10,7 +10,7 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
-      header="new.gif"
+      header="new.webp"
       bg="new.png"
       :height="70"
       color="blue"
@@ -20,6 +20,7 @@
         <div v-for="user of data.new" :key="user.id" class="flex col"
           ><img
             src="@/asset/img/member/spotlight.svg"
+            alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
             height="93"
@@ -48,7 +49,7 @@
     </GlobalCard>
     <br />
     <GlobalCard
-      header="popularity_blue.gif"
+      header="popularity_blue.webp"
       bg="popularity_blue.png"
       :height="75"
       color="blue"
@@ -58,6 +59,7 @@
         <div v-for="user of data.popularity" :key="user.id" class="flex col"
           ><img
             src="@/asset/img/member/spotlight.svg"
+            alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
             height="93"
@@ -86,7 +88,7 @@
     </GlobalCard>
     <br />
     <GlobalCard
-      header="wedding_blue.gif"
+      header="wedding_blue.webp"
       bg="wedding_blue.png"
       color="blue"
       v-if="data"
@@ -99,6 +101,7 @@
           style="align-items: center"
           ><img
             src="@/asset/img/member/spotlight.svg"
+            alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
             height="93"

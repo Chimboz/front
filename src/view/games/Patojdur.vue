@@ -8,14 +8,16 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard header="patojdur.gif" justified bg="patojdur.gif" :height="77">
+    <GlobalCard header="patojdur.webp" justified bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Le gameplay</router-link
         >
         <router-link to="#modes" class="btn-sm blue-bg"
@@ -23,7 +25,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Les modes</router-link
         >
         <router-link to="#races" class="btn-sm blue-bg"
@@ -31,7 +35,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Les courses</router-link
         >
         <router-link to="#yesterday" class="btn-sm blue-bg"
@@ -39,7 +45,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Champion du jour</router-link
         >
         <router-link to="#today" class="btn-sm blue-bg"
@@ -47,7 +55,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Classement du jour</router-link
         >
         <router-link to="#general" class="btn-sm blue-bg"
@@ -55,7 +65,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Classement général</router-link
         >
         <router-link to="#records" class="btn-sm blue-bg"
@@ -63,7 +75,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Les records</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
@@ -71,7 +85,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Les groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
@@ -89,7 +105,9 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/patojdur/preview.jpg"
+        src="@/asset/img/game/patojdur/preview.webp"
+        width="200"
+        height="170"
         alt="A game of bacteria"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
@@ -177,14 +195,14 @@
         <tbody>
           <tr v-for="(rank, index) in data.record" :key="index">
             <td>{{ rank.race }}</td>
-            <td
-              ><b>{{ rank.score }}</b></td
-            >
+            <td>
+              <b>{{ rank.score }}</b>
+            </td>
             <td><UserLink :user="rank.user" /></td>
-            <td style="text-align: right"
-              ><b>{{ formatDate(rank.date) }}</b
-              ><br /><i>{{ rank.day }}e journée</i></td
-            >
+            <td style="text-align: right">
+              <b>{{ formatDate(rank.date) }}</b
+              ><br /><i>{{ rank.day }}e journée</i>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -217,9 +235,9 @@
           <tr v-for="(rank, index) in data.yesterday" :key="index">
             <td>{{ index + 1 }}</td>
             <td><UserLink :user="rank.user" /></td>
-            <td
-              ><b>{{ rank.score }}</b></td
-            >
+            <td>
+              <b>{{ rank.score }}</b>
+            </td>
             <td>{{ formatHour(rank.date) }}</td>
           </tr>
         </tbody>
@@ -249,9 +267,9 @@
           <tr v-for="(rank, index) in data.general" :key="index">
             <td>{{ index + 1 }}</td>
             <td><UserLink :user="rank.user" /></td>
-            <td
-              ><b>{{ rank.score }}</b></td
-            >
+            <td>
+              <b>{{ rank.score }}</b>
+            </td>
             <td>{{ rank.races }}</td>
           </tr>
         </tbody>
@@ -280,9 +298,9 @@
           <tr v-for="(rank, index) in data.today" :key="index">
             <td>{{ index + 1 }}</td>
             <td><UserLink :user="rank.user" /></td>
-            <td
-              ><b>{{ rank.score }}</b></td
-            >
+            <td>
+              <b>{{ rank.score }}</b>
+            </td>
             <td>{{ formatHour(rank.date) }}</td>
           </tr>
         </tbody>
@@ -308,16 +326,16 @@
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
             <td><GroupLink :group="rank.group" /></td>
-            <td
-              ><b>{{ rank.score }}</b></td
-            >
+            <td>
+              <b>{{ rank.score }}</b>
+            </td>
           </tr>
         </tbody>
       </table>
     </GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top
@@ -362,20 +380,20 @@ export default {
   name: "PatojdurView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
     formatDate(date) {
       return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
     },
     formatHour(date) {
       return format(new Date(date), "p", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -393,23 +411,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 

@@ -16,6 +16,8 @@
                   draggable="false"
                   @contextmenu.prevent
                   alt="Puce"
+                  height="30"
+                  width="30"
                   src="@/asset/img/puce.svg"
                 />
               </button>
@@ -59,6 +61,8 @@
                   draggable="false"
                   @contextmenu.prevent
                   alt="Puce"
+                  height="30"
+                  width="30"
                   src="@/asset/img/puce.svg"
                 />
               </button>
@@ -122,6 +126,7 @@
               type="button"
               :class="{ active: profile }"
               @click="profile = !profile"
+              :aria-label="$t('profile.profileSection')"
               >{{ $t("profile.profileSection") }}</GlobalButton
             ><GlobalButton
               type="button"
@@ -130,29 +135,38 @@
                 profile = !profile;
                 loadInventory = true;
               "
+              :aria-label="$t('profile.invSection')"
               >{{ $t("profile.invSection") }}</GlobalButton
             >
           </div>
           <div id="profile" v-show="profile">
             <Emotes @emote="(emote) => $emit('emote', emote)" />
             <br />
-            <h3 class="justified">{{$t("profile.motto")}}</h3>
+            <div class="justified">
+              <label for="motto">{{ $t("profile.motto") }}</label>
+            </div>
             <input
               minlength="0"
               maxlength="200"
               type="text"
+              id="motto"
               :value="motto"
               @input="$emit('update:motto', $event.target.value)"
             />
-            <h3 class="justified">{{$t("profile.website")}}</h3>
+            <div class="justified">
+              <label for="website">{{ $t("profile.website") }}</label>
+            </div>
             <input
               minlength="0"
               maxlength="100"
               type="text"
+              id="website"
               :value="website"
               @input="$emit('update:website', $event.target.value)"
             />
-            <h3 class="justified">{{$t("profile.interests")}}</h3>
+            <div class="justified">
+              <label>{{ $t("profile.interests") }}</label>
+            </div>
             <ol>
               <li>
                 <input
@@ -160,6 +174,8 @@
                   maxlength="100"
                   type="text"
                   :value="centrea"
+                  id="interesta"
+                  aria-label="Interest A"
                   @input="$emit('update:centrea', $event.target.value)"
                 />
               </li>
@@ -169,6 +185,8 @@
                   maxlength="100"
                   type="text"
                   :value="centreb"
+                  id="interestb"
+                  aria-label="Interest B"
                   @input="$emit('update:centreb', $event.target.value)"
                 />
               </li>
@@ -178,6 +196,8 @@
                   maxlength="100"
                   type="text"
                   :value="centrec"
+                  id="interestc"
+                  aria-label="Interest C"
                   @input="$emit('update:centrec', $event.target.value)"
                 />
               </li>
@@ -187,6 +207,8 @@
                   maxlength="100"
                   type="text"
                   :value="centred"
+                  id="interestd"
+                  aria-label="Interest D"
                   @input="$emit('update:centred', $event.target.value)"
                 />
               </li>
@@ -256,7 +278,7 @@
                   :class="[
                     name,
                     item.rarity,
-                    this.data.look[name] == item.id ? 'active': false,
+                    this.data.look[name] == item.id ? 'active' : false,
                   ]"
                   v-for="item of category"
                   :key="item.id"
@@ -266,7 +288,12 @@
                   <img
                     draggable="false"
                     @contextmenu.prevent
-                    v-if="item.id == 1 || item.id == 792 || item.id == 868 || item.id == 938"
+                    v-if="
+                      item.id == 1 ||
+                      item.id == 792 ||
+                      item.id == 868 ||
+                      item.id == 938
+                    "
                     src="@/asset/img/icon/cross.svg"
                   />
                   <VLazyImage
@@ -292,8 +319,10 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
+              width="40"
+              height="33"
               src="@/asset/img/arrow.svg" /></template
-          >{{$t("button.save")}}</GlobalButton
+          >{{ $t("button.save") }}</GlobalButton
         ><router-link :to="`/book/${data.id}`" class="btn">
           <GlobalButton type="button" style="width: 150px"
             ><template #prepend
@@ -304,7 +333,7 @@
                 width="24"
                 height="24"
                 src="@/asset/img/icon/profile.svg" /></template
-            >{{$t("button.card")}}</GlobalButton
+            >{{ $t("button.card") }}</GlobalButton
           ></router-link
         >
       </div>
@@ -384,7 +413,7 @@ li::marker {
   flex-direction: column;
 }
 
-h3 {
+#profile label {
   font-family: "Chimboz Heavy";
   font-weight: normal;
   color: var(--light);
@@ -493,6 +522,7 @@ h3 {
 
 .arrows button:nth-child(2n) img {
   height: 30px;
+  width: 30px;
 }
 
 .arrows button:hover,
@@ -524,6 +554,10 @@ h3 {
   position: absolute;
   animation: blink 0.3s infinite step-end;
   z-index: 2;
+}
+
+.container-acc {
+  flex-direction: column;
 }
 
 @media (min-width: 800px) {
@@ -608,7 +642,11 @@ h3 {
   margin: calc(var(--sm-gap) / 2);
   position: relative;
   display: inline-block;
-  background: linear-gradient(to bottom, var(--main-card-blue), var(--main-card));
+  background: linear-gradient(
+    to bottom,
+    var(--main-card-blue),
+    var(--main-card)
+  );
   height: 40px;
   width: 40px;
   border-radius: var(--border-radius);

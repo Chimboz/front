@@ -11,6 +11,7 @@
         draggable="false"
         @contextmenu.prevent
         alt="Neutral emote"
+        height="23"
         :src="require(`@/asset/img/icon/emote/${emote}.svg`)"
       />
     </button>
@@ -49,10 +50,10 @@ export default {
         "crazy",
         "fearful",
         "smirk",
-        "croon"
-      ]
+        "croon",
+      ],
     };
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

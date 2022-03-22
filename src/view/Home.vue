@@ -81,10 +81,11 @@
       src="/announce/img.svg"
       alt="Announcement"
       width="468"
+      height="137"
       style="width: 100%"
     />
     <br />
-    <GlobalCard header="lottery.png" v-if="data && data.lottery">
+    <GlobalCard header="lottery.webp" v-if="data && data.lottery">
       <template #header> </template>
       <div v-if="lottery">
         <div>{{ $t("lottery.firstLine") }}</div>
@@ -124,7 +125,7 @@
         ><img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/home/chimboking.gif"
+          src="@/asset/img/home/chimboking.webp"
           width="130"
           height="70"
           alt="Chimboking portrait"
@@ -187,7 +188,7 @@
       <router-link to="/shop">
         <GlobalCard
           color="yellow"
-          header="packs.png"
+          header="packs.webp"
           :width="154"
           :height="96"
           class="packs"

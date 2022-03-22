@@ -16,7 +16,7 @@
       alt="Card header"
       class="card-header"
       v-else-if="top"
-      src="@/asset/img/card/header/default.gif"
+      src="@/asset/img/card/header/default.webp"
       width="154"
       height="42"
     />

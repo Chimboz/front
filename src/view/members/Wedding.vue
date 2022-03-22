@@ -16,7 +16,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.today") }}</router-link
         >
@@ -25,7 +25,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.divorces") }}</router-link
         >
@@ -34,7 +34,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.holding") }}</router-link
         >
@@ -43,7 +43,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.png"
+            src="@/asset/img/icon/caret.webp" width="3" height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.held") }}</router-link
         >
@@ -277,7 +277,7 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
-        header="ensavoirplus.gif"
+        header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top
