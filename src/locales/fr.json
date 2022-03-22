@@ -59,7 +59,8 @@
     "currentpassword": "Mot de passe actuel",
     "item": "Item",
     "balance": "Balance",
-    "duration": "Durée"
+    "duration": "Durée",
+    "reason": "Raison"
   },
   "section": {
     "account": "Mon compte",

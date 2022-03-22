@@ -157,6 +157,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card {
+  position: relative;
   border-radius: var(--border-radius);
   width: 100%;
   height: auto;

@@ -5,17 +5,22 @@
         <template #button>
           <GlobalButton icon="rules.svg">Registre</GlobalButton>
         </template>
-        <div class="logs fullwidth">
+        <ScrollableContainer
+          route="adminlogs"
+          class="fullwidth"
+          @scroll-data="
+            (data) => (this.data = [...new Set([...this.data, ...data])])
+          "
+        >
           <div class="log" v-for="(log, index) in data" :key="index">
             <b>{{ formatDate(log.date) }}</b
-            ><br />
+            ><em> par <UserLink :user="log.moderator" /></em><br />
             <b>{{ log.type }} de <UserLink :user="log.author" /></b><br />
-            {{ log.reason }}<br />
-            <div style="text-align: right">
-              <em>par <UserLink :user="log.moderator" /></em>
-            </div>
-          </div></div></GlobalCard
-    ></template>
+            {{ log.reason }}
+          </div>
+        </ScrollableContainer></GlobalCard
+      ></template
+    >
     <router-view></router-view>
     <template #right-column
       ><GlobalCard color="blue">
@@ -54,6 +59,7 @@
   </GlobalContainer>
 </template>
 <script>
+import ScrollableContainer from "@/component/core/ScrollableContainer";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -63,6 +69,9 @@ const locales = { fr, enGB };
 // Admin page.
 export default {
   name: "AdminView",
+  components: {
+    ScrollableContainer,
+  },
   data() {
     return {
       data: null,

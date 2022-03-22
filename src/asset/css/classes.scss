@@ -96,7 +96,8 @@
 
 input:valid:not(:placeholder-shown),
 textarea:valid:not(:placeholder-shown) {
-  box-shadow: inset 1px 1px 1px var(--main-button-green), inset -1px -1px 1px var(--dark-button-green);
+  box-shadow: inset 1px 1px 1px var(--main-button-green),
+    inset -1px -1px 1px var(--dark-button-green);
 }
 
 .btn-md:hover,
@@ -144,6 +145,26 @@ textarea.btn-md {
 }
 .btn-action img {
   vertical-align: top;
+}
+
+.btn-danger {
+  color: var(--light);
+  border: 1px solid var(--dark-button-red);
+  background: linear-gradient(to bottom, var(--light), var(--main-button-red));
+  text-shadow: 1px 0 0 var(--dark-button-red), -1px 0 0 var(--dark-button-red),
+    0 1px 0 var(--dark-button-red), 0 -1px 0 var(--dark-button-red),
+    0.7px 0.7px var(--dark-button-red), -0.7px -0.7px 0 var(--dark-button-red),
+    0.7px -0.7px 0 var(--dark-button-red), -0.7px 0.7px 0 var(--dark-button-red);
+}
+
+.btn-success {
+  color: var(--light);
+  border: 1px solid var(--dark-button-green);
+  background: linear-gradient(to bottom, var(--light), var(--main-button-green));
+  text-shadow: 1px 0 0 var(--dark-button-green), -1px 0 0 var(--dark-button-green),
+    0 1px 0 var(--dark-button-green), 0 -1px 0 var(--dark-button-green),
+    0.7px 0.7px var(--dark-button-green), -0.7px -0.7px 0 var(--dark-button-green),
+    0.7px -0.7px 0 var(--dark-button-green), -0.7px 0.7px 0 var(--dark-button-green);
 }
 
 // Button small
