@@ -71,7 +71,9 @@
         <div class="member-text">
           <p>
             <img
-              src="@/asset/img/member/wedding.png"
+              src="@/asset/img/member/wedding.svg"
+              height="20"
+              width="20"
               alt="Wedding icon"
               draggable="false"
               @contextmenu.prevent

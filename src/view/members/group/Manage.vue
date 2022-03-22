@@ -10,7 +10,7 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
-      header="group.gif"
+      header="group.webp"
       bg="groups.gif"
       :height="70"
       color="blue"
@@ -44,10 +44,11 @@
           <tr v-for="(group, index) in data.member" :key="index">
             <td><GroupLink :group="group" /></td>
             <td>
-              [<a
+              [<span
+                class="link"
                 @click.prevent="leave(group.id)"
                 style="cursor: var(--pointer)"
-                >Se désinscrire</a
+                >Se désinscrire</span
               >]
             </td>
           </tr>
@@ -73,10 +74,11 @@
           <tr v-for="(group, index) in data.pending" :key="index">
             <td><GroupLink :group="group" /></td>
             <td>
-              [<a
+              [<span
+                class="link"
                 @click.prevent="cancel(group.id)"
                 style="cursor: var(--pointer)"
-                >Annuler</a
+                >Annuler</span
               >]
             </td>
           </tr>

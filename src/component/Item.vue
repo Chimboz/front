@@ -24,6 +24,7 @@
     <div class="flex" style="align-items: flex-start">
       <img
         :src="`/item/${data.type}/${data.id}.svg`"
+        :alt="data.name"
         class="item-preview"
         draggable="false"
         @contextmenu.prevent

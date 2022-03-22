@@ -10,13 +10,19 @@
     </template>
     <GlobalCard color="yellow" justified
       ><template #subtop>Effaceur</template>
-      <template #header>SOS pseudo moisi, changez de pseudo pour 200 pepettes !</template>
+      <template #header
+        >SOS pseudo moisi, changez de pseudo pour 200 pepettes !</template
+      >
       <img
-        src="@/asset/img/shop/effaceur.gif"
+        src="@/asset/img/shop/effaceur.webp"
+        height="91"
+        width="444"
+        alt="Eraser"
         draggable="false"
+        style="width: 100%"
         @contextmenu.prevent
       />
-      
+
       <br />
       <form @submit.prevent="submit">
         <input
@@ -34,16 +40,21 @@
         />
         <br /><br />
         <div class="flex">
-          <GlobalButton type="button" @click="generatePseudo()"
+          <GlobalButton
+            type="button"
+            @click="generatePseudo()"
+            aria-label="Generate nickname"
             >Générer un pseudo</GlobalButton
           >
-          <GlobalButton color="green" type="submit"
+          <GlobalButton color="green" type="submit" aria-label="Save"
             ><template #prepend
               ><img
                 draggable="false"
                 @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
+                width="40"
+                height="33"
                 src="@/asset/img/arrow.svg" /></template
             >Sauver</GlobalButton
           >

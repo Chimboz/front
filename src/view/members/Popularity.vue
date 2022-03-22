@@ -16,7 +16,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;Classement du jour</router-link
         >
@@ -25,7 +27,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;Classement général</router-link
         >
@@ -34,7 +38,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;Champions du jour</router-link
         >
@@ -43,7 +49,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;Classement des groupes</router-link
         >
@@ -52,7 +60,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;Voter</router-link
         >
@@ -90,7 +100,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.gif"
+            src="@/asset/img/social/popularity/star.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>
@@ -116,7 +128,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.gif"
+            src="@/asset/img/social/popularity/poop.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>
@@ -150,7 +164,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.gif"
+            src="@/asset/img/social/popularity/star.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>
@@ -176,7 +192,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.gif"
+            src="@/asset/img/social/popularity/poop.webp"
+            width="141"
+            height="58"
           />
           <table class="score">
             <colgroup>
@@ -209,7 +227,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.gif"
+            src="@/asset/img/social/popularity/star.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>
@@ -235,7 +255,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.gif"
+            src="@/asset/img/social/popularity/poop.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>
@@ -267,7 +289,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.gif"
+            src="@/asset/img/social/popularity/star.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>
@@ -293,7 +317,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.gif"
+            src="@/asset/img/social/popularity/poop.webp"
+            width="141"
+            height="58"
           />
           <table>
             <colgroup>

@@ -34,10 +34,12 @@
                   item.rarity,
                   $route.params.id == item.id ? 'active' : false,
                 ]"
+                :aria-label="item.name"
               >
                 <VLazyImage
                   draggable="false"
                   @contextmenu.prevent
+                  :alt="item.name"
                   :src="`/item/${item.type}/${item.id}.svg`"
                   :src-placeholder="require('@/asset/img/loading.svg')"
                 /></button></router-link
@@ -45,7 +47,7 @@
         </div>
         <div v-if="isLoading" class="spinner-loading">
           <img
-            src="@/asset/img/loading.svg"
+            src="@/asset/img/loading.svg" alt="Loading spinner" 
             draggable="false"
             width="200"
             height="200"
@@ -81,6 +83,7 @@
           <button
             type="button"
             v-for="category of categories"
+            :aria-label="category"
             :key="category"
             :class="{ active: checkedCategories.includes(category) }"
             @click="
@@ -102,6 +105,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
+              :alt="category"
               :src="require(`@/asset/img/icon/item_category/${category}.svg`)"
             />
           </button>
@@ -118,6 +122,7 @@
           <button
             type="button"
             v-for="rarity of rarities"
+            :aria-label="rarity"
             :key="rarity"
             :class="[
               rarity,
@@ -138,6 +143,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
+              :alt="rarity"
               :src="require(`@/asset/img/icon/rarity/${rarity}.png`)"
             />
           </button>

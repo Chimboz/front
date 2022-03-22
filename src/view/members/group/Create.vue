@@ -10,7 +10,7 @@
       <GlobalRules bot />
     </template>
     <form method="POST" @submit.prevent="create()">
-      <GlobalCard header="group.gif" :height="70" color="blue" justified>
+      <GlobalCard header="group.webp" :height="70" color="blue" justified>
         <input
           ref="groupname"
           required

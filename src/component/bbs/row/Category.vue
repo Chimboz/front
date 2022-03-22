@@ -6,7 +6,7 @@
       :class="{ arrow: hide }"
     >
       <th valign="middle" colspan="5" height="28">
-        <a>{{ category.category }}</a>
+        <span class="link">{{ category.category }}</span>
       </th>
     </tr>
   </thead>
@@ -35,9 +35,9 @@
             bbs.name
           }}</router-link>
         </div>
-        <div class="genmed">{{ bbs.desc }}</div
-        ><div class="gensmall"
-          >Modérateurs&nbsp;:
+        <div class="genmed">{{ bbs.desc }}</div>
+        <div class="gensmall">
+          Modérateurs&nbsp;:
           <GroupLink
             v-for="(mod, index) in bbs.mods"
             :key="mod.id"
@@ -86,23 +86,23 @@ export default {
   name: "CategoryRow",
   data() {
     return {
-      hide: false
+      hide: false,
     };
   },
   props: {
     category: {
       required: true,
-      type: Object
-    }
+      type: Object,
+    },
   },
   methods: {
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true
+        addSuffix: true,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -112,14 +112,14 @@ export default {
   color: var(--main-bg);
 }
 
-.category a::before {
+.category .link::before {
   content: "▼ ";
   display: inline-block;
   will-change: transform;
   transition: 0.2s;
 }
 
-.category.arrow a::before {
+.category.arrow .link::before {
   transform: rotate(-90deg);
 }
 

@@ -33,7 +33,8 @@
           </div>
         </router-link>
         <div v-if="friend.status.sent">
-          <a
+          <span
+            class="link"
             @click.prevent="cancel(friend)"
             style="color: red; cursor: var(--pointer)"
             ><img
@@ -44,7 +45,7 @@
               draggable="false"
               style="margin: 0 2px"
               @contextmenu.prevent
-            />Annuler</a
+            />Annuler</span
           >
         </div>
         <div
@@ -52,7 +53,8 @@
             friend.status.hasOwnProperty('sent') && !friend.status.sent
           "
         >
-          <a
+          <span
+            class="link"
             @click.prevent="accept(friend)"
             style="color: green; cursor: var(--pointer)"
             ><img
@@ -63,8 +65,9 @@
               draggable="false"
               style="margin: 0 2px"
               @contextmenu.prevent
-            />Accepter</a
-          ><br /><a
+            />Accepter</span
+          ><br /><span
+            class="link"
             @click.prevent="decline(friend)"
             style="color: red; cursor: var(--pointer)"
             ><img
@@ -75,7 +78,7 @@
               draggable="false"
               style="margin: 0 2px"
               @contextmenu.prevent
-            />Décliner</a
+            />Décliner</span
           >
         </div>
         <div v-else-if="!friend.status.connected">
@@ -90,6 +93,8 @@
               draggable="false"
               @contextmenu.prevent
               alt="Online"
+              height="20"
+              width="17"
               src="@/asset/img/tiz/tiz_shape.svg"
             />&nbsp;<b>En ligne</b>
           </div>

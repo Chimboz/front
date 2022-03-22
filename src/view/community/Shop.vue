@@ -32,6 +32,7 @@
           draggable="false"
           @contextmenu.prevent
           class="pack-preview"
+          alt="Pack preview"
           src="@/asset/img/shop/cabin.svg"
         />
         <div class="preview-tiz flex centered">

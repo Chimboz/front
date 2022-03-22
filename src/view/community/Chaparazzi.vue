@@ -15,6 +15,7 @@
           <router-link :to="'/chaparazzi/' + image.name">
             <VLazyImage
               draggable="false"
+              :alt="image.name"
               @contextmenu.prevent
               :src="`/gallery/${image.name}`"
               :src-placeholder="require('@/asset/img/loading.svg')"
@@ -26,7 +27,7 @@
         </div>
         <div v-if="isLoading" class="spinner-loading">
           <img
-            src="@/asset/img/loading.svg"
+            src="@/asset/img/loading.svg" alt="Loading spinner" 
             draggable="false"
             width="200"
             height="200"

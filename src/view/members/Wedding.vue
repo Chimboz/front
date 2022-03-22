@@ -9,14 +9,16 @@
       <br />
       <GlobalRules bot />
     </template>
-    <GlobalCard header="wedding.gif" justified bg="wedding.gif">
+    <GlobalCard header="wedding.webp" justified bg="wedding.gif">
       <div class="flex centered hstack">
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.today") }}</router-link
         >
@@ -25,7 +27,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.divorces") }}</router-link
         >
@@ -34,7 +38,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.holding") }}</router-link
         >
@@ -43,7 +49,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
             style="image-rendering: pixelated"
           />&nbsp;{{ $t("wedding.section.held") }}</router-link
         >
@@ -118,9 +126,12 @@
     ><br />
     <GlobalCard id="today" v-if="data">
       <template #header
-        ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />{{
-          $t("wedding.title.today")
-        }}
+        ><img
+          src="@/asset/img/social/wedding/mariage2.webp"
+          alt="Marriage icon"
+          width="143"
+          height="64"
+        /><br />{{ $t("wedding.title.today") }}
       </template>
       {{ $t("date.Today") }}, <b>{{ formatDate(Date.now(), "PP") }}</b
       >, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
@@ -144,8 +155,12 @@
     <br />
     <GlobalCard id="best" v-if="data">
       <template #header
-        ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Les 20
-        mariages qui tiennent&nbsp;!
+        ><img
+          src="@/asset/img/social/wedding/mariage2.webp"
+          alt="Marriage icon"
+          width="143"
+          height="64"
+        /><br />Les 20 mariages qui tiennent&nbsp;!
       </template>
       <template #subtitle
         >Ça commence pour un jour... ça fini pour toujours !</template
@@ -189,8 +204,12 @@
     <br />
     <GlobalCard id="divorce" v-if="data">
       <template #header
-        ><img src="@/asset/img/social/wedding/divorce2.gif" /><br />Les divorces
-        depuis 24 heures
+        ><img
+          src="@/asset/img/social/wedding/divorce2.webp"
+          alt="Divorce icon"
+          width="143"
+          height="64"
+        /><br />Les divorces depuis 24 heures
       </template>
       <template #subtitle
         >Le mariage est virtuel mais la douleur est réelle&nbsp;!</template
@@ -235,8 +254,12 @@
     <br />
     <GlobalCard id="broken" v-if="data">
       <template #header
-        ><img src="@/asset/img/social/wedding/mariage2.gif" /><br />Les 20
-        mariages qui ont tenu !
+        ><img
+          src="@/asset/img/social/wedding/mariage2.webp"
+          alt="Marriage icon"
+          width="143"
+          height="64"
+        /><br />Les 20 mariages qui ont tenu !
       </template>
       <template #subtitle>C'est fini... mais ça a duré !!! </template>
       <table class="score fullwidth">
@@ -295,7 +318,7 @@
         En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
         <br /><br />
         <img
-          src="@/asset/img/social/wedding/divorce.gif"
+          src="@/asset/img/social/wedding/divorce.webp"
           alt="Divorce"
           draggable="false"
           @contextmenu.prevent
@@ -304,7 +327,7 @@
         /><br />
         <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br /><br />
         <img
-          src="@/asset/img/social/wedding/mariage.gif"
+          src="@/asset/img/social/wedding/mariage.webp"
           alt="Wedding"
           draggable="false"
           @contextmenu.prevent
@@ -317,12 +340,12 @@
           data.stats.members - (data.stats.total - data.stats.divorce) * 2
         }}</b>
         célibs !!! <br /><img
-          src="@/asset/img/social/wedding/mariage2.gif"
+          src="@/asset/img/social/wedding/mariage2.webp"
           alt="Wedding"
           draggable="false"
           @contextmenu.prevent
-          width="120"
-          height="54"
+          width="130"
+          height="58"
           style="width: 100%"
         /><br />
         <h3>Archive de tous les mariages</h3>

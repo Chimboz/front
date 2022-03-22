@@ -10,7 +10,7 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
-      header="group.gif"
+      header="group.webp"
       bg="groups.gif"
       :height="70"
       color="blue"

@@ -14,7 +14,9 @@
       pouvoir devenir modo, que tu allais gagner des points ou un niveau, et tu
       as donné ton mot de passe à quelqu'un !<br />
       <br />
-      Et évidemment, tu y a cru... <h3>T'es pas malin !</h3><br />
+      Et évidemment, tu y a cru...
+      <h3>T'es pas malin !</h3>
+      <br />
       <br />
       Il ne te reste plus qu'a changer de mot de passe rapidement :<br />
       <br />
@@ -49,10 +51,12 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow jitter green"
+              width="40"
+              height="33"
               src="@/asset/img/arrow.svg" /></template
           >Envoyer</GlobalButton
-        ></form
-      >
+        >
+      </form>
       <br />
       Par contre, si tu as donné ton mot de passe de compte e-mail, tu es le
       dernier des pamalins et nous ne pouvons plus rien pour toi ...
@@ -69,7 +73,7 @@ export default {
   methods: {
     changePassword() {
       console.log("Change password");
-    }
+    },
   },
   metaInfo: {
     title: "section.notsmart",
@@ -77,22 +81,22 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>

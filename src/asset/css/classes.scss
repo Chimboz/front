@@ -3,6 +3,15 @@
   margin-left: calc(-1 * var(--gap));
 }
 
+.link {
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 // Pink icon
 .btn-pink::before {
   content: "";
@@ -160,11 +169,17 @@ textarea.btn-md {
 .btn-success {
   color: var(--light);
   border: 1px solid var(--dark-button-green);
-  background: linear-gradient(to bottom, var(--light), var(--main-button-green));
-  text-shadow: 1px 0 0 var(--dark-button-green), -1px 0 0 var(--dark-button-green),
-    0 1px 0 var(--dark-button-green), 0 -1px 0 var(--dark-button-green),
-    0.7px 0.7px var(--dark-button-green), -0.7px -0.7px 0 var(--dark-button-green),
-    0.7px -0.7px 0 var(--dark-button-green), -0.7px 0.7px 0 var(--dark-button-green);
+  background: linear-gradient(
+    to bottom,
+    var(--light),
+    var(--main-button-green)
+  );
+  text-shadow: 1px 0 0 var(--dark-button-green),
+    -1px 0 0 var(--dark-button-green), 0 1px 0 var(--dark-button-green),
+    0 -1px 0 var(--dark-button-green), 0.7px 0.7px var(--dark-button-green),
+    -0.7px -0.7px 0 var(--dark-button-green),
+    0.7px -0.7px 0 var(--dark-button-green),
+    -0.7px 0.7px 0 var(--dark-button-green);
 }
 
 // Button small

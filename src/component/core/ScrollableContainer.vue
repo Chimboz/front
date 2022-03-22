@@ -3,7 +3,7 @@
     <slot></slot>
     <div v-if="isLoading" class="spinner-loading">
       <img
-        src="@/asset/img/loading.svg"
+        src="@/asset/img/loading.svg" alt="Loading spinner" 
         draggable="false"
         width="200"
         height="200"
