@@ -77,7 +77,8 @@ export default {
       isVisible: false,
       message: "error.default",
       type: "error",
-      callback: ""
+      callback: "",
+      params: {},
     };
   },
   mounted() {
@@ -107,16 +108,17 @@ export default {
       this.type = "confirmation";
       this.message = req.message;
       this.callback = req.callback;
+      this.params = req.params;
     },
     async request() {
-      const req = await this.api.get(this.callback);
+      const req = await this.api.post(this.callback, this.params);
       if (req.data.success) {
         this.success({ message: "success.buy" });
       } else {
         this.failure({ message: "failure.buy" });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
