@@ -220,16 +220,4 @@ export default {
 .loss {
   background: #fb0d0d33 !important;
 }
-
-.loss .sign {
-  color: var(--main-button-red);
-}
-
-.sign {
-  position: relative;
-  top: 4px;
-  color: var(--main-button-green);
-  font-size: var(--lg-font-size);
-  font-family: "Jagger SF";
-}
 </style>

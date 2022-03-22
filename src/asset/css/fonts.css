@@ -50,15 +50,6 @@
 }
 
 @font-face {
-  font-family: "Jagger SF";
-  src: url("../font/jagger_sf.woff2") format("woff2"),
-    url("../font/jagger_sf.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Helvetica Fallback";
   src: url("../font/helvetica_bold_oblique.woff2") format("woff2"),
     url("../font/helvetica_bold_oblique.woff") format("woff");
