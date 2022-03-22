@@ -6,6 +6,8 @@
         draggable="false"
         alt="Chaparadio"
         @contextmenu.prevent
+        height="38"
+        width="65"
         src="@/asset/img/radio/logo.svg"
       />
       <img
@@ -15,6 +17,8 @@
         @contextmenu.prevent
         v-if="!playing"
         @click.prevent="play"
+        height="18"
+        width="18"
         src="@/asset/img/radio/play.svg"
       />
       <img
@@ -24,6 +28,8 @@
         alt="Pause button"
         @contextmenu.prevent
         @click.prevent="pause"
+        height="18"
+        width="18"
         src="@/asset/img/radio/pause.svg"
       />
       <img
@@ -32,6 +38,8 @@
         alt="Stop button"
         @contextmenu.prevent
         @click.prevent="stop"
+        height="18"
+        width="18"
         src="@/asset/img/radio/stop.svg"
       />
       <div class="progress pointer" @click.prevent="skip" ref="progress">
@@ -73,8 +81,10 @@ export default {
       this.pause();
       this.$refs.player.currentTime = 0;
     },
-    skip(e){
-      this.$refs.player.currentTime = e.offsetX / this.$refs.progress.offsetWidth * this.$refs.player.duration;
+    skip(e) {
+      this.$refs.player.currentTime =
+        (e.offsetX / this.$refs.progress.offsetWidth) *
+        this.$refs.player.duration;
     },
     progress() {
       this.$refs.progressBar.style.width =
