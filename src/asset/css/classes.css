@@ -12,7 +12,7 @@
   text-decoration: underline;
 }
 
-// Pink icon
+/* Pink icon */
 .btn-pink::before {
   content: "";
   position: absolute;
@@ -43,7 +43,7 @@
   border: 2px solid var(--light);
 }
 
-// Horizontal stack
+/* Horizontal stack */
 .hstack {
   flex-wrap: wrap;
   width: 100%;
@@ -56,7 +56,7 @@
   margin-bottom: var(--sm-gap);
 }
 
-// Custom checkboxes
+/* Custom checkboxes */
 .markdown-body [type="checkbox"]:disabled {
   width: 0;
   height: 0;
@@ -81,14 +81,14 @@
   border: 1px solid transparent;
 }
 
-// Markdown lists and checkboxes
+/* Markdown lists and checkboxes */
 .markdown-body li input[type="checkbox"] {
   margin-left: -16px;
   position: absolute;
 }
 
-// Custom buttons
-// Button medium
+/* Custom buttons */
+/* Button medium */
 .btn-md {
   display: inline-flex;
   padding: var(--md-gap);
@@ -131,12 +131,12 @@ textarea.btn-md {
   padding: var(--md-gap);
 }
 
-// Button padding
+/* Button padding */
 .btn + .btn {
   margin-left: var(--md-gap);
 }
 
-// Button action
+/* Button action */
 .btn-action {
   border-radius: calc(var(--border-radius) / 3);
   padding: 0 4px;
@@ -182,7 +182,7 @@ textarea.btn-md {
     -0.7px 0.7px 0 var(--dark-button-green);
 }
 
-// Button small
+/* Button small */
 .btn-sm {
   border-radius: var(--round);
   font-weight: bold;
@@ -193,7 +193,7 @@ textarea.btn-md {
   align-items: center;
 }
 
-// SideNav
+/* SideNav */
 .card .list {
   display: flex;
   align-items: center;
@@ -287,7 +287,7 @@ button:hover .arrow {
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
 }
 
-// BBS
+/* BBS */
 table.bbs {
   width: 100%;
   border-spacing: 0;
@@ -343,7 +343,7 @@ table.bbs {
   }
 }
 
-// Suggestions
+/* Suggestions */
 .suggestions {
   background: var(--light);
   box-shadow: 0 2px 4px var(--dark);
@@ -362,7 +362,7 @@ table.bbs {
   padding: var(--md-gap);
 }
 
-// Animations
+/* Animations */
 @keyframes jitter {
   0% {
     transform: rotateZ(-25deg);

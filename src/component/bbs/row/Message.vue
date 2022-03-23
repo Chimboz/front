@@ -158,6 +158,9 @@ export default {
   }
 };
 </script>
+<style src="@/asset/css/markdown.css"></style>
+<style src="katex/dist/katex.min.css"></style>
+<style src="@/asset/css/code.css"></style>
 <style lang="scss">
 .info-sm .tiz {
   margin-bottom: -25px;

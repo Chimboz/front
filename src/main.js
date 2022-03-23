@@ -11,15 +11,11 @@ import api from "./module/api";
 import "./registerServiceWorker";
 // Internal CSS
 import "modern-normalize/modern-normalize.css"; // Reset
-import "./asset/css/var.scss";
+import "./asset/css/var.css";
 import "./asset/css/main.scss";
 import "./asset/css/fonts.css";
-import "./asset/css/classes.scss";
-import "./asset/css/atomic.scss";
-import "./asset/css/markdown.css";
-import "./asset/css/code.scss";
-// Module CSS
-import "katex/dist/katex.min.css";
+import "./asset/css/classes.css";
+import "./asset/css/atomic.css";
 // Globally registered components
 import Avatar from "./component/core/global/Avatar.vue";
 import Button from "./component/core/global/Button.vue";
