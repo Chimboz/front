@@ -29,7 +29,7 @@
       <template #subtitle
         >Faire partie de ce groupe c'est ce qu'y a de plus classe...</template
       >
-      <table class="groups fullwidth">
+      <table class="centered fullwidth">
         <colgroup>
           <col width="100%" />
           <col width="150" />
@@ -59,7 +59,7 @@
     <GlobalCard color="blue" v-if="data">
       <template #header>Mes demandes en attente </template>
       <template #subtitle>Tout vient à point à qui sait attendre !</template>
-      <table class="groups fullwidth">
+      <table class="centered fullwidth">
         <colgroup>
           <col width="100%" />
           <col width="150" />
@@ -91,7 +91,7 @@
       <template #subtitle
         >Ils étaient bien sûr les meilleurs groupes de la communauté...
       </template>
-      <table class="groups fullwidth">
+      <table class="centered fullwidth">
         <colgroup>
           <col width="100%" />
           <col width="150" />
@@ -412,9 +412,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.groups {
-  text-align: center;
-}
-</style>

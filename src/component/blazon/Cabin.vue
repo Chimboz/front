@@ -100,7 +100,6 @@
                     : []
                 }"
                 :key="name"
-                :class="[name]"
               >
                 <button
                   type="button"

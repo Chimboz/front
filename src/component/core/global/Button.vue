@@ -23,12 +23,12 @@ import StrokeText from "@/component/core/StrokeText.vue";
 export default {
   name: "GlobalButton",
   components: {
-    StrokeText
+    StrokeText,
   },
   props: {
     icon: {
       required: false,
-      type: String
+      type: String,
     },
     color: {
       required: false,
@@ -36,8 +36,8 @@ export default {
       type: String,
       validator(value) {
         return ["red", "green", "yellow", "orange"].includes(value);
-      }
-    }
+      },
+    },
   },
   computed: {
     cssVars() {
@@ -68,8 +68,8 @@ export default {
             "--selected-dark-button": "var(--dark-button)",
           };
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -93,7 +93,7 @@ export default {
   border-color: var(--selected-main-button) var(--selected-main-button)
     var(--selected-dark-button) var(--selected-main-button);
 
-  box-shadow: 0 2px 1px #0006;
+  box-shadow: 0 2px 1px var(--dark);
   filter: brightness(1);
   border-radius: var(--border-radius);
   border-width: 2px 5px;

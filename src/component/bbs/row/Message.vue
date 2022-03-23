@@ -43,7 +43,7 @@
             "
           /> </router-link
         >&nbsp;
-        <h4 class="ellipsis justified title">{{ message.title }}</h4>
+        <b class="ellipsis justified title">{{ message.title }}</b>
         &nbsp;
         <div v-if="authenticated">
           <button
@@ -54,10 +54,11 @@
                 `**${this.message.author.name}** a écrit :\n${this.message.content}`.replace(
                   /^/gm,
                   '> '
-                )+'\n\n'
+                ) + '\n\n'
               )
             "
-            ><img
+          >
+            <img
               src="@/asset/img/bbs/icon/bubble.svg"
               width="14"
               height="12"
@@ -74,7 +75,8 @@
               user.role > 50
             "
             @click.prevent="eventBus.emit('edit', this.message.content)"
-            ><img
+          >
+            <img
               src="@/asset/img/bbs/icon/pen.svg"
               width="12"
               height="12"
@@ -87,8 +89,9 @@
             class="btn-action"
             v-if="message.author.id === user.id || user.role > 50"
             @click.prevent="this.delete"
-            >x</button
           >
+            x
+          </button>
         </div>
       </div>
       <hr style="margin: 2px 0" />
@@ -117,13 +120,13 @@ export default {
   props: {
     message: {
       required: true,
-      type: Object
+      type: Object,
     },
     separator: {
       required: false,
       default: true,
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   mounted() {
     if (this.$route.hash) {
@@ -138,9 +141,9 @@ export default {
     },
     formatDate() {
       return format(new Date(this.message.date), "PPpp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   methods: {
     scrollTo(anchor) {
@@ -154,8 +157,8 @@ export default {
     },
     quote() {
       console.log();
-    }
-  }
+    },
+  },
 };
 </script>
 <style src="@/asset/css/markdown.css"></style>

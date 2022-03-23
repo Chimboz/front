@@ -41,7 +41,7 @@
       <router-link to="bbs">BBS</router-link>...)ou même un poste sur le chat
       (<router-link to="/groups/3">modos officiels</router-link>,
       <router-link to="/groups/9">aideurs officiels</router-link>). <br /><br />
-      <table class="groups fullwidth">
+      <table class="centered fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -73,7 +73,7 @@
       >
       Les membres de ces groupes sont designés par
       <b>le créateur du groupe</b>... <br /><br />
-      <table class="groups fullwidth">
+      <table class="centered fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -112,7 +112,7 @@
         à Popularité</b
       >, leur nombre de points sera <b>10+2+7</b> soit <b>19 points</b>. Cela
       signifie que moins un groupe a des points, plus il est fort !<br /><br />
-      <table class="groups fullwidth">
+      <table class="centered fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -425,9 +425,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.groups {
-  text-align: center;
-}
-</style>

@@ -121,7 +121,7 @@
           <div class="gender">{{ this.gender }}</div>
         </div>
         <div class="right-acc flex">
-          <div class="nav-acc flex">
+          <div class="flex">
             <GlobalButton
               type="button"
               :class="{ active: profile }"
@@ -311,7 +311,7 @@
           </div>
         </div>
       </div>
-      <div class="flex centered btn-menu">
+      <div class="flex centered">
         <GlobalButton color="green" type="submit" style="width: 150px"
           ><template #prepend
             ><img

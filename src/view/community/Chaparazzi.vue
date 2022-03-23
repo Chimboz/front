@@ -128,7 +128,7 @@ export default {
 }
 
 .spinner-loading {
-  background: #0003;
+  background: var(--dark);
   position: absolute;
   width: 100%;
   height: 100%;

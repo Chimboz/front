@@ -502,10 +502,10 @@ tr td:first-child {
 }
 
 #today .fullwidth {
-  padding: 6px;
+  padding: var(--md-gap);
 }
 
 #today .fullwidth:nth-child(2n + 1) {
-  background: #eef5fa;
+  background: #fff6;
 }
 </style>

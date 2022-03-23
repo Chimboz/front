@@ -294,7 +294,7 @@ export default {
   border-width: 2px 1px;
   border-style: solid;
   border-color: var(--pink) var(--pink) var(--dark-pink) var(--pink);
-  box-shadow: 0 2px 1px #0006;
+  box-shadow: 0 2px 1px var(--dark);
 }
 
 #nav a:not(:first-child) {

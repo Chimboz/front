@@ -130,7 +130,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #0007;
+  background-color: var(--dark);
 }
 
 .modal-content {

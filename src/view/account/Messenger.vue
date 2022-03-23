@@ -60,7 +60,7 @@
               ></h3
             ></div
           >
-          <span class="content">{{ message.content.slice(0, 64) }}</span>
+          <span>{{ message.content.slice(0, 64) }}</span>
         </div>
       </router-link>
     </GlobalCard>

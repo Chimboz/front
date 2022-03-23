@@ -69,7 +69,7 @@
             <span>{{ shown.cost }}p.</span>
           </div>
         </div>
-        <div class="preview-description">
+        <div>
           <div class="preview-infos">
             <br /><br />
             <h3>Pack {{ shown.name }}</h3>

@@ -20,7 +20,7 @@
           id: 'reply',
           new: true,
           signature: this.signature,
-          title: this.title
+          title: this.title,
         }"
         :separator="false"
       />
@@ -60,10 +60,10 @@
           <td><b>Mise en forme</b></td>
           <td class="markdown-body" style="vertical-align: middle">
             <div class="flex hstack">
-              <button type="button" class="btn-md" @click="format('**')"
-                ><b>B</b></button
-              ><button type="button" class="btn-md" @click="format('*')"
-                ><i>i</i></button
+              <button type="button" class="btn-md" @click="format('**')">
+                <b>B</b></button
+              ><button type="button" class="btn-md" @click="format('*')">
+                <i>i</i></button
               ><button type="button" class="btn-md" @click="format('<u>')">
                 <u>u</u>
               </button>
@@ -73,7 +73,12 @@
               <button type="button" class="btn-md" @click="formatLink(false)">
                 <a href="#" @click.prevent>a</a>
               </button>
-              <button type="button" class="btn-md" style="padding: 2px" @click="formatLink(true)">
+              <button
+                type="button"
+                class="btn-md"
+                style="padding: 2px"
+                @click="formatLink(true)"
+              >
                 <img
                   draggable="false"
                   @contextmenu.prevent
@@ -88,114 +93,40 @@
                 style="padding: 0"
                 @change="(event) => formatColor(event.target.value)"
               >
-                <option
-                  style="color: #444444"
-                  value="#444444"
-                >
-                  Couleur
-                </option>
-                <option
-                  style="color: #cecece"
-                  value="#CECECE"
-                >
+                <option style="color: #444444" value="#444444">Couleur</option>
+                <option style="color: #cecece" value="#CECECE">
                   Gris triste
                 </option>
-                <option
-                  style="color: #999999"
-                  value="#999999"
-                >
+                <option style="color: #999999" value="#999999">
                   Gris divorce
                 </option>
-                <option
-                  style="color: #ff0000"
-                  value="#FF0000"
-                >
-                  Rouge
-                </option>
-                <option
-                  style="color: #cc6600"
-                  value="#CC6600"
-                >
-                  Chocolat
-                </option>
-                <option
-                  style="color: #fe9e01"
-                  value="#FE9E01"
-                >
-                  Orange
-                </option>
-                <option
-                  style="color: var(--light)f00"
-                  value="var(--light)F00"
-                >
+                <option style="color: #ff0000" value="#FF0000">Rouge</option>
+                <option style="color: #cc6600" value="#CC6600">Chocolat</option>
+                <option style="color: #fe9e01" value="#FE9E01">Orange</option>
+                <option style="color: var(--light) f00" value="var(--light)F00">
                   Jaune
                 </option>
-                <option
-                  style="color: #ade76b"
-                  value="#ADE76B"
-                >
-                  Vert
-                </option>
-                <option
-                  style="color: #66cc00"
-                  value="#66CC00"
-                >
-                  Gilvert
-                </option>
-                <option
-                  style="color: #018352"
-                  value="#018352"
-                >
-                  Pelouse
-                </option>
-                <option
-                  style="color: #9412fe"
-                  value="#9412FE"
-                >
+                <option style="color: #ade76b" value="#ADE76B">Vert</option>
+                <option style="color: #66cc00" value="#66CC00">Gilvert</option>
+                <option style="color: #018352" value="#018352">Pelouse</option>
+                <option style="color: #9412fe" value="#9412FE">
                   Violet du marié
                 </option>
-                <option
-                  style="color: #376da8"
-                  value="#376DA8"
-                >
-                  Bleu
-                </option>
-                <option
-                  style="color: #6699cc"
-                  value="#6699CC"
-                >
+                <option style="color: #376da8" value="#376DA8">Bleu</option>
+                <option style="color: #6699cc" value="#6699CC">
                   Bleu Chimbo
                 </option>
-                <option
-                  style="color: #fe81c0"
-                  value="#FE81C0"
-                >
+                <option style="color: #fe81c0" value="#FE81C0">
                   Rose Dupatta
                 </option>
-                <option
-                  style="color: #ff3399"
-                  value="#FF3399"
-                >
+                <option style="color: #ff3399" value="#FF3399">
                   Rose Chimbo
                 </option>
-                <option
-                  style="color: #e40173"
-                  value="#E40173"
-                >
+                <option style="color: #e40173" value="#E40173">
                   Gurujiolet
                 </option>
-                <option
-                  style="color: #FFFFFF"
-                  value="#FFFFFF"
-                >
-                  Blanc
-                </option>
-                <option
-                  style="color: #000"
-                  value="#000000"
-                >
-                  Noir
-                </option>
+                <option style="color: #ffffff" value="#FFFFFF">Blanc</option>
+                <option style="color: #000" value="#000000">Noir</option>
               </select>
               <select
                 class="btn-md"
@@ -213,7 +144,7 @@
                 class="btn-md"
                 @click="formatMultiline('> ')"
               >
-                <blockquote style="margin-bottom: 0"> Quote </blockquote>
+                <blockquote style="margin-bottom: 0">Quote</blockquote>
               </button>
               <button
                 type="button"
@@ -237,7 +168,7 @@
               </button>
               <button type="button" class="btn-md" @click="formatCode()">
                 <pre style="padding: 2px; margin: 0; color: var(--light)">
-Code block</pre
+                  Code block</pre
                 >
               </button>
             </div>
@@ -270,6 +201,7 @@ Code block</pre
               <GlobalButton
                 type="button"
                 @click.prevent="this.preview = this.message"
+                aria-label="Preview"
                 >Prévisualiser</GlobalButton
               >
               <GlobalButton type="submit" color="green" v-if="mode == 'post'"
@@ -279,6 +211,7 @@ Code block</pre
                     @contextmenu.prevent
                     alt="Arrow icon"
                     class="arrow jitter green"
+                    aria-label="Send"
                     src="@/asset/img/arrow.svg" /></template
                 >Envoyer</GlobalButton
               >
@@ -287,6 +220,7 @@ Code block</pre
                 color="red"
                 v-if="mode == 'edit'"
                 @click="mode = 'post'"
+                aria-label="Cancel"
               >
                 Annuler</GlobalButton
               >
@@ -297,6 +231,7 @@ Code block</pre
                     @contextmenu.prevent
                     alt="Arrow icon"
                     class="arrow jitter green"
+                    aria-label="Edit"
                     src="@/asset/img/arrow.svg" /></template
                 >Editer</GlobalButton
               >
@@ -336,18 +271,18 @@ export default {
       signature: true,
       markdown: false,
       selectionRange: [0, 0],
-      mode: "post"
+      mode: "post",
     };
   },
   props: {
     isTopic: {
       required: false,
       default: false,
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   computed: {
-    ...mapState("auth", ["user"])
+    ...mapState("auth", ["user"]),
   },
   methods: {
     submit() {
@@ -365,7 +300,7 @@ export default {
     selectionHandler(e) {
       this.selectionRange = [
         e.currentTarget.selectionStart,
-        e.currentTarget.selectionEnd
+        e.currentTarget.selectionEnd,
       ];
     },
     select() {
@@ -409,7 +344,7 @@ export default {
         this.message.substring(this.selectionRange[1]);
       this.selectionRange = [
         this.selectionRange[0] + 4,
-        this.selectionRange[0] + 4 + this.$t("format.language").length
+        this.selectionRange[0] + 4 + this.$t("format.language").length,
       ];
       this.focusHandler();
     },
@@ -436,8 +371,8 @@ export default {
         "</span>" +
         this.message.substring(this.selectionRange[1]);
       this.focusHandler();
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

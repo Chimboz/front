@@ -74,7 +74,6 @@
         color="yellow"
         v-if="data"
         justified
-        class="recent"
         header="mi_sm.svg"
       >
         <div
