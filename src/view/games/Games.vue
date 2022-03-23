@@ -267,7 +267,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .game-champion {
-  background: linear-gradient(to bottom, #58a8db, #6ebef0);
-  margin-bottom: 6px;
+  background: linear-gradient(to bottom, #58a8db, var(--selected-main-card));
+  margin-bottom: var(--md-gap);
 }
 </style>

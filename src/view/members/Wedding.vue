@@ -165,7 +165,7 @@
       <template #subtitle
         >Ça commence pour un jour... ça fini pour toujours !</template
       >
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -215,7 +215,7 @@
         >Le mariage est virtuel mais la douleur est réelle&nbsp;!</template
       >
       <b>{{ data.divorce.length }}</b> couples ont été brisés&nbsp;!<br /><br />
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="100" />
           <col width="100%" />
@@ -262,7 +262,7 @@
         /><br />Les 20 mariages qui ont tenu !
       </template>
       <template #subtitle>C'est fini... mais ça a duré !!! </template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -486,7 +486,7 @@ tr td:first-child {
 }
 
 .witness1 {
-  left: 100px;
+  left: 70px;
 }
 
 .witness2 {
@@ -494,11 +494,11 @@ tr td:first-child {
 }
 
 .married1 {
-  left: 150px;
+  left: 130px;
 }
 
 .married2 {
-  left: 225px;
+  left: 215px;
 }
 
 #today .fullwidth {

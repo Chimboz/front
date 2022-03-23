@@ -57,7 +57,7 @@
     ><br />
     <GlobalCard v-if="data"
       ><template #header>{{ $t("book.last") }}</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="10%" />
           <col width="45%" />

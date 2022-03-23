@@ -105,7 +105,7 @@
     <br /><GlobalCard id="best" v-if="data">
       <template #header>Les 20 plus mazo de l'Archipel</template>
       <template #subtitle>Continuera ? Continuera pas ? &lt;:D</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />

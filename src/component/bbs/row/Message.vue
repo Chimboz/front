@@ -93,7 +93,7 @@
       </div>
       <hr style="margin: 2px 0" />
       <div class="markdown-body" v-html="formatMessage"></div>
-      <div class="signature" v-if="message.signature">
+      <div v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>
       </div>
     </td>

@@ -1,11 +1,10 @@
 <template>
   <tbody>
-    <tr class="topic">
-      <td class="row1" align="center" valign="middle" height="50">
+    <tr>
+      <td align="center" valign="middle" height="50">
         <img
           draggable="false"
           @contextmenu.prevent
-          class="icon"
           :src="
             require(`@/asset/img/bbs/folder${
               topic.sticky ? '_sticky' : ''}${
@@ -18,21 +17,19 @@
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         />
       </td>
-      <td class="row1" width="100%" height="50" align="left">
-        <span class="forumlink">
-          <router-link :to="'/topic/' + topic.id" class="forumlink">{{
+      <td width="100%" height="50" align="left">
+          <router-link :to="'/topic/' + topic.id">{{
             topic.title
           }}</router-link>
-        </span>
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall">{{ topic.reply }}</span>
+        {{ topic.reply }}
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall"><UserLink :user="topic.author" /></span>
+        <UserLink :user="topic.author" />
       </td>
       <td class="row2" align="center" valign="middle" height="50">
-        <span class="gensmall">{{ topic.view }}</span>
+        {{ topic.view }}
       </td>
       <td class="row2" align="center" valign="middle" height="50">
         <div>{{ formatDate }}</div>

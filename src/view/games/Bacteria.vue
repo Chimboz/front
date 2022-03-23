@@ -149,7 +149,7 @@
       Les 10 premiers du classement remportent le
       <b>casque Bacteria</b>.<br />
       <br />
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -188,7 +188,7 @@
     <br /><GlobalCard id="worst" v-if="data">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -227,7 +227,7 @@
     <br /><GlobalCard id="groups" v-if="data">
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />

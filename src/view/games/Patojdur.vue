@@ -177,7 +177,7 @@
     <GlobalCard id="records" v-if="data">
       <template #header>Records !</template>
       <template #subtitle>Ce jour là, il a comme volé sur l'eau...</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="20%" />
           <col width="20%" />
@@ -216,7 +216,7 @@
       Les 10 premiers du classement remportent le
       <b>casque Patojdur</b> pour la journée.<br />
       <br />
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -248,7 +248,7 @@
         >Classement général single {{ data.day - 1 }}e journée</template
       >
       <template #subtitle>2 heures par jour minimum dans la mare...</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -279,7 +279,7 @@
         >{{ data.day }}e journée ! {{ data.stats.today }} patojeurs !</template
       >
       La {{ data.day }}e journée de course est en cours !
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />
@@ -309,7 +309,7 @@
     <br /><GlobalCard id="groups" v-if="data">
       <template #header>Classement des groupes !</template>
       <template #subtitle>Plus on est de fous...</template>
-      <table class="score fullwidth">
+      <table class="fullwidth">
         <colgroup>
           <col width="30" />
           <col width="100%" />

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-eval' 'sha256-CWO12sIlCNYE0SdprlVjNeT8gGbuT66kYOwcjwwZJy8=' 'sha256-Y1hIFQ1fUMsxHZWel8aGCzZvcGC+oQVY9pmu0naxb6w=' 'sha256-z+EBYO7hQZNaU6J3rSf7REphgWa3sLaLR5Z5EzSn3Us=' 'sha256-IeiF6s+iq36kWHvIKag5ALpB8lz7ro/y9tdnf4tF2Ls='; object-src 'self'; base-uri 'none'"
+      content="script-src 'self' 'unsafe-eval' 'sha256-CWO12sIlCNYE0SdprlVjNeT8gGbuT66kYOwcjwwZJy8=' 'sha256-5v5NjrhkH+U3iF7s0g1uYKVmOnjWkXzcFcVjqOiu4R0=' 'sha256-z+EBYO7hQZNaU6J3rSf7REphgWa3sLaLR5Z5EzSn3Us=' 'sha256-Zju3J60B+AxdpeX3vALTTjXvI0eDw1pxxDeDoyw9iY0='; object-src 'self'; base-uri 'none'"
     />
     <meta
       name="description"
@@ -54,7 +54,7 @@
       sizes="16x16"
       href="/favicon-16x16.png?v=1.1"
     />
-    <link rel="manifest" href="/site.webmanifest?v=1.1" />
+    <link rel="manifest" href="/manifest.json?v=1.1" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.1" color="#6090be" />
     <link rel="shortcut icon" href="/favicon.ico?v=1.1" />
     <meta name="apple-mobile-web-app-title" content="Chimboz" />
@@ -85,6 +85,7 @@
           "https://img.shields.io/badge/loadtime-" + loadTime + "ms-blue";
         $img.alt = "Loadtime " + loadTime + "ms";
         $img.title = $img.alt;
+        $img.height = 20;
         document.getElementById("loadtime").appendChild($img);
       });
     </script>

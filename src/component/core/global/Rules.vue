@@ -15,7 +15,7 @@
         ><b>{{ $t("rules.rule" + rule) }}</b></div
       >
     </div>
-    <div class="btn-rules fullwidth"
+    <div class="fullwidth"
       ><GlobalButton icon="rules.svg">Règles</GlobalButton></div
     >
   </GlobalCard>

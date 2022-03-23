@@ -94,7 +94,7 @@
       <RandomNumber v-else :max="30" :value="gain" :duration="5000" /> <br /><br
         v-if="!lottery"
       />
-      <GlobalButton color="orange" @click="handle" class="btn-loto"
+      <GlobalButton color="orange" @click="handle"
         ><template #prepend
           ><img
             draggable="false"
@@ -300,11 +300,10 @@ export default {
   },
 };
 </script>
+<style src="@/asset/css/markdown.css"></style>
+<style src="katex/dist/katex.min.css"></style>
+<style src="@/asset/css/code.css"></style>
 <style lang="scss">
-.btn-loto .btn-text {
-  margin-left: 16px;
-}
-
 .packs .card-btn {
   background: linear-gradient(
     to bottom,
@@ -329,10 +328,6 @@ export default {
 
 .chaparazzi-link:hover {
   text-decoration: none;
-}
-
-.gallery {
-  flex-wrap: wrap;
 }
 
 .gallery .photo {

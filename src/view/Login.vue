@@ -14,7 +14,7 @@
       <router-link to="/shop">
         <GlobalCard
           color="yellow"
-          header="packs.png"
+          header="packs.webp"
           :width="154"
           :height="96"
           class="packs"
@@ -176,9 +176,9 @@ export default {
 .packs .card-btn {
   background: linear-gradient(
     to bottom,
-    #7aaaf0,
-    #7aaaf0 50%,
-    var(--main-card-color) 50%
+    var(--dark-card-blue),
+    var(--dark-card-blue) 50%,
+    var(--main-card-yellow) 50%
   ) !important;
 }
 </style>
@@ -188,8 +188,8 @@ export default {
 }
 
 .game-champion {
-  background: linear-gradient(to bottom, #58a8db, #6ebef0);
-  margin-bottom: 6px;
+  background: linear-gradient(to bottom, #58a8db, var(--selected-main-card));
+  margin-bottom: var(--md-gap);
 }
 
 .gallery {

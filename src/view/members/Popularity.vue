@@ -196,7 +196,7 @@
             width="141"
             height="58"
           />
-          <table class="score">
+          <table>
             <colgroup>
               <col width="30" />
               <col width="100%" />

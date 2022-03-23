@@ -23,7 +23,7 @@
         width="154"
         height="124"
         draggable="false"
-        alt="Bank vault"
+        aria-label="Bank vault"
         @contextmenu.prevent
         type="image/svg+xml"
         :data="require('@/asset/img/bank/door.svg')"
