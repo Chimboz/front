@@ -265,7 +265,7 @@ export default {
 
 // Chest
 .chest {
-  max-height: 177px;
+  max-height: 200px;
   overflow-y: auto;
 }
 .category {

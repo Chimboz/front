@@ -131,10 +131,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.logs {
-  max-height: 200px;
-  overflow-y: auto;
-}
 .log {
   padding: var(--md-gap);
 }

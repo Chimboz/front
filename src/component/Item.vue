@@ -113,7 +113,7 @@ export default {
 }
 
 .owners {
-  max-height: 150px;
+  max-height: 200px;
   overflow-y: auto;
 }
 

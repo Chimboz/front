@@ -194,7 +194,7 @@ export default {
 
 <style lang="scss" scoped>
 .messages {
-  max-height: 500px;
+  max-height: 450px;
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;

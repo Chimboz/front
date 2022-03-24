@@ -32,6 +32,9 @@
         </div>
         <div class="level-description flex centered">
           <img
+            width="200"
+            height="200"
+            :alt="'Level' + data[selected].level"
             :src="require('@/asset/img/level/' + data[selected].level + '.png')"
           />
           <div v-for="(line, index) of data[selected].content" :key="index">
@@ -94,7 +97,7 @@ export default {
 
 <style lang="scss" scoped>
 .level-list {
-  max-height: 250px;
+  max-height: 450px;
   overflow-y: scroll;
 }
 

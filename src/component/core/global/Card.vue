@@ -196,6 +196,7 @@ img + .card,
     transparent 50%,
     var(--selected-main-card) 50%
   );
+  padding-bottom: 2px;
 }
 
 img + .card > .card-bg {

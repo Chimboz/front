@@ -139,16 +139,8 @@ table {
   overflow: hidden;
 }
 
-.bbs tbody {
-  background: var(--light);
-}
-
-tbody {
-  background: var(--light);
-}
-
 table:not(.bbs) tr:nth-child(2n + 1) {
-  background: #004e8422;
+  background: var(--selected-dark-card);
 }
 
 iframe {

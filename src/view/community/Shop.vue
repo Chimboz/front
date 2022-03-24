@@ -33,6 +33,8 @@
           @contextmenu.prevent
           class="pack-preview"
           alt="Pack preview"
+          height="196"
+          width="468"
           src="@/asset/img/shop/cabin.svg"
         />
         <div class="preview-tiz flex centered">
@@ -212,7 +214,7 @@ h3 {
 .menu > div {
   position: relative;
   flex-wrap: wrap;
-  max-height: 404px;
+  max-height: 450px;
   overflow-y: auto;
   padding: 6px 0;
 }

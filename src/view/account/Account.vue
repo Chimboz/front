@@ -182,7 +182,6 @@
               },
             },
             scales: {
-              
               y: { min: this.data.patojdur.stats.record },
             },
           }"
@@ -342,7 +341,11 @@
               v-else-if="friend.status.connected"
               alt="Online on website"
               src="@/asset/img/icon/account/online.png"
-            /><img v-else alt="Offline" src="@/asset/img/icon/account/offline.png" />&nbsp;
+            /><img
+              v-else
+              alt="Offline"
+              src="@/asset/img/icon/account/offline.png"
+            />&nbsp;
             <div class="flex col" style="align-items: flex-start">
               <UserLink :user="friend.user" />
               {{ friend.status.connected ? friend.status.room : "" }}
@@ -357,26 +360,26 @@
             $t("profile.groupsList")
           }}</GlobalButton>
         </template>
-        <table class="fullwidth">
-          <colgroup>
-            <col width="30" />
-            <col width="100%" />
-          </colgroup>
-          <tbody>
-            <tr v-for="group of this.data.groups" :key="group.id">
-              <td height="22">
-                <img
-                  v-if="group.owner"
-                  alt="Group owner"
-                  width="22"
-                  height="22"
-                  src="@/asset/img/icon/account/leader.svg"
-                />
-              </td>
-              <td style="text-align: left"><GroupLink :group="group" /></td>
-            </tr>
-          </tbody>
-        </table>
+        <router-link
+          v-for="group of this.data.groups"
+          :key="group.id"
+          :to="'/groups/' + group.id"
+        >
+          <div
+            class="list fullwidth flex-centered"
+            style="justify-content: flex-start"
+          >
+            <img
+              :style="{ opacity: group.owner ? '1' : '0' }"
+              alt="Group owner"
+              width="22"
+              height="22"
+              src="@/asset/img/icon/account/leader.svg"
+            />&nbsp;
+            <div class="flex col" style="align-items: flex-start">
+              <GroupLink :group="group" />
+            </div></div
+        ></router-link>
       </GlobalCard>
     </template>
   </GlobalContainer>
