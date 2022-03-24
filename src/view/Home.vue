@@ -150,12 +150,13 @@
           :key="photo.name"
           style="margin: auto"
         >
-          <img
-            draggable="false"
-            :src="`gallery/${photo.name}`"
-            :alt="photo.name"
-            width="130"
-          /><b>{{ formatDatePhotos(photo.date) }}</b>
+          <router-link :to="'/chaparazzi/' + photo.name">
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              :src="`gallery/${photo.name}`"
+              :alt="photo.name" /></router-link
+          ><b>{{ formatDatePhotos(photo.date) }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -293,16 +294,17 @@ export default {
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
+      { property: "og:image", content: "/android-chrome-192x192.png" },
       { property: "og:image:width", content: "192" },
       { property: "og:image:height", content: "192" },
     ],
   },
 };
 </script>
-<style src="@/asset/css/markdown.css"></style>
+
+<style src="@/asset/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>
-<style src="@/asset/css/code.css"></style>
+<style src="@/asset/css/bbs/code.css"></style>
 <style lang="scss">
 .packs .card-btn {
   background: linear-gradient(
@@ -313,7 +315,6 @@ export default {
   ) !important;
 }
 </style>
-
 <style lang="scss" scoped>
 .news-date {
   color: var(--title-card-yellow);

@@ -7,15 +7,11 @@
   <a href="https://github.com/Tigriz/chzretro-front/issues"><img alt="Number of issues" src="https://img.shields.io/github/issues/Tigriz/chzretro-front" /></a>
 </p>
 
-# Contributions
-
-Please see [project kanban](https://github.com/Tigriz/chzretro-front/projects/1), to-do tasks.
-
 # Conventions
 
 Folders' name is singular (excepted `locales` because vue-i18n hardcoded it).  
 Routes are plural if they have subroutes (`/games`).  
-Use snake*case for files : replace whitespaces " " with **underscores** "\_" in filenames.  
+Use snake\_case for files : replace whitespaces " " with **underscores** "\_" in filenames.  
 Vue files (`*.vue`) begin with an uppercase letter and use PascalCase.
 
 # Branches
@@ -79,6 +75,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## SVG
 
 [SVG Animation editor](http://anigen.org/versions/0_8_1/)  
+[svgasm](https://github.com/tomkwok/svgasm)
 [SVG Path editor](https://yqnn.github.io/svg-path-editor/)  
 [Inkscape](https://inkscape.org/)
 

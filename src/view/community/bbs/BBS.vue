@@ -35,19 +35,19 @@
           <img
             draggable="false"
             @contextmenu.prevent
-            alt="Nouveaux messages"
-            title="Nouveaux messages"
+            :alt="$t('bbs.new')"
+            :title="$t('bbs.new')"
             src="@/asset/img/bbs/folder_new.svg"
-          />&nbsp;Nouveaux messages&nbsp;
+          />&nbsp;{{ $t("bbs.new") }}&nbsp;
         </div>
         <div>
           <img
             draggable="false"
             @contextmenu.prevent
-            alt="Pas de nouveaux messages"
-            title="Pas de nouveaux messages"
+            :alt="$t('bbs.nonew')"
+            :title="$t('bbs.nonew')"
             src="@/asset/img/bbs/folder.svg"
-          />&nbsp;Pas de nouveaux messages&nbsp;
+          />&nbsp;{{$t('bbs.nonew')}}&nbsp;
         </div>
       </div></GlobalCard
     >
@@ -105,13 +105,8 @@ export default {
   }
 };
 </script>
-<style src="@/asset/css/bbs.css"></style>
-<style lang="scss">
-.symbol-info {
-  flex-direction: row;
-  justify-content: center;
-}
-
+<style src="@/asset/css/bbs/bbs.css"></style>
+<style lang="scss" scoped>
 .columns {
   column-count: 1;
 }

@@ -117,7 +117,9 @@
   },
   "bbs": {
     "lock_new": "BBS Locked (new messages)",
-    "lock": "BBS Locked"
+    "lock": "BBS Locked",
+    "new": "New messages",
+    "nonew": "No new messages"
   },
   "success": {
     "buy": "You bought successfully !"

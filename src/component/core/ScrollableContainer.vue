@@ -1,7 +1,7 @@
 <template>
   <div class="scrollable" @scroll.passive="onScroll">
     <slot></slot>
-    <div v-if="isLoading" class="spinner-loading">
+    <div v-show="isLoading" class="spinner-loading">
       <img
         src="@/asset/img/loading.svg" alt="Loading spinner" 
         draggable="false"
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
-      if (scrollTop + clientHeight >= scrollHeight - 5 && !this.hasEnded) {
+      if (scrollTop + clientHeight >= scrollHeight && !this.hasEnded) {
         this.isLoading = true;
         this.api.get(`/api/${this.route}/${++this.page}.json`).then(
           (res) => {

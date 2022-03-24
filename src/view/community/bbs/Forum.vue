@@ -130,7 +130,7 @@ export default {
   }
 };
 </script>
-<style src="@/asset/css/bbs.css"></style>
+<style src="@/asset/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>
 .columns {
   column-count: 1;

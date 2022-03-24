@@ -31,7 +31,11 @@
     <Demo />
     <br />
     <GlobalCard v-if="data">
-      <template #subtop>{{ $t("section.chaparazzi") }}</template>
+      <template #subtop
+        ><router-link to="/chaparazzi" class="chaparazzi-link">{{
+          $t("section.chaparazzi")
+        }}</router-link></template
+      >
       <div class="gallery flex">
         <div
           class="flex col photo"
@@ -39,13 +43,27 @@
           :key="photo.name"
           style="margin: auto"
         >
+          <router-link :to="'/chaparazzi/' + photo.name">
+            <img
+              draggable="false"
+              @contextmenu.prevent
+              :src="`gallery/${photo.name}`"
+              :alt="photo.name" /></router-link
+          ><b>{{ formatDatePhotos(photo.date) }}</b>
+        </div>
+      </div>
+      <div style="text-align: right">
+        <router-link to="/chaparazzi">
           <img
+            src="@/asset/img/puce.svg"
+            alt="Puce"
             draggable="false"
             @contextmenu.prevent
-            :src="`gallery/${photo.name}`"
-            :alt="photo.name"
-          /><b>{{ formatDatePhotos(photo.date) }}</b>
-        </div>
+            height="17"
+            width="17"
+          />
+          {{ $t("chaparazzi.more") }}
+        </router-link>
       </div>
     </GlobalCard>
     <template #right-column>
@@ -83,7 +101,9 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br />{{$t("champion.patojdur")}}
+            <UserLink :user="data.patojdur.user" /><br />{{
+              $t("champion.patojdur")
+            }}
           </div>
           <img src="@/asset/img/game/mazo/head.gif" />
           <img src="@/asset/img/game/mazo/bg.gif" />
@@ -99,7 +119,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.mazo.user" /><br />{{$t("champion.mazo")}}
+            <UserLink :user="data.mazo.user" /><br />{{ $t("champion.mazo") }}
           </div>
         </div></GlobalCard
       >
@@ -157,15 +177,16 @@ export default {
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil",
+        content: "Chimboz, connection",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil",
+        content:
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
+      { property: "og:image", content: "/android-chrome-192x192.png" },
       { property: "og:image:width", content: "192" },
       { property: "og:image:height", content: "192" },
     ],
@@ -192,6 +213,15 @@ export default {
   margin-bottom: var(--md-gap);
 }
 
+.chaparazzi-link {
+  font-weight: normal;
+  fill: var(--light);
+}
+
+.chaparazzi-link:hover {
+  text-decoration: none;
+}
+
 .gallery {
   flex-wrap: wrap;
 }
@@ -202,5 +232,6 @@ export default {
 
 .gallery .photo img {
   border: 1px solid var(--main-bg);
+  width: 100%;
 }
 </style>
