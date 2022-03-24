@@ -2,11 +2,6 @@
   font-family: "Chimboz Heavy";
 }
 
-.danger {
-  background: var(--red);
-  color: var(--light);
-}
-
 .pink {
   color: var(--pink);
 }

@@ -92,11 +92,9 @@
 .btn-md {
   display: inline-flex;
   padding: var(--md-gap);
-  margin: 0 var(--sm-gap);
   border-radius: var(--md-gap);
-  align-items: center;
   justify-content: center;
-  border: 0px;
+  border: 0;
   color: var(--text);
   background: var(--light);
   box-shadow: inset 1px 1px 1px var(--dark), inset -1px -1px 1px var(--dark);
@@ -123,7 +121,6 @@ textarea:invalid:not(:placeholder-shown) {
 input:not([type="checkbox"]).btn-md,
 textarea.btn-md {
   width: 100%;
-  padding: var(--md-gap);
 }
 
 /* Button padding */

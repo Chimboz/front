@@ -154,7 +154,7 @@
         /><b> Jeux</b>
       </div>
       <div class="flex">
-        <select class="btn-md" style="padding: 0">
+        <select class="btn-md">
           <option value="bacteria">Bacteria</option>
           <option value="patojdur">Patojdur</option>
           <option value="mazo">Mazo</option></select
