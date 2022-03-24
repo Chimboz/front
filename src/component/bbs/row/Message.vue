@@ -15,7 +15,7 @@
       }}</span>
     </td>
     <td class="justified" valign="top">
-      <h2 class="head flex centered info-sm ellipsis">
+      <h2 class="head flex info-sm ellipsis">
         <GlobalAvatar
           :avatar="message.author.look.avatar"
           :emote="message.author.look.emote"
@@ -31,7 +31,7 @@
           <span class="date">{{ formatDate }}</span>
         </div>
       </h2>
-      <div class="head flex centered">
+      <div class="head flex">
         <router-link :to="'#' + message.id">
           <img
             draggable="false"

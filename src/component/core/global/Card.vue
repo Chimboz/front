@@ -160,7 +160,6 @@ export default {
   position: relative;
   border-radius: var(--border-radius);
   width: 100%;
-  height: auto;
   text-align: center;
   background-image: linear-gradient(
     to bottom,
@@ -175,6 +174,7 @@ export default {
 .card-header {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   width: 100%;
+  height: auto;
 }
 
 img + .card,

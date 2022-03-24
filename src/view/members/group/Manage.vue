@@ -127,7 +127,7 @@
     <template #right-column
       ><GlobalCard color="blue" header="ensavoirplus.webp" v-if="data">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
-        <div style="text-align: left">
+        <div class="justified">
           <img
             src="@/asset/img/puce.svg"
             alt="Caret"

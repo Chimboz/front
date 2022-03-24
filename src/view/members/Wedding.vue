@@ -506,6 +506,6 @@ tr td:first-child {
 }
 
 #today .fullwidth:nth-child(2n + 1) {
-  background: #fff6;
+  background: var(--light);
 }
 </style>

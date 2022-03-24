@@ -6,7 +6,7 @@
     </colgroup>
     <thead>
       <tr>
-        <th valign="top" colspan="2" height="25" nowrap="nowrap">
+        <th valign="top" colspan="2" nowrap="nowrap">
           Prévisualisation
         </th>
       </tr>
@@ -35,7 +35,7 @@
       </colgroup>
       <thead>
         <tr>
-          <th valign="top" colspan="2" height="25" nowrap="nowrap">
+          <th valign="top" colspan="2" nowrap="nowrap">
             {{ isTopic ? "Créer un sujet" : "Répondre au sujet" }}
           </th>
         </tr>
@@ -167,9 +167,7 @@
                 <code>Code</code>
               </button>
               <button type="button" class="btn-md" @click="formatCode()">
-                <pre style="padding: 2px; margin: 0; color: var(--light)">
-                  Code block</pre
-                >
+                <code>Code block</code>
               </button>
             </div>
           </td>
@@ -377,15 +375,17 @@ export default {
 </script>
 <style lang="scss" scoped>
 td {
-  padding: 6px;
+  padding: var(--sm-gap);
   vertical-align: top;
 }
 
 textarea {
-  width: 100%;
   min-height: 240px;
   resize: vertical;
-  font-size: 11px;
+}
+
+.btn-md {
+  height: 28px;
 }
 
 .title {

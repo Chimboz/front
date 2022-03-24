@@ -124,7 +124,6 @@ img {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   vertical-align: middle;
-  height: auto;
 }
 
 p {
@@ -145,7 +144,7 @@ table {
 }
 
 tbody {
-  background: var(--light) 4;
+  background: var(--light);
 }
 
 table:not(.bbs) tr:nth-child(2n + 1) {

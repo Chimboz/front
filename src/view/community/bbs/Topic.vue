@@ -77,3 +77,4 @@ export default {
   }
 };
 </script>
+<style src="@/asset/css/bbs.css"></style>

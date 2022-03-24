@@ -201,7 +201,7 @@
     <GlobalCard color="blue" v-if="data">
       <template #header>Membres</template>
       <div
-        style="display: inline-block"
+        class="inline"
         v-for="user of this.data.members"
         :key="user.id"
       >
@@ -212,7 +212,7 @@
           height="11"
           alt="Close"
           draggable="false"
-          style="cursor: var(--pointer); margin: 0 2px"
+          class="pointer"
           @contextmenu.prevent
         />
       </div> </GlobalCard
@@ -220,7 +220,7 @@
     <GlobalCard color="blue" v-if="data">
       <template #header>Demandes</template>
       <div
-        style="display: inline-block"
+        class="inline"
         v-for="user of this.data.demands"
         :key="user.id"
       >
@@ -231,7 +231,7 @@
           height="11"
           alt="Close"
           draggable="false"
-          style="cursor: var(--pointer); margin: 0 2px"
+          class="pointer"
           @contextmenu.prevent
         /><img
           @click.prevent="rejectDemand(user.id)"
@@ -240,7 +240,7 @@
           height="11"
           alt="Close"
           draggable="false"
-          style="cursor: var(--pointer); margin: 0 2px"
+          class="pointer"
           @contextmenu.prevent
         /></div></GlobalCard
     ><br />

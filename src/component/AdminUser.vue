@@ -135,7 +135,7 @@
       </div>
       <br />
       <div class="flex">
-        <select class="btn-md" style="padding: 0">
+        <select class="btn-md" style="padding: var(--md-gap) var(--md-gap)">
           <option value="bacteria">Les Créateurs</option>
           <option value="patojdur">Patojdur</option>
           <option value="mazo">Mazo</option></select

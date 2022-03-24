@@ -105,6 +105,7 @@ export default {
   }
 };
 </script>
+<style src="@/asset/css/bbs.css"></style>
 <style lang="scss">
 .symbol-info {
   flex-direction: row;

@@ -199,7 +199,7 @@
               <b>{{ rank.score }}</b>
             </td>
             <td><UserLink :user="rank.user" /></td>
-            <td style="text-align: right">
+            <td class="justified">
               <b>{{ formatDate(rank.date) }}</b
               ><br /><i>{{ rank.day }}e journée</i>
             </td>
