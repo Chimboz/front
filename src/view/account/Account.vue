@@ -539,7 +539,7 @@ export default {
 }
 
 .games {
-  column-count: 3;
+  column-count: 2;
 }
 
 .number {
