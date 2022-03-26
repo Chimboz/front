@@ -88,12 +88,12 @@ export default {
       })
     );
   },
-  /*async beforeRouteUpdate(to, from, next) {
+  async beforeRouteUpdate(to, from, next) {
     const req = await this.api.get(`/api/chaparazzi/0.json`);
     this.data = req.data;
     this.shown = this.data[0];
     next();
-  },*/
+  },
   metaInfo: {
     title: "section.chaparazzi",
     meta: [
