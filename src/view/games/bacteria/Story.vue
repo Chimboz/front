@@ -8,7 +8,7 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard header="bacteria.gif" justified bg="bacteria.gif">
+    <GlobalCard header="bacteria.webp" justified bg="bacteria.gif">
       <template #header>Histoire de Bacteria</template>
       Chimbi n'était pas un chimbo comme les autres. Il était tout blanc, rond
       comme un oeuf, et n'avait ni cornes, ni chapeau, ni casque de guerrier
