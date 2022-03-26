@@ -7,9 +7,13 @@
             <div class="arrows flex">
               <button
                 type="button"
-                v-for="(category, name) of this.data.items"
+                v-for="(_, name) of data.items"
                 :key="name"
-                :disabled="data.items[name].indexOf(data.look[name]) < 1"
+                :disabled="
+                  data.items[name]
+                    .map((item) => item.id)
+                    .indexOf(data.look[name]) < 1
+                "
                 @click="$emit('previousItem', name)"
               >
                 <img
@@ -49,10 +53,12 @@
             <div class="arrows flex">
               <button
                 type="button"
-                v-for="(category, name) of this.data.items"
+                v-for="(_, name) of data.items"
                 :key="name"
                 :disabled="
-                  data.items[name].indexOf(data.look[name]) >
+                  data.items[name]
+                    .map((item) => item.id)
+                    .indexOf(data.look[name]) >
                   data.items[name].length - 2
                 "
                 @click="$emit('nextItem', name)"
@@ -118,7 +124,7 @@
             </button>
           </div>
           <br />
-          <div class="gender">{{ this.gender }}</div>
+          <div class="gender">{{ gender }}</div>
         </div>
         <div class="right-acc flex">
           <div class="flex">

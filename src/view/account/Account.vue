@@ -32,14 +32,18 @@
       @previous-item="
         (name) =>
           (data.look[name] =
-            data.items[name][data.items[name].indexOf(data.look[name]) - 1])
+            data.items[name][
+              data.items[name].map((item) => item.id).indexOf(data.look[name]) -
+                1
+            ].id)
       "
       @next-item="
         (name) =>
           (data.look[name] =
-            this.data.items[name][
-              data.items[name].indexOf(data.look[name]) + 1
-            ])
+            data.items[name][
+              data.items[name].map((item) => item.id).indexOf(data.look[name]) +
+                1
+            ].id)
       "
       @change-gender="(gender) => (this.data.gender = gender)"
       v-model:motto="data.motto"
