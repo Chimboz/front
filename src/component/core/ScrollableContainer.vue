@@ -1,9 +1,14 @@
 <template>
-  <div class="scrollable" @scroll.passive="onScroll">
+  <div
+    class="scrollable"
+    @scroll.passive="onScroll"
+    :style="{ maxHeight: this.height + 'px' }"
+  >
     <slot></slot>
     <div v-show="isLoading" class="spinner-loading">
       <img
-        src="@/asset/img/loading.svg" alt="Loading spinner" 
+        src="@/asset/img/loading.svg"
+        alt="Loading spinner"
         draggable="false"
         width="200"
         height="200"
@@ -31,6 +36,11 @@ export default {
       type: String,
       required: true,
     },
+    height: {
+      type: Number,
+      required: false,
+      default: 200,
+    },
   },
   methods: {
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
@@ -53,7 +63,6 @@ export default {
 </script>
 <style style="scss" scoped>
 .scrollable {
-  max-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
   transition: 0.3s;
