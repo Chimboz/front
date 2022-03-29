@@ -214,20 +214,6 @@ export default {
       isLoading: false,
     };
   },
-  methods: {
-    onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
-      if (scrollTop + clientHeight >= scrollHeight - 60) {
-        this.isLoading = true;
-        this.api.get(`/api/encyclopedia/${++this.page}.json`).then(
-          (res) => {
-            this.data = [...new Set([...this.data, ...res.data])];
-            this.isLoading = false;
-          },
-          () => (this.isLoading = false)
-        );
-      }
-    },
-  },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get(`/api/encyclopedia/${vm.page}.json`).then((res) => {
@@ -235,13 +221,7 @@ export default {
         vm.shown = res.data[0];
       })
     );
-  } /*
-  async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(`/api/encyclopedia/0.json`);
-    this.data = req.data;
-    this.shown = this.data[0];
-    next();
-  },*/,
+  },
   metaInfo: {
     title: "section.encyclopedia",
   },

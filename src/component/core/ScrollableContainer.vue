@@ -75,6 +75,7 @@ export default {
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
   border-radius: var(--border-radius);
