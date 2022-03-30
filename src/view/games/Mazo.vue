@@ -15,7 +15,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Le gameplay</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
@@ -23,7 +25,9 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp" width="3" height="6"
+            src="@/asset/img/icon/caret.webp"
+            width="3"
+            height="6"
           />&nbsp;Les meilleurs</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
@@ -208,7 +212,6 @@ export default {
   },
   metaInfo: {
     title: "section.mazo",
-
   },
 };
 </script>

@@ -344,7 +344,6 @@ export default {
   },
   metaInfo: {
     title: "section.bacteria",
-
   },
 };
 </script>

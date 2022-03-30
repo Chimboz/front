@@ -1,4 +1,0 @@
-# Notsmart
-
-Notsmart page
-

@@ -127,7 +127,6 @@ export default {
   },
   metaInfo: {
     title: "section.messenger",
-
   },
 };
 </script>

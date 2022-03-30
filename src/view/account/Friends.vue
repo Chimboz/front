@@ -236,7 +236,6 @@ export default {
   },
   metaInfo: {
     title: "section.friends",
-
   },
 };
 </script>

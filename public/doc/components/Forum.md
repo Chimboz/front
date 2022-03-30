@@ -1,4 +1,0 @@
-# Forum
-
-Forum page
-

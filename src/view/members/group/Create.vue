@@ -50,8 +50,8 @@
             class="arrow green jitter"
             src="@/asset/img/arrow.svg" /></template
         >Sauver</GlobalButton
-      ></form
-    >
+      >
+    </form>
     <template #right-column> </template>
   </GlobalContainer>
 </template>
@@ -64,7 +64,7 @@ import Cabin from "@/component/blazon/Cabin.vue";
 export default {
   name: "CreateView",
   components: {
-    Cabin
+    Cabin,
   },
   data() {
     return {
@@ -74,7 +74,7 @@ export default {
           top: -1,
           bot: 2,
           primary: "#444444",
-          secondary: "#CECECE"
+          secondary: "#CECECE",
         },
         items: {
           primary: [
@@ -95,7 +95,7 @@ export default {
             "#FF3399",
             "#E40173",
             "#FFFFFF",
-            "#000000"
+            "#000000",
           ],
           top: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
           shape: [0, 1, 2, 3, 4, 5],
@@ -103,7 +103,7 @@ export default {
             2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
             21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
             38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
-            55, 56, 57, 58
+            55, 56, 57, 58,
           ],
           secondary: [
             "#444444",
@@ -123,40 +123,20 @@ export default {
             "#FF3399",
             "#E40173",
             "#FFFFFF",
-            "#000000"
-          ]
-        }
-      }
+            "#000000",
+          ],
+        },
+      },
     };
   },
   methods: {
     create() {
       console.log(this.data, this.$refs.groupname.value);
-    }
+    },
   },
   metaInfo: {
     title: "section.groupedit",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
-      },
-      {
-        property: "og:title",
-        content: "Chimboz, accueil"
-      },
-      {
-        property: "og:description",
-        content: "Chimboz, accueil"
-      },
-      { property: "og:site_name", content: "Chimboz" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
-      { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

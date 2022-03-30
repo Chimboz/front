@@ -200,11 +200,7 @@
     ><br />
     <GlobalCard color="blue" v-if="data">
       <template #header>Membres</template>
-      <div
-        class="inline"
-        v-for="user of this.data.members"
-        :key="user.id"
-      >
+      <div class="inline" v-for="user of this.data.members" :key="user.id">
         <UserLink :user="user" :separator="false" /><img
           @click.prevent="removeMember(user.id)"
           src="@/asset/img/icon/failure.svg"
@@ -219,11 +215,7 @@
     ><br />
     <GlobalCard color="blue" v-if="data">
       <template #header>Demandes</template>
-      <div
-        class="inline"
-        v-for="user of this.data.demands"
-        :key="user.id"
-      >
+      <div class="inline" v-for="user of this.data.demands" :key="user.id">
         <UserLink :user="user" :separator="false" /><img
           @click.prevent="acceptDemand(user.id)"
           src="@/asset/img/icon/success.svg"
@@ -336,7 +328,6 @@ export default {
   },
   metaInfo: {
     title: "section.groupedit",
-
   },
 };
 </script>

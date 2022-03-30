@@ -311,7 +311,6 @@ export default {
   },
   metaInfo: {
     title: "section.member",
-
   },
 };
 </script>

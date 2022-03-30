@@ -1,4 +1,0 @@
-# Groups
-
-Groups page
-

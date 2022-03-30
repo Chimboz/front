@@ -242,7 +242,6 @@ export default {
   },
   metaInfo: {
     title: "section.games",
-
   },
 };
 </script>

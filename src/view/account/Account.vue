@@ -490,7 +490,6 @@ export default {
   },
   metaInfo: {
     title: "section.account",
-
   },
 };
 </script>

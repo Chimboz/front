@@ -407,7 +407,6 @@ export default {
   },
   metaInfo: {
     title: "section.patojdur",
-
   },
 };
 </script>

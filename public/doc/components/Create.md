@@ -1,4 +1,0 @@
-# Create
-
-Group creation page
-

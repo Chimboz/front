@@ -422,7 +422,6 @@ export default {
   },
   metaInfo: {
     title: "section.wedding",
-
   },
 };
 </script>

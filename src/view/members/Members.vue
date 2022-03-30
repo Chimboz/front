@@ -17,8 +17,8 @@
       v-if="data"
     >
       <div class="flex" style="justify-content: space-evenly">
-        <div v-for="user of data.new" :key="user.id" class="flex col"
-          ><img
+        <div v-for="user of data.new" :key="user.id" class="flex col">
+          <img
             src="@/asset/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
@@ -38,8 +38,8 @@
           <UserLink :user="user" />
           <span
             >Membre n°<b>{{ user.id }}</b></span
-          ></div
-        >
+          >
+        </div>
       </div>
       <br />
       Les derniers membres qui ont rejoint l'archipel !
@@ -56,8 +56,8 @@
       v-if="data"
     >
       <div class="flex" style="justify-content: space-evenly">
-        <div v-for="user of data.popularity" :key="user.id" class="flex col"
-          ><img
+        <div v-for="user of data.popularity" :key="user.id" class="flex col">
+          <img
             src="@/asset/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
@@ -77,8 +77,8 @@
           <UserLink :user="user" />
           <span
             >Avec <b>{{ user.score }}</b> points</span
-          ></div
-        >
+          >
+        </div>
       </div>
       <br />
       Les membres les plus populaire de l'archipel !
@@ -99,14 +99,17 @@
           :key="couple.user1.id"
           class="flex col"
           style="align-items: center"
-          ><img
+        >
+          <img
             src="@/asset/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
             height="93"
-            width="100" /><div class="flex" style="justify-content: center"
-            ><GlobalAvatar
+            width="100"
+          />
+          <div class="flex" style="justify-content: center">
+            <GlobalAvatar
               :avatar="couple.user1.look.avatar"
               emote="luv"
               :hat="couple.user1.look.hat"
@@ -114,7 +117,8 @@
               :shoe="couple.user1.look.shoe"
               :item0="couple.user1.look.item0"
               :item1="couple.user1.look.item1"
-              :item2="couple.user1.look.item2" /><GlobalAvatar
+              :item2="couple.user1.look.item2"
+            /><GlobalAvatar
               :avatar="couple.user2.look.avatar"
               emote="luv"
               :hat="couple.user2.look.hat"
@@ -123,11 +127,13 @@
               :item0="couple.user2.look.item0"
               :item1="couple.user2.look.item1"
               :item2="couple.user2.look.item2"
-          /></div>
+            />
+          </div>
           <span>
             <UserLink :user="couple.user1" /> &amp;
-            <UserLink :user="couple.user2" /></span
-        ></div>
+            <UserLink :user="couple.user2"
+          /></span>
+        </div>
       </div>
       <br />
       Les derniers mariages célébrés par Guruji
@@ -139,8 +145,8 @@
         <template #button>
           <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
-        <form @submit.prevent="search()" class="flex fullwidth"
-          ><input
+        <form @submit.prevent="search()" class="flex fullwidth">
+          <input
             required
             minlength="3"
             maxlength="15"
@@ -150,9 +156,11 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">go</button></form
-        ><br /><form @submit.prevent="search()" class="flex fullwidth"
-          ><input
+          /><button type="submit" class="btn-action">go</button>
+        </form>
+        <br />
+        <form @submit.prevent="search()" class="flex fullwidth">
+          <input
             required
             minlength="3"
             maxlength="15"
@@ -161,9 +169,10 @@
             class="btn-md"
             autocomplete="group"
             :placeholder="$t('placeholder.group')"
-          /><button type="submit" class="btn-action">go</button></form
-        ></GlobalCard
-      ></template>
+          /><button type="submit" class="btn-action">go</button>
+        </form></GlobalCard
+      ></template
+    >
   </GlobalContainer>
 </template>
 <script>
@@ -174,13 +183,13 @@ export default {
   name: "MembersView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
     search() {
       console.log("Envoyé!");
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -194,27 +203,7 @@ export default {
   },
   metaInfo: {
     title: "section.members",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
-      },
-      {
-        property: "og:title",
-        content: "Chimboz, accueil"
-      },
-      {
-        property: "og:description",
-        content: "Chimboz, accueil"
-      },
-      { property: "og:site_name", content: "Chimboz" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
-      { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

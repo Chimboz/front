@@ -26,15 +26,16 @@
         />
         <div class="flex col">
           <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
-          <div class="motto">"{{ this.data.motto }}"</div> </div
-        ><img
+          <div class="motto">"{{ this.data.motto }}"</div>
+        </div>
+        <img
           v-if="this.data.official"
           src="@/asset/img/group/official.svg"
           style="float: right"
         />
       </div>
-      <div class="markdown-body description" v-html="formatDescription"></div
-      ><br />
+      <div class="markdown-body description" v-html="formatDescription"></div>
+      <br />
       <GlobalCard v-if="data" class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
         <UserLink :user="data.leader" />
@@ -55,8 +56,8 @@
         ><br /><br />
         <div class="icon flex col centered">
           <div style="line-height: 10px">Niveau moyen</div>
-          <div
-            ><img
+          <div>
+            <img
               draggable="false"
               @contextmenu.prevent
               :alt="digit"
@@ -65,7 +66,8 @@
               width="19"
               height="21"
               :src="require(`@/asset/img/number/${digit}.svg`)"
-          /></div>
+            />
+          </div>
         </div>
         &nbsp;<img
           :src="require(`@/asset/img/group/${this.data.status}.png`)"
@@ -114,12 +116,12 @@
             style="float: left; margin-right: 4px"
           />
           {{ $t(`group.${this.data.status}`) }}
-          <div v-if="authenticated"
-            ><br />
+          <div v-if="authenticated">
+            <br />
             <a @click.prevent="join" style="cursor: var(--pointer)"
               >Rejoindre ce groupe</a
-            ></div
-          >
+            >
+          </div>
         </div>
       </GlobalCard></template
     >
@@ -141,11 +143,11 @@ export default {
   name: "GroupView",
   components: {
     Blazon,
-    StrokeText
+    StrokeText,
   },
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   computed: {
@@ -155,19 +157,19 @@ export default {
     },
     formatDate() {
       return format(new Date(this.data.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
     },
     formatDistance() {
       return differenceInCalendarDays(new Date(), new Date(this.data.date), {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   methods: {
     join() {
       console.log("Rejoins " + this.$route.params.id);
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -181,27 +183,7 @@ export default {
   },
   metaInfo: {
     title: "section.group",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
-      },
-      {
-        property: "og:title",
-        content: "Chimboz, accueil"
-      },
-      {
-        property: "og:description",
-        content: "Chimboz, accueil"
-      },
-      { property: "og:site_name", content: "Chimboz" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
-      { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+  },
 };
 </script>
 

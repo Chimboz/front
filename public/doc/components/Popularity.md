@@ -1,4 +1,0 @@
-# Popularity
-
-Popularity page
-

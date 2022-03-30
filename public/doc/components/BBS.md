@@ -1,4 +1,0 @@
-# BBS
-
-BBS page
-

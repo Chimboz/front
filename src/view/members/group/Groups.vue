@@ -212,138 +212,150 @@
             >({{
               ((data.stats.type.ekip / data.stats.total) * 100).toFixed(2)
             }}%)</sub
-          ><br>
-        <img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Skwat : <b>{{ data.stats.type.skwat }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.skwat / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Guild : <b>{{ data.stats.type.guild }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.guild / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Alliance : <b>{{ data.stats.type.alliance }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.alliance / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Empire : <b>{{ data.stats.type.empire }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.empire / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Sekt : <b>{{ data.stats.type.sekt }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.sekt / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Skool : <b>{{ data.stats.type.skool }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.skool / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Hord : <b>{{ data.stats.type.hord }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.hord / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Meute : <b>{{ data.stats.type.meute }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.meute / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Gang : <b>{{ data.stats.type.gang }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.gang / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ><br /><img
-          src="@/asset/img/puce.svg"
-          alt="Caret"
-          draggable="false"
-          @contextmenu.prevent
-          height="17"
-          width="17" />
-        Triad : <b>{{ data.stats.type.triad }}</b
-        >&nbsp;
-        <sub
-          >({{
-            ((data.stats.type.triad / data.stats.total) * 100).toFixed(2)
-          }}%)</sub
-        ></div><br /><img
+          ><br />
+          <img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Skwat : <b>{{ data.stats.type.skwat }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.skwat / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Guild : <b>{{ data.stats.type.guild }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.guild / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Alliance : <b>{{ data.stats.type.alliance }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.alliance / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Empire : <b>{{ data.stats.type.empire }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.empire / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Sekt : <b>{{ data.stats.type.sekt }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.sekt / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Skool : <b>{{ data.stats.type.skool }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.skool / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Hord : <b>{{ data.stats.type.hord }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.hord / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Meute : <b>{{ data.stats.type.meute }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.meute / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Gang : <b>{{ data.stats.type.gang }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.gang / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          ><br /><img
+            src="@/asset/img/puce.svg"
+            alt="Caret"
+            draggable="false"
+            @contextmenu.prevent
+            height="17"
+            width="17"
+          />
+          Triad : <b>{{ data.stats.type.triad }}</b
+          >&nbsp;
+          <sub
+            >({{
+              ((data.stats.type.triad / data.stats.total) * 100).toFixed(2)
+            }}%)</sub
+          >
+        </div>
+        <br /><img
           src="@/asset/img/puce.svg"
           alt="Caret"
           draggable="false"
@@ -402,7 +414,6 @@ export default {
   },
   metaInfo: {
     title: "section.groups",
-
   },
 };
 </script>

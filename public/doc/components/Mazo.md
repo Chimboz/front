@@ -1,4 +1,0 @@
-# Mazo
-
-Mazo page
-

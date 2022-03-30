@@ -27,7 +27,8 @@
         </div>
         <div v-if="isLoading" class="spinner-loading">
           <img
-            src="@/asset/img/loading.svg" alt="Loading spinner" 
+            src="@/asset/img/loading.svg"
+            alt="Loading spinner"
             draggable="false"
             width="200"
             height="200"
@@ -96,7 +97,6 @@ export default {
   },
   metaInfo: {
     title: "section.chaparazzi",
-
   },
 };
 </script>

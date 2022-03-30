@@ -1,4 +1,0 @@
-# Manage
-
-Groups management page
-

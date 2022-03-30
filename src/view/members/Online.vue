@@ -61,15 +61,15 @@ export default {
   name: "OnlineView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   computed: {
     formatDate() {
       return format(new Date(this.data.record.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]]
+        locale: locales[navigator.language.split("-")[0]],
       });
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -83,27 +83,7 @@ export default {
   },
   metaInfo: {
     title: "section.online",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
-      },
-      {
-        property: "og:title",
-        content: "Chimboz, accueil"
-      },
-      {
-        property: "og:description",
-        content: "Chimboz, accueil"
-      },
-      { property: "og:site_name", content: "Chimboz" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
-      { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+  },
 };
 </script>
 

@@ -96,7 +96,6 @@ export default {
   },
   metaInfo: {
     title: "section.eraser",
-
   },
 };
 </script>

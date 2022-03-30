@@ -169,27 +169,6 @@ export default {
   },
   metaInfo: {
     title: "section.login",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
-      },
-      {
-        property: "og:title",
-        content: "Chimboz, connection",
-      },
-      {
-        property: "og:description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
-      },
-      { property: "og:site_name", content: "Chimboz" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/android-chrome-192x192.png" },
-      { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" },
-    ],
   },
 };
 </script>

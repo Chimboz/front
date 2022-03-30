@@ -71,7 +71,6 @@ export default {
   },
   metaInfo: {
     title: "level",
-
   },
 };
 </script>

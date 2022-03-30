@@ -77,7 +77,6 @@ export default {
   },
   metaInfo: {
     title: "section.notsmart",
-
   },
 };
 </script>

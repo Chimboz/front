@@ -89,7 +89,6 @@ export default {
   },
   metaInfo: {
     title: "section.capitalization",
-
   },
 };
 </script>

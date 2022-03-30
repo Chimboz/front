@@ -1,4 +1,0 @@
-# Shop
-
-Shop page
-

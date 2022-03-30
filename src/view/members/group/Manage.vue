@@ -389,7 +389,6 @@ export default {
   },
   metaInfo: {
     title: "section.groups",
-
   },
 };
 </script>

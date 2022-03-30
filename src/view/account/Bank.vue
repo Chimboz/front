@@ -191,7 +191,6 @@ export default {
   },
   metaInfo: {
     title: "section.bank",
-
   },
 };
 </script>

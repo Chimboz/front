@@ -8,9 +8,7 @@
         <ScrollableContainer
           route="adminlogs"
           class="fullwidth"
-          @scroll-data="
-            (data) => (this.data = [...this.data, ...data])
-          "
+          @scroll-data="(data) => (this.data = [...this.data, ...data])"
         >
           <div class="log" v-for="(log, index) in data" :key="index">
             <b>{{ formatDate(log.date) }}</b
@@ -107,7 +105,6 @@ export default {
   },
   metaInfo: {
     title: "section.admin",
-
   },
 };
 </script>

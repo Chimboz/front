@@ -1,4 +1,0 @@
-# Edit
-
-Group edition page
-

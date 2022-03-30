@@ -47,13 +47,13 @@
             "
           >
             <div>
-              <h3
-                ><UserLink v-if="!message.you" :user="data.user" />&nbsp;<span
+              <h3>
+                <UserLink v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
                   >{{ formatDate(message.date) }}</span
-                ></h3
-              ></div
-            >
+                >
+              </h3>
+            </div>
             <span
               class="content"
               v-html="messageRender(message.content)"
@@ -62,8 +62,8 @@
           </div>
         </div>
       </ScrollableContainer>
-      <form @submit.prevent="send" class="flex fullwidth"
-        ><input
+      <form @submit.prevent="send" class="flex fullwidth">
+        <input
           required
           minlength="1"
           name="message"
@@ -71,16 +71,11 @@
           class="btn-md"
           v-model="message"
           :placeholder="$t('placeholder.message')"
-        /><button type="submit" class="btn-action">➤</button></form
-      >
+        /><button type="submit" class="btn-action">➤</button>
+      </form>
     </GlobalCard>
     <template #right-column
-      ><GlobalCard
-        color="yellow"
-        v-if="data"
-        justified
-        header="mi_sm.svg"
-      >
+      ><GlobalCard color="yellow" v-if="data" justified header="mi_sm.svg">
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"
@@ -125,12 +120,12 @@ import messageRender from "@/module/messageRender.js";
 export default {
   name: "ConversationView",
   components: {
-    ScrollableContainer
+    ScrollableContainer,
   },
   data() {
     return {
       data: null,
-      message: ""
+      message: "",
     };
   },
   methods: {
@@ -140,7 +135,7 @@ export default {
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true
+        addSuffix: true,
       });
     },
     hashColor(str) {
@@ -160,10 +155,10 @@ export default {
       this.data.messages.push({
         you: true,
         content: this.message,
-        date: Date.now()
+        date: Date.now(),
       });
       this.message = "";
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -177,27 +172,7 @@ export default {
   },
   metaInfo: {
     title: "section.conversation",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
-      },
-      {
-        property: "og:title",
-        content: "Chimboz, accueil"
-      },
-      {
-        property: "og:description",
-        content: "Chimboz, accueil"
-      },
-      { property: "og:site_name", content: "Chimboz" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/announce/summer.png" },
-      { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+  },
 };
 </script>
 

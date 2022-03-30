@@ -1,4 +1,0 @@
-# Games
-
-Games page
-

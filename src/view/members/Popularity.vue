@@ -455,7 +455,6 @@ export default {
   },
   metaInfo: {
     title: "section.popularity",
-
   },
 };
 </script>

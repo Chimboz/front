@@ -156,7 +156,6 @@ export default {
   },
   metaInfo: {
     title: "section.shop",
-
   },
 };
 </script>
