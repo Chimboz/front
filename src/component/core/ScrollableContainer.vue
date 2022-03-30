@@ -28,7 +28,6 @@ export default {
     return {
       page: 0,
       isLoading: false,
-      hasEnded: false,
     };
   },
   props: {
@@ -53,7 +52,6 @@ export default {
           },
           () => {
             this.isLoading = false;
-            this.hasEnded = true;
           }
         );
       }

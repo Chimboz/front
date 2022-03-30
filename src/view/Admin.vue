@@ -9,7 +9,7 @@
           route="adminlogs"
           class="fullwidth"
           @scroll-data="
-            (data) => (this.data = [...new Set([...this.data, ...data])])
+            (data) => (this.data = [...this.data, ...data])
           "
         >
           <div class="log" v-for="(log, index) in data" :key="index">
