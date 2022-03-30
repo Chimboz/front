@@ -13,7 +13,7 @@
         route="banklogs"
         class="fullwidth"
         :maxHeight="300"
-        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+        @scroll-data="(data) => (this.data.logs = [...this.data.logs, ...data])"
       >
         <table class="w-100">
           <colgroup>
