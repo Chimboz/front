@@ -10,7 +10,12 @@
     </template>
     <GlobalCard color="yellow" v-if="data" justified
       ><template #subtop>{{ data.user.name }}</template>
-      <div class="messages fullwidth flex">
+      <ScrollableContainer
+        route="messages"
+        class="messages fullwidth flex"
+        :maxHeight="450"
+        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+      >
         <div
           class="message flex"
           :class="{ you: message.you }"
@@ -56,7 +61,7 @@
             ></span>
           </div>
         </div>
-      </div>
+      </ScrollableContainer>
       <form @submit.prevent="send" class="flex fullwidth"
         ><input
           required
@@ -108,6 +113,7 @@
   </GlobalContainer>
 </template>
 <script>
+import ScrollableContainer from "@/component/core/ScrollableContainer";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -118,6 +124,9 @@ import messageRender from "@/module/messageRender.js";
 // Conversation page (view for 1-to-1 messaging)
 export default {
   name: "ConversationView",
+  components: {
+    ScrollableContainer
+  },
   data() {
     return {
       data: null,
@@ -194,8 +203,6 @@ export default {
 
 <style lang="scss" scoped>
 .messages {
-  max-height: 450px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
 }

@@ -2,7 +2,7 @@
   <div
     class="scrollable"
     @scroll.passive="onScroll"
-    :style="{ maxHeight: this.height + 'px' }"
+    :style="{ maxHeight: this.maxHeight + 'px' }"
   >
     <slot></slot>
     <div v-show="isLoading" class="spinner-loading">
@@ -20,8 +20,8 @@
 
 <script>
 // @vuese
-// @group View/Community
-// Encyclopedia page
+// @group Core
+// Generic scrollable container for infinite scroll
 export default {
   name: "ScrollableContainer",
   data() {
@@ -35,7 +35,7 @@ export default {
       type: String,
       required: true,
     },
-    height: {
+    maxHeight: {
       type: Number,
       required: false,
       default: 200,

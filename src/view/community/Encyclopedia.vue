@@ -13,7 +13,7 @@
       <ScrollableContainer
         route="encyclopedia"
         class="fullwidth"
-        :height="500"
+        :maxHeight="450"
         @scroll-data="
           (data) => (this.data = [...new Set([...this.data, ...data])])
         "

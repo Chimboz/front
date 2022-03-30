@@ -9,45 +9,52 @@
       <GlobalRules bot />
     </template>
     <GlobalCard color="yellow" v-if="data" justified header="bank.gif">
-      <table class="fullwidth">
-        <colgroup>
-          <col width="100" />
-          <col width="100%" />
-          <col width="100" />
-        </colgroup>
-        <thead style="background: var(--dark-card-yellow)">
-          <th class="centered">Date</th>
-          <th>Description</th>
-          <th style="text-align: right">Solde</th>
-        </thead>
-        <tr
-          v-for="line of data.logs"
-          :key="line.date"
-          class="bank-line"
-          :class="{ loss: line.value < 0 }"
-        >
-          <td class="centered">
-            <b>{{ formatDate(line.date) }}</b>
-          </td>
-          <td>{{ line.description }}</td>
-          <td style="text-align: right">
-            <img
-              draggable="false"
-              @contextmenu.prevent
-              :alt="number"
-              v-for="number in Math.abs(line.value).toString(10)"
-              :key="number.index"
-              width="19"
-              height="21"
-              :src="
-                require(`@/asset/img/number/${
-                  line.value < 0 ? 'pink/' : ''
-                }${number}.svg`)
-              "
-            />
-          </td>
-        </tr>
-      </table>
+      <ScrollableContainer
+        route="banklogs"
+        class="fullwidth"
+        :maxHeight="300"
+        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+      >
+        <table class="w-100">
+          <colgroup>
+            <col width="100" />
+            <col width="100%" />
+            <col width="100" />
+          </colgroup>
+          <thead style="background: var(--dark-card-yellow)">
+            <th class="centered">Date</th>
+            <th>Description</th>
+            <th style="text-align: right">Solde</th>
+          </thead>
+          <tr
+            v-for="line of data.logs"
+            :key="line.date"
+            class="bank-line"
+            :class="{ loss: line.value < 0 }"
+          >
+            <td class="centered">
+              <b>{{ formatDate(line.date) }}</b>
+            </td>
+            <td>{{ line.description }}</td>
+            <td style="text-align: right">
+              <img
+                draggable="false"
+                @contextmenu.prevent
+                :alt="number"
+                v-for="number in Math.abs(line.value).toString(10)"
+                :key="number.index"
+                width="19"
+                height="21"
+                :src="
+                  require(`@/asset/img/number/${
+                    line.value < 0 ? 'pink/' : ''
+                  }${number}.svg`)
+                "
+              />
+            </td>
+          </tr>
+        </table>
+      </ScrollableContainer>
       <br />
       <img
         src="@/asset/img/puce.svg"
@@ -80,6 +87,7 @@
 </template>
 <script>
 import Bank from "@/component/Bank.vue";
+import ScrollableContainer from "@/component/core/ScrollableContainer";
 import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -114,7 +122,7 @@ Chart.register(
 // Bank page
 export default {
   name: "LevelView",
-  components: { Bank, BarChart },
+  components: { Bank, BarChart, ScrollableContainer },
   data() {
     return {
       data: null,

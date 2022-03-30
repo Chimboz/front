@@ -10,97 +10,103 @@
     </template>
     <GlobalCard color="yellow" v-if="data" justified
       ><template #subtop>Friends</template>
-      <div class="friend" v-for="friend of data" :key="friend.user.id">
-        <router-link
-          :to="'/book/' + friend.user.id"
-          :class="{ pending: friend.status.hasOwnProperty('sent') }"
-        >
-          <UserLink :user="friend.user" class="ellipsis" />
-          <div
-            class="tiz-portrait"
-            :style="{ background: hashColor(friend.user.name) }"
+      <ScrollableContainer
+        route="friends"
+        :maxHeight="450"
+        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+      >
+        <div class="friend" v-for="friend of data" :key="friend.user.id">
+          <router-link
+            :to="'/book/' + friend.user.id"
+            :class="{ pending: friend.status.hasOwnProperty('sent') }"
           >
-            <GlobalAvatar
-              :avatar="friend.user.look.avatar"
-              :emote="friend.user.look.emote"
-              :hat="friend.user.look.hat"
-              :body="friend.user.look.body"
-              :shoe="friend.user.look.shoe"
-              :item0="friend.user.look.item0"
-              :item1="friend.user.look.item1"
-              :item2="friend.user.look.item2"
-            />
+            <UserLink :user="friend.user" class="ellipsis" />
+            <div
+              class="tiz-portrait"
+              :style="{ background: hashColor(friend.user.name) }"
+            >
+              <GlobalAvatar
+                :avatar="friend.user.look.avatar"
+                :emote="friend.user.look.emote"
+                :hat="friend.user.look.hat"
+                :body="friend.user.look.body"
+                :shoe="friend.user.look.shoe"
+                :item0="friend.user.look.item0"
+                :item1="friend.user.look.item1"
+                :item2="friend.user.look.item2"
+              />
+            </div>
+          </router-link>
+          <div v-if="friend.status.sent">
+            <span
+              class="link"
+              @click.prevent="cancel(friend)"
+              style="color: red; cursor: var(--pointer)"
+              ><img
+                src="@/asset/img/icon/failure.svg"
+                width="11"
+                height="11"
+                alt="Close"
+                draggable="false"
+                style="margin: 0 2px"
+                @contextmenu.prevent
+              />Annuler</span
+            >
           </div>
-        </router-link>
-        <div v-if="friend.status.sent">
-          <span
-            class="link"
-            @click.prevent="cancel(friend)"
-            style="color: red; cursor: var(--pointer)"
-            ><img
-              src="@/asset/img/icon/failure.svg"
-              width="11"
-              height="11"
-              alt="Close"
-              draggable="false"
-              style="margin: 0 2px"
-              @contextmenu.prevent
-            />Annuler</span
-          >
-        </div>
-        <div
-          v-else-if="
-            friend.status.hasOwnProperty('sent') && !friend.status.sent
-          "
-        >
-          <span
-            class="link"
-            @click.prevent="accept(friend)"
-            style="color: green; cursor: var(--pointer)"
-            ><img
-              src="@/asset/img/icon/success.svg"
-              width="11"
-              height="11"
-              alt="Close"
-              draggable="false"
-              style="margin: 0 2px"
-              @contextmenu.prevent
-            />Accepter</span
-          ><br /><span
-            class="link"
-            @click.prevent="decline(friend)"
-            style="color: red; cursor: var(--pointer)"
-            ><img
-              src="@/asset/img/icon/failure.svg"
-              width="11"
-              height="11"
-              alt="Close"
-              draggable="false"
-              style="margin: 0 2px"
-              @contextmenu.prevent
-            />Décliner</span
-          >
-        </div>
-        <div v-else-if="!friend.status.connected">
-          Dernière visite le <b>{{ formatDate(friend.status.date) }}</b>
-        </div>
-        <div v-else>
           <div
-            class="online flex centered"
-            :class="{ tchat: friend.status.room }"
+            v-else-if="
+              friend.status.hasOwnProperty('sent') && !friend.status.sent
+            "
           >
-            <img
-              draggable="false"
-              @contextmenu.prevent
-              alt="Online"
-              height="20"
-              width="17"
-              src="@/asset/img/tiz/tiz_shape.svg"
-            />&nbsp;<b>En ligne</b>
+            <span
+              class="link"
+              @click.prevent="accept(friend)"
+              style="color: green; cursor: var(--pointer)"
+              ><img
+                src="@/asset/img/icon/success.svg"
+                width="11"
+                height="11"
+                alt="Close"
+                draggable="false"
+                style="margin: 0 2px"
+                @contextmenu.prevent
+              />Accepter</span
+            ><br /><span
+              class="link"
+              @click.prevent="decline(friend)"
+              style="color: red; cursor: var(--pointer)"
+              ><img
+                src="@/asset/img/icon/failure.svg"
+                width="11"
+                height="11"
+                alt="Close"
+                draggable="false"
+                style="margin: 0 2px"
+                @contextmenu.prevent
+              />Décliner</span
+            >
           </div>
-          <b>{{ friend.status.room }}</b>
+          <div v-else-if="!friend.status.connected">
+            Dernière visite le <b>{{ formatDate(friend.status.date) }}</b>
+          </div>
+          <div v-else>
+            <div
+              class="online flex centered"
+              :class="{ tchat: friend.status.room }"
+            >
+              <img
+                draggable="false"
+                @contextmenu.prevent
+                alt="Online"
+                height="20"
+                width="17"
+                src="@/asset/img/tiz/tiz_shape.svg"
+              />&nbsp;<b>En ligne</b>
+            </div>
+            <b>{{ friend.status.room }}</b>
+          </div>
         </div>
-      </div>
+      </ScrollableContainer>
     </GlobalCard>
     <template #right-column
       ><GlobalCard color="blue" top>
@@ -121,6 +127,7 @@
   </GlobalContainer>
 </template>
 <script>
+import ScrollableContainer from "../../component/core/ScrollableContainer.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -129,6 +136,9 @@ const locales = { fr, enGB };
 // Friends page
 export default {
   name: "FriendsView",
+  components: {
+    ScrollableContainer,
+  },
   data() {
     return {
       data: null,

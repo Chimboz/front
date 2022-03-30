@@ -20,49 +20,60 @@
           class="btn-md"
           autocomplete="username"
           :placeholder="$t('placeholder.username')"
-        /><button type="button" class="btn-action">go</button></div
+        /><button type="button" class="btn-action">go</button>
+      </div>
+      <ScrollableContainer
+        class="fullwidth"
+        route="messages"
+        :maxHeight="450"
+        @scroll-data="(data) => (this.data = [...this.data, ...data])"
       >
-      <router-link
-        class="message fullwidth flex"
-        v-for="message of data"
-        :key="message.user.id"
-        :to="'/messenger/' + message.user.id"
-        :class="{ active: message.new }"
-      >
-        <div
-          class="tiz-portrait"
-          :style="{ background: hashColor(message.user.name) }"
+        <router-link
+          class="message flex"
+          v-for="message of data"
+          :key="message.user.id"
+          :to="'/messenger/' + message.user.id"
+          :class="{ active: message.new }"
         >
-          <GlobalAvatar
-            :avatar="message.user.look.avatar"
-            :emote="message.user.look.emote"
-            :hat="message.user.look.hat"
-            :body="message.user.look.body"
-            :shoe="message.user.look.shoe"
-            :item0="message.user.look.item0"
-            :item1="message.user.look.item1"
-            :item2="message.user.look.item2"
-          />
-        </div>
-        <div
-          class="flex col"
-          style="
-            justify-content: space-evenly;
-            padding: 6px;
-            width: calc(100% - 50px);
-          "
-        >
-          <div>
-            <h3
-              ><UserLink :user="message.user" /><span
-                style="float: right; font-weight: normal; font-size: var(--font-size)"
-                >{{ formatDate(message.date) }}</span
-              ></h3
-            ></div
+          <div
+            class="tiz-portrait"
+            :style="{ background: hashColor(message.user.name) }"
           >
-          <span>{{ message.content.slice(0, 64) }}</span>
-        </div>
-      </router-link>
+            <GlobalAvatar
+              :avatar="message.user.look.avatar"
+              :emote="message.user.look.emote"
+              :hat="message.user.look.hat"
+              :body="message.user.look.body"
+              :shoe="message.user.look.shoe"
+              :item0="message.user.look.item0"
+              :item1="message.user.look.item1"
+              :item2="message.user.look.item2"
+            />
+          </div>
+          <div
+            class="flex col"
+            style="
+              justify-content: space-evenly;
+              padding: 6px;
+              width: calc(100% - 50px);
+            "
+          >
+            <div>
+              <h3>
+                <UserLink :user="message.user" /><span
+                  style="
+                    float: right;
+                    font-weight: normal;
+                    font-size: var(--font-size);
+                  "
+                  >{{ formatDate(message.date) }}</span
+                >
+              </h3>
+            </div>
+            <span>{{ message.content.slice(0, 64) }}</span>
+          </div>
+        </router-link>
+      </ScrollableContainer>
     </GlobalCard>
     <template #right-column></template>
   </GlobalContainer>
@@ -70,23 +81,25 @@
 <script>
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import ScrollableContainer from "../../component/core/ScrollableContainer.vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Account
 // Messenger page
 export default {
+  components: { ScrollableContainer },
   name: "MessengerView",
   data() {
     return {
-      data: null
+      data: null,
     };
   },
   methods: {
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true
+        addSuffix: true,
       });
     },
     hashColor(str) {
@@ -100,7 +113,7 @@ export default {
         colour += ("00" + value.toString(16)).substr(-2);
       }
       return colour;
-    }
+    },
   },
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
@@ -118,23 +131,23 @@ export default {
       {
         name: "description",
         content:
-          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
+          "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
       },
       {
         property: "og:title",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       {
         property: "og:description",
-        content: "Chimboz, accueil"
+        content: "Chimboz, accueil",
       },
       { property: "og:site_name", content: "Chimboz" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/announce/summer.png" },
       { property: "og:image:width", content: "192" },
-      { property: "og:image:height", content: "192" }
-    ]
-  }
+      { property: "og:image:height", content: "192" },
+    ],
+  },
 };
 </script>
 <style lang="scss"></style>
