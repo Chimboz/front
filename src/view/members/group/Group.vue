@@ -186,7 +186,9 @@ export default {
   },
 };
 </script>
-
+<style src="@/asset/css/bbs/markdown.css"></style>
+<style src="katex/dist/katex.min.css"></style>
+<style src="@/asset/css/bbs/code.css"></style>
 <style lang="scss" scoped>
 .blazon {
   float: left;
