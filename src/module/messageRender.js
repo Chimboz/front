@@ -4,7 +4,12 @@ import katex from "katex/dist/katex.mjs";
 import hljs from "highlight.js";
 
 const allowed_uri = ["http", "https"];
-const allowed_images = ["i.imgur.com", "image.noelshack.com", "chimboz.fr", "chimbozfront.web.app"];
+const allowed_images = [
+  "i.imgur.com",
+  "image.noelshack.com",
+  "chimboz.fr",
+  "chimbozfront.web.app",
+];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
 const allowed_properties = [
@@ -23,6 +28,7 @@ const allowed_tags = [
   "h4",
   "h6",
   "p",
+  "span",
   "i",
   "ul",
   "ol",
@@ -112,9 +118,8 @@ const markedRender = function (string) {
   // marked options
   marked.setOptions({
     renderer: renderer,
-    highlight: (code, lang) => {
-      const language = hljs.getLanguage(lang) ? lang : "plaintext";
-      return hljs.highlight(code, { language }).value;
+    highlight: (code) => {
+      return hljs.highlightAuto(code).value;
     },
     langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
     pedantic: false,
