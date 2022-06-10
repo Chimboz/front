@@ -139,7 +139,7 @@ table {
   overflow: hidden;
 }
 
-table:not(.bbs) tr:nth-child(2n + 1) {
+:not(.markdown-body) > table:not(.bbs) tr:nth-child(2n + 1) {
   background: var(--selected-dark-card);
 }
 
