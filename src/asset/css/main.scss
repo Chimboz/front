@@ -166,20 +166,3 @@ button {
   background: none;
   border: 0;
 }
-
-// Item classes
-.item.rare {
-  background: linear-gradient(to bottom, var(--rare), var(--main-card)) !important;
-}
-
-.item.mythic {
-  background: linear-gradient(to bottom, var(--mythic), var(--main-card)) !important;
-}
-
-.item.legendary {
-  background: linear-gradient(to bottom, var(--legendary), var(--main-card)) !important;
-}
-
-.item.unique {
-  background: linear-gradient(to bottom, var(--unique), var(--main-card)) !important;
-}

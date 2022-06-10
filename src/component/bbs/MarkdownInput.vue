@@ -364,9 +364,9 @@ export default {
     formatColor(hex) {
       this.message =
         this.message.substring(0, this.selectionRange[0]) +
-        `<span style="color:${hex}">` +
+        `<i style="color:${hex}">` +
         this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
-        "</span>" +
+        "</i>" +
         this.message.substring(this.selectionRange[1]);
       this.focusHandler();
     },

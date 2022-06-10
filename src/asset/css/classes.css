@@ -87,6 +87,15 @@
   position: absolute;
 }
 
+/* Markdown custom styling */
+.markdown-body img {
+  background: transparent !important;
+}
+
+.markdown-body i {
+  font-style: normal;
+}
+
 /* Custom buttons */
 /* Button medium */
 .btn-md {
@@ -185,7 +194,7 @@ textarea.btn-md {
   align-items: center;
 }
 
-/* SideNav */
+/* Sidenav */
 .card .list {
   display: flex;
   align-items: center;
@@ -275,6 +284,39 @@ button:hover .arrow {
   border-radius: var(--gap) / var(--md-gap);
   padding: var(--md-gap);
   background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
+}
+
+/* Item classes */
+.item.rare {
+  background: linear-gradient(
+    to bottom,
+    var(--rare),
+    var(--main-card)
+  ) !important;
+}
+
+.item.mythic {
+  background: linear-gradient(
+    to bottom,
+    var(--mythic),
+    var(--main-card)
+  ) !important;
+}
+
+.item.legendary {
+  background: linear-gradient(
+    to bottom,
+    var(--legendary),
+    var(--main-card)
+  ) !important;
+}
+
+.item.unique {
+  background: linear-gradient(
+    to bottom,
+    var(--unique),
+    var(--main-card)
+  ) !important;
 }
 
 /* Animations */
