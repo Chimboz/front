@@ -30,7 +30,7 @@
     "vue-chart-3": "^3.1.4",
     "vue-i18n": "^9.1.10",
     "vue-meta": "^3.0.0-alpha.10",
-    "vue-router": "^4.0.15",
+    "vue-router": "^4.0.16",
     "vuex": "^4.0.2",
     "vuex-persistedstate": "^4.0.0"
   },
