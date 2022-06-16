@@ -287,6 +287,7 @@ export default {
       if (this.mode == "post") {
         console.log("Envoyé!");
       } else console.log("Edité!");
+      this.message = "";
     },
     scrollTo(anchor) {
       location.href = anchor;

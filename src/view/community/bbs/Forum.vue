@@ -17,7 +17,7 @@
         src="@/asset/img/bbs/post.gif"
       />
     </button>
-    <markdown-input isTopic v-if="post && data && !data.locked" />
+    <MarkdownInput isTopic v-if="post && data && !data.locked" />
     <br />
     <GlobalCard>
       <div class="columns">
