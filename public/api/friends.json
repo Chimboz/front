@@ -1,0 +1,102 @@
+[
+  {
+    "user": {
+      "name": "Owned",
+      "id": 2,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    "status": {
+      "connected": true,
+      "room": "La Colline Sacrée",
+      "date": 1630075662000
+    }
+  },
+  {
+    "user": {
+      "name": "Chapakinggggggggggg",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    "status": {
+      "connected": true,
+      "date": 1630075662000
+    }
+  },
+  {
+    "user": {
+      "name": "ChAtEuX",
+      "id": 9,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    "status": {
+      "connected": false,
+      "room": "La Colline Sacrée",
+      "date": 1630075662000
+    }
+  },
+  {
+    "user": {
+      "name": "Chelha",
+      "id": 2,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    "status": {
+      "sent": true
+    }
+  },
+  {
+    "user": {
+      "name": "Koko",
+      "id": 2,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    "status": {
+      "sent": false
+    }
+  }
+]

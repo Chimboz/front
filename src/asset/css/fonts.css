@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Pixelated Verdana 12";
+  src: url("../font/pixelated_verdana_12pt.woff2") format("woff2"),
+    url("../font/pixelated_verdana_12pt.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+@font-face {
+  font-family: "Pixelated Verdana 12";
+  src: url("../font/pixelated_verdana_bold_12pt.woff2") format("woff2"),
+    url("../font/pixelated_verdana_bold_12pt.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+@font-face {
+  font-family: "Pixelated Verdana 10";
+  src: url("../font/pixelated_verdana_bold_10pt.woff2") format("woff2"),
+    url("../font/pixelated_verdana_bold_10pt.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+@font-face {
+  font-family: "Chimboz Heavy";
+  src: url("../font/chimbozheavy.woff2") format("woff2"),
+    url("../font/chimbozheavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chimboz Heavy";
+  src: url("../font/chimbozheavy_bold.woff2") format("woff2"),
+    url("../font/chimbozheavy_bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/helvetica_bold_oblique.woff2") format("woff2"),
+    url("../font/helvetica_bold_oblique.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/helvetica.woff2") format("woff2"),
+    url("../font/helvetica.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/helvetica_bold.woff2") format("woff2"),
+    url("../font/helvetica_bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Helvetica Fallback";
+  src: url("../font/helvetica_oblique.woff2") format("woff2"),
+    url("../font/helvetica_oblique.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Pixelade";
+  src: url("../font/pixelade.woff2") format("woff2"),
+    url("../font/pixelade.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("../font/impact.woff2") format("woff2"),
+    url("../font/impact.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cocon";
+  src: url("../font/cocon.woff2") format("woff2"),
+    url("../font/cocon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

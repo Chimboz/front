@@ -1,0 +1,73 @@
+[
+  {
+    "name": "aloha1",
+    "description": "Salut à tous les amis",
+    "cost": 100,
+    "looks": [
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      },
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    ]
+  },
+  {
+    "name": "aloha2",
+    "description": "Salut à tous les amis",
+    "cost": 50,
+    "looks": [
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    ]
+  },
+  {
+    "name": "ete",
+    "description": "Salut à tous les amis",
+    "cost": 100,
+    "looks": [
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      },
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    ]
+  }
+]

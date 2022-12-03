@@ -1,0 +1,92 @@
+{
+  "user": {
+    "name": "Froidasse",
+    "id": 3,
+    "color": "#f0f",
+    "look": {
+      "avatar": 0,
+      "emote": "zzz",
+      "hat": 7,
+      "body": 334,
+      "shoe": 612,
+      "item0": 808,
+      "item1": 868,
+      "item2": 938
+    }
+  },
+  "messages": [
+    { "content": "bite lol!", "date": 1638366030341 },
+    { "you": true, "content": "bite aussi par ici", "date": 1638366230341 },
+    {
+      "you": true,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, mi ut tempor sodales, leo mi volutpat turpis, ac maximus velit nibh condimentum felis. Suspendisse quis quam et leo consequat sollicitudin. Vivamus luctus lacinia gravida. Sed venenatis feugiat justo, in auctor ante sagittis id. Nunc semper pellentesque eleifend. Nam eros ipsum, finibus nec neque iaculis, egestas semper lorem. Nunc ornare, justo vel rutrum sollicitudin, elit tortor sodales nisl, vitae egestas mauris nunc nec lectus. Nullam sed neque nec sapien condimentum auctor. Phasellus molestie porta dui, sed hendrerit odio fringilla quis. Praesent lobortis nulla vel euismod molestie.",
+      "date": 1638366230341
+    },
+    {
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, mi ut tempor sodales, leo mi volutpat turpis, ac maximus velit nibh condimentum felis. Suspendisse quis quam et leo consequat sollicitudin. Vivamus luctus lacinia gravida. Sed venenatis feugiat justo, in auctor ante sagittis id. Nunc semper pellentesque eleifend. Nam eros ipsum, finibus nec neque iaculis, egestas semper lorem. Nunc ornare, justo vel rutrum sollicitudin, elit tortor sodales nisl, vitae egestas mauris nunc nec lectus. Nullam sed neque nec sapien condimentum auctor. Phasellus molestie porta dui, sed hendrerit odio fringilla quis. Praesent lobortis nulla vel euismod molestie.",
+      "date": 1638366230341
+    },
+    {
+      "content": "https://www.youtube.com/watch?v=l-lXuMiXcUg",
+      "date": 1638366030341
+    }
+  ],
+  "recent": [
+    {
+      "name": "Tigriz",
+      "id": 3,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    {
+      "name": "Tigrouz",
+      "id": 4,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    {
+      "name": "Froidasse",
+      "id": 4,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    },
+    {
+      "name": "Owned",
+      "id": 4,
+      "look": {
+        "avatar": 0,
+        "emote": "zzz",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    }
+  ]
+}

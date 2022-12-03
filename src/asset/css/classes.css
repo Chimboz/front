@@ -1,0 +1,357 @@
+.fullwidth {
+  width: calc(100% + 2 * var(--gap)) !important;
+  margin-left: calc(-1 * var(--gap));
+}
+
+.link {
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Pink icon */
+.btn-pink::before {
+  content: "";
+  position: absolute;
+  width: 23.452px;
+  height: 23.45px;
+  background-image: url(../img/icon/bg_pink.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-pink img {
+  position: relative;
+  height: 23.45px;
+}
+
+.btn-pink:active::before {
+  transform: rotate(180deg);
+}
+
+.btn-pink {
+  border-radius: 100%;
+  border: 2px solid transparent;
+  width: 27.452px;
+  height: 27.45px;
+}
+
+.btn-pink.active {
+  border: 2px solid var(--light);
+}
+
+/* Horizontal stack */
+.hstack {
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: calc(-1 * var(--sm-gap));
+  margin-right: calc(-1 * var(--sm-gap));
+}
+
+.hstack > * {
+  margin-right: var(--sm-gap);
+  margin-bottom: var(--sm-gap);
+}
+
+/* Custom checkboxes */
+.markdown-body [type="checkbox"]:disabled {
+  width: 0;
+  height: 0;
+  filter: none !important;
+}
+
+.markdown-body [type="checkbox"]:not(:checked):before,
+.markdown-body [type="checkbox"]:checked:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #0005;
+  background: var(--light);
+  border-radius: 0.2em;
+}
+
+.markdown-body [type="checkbox"]:checked:before {
+  background: var(--color-accent-fg);
+  border: 1px solid transparent;
+}
+
+/* Markdown lists and checkboxes */
+.markdown-body li input[type="checkbox"] {
+  margin-left: -16px;
+  position: absolute;
+}
+
+/* Markdown custom styling */
+.markdown-body img {
+  background: transparent !important;
+}
+
+.markdown-body i {
+  font-style: normal;
+}
+
+/* Custom buttons */
+/* Button medium */
+.btn-md {
+  display: inline-flex;
+  padding: var(--md-gap);
+  border-radius: var(--md-gap);
+  justify-content: center;
+  border: 0;
+  color: var(--text);
+  background: var(--light);
+  box-shadow: inset 1px 1px 1px var(--dark), inset -1px -1px 1px var(--dark);
+}
+
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+  box-shadow: inset 1px 1px 1px var(--main-button-green),
+    inset -1px -1px 1px var(--dark-button-green);
+}
+
+.btn-md:hover,
+.btn-md:active,
+input:not([type="checkbox"]).btn-md:focus,
+textarea.btn-md:focus {
+  box-shadow: inset 1px 1px 1px var(--orange), inset -1px -1px 1px var(--orange);
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--red);
+}
+
+input:not([type="checkbox"]).btn-md,
+textarea.btn-md {
+  width: 100%;
+}
+
+/* Button padding */
+.btn + .btn {
+  margin-left: var(--md-gap);
+}
+
+/* Button action */
+.btn-action {
+  border-radius: calc(var(--border-radius) / 3);
+  padding: 0 var(--md-gap);
+  align-items: center;
+  background: linear-gradient(to bottom, var(--light), var(--light-bbs));
+  border: 1px solid var(--blue);
+  font-family: "Cocon";
+  text-transform: lowercase;
+  color: var(--blue);
+  text-decoration: none !important;
+  margin: 0 var(--sm-gap);
+}
+.btn-action:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.btn-action img {
+  vertical-align: top;
+}
+
+.btn-danger {
+  color: var(--light);
+  border: 1px solid var(--dark-button-red);
+  background: linear-gradient(to bottom, var(--light), var(--main-button-red));
+  text-shadow: 1px 0 0 var(--dark-button-red), -1px 0 0 var(--dark-button-red),
+    0 1px 0 var(--dark-button-red), 0 -1px 0 var(--dark-button-red),
+    0.7px 0.7px var(--dark-button-red), -0.7px -0.7px 0 var(--dark-button-red),
+    0.7px -0.7px 0 var(--dark-button-red), -0.7px 0.7px 0 var(--dark-button-red);
+}
+
+.btn-success {
+  color: var(--light);
+  border: 1px solid var(--dark-button-green);
+  background: linear-gradient(
+    to bottom,
+    var(--light),
+    var(--main-button-green)
+  );
+  text-shadow: 1px 0 0 var(--dark-button-green),
+    -1px 0 0 var(--dark-button-green), 0 1px 0 var(--dark-button-green),
+    0 -1px 0 var(--dark-button-green), 0.7px 0.7px var(--dark-button-green),
+    -0.7px -0.7px 0 var(--dark-button-green),
+    0.7px -0.7px 0 var(--dark-button-green),
+    -0.7px 0.7px 0 var(--dark-button-green);
+}
+
+/* Button small */
+.btn-sm {
+  border-radius: var(--round);
+  font-weight: bold;
+  display: inline-flex;
+  padding: 0 var(--md-gap);
+  color: var(--light);
+  align-items: center;
+}
+
+/* Sidenav */
+.card .list {
+  display: flex;
+  align-items: center;
+  padding: var(--sm-gap) var(--md-gap);
+}
+
+.card a:nth-child(2n + 1) .list {
+  background: var(--light-blue)
+    linear-gradient(
+      to right,
+      var(--main-card-blue),
+      transparent 10%,
+      transparent 90%,
+      var(--main-card-blue)
+    );
+}
+
+.router-link-active .list,
+.active .list {
+  background: transparent
+    linear-gradient(
+      to right,
+      var(--main-card-blue),
+      var(--pink) 10%,
+      var(--pink) 90%,
+      var(--main-card-blue)
+    ) !important;
+}
+
+.card .router-link-active,
+.card .active {
+  color: var(--light);
+}
+
+#loadtime {
+  text-align: center;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.flex-centered {
+  justify-content: center;
+}
+
+.animated {
+  will-change: transform;
+}
+
+.arrow.green {
+  filter: hue-rotate(135deg) saturate(1.5) !important;
+}
+
+.jitter {
+  transform: rotateZ(-25deg);
+}
+
+button:hover .arrow {
+  animation: jitter 0.5s forwards;
+}
+
+.level {
+  background: linear-gradient(
+      to right,
+      var(--main-card-blue),
+      transparent 10%,
+      transparent 90%,
+      var(--main-card-blue)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--main-card-blue) 15%,
+      #a8dfff 15%,
+      #a8dfff 85%,
+      var(--main-card-blue) 85%
+    );
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.level .number {
+  display: flex;
+  border-radius: var(--gap) / var(--md-gap);
+  padding: var(--md-gap);
+  background: linear-gradient(to right, #a8dfff 50%, #a8dfff22);
+}
+
+/* Item classes */
+.item.rare {
+  background: linear-gradient(
+    to bottom,
+    var(--rare),
+    var(--main-card)
+  ) !important;
+}
+
+.item.mythic {
+  background: linear-gradient(
+    to bottom,
+    var(--mythic),
+    var(--main-card)
+  ) !important;
+}
+
+.item.legendary {
+  background: linear-gradient(
+    to bottom,
+    var(--legendary),
+    var(--main-card)
+  ) !important;
+}
+
+.item.unique {
+  background: linear-gradient(
+    to bottom,
+    var(--unique),
+    var(--main-card)
+  ) !important;
+}
+
+/* Animations */
+@keyframes jitter {
+  0% {
+    transform: rotateZ(-25deg);
+  }
+  10% {
+    transform: rotateZ(35deg);
+  }
+  20% {
+    transform: rotateZ(-15deg);
+  }
+  30% {
+    transform: rotateZ(25deg);
+  }
+  40% {
+    transform: rotateZ(-15deg);
+  }
+  50% {
+    transform: rotateZ(15deg);
+  }
+  60% {
+    transform: rotateZ(-15deg);
+  }
+  70% {
+    transform: rotateZ(15deg) scale(1.05);
+  }
+  80% {
+    transform: rotateZ(0deg) scale(1.1);
+  }
+  90% {
+    transform: rotateZ(30deg) scale(1.15);
+  }
+  100% {
+    transform: rotateZ(-30deg) scale(1.15);
+  }
+}

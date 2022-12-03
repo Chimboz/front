@@ -1,0 +1,23 @@
+[
+  {
+    "type": "lol",
+    "reason": "Racisme",
+    "author": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+    "moderator": { "name": "slim", "id": 3, "color": "#f00" },
+    "date": 1647884990963
+  },
+  {
+    "type": "kek",
+    "reason": "Racisme",
+    "author": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+    "moderator": { "name": "slim", "id": 3, "color": "#f00" },
+    "date": 1647884590963
+  },
+  {
+    "type": "mdr",
+    "reason": "Racisme",
+    "author": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+    "moderator": { "name": "slim", "id": 3, "color": "#f00" },
+    "date": 1647884090963
+  }
+]

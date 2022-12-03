@@ -1,0 +1,76 @@
+{
+  "name": "Tigriz",
+  "gender": "unknown",
+  "astro": "bite en bois",
+  "id": 3,
+  "register": 1630075662000,
+  "wedding": {
+    "user": { "id": 2, "name": "Tigriz", "color": "#f0f" },
+    "id": 1,
+    "date": 1630075662000
+  },
+  "look": {
+    "avatar": 0,
+    "emote": "neutral",
+    "hat": 7,
+    "body": 334,
+    "shoe": 612,
+    "item0": 808,
+    "item1": 868,
+    "item2": 938
+  },
+  "bacteria": {
+    "rank": 1,
+    "win": 10,
+    "lose": 5,
+    "draw": 5,
+    "score": 40
+  },
+  "patojdur": {
+    "rank": 1,
+    "score": 7000,
+    "today": {
+      "rank": 2,
+      "score": "29'000"
+    },
+    "yesterday": {
+      "rank": 2,
+      "score": "29'000"
+    }
+  },
+  "popularity": {
+    "rank": 1,
+    "score": 123,
+    "today": {
+      "rank": 2,
+      "score": 5
+    },
+    "yesterday": {
+      "rank": 2,
+      "score": 10
+    }
+  },
+  "groups": [
+    {
+      "name": "Les Créateurs",
+      "id": 1,
+      "color": "#900"
+    },
+    {
+      "name": "La Chatterie",
+      "id": 2,
+      "color": "#000"
+    }
+  ],
+  "level": 21,
+  "status": {
+    "connected": false,
+    "room": "La Colline Sacrée",
+    "date": 1630075662000
+  },
+  "motto": "Nitens lux, horrenda procella, tenebris aeternis involuta",
+  "centres": ["Musique", "informatique", "mathématiques", "Sayaka"],
+  "website": "http://last.fm/user/Tigriz",
+  "emote": "zzz",
+  "forum": 123
+}

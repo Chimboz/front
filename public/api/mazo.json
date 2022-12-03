@@ -1,0 +1,24 @@
+{
+  "best": [
+    {
+      "user": { "name": "Meyriu", "id": 115 },
+      "score": 23,
+      "date": 1625534039650
+    },
+    {
+      "user": { "name": "Gucci", "id": 170 },
+      "score": 22,
+      "date": 1625534039650
+    },
+    {
+      "user": { "name": "Killer", "id": 92 },
+      "score": 21,
+      "date": 1625534039650
+    },
+    {
+      "user": { "name": "Tigriz", "id": 111 },
+      "score": 20,
+      "date": 1625534039650
+    }
+  ]
+}

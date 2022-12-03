@@ -1,0 +1,207 @@
+{
+  "mi": {
+    "message": "message | messages"
+  },
+  "level": "Niveau",
+  "friends": {
+    "online": "ami connecté | amis connectés"
+  },
+  "credit": {
+    "text": "pépette | pépettes",
+    "youGot": "Tu as actuellement",
+    "title": "Pépette | Pépettes"
+  },
+  "lottery": {
+    "firstLine": "Tu peux gagner jusqu'à 30 pépettes",
+    "secondLine": "Clique sur le bouton pour gagner des pépettes"
+  },
+  "online": "connecté | connectés",
+  "members": {
+    "text": "membre | membres",
+    "past": "passé depuis 24h. | passés depuis 24h."
+  },
+  "navbar": {
+    "logout": "Se déconnecter",
+    "login": "Se connecter",
+    "play": "Jouer !",
+    "account": "Mon compte",
+    "members": "Membres",
+    "games": "Jeux",
+    "community": "Communauté"
+  },
+  "formatting": {
+    "bold": "Gras",
+    "italic": "Italique",
+    "underline": "Souligné"
+  },
+  "error": {
+    "unknown": "Erreur inconnue.",
+    "notfound": "La route demandée par l'API n'existe pas.",
+    "default": "Erreur, la page que vous cherchez n'existe pas.",
+    "connected": "Vous êtes déjà connecté !",
+    "tchat": "Erreur, le tchat n'est pas actif.",
+    "login": "Erreur, vous devez être connecté pour effectuer cette action."
+  },
+  "format": {
+    "language": "langage"
+  },
+  "placeholder": {
+    "username": "Pseudo",
+    "mail": "Courriel",
+    "password": "Mot de passe",
+    "password_confirm": "Confirmation",
+    "group": "Groupe",
+    "groupname": "Nom du groupe",
+    "weddingid": "Numéro d'un mariage",
+    "message": "Message",
+    "newpassword": "Nouveau mot de passe",
+    "confirmpassword": "Répéter le mot de passe",
+    "currentpassword": "Mot de passe actuel",
+    "item": "Item",
+    "balance": "Balance",
+    "duration": "Durée",
+    "reason": "Raison"
+  },
+  "section": {
+    "account": "Mon compte",
+    "messenger": "Ma messagerie",
+    "groups": "Groupes",
+    "friends": "Mes amis",
+    "forum": "Forum",
+    "password": "Pamalin",
+    "capitalization": "MajMin",
+    "shop": "Boutique",
+    "bacteria": "Bacteria",
+    "patojdur": "Patojdur",
+    "mazo": "Mazo",
+    "members": "Membres",
+    "book": "Annuaire",
+    "wedding": "Mariages",
+    "popularity": "Popularité",
+    "encyclopedia": "Encyclopédie",
+    "games": "Jeux",
+    "community": "Communauté",
+    "devlog": "Journal de dev",
+    "documentation": "Documentation",
+    "home": "Accueil",
+    "error": "Erreur",
+    "login": "Se connecter",
+    "topic": "Sujet",
+    "bbs": "BBS",
+    "group": "Groupe",
+    "member": "Membre",
+    "groupedit": "Édition de groupe",
+    "online": "En ligne",
+    "conversation": "Conversation",
+    "notsmart": "Pamalin",
+    "bacteriaStory": "Histoire de Bacteria",
+    "eraser": "Effaceur",
+    "chaparazzi": "Chaparazzi",
+    "bank": "Banque",
+    "admin": "Admin",
+    "chapaniouz": "Chapaniouz"
+  },
+  "group": {
+    "open": "Ce groupe est ouvert, tu peux le joindre immédiatement.",
+    "leader": {
+      "empire": "Empereur de l'empire"
+    }
+  },
+  "rules": {
+    "rule0": "Ne donne jamais ton mot de passe, à personne !",
+    "rule1": "Ne donne jamais d'informations personnelles, n'en demande jamais.",
+    "rule2": "Reste toujours calme, poli, correct et respectueux.",
+    "rule3": "Ne tente pas de hack, de vol de compte, de choses illégales.",
+    "rule4": "Evite la publicité ou les convictions abusives.",
+    "rule5": "N'incite jamais les autres à faire des choses contraires aux règles d'or.",
+    "rule": "Règle"
+  },
+  "bbs": {
+    "lock_new": "BBS Verrouillé (nouveaux messages)",
+    "lock": "BBS Verrouillé",
+    "new": "Nouveaux messages",
+    "nonew": "Pas de nouveaux messages"
+  },
+  "success": {
+    "buy": "Vous avez acheté avez succès !"
+  },
+  "champion": {
+    "bacteria": "est champion Baceria !",
+    "patojdur": "est champion Patojdur !",
+    "mazo": "est un des meilleurs Mazoteurs du moment !"
+  },
+  "button": {
+    "save": "Sauver",
+    "card": "Fiche",
+    "signin": "Se connecter",
+    "register": "S'inscrire",
+    "lottery": "Ma loterie"
+  },
+  "profile": {
+    "friendsList": "Amis",
+    "groupsList": "Groupes",
+    "profileSection": "Profil",
+    "invSection": "Inventaire",
+    "motto": "Ta phrase préférée",
+    "website": "Ta page perso",
+    "interests": "Tes centres d'intérêts"
+  },
+  "demo": {
+    "info1": "Bienvenue sur l'archipel",
+    "info2": "Crée ton style",
+    "info3": "Discute avec tes amis",
+    "info4": "Fais ta vie virtuelle",
+    "info5": "Rejoins des groupes",
+    "info6": "Affronte les joueurs dans des mini-jeux",
+    "try": "Je veux juste essayer"
+  },
+  "chaparazzi": {
+    "more": "Voir la galerie"
+  },
+  "shop": {
+    "pack": "Pack",
+    "item": "Item"
+  },
+  "wedding": {
+    "section": {
+      "today": "Les mariages du jour",
+      "divorces": "Les divorces",
+      "holding": "Ceux qui tiennent",
+      "held": "Ceux qui ont tenu",
+      "last": "Le dernier mariage"
+    },
+    "description": "Dans notre monde, on peut se faire beaucoup d'amis, il arrive même que parfois, certaines relations aillent au-delà de l'amitié...<br /><br />Voilà pourquoi notre cher <b>Guruji</b> célèbre chaque <b>mercredi</b>, <b>samedi</b> et <b>dimanche</b> de magnifiques mariages sur la colline sacrée.<br />Seuls les membres célibataires peuvent demander à se marier.<br /> Ceux qui veulent briser ces liens sacrés devront trouver la grotte du Divorce et affronter la honte et la peur.<br /><br />Les 3 couples qui tiennent le plus gagnent les fringues des mariés.",
+    "name": "mariage",
+    "wishes": "Tous nos voeux de bonheur à",
+    "marriedbyguruji": "qui ont été mariés par <b>Guruji</b> en présence de",
+    "title": {
+      "today": "Tous les mariages depuis 24 heures"
+    },
+    "celebrated": "mariages ont été célébrés",
+    "gotmarried": "se sont mariés",
+    "gotwitnessed": "en présence de",
+    "andof": "et de"
+  },
+  "date": {
+    "on": "le",
+    "Today": "Aujourd'hui",
+    "On": "Le"
+  },
+  "score": {
+    "nth": "ème"
+  },
+  "book": {
+    "description": "Tu cherches à en savoir plus sur un copain ou une nouvelle rencontre ?<br /><br />Ici tu peux chercher des infos sur tous les membres de la communauté.",
+    "search": "Rechercher un membre",
+    "last": "Les 10 derniers membres",
+    "registeredon": "Inscrit le"
+  },
+  "No": "N°",
+  "Pseudo": "Pseudo",
+  "admin": {
+    "last": "Registre des dernières sanctions",
+    "modal": {
+      "ban": "Confirmer le bannissement de ce membre ?"
+    }
+  }
+}

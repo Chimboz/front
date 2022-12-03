@@ -1,0 +1,146 @@
+[
+  { "id": 1009, "name": "Bonnet de marin", "rarity": "common", "type": "etc" },
+  { "id": 3, "name": "Toque orientale", "rarity": "common", "type": "hat" },
+  {
+    "id": 4,
+    "name": "Petites cornes blanches",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 5, "name": "Oreilles de lapin", "rarity": "common", "type": "hat" },
+  {
+    "id": 6,
+    "name": "Noeud dans les cheveux",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 7,
+    "name": "Oreilles de chat soyeuses",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 8, "name": "Cornes de taureau", "rarity": "common", "type": "hat" },
+  { "id": 9, "name": "Coupe afro orange", "rarity": "common", "type": "hat" },
+  { "id": 10, "name": "Boule afro", "rarity": "common", "type": "hat" },
+  { "id": 11, "name": "Coupe hippie", "rarity": "common", "type": "hat" },
+  { "id": 12, "name": "Ailettes robot", "rarity": "common", "type": "hat" },
+  {
+    "id": 13,
+    "name": "Ailettes capteurs robot",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 14, "name": "T\u00eate robot", "rarity": "common", "type": "hat" },
+  {
+    "id": 15,
+    "name": "Ailettes mecha courtes",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 16, "name": "Turban rose", "rarity": "common", "type": "hat" },
+  { "id": 17, "name": "Chignons rouges", "rarity": "common", "type": "hat" },
+  {
+    "id": 18,
+    "name": "Coupe accroche-coeur",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 19,
+    "name": "Coupe \u00e0 nattes carotte",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 20,
+    "name": "Coupe mini-dreadlocks",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 21, "name": "Chapeau rastafari", "rarity": "common", "type": "hat" },
+  {
+    "id": 22,
+    "name": "Toque en fourrure russe",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 23, "name": "Toque canadienne", "rarity": "common", "type": "hat" },
+  { "id": 24, "name": "Chapeau melon", "rarity": "common", "type": "hat" },
+  {
+    "id": 25,
+    "name": "Bonnet de f\u00eate",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 26, "name": "Masque kamai", "rarity": "common", "type": "hat" },
+  { "id": 27, "name": "Masque wata", "rarity": "common", "type": "hat" },
+  { "id": 28, "name": "Coupe blonde", "rarity": "common", "type": "hat" },
+  {
+    "id": 29,
+    "name": "Coupe \u00e0 pics blanche",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 30,
+    "name": "Grosses dreads blanches",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 31,
+    "name": "Coupe \u00e0 couettes courtes",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 32,
+    "name": "Coupe de mari\u00e9e",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 33,
+    "name": "Cheveux blancs avec natte",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 34,
+    "name": "Coupe tintin blanche",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 35,
+    "name": "Coupe avec couettes",
+    "rarity": "common",
+    "type": "hat"
+  },
+  {
+    "id": 36,
+    "name": "Coupe \u00e0 pics fashion",
+    "rarity": "common",
+    "type": "hat"
+  },
+  { "id": 37, "name": "Bacteria casque or", "rarity": "mythic", "type": "hat" },
+  {
+    "id": 38,
+    "name": "Bacteria casque argent",
+    "rarity": "mythic",
+    "type": "hat"
+  },
+  {
+    "id": 39,
+    "name": "Bacteria casque bronze",
+    "rarity": "mythic",
+    "type": "hat"
+  },
+  {
+    "id": 40,
+    "name": "Bacteria casque rouge",
+    "rarity": "common",
+    "type": "hat"
+  }
+]

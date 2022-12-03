@@ -1,0 +1,22 @@
+{
+  "id": 2,
+  "name": "Lunettes bleues",
+  "rarity": "rare",
+  "type": "body",
+  "owner": [
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "Owned", "id": 3 }, "quantity": 2 },
+    { "user": { "name": "slim", "id": 3 }, "quantity": 4 }
+  ]
+}

@@ -1,0 +1,58 @@
+table.bbs {
+  width: 100%;
+  border-spacing: 0;
+  box-shadow: 0 0 3px var(--dark);
+  border-radius: calc(var(--border-radius) / 3);
+  background: var(--light-bbs);
+  padding: calc(var(--gap) / 2) 0;
+}
+
+.bbs tbody {
+  background: var(--light);
+}
+
+.bbs > thead > tr > th {
+  height: 24px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--light-bbs) 0px,
+    var(--light-bbs) 50%,
+    var(--dark-bbs) 100%
+  );
+  border-bottom: 1px solid var(--dark);
+}
+
+.bbs > colgroup > col:nth-child(3),
+.bbs > colgroup > col:nth-child(4),
+.bbs > tbody > tr > td:nth-child(3),
+.bbs > tbody > tr > td:nth-child(4),
+.bbs > thead > tr > th:nth-child(2),
+.bbs > thead > tr > th:nth-child(3) {
+  display: none;
+}
+
+.board > colgroup > tr > col:nth-child(5),
+.board > tbody > tr > td:nth-child(5),
+.board > thead > tr > th:nth-child(4) {
+  display: none;
+}
+
+.board > tbody > tr > td:nth-child(4),
+.board > thead > tr > th:nth-child(3) {
+  display: table-cell !important;
+}
+
+.board col:nth-child(4) {
+  display: table-column;
+}
+
+@media (min-width: 600px) {
+  .bbs > tbody > tr > td,
+  .bbs > thead > tr > th {
+    display: table-cell !important;
+  }
+
+  .bbs > colgroup > col {
+    display: table-column !important;
+  }
+}

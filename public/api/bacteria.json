@@ -1,0 +1,115 @@
+{
+  "records": {
+    "played": {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
+    },
+    "won": {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
+    },
+    "lost": {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
+    },
+    "drawn": {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "record": 200
+    }
+  },
+  "stats": {
+    "player": 12345,
+    "games": 67890,
+    "yesterday": 500
+  },
+  "best": [
+    {
+      "user": { "name": "Meyriu", "id": 115 },
+      "score": 7800,
+      "win": 232,
+      "draw": 12,
+      "lose": 39
+    },
+    {
+      "user": { "name": "Gucci", "id": 170 },
+      "id": 3,
+      "score": 5560,
+      "win": 158,
+      "draw": 11,
+      "lose": 22
+    },
+    {
+      "user": { "name": "Killer", "id": 92 },
+      "id": 3,
+      "score": 5040,
+      "win": 131,
+      "draw": 4,
+      "lose": 5
+    },
+    {
+      "user": { "name": "Tigriz", "id": 111 },
+      "id": 3,
+      "score": 3480,
+      "win": 108,
+      "draw": 2,
+      "lose": 28
+    }
+  ],
+  "worst": [
+    {
+      "user": { "name": "Froidasse", "id": 20 },
+      "id": 3,
+      "color": "#f0f",
+      "score": -9920,
+      "win": 58,
+      "draw": 10,
+      "lose": 303
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    },
+    {
+      "user": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "id": 3,
+      "color": "#f0f",
+      "score": 2712,
+      "win": 100,
+      "draw": 50,
+      "lose": 50
+    }
+  ],
+  "groups": [
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+
+      "score": 2712
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712
+    }
+  ]
+}

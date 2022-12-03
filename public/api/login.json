@@ -1,0 +1,83 @@
+{
+  "connected": 6,
+  "members": 9001,
+  "last24": 666,
+  "shop": {
+    "pack": "supporter",
+    "looks": [
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      },
+      {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    ]
+  },
+  "gallery": [
+    { "name": "howto.webp", "date": 1636186085492 },
+    { "name": "howto.webp", "date": 1636186085492 },
+    { "name": "howto.webp", "date": 1636186085492 }
+  ],
+  "bacteria": {
+    "user": {
+      "name": "Chapaking",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    }
+  },
+  "patojdur": {
+    "user": {
+      "name": "Chapaking",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    }
+  },
+  "mazo": {
+    "user": {
+      "name": "Chapaking",
+      "id": 1,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    }
+  }
+}

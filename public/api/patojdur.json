@@ -1,0 +1,108 @@
+{
+  "day": "312",
+  "stats": {
+    "yesterday": 678,
+    "today": 123
+  },
+  "record": [
+    {
+      "user": {
+        "name": "warkS",
+        "id": "43"
+      },
+      "race": "Burnin'Flak",
+      "score": "28'004",
+      "date": 1636721804170,
+      "day": 310
+    }
+  ],
+  "today": [
+    {
+      "user": {
+        "name": "warkS",
+        "id": "43"
+      },
+      "score": "28'004",
+      "date": 1636721804170
+    }
+  ],
+  "yesterday": [
+    {
+      "user": {
+        "name": "warkS",
+        "id": "43"
+      },
+      "score": "27'971",
+      "date": 1636721804170
+    },
+    {
+      "user": {
+        "name": "Guruji",
+        "id": "67"
+      },
+      "score": "28'074",
+      "date": 1636721804170
+    },
+    {
+      "user": {
+        "name": "J-J",
+        "id": "25"
+      },
+      "score": "40'702",
+      "date": 1636721804170
+    },
+    {
+      "user": {
+        "name": "ZaZinOu",
+        "id": "358"
+      },
+      "score": "66'639",
+      "date": 1636721804170
+    }
+  ],
+  "general": [
+    {
+      "user": {
+        "name": "Guruji",
+        "id": "67"
+      },
+      "score": "8890",
+      "races": 12
+    },
+    {
+      "user": {
+        "name": "Steuph",
+        "id": "10"
+      },
+      "score": "7240",
+      "races": 11
+    },
+    {
+      "user": {
+        "name": "NuraTo",
+        "id": "254"
+      },
+      "score": "5110",
+      "races": 10
+    }
+  ],
+  "groups": [
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+
+      "score": 2712
+    },
+    {
+      "group": { "name": "Tigriz", "id": 3, "color": "#f0f" },
+      "score": 2712
+    }
+  ]
+}

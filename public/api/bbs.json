@@ -1,0 +1,96 @@
+[
+  {
+    "category": "Chimboz",
+    "bbs": [
+      {
+        "id": 1,
+        "name": "Messages Officiels",
+        "locked": true,
+        "desc": "Les messages officiels, les seuls, les vrais.",
+        "mods": [
+          {
+            "name": "Les Créateurs",
+            "id": 1,
+            "color": "#900"
+          }
+        ],
+        "topics": 2,
+        "messages": 2,
+        "last_msg": {
+          "author": {
+            "name": "Owneddddddddddddddddd",
+            "id": 2,
+            "color": "#900"
+          },
+          "date": 0,
+          "topicid": 1,
+          "msgid": 1
+        }
+      },
+      {
+        "id": 2,
+        "name": "Agora",
+        "locked": false,
+        "desc": "Forum de la communauté. Merci d'éviter le flood et les sujets inutiles.",
+        "mods": [
+          {
+            "name": "Les Créateurs",
+            "id": 1,
+            "color": "#900"
+          },
+          {
+            "name": "Les Modos BBS",
+            "id": 2,
+            "color": "#326496"
+          }
+        ],
+        "topics": 2,
+        "messages": 5,
+        "last_msg": {
+          "author": { "name": "IceTeaZouneT", "id": 3 },
+          "id": 3,
+          "date": 1626554039650,
+          "topicid": 2,
+          "msgid": 2
+        }
+      }
+    ]
+  },
+  {
+    "category": "Activités / Jeux",
+    "bbs": [
+      {
+        "id": 1,
+        "name": "Bacteria",
+        "locked": false,
+        "new": true,
+        "desc": "C'est le 1er jeu de Chimboz, un jeu mythique, plus d'un million de parties depuis le lancement, tout ce que tu veux savoir sur ce jeu, c'est là....",
+        "mods": [
+          {
+            "name": "Les Créateurs",
+            "id": 1,
+            "color": "#900"
+          },
+          {
+            "name": "Les Modos BBS",
+            "id": 2,
+            "color": "#326496"
+          },
+          {
+            "name": "Les Animateurs",
+            "id": 4,
+            "color": "#f30"
+          }
+        ],
+        "topics": 1,
+        "messages": 1,
+        "last_msg": {
+          "author": { "name": "Meyriu", "id": 115 },
+          "date": 1625534039650,
+          "topicid": 4,
+          "msgid": 6
+        }
+      }
+    ]
+  }
+]

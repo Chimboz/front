@@ -1,0 +1,206 @@
+{
+  "mi": {
+    "message": "message | messages"
+  },
+  "level": "Level",
+  "friends": {
+    "online": "friend online | friends online"
+  },
+  "credit": {
+    "text": "credit | credits",
+    "youGot": "You currently have",
+    "title": "Credit | Credits"
+  },
+  "lottery": {
+    "firstLine": "You can earn up to 30 credits",
+    "secondLine": "Click on the button to earn credits"
+  },
+  "online": "player online | players online",
+  "members": {
+    "text": "member | members",
+    "past": "past since 24h."
+  },
+  "navbar": {
+    "logout": "Sign out",
+    "login": "Sign in",
+    "play": "Play!",
+    "account": "My account",
+    "games": "Games",
+    "members": "Members",
+    "community": "Community"
+  },
+  "formatting": {
+    "bold": "Bold",
+    "italic": "Italic",
+    "underline": "Underline"
+  },
+  "error": {
+    "unknown": "Unknown error.",
+    "notfound": "Error, unknown API route.",
+    "default": "Error, requested page does not exist.",
+    "connected": "You are already signed in!",
+    "tchat": "Error, tchat is unavailable.",
+    "login": "Error, you must be logged to do this."
+  },
+  "format": {
+    "language": "language"
+  },
+  "placeholder": {
+    "username": "Username",
+    "mail": "Mail",
+    "password": "Password",
+    "password_confirm": "Confirm",
+    "group": "Group",
+    "groupname": "Group name",
+    "weddingid": "Wedding number",
+    "message": "Message",
+    "confirmpassword": "Confirm password",
+    "newpassword": "New password",
+    "currentpassword": "Current password",
+    "item": "Item",
+    "balance": "Balance",
+    "duration": "Duration",
+    "reason": "Reason"
+  },
+  "section": {
+    "account": "Account",
+    "messenger": "Messenger",
+    "groups": "Groups",
+    "friends": "Friends",
+    "forum": "Forum",
+    "password": "Notsmart",
+    "capitalization": "LowUpp",
+    "shop": "Shop",
+    "bacteria": "Bacteria",
+    "patojdur": "Wide Wade",
+    "mazo": "Mazo",
+    "members": "Members",
+    "book": "Book",
+    "wedding": "Weddings",
+    "popularity": "Popularity",
+    "encyclopedia": "Encyclopedia",
+    "games": "Games",
+    "community": "Community",
+    "devlog": "Devlog",
+    "documentation": "Documentation",
+    "home": "Home",
+    "error": "Error",
+    "login": "Log in",
+    "topic": "Topic",
+    "bbs": "BBS",
+    "group": "Group",
+    "member": "Member",
+    "groupedit": "Group edit",
+    "online": "Online",
+    "conversation": "Conversation",
+    "notsmart": "Notsmart",
+    "bacteriaStory": "Bacteria's Story",
+    "eraser": "Eraser",
+    "chaparazzi": "Chaparazzi",
+    "bank": "Bank",
+    "admin": "Admin",
+    "chapaniouz": "Chapanews"
+  },
+  "group": {
+    "leader": {
+      "empire": "Emperor of the empire"
+    }
+  },
+  "rules": {
+    "rule0": "Don't ever give your password to anyone!",
+    "rule1": "Don't ever disclose your personal information or ask anyone theirs!",
+    "rule2": "Always be calm, polite, nice and respectful of others.",
+    "rule3": "Don't attempt to hack, steal accounts or get into illegal activities.",
+    "rule4": "Avoid propaganda, publicity and offensive behavior.",
+    "rule5": "Don't encourage others to disobey the Golden Rules.",
+    "rule": "Rule"
+  },
+  "bbs": {
+    "lock_new": "BBS Locked (new messages)",
+    "lock": "BBS Locked",
+    "new": "New messages",
+    "nonew": "No new messages"
+  },
+  "success": {
+    "buy": "You bought successfully !"
+  },
+  "champion": {
+    "bacteria": "is Bacteria champion!",
+    "patojdur": "is Wide Wade champion!",
+    "mazo": "is one of the best at Mazo right now!"
+  },
+  "button": {
+    "save": "Save",
+    "card": "Card",
+    "signin": "Sign in",
+    "register": "Register",
+    "lottery": "My lottery"
+  },
+  "profile": {
+    "friendsList": "Friends",
+    "groupsList": "Groups",
+    "profileSection": "Profile",
+    "invSection": "Inventory",
+    "motto": "Your motto",
+    "website": "Your website",
+    "interests": "Your interests"
+  },
+  "demo": {
+    "info1": "Welcome to the archipelago",
+    "info2": "Customise your character",
+    "info3": "Chat with your friends",
+    "info4": "Live your virtual life",
+    "info5": "Join groups",
+    "info6": "Compete with players in minigames",
+    "try": "I just want to try"
+  },
+  "chaparazzi": {
+    "more": "See the gallery"
+  },
+  "shop": {
+    "pack": "Pack",
+    "item": "Item"
+  },
+  "wedding": {
+    "section": {
+      "today": "Couples married today",
+      "divorces": "Couples divorced today",
+      "holding": "Those that are still going strong",
+      "held": "Those that lasted long",
+      "last": "Last marriage"
+    },
+    "description": "In our world, we can do lot of friends, it even sometimes happens that some go beyond friendship...<br /><br />That's why our dear <b>Guruji</b> celebrates each <b>wednesday</b>, <b>saturday</b> and <b>sunday</b> beautiful weddings on the holy hill.<br />Only members that are single can do marriage proposal.<br /> Those who want to break these sacred links should find the cave of Divorce and fight shame and fear.<br /><br />The 3 couples that lasted the longest will earn married clothes.",
+    "name": "marriage",
+    "wishes": "Our best wishes to",
+    "marriedbyguruji": "whose marriage was performed <b>Guruji</b> and witnessed by",
+    "title": {
+      "today": "Wedding ceremonies of the last 24 hours"
+    },
+    "celebrated": "marriages were celebrated",
+    "gotmarried": "got married",
+    "gotwitnessed": "and witnessed by",
+    "andof": "and of"
+  },
+  "date": {
+    "on": "on",
+    "Today": "Today",
+    "On": "On"
+  },
+  "score": {
+    "nth": "th"
+  },
+  "book": {
+    "description": "Want to find out more about your friend or someone else you've just met?<br /><br />Here you can search for infos on every member of the community.",
+    "search": "Search a member",
+    "last": "List of last 10 newly arrived members",
+    "registeredon": "Registered on"
+  },
+  "No": "No.",
+  "Pseudo": "Nick",
+  "admin": {
+    "last": "Last sanctions log",
+    "modal": {
+      "ban": "Confirm member ban?"
+    }
+  }
+}

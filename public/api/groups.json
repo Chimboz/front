@@ -1,0 +1,37 @@
+{
+  "official": [
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" }
+  ],
+  "new": [
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" },
+    { "id": 1, "name": "Salut", "type": "Group" }
+  ],
+  "best": [
+    { "id": 1, "name": "Salut", "score": 3 },
+    { "id": 1, "name": "Salut", "score": 6 },
+    { "id": 1, "name": "Salut", "score": 9 }
+  ],
+  "random": { "id": 12, "name": "random" },
+  "stats": {
+    "total": 42,
+    "type": {
+      "group": 3,
+      "klub": 3,
+      "clan": 3,
+      "ekip": 3,
+      "skwat": 3,
+      "guild": 3,
+      "alliance": 3,
+      "empire": 3,
+      "sekt": 3,
+      "skool": 3,
+      "hord": 3,
+      "meute": 3,
+      "gang": 3,
+      "triad": 3
+    }
+  }
+}

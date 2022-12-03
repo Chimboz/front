@@ -1,0 +1,52 @@
+.font-ch {
+  font-family: "Chimboz Heavy";
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.pink-bg {
+  background: var(--pink);
+}
+
+.blue-bg {
+  background: var(--main-bg);
+}
+
+.pointer {
+  cursor: var(--pointer);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline {
+  display: inline-flex;
+}
+
+.flex.centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.centered {
+  text-align: center;
+}
+
+.justified {
+  text-align: justify;
+}
+
+.relative {
+  position: relative;
+}
