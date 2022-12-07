@@ -217,8 +217,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-export default {
-  name: "DemoComponent",
+
+  
   data() {
     return {
       section: 1,

@@ -285,8 +285,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members/Group
 // Group edition page
-export default {
-  name: "EditView",
+
+  
   components: {
     StrokeText,
     Blazon,

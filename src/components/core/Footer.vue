@@ -70,7 +70,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
+
   name: "TheFooter"
 };
 </script>

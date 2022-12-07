@@ -59,8 +59,8 @@ import StrokeText from "@/components/core/StrokeText.vue";
 
 // @vuese
 // @group Core/Global
-export default {
-  name: "GlobalCard",
+
+  
   components: {
     StrokeText,
   },

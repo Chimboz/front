@@ -179,8 +179,8 @@
 // @vuese
 // @group View/Members
 // Members page
-export default {
-  name: "MembersView",
+
+  
   data() {
     return {
       data: null,

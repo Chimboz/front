@@ -9,8 +9,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core/Global/Link
-export default {
-  name: "GroupLink",
+
+  
   props: {
     group: {
       required: false,

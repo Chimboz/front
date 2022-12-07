@@ -147,8 +147,8 @@
 // @vuese
 // @group Core/Global
 // Main component for showing avatars. Handle movements and emotes too.
-export default {
-  name: "GlobalAvatar",
+
+  
   props: {
     // Avatar type
     avatar: {

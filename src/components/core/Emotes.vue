@@ -20,8 +20,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
-  name: "CoreEmotes",
+
+  
   data() {
     return {
       emotes: [

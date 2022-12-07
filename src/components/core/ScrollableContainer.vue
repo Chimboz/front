@@ -22,8 +22,8 @@
 // @vuese
 // @group Core
 // Generic scrollable container for infinite scroll
-export default {
-  name: "ScrollableContainer",
+
+  
   data() {
     return {
       page: 0,

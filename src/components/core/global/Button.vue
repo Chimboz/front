@@ -20,8 +20,8 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @vuese
 // @group Core/Global
 // A default button
-export default {
-  name: "GlobalButton",
+
+  
   components: {
     StrokeText,
   },

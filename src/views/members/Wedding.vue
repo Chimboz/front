@@ -388,8 +388,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members
 // Wedding page
-export default {
-  name: "WeddingView",
+
+  
   data() {
     return {
       data: null,

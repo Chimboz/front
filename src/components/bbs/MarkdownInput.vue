@@ -249,8 +249,8 @@ const user = auth.user;
 
 // @vuese
 // @group BBS
-export default {
-  name: "MarkdownInput",
+
+  
   components: { Emotes, Message },
   mounted() {
     this.eventBus.on("quote", (message) => {

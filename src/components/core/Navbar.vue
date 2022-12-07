@@ -190,8 +190,8 @@ const user = auth.user;
 
 // @vuese
 // @group Core
-export default {
-  name: "TheNavbar",
+
+  
   data() {
     return {
       date: new Date(),

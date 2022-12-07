@@ -23,8 +23,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core/Global
-export default {
-  name: "GlobalRules",
+
+  
   data() {
     return {
       rule: 0

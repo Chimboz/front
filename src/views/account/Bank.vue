@@ -120,8 +120,8 @@ Chart.register(
 // @vuese
 // @group View/Account
 // Bank page
-export default {
-  name: "LevelView",
+
+  
   components: { Bank, BarChart, ScrollableContainer },
   data() {
     return {

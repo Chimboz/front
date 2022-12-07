@@ -423,8 +423,8 @@ Chart.register(
 // @vuese
 // @group View/Account
 // Account page
-export default {
-  name: "AccountView",
+
+  
   components: {
     Bank,
     Cabin,

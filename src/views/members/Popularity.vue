@@ -430,8 +430,8 @@ const user = auth.user;
 // @vuese
 // @group View/Members
 // Popularity page
-export default {
-  name: "PopularityView",
+
+  
   data() {
     return {
       data: null,

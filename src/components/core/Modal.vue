@@ -70,8 +70,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
-  name: "TheModal",
+
+  
   data() {
     return {
       isVisible: false,

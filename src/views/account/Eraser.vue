@@ -77,8 +77,8 @@ const user = auth.user;
 // @vuese
 // @group View/Community
 // Eraser page
-export default {
-  name: "EraserView",
+
+  
   components: { Bank },
   data() {
     return {

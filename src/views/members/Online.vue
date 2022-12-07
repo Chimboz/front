@@ -57,8 +57,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members
 // Online page
-export default {
-  name: "OnlineView",
+
+  
   data() {
     return {
       data: null,

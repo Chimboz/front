@@ -15,8 +15,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-export default {
-  name: "ChaparazziGallery",
+
+  
 };
 </script>
 <style lang="scss" scoped></style>

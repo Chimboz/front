@@ -50,8 +50,8 @@ const user = auth.user;
 
 // @vuese
 // @group Default
-export default {
-  name: "BankComponent",
+
+  
   components: {
     AnimatedNumber,
   },

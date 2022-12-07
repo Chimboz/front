@@ -14,8 +14,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
-  name: "AnimatedNumber",
+
+  
   props: {
     number: { default: 0, type: Number },
     delay: { default: 5, type: Number, required: false }

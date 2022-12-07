@@ -113,8 +113,8 @@ const user = auth.user;
 // @vuese
 // @group View/Community
 // Shop page
-export default {
-  name: "ShopView",
+
+  
   components: {
     Bank,
     Pack,

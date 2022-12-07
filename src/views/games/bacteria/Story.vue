@@ -248,8 +248,8 @@
 // @vuese
 // @group View/Games/Bacteria
 // Bacteria's story page
-export default {
-  name: "StoryView",
+
+  
   metaInfo: {
     title: "section.bacteriaStory",
   },

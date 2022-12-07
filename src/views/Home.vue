@@ -228,8 +228,8 @@ import messageRender from "@/modules/messageRender.js";
 // @vuese
 // @group View
 // Home page
-export default {
-  name: "HomeView",
+
+  
   components: {
     Bank,
     RandomNumber,

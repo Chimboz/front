@@ -51,8 +51,8 @@
 // @vuese
 // @group View/Account
 // Levels page
-export default {
-  name: "LevelView",
+
+  
   data() {
     return {
       data: null,

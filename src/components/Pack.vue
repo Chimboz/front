@@ -91,8 +91,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-export default {
-  name: "PackBlister",
+
+  
   props: {
     name: {
       required: true,

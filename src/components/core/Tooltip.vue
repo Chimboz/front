@@ -7,7 +7,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
+
   name: "CoreTooltip"
 };
 </script>

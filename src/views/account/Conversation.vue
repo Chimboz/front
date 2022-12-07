@@ -117,8 +117,8 @@ import messageRender from "@/modules/messageRender.js";
 // @vuese
 // @group View/Account
 // Conversation page (view for 1-to-1 messaging)
-export default {
-  name: "ConversationView",
+
+  
   components: {
     ScrollableContainer,
   },

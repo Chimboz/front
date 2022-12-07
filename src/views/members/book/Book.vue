@@ -167,8 +167,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members/Book
 // Book page
-export default {
-  name: "BookView",
+
+  
   data() {
     return {
       data: null,

@@ -136,8 +136,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View
 // Login page
-export default {
-  name: "LoginView",
+
+  
   components: {
     Pack,
     Demo,

@@ -84,8 +84,8 @@ const user = auth.user;
 
 // @vuese
 // @group BBS/List
-export default {
-  name: "TopicList",
+
+  
   components: {
     Message,
     Pagination

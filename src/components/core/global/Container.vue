@@ -21,7 +21,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Core/Global
-export default {
+
   name: "GlobalContainer"
 };
 </script>

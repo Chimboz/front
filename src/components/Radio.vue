@@ -53,8 +53,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-export default {
-  name: "RadioPlayer",
+
+  
   props: {
     src: {
       type: String,

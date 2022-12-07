@@ -394,8 +394,8 @@ const user = auth.user;
 // @vuese
 // @group View/Members/Group
 // Groups page
-export default {
-  name: "GroupsView",
+
+  
   data() {
     return {
       data: null,

@@ -270,8 +270,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members/Book
 // Member page
-export default {
-  name: "MemberView",
+
+  
   components: {
     StrokeText,
   },

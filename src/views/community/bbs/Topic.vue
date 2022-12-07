@@ -24,8 +24,8 @@ const user = auth.user;
 // @vuese
 // @group View/Community/BBS
 // Topic page
-export default {
-  name: "TopicView",
+
+  
   components: {
     TopicList,
     MarkdownInput

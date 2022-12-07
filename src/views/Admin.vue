@@ -65,8 +65,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View
 // Admin page.
-export default {
-  name: "AdminView",
+
+  
   components: {
     ScrollableContainer,
   },

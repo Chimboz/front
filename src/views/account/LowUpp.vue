@@ -63,8 +63,8 @@ const user = auth.user;
 // @vuese
 // @group View/Account
 // Capitalization page
-export default {
-  name: "LowUppView",
+
+  
   data() {
     return {
       pseudo: "Test",

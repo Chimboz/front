@@ -61,8 +61,8 @@ import Cabin from "@/components/blazon/Cabin.vue";
 // @vuese
 // @group View/Members/Group
 // Group creation page
-export default {
-  name: "CreateView",
+
+  
   components: {
     Cabin,
   },

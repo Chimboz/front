@@ -157,8 +157,8 @@ import Tooltip from "@/components/core/Tooltip.vue";
 // @vuese
 // @group View/Community
 // Encyclopedia page
-export default {
-  name: "EncyclopediaView",
+
+  
   components: {
     VLazyImage,
     Tooltip,

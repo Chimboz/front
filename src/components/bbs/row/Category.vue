@@ -82,8 +82,8 @@ const locales = { fr, enGB };
 
 // @vuese
 // @group BBS/Row
-export default {
-  name: "CategoryRow",
+
+  
   data() {
     return {
       hide: false,

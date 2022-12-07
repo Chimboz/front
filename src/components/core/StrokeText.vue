@@ -19,8 +19,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
-  name: "StrokeText",
+
+  
   props: {
     justified: {
       required: false,

@@ -9,7 +9,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Blazon
-export default {
+
     name:"BlazonBackground",
     props: {
         id: {

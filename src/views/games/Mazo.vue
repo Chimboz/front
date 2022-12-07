@@ -186,8 +186,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Games
 // Mazo page
-export default {
-  name: "MazoView",
+
+  
   data() {
     return {
       data: null,

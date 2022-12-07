@@ -60,8 +60,8 @@ const locales = { fr, enGB };
 
 // @vuese
 // @group BBS/Row
-export default {
-  name: "TopicRow",
+
+  
   props: {
     topic: {
       required: true,

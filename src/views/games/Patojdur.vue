@@ -376,8 +376,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Games
 // Patojdur (Wide Wade) page
-export default {
-  name: "PatojdurView",
+
+  
   data() {
     return {
       data: null,

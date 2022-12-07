@@ -87,9 +87,9 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Account
 // Messenger page
-export default {
+
   components: { ScrollableContainer },
-  name: "MessengerView",
+  
   data() {
     return {
       data: null,

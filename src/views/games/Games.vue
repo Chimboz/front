@@ -223,8 +223,8 @@
 // @vuese
 // @group View/Games
 // Games page
-export default {
-  name: "GamesView",
+
+  
   data() {
     return {
       data: null,

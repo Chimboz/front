@@ -49,8 +49,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Community
 // Chaparazzi page
-export default {
-  name: "ChaparazziView",
+
+  
   components: {
     VLazyImage,
   },

@@ -23,7 +23,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Blazon
-export default {
+
     name:"BlazonTop",
     props: {
         id: {

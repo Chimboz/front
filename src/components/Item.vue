@@ -60,8 +60,8 @@ import StrokeText from "@/components/core/StrokeText.vue";
 
 // @vuese
 // @group Default
-export default {
-  name: "EncyclopediaItem",
+
+  
   components: {
     StrokeText,
   },

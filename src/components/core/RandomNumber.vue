@@ -15,8 +15,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
-  name: "RandomNumber",
+
+  
   data() {
     return {
       displayNumber: this.max.toString(),

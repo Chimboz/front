@@ -13,8 +13,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core/Global/Link
-export default {
-  name: "UserLink",
+
+  
   props: {
     user: {
       required: true,

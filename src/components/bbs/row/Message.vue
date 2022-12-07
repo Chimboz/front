@@ -117,8 +117,8 @@ const user = auth.user;
 
 // @vuese
 // @group BBS/Row
-export default {
-  name: "MessageRow",
+
+  
   props: {
     message: {
       required: true,

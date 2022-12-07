@@ -21,8 +21,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core/Global
-export default {
-  name: "SideNavEntries",
+
+  
   props: {
     section: {
       required: true,

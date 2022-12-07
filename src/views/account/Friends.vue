@@ -134,8 +134,8 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Account
 // Friends page
-export default {
-  name: "FriendsView",
+
+  
   components: {
     ScrollableContainer,
   },

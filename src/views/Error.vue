@@ -25,8 +25,8 @@
 // @vuese
 // @group View
 // Error page. You can define an error message using route parameter `message`.
-export default {
-  name: "ErrorView",
+
+  
   metaInfo: {
     title: "section.error",
   },

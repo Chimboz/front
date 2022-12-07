@@ -68,8 +68,8 @@
 // @vuese
 // @group View/Account
 // Notsmart page
-export default {
-  name: "NotsmartView",
+
+  
   methods: {
     changePassword() {
       console.log("Change password");

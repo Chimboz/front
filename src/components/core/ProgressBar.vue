@@ -27,8 +27,8 @@ const endingPoint = 90;
 
 // @vuese
 // @group Core
-export default {
-  name: "ProgressBar",
+
+  
 
   data: () => ({
     isLoading: true, // Once loading is done, start fading away

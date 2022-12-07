@@ -362,8 +362,8 @@
 // @vuese
 // @group View/Members/Group
 // Groups management page
-export default {
-  name: "ManageView",
+
+  
   data() {
     return {
       data: null,

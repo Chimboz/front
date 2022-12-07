@@ -24,8 +24,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-export default {
-  name: "CoreProgress",
+
+  
   props: {
     win: {
       required: true,

@@ -65,8 +65,8 @@ const user = auth.user;
 
 // @vuese
 // @group BBS/List
-export default {
-  name: "ForumList",
+
+  
   components: {
     Topic,
     Pagination

@@ -202,16 +202,16 @@
 </template>
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/auth";
-const auth = useAuthStore();
-const user = auth.user;
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+const auth = useAuthStore();
+const user = auth.user;
 const locales = { fr, enGB };
 
 // @vuese
 // @group Default
-export default {
-  name: "AdminUser",
+
+  
   data() {
     return {
       data: null,

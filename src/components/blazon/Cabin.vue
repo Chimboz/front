@@ -162,8 +162,8 @@ import VLazyImage from "v-lazy-image";
 
 // @vuese
 // @group Blazon
-export default {
-  name: "BlazonCabin",
+
+  
   components: {
     Blazon,
     VLazyImage
