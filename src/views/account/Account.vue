@@ -424,14 +424,6 @@ Chart.register(
 // @group View/Account
 // Account page
 
-  
-  components: {
-    Bank,
-    Cabin,
-    StrokeText,
-    DoughnutChart,
-    BarChart,
-  },
 
   data() {
     return {

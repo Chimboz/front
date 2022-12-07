@@ -135,10 +135,7 @@ const locales = { fr, enGB };
 // @group View/Account
 // Friends page
 
-  
-  components: {
-    ScrollableContainer,
-  },
+
   data() {
     return {
       data: null,

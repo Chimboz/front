@@ -163,11 +163,7 @@ import VLazyImage from "v-lazy-image";
 // @vuese
 // @group Blazon
 
-  
-  components: {
-    Blazon,
-    VLazyImage
-  },
+
   data() {
     return {
       info: "",

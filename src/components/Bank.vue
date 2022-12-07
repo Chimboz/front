@@ -51,10 +51,7 @@ const user = auth.user;
 // @vuese
 // @group Default
 
-  
-  components: {
-    AnimatedNumber,
-  },
+
   props: {
     delay: { default: 5, type: Number, required: false },
   },

@@ -67,7 +67,6 @@
       playing: false,
     };
   },
-  components: {},
   methods: {
     play() {
       this.playing = true;

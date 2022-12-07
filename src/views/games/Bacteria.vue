@@ -322,11 +322,6 @@ import Tooltip from "@/components/core/Tooltip.vue";
 // @group View/Games
 // Bacteria page
 
-  
-  components: {
-    Progress,
-    Tooltip,
-  },
   data() {
     return {
       data: null,

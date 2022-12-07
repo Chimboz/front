@@ -121,8 +121,6 @@ Chart.register(
 // @group View/Account
 // Bank page
 
-  
-  components: { Bank, BarChart, ScrollableContainer },
   data() {
     return {
       data: null,

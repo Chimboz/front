@@ -142,11 +142,6 @@ const locales = { fr, enGB };
 // @group View/Members/Group
 // Group view page
 
-  
-  components: {
-    Blazon,
-    StrokeText,
-  },
   data() {
     return {
       data: null,

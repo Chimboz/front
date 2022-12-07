@@ -114,11 +114,6 @@ const user = auth.user;
 // @group View/Community
 // Shop page
 
-  
-  components: {
-    Bank,
-    Pack,
-  },
   data() {
     return {
       data: null,

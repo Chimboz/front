@@ -61,10 +61,7 @@ import BBSList from "@/components/bbs/list/BBS.vue";
 // @group View/Community/BBS
 // BBS page
 
-  
-  components: {
-    BBSList
-  },
+
   data() {
     return {
       data: null

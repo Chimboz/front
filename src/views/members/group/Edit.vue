@@ -286,12 +286,6 @@ const locales = { fr, enGB };
 // @group View/Members/Group
 // Group edition page
 
-  
-  components: {
-    StrokeText,
-    Blazon,
-    Cabin,
-  },
   data() {
     return {
       data: null,

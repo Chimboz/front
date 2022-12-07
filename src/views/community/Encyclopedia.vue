@@ -158,12 +158,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
 // @group View/Community
 // Encyclopedia page
 
-  
-  components: {
-    VLazyImage,
-    Tooltip,
-    ScrollableContainer,
-  },
+
   data() {
     return {
       data: null,

@@ -228,14 +228,6 @@ import messageRender from "@/modules/messageRender.js";
 // @vuese
 // @group View
 // Home page
-
-  
-  components: {
-    Bank,
-    RandomNumber,
-    Pack,
-    Radio,
-  },
   data() {
     return {
       data: null,

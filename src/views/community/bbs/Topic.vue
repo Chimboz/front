@@ -25,11 +25,6 @@ const user = auth.user;
 // @group View/Community/BBS
 // Topic page
 
-  
-  components: {
-    TopicList,
-    MarkdownInput
-  },
   data() {
     return {
       data: null

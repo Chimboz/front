@@ -61,10 +61,6 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @vuese
 // @group Default
 
-  
-  components: {
-    StrokeText,
-  },
   data() {
     return {
       data: null,

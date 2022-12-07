@@ -78,8 +78,6 @@ const user = auth.user;
 // @group View/Community
 // Eraser page
 
-  
-  components: { Bank },
   data() {
     return {
       pseudo: "",

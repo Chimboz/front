@@ -27,10 +27,6 @@ import Category from "../row/Category.vue";
 // @vuese
 // @group BBS/List
 
-  
-  components: {
-    Category
-  },
   props: {
     boards: {
       required: true,

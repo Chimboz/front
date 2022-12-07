@@ -87,9 +87,6 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Account
 // Messenger page
-
-  components: { ScrollableContainer },
-  
   data() {
     return {
       data: null,

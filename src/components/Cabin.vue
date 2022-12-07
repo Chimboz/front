@@ -353,11 +353,7 @@ import VLazyImage from "v-lazy-image";
 // @vuese
 // @group Default
 
-  
-  components: {
-    Emotes,
-    VLazyImage,
-  },
+
   data() {
     return {
       profile: true,

@@ -60,10 +60,6 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @vuese
 // @group Core/Global
 
-  
-  components: {
-    StrokeText,
-  },
   props: {
     // A header image, automatically prefixed by `/assets/img/card/header/`
     header: {

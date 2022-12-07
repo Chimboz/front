@@ -66,10 +66,6 @@ const locales = { fr, enGB };
 // @group View
 // Admin page.
 
-  
-  components: {
-    ScrollableContainer,
-  },
   data() {
     return {
       data: null,

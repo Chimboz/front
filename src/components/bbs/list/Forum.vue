@@ -66,11 +66,7 @@ const user = auth.user;
 // @vuese
 // @group BBS/List
 
-  
-  components: {
-    Topic,
-    Pagination
-  },
+
   props: {
     forum: {
       required: true,

@@ -21,10 +21,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @group Core/Global
 // A default button
 
-  
-  components: {
-    StrokeText,
-  },
+
   props: {
     icon: {
       required: false,

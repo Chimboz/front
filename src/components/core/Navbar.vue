@@ -201,9 +201,7 @@ const user = auth.user;
     ...mapGetters("auth", ["authenticated"]),
     ...mapState("auth", ["user"]),
   },
-  components: {
-    StrokeText,
-  },
+
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");

@@ -44,11 +44,6 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 // @group View/Community/BBS
 // Forum page
 
-  
-  components: {
-    ForumList,
-    MarkdownInput
-  },
   data() {
     return {
       data: null,

@@ -62,10 +62,6 @@ import Cabin from "@/components/blazon/Cabin.vue";
 // @group View/Members/Group
 // Group creation page
 
-  
-  components: {
-    Cabin,
-  },
   data() {
     return {
       data: {

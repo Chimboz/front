@@ -271,10 +271,7 @@ const locales = { fr, enGB };
 // @group View/Members/Book
 // Member page
 
-  
-  components: {
-    StrokeText,
-  },
+
   data() {
     return {
       data: null,

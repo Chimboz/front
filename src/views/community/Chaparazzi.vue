@@ -50,10 +50,6 @@ const locales = { fr, enGB };
 // @group View/Community
 // Chaparazzi page
 
-  
-  components: {
-    VLazyImage,
-  },
   data() {
     return {
       data: null,

@@ -86,10 +86,6 @@ const user = auth.user;
 // @group BBS/List
 
   
-  components: {
-    Message,
-    Pagination
-  },
   props: {
     topic: {
       required: true,

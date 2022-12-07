@@ -136,12 +136,6 @@ const locales = { fr, enGB };
 // @vuese
 // @group View
 // Login page
-
-  
-  components: {
-    Pack,
-    Demo,
-  },
   data() {
     return {
       data: null,

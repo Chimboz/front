@@ -20,13 +20,7 @@ import Bot from "./Bot.vue";
 // @vuese
 // @group Blazon
 
-  
-  components: {
-    Background,
-    Reflection,
-    Top,
-    Bot
-  },
+
   props: {
     primary: {
       required: true,

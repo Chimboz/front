@@ -250,8 +250,7 @@ const user = auth.user;
 // @vuese
 // @group BBS
 
-  
-  components: { Emotes, Message },
+
   mounted() {
     this.eventBus.on("quote", (message) => {
       this.message += message;
