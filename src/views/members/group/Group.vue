@@ -130,7 +130,7 @@
 <script setup lang="ts">
 import Blazon from "@/components/blazon/Blazon.vue";
 import StrokeText from "@/components/core/StrokeText.vue";
-import messageRender from "@/modules/messageRender.js";
+import messageRender from "@/modules/messageRender";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { useAuthStore } from "@/stores/auth";

@@ -1,6 +1,6 @@
 import { marked } from "marked";
 import DOMPurify from "dompurify";
-import katex from "katex/dist/katex.mjs";
+import katex from "katex";
 import hljs from "highlight.js";
 
 const allowed_uri = ["http", "https"];

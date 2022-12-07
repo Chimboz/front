@@ -112,7 +112,7 @@ import ScrollableContainer from "@/components/core/ScrollableContainer";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import messageRender from "@/modules/messageRender.js";
+import messageRender from "@/modules/messageRender";
 
 // @vuese
 // @group View/Account

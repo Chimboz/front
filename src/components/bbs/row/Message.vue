@@ -110,7 +110,7 @@
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import messageRender from "@/modules/messageRender.js";
+import messageRender from "@/modules/messageRender";
 import { useAuthStore } from "@/stores/auth";
 const auth = useAuthStore();
 const user = auth.user;

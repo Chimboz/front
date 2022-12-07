@@ -222,20 +222,18 @@ import Bank from "@/components/Bank.vue";
 import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
-import messageRender from "@/modules/messageRender.js";
+import messageRender from "@/modules/messageRender";
 
 // @vuese
 // @group View
 // Home page
-  data() {
-    return {
-      data: null,
-      lottery: true,
-      gain: 0,
-    };
-  },
-  async beforeRouteEnter(to, from, next) {
+const data = ref(null);
+const lottery = ref(true),
+const gain = ref(0);
+
+  function async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/home.json").then((res) => (vm.data = res.data))
     );
