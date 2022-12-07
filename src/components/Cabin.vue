@@ -347,7 +347,7 @@
   </GlobalCard>
 </template>
 <script>
-import Emotes from "@/component/core/Emotes.vue";
+import Emotes from "@/components/core/Emotes.vue";
 import VLazyImage from "v-lazy-image";
 
 // @vuese

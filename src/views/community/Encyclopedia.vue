@@ -150,9 +150,9 @@
   </GlobalContainer>
 </template>
 <script>
-import ScrollableContainer from "@/component/core/ScrollableContainer";
+import ScrollableContainer from "@/components/core/ScrollableContainer";
 import VLazyImage from "v-lazy-image";
-import Tooltip from "@/component/core/Tooltip.vue";
+import Tooltip from "@/components/core/Tooltip.vue";
 
 // @vuese
 // @group View/Community

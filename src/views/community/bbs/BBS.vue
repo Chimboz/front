@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import BBSList from "@/component/bbs/list/BBS.vue";
+import BBSList from "@/components/bbs/list/BBS.vue";
 
 // @vuese
 // @group View/Community/BBS

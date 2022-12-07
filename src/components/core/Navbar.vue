@@ -183,7 +183,7 @@
 </template>
 
 <script>
-import StrokeText from "@/component/core/StrokeText.vue";
+import StrokeText from "@/components/core/StrokeText.vue";
 import { mapGetters, mapState } from "vuex";
 
 // @vuese

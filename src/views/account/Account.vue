@@ -390,9 +390,9 @@
 </template>
 
 <script>
-import Cabin from "@/component/Cabin.vue";
-import Bank from "@/component/Bank.vue";
-import StrokeText from "@/component/core/StrokeText.vue";
+import Cabin from "@/components/Cabin.vue";
+import Bank from "@/components/Bank.vue";
+import StrokeText from "@/components/core/StrokeText.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import ForumList from "@/component/bbs/list/Forum.vue";
-import MarkdownInput from "@/component/bbs/MarkdownInput.vue";
+import ForumList from "@/components/bbs/list/Forum.vue";
+import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 
 // @vuese
 // @group View/Community/BBS

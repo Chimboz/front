@@ -56,7 +56,7 @@
   </GlobalContainer>
 </template>
 <script>
-import Cabin from "@/component/blazon/Cabin.vue";
+import Cabin from "@/components/blazon/Cabin.vue";
 
 // @vuese
 // @group View/Members/Group

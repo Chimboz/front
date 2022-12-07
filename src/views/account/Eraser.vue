@@ -69,7 +69,7 @@
   </GlobalContainer>
 </template>
 <script>
-import Bank from "@/component/Bank.vue";
+import Bank from "@/components/Bank.vue";
 import { mapState } from "vuex";
 
 // @vuese

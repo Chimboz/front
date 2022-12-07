@@ -128,8 +128,8 @@
   </GlobalContainer>
 </template>
 <script>
-import Blazon from "@/component/blazon/Blazon.vue";
-import StrokeText from "@/component/core/StrokeText.vue";
+import Blazon from "@/components/blazon/Blazon.vue";
+import StrokeText from "@/components/core/StrokeText.vue";
 import messageRender from "@/module/messageRender.js";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

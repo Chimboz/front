@@ -259,7 +259,7 @@
 </template>
 
 <script>
-import StrokeText from "@/component/core/StrokeText.vue";
+import StrokeText from "@/components/core/StrokeText.vue";
 import { mapState } from "vuex";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

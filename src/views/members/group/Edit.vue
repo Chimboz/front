@@ -275,9 +275,9 @@
   </GlobalContainer>
 </template>
 <script>
-import Blazon from "@/component/blazon/Blazon.vue";
-import StrokeText from "@/component/core/StrokeText.vue";
-import Cabin from "@/component/blazon/Cabin.vue";
+import Blazon from "@/components/blazon/Blazon.vue";
+import StrokeText from "@/components/core/StrokeText.vue";
+import Cabin from "@/components/blazon/Cabin.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

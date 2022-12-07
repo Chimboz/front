@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import StrokeText from "@/component/core/StrokeText.vue";
+import StrokeText from "@/components/core/StrokeText.vue";
 
 // @vuese
 // @group Core/Global

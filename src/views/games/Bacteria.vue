@@ -315,8 +315,8 @@
 </template>
 
 <script>
-import Progress from "@/component/core/Progress.vue";
-import Tooltip from "@/component/core/Tooltip.vue";
+import Progress from "@/components/core/Progress.vue";
+import Tooltip from "@/components/core/Tooltip.vue";
 
 // @vuese
 // @group View/Games

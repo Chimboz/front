@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import ProgressBar from "@/component/core/ProgressBar.vue";
-import Navbar from "@/component/core/Navbar.vue";
-import Footer from "@/component/core/Footer.vue";
-import Modal from "@/component/core/Modal.vue";
+import ProgressBar from "@/components/core/ProgressBar.vue";
+import Navbar from "@/components/core/Navbar.vue";
+import Footer from "@/components/core/Footer.vue";
+import Modal from "@/components/core/Modal.vue";
 import { mapState } from "vuex";
 
 // @vuese

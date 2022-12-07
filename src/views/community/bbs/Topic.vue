@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import TopicList from "@/component/bbs/list/Topic.vue";
-import MarkdownInput from "@/component/bbs/MarkdownInput.vue";
+import TopicList from "@/components/bbs/list/Topic.vue";
+import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 import { mapGetters } from "vuex";
 
 // @vuese

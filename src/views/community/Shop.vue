@@ -104,8 +104,8 @@
   </GlobalContainer>
 </template>
 <script>
-import Bank from "@/component/Bank.vue";
-import Pack from "@/component/Pack.vue";
+import Bank from "@/components/Bank.vue";
+import Pack from "@/components/Pack.vue";
 import { mapGetters } from "vuex";
 
 // @vuese

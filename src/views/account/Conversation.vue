@@ -108,7 +108,7 @@
   </GlobalContainer>
 </template>
 <script>
-import ScrollableContainer from "@/component/core/ScrollableContainer";
+import ScrollableContainer from "@/components/core/ScrollableContainer";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

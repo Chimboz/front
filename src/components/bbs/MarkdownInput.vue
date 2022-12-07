@@ -241,8 +241,8 @@
   </form>
 </template>
 <script>
-import Emotes from "@/component/core/Emotes.vue";
-import Message from "@/component/bbs/row/Message.vue";
+import Emotes from "@/components/core/Emotes.vue";
+import Message from "@/components/bbs/row/Message.vue";
 import { mapState } from "vuex";
 
 // @vuese

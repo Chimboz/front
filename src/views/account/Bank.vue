@@ -86,8 +86,8 @@
   </GlobalContainer>
 </template>
 <script>
-import Bank from "@/component/Bank.vue";
-import ScrollableContainer from "@/component/core/ScrollableContainer";
+import Bank from "@/components/Bank.vue";
+import ScrollableContainer from "@/components/core/ScrollableContainer";
 import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

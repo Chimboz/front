@@ -216,10 +216,10 @@
 </template>
 
 <script>
-import Radio from "@/component/Radio.vue";
-import RandomNumber from "@/component/core/RandomNumber.vue";
-import Bank from "@/component/Bank.vue";
-import Pack from "@/component/Pack.vue";
+import Radio from "@/components/Radio.vue";
+import RandomNumber from "@/components/core/RandomNumber.vue";
+import Bank from "@/components/Bank.vue";
+import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
