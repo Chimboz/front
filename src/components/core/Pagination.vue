@@ -12,7 +12,7 @@
 // @group BBS
 
   
-  props: {
+  const props = defineProps<{
     current: { default: 0, type: Number, required: true },
     total: { required: true, type: Number },
     callback: { required: true, type: Function, default: (page) => page }

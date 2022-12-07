@@ -64,7 +64,7 @@
 // @group Blazon
 
     name:"BlazonBot",
-    props: {
+    const props = defineProps<{
         id: {
             type: Number,
             required: true,

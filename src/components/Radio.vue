@@ -55,7 +55,7 @@
 // @group Default
 
   
-  props: {
+  const props = defineProps<{
     src: {
       type: String,
       required: true,

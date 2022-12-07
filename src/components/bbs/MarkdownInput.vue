@@ -273,7 +273,7 @@ const user = auth.user;
       mode: "post",
     };
   },
-  props: {
+  const props = defineProps<{
     isTopic: {
       required: false,
       default: false,

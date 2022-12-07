@@ -15,7 +15,7 @@
 // @group Core/Global/Link
 
   
-  props: {
+  const props = defineProps<{
     user: {
       required: true,
       type: Object

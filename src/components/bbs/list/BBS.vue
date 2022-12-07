@@ -27,7 +27,7 @@ import Category from "../row/Category.vue";
 // @vuese
 // @group BBS/List
 
-  props: {
+  const props = defineProps<{
     boards: {
       required: true,
       type: Array

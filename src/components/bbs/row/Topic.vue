@@ -62,7 +62,7 @@ const locales = { fr, enGB };
 // @group BBS/Row
 
   
-  props: {
+  const props = defineProps<{
     topic: {
       required: true,
       type: Object,

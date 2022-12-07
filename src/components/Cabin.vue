@@ -363,7 +363,7 @@ import VLazyImage from "v-lazy-image";
       gender: this.data.gender,
     };
   },
-  props: {
+  const props = defineProps<{
     data: {
       required: true,
       type: Object,

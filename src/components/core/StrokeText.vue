@@ -21,7 +21,7 @@
 // @group Core
 
   
-  props: {
+  const props = defineProps<{
     justified: {
       required: false,
       type: Boolean,

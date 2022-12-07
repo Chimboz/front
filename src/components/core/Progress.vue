@@ -26,7 +26,7 @@
 // @group Core
 
   
-  props: {
+  const props = defineProps<{
     win: {
       required: true,
       type: Number,

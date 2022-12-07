@@ -52,7 +52,7 @@ const user = auth.user;
 // @group Default
 
 
-  props: {
+  const props = defineProps<{
     delay: { default: 5, type: Number, required: false },
   },
 

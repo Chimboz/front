@@ -175,7 +175,7 @@ import VLazyImage from "v-lazy-image";
       console.log("Envoyé!");
     }
   },
-  props: {
+  const props = defineProps<{
     data: {
       required: true,
       type: Object

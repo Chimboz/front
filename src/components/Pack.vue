@@ -93,7 +93,7 @@
 // @group Default
 
   
-  props: {
+  const props = defineProps<{
     name: {
       required: true,
       type: String

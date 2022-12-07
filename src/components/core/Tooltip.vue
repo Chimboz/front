@@ -7,9 +7,6 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-
-  name: "CoreTooltip"
-};
 </script>
 <style lang="scss" scoped>
 .tooltip {

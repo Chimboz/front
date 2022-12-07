@@ -11,7 +11,7 @@
 // @group Blazon
 
     name:"BlazonReflection",
-    props: {
+    const props = defineProps<{
         id: {
             type: Number,
             required: true,

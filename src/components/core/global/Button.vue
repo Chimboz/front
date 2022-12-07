@@ -22,7 +22,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // A default button
 
 
-  props: {
+  const props = defineProps<{
     icon: {
       required: false,
       type: String,

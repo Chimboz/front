@@ -21,7 +21,7 @@ import Bot from "./Bot.vue";
 // @group Blazon
 
 
-  props: {
+  const props = defineProps<{
     primary: {
       required: true,
       type: String,

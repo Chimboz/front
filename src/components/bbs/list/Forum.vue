@@ -67,7 +67,7 @@ const user = auth.user;
 // @group BBS/List
 
 
-  props: {
+  const props = defineProps<{
     forum: {
       required: true,
       type: Object

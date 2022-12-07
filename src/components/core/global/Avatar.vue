@@ -149,7 +149,7 @@
 // Main component for showing avatars. Handle movements and emotes too.
 
   
-  props: {
+  const props = defineProps<{
     // Avatar type
     avatar: {
       required: false,

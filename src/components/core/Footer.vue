@@ -70,9 +70,6 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-
-  name: "TheFooter"
-};
 </script>
 
 <style lang="scss" scoped>

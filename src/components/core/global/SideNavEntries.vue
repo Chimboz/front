@@ -23,7 +23,7 @@
 // @group Core/Global
 
   
-  props: {
+  const props = defineProps<{
     section: {
       required: true,
       type: String,

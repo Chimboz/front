@@ -119,7 +119,7 @@ const user = auth.user;
 // @group BBS/Row
 
   
-  props: {
+  const props = defineProps<{
     message: {
       required: true,
       type: Object,

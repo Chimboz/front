@@ -11,7 +11,7 @@
 // @group Core/Global/Link
 
   
-  props: {
+  const props = defineProps<{
     group: {
       required: false,
       type: Object

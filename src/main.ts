@@ -16,7 +16,7 @@ app.mount('#app')*/
 import { createApp } from "vue";
 import App from "./App.vue";
 // External plugins
-import router from "./modules/router";
+import router from "./router";
 import { createPinia } from 'pinia'
 import i18n from "./modules/i18n";
 import eventBus from "./modules/eventBus";

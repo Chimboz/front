@@ -89,7 +89,7 @@ const locales = { fr, enGB };
       hide: false,
     };
   },
-  props: {
+  const props = defineProps<{
     category: {
       required: true,
       type: Object,

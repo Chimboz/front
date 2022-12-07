@@ -30,7 +30,7 @@
       isLoading: false,
     };
   },
-  props: {
+  const props = defineProps<{
     route: {
       type: String,
       required: true,

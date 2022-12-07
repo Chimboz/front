@@ -25,7 +25,7 @@
       elapsed: 0
     };
   },
-  props: {
+  const props = defineProps<{
     min: { default: 0, type: Number, required: false },
     max: { type: Number, required: true },
     value: { type: Number, required: true },

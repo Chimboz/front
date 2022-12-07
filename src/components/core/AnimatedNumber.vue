@@ -16,7 +16,7 @@
 // @group Core
 
   
-  props: {
+  const props = defineProps<{
     number: { default: 0, type: Number },
     delay: { default: 5, type: Number, required: false }
   },

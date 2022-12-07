@@ -21,9 +21,6 @@
 <script setup lang="ts">
 // @vuese
 // @group Core/Global
-
-  name: "GlobalContainer"
-};
 </script>
 <style lang="scss" scoped>
 .row {

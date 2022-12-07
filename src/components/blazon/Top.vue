@@ -25,7 +25,7 @@
 // @group Blazon
 
     name:"BlazonTop",
-    props: {
+    const props = defineProps<{
         id: {
             type: Number,
             required: true,

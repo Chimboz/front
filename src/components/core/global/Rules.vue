@@ -30,7 +30,7 @@
       rule: 0
     };
   },
-  props: {
+  const props = defineProps<{
     bot: {
       required: false,
       type: Boolean,
