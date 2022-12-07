@@ -3,7 +3,7 @@
     class="header"
     :style="{
       'background-image':
-        'url(' + require(`@/asset/img/navbar/svg/${date.getHours()}.svg`) + ')',
+        'url(' + require(`@/assets/img/navbar/svg/${date.getHours()}.svg`) + ')',
     }"
   >
     <router-link to="/"
@@ -14,7 +14,7 @@
         width="240"
         height="70"
         id="logo"
-        src="@/asset/img/logo.svg"
+        src="@/assets/img/logo.svg"
     /></router-link>
     <div class="login flex">
       <div style="margin-top: -10px">
@@ -36,7 +36,7 @@
             alt="Disconnect icon"
             height="11"
             width="11"
-            src="@/asset/img/icon/failure.svg"
+            src="@/assets/img/icon/failure.svg"
           />
           {{ $t("navbar.logout") }}
         </button>
@@ -48,7 +48,7 @@
               alt="Connect icon"
               height="11"
               width="11"
-              src="@/asset/img/icon/success.svg"
+              src="@/assets/img/icon/success.svg"
             />
             {{ $t("navbar.login") }}
           </router-link>
@@ -75,7 +75,7 @@
           @contextmenu.prevent
           alt="Home icon"
           class="nav-icon"
-          src="@/asset/img/navbar/icon/home.svg"
+          src="@/assets/img/navbar/icon/home.svg"
           width="20"
           height="20"
           style="margin: 2px; padding: 1px"
@@ -89,7 +89,7 @@
             @contextmenu.prevent
             alt="Tchat icon"
             class="nav-icon"
-            src="@/asset/img/navbar/icon/tchat.svg"
+            src="@/assets/img/navbar/icon/tchat.svg"
             width="28"
             height="21"
           />
@@ -104,7 +104,7 @@
           class="arrow jitter"
           width="40"
           height="33"
-          src="@/asset/img/arrow.svg"
+          src="@/assets/img/arrow.svg"
         /></button
     ></a>
     <router-link v-if="authenticated" to="/account"
@@ -117,7 +117,7 @@
             class="nav-icon"
             width="21"
             height="21"
-            src="@/asset/img/navbar/icon/account.svg"
+            src="@/assets/img/navbar/icon/account.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.account")
@@ -135,7 +135,7 @@
             class="nav-icon"
             width="20"
             height="21"
-            src="@/asset/img/navbar/icon/games.svg"
+            src="@/assets/img/navbar/icon/games.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.games")
@@ -153,7 +153,7 @@
             class="nav-icon"
             width="21"
             height="21"
-            src="@/asset/img/navbar/icon/members.svg"
+            src="@/assets/img/navbar/icon/members.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.members")
@@ -171,7 +171,7 @@
             class="nav-icon"
             width="21"
             height="21"
-            src="@/asset/img/navbar/icon/community.svg"
+            src="@/assets/img/navbar/icon/community.svg"
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.community")
@@ -182,9 +182,11 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
-import { mapGetters, mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group Core

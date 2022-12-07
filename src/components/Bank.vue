@@ -17,7 +17,7 @@
         :style="coinsPosition[n]"
         v-show="n <= Math.min(Math.floor(coins / 10), 176)"
         :key="n"
-        :src="require(`@/asset/img/bank/coin.svg`)"
+        :src="require(`@/assets/img/bank/coin.svg`)"
       />
       <object
         width="154"
@@ -26,7 +26,7 @@
         aria-label="Bank vault"
         @contextmenu.prevent
         type="image/svg+xml"
-        :data="require('@/asset/img/bank/door.svg')"
+        :data="require('@/assets/img/bank/door.svg')"
       ></object>
     </div>
 
@@ -42,9 +42,11 @@
     >--></GlobalCard
   >
 </template>
-<script>
+<script setup lang="ts">
 import AnimatedNumber from "@/components/core/AnimatedNumber.vue";
-import { mapGetters, mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group Default
@@ -158,7 +160,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .bank {
-  background: url(../asset/img/bank/bg.svg);
+  background: url(../assets/img/bank/bg.svg);
   background-size: contain;
 }
 

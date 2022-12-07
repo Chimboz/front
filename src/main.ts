@@ -16,37 +16,38 @@ app.mount('#app')*/
 import { createApp } from "vue";
 import App from "./App.vue";
 // External plugins
-import router from "./module/router";
-import store from "./module/store";
-import i18n from "./i18n";
-import eventBus from "./module/eventBus";
+import router from "./modules/router";
+import { createPinia } from 'pinia'
+import i18n from "./modules/i18n";
+import eventBus from "./modules/eventBus";
 import { createMetaManager, plugin as metaPlugin } from "vue-meta";
 // Modules
-import api from "./module/api";
-import "./registerServiceWorker";
+import api from "./modules/api";
+// import "./modules/registerServiceWorker";
 // Internal CSS
 import "modern-normalize/modern-normalize.css"; // Reset
-import "./asset/css/var.css";
-import "./asset/css/main.scss";
-import "./asset/css/fonts.css";
-import "./asset/css/classes.css";
-import "./asset/css/atomic.css";
+import "./assets/css/var.css";
+import "./assets/css/main.scss";
+import "./assets/css/fonts.css";
+import "./assets/css/classes.css";
+import "./assets/css/atomic.css";
 // Globally registered components
-import Avatar from "./component/core/global/Avatar.vue";
-import Button from "./component/core/global/Button.vue";
-import Card from "./component/core/global/Card.vue";
-import Container from "./component/core/global/Container.vue";
-import Group from "./component/core/global/link/Group.vue";
-import Rules from "./component/core/global/Rules.vue";
-import SideNavEntries from "./component/core/global/SideNavEntries.vue";
-import User from "./component/core/global/link/User.vue";
+import Avatar from "./components/core/global/Avatar.vue";
+import Button from "./components/core/global/Button.vue";
+import Card from "./components/core/global/Card.vue";
+import Container from "./components/core/global/Container.vue";
+import Group from "./components/core/global/link/Group.vue";
+import Rules from "./components/core/global/Rules.vue";
+import SideNavEntries from "./components/core/global/SideNavEntries.vue";
+import User from "./components/core/global/link/User.vue";
 
 const metaManager = createMetaManager();
+const pinia = createPinia();
 
 const app = createApp(App)
   .use(i18n)
   .use(router)
-  .use(store)
+  .use(pinia)
   .use(metaManager)
   .use(metaPlugin);
 

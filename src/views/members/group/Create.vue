@@ -48,14 +48,14 @@
             @contextmenu.prevent
             alt="Arrow icon"
             class="arrow green jitter"
-            src="@/asset/img/arrow.svg" /></template
+            src="@/assets/img/arrow.svg" /></template
         >Sauver</GlobalButton
       >
     </form>
     <template #right-column> </template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Cabin from "@/components/blazon/Cabin.vue";
 
 // @vuese

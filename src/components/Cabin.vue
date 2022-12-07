@@ -22,7 +22,7 @@
                   alt="Puce"
                   height="30"
                   width="30"
-                  src="@/asset/img/puce.svg"
+                  src="@/assets/img/puce.svg"
                 />
               </button>
             </div>
@@ -69,7 +69,7 @@
                   alt="Puce"
                   height="30"
                   width="30"
-                  src="@/asset/img/puce.svg"
+                  src="@/assets/img/puce.svg"
                 />
               </button>
             </div>
@@ -89,7 +89,7 @@
                 @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
-                src="@/asset/img/icon/gender/male.svg"
+                src="@/assets/img/icon/gender/male.svg"
               /></button
             ><button
               type="button"
@@ -104,7 +104,7 @@
                 @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
-                src="@/asset/img/icon/gender/female.svg"
+                src="@/assets/img/icon/gender/female.svg"
               /></button
             ><button
               type="button"
@@ -119,7 +119,7 @@
                 @contextmenu.prevent
                 alt="Unknown gender"
                 title="Unknown gender"
-                src="@/asset/img/icon/gender/unknown.svg"
+                src="@/assets/img/icon/gender/unknown.svg"
               />
             </button>
           </div>
@@ -250,7 +250,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   :src="
-                    require(`@/asset/img/icon/item_category/${category}.svg`)
+                    require(`@/assets/img/icon/item_category/${category}.svg`)
                   "
                 />
               </button>
@@ -300,14 +300,14 @@
                       item.id == 868 ||
                       item.id == 938
                     "
-                    src="@/asset/img/icon/cross.svg"
+                    src="@/assets/img/icon/cross.svg"
                   />
                   <VLazyImage
                     draggable="false"
                     @contextmenu.prevent
                     v-else
                     :src="`/item/${name}/${item.id}.svg`"
-                    :src-placeholder="require('@/asset/img/loading.svg')"
+                    :src-placeholder="require('@/assets/img/loading.svg')"
                   />
                   <div class="quantity">{{ item.nb }}</div>
                 </button>
@@ -327,7 +327,7 @@
               class="arrow green jitter"
               width="40"
               height="33"
-              src="@/asset/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg" /></template
           >{{ $t("button.save") }}</GlobalButton
         ><router-link :to="`/book/${data.id}`" class="btn">
           <GlobalButton type="button" style="width: 150px"
@@ -338,7 +338,7 @@
                 alt="Profile icon"
                 width="24"
                 height="24"
-                src="@/asset/img/icon/profile.svg" /></template
+                src="@/assets/img/icon/profile.svg" /></template
             >{{ $t("button.card") }}</GlobalButton
           ></router-link
         >
@@ -346,7 +346,7 @@
     </form>
   </GlobalCard>
 </template>
-<script>
+<script setup lang="ts">
 import Emotes from "@/components/core/Emotes.vue";
 import VLazyImage from "v-lazy-image";
 

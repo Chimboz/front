@@ -3,7 +3,7 @@
     <template #subtop>{{ data.name }}</template>
     <div class="header fullwidth">
       <img
-        src="@/asset/img/puce.svg"
+        src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
         @contextmenu.prevent
@@ -44,7 +44,7 @@
     <br />
     <div class="header fullwidth">
       <img
-        src="@/asset/img/puce.svg"
+        src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
         @contextmenu.prevent
@@ -84,7 +84,7 @@
       <br />
       <div class="header fullwidth">
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -100,7 +100,7 @@
       ><br />
       <div class="header fullwidth">
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -118,7 +118,7 @@
       <br /><br />
       <div class="header fullwidth">
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -145,7 +145,7 @@
       <br />
       <div class="header fullwidth">
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -166,7 +166,7 @@
     </div>
     <div class="header fullwidth">
       <img
-        src="@/asset/img/puce.svg"
+        src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
         @contextmenu.prevent
@@ -200,8 +200,10 @@
     </form>
   </GlobalCard>
 </template>
-<script>
-import { mapState } from "vuex";
+<script setup lang="ts">
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

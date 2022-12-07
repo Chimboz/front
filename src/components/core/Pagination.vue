@@ -7,7 +7,7 @@
     >{{ page + 1 }}</router-link
   >
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group BBS
 export default {

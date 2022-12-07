@@ -8,7 +8,7 @@
         alt="Error icon"
         width="39"
         height="32"
-        src="@/asset/img/icon/warning.svg"
+        src="@/assets/img/icon/warning.svg"
       /><b
         >&nbsp;{{
           this.$route.params.message
@@ -21,7 +21,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View
 // Error page. You can define an error message using route parameter `message`.

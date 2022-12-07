@@ -19,7 +19,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/visuel.webp"
+        src="@/assets/img/game/bacteria/visuel.webp"
         width="150"
         height="150"
         alt="Bacteria preview"
@@ -38,7 +38,7 @@
           @contextmenu.prevent
           width="14"
           height="13"
-          src="@/asset/img/icon/button/help.svg"
+          src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
@@ -54,7 +54,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/patojdur/visuel.webp"
+        src="@/assets/img/game/patojdur/visuel.webp"
         alt="Patojdur preview"
         width="150"
         height="150"
@@ -74,7 +74,7 @@
           width="14"
           height="13"
           alt="Help icon"
-          src="@/asset/img/icon/button/help.svg"
+          src="@/assets/img/icon/button/help.svg"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </GlobalCard>
@@ -89,7 +89,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/mazo/visuel.webp"
+        src="@/assets/img/game/mazo/visuel.webp"
         width="150"
         height="150"
         alt="Mazo preview"
@@ -108,7 +108,7 @@
           @contextmenu.prevent
           width="14"
           height="13"
-          src="@/asset/img/icon/button/help.svg"
+          src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
@@ -123,7 +123,7 @@
       >
         <div class="fullwidth">
           <img
-            src="@/asset/img/game/bacteria/head.gif"
+            src="@/assets/img/game/bacteria/head.gif"
             alt="Bacteria header"
             width="154"
             height="50"
@@ -131,7 +131,7 @@
             @contextmenu.prevent
           />
           <img
-            src="@/asset/img/game/bacteria/bg.gif"
+            src="@/assets/img/game/bacteria/bg.gif"
             alt="Bacteria background"
             width="154"
             height="84"
@@ -153,7 +153,7 @@
             <UserLink :user="data.bacteria.user" /><br />est champion Bacteria !
           </div>
           <img
-            src="@/asset/img/game/patojdur/head.gif"
+            src="@/assets/img/game/patojdur/head.gif"
             alt="Patojdur header"
             width="154"
             height="50"
@@ -161,7 +161,7 @@
             @contextmenu.prevent
           />
           <img
-            src="@/asset/img/game/patojdur/bg.gif"
+            src="@/assets/img/game/patojdur/bg.gif"
             alt="Patojdur background"
             width="154"
             height="84"
@@ -183,7 +183,7 @@
             <UserLink :user="data.patojdur.user" /><br />est champion Patojdur !
           </div>
           <img
-            src="@/asset/img/game/mazo/head.gif"
+            src="@/assets/img/game/mazo/head.gif"
             alt="Mazo header"
             width="154"
             height="50"
@@ -191,7 +191,7 @@
             @contextmenu.prevent
           />
           <img
-            src="@/asset/img/game/mazo/bg.gif"
+            src="@/assets/img/game/mazo/bg.gif"
             alt="Mazo background"
             width="154"
             height="84"
@@ -219,7 +219,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View/Games
 // Games page

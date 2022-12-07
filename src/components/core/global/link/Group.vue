@@ -6,7 +6,7 @@
     <div v-if="separator">,&nbsp;</div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core/Global/Link
 export default {

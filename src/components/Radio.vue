@@ -8,7 +8,7 @@
         @contextmenu.prevent
         height="38"
         width="65"
-        src="@/asset/img/radio/logo.svg"
+        src="@/assets/img/radio/logo.svg"
       />
       <img
         class="btn-radio pointer"
@@ -19,7 +19,7 @@
         @click.prevent="play"
         height="18"
         width="18"
-        src="@/asset/img/radio/play.svg"
+        src="@/assets/img/radio/play.svg"
       />
       <img
         v-else
@@ -30,7 +30,7 @@
         @click.prevent="pause"
         height="18"
         width="18"
-        src="@/asset/img/radio/pause.svg"
+        src="@/assets/img/radio/pause.svg"
       />
       <img
         class="btn-radio pointer"
@@ -40,7 +40,7 @@
         @click.prevent="stop"
         height="18"
         width="18"
-        src="@/asset/img/radio/stop.svg"
+        src="@/assets/img/radio/stop.svg"
       />
       <div class="progress pointer" @click.prevent="skip" ref="progress">
         <div class="progress-bar" ref="progressBar"></div>
@@ -50,7 +50,7 @@
   </GlobalCard>
 </template>
 
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Default
 export default {
@@ -112,7 +112,7 @@ export default {
 .progress-bar {
   height: var(--lg-font-size);
   border-radius: var(--border-radius);
-  background: url("../asset/img/progress.svg");
+  background: url("../assets/img/progress.svg");
   background-size: 56.7px;
   animation: colorrush 2s infinite linear;
 }

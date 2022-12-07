@@ -19,7 +19,7 @@
     <br /><GlobalCard>
       <img
         style="float: left"
-        src="@/asset/img/book/search.webp"
+        src="@/assets/img/book/search.webp"
         height="71"
         width="107"
         alt="Search icon"
@@ -90,7 +90,7 @@
         v-if="data"
       >
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -100,7 +100,7 @@
         <br />
         <b>Nouveaux</b><br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -108,7 +108,7 @@
           width="17"
         /><b>{{ data.day }}</b> depuis 24h!<br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -118,7 +118,7 @@
         <br />
         <b>Les Genres :</b><br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -128,7 +128,7 @@
         >&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub
         ><br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -138,7 +138,7 @@
         >&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub
         ><br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -159,7 +159,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

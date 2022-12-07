@@ -115,7 +115,7 @@
       <br />
       <router-link to="/groups/create"
         ><img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -129,7 +129,7 @@
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -143,7 +143,7 @@
               ((data.stats.type.group / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -157,7 +157,7 @@
               ((data.stats.type.klub / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -171,7 +171,7 @@
               ((data.stats.type.clan / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -186,7 +186,7 @@
             }}%)</sub
           ><br />
           <img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -200,7 +200,7 @@
               ((data.stats.type.skwat / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -214,7 +214,7 @@
               ((data.stats.type.guild / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -228,7 +228,7 @@
               ((data.stats.type.alliance / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -242,7 +242,7 @@
               ((data.stats.type.empire / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -256,7 +256,7 @@
               ((data.stats.type.sekt / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -270,7 +270,7 @@
               ((data.stats.type.skool / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -284,7 +284,7 @@
               ((data.stats.type.hord / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -298,7 +298,7 @@
               ((data.stats.type.meute / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -312,7 +312,7 @@
               ((data.stats.type.gang / data.stats.total) * 100).toFixed(2)
             }}%)</sub
           ><br /><img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
             @contextmenu.prevent
@@ -328,7 +328,7 @@
           >
         </div>
         <br /><img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -338,7 +338,7 @@
         d'avoir un certain
         <router-link to="/levels">niveau</router-link>.<br /><br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -347,7 +347,7 @@
         dans le <router-link to="/levels">tableau des niveaux</router-link>,
         comprend uniquement les <b>groupes des membres</b>, les
         <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -358,7 +358,7 @@
     ></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View/Members/Group
 // Groups management page

@@ -30,7 +30,7 @@
         </div>
         <img
           v-if="this.data.official"
-          src="@/asset/img/group/official.svg"
+          src="@/assets/img/group/official.svg"
           style="float: right"
         />
       </div>
@@ -65,12 +65,12 @@
               :key="digit.index"
               width="19"
               height="21"
-              :src="require(`@/asset/img/number/${digit}.svg`)"
+              :src="require(`@/assets/img/number/${digit}.svg`)"
             />
           </div>
         </div>
         &nbsp;<img
-          :src="require(`@/asset/img/group/${this.data.status}.png`)"
+          :src="require(`@/assets/img/group/${this.data.status}.png`)"
         />
       </GlobalCard>
       <br />
@@ -78,7 +78,7 @@
       <b>{{ formatDate }} ({{ formatDistance }} jours)</b><br />
       <br />
       <GlobalCard v-if="data" class="justified"
-        ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
+        ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
           >Bacteria</b
         ><br /><br />
         Classé : <b>{{ this.data.bacteria.rank }}</b
@@ -86,7 +86,7 @@
         <b>{{ this.data.bacteria.points }}</b> points.</GlobalCard
       ><br />
       <GlobalCard v-if="data" class="justified"
-        ><img src="@/asset/img/group/patojdur.gif" style="float: left" /><b
+        ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
           >Patojdur</b
         ><br /><br />
         Classé : <b>{{ this.data.patojdur.rank }}</b
@@ -94,7 +94,7 @@
         <b>{{ this.data.patojdur.points }}</b> points.</GlobalCard
       ><br />
       <GlobalCard v-if="data" class="justified"
-        ><img src="@/asset/img/group/popularity.gif" style="float: left" /><b
+        ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
           >Popularity</b
         ><br /><br />
         Classé : <b>{{ this.data.popularity.rank }}</b
@@ -112,7 +112,7 @@
         <template #header> Inscription pour rejoindre ce groupe </template>
         <div class="justified">
           <img
-            :src="require(`@/asset/img/group/${this.data.status}.png`)"
+            :src="require(`@/assets/img/group/${this.data.status}.png`)"
             style="float: left; margin-right: 4px"
           />
           {{ $t(`group.${this.data.status}`) }}
@@ -127,13 +127,15 @@
     >
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Blazon from "@/components/blazon/Blazon.vue";
 import StrokeText from "@/components/core/StrokeText.vue";
-import messageRender from "@/module/messageRender.js";
+import messageRender from "@/modules/messageRender.js";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { mapGetters } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 const locales = { fr, enGB };
 
 // @vuese
@@ -186,9 +188,9 @@ export default {
   },
 };
 </script>
-<style src="@/asset/css/bbs/markdown.css"></style>
+<style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>
-<style src="@/asset/css/bbs/code.css"></style>
+<style src="@/assets/css/bbs/code.css"></style>
 <style lang="scss" scoped>
 .blazon {
   float: left;

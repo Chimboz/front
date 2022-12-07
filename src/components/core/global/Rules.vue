@@ -8,7 +8,7 @@
           alt="Rules icon"
           width="36"
           height="22"
-          src="@/asset/img/icon/rules.svg"
+          src="@/assets/img/icon/rules.svg"
         /><div class="rule-number"><b>{{ rule + 1 }}</b></div></div
       >
       <div class="rule"
@@ -20,7 +20,7 @@
     >
   </GlobalCard>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core/Global
 export default {

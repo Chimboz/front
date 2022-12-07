@@ -225,7 +225,7 @@
       >
         Toutes les infos, les techniques, news.<br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -233,7 +233,7 @@
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -244,7 +244,7 @@
     >
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View/Games/Bacteria
 // Bacteria's story page

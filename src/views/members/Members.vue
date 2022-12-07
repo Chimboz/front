@@ -19,7 +19,7 @@
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.new" :key="user.id" class="flex col">
           <img
-            src="@/asset/img/member/spotlight.svg"
+            src="@/assets/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
@@ -58,7 +58,7 @@
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.popularity" :key="user.id" class="flex col">
           <img
-            src="@/asset/img/member/spotlight.svg"
+            src="@/assets/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
@@ -101,7 +101,7 @@
           style="align-items: center"
         >
           <img
-            src="@/asset/img/member/spotlight.svg"
+            src="@/assets/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
             @contextmenu.prevent
@@ -175,7 +175,7 @@
     >
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View/Members
 // Members page

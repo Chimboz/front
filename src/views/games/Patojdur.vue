@@ -15,7 +15,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Le gameplay</router-link
@@ -25,7 +25,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Les modes</router-link
@@ -35,7 +35,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Les courses</router-link
@@ -45,7 +45,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Champion du jour</router-link
@@ -55,7 +55,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Classement du jour</router-link
@@ -65,7 +65,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Classement général</router-link
@@ -75,7 +75,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Les records</router-link
@@ -85,7 +85,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
           />&nbsp;Les groupes</router-link
@@ -97,7 +97,7 @@
             width="14"
             height="13"
             alt="Help icon"
-            src="@/asset/img/icon/button/help.svg"
+            src="@/assets/img/icon/button/help.svg"
           />&nbsp;Comment jouer&nbsp;?
         </router-link>
       </div>
@@ -105,7 +105,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/patojdur/preview.webp"
+        src="@/assets/img/game/patojdur/preview.webp"
         width="200"
         height="170"
         alt="A game of bacteria"
@@ -344,21 +344,21 @@
         v-if="data"
       >
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
         />&nbsp;<router-link to="bbs/6">BBS de Patojdur</router-link><br />
         <br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
         />
         Hier, il y a eu {{ data.stats.yesterday }} Patojeurs.<br /><br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -368,7 +368,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

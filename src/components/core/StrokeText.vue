@@ -16,7 +16,7 @@
     </text>
   </svg>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 export default {

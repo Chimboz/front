@@ -5,8 +5,8 @@
 <!-- @vuese:GlobalCard:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
-|header|A header image, automatically prefixed by `/asset/img/card/header/`|`String`|`false`|-|
-|bg|A background image, automatically prefixed by `/asset/img/card/background/`|`String`|`false`|-|
+|header|A header image, automatically prefixed by `/assets/img/card/header/`|`String`|`false`|-|
+|bg|A background image, automatically prefixed by `/assets/img/card/background/`|`String`|`false`|-|
 |width|Width of the header image|`Number`|`false`|468|
 |height|Height of the header image|`Number`|`false`|77|
 |color|Color of the card|`"yellow"`, `"blue"`, `"red"`|`false`|-|

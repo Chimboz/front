@@ -14,7 +14,7 @@
                 :key="number.index"
                 width="19"
                 height="21"
-                :src="require(`@/asset/img/number/${number}.svg`)"
+                :src="require(`@/assets/img/number/${number}.svg`)"
               />
             </div></div></router-link
         ><br />
@@ -70,7 +70,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <b> sur </b>
@@ -83,7 +83,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <br />
@@ -96,7 +96,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <b> point(s)</b><br /><br />
@@ -125,7 +125,7 @@
               :key="number.index"
               width="19"
               height="21"
-              :src="require(`@/asset/img/number/${number}.svg`)"
+              :src="require(`@/assets/img/number/${number}.svg`)"
             />
           </div>
           <b> parties</b>
@@ -146,7 +146,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <b> sur </b>
@@ -159,7 +159,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <br />
@@ -172,7 +172,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <b> point(s)</b>
@@ -206,7 +206,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <b> sur </b>
@@ -219,7 +219,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/${number}.svg`)"
+            :src="require(`@/assets/img/number/${number}.svg`)"
           />
         </div>
         <br />
@@ -231,7 +231,7 @@
           :key="number.index"
           width="19"
           height="21"
-          :src="require(`@/asset/img/number/${number}.svg`)"
+          :src="require(`@/assets/img/number/${number}.svg`)"
         />
         <b> point(s)</b>
       </GlobalCard>
@@ -255,7 +255,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/asset/img/number/pink/${number}.svg`)"
+            :src="require(`@/assets/img/number/pink/${number}.svg`)"
           />
         </div>
         <div style="margin-top: -21px">
@@ -271,7 +271,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   :src="
-                    require(`@/asset/img/bbs/msg${
+                    require(`@/assets/img/bbs/msg${
                       message.new ? '_new' : ''
                     }.svg`)
                   "
@@ -308,7 +308,7 @@
                 <img
                   draggable="false"
                   @contextmenu.prevent
-                  src="@/asset/img/bbs/msg.svg"
+                  src="@/assets/img/bbs/msg.svg"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
                 />&nbsp;{{ message.topic.title }}
@@ -340,15 +340,15 @@
             <img
               v-if="friend.status.connected && friend.status.room"
               alt="Online on tchat"
-              src="@/asset/img/icon/account/online_tchat.png"
+              src="@/assets/img/icon/account/online_tchat.png"
             /><img
               v-else-if="friend.status.connected"
               alt="Online on website"
-              src="@/asset/img/icon/account/online.png"
+              src="@/assets/img/icon/account/online.png"
             /><img
               v-else
               alt="Offline"
-              src="@/asset/img/icon/account/offline.png"
+              src="@/assets/img/icon/account/offline.png"
             />&nbsp;
             <div class="flex col" style="align-items: flex-start">
               <UserLink :user="friend.user" />
@@ -378,7 +378,7 @@
               alt="Group owner"
               width="22"
               height="22"
-              src="@/asset/img/icon/account/leader.svg"
+              src="@/assets/img/icon/account/leader.svg"
             />&nbsp;
             <div class="flex col" style="align-items: flex-start">
               <GroupLink :group="group" />
@@ -389,7 +389,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import Cabin from "@/components/Cabin.vue";
 import Bank from "@/components/Bank.vue";
 import StrokeText from "@/components/core/StrokeText.vue";

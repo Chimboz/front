@@ -43,7 +43,7 @@
               @click.prevent="cancel(friend)"
               style="color: red; cursor: var(--pointer)"
               ><img
-                src="@/asset/img/icon/failure.svg"
+                src="@/assets/img/icon/failure.svg"
                 width="11"
                 height="11"
                 alt="Close"
@@ -63,7 +63,7 @@
               @click.prevent="accept(friend)"
               style="color: green; cursor: var(--pointer)"
               ><img
-                src="@/asset/img/icon/success.svg"
+                src="@/assets/img/icon/success.svg"
                 width="11"
                 height="11"
                 alt="Close"
@@ -76,7 +76,7 @@
               @click.prevent="decline(friend)"
               style="color: red; cursor: var(--pointer)"
               ><img
-                src="@/asset/img/icon/failure.svg"
+                src="@/assets/img/icon/failure.svg"
                 width="11"
                 height="11"
                 alt="Close"
@@ -100,7 +100,7 @@
                 alt="Online"
                 height="20"
                 width="17"
-                src="@/asset/img/tiz/tiz_shape.svg"
+                src="@/assets/img/tiz/tiz_shape.svg"
               />&nbsp;<b>En ligne</b>
             </div>
             <b>{{ friend.status.room }}</b>
@@ -126,8 +126,8 @@
     </template>
   </GlobalContainer>
 </template>
-<script>
-import ScrollableContainer from "../../component/core/ScrollableContainer.vue";
+<script setup lang="ts">
+import ScrollableContainer from "../../components/core/ScrollableContainer.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

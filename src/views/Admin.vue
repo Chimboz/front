@@ -56,7 +56,7 @@
     >
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainer";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

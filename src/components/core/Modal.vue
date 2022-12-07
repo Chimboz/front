@@ -7,7 +7,7 @@
         v-if="type == 'error'"
         width="46"
         height="35"
-        src="@/asset/img/icon/warning2.svg"
+        src="@/assets/img/icon/warning2.svg"
       />
       <img
         draggable="false"
@@ -15,7 +15,7 @@
         v-if="type == 'success'"
         width="46"
         height="46"
-        src="@/asset/img/icon/success.svg"
+        src="@/assets/img/icon/success.svg"
       />
       <img
         draggable="false"
@@ -23,7 +23,7 @@
         v-if="type == 'failure'"
         width="46"
         height="46"
-        src="@/asset/img/icon/failure.svg"
+        src="@/assets/img/icon/failure.svg"
       />
       <img
         draggable="false"
@@ -31,7 +31,7 @@
         v-if="type == 'confirmation'"
         width="46"
         height="42"
-        src="@/asset/img/icon/confirmation.svg"
+        src="@/assets/img/icon/confirmation.svg"
       />
       <p>{{ $t(message) }}</p>
       <button
@@ -43,14 +43,14 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/icon/ok.svg"
+          src="@/assets/img/icon/ok.svg"
         />
       </button>
       <button class="btn-pink ok" @click="isVisible = false" v-else>
         <img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/icon/ok.svg"
+          src="@/assets/img/icon/ok.svg"
         />
       </button>
       <button
@@ -61,13 +61,13 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/icon/ko.svg"
+          src="@/assets/img/icon/ko.svg"
         />
       </button>
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 export default {

@@ -18,7 +18,7 @@
               :alt="image.name"
               @contextmenu.prevent
               :src="`/gallery/${image.name}`"
-              :src-placeholder="require('@/asset/img/loading.svg')"
+              :src-placeholder="require('@/assets/img/loading.svg')"
             />
           </router-link>
           <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
@@ -27,7 +27,7 @@
         </div>
         <div v-if="isLoading" class="spinner-loading">
           <img
-            src="@/asset/img/loading.svg"
+            src="@/assets/img/loading.svg"
             alt="Loading spinner"
             draggable="false"
             width="200"
@@ -40,7 +40,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import VLazyImage from "v-lazy-image";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

@@ -15,7 +15,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -26,7 +26,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -37,7 +37,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -48,7 +48,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -61,7 +61,7 @@
             width="14"
             height="13"
             alt="Help icon"
-            src="@/asset/img/icon/button/help.svg"
+            src="@/assets/img/icon/button/help.svg"
           />&nbsp;Comment jouer&nbsp;?
         </router-link>
       </div>
@@ -69,7 +69,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/preview.webp"
+        src="@/assets/img/game/bacteria/preview.webp"
         width="200"
         height="191"
         alt="A game of bacteria"
@@ -95,7 +95,7 @@
       <img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/game/bacteria/howto.png"
+        src="@/assets/img/game/bacteria/howto.png"
         alt="A game of bacteria"
         width="194"
         height="128"
@@ -263,7 +263,7 @@
       >
         Toutes les infos, les techniques, news.<br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -273,7 +273,7 @@
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -283,7 +283,7 @@
         ><br />
         <br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -293,7 +293,7 @@
         <b>Bacteria</b>.<br />
         <br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -302,7 +302,7 @@
         />&nbsp;<b>{{ data.stats.games }}</b> parties ont été jouées.<br />
         <br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
@@ -314,7 +314,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import Progress from "@/components/core/Progress.vue";
 import Tooltip from "@/components/core/Tooltip.vue";
 

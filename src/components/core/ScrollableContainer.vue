@@ -7,7 +7,7 @@
     <slot></slot>
     <div v-show="isLoading" class="spinner-loading">
       <img
-        src="@/asset/img/loading.svg"
+        src="@/assets/img/loading.svg"
         alt="Loading spinner"
         draggable="false"
         width="200"
@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 // Generic scrollable container for infinite scroll

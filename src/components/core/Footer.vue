@@ -67,7 +67,7 @@
     /></a>
   </footer>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 export default {

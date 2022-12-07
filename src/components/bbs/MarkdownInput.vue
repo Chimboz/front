@@ -83,7 +83,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   alt="Image embed"
-                  src="@/asset/img/favicon.svg"
+                  src="@/assets/img/favicon.svg"
                   height="22"
                   style="height: 100%"
                 />
@@ -210,7 +210,7 @@
                     alt="Arrow icon"
                     class="arrow jitter green"
                     aria-label="Send"
-                    src="@/asset/img/arrow.svg" /></template
+                    src="@/assets/img/arrow.svg" /></template
                 >Envoyer</GlobalButton
               >
               <GlobalButton
@@ -230,7 +230,7 @@
                     alt="Arrow icon"
                     class="arrow jitter green"
                     aria-label="Edit"
-                    src="@/asset/img/arrow.svg" /></template
+                    src="@/assets/img/arrow.svg" /></template
                 >Editer</GlobalButton
               >
             </div>
@@ -240,10 +240,12 @@
     </table>
   </form>
 </template>
-<script>
+<script setup lang="ts">
 import Emotes from "@/components/core/Emotes.vue";
 import Message from "@/components/bbs/row/Message.vue";
-import { mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group BBS

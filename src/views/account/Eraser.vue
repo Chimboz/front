@@ -14,7 +14,7 @@
         >SOS pseudo moisi, changez de pseudo pour 200 pepettes !</template
       >
       <img
-        src="@/asset/img/shop/effaceur.webp"
+        src="@/assets/img/shop/effaceur.webp"
         height="91"
         width="444"
         alt="Eraser"
@@ -55,7 +55,7 @@
                 class="arrow green jitter"
                 width="40"
                 height="33"
-                src="@/asset/img/arrow.svg" /></template
+                src="@/assets/img/arrow.svg" /></template
             >Sauver</GlobalButton
           >
         </div>
@@ -68,9 +68,11 @@
     <template #right-column><Bank /></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Bank from "@/components/Bank.vue";
-import { mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group View/Community

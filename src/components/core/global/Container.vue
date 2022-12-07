@@ -18,7 +18,7 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core/Global
 export default {

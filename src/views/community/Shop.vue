@@ -16,16 +16,16 @@
       style="position: relative"
     >
       <audio autoplay>
-        <source src="@/asset/sound/shop/moving_stars.flac" type="audio/flac" />
+        <source src="@/assets/sound/shop/moving_stars.flac" type="audio/flac" />
       </audio>
       <audio autoplay>
-        <source src="@/asset/sound/shop/preview.mp3" type="audio/wav" />
+        <source src="@/assets/sound/shop/preview.mp3" type="audio/wav" />
       </audio>
       <audio ref="clickAudio">
-        <source src="@/asset/sound/shop/show.wav" type="audio/wav" />
+        <source src="@/assets/sound/shop/show.wav" type="audio/wav" />
       </audio>
       <audio ref="buyAudio">
-        <source src="@/asset/sound/shop/selected.mp3" type="audio/mpeg" />
+        <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg" />
       </audio>
       <div class="preview fullwidth flex">
         <img
@@ -35,7 +35,7 @@
           alt="Pack preview"
           height="196"
           width="468"
-          src="@/asset/img/shop/cabin.svg"
+          src="@/assets/img/shop/cabin.svg"
         />
         <div class="preview-tiz flex centered">
           <GlobalAvatar
@@ -61,7 +61,7 @@
           />
           <div class="preview-price">
             <img
-              src="@/asset/img/shop/circle.svg"
+              src="@/assets/img/shop/circle.svg"
               width="58"
               height="57"
               draggable="false"
@@ -103,10 +103,12 @@
     <template #right-column><Bank /></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Bank from "@/components/Bank.vue";
 import Pack from "@/components/Pack.vue";
-import { mapGetters } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group View/Community

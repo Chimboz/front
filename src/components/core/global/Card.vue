@@ -8,7 +8,7 @@
       :width="width"
       :height="height"
       v-if="header"
-      :src="require(`@/asset/img/card/header/${header}`)"
+      :src="require(`@/assets/img/card/header/${header}`)"
     />
     <img
       draggable="false"
@@ -16,7 +16,7 @@
       alt="Card header"
       class="card-header"
       v-else-if="top"
-      src="@/asset/img/card/header/default.webp"
+      src="@/assets/img/card/header/default.webp"
       width="154"
       height="42"
     />
@@ -47,14 +47,14 @@
       @contextmenu.prevent
       alt="Card footer"
       v-if="bot"
-      src="@/asset/img/card/footer/default.gif"
+      src="@/assets/img/card/footer/default.gif"
       width="154"
       height="44"
     />
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
 
 // @vuese
@@ -65,12 +65,12 @@ export default {
     StrokeText,
   },
   props: {
-    // A header image, automatically prefixed by `/asset/img/card/header/`
+    // A header image, automatically prefixed by `/assets/img/card/header/`
     header: {
       required: false,
       type: String,
     },
-    // A background image, automatically prefixed by `/asset/img/card/background/`
+    // A background image, automatically prefixed by `/assets/img/card/background/`
     bg: {
       required: false,
       type: String,
@@ -145,7 +145,7 @@ export default {
       }
     },
     bgImage() {
-      return require("@/asset/img/card/background/" + this.bg);
+      return require("@/assets/img/card/background/" + this.bg);
     },
     inlineBg() {
       return {

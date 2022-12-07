@@ -78,10 +78,10 @@
     <template #right-column></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import ScrollableContainer from "../../component/core/ScrollableContainer.vue";
+import ScrollableContainer from "../../components/core/ScrollableContainer.vue";
 const locales = { fr, enGB };
 
 // @vuese

@@ -46,7 +46,7 @@
                 width="19"
                 height="21"
                 :src="
-                  require(`@/asset/img/number/${
+                  require(`@/assets/img/number/${
                     line.value < 0 ? 'pink/' : ''
                   }${number}.svg`)
                 "
@@ -57,7 +57,7 @@
       </ScrollableContainer>
       <br />
       <img
-        src="@/asset/img/puce.svg"
+        src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
         @contextmenu.prevent
@@ -85,7 +85,7 @@
     <template #right-column><Bank /></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Bank from "@/components/Bank.vue";
 import ScrollableContainer from "@/components/core/ScrollableContainer";
 import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";

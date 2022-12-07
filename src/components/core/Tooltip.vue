@@ -4,7 +4,7 @@
     <span class="tooltiptext"><slot name="tooltip"></slot></span>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 export default {

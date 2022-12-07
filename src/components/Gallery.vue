@@ -12,7 +12,7 @@
   </GlobalCard>
   <br />
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Default
 export default {

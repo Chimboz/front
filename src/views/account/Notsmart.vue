@@ -53,7 +53,7 @@
               class="arrow jitter green"
               width="40"
               height="33"
-              src="@/asset/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg" /></template
           >Envoyer</GlobalButton
         >
       </form>
@@ -64,7 +64,7 @@
     <template #right-column></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View/Account
 // Notsmart page

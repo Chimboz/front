@@ -8,7 +8,7 @@
   >
     <div class="list">
       <img
-        src="@/asset/img/puce.svg"
+        src="@/assets/img/puce.svg"
         alt="Puce"
         width="17"
         height="17"
@@ -18,7 +18,7 @@
     </div>
   </router-link>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core/Global
 export default {

@@ -12,12 +12,12 @@
         @contextmenu.prevent
         alt="Neutral emote"
         height="23"
-        :src="require(`@/asset/img/icon/emote/${emote}.svg`)"
+        :src="require(`@/assets/img/icon/emote/${emote}.svg`)"
       />
     </button>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 export default {

@@ -39,7 +39,7 @@
             alt="Voir le dernier message"
             title="Voir le dernier message"
             :src="
-              require(`@/asset/img/bbs/msg${message.new ? '_new' : ''}.svg`)
+              require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
           /> </router-link
         >&nbsp;
@@ -59,7 +59,7 @@
             "
           >
             <img
-              src="@/asset/img/bbs/icon/bubble.svg"
+              src="@/assets/img/bbs/icon/bubble.svg"
               width="14"
               height="12"
               draggable="false"
@@ -77,7 +77,7 @@
             @click.prevent="eventBus.emit('edit', this.message.content)"
           >
             <img
-              src="@/asset/img/bbs/icon/pen.svg"
+              src="@/assets/img/bbs/icon/pen.svg"
               width="12"
               height="12"
               draggable="false"
@@ -106,12 +106,14 @@
   </tr>
 </template>
 
-<script>
+<script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import messageRender from "@/module/messageRender.js";
-import { mapGetters, mapState } from "vuex";
+import messageRender from "@/modules/messageRender.js";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group BBS/Row
@@ -161,9 +163,9 @@ export default {
   },
 };
 </script>
-<style src="@/asset/css/bbs/markdown.css"></style>
+<style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>
-<style src="@/asset/css/bbs/code.css"></style>
+<style src="@/assets/css/bbs/code.css"></style>
 <style lang="scss">
 .info-sm .tiz {
   margin-bottom: -25px;

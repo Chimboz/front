@@ -45,7 +45,7 @@
   <div style="text-align: end">
     <button class="btn-action" @click.prevent="quote(message.id)"
       ><img
-        src="@/asset/img/bbs/icon/lock.svg"
+        src="@/assets/img/bbs/icon/lock.svg"
         width="9"
         height="12"
         draggable="false"
@@ -56,10 +56,12 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import Topic from "../row/Topic.vue";
 import Pagination from "../../core/Pagination.vue";
-import { mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group BBS/List

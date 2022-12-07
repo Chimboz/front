@@ -48,7 +48,7 @@
                   @contextmenu.prevent
                   :alt="item.name"
                   :src="`/item/${item.type}/${item.id}.svg`"
-                  :src-placeholder="require('@/asset/img/loading.svg')"
+                  :src-placeholder="require('@/assets/img/loading.svg')"
                 /></button></router-link
           ></Tooltip>
         </div>
@@ -70,7 +70,7 @@
         </form>
         <br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -104,12 +104,12 @@
               draggable="false"
               @contextmenu.prevent
               :alt="category"
-              :src="require(`@/asset/img/icon/item_category/${category}.svg`)"
+              :src="require(`@/assets/img/icon/item_category/${category}.svg`)"
             />
           </button>
         </div>
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -142,14 +142,14 @@
               draggable="false"
               @contextmenu.prevent
               :alt="rarity"
-              :src="require(`@/asset/img/icon/rarity/${rarity}.png`)"
+              :src="require(`@/assets/img/icon/rarity/${rarity}.png`)"
             />
           </button>
         </div> </GlobalCard
     ></template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainer";
 import VLazyImage from "v-lazy-image";
 import Tooltip from "@/components/core/Tooltip.vue";

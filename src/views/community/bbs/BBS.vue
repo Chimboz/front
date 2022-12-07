@@ -19,7 +19,7 @@
             @contextmenu.prevent
             :alt="$t('bbs.lock_new')"
             :title="$t('bbs.lock_new')"
-            src="@/asset/img/bbs/folder_new_lock.svg"
+            src="@/assets/img/bbs/folder_new_lock.svg"
           />&nbsp;{{ $t("bbs.lock_new") }}&nbsp;
         </div>
         <div>
@@ -28,7 +28,7 @@
             @contextmenu.prevent
             :alt="$t('bbs.lock')"
             title="$t('bbs.lock')"
-            src="@/asset/img/bbs/folder_lock.svg"
+            src="@/assets/img/bbs/folder_lock.svg"
           />&nbsp;{{ $t("bbs.lock") }}&nbsp;
         </div>
         <div>
@@ -37,7 +37,7 @@
             @contextmenu.prevent
             :alt="$t('bbs.new')"
             :title="$t('bbs.new')"
-            src="@/asset/img/bbs/folder_new.svg"
+            src="@/assets/img/bbs/folder_new.svg"
           />&nbsp;{{ $t("bbs.new") }}&nbsp;
         </div>
         <div>
@@ -46,7 +46,7 @@
             @contextmenu.prevent
             :alt="$t('bbs.nonew')"
             :title="$t('bbs.nonew')"
-            src="@/asset/img/bbs/folder.svg"
+            src="@/assets/img/bbs/folder.svg"
           />&nbsp;{{$t('bbs.nonew')}}&nbsp;
         </div>
       </div></GlobalCard
@@ -54,7 +54,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import BBSList from "@/components/bbs/list/BBS.vue";
 
 // @vuese
@@ -86,7 +86,7 @@ export default {
   }
 };
 </script>
-<style src="@/asset/css/bbs/bbs.css"></style>
+<style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>
 .columns {
   column-count: 1;

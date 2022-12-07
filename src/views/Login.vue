@@ -55,7 +55,7 @@
       <div style="text-align: right">
         <router-link to="/chaparazzi">
           <img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Puce"
             draggable="false"
             @contextmenu.prevent
@@ -69,8 +69,8 @@
     <template #right-column>
       <GlobalCard color="blue" header="games.gif" v-if="data">
         <div class="fullwidth">
-          <img src="@/asset/img/game/bacteria/head.gif" />
-          <img src="@/asset/img/game/bacteria/bg.gif" />
+          <img src="@/assets/img/game/bacteria/head.gif" />
+          <img src="@/assets/img/game/bacteria/bg.gif" />
           <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
@@ -87,8 +87,8 @@
               $t("champion.bacteria")
             }}
           </div>
-          <img src="@/asset/img/game/patojdur/head.gif" />
-          <img src="@/asset/img/game/patojdur/bg.gif" />
+          <img src="@/assets/img/game/patojdur/head.gif" />
+          <img src="@/assets/img/game/patojdur/bg.gif" />
           <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
@@ -105,8 +105,8 @@
               $t("champion.patojdur")
             }}
           </div>
-          <img src="@/asset/img/game/mazo/head.gif" />
-          <img src="@/asset/img/game/mazo/bg.gif" />
+          <img src="@/assets/img/game/mazo/head.gif" />
+          <img src="@/assets/img/game/mazo/bg.gif" />
           <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
@@ -126,7 +126,7 @@
     </template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Demo from "@/components/Demo.vue";
 import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";

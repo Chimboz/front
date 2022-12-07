@@ -13,7 +13,7 @@ export const routes = [
     children: [
       {
         path: ":id",
-        component: () => import("../../component/AdminUser.vue"),
+        component: () => import("../../components/AdminUser.vue"),
         meta: { sitemap: { ignoreRoute: true } },
       },
     ],
@@ -210,7 +210,7 @@ export const routes = [
     children: [
       {
         path: ":id",
-        component: () => import("../../component/Item.vue"),
+        component: () => import("../../components/Item.vue"),
         meta: { sitemap: { ignoreRoute: true } },
       },
     ],
@@ -222,7 +222,7 @@ export const routes = [
     children: [
       {
         path: ":name",
-        component: () => import("../../component/Gallery.vue"),
+        component: () => import("../../components/Gallery.vue"),
         meta: { sitemap: { ignoreRoute: true } },
       },
     ],

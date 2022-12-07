@@ -148,7 +148,7 @@
           :checked="data.status == 'open'"
         /><label for="open"
           ><img
-            src="@/asset/img/group/open.png"
+            src="@/assets/img/group/open.png"
             width="50"
             height="50"
             alt="Open"
@@ -163,7 +163,7 @@
           :checked="data.status == 'demand'"
         /><label for="demand"
           ><img
-            src="@/asset/img/group/demand.png"
+            src="@/assets/img/group/demand.png"
             width="50"
             height="50"
             alt="Demand"
@@ -178,7 +178,7 @@
           :checked="data.status == 'close'"
         /><label for="close"
           ><img
-            src="@/asset/img/group/close.png"
+            src="@/assets/img/group/close.png"
             width="50"
             height="50"
             alt="Close"
@@ -193,7 +193,7 @@
               @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
-              src="@/asset/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg" /></template
           >Sauver</GlobalButton
         >
       </form></GlobalCard
@@ -203,7 +203,7 @@
       <div class="inline" v-for="user of this.data.members" :key="user.id">
         <UserLink :user="user" :separator="false" /><img
           @click.prevent="removeMember(user.id)"
-          src="@/asset/img/icon/failure.svg"
+          src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
           alt="Close"
@@ -218,7 +218,7 @@
       <div class="inline" v-for="user of this.data.demands" :key="user.id">
         <UserLink :user="user" :separator="false" /><img
           @click.prevent="acceptDemand(user.id)"
-          src="@/asset/img/icon/success.svg"
+          src="@/assets/img/icon/success.svg"
           width="11"
           height="11"
           alt="Close"
@@ -227,7 +227,7 @@
           @contextmenu.prevent
         /><img
           @click.prevent="rejectDemand(user.id)"
-          src="@/asset/img/icon/failure.svg"
+          src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
           alt="Close"
@@ -237,7 +237,7 @@
         /></div></GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
-      ><img src="@/asset/img/group/bacteria.gif" style="float: left" /><b
+      ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
         >Bacteria</b
       ><br /><br />
       Classé : <b>{{ this.data.bacteria.rank }}</b
@@ -245,7 +245,7 @@
       <b>{{ this.data.bacteria.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
-      ><img src="@/asset/img/group/patojdur.gif" style="float: left" /><b
+      ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
         >Patojdur</b
       ><br /><br />
       Classé : <b>{{ this.data.patojdur.rank }}</b
@@ -253,7 +253,7 @@
       <b>{{ this.data.patojdur.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
-      ><img src="@/asset/img/group/popularity.gif" style="float: left" /><b
+      ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
         >Popularity</b
       ><br /><br />
       Classé : <b>{{ this.data.popularity.rank }}</b
@@ -274,7 +274,7 @@
     <template #right-column> </template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import Blazon from "@/components/blazon/Blazon.vue";
 import StrokeText from "@/components/core/StrokeText.vue";
 import Cabin from "@/components/blazon/Cabin.vue";

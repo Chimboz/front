@@ -21,7 +21,7 @@
   </table>
 </template>
 
-<script>
+<script setup lang="ts">
 import Category from "../row/Category.vue";
 
 // @vuese

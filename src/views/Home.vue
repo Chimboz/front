@@ -14,7 +14,7 @@
                 :key="number.index"
                 width="19"
                 height="21"
-                :src="require(`@/asset/img/number/${number}.svg`)"
+                :src="require(`@/assets/img/number/${number}.svg`)"
               />
             </div>
           </div>
@@ -30,14 +30,14 @@
                 :key="number.index"
                 width="19"
                 height="21"
-                :src="require(`@/asset/img/number/pink/${number}.svg`)"
+                :src="require(`@/assets/img/number/pink/${number}.svg`)"
               />
             </div>
             <img
               draggable="false"
               @contextmenu.prevent
               alt="Messages"
-              src="@/asset/img/home/messages.png"
+              src="@/assets/img/home/messages.png"
               width="154"
               height="67"
               class="fullwidth"
@@ -56,14 +56,14 @@
                 :key="number.index"
                 width="19"
                 height="21"
-                :src="require(`@/asset/img/number/pink/${number}.svg`)"
+                :src="require(`@/assets/img/number/pink/${number}.svg`)"
               />
             </div>
             <img
               draggable="false"
               @contextmenu.prevent
               alt="Friends"
-              src="@/asset/img/home/friends.png"
+              src="@/assets/img/home/friends.png"
               width="154"
               height="67"
               class="fullwidth"
@@ -103,7 +103,7 @@
             class="handle"
             height="33"
             width="16"
-            src="@/asset/img/lottery/up.svg"
+            src="@/assets/img/lottery/up.svg"
             v-if="lottery" /><img
             draggable="false"
             @contextmenu.prevent
@@ -111,7 +111,7 @@
             class="handle"
             height="33"
             width="16"
-            src="@/asset/img/lottery/down.svg"
+            src="@/assets/img/lottery/down.svg"
             v-else /></template
         >{{ $t("button.lottery") }}</GlobalButton
       ></GlobalCard
@@ -125,7 +125,7 @@
         ><img
           draggable="false"
           @contextmenu.prevent
-          src="@/asset/img/home/chimboking.webp"
+          src="@/assets/img/home/chimboking.webp"
           width="130"
           height="70"
           alt="Chimboking portrait"
@@ -162,7 +162,7 @@
       <div style="text-align: right">
         <router-link to="/chaparazzi">
           <img
-            src="@/asset/img/puce.svg"
+            src="@/assets/img/puce.svg"
             alt="Puce"
             draggable="false"
             @contextmenu.prevent
@@ -215,7 +215,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import Radio from "@/components/Radio.vue";
 import RandomNumber from "@/components/core/RandomNumber.vue";
 import Bank from "@/components/Bank.vue";
@@ -223,7 +223,7 @@ import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
-import messageRender from "@/module/messageRender.js";
+import messageRender from "@/modules/messageRender.js";
 
 // @vuese
 // @group View
@@ -282,9 +282,9 @@ export default {
 };
 </script>
 
-<style src="@/asset/css/bbs/markdown.css"></style>
+<style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>
-<style src="@/asset/css/bbs/code.css"></style>
+<style src="@/assets/css/bbs/code.css"></style>
 <style lang="scss">
 .packs .card-btn {
   background: linear-gradient(
@@ -331,6 +331,6 @@ export default {
 .handle {
   margin-left: calc(-4% - 16px);
   margin-top: -16px;
-  border-image: url(../asset/img/lottery/down.svg);
+  border-image: url(../assets/img/lottery/down.svg);
 }
 </style>

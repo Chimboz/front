@@ -16,7 +16,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   alt="Puce"
-                  src="@/asset/img/puce.svg"
+                  src="@/assets/img/puce.svg"
                 />
               </button>
             </div>
@@ -42,7 +42,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   alt="Puce"
-                  src="@/asset/img/puce.svg"
+                  src="@/assets/img/puce.svg"
                 />
               </button>
             </div>
@@ -78,7 +78,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   :src="
-                    require(`@/asset/img/icon/item_category/${category}.svg`)
+                    require(`@/assets/img/icon/item_category/${category}.svg`)
                   "
                 />
               </button>
@@ -137,14 +137,14 @@
                     draggable="false"
                     @contextmenu.prevent
                     v-else-if="item == -1"
-                    src="@/asset/img/icon/cross.svg"
+                    src="@/assets/img/icon/cross.svg"
                   />
                   <VLazyImage
                     draggable="false"
                     @contextmenu.prevent
                     v-else
                     :src="`/blazon/${name}/${item}.svg`"
-                    :src-placeholder="require('@/asset/img/loading.svg')"
+                    :src-placeholder="require('@/assets/img/loading.svg')"
                   />
                 </button>
               </div>
@@ -156,7 +156,7 @@
     </form>
   </GlobalCard>
 </template>
-<script>
+<script setup lang="ts">
 import Blazon from "@/components/blazon/Blazon.vue";
 import VLazyImage from "v-lazy-image";
 

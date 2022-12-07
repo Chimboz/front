@@ -16,7 +16,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -27,7 +27,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -38,7 +38,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -49,7 +49,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -60,7 +60,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -100,7 +100,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.webp"
+            src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
           />
@@ -128,7 +128,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.webp"
+            src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
           />
@@ -164,7 +164,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.webp"
+            src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
           />
@@ -192,7 +192,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.webp"
+            src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
           />
@@ -227,7 +227,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.webp"
+            src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
           />
@@ -255,7 +255,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.webp"
+            src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
           />
@@ -289,7 +289,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/star.webp"
+            src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
           />
@@ -317,7 +317,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Star"
-            src="@/asset/img/social/popularity/poop.webp"
+            src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
           />
@@ -373,7 +373,7 @@
         v-if="data"
       >
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -396,7 +396,7 @@
         }}%)<br />
         <br />
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -422,8 +422,10 @@
   </GlobalContainer>
 </template>
 
-<script>
-import { mapGetters } from "vuex";
+<script setup lang="ts">
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group View/Members

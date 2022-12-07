@@ -47,7 +47,7 @@
               class="arrow green jitter"
               width="40"
               height="33"
-              src="@/asset/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg" /></template
           >Sauver</GlobalButton
         >
       </form>
@@ -55,8 +55,10 @@
     <template #right-column> </template>
   </GlobalContainer>
 </template>
-<script>
-import { mapState } from "vuex";
+<script setup lang="ts">
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group View/Account

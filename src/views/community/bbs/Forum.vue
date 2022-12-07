@@ -14,7 +14,7 @@
       <img
         v-if="!post && data && !data.locked"
         @click="post = true"
-        src="@/asset/img/bbs/post.gif"
+        src="@/assets/img/bbs/post.gif"
       />
     </button>
     <MarkdownInput isTopic v-if="post && data && !data.locked" />
@@ -36,7 +36,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import ForumList from "@/components/bbs/list/Forum.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 
@@ -54,35 +54,35 @@ export default {
       data: null,
       iconDescriptions: [
         {
-          src: require("@/asset/img/bbs/folder_new.svg"),
+          src: require("@/assets/img/bbs/folder_new.svg"),
           label: "Nouveaux messages"
         },
         {
-          src: require("@/asset/img/bbs/folder_new_hot.svg"),
+          src: require("@/assets/img/bbs/folder_new_hot.svg"),
           label: "Nouveaux messages [ Populaire ]"
         },
         {
-          src: require("@/asset/img/bbs/folder_new_lock.svg"),
+          src: require("@/assets/img/bbs/folder_new_lock.svg"),
           label: "Nouveaux messages [ Verrouillé ]"
         },
         {
-          src: require("@/asset/img/bbs/folder.svg"),
+          src: require("@/assets/img/bbs/folder.svg"),
           label: "Pas de nouveaux messages"
         },
         {
-          src: require("@/asset/img/bbs/folder_hot.svg"),
+          src: require("@/assets/img/bbs/folder_hot.svg"),
           label: "Pas de nouveaux messages [ Populaire ]"
         },
         {
-          src: require("@/asset/img/bbs/folder_lock.svg"),
+          src: require("@/assets/img/bbs/folder_lock.svg"),
           label: "Pas de nouveaux messages [ Verrouillé ]"
         },
         {
-          src: require("@/asset/img/bbs/folder_announce.svg"),
+          src: require("@/assets/img/bbs/folder_announce.svg"),
           label: "Annonce"
         },
         {
-          src: require("@/asset/img/bbs/folder_sticky.svg"),
+          src: require("@/assets/img/bbs/folder_sticky.svg"),
           label: "Post-it"
         }
       ],
@@ -111,7 +111,7 @@ export default {
   }
 };
 </script>
-<style src="@/asset/css/bbs/bbs.css"></style>
+<style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>
 .columns {
   column-count: 1;

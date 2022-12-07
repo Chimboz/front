@@ -62,7 +62,7 @@
                 draggable="false"
                 @contextmenu.prevent
                 alt="Online"
-                src="@/asset/img/tiz/tiz_shape.svg"
+                src="@/assets/img/tiz/tiz_shape.svg"
               />&nbsp;<b>En ligne</b>
             </div>
             <b>{{ this.data.status.room }}</b>
@@ -71,7 +71,7 @@
         <div class="member-text">
           <p>
             <img
-              src="@/asset/img/member/wedding.svg"
+              src="@/assets/img/member/wedding.svg"
               height="20"
               width="20"
               alt="Wedding icon"
@@ -129,7 +129,7 @@
               height="16"
               width="20"
               :src="
-                require(`@/asset/img/member/${data.gender}/${data.gender}.svg`)
+                require(`@/assets/img/member/${data.gender}/${data.gender}.svg`)
               "
             />
           </div>
@@ -145,7 +145,7 @@
                 :key="digit.index"
                 width="19"
                 height="21"
-                :src="require(`@/asset/img/number/${digit}.svg`)"
+                :src="require(`@/assets/img/number/${digit}.svg`)"
               />
             </div>
           </div>
@@ -167,7 +167,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          :src="require(`@/asset/img/member/${data.gender}/bacteria.svg`)"
+          :src="require(`@/assets/img/member/${data.gender}/bacteria.svg`)"
           alt="Bacteria"
           style="float: left"
         />
@@ -190,7 +190,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          :src="require(`@/asset/img/member/${data.gender}/patojdur.svg`)"
+          :src="require(`@/assets/img/member/${data.gender}/patojdur.svg`)"
           alt="Patojdur"
           style="float: left"
         />
@@ -213,7 +213,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          :src="require(`@/asset/img/member/${data.gender}/popularity.svg`)"
+          :src="require(`@/assets/img/member/${data.gender}/popularity.svg`)"
           alt="Patojdur"
           style="float: left"
         />
@@ -258,9 +258,11 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
-import { mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -321,12 +323,12 @@ export default {
 }
 .male .card,
 .unknown .card {
-  background-image: url(../../../asset/img/member/male/header.gif);
+  background-image: url(../../../assets/img/member/male/header.gif);
   background-color: #d5e6f3;
 }
 
 .female .card {
-  background-image: url(../../../asset/img/member/female/header.gif);
+  background-image: url(../../../assets/img/member/female/header.gif);
   background-color: #ff96da;
 }
 </style>
@@ -374,7 +376,7 @@ export default {
 .portrait {
   justify-content: center;
   align-items: center;
-  background: url(../../../asset/img/member/portrait.png);
+  background: url(../../../assets/img/member/portrait.png);
   height: 112px;
   width: 104px;
   margin-bottom: 6px;

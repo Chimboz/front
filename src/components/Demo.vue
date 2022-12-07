@@ -45,7 +45,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/demo/0.png"
+              src="@/assets/img/demo/0.png"
             />
           </section>
           <section :class="{ display: demo == 1 }">
@@ -53,7 +53,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/demo/1.png"
+              src="@/assets/img/demo/1.png"
             />
           </section>
           <section :class="{ display: demo == 2 }">
@@ -61,7 +61,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/demo/2.png"
+              src="@/assets/img/demo/2.png"
             />
           </section>
           <section :class="{ display: demo == 3 }">
@@ -69,7 +69,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/demo/3.png"
+              src="@/assets/img/demo/3.png"
             />
           </section>
           <section :class="{ display: demo == 4 }">
@@ -77,7 +77,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/demo/4.png"
+              src="@/assets/img/demo/4.png"
             />
           </section>
           <section :class="{ display: demo == 5 }">
@@ -85,7 +85,7 @@
             <img
               draggable="false"
               @contextmenu.prevent
-              src="@/asset/img/demo/5.png"
+              src="@/assets/img/demo/5.png"
             />
           </section>
         </div>
@@ -140,7 +140,7 @@
                 @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
-                src="@/asset/img/arrow.svg" /></template
+                src="@/assets/img/arrow.svg" /></template
             >{{$t("button.register")}}</GlobalButton
           >
         </div>
@@ -200,7 +200,7 @@
                 @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
-                src="@/asset/img/arrow.svg" /></template
+                src="@/assets/img/arrow.svg" /></template
             >{{$t("button.signin")}}</GlobalButton
           >
         </div>
@@ -210,11 +210,11 @@
       >{{$t("demo.try")}}&nbsp;&nbsp;<img
         draggable="false"
         @contextmenu.prevent
-        src="@/asset/img/puce.svg"
+        src="@/assets/img/puce.svg"
     /></a>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Default
 export default {
@@ -306,19 +306,19 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
 
 @each $category in $categories {
   .#{$category} {
-    background: url(../asset/img/demo/#{$category}.svg);
-    border-image: url(../asset/img/demo/#{$category}_hover.svg);
+    background: url(../assets/img/demo/#{$category}.svg);
+    border-image: url(../assets/img/demo/#{$category}_hover.svg);
   }
 
   .#{$category}:hover,
   .#{$category}.active {
-    background: url(../asset/img/demo/#{$category}_hover.svg);
-    border-image: url(../asset/img/demo/#{$category}.svg);
+    background: url(../assets/img/demo/#{$category}_hover.svg);
+    border-image: url(../assets/img/demo/#{$category}.svg);
   }
 }
 
 .demo-picture {
-  background: url(../asset/img/demo/demo.svg);
+  background: url(../assets/img/demo/demo.svg);
   background-size: cover;
   overflow: hidden;
   border-radius: var(--md-gap);
@@ -386,7 +386,7 @@ section.display {
   height: 45.25px;
   text-align: left;
   padding: var(--gap);
-  background: url(../asset/img/demo/info.svg);
+  background: url(../assets/img/demo/info.svg);
   background-size: cover;
 }
 

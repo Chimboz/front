@@ -7,11 +7,11 @@
     :key="digit.index"
     width="19"
     height="21"
-    :src="require(`@/asset/img/number/${digit}.svg`)"
+    :src="require(`@/assets/img/number/${digit}.svg`)"
   />
 </template>
 
-<script>
+<script setup lang="ts">
 // @vuese
 // @group Core
 export default {

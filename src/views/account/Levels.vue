@@ -26,7 +26,7 @@
               :key="number.index"
               width="19"
               height="21"
-              :src="require(`@/asset/img/number/${number}.svg`)"
+              :src="require(`@/assets/img/number/${number}.svg`)"
             />&nbsp;<b>{{ rank.name }}</b>
           </div>
         </div>
@@ -35,7 +35,7 @@
             width="200"
             height="200"
             :alt="'Level' + data[selected].level"
-            :src="require('@/asset/img/level/' + data[selected].level + '.png')"
+            :src="require('@/assets/img/level/' + data[selected].level + '.png')"
           />
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
@@ -47,7 +47,7 @@
     <template #right-column> </template>
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 // @vuese
 // @group View/Account
 // Levels page

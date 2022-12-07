@@ -14,10 +14,12 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import TopicList from "@/components/bbs/list/Topic.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
-import { mapGetters } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group View/Community/BBS
@@ -58,4 +60,4 @@ export default {
   }
 };
 </script>
-<style src="@/asset/css/bbs/bbs.css"></style>
+<style src="@/assets/css/bbs/bbs.css"></style>

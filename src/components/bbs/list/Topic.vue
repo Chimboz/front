@@ -48,7 +48,7 @@
   <div style="text-align: end" v-if="authenticated">
     <button class="btn-action" v-if="user.role > 50" @click.prevent="move"
       ><img
-        src="@/asset/img/bbs/icon/arrow.svg"
+        src="@/assets/img/bbs/icon/arrow.svg"
         width="10"
         height="12"
         draggable="false"
@@ -58,7 +58,7 @@
     >&nbsp;
     <button class="btn-action" v-if="user.role > 50" @click.prevent="lock"
       ><img
-        src="@/asset/img/bbs/icon/lock.svg"
+        src="@/assets/img/bbs/icon/lock.svg"
         width="9"
         height="12"
         draggable="false"
@@ -75,10 +75,12 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import Pagination from "../../core/Pagination.vue";
 import Message from "../row/Message.vue";
-import { mapGetters, mapState } from "vuex";
+import { useAuthStore } from "@/stores/auth";
+const auth = useAuthStore();
+const user = auth.user;
 
 // @vuese
 // @group BBS/List

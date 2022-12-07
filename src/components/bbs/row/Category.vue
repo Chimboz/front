@@ -21,7 +21,7 @@
           draggable="false"
           @contextmenu.prevent
           :src="
-            require(`@/asset/img/bbs/folder${bbs.new ? '_new' : ''}${
+            require(`@/assets/img/bbs/folder${bbs.new ? '_new' : ''}${
               bbs.locked ? '_lock' : ''
             }.svg`)
           "
@@ -61,7 +61,7 @@
           ><img
             draggable="false"
             @contextmenu.prevent
-            :src="require(`@/asset/img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
+            :src="require(`@/assets/img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
         /></router-link>
@@ -75,7 +75,7 @@
   </tbody>
 </template>
 
-<script>
+<script setup lang="ts">
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

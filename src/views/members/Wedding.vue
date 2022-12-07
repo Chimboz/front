@@ -16,7 +16,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -27,7 +27,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -38,7 +38,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -49,7 +49,7 @@
             draggable="false"
             @contextmenu.prevent
             alt="Caret"
-            src="@/asset/img/icon/caret.webp"
+            src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
@@ -69,7 +69,7 @@
           draggable="false"
           @contextmenu.prevent
           alt="Star"
-          src="@/asset/img/social/wedding/wedding.svg"
+          src="@/assets/img/social/wedding/wedding.svg"
         />
         <GlobalAvatar
           class="witness witness1"
@@ -127,7 +127,7 @@
     <GlobalCard id="today" v-if="data">
       <template #header
         ><img
-          src="@/asset/img/social/wedding/mariage2.webp"
+          src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
@@ -156,7 +156,7 @@
     <GlobalCard id="best" v-if="data">
       <template #header
         ><img
-          src="@/asset/img/social/wedding/mariage2.webp"
+          src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
@@ -205,7 +205,7 @@
     <GlobalCard id="divorce" v-if="data">
       <template #header
         ><img
-          src="@/asset/img/social/wedding/divorce2.webp"
+          src="@/assets/img/social/wedding/divorce2.webp"
           alt="Divorce icon"
           width="143"
           height="64"
@@ -255,7 +255,7 @@
     <GlobalCard id="broken" v-if="data">
       <template #header
         ><img
-          src="@/asset/img/social/wedding/mariage2.webp"
+          src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
@@ -308,7 +308,7 @@
         color="blue"
       >
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -318,7 +318,7 @@
         En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
         <br /><br />
         <img
-          src="@/asset/img/social/wedding/divorce.webp"
+          src="@/assets/img/social/wedding/divorce.webp"
           alt="Divorce"
           draggable="false"
           @contextmenu.prevent
@@ -327,7 +327,7 @@
         /><br />
         <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br /><br />
         <img
-          src="@/asset/img/social/wedding/mariage.webp"
+          src="@/assets/img/social/wedding/mariage.webp"
           alt="Wedding"
           draggable="false"
           @contextmenu.prevent
@@ -340,7 +340,7 @@
           data.stats.members - (data.stats.total - data.stats.divorce) * 2
         }}</b>
         célibs !!! <br /><img
-          src="@/asset/img/social/wedding/mariage2.webp"
+          src="@/assets/img/social/wedding/mariage2.webp"
           alt="Wedding"
           draggable="false"
           @contextmenu.prevent
@@ -380,7 +380,7 @@
   </GlobalContainer>
 </template>
 
-<script>
+<script setup lang="ts">
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };

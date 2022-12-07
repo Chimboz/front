@@ -1,6 +1,6 @@
 <template>
   <div class="blazon">
-    <img src="@/asset/img/group/ribbons.svg" class="ribbons" />
+    <img src="@/assets/img/group/ribbons.svg" class="ribbons" />
     <div class="blazon-body">
       <background :primary="primary" :secondary="secondary" :id="shape" />
       <div class="top" v-if="top != -1"><top :color="primary" :id="top" /></div>
@@ -11,7 +11,7 @@
     </div>
   </div>
 </template>
-<script>
+<script setup lang="ts">
 import Background from "./Background.vue";
 import Reflection from "./Reflection.vue";
 import Top from "./Top.vue";

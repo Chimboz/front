@@ -36,7 +36,7 @@
         v-if="data"
       >
         <img
-          src="@/asset/img/puce.svg"
+          src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
@@ -49,7 +49,7 @@
     >
   </GlobalContainer>
 </template>
-<script>
+<script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
