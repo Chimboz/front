@@ -131,16 +131,24 @@ import Demo from "@/components/Demo.vue";
 import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View
 // Login page
-  data() {
-    return {
-      data: null,
-    };
-  },
+const data: any = ref(null);
+
+function formatDatePhotos(date: number) {
+  return format(new Date(date), "PP", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+
+function login() {
+  //this.$store.dispatch("auth/login");
+}
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/login.json").then((res) => (vm.data = res.data))
@@ -152,19 +160,13 @@ const locales = { fr, enGB };
     next();
   },
   methods: {
-    login() {
-      this.$store.dispatch("auth/login");
-    },
-    formatDatePhotos(date) {
-      return format(new Date(date), "PP", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
+
+
   },
   metaInfo: {
     title: "section.login",
   },
-};
+};*/
 </script>
 <style lang="scss">
 .packs .card-btn {

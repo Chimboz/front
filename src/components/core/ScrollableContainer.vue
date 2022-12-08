@@ -2,7 +2,7 @@
   <div
     class="scrollable"
     @scroll.passive="onScroll"
-    :style="{ maxHeight: this.maxHeight + 'px' }"
+    :style="{ maxHeight: maxHeight + 'px' }"
   >
     <slot></slot>
     <div v-show="isLoading" class="spinner-loading">
@@ -23,41 +23,37 @@
 // @group Core
 // Generic scrollable container for infinite scroll
 
-  
-  data() {
-    return {
-      page: 0,
-      isLoading: false,
-    };
-  },
-  const props = defineProps<{
-    route: {
-      type: String,
-      required: true,
-    },
-    maxHeight: {
-      type: Number,
-      required: false,
-      default: 200,
-    },
-  },
-  methods: {
-    onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
+import { ref } from "vue";
+
+const page = ref(0);
+const isLoading = ref(false);
+
+const props = withDefaults(
+  defineProps<{
+    route: string;
+    maxHeight?: number;
+  }>(),
+  {
+    maxHeight: 200,
+  }
+);
+
+function onScroll(){}
+/*
+function     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }: Event) {
       if (scrollTop + clientHeight >= scrollHeight && !this.hasEnded) {
-        this.isLoading = true;
-        this.api.get(`/api/${this.route}/${++this.page}.json`).then(
-          (res) => {
+        isLoading.value = true;
+        this.api.get(`/api/${props.route}/${++page.value}.json`).then(
+          (res: any) => {
             this.$emit("scrollData", res.data);
-            this.isLoading = false;
+            isLoading.value = false;
           },
           () => {
-            this.isLoading = false;
+            isLoading.value = false;
           }
         );
       }
-    },
-  },
-};
+    },*/
 </script>
 <style style="scss" scoped>
 .scrollable {

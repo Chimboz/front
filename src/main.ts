@@ -41,14 +41,11 @@ import Rules from "./components/core/global/Rules.vue";
 import SideNavEntries from "./components/core/global/SideNavEntries.vue";
 import User from "./components/core/global/link/User.vue";
 
-const metaManager = createMetaManager();
-const pinia = createPinia();
-
 const app = createApp(App)
   .use(i18n)
   .use(router)
-  .use(pinia)
-  .use(metaManager)
+  .use(createPinia())
+  .use(createMetaManager())
   .use(metaPlugin);
 
 // Globally accessible modules
@@ -69,7 +66,7 @@ app.mount("#app");
 
 // Router progress bar
 router.beforeEach((to, from, next) => {
-  if (typeof to.matched[0]?.components.default === "function") {
+  if (typeof to.matched[0].components?.default === "function") {
     eventBus.emit("asyncComponentLoading", to);
   }
   next();

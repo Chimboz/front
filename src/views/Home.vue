@@ -223,16 +223,38 @@ import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
-const locales = { fr, enGB };
 import messageRender from "@/modules/messageRender";
+const locales = { fr, enGB };
 
 // @vuese
 // @group View
 // Home page
-const data = ref(null);
-const lottery = ref(true),
+const data: any = ref(null);
+const lottery = ref(true);
 const gain = ref(0);
 
+async function handle({ currentTarget }: Event) {
+  lottery.value = false;
+  // currentTarget!.disabled = true;
+  // const req = await this.api.get("/api/lottery.json");
+  // gain.value = req.data.gain;
+}
+function formatDatePhotos(date: number) {
+  return format(new Date(date), "PP", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+
+function formatMessage() {
+  return messageRender(data.news.content);
+}
+function formatDate() {
+  return format(new Date(data.news.date), "PPp", {
+    //locale: locales[navigator.language.split("-")[0]],
+  });
+}
+
+/*
   function async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/home.json").then((res) => (vm.data = res.data))
@@ -244,32 +266,15 @@ const gain = ref(0);
     next();
   },
   methods: {
-    async handle({ currentTarget }) {
-      this.lottery = false;
-      currentTarget.disabled = true;
-      const req = await this.api.get("/api/lottery.json");
-      this.gain = req.data.gain;
-    },
-    formatDatePhotos(date) {
-      return format(new Date(date), "PP", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
+
   },
   computed: {
-    formatMessage() {
-      return messageRender(this.data.news.content);
-    },
-    formatDate() {
-      return format(new Date(this.data.news.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
+
   },
   metaInfo: {
     title: "section.home",
   },
-};
+};*/
 </script>
 
 <style src="@/assets/css/bbs/markdown.css"></style>

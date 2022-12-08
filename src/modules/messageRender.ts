@@ -72,7 +72,7 @@ const allowed_attr = [
   "preserveAspectRatio",
 ];
 
-const markedRender = function (string) {
+const markedRender = function (string: string) {
   const renderer = new marked.Renderer();
 
   const rendererCodespan = renderer.codespan;
@@ -80,11 +80,12 @@ const markedRender = function (string) {
     const math = mathsExpression(text);
     if (math) return math;
 
+    // @ts-ignore
     return rendererCodespan(text);
   };
 
   // KaTeX
-  function mathsExpression(expr) {
+  function mathsExpression(expr: string) {
     let render = "Invalid LaTeX";
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
       expr = expr.substr(2, expr.length - 4);
@@ -134,17 +135,17 @@ const markedRender = function (string) {
   return marked(string);
 };
 
-const dompurifyRender = function (string) {
+const dompurifyRender = function (string: string) {
   // Allowed URI schemes
-  var regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
+  let regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
 
   /**
    *  Take CSS property-value pairs and validate against allow-list,
    *  then add the styles to an array of property-value pairs
    */
-  function validateStyles(output, styles) {
+  function validateStyles(output: Array<string>, styles: any) {
     // Validate regular CSS properties
-    for (var prop in styles) {
+    for (let prop in styles) {
       if (typeof styles[prop] === "string") {
         if (styles[prop] && allowed_properties.indexOf(prop) > -1) {
           if (allow_css_functions || !/\w+\(/.test(styles[prop])) {
@@ -160,9 +161,9 @@ const dompurifyRender = function (string) {
    * apply them to the DOM later on. Note that only selector rules
    * are supported right now
    */
-  function addCSSRules(output, cssRules) {
-    for (var index = cssRules.length - 1; index >= 0; index--) {
-      var rule = cssRules[index];
+  function addCSSRules(output: any, cssRules: any) {
+    for (let index = cssRules.length - 1; index >= 0; index--) {
+      let rule = cssRules[index];
       // check for rules with selector
       if (rule.type == 1 && rule.selectorText) {
         output.push(rule.selectorText + "{");
@@ -175,21 +176,21 @@ const dompurifyRender = function (string) {
   }
 
   // Add a hook to enforce CSS element sanitization
-  DOMPurify.addHook("uponSanitizeElement", function (node, data) {
+  DOMPurify.addHook("uponSanitizeElement", function (node: any, data) {
     if (data.tagName === "style") {
-      var output = [];
+      let output: any = [];
       addCSSRules(output, node.sheet.cssRules);
       node.textContent = output.join("\n");
     }
   });
 
   // Add a hook to enforce CSS attribute sanitization
-  DOMPurify.addHook("afterSanitizeAttributes", function (node) {
-    var anchor;
+  DOMPurify.addHook("afterSanitizeAttributes", function (node: any) {
+    let anchor: HTMLAnchorElement;
     // Sanitizing anchors
     if (node.hasAttribute("href")) {
       anchor = document.createElement("a");
-      anchor.href = node.getAttribute("href");
+      anchor.href = node.getAttribute("href")!;
       node.setAttribute("target", "_blank");
       node.setAttribute("rel", "noreferrer noopener nofollow");
       if (anchor.protocol && !anchor.protocol.match(regex_uri)) {
@@ -200,7 +201,7 @@ const dompurifyRender = function (string) {
     // Whitelist images
     if (node.hasAttribute("src")) {
       anchor = document.createElement("a");
-      anchor.href = node.getAttribute("src");
+      anchor.href = node.getAttribute("src")!;
       if (anchor.hostname && !allowed_images.includes(anchor.hostname)) {
         node.removeAttribute("src");
       }
@@ -211,13 +212,13 @@ const dompurifyRender = function (string) {
     // Sanitizing CSS
     // Nasty hack to fix baseURI + CSS problems in Chrome
     if (!node.ownerDocument.baseURI) {
-      var base = document.createElement("base");
+      let base = document.createElement("base");
       base.href = document.baseURI;
       node.ownerDocument.head.appendChild(base);
     }
     // Check all style attribute values and validate them
     if (node.hasAttribute("style")) {
-      var output = [];
+      let output: Array<string> = [];
       validateStyles(output, node.style);
       // re-add styles in case any are left
       if (output.length) {
@@ -234,24 +235,22 @@ const dompurifyRender = function (string) {
   });
 };
 
-const messageRender = function (string) {
+const messageRender = function (string: string) {
   const result = dompurifyRender(markedRender(string));
 
   // Custom embeds
-  var DOM = document.createElement("div");
+  let DOM = document.createElement("div");
   DOM.innerHTML = result;
   for (let el of DOM.querySelectorAll("a")) {
     if (el.href.match(youtube)) {
-      var iframe = document.createElement("iframe");
+      let iframe = document.createElement("iframe");
       iframe.setAttribute(
         "src",
-        el
-          .getAttribute("href")
-          .replace(youtube, `https://youtube.com/embed/$5$6`)
+        el.href.replace(youtube, `https://youtube.com/embed/$5$6`)
       );
-      iframe.setAttribute("allowfullscreen", true);
+      iframe.setAttribute("allowfullscreen", "true");
       iframe.setAttribute("title", "Youtube Video");
-      el.parentNode.replaceChild(iframe, el);
+      el.parentNode!.replaceChild(iframe, el);
     }
   }
 

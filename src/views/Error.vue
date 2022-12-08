@@ -11,9 +11,7 @@
         src="@/assets/img/icon/warning.svg"
       /><b
         >&nbsp;{{
-          this.$route.params.message
-            ? $t(this.$route.params.message)
-            : $t("error.default")
+          $route.params.message ? t($route.params.message as string) : t("error.default")
         }}</b
       >
     </GlobalCard>
@@ -22,13 +20,16 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 // @vuese
 // @group View
 // Error page. You can define an error message using route parameter `message`.
 
-  
+const { t } = useI18n();
+
+/*
   metaInfo: {
     title: "section.error",
   },
-};
+};*/
 </script>

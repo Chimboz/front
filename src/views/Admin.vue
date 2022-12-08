@@ -60,35 +60,31 @@
 import ScrollableContainer from "@/components/core/ScrollableContainer";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View
 // Admin page.
+const data = ref<null | Array<any>>(null);
+const username = ref("");
+const suggestionsHere = ref(null);
 
-  data() {
-    return {
-      data: null,
-      username: "",
-      suggestionsHere: null,
-    };
-  },
-  methods: {
-    onKeypressValue() {
-      if (this.username != undefined && this.username != "") {
-        this.api.get("/api/test.json").then((res) => {
+function onKeypressValue() {
+  if (username.value != undefined && username.value != "") {
+    /*api.get("/api/test.json").then((res: any) => {
           if (res.data && res.data.length > 0) {
-            this.suggestionsHere = res.data;
+            suggestionsHere.value = res.data;
           }
-        });
-      }
-    },
-    formatDate(date) {
-      return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  },
+        });*/
+  }
+}
+function formatDate(date: number) {
+  return format(new Date(date), "PPp", {
+    //locale: locales[navigator.language.split("-")[0]],
+  });
+}
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/admin.json").then((res) => (vm.data = res.data))
@@ -102,7 +98,7 @@ const locales = { fr, enGB };
   metaInfo: {
     title: "section.admin",
   },
-};
+};*/
 </script>
 <style lang="scss" scoped>
 .log {
