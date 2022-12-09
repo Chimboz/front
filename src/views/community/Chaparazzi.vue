@@ -51,7 +51,7 @@ const locales = { fr, enGB };
 // Chaparazzi page
 
 
-      const data: any = ref(null);,
+      const data: any = ref(null);
       search: "",
       page: 0,
       isLoading: false,

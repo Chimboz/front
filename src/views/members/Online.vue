@@ -66,19 +66,9 @@ function formatDate() {
     //locale: locales[navigator.language.split("-")[0]],
   });
 }
-/*
-  async function beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/online.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/online.json");
-    data = req.data;
-    next();
-  };
+
+// /api/online.json
 // meta title section.online
-};*/
 </script>
 
 <style lang="scss" scoped></style>

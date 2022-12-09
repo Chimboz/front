@@ -126,9 +126,7 @@ function create() {
   console.log(data.value, true);
 }
 
-/*
 // meta title section.groupedit
-};*/
 </script>
 <style lang="scss" scoped>
 .blazon {

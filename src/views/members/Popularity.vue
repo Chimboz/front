@@ -437,10 +437,8 @@ const authenticated = true;
 function vote() {
   console.log("Envoyé!");
 }
-/*
 // /api/popularity.json
 // meta title section.popularity
-};*/
 </script>
 
 <style lang="scss" scoped>

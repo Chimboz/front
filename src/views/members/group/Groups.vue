@@ -388,6 +388,7 @@
 </template>
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
@@ -395,11 +396,8 @@ const user = auth.user;
 // @group View/Members/Group
 // Groups page
 
-  
 const data = ref<any>(null);
-  computed: {
-    const authenticated = true;,
-  },
+const authenticated = true;
 // /api/groups.json
 // meta title section.groups
 </script>

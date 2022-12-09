@@ -54,7 +54,7 @@
 
   
 
-      const data: any = ref(null);,
+      const data: any = ref(null);
       selected: 0,
     };
   },

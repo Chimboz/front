@@ -359,20 +359,20 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import { ref } from 'vue';
+
 // @vuese
 // @group View/Members/Group
 // Groups management page
 
-  
 const data = ref<any>(null);
 
-function cancel(id) {
+function cancel(id: number) {
       console.log("Annulé " + id);
-    },
-function leave(id) {
+    };
+function leave(id: number) {
       console.log("Quitté " + id);
-    },
-  };
+    };
 // /api/manage.json
 // meta title section.groups
 </script>

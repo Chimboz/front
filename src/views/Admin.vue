@@ -88,10 +88,8 @@ function formatDate(date: number) {
     //locale: locales[navigator.language.split("-")[0]],
   });
 }
-/*
 // /api/admin.json
 // meta title section.admin
-};*/
 </script>
 <style lang="scss" scoped>
 .log {

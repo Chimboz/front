@@ -107,6 +107,7 @@
 import Bank from "@/components/Bank.vue";
 import Pack from "@/components/Pack.vue";
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
@@ -114,28 +115,23 @@ const user = auth.user;
 // @group View/Community
 // Shop page
 
+const data: any = ref(null);
+const shown = ref<any>(null);
+const authenticated = true;
 
-      const data: any = ref(null);,
-      shown: null,
-    };
-  },
-  computed: {
-    const authenticated = true;,
-  },
-
-function show(pack) {
-      shown = pack;
-      $refs.clickAudio.play();
-    },
+function show(pack: any) {
+  /*shown = pack;
+  $refs.clickAudio.play();*/
+}
 function buy() {
-      $refs.buyAudio.play();
-      console.log("Acheté " + shown.name);
-      eventBus.emit("confirmation", {
-        message: "success.buy",
-        callback: "/api/success.json",
-      });
-    },
-  };
+  /*
+  $refs.buyAudio.play();
+  console.log("Acheté " + shown.name);
+  eventBus.emit("confirmation", {
+    message: "success.buy",
+    callback: "/api/success.json",
+  });*/
+}
 // /api/shop.json
 // meta title section.shop
 </script>

@@ -308,10 +308,9 @@ function rejectDemand(id: number) {
 
 function focusHandler(){}
 function selectionHandler(){}
-/*
+
 // /api/edit.json
 // meta title section.groupedit
-};*/
 </script>
 <style lang="scss" scoped>
 .blazon {

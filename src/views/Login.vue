@@ -148,14 +148,9 @@ function formatDatePhotos(date: number) {
 function login() {
   //$store.dispatch("auth/login");
 }
-/*
+
 // /api/login.json
-
-
-
-  };
 // meta title section.login
-};*/
 </script>
 <style lang="scss">
 .packs .card-btn {

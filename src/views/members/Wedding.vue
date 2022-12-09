@@ -406,10 +406,9 @@ function formatDistance(datebegin: number, dateend: number) {
 function search() {
   console.log("Envoyé!");
 }
-/*
+
 // /api/weddings.json
 // meta title section.wedding
-};*/
 </script>
 
 <style lang="scss" scoped>

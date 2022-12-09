@@ -254,10 +254,8 @@ function formatDate() {
   });
 }
 
-/*
-/api/home.json
+// /api/home.json
 // meta title section.home
-};*/
 </script>
 
 <style src="@/assets/css/bbs/markdown.css"></style>

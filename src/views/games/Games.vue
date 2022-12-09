@@ -224,6 +224,8 @@
 // @group View/Games
 // Games page
 
+import { ref } from 'vue';
+
   
 const data = ref<any>(null);
 // /api/games.json

@@ -24,7 +24,5 @@
 // @group View
 // Error page. You can define an error message using route parameter `message`.
 
-/*
 // meta title section.error
-};*/
 </script>

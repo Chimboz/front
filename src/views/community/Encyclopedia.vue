@@ -160,7 +160,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
 
 
 
-      const data: any = ref(null);,
+      const data: any = ref(null);
       categories: [
         "body",
         "bot",

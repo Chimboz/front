@@ -162,39 +162,35 @@
 <script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Book
 // Book page
 
-  
-
-      const data: any = ref(null);,
-      username: "",
-      suggestionsHere: null,
-    };
-  },
+const data: any = ref(null);
+const username = ref("");
+const suggestionsHere = ref<any>(null);
 
 function onKeypressValue() {
-      if (username != undefined && username != "") {
-        api.get("api/test.json").then((res) => {
-          if (res.data && res.data.length > 0) {
-            suggestionsHere = res.data;
-          }
-        });
+  /*if (username != undefined && username.value != "") {
+    api.get("api/test.json").then((res) => {
+      if (res.data && res.data.length > 0) {
+        suggestionsHere = res.data;
       }
-    },
+    });
+  }*/
+}
 function search() {
-      let id = 1;
-      $router.push(`/book/${id}`);
-    },
-function formatDate(date) {
-      return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  };
+  let id = 1;
+  // $router.push(`/book/${id}`);
+}
+function formatDate(date: number) {
+  return format(new Date(date), "PPp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
 // /api/book.json
 // meta title section.popularity
 </script>

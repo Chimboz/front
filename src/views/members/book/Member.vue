@@ -14,12 +14,7 @@
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <GlobalCard
-      class="member"
-      :class="[data.gender]"
-      v-if="data"
-      justified
-    >
+    <GlobalCard class="member" :class="[data.gender]" v-if="data" justified>
       <div class="member-header">
         <GlobalAvatar
           :avatar="data.look.avatar"
@@ -152,10 +147,7 @@
           <br /><br />
           <p>
             Vérification du nom :
-            <b
-              >{{ data.name.toLowerCase() }},
-              {{ data.name.toUpperCase() }}</b
-            >
+            <b>{{ data.name.toLowerCase() }}, {{ data.name.toUpperCase() }}</b>
           </p>
           <p>
             Signe astrologik : <b>{{ data.astro }}</b>
@@ -261,41 +253,38 @@
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
 import { useAuthStore } from "@/stores/auth";
-const auth = useAuthStore();
-const user = auth.user;
+import { ref } from "vue";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import type User from "@/types/User";
 const locales = { fr, enGB };
+const auth = useAuthStore();
+const user = auth.user as User;
 
 // @vuese
 // @group View/Members/Book
 // Member page
 
+const data: any = ref(null);
+const duration = 1;
 
-
-      const data: any = ref(null);,
-      duration: 1,
-    };
-  },
-
-// /api/member.json
-
-function formatDate(date) {
-      return format(new Date(date), "PPp", {
+function formatDate(date: number) {
+  return format(new Date(date), "PPp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+function formatDistance(date: number) {
+  return differenceInCalendarDays(
+    new Date(),
+    new Date(date) /*{
         locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-function formatDistance(date) {
-      return differenceInCalendarDays(new Date(), new Date(date), {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
+      }*/
+  );
+}
 function ban() {
-      console.log(
-        "Banni" + $route.params.id + " durée " + duration * 86400
-      );
-    },
-  };
+  console.log("Banni" + /*$route.params.id +*/ " durée " + duration * 86400);
+}
+// /api/member.json
 // meta title section.member
 </script>
 <style lang="scss">

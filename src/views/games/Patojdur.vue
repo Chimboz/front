@@ -371,26 +371,25 @@
 <script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Games
 // Patojdur (Wide Wade) page
 
-  
 const data = ref<any>(null);
 
-function formatDate(date) {
-      return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-function formatHour(date) {
-      return format(new Date(date), "p", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  };
+function formatDate(date: number) {
+  return format(new Date(date), "PPp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+function formatHour(date: number) {
+  return format(new Date(date), "p", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
 // /api/patojdur.json
 // meta title section.patojdur
 </script>

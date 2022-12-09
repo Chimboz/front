@@ -187,10 +187,8 @@ function search() {
   console.log("Envoyé!");
 }
 
-/*
 // /api/members.json
 // meta title section.members
-};*/
 </script>
 <style lang="scss" scoped>
 img[src*="spotlight"] {

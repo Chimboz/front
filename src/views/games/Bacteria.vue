@@ -317,6 +317,7 @@
 <script setup lang="ts">
 import Progress from "@/components/core/Progress.vue";
 import Tooltip from "@/components/core/Tooltip.vue";
+import { ref } from "vue";
 
 // @vuese
 // @group View/Games

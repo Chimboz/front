@@ -162,10 +162,9 @@ function formatDistance() {
 function join() {
   console.log("Rejoins " /*+ $route.params.id*/);
 }
-/*
+
 // /api/group.json
 // meta title section.group
-};*/
 </script>
 <style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>
