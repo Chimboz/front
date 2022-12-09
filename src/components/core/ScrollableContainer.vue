@@ -40,7 +40,7 @@ const props = withDefaults(
 
 function onScroll(){}
 /*
-function     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }: Event) {
+functionfunction onScroll({ target: { scrollTop, clientHeight, scrollHeight } }: Event) {
       if (scrollTop + clientHeight >= scrollHeight && !hasEnded) {
         isLoading.value = true;
         api.get(`/api/${props.route}/${++page.value}.json`).then(

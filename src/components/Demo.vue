@@ -228,7 +228,7 @@ function mounted() {
     setInterval(() => (demo = (demo + 1) % 6), 7000);
   },
 
-    login() {
+function login() {
       $store.dispatch("auth/login");
     },
   },

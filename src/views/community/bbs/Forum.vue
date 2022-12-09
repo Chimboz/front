@@ -83,22 +83,7 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
       post: false
     };
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api
-        .get(
-          `/api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json`
-        )
-        .then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get(
-      `/api/forum/${to.params.page ? to.params.page : 1}.json`
-    );
-    data = req.data;
-    next();
-  },
+// /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
   metaInfo: {
     title: "section.forum",
 

@@ -73,7 +73,7 @@ function mounted() {
     pseudo = user.name.slice();
   },
 
-    changeCase(index) {
+function changeCase(index) {
       let letter;
       if (pseudo[index].toUpperCase() == pseudo[index])
         letter = pseudo[index].toLowerCase();
@@ -81,7 +81,7 @@ function mounted() {
       pseudo =
         pseudo.slice(0, index) + letter + pseudo.slice(index + 1);
     },
-    submit() {
+function submit() {
       console.log(`Envoyé ${pseudo}!`);
     },
   },

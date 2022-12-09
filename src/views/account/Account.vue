@@ -427,7 +427,7 @@ Chart.register(
 
 const data = ref<any>(null);
 
-    formatDate(date) {
+function formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,
@@ -435,7 +435,7 @@ const data = ref<any>(null);
     },
   },
   computed: {
-    statsBacteria() {
+function statsBacteria() {
       return {
         labels: ["Win", "Draw", "Lose"],
         datasets: [
@@ -450,7 +450,7 @@ const data = ref<any>(null);
         ],
       };
     },
-    statsPatojdur() {
+function statsPatojdur() {
       return {
         labels: ["Best", "Today", "Yesterday"],
         datasets: [
@@ -466,16 +466,7 @@ const data = ref<any>(null);
       };
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/account.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/account.json");
-    data = req.data;
-    next();
-  },
+// /api/account.json
   metaInfo: {
     title: "section.account",
   },

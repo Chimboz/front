@@ -43,21 +43,21 @@ function mounted() {
   },
 
 
-    start() {
+function start() {
       isLoading = true;
       isVisible = true;
       progress = startingPoint;
       loop();
     },
 
-    random(min, max) {
+function random(min, max) {
       return (
         Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
         Math.ceil(min)
       );
     },
 
-    loop() {
+function loop() {
       if (timeoutId) {
         clearTimeout(timeoutId);
       }
@@ -80,7 +80,7 @@ function mounted() {
       );
     },
 
-    stop() {
+function stop() {
       isLoading = false;
       progress = 100;
       clearTimeout(timeoutId);

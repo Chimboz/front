@@ -58,7 +58,7 @@ const locales = { fr, enGB };
     };
   },
 
-    onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
+function onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
       if (scrollTop + clientHeight >= scrollHeight - 60) {
         isLoading = true;
         api.get(`/api/chaparazzi/${++page}.json`).then(
@@ -70,26 +70,13 @@ const locales = { fr, enGB };
         );
       }
     },
-    formatDate(date) {
+function formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get(`/api/chaparazzi/${vm.page}.json`).then((res) => {
-        vm.data = res.data;
-        vm.shown = res.data[0];
-      })
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get(`/api/chaparazzi/0.json`);
-    data = req.data;
-    shown = data[0];
-    next();
-  },
+// /api/chaparazzi/${vm.page}.json
   metaInfo: {
     title: "section.chaparazzi",
   },

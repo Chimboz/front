@@ -398,18 +398,9 @@ const user = auth.user;
   
 const data = ref<any>(null);
   computed: {
-    ...mapGetters("auth", ["authenticated"]),
+    const authenticated = true;,
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/groups.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/groups.json");
-    data = req.data;
-    next();
-  },
+// /api/groups.json
   metaInfo: {
     title: "section.groups",
   },

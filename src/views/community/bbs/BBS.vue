@@ -66,16 +66,7 @@ import BBSList from "@/components/bbs/list/BBS.vue";
       data: null
     };
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/bbs.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/bbs.json");
-    data = req.data;
-    next();
-  },
+// /api/bbs.json
   metaInfo: {
     title: "section.bbs",
 

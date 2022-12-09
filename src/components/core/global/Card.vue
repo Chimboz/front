@@ -88,7 +88,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
       required: false,
       // `"yellow"`, `"blue"`, `"red"`
       type: String,
-      validator(value) {
+function validator(value) {
         return ["yellow", "blue", "red"].includes(value);
       },
     },
@@ -112,7 +112,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
     },
   },
   computed: {
-    cssVars() {
+function cssVars() {
       switch (color) {
         case "yellow":
           return {
@@ -140,10 +140,10 @@ import StrokeText from "@/components/core/StrokeText.vue";
           };
       }
     },
-    bgImage() {
+function bgImage() {
       return require("@/assets/img/card/background/" + bg);
     },
-    inlineBg() {
+function inlineBg() {
       return {
         backgroundImage: `url(${bgImage})`,
       };

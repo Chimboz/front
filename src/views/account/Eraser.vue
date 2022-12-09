@@ -83,10 +83,10 @@ const user = auth.user;
     };
   },
 
-    submit() {
+function submit() {
       console.log(`Envoyé ${pseudo}!`);
     },
-    generatePseudo() {
+function generatePseudo() {
       pseudo = "test";
     },
   },

@@ -29,24 +29,9 @@ const user = auth.user;
       data: null
     };
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api
-        .get(
-          `/api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json`
-        )
-        .then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get(
-      `/api/topic/${to.params.page ? to.params.page : 1}.json`
-    );
-    data = req.data;
-    next();
-  },
+// /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
   computed: {
-    ...mapGetters("auth", ["authenticated"])
+    const authenticated = true;
   },
   metaInfo: {
     title: "section.topic",

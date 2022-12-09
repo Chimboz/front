@@ -309,16 +309,7 @@ function rejectDemand(id: number) {
 function focusHandler(){}
 function selectionHandler(){}
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/edit.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/edit.json");
-    data = req.data;
-    next();
-  },
+// /api/edit.json
   metaInfo: {
     title: "section.groupedit",
   },

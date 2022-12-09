@@ -136,28 +136,28 @@ function mounted() {
     }
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"]),
-    formatMessage() {
+    const authenticated = true;,
+    const user = {};
+function formatMessage() {
       return messageRender(message.content);
     },
-    formatDate() {
+function formatDate() {
       return format(new Date(message.date), "PPpp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
   },
 
-    scrollTo(anchor) {
+function scrollTo(anchor) {
       location.href = anchor;
     },
-    edit() {
+function edit() {
       console.log("edit " + message.id);
     },
-    delete() {
+function delete() {
       console.log("delete " + message.id);
     },
-    quote() {
+function quote() {
       console.log();
     },
   },

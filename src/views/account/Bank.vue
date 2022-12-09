@@ -123,19 +123,19 @@ Chart.register(
 
 const data = ref<any>(null);
 
-    formatDate(date) {
+function formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-    formatDateStats(date) {
+function formatDateStats(date) {
       return format(new Date(date), "d MMM", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
   },
   computed: {
-    bankData() {
+function bankData() {
       const dataset = {
         labels: [],
         datasets: [
@@ -173,16 +173,7 @@ const data = ref<any>(null);
       return dataset;
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/bank.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/bank.json");
-    data = req.data;
-    next();
-  },
+// /api/bank.json
   metaInfo: {
     title: "section.bank",
   },

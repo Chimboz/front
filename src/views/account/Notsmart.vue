@@ -71,7 +71,7 @@
 
   
 
-    changePassword() {
+function changePassword() {
       console.log("Change password");
     },
   },

@@ -278,28 +278,19 @@ const locales = { fr, enGB };
     };
   },
 
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/member.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/member.json");
-    data = req.data;
-    next();
-  },
+// /api/member.json
 
-    formatDate(date) {
+function formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-    formatDistance(date) {
+function formatDistance(date) {
       return differenceInCalendarDays(new Date(), new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-    ban() {
+function ban() {
       console.log(
         "Banni" + $route.params.id + " durée " + duration * 86400
       );

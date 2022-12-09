@@ -208,14 +208,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
       isLoading: false,
     };
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get(`/api/encyclopedia/${vm.page}.json`).then((res) => {
-        vm.data = res.data;
-        vm.shown = res.data[0];
-      })
-    );
-  },
+// /api/encyclopedia/${vm.page}.json
   metaInfo: {
     title: "section.encyclopedia",
   },

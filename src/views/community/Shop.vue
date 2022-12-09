@@ -120,14 +120,14 @@ const user = auth.user;
     };
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"]),
+    const authenticated = true;,
   },
 
-    show(pack) {
+function show(pack) {
       shown = pack;
       $refs.clickAudio.play();
     },
-    buy() {
+function buy() {
       $refs.buyAudio.play();
       console.log("Acheté " + shown.name);
       eventBus.emit("confirmation", {
@@ -136,20 +136,7 @@ const user = auth.user;
       });
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/shop.json").then((res) => {
-        vm.data = res.data;
-        vm.shown = res.data[0];
-      })
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/shop.json");
-    data = req.data;
-    shown = data[0];
-    next();
-  },
+// /api/shop.json
   metaInfo: {
     title: "section.shop",
   },

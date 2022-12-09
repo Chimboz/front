@@ -18,7 +18,7 @@
     callback: { required: true, type: Function, default: (page) => page }
   },
   computed: {
-    array() {
+function array() {
       return [
         ...new Set([
           ...Array(total < 3 ? total : 3).keys(),

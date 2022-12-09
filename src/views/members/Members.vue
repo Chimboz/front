@@ -188,16 +188,7 @@ function search() {
 }
 
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/members.json");
-    data = req.data;
-    next();
-  },
+// /api/members.json
   metaInfo: {
     title: "section.members",
   },

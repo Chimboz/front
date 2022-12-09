@@ -93,17 +93,17 @@ const user = auth.user;
     }
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"]),
+    const authenticated = true;,
     ...mapState("auth", ["user"])
   },
 
-    lock() {
+function lock() {
       console.log("Lock " + $route.params.topic);
     },
-    delete() {
+function delete() {
       console.log("Delete " + $route.params.topic);
     },
-    move() {
+function move() {
       console.log("Move " + $route.params.topic);
     }
   }

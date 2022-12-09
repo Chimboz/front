@@ -197,17 +197,17 @@ const user = auth.user;
     };
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"]),
+    const authenticated = true;,
+    const user = {};
   },
 
 
-    logout() {
+function logout() {
       $store.dispatch("auth/logout");
       $router.push($route.path == "/" ? "/login" : $route.path);
     },
   },
-  created() {
+function created() {
     document.body.className = "h" + date.getHours();
   },
 </script>

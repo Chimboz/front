@@ -87,22 +87,22 @@ function mounted() {
     eventBus.on("confirmation", (req) => confirmation(req));
   },
 
-    error(req) {
+function error(req) {
       isVisible = true;
       type = "error";
       message = req.message;
     },
-    success(req) {
+function success(req) {
       isVisible = true;
       type = "success";
       message = req.message;
     },
-    failure(req) {
+function failure(req) {
       isVisible = true;
       type = "failure";
       message = req.message;
     },
-    confirmation(req) {
+function confirmation(req) {
       isVisible = true;
       type = "confirmation";
       message = req.message;

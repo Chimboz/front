@@ -438,16 +438,7 @@ function vote() {
   console.log("Envoyé!");
 }
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/popularity.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/popularity.json");
-    data = req.data;
-    next();
-  },
+// /api/popularity.json
   metaInfo: {
     title: "section.popularity",
   },

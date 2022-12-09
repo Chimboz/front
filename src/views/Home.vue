@@ -255,22 +255,7 @@ function formatDate() {
 }
 
 /*
-  function async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/home.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/home.json");
-    data = req.data;
-    next();
-  },
-
-
-  },
-  computed: {
-
-  },
+/api/home.json
   metaInfo: {
     title: "section.home",
   },

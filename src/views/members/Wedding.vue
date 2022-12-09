@@ -407,16 +407,7 @@ function search() {
   console.log("Envoyé!");
 }
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/weddings.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/weddings.json");
-    data = req.data;
-    next();
-  },
+// /api/weddings.json
   metaInfo: {
     title: "section.wedding",
   },

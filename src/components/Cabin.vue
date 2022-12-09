@@ -375,7 +375,7 @@ import VLazyImage from "v-lazy-image";
     centred: { type: String },
   },
 
-    submit() {
+function submit() {
       console.log("Envoyé!");
     },
   },

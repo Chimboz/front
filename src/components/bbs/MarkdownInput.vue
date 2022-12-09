@@ -281,32 +281,32 @@ function mounted() {
   },
 
 
-    submit() {
+function submit() {
       if (mode == "post") {
         console.log("Envoyé!");
       } else console.log("Edité!");
       message = "";
     },
-    scrollTo(anchor) {
+function scrollTo(anchor) {
       location.href = anchor;
     },
-    focusHandler() {
+function focusHandler() {
       $refs.message.focus();
       select();
     },
-    selectionHandler(e) {
+function selectionHandler(e) {
       selectionRange = [
         e.currentTarget.selectionStart,
         e.currentTarget.selectionEnd,
       ];
     },
-    select() {
+function select() {
       $refs.message.setSelectionRange(
         selectionRange[0],
         selectionRange[1]
       );
     },
-    format(pattern) {
+function format(pattern) {
       message =
         message.substring(0, selectionRange[0]) +
         pattern +
@@ -317,7 +317,7 @@ function mounted() {
         message.substring(selectionRange[1]);
       focusHandler();
     },
-    formatLink(image) {
+function formatLink(image) {
       message =
         message.substring(0, selectionRange[0]) +
         `${image ? "!" : ""}[${message.substring(
@@ -330,7 +330,7 @@ function mounted() {
         message.substring(selectionRange[1]);
       focusHandler();
     },
-    formatCode() {
+function formatCode() {
       message =
         message.substring(0, selectionRange[0]) +
         "\n```" +
@@ -345,7 +345,7 @@ function mounted() {
       ];
       focusHandler();
     },
-    formatMultiline(pattern) {
+function formatMultiline(pattern) {
       message =
         message.substring(0, selectionRange[0]) +
         (message.charAt(selectionRange[0] - 1) == "\n" ||
@@ -360,7 +360,7 @@ function mounted() {
         message.substring(selectionRange[1]);
       focusHandler();
     },
-    formatColor(hex) {
+function formatColor(hex) {
       message =
         message.substring(0, selectionRange[0]) +
         `<i style="color:${hex}">` +

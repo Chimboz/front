@@ -31,13 +31,13 @@ import StrokeText from "@/components/core/StrokeText.vue";
       required: false,
       // `"red"`, `"green"`, `"yellow"`, `"orange"`
       type: String,
-      validator(value) {
+function validator(value) {
         return ["red", "green", "yellow", "orange"].includes(value);
       },
     },
   },
   computed: {
-    cssVars() {
+function cssVars() {
       switch (color) {
         case "yellow":
           return {

@@ -190,22 +190,13 @@ const locales = { fr, enGB };
   
 const data = ref<any>(null);
 
-    formatDate(date) {
+function formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/mazo.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/mazo.json");
-    data = req.data;
-    next();
-  },
+// /api/mazo.json
   metaInfo: {
     title: "section.mazo",
   },

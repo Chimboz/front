@@ -36,19 +36,19 @@ function mounted() {
   },
 
 
-    randomInt(min, max) {
+function randomInt(min, max) {
       return (
         Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
         Math.ceil(min)
       );
     },
-    bezier(time, startValue, change, duration) {
+function bezier(time, startValue, change, duration) {
       time /= duration / 2;
       if (time < 1) return (change / 2) * time * time + startValue;
       time--;
       return (-change / 2) * (time * (time - 2) - 1) + startValue;
     },
-    tween(timestamp) {
+function tween(timestamp) {
       if (start === 0) start = timestamp;
       elapsed = timestamp - start;
 

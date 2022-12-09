@@ -67,24 +67,24 @@
     };
   },
 
-    play() {
+function play() {
       playing = true;
       $refs.player.play();
     },
-    pause() {
+function pause() {
       playing = false;
       $refs.player.pause();
     },
-    stop() {
+function stop() {
       pause();
       $refs.player.currentTime = 0;
     },
-    skip(e) {
+function skip(e) {
       $refs.player.currentTime =
         (e.offsetX / $refs.progress.offsetWidth) *
         $refs.player.duration;
     },
-    progress() {
+function progress() {
       $refs.progressBar.style.width =
         ($refs.player.currentTime / $refs.player.duration) * 100 +
         "%";

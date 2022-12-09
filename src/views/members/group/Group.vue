@@ -163,16 +163,7 @@ function join() {
   console.log("Rejoins " /*+ $route.params.id*/);
 }
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/group.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/group.json");
-    data = req.data;
-    next();
-  },
+// /api/group.json
   metaInfo: {
     title: "section.group",
   },

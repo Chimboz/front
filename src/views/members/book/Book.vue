@@ -176,7 +176,7 @@ const locales = { fr, enGB };
     };
   },
 
-    onKeypressValue() {
+function onKeypressValue() {
       if (username != undefined && username != "") {
         api.get("api/test.json").then((res) => {
           if (res.data && res.data.length > 0) {
@@ -185,26 +185,17 @@ const locales = { fr, enGB };
         });
       }
     },
-    search() {
+function search() {
       let id = 1;
       $router.push(`/book/${id}`);
     },
-    formatDate(date) {
+function formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/book.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/book.json");
-    data = req.data;
-    next();
-  },
+// /api/book.json
   metaInfo: {
     title: "section.popularity",
   },

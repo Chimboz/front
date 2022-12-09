@@ -133,13 +133,13 @@ function mounted() {
     };
   },
 
-    randomInt(min, max) {
+function randomInt(min, max) {
       return (
         Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
         Math.ceil(min)
       );
     },
-    tween() {
+function tween() {
       if (coins >= user.credits || coins > 1760) return;
       coins += Math.max(
         Math.floor(user.credits / 60 / delay),
@@ -149,8 +149,8 @@ function mounted() {
     },
   },
   computed: {
-    ...mapGetters("auth", ["authenticated"]),
-    ...mapState("auth", ["user"]),
+    const authenticated = true;,
+    const user = {};
   },
 </script>
 <style lang="scss" scoped>

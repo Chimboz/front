@@ -366,23 +366,14 @@
   
 const data = ref<any>(null);
 
-    cancel(id) {
+function cancel(id) {
       console.log("Annulé " + id);
     },
-    leave(id) {
+function leave(id) {
       console.log("Quitté " + id);
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/manage.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/manage.json");
-    data = req.data;
-    next();
-  },
+// /api/manage.json
   metaInfo: {
     title: "section.groups",
   },

@@ -31,7 +31,7 @@ function mounted() {
   },
 
 
-    tween() {
+function tween() {
       displayNumber += Math.max(
         Math.floor(number / 60 / delay),
         1

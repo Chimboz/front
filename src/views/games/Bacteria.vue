@@ -323,16 +323,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
 // Bacteria page
 
 const data = ref<any>(null);
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/bacteria.json");
-    data = req.data;
-    next();
-  },
+// /api/bacteria.json
   metaInfo: {
     title: "section.bacteria",
   },

@@ -104,7 +104,7 @@
     }
   },
 
-    play() {
+function play() {
       $refs.audio.play();
     }
   }

@@ -226,16 +226,7 @@
 
   
 const data = ref<any>(null);
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/games.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/games.json");
-    data = req.data;
-    next();
-  },
+// /api/games.json
   metaInfo: {
     title: "section.games",
   },

@@ -138,13 +138,13 @@ const locales = { fr, enGB };
 
 const data = ref<any>(null);
 
-    formatDate(date) {
+function formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,
       });
     },
-    hashColor(str) {
+function hashColor(str) {
       var hash = 0;
       for (var i = 0; i < str.length; i++) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash);
@@ -156,12 +156,12 @@ const data = ref<any>(null);
       }
       return colour;
     },
-    cancel(friend) {
+function cancel(friend) {
       console.log("Cancel " + friend.user.id);
       // API Call returning true if friend removed
       data.splice(data.indexOf(friend), 1);
     },
-    accept(friend) {
+function accept(friend) {
       console.log("Accept " + friend.user.id);
       // API Call returning new friend infos (status)
       data.splice(data.indexOf(friend), 1, {
@@ -186,11 +186,11 @@ const data = ref<any>(null);
         },
       });
     },
-    decline(friend) {
+function decline(friend) {
       console.log("Decline " + friend.user.id);
       data.splice(data.indexOf(friend), 1);
     },
-    addFriend(form) {
+function addFriend(form) {
       for (let element of form.target.elements) {
         if (element.name == "friend") {
           console.log(`Ajouté ${element.value} en ami`);
@@ -217,16 +217,7 @@ const data = ref<any>(null);
       }
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/friends.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/friends.json");
-    data = req.data;
-    next();
-  },
+// /api/friends.json
   metaInfo: {
     title: "section.friends",
   },

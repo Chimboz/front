@@ -170,7 +170,7 @@ import VLazyImage from "v-lazy-image";
     };
   },
 
-    submit() {
+function submit() {
       console.log("Envoyé!");
     }
   },

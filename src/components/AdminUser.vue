@@ -215,12 +215,12 @@ const locales = { fr, enGB };
 const data = ref<any>(null);
 
 
-    formatDate(date) {
+function formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-    action(type, params) {
+function action(type, params) {
       eventBus.emit("confirmation", {
         message: `admin.modal.${type}`,
         callback: `/api/${type}.json`,
@@ -228,18 +228,7 @@ const data = ref<any>(null);
       });
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get(`/api/admin/${vm.$route.params.id}.json`).then((res) => {
-        vm.data = res.data;
-      })
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get(`/api/admin/${to.params.id}.json`);
-    data = req.data;
-    next();
-  },
+// /api/admin/${to.params.id}.json
 </script>
 <style lang="scss" scoped>
 .pseudo {

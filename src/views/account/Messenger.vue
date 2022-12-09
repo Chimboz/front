@@ -89,13 +89,13 @@ const locales = { fr, enGB };
 // Messenger page
 const data = ref<any>(null);
 
-    formatDate(date) {
+function formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,
       });
     },
-    hashColor(str) {
+function hashColor(str) {
       var hash = 0;
       for (var i = 0; i < str.length; i++) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash);
@@ -108,16 +108,7 @@ const data = ref<any>(null);
       return colour;
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/messenger.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/messenger.json");
-    data = req.data;
-    next();
-  },
+// /api/messenger.json
   metaInfo: {
     title: "section.messenger",
   },

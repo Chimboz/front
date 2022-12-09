@@ -62,18 +62,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @group Default
 
 const data = ref<any>(null);
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get(`/api/item/${vm.$route.params.id}.json`).then((res) => {
-        vm.data = res.data;
-      })
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get(`/api/item/${to.params.id}.json`);
-    data = req.data;
-    next();
-  },
+// /api/item/${vm.$route.params.id}.json
 </script>
 <style lang="scss" scoped>
 .item-name {

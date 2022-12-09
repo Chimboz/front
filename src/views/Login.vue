@@ -149,16 +149,7 @@ function login() {
   //$store.dispatch("auth/login");
 }
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/login.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/login.json");
-    data = req.data;
-    next();
-  },
+// /api/login.json
 
 
 

@@ -125,16 +125,16 @@ import messageRender from "@/modules/messageRender";
     };
   },
 
-    messageRender(message) {
+function messageRender(message) {
       return messageRender(message);
     },
-    formatDate(date) {
+function formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,
       });
     },
-    hashColor(str) {
+function hashColor(str) {
       var hash = 0;
       for (var i = 0; i < str.length; i++) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash);
@@ -146,7 +146,7 @@ import messageRender from "@/modules/messageRender";
       }
       return colour;
     },
-    send() {
+function send() {
       console.log("Envoyé " + message);
       data.messages.push({
         you: true,
@@ -156,16 +156,7 @@ import messageRender from "@/modules/messageRender";
       message = "";
     },
   },
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/conversation.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/conversation.json");
-    data = req.data;
-    next();
-  },
+// /api/conversation.json
   metaInfo: {
     title: "section.conversation",
   },

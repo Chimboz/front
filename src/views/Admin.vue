@@ -89,16 +89,7 @@ function formatDate(date: number) {
   });
 }
 /*
-  async beforeRouteEnter(to, from, next) {
-    next((vm) =>
-      vm.api.get("/api/admin.json").then((res) => (vm.data = res.data))
-    );
-  },
-  async beforeRouteUpdate(to, from, next) {
-    const req = await api.get("/api/admin.json");
-    data = req.data;
-    next();
-  },
+// /api/admin.json
   metaInfo: {
     title: "section.admin",
   },
