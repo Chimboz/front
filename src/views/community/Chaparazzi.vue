@@ -77,9 +77,7 @@ function formatDate(date) {
     },
   },
 // /api/chaparazzi/${vm.page}.json
-  metaInfo: {
-    title: "section.chaparazzi",
-  },
+// meta title section.chaparazzi
 </script>
 <style lang="scss" scoped>
 .gallery {

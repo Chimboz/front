@@ -392,9 +392,7 @@ function formatHour(date) {
     },
   },
 // /api/patojdur.json
-  metaInfo: {
-    title: "section.patojdur",
-  },
+// meta title section.patojdur
 </script>
 
 <style lang="scss" scoped>

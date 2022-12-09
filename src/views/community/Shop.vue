@@ -137,9 +137,7 @@ function buy() {
     },
   },
 // /api/shop.json
-  metaInfo: {
-    title: "section.shop",
-  },
+// meta title section.shop
 </script>
 <style lang="scss">
 .menu .pack {

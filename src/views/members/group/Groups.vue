@@ -401,7 +401,5 @@ const data = ref<any>(null);
     const authenticated = true;,
   },
 // /api/groups.json
-  metaInfo: {
-    title: "section.groups",
-  },
+// meta title section.groups
 </script>

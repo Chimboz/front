@@ -189,9 +189,7 @@ function search() {
 
 /*
 // /api/members.json
-  metaInfo: {
-    title: "section.members",
-  },
+// meta title section.members
 };*/
 </script>
 <style lang="scss" scoped>

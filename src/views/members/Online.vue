@@ -77,9 +77,7 @@ function formatDate() {
     data = req.data;
     next();
   },
-  metaInfo: {
-    title: "section.online",
-  },
+// meta title section.online
 };*/
 </script>
 

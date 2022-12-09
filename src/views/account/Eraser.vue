@@ -91,9 +91,7 @@ function generatePseudo() {
     },
   },
 
-  metaInfo: {
-    title: "section.eraser",
-  },
+// meta title section.eraser
 </script>
 
 <style lang="scss" scoped>

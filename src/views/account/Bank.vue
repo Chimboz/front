@@ -174,9 +174,7 @@ function bankData() {
     },
   },
 // /api/bank.json
-  metaInfo: {
-    title: "section.bank",
-  },
+// meta title section.bank
 </script>
 
 <style lang="scss" scoped>

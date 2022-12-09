@@ -86,9 +86,7 @@ function submit() {
     },
   },
 
-  metaInfo: {
-    title: "section.capitalization",
-  },
+// meta title section.capitalization
 </script>
 
 <style lang="scss" scoped>

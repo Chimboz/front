@@ -374,7 +374,5 @@ function leave(id) {
     },
   },
 // /api/manage.json
-  metaInfo: {
-    title: "section.groups",
-  },
+// meta title section.groups
 </script>

@@ -157,9 +157,7 @@ function send() {
     },
   },
 // /api/conversation.json
-  metaInfo: {
-    title: "section.conversation",
-  },
+// meta title section.conversation
 </script>
 
 <style lang="scss" scoped>

@@ -90,9 +90,7 @@ function formatDate(date: number) {
 }
 /*
 // /api/admin.json
-  metaInfo: {
-    title: "section.admin",
-  },
+// meta title section.admin
 };*/
 </script>
 <style lang="scss" scoped>

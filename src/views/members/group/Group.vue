@@ -164,9 +164,7 @@ function join() {
 }
 /*
 // /api/group.json
-  metaInfo: {
-    title: "section.group",
-  },
+// meta title section.group
 };*/
 </script>
 <style src="@/assets/css/bbs/markdown.css"></style>

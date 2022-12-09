@@ -67,10 +67,7 @@ import BBSList from "@/components/bbs/list/BBS.vue";
     };
   },
 // /api/bbs.json
-  metaInfo: {
-    title: "section.bbs",
-
-  }
+// meta title section.bbs
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

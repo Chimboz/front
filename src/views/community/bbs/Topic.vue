@@ -33,9 +33,6 @@ const user = auth.user;
   computed: {
     const authenticated = true;
   },
-  metaInfo: {
-    title: "section.topic",
-
-  }
+// meta title section.topic
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

@@ -218,9 +218,7 @@ function addFriend(form) {
     },
   },
 // /api/friends.json
-  metaInfo: {
-    title: "section.friends",
-  },
+// meta title section.friends
 </script>
 
 <style lang="scss" scoped>

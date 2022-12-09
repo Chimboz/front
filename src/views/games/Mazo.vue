@@ -197,9 +197,7 @@ function formatDate(date) {
     },
   },
 // /api/mazo.json
-  metaInfo: {
-    title: "section.mazo",
-  },
+// meta title section.mazo
 </script>
 
 <style lang="scss" scoped>

@@ -296,9 +296,7 @@ function ban() {
       );
     },
   },
-  metaInfo: {
-    title: "section.member",
-  },
+// meta title section.member
 </script>
 <style lang="scss">
 .card {

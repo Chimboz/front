@@ -109,9 +109,7 @@ function hashColor(str) {
     },
   },
 // /api/messenger.json
-  metaInfo: {
-    title: "section.messenger",
-  },
+// meta title section.messenger
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

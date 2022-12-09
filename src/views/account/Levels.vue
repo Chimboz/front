@@ -59,9 +59,7 @@
     };
   },
 // /api/levels.json
-  metaInfo: {
-    title: "level",
-  },
+// meta title level
 </script>
 
 <style lang="scss" scoped>

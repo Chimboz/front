@@ -25,8 +25,6 @@
 // Error page. You can define an error message using route parameter `message`.
 
 /*
-  metaInfo: {
-    title: "section.error",
-  },
+// meta title section.error
 };*/
 </script>

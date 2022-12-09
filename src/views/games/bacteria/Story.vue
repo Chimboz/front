@@ -250,7 +250,5 @@
 // Bacteria's story page
 
   
-  metaInfo: {
-    title: "section.bacteriaStory",
-  },
+// meta title section.bacteriaStory
 </script>

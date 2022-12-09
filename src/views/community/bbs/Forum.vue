@@ -84,10 +84,7 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
     };
   },
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
-  metaInfo: {
-    title: "section.forum",
-
-  }
+// meta title section.forum
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

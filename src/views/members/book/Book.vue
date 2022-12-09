@@ -196,9 +196,7 @@ function formatDate(date) {
     },
   },
 // /api/book.json
-  metaInfo: {
-    title: "section.popularity",
-  },
+// meta title section.popularity
 </script>
 
 <style lang="scss" scoped>

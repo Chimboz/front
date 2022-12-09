@@ -439,9 +439,7 @@ function vote() {
 }
 /*
 // /api/popularity.json
-  metaInfo: {
-    title: "section.popularity",
-  },
+// meta title section.popularity
 };*/
 </script>
 

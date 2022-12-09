@@ -127,9 +127,7 @@ function create() {
 }
 
 /*
-  metaInfo: {
-    title: "section.groupedit",
-  },
+// meta title section.groupedit
 };*/
 </script>
 <style lang="scss" scoped>

@@ -324,9 +324,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
 
 const data = ref<any>(null);
 // /api/bacteria.json
-  metaInfo: {
-    title: "section.bacteria",
-  },
+// meta title section.bacteria
 </script>
 
 <style lang="scss" scoped>

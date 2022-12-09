@@ -310,9 +310,7 @@ function focusHandler(){}
 function selectionHandler(){}
 /*
 // /api/edit.json
-  metaInfo: {
-    title: "section.groupedit",
-  },
+// meta title section.groupedit
 };*/
 </script>
 <style lang="scss" scoped>

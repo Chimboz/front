@@ -75,7 +75,5 @@ function changePassword() {
       console.log("Change password");
     },
   },
-  metaInfo: {
-    title: "section.notsmart",
-  },
+// meta title section.notsmart
 </script>

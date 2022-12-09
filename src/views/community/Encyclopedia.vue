@@ -209,9 +209,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
     };
   },
 // /api/encyclopedia/${vm.page}.json
-  metaInfo: {
-    title: "section.encyclopedia",
-  },
+// meta title section.encyclopedia
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container

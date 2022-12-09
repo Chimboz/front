@@ -227,9 +227,7 @@
   
 const data = ref<any>(null);
 // /api/games.json
-  metaInfo: {
-    title: "section.games",
-  },
+// meta title section.games
 </script>
 <style lang="scss" scoped>
 .game-champion {

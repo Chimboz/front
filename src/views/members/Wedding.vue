@@ -408,9 +408,7 @@ function search() {
 }
 /*
 // /api/weddings.json
-  metaInfo: {
-    title: "section.wedding",
-  },
+// meta title section.wedding
 };*/
 </script>
 

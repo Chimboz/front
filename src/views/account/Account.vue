@@ -467,9 +467,7 @@ function statsPatojdur() {
     },
   },
 // /api/account.json
-  metaInfo: {
-    title: "section.account",
-  },
+// meta title section.account
 </script>
 <style lang="scss">
 .games .card {

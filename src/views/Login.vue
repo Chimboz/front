@@ -154,9 +154,7 @@ function login() {
 
 
   },
-  metaInfo: {
-    title: "section.login",
-  },
+// meta title section.login
 };*/
 </script>
 <style lang="scss">

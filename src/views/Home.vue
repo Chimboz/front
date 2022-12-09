@@ -256,9 +256,7 @@ function formatDate() {
 
 /*
 /api/home.json
-  metaInfo: {
-    title: "section.home",
-  },
+// meta title section.home
 };*/
 </script>
 
