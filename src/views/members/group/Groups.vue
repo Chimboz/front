@@ -396,11 +396,7 @@ const user = auth.user;
 // Groups page
 
   
-  data() {
-    return {
-      data: null,
-    };
-  },
+const data = ref<any>(null);
   computed: {
     ...mapGetters("auth", ["authenticated"]),
   },
@@ -417,5 +413,4 @@ const user = auth.user;
   metaInfo: {
     title: "section.groups",
   },
-};
 </script>

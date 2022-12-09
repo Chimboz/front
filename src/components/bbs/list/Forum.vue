@@ -76,5 +76,4 @@ const user = auth.user;
   computed: {
     ...mapState("auth", ["user"])
   }
-};
 </script>

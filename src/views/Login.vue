@@ -159,7 +159,7 @@ function login() {
     data = req.data;
     next();
   },
-  methods: {
+
 
 
   },

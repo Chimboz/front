@@ -121,12 +121,8 @@ Chart.register(
 // @group View/Account
 // Bank page
 
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
+const data = ref<any>(null);
+
     formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
@@ -190,7 +186,6 @@ Chart.register(
   metaInfo: {
     title: "section.bank",
   },
-};
 </script>
 
 <style lang="scss" scoped>

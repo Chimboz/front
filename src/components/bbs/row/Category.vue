@@ -84,8 +84,7 @@ const locales = { fr, enGB };
 // @group BBS/Row
 
   
-  data() {
-    return {
+
       hide: false,
     };
   },
@@ -95,7 +94,7 @@ const locales = { fr, enGB };
       type: Object,
     },
   },
-  methods: {
+
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
@@ -103,7 +102,6 @@ const locales = { fr, enGB };
       });
     },
   },
-};
 </script>
 
 <style lang="scss" scoped>

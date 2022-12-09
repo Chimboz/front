@@ -159,8 +159,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
 // Encyclopedia page
 
 
-  data() {
-    return {
+
       data: null,
       categories: [
         "body",
@@ -220,7 +219,6 @@ import Tooltip from "@/components/core/Tooltip.vue";
   metaInfo: {
     title: "section.encyclopedia",
   },
-};
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container

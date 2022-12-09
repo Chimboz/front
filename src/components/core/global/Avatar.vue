@@ -199,7 +199,6 @@
       default: 938,
     },
   },
-};
 </script>
 <style lang="scss" scoped>
 .tiz {

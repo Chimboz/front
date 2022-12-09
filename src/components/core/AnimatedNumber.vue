@@ -21,17 +21,16 @@
     delay: { default: 5, type: Number, required: false }
   },
 
-  data() {
-    return {
+
       displayNumber: 0
     };
   },
 
-  mounted() {
+function mounted() {
     requestAnimationFrame(tween);
   },
 
-  methods: {
+
     tween() {
       displayNumber += Math.max(
         Math.floor(number / 60 / delay),
@@ -43,5 +42,4 @@
       } else requestAnimationFrame(tween);
     }
   }
-};
 </script>

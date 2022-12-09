@@ -44,8 +44,7 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 // @group View/Community/BBS
 // Forum page
 
-  data() {
-    return {
+
       data: null,
       iconDescriptions: [
         {
@@ -104,7 +103,6 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
     title: "section.forum",
 
   }
-};
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

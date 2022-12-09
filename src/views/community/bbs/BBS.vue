@@ -62,8 +62,7 @@ import BBSList from "@/components/bbs/list/BBS.vue";
 // BBS page
 
 
-  data() {
-    return {
+
       data: null
     };
   },
@@ -81,7 +80,6 @@ import BBSList from "@/components/bbs/list/BBS.vue";
     title: "section.bbs",
 
   }
-};
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

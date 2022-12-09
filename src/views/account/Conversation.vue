@@ -119,13 +119,12 @@ import messageRender from "@/modules/messageRender";
 // Conversation page (view for 1-to-1 messaging)
 
 
-  data() {
-    return {
+
       data: null,
       message: "",
     };
   },
-  methods: {
+
     messageRender(message) {
       return messageRender(message);
     },
@@ -170,7 +169,6 @@ import messageRender from "@/modules/messageRender";
   metaInfo: {
     title: "section.conversation",
   },
-};
 </script>
 
 <style lang="scss" scoped>

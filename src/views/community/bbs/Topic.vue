@@ -25,8 +25,7 @@ const user = auth.user;
 // @group View/Community/BBS
 // Topic page
 
-  data() {
-    return {
+
       data: null
     };
   },
@@ -53,6 +52,5 @@ const user = auth.user;
     title: "section.topic",
 
   }
-};
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

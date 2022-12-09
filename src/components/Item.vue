@@ -61,11 +61,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @vuese
 // @group Default
 
-  data() {
-    return {
-      data: null,
-    };
-  },
+const data = ref<any>(null);
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get(`/api/item/${vm.$route.params.id}.json`).then((res) => {
@@ -78,7 +74,6 @@ import StrokeText from "@/components/core/StrokeText.vue";
     data = req.data;
     next();
   },
-};
 </script>
 <style lang="scss" scoped>
 .item-name {

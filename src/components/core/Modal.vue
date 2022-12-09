@@ -72,8 +72,7 @@
 // @group Core
 
   
-  data() {
-    return {
+
       isVisible: false,
       message: "error.default",
       type: "error",
@@ -81,13 +80,13 @@
       params: {},
     };
   },
-  mounted() {
+function mounted() {
     eventBus.on("error", (req) => error(req));
     eventBus.on("success", (req) => success(req));
     eventBus.on("failure", (req) => failure(req));
     eventBus.on("confirmation", (req) => confirmation(req));
   },
-  methods: {
+
     error(req) {
       isVisible = true;
       type = "error";
@@ -119,7 +118,6 @@
       }
     },
   },
-};
 </script>
 <style lang="scss" scoped>
 .modal {

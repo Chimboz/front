@@ -32,7 +32,6 @@
       ].sort();
     }
   }
-};
 </script>
 <style lang="scss" scoped>
 .btn-action:not(.router-link-active) {

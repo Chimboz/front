@@ -114,8 +114,7 @@ const user = auth.user;
 // @group View/Community
 // Shop page
 
-  data() {
-    return {
+
       data: null,
       shown: null,
     };
@@ -123,7 +122,7 @@ const user = auth.user;
   computed: {
     ...mapGetters("auth", ["authenticated"]),
   },
-  methods: {
+
     show(pack) {
       shown = pack;
       $refs.clickAudio.play();
@@ -154,7 +153,6 @@ const user = auth.user;
   metaInfo: {
     title: "section.shop",
   },
-};
 </script>
 <style lang="scss">
 .menu .pack {

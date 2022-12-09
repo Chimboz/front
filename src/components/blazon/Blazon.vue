@@ -48,7 +48,6 @@ import Bot from "./Bot.vue";
       default: 1
     }
   }
-};
 </script>
 <style lang="scss" scoped>
 .blazon,

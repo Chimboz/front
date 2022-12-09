@@ -25,8 +25,7 @@
 // @group Core/Global
 
   
-  data() {
-    return {
+
       rule: 0
     };
   },
@@ -42,12 +41,11 @@
       default: false
     }
   },
-  mounted() {
+function mounted() {
     setInterval(() => {
       rule = (rule + 1) % 6;
     }, 3000);
   }
-};
 </script>
 <style lang="scss">
 .rules .card-bg {

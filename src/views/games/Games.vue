@@ -225,11 +225,7 @@
 // Games page
 
   
-  data() {
-    return {
-      data: null,
-    };
-  },
+const data = ref<any>(null);
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/games.json").then((res) => (vm.data = res.data))
@@ -243,7 +239,6 @@
   metaInfo: {
     title: "section.games",
   },
-};
 </script>
 <style lang="scss" scoped>
 .game-champion {

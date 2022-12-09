@@ -136,12 +136,8 @@ const locales = { fr, enGB };
 // Friends page
 
 
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
+const data = ref<any>(null);
+
     formatDate(date) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
@@ -234,7 +230,6 @@ const locales = { fr, enGB };
   metaInfo: {
     title: "section.friends",
   },
-};
 </script>
 
 <style lang="scss" scoped>

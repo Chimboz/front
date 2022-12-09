@@ -22,8 +22,7 @@
 // @group Core
 
   
-  data() {
-    return {
+
       emotes: [
         "neutral",
         "yo",
@@ -54,7 +53,6 @@
       ],
     };
   },
-};
 </script>
 <style lang="scss" scoped>
 .btn-pink {

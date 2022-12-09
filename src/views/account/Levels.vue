@@ -53,8 +53,7 @@
 // Levels page
 
   
-  data() {
-    return {
+
       data: null,
       selected: 0,
     };
@@ -72,7 +71,6 @@
   metaInfo: {
     title: "level",
   },
-};
 </script>
 
 <style lang="scss" scoped>

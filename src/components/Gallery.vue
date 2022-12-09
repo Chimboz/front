@@ -17,6 +17,5 @@
 // @group Default
 
   
-};
 </script>
 <style lang="scss" scoped></style>

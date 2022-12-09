@@ -50,15 +50,14 @@ const locales = { fr, enGB };
 // @group View/Community
 // Chaparazzi page
 
-  data() {
-    return {
+
       data: null,
       search: "",
       page: 0,
       isLoading: false,
     };
   },
-  methods: {
+
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
       if (scrollTop + clientHeight >= scrollHeight - 60) {
         isLoading = true;
@@ -94,7 +93,6 @@ const locales = { fr, enGB };
   metaInfo: {
     title: "section.chaparazzi",
   },
-};
 </script>
 <style lang="scss" scoped>
 .gallery {

@@ -70,7 +70,7 @@
 // Notsmart page
 
   
-  methods: {
+
     changePassword() {
       console.log("Change password");
     },
@@ -78,5 +78,4 @@
   metaInfo: {
     title: "section.notsmart",
   },
-};
 </script>

@@ -28,5 +28,4 @@
       default: false
     }
   }
-};
 </script>

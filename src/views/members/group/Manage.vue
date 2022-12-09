@@ -364,12 +364,8 @@
 // Groups management page
 
   
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
+const data = ref<any>(null);
+
     cancel(id) {
       console.log("Annulé " + id);
     },
@@ -390,5 +386,4 @@
   metaInfo: {
     title: "section.groups",
   },
-};
 </script>

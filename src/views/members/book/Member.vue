@@ -272,15 +272,12 @@ const locales = { fr, enGB };
 // Member page
 
 
-  data() {
-    return {
+
       data: null,
       duration: 1,
     };
   },
-  computed: {
-    ...mapState("auth", ["user"]),
-  },
+
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/member.json").then((res) => (vm.data = res.data))
@@ -291,7 +288,7 @@ const locales = { fr, enGB };
     data = req.data;
     next();
   },
-  methods: {
+
     formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
@@ -311,7 +308,6 @@ const locales = { fr, enGB };
   metaInfo: {
     title: "section.member",
   },
-};
 </script>
 <style lang="scss">
 .card {

@@ -56,7 +56,7 @@ const user = auth.user;
     delay: { default: 5, type: Number, required: false },
   },
 
-  mounted() {
+function mounted() {
     if (!authenticated) return;
     for (
       let i = 8;
@@ -77,8 +77,7 @@ const user = auth.user;
     }
     requestAnimationFrame(tween);
   },
-  data() {
-    return {
+
       coins: 7,
       coinsPosition: [
         {
@@ -133,7 +132,7 @@ const user = auth.user;
       ],
     };
   },
-  methods: {
+
     randomInt(min, max) {
       return (
         Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
@@ -153,7 +152,6 @@ const user = auth.user;
     ...mapGetters("auth", ["authenticated"]),
     ...mapState("auth", ["user"]),
   },
-};
 </script>
 <style lang="scss" scoped>
 .bank {

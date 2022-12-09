@@ -149,7 +149,6 @@ import StrokeText from "@/components/core/StrokeText.vue";
       };
     },
   },
-};
 </script>
 <style lang="scss" scoped>
 .card {

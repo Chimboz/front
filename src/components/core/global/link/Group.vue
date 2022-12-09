@@ -22,7 +22,6 @@
       type: Boolean
     }
   }
-};
 </script>
 <style lang="scss" scoped>
 div {

@@ -354,8 +354,7 @@ import VLazyImage from "v-lazy-image";
 // @group Default
 
 
-  data() {
-    return {
+
       profile: true,
       loadInventory: false,
       info: "",
@@ -375,12 +374,11 @@ import VLazyImage from "v-lazy-image";
     centrec: { type: String },
     centred: { type: String },
   },
-  methods: {
+
     submit() {
       console.log("Envoyé!");
     },
   },
-};
 </script>
 <style lang="scss">
 .cabin-scene .tiz {

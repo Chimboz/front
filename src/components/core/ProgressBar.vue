@@ -37,12 +37,12 @@ const endingPoint = 90;
     timeoutId: undefined
   }),
 
-  mounted() {
+function mounted() {
     eventBus.on("asyncComponentLoading", start);
     eventBus.on("asyncComponentLoaded", stop);
   },
 
-  methods: {
+
     start() {
       isLoading = true;
       isVisible = true;
@@ -91,7 +91,6 @@ const endingPoint = 90;
       }, 2000);
     }
   }
-};
 </script>
 <style scoped>
 .loading-container {

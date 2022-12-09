@@ -253,5 +253,4 @@
   metaInfo: {
     title: "section.bacteriaStory",
   },
-};
 </script>

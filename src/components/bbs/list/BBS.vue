@@ -33,5 +33,4 @@ import Category from "../row/Category.vue";
       type: Array
     }
   }
-};
 </script>

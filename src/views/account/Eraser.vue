@@ -78,12 +78,11 @@ const user = auth.user;
 // @group View/Community
 // Eraser page
 
-  data() {
-    return {
+
       pseudo: "",
     };
   },
-  methods: {
+
     submit() {
       console.log(`Envoyé ${pseudo}!`);
     },
@@ -91,13 +90,10 @@ const user = auth.user;
       pseudo = "test";
     },
   },
-  computed: {
-    ...mapState("auth", ["user"]),
-  },
+
   metaInfo: {
     title: "section.eraser",
   },
-};
 </script>
 
 <style lang="scss" scoped>

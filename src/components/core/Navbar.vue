@@ -192,8 +192,7 @@ const user = auth.user;
 // @group Core
 
   
-  data() {
-    return {
+
       date: new Date(),
     };
   },
@@ -202,7 +201,7 @@ const user = auth.user;
     ...mapState("auth", ["user"]),
   },
 
-  methods: {
+
     logout() {
       $store.dispatch("auth/logout");
       $router.push($route.path == "/" ? "/login" : $route.path);
@@ -211,7 +210,6 @@ const user = auth.user;
   created() {
     document.body.className = "h" + date.getHours();
   },
-};
 </script>
 <style lang="scss" scoped>
 .header {

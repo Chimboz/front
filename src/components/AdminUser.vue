@@ -212,15 +212,9 @@ const locales = { fr, enGB };
 // @group Default
 
   
-  data() {
-    return {
-      data: null,
-    };
-  },
-  computed: {
-    ...mapState("auth", ["user"]),
-  },
-  methods: {
+const data = ref<any>(null);
+
+
     formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
@@ -246,7 +240,6 @@ const locales = { fr, enGB };
     data = req.data;
     next();
   },
-};
 </script>
 <style lang="scss" scoped>
 .pseudo {

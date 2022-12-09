@@ -43,7 +43,6 @@
       default: 33.3
     }
   }
-};
 </script>
 
 <style lang="scss" scoped>

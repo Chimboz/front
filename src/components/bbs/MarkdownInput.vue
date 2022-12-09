@@ -251,7 +251,7 @@ const user = auth.user;
 // @group BBS
 
 
-  mounted() {
+function mounted() {
     eventBus.on("quote", (message) => {
       message += message;
       if ($refs.message) $refs.message.focus();
@@ -262,8 +262,7 @@ const user = auth.user;
       if ($refs.message) $refs.message.focus();
     });
   },
-  data() {
-    return {
+
       message: "",
       title: "",
       preview: "",
@@ -280,10 +279,8 @@ const user = auth.user;
       type: Boolean,
     },
   },
-  computed: {
-    ...mapState("auth", ["user"]),
-  },
-  methods: {
+
+
     submit() {
       if (mode == "post") {
         console.log("Envoyé!");
@@ -373,7 +370,6 @@ const user = auth.user;
       focusHandler();
     },
   },
-};
 </script>
 <style lang="scss" scoped>
 td {

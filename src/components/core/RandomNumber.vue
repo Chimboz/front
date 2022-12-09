@@ -17,8 +17,7 @@
 // @group Core
 
   
-  data() {
-    return {
+
       displayNumber: max.toString(),
       start: 0,
       previousTimeStamp: Date.now(),
@@ -32,11 +31,11 @@
     duration: { default: 2000, type: Number, required: true }
   },
 
-  mounted() {
+function mounted() {
     requestAnimationFrame(tween);
   },
 
-  methods: {
+
     randomInt(min, max) {
       return (
         Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
@@ -67,7 +66,6 @@
       } else displayNumber = value.toString();
     }
   }
-};
 </script>
 <style scoped>
 .win {

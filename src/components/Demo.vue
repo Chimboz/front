@@ -219,21 +219,19 @@
 // @group Default
 
   
-  data() {
-    return {
+
       section: 1,
       demo: 0,
     };
   },
-  mounted() {
+function mounted() {
     setInterval(() => (demo = (demo + 1) % 6), 7000);
   },
-  methods: {
+
     login() {
       $store.dispatch("auth/login");
     },
   },
-};
 </script>
 <style lang="scss" scoped>
 .background {

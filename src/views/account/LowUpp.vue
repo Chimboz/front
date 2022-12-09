@@ -65,15 +65,14 @@ const user = auth.user;
 // Capitalization page
 
   
-  data() {
-    return {
+
       pseudo: "Test",
     };
   },
-  mounted() {
+function mounted() {
     pseudo = user.name.slice();
   },
-  methods: {
+
     changeCase(index) {
       let letter;
       if (pseudo[index].toUpperCase() == pseudo[index])
@@ -86,13 +85,10 @@ const user = auth.user;
       console.log(`Envoyé ${pseudo}!`);
     },
   },
-  computed: {
-    ...mapState("auth", ["user"]),
-  },
+
   metaInfo: {
     title: "section.capitalization",
   },
-};
 </script>
 
 <style lang="scss" scoped>

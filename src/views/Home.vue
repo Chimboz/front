@@ -265,7 +265,7 @@ function formatDate() {
     data = req.data;
     next();
   },
-  methods: {
+
 
   },
   computed: {

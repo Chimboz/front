@@ -164,13 +164,12 @@ import VLazyImage from "v-lazy-image";
 // @group Blazon
 
 
-  data() {
-    return {
+
       info: "",
       checked: ["shape", "top", "bot", "primary", "secondary"]
     };
   },
-  methods: {
+
     submit() {
       console.log("Envoyé!");
     }
@@ -181,7 +180,6 @@ import VLazyImage from "v-lazy-image";
       type: Object
     }
   }
-};
 </script>
 <style lang="scss">
 .cabin .blazon {

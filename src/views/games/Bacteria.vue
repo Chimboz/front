@@ -322,11 +322,7 @@ import Tooltip from "@/components/core/Tooltip.vue";
 // @group View/Games
 // Bacteria page
 
-  data() {
-    return {
-      data: null,
-    };
-  },
+const data = ref<any>(null);
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/bacteria.json").then((res) => (vm.data = res.data))
@@ -340,7 +336,6 @@ import Tooltip from "@/components/core/Tooltip.vue";
   metaInfo: {
     title: "section.bacteria",
   },
-};
 </script>
 
 <style lang="scss" scoped>

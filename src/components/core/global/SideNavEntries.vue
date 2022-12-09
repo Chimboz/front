@@ -29,8 +29,7 @@
       type: String,
     },
   },
-  data() {
-    return {
+
       sideNavEntries: [
         {
           label: "section.account",
@@ -135,5 +134,4 @@
       ],
     };
   },
-};
 </script>

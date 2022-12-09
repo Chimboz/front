@@ -103,12 +103,11 @@
       type: Array
     }
   },
-  methods: {
+
     play() {
       $refs.audio.play();
     }
   }
-};
 </script>
 
 <style scoped>

@@ -130,7 +130,7 @@ const user = auth.user;
       type: Boolean,
     },
   },
-  mounted() {
+function mounted() {
     if ($route.hash) {
       scrollTo($route.hash);
     }
@@ -147,7 +147,7 @@ const user = auth.user;
       });
     },
   },
-  methods: {
+
     scrollTo(anchor) {
       location.href = anchor;
     },
@@ -161,7 +161,6 @@ const user = auth.user;
       console.log();
     },
   },
-};
 </script>
 <style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>

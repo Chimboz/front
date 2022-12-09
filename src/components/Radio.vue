@@ -62,12 +62,11 @@
       default: "track.mp3",
     },
   },
-  data() {
-    return {
+
       playing: false,
     };
   },
-  methods: {
+
     play() {
       playing = true;
       $refs.player.play();
@@ -91,7 +90,6 @@
         "%";
     },
   },
-};
 </script>
 
 <style lang="scss" scoped>

@@ -378,12 +378,8 @@ const locales = { fr, enGB };
 // Patojdur (Wide Wade) page
 
   
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
+const data = ref<any>(null);
+
     formatDate(date) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
@@ -408,7 +404,6 @@ const locales = { fr, enGB };
   metaInfo: {
     title: "section.patojdur",
   },
-};
 </script>
 
 <style lang="scss" scoped>

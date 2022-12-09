@@ -81,5 +81,4 @@ const locales = { fr, enGB };
       });
     },
   },
-};
 </script>

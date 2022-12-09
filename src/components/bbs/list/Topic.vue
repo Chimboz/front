@@ -96,7 +96,7 @@ const user = auth.user;
     ...mapGetters("auth", ["authenticated"]),
     ...mapState("auth", ["user"])
   },
-  methods: {
+
     lock() {
       console.log("Lock " + $route.params.topic);
     },
@@ -107,7 +107,6 @@ const user = auth.user;
       console.log("Move " + $route.params.topic);
     }
   }
-};
 </script>
 <style lang="scss" scoped>
 .info {

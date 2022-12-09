@@ -169,14 +169,13 @@ const locales = { fr, enGB };
 // Book page
 
   
-  data() {
-    return {
+
       data: null,
       username: "",
       suggestionsHere: null,
     };
   },
-  methods: {
+
     onKeypressValue() {
       if (username != undefined && username != "") {
         api.get("api/test.json").then((res) => {
@@ -209,7 +208,6 @@ const locales = { fr, enGB };
   metaInfo: {
     title: "section.popularity",
   },
-};
 </script>
 
 <style lang="scss" scoped>
