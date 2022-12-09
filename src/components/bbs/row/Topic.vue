@@ -75,7 +75,7 @@ const locales = { fr, enGB };
   },
   computed: {
     formatDate() {
-      return formatDistanceToNowStrict(new Date(this.topic.last_msg.date), {
+      return formatDistanceToNowStrict(new Date(topic.last_msg.date), {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,
       });

@@ -15,7 +15,7 @@
         class="fullwidth"
         :maxHeight="450"
         @scroll-data="
-          (data) => (this.data = [...new Set([...this.data, ...data])])
+          (data) => (data = [...new Set([...data, ...data])])
         "
       >
         <div

@@ -424,41 +424,34 @@
 
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
 // @vuese
 // @group View/Members
 // Popularity page
+const data = ref<any>([]);
+const authenticated = true;
 
-  
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
-    vote() {
-      console.log("Envoyé!");
-    },
-  },
-  computed: {
-    ...mapGetters("auth", ["authenticated"]),
-  },
+function vote() {
+  console.log("Envoyé!");
+}
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/popularity.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/popularity.json");
-    this.data = req.data;
+    const req = await api.get("/api/popularity.json");
+    data = req.data;
     next();
   },
   metaInfo: {
     title: "section.popularity",
   },
-};
+};*/
 </script>
 
 <style lang="scss" scoped>

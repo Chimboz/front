@@ -8,7 +8,7 @@
         <ScrollableContainer
           route="adminlogs"
           class="fullwidth"
-          @scroll-data="(data) => (this.data = [...this.data, ...data])"
+          @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
         >
           <div class="log" v-for="(log, index) in data" :key="index">
             <b>{{ formatDate(log.date) }}</b
@@ -43,7 +43,7 @@
           />
           <button type="submit" class="btn-action">go</button>
         </form>
-        <div class="suggestions" v-if="suggestionsHere && this.username != ''">
+        <div class="suggestions" v-if="suggestionsHere && username != ''">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <router-link :to="'/admin/' + suggestion.mid">{{
@@ -66,9 +66,9 @@ const locales = { fr, enGB };
 // @vuese
 // @group View
 // Admin page.
-const data = ref<null | Array<any>>(null);
+const data = ref<Array<any>>([]);
 const username = ref("");
-const suggestionsHere = ref(null);
+const suggestionsHere = ref<Array<any>>([]);
 
 function onKeypressValue() {
   if (username.value != undefined && username.value != "") {
@@ -78,6 +78,10 @@ function onKeypressValue() {
           }
         });*/
   }
+}
+
+function search(){
+  return true;
 }
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {
@@ -91,8 +95,8 @@ function formatDate(date: number) {
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/admin.json");
-    this.data = req.data;
+    const req = await api.get("/api/admin.json");
+    data = req.data;
     next();
   },
   metaInfo: {

@@ -26,7 +26,7 @@
         class="fullwidth"
         route="messages"
         :maxHeight="450"
-        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+        @scroll-data="(data) => (data = [...data, ...data])"
       >
         <router-link
           class="message flex"
@@ -118,8 +118,8 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/messenger.json");
-    this.data = req.data;
+    const req = await api.get("/api/messenger.json");
+    data = req.data;
     next();
   },
   metaInfo: {

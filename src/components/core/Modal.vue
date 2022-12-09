@@ -82,40 +82,40 @@
     };
   },
   mounted() {
-    this.eventBus.on("error", (req) => this.error(req));
-    this.eventBus.on("success", (req) => this.success(req));
-    this.eventBus.on("failure", (req) => this.failure(req));
-    this.eventBus.on("confirmation", (req) => this.confirmation(req));
+    eventBus.on("error", (req) => error(req));
+    eventBus.on("success", (req) => success(req));
+    eventBus.on("failure", (req) => failure(req));
+    eventBus.on("confirmation", (req) => confirmation(req));
   },
   methods: {
     error(req) {
-      this.isVisible = true;
-      this.type = "error";
-      this.message = req.message;
+      isVisible = true;
+      type = "error";
+      message = req.message;
     },
     success(req) {
-      this.isVisible = true;
-      this.type = "success";
-      this.message = req.message;
+      isVisible = true;
+      type = "success";
+      message = req.message;
     },
     failure(req) {
-      this.isVisible = true;
-      this.type = "failure";
-      this.message = req.message;
+      isVisible = true;
+      type = "failure";
+      message = req.message;
     },
     confirmation(req) {
-      this.isVisible = true;
-      this.type = "confirmation";
-      this.message = req.message;
-      this.callback = req.callback;
-      this.params = req.params;
+      isVisible = true;
+      type = "confirmation";
+      message = req.message;
+      callback = req.callback;
+      params = req.params;
     },
     async request() {
-      const req = await this.api.post(this.callback, this.params);
+      const req = await api.post(callback, params);
       if (req.data.success) {
-        this.success({ message: "success.buy" });
+        success({ message: "success.buy" });
       } else {
-        this.failure({ message: "failure.buy" });
+        failure({ message: "failure.buy" });
       }
     },
   },

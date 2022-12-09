@@ -44,7 +44,7 @@
   },
   mounted() {
     setInterval(() => {
-      this.rule = (this.rule + 1) % 6;
+      rule = (rule + 1) % 6;
     }, 3000);
   }
 };

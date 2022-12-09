@@ -333,8 +333,8 @@ import Tooltip from "@/components/core/Tooltip.vue";
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/bacteria.json");
-    this.data = req.data;
+    const req = await api.get("/api/bacteria.json");
+    data = req.data;
     next();
   },
   metaInfo: {

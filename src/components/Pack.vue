@@ -105,7 +105,7 @@
   },
   methods: {
     play() {
-      this.$refs.audio.play();
+      $refs.audio.play();
     }
   }
 };

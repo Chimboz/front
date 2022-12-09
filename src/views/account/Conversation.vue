@@ -14,7 +14,7 @@
         route="messages"
         class="messages fullwidth flex"
         :maxHeight="450"
-        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+        @scroll-data="(data) => (data = [...data, ...data])"
       >
         <div
           class="message flex"
@@ -148,13 +148,13 @@ import messageRender from "@/modules/messageRender";
       return colour;
     },
     send() {
-      console.log("Envoyé " + this.message);
-      this.data.messages.push({
+      console.log("Envoyé " + message);
+      data.messages.push({
         you: true,
-        content: this.message,
+        content: message,
         date: Date.now(),
       });
-      this.message = "";
+      message = "";
     },
   },
   async beforeRouteEnter(to, from, next) {
@@ -163,8 +163,8 @@ import messageRender from "@/modules/messageRender";
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/conversation.json");
-    this.data = req.data;
+    const req = await api.get("/api/conversation.json");
+    data = req.data;
     next();
   },
   metaInfo: {

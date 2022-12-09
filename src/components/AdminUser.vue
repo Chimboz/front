@@ -227,7 +227,7 @@ const locales = { fr, enGB };
       });
     },
     action(type, params) {
-      this.eventBus.emit("confirmation", {
+      eventBus.emit("confirmation", {
         message: `admin.modal.${type}`,
         callback: `/api/${type}.json`,
         params: params,
@@ -242,8 +242,8 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(`/api/admin/${to.params.id}.json`);
-    this.data = req.data;
+    const req = await api.get(`/api/admin/${to.params.id}.json`);
+    data = req.data;
     next();
   },
 };

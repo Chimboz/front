@@ -57,76 +57,76 @@ const user = auth.user;
   },
 
   mounted() {
-    if (!this.authenticated) return;
+    if (!authenticated) return;
     for (
       let i = 8;
-      i <= Math.min(Math.floor(this.user.credits / 10), 360);
+      i <= Math.min(Math.floor(user.credits / 10), 360);
       i++
     ) {
       const left =
-        +this.coinsPosition[i % 8].left.slice(0, -2) + this.randomInt(-3, 3);
-      const top = +this.coinsPosition[i - 8].top.slice(0, -2) - 4;
-      const filter = this.coinsPosition[i % 8].filter;
-      const transform = this.coinsPosition[i % 8].transform;
-      this.coinsPosition.push({
+        +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
+      const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
+      const filter = coinsPosition[i % 8].filter;
+      const transform = coinsPosition[i % 8].transform;
+      coinsPosition.push({
         left: left + "px",
         top: top + "px",
         filter: filter,
         transform: transform,
       });
     }
-    requestAnimationFrame(this.tween);
+    requestAnimationFrame(tween);
   },
   data() {
     return {
       coins: 7,
       coinsPosition: [
         {
-          left: this.randomInt(33, 52) + "px",
-          top: this.randomInt(65, 69) + "px",
+          left: randomInt(33, 52) + "px",
+          top: randomInt(65, 69) + "px",
           filter: "brightness(.7)",
           transform: "scale(.8)",
         },
         {
-          left: this.randomInt(74, 96) + "px",
-          top: this.randomInt(65, 69) + "px",
+          left: randomInt(74, 96) + "px",
+          top: randomInt(65, 69) + "px",
           filter: "brightness(.7)",
           transform: "scale(.8)",
         },
 
         {
-          left: this.randomInt(22, 32) + "px",
-          top: this.randomInt(77, 81) + "px",
+          left: randomInt(22, 32) + "px",
+          top: randomInt(77, 81) + "px",
           filter: "brightness(.85)",
           transform: "scale(.9)",
         },
         {
-          left: this.randomInt(56, 68) + "px",
-          top: this.randomInt(77, 81) + "px",
+          left: randomInt(56, 68) + "px",
+          top: randomInt(77, 81) + "px",
           filter: "brightness(.85)",
           transform: "scale(.9)",
         },
         {
-          left: this.randomInt(92, 102) + "px",
-          top: this.randomInt(77, 81) + "px",
+          left: randomInt(92, 102) + "px",
+          top: randomInt(77, 81) + "px",
           filter: "brightness(.85)",
           transform: "scale(.9)",
         },
         {
-          left: this.randomInt(22, 32) + "px",
-          top: this.randomInt(88, 93) + "px",
+          left: randomInt(22, 32) + "px",
+          top: randomInt(88, 93) + "px",
           filter: "brightness(1)",
           transform: "scale(1)",
         },
         {
-          left: this.randomInt(56, 68) + "px",
-          top: this.randomInt(88, 93) + "px",
+          left: randomInt(56, 68) + "px",
+          top: randomInt(88, 93) + "px",
           filter: "brightness(1)",
           transform: "scale(1)",
         },
         {
-          left: this.randomInt(92, 102) + "px",
-          top: this.randomInt(88, 93) + "px",
+          left: randomInt(92, 102) + "px",
+          top: randomInt(88, 93) + "px",
           filter: "brightness(1)",
           transform: "scale(1)",
         },
@@ -141,12 +141,12 @@ const user = auth.user;
       );
     },
     tween() {
-      if (this.coins >= this.user.credits || this.coins > 1760) return;
-      this.coins += Math.max(
-        Math.floor(this.user.credits / 60 / this.delay),
+      if (coins >= user.credits || coins > 1760) return;
+      coins += Math.max(
+        Math.floor(user.credits / 60 / delay),
         1
       );
-      if (this.coins < this.user.credits) requestAnimationFrame(this.tween);
+      if (coins < user.credits) requestAnimationFrame(tween);
     },
   },
   computed: {

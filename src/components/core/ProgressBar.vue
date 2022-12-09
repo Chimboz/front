@@ -38,16 +38,16 @@ const endingPoint = 90;
   }),
 
   mounted() {
-    this.eventBus.on("asyncComponentLoading", this.start);
-    this.eventBus.on("asyncComponentLoaded", this.stop);
+    eventBus.on("asyncComponentLoading", start);
+    eventBus.on("asyncComponentLoaded", stop);
   },
 
   methods: {
     start() {
-      this.isLoading = true;
-      this.isVisible = true;
-      this.progress = startingPoint;
-      this.loop();
+      isLoading = true;
+      isVisible = true;
+      progress = startingPoint;
+      loop();
     },
 
     random(min, max) {
@@ -58,22 +58,22 @@ const endingPoint = 90;
     },
 
     loop() {
-      if (this.timeoutId) {
-        clearTimeout(this.timeoutId);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
       }
-      if (this.progress >= endingPoint) {
+      if (progress >= endingPoint) {
         return;
       }
       const size =
         (endingPoint - startingPoint) / (defaultDuration / defaultInterval);
       const p = Math.round(
-        this.progress +
-          this.random(size * (1 - variation), size * (1 + variation))
+        progress +
+          random(size * (1 - variation), size * (1 + variation))
       );
-      this.progress = Math.min(p, endingPoint);
-      this.timeoutId = setTimeout(
-        this.loop,
-        this.random(
+      progress = Math.min(p, endingPoint);
+      timeoutId = setTimeout(
+        loop,
+        random(
           defaultInterval * (1 - variation),
           defaultInterval * (1 + variation)
         )
@@ -81,12 +81,12 @@ const endingPoint = 90;
     },
 
     stop() {
-      this.isLoading = false;
-      this.progress = 100;
-      clearTimeout(this.timeoutId);
+      isLoading = false;
+      progress = 100;
+      clearTimeout(timeoutId);
       setTimeout(() => {
-        if (!this.isLoading) {
-          this.isVisible = false;
+        if (!isLoading) {
+          isVisible = false;
         }
       }, 2000);
     }

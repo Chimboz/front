@@ -401,8 +401,8 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/patojdur.json");
-    this.data = req.data;
+    const req = await api.get("/api/patojdur.json");
+    data = req.data;
     next();
   },
   metaInfo: {

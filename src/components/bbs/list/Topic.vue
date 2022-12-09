@@ -20,7 +20,7 @@
       <tr>
         <th valign="top" colspan="2" height="25" nowrap="nowrap">
           <pagination
-            :current="this.$route.params.page ? +this.$route.params.page : 1"
+            :current="$route.params.page ? +$route.params.page : 1"
             :total="topic.pages"
             :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
           />
@@ -38,7 +38,7 @@
     <tr>
       <th valign="bottom" colspan="2" height="25" nowrap="nowrap">
         <pagination
-          :current="this.$route.params.page ? +this.$route.params.page : 1"
+          :current="$route.params.page ? +$route.params.page : 1"
           :total="topic.pages"
           :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
         />
@@ -69,7 +69,7 @@
     <button
       class="btn-action"
       v-if="user.role > 50"
-      @click.prevent="this.delete"
+      @click.prevent="delete"
       >x&nbsp;Supprimer</button
     >
   </div>
@@ -98,13 +98,13 @@ const user = auth.user;
   },
   methods: {
     lock() {
-      console.log("Lock " + this.$route.params.topic);
+      console.log("Lock " + $route.params.topic);
     },
     delete() {
-      console.log("Delete " + this.$route.params.topic);
+      console.log("Delete " + $route.params.topic);
     },
     move() {
-      console.log("Move " + this.$route.params.topic);
+      console.log("Move " + $route.params.topic);
     }
   }
 };

@@ -38,7 +38,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
   },
   computed: {
     cssVars() {
-      switch (this.color) {
+      switch (color) {
         case "yellow":
           return {
             "--selected-main-button": "var(--main-button-yellow)",

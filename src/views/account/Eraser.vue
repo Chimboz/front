@@ -85,10 +85,10 @@ const user = auth.user;
   },
   methods: {
     submit() {
-      console.log(`Envoyé ${this.pseudo}!`);
+      console.log(`Envoyé ${pseudo}!`);
     },
     generatePseudo() {
-      this.pseudo = "test";
+      pseudo = "test";
     },
   },
   computed: {

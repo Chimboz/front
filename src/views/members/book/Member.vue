@@ -16,7 +16,7 @@
     ><br />
     <GlobalCard
       class="member"
-      :class="[this.data.gender]"
+      :class="[data.gender]"
       v-if="data"
       justified
     >
@@ -32,8 +32,8 @@
           :item2="data.look.item2"
         />
         <div class="flex col" style="z-index: 1; position: relative">
-          <StrokeText class="pseudo" justified>{{ this.data.name }}</StrokeText>
-          <div class="motto">"{{ this.data.motto }}"</div>
+          <StrokeText class="pseudo" justified>{{ data.name }}</StrokeText>
+          <div class="motto">"{{ data.motto }}"</div>
         </div>
       </div>
       <div class="member-body">
@@ -50,13 +50,13 @@
               :item2="data.look.item2"
             />
           </div>
-          <div v-if="!this.data.status.connected">
+          <div v-if="!data.status.connected">
             Dernière visite le <b>{{ formatDate(data.status.date) }}</b>
           </div>
           <div v-else>
             <div
               class="online flex centered"
-              :class="{ tchat: this.data.status.room }"
+              :class="{ tchat: data.status.room }"
             >
               <img
                 draggable="false"
@@ -65,7 +65,7 @@
                 src="@/assets/img/tiz/tiz_shape.svg"
               />&nbsp;<b>En ligne</b>
             </div>
-            <b>{{ this.data.status.room }}</b>
+            <b>{{ data.status.room }}</b>
           </div>
         </div>
         <div class="member-text">
@@ -90,9 +90,9 @@
           </p>
           <p>
             Intérêts :
-            <b v-for="(interest, index) of this.data.centres" :key="index"
+            <b v-for="(interest, index) of data.centres" :key="index"
               >{{ interest
-              }}<span v-if="index < this.data.centres.length - 1">, </span></b
+              }}<span v-if="index < data.centres.length - 1">, </span></b
             >
           </p>
           <p>
@@ -100,17 +100,17 @@
             <a
               target="_blank"
               rel="noreferrer noopennr nofollower"
-              :href="this.data.website"
-              >{{ this.data.website }}</a
+              :href="data.website"
+              >{{ data.website }}</a
             >
           </p>
           <p>
             Inscrit aux groupes :
             <GroupLink
-              v-for="(group, index) of this.data.groups"
+              v-for="(group, index) of data.groups"
               :group="group"
               :key="group.id"
-              :separator="index < this.data.groups.length - 1"
+              :separator="index < data.groups.length - 1"
             />
           </p>
           <br />
@@ -153,12 +153,12 @@
           <p>
             Vérification du nom :
             <b
-              >{{ this.data.name.toLowerCase() }},
-              {{ this.data.name.toUpperCase() }}</b
+              >{{ data.name.toLowerCase() }},
+              {{ data.name.toUpperCase() }}</b
             >
           </p>
           <p>
-            Signe astrologik : <b>{{ this.data.astro }}</b>
+            Signe astrologik : <b>{{ data.astro }}</b>
           </p>
         </div>
       </div>
@@ -287,8 +287,8 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/member.json");
-    this.data = req.data;
+    const req = await api.get("/api/member.json");
+    data = req.data;
     next();
   },
   methods: {
@@ -304,7 +304,7 @@ const locales = { fr, enGB };
     },
     ban() {
       console.log(
-        "Banni" + this.$route.params.id + " durée " + this.duration * 86400
+        "Banni" + $route.params.id + " durée " + duration * 86400
       );
     },
   },

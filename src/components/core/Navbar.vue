@@ -204,12 +204,12 @@ const user = auth.user;
 
   methods: {
     logout() {
-      this.$store.dispatch("auth/logout");
-      this.$router.push(this.$route.path == "/" ? "/login" : this.$route.path);
+      $store.dispatch("auth/logout");
+      $router.push($route.path == "/" ? "/login" : $route.path);
     },
   },
   created() {
-    document.body.className = "h" + this.date.getHours();
+    document.body.className = "h" + date.getHours();
   },
 };
 </script>

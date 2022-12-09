@@ -74,8 +74,8 @@ import StrokeText from "@/components/core/StrokeText.vue";
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(`/api/item/${to.params.id}.json`);
-    this.data = req.data;
+    const req = await api.get(`/api/item/${to.params.id}.json`);
+    data = req.data;
     next();
   },
 };

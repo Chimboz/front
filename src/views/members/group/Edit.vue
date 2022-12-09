@@ -34,16 +34,16 @@
     <br />
     <Cabin
       v-if="data"
-      @update-item="(name, item) => (data.blazon[name] = item)"
+      @update-item="(name: any, item: any) => (data.blazon[name] = item)"
       @previous-item="
-        (name) =>
+        (name: any) =>
           (data.blazon[name] =
             data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
       "
       @next-item="
-        (name) =>
+        (name: any) =>
           (data.blazon[name] =
-            this.data.items[name][
+            data.items[name][
               data.items[name].indexOf(data.blazon[name]) + 1
             ])
       "
@@ -200,7 +200,7 @@
     ><br />
     <GlobalCard color="blue" v-if="data">
       <template #header>Membres</template>
-      <div class="inline" v-for="user of this.data.members" :key="user.id">
+      <div class="inline" v-for="user of data.members" :key="user.id">
         <UserLink :user="user" :separator="false" /><img
           @click.prevent="removeMember(user.id)"
           src="@/assets/img/icon/failure.svg"
@@ -215,7 +215,7 @@
     ><br />
     <GlobalCard color="blue" v-if="data">
       <template #header>Demandes</template>
-      <div class="inline" v-for="user of this.data.demands" :key="user.id">
+      <div class="inline" v-for="user of data.demands" :key="user.id">
         <UserLink :user="user" :separator="false" /><img
           @click.prevent="acceptDemand(user.id)"
           src="@/assets/img/icon/success.svg"
@@ -240,33 +240,33 @@
       ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
         >Bacteria</b
       ><br /><br />
-      Classé : <b>{{ this.data.bacteria.rank }}</b
-      >/<b>{{ this.data.bacteria.total }}</b> avec
-      <b>{{ this.data.bacteria.points }}</b> points.</GlobalCard
+      Classé : <b>{{ data.bacteria.rank }}</b
+      >/<b>{{ data.bacteria.total }}</b> avec
+      <b>{{ data.bacteria.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
       ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
         >Patojdur</b
       ><br /><br />
-      Classé : <b>{{ this.data.patojdur.rank }}</b
-      >/<b>{{ this.data.patojdur.total }}</b> avec
-      <b>{{ this.data.patojdur.points }}</b> points.</GlobalCard
+      Classé : <b>{{ data.patojdur.rank }}</b
+      >/<b>{{ data.patojdur.total }}</b> avec
+      <b>{{ data.patojdur.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
       ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
         >Popularity</b
       ><br /><br />
-      Classé : <b>{{ this.data.popularity.rank }}</b
-      >/<b>{{ this.data.popularity.total }}</b> avec
-      <b>{{ this.data.popularity.points }}</b> points.</GlobalCard
+      Classé : <b>{{ data.popularity.rank }}</b
+      >/<b>{{ data.popularity.total }}</b> avec
+      <b>{{ data.popularity.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified">
-      Classement général : <b>{{ this.data.global.rank }}</b
-      >/<b>{{ this.data.global.total }}</b> avec
-      <b>{{ this.data.global.points }}</b> points.</GlobalCard
+      Classement général : <b>{{ data.global.rank }}</b
+      >/<b>{{ data.global.total }}</b> avec
+      <b>{{ data.global.points }}</b> points.</GlobalCard
     ><br /><GlobalCard
       ><a
-        @click.prevent="this.delete()"
+        @click.prevent="deleteGroup()"
         style="color: red; cursor: var(--pointer)"
         >Supprimer le groupe</a
       ></GlobalCard
@@ -280,50 +280,49 @@ import StrokeText from "@/components/core/StrokeText.vue";
 import Cabin from "@/components/blazon/Cabin.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Group
 // Group edition page
+const data = ref<any>(null);
 
-  data() {
-    return {
-      data: null,
-    };
-  },
+function formatDate(date: number) {
+  return format(new Date(data.value.date), "PPp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+function deleteGroup() {
+  console.log("Suppression");
+}
+function removeMember(id: number) {
+  console.log("Suppression du membre " + id);
+}
+function acceptDemand(id: number) {
+  console.log("Acceptation du membre " + id);
+}
+function rejectDemand(id: number) {
+  console.log("Rejection du membre " + id);
+}
+
+function focusHandler(){}
+function selectionHandler(){}
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/edit.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/edit.json");
-    this.data = req.data;
+    const req = await api.get("/api/edit.json");
+    data = req.data;
     next();
-  },
-  methods: {
-    formatDate() {
-      return format(new Date(this.data.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-    delete() {
-      console.log("Suppression");
-    },
-    removeMember(id) {
-      console.log("Suppression du membre " + id);
-    },
-    acceptDemand(id) {
-      console.log("Acceptation du membre " + id);
-    },
-    rejectDemand(id) {
-      console.log("Rejection du membre " + id);
-    },
   },
   metaInfo: {
     title: "section.groupedit",
   },
-};
+};*/
 </script>
 <style lang="scss" scoped>
 .blazon {

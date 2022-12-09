@@ -25,11 +25,11 @@
           :secondary="data.blazon.secondary"
         />
         <div class="flex col">
-          <StrokeText class="group-name">{{ this.data.name }}</StrokeText>
-          <div class="motto">"{{ this.data.motto }}"</div>
+          <StrokeText class="group-name">{{ data.name }}</StrokeText>
+          <div class="motto">"{{ data.motto }}"</div>
         </div>
         <img
-          v-if="this.data.official"
+          v-if="data.official"
           src="@/assets/img/group/official.svg"
           style="float: right"
         />
@@ -47,10 +47,10 @@
         >)<br /><br />
         Membres du groupe:
         <UserLink
-          v-for="(user, index) of this.data.members"
+          v-for="(user, index) of data.members"
           :user="user"
           :key="user.id"
-          :separator="index < this.data.members.length - 1"
+          :separator="index < data.members.length - 1"
         /><br /><br />
         Localisation : <b>{{ data.localisation }}</b
         ><br /><br />
@@ -69,42 +69,40 @@
             />
           </div>
         </div>
-        &nbsp;<img
-          :src="require(`@/assets/img/group/${this.data.status}.png`)"
-        />
+        &nbsp;<img :src="require(`@/assets/img/group/${data.status}.png`)" />
       </GlobalCard>
       <br />
-      Groupe no. <b>{{ this.$route.params.id }}</b> créé le
+      Groupe no. <b>{{ $route.params.id }}</b> créé le
       <b>{{ formatDate }} ({{ formatDistance }} jours)</b><br />
       <br />
       <GlobalCard v-if="data" class="justified"
         ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
           >Bacteria</b
         ><br /><br />
-        Classé : <b>{{ this.data.bacteria.rank }}</b
-        >/<b>{{ this.data.bacteria.total }}</b> avec
-        <b>{{ this.data.bacteria.points }}</b> points.</GlobalCard
+        Classé : <b>{{ data.bacteria.rank }}</b
+        >/<b>{{ data.bacteria.total }}</b> avec
+        <b>{{ data.bacteria.points }}</b> points.</GlobalCard
       ><br />
       <GlobalCard v-if="data" class="justified"
         ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
           >Patojdur</b
         ><br /><br />
-        Classé : <b>{{ this.data.patojdur.rank }}</b
-        >/<b>{{ this.data.patojdur.total }}</b> avec
-        <b>{{ this.data.patojdur.points }}</b> points.</GlobalCard
+        Classé : <b>{{ data.patojdur.rank }}</b
+        >/<b>{{ data.patojdur.total }}</b> avec
+        <b>{{ data.patojdur.points }}</b> points.</GlobalCard
       ><br />
       <GlobalCard v-if="data" class="justified"
         ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
           >Popularity</b
         ><br /><br />
-        Classé : <b>{{ this.data.popularity.rank }}</b
-        >/<b>{{ this.data.popularity.total }}</b> avec
-        <b>{{ this.data.popularity.points }}</b> points.</GlobalCard
+        Classé : <b>{{ data.popularity.rank }}</b
+        >/<b>{{ data.popularity.total }}</b> avec
+        <b>{{ data.popularity.points }}</b> points.</GlobalCard
       ><br />
       <GlobalCard v-if="data" class="justified">
-        Classement général : <b>{{ this.data.global.rank }}</b
-        >/<b>{{ this.data.global.total }}</b> avec
-        <b>{{ this.data.global.points }}</b> points.</GlobalCard
+        Classement général : <b>{{ data.global.rank }}</b
+        >/<b>{{ data.global.total }}</b> avec
+        <b>{{ data.global.points }}</b> points.</GlobalCard
       >
     </GlobalCard>
     <template #right-column
@@ -112,10 +110,10 @@
         <template #header> Inscription pour rejoindre ce groupe </template>
         <div class="justified">
           <img
-            :src="require(`@/assets/img/group/${this.data.status}.png`)"
+            :src="require(`@/assets/img/group/${data.status}.png`)"
             style="float: left; margin-right: 4px"
           />
-          {{ $t(`group.${this.data.status}`) }}
+          {{ $t(`group.${data.status}`) }}
           <div v-if="authenticated">
             <br />
             <a @click.prevent="join" style="cursor: var(--pointer)"
@@ -134,6 +132,7 @@ import messageRender from "@/modules/messageRender";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 const locales = { fr, enGB };
@@ -141,47 +140,43 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members/Group
 // Group view page
+const data = ref<any>(null);
+const authenticated = true;
 
-  data() {
-    return {
-      data: null,
-    };
-  },
-  computed: {
-    ...mapGetters("auth", ["authenticated"]),
-    formatDescription() {
-      return messageRender(this.data.description);
-    },
-    formatDate() {
-      return format(new Date(this.data.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-    formatDistance() {
-      return differenceInCalendarDays(new Date(), new Date(this.data.date), {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  },
-  methods: {
-    join() {
-      console.log("Rejoins " + this.$route.params.id);
-    },
-  },
+function formatDescription() {
+  return messageRender(data.description);
+}
+function formatDate() {
+  return format(new Date(data.date), "PPp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+function formatDistance() {
+  return differenceInCalendarDays(
+    new Date(),
+    new Date(data.date) /*, {
+        // locale: locales[navigator.language.split("-")[0]],
+      }*/
+  );
+}
+function join() {
+  console.log("Rejoins " /*+ $route.params.id*/);
+}
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/group.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/group.json");
-    this.data = req.data;
+    const req = await api.get("/api/group.json");
+    data = req.data;
     next();
   },
   metaInfo: {
     title: "section.group",
   },
-};
+};*/
 </script>
 <style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>

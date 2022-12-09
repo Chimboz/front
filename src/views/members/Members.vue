@@ -176,35 +176,32 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import { ref } from 'vue';
+
 // @vuese
 // @group View/Members
 // Members page
+const data: any = ref(null);
 
-  
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
-    search() {
-      console.log("Envoyé!");
-    },
-  },
+function search() {
+  console.log("Envoyé!");
+}
+
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/members.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/members.json");
-    this.data = req.data;
+    const req = await api.get("/api/members.json");
+    data = req.data;
     next();
   },
   metaInfo: {
     title: "section.members",
   },
-};
+};*/
 </script>
 <style lang="scss" scoped>
 img[src*="spotlight"] {

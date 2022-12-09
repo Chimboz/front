@@ -259,21 +259,21 @@
               <div
                 class="category"
                 v-for="(category, name) of {
-                  item0: this.checked.includes('item0')
-                    ? this.data.items.item0
+                  item0: checked.includes('item0')
+                    ? data.items.item0
                     : [],
-                  hat: this.checked.includes('hat') ? this.data.items.hat : [],
-                  item1: this.checked.includes('item1')
-                    ? this.data.items.item1
+                  hat: checked.includes('hat') ? data.items.hat : [],
+                  item1: checked.includes('item1')
+                    ? data.items.item1
                     : [],
-                  body: this.checked.includes('body')
-                    ? this.data.items.body
+                  body: checked.includes('body')
+                    ? data.items.body
                     : [],
-                  item2: this.checked.includes('item2')
-                    ? this.data.items.item2
+                  item2: checked.includes('item2')
+                    ? data.items.item2
                     : [],
-                  shoe: this.checked.includes('shoe')
-                    ? this.data.items.shoe
+                  shoe: checked.includes('shoe')
+                    ? data.items.shoe
                     : [],
                 }"
                 :key="name"
@@ -284,7 +284,7 @@
                   :class="[
                     name,
                     item.rarity,
-                    this.data.look[name] == item.id ? 'active' : false,
+                    data.look[name] == item.id ? 'active' : false,
                   ]"
                   v-for="item of category"
                   :key="item.id"
@@ -313,7 +313,7 @@
                 </button>
               </div>
             </div>
-            <div class="info">{{ this.info }}</div>
+            <div class="info">{{ info }}</div>
           </div>
         </div>
       </div>
@@ -360,7 +360,7 @@ import VLazyImage from "v-lazy-image";
       loadInventory: false,
       info: "",
       checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
-      gender: this.data.gender,
+      gender: data.gender,
     };
   },
   const props = defineProps<{

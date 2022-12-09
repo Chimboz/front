@@ -44,7 +44,7 @@
           />
           <button type="submit" class="btn-action">go</button>
         </form>
-        <div class="suggestions" v-if="suggestionsHere && this.username != ''">
+        <div class="suggestions" v-if="suggestionsHere && username != ''">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <router-link :to="'/book/' + suggestion.mid">{{
@@ -178,17 +178,17 @@ const locales = { fr, enGB };
   },
   methods: {
     onKeypressValue() {
-      if (this.username != undefined && this.username != "") {
-        this.api.get("api/test.json").then((res) => {
+      if (username != undefined && username != "") {
+        api.get("api/test.json").then((res) => {
           if (res.data && res.data.length > 0) {
-            this.suggestionsHere = res.data;
+            suggestionsHere = res.data;
           }
         });
       }
     },
     search() {
       let id = 1;
-      this.$router.push(`/book/${id}`);
+      $router.push(`/book/${id}`);
     },
     formatDate(date) {
       return format(new Date(date), "PPp", {
@@ -202,8 +202,8 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/book.json");
-    this.data = req.data;
+    const req = await api.get("/api/book.json");
+    data = req.data;
     next();
   },
   metaInfo: {

@@ -1,6 +1,6 @@
 <template>
   <img
-    :class="{ win: this.elapsed > this.duration }"
+    :class="{ win: elapsed > duration }"
     draggable="false"
     @contextmenu.prevent
     :alt="digit"
@@ -19,7 +19,7 @@
   
   data() {
     return {
-      displayNumber: this.max.toString(),
+      displayNumber: max.toString(),
       start: 0,
       previousTimeStamp: Date.now(),
       elapsed: 0
@@ -33,7 +33,7 @@
   },
 
   mounted() {
-    requestAnimationFrame(this.tween);
+    requestAnimationFrame(tween);
   },
 
   methods: {
@@ -50,21 +50,21 @@
       return (-change / 2) * (time * (time - 2) - 1) + startValue;
     },
     tween(timestamp) {
-      if (this.start === 0) this.start = timestamp;
-      this.elapsed = timestamp - this.start;
+      if (start === 0) start = timestamp;
+      elapsed = timestamp - start;
 
-      if (this.previousTimeStamp !== timestamp) {
-        const random = this.randomInt(this.min, this.max);
-        this.displayNumber = random < 10 ? "0" + random : random.toString();
+      if (previousTimeStamp !== timestamp) {
+        const random = randomInt(min, max);
+        displayNumber = random < 10 ? "0" + random : random.toString();
       }
 
-      if (this.elapsed < this.duration) {
-        this.previousTimeStamp = timestamp;
+      if (elapsed < duration) {
+        previousTimeStamp = timestamp;
         setTimeout(
-          () => requestAnimationFrame(this.tween),
-          this.bezier(this.elapsed, 0, 500, this.duration)
+          () => requestAnimationFrame(tween),
+          bezier(elapsed, 0, 500, duration)
         );
-      } else this.displayNumber = this.value.toString();
+      } else displayNumber = value.toString();
     }
   }
 };

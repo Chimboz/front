@@ -34,7 +34,7 @@
     <tr>
       <th valign="bottom" colspan="6" height="25" nowrap="nowrap">
         <pagination
-          :current="this.$route.params.page ? +this.$route.params.page : 1"
+          :current="$route.params.page ? +$route.params.page : 1"
           :total="forum.pages"
           :callback="(page) => '/bbs/' + $route.params.id + '/' + page"
         />

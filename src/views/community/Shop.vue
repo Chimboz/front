@@ -125,13 +125,13 @@ const user = auth.user;
   },
   methods: {
     show(pack) {
-      this.shown = pack;
-      this.$refs.clickAudio.play();
+      shown = pack;
+      $refs.clickAudio.play();
     },
     buy() {
-      this.$refs.buyAudio.play();
-      console.log("Acheté " + this.shown.name);
-      this.eventBus.emit("confirmation", {
+      $refs.buyAudio.play();
+      console.log("Acheté " + shown.name);
+      eventBus.emit("confirmation", {
         message: "success.buy",
         callback: "/api/success.json",
       });
@@ -146,9 +146,9 @@ const user = auth.user;
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/shop.json");
-    this.data = req.data;
-    this.shown = this.data[0];
+    const req = await api.get("/api/shop.json");
+    data = req.data;
+    shown = data[0];
     next();
   },
   metaInfo: {

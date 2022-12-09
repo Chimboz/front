@@ -236,7 +236,7 @@ const gain = ref(0);
 async function handle({ currentTarget }: Event) {
   lottery.value = false;
   // currentTarget!.disabled = true;
-  // const req = await this.api.get("/api/lottery.json");
+  // const req = await api.get("/api/lottery.json");
   // gain.value = req.data.gain;
 }
 function formatDatePhotos(date: number) {
@@ -261,8 +261,8 @@ function formatDate() {
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/home.json");
-    this.data = req.data;
+    const req = await api.get("/api/home.json");
+    data = req.data;
     next();
   },
   methods: {

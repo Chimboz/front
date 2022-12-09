@@ -29,7 +29,7 @@
       <slot name="button"></slot>
     </div>
     <div class="card" :class="{ bot: bot }">
-      <div class="card-bg" :style="this.bg ? inlineBg : {}">
+      <div class="card-bg" :style="bg ? inlineBg : {}">
         <h2>
           <slot name="header"></slot>
         </h2>
@@ -113,7 +113,7 @@ import StrokeText from "@/components/core/StrokeText.vue";
   },
   computed: {
     cssVars() {
-      switch (this.color) {
+      switch (color) {
         case "yellow":
           return {
             "--selected-main-card": "var(--main-card-yellow)",
@@ -141,11 +141,11 @@ import StrokeText from "@/components/core/StrokeText.vue";
       }
     },
     bgImage() {
-      return require("@/assets/img/card/background/" + this.bg);
+      return require("@/assets/img/card/background/" + bg);
     },
     inlineBg() {
       return {
-        backgroundImage: `url(${this.bgImage})`,
+        backgroundImage: `url(${bgImage})`,
       };
     },
   },

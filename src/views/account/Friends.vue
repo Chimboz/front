@@ -13,7 +13,7 @@
       <ScrollableContainer
         route="friends"
         :maxHeight="450"
-        @scroll-data="(data) => (this.data = [...this.data, ...data])"
+        @scroll-data="(data) => (data = [...data, ...data])"
       >
         <div class="friend" v-for="friend of data" :key="friend.user.id">
           <router-link
@@ -163,12 +163,12 @@ const locales = { fr, enGB };
     cancel(friend) {
       console.log("Cancel " + friend.user.id);
       // API Call returning true if friend removed
-      this.data.splice(this.data.indexOf(friend), 1);
+      data.splice(data.indexOf(friend), 1);
     },
     accept(friend) {
       console.log("Accept " + friend.user.id);
       // API Call returning new friend infos (status)
-      this.data.splice(this.data.indexOf(friend), 1, {
+      data.splice(data.indexOf(friend), 1, {
         user: {
           name: "Owned",
           id: 2,
@@ -192,13 +192,13 @@ const locales = { fr, enGB };
     },
     decline(friend) {
       console.log("Decline " + friend.user.id);
-      this.data.splice(this.data.indexOf(friend), 1);
+      data.splice(data.indexOf(friend), 1);
     },
     addFriend(form) {
       for (let element of form.target.elements) {
         if (element.name == "friend") {
           console.log(`Ajouté ${element.value} en ami`);
-          this.data.push({
+          data.push({
             user: {
               name: "Owned",
               id: 2,
@@ -227,8 +227,8 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/friends.json");
-    this.data = req.data;
+    const req = await api.get("/api/friends.json");
+    data = req.data;
     next();
   },
   metaInfo: {

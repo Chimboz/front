@@ -45,7 +45,7 @@
                 1
             ].id)
       "
-      @change-gender="(gender) => (this.data.gender = gender)"
+      @change-gender="(gender) => (data.gender = gender)"
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"
@@ -186,7 +186,7 @@
               },
             },
             scales: {
-              y: { min: this.data.patojdur.stats.record },
+              y: { min: data.patojdur.stats.record },
             },
           }"
         />
@@ -260,7 +260,7 @@
         </div>
         <div style="margin-top: -21px">
           <router-link
-            v-for="message of this.data.pm"
+            v-for="message of data.pm"
             :key="message.author.id"
             :to="`/messenger/${message.author.id}`"
             :class="{ active: message.new }"
@@ -323,7 +323,7 @@
           }}</GlobalButton>
         </template>
         <router-link
-          v-for="friend of this.data.friends.sort(
+          v-for="friend of data.friends.sort(
             (a, b) =>
               b.status.connected +
               (b.status.room ? 1 : 0) -
@@ -365,7 +365,7 @@
           }}</GlobalButton>
         </template>
         <router-link
-          v-for="group of this.data.groups"
+          v-for="group of data.groups"
           :key="group.id"
           :to="'/groups/' + group.id"
         >
@@ -445,9 +445,9 @@ Chart.register(
         datasets: [
           {
             data: [
-              this.data.bacteria.stats.win,
-              this.data.bacteria.stats.draw,
-              this.data.bacteria.stats.lose,
+              data.bacteria.stats.win,
+              data.bacteria.stats.draw,
+              data.bacteria.stats.lose,
             ],
             backgroundColor: ["#5b3", "#fff", "#fb0d0d"],
           },
@@ -460,9 +460,9 @@ Chart.register(
         datasets: [
           {
             data: [
-              this.data.patojdur.stats.best,
-              this.data.patojdur.stats.today,
-              this.data.patojdur.stats.yesterday,
+              data.patojdur.stats.best,
+              data.patojdur.stats.today,
+              data.patojdur.stats.yesterday,
             ],
             backgroundColor: ["#fc0", "#6ebef0", "#5aa1cd"],
           },
@@ -476,8 +476,8 @@ Chart.register(
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/account.json");
-    this.data = req.data;
+    const req = await api.get("/api/account.json");
+    data = req.data;
     next();
   },
   metaInfo: {

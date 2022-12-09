@@ -52,39 +52,35 @@
 <script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
 // Online page
+const data: any = ref(null);
 
-  
-  data() {
-    return {
-      data: null,
-    };
-  },
-  computed: {
-    formatDate() {
-      return format(new Date(this.data.record.date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  },
-  async beforeRouteEnter(to, from, next) {
+function formatDate() {
+  return "date";
+  return format(new Date(data.value.record.date), "PPp", {
+    //locale: locales[navigator.language.split("-")[0]],
+  });
+}
+/*
+  async function beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/online.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/online.json");
-    this.data = req.data;
+    const req = await api.get("/api/online.json");
+    data = req.data;
     next();
   },
   metaInfo: {
     title: "section.online",
   },
-};
+};*/
 </script>
 
 <style lang="scss" scoped></style>

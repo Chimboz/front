@@ -150,7 +150,7 @@
         autocomplete="on"
         @submit.prevent="
           login();
-          this.$router.push('/');
+          $router.push('/');
         "
       >
         <br />
@@ -226,11 +226,11 @@
     };
   },
   mounted() {
-    setInterval(() => (this.demo = (this.demo + 1) % 6), 7000);
+    setInterval(() => (demo = (demo + 1) % 6), 7000);
   },
   methods: {
     login() {
-      this.$store.dispatch("auth/login");
+      $store.dispatch("auth/login");
     },
   },
 };

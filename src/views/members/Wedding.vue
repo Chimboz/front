@@ -383,47 +383,44 @@
 <script setup lang="ts">
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
 // Wedding page
+const data = ref<any>([]);
 
-  
-  data() {
-    return {
-      data: null,
-    };
-  },
+function formatDate(date: number, formatPattern: string) {
+  return true;
+  return format(new Date(date), formatPattern, {
+    //locale: locales[navigator.language.split("-")[0]],
+  });
+}
+function formatDistance(datebegin: number, dateend: number) {
+  return true; /*
+  return differenceInCalendarDays(new Date(dateend), new Date(datebegin), {
+    locale: locales[navigator.language.split("-")[0]],
+  });*/
+}
+function search() {
+  console.log("Envoyé!");
+}
+/*
   async beforeRouteEnter(to, from, next) {
     next((vm) =>
       vm.api.get("/api/weddings.json").then((res) => (vm.data = res.data))
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/weddings.json");
-    this.data = req.data;
+    const req = await api.get("/api/weddings.json");
+    data = req.data;
     next();
-  },
-  methods: {
-    formatDate(date, formatPattern) {
-      return format(new Date(date), formatPattern, {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-    formatDistance(datebegin, dateend) {
-      return differenceInCalendarDays(new Date(dateend), new Date(datebegin), {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-    search() {
-      console.log("Envoyé!");
-    },
   },
   metaInfo: {
     title: "section.wedding",
   },
-};
+};*/
 </script>
 
 <style lang="scss" scoped>

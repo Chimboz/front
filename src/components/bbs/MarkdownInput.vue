@@ -1,5 +1,5 @@
 <template>
-  <table class="bbs preview" :class="{ display: this.preview }">
+  <table class="bbs preview" :class="{ display: preview }">
     <colgroup>
       <col width="100" class="info" />
       <col width="100%" />
@@ -14,19 +14,19 @@
     <tbody>
       <Message
         :message="{
-          author: this.user,
-          content: this.preview,
+          author: user,
+          content: preview,
           date: Date.now(),
           id: 'reply',
           new: true,
-          signature: this.signature,
-          title: this.title,
+          signature: signature,
+          title: title,
         }"
         :separator="false"
       />
     </tbody>
   </table>
-  <br v-if="this.preview" />
+  <br v-if="preview" />
   <form @submit.prevent="submit">
     <table class="bbs input">
       <colgroup>
@@ -198,7 +198,7 @@
             <div class="flex">
               <GlobalButton
                 type="button"
-                @click.prevent="this.preview = this.message"
+                @click.prevent="preview = message"
                 aria-label="Preview"
                 >Prévisualiser</GlobalButton
               >
@@ -252,14 +252,14 @@ const user = auth.user;
 
 
   mounted() {
-    this.eventBus.on("quote", (message) => {
-      this.message += message;
-      if (this.$refs.message) this.$refs.message.focus();
+    eventBus.on("quote", (message) => {
+      message += message;
+      if ($refs.message) $refs.message.focus();
     });
-    this.eventBus.on("edit", (message) => {
-      this.message = message;
-      this.mode = "edit";
-      if (this.$refs.message) this.$refs.message.focus();
+    eventBus.on("edit", (message) => {
+      message = message;
+      mode = "edit";
+      if ($refs.message) $refs.message.focus();
     });
   },
   data() {
@@ -285,92 +285,92 @@ const user = auth.user;
   },
   methods: {
     submit() {
-      if (this.mode == "post") {
+      if (mode == "post") {
         console.log("Envoyé!");
       } else console.log("Edité!");
-      this.message = "";
+      message = "";
     },
     scrollTo(anchor) {
       location.href = anchor;
     },
     focusHandler() {
-      this.$refs.message.focus();
-      this.select();
+      $refs.message.focus();
+      select();
     },
     selectionHandler(e) {
-      this.selectionRange = [
+      selectionRange = [
         e.currentTarget.selectionStart,
         e.currentTarget.selectionEnd,
       ];
     },
     select() {
-      this.$refs.message.setSelectionRange(
-        this.selectionRange[0],
-        this.selectionRange[1]
+      $refs.message.setSelectionRange(
+        selectionRange[0],
+        selectionRange[1]
       );
     },
     format(pattern) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      message =
+        message.substring(0, selectionRange[0]) +
         pattern +
-        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        message.substring(selectionRange[0], selectionRange[1]) +
         (/<[a-z0-9]+>/.test(pattern)
           ? pattern.substring(0, 1) + "/" + pattern.substring(1)
           : pattern) +
-        this.message.substring(this.selectionRange[1]);
-      this.focusHandler();
+        message.substring(selectionRange[1]);
+      focusHandler();
     },
     formatLink(image) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
-        `${image ? "!" : ""}[${this.message.substring(
-          this.selectionRange[0],
-          this.selectionRange[1]
-        )}](${this.message.substring(
-          this.selectionRange[0],
-          this.selectionRange[1]
+      message =
+        message.substring(0, selectionRange[0]) +
+        `${image ? "!" : ""}[${message.substring(
+          selectionRange[0],
+          selectionRange[1]
+        )}](${message.substring(
+          selectionRange[0],
+          selectionRange[1]
         )})` +
-        this.message.substring(this.selectionRange[1]);
-      this.focusHandler();
+        message.substring(selectionRange[1]);
+      focusHandler();
     },
     formatCode() {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      message =
+        message.substring(0, selectionRange[0]) +
         "\n```" +
-        this.$t("format.language") +
+        $t("format.language") +
         "\n" +
-        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        message.substring(selectionRange[0], selectionRange[1]) +
         "\n```\n" +
-        this.message.substring(this.selectionRange[1]);
-      this.selectionRange = [
-        this.selectionRange[0] + 4,
-        this.selectionRange[0] + 4 + this.$t("format.language").length,
+        message.substring(selectionRange[1]);
+      selectionRange = [
+        selectionRange[0] + 4,
+        selectionRange[0] + 4 + $t("format.language").length,
       ];
-      this.focusHandler();
+      focusHandler();
     },
     formatMultiline(pattern) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
-        (this.message.charAt(this.selectionRange[0] - 1) == "\n" ||
-        this.selectionRange[0] == 0
+      message =
+        message.substring(0, selectionRange[0]) +
+        (message.charAt(selectionRange[0] - 1) == "\n" ||
+        selectionRange[0] == 0
           ? pattern
           : "\n" + pattern) +
-        this.message
-          .substring(this.selectionRange[0], this.selectionRange[1])
+        message
+          .substring(selectionRange[0], selectionRange[1])
           .split("\n")
           .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
         "\n" +
-        this.message.substring(this.selectionRange[1]);
-      this.focusHandler();
+        message.substring(selectionRange[1]);
+      focusHandler();
     },
     formatColor(hex) {
-      this.message =
-        this.message.substring(0, this.selectionRange[0]) +
+      message =
+        message.substring(0, selectionRange[0]) +
         `<i style="color:${hex}">` +
-        this.message.substring(this.selectionRange[0], this.selectionRange[1]) +
+        message.substring(selectionRange[0], selectionRange[1]) +
         "</i>" +
-        this.message.substring(this.selectionRange[1]);
-      this.focusHandler();
+        message.substring(selectionRange[1]);
+      focusHandler();
     },
   },
 };

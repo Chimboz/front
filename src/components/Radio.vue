@@ -69,25 +69,25 @@
   },
   methods: {
     play() {
-      this.playing = true;
-      this.$refs.player.play();
+      playing = true;
+      $refs.player.play();
     },
     pause() {
-      this.playing = false;
-      this.$refs.player.pause();
+      playing = false;
+      $refs.player.pause();
     },
     stop() {
-      this.pause();
-      this.$refs.player.currentTime = 0;
+      pause();
+      $refs.player.currentTime = 0;
     },
     skip(e) {
-      this.$refs.player.currentTime =
-        (e.offsetX / this.$refs.progress.offsetWidth) *
-        this.$refs.player.duration;
+      $refs.player.currentTime =
+        (e.offsetX / $refs.progress.offsetWidth) *
+        $refs.player.duration;
     },
     progress() {
-      this.$refs.progressBar.style.width =
-        (this.$refs.player.currentTime / this.$refs.player.duration) * 100 +
+      $refs.progressBar.style.width =
+        ($refs.player.currentTime / $refs.player.duration) * 100 +
         "%";
     },
   },

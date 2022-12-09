@@ -40,10 +40,10 @@ const user = auth.user;
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(
+    const req = await api.get(
       `/api/topic/${to.params.page ? to.params.page : 1}.json`
     );
-    this.data = req.data;
+    data = req.data;
     next();
   },
   computed: {

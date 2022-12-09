@@ -73,8 +73,8 @@ import BBSList from "@/components/bbs/list/BBS.vue";
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/bbs.json");
-    this.data = req.data;
+    const req = await api.get("/api/bbs.json");
+    data = req.data;
     next();
   },
   metaInfo: {

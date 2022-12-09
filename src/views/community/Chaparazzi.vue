@@ -61,13 +61,13 @@ const locales = { fr, enGB };
   methods: {
     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
       if (scrollTop + clientHeight >= scrollHeight - 60) {
-        this.isLoading = true;
-        this.api.get(`/api/chaparazzi/${++this.page}.json`).then(
+        isLoading = true;
+        api.get(`/api/chaparazzi/${++page}.json`).then(
           (res) => {
-            this.data = [...new Set([...this.data, ...res.data])];
-            this.isLoading = false;
+            data = [...new Set([...data, ...res.data])];
+            isLoading = false;
           },
-          () => (this.isLoading = false)
+          () => (isLoading = false)
         );
       }
     },
@@ -86,9 +86,9 @@ const locales = { fr, enGB };
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(`/api/chaparazzi/0.json`);
-    this.data = req.data;
-    this.shown = this.data[0];
+    const req = await api.get(`/api/chaparazzi/0.json`);
+    data = req.data;
+    shown = data[0];
     next();
   },
   metaInfo: {

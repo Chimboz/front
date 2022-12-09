@@ -41,11 +41,11 @@ const props = withDefaults(
 function onScroll(){}
 /*
 function     onScroll({ target: { scrollTop, clientHeight, scrollHeight } }: Event) {
-      if (scrollTop + clientHeight >= scrollHeight && !this.hasEnded) {
+      if (scrollTop + clientHeight >= scrollHeight && !hasEnded) {
         isLoading.value = true;
-        this.api.get(`/api/${props.route}/${++page.value}.json`).then(
+        api.get(`/api/${props.route}/${++page.value}.json`).then(
           (res: any) => {
-            this.$emit("scrollData", res.data);
+            $emit("scrollData", res.data);
             isLoading.value = false;
           },
           () => {

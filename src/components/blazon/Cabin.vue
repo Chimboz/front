@@ -7,7 +7,7 @@
             <div class="arrows flex">
               <button
                 type="button"
-                v-for="(category, name) of this.data.items"
+                v-for="(category, name) of data.items"
                 :key="name"
                 :disabled="data.items[name].indexOf(data.blazon[name]) < 1"
                 @click="$emit('previousItem', name)"
@@ -30,7 +30,7 @@
             <div class="arrows flex">
               <button
                 type="button"
-                v-for="(category, name) of this.data.items"
+                v-for="(category, name) of data.items"
                 :key="name"
                 :disabled="
                   data.items[name].indexOf(data.blazon[name]) >
@@ -87,16 +87,16 @@
               <div
                 class="category"
                 v-for="(category, name) of {
-                  shape: this.checked.includes('shape')
-                    ? this.data.items.shape
+                  shape: checked.includes('shape')
+                    ? data.items.shape
                     : [],
-                  top: this.checked.includes('top') ? this.data.items.top : [],
-                  bot: this.checked.includes('bot') ? this.data.items.bot : [],
-                  primary: this.checked.includes('primary')
-                    ? this.data.items.primary
+                  top: checked.includes('top') ? data.items.top : [],
+                  bot: checked.includes('bot') ? data.items.bot : [],
+                  primary: checked.includes('primary')
+                    ? data.items.primary
                     : [],
-                  secondary: this.checked.includes('secondary')
-                    ? this.data.items.secondary
+                  secondary: checked.includes('secondary')
+                    ? data.items.secondary
                     : []
                 }"
                 :key="name"
@@ -105,7 +105,7 @@
                   type="button"
                   class="item"
                   :class="{
-                    active: this.data.blazon[name] == item
+                    active: data.blazon[name] == item
                   }"
                   v-for="item of category"
                   :key="item"
@@ -149,7 +149,7 @@
                 </button>
               </div>
             </div>
-            <div class="info">{{ this.info }}</div>
+            <div class="info">{{ info }}</div>
           </div>
         </div>
       </div>

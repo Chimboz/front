@@ -13,7 +13,7 @@
         route="banklogs"
         class="fullwidth"
         :maxHeight="300"
-        @scroll-data="(data) => (this.data.logs = [...this.data.logs, ...data])"
+        @scroll-data="(data) => (data.logs = [...data.logs, ...data])"
       >
         <table class="w-100">
           <colgroup>
@@ -153,20 +153,20 @@ Chart.register(
           { type: "bar", label: "Balance", data: [], backgroundColor: [] },
         ],
       };
-      let balance = this.data.balance;
+      let balance = data.balance;
       let i = 0;
       const today = new Date();
       for (const day of eachDayOfInterval({
         start: subDays(today, 6),
         end: today,
       }).reverse()) {
-        const data = this.data.logs.filter((el) => isSameDay(el.date, day));
+        const data = data.logs.filter((el) => isSameDay(el.date, day));
         let value = 0;
         if (data.length == 1) value = data[0].value;
         if (data.length > 1)
           value = data.reduce((prev, curr) => prev.value + curr.value);
         if (i > 0) balance -= dataset.datasets[1].data[i - 1];
-        dataset.labels.push(this.formatDateStats(day));
+        dataset.labels.push(formatDateStats(day));
         dataset.datasets[1].data.push(value);
         dataset.datasets[0].data.push(balance);
         dataset.datasets[1].backgroundColor.push(
@@ -183,8 +183,8 @@ Chart.register(
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/bank.json");
-    this.data = req.data;
+    const req = await api.get("/api/bank.json");
+    data = req.data;
     next();
   },
   metaInfo: {

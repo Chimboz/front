@@ -31,7 +31,7 @@
             class="letter"
             @click="changeCase(index)"
             type="button"
-            v-for="(letter, index) of this.pseudo"
+            v-for="(letter, index) of pseudo"
             :key="index"
           >
             {{ letter }}
@@ -71,19 +71,19 @@ const user = auth.user;
     };
   },
   mounted() {
-    this.pseudo = this.user.name.slice();
+    pseudo = user.name.slice();
   },
   methods: {
     changeCase(index) {
       let letter;
-      if (this.pseudo[index].toUpperCase() == this.pseudo[index])
-        letter = this.pseudo[index].toLowerCase();
-      else letter = this.pseudo[index].toUpperCase();
-      this.pseudo =
-        this.pseudo.slice(0, index) + letter + this.pseudo.slice(index + 1);
+      if (pseudo[index].toUpperCase() == pseudo[index])
+        letter = pseudo[index].toLowerCase();
+      else letter = pseudo[index].toUpperCase();
+      pseudo =
+        pseudo.slice(0, index) + letter + pseudo.slice(index + 1);
     },
     submit() {
-      console.log(`Envoyé ${this.pseudo}!`);
+      console.log(`Envoyé ${pseudo}!`);
     },
   },
   computed: {

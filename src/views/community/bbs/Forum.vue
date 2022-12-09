@@ -94,10 +94,10 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get(
+    const req = await api.get(
       `/api/forum/${to.params.page ? to.params.page : 1}.json`
     );
-    this.data = req.data;
+    data = req.data;
     next();
   },
   metaInfo: {

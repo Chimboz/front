@@ -51,7 +51,7 @@
             @click.prevent="
               eventBus.emit(
                 'quote',
-                `**${this.message.author.name}** a écrit :\n${this.message.content}`.replace(
+                `**${message.author.name}** a écrit :\n${message.content}`.replace(
                   /^/gm,
                   '> '
                 ) + '\n\n'
@@ -74,7 +74,7 @@
                 Date.now() - message.date < 600) ||
               user.role > 50
             "
-            @click.prevent="eventBus.emit('edit', this.message.content)"
+            @click.prevent="eventBus.emit('edit', message.content)"
           >
             <img
               src="@/assets/img/bbs/icon/pen.svg"
@@ -88,7 +88,7 @@
           <button
             class="btn-action"
             v-if="message.author.id === user.id || user.role > 50"
-            @click.prevent="this.delete"
+            @click.prevent="delete"
           >
             x
           </button>
@@ -131,18 +131,18 @@ const user = auth.user;
     },
   },
   mounted() {
-    if (this.$route.hash) {
-      this.scrollTo(this.$route.hash);
+    if ($route.hash) {
+      scrollTo($route.hash);
     }
   },
   computed: {
     ...mapGetters("auth", ["authenticated"]),
     ...mapState("auth", ["user"]),
     formatMessage() {
-      return messageRender(this.message.content);
+      return messageRender(message.content);
     },
     formatDate() {
-      return format(new Date(this.message.date), "PPpp", {
+      return format(new Date(message.date), "PPpp", {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
@@ -152,10 +152,10 @@ const user = auth.user;
       location.href = anchor;
     },
     edit() {
-      console.log("edit " + this.message.id);
+      console.log("edit " + message.id);
     },
     delete() {
-      console.log("delete " + this.message.id);
+      console.log("delete " + message.id);
     },
     quote() {
       console.log();

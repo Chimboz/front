@@ -146,7 +146,7 @@ function formatDatePhotos(date: number) {
 }
 
 function login() {
-  //this.$store.dispatch("auth/login");
+  //$store.dispatch("auth/login");
 }
 /*
   async beforeRouteEnter(to, from, next) {
@@ -155,8 +155,8 @@ function login() {
     );
   },
   async beforeRouteUpdate(to, from, next) {
-    const req = await this.api.get("/api/login.json");
-    this.data = req.data;
+    const req = await api.get("/api/login.json");
+    data = req.data;
     next();
   },
   methods: {

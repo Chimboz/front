@@ -28,19 +28,19 @@
   },
 
   mounted() {
-    requestAnimationFrame(this.tween);
+    requestAnimationFrame(tween);
   },
 
   methods: {
     tween() {
-      this.displayNumber += Math.max(
-        Math.floor(this.number / 60 / this.delay),
+      displayNumber += Math.max(
+        Math.floor(number / 60 / delay),
         1
       );
-      if (this.number <= this.displayNumber) {
-        this.displayNumber = this.number;
+      if (number <= displayNumber) {
+        displayNumber = number;
         return;
-      } else requestAnimationFrame(this.tween);
+      } else requestAnimationFrame(tween);
     }
   }
 };
