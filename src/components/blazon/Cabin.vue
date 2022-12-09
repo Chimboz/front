@@ -173,7 +173,7 @@ import VLazyImage from "v-lazy-image";
 function submit() {
       console.log("Envoyé!");
     }
-  },
+  };
   const props = defineProps<{
     data: {
       required: true,

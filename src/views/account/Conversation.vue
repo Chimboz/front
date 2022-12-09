@@ -120,10 +120,9 @@ import messageRender from "@/modules/messageRender";
 
 
 
-      data: null,
-      message: "",
-    };
-  },
+      const data: any = ref(null);
+      const message = ref("");
+
 
 function messageRender(message) {
       return messageRender(message);
@@ -155,7 +154,7 @@ function send() {
       });
       message = "";
     },
-  },
+function test() {22};
 // /api/conversation.json
 // meta title section.conversation
 </script>

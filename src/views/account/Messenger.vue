@@ -107,7 +107,7 @@ function hashColor(str) {
       }
       return colour;
     },
-  },
+  };
 // /api/messenger.json
 // meta title section.messenger
 </script>

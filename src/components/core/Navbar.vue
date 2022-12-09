@@ -209,7 +209,7 @@ function logout() {
   },
 function created() {
     document.body.className = "h" + date.getHours();
-  },
+  };
 </script>
 <style lang="scss" scoped>
 .header {

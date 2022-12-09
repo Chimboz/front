@@ -44,7 +44,7 @@
 function mounted() {
     setInterval(() => {
       rule = (rule + 1) % 6;
-    }, 3000);
+    }; 3000);
   }
 </script>
 <style lang="scss">

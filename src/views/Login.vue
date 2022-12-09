@@ -153,7 +153,7 @@ function login() {
 
 
 
-  },
+  };
 // meta title section.login
 };*/
 </script>

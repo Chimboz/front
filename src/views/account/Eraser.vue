@@ -89,7 +89,7 @@ function submit() {
 function generatePseudo() {
       pseudo = "test";
     },
-  },
+  };
 
 // meta title section.eraser
 </script>

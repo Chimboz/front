@@ -66,7 +66,7 @@ function cssVars() {
           };
       }
     },
-  },
+  };
 </script>
 <style lang="scss" scoped>
 .btn {

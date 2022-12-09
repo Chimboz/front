@@ -148,7 +148,7 @@ function inlineBg() {
         backgroundImage: `url(${bgImage})`,
       };
     },
-  },
+  };
 </script>
 <style lang="scss" scoped>
 .card {

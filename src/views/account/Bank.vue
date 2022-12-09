@@ -172,7 +172,7 @@ function bankData() {
       }
       return dataset;
     },
-  },
+  };
 // /api/bank.json
 // meta title section.bank
 </script>

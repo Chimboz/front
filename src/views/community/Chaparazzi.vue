@@ -51,7 +51,7 @@ const locales = { fr, enGB };
 // Chaparazzi page
 
 
-      data: null,
+      const data: any = ref(null);,
       search: "",
       page: 0,
       isLoading: false,
@@ -75,7 +75,7 @@ function formatDate(date) {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-  },
+  };
 // /api/chaparazzi/${vm.page}.json
 // meta title section.chaparazzi
 </script>

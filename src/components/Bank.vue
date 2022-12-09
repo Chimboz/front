@@ -151,7 +151,7 @@ function tween() {
   computed: {
     const authenticated = true;,
     const user = {};
-  },
+  };
 </script>
 <style lang="scss" scoped>
 .bank {

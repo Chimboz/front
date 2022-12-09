@@ -117,7 +117,7 @@ function confirmation(req) {
         failure({ message: "failure.buy" });
       }
     },
-  },
+  };
 </script>
 <style lang="scss" scoped>
 .modal {

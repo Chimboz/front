@@ -63,7 +63,7 @@ import BBSList from "@/components/bbs/list/BBS.vue";
 
 
 
-      data: null
+      const data: any = ref(null);
     };
   },
 // /api/bbs.json

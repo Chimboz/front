@@ -273,7 +273,7 @@ const locales = { fr, enGB };
 
 
 
-      data: null,
+      const data: any = ref(null);,
       duration: 1,
     };
   },
@@ -295,7 +295,7 @@ function ban() {
         "Banni" + $route.params.id + " durée " + duration * 86400
       );
     },
-  },
+  };
 // meta title section.member
 </script>
 <style lang="scss">

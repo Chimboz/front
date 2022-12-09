@@ -102,7 +102,7 @@ function lock() {
     },
 function delete() {
       console.log("Delete " + $route.params.topic);
-    },
+    };
 function move() {
       console.log("Move " + $route.params.topic);
     }

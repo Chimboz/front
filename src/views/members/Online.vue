@@ -76,7 +76,7 @@ function formatDate() {
     const req = await api.get("/api/online.json");
     data = req.data;
     next();
-  },
+  };
 // meta title section.online
 };*/
 </script>

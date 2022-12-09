@@ -390,7 +390,7 @@ function formatHour(date) {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-  },
+  };
 // /api/patojdur.json
 // meta title section.patojdur
 </script>

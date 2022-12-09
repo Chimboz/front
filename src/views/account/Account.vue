@@ -465,7 +465,7 @@ function statsPatojdur() {
         ],
       };
     },
-  },
+  };
 // /api/account.json
 // meta title section.account
 </script>

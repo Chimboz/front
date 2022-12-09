@@ -195,7 +195,7 @@ function formatDate(date) {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-  },
+  };
 // /api/mazo.json
 // meta title section.mazo
 </script>

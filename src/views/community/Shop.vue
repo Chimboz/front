@@ -115,7 +115,7 @@ const user = auth.user;
 // Shop page
 
 
-      data: null,
+      const data: any = ref(null);,
       shown: null,
     };
   },
@@ -135,7 +135,7 @@ function buy() {
         callback: "/api/success.json",
       });
     },
-  },
+  };
 // /api/shop.json
 // meta title section.shop
 </script>

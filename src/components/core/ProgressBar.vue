@@ -88,7 +88,7 @@ function stop() {
         if (!isLoading) {
           isVisible = false;
         }
-      }, 2000);
+      }; 2000);
     }
   }
 </script>

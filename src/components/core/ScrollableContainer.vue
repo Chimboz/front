@@ -53,7 +53,7 @@ functionfunction onScroll({ target: { scrollTop, clientHeight, scrollHeight } }:
           }
         );
       }
-    },*/
+    };*/
 </script>
 <style style="scss" scoped>
 .scrollable {

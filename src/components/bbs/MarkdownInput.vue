@@ -369,7 +369,7 @@ function formatColor(hex) {
         message.substring(selectionRange[1]);
       focusHandler();
     },
-  },
+  };
 </script>
 <style lang="scss" scoped>
 td {

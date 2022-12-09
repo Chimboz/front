@@ -26,7 +26,7 @@ const user = auth.user;
 // Topic page
 
 
-      data: null
+      const data: any = ref(null);
     };
   },
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json

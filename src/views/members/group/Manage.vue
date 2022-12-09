@@ -372,7 +372,7 @@ function cancel(id) {
 function leave(id) {
       console.log("Quitté " + id);
     },
-  },
+  };
 // /api/manage.json
 // meta title section.groups
 </script>

@@ -378,7 +378,7 @@ import VLazyImage from "v-lazy-image";
 function submit() {
       console.log("Envoyé!");
     },
-  },
+  };
 </script>
 <style lang="scss">
 .cabin-scene .tiz {

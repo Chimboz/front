@@ -101,7 +101,7 @@ function formatDate(date) {
         addSuffix: true,
       });
     },
-  },
+  };
 </script>
 
 <style lang="scss" scoped>

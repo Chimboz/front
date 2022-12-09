@@ -228,7 +228,7 @@ function action(type, params) {
         params: params,
       });
     },
-  },
+  };
 // /api/admin/${to.params.id}.json
 </script>
 <style lang="scss" scoped>

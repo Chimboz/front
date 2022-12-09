@@ -231,7 +231,7 @@ function mounted() {
 function login() {
       $store.dispatch("auth/login");
     },
-  },
+  };
 </script>
 <style lang="scss" scoped>
 .background {

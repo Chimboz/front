@@ -28,7 +28,7 @@
 
 function mounted() {
     requestAnimationFrame(tween);
-  },
+  };
 
 
 function tween() {

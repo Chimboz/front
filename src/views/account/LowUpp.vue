@@ -84,7 +84,7 @@ function changeCase(index) {
 function submit() {
       console.log(`Envoyé ${pseudo}!`);
     },
-  },
+  };
 
 // meta title section.capitalization
 </script>

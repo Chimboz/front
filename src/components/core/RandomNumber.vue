@@ -47,7 +47,7 @@ function bezier(time, startValue, change, duration) {
       if (time < 1) return (change / 2) * time * time + startValue;
       time--;
       return (-change / 2) * (time * (time - 2) - 1) + startValue;
-    },
+    };
 function tween(timestamp) {
       if (start === 0) start = timestamp;
       elapsed = timestamp - start;

@@ -74,6 +74,6 @@
 function changePassword() {
       console.log("Change password");
     },
-  },
+  };
 // meta title section.notsmart
 </script>

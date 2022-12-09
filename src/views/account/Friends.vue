@@ -216,7 +216,7 @@ function addFriend(form) {
         }
       }
     },
-  },
+  };
 // /api/friends.json
 // meta title section.friends
 </script>

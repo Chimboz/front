@@ -160,7 +160,7 @@ function delete() {
 function quote() {
       console.log();
     },
-  },
+  };
 </script>
 <style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>

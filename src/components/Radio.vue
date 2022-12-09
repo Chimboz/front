@@ -89,7 +89,7 @@ function progress() {
         ($refs.player.currentTime / $refs.player.duration) * 100 +
         "%";
     },
-  },
+  };
 </script>
 
 <style lang="scss" scoped>

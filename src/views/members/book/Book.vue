@@ -170,7 +170,7 @@ const locales = { fr, enGB };
 
   
 
-      data: null,
+      const data: any = ref(null);,
       username: "",
       suggestionsHere: null,
     };
@@ -194,7 +194,7 @@ function formatDate(date) {
         locale: locales[navigator.language.split("-")[0]],
       });
     },
-  },
+  };
 // /api/book.json
 // meta title section.popularity
 </script>

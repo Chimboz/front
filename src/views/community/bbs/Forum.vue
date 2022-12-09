@@ -45,7 +45,7 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 // Forum page
 
 
-      data: null,
+      const data: any = ref(null);,
       iconDescriptions: [
         {
           src: require("@/assets/img/bbs/folder_new.svg"),
