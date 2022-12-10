@@ -4,7 +4,7 @@
     :class="{
       'loading-container': true,
       loading: isLoading,
-      visible: isVisible
+      visible: isVisible,
     }"
   >
     <div class="loader" :style="{ width: progress + '%' }">
@@ -14,6 +14,9 @@
   </div>
 </template>
 <script setup lang="ts">
+import eventBus from "@/modules/eventBus";
+import { ref } from "vue";
+
 // Assume that loading will complete under this amount of time.
 const defaultDuration = 4000;
 // How frequently to update
@@ -28,69 +31,57 @@ const endingPoint = 90;
 // @vuese
 // @group Core
 
-  
+const isLoading = ref(true); // Once loading is done, start fading away
+const isVisible = ref(false); // Once animate finish, set display: none
+const progress = ref(startingPoint);
+const timeoutId = ref<NodeJS.Timeout | undefined>(undefined);
 
-  data: () => ({
-    isLoading: true, // Once loading is done, start fading away
-    isVisible: false, // Once animate finish, set display: none
-    progress: startingPoint,
-    timeoutId: undefined
-  }),
-
-function mounted() {
-    eventBus.on("asyncComponentLoading", start);
-    eventBus.on("asyncComponentLoaded", stop);
-  },
-
+eventBus.on("asyncComponentLoading", start);
+eventBus.on("asyncComponentLoaded", stop);
 
 function start() {
-      isLoading = true;
-      isVisible = true;
-      progress = startingPoint;
-      loop();
-    },
+  isLoading.value = true;
+  isVisible.value = true;
+  progress.value = startingPoint;
+  loop();
+}
 
-function random(min, max) {
-      return (
-        Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
-        Math.ceil(min)
-      );
-    },
+function random(min: number, max: number) {
+  return (
+    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+    Math.ceil(min)
+  );
+}
 
 function loop() {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      if (progress >= endingPoint) {
-        return;
-      }
-      const size =
-        (endingPoint - startingPoint) / (defaultDuration / defaultInterval);
-      const p = Math.round(
-        progress +
-          random(size * (1 - variation), size * (1 + variation))
-      );
-      progress = Math.min(p, endingPoint);
-      timeoutId = setTimeout(
-        loop,
-        random(
-          defaultInterval * (1 - variation),
-          defaultInterval * (1 + variation)
-        )
-      );
-    },
+  if (timeoutId) {
+    clearTimeout(timeoutId.value);
+  }
+  if (progress.value >= endingPoint) {
+    return;
+  }
+  const size =
+    (endingPoint - startingPoint) / (defaultDuration / defaultInterval);
+  const p = Math.round(
+    progress.value + random(size * (1 - variation), size * (1 + variation))
+  );
+  progress.value = Math.min(p, endingPoint);
+  timeoutId.value = setTimeout(
+    loop,
+    random(defaultInterval * (1 - variation), defaultInterval * (1 + variation))
+  );
+}
 
 function stop() {
-      isLoading = false;
-      progress = 100;
-      clearTimeout(timeoutId);
-      setTimeout(() => {
-        if (!isLoading) {
-          isVisible = false;
-        }
-      }; 2000);
+  isLoading.value = false;
+  progress.value = 100;
+  clearTimeout(timeoutId.value);
+  setTimeout(() => {
+    if (!isLoading) {
+      isVisible.value = false;
     }
-  }
+  }, 2000);
+}
 </script>
 <style scoped>
 .loading-container {
@@ -127,7 +118,12 @@ function stop() {
   float: right;
   height: 100%;
   width: 20%;
-  background-image: linear-gradient(to right, var(--pink), var(--light), var(--pink));
+  background-image: linear-gradient(
+    to right,
+    var(--pink),
+    var(--light),
+    var(--pink)
+  );
   animation: loading-animation 2s ease-in infinite;
 }
 

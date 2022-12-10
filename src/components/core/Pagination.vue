@@ -11,27 +11,27 @@
 // @vuese
 // @group BBS
 
-  
-  const props = defineProps<{
-    current: { default: 0, type: Number, required: true },
-    total: { required: true, type: Number },
-    callback: { required: true, type: Function, default: (page) => page }
-  },
-  computed: {
+const props = withDefaults(
+  defineProps<{
+    current: number;
+    total: number;
+    callback: Function;
+  }>(),
+  { current: 0, total: 0, callback: (page) => page }
+);
 function array() {
-      return [
-        ...new Set([
-          ...Array(total < 3 ? total : 3).keys(),
-          current - 2 > 0 ? current - 2 : 0,
-          current - 1,
-          current < total - 1 ? current : 0,
-          total - 3 > 0 ? total - 3 : 0,
-          total - 2 > 0 ? total - 2 : 0,
-          total - 1
-        ])
-      ].sort();
-    }
-  }
+  return [
+    ...new Set([
+      ...Array(props.total < 3 ? props.total : 3).keys(),
+      props.current - 2 > 0 ? props.current - 2 : 0,
+      props.current - 1,
+      props.current < props.total - 1 ? props.current : 0,
+      props.total - 3 > 0 ? props.total - 3 : 0,
+      props.total - 2 > 0 ? props.total - 2 : 0,
+      props.total - 1,
+    ]),
+  ].sort();
+}
 </script>
 <style lang="scss" scoped>
 .btn-action:not(.router-link-active) {

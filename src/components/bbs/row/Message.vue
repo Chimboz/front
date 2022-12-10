@@ -109,58 +109,52 @@
 <script setup lang="ts">
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-const locales = { fr, enGB };
 import messageRender from "@/modules/messageRender";
 import { useAuthStore } from "@/stores/auth";
+import { useRoute } from "vue-router";
+import { onMounted } from "vue";
+import eventBus from "@/modules/eventBus";
+const locales = { fr, enGB };
 const auth = useAuthStore();
-const user = auth.user;
+const authenticated = true;
+const user = auth.user!;
+const route = useRoute();
 
 // @vuese
 // @group BBS/Row
 
-  
-  const props = defineProps<{
-    message: {
-      required: true,
-      type: Object,
-    },
-    separator: {
-      required: false,
-      default: true,
-      type: Boolean,
-    },
-  },
-function mounted() {
-    if ($route.hash) {
-      scrollTo($route.hash);
-    }
-  },
-  computed: {
-    const authenticated = true;,
-    const user = {};
-function formatMessage() {
-      return messageRender(message.content);
-    },
-function formatDate() {
-      return format(new Date(message.date), "PPpp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  },
+const props = withDefaults(
+  defineProps<{
+    message: any;
+    separator: boolean;
+  }>(),
+  { separator: true }
+);
+onMounted(() => {
+  if (route.hash) scrollTo(route.hash);
+});
 
-function scrollTo(anchor) {
-      location.href = anchor;
-    },
+function formatMessage() {
+  return messageRender(props.message.content);
+}
+function formatDate() {
+  return format(new Date(props.message.date), "PPpp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+
+function scrollTo(anchor: string) {
+  location.href = anchor;
+}
 function edit() {
-      console.log("edit " + message.id);
-    },
-function delete() {
-      console.log("delete " + message.id);
-    },
+  console.log("edit " + props.message.id);
+}
+function deleteMessage() {
+  console.log("delete " + props.message.id);
+}
 function quote() {
-      console.log();
-    },
-  };
+  console.log();
+}
 </script>
 <style src="@/assets/css/bbs/markdown.css"></style>
 <style src="katex/dist/katex.min.css"></style>

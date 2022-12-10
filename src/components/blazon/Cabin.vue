@@ -53,7 +53,7 @@
             <div class="category-selection" @contextmenu.prevent>
               <button
                 type="button"
-                v-for="(_, category) of data.items"
+                v-for="category of data.items"
                 :key="category"
                 :class="{ active: checked.includes(category) }"
                 @click="
@@ -63,7 +63,7 @@
                         'top',
                         'bot',
                         'primary',
-                        'secondary'
+                        'secondary',
                       ])
                     : (checked = [`${category}`])
                 "
@@ -87,9 +87,7 @@
               <div
                 class="category"
                 v-for="(category, name) of {
-                  shape: checked.includes('shape')
-                    ? data.items.shape
-                    : [],
+                  shape: checked.includes('shape') ? data.items.shape : [],
                   top: checked.includes('top') ? data.items.top : [],
                   bot: checked.includes('bot') ? data.items.bot : [],
                   primary: checked.includes('primary')
@@ -97,7 +95,7 @@
                     : [],
                   secondary: checked.includes('secondary')
                     ? data.items.secondary
-                    : []
+                    : [],
                 }"
                 :key="name"
               >
@@ -105,7 +103,7 @@
                   type="button"
                   class="item"
                   :class="{
-                    active: data.blazon[name] == item
+                    active: data.blazon[name] == item,
                   }"
                   v-for="item of category"
                   :key="item"
@@ -159,27 +157,21 @@
 <script setup lang="ts">
 import Blazon from "@/components/blazon/Blazon.vue";
 import VLazyImage from "v-lazy-image";
+import { ref } from "vue";
 
 // @vuese
 // @group Blazon
 
+defineProps<{
+  data: any;
+}>();
 
-
-      info: "",
-      checked: ["shape", "top", "bot", "primary", "secondary"]
-    };
-  },
+const info = ref("");
+const checked = ref(["shape", "top", "bot", "primary", "secondary"]);
 
 function submit() {
-      console.log("Envoyé!");
-    }
-  };
-  const props = defineProps<{
-    data: {
-      required: true,
-      type: Object
-    }
-  }
+  console.log("Envoyé!");
+}
 </script>
 <style lang="scss">
 .cabin .blazon {

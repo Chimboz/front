@@ -12,7 +12,7 @@
       paint-order="stroke"
       :text-anchor="justified ? 'left' : 'middle'"
     >
-      <slot></slot>
+      <slot />
     </text>
   </svg>
 </template>
@@ -20,12 +20,7 @@
 // @vuese
 // @group Core
 
-  
-  const props = defineProps<{
-    justified: {
-      required: false,
-      type: Boolean,
-      default: false
-    }
-  }
+defineProps<{
+  justified?: boolean;
+}>();
 </script>

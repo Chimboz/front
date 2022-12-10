@@ -29,7 +29,7 @@
       <slot name="button"></slot>
     </div>
     <div class="card" :class="{ bot: bot }">
-      <div class="card-bg" :style="bg ? inlineBg : {}">
+      <div class="card-bg" :style="bg ? inlineBg() : undefined">
         <h2>
           <slot name="header"></slot>
         </h2>
@@ -56,99 +56,67 @@
 
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
+import { number } from "@intlify/core-base";
 
 // @vuese
 // @group Core/Global
 
-  const props = defineProps<{
+const props = withDefaults(
+  defineProps<{
     // A header image, automatically prefixed by `/assets/img/card/header/`
-    header: {
-      required: false,
-      type: String,
-    },
+    header: string;
     // A background image, automatically prefixed by `/assets/img/card/background/`
-    bg: {
-      required: false,
-      type: String,
-    },
+    bg: string;
     // Width of the header image
-    width: {
-      required: false,
-      default: 468,
-      type: Number,
-    },
+    width: number;
     // Height of the header image
-    height: {
-      required: false,
-      default: 77,
-      type: Number,
-    },
+    height: number;
     // Color of the card
-    color: {
-      required: false,
-      // `"yellow"`, `"blue"`, `"red"`
-      type: String,
-function validator(value) {
-        return ["yellow", "blue", "red"].includes(value);
-      },
-    },
+    color?: "yellow" | "blue" | "red";
     // Whether the text is left aligned
-    justified: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
+    justified: boolean;
     // Display a default footer image
-    bot: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
+    bot: boolean;
     // Display a default header image
-    top: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
-  },
-  computed: {
+    top: boolean;
+  }>(),
+  { width: 468, height: 77 }
+);
+
 function cssVars() {
-      switch (color) {
-        case "yellow":
-          return {
-            "--selected-main-card": "var(--main-card-yellow)",
-            "--selected-dark-card": "var(--dark-card-yellow)",
-            "--selected-title-card": "var(--title-card-yellow)",
-          };
-        case "blue":
-          return {
-            "--selected-main-card": "var(--main-card-blue)",
-            "--selected-dark-card": "var(--dark-card-blue)",
-            "--selected-title-card": "var(--title-card-blue)",
-          };
-        case "red":
-          return {
-            "--selected-main-card": "var(--main-card-red)",
-            "--selected-dark-card": "var(--dark-card-red)",
-            "--selected-title-card": "var(--title-card-red)",
-          };
-        default:
-          return {
-            "--selected-main-card": "var(--main-card)",
-            "--selected-dark-card": "var(--dark-card)",
-            "--selected-title-card": "var(--title-card)",
-          };
-      }
-    },
-function bgImage() {
-      return require("@/assets/img/card/background/" + bg);
-    },
-function inlineBg() {
+  switch (props.color) {
+    case "yellow":
       return {
-        backgroundImage: `url(${bgImage})`,
+        "--selected-main-card": "var(--main-card-yellow)",
+        "--selected-dark-card": "var(--dark-card-yellow)",
+        "--selected-title-card": "var(--title-card-yellow)",
       };
-    },
-  };
+    case "blue":
+      return {
+        "--selected-main-card": "var(--main-card-blue)",
+        "--selected-dark-card": "var(--dark-card-blue)",
+        "--selected-title-card": "var(--title-card-blue)",
+      };
+    case "red":
+      return {
+        "--selected-main-card": "var(--main-card-red)",
+        "--selected-dark-card": "var(--dark-card-red)",
+        "--selected-title-card": "var(--title-card-red)",
+      };
+    default:
+      return {
+        "--selected-main-card": "var(--main-card)",
+        "--selected-dark-card": "var(--dark-card)",
+        "--selected-title-card": "var(--title-card)",
+      };
+  }
+}
+function bgImage() {
+  return require("@/assets/img/card/background/" + props.bg);
+}
+function inlineBg() {
+  return `background-image: url(${bgImage})`;
+}
 </script>
 <style lang="scss" scoped>
 .card {

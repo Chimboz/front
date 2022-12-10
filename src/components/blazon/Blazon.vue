@@ -4,9 +4,9 @@
     <div class="blazon-body">
       <background :primary="primary" :secondary="secondary" :id="shape" />
       <div class="top" v-if="top != -1"><top :color="primary" :id="top" /></div>
-      <div class="bot" :class="{ lone: top == -1 }"
-        ><bot :color="primary" :id="bot"
-      /></div>
+      <div class="bot" :class="{ lone: top == -1 }">
+        <bot :color="primary" :id="bot" />
+      </div>
       <div class="reflection"><reflection :id="shape" /></div>
     </div>
   </div>
@@ -20,34 +20,22 @@ import Bot from "./Bot.vue";
 // @vuese
 // @group Blazon
 
-
-  const props = defineProps<{
-    primary: {
-      required: true,
-      type: String,
-      default: "var(--light)"
-    },
-    secondary: {
-      required: true,
-      type: String,
-      default: "var(--light)"
-    },
-    shape: {
-      required: true,
-      type: Number,
-      default: 1
-    },
-    top: {
-      required: true,
-      type: Number,
-      default: 1
-    },
-    bot: {
-      required: true,
-      type: Number,
-      default: 1
-    }
+withDefaults(
+  defineProps<{
+    primary: string;
+    secondary: string;
+    shape: number;
+    top: number;
+    bot: number;
+  }>(),
+  {
+    primary: "var(--light)",
+    secondary: "var(--light)",
+    shape: 1,
+    top: 1,
+    bot: 1,
   }
+);
 </script>
 <style lang="scss" scoped>
 .blazon,

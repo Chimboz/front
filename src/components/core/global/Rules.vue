@@ -1,51 +1,42 @@
 <template>
   <GlobalCard class="rules" color="blue" :bot="bot" :top="top">
     <div class="rule-container fullwidth">
-      <div
-        ><img
+      <div>
+        <img
           draggable="false"
           @contextmenu.prevent
           alt="Rules icon"
           width="36"
           height="22"
           src="@/assets/img/icon/rules.svg"
-        /><div class="rule-number"><b>{{ rule + 1 }}</b></div></div
-      >
-      <div class="rule"
-        ><b>{{ $t("rules.rule" + rule) }}</b></div
-      >
+        />
+        <div class="rule-number">
+          <b>{{ rule + 1 }}</b>
+        </div>
+      </div>
+      <div class="rule">
+        <b>{{ $t("rules.rule" + rule) }}</b>
+      </div>
     </div>
-    <div class="fullwidth"
-      ><GlobalButton icon="rules.svg">Règles</GlobalButton></div
-    >
+    <div class="fullwidth">
+      <GlobalButton icon="rules.svg">Règles</GlobalButton>
+    </div>
   </GlobalCard>
 </template>
 <script setup lang="ts">
 // @vuese
 // @group Core/Global
 
-  
+import { ref } from "vue";
 
-      rule: 0
-    };
-  },
-  const props = defineProps<{
-    bot: {
-      required: false,
-      type: Boolean,
-      default: false
-    },
-    top: {
-      required: false,
-      type: Boolean,
-      default: false
-    }
-  },
-function mounted() {
-    setInterval(() => {
-      rule = (rule + 1) % 6;
-    }; 3000);
-  }
+const rule = ref(0);
+defineProps<{
+  bot: boolean;
+  top: boolean;
+}>();
+setInterval(() => {
+  rule.value = ++rule.value % 6;
+}, 3000);
 </script>
 <style lang="scss">
 .rules .card-bg {

@@ -1,3 +1,4 @@
+<!--prettier-ignore-->
 <template>
     <svg v-if="id==0" height="67.75" width="69.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path :fill="primary" d="m34.75.5-.65.35c-8.567 4.533-17.95 8.267-28.15 11.2.1 16.667 2.867 29.35 8.3 38.05 2.433 3.933 5.416 7.05 8.95 9.35 3.366 2.2 7.217 3.666 11.55 4.4 19.933-3.7 29.534-20.966 28.8-51.8C52.685 9.45 43.084 5.6 34.75.5Z" style="display:inline;opacity:1"/><path :fill="secondary" d="M34.1 6.7c-6.934 3.866-14.5 6.984-22.7 9.35.067 15.734 3.083 27.083 9.05 34.05l2.75 2.75c3.2 2.7 7.033 4.434 11.5 5.2l.35-.1-.15-.8.2.55.05.25c15.834-3.2 23.467-17.166 22.9-41.9C49.318 13.985 41.6 10.9 34.9 6.8l-.1-.05-.05-.05Z"/></svg>
     <svg v-if="id==1" height="67.75" width="69.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path :fill="primary" d="M34.9 6.3c-9.933.134-19.317 2.167-28.15 6.1.1 17.534 2.867 30.9 8.3 40.1 2.434 4.133 5.417 7.416 8.95 9.85 3.2 2.2 6.834 3.7 10.9 4.5l.65.15c19.9-3.933 29.583-22.133 29.05-54.6-9.734-3.933-19.25-5.966-28.55-6.1Z"/><path :fill="secondary" d="M34.9 11.9c-7.666 0-15.166 1.634-22.5 4.9.067 14.034 2.284 24.716 6.65 32.05 1.934 3.3 4.316 5.933 7.15 7.9 2.533 1.733 5.434 2.933 8.7 3.6l.55.1C51.382 57.315 59.132 42.766 58.7 16.8c-8.1-3.3-16.033-4.933-23.8-4.9z"/></svg>
@@ -9,24 +10,12 @@
 <script setup lang="ts">
 // @vuese
 // @group Blazon
-
-    name:"BlazonBackground",
-    const props = defineProps<{
-        id: {
-            type: Number,
-            required: true,
-            default: 1
-        },
-        primary: {
-            type: String,
-            required: true,
-            default: "var(--light)"
-        },
-        secondary: {
-            type: String,
-            required: true,
-            default: "var(--light)"
-        }
-    }
-}
+withDefaults(
+  defineProps<{
+    id: number;
+    primary: string;
+    secondary: string;
+  }>(),
+  { id: 1, primary: "var(--light)", secondary: "var(--light)" }
+);
 </script>

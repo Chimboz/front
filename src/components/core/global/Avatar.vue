@@ -7,7 +7,7 @@
         alt="Shoe"
         draggable="false"
         @contextmenu.prevent
-        @error.prevent="(e) => (e.target.style.display = 'none')"
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         :src="`/item/shoe/${shoe}.svg`"
       />
       <img
@@ -16,7 +16,7 @@
         draggable="false"
         alt="Shoe"
         @contextmenu.prevent
-        @error.prevent="(e) => (e.target.style.display = 'none')"
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         :src="`/item/shoe/${shoe}.svg`"
       />
       <img
@@ -25,7 +25,7 @@
         alt="Shoe"
         draggable="false"
         @contextmenu.prevent
-        @error.prevent="(e) => (e.target.style.display = 'none')"
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         :src="`/avatar/6/shoe.svg`"
       />
       <img
@@ -34,7 +34,7 @@
         draggable="false"
         alt="Shoe"
         @contextmenu.prevent
-        @error.prevent="(e) => (e.target.style.display = 'none')"
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         :src="`/avatar/6/shoe.svg`"
       />
       <div class="body-parts" v-if="avatar === 6">
@@ -44,7 +44,7 @@
           draggable="false"
           alt="Body"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/avatar/6/body.svg`"
         />
       </div>
@@ -55,7 +55,7 @@
           draggable="false"
           alt="Body"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/avatar/2/body.svg`"
         />
         <img
@@ -64,7 +64,7 @@
           draggable="false"
           alt="Body"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/item/body/${body}.svg`"
         />
         <img
@@ -72,7 +72,7 @@
           draggable="false"
           alt="Emote"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/avatar/0/emote/${emote}.svg`"
         />
         <img
@@ -80,7 +80,7 @@
           draggable="false"
           class="item hands"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           alt="Hands"
         />
         <img
@@ -89,7 +89,7 @@
           draggable="false"
           alt="Item 2"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/item/item2/${item2}.svg`"
         />
         <img
@@ -98,7 +98,7 @@
           draggable="false"
           alt="Item 1"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/item/item1/${item1}.svg`"
         />
         <img
@@ -107,7 +107,7 @@
           draggable="false"
           alt="Hat"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/item/hat/${hat}.svg`"
         />
         <img
@@ -116,7 +116,7 @@
           draggable="false"
           alt="Item 0"
           @contextmenu.prevent
-          @error.prevent="(e) => (e.target.style.display = 'none')"
+          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
           :src="`/item/item0/${item0}.svg`"
         />
       </div>
@@ -126,7 +126,7 @@
         draggable="false"
         alt="Body"
         @contextmenu.prevent
-        @error.prevent="(e) => (e.target.style.display = 'none')"
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         :src="`/avatar/${avatar}/body.svg`"
       />
     </div>
@@ -136,7 +136,7 @@
         alt="Body"
         style="margin-bottom: 30px"
         @contextmenu.prevent
-        @error.prevent="(e) => (e.target.style.display = 'none')"
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         :src="`/avatar/${avatar}/body.svg`"
       />
     </div>
@@ -148,57 +148,30 @@
 // @group Core/Global
 // Main component for showing avatars. Handle movements and emotes too.
 
-  
-  const props = defineProps<{
-    // Avatar type
-    avatar: {
-      required: false,
-      type: Number,
-      default: 0,
-    },
-    // Emote
-    emote: {
-      required: false,
-      type: String,
-      default: "neutral",
-    },
-    // Hat item
-    hat: {
-      required: false,
-      type: Number,
-      default: 1,
-    },
-    // Body item
-    body: {
-      required: false,
-      type: Number,
-      default: 318,
-    },
-    // Shoe item
-    shoe: {
-      required: false,
-      type: Number,
-      default: 606,
-    },
-    // Item0 (glasses, masks) item
-    item0: {
-      required: false,
-      type: Number,
-      default: 792,
-    },
-    // Item1 (bags, beards) item
-    item1: {
-      required: false,
-      type: Number,
-      default: 868,
-    },
-    // Item2 (necklaces, badges) item
-    item2: {
-      required: false,
-      type: Number,
-      default: 938,
-    },
-  },
+import type { ImgHTMLAttributes } from "vue";
+
+withDefaults(
+  defineProps<{
+    avatar: number;
+    emote: string;
+    hat: number;
+    body: number;
+    shoe: number;
+    item0: number;
+    item1: number;
+    item2: number;
+  }>(),
+  {
+    avatar: 0,
+    emote: "neutral",
+    hat: 1,
+    body: 318,
+    shoe: 606,
+    item0: 792,
+    item1: 868,
+    item2: 938,
+  }
+);
 </script>
 <style lang="scss" scoped>
 .tiz {

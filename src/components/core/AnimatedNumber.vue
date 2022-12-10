@@ -3,8 +3,8 @@
     draggable="false"
     @contextmenu.prevent
     :alt="digit"
-    v-for="digit in displayNumber.toString(10)"
-    :key="digit.index"
+    v-for="(digit, index) in displayNumber.toString(10)"
+    :key="index"
     width="19"
     height="21"
     :src="require(`@/assets/img/number/${digit}.svg`)"
@@ -15,31 +15,30 @@
 // @vuese
 // @group Core
 
-  
-  const props = defineProps<{
-    number: { default: 0, type: Number },
-    delay: { default: 5, type: Number, required: false }
-  },
+import { onMounted, ref } from "vue";
 
+const props = withDefaults(
+  defineProps<{
+    number: number;
+    delay?: number;
+  }>(),
+  { number: 0, delay: 5 }
+);
 
-      displayNumber: 0
-    };
-  },
+const displayNumber = ref(0);
 
-function mounted() {
-    requestAnimationFrame(tween);
-  };
-
+onMounted(() => {
+  requestAnimationFrame(tween);
+});
 
 function tween() {
-      displayNumber += Math.max(
-        Math.floor(number / 60 / delay),
-        1
-      );
-      if (number <= displayNumber) {
-        displayNumber = number;
-        return;
-      } else requestAnimationFrame(tween);
-    }
-  }
+  displayNumber.value += Math.max(
+    Math.floor(props.number / 60 / props.delay),
+    1
+  );
+  if (props.number <= displayNumber.value) {
+    displayNumber.value = props.number;
+    return;
+  } else requestAnimationFrame(tween);
+}
 </script>

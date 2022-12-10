@@ -21,52 +21,40 @@ import StrokeText from "@/components/core/StrokeText.vue";
 // @group Core/Global
 // A default button
 
+const props = defineProps<{
+  icon: string;
+  color?: "red" | "green" | "yellow" | "orange";
+}>();
 
-  const props = defineProps<{
-    icon: {
-      required: false,
-      type: String,
-    },
-    color: {
-      required: false,
-      // `"red"`, `"green"`, `"yellow"`, `"orange"`
-      type: String,
-function validator(value) {
-        return ["red", "green", "yellow", "orange"].includes(value);
-      },
-    },
-  },
-  computed: {
 function cssVars() {
-      switch (color) {
-        case "yellow":
-          return {
-            "--selected-main-button": "var(--main-button-yellow)",
-            "--selected-dark-button": "var(--dark-button-yellow)",
-          };
-        case "orange":
-          return {
-            "--selected-main-button": "var(--main-button-orange)",
-            "--selected-dark-button": "var(--dark-button-orange)",
-          };
-        case "red":
-          return {
-            "--selected-main-button": "var(--main-button-red)",
-            "--selected-dark-button": "var(--dark-button-red)",
-          };
-        case "green":
-          return {
-            "--selected-main-button": "var(--main-button-green)",
-            "--selected-dark-button": "var(--dark-button-green)",
-          };
-        default:
-          return {
-            "--selected-main-button": "var(--main-button)",
-            "--selected-dark-button": "var(--dark-button)",
-          };
-      }
-    },
-  };
+  switch (props.color) {
+    case "yellow":
+      return {
+        "--selected-main-button": "var(--main-button-yellow)",
+        "--selected-dark-button": "var(--dark-button-yellow)",
+      };
+    case "orange":
+      return {
+        "--selected-main-button": "var(--main-button-orange)",
+        "--selected-dark-button": "var(--dark-button-orange)",
+      };
+    case "red":
+      return {
+        "--selected-main-button": "var(--main-button-red)",
+        "--selected-dark-button": "var(--dark-button-red)",
+      };
+    case "green":
+      return {
+        "--selected-main-button": "var(--main-button-green)",
+        "--selected-dark-button": "var(--dark-button-green)",
+      };
+    default:
+      return {
+        "--selected-main-button": "var(--main-button)",
+        "--selected-dark-button": "var(--dark-button)",
+      };
+  }
+}
 </script>
 <style lang="scss" scoped>
 .btn {

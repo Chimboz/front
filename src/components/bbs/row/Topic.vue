@@ -1,37 +1,41 @@
 <template>
   <tbody>
     <tr>
-      <td align="center" valign="middle" height="50">
+      <td style="text-align: center" valign="middle" height="50">
         <img
           draggable="false"
           @contextmenu.prevent
           :src="
-            require(`@/assets/img/bbs/folder${
-              topic.sticky ? '_sticky' : ''}${
-              topic.announce && !topic.sticky ? '_announce' : ''}${
-              topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
-              topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''}${
-              topic.reply > 10 && !topic.announce && !topic.sticky && !topic.locked ? '_hot' : ''}.svg`)
+            require(`@/assets/img/bbs/folder${topic.sticky ? '_sticky' : ''}${
+              topic.announce && !topic.sticky ? '_announce' : ''
+            }${topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
+              topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''
+            }${
+              topic.reply > 10 &&
+              !topic.announce &&
+              !topic.sticky &&
+              !topic.locked
+                ? '_hot'
+                : ''
+            }.svg`)
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         />
       </td>
-      <td width="100%" height="50" align="left">
-          <router-link :to="'/topic/' + topic.id">{{
-            topic.title
-          }}</router-link>
+      <td width="100%" height="50" style="text-align: left">
+        <router-link :to="'/topic/' + topic.id">{{ topic.title }}</router-link>
       </td>
-      <td class="row2" align="center" valign="middle" height="50">
+      <td class="row2" style="text-align: center" valign="middle" height="50">
         {{ topic.reply }}
       </td>
-      <td class="row2" align="center" valign="middle" height="50">
+      <td class="row2" style="text-align: center" valign="middle" height="50">
         <UserLink :user="topic.author" />
       </td>
-      <td class="row2" align="center" valign="middle" height="50">
+      <td class="row2" style="text-align: center" valign="middle" height="50">
         {{ topic.view }}
       </td>
-      <td class="row2" align="center" valign="middle" height="50">
+      <td class="row2" style="text-align: center" valign="middle" height="50">
         <div>{{ formatDate }}</div>
         <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
@@ -61,24 +65,18 @@ const locales = { fr, enGB };
 // @vuese
 // @group BBS/Row
 
-  
-  const props = defineProps<{
-    topic: {
-      required: true,
-      type: Object,
-    },
-    separator: {
-      required: false,
-      default: true,
-      type: Boolean,
-    },
-  },
-  computed: {
+const props = withDefaults(
+  defineProps<{
+    topic: any;
+    separator: boolean;
+  }>(),
+  { separator: true }
+);
+
 function formatDate() {
-      return formatDistanceToNowStrict(new Date(topic.last_msg.date), {
-        locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true,
-      });
-    },
-  };
+  return formatDistanceToNowStrict(new Date(props.topic.last_msg.date), {
+    //locale: locales[navigator.language.split("-")[0]],
+    addSuffix: true,
+  });
+}
 </script>

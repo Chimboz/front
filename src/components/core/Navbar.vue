@@ -3,7 +3,9 @@
     class="header"
     :style="{
       'background-image':
-        'url(' + require(`@/assets/img/navbar/svg/${date.getHours()}.svg`) + ')',
+        'url(' +
+        require(`@/assets/img/navbar/svg/${date.getHours()}.svg`) +
+        ')',
     }"
   >
     <router-link to="/"
@@ -191,25 +193,16 @@ const user = auth.user;
 // @vuese
 // @group Core
 
-  
-
-      date: new Date(),
-    };
-  },
-  computed: {
-    const authenticated = true;,
-    const user = {};
-  },
-
+const date = new Date();
+const authenticated = true;
 
 function logout() {
-      $store.dispatch("auth/logout");
-      $router.push($route.path == "/" ? "/login" : $route.path);
-    },
-  },
+  /*$store.dispatch("auth/logout");
+      $router.push($route.path == "/" ? "/login" : $route.path);*/
+}
 function created() {
-    document.body.className = "h" + date.getHours();
-  };
+  document.body.className = "h" + date.getHours();
+}
 </script>
 <style lang="scss" scoped>
 .header {

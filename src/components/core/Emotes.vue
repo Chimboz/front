@@ -21,38 +21,36 @@
 // @vuese
 // @group Core
 
-  
+import type Emote from '@/types/Emotes';
 
-      emotes: [
-        "neutral",
-        "yo",
-        "lol",
-        "sad",
-        "cry",
-        "angry",
-        "wink",
-        "korbak",
-        "tongue",
-        "luv",
-        "oh",
-        "zzz",
-        "flag",
-        "neko",
-        "irritated",
-        "left",
-        "focused",
-        "vv",
-        "shameful",
-        "oops",
-        "kawai",
-        "parano",
-        "crazy",
-        "fearful",
-        "smirk",
-        "croon",
-      ],
-    };
-  },
+const emotes: Emote[] = [
+  "neutral",
+  "yo",
+  "lol",
+  "sad",
+  "cry",
+  "angry",
+  "wink",
+  "korbak",
+  "tongue",
+  "luv",
+  "oh",
+  "zzz",
+  "flag",
+  "neko",
+  "irritated",
+  "left",
+  "focused",
+  "vv",
+  "shameful",
+  "oops",
+  "kawai",
+  "parano",
+  "crazy",
+  "fearful",
+  "smirk",
+  "croon",
+];
 </script>
 <style lang="scss" scoped>
 .btn-pink {

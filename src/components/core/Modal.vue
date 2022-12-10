@@ -71,53 +71,50 @@
 // @vuese
 // @group Core
 
-  
+import eventBus from "@/modules/eventBus";
+import { ref } from "vue";
 
-      isVisible: false,
-      message: "error.default",
-      type: "error",
-      callback: "",
-      params: {},
-    };
-  },
-function mounted() {
-    eventBus.on("error", (req) => error(req));
-    eventBus.on("success", (req) => success(req));
-    eventBus.on("failure", (req) => failure(req));
-    eventBus.on("confirmation", (req) => confirmation(req));
-  },
+const isVisible = ref(false);
+const message = ref("error.default");
+const type = ref("error");
+const callback = ref("");
+const params = ref({});
 
-function error(req) {
-      isVisible = true;
-      type = "error";
-      message = req.message;
-    },
-function success(req) {
-      isVisible = true;
-      type = "success";
-      message = req.message;
-    },
-function failure(req) {
-      isVisible = true;
-      type = "failure";
-      message = req.message;
-    },
-function confirmation(req) {
-      isVisible = true;
-      type = "confirmation";
-      message = req.message;
-      callback = req.callback;
-      params = req.params;
-    },
-    async request() {
-      const req = await api.post(callback, params);
-      if (req.data.success) {
-        success({ message: "success.buy" });
-      } else {
-        failure({ message: "failure.buy" });
-      }
-    },
-  };
+eventBus.on("error", (req) => error(req));
+eventBus.on("success", (req) => success(req));
+eventBus.on("failure", (req) => failure(req));
+eventBus.on("confirmation", (req) => confirmation(req));
+
+function error(req: any) {
+  isVisible.value = true;
+  type.value = "error";
+  message.value = req.message;
+}
+function success(req: any) {
+  isVisible.value = true;
+  type.value = "success";
+  message.value = req.message;
+}
+function failure(req: any) {
+  isVisible.value = true;
+  type.value = "failure";
+  message.value = req.message;
+}
+function confirmation(req: any) {
+  isVisible.value = true;
+  type.value = "confirmation";
+  message.value = req.message;
+  callback.value = req.callback;
+  params.value = req.params;
+}
+async function request() {
+  /*const req = await api.post(callback, params);
+  if (req.data.success) {
+    success({ message: "success.buy" });
+  } else {
+    failure({ message: "failure.buy" });
+  }*/
+}
 </script>
 <style lang="scss" scoped>
 .modal {

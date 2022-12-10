@@ -14,23 +14,11 @@
 // @vuese
 // @group Core/Global/Link
 
-  
-  const props = defineProps<{
-    user: {
-      required: true,
-      type: Object
-    },
-    separator: {
-      required: false,
-      default: false,
-      type: Boolean
-    },
-    ellipsis: {
-      required: false,
-      default: false,
-      type: Boolean
-    }
-  }
+defineProps<{
+  user: any;
+  separator: boolean;
+  ellipsis: boolean;
+}>();
 </script>
 <style lang="scss" scoped>
 div {

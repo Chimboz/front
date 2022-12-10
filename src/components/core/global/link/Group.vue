@@ -10,18 +10,10 @@
 // @vuese
 // @group Core/Global/Link
 
-  
-  const props = defineProps<{
-    group: {
-      required: false,
-      type: Object
-    },
-    separator: {
-      required: false,
-      default: false,
-      type: Boolean
-    }
-  }
+defineProps<{
+  group: any;
+  separator: boolean;
+}>();
 </script>
 <style lang="scss" scoped>
 div {

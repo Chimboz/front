@@ -4,8 +4,8 @@
     draggable="false"
     @contextmenu.prevent
     :alt="digit"
-    v-for="digit in displayNumber"
-    :key="digit.index"
+    v-for="(digit, index) in displayNumber"
+    :key="index"
     width="19"
     height="21"
     :src="require(`@/assets/img/number/${digit}.svg`)"
@@ -16,56 +16,61 @@
 // @vuese
 // @group Core
 
-  
+import { onMounted, ref } from "vue";
 
-      displayNumber: max.toString(),
-      start: 0,
-      previousTimeStamp: Date.now(),
-      elapsed: 0
-    };
-  },
-  const props = defineProps<{
-    min: { default: 0, type: Number, required: false },
-    max: { type: Number, required: true },
-    value: { type: Number, required: true },
-    duration: { default: 2000, type: Number, required: true }
-  },
+const props = withDefaults(
+  defineProps<{
+    min: number;
+    max: number;
+    value: number;
+    duration: number;
+  }>(),
+  { min: 0, duration: 2000 }
+);
 
-function mounted() {
-    requestAnimationFrame(tween);
-  },
+const displayNumber = ref(props.max.toString());
+const start = ref(0);
+const previousTimeStamp = ref(Date.now());
+const elapsed = ref(0);
 
+onMounted(() => {
+  requestAnimationFrame(tween);
+});
 
-function randomInt(min, max) {
-      return (
-        Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
-        Math.ceil(min)
-      );
-    },
-function bezier(time, startValue, change, duration) {
-      time /= duration / 2;
-      if (time < 1) return (change / 2) * time * time + startValue;
-      time--;
-      return (-change / 2) * (time * (time - 2) - 1) + startValue;
-    };
-function tween(timestamp) {
-      if (start === 0) start = timestamp;
-      elapsed = timestamp - start;
+function randomInt(min: number, max: number) {
+  return (
+    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+    Math.ceil(min)
+  );
+}
+function bezier(
+  time: number,
+  startValue: number,
+  change: number,
+  duration: number
+) {
+  time /= duration / 2;
+  if (time < 1) return (change / 2) * time * time + startValue;
+  time--;
+  return (-change / 2) * (time * (time - 2) - 1) + startValue;
+}
+function tween(timestamp: number) {
+  if (start.value === 0) start.value = timestamp;
+  elapsed.value = timestamp - start.value;
 
-      if (previousTimeStamp !== timestamp) {
-        const random = randomInt(min, max);
-        displayNumber = random < 10 ? "0" + random : random.toString();
-      }
-
-      if (elapsed < duration) {
-        previousTimeStamp = timestamp;
-        setTimeout(
-          () => requestAnimationFrame(tween),
-          bezier(elapsed, 0, 500, duration)
-        );
-      } else displayNumber = value.toString();
-    }
+  if (previousTimeStamp.value !== timestamp) {
+    const random = randomInt(props.min, props.max);
+    displayNumber.value = random < 10 ? "0" + random : random.toString();
   }
+
+  if (elapsed.value < props.duration) {
+    previousTimeStamp.value = timestamp;
+    setTimeout(
+      () => requestAnimationFrame(tween),
+      bezier(elapsed.value, 0, 500, props.duration)
+    );
+  } else displayNumber.value = props.value.toString();
+}
 </script>
 <style scoped>
 .win {
