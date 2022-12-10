@@ -1,4 +1,4 @@
-import { createI18n } from "vue-i18n/index";
+import { createI18n } from "vue-i18n";
 
 /**
  * Load locale messages
@@ -12,8 +12,8 @@ function loadLocaleMessages() {
     true,
     /[A-Za-z0-9-_,\s]+\.json$/i
   );
-  const messages = {};
-  locales.keys().forEach((key) => {
+  const messages: any = {};
+  locales.keys().forEach((key: string) => {
     const matched = key.match(/([A-Za-z0-9-_]+)\./i);
     if (matched && matched.length > 1) {
       const locale = matched[1];

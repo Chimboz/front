@@ -11,7 +11,7 @@
                 :key="name"
                 :disabled="
                   data.items[name]
-                    .map((item) => item.id)
+                    .map((item: any) => item.id)
                     .indexOf(data.look[name]) < 1
                 "
                 @click="$emit('previousItem', name)"
@@ -29,14 +29,6 @@
             <div
               class="cabin-scene relative flex"
               tabindex="0"
-              @keydown.up="up = true"
-              @keyup.up="up = false"
-              @keydown.down="down = true"
-              @keyup.down="down = false"
-              @keydown.left="left = true"
-              @keyup.left="left = false"
-              @keydown.right="right = true"
-              @keyup.right="right = false"
             >
               <GlobalAvatar
                 :avatar="data.look.avatar"
@@ -57,7 +49,7 @@
                 :key="name"
                 :disabled="
                   data.items[name]
-                    .map((item) => item.id)
+                    .map((item: any) => item.id)
                     .indexOf(data.look[name]) >
                   data.items[name].length - 2
                 "
@@ -146,7 +138,7 @@
             >
           </div>
           <div id="profile" v-show="profile">
-            <Emotes @emote="(emote) => $emit('emote', emote)" />
+            <Emotes @emote="(emote: any) => $emit('emote', emote)" />
             <br />
             <div class="justified">
               <label for="motto">{{ $t("profile.motto") }}</label>
@@ -157,7 +149,7 @@
               type="text"
               id="motto"
               :value="motto"
-              @input="$emit('update:motto', $event.target.value)"
+              @input="$emit('update:motto', $event.target/*.value*/)"
             />
             <div class="justified">
               <label for="website">{{ $t("profile.website") }}</label>
@@ -168,7 +160,7 @@
               type="text"
               id="website"
               :value="website"
-              @input="$emit('update:website', $event.target.value)"
+              @input="$emit('update:website', $event.target/*.value*/)"
             />
             <div class="justified">
               <label>{{ $t("profile.interests") }}</label>
@@ -182,7 +174,7 @@
                   :value="centrea"
                   id="interesta"
                   aria-label="Interest A"
-                  @input="$emit('update:centrea', $event.target.value)"
+                  @input="$emit('update:centrea', $event.target/*.value*/)"
                 />
               </li>
               <li>
@@ -193,7 +185,7 @@
                   :value="centreb"
                   id="interestb"
                   aria-label="Interest B"
-                  @input="$emit('update:centreb', $event.target.value)"
+                  @input="$emit('update:centreb', $event.target/*.value*/)"
                 />
               </li>
               <li>
@@ -204,7 +196,7 @@
                   :value="centrec"
                   id="interestc"
                   aria-label="Interest C"
-                  @input="$emit('update:centrec', $event.target.value)"
+                  @input="$emit('update:centrec', $event.target/*.value*/)"
                 />
               </li>
               <li>
@@ -215,7 +207,7 @@
                   :value="centred"
                   id="interestd"
                   aria-label="Interest D"
-                  @input="$emit('update:centred', $event.target.value)"
+                  @input="$emit('update:centred', $event.target/*.value*/)"
                 />
               </li>
             </ol>
@@ -224,7 +216,7 @@
             <div class="category-selection" @contextmenu.prevent>
               <button
                 type="button"
-                v-for="(_, category) of data.items"
+                v-for="category of data.items"
                 :key="category"
                 :class="{ active: checked.includes(category) }"
                 @click="
@@ -259,22 +251,12 @@
               <div
                 class="category"
                 v-for="(category, name) of {
-                  item0: checked.includes('item0')
-                    ? data.items.item0
-                    : [],
+                  item0: checked.includes('item0') ? data.items.item0 : [],
                   hat: checked.includes('hat') ? data.items.hat : [],
-                  item1: checked.includes('item1')
-                    ? data.items.item1
-                    : [],
-                  body: checked.includes('body')
-                    ? data.items.body
-                    : [],
-                  item2: checked.includes('item2')
-                    ? data.items.item2
-                    : [],
-                  shoe: checked.includes('shoe')
-                    ? data.items.shoe
-                    : [],
+                  item1: checked.includes('item1') ? data.items.item1 : [],
+                  body: checked.includes('body') ? data.items.body : [],
+                  item2: checked.includes('item2') ? data.items.item2 : [],
+                  shoe: checked.includes('shoe') ? data.items.shoe : [],
                 }"
                 :key="name"
               >
@@ -349,36 +331,30 @@
 <script setup lang="ts">
 import Emotes from "@/components/core/Emotes.vue";
 import VLazyImage from "v-lazy-image";
+import { ref } from "vue";
 
 // @vuese
 // @group Default
 
+const props = defineProps<{
+  data: any;
+  motto: string;
+  website: string;
+  centrea: string;
+  centreb: string;
+  centrec: string;
+  centred: string;
+}>();
 
-
-      profile: true,
-      loadInventory: false,
-      info: "",
-      checked: ["item0", "hat", "item1", "body", "item2", "shoe"],
-      gender: data.gender,
-    };
-  },
-  const props = defineProps<{
-    data: {
-      required: true,
-      type: Object,
-    },
-    motto: { type: String },
-    website: { type: String },
-    centrea: { type: String },
-    centreb: { type: String },
-    centrec: { type: String },
-    centred: { type: String },
-  },
+const profile = ref(true);
+const loadInventory = ref(false);
+const info = ref("");
+const checked = ref(["item0", "hat", "item1", "body", "item2", "shoe"]);
+const gender = ref(props.data.gender);
 
 function submit() {
-      console.log("Envoyé!");
-    },
-  };
+  console.log("Envoyé!");
+}
 </script>
 <style lang="scss">
 .cabin-scene .tiz {

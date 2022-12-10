@@ -1,6 +1,6 @@
 <template>
   <GlobalCard color="yellow">
-    <template #header>{{ $route.params.name.replace(/\.[^/.]+$/, "") }}</template>
+    <template #header>{{ String($route.params.name).replace(/\.[^/.]+$/, "") }}</template>
     <a target="_blank" :href="'/gallery/' + $route.params.name">
       <img
         draggable="false"
@@ -15,7 +15,4 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-
-  
 </script>
-<style lang="scss" scoped></style>

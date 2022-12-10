@@ -205,30 +205,28 @@ import { useAuthStore } from "@/stores/auth";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import eventBus from "@/modules/eventBus";
 const auth = useAuthStore();
-const user = auth.user;
+const user = auth.user!;
 const locales = { fr, enGB };
 
 // @vuese
 // @group Default
 
-  
 const data = ref<any>(null);
 
-
 function formatDate(date: number) {
-      return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-function action(type, params) {
-      eventBus.emit("confirmation", {
-        message: `admin.modal.${type}`,
-        callback: `/api/${type}.json`,
-        params: params,
-      });
-    },
-  };
+  return format(new Date(date), "PPp", {
+    // locale: locales[navigator.language.split("-")[0]],
+  });
+}
+function action(type: string, params?: object) {
+  eventBus.emit("confirmation", {
+    message: `admin.modal.${type}`,
+    callback: `/api/${type}.json`,
+    params: params,
+  });
+}
 // /api/admin/${to.params.id}.json
 </script>
 <style lang="scss" scoped>

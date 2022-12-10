@@ -19,11 +19,10 @@ import App from "./App.vue";
 import router from "./router";
 import { createPinia } from 'pinia'
 import i18n from "./modules/i18n";
-import { useI18n } from "vue-i18n";
 import eventBus from "./modules/eventBus";
 import { createMetaManager, plugin as metaPlugin } from "vue-meta";
 // Modules
-import api from "./modules/api";
+// import api from "./modules/api";
 // import "./modules/registerServiceWorker";
 // Internal CSS
 import "modern-normalize/modern-normalize.css"; // Reset
@@ -51,10 +50,6 @@ const app = createApp(App)
 
 // Globally accessible modules
 app.config.globalProperties.eventBus = eventBus; // Event hub
-app.config.globalProperties.api = api; // Custom Axios API fetcher
-
-const { t } = useI18n();
-app.config.globalProperties.$t = t
 
 // Registering global components
 app.component("GlobalAvatar", Avatar);

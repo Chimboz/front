@@ -41,7 +41,7 @@
         </div>
         <div class="demo-picture relative">
           <section :class="{ display: demo == 0 }">
-            <div class="demo-info">{{$t("demo.info1")}}</div>
+            <div class="demo-info">{{ $t("demo.info1") }}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -49,7 +49,7 @@
             />
           </section>
           <section :class="{ display: demo == 1 }">
-            <div class="demo-info">{{$t("demo.info2")}}</div>
+            <div class="demo-info">{{ $t("demo.info2") }}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -57,7 +57,7 @@
             />
           </section>
           <section :class="{ display: demo == 2 }">
-            <div class="demo-info">{{$t("demo.info3")}}</div>
+            <div class="demo-info">{{ $t("demo.info3") }}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -65,7 +65,7 @@
             />
           </section>
           <section :class="{ display: demo == 3 }">
-            <div class="demo-info">{{$t("demo.info4")}}</div>
+            <div class="demo-info">{{ $t("demo.info4") }}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -73,7 +73,7 @@
             />
           </section>
           <section :class="{ display: demo == 4 }">
-            <div class="demo-info">{{$t("demo.info5")}}</div>
+            <div class="demo-info">{{ $t("demo.info5") }}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -81,7 +81,7 @@
             />
           </section>
           <section :class="{ display: demo == 5 }">
-            <div class="demo-info">{{$t("demo.info6")}}</div>
+            <div class="demo-info">{{ $t("demo.info6") }}</div>
             <img
               draggable="false"
               @contextmenu.prevent
@@ -129,9 +129,9 @@
           class="btn-md"
         />
         <div class="flex">
-          <GlobalButton @click="section = 1" type="button"
-            >{{$t("button.signin")}}</GlobalButton
-          >
+          <GlobalButton @click="section = 1" type="button">{{
+            $t("button.signin")
+          }}</GlobalButton>
           <GlobalButton color="green"
             ><template #prepend
               ><img
@@ -141,7 +141,7 @@
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg" /></template
-            >{{$t("button.register")}}</GlobalButton
+            >{{ $t("button.register") }}</GlobalButton
           >
         </div>
       </form>
@@ -190,9 +190,9 @@
           />
         </div>-->
         <div class="flex">
-          <GlobalButton @click="section = 0" type="button"
-            >{{$t("button.register")}}</GlobalButton
-          >
+          <GlobalButton @click="section = 0" type="button">{{
+            $t("button.register")
+          }}</GlobalButton>
           <GlobalButton type="submit" color="green"
             ><template #prepend
               ><img
@@ -201,13 +201,13 @@
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg" /></template
-            >{{$t("button.signin")}}</GlobalButton
+            >{{ $t("button.signin") }}</GlobalButton
           >
         </div>
       </form>
     </div>
     <a href="/tchat" class="try pointer"
-      >{{$t("demo.try")}}&nbsp;&nbsp;<img
+      >{{ $t("demo.try") }}&nbsp;&nbsp;<img
         draggable="false"
         @contextmenu.prevent
         src="@/assets/img/puce.svg"
@@ -218,20 +218,18 @@
 // @vuese
 // @group Default
 
-  
+import { ref } from "vue";
 
-      section: 1,
-      demo: 0,
-    };
-  },
+const section = ref(1);
+const demo = ref(0);
+
 function mounted() {
-    setInterval(() => (demo = (demo + 1) % 6), 7000);
-  },
+  setInterval(() => (demo.value = (demo.value + 1) % 6), 7000);
+}
 
 function login() {
-      $store.dispatch("auth/login");
-    },
-  };
+  //$store.dispatch("auth/login");
+}
 </script>
 <style lang="scss" scoped>
 .background {

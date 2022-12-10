@@ -31,7 +31,7 @@ const isLoading = ref(false);
 const props = withDefaults(
   defineProps<{
     route: string;
-    maxHeight?: number;
+    maxHeight: number;
   }>(),
   {
     maxHeight: 200,

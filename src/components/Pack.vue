@@ -92,22 +92,14 @@
 // @vuese
 // @group Default
 
-  
-  const props = defineProps<{
-    name: {
-      required: true,
-      type: String
-    },
-    looks: {
-      required: true,
-      type: Array
-    }
-  },
+const props = defineProps<{
+  name: string;
+  looks: Array<any>;
+}>();
 
 function play() {
-      $refs.audio.play();
-    }
-  }
+  // $refs.audio.play();
+}
 </script>
 
 <style scoped>
@@ -177,7 +169,7 @@ function play() {
   width: 50%;
   height: 200%;
   transform: translateX(-300%) var(--rotate);
-  background: var(--light)a;
+  background: var(--light) a;
   animation: shine 5s infinite linear;
 }
 

@@ -46,50 +46,45 @@
         <div class="progress-bar" ref="progressBar"></div>
       </div>
     </div>
-    <audio @timeupdate="progress" :src="'/radio/' + src" ref="player"></audio>
+    <audio @timeupdate="onProgress" :src="'/radio/' + src" ref="player"></audio>
   </GlobalCard>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 // @vuese
 // @group Default
-
-  
-  const props = defineProps<{
-    src: {
-      type: String,
-      required: true,
-      default: "track.mp3",
-    },
-  },
-
-      playing: false,
-    };
-  },
+const props = withDefaults(
+  defineProps<{
+    src: string;
+  }>(),
+  { src: "track.mp3" }
+);
+const playing = ref(false);
+const player = ref<null | HTMLAudioElement>(null);
+const progress = ref<null | HTMLElement>(null);
+const progressBar = ref<null | HTMLElement>(null);
 
 function play() {
-      playing = true;
-      $refs.player.play();
-    },
+  playing.value = true;
+  player.value!.play();
+}
 function pause() {
-      playing = false;
-      $refs.player.pause();
-    },
+  playing.value = false;
+  player.value!.pause();
+}
 function stop() {
-      pause();
-      $refs.player.currentTime = 0;
-    },
-function skip(e) {
-      $refs.player.currentTime =
-        (e.offsetX / $refs.progress.offsetWidth) *
-        $refs.player.duration;
-    },
-function progress() {
-      $refs.progressBar.style.width =
-        ($refs.player.currentTime / $refs.player.duration) * 100 +
-        "%";
-    },
-  };
+  pause();
+  player.value!.currentTime = 0;
+}
+function skip(e: MouseEvent) {
+  player.value!.currentTime =
+    (e.offsetX / progress.value!.offsetWidth) * player.value!.duration;
+}
+function onProgress() {
+  progressBar.value!.style.width =
+    (player.value!.currentTime / player.value!.duration) * 100 + "%";
+}
 </script>
 
 <style lang="scss" scoped>
