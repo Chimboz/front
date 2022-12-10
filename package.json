@@ -17,6 +17,7 @@
     "axios": "^1.2.1",
     "chart.js": "^3.9.1",
     "date-fns": "^2.29.3",
+    "dompurify": "^2.4.1",
     "highlight.js": "^11.7.0",
     "katex": "^0.16.3",
     "marked": "^4.2.4",
@@ -31,6 +32,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.8.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/dompurify": "^2.4.0",
     "@types/jsdom": "^20.0.1",

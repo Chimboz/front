@@ -27,8 +27,11 @@ export const useAuthStore = defineStore("counter", () => {
   }
 
   function logout() {
-    user.value = false;
+    user.value = undefined;
   }
+
+  // TODO: remove
+  login();
 
   return { user, login, logout };
 });
