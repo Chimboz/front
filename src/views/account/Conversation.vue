@@ -14,7 +14,7 @@
         route="messages"
         class="messages fullwidth flex"
         :maxHeight="450"
-        @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
+        @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <div
           class="message flex"

@@ -6,9 +6,7 @@
     </colgroup>
     <thead>
       <tr>
-        <th valign="top" colspan="2" nowrap="nowrap">
-          Prévisualisation
-        </th>
+        <th valign="top" colspan="2" nowrap="nowrap">Prévisualisation</th>
       </tr>
     </thead>
     <tbody>
@@ -91,7 +89,7 @@
               <select
                 class="btn-md"
                 style="padding: 0"
-                @change="(event) => formatColor(event.target.value)"
+                @change="(event) => formatColor((event.target as SelectHTMLAttributes).value)"
               >
                 <option style="color: #444444" value="#444444">Couleur</option>
                 <option style="color: #cecece" value="#CECECE">
@@ -131,10 +129,10 @@
               <select
                 class="btn-md"
                 style="padding: 0"
-                @change="(event) => formatMultiline(event.target.value)"
+                @change="(event) => formatMultiline((event.target as SelectHTMLAttributes).value)"
               >
                 <option value="##### ">Trop minuscule</option>
-                <option value="#### " selected="selected">Taille</option>
+                <option value="#### " selected>Taille</option>
                 <option value="### ">Grand</option>
                 <option value="## ">Fat</option>
                 <option value="# ">Trop trop gros</option>
@@ -174,7 +172,7 @@
         </tr>
         <tr>
           <td>
-            <Emotes @emote="(emote) => (message += `:${emote}:`)" />
+            <Emotes @emote="(emote: string) => (message += `:${emote}:`)" />
           </td>
           <td>
             <textarea
@@ -185,7 +183,7 @@
               spellcheck="true"
               maxlength="60000"
               class="btn-md"
-              ref="message"
+              ref="textarea"
               style="font-family: monospace; padding: var(--gap)"
               v-model="message"
               @focus="focusHandler"
@@ -244,132 +242,125 @@
 import Emotes from "@/components/core/Emotes.vue";
 import Message from "@/components/bbs/row/Message.vue";
 import { useAuthStore } from "@/stores/auth";
+import eventBus from "@/modules/eventBus";
+import { ref, type SelectHTMLAttributes, type TextareaHTMLAttributes } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
 // @vuese
 // @group BBS
 
+const textarea = ref<null | HTMLTextAreaElement>(null);
+const message = ref("");
+const title = ref("");
+const preview = ref("");
+const signature = ref(true);
+const markdown = ref(false);
+const selectionRange = ref([0, 0]);
+const mode = ref("post");
 
-function mounted() {
-    eventBus.on("quote", (message) => {
-      message += message;
-      if ($refs.message) $refs.message.focus();
-    });
-    eventBus.on("edit", (message) => {
-      message = message;
-      mode = "edit";
-      if ($refs.message) $refs.message.focus();
-    });
-  },
+const props = defineProps<{
+  isTopic: boolean;
+}>();
 
-      message: "",
-      title: "",
-      preview: "",
-      signature: true,
-      markdown: false,
-      selectionRange: [0, 0],
-      mode: "post",
-    };
-  },
-  const props = defineProps<{
-    isTopic: {
-      required: false,
-      default: false,
-      type: Boolean,
-    },
-  },
-
+eventBus.on("quote", (quotedMessage) => {
+  message.value += quotedMessage;
+  if (textarea.value!) textarea.value!.focus();
+});
+eventBus.on("edit", (message) => {
+  message = message;
+  mode.value = "edit";
+  if (textarea.value!) textarea.value!.focus();
+});
 
 function submit() {
-      if (mode == "post") {
-        console.log("Envoyé!");
-      } else console.log("Edité!");
-      message = "";
-    },
-function scrollTo(anchor) {
-      location.href = anchor;
-    },
+  if (mode.value == "post") {
+    console.log("Envoyé!");
+  } else console.log("Edité!");
+  message.value = "";
+}
+function scrollTo(anchor: any) {
+  location.href = anchor;
+}
 function focusHandler() {
-      $refs.message.focus();
-      select();
-    },
-function selectionHandler(e) {
-      selectionRange = [
-        e.currentTarget.selectionStart,
-        e.currentTarget.selectionEnd,
-      ];
-    },
+  textarea.value!.focus();
+  select();
+}
+function selectionHandler(e: any) {
+  selectionRange.value = [
+    e.currentTarget.selectionStart,
+    e.currentTarget.selectionEnd,
+  ];
+}
 function select() {
-      $refs.message.setSelectionRange(
-        selectionRange[0],
-        selectionRange[1]
-      );
-    },
-function format(pattern) {
-      message =
-        message.substring(0, selectionRange[0]) +
-        pattern +
-        message.substring(selectionRange[0], selectionRange[1]) +
-        (/<[a-z0-9]+>/.test(pattern)
-          ? pattern.substring(0, 1) + "/" + pattern.substring(1)
-          : pattern) +
-        message.substring(selectionRange[1]);
-      focusHandler();
-    },
-function formatLink(image) {
-      message =
-        message.substring(0, selectionRange[0]) +
-        `${image ? "!" : ""}[${message.substring(
-          selectionRange[0],
-          selectionRange[1]
-        )}](${message.substring(
-          selectionRange[0],
-          selectionRange[1]
-        )})` +
-        message.substring(selectionRange[1]);
-      focusHandler();
-    },
+  textarea.value!.setSelectionRange(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  );
+}
+function format(pattern: string) {
+  message.value =
+    message.value.substring(0, selectionRange.value[0]) +
+    pattern +
+    message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
+    (/<[a-z0-9]+>/.test(pattern)
+      ? pattern.substring(0, 1) + "/" + pattern.substring(1)
+      : pattern) +
+    message.value.substring(selectionRange.value[1]);
+  focusHandler();
+}
+function formatLink(image: boolean) {
+  message.value =
+    message.value.substring(0, selectionRange.value[0]) +
+    `${image ? "!" : ""}[${message.value.substring(
+      selectionRange.value[0],
+      selectionRange.value[1]
+    )}](${message.value.substring(
+      selectionRange.value[0],
+      selectionRange.value[1]
+    )})` +
+    message.value.substring(selectionRange.value[1]);
+  focusHandler();
+}
 function formatCode() {
-      message =
-        message.substring(0, selectionRange[0]) +
-        "\n```" +
-        $t("format.language") +
-        "\n" +
-        message.substring(selectionRange[0], selectionRange[1]) +
-        "\n```\n" +
-        message.substring(selectionRange[1]);
-      selectionRange = [
-        selectionRange[0] + 4,
-        selectionRange[0] + 4 + $t("format.language").length,
-      ];
-      focusHandler();
-    },
-function formatMultiline(pattern) {
-      message =
-        message.substring(0, selectionRange[0]) +
-        (message.charAt(selectionRange[0] - 1) == "\n" ||
-        selectionRange[0] == 0
-          ? pattern
-          : "\n" + pattern) +
-        message
-          .substring(selectionRange[0], selectionRange[1])
-          .split("\n")
-          .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
-        "\n" +
-        message.substring(selectionRange[1]);
-      focusHandler();
-    },
-function formatColor(hex) {
-      message =
-        message.substring(0, selectionRange[0]) +
-        `<i style="color:${hex}">` +
-        message.substring(selectionRange[0], selectionRange[1]) +
-        "</i>" +
-        message.substring(selectionRange[1]);
-      focusHandler();
-    },
-  };
+  message.value =
+    message.value.substring(0, selectionRange.value[0]) +
+    "\n```" +
+    $t("format.language") +
+    "\n" +
+    message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
+    "\n```\n" +
+    message.value.substring(selectionRange.value[1]);
+  selectionRange.value = [
+    selectionRange.value[0] + 4,
+    selectionRange.value[0] + 4 + $t("format.language").length,
+  ];
+  focusHandler();
+}
+function formatMultiline(pattern: string) {
+  message.value =
+    message.value.substring(0, selectionRange.value[0]) +
+    (message.value.charAt(selectionRange.value[0] - 1) == "\n" ||
+    selectionRange.value[0] == 0
+      ? pattern
+      : "\n" + pattern) +
+    message.value
+      .substring(selectionRange.value[0], selectionRange.value[1])
+      .split("\n")
+      .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
+    "\n" +
+    message.value.substring(selectionRange.value[1]);
+  focusHandler();
+}
+function formatColor(hex: string) {
+  message.value =
+    message.value.substring(0, selectionRange.value[0]) +
+    `<i style="color:${hex}">` +
+    message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
+    "</i>" +
+    message.value.substring(selectionRange.value[1]);
+  focusHandler();
+}
 </script>
 <style lang="scss" scoped>
 td {

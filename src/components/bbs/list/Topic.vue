@@ -19,10 +19,10 @@
     <thead>
       <tr>
         <th valign="top" colspan="2" height="25" nowrap="nowrap">
-          <pagination
+          <Pagination
             :current="$route.params.page ? +$route.params.page : 1"
             :total="topic.pages"
-            :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
+            :callback="(page: number) => '/topic/' + $route.params.topic + '/' + page"
           />
         </th>
       </tr>
@@ -37,17 +37,18 @@
     </tbody>
     <tr>
       <th valign="bottom" colspan="2" height="25" nowrap="nowrap">
-        <pagination
+        <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
           :total="topic.pages"
-          :callback="(page) => '/topic/' + $route.params.topic + '/' + page"
+          :callback="(page: number) => '/topic/' + $route.params.topic + '/' + page"
         />
       </th>
-    </tr> </table
-  ><br />
+    </tr>
+  </table>
+  <br />
   <div style="text-align: end" v-if="authenticated">
-    <button class="btn-action" v-if="user.role > 50" @click.prevent="move"
-      ><img
+    <button class="btn-action" v-if="user.role > 50" @click.prevent="move">
+      <img
         src="@/assets/img/bbs/icon/arrow.svg"
         width="10"
         height="12"
@@ -56,8 +57,8 @@
         @contextmenu.prevent
       />&nbsp;Déplacer</button
     >&nbsp;
-    <button class="btn-action" v-if="user.role > 50" @click.prevent="lock"
-      ><img
+    <button class="btn-action" v-if="user.role > 50" @click.prevent="lock">
+      <img
         src="@/assets/img/bbs/icon/lock.svg"
         width="9"
         height="12"
@@ -66,12 +67,9 @@
         @contextmenu.prevent
       />&nbsp;Verrouiller</button
     >&nbsp;
-    <button
-      class="btn-action"
-      v-if="user.role > 50"
-      @click.prevent="delete"
-      >x&nbsp;Supprimer</button
-    >
+    <button class="btn-action" v-if="user.role > 50" @click.prevent="delete">
+      x&nbsp;Supprimer
+    </button>
   </div>
 </template>
 
@@ -79,34 +77,28 @@
 import Pagination from "../../core/Pagination.vue";
 import Message from "../row/Message.vue";
 import { useAuthStore } from "@/stores/auth";
+import { useRoute } from "vue-router";
 const auth = useAuthStore();
-const user = auth.user;
+const user = auth.user!;
+const authenticated = true;
+const route = useRoute();
 
 // @vuese
 // @group BBS/List
 
-  
-  const props = defineProps<{
-    topic: {
-      required: true,
-      type: Object
-    }
-  },
-  computed: {
-    const authenticated = true;,
-    ...mapState("auth", ["user"])
-  },
+const props = defineProps<{
+  topic: any;
+}>();
 
 function lock() {
-      console.log("Lock " + $route.params.topic);
-    },
-function delete() {
-      console.log("Delete " + $route.params.topic);
-    };
+  console.log("Lock " + route.params.topic);
+}
+function deleteTopic() {
+  console.log("Delete " + route.params.topic);
+}
 function move() {
-      console.log("Move " + $route.params.topic);
-    }
-  }
+  console.log("Move " + route.params.topic);
+}
 </script>
 <style lang="scss" scoped>
 .info {

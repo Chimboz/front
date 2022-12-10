@@ -8,7 +8,7 @@
         <ScrollableContainer
           route="adminlogs"
           class="fullwidth"
-          @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
+          @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div class="log" v-for="(log, index) in data" :key="index">
             <b>{{ formatDate(log.date) }}</b
@@ -66,9 +66,9 @@ const locales = { fr, enGB };
 // @vuese
 // @group View
 // Admin page.
-const data = ref<Array<any>>([]);
+const data = ref<any[]>([]);
 const username = ref("");
-const suggestionsHere = ref<Array<any>>([]);
+const suggestionsHere = ref<any[]>([]);
 
 function onKeypressValue() {
   if (username.value != undefined && username.value != "") {

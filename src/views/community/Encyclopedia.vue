@@ -14,7 +14,7 @@
         route="encyclopedia"
         class="fullwidth"
         :maxHeight="450"
-        @scroll-data="(results: Array<any>) => (data = [...new Set([...data, ...results])])"
+        @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
       >
         <div
           v-for="item of data.filter(

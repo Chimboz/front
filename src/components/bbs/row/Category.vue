@@ -78,30 +78,23 @@
 <script setup lang="ts">
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group BBS/Row
 
-  
-
-      hide: false,
-    };
-  },
-  const props = defineProps<{
-    category: {
-      required: true,
-      type: Object,
-    },
-  },
+const hide = ref(false);
+const props = defineProps<{
+  category: any;
+}>();
 
 function formatDate(date: number) {
-      return formatDistanceToNowStrict(new Date(date), {
-        locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true,
-      });
-    },
-  };
+  return formatDistanceToNowStrict(new Date(date), {
+    // locale: locales[navigator.language.split("-")[0]],
+    addSuffix: true,
+  });
+}
 </script>
 
 <style lang="scss" scoped>

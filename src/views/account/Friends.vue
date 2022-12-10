@@ -13,7 +13,7 @@
       <ScrollableContainer
         route="friends"
         :maxHeight="450"
-        @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
+        @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <div class="friend" v-for="friend of data" :key="friend.user.id">
           <router-link

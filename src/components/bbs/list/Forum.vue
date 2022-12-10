@@ -36,23 +36,23 @@
         <pagination
           :current="$route.params.page ? +$route.params.page : 1"
           :total="forum.pages"
-          :callback="(page) => '/bbs/' + $route.params.id + '/' + page"
+          :callback="(page: number) => '/bbs/' + $route.params.id + '/' + page"
         />
       </th>
     </tr>
   </table>
   <br />
   <div style="text-align: end">
-    <button class="btn-action" @click.prevent="quote(message.id)"
-      ><img
+    <button class="btn-action" @click.prevent="lock($route.params.id as string)">
+      <img
         src="@/assets/img/bbs/icon/lock.svg"
         width="9"
         height="12"
         draggable="false"
         alt="Lock"
         @contextmenu.prevent
-      />&nbsp;Verrouiller</button
-    >
+      />&nbsp;Verrouiller
+    </button>
   </div>
 </template>
 
@@ -66,14 +66,11 @@ const user = auth.user;
 // @vuese
 // @group BBS/List
 
+defineProps<{
+  forum: any;
+}>();
 
-  const props = defineProps<{
-    forum: {
-      required: true,
-      type: Object
-    }
-  },
-  computed: {
-    ...mapState("auth", ["user"])
-  }
+function lock(id: string) {
+  console.log("verrouille" + id);
+}
 </script>

@@ -13,7 +13,7 @@
         route="banklogs"
         class="fullwidth"
         :maxHeight="300"
-        @scroll-data="(results: Array<any>) => (data.logs = [...data.logs, ...results])"
+        @scroll-data="(results: any[]) => (data.logs = [...data.logs, ...results])"
       >
         <table class="w-100">
           <colgroup>
@@ -138,7 +138,7 @@ function formatDateStats(date: Date) {
 }
 function bankData() {
   const dataset: ChartData<any> = {
-    labels: [] as Array<any>,
+    labels: [] as any[],
     datasets: [
       {
         type: "line",

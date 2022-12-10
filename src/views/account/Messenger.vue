@@ -26,7 +26,7 @@
         class="fullwidth"
         route="messages"
         :maxHeight="450"
-        @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
+        @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <router-link
           class="message flex"

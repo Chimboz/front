@@ -94,7 +94,7 @@
 
 const props = defineProps<{
   name: string;
-  looks: Array<any>;
+  looks: any[];
 }>();
 
 function play() {
