@@ -27,25 +27,25 @@
     <Cabin
       v-if="data"
       :data="data"
-      @update-item="(name, item) => (data.look[name] = item)"
-      @emote="(emote) => (data.look.emote = emote)"
+      @update-item="(name: any, item: any) => (data.look[name] = item)"
+      @emote="(emote:any) => (data.look.emote = emote)"
       @previous-item="
-        (name) =>
+        (name: any) =>
           (data.look[name] =
             data.items[name][
-              data.items[name].map((item) => item.id).indexOf(data.look[name]) -
+              data.items[name].map((item: any) => item.id).indexOf(data.look[name]) -
                 1
             ].id)
       "
       @next-item="
-        (name) =>
+        (name: any) =>
           (data.look[name] =
             data.items[name][
-              data.items[name].map((item) => item.id).indexOf(data.look[name]) +
+              data.items[name].map((item: any) => item.id).indexOf(data.look[name]) +
                 1
             ].id)
       "
-      @change-gender="(gender) => (data.gender = gender)"
+      @change-gender="(gender: any) => (data.gender = gender)"
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"
@@ -250,7 +250,7 @@
             @contextmenu.prevent
             :alt="number"
             v-for="number in data.pm
-              .reduce((prev, curr) => prev + +curr.new, 0)
+              .reduce((prev: number, curr: any) => prev + +curr.new, 0)
               .toString(10)"
             :key="number.index"
             width="19"
@@ -324,7 +324,7 @@
         </template>
         <router-link
           v-for="friend of data.friends.sort(
-            (a, b) =>
+            (a: any, b: any) =>
               b.status.connected +
               (b.status.room ? 1 : 0) -
               a.status.connected -
@@ -395,7 +395,7 @@ import Bank from "@/components/Bank.vue";
 import StrokeText from "@/components/core/StrokeText.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-const locales = { fr, enGB };
+import { ref } from "vue";
 import { DoughnutChart, BarChart } from "vue-chart-3";
 import {
   Chart,
@@ -408,6 +408,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
+const locales = { fr, enGB };
 
 Chart.register(
   Legend,
@@ -424,48 +425,45 @@ Chart.register(
 // @group View/Account
 // Account page
 
-
 const data = ref<any>(null);
 
-function formatDate(date) {
-      return formatDistanceToNowStrict(new Date(date), {
-        locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true,
-      });
-    },
-  },
-  computed: {
+function formatDate(date: number) {
+  return formatDistanceToNowStrict(new Date(date), {
+    // locale: locales[navigator.language.split("-")[0]],
+    addSuffix: true,
+  });
+}
 function statsBacteria() {
-      return {
-        labels: ["Win", "Draw", "Lose"],
-        datasets: [
-          {
-            data: [
-              data.bacteria.stats.win,
-              data.bacteria.stats.draw,
-              data.bacteria.stats.lose,
-            ],
-            backgroundColor: ["#5b3", "#fff", "#fb0d0d"],
-          },
+  return {
+    labels: ["Win", "Draw", "Lose"],
+    datasets: [
+      {
+        data: [
+          data.value.bacteria.stats.win,
+          data.value.bacteria.stats.draw,
+          data.value.bacteria.stats.lose,
         ],
-      };
-    },
-function statsPatojdur() {
-      return {
-        labels: ["Best", "Today", "Yesterday"],
-        datasets: [
-          {
-            data: [
-              data.patojdur.stats.best,
-              data.patojdur.stats.today,
-              data.patojdur.stats.yesterday,
-            ],
-            backgroundColor: ["#fc0", "#6ebef0", "#5aa1cd"],
-          },
-        ],
-      };
-    },
+        backgroundColor: ["#5b3", "#fff", "#fb0d0d"],
+      },
+    ],
   };
+}
+function statsPatojdur() {
+  return {
+    labels: ["Best", "Today", "Yesterday"],
+    datasets: [
+      {
+        data: [
+          data.value.patojdur.stats.best,
+          data.value.patojdur.stats.today,
+          data.value.patojdur.stats.yesterday,
+        ],
+        backgroundColor: ["#fc0", "#6ebef0", "#5aa1cd"],
+      },
+    ],
+  };
+}
+
 // /api/account.json
 // meta title section.account
 </script>

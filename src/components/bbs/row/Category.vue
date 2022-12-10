@@ -95,7 +95,7 @@ const locales = { fr, enGB };
     },
   },
 
-function formatDate(date) {
+function formatDate(date: number) {
       return formatDistanceToNowStrict(new Date(date), {
         locale: locales[navigator.language.split("-")[0]],
         addSuffix: true,

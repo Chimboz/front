@@ -69,11 +69,8 @@
 // @group View/Account
 // Notsmart page
 
-  
-
 function changePassword() {
-      console.log("Change password");
-    },
-  };
+  console.log("Change password");
+}
 // meta title section.notsmart
 </script>

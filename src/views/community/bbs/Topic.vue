@@ -18,6 +18,7 @@
 import TopicList from "@/components/bbs/list/Topic.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
@@ -25,14 +26,10 @@ const user = auth.user;
 // @group View/Community/BBS
 // Topic page
 
+const data: any = ref(null);
+const authenticated = true;
 
-      const data: any = ref(null);
-    };
-  },
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
-  computed: {
-    const authenticated = true;
-  },
 // meta title section.topic
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

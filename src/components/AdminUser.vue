@@ -216,7 +216,7 @@ const locales = { fr, enGB };
 const data = ref<any>(null);
 
 
-function formatDate(date) {
+function formatDate(date: number) {
       return format(new Date(date), "PPp", {
         locale: locales[navigator.language.split("-")[0]],
       });

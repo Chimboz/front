@@ -44,38 +44,36 @@
 import VLazyImage from "v-lazy-image";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Community
 // Chaparazzi page
+const data: any = ref(null);
+const search = ref("");
+const page = ref(0);
+const isLoading = ref(false);
 
+function onScroll() {}
+/*function onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
+  if (scrollTop + clientHeight >= scrollHeight - 60) {
+    isLoading = true;
+    api.get(`/api/chaparazzi/${++page}.json`).then(
+      (res) => {
+        data = [...new Set([...data, ...res.data])];
+        isLoading = false;
+      },
+      () => (isLoading = false)
+    );
+  }
+}*/
+function formatDate(date: number) {
+  return format(new Date(date), "PPp", {
+    //locale: locales[navigator.language.split("-")[0]],
+  });
+}
 
-      const data: any = ref(null);
-      search: "",
-      page: 0,
-      isLoading: false,
-    };
-  },
-
-function onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
-      if (scrollTop + clientHeight >= scrollHeight - 60) {
-        isLoading = true;
-        api.get(`/api/chaparazzi/${++page}.json`).then(
-          (res) => {
-            data = [...new Set([...data, ...res.data])];
-            isLoading = false;
-          },
-          () => (isLoading = false)
-        );
-      }
-    },
-function formatDate(date) {
-      return format(new Date(date), "PPp", {
-        locale: locales[navigator.language.split("-")[0]],
-      });
-    },
-  };
 // /api/chaparazzi/${vm.page}.json
 // meta title section.chaparazzi
 </script>

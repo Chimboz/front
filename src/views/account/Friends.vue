@@ -13,7 +13,7 @@
       <ScrollableContainer
         route="friends"
         :maxHeight="450"
-        @scroll-data="(data) => (data = [...data, ...data])"
+        @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
       >
         <div class="friend" v-for="friend of data" :key="friend.user.id">
           <router-link
@@ -130,41 +130,71 @@
 import ScrollableContainer from "../../components/core/ScrollableContainer.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
 // @vuese
 // @group View/Account
 // Friends page
 
-
 const data = ref<any>(null);
 
-function formatDate(date) {
-      return formatDistanceToNowStrict(new Date(date), {
-        locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true,
-      });
+function formatDate(date: number) {
+  return formatDistanceToNowStrict(new Date(date), {
+    // locale: locales[navigator.language.split("-")[0]],
+    addSuffix: true,
+  });
+}
+function hashColor(str: string) {
+  var hash = 0;
+  for (var i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  var colour = "#";
+  for (i = 0; i < 3; i++) {
+    var value = (hash >> (i * 8)) & 0xff;
+    colour += ("00" + value.toString(16)).substr(-2);
+  }
+  return colour;
+}
+function cancel(friend: any) {
+  console.log("Cancel " + friend.user.id);
+  // API Call returning true if friend removed
+  data.splice(data.indexOf(friend), 1);
+}
+function accept(friend: any) {
+  console.log("Accept " + friend.user.id);
+  // API Call returning new friend infos (status)
+  data.splice(data.indexOf(friend), 1, {
+    user: {
+      name: "Owned",
+      id: 2,
+      look: {
+        avatar: 0,
+        emote: "neutral",
+        hat: 7,
+        body: 334,
+        shoe: 612,
+        item0: 808,
+        item1: 868,
+        item2: 938,
+      },
     },
-function hashColor(str) {
-      var hash = 0;
-      for (var i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-      }
-      var colour = "#";
-      for (i = 0; i < 3; i++) {
-        var value = (hash >> (i * 8)) & 0xff;
-        colour += ("00" + value.toString(16)).substr(-2);
-      }
-      return colour;
+    status: {
+      connected: true,
+      room: "La Colline Sacrée",
+      date: 1630075662000,
     },
-function cancel(friend) {
-      console.log("Cancel " + friend.user.id);
-      // API Call returning true if friend removed
-      data.splice(data.indexOf(friend), 1);
-    },
-function accept(friend) {
-      console.log("Accept " + friend.user.id);
-      // API Call returning new friend infos (status)
-      data.splice(data.indexOf(friend), 1, {
+  });
+}
+function decline(friend: any) {
+  console.log("Decline " + friend.user.id);
+  data.splice(data.indexOf(friend), 1);
+}
+function addFriend(form: any) {
+  for (let element of form.target.elements) {
+    if (element.name == "friend") {
+      console.log(`Ajouté ${element.value} en ami`);
+      data.push({
         user: {
           name: "Owned",
           id: 2,
@@ -180,43 +210,12 @@ function accept(friend) {
           },
         },
         status: {
-          connected: true,
-          room: "La Colline Sacrée",
-          date: 1630075662000,
+          sent: true,
         },
       });
-    },
-function decline(friend) {
-      console.log("Decline " + friend.user.id);
-      data.splice(data.indexOf(friend), 1);
-    },
-function addFriend(form) {
-      for (let element of form.target.elements) {
-        if (element.name == "friend") {
-          console.log(`Ajouté ${element.value} en ami`);
-          data.push({
-            user: {
-              name: "Owned",
-              id: 2,
-              look: {
-                avatar: 0,
-                emote: "neutral",
-                hat: 7,
-                body: 334,
-                shoe: 612,
-                item0: 808,
-                item1: 868,
-                item2: 938,
-              },
-            },
-            status: {
-              sent: true,
-            },
-          });
-        }
-      }
-    },
-  };
+    }
+  }
+}
 // /api/friends.json
 // meta title section.friends
 </script>

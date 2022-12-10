@@ -26,7 +26,7 @@
         class="fullwidth"
         route="messages"
         :maxHeight="450"
-        @scroll-data="(data) => (data = [...data, ...data])"
+        @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
       >
         <router-link
           class="message flex"
@@ -81,6 +81,7 @@
 <script setup lang="ts">
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 import ScrollableContainer from "../../components/core/ScrollableContainer.vue";
 const locales = { fr, enGB };
 
@@ -89,25 +90,24 @@ const locales = { fr, enGB };
 // Messenger page
 const data = ref<any>(null);
 
-function formatDate(date) {
-      return formatDistanceToNowStrict(new Date(date), {
-        locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true,
-      });
-    },
-function hashColor(str) {
-      var hash = 0;
-      for (var i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-      }
-      var colour = "#";
-      for (i = 0; i < 3; i++) {
-        var value = (hash >> (i * 8)) & 0xff;
-        colour += ("00" + value.toString(16)).substr(-2);
-      }
-      return colour;
-    },
-  };
+function formatDate(date: number) {
+  return formatDistanceToNowStrict(new Date(date), {
+    // locale: locales[navigator.language.split("-")[0]],
+    addSuffix: true,
+  });
+}
+function hashColor(str: string) {
+  var hash = 0;
+  for (var i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  var colour = "#";
+  for (i = 0; i < 3; i++) {
+    var value = (hash >> (i * 8)) & 0xff;
+    colour += ("00" + value.toString(16)).substr(-2);
+  }
+  return colour;
+}
 // /api/messenger.json
 // meta title section.messenger
 </script>

@@ -71,6 +71,7 @@
 <script setup lang="ts">
 import Bank from "@/components/Bank.vue";
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
@@ -78,18 +79,14 @@ const user = auth.user;
 // @group View/Community
 // Eraser page
 
-
-      pseudo: "",
-    };
-  },
+const pseudo = ref("");
 
 function submit() {
-      console.log(`Envoyé ${pseudo}!`);
-    },
+  console.log(`Envoyé ${pseudo}!`);
+}
 function generatePseudo() {
-      pseudo = "test";
-    },
-  };
+  pseudo.value = "test";
+}
 
 // meta title section.eraser
 </script>

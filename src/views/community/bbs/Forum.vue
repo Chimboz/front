@@ -39,50 +39,48 @@
 <script setup lang="ts">
 import ForumList from "@/components/bbs/list/Forum.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
+import { ref } from "vue";
 
 // @vuese
 // @group View/Community/BBS
 // Forum page
 
-
-      const data: any = ref(null);
-      iconDescriptions: [
-        {
-          src: require("@/assets/img/bbs/folder_new.svg"),
-          label: "Nouveaux messages"
-        },
-        {
-          src: require("@/assets/img/bbs/folder_new_hot.svg"),
-          label: "Nouveaux messages [ Populaire ]"
-        },
-        {
-          src: require("@/assets/img/bbs/folder_new_lock.svg"),
-          label: "Nouveaux messages [ Verrouillé ]"
-        },
-        {
-          src: require("@/assets/img/bbs/folder.svg"),
-          label: "Pas de nouveaux messages"
-        },
-        {
-          src: require("@/assets/img/bbs/folder_hot.svg"),
-          label: "Pas de nouveaux messages [ Populaire ]"
-        },
-        {
-          src: require("@/assets/img/bbs/folder_lock.svg"),
-          label: "Pas de nouveaux messages [ Verrouillé ]"
-        },
-        {
-          src: require("@/assets/img/bbs/folder_announce.svg"),
-          label: "Annonce"
-        },
-        {
-          src: require("@/assets/img/bbs/folder_sticky.svg"),
-          label: "Post-it"
-        }
-      ],
-      post: false
-    };
+const data: any = ref(null);
+const iconDescriptions = [
+  {
+    src: require("@/assets/img/bbs/folder_new.svg"),
+    label: "Nouveaux messages",
   },
+  {
+    src: require("@/assets/img/bbs/folder_new_hot.svg"),
+    label: "Nouveaux messages [ Populaire ]",
+  },
+  {
+    src: require("@/assets/img/bbs/folder_new_lock.svg"),
+    label: "Nouveaux messages [ Verrouillé ]",
+  },
+  {
+    src: require("@/assets/img/bbs/folder.svg"),
+    label: "Pas de nouveaux messages",
+  },
+  {
+    src: require("@/assets/img/bbs/folder_hot.svg"),
+    label: "Pas de nouveaux messages [ Populaire ]",
+  },
+  {
+    src: require("@/assets/img/bbs/folder_lock.svg"),
+    label: "Pas de nouveaux messages [ Verrouillé ]",
+  },
+  {
+    src: require("@/assets/img/bbs/folder_announce.svg"),
+    label: "Annonce",
+  },
+  {
+    src: require("@/assets/img/bbs/folder_sticky.svg"),
+    label: "Post-it",
+  },
+];
+const post = ref(false);
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.forum
 </script>

@@ -14,7 +14,7 @@
         route="messages"
         class="messages fullwidth flex"
         :maxHeight="450"
-        @scroll-data="(data) => (data = [...data, ...data])"
+        @scroll-data="(results: Array<any>) => (data = [...data, ...results])"
       >
         <div
           class="message flex"
@@ -109,52 +109,47 @@
 </template>
 <script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainer";
+import messageRender from "@/modules/messageRender";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import { ref } from "vue";
 const locales = { fr, enGB };
-import messageRender from "@/modules/messageRender";
 
 // @vuese
 // @group View/Account
 // Conversation page (view for 1-to-1 messaging)
 
+const data: any = ref(null);
+const message = ref("");
 
-
-      const data: any = ref(null);
-      const message = ref("");
-
-
-function messageRender(message) {
-      return messageRender(message);
-    },
-function formatDate(date) {
-      return formatDistanceToNowStrict(new Date(date), {
-        locale: locales[navigator.language.split("-")[0]],
-        addSuffix: true,
-      });
-    },
-function hashColor(str) {
-      var hash = 0;
-      for (var i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-      }
-      var colour = "#";
-      for (i = 0; i < 3; i++) {
-        var value = (hash >> (i * 8)) & 0xff;
-        colour += ("00" + value.toString(16)).substr(-2);
-      }
-      return colour;
-    },
+function formatDate(date: number) {
+  return formatDistanceToNowStrict(new Date(date), {
+    // locale: locales[navigator.language.split("-")[0]],
+    addSuffix: true,
+  });
+}
+function hashColor(str: string) {
+  var hash = 0;
+  for (var i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  var colour = "#";
+  for (i = 0; i < 3; i++) {
+    var value = (hash >> (i * 8)) & 0xff;
+    colour += ("00" + value.toString(16)).substr(-2);
+  }
+  return colour;
+}
 function send() {
-      console.log("Envoyé " + message);
-      data.messages.push({
-        you: true,
-        content: message,
-        date: Date.now(),
-      });
-      message = "";
-    },
-function test() {22};
+  console.log("Envoyé " + message);
+  data.messages.push({
+    you: true,
+    content: message,
+    date: Date.now(),
+  });
+  message.value = "";
+}
+
 // /api/conversation.json
 // meta title section.conversation
 </script>

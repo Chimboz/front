@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import type User from '@/types/User';
 
 export const useAuthStore = defineStore("counter", () => {
-  const user = ref<false | User>(false);
+  const user = ref<undefined | User>(undefined);
   function login() {
     user.value = {
       name: "Tigriz",

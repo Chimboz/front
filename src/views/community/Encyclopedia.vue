@@ -14,13 +14,11 @@
         route="encyclopedia"
         class="fullwidth"
         :maxHeight="450"
-        @scroll-data="
-          (data) => (data = [...new Set([...data, ...data])])
-        "
+        @scroll-data="(results: Array<any>) => (data = [...new Set([...data, ...results])])"
       >
         <div
           v-for="item of data.filter(
-            (item) =>
+            (item:any) =>
               checkedCategories.includes(item.type) &&
               checkedRarities.includes(item.rarity) &&
               item.name.includes(search)
@@ -59,7 +57,7 @@
         ><template #button>
           <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
-        <form @submit.prevent="search()" class="flex fullwidth">
+        <form @submit.prevent="onSearch" class="flex fullwidth">
           <input
             name="username"
             type="text"
@@ -153,61 +151,58 @@
 import ScrollableContainer from "@/components/core/ScrollableContainer";
 import VLazyImage from "v-lazy-image";
 import Tooltip from "@/components/core/Tooltip.vue";
+import { ref } from "vue";
 
 // @vuese
 // @group View/Community
 // Encyclopedia page
+const data: any = ref(null);
+const categories = [
+  "body",
+  "bot",
+  "etc",
+  "floor",
+  "frame",
+  "furniture",
+  "hat",
+  "item0",
+  "item1",
+  "item2",
+  "pet",
+  "power",
+  "primary",
+  "secondary",
+  "shape",
+  "shoe",
+  "top",
+  "wall",
+];
+const checkedCategories = [
+  "body",
+  "bot",
+  "etc",
+  "floor",
+  "frame",
+  "furniture",
+  "hat",
+  "item0",
+  "item1",
+  "item2",
+  "pet",
+  "power",
+  "primary",
+  "secondary",
+  "shape",
+  "shoe",
+  "top",
+  "wall",
+];
+const rarities = ["common", "rare", "mythic", "legendary", "unique"];
+const checkedRarities = ["common", "rare", "mythic", "legendary", "unique"];
+const search = ref("");
 
+function onSearch() {}
 
-
-      const data: any = ref(null);
-      categories: [
-        "body",
-        "bot",
-        "etc",
-        "floor",
-        "frame",
-        "furniture",
-        "hat",
-        "item0",
-        "item1",
-        "item2",
-        "pet",
-        "power",
-        "primary",
-        "secondary",
-        "shape",
-        "shoe",
-        "top",
-        "wall",
-      ],
-      checkedCategories: [
-        "body",
-        "bot",
-        "etc",
-        "floor",
-        "frame",
-        "furniture",
-        "hat",
-        "item0",
-        "item1",
-        "item2",
-        "pet",
-        "power",
-        "primary",
-        "secondary",
-        "shape",
-        "shoe",
-        "top",
-        "wall",
-      ],
-      rarities: ["common", "rare", "mythic", "legendary", "unique"],
-      checkedRarities: ["common", "rare", "mythic", "legendary", "unique"],
-      search: "",
-      page: 0,
-      isLoading: false,
-    };
-  },
 // /api/encyclopedia/${vm.page}.json
 // meta title section.encyclopedia
 </script>

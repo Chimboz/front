@@ -57,6 +57,7 @@
 </template>
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/auth";
+import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
@@ -64,27 +65,22 @@ const user = auth.user;
 // @group View/Account
 // Capitalization page
 
-  
-
-      pseudo: "Test",
-    };
-  },
+const pseudo = ref("");
 function mounted() {
-    pseudo = user.name.slice();
-  },
+  pseudo.value = user!.name.slice();
+}
 
-function changeCase(index) {
-      let letter;
-      if (pseudo[index].toUpperCase() == pseudo[index])
-        letter = pseudo[index].toLowerCase();
-      else letter = pseudo[index].toUpperCase();
-      pseudo =
-        pseudo.slice(0, index) + letter + pseudo.slice(index + 1);
-    },
+function changeCase(index: number) {
+  let letter;
+  if (pseudo.value[index].toUpperCase() == pseudo.value[index])
+    letter = pseudo.value[index].toLowerCase();
+  else letter = pseudo.value[index].toUpperCase();
+  pseudo.value =
+    pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1);
+}
 function submit() {
-      console.log(`Envoyé ${pseudo}!`);
-    },
-  };
+  console.log(`Envoyé ${pseudo}!`);
+}
 
 // meta title section.capitalization
 </script>

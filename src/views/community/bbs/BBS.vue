@@ -47,7 +47,7 @@
             :alt="$t('bbs.nonew')"
             :title="$t('bbs.nonew')"
             src="@/assets/img/bbs/folder.svg"
-          />&nbsp;{{$t('bbs.nonew')}}&nbsp;
+          />&nbsp;{{ $t("bbs.nonew") }}&nbsp;
         </div>
       </div></GlobalCard
     >
@@ -56,16 +56,14 @@
 
 <script setup lang="ts">
 import BBSList from "@/components/bbs/list/BBS.vue";
+import { ref } from "vue";
 
 // @vuese
 // @group View/Community/BBS
 // BBS page
 
+const data: any = ref(null);
 
-
-      const data: any = ref(null);
-    };
-  },
 // /api/bbs.json
 // meta title section.bbs
 </script>

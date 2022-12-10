@@ -35,7 +35,9 @@
             width="200"
             height="200"
             :alt="'Level' + data[selected].level"
-            :src="require('@/assets/img/level/' + data[selected].level + '.png')"
+            :src="
+              require('@/assets/img/level/' + data[selected].level + '.png')
+            "
           />
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
@@ -48,16 +50,13 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import { ref } from "vue";
 // @vuese
 // @group View/Account
 // Levels page
 
-  
-
-      const data: any = ref(null);
-      selected: 0,
-    };
-  },
+const data: any = ref(null);
+const selected = ref(0);
 // /api/levels.json
 // meta title level
 </script>
