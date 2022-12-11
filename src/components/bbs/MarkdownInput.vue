@@ -243,7 +243,7 @@ import Emotes from "@/components/core/Emotes.vue";
 import Message from "@/components/bbs/row/Message.vue";
 import { useAuthStore } from "@/stores/auth";
 import eventBus from "@/modules/eventBus";
-import { ref, type SelectHTMLAttributes, type TextareaHTMLAttributes } from "vue";
+import { ref, type SelectHTMLAttributes } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
 
@@ -255,7 +255,6 @@ const message = ref("");
 const title = ref("");
 const preview = ref("");
 const signature = ref(true);
-const markdown = ref(false);
 const selectionRange = ref([0, 0]);
 const mode = ref("post");
 
@@ -264,7 +263,9 @@ const props = defineProps<{
 }>();
 
 eventBus.on("quote", (quotedMessage) => {
-  message.value += quotedMessage;
+  if (message.value.slice(-1) === "\n" || message.value.slice(-1) === "")
+    message.value += quotedMessage;
+  else message.value += "\n" + quotedMessage;
   if (textarea.value!) textarea.value!.focus();
 });
 eventBus.on("edit", (message) => {
