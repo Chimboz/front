@@ -124,6 +124,7 @@ const markedRender = function (string: string) {
     pedantic: false,
     gfm: true,
     breaks: true,
+    headerIds: false,
     sanitize: false,
     smartLists: true,
     smartypants: false,

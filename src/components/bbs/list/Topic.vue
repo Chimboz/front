@@ -1,9 +1,12 @@
 <template>
   <span class="pink justified" style="text-align: left">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link v-if="topic" :to="'/bbs/' + $route.params.forum" class="pink">{{
-      topic.name
-    }}</router-link></span
+    <router-link
+      v-if="topic"
+      :to="'/bbs/' + $route.params.forum"
+      class="pink"
+      >{{ topic.name }}</router-link
+    ></span
   >
   <router-link :to="'/topic/' + $route.params.topic" class="pink"
     ><h1 class="justified ellipsis" v-if="topic.messages[0]">
@@ -22,7 +25,7 @@
           <Pagination
             :current="$route.params.page ? +$route.params.page : 1"
             :total="topic.pages"
-            :callback="(page: number) => '/topic/' + $route.params.topic + '/' + page"
+            :callback="(page: number) => `/topic/${$route.params.forum}/${$route.params.topic}/${page}`"
           />
         </th>
       </tr>
@@ -40,7 +43,7 @@
         <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
           :total="topic.pages"
-          :callback="(page: number) => '/topic/' + $route.params.topic + '/' + page"
+          :callback="(page: number) => `/topic/${$route.params.forum}/${$route.params.topic}/${page}`"
         />
       </th>
     </tr>

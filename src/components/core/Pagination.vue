@@ -1,6 +1,8 @@
 <template>
+  <div v-for="page of array()"
+    :key="page + 1"></div>
   <router-link
-    v-for="page of array"
+    v-for="page of array()"
     :key="page + 1"
     class="btn-action"
     :to="callback(page + 1)"
@@ -13,7 +15,7 @@
 
 const props = withDefaults(
   defineProps<{
-    current: number;
+    current?: number;
     total: number;
     callback: Function;
   }>(),
@@ -22,15 +24,15 @@ const props = withDefaults(
 function array() {
   return [
     ...new Set([
-      ...Array(props.total < 3 ? props.total : 3).keys(),
-      props.current - 2 > 0 ? props.current - 2 : 0,
+      ...Array(Math.min(props.total, 3)).keys(),
+      props.current - 2,
       props.current - 1,
-      props.current < props.total - 1 ? props.current : 0,
-      props.total - 3 > 0 ? props.total - 3 : 0,
-      props.total - 2 > 0 ? props.total - 2 : 0,
+      props.current,
+      props.total - 3,
+      props.total - 2,
       props.total - 1,
     ]),
-  ].sort();
+  ].filter((page) => page >= 0 && page < props.total).sort((a, b) => a - b);
 }
 </script>
 <style lang="scss" scoped>

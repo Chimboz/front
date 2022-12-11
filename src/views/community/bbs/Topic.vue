@@ -20,7 +20,7 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
 import { onBeforeMount, ref } from "vue";
-import { useRoute } from "vue-router";
+import { onBeforeRouteUpdate, useRoute } from "vue-router";
 const auth = useAuthStore();
 const user = auth.user;
 const route = useRoute()
@@ -35,6 +35,12 @@ const authenticated = true;
 onBeforeMount(async () => {
   data.value = (
     await api.get(`bbs/topic/${route.params.forum}/${route.params.topic}?page=${route.params.page}`)
+  ).data;
+});
+
+onBeforeRouteUpdate(async (to) => {
+  data.value = (
+    await api.get(`bbs/topic/${to.params.forum}/${to.params.topic}?page=${to.params.page}`)
   ).data;
 });
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json

@@ -33,10 +33,10 @@
     />
     <tr>
       <th valign="bottom" colspan="6" height="25" nowrap="nowrap">
-        <pagination
+        <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
           :total="forum.pages"
-          :callback="(page: number) => '/bbs/' + $route.params.id + '/' + page"
+          :callback="(page: number) => `/bbs/${$route.params.id}/${page}`"
         />
       </th>
     </tr>

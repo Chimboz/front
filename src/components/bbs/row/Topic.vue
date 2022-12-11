@@ -12,7 +12,7 @@
               }${topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
                 topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''
               }${
-                topic.reply > 10 &&
+                topic.reply > 9 &&
                 !topic.announce &&
                 !topic.sticky &&
                 !topic.locked
@@ -26,7 +26,15 @@
         />
       </td>
       <td width="100%" height="50" style="text-align: left">
-        <router-link :to="`/topic/${$route.params.id}/${topic.id}`">{{ topic.title }}</router-link>
+        <router-link :to="`/topic/${$route.params.id}/${topic.id}`">{{
+          topic.title
+        }}</router-link>
+        <br />
+        <Pagination
+          v-if="topic.reply > 9"
+          :total="Math.floor(topic.reply / 10 + 1)"
+          :callback="(page: number) => `/topic/${$route.params.id}/${topic.id}/${page}`"
+        />
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
         {{ topic.reply }}
@@ -41,7 +49,7 @@
         <div>{{ formatDate() }}</div>
         <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
-        <router-link :to="'/topic/' + topic.id + '#' + topic.last_msg.msgid"
+        <router-link :to="`/topic/${$route.params.id}/${topic.id}/${Math.floor(topic.reply / 10 + 1)}#${topic.last_msg.msgid}`"
           ><img
             draggable="false"
             @contextmenu.prevent
@@ -60,6 +68,7 @@
 </template>
 
 <script setup lang="ts">
+import Pagination from "@/components/core/Pagination.vue";
 import { asset } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

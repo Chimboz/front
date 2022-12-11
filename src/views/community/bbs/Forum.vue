@@ -42,13 +42,13 @@ import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
 import api from "@/modules/api";
 import { asset } from "@/utils";
 import { onBeforeMount, ref } from "vue";
-import { useRoute } from "vue-router";
+import { onBeforeRouteUpdate, useRoute } from "vue-router";
 
 // @vuese
 // @group View/Community/BBS
 // Forum page
 
-const route = useRoute();
+const route = useRoute()
 
 const iconDescriptions = [
   {
@@ -90,6 +90,12 @@ const data: any = ref(undefined);
 onBeforeMount(async () => {
   data.value = (
     await api.get(`bbs/forum/${route.params.id}?page=${route.params.page}`)
+  ).data;
+});
+
+onBeforeRouteUpdate(async (to) => {
+  data.value = (
+    await api.get(`bbs/forum/${to.params.id}?page=${to.params.page}`)
   ).data;
 });
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json

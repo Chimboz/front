@@ -32,16 +32,15 @@
         </div>
       </h2>
       <div class="head flex">
-        <router-link :to="'#' + message.id">
+        <a :href="`#${message.id}`">
           <img
             draggable="false"
-            @contextmenu.prevent
-            alt="Voir le dernier message"
-            title="Voir le dernier message"
+            alt="Lien du message"
+            title="Lien du message"
             :src="
               asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
-          /> </router-link
+          /> </a
         >&nbsp;
         <b class="ellipsis justified title">{{ message.title }}</b>
         &nbsp;
