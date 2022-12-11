@@ -376,7 +376,7 @@ const locales = { fr, enGB };
 
 // @vuese
 // @group View/Games
-// Patojdur (Wide Wade) page
+// Patojdur (Wild Wade) page
 
 const data = ref<any>(null);
 

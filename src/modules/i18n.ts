@@ -1,33 +1,11 @@
 import { createI18n } from "vue-i18n";
-
-/**
- * Load locale messages
- *
- * The loaded `JSON` locale messages is pre-compiled by `@intlify/vue-i18n-loader`, which is integrated into `vue-cli-plugin-i18n`.
- * See: https://github.com/intlify/vue-i18n-loader#rocket-i18n-resource-pre-compilation
- */
-/*
-function loadLocaleMessages() {
-  const locales = require.context(
-    "./locales",
-    true,
-    /[A-Za-z0-9-_,\s]+\.json$/i
-  );
-  const messages: any = {};
-  locales.keys().forEach((key: string) => {
-    const matched = key.match(/([A-Za-z0-9-_]+)\./i);
-    if (matched && matched.length > 1) {
-      const locale = matched[1];
-      messages[locale] = locales(key).default;
-    }
-  });
-  return messages;
-}*/
+import en from "@/locales/en.json";
+import fr from "@/locales/fr.json";
 
 export default createI18n({
   legacy: false,
   locale: navigator.language.split("-")[0] || "fr",
   fallbackLocale: "fr",
-  // messages: loadLocaleMessages(),
+  messages: { en, fr },
   globalInjection: true,
 });
