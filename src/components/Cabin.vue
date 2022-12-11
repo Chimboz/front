@@ -242,7 +242,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   :src="
-                    require(`@/assets/img/icon/item_category/${category}.svg`)
+                    asset(`img/icon/item_category/${category}.svg`)
                   "
                 />
               </button>
@@ -289,7 +289,7 @@
                     @contextmenu.prevent
                     v-else
                     :src="`/item/${name}/${item.id}.svg`"
-                    :src-placeholder="require('@/assets/img/loading.svg')"
+                    src-placeholder="@/assets/img/loading.svg"
                   />
                   <div class="quantity">{{ item.nb }}</div>
                 </button>
@@ -331,6 +331,7 @@
 <script setup lang="ts">
 import Emotes from "@/components/core/Emotes.vue";
 import VLazyImage from "v-lazy-image";
+import { asset } from "@/utils";
 import { ref, type InputHTMLAttributes } from "vue";
 
 // @vuese

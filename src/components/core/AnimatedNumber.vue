@@ -7,14 +7,14 @@
     :key="index"
     width="19"
     height="21"
-    :src="require(`@/assets/img/number/${digit}.svg`)"
+    :src="asset(`img/number/${digit}.svg`)"
   />
 </template>
 
 <script setup lang="ts">
 // @vuese
 // @group Core
-
+import { asset } from "@/utils";
 import { onMounted, ref } from "vue";
 
 const props = withDefaults(

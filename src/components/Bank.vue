@@ -17,7 +17,7 @@
         :style="coinsPosition[n]"
         v-show="n <= Math.min(Math.floor(coins / 10), 176)"
         :key="n"
-        :src="require(`@/assets/img/bank/coin.svg`)"
+        src="@/assets/img/bank/coin.svg"
       />
       <object
         width="154"
@@ -26,7 +26,7 @@
         aria-label="Bank vault"
         @contextmenu.prevent
         type="image/svg+xml"
-        :data="require('@/assets/img/bank/door.svg')"
+        data="@/assets/img/bank/door.svg"
       ></object>
     </div>
 

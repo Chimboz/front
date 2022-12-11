@@ -2,10 +2,7 @@
   <div
     class="header"
     :style="{
-      'background-image':
-        'url(' +
-        require(`@/assets/img/navbar/svg/${date.getHours()}.svg`) +
-        ')',
+      backgroundImage: `url(${asset(`img/navbar/svg/${hours}.svg`)})`,
     }"
   >
     <router-link to="/"
@@ -187,22 +184,22 @@
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
 import { useAuthStore } from "@/stores/auth";
+import { asset } from "@/utils";
 const auth = useAuthStore();
 const user = auth.user;
 
 // @vuese
 // @group Core
 
-const date = new Date();
+const hours = new Date().getHours();
 const authenticated = true;
 
 function logout() {
   /*$store.dispatch("auth/logout");
       $router.push($route.path == "/" ? "/login" : $route.path);*/
 }
-function created() {
-  document.body.className = "h" + date.getHours();
-}
+
+document.body.className = "h" + hours;
 </script>
 <style lang="scss" scoped>
 .header {

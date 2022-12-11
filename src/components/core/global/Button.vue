@@ -7,7 +7,7 @@
       v-if="icon"
       class="btn-icon"
       alt="Button icon"
-      :src="require(`@/assets/img/icon/button/${icon}`)"
+      :src="asset(`img/icon/button/${props.icon}`)"
     />
     <div class="btn-text">
       <StrokeText><slot></slot></StrokeText>
@@ -16,6 +16,7 @@
 </template>
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
+import { asset } from "@/utils";
 
 // @vuese
 // @group Core/Global
