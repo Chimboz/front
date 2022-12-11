@@ -56,13 +56,18 @@
 
 <script setup lang="ts">
 import BBSList from "@/components/bbs/list/BBS.vue";
-import { ref } from "vue";
+import api from "@/modules/api";
+import { onBeforeMount, ref } from "vue";
 
 // @vuese
 // @group View/Community/BBS
 // BBS page
 
-const data: any = ref(null);
+const data: any = ref(undefined);
+
+onBeforeMount(async ()=> {
+  data.value = (await api.get('/bbs')).data;
+})
 
 // /api/bbs.json
 // meta title section.bbs

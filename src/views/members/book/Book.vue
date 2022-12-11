@@ -169,7 +169,7 @@ const locales = { fr, enGB };
 // @group View/Members/Book
 // Book page
 
-const data: any = ref(null);
+const data: any = ref(undefined);
 const username = ref("");
 const suggestionsHere = ref<any>(null);
 
@@ -188,7 +188,7 @@ function search() {
 }
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 // /api/book.json

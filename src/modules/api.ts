@@ -1,10 +1,9 @@
 // API module for all request of the app
-
 import axios from "axios";
 import eventBus from "./eventBus";
 
 const api = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL, // Force base URL
+  baseURL: import.meta.env.VITE_BACK_URL, // Force base URL
   // Force JSON format
   headers: {
     Accept: "application/json",

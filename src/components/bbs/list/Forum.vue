@@ -26,10 +26,10 @@
     </thead>
 
     <Topic
-      v-for="(topic, index) in forum.topics"
+      v-for="(topic, index) in forum.subject"
       :key="topic.id"
       :topic="topic"
-      :separator="index < forum.topics.length - 1"
+      :separator="index < forum.subject.length - 1"
     />
     <tr>
       <th valign="bottom" colspan="6" height="25" nowrap="nowrap">

@@ -134,7 +134,7 @@
         {{ data.news.title }}
       </template>
       <div class="markdown-body" v-html="formatMessage"></div>
-      <div class="news-date">{{ data.news.author }}, {{ formatDate }}</div>
+      <div class="news-date">{{ data.news.author }}, {{ formatDate() }}</div>
     </GlobalCard>
     <br />
     <GlobalCard v-if="data">
@@ -222,16 +222,22 @@ import Bank from "@/components/Bank.vue";
 import Pack from "@/components/Pack.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { ref } from "vue";
+import { onBeforeMount, ref } from "vue";
 import messageRender from "@/modules/messageRender";
+import api from "@/modules/api";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View
 // Home page
-const data: any = ref(null);
+const data: any = ref(undefined);
 const lottery = ref(true);
 const gain = ref(0);
+
+onBeforeMount(async ()=> {
+  data.value = (await api.get('/home')).data;
+})
+
 
 async function handle({ currentTarget }: Event) {
   lottery.value = false;
@@ -241,7 +247,7 @@ async function handle({ currentTarget }: Event) {
 }
 function formatDatePhotos(date: number) {
   return format(new Date(date), "PP", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 

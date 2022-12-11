@@ -265,21 +265,18 @@ const user = auth.user as User;
 // @group View/Members/Book
 // Member page
 
-const data: any = ref(null);
+const data: any = ref(undefined);
 const duration = 1;
 
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function formatDistance(date: number) {
-  return differenceInCalendarDays(
-    new Date(),
-    new Date(date) /*{
-        locale: locales[navigator.language.split("-")[0]],
-      }*/
-  );
+  return differenceInCalendarDays(new Date(), new Date(date), {
+    locale: locales[navigator.language.split("-")[0]],
+  });
 }
 function ban() {
   console.log("Banni" + /*$route.params.id +*/ " durée " + duration * 86400);

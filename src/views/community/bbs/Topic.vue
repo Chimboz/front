@@ -26,7 +26,7 @@ const user = auth.user;
 // @group View/Community/BBS
 // Topic page
 
-const data: any = ref(null);
+const data: any = ref(undefined);
 const authenticated = true;
 
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json

@@ -28,7 +28,7 @@
         />
         <div class="ellipsis">
           <UserLink :user="message.author" />&nbsp;le
-          <span class="date">{{ formatDate }}</span>
+          <span class="date">{{ formatDate() }}</span>
         </div>
       </h2>
       <div class="head flex">
@@ -139,7 +139,7 @@ function formatMessage() {
 }
 function formatDate() {
   return format(new Date(props.message.date), "PPpp", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 

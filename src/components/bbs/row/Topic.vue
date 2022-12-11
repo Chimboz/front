@@ -6,18 +6,20 @@
           draggable="false"
           @contextmenu.prevent
           :src="
-            require(`@/assets/img/bbs/folder${topic.sticky ? '_sticky' : ''}${
-              topic.announce && !topic.sticky ? '_announce' : ''
-            }${topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
-              topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''
-            }${
-              topic.reply > 10 &&
-              !topic.announce &&
-              !topic.sticky &&
-              !topic.locked
-                ? '_hot'
-                : ''
-            }.svg`)
+            asset(
+              `img/bbs/folder${topic.sticky ? '_sticky' : ''}${
+                topic.announce && !topic.sticky ? '_announce' : ''
+              }${topic.new && !topic.announce && !topic.sticky ? '_new' : ''}${
+                topic.locked && !topic.announce && !topic.sticky ? '_lock' : ''
+              }${
+                topic.reply > 10 &&
+                !topic.announce &&
+                !topic.sticky &&
+                !topic.locked
+                  ? '_hot'
+                  : ''
+              }.svg`
+            )
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
@@ -36,14 +38,14 @@
         {{ topic.view }}
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
-        <div>{{ formatDate }}</div>
+        <div>{{ formatDate() }}</div>
         <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link :to="'/topic/' + topic.id + '#' + topic.last_msg.msgid"
           ><img
             draggable="false"
             @contextmenu.prevent
-            :src="require(`@/assets/img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
+            :src="asset(`img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
         /></router-link>
@@ -58,6 +60,7 @@
 </template>
 
 <script setup lang="ts">
+import { asset } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
@@ -75,7 +78,7 @@ const props = withDefaults(
 
 function formatDate() {
   return formatDistanceToNowStrict(new Date(props.topic.last_msg.date), {
-    //locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
     addSuffix: true,
   });
 }

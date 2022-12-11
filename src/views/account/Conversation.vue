@@ -119,12 +119,12 @@ const locales = { fr, enGB };
 // @group View/Account
 // Conversation page (view for 1-to-1 messaging)
 
-const data: any = ref(null);
+const data: any = ref(undefined);
 const message = ref("");
 
 function formatDate(date: number) {
   return formatDistanceToNowStrict(new Date(date), {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
     addSuffix: true,
   });
 }

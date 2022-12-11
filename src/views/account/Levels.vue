@@ -55,7 +55,7 @@ import { ref } from "vue";
 // @group View/Account
 // Levels page
 
-const data: any = ref(null);
+const data: any = ref(undefined);
 const selected = ref(0);
 // /api/levels.json
 // meta title level

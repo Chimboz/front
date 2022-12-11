@@ -156,7 +156,7 @@ import { ref } from "vue";
 // @vuese
 // @group View/Community
 // Encyclopedia page
-const data: any = ref(null);
+const data: any = ref(undefined);
 const categories = [
   "body",
   "bot",

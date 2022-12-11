@@ -43,7 +43,7 @@
           height="17"
           width="17"
         />Le record de connectés est de <b>{{ data.record.online }}</b> le
-        <b>{{ formatDate }}</b
+        <b>{{ formatDate() }}</b
         >.
       </GlobalCard></template
     >
@@ -58,7 +58,7 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members
 // Online page
-const data: any = ref(null);
+const data: any = ref(undefined);
 
 function formatDate() {
   return "date";

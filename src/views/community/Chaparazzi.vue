@@ -50,7 +50,7 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Community
 // Chaparazzi page
-const data: any = ref(null);
+const data: any = ref(undefined);
 const search = ref("");
 const page = ref(0);
 const isLoading = ref(false);

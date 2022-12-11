@@ -140,7 +140,7 @@ const data = ref<any>(null);
 
 function formatDate(date: number) {
   return formatDistanceToNowStrict(new Date(date), {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
     addSuffix: true,
   });
 }

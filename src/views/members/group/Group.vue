@@ -73,7 +73,7 @@
       </GlobalCard>
       <br />
       Groupe no. <b>{{ $route.params.id }}</b> créé le
-      <b>{{ formatDate }} ({{ formatDistance }} jours)</b><br />
+      <b>{{ formatDate() }} ({{ formatDistance }} jours)</b><br />
       <br />
       <GlobalCard v-if="data" class="justified"
         ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
@@ -148,14 +148,14 @@ function formatDescription() {
 }
 function formatDate() {
   return format(new Date(data.date), "PPp", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function formatDistance() {
   return differenceInCalendarDays(
     new Date(),
     new Date(data.date) /*, {
-        // locale: locales[navigator.language.split("-")[0]],
+        locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
       }*/
   );
 }

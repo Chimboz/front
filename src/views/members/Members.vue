@@ -181,7 +181,7 @@ import { ref } from 'vue';
 // @vuese
 // @group View/Members
 // Members page
-const data: any = ref(null);
+const data: any = ref(undefined);
 
 function search() {
   console.log("Envoyé!");

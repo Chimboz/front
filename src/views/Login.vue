@@ -137,11 +137,11 @@ const locales = { fr, enGB };
 // @vuese
 // @group View
 // Login page
-const data: any = ref(null);
+const data: any = ref(undefined);
 
 function formatDatePhotos(date: number) {
   return format(new Date(date), "PP", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 

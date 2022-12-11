@@ -31,8 +31,8 @@ import { ref } from "vue";
 
 const rule = ref(0);
 defineProps<{
-  bot: boolean;
-  top: boolean;
+  bot?: boolean;
+  top?: boolean;
 }>();
 setInterval(() => {
   rule.value = ++rule.value % 6;

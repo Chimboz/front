@@ -115,7 +115,7 @@ const user = auth.user;
 // @group View/Community
 // Shop page
 
-const data: any = ref(null);
+const data: any = ref(undefined);
 const shown = ref<any>(null);
 const authenticated = true;
 

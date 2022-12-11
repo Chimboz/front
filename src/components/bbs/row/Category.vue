@@ -16,12 +16,12 @@
     :class="{ hide: hide }"
   >
     <tr class="bbs">
-      <td align="center" valign="middle" height="50">
+      <td style="text-align: center" valign="middle" height="50">
         <img
           draggable="false"
           @contextmenu.prevent
           :src="
-            require(`@/assets/img/bbs/folder${bbs.new ? '_new' : ''}${
+            asset(`img/bbs/folder${bbs.new ? '_new' : ''}${
               bbs.locked ? '_lock' : ''
             }.svg`)
           "
@@ -29,7 +29,7 @@
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         />
       </td>
-      <td align="left" width="100%">
+      <td style="text-align: left" width="100%">
         <div>
           <router-link :to="'/bbs/' + bbs.id" class="pink">{{
             bbs.name
@@ -46,13 +46,13 @@
           />
         </div>
       </td>
-      <td align="center" valign="middle">
+      <td style="text-align: center" valign="middle">
         {{ bbs.topics }}
       </td>
-      <td align="center" valign="middle">
+      <td style="text-align: center" valign="middle">
         {{ bbs.messages }}
       </td>
-      <td align="center" valign="middle">
+      <td style="text-align: center" valign="middle">
         <div>{{ formatDate(bbs.last_msg.date) }}</div>
         <UserLink :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
@@ -61,7 +61,7 @@
           ><img
             draggable="false"
             @contextmenu.prevent
-            :src="require(`@/assets/img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
+            :src="asset(`img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
         /></router-link>
@@ -76,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import { asset } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
@@ -91,7 +92,7 @@ const props = defineProps<{
 
 function formatDate(date: number) {
   return formatDistanceToNowStrict(new Date(date), {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
     addSuffix: true,
   });
 }

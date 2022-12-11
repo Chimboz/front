@@ -128,12 +128,12 @@ const data = ref<any>(null);
 
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function formatDateStats(date: Date) {
   return format(date, "d MMM", {
-    // locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function bankData() {

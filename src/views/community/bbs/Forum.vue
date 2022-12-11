@@ -39,48 +39,59 @@
 <script setup lang="ts">
 import ForumList from "@/components/bbs/list/Forum.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
-import { ref } from "vue";
+import api from "@/modules/api";
+import { asset } from "@/utils";
+import { onBeforeMount, ref } from "vue";
+import { useRoute } from "vue-router";
 
 // @vuese
 // @group View/Community/BBS
 // Forum page
 
-const data: any = ref(null);
+const route = useRoute();
+
 const iconDescriptions = [
   {
-    src: require("@/assets/img/bbs/folder_new.svg"),
+    src: asset("img/bbs/folder_new.svg"),
     label: "Nouveaux messages",
   },
   {
-    src: require("@/assets/img/bbs/folder_new_hot.svg"),
+    src: asset("img/bbs/folder_new_hot.svg"),
     label: "Nouveaux messages [ Populaire ]",
   },
   {
-    src: require("@/assets/img/bbs/folder_new_lock.svg"),
+    src: asset("img/bbs/folder_new_lock.svg"),
     label: "Nouveaux messages [ Verrouillé ]",
   },
   {
-    src: require("@/assets/img/bbs/folder.svg"),
+    src: asset("img/bbs/folder.svg"),
     label: "Pas de nouveaux messages",
   },
   {
-    src: require("@/assets/img/bbs/folder_hot.svg"),
+    src: asset("img/bbs/folder_hot.svg"),
     label: "Pas de nouveaux messages [ Populaire ]",
   },
   {
-    src: require("@/assets/img/bbs/folder_lock.svg"),
+    src: asset("img/bbs/folder_lock.svg"),
     label: "Pas de nouveaux messages [ Verrouillé ]",
   },
   {
-    src: require("@/assets/img/bbs/folder_announce.svg"),
+    src: asset("img/bbs/folder_announce.svg"),
     label: "Annonce",
   },
   {
-    src: require("@/assets/img/bbs/folder_sticky.svg"),
+    src: asset("img/bbs/folder_sticky.svg"),
     label: "Post-it",
   },
 ];
 const post = ref(false);
+const data: any = ref(undefined);
+
+onBeforeMount(async () => {
+  data.value = (
+    await api.get(`bbs/forum/${route.params.id}?page=${route.params.page}`)
+  ).data;
+});
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.forum
 </script>
