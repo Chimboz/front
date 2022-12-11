@@ -43,7 +43,11 @@
         src="@/assets/img/radio/stop.svg"
       />
       <div class="progress pointer" @click.prevent="skip" ref="progress">
-        <div class="progress-bar" ref="progressBar"></div>
+        <div
+          class="progress-bar"
+          :class="{ playing: playing }"
+          ref="progressBar"
+        ></div>
       </div>
     </div>
     <audio @timeupdate="onProgress" :src="'/radio/' + src" ref="player"></audio>
@@ -107,6 +111,11 @@ function onProgress() {
   background: url("../assets/img/progress.svg");
   background-size: 56.7px;
   animation: colorrush 2s infinite linear;
+  animation-play-state: paused;
+}
+
+.progress-bar.playing {
+  animation-play-state: running;
 }
 
 .progress {

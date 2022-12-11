@@ -1,5 +1,5 @@
 <template>
-  <button class="btn flex" :style="cssVars">
+  <button class="btn flex" :class="color">
     <slot name="prepend"></slot>
     <img
       draggable="false"
@@ -23,42 +23,23 @@ import { asset } from "@/utils";
 // A default button
 
 const props = defineProps<{
-  icon: string;
+  icon?: string;
   color?: "red" | "green" | "yellow" | "orange";
 }>();
-
-function cssVars() {
-  switch (props.color) {
-    case "yellow":
-      return {
-        "--selected-main-button": "var(--main-button-yellow)",
-        "--selected-dark-button": "var(--dark-button-yellow)",
-      };
-    case "orange":
-      return {
-        "--selected-main-button": "var(--main-button-orange)",
-        "--selected-dark-button": "var(--dark-button-orange)",
-      };
-    case "red":
-      return {
-        "--selected-main-button": "var(--main-button-red)",
-        "--selected-dark-button": "var(--dark-button-red)",
-      };
-    case "green":
-      return {
-        "--selected-main-button": "var(--main-button-green)",
-        "--selected-dark-button": "var(--dark-button-green)",
-      };
-    default:
-      return {
-        "--selected-main-button": "var(--main-button)",
-        "--selected-dark-button": "var(--dark-button)",
-      };
-  }
-}
 </script>
 <style lang="scss" scoped>
+$colors: ("yellow", "orange", "red", "green");
+
+@each $color in $colors {
+  .btn.#{$color} {
+    --selected-main-button: var(--main-button-#{$color});
+    --selected-dark-button: var(--dark-button-#{$color});
+  }
+}
+
 .btn {
+  --selected-main-button: var(--main-button);
+  --selected-dark-button: var(--dark-button);
   cursor: var(--pointer);
   width: 100%;
   height: 25px;

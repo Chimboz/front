@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ justified: justified }" :style="cssVars">
+  <div :class="[color, { justified: justified }]" class="card-container">
     <img
       draggable="false"
       @contextmenu.prevent
@@ -8,7 +8,7 @@
       :width="width"
       :height="height"
       v-if="header"
-      :src="require(`@/assets/img/card/header/${header}`)"
+      :src="asset(`img/card/header/${header}`)"
     />
     <img
       draggable="false"
@@ -29,7 +29,12 @@
       <slot name="button"></slot>
     </div>
     <div class="card" :class="{ bot: bot }">
-      <div class="card-bg" :style="bg ? inlineBg() : undefined">
+      <div
+        class="card-bg"
+        :style="{
+          backgroundImage: `url(${asset(`img/card/background/${props.bg}`)})`,
+        }"
+      >
         <h2>
           <slot name="header"></slot>
         </h2>
@@ -56,7 +61,7 @@
 
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeText.vue";
-import { number } from "@intlify/core-base";
+import { asset } from "@/utils";
 
 // @vuese
 // @group Core/Global
@@ -64,61 +69,42 @@ import { number } from "@intlify/core-base";
 const props = withDefaults(
   defineProps<{
     // A header image, automatically prefixed by `/assets/img/card/header/`
-    header: string;
+    header?: string;
     // A background image, automatically prefixed by `/assets/img/card/background/`
-    bg: string;
+    bg?: string;
     // Width of the header image
-    width: number;
+    width?: number;
     // Height of the header image
-    height: number;
+    height?: number;
     // Color of the card
     color?: "yellow" | "blue" | "red";
     // Whether the text is left aligned
-    justified: boolean;
+    justified?: boolean;
     // Display a default footer image
-    bot: boolean;
+    bot?: boolean;
     // Display a default header image
-    top: boolean;
+    top?: boolean;
   }>(),
   { width: 468, height: 77 }
 );
-
-function cssVars() {
-  switch (props.color) {
-    case "yellow":
-      return {
-        "--selected-main-card": "var(--main-card-yellow)",
-        "--selected-dark-card": "var(--dark-card-yellow)",
-        "--selected-title-card": "var(--title-card-yellow)",
-      };
-    case "blue":
-      return {
-        "--selected-main-card": "var(--main-card-blue)",
-        "--selected-dark-card": "var(--dark-card-blue)",
-        "--selected-title-card": "var(--title-card-blue)",
-      };
-    case "red":
-      return {
-        "--selected-main-card": "var(--main-card-red)",
-        "--selected-dark-card": "var(--dark-card-red)",
-        "--selected-title-card": "var(--title-card-red)",
-      };
-    default:
-      return {
-        "--selected-main-card": "var(--main-card)",
-        "--selected-dark-card": "var(--dark-card)",
-        "--selected-title-card": "var(--title-card)",
-      };
-  }
-}
-function bgImage() {
-  return require("@/assets/img/card/background/" + props.bg);
-}
-function inlineBg() {
-  return `background-image: url(${bgImage})`;
-}
 </script>
 <style lang="scss" scoped>
+$colors: ("yellow", "blue", "red");
+
+@each $color in $colors {
+  .card-container.#{$color} {
+    --selected-main-card: var(--main-card-#{$color});
+    --selected-dark-card: var(--dark-card-#{$color});
+    --selected-title-card: var(--title-card-#{$color});
+  }
+}
+
+.card-container {
+  --selected-main-card: var(--main-card);
+  --selected-dark-card: var(--dark-card);
+  --selected-title-card: var(--title-card);
+}
+
 .card {
   position: relative;
   border-radius: var(--border-radius);

@@ -12,7 +12,7 @@
 
 defineProps<{
   group: any;
-  separator: boolean;
+  separator?: boolean;
 }>();
 </script>
 <style lang="scss" scoped>

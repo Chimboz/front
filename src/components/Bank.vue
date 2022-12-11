@@ -26,7 +26,7 @@
         aria-label="Bank vault"
         @contextmenu.prevent
         type="image/svg+xml"
-        data="@/assets/img/bank/door.svg"
+        :data="asset('img/bank/door.svg')"
       ></object>
     </div>
 
@@ -45,6 +45,7 @@
 <script setup lang="ts">
 import AnimatedNumber from "@/components/core/AnimatedNumber.vue";
 import { useAuthStore } from "@/stores/auth";
+import { asset } from "@/utils";
 import { onMounted, ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user!;
@@ -54,7 +55,7 @@ const user = auth.user!;
 
 const props = withDefaults(
   defineProps<{
-    delay: number;
+    delay?: number;
   }>(),
   { delay: 5 }
 );
@@ -147,6 +148,7 @@ function tween() {
 .bank {
   background: url(../assets/img/bank/bg.svg);
   background-size: contain;
+  overflow: hidden;
 }
 
 .bank object {
