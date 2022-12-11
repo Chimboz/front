@@ -25,7 +25,7 @@
           :item0="message.author.look.item0"
           :item1="message.author.look.item1"
           :item2="message.author.look.item2"
-        />
+        />&nbsp;&nbsp;
         <div class="ellipsis">
           <UserLink :user="message.author" />&nbsp;le
           <span class="date">{{ formatDate() }}</span>
@@ -177,6 +177,7 @@ td {
 
 .info {
   display: none !important;
+  overflow: hidden;
 }
 
 @media (min-width: 800px) {

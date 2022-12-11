@@ -260,7 +260,7 @@ const selectionRange = ref([0, 0]);
 const mode = ref("post");
 
 const props = defineProps<{
-  isTopic: boolean;
+  isTopic?: boolean;
 }>();
 
 eventBus.on("quote", (quotedMessage) => {

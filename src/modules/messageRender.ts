@@ -10,7 +10,7 @@ const allowed_images = [
   "chimboz.fr",
   "chimbozfront.web.app",
   // TODO: remove in prod
-  "localhost"
+  "localhost",
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
@@ -88,21 +88,21 @@ const markedRender = function (string: string) {
 
   // KaTeX
   function mathsExpression(expr: string) {
-    let render = "Invalid LaTeX";
+    let render = "<code>Invalid LaTeX</code>";
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
-      expr = expr.substr(2, expr.length - 4);
+      expr = expr.slice(2, -2);
       try {
         render = katex.renderToString(expr, { displayMode: true, maxSize: 2 });
-      } catch {
-        console.warn("Invalid LaTeX");
+      } catch (e) {
+        console.warn("Invalid LaTeX block" + e);
       }
       return render;
     } else if (expr.match(/^\$[\s\S]*\$$/)) {
-      expr = expr.slice(1, -2);
+      expr = expr.slice(1, -1);
       try {
         render = katex.renderToString(expr, { displayMode: false, maxSize: 2 });
-      } catch {
-        console.warn("Invalid LaTeX");
+      } catch (e) {
+        console.warn("Invalid LaTeX line" + e);
       }
       return render;
     }
