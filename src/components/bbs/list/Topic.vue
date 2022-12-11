@@ -1,8 +1,8 @@
 <template>
   <span class="pink justified" style="text-align: left">
     <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link v-if="topic" :to="'/bbs/' + topic.forum.id" class="pink">{{
-      topic.forum.name
+    <router-link v-if="topic" :to="'/bbs/' + $route.params.forum" class="pink">{{
+      topic.name
     }}</router-link></span
   >
   <router-link :to="'/topic/' + $route.params.topic" class="pink"

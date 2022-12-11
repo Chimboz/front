@@ -9,6 +9,8 @@ const allowed_images = [
   "image.noelshack.com",
   "chimboz.fr",
   "chimbozfront.web.app",
+  // TODO: remove in prod
+  "localhost"
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
@@ -96,7 +98,7 @@ const markedRender = function (string: string) {
       }
       return render;
     } else if (expr.match(/^\$[\s\S]*\$$/)) {
-      expr = expr.substr(1, expr.length - 2);
+      expr = expr.slice(1, -2);
       try {
         render = katex.renderToString(expr, { displayMode: false, maxSize: 2 });
       } catch {
@@ -108,12 +110,8 @@ const markedRender = function (string: string) {
 
   // Custom emotes
   string = string.replace(
-    /(:(\w)+:)/g,
-    (match) =>
-      `![${match.substring(1, match.length - 1)}](/emoticon/${match.substring(
-        1,
-        match.length - 1
-      )}.svg)`
+    /:(\w)+:/g,
+    (match) => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`
   );
 
   // marked options

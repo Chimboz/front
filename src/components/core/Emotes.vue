@@ -12,7 +12,7 @@
         @contextmenu.prevent
         alt="Neutral emote"
         height="23"
-        :src="require(`@/assets/img/icon/emote/${emote}.svg`)"
+        :src="asset(`img/icon/emote/${emote}.svg`)"
       />
     </button>
   </div>
@@ -20,7 +20,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-
+import { asset } from '@/utils';
 import type Emote from '@/types/Emotes';
 
 const emotes: Emote[] = [

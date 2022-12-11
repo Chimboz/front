@@ -17,10 +17,13 @@
 <script setup lang="ts">
 import TopicList from "@/components/bbs/list/Topic.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
+import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
-import { ref } from "vue";
+import { onBeforeMount, ref } from "vue";
+import { useRoute } from "vue-router";
 const auth = useAuthStore();
 const user = auth.user;
+const route = useRoute()
 
 // @vuese
 // @group View/Community/BBS
@@ -29,6 +32,11 @@ const user = auth.user;
 const data: any = ref(undefined);
 const authenticated = true;
 
+onBeforeMount(async () => {
+  data.value = (
+    await api.get(`bbs/topic/${route.params.forum}/${route.params.topic}?page=${route.params.page}`)
+  ).data;
+});
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.topic
 </script>

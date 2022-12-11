@@ -197,7 +197,8 @@ const router = createRouter({
       },
     },
     {
-      path: "/topic/:topic/:page?",
+      // TODO: remove topic parameter
+      path: "/topic/:forum/:topic/:page?",
       name: "Topic",
       component: () => import("../views/community/bbs/Topic.vue"),
       meta: { sitemap: { ignoreRoute: true } },

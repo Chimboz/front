@@ -26,7 +26,7 @@
         />
       </td>
       <td width="100%" height="50" style="text-align: left">
-        <router-link :to="'/topic/' + topic.id">{{ topic.title }}</router-link>
+        <router-link :to="`/topic/${$route.params.id}/${topic.id}`">{{ topic.title }}</router-link>
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
         {{ topic.reply }}

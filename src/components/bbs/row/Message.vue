@@ -11,7 +11,7 @@
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
       /><UserLink :user="message.author" ellipsis /><span class="date">{{
-        formatDate
+        formatDate()
       }}</span>
     </td>
     <td class="justified" valign="top">
@@ -39,7 +39,7 @@
             alt="Voir le dernier message"
             title="Voir le dernier message"
             :src="
-              require(`@/assets/img/bbs/msg${message.new ? '_new' : ''}.svg`)
+              asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)
             "
           /> </router-link
         >&nbsp;
@@ -95,7 +95,7 @@
         </div>
       </div>
       <hr style="margin: 2px 0" />
-      <div class="markdown-body" v-html="formatMessage"></div>
+      <div class="markdown-body" v-html="messageRender(message.content)"></div>
       <div v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>
       </div>
@@ -107,6 +107,7 @@
 </template>
 
 <script setup lang="ts">
+import { asset } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/modules/messageRender";
@@ -134,9 +135,6 @@ onMounted(() => {
   if (route.hash) scrollTo(route.hash);
 });
 
-function formatMessage() {
-  return messageRender(props.message.content);
-}
 function formatDate() {
   return format(new Date(props.message.date), "PPpp", {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
