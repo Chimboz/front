@@ -100,7 +100,7 @@ import {
   LineController,
   PointElement,
   LineElement,
-type ChartData,
+  type ChartData,
 } from "chart.js";
 import { ref } from "vue";
 import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
@@ -118,7 +118,6 @@ Chart.register(
   PointElement,
   LineElement
 );
-
 
 // @vuese
 // @group View/Account
@@ -150,18 +149,22 @@ function bankData() {
       { type: "bar", label: "Balance", data: [], backgroundColor: [] },
     ],
   };
-  let balance = data.balance;
+  let balance = data.value.balance;
   let i = 0;
   const today = new Date();
   for (const day of eachDayOfInterval({
     start: subDays(today, 6),
     end: today,
   }).reverse()) {
-    const chartData: any = data.logs.filter((el: any) => isSameDay(el.date, day));
+    const chartData: any = data.value.logs.filter((el: any) =>
+      isSameDay(el.date, day)
+    );
     let value = 0;
     if (chartData.length == 1) value = chartData[0].value;
     if (chartData.length > 1)
-      value = chartData.reduce((prev: any, curr: any) => prev.value + curr.value);
+      value = chartData.reduce(
+        (prev: any, curr: any) => prev.value + curr.value
+      );
     if (i > 0) balance -= dataset.datasets[1].data[i - 1];
     dataset.labels!.push(formatDateStats(day));
     dataset.datasets[1].data.push(value);

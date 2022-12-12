@@ -82,7 +82,7 @@ const user = auth.user;
 const pseudo = ref("");
 
 function submit() {
-  console.log(`Envoyé ${pseudo}!`);
+  console.log(`Envoyé ${pseudo.value}!`);
 }
 function generatePseudo() {
   pseudo.value = "test";

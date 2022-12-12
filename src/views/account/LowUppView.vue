@@ -79,7 +79,7 @@ function changeCase(index: number) {
     pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1);
 }
 function submit() {
-  console.log(`Envoyé ${pseudo}!`);
+  console.log(`Envoyé ${pseudo.value}!`);
 }
 
 // meta title section.capitalization

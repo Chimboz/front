@@ -34,7 +34,7 @@
               data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
         "
         @next-item="
-          (name: 'shape'|'top'|'bot'|'primary'|'secondary') =>
+          (name: keyof UnwrapNestedRefs<UnwrapNestedRefs<typeof data>>) =>
             (data.blazon[name] =
               data.items[name][
                 data.items[name].indexOf(data.blazon[name]) + 1
@@ -56,13 +56,14 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import type { UnwrapNestedRefs } from "vue";
 import Cabin from "@/components/blazon/Cabin.vue";
-import { ref } from "vue";
+import { reactive } from "vue";
 
 // @vuese
 // @group View/Members/Group
 // Group creation page
-const data = ref({
+const data = reactive({
   blazon: {
     shape: 0,
     top: -1,
@@ -123,7 +124,7 @@ const data = ref({
 });
 
 function create() {
-  console.log(data.value, true);
+  console.log(data, true);
 }
 
 // meta title section.groupedit

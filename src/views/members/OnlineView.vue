@@ -61,7 +61,6 @@ const locales = { fr, enGB };
 const data: any = ref(undefined);
 
 function formatDate() {
-  return "date";
   return format(new Date(data.value.record.date), "PPp", {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });

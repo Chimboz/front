@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,13 +6,13 @@ const router = createRouter({
     {
       path: "/",
       name: "Home",
-      component: () => import("../views/Home.vue"),
+      component: () => import("../views/HomeView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/admin",
       name: "Admin",
-      component: () => import("../views/Admin.vue"),
+      component: () => import("../views/AdminView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
       children: [
         {
@@ -25,95 +25,95 @@ const router = createRouter({
     {
       path: "/account",
       name: "Account",
-      component: () => import("../views/account/Account.vue"),
+      component: () => import("../views/account/AccountView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/levels",
       name: "Levels",
-      component: () => import("../views/account/Levels.vue"),
+      component: () => import("../views/account/LevelsView.vue"),
     },
     {
       path: "/messenger",
       name: "Messenger",
-      component: () => import("../views/account/Messenger.vue"),
+      component: () => import("../views/account/MessengerView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/messenger/:id",
       name: "Conversation",
-      component: () => import("../views/account/Conversation.vue"),
+      component: () => import("../views/account/ConversationView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/friends",
       name: "Friends",
-      component: () => import("../views/account/Friends.vue"),
+      component: () => import("../views/account/FriendsView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/notsmart",
       name: "Notsmart",
-      component: () => import("../views/account/Notsmart.vue"),
+      component: () => import("../views/account/NotsmartView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/eraser",
       name: "Eraser",
-      component: () => import("../views/account/Eraser.vue"),
+      component: () => import("../views/account/EraserView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/lowupp",
       name: "LowUpp",
-      component: () => import("../views/account/LowUpp.vue"),
+      component: () => import("../views/account/LowUppView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/bank",
       name: "Bank",
-      component: () => import("../views/account/Bank.vue"),
+      component: () => import("../views/account/BankView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/games",
       name: "Games",
-      component: () => import("../views/games/Games.vue"),
+      component: () => import("../views/games/GamesView.vue"),
     },
     {
       path: "/games/bacteria",
       name: "Bacteria",
-      component: () => import("../views/games/Bacteria.vue"),
+      component: () => import("../views/games/BacteriaView.vue"),
     },
     {
       path: "/games/bacteria/story",
       name: "Bacteria Story",
-      component: () => import("../views/games/bacteria/Story.vue"),
+      component: () => import("../views/games/bacteria/StoryView.vue"),
     },
     {
       path: "/games/patojdur",
       name: "Patojdur",
-      component: () => import("../views/games/Patojdur.vue"),
+      component: () => import("../views/games/PatojdurView.vue"),
     },
     {
       path: "/games/mazo",
       name: "Mazo",
-      component: () => import("../views/games/Mazo.vue"),
+      component: () => import("../views/games/MazoView.vue"),
     },
     {
       path: "/members",
       name: "Members",
-      component: () => import("../views/members/Members.vue"),
+      component: () => import("../views/members/MembersView.vue"),
     },
     {
       path: "/book",
       name: "Book",
-      component: () => import("../views/members/book/Book.vue"),
+      component: () => import("../views/members/book/BookView.vue"),
     },
     {
       path: "/book/:id",
       name: "Member",
-      component: () => import("../views/members/book/Member.vue"),
+      component: () => import("../views/members/book/MemberView.vue"),
       meta: {
         sitemap: {
           slugs: [1],
@@ -123,22 +123,22 @@ const router = createRouter({
     {
       path: "/weddings",
       name: "Wedding",
-      component: () => import("../views/members/Wedding.vue"),
+      component: () => import("../views/members/WeddingView.vue"),
     },
     {
       path: "/popularity",
       name: "Popularity",
-      component: () => import("../views/members/Popularity.vue"),
+      component: () => import("../views/members/PopularityView.vue"),
     },
     {
       path: "/groups",
       name: "Groups",
-      component: () => import("../views/members/group/Groups.vue"),
+      component: () => import("../views/members/group/GroupsView.vue"),
     },
     {
       path: "/groups/:id",
       name: "Group",
-      component: () => import("../views/members/group/Group.vue"),
+      component: () => import("../views/members/group/GroupView.vue"),
       meta: {
         sitemap: {
           slugs: [1],
@@ -148,35 +148,35 @@ const router = createRouter({
     {
       path: "/groups/manage",
       name: "Group Manage",
-      component: () => import("../views/members/group/Manage.vue"),
+      component: () => import("../views/members/group/ManageView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/groups/edit/:id",
       name: "Group Edit",
-      component: () => import("../views/members/group/Edit.vue"),
+      component: () => import("../views/members/group/EditView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/groups/create",
       name: "Group Create",
-      component: () => import("../views/members/group/Create.vue"),
+      component: () => import("../views/members/group/CreateView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/online",
       name: "Online",
-      component: () => import("../views/members/Online.vue"),
+      component: () => import("../views/members/OnlineView.vue"),
     },
     {
       path: "/bbs",
       name: "BBS",
-      component: () => import("../views/community/bbs/BBS.vue"),
+      component: () => import("../views/community/bbs/BBSView.vue"),
     },
     {
       path: "/bbs/:id/:page?",
       name: "Forum",
-      component: () => import("../views/community/bbs/Forum.vue"),
+      component: () => import("../views/community/bbs/ForumView.vue"),
       meta: {
         sitemap: {
           slugs: [
@@ -200,18 +200,18 @@ const router = createRouter({
       // TODO: remove topic parameter
       path: "/topic/:forum/:topic/:page?",
       name: "Topic",
-      component: () => import("../views/community/bbs/Topic.vue"),
+      component: () => import("../views/community/bbs/TopicView.vue"),
       meta: { sitemap: { ignoreRoute: true } },
     },
     {
       path: "/shop",
       name: "Shop",
-      component: () => import("../views/community/Shop.vue"),
+      component: () => import("../views/community/ShopView.vue"),
     },
     {
       path: "/encyclopedia",
       name: "Encyclopedia",
-      component: () => import("../views/community/Encyclopedia.vue"),
+      component: () => import("../views/community/EncyclopediaView.vue"),
       children: [
         {
           path: ":id",
@@ -223,7 +223,7 @@ const router = createRouter({
     {
       path: "/chaparazzi",
       name: "Chaparazzi",
-      component: () => import("../views/community/Chaparazzi.vue"),
+      component: () => import("../views/community/ChaparazziView.vue"),
       children: [
         {
           path: ":name",
@@ -235,18 +235,18 @@ const router = createRouter({
     {
       path: "/login",
       name: "Login",
-      component: () => import("../views/Login.vue"),
+      component: () => import("../views/LoginView.vue"),
     },
     // 404
     {
       path: "/:pathMatch(.*)*",
       name: "Error",
-      component: () => import("../views/Error.vue"),
+      component: () => import("../views/ErrorView.vue"),
     },
-  ]
-})
+  ],
+});
 
-export default router
+export default router;
 
 /*
 import { createRouter, createWebHistory } from "vue-router";

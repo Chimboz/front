@@ -159,12 +159,12 @@ function hashColor(str: string) {
 function cancel(friend: any) {
   console.log("Cancel " + friend.user.id);
   // API Call returning true if friend removed
-  data.splice(data.indexOf(friend), 1);
+  data.value.splice(data.value.indexOf(friend), 1);
 }
 function accept(friend: any) {
   console.log("Accept " + friend.user.id);
   // API Call returning new friend infos (status)
-  data.splice(data.indexOf(friend), 1, {
+  data.value.splice(data.value.indexOf(friend), 1, {
     user: {
       name: "Owned",
       id: 2,
@@ -188,13 +188,13 @@ function accept(friend: any) {
 }
 function decline(friend: any) {
   console.log("Decline " + friend.user.id);
-  data.splice(data.indexOf(friend), 1);
+  data.value.splice(data.value.indexOf(friend), 1);
 }
 function addFriend(form: any) {
   for (let element of form.target.elements) {
     if (element.name == "friend") {
       console.log(`Ajouté ${element.value} en ami`);
-      data.push({
+      data.value.push({
         user: {
           name: "Owned",
           id: 2,

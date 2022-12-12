@@ -141,8 +141,8 @@ function hashColor(str: string) {
   return colour;
 }
 function send() {
-  console.log("Envoyé " + message);
-  data.messages.push({
+  console.log("Envoyé " + message.value);
+  data.value.messages.push({
     you: true,
     content: message,
     date: Date.now(),
