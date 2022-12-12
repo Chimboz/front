@@ -126,15 +126,15 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import Blazon from "@/components/blazon/Blazon.vue";
-import StrokeText from "@/components/core/StrokeText.vue";
+import Blazon from "@/components/blazon/BlazonComponent.vue";
+import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import messageRender from "@/modules/messageRender";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { useAuthStore } from "@/stores/auth";
+// import { useAuthStore } from "@/stores/auth";
 import { ref } from "vue";
-const auth = useAuthStore();
-const user = auth.user;
+// const auth = useAuthStore();
+// const user = auth.user;
 const locales = { fr, enGB };
 
 // @vuese
@@ -144,17 +144,17 @@ const data = ref<any>(null);
 const authenticated = true;
 
 function formatDescription() {
-  return messageRender(data.description);
+  return messageRender(data.value.description);
 }
 function formatDate() {
-  return format(new Date(data.date), "PPp", {
+  return format(new Date(data.value.date), "PPp", {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function formatDistance() {
   return differenceInCalendarDays(
     new Date(),
-    new Date(data.date) /*, {
+    new Date(data.value.date) /*, {
         locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
       }*/
   );

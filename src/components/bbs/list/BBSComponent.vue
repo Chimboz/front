@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import Category from "../row/Category.vue";
+import Category from "../row/CategoryComponent.vue";
 
 // @vuese
 // @group BBS/List

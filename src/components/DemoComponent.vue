@@ -218,14 +218,14 @@
 // @vuese
 // @group Default
 
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const section = ref(1);
 const demo = ref(0);
 
-function mounted() {
+onMounted(() => {
   setInterval(() => (demo.value = (demo.value + 1) % 6), 7000);
-}
+});
 
 function login() {
   //$store.dispatch("auth/login");

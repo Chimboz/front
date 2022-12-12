@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import BBSList from "@/components/bbs/list/BBS.vue";
+import BBSList from "@/components/bbs/list/BBSComponent.vue";
 import api from "@/modules/api";
 import { onBeforeMount, ref } from "vue";
 
@@ -65,9 +65,9 @@ import { onBeforeMount, ref } from "vue";
 
 const data: any = ref(undefined);
 
-onBeforeMount(async ()=> {
-  data.value = (await api.get('/bbs')).data;
-})
+onBeforeMount(async () => {
+  data.value = (await api.get("/bbs")).data;
+});
 
 // /api/bbs.json
 // meta title section.bbs

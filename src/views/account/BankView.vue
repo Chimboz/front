@@ -86,8 +86,8 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import Bank from "@/components/Bank.vue";
-import ScrollableContainer from "@/components/core/ScrollableContainer.vue";
+import Bank from "@/components/BankComponent.vue";
+import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import { BarChart } from "vue-chart-3";
 import {
   Chart,

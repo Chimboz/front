@@ -182,7 +182,7 @@
 </template>
 
 <script setup lang="ts">
-import StrokeText from "@/components/core/StrokeText.vue";
+import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { asset } from "@/utils";
 const auth = useAuthStore();

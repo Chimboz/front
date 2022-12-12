@@ -239,8 +239,8 @@
   </form>
 </template>
 <script setup lang="ts">
-import Emotes from "@/components/core/Emotes.vue";
-import Message from "@/components/bbs/row/Message.vue";
+import Emotes from "@/components/core/EmotesComponent.vue";
+import Message from "@/components/bbs/row/MessageComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import eventBus from "@/modules/eventBus";
 import { ref, type SelectHTMLAttributes } from "vue";
@@ -258,7 +258,7 @@ const signature = ref(true);
 const selectionRange = ref([0, 0]);
 const mode = ref("post");
 
-const props = defineProps<{
+defineProps<{
   isTopic?: boolean;
 }>();
 
@@ -268,8 +268,8 @@ eventBus.on("quote", (quotedMessage) => {
   else message.value += "\n" + quotedMessage;
   if (textarea.value!) textarea.value!.focus();
 });
-eventBus.on("edit", (message) => {
-  message = message;
+eventBus.on("edit", (editedMessage) => {
+  message.value = editedMessage as string;
   mode.value = "edit";
   if (textarea.value!) textarea.value!.focus();
 });

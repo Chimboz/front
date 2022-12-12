@@ -148,9 +148,9 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainer.vue";
+import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import VLazyImage from "v-lazy-image";
-import Tooltip from "@/components/core/Tooltip.vue";
+import Tooltip from "@/components/core/TooltipComponent.vue";
 import { ref } from "vue";
 
 // @vuese

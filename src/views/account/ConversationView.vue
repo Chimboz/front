@@ -108,7 +108,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainer.vue";
+import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import messageRender from "@/modules/messageRender";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

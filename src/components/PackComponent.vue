@@ -92,7 +92,7 @@
 // @vuese
 // @group Default
 
-const props = defineProps<{
+defineProps<{
   name: string;
   looks: any[];
 }>();

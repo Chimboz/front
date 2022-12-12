@@ -58,7 +58,7 @@
 import { ref } from "vue";
 // @vuese
 // @group Default
-const props = withDefaults(
+withDefaults(
   defineProps<{
     src: string;
   }>(),

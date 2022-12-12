@@ -70,15 +70,19 @@
         @contextmenu.prevent
       />&nbsp;Verrouiller</button
     >&nbsp;
-    <button class="btn-action" v-if="user.role > 50" @click.prevent="delete">
+    <button
+      class="btn-action"
+      v-if="user.role > 50"
+      @click.prevent="deleteTopic"
+    >
       x&nbsp;Supprimer
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import Pagination from "../../core/Pagination.vue";
-import Message from "../row/Message.vue";
+import Pagination from "../../core/PaginationComponent.vue";
+import Message from "../row/MessageComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRoute } from "vue-router";
 const auth = useAuthStore();
@@ -89,7 +93,7 @@ const route = useRoute();
 // @vuese
 // @group BBS/List
 
-const props = defineProps<{
+defineProps<{
   topic: any;
 }>();
 

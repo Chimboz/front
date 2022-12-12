@@ -315,8 +315,8 @@
 </template>
 
 <script setup lang="ts">
-import Progress from "@/components/core/Progress.vue";
-import Tooltip from "@/components/core/Tooltip.vue";
+import Progress from "@/components/core/ProgressComponent.vue";
+import Tooltip from "@/components/core/TooltipComponent.vue";
 import { ref } from "vue";
 
 // @vuese

@@ -43,7 +43,10 @@
   </table>
   <br />
   <div style="text-align: end">
-    <button class="btn-action" @click.prevent="lock($route.params.id as string)">
+    <button
+      class="btn-action"
+      @click.prevent="lock($route.params.id as string)"
+    >
       <img
         src="@/assets/img/bbs/icon/lock.svg"
         width="9"
@@ -57,11 +60,11 @@
 </template>
 
 <script setup lang="ts">
-import Topic from "../row/Topic.vue";
-import Pagination from "../../core/Pagination.vue";
-import { useAuthStore } from "@/stores/auth";
-const auth = useAuthStore();
-const user = auth.user;
+import Topic from "../row/TopicComponent.vue";
+import Pagination from "../../core/PaginationComponent.vue";
+// import { useAuthStore } from "@/stores/auth";
+// const auth = useAuthStore();
+// const user = auth.user;
 
 // @vuese
 // @group BBS/List

@@ -275,9 +275,9 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import Blazon from "@/components/blazon/Blazon.vue";
-import StrokeText from "@/components/core/StrokeText.vue";
-import Cabin from "@/components/blazon/Cabin.vue";
+import Blazon from "@/components/blazon/BlazonComponent.vue";
+import StrokeText from "@/components/core/StrokeTextComponent.vue";
+import Cabin from "@/components/blazon/CabinComponent.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
@@ -306,8 +306,8 @@ function rejectDemand(id: number) {
   console.log("Rejection du membre " + id);
 }
 
-function focusHandler(){}
-function selectionHandler(){}
+function focusHandler() {}
+function selectionHandler() {}
 
 // /api/edit.json
 // meta title section.groupedit

@@ -104,8 +104,8 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import Bank from "@/components/Bank.vue";
-import Pack from "@/components/Pack.vue";
+import Bank from "@/components/BankComponent.vue";
+import Pack from "@/components/PackComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { ref } from "vue";
 const auth = useAuthStore();

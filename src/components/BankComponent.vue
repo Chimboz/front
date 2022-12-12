@@ -43,7 +43,7 @@
   >
 </template>
 <script setup lang="ts">
-import AnimatedNumber from "@/components/core/AnimatedNumber.vue";
+import AnimatedNumber from "@/components/core/AnimatedNumberComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { asset } from "@/utils";
 import { onMounted, ref } from "vue";

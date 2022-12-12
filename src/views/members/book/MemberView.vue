@@ -251,7 +251,7 @@
 </template>
 
 <script setup lang="ts">
-import StrokeText from "@/components/core/StrokeText.vue";
+import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { ref } from "vue";
 import { format, differenceInCalendarDays } from "date-fns";
@@ -274,9 +274,7 @@ function formatDate(date: number) {
   });
 }
 function formatDistance(date: number) {
-  return differenceInCalendarDays(new Date(), new Date(date), {
-    locale: locales[navigator.language.split("-")[0]],
-  });
+  return differenceInCalendarDays(new Date(), new Date(date));
 }
 function ban() {
   console.log("Banni" + /*$route.params.id +*/ " durée " + duration * 86400);

@@ -12,10 +12,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import Background from "./Background.vue";
-import Reflection from "./Reflection.vue";
-import Top from "./Top.vue";
-import Bot from "./Bot.vue";
+import Background from "./BackgroundComponent.vue";
+import Reflection from "./ReflectionComponent.vue";
+import Top from "./TopComponent.vue";
+import Bot from "./BotComponent.vue";
 
 // @vuese
 // @group Blazon

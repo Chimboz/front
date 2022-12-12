@@ -18,10 +18,10 @@
 </template>
 
 <script setup lang="ts">
-import ProgressBar from "@/components/core/ProgressBar.vue";
-import Navbar from "@/components/core/Navbar.vue";
-import Footer from "@/components/core/Footer.vue";
-import Modal from "@/components/core/Modal.vue";
+import ProgressBar from "@/components/core/ProgressBarComponent.vue";
+import Navbar from "@/components/core/NavbarComponent.vue";
+import Footer from "@/components/core/FooterComponent.vue";
+import Modal from "@/components/core/ModalComponent.vue";
 
 // @vuese
 // @group View

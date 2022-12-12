@@ -49,7 +49,10 @@
         <div>{{ formatDate() }}</div>
         <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
-        <router-link :to="`/topic/${$route.params.id}/${topic.id}/${Math.floor(topic.reply / 10 + 1)}#${topic.last_msg.msgid}`"
+        <router-link
+          :to="`/topic/${$route.params.id}/${topic.id}/${Math.floor(
+            topic.reply / 10 + 1
+          )}#${topic.last_msg.msgid}`"
           ><img
             draggable="false"
             @contextmenu.prevent
@@ -68,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import Pagination from "@/components/core/Pagination.vue";
+import Pagination from "@/components/core/PaginationComponent.vue";
 import { asset } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

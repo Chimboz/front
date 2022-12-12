@@ -56,7 +56,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import Cabin from "@/components/blazon/Cabin.vue";
+import Cabin from "@/components/blazon/CabinComponent.vue";
 import { reactive } from "vue";
 
 // @vuese

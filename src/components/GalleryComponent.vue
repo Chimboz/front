@@ -1,6 +1,8 @@
 <template>
   <GlobalCard color="yellow">
-    <template #header>{{ String($route.params.name).replace(/\.[^/.]+$/, "") }}</template>
+    <template #header>{{
+      String($route.params.name).replace(/\.[^/.]+$/, "")
+    }}</template>
     <a target="_blank" :href="'/gallery/' + $route.params.name">
       <img
         draggable="false"

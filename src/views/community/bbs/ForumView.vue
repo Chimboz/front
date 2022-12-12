@@ -37,8 +37,8 @@
 </template>
 
 <script setup lang="ts">
-import ForumList from "@/components/bbs/list/Forum.vue";
-import MarkdownInput from "@/components/bbs/MarkdownInput.vue";
+import ForumList from "@/components/bbs/list/ForumComponent.vue";
+import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
 import api from "@/modules/api";
 import { asset } from "@/utils";
 import { onBeforeMount, ref } from "vue";
@@ -48,7 +48,7 @@ import { onBeforeRouteUpdate, useRoute } from "vue-router";
 // @group View/Community/BBS
 // Forum page
 
-const route = useRoute()
+const route = useRoute();
 
 const iconDescriptions = [
   {

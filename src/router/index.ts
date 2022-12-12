@@ -17,7 +17,7 @@ const router = createRouter({
       children: [
         {
           path: ":id",
-          component: () => import("../components/AdminUser.vue"),
+          component: () => import("../components/AdminUserComponent.vue"),
           meta: { sitemap: { ignoreRoute: true } },
         },
       ],
@@ -215,7 +215,7 @@ const router = createRouter({
       children: [
         {
           path: ":id",
-          component: () => import("../components/Item.vue"),
+          component: () => import("../components/ItemComponent.vue"),
           meta: { sitemap: { ignoreRoute: true } },
         },
       ],
@@ -227,7 +227,7 @@ const router = createRouter({
       children: [
         {
           path: ":name",
-          component: () => import("../components/Gallery.vue"),
+          component: () => import("../components/GalleryComponent.vue"),
           meta: { sitemap: { ignoreRoute: true } },
         },
       ],

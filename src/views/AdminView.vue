@@ -57,7 +57,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainer.vue";
+import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";

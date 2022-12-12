@@ -17,7 +17,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 // External plugins
 import router from "./router";
-import { createPinia } from 'pinia'
+import { createPinia } from "pinia";
 import i18n from "./modules/i18n";
 import eventBus from "./modules/eventBus";
 import { createMetaManager, plugin as metaPlugin } from "vue-meta";
@@ -32,14 +32,14 @@ import "./assets/css/fonts.css";
 import "./assets/css/classes.css";
 import "./assets/css/atomic.css";
 // Globally registered components
-import Avatar from "./components/core/global/Avatar.vue";
-import Button from "./components/core/global/Button.vue";
-import Card from "./components/core/global/Card.vue";
-import Container from "./components/core/global/Container.vue";
-import Group from "./components/core/global/link/Group.vue";
-import Rules from "./components/core/global/Rules.vue";
-import SideNavEntries from "./components/core/global/SideNavEntries.vue";
-import User from "./components/core/global/link/User.vue";
+import Avatar from "./components/core/global/AvatarComponent.vue";
+import Button from "./components/core/global/ButtonComponent.vue";
+import Card from "./components/core/global/CardComponent.vue";
+import Container from "./components/core/global/ContainerComponent.vue";
+import Group from "./components/core/global/link/GroupComponent.vue";
+import Rules from "./components/core/global/RulesComponent.vue";
+import SideNavEntries from "./components/core/global/SideNavEntriesComponent.vue";
+import User from "./components/core/global/link/UserComponent.vue";
 
 const app = createApp(App)
   .use(i18n)

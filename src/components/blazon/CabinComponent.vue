@@ -155,7 +155,7 @@
   </GlobalCard>
 </template>
 <script setup lang="ts">
-import Blazon from "@/components/blazon/Blazon.vue";
+import Blazon from "@/components/blazon/BlazonComponent.vue";
 import VLazyImage from "v-lazy-image";
 import { ref } from "vue";
 

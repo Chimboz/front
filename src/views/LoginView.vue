@@ -127,8 +127,8 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import Demo from "@/components/Demo.vue";
-import Pack from "@/components/Pack.vue";
+import Demo from "@/components/DemoComponent.vue";
+import Pack from "@/components/PackComponent.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";

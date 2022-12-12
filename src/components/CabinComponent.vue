@@ -26,10 +26,7 @@
                 />
               </button>
             </div>
-            <div
-              class="cabin-scene relative flex"
-              tabindex="0"
-            >
+            <div class="cabin-scene relative flex" tabindex="0">
               <GlobalAvatar
                 :avatar="data.look.avatar"
                 :emote="data.look.emote"
@@ -149,7 +146,12 @@
               type="text"
               id="motto"
               :value="motto"
-              @input="$emit('update:motto', ($event.target as InputHTMLAttributes).value)"
+              @input="
+                $emit(
+                  'update:motto',
+                  ($event.target as InputHTMLAttributes).value
+                )
+              "
             />
             <div class="justified">
               <label for="website">{{ $t("profile.website") }}</label>
@@ -160,7 +162,12 @@
               type="text"
               id="website"
               :value="website"
-              @input="$emit('update:website', ($event.target as InputHTMLAttributes).value)"
+              @input="
+                $emit(
+                  'update:website',
+                  ($event.target as InputHTMLAttributes).value
+                )
+              "
             />
             <div class="justified">
               <label>{{ $t("profile.interests") }}</label>
@@ -174,7 +181,12 @@
                   :value="centrea"
                   id="interesta"
                   aria-label="Interest A"
-                  @input="$emit('update:centrea', ($event.target as InputHTMLAttributes).value)"
+                  @input="
+                    $emit(
+                      'update:centrea',
+                      ($event.target as InputHTMLAttributes).value
+                    )
+                  "
                 />
               </li>
               <li>
@@ -185,7 +197,12 @@
                   :value="centreb"
                   id="interestb"
                   aria-label="Interest B"
-                  @input="$emit('update:centreb', ($event.target as InputHTMLAttributes).value)"
+                  @input="
+                    $emit(
+                      'update:centreb',
+                      ($event.target as InputHTMLAttributes).value
+                    )
+                  "
                 />
               </li>
               <li>
@@ -196,7 +213,12 @@
                   :value="centrec"
                   id="interestc"
                   aria-label="Interest C"
-                  @input="$emit('update:centrec', ($event.target as InputHTMLAttributes).value)"
+                  @input="
+                    $emit(
+                      'update:centrec',
+                      ($event.target as InputHTMLAttributes).value
+                    )
+                  "
                 />
               </li>
               <li>
@@ -207,7 +229,12 @@
                   :value="centred"
                   id="interestd"
                   aria-label="Interest D"
-                  @input="$emit('update:centred', ($event.target as InputHTMLAttributes).value)"
+                  @input="
+                    $emit(
+                      'update:centred',
+                      ($event.target as InputHTMLAttributes).value
+                    )
+                  "
                 />
               </li>
             </ol>
@@ -241,9 +268,7 @@
                 <img
                   draggable="false"
                   @contextmenu.prevent
-                  :src="
-                    asset(`img/icon/item_category/${category}.svg`)
-                  "
+                  :src="asset(`img/icon/item_category/${category}.svg`)"
                 />
               </button>
             </div>
@@ -329,7 +354,7 @@
   </GlobalCard>
 </template>
 <script setup lang="ts">
-import Emotes from "@/components/core/Emotes.vue";
+import Emotes from "@/components/core/EmotesComponent.vue";
 import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import { ref, type InputHTMLAttributes } from "vue";
