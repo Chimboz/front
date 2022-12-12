@@ -129,9 +129,11 @@
 <script setup lang="ts">
 import Demo from "@/components/DemoComponent.vue";
 import Pack from "@/components/PackComponent.vue";
+import api from "@/modules/api";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { ref } from "vue";
+import { onBeforeMount, ref } from "vue";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
@@ -145,9 +147,10 @@ function formatDatePhotos(date: number) {
   });
 }
 
-function login() {
-  //$store.dispatch("auth/login");
-}
+onBeforeMount(async () => {
+  data.value = (await api.get("right")).data;
+  api.get("https://chimboz.fr/sanctum/csrf-cookie");
+});
 
 // /api/login.json
 // meta title section.login

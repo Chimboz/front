@@ -26,8 +26,8 @@
           id="connect"
           class="centered"
           style="display: inline-flex"
-          @click="logout"
-          v-if="authenticated"
+          @click="auth.logout()"
+          v-if="user"
         >
           <img
             draggable="false"
@@ -55,14 +55,14 @@
       </div>
       <GlobalAvatar
         style="margin-right: 16px"
-        :avatar="user ? user.look.avatar : 0"
-        :emote="user ? user.look.emote : 'neutral'"
-        :hat="user ? user.look.hat : 1"
-        :body="user ? user.look.body : 318"
-        :shoe="user ? user.look.shoe : 606"
-        :item0="user ? user.look.item0 : 792"
-        :item1="user ? user.look.item1 : 868"
-        :item2="user ? user.look.item2 : 938"
+        :avatar="user ? 0 : 0"
+        :emote="user ? user.avatar_mood : 'neutral'"
+        :hat="user ? +user.avatar_design.split(';')[1] : 1"
+        :body="user ? +user.avatar_design.split(';')[2] : 318"
+        :shoe="user ? +user.avatar_design.split(';')[3] : 606"
+        :item0="user ? +user.avatar_design.split(';')[4] : 792"
+        :item1="user ? +user.avatar_design.split(';')[5] : 868"
+        :item2="user ? +user.avatar_design.split(';')[6] : 938"
       />
     </div>
   </div>
@@ -106,7 +106,7 @@
           src="@/assets/img/arrow.svg"
         /></button
     ></a>
-    <router-link v-if="authenticated" to="/account"
+    <router-link v-if="user" to="/account"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -192,13 +192,6 @@ const user = auth.user;
 // @group Core
 
 const hours = new Date().getHours();
-const authenticated = true;
-
-function logout() {
-  /*$store.dispatch("auth/logout");
-      $router.push($route.path == "/" ? "/login" : $route.path);*/
-}
-
 document.body.className = "h" + hours;
 </script>
 <style lang="scss" scoped>

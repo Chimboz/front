@@ -66,7 +66,7 @@ import { onBeforeMount, ref } from "vue";
 const data: any = ref(undefined);
 
 onBeforeMount(async () => {
-  data.value = (await api.get("/bbs")).data;
+  data.value = (await api.get("bbs")).data;
 });
 
 // /api/bbs.json

@@ -1,21 +1,35 @@
 type User = {
-  name: string;
-  id: number;
-  signature: string;
-  color: string;
-  role: number;
-  credits: number;
-  look: {
-    avatar: number;
-    emote: string;
-    hat: number;
-    body: number;
-    shoe: number;
-    item0: number;
-    item1: number;
-    item2: number;
-  };
-  notifications: number;
+  id: number,
+  pseudo: string,
+  email: string,
+  regdate: string,
+  lastvisit: string,
+  money: string,
+  avatar_design: string,
+  signature: string,
+  website: string,
+  interest1: string,
+  interest2: string,
+  interest3: string,
+  interest4: string,
+  posts: string,
+  avatar_mood: string,
+  gender: string,
+  level_time: string,
+  actif: string,
+  banned: null,
+  admin: string,
+  user_level: string,
+  level: string,
+  currentPet: string,
+  loginToHome: string,
+  sign: string,
+  online: string,
+  room: string,
+  sid: string,
+  loterie: string,
+  fermla: null,
+  updated_at: string,
 };
 
 export default User;

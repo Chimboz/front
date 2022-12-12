@@ -1,37 +1,62 @@
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { defineStore } from "pinia";
-import type User from '@/types/User';
+import type User from "@/types/User";
+import api from "@/modules/api";
 
 export const useAuthStore = defineStore("auth", () => {
   const user = ref<undefined | User>(undefined);
-  function login() {
+  async function login(pseudo: string, password: string) {
+    /*
+    await api.post("auth/login", {
+      pseudo,
+      password,
+      device_name: "browser",
+    });
+    user.value = (await api.get("user")).data;
+    */
+    // FIXME
     user.value = {
-      name: "Tigriz",
       id: 3,
+      pseudo: "Tigriz",
+      email: "e-abyn@hotmail.fr",
+      regdate: "1615900606",
+      lastvisit: "1670880930",
+      money: "2550",
+      avatar_design: "r;7;334;612;808;868;938",
       signature: "Nitens lux, horrenda procella, tenebris aeternis involuta",
-      color: "#900",
-      role: 100,
-      credits: 1069,
-      look: {
-        avatar: 0,
-        emote: "zzz",
-        hat: 7,
-        body: 334,
-        shoe: 612,
-        item0: 808,
-        item1: 868,
-        item2: 938,
-      },
-      notifications: 0,
+      website: "http://last.fm/user/Tigriz",
+      interest1: "Musique",
+      interest2: "informatique",
+      interest3: "math\u00e9matiques",
+      interest4: "Sayaka",
+      posts: "153",
+      avatar_mood: "zzz",
+      gender: "chimbo",
+      level_time: "6917752528",
+      actif: "1",
+      banned: null,
+      admin: "0",
+      user_level: "5",
+      level: "25",
+      currentPet: "103",
+      loginToHome: "1",
+      sign: "dragon rouge de terre",
+      online: "0",
+      room: "bacteria_debutants",
+      sid: "EIgG3ViTqPQ2XwRXmrKLT4lFdNJv4IRptZu",
+      loterie: "1",
+      fermla: null,
+      updated_at: "2022-12-12 22:35:30",
     };
   }
 
-  function logout() {
+  async function logout() {
+    await api.get("logout");
     user.value = undefined;
   }
 
-  // TODO: remove
-  login();
+  // FIXME
+  login("", "");
 
   return { user, login, logout };
 });

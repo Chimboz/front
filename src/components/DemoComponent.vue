@@ -149,7 +149,7 @@
         v-if="section == 1"
         autocomplete="on"
         @submit.prevent="
-          login();
+          auth.login(username, password);
           $router.push('/');
         "
       >
@@ -162,6 +162,7 @@
             maxlength="15"
             name="username"
             type="text"
+            v-model="username"
             pattern="[\w\.\-_@]{2,15}"
             class="btn-md"
             autocomplete="username"
@@ -171,6 +172,7 @@
             required
             name="password"
             type="password"
+            v-model="password"
             :placeholder="$t('placeholder.password')"
             autocomplete="current-password"
             class="btn-md"
@@ -217,19 +219,19 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-
+import { useAuthStore } from "@/stores/auth";
 import { onMounted, ref } from "vue";
 
+const auth = useAuthStore()
+
+const username = ref('');
+const password = ref('');
 const section = ref(1);
 const demo = ref(0);
 
 onMounted(() => {
   setInterval(() => (demo.value = (demo.value + 1) % 6), 7000);
 });
-
-function login() {
-  //$store.dispatch("auth/login");
-}
 </script>
 <style lang="scss" scoped>
 .background {
