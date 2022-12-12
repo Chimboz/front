@@ -34,7 +34,7 @@
               data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
         "
         @next-item="
-          (name: keyof UnwrapNestedRefs<UnwrapNestedRefs<typeof data>>) =>
+          (name: 'shape'|'top'|'bot'|'primary'|'secondary') =>
             (data.blazon[name] =
               data.items[name][
                 data.items[name].indexOf(data.blazon[name]) + 1
@@ -56,7 +56,6 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import type { UnwrapNestedRefs } from "vue";
 import Cabin from "@/components/blazon/Cabin.vue";
 import { reactive } from "vue";
 
