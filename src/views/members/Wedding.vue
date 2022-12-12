@@ -394,7 +394,7 @@ const data = ref<any>([]);
 function formatDate(date: number, formatPattern: string) {
   return true;
   return format(new Date(date), formatPattern, {
-    //locale: locales[navigator.language.split("-")[0]],
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function formatDistance(datebegin: number, dateend: number) {

@@ -27,18 +27,18 @@
       <Cabin
         v-if="data"
         :data="data"
-        @update-item="(name: 'shape'|'top'|'bot'|'primary'|'secondary', item: never) => (data.blazon[name] = item)"
+        @update-item="(name: 'shape'|'top'|'bot'|'primary'|'secondary', item: number|string ) => (data.blazon[name] = item)"
         @previous-item="
           (name: 'shape'|'top'|'bot'|'primary'|'secondary') =>
-            /*(data.blazon[name] =
-              data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])*/
+            (data.blazon[name] =
+              data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
         "
         @next-item="
           (name: 'shape'|'top'|'bot'|'primary'|'secondary') =>
-            /*(data.blazon[name] =
+            (data.blazon[name] =
               data.items[name][
                 data.items[name].indexOf(data.blazon[name]) + 1
-              ])*/
+              ])
         "
       /><br />
       <GlobalButton color="green" type="submit"

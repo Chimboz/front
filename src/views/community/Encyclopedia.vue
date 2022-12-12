@@ -148,7 +148,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainer";
+import ScrollableContainer from "@/components/core/ScrollableContainer.vue";
 import VLazyImage from "v-lazy-image";
 import Tooltip from "@/components/core/Tooltip.vue";
 import { ref } from "vue";
@@ -177,7 +177,7 @@ const categories = [
   "top",
   "wall",
 ];
-const checkedCategories = [
+const checkedCategories = ref([
   "body",
   "bot",
   "etc",
@@ -196,9 +196,15 @@ const checkedCategories = [
   "shoe",
   "top",
   "wall",
-];
+]);
 const rarities = ["common", "rare", "mythic", "legendary", "unique"];
-const checkedRarities = ["common", "rare", "mythic", "legendary", "unique"];
+const checkedRarities = ref([
+  "common",
+  "rare",
+  "mythic",
+  "legendary",
+  "unique",
+]);
 const search = ref("");
 
 function onSearch() {}

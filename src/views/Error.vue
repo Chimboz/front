@@ -11,7 +11,9 @@
         src="@/assets/img/icon/warning.svg"
       /><b
         >&nbsp;{{
-          $route.params.message ? $t($route.params.message as string) : $t("error.default")
+          $route.params.message
+            ? $t($route.params.message as string)
+            : $t("error.default")
         }}</b
       >
     </GlobalCard>

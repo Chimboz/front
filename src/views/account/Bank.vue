@@ -87,7 +87,7 @@
 </template>
 <script setup lang="ts">
 import Bank from "@/components/Bank.vue";
-import ScrollableContainer from "@/components/core/ScrollableContainer";
+import ScrollableContainer from "@/components/core/ScrollableContainer.vue";
 import { BarChart } from "vue-chart-3";
 import {
   Chart,

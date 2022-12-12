@@ -234,16 +234,15 @@ const data: any = ref(undefined);
 const lottery = ref(true);
 const gain = ref(0);
 
-onBeforeMount(async ()=> {
-  data.value = (await api.get('/home')).data;
-})
+onBeforeMount(async () => {
+  data.value = (await api.get("/home")).data;
+});
 
-
-async function handle({ currentTarget }: Event) {
+async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   lottery.value = false;
-  // currentTarget!.disabled = true;
-  // const req = await api.get("/api/lottery.json");
-  // gain.value = req.data.gain;
+  currentTarget.disabled = true;
+  const req = await api.get("/api/lottery.json");
+  gain.value = req.data.gain;
 }
 function formatDatePhotos(date: number) {
   return format(new Date(date), "PP", {
@@ -252,11 +251,11 @@ function formatDatePhotos(date: number) {
 }
 
 function formatMessage() {
-  return messageRender(data.news.content);
+  return messageRender(data.value.news.content);
 }
 function formatDate() {
-  return format(new Date(data.news.date), "PPp", {
-    //locale: locales[navigator.language.split("-")[0]],
+  return format(new Date(data.value.news.date), "PPp", {
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 

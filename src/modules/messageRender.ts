@@ -136,7 +136,7 @@ const markedRender = function (string: string) {
 
 const dompurifyRender = function (string: string) {
   // Allowed URI schemes
-  let regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
+  const regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
 
   /**
    *  Take CSS property-value pairs and validate against allow-list,
@@ -144,7 +144,7 @@ const dompurifyRender = function (string: string) {
    */
   function validateStyles(output: Array<string>, styles: any) {
     // Validate regular CSS properties
-    for (let prop in styles) {
+    for (const prop in styles) {
       if (typeof styles[prop] === "string") {
         if (styles[prop] && allowed_properties.indexOf(prop) > -1) {
           if (allow_css_functions || !/\w+\(/.test(styles[prop])) {
@@ -162,7 +162,7 @@ const dompurifyRender = function (string: string) {
    */
   function addCSSRules(output: any, cssRules: any) {
     for (let index = cssRules.length - 1; index >= 0; index--) {
-      let rule = cssRules[index];
+      const rule = cssRules[index];
       // check for rules with selector
       if (rule.type == 1 && rule.selectorText) {
         output.push(rule.selectorText + "{");
@@ -177,7 +177,7 @@ const dompurifyRender = function (string: string) {
   // Add a hook to enforce CSS element sanitization
   DOMPurify.addHook("uponSanitizeElement", function (node: any, data) {
     if (data.tagName === "style") {
-      let output: any = [];
+      const output: any = [];
       addCSSRules(output, node.sheet.cssRules);
       node.textContent = output.join("\n");
     }
@@ -211,13 +211,13 @@ const dompurifyRender = function (string: string) {
     // Sanitizing CSS
     // Nasty hack to fix baseURI + CSS problems in Chrome
     if (!node.ownerDocument.baseURI) {
-      let base = document.createElement("base");
+      const base = document.createElement("base");
       base.href = document.baseURI;
       node.ownerDocument.head.appendChild(base);
     }
     // Check all style attribute values and validate them
     if (node.hasAttribute("style")) {
-      let output: Array<string> = [];
+      const output: Array<string> = [];
       validateStyles(output, node.style);
       // re-add styles in case any are left
       if (output.length) {
@@ -238,11 +238,11 @@ const messageRender = function (string: string) {
   const result = dompurifyRender(markedRender(string));
 
   // Custom embeds
-  let DOM = document.createElement("div");
+  const DOM = document.createElement("div");
   DOM.innerHTML = result;
-  for (let el of DOM.querySelectorAll("a")) {
+  for (const el of DOM.querySelectorAll("a")) {
     if (el.href.match(youtube)) {
-      let iframe = document.createElement("iframe");
+      const iframe = document.createElement("iframe");
       iframe.setAttribute(
         "src",
         el.href.replace(youtube, `https://youtube.com/embed/$5$6`)
