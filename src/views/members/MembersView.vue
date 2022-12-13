@@ -176,7 +176,10 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from '@/modules/api';
+import { fetchData } from '@/utils';
 import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 // @vuese
 // @group View/Members
@@ -186,6 +189,10 @@ const data: any = ref(undefined);
 function search() {
   console.log("Envoyé!");
 }
+
+fetchData(async () => {
+  data.value = (await api.get("members")).data;
+})
 
 // /api/members.json
 // meta title section.members

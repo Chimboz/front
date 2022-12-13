@@ -14,7 +14,7 @@
                 :key="number.index"
                 width="19"
                 height="21"
-                :src="require(`@/assets/img/number/${number}.svg`)"
+                :src="asset(`img/number/${number}.svg`)"
               />
             </div></div></router-link
         ><br />
@@ -70,7 +70,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <b> sur </b>
@@ -83,7 +83,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <br />
@@ -96,7 +96,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <b> point(s)</b><br /><br />
@@ -125,7 +125,7 @@
               :key="number.index"
               width="19"
               height="21"
-              :src="require(`@/assets/img/number/${number}.svg`)"
+              :src="asset(`img/number/${number}.svg`)"
             />
           </div>
           <b> parties</b>
@@ -146,7 +146,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <b> sur </b>
@@ -159,7 +159,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <br />
@@ -172,7 +172,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <b> point(s)</b>
@@ -206,7 +206,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <b> sur </b>
@@ -219,7 +219,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/${number}.svg`)"
+            :src="asset(`img/number/${number}.svg`)"
           />
         </div>
         <br />
@@ -231,7 +231,7 @@
           :key="number.index"
           width="19"
           height="21"
-          :src="require(`@/assets/img/number/${number}.svg`)"
+          :src="asset(`img/number/${number}.svg`)"
         />
         <b> point(s)</b>
       </GlobalCard>
@@ -255,7 +255,7 @@
             :key="number.index"
             width="19"
             height="21"
-            :src="require(`@/assets/img/number/pink/${number}.svg`)"
+            :src="asset(`img/number/pink/${number}.svg`)"
           />
         </div>
         <div style="margin-top: -21px">
@@ -271,7 +271,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   :src="
-                    require(`@/assets/img/bbs/msg${
+                    asset(`img/bbs/msg${
                       message.new ? '_new' : ''
                     }.svg`)
                   "

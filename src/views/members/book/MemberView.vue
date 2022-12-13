@@ -79,7 +79,7 @@
               >
               avec
               <UserLink :user="data.wedding.user" /> depuis
-              {{ formatDistance(data.wedding.date) }} jours
+              {{ formatDistance(data.wedding.time) }} jours
             </span>
             <span v-else><b>Célibataire</b></span>
           </p>
@@ -113,6 +113,7 @@
             <div v-if="data.gender == 'male'">Chimbo</div>
             <div v-else-if="data.gender == 'female'">Chimbette</div>
             <div v-else>Chimbi</div>
+            <!--TODO svg pas bien size-->
             <img
               draggable="false"
               @contextmenu.prevent
@@ -121,11 +122,9 @@
                 data.gender.slice(1) +
                 ' gender'
               "
-              height="16"
+              height="20"
               width="20"
-              :src="
-                require(`@/assets/img/member/${data.gender}/${data.gender}.svg`)
-              "
+              :src="asset(`img/member/${data.gender}/${data.gender}.svg`)"
             />
           </div>
           &nbsp;
@@ -140,7 +139,7 @@
                 :key="digit.index"
                 width="19"
                 height="21"
-                :src="require(`@/assets/img/number/${digit}.svg`)"
+                :src="asset(`img/number/${digit}.svg`)"
               />
             </div>
           </div>
@@ -159,7 +158,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          :src="require(`@/assets/img/member/${data.gender}/bacteria.svg`)"
+          :src="asset(`img/member/${data.gender}/bacteria.svg`)"
           alt="Bacteria"
           style="float: left"
         />
@@ -182,7 +181,7 @@
         <img
           draggable="false"
           @contextmenu.prevent
-          :src="require(`@/assets/img/member/${data.gender}/patojdur.svg`)"
+          :src="asset(`img/member/${data.gender}/patojdur.svg`)"
           alt="Patojdur"
           style="float: left"
         />
@@ -201,12 +200,27 @@
         >
       </div>
       <br v-if="data.patojdur" />
+      <div class="member-section" v-if="data.mazo">
+        <img
+          draggable="false"
+          @contextmenu.prevent
+          :src="asset(`img/member/${data.gender}/mazo.svg`)"
+          alt="Mazo"
+          style="float: left"
+        />
+        <span
+          >Classement : <b>{{ data.mazo.rank }}</b
+          ><sup v-if="data.mazo.rank == 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.mazo.score }}</b> points</span
+        >
+      </div>
+      <br v-if="data.mazo" />
       <div class="member-section" v-if="data.popularity">
         <img
           draggable="false"
           @contextmenu.prevent
-          :src="require(`@/assets/img/member/${data.gender}/popularity.svg`)"
-          alt="Patojdur"
+          :src="asset(`img/member/${data.gender}/popularity.svg`)"
+          alt="Popularity"
           style="float: left"
         />
         <span
@@ -243,7 +257,7 @@
       }}</router-link>
     </GlobalCard>
     <template #right-column
-      ><router-link v-if="user.role > 50" :to="'/admin/' + $route.params.id"
+      ><router-link v-if="+user.admin > 0" :to="'/admin/' + $route.params.id"
         ><GlobalButton icon="rules.svg">Modérer</GlobalButton></router-link
       ></template
     >
@@ -251,12 +265,15 @@
 </template>
 
 <script setup lang="ts">
+import { asset, fetchData } from "@/utils";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { ref } from "vue";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import type User from "@/types/User";
+import api from "@/modules/api";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 const auth = useAuthStore();
 const user = auth.user as User;
@@ -279,6 +296,21 @@ function formatDistance(date: number) {
 function ban() {
   console.log("Banni" + /*$route.params.id +*/ " durée " + duration * 86400);
 }
+
+fetchData(async (params) => {
+  data.value = (await api.get(`book/${params.id}`)).data;
+  switch (data.value.gender) {
+    case "chimbo":
+      data.value.gender = "male";
+      break;
+    case "chimbette":
+      data.value.gender = "female";
+      break;
+    case "inconnu":
+      data.value.gender = "unknown";
+      break;
+  }
+});
 // /api/member.json
 // meta title section.member
 </script>

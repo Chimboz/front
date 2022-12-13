@@ -7,13 +7,13 @@
       <div class="item-icons">
         n°{{ $route.params.id }}
         <img
-          :src="require(`@/assets/img/icon/rarity/${data.rarity}.png`)"
+          :src="asset(`img/icon/rarity/${data.rarity}.png`)"
           :title="data.rarity"
           :alt="data.rarity"
           draggable="false"
           @contextmenu.prevent
         />&nbsp;<img
-          :src="require(`@/assets/img/icon/item_category/${data.type}.svg`)"
+          :src="asset(`img/icon/item_category/${data.type}.svg`)"
           :title="data.type"
           :alt="data.type"
           draggable="false"

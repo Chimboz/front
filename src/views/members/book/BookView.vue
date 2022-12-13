@@ -160,9 +160,12 @@
 </template>
 
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
@@ -172,6 +175,10 @@ const locales = { fr, enGB };
 const data: any = ref(undefined);
 const username = ref("");
 const suggestionsHere = ref<any>(null);
+
+fetchData(async () => {
+  data.value = (await api.get("book")).data;
+})
 
 function onKeypressValue() {
   /*if (username != undefined && username.value != "") {

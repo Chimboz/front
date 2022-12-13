@@ -26,7 +26,7 @@
               :key="number.index"
               width="19"
               height="21"
-              :src="require(`@/assets/img/number/${number}.svg`)"
+              :src="asset(`img/number/${number}.svg`)"
             />&nbsp;<b>{{ rank.name }}</b>
           </div>
         </div>

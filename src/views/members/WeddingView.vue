@@ -381,31 +381,39 @@
 </template>
 
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
 // Wedding page
-const data = ref<any>([]);
+const data = ref<any>(undefined);
 
 function formatDate(date: number, formatPattern: string) {
-  return true;
   return format(new Date(date), formatPattern, {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
 function formatDistance(datebegin: number, dateend: number) {
-  return true; /*
-  return differenceInCalendarDays(new Date(dateend), new Date(datebegin), {
-    locale: locales[navigator.language.split("-")[0]],
-  });*/
+  return differenceInCalendarDays(
+    new Date(dateend),
+    new Date(datebegin) /*{
+    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
+  }*/
+  );
 }
 function search() {
   console.log("Envoyé!");
 }
+
+fetchData(async () => {
+  data.value = (await api.get("weddings")).data;
+});
 
 // /api/weddings.json
 // meta title section.wedding

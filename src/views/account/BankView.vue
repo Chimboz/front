@@ -46,7 +46,7 @@
                 width="19"
                 height="21"
                 :src="
-                  require(`@/assets/img/number/${
+                  asset(`img/number/${
                     line.value < 0 ? 'pink/' : ''
                   }${number}.svg`)
                 "

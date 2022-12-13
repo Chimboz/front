@@ -8,7 +8,7 @@
     :key="index"
     width="19"
     height="21"
-    :src="require(`@/assets/img/number/${digit}.svg`)"
+    :src="asset(`img/number/${digit}.svg`)"
   />
 </template>
 

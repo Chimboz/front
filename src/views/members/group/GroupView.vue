@@ -65,11 +65,11 @@
               :key="digit.index"
               width="19"
               height="21"
-              :src="require(`@/assets/img/number/${digit}.svg`)"
+              :src="asset(`img/number/${digit}.svg`)"
             />
           </div>
         </div>
-        &nbsp;<img :src="require(`@/assets/img/group/${data.status}.png`)" />
+        &nbsp;<img :src="asset(`img/group/${data.status}.png`)" />
       </GlobalCard>
       <br />
       Groupe no. <b>{{ $route.params.id }}</b> créé le
@@ -110,7 +110,7 @@
         <template #header> Inscription pour rejoindre ce groupe </template>
         <div class="justified">
           <img
-            :src="require(`@/assets/img/group/${data.status}.png`)"
+            :src="asset(`img/group/${data.status}.png`)"
             style="float: left; margin-right: 4px"
           />
           {{ $t(`group.${data.status}`) }}

@@ -3,7 +3,7 @@
     <template #button>
       <router-link to="/bank"
         ><GlobalButton color="yellow" icon="credits.svg">{{
-          $t("credit.title", user.credits)
+          $t("credit.title", +user.money)
         }}</GlobalButton></router-link
       >
     </template>
@@ -13,7 +13,7 @@
         @contextmenu.prevent
         class="coin"
         alt="Coin"
-        v-for="(_, n) in Math.min(Math.floor(user.credits / 10), 176)"
+        v-for="(_, n) in Math.min(Math.floor(+user.money / 10), 176)"
         :style="coinsPosition[n]"
         v-show="n <= Math.min(Math.floor(coins / 10), 176)"
         :key="n"
@@ -32,8 +32,8 @@
 
     <router-link to="/bank">
       <div>{{ $t("credit.youGot") }}</div>
-      <AnimatedNumber :number="user.credits" :delay="delay" />
-      <div>{{ $t("credit.text", user.credits) }}</div></router-link
+      <AnimatedNumber :number="+user.money" :delay="delay" />
+      <div>{{ $t("credit.text", +user.money) }}</div></router-link
     >
     <!--<router-link to="/reflooz" class="btn-route"
       ><GlobalButton color="orange" icon="reflooz.svg"
@@ -117,7 +117,7 @@ const coinsPosition = [
 
 onMounted(() => {
   if (!authenticated) return;
-  for (let i = 8; i <= Math.min(Math.floor(user.credits / 10), 360); i++) {
+  for (let i = 8; i <= Math.min(Math.floor(+user.money / 10), 360); i++) {
     const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
     const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
     const filter = coinsPosition[i % 8].filter;
@@ -139,9 +139,9 @@ function randomInt(min: number, max: number) {
   );
 }
 function tween() {
-  if (coins.value >= user.credits || coins.value > 1760) return;
-  coins.value += Math.max(Math.floor(user.credits / 60 / props.delay), 1);
-  if (coins.value < user.credits) requestAnimationFrame(tween);
+  if (coins.value >= +user.money || coins.value > 1760) return;
+  coins.value += Math.max(Math.floor(+user.money / 60 / props.delay), 1);
+  if (coins.value < +user.money) requestAnimationFrame(tween);
 }
 </script>
 <style lang="scss" scoped>

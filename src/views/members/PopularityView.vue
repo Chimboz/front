@@ -423,20 +423,33 @@
 </template>
 
 <script setup lang="ts">
+import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
+import { fetchData } from "@/utils";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const auth = useAuthStore();
 const user = auth.user;
 
 // @vuese
 // @group View/Members
 // Popularity page
-const data = ref<any>([]);
+const data = ref<any>(undefined);
 const authenticated = true;
 
 function vote() {
   console.log("Envoyé!");
 }
+fetchData(async () => {
+  data.value = (await api.get("popularity")).data;
+  // TODO remove
+  data.value.groups = {
+    best: [],
+    worst: [],
+  };
+  data.value.stats.yesterday = data.value.stats.today;
+});
+
 // /api/popularity.json
 // meta title section.popularity
 </script>

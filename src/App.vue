@@ -1,7 +1,7 @@
 <template>
   <ProgressBar />
   <Navbar />
-  <router-view />
+  <RouterView />
   <Footer />
   <Modal />
   <metainfo>

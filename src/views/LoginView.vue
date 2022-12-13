@@ -130,9 +130,10 @@
 import Demo from "@/components/DemoComponent.vue";
 import Pack from "@/components/PackComponent.vue";
 import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { onBeforeMount, ref } from "vue";
+import { ref } from "vue";
 import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
@@ -147,7 +148,7 @@ function formatDatePhotos(date: number) {
   });
 }
 
-onBeforeMount(async () => {
+fetchData(async () => {
   data.value = (await api.get("right")).data;
   api.get("https://chimboz.fr/sanctum/csrf-cookie");
 });

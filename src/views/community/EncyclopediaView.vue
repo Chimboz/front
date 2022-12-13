@@ -102,7 +102,7 @@
               draggable="false"
               @contextmenu.prevent
               :alt="category"
-              :src="require(`@/assets/img/icon/item_category/${category}.svg`)"
+              :src="asset(`img/icon/item_category/${category}.svg`)"
             />
           </button>
         </div>
@@ -140,7 +140,7 @@
               draggable="false"
               @contextmenu.prevent
               :alt="rarity"
-              :src="require(`@/assets/img/icon/rarity/${rarity}.png`)"
+              :src="asset(`img/icon/rarity/${rarity}.png`)"
             />
           </button>
         </div> </GlobalCard

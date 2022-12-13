@@ -40,15 +40,12 @@
 import ForumList from "@/components/bbs/list/ForumComponent.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
 import api from "@/modules/api";
-import { asset } from "@/utils";
-import { onBeforeMount, ref } from "vue";
-import { onBeforeRouteUpdate, useRoute } from "vue-router";
+import { asset, fetchData } from "@/utils";
+import { ref } from "vue";
 
 // @vuese
 // @group View/Community/BBS
 // Forum page
-
-const route = useRoute();
 
 const iconDescriptions = [
   {
@@ -87,17 +84,12 @@ const iconDescriptions = [
 const post = ref(false);
 const data: any = ref(undefined);
 
-onBeforeMount(async () => {
+fetchData(async (params) => {
   data.value = (
-    await api.get(`bbs/forum/${route.params.id}?page=${route.params.page}`)
+    await api.get(`bbs/forum/${params.id}?page=${params.page}`)
   ).data;
-});
+})
 
-onBeforeRouteUpdate(async (to) => {
-  data.value = (
-    await api.get(`bbs/forum/${to.params.id}?page=${to.params.page}`)
-  ).data;
-});
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.forum
 </script>

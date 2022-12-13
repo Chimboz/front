@@ -57,7 +57,8 @@
 <script setup lang="ts">
 import BBSList from "@/components/bbs/list/BBSComponent.vue";
 import api from "@/modules/api";
-import { onBeforeMount, ref } from "vue";
+import { fetchData } from "@/utils";
+import { ref } from "vue";
 
 // @vuese
 // @group View/Community/BBS
@@ -65,7 +66,7 @@ import { onBeforeMount, ref } from "vue";
 
 const data: any = ref(undefined);
 
-onBeforeMount(async () => {
+fetchData(async () => {
   data.value = (await api.get("bbs")).data;
 });
 

@@ -18,12 +18,11 @@
 import TopicList from "@/components/bbs/list/TopicComponent.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
 import api from "@/modules/api";
+import { fetchData } from "@/utils";
 // import { useAuthStore } from "@/stores/auth";
-import { onBeforeMount, ref } from "vue";
-import { onBeforeRouteUpdate, useRoute } from "vue-router";
+import { ref } from "vue";
 // const auth = useAuthStore();
 // const user = auth.user;
-const route = useRoute();
 
 // @vuese
 // @group View/Community/BBS
@@ -32,18 +31,10 @@ const route = useRoute();
 const data: any = ref(undefined);
 const authenticated = true;
 
-onBeforeMount(async () => {
+fetchData(async (params) => {
   data.value = (
     await api.get(
-      `bbs/topic/${route.params.forum}/${route.params.topic}?page=${route.params.page}`
-    )
-  ).data;
-});
-
-onBeforeRouteUpdate(async (to) => {
-  data.value = (
-    await api.get(
-      `bbs/topic/${to.params.forum}/${to.params.topic}?page=${to.params.page}`
+      `bbs/topic/${params.forum}/${params.topic}?page=${params.page}`
     )
   ).data;
 });

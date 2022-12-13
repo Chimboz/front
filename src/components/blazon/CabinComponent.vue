@@ -78,7 +78,7 @@
                   draggable="false"
                   @contextmenu.prevent
                   :src="
-                    require(`@/assets/img/icon/item_category/${category}.svg`)
+                    asset(`img/icon/item_category/${category}.svg`)
                   "
                 />
               </button>
