@@ -92,7 +92,7 @@
         <div class="flex hstack">
           <Pack
             @click.prevent="show(pack)"
-            v-for="pack of data"
+            v-for="pack of data.packs"
             :key="pack.name"
             :name="pack.name"
             :looks="pack.looks"
@@ -106,7 +106,10 @@
 <script setup lang="ts">
 import Bank from "@/components/BankComponent.vue";
 import Pack from "@/components/PackComponent.vue";
+import api from "@/modules/api";
+import eventBus from "@/modules/eventBus";
 import { useAuthStore } from "@/stores/auth";
+import { fetchData } from "@/utils";
 import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
@@ -116,29 +119,35 @@ const user = auth.user;
 // Shop page
 
 const data: any = ref(undefined);
-const shown = ref<any>(null);
+const shown = ref<any>(undefined);
 const authenticated = true;
+const buyAudio = ref<null | HTMLAudioElement>(null);
+const clickAudio = ref<null | HTMLAudioElement>(null);
 
 function show(pack: any) {
-  /*shown = pack;
-  $refs.clickAudio.play();*/
+  shown.value = pack;
+  clickAudio.value!.play();
 }
 function buy() {
-  /*
-  $refs.buyAudio.play();
+  buyAudio.value!.play();
   console.log("Acheté " + shown.name);
   eventBus.emit("confirmation", {
     message: "success.buy",
     callback: "/api/success.json",
-  });*/
+  });
 }
+
+fetchData(async () => {
+  data.value = (await api.get("shop")).data;
+  shown.value = data.value.packs[0];
+});
 
 // /api/shop.json
 // meta title section.shop
 </script>
 <style lang="scss">
 .menu .pack {
-  max-width: calc(25% - var(--gap));
+  max-width: calc(25% - var(--sm-gap));
 }
 </style>
 <style lang="scss" scoped>

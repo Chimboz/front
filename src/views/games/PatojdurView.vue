@@ -369,9 +369,12 @@
 </template>
 
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
@@ -390,6 +393,15 @@ function formatHour(date: number) {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
+
+fetchData(async () => {
+  data.value = (await api.get("games/patoj")).data;
+  data.value.stats = {
+    today: 1,
+    yesterday: 2,
+  };
+});
+
 // /api/patojdur.json
 // meta title section.patojdur
 </script>

@@ -125,8 +125,8 @@
       <br />
       <b>parties gagnées</b><br />
       <div class="fullwidth light">
-        <UserLink :user="data.records.won.user" /> avec
-        {{ data.records.won.record }} parties gagnées&nbsp;!
+        <UserLink :user="data.records.win.user" /> avec
+        {{ data.records.win.record }} parties gagnées&nbsp;!
       </div>
       <br />
       <b>parties perdues</b><br />
@@ -137,8 +137,8 @@
       <br />
       <b>match nuls</b><br />
       <div class="fullwidth light">
-        <UserLink :user="data.records.drawn.user" /> avec
-        {{ data.records.drawn.record }} match nuls&nbsp;!
+        <UserLink :user="data.records.draw.user" /> avec
+        {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
     </GlobalCard>
     <br /><GlobalCard id="best" v-if="data">
@@ -317,13 +317,26 @@
 <script setup lang="ts">
 import Progress from "@/components/core/ProgressComponent.vue";
 import Tooltip from "@/components/core/TooltipComponent.vue";
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 
 // @vuese
 // @group View/Games
 // Bacteria page
 
 const data = ref<any>(undefined);
+
+fetchData(async () => {
+  data.value = (await api.get("games/bacteria")).data;
+  data.value.stats = {
+    player: 1,
+    games: 2,
+    yesterday: 3,
+  };
+});
+
 // /api/bacteria.json
 // meta title section.bacteria
 </script>

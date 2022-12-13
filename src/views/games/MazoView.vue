@@ -125,13 +125,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(rank, index) in data.best" :key="index">
+          <tr v-for="(rank, index) in data.mazo" :key="index">
             <td>{{ index + 1 }}</td>
             <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ formatDate(rank.date) }}</td>
+            <td>{{ formatDate(rank.date || 1670928217153) /* TODO remove */ }}</td>
           </tr>
         </tbody>
       </table>
@@ -179,9 +179,12 @@
 </template>
 
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
@@ -195,6 +198,10 @@ function formatDate(date: number) {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
+
+fetchData(async () => {
+  data.value = (await api.get("games/mazo")).data;
+});
 // /api/mazo.json
 // meta title section.mazo
 </script>

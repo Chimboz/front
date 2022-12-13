@@ -50,6 +50,8 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
@@ -65,6 +67,10 @@ function formatDate() {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
+
+fetchData(async () => {
+  data.value = (await api.get("online")).data;
+});
 
 // /api/online.json
 // meta title section.online

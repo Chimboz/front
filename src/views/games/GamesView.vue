@@ -224,10 +224,15 @@
 // @group View/Games
 // Games page
 
-import { ref } from 'vue';
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
+import { ref } from "vue";
+import { RouterLink } from "vue-router";
 
-  
 const data = ref<any>(undefined);
+fetchData(async () => {
+  data.value = (await api.get("games")).data;
+});
 // /api/games.json
 // meta title section.games
 </script>

@@ -92,13 +92,17 @@
 // @vuese
 // @group Default
 
+import { ref } from 'vue';
+
 defineProps<{
   name: string;
   looks: any[];
 }>();
 
+const audio = ref<null | HTMLAudioElement>(null)
+
 function play() {
-  // $refs.audio.play();
+  audio.value!.play();
 }
 </script>
 
