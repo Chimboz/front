@@ -18,7 +18,7 @@
     <div class="login flex">
       <div style="margin-top: -10px">
         <UserLink
-          :user="user || { name: 'Visiteur' }"
+          :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           id="username"
           style="display: inherit"
         />
