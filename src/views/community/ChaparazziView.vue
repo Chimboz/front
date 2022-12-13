@@ -10,7 +10,12 @@
     </template>
     <RouterView />
     <GlobalCard color="yellow" v-if="data" style="position: relative">
-      <div class="gallery" @scroll.passive="onScroll">
+      <ScrollableContainer
+        route="gallery"
+        class="fullwidth"
+        :maxHeight="450"
+        @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
+      >
         <div v-for="image of data" :key="image.name" class="gallery-image">
           <router-link :to="'/chaparazzi/' + image.name">
             <VLazyImage
@@ -25,17 +30,7 @@
           <UserLink :user="image.author" /><br />
           {{ formatDate(image.date) }}
         </div>
-        <div v-if="isLoading" class="spinner-loading">
-          <img
-            src="@/assets/img/loading.svg"
-            alt="Loading spinner"
-            draggable="false"
-            width="200"
-            height="200"
-            @contextmenu.prevent
-          />
-        </div>
-      </div>
+      </ScrollableContainer>
     </GlobalCard>
   </GlobalContainer>
 </template>
@@ -44,36 +39,27 @@
 import VLazyImage from "v-lazy-image";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { ref } from "vue";
+import { onBeforeMount, ref } from "vue";
 import { asset } from "@/utils";
+import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
+import api from "@/modules/api";
+import { RouterView, RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Community
 // Chaparazzi page
 const data: any = ref(undefined);
-const search = ref("");
-const page = ref(0);
-const isLoading = ref(false);
 
-function onScroll() {}
-/*function onScroll({ target: { scrollTop, clientHeight, scrollHeight } }) {
-  if (scrollTop + clientHeight >= scrollHeight - 60) {
-    isLoading = true;
-    api.get(`/api/chaparazzi/${++page}.json`).then(
-      (res) => {
-        data = [...new Set([...data, ...res.data])];
-        isLoading = false;
-      },
-      () => (isLoading = false)
-    );
-  }
-}*/
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });
 }
+
+onBeforeMount(async () => {
+  data.value = (await api.get(`gallery?page=0`)).data;
+});
 
 // /api/chaparazzi/${vm.page}.json
 // meta title section.chaparazzi

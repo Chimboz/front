@@ -253,7 +253,7 @@
       <br />
       Messages sur le forum :
       <router-link :to="'/bbs/author/' + $route.params.id">{{
-        data.forum
+        data.posts
       }}</router-link>
     </GlobalCard>
     <template #right-column
