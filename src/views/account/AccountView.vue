@@ -101,7 +101,7 @@
         </div>
         <b> point(s)</b><br /><br />
         <DoughnutChart
-          :chartData="statsBacteria"
+          :chartData="statsBacteria()"
           :options="{
             elements: {
               arc: {
@@ -178,7 +178,7 @@
         <b> point(s)</b>
         <br /><br />
         <BarChart
-          :chartData="statsPatojdur"
+          :chartData="statsPatojdur()"
           :options="{
             plugins: {
               legend: {
@@ -270,11 +270,7 @@
                 <img
                   draggable="false"
                   @contextmenu.prevent
-                  :src="
-                    asset(`img/bbs/msg${
-                      message.new ? '_new' : ''
-                    }.svg`)
-                  "
+                  :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
                 />&nbsp;<UserLink :user="message.author" />
@@ -408,6 +404,9 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
+import api from "@/modules/api";
+import { fetchData, asset } from "@/utils";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 Chart.register(
@@ -464,6 +463,12 @@ function statsPatojdur() {
   };
 }
 
+fetchData(async () => {
+  // data.value = (await api.get(`account?lang=${navigator.language.split("-")[0]}`)).data;
+  // TODO remove
+  data.value = (await api.get(`http://localhost:5173/api/account.json`)).data;
+});
+
 // /api/account.json
 // meta title section.account
 </script>
@@ -497,10 +502,11 @@ function statsPatojdur() {
 }
 
 .games {
-  column-count: 2;
+  column-count: 3;
 }
 
 .number {
   display: inline-block;
+  white-space: nowrap;
 }
 </style>

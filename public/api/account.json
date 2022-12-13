@@ -1,5 +1,13 @@
 {
   "username": "Tigriz",
+  "id": 3,
+  "level": 25,
+  "gender": "chimbo",
+  "motto": "Nitens lux, horrenda procella, tenebris aeternis involuta",
+  "centres": ["Musique", "informatique", "mathématiques", "Sayaka"],
+  "website": "http://last.fm/user/Tigriz",
+  "emote": "zzz",
+  "ppt": 2576,
   "look": {
     "avatar": 0,
     "emote": "zzz",
@@ -10,843 +18,4969 @@
     "item1": 868,
     "item2": 938
   },
-  "id": 3,
   "items": {
     "hat": [
-      { "id": 1, "name": "", "nb": 1 },
-      { "id": 2, "name": "Bonnet de marin", "nb": 1, "rarity": "rare" },
-      { "id": 3, "name": "Toque orientale", "nb": 1, "rarity": "mythic" },
+      {
+        "id": 1,
+        "name": "",
+        "nb": 1
+      },
+      {
+        "id": 2,
+        "name": "Sailor cap",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 3,
+        "name": "Oriental touch",
+        "nb": 1,
+        "rarity": "common"
+      },
       {
         "id": 4,
-        "name": "Petites cornes blanches",
+        "name": "Little white horns",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 5,
+        "name": "Bunny ears",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 6,
+        "name": "Knot in the hair",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Silky cat ears",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 8,
+        "name": "Bull horns",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 9,
+        "name": "Orange afro haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Afro ball",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 11,
+        "name": "Hippie haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 12,
+        "name": "Robot fins",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 13,
+        "name": "Robot sensor fins",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 14,
+        "name": "Robot head",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 15,
+        "name": "Short mecha fins",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 16,
+        "name": "Turban rose",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 17,
+        "name": "Red buns",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 18,
+        "name": "Heart-catching haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 19,
+        "name": "Carrot pigtail haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 20,
+        "name": "Coupe mini-dreadlocks",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 21,
+        "name": "Rastafarian hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 22,
+        "name": "Russian fur hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 23,
+        "name": "Canadian toque",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 24,
+        "name": "Bowler hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Party hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 26,
+        "name": "Kamai mask",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 27,
+        "name": "Wata mask",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 28,
+        "name": "Blonde haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 29,
+        "name": "White spiked haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 30,
+        "name": "Big white dreads",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 31,
+        "name": "Haircut with pigtails",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 32,
+        "name": "Bridal haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 33,
+        "name": "White hair with braid",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 34,
+        "name": "White tintin haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 35,
+        "name": "Haircut with duvets",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 36,
+        "name": "Fashion spike haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 50,
+        "name": "Orange turban",
+        "nb": 6,
+        "rarity": "mythic"
+      },
+      {
+        "id": 51,
+        "name": "Christmas hat",
+        "nb": 1,
+        "rarity": "mythic"
+      },
+      {
+        "id": 53,
+        "name": "Supporter hat",
+        "nb": 2,
+        "rarity": "mythic"
+      },
+      {
+        "id": 54,
+        "name": "Supporter hat",
+        "nb": 1,
+        "rarity": "mythic"
+      },
+      {
+        "id": 55,
+        "name": "Red redromic cap",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 56,
+        "name": "Blue redromic cap",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 57,
+        "name": "Hat aloha i",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 58,
+        "name": "Vahine haircut aloha i",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 59,
+        "name": "Haircut aloha ii",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 60,
+        "name": "Vahine haircute aloha ii",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 64,
+        "name": "Wild west hat i",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 66,
+        "name": "Big basta hat i",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 67,
+        "name": "Wild west hat ii",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 68,
+        "name": "Wild west hat ii",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 69,
+        "name": "Wizard hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 70,
+        "name": "Vampire hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 71,
+        "name": "Halloween hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 75,
+        "name": "Ketou's haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 77,
+        "name": "Oldskool hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 78,
+        "name": "Gangster hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 80,
+        "name": "Lovaz hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 81,
+        "name": "Lovaz hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 85,
+        "name": "Easter hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 88,
+        "name": "King's crown",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 89,
+        "name": "Mazo gold helmet",
+        "nb": 1,
+        "rarity": "mythic"
+      },
+      {
+        "id": 92,
+        "name": "Girl ultimoz haircut",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 93,
+        "name": "Boy ultimoz haircut",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 94,
+        "name": "7tiz hat",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 95,
+        "name": "7tiz hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 97,
+        "name": "Gothic hat",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 98,
+        "name": "Patoune hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 99,
+        "name": "Patoune hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 100,
+        "name": "Blue balaclava",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 101,
+        "name": "Gray balaclava",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 102,
+        "name": "Red balaclava",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 103,
+        "name": "Pink balaclava",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 104,
+        "name": "Ninjaz balaclava",
         "nb": 1,
         "rarity": "legendary"
       },
-      { "id": 5, "name": "Oreilles de lapin", "nb": 1, "rarity": "unique" },
-      { "id": 6, "name": "Noeud dans les cheveux", "nb": 1 },
-      { "id": 7, "name": "Oreilles de chat soyeuses", "nb": 1 },
-      { "id": 8, "name": "Cornes de taureau", "nb": 1 },
-      { "id": 9, "name": "Coupe afro orange", "nb": 1 },
-      { "id": 10, "name": "Boule afro", "nb": 1 },
-      { "id": 11, "name": "Coupe hippie", "nb": 1 },
-      { "id": 12, "name": "Ailettes robot", "nb": 1 },
-      { "id": 13, "name": "Ailettes capteurs robot", "nb": 1 },
-      { "id": 14, "name": "T\u00eate robot", "nb": 1 },
-      { "id": 15, "name": "Ailettes mecha courtes", "nb": 1 },
-      { "id": 16, "name": "Turban rose", "nb": 1 },
-      { "id": 17, "name": "Chignons rouges", "nb": 1 },
-      { "id": 18, "name": "Coupe accroche-coeur", "nb": 1 },
-      { "id": 19, "name": "Coupe \u00e0 nattes carotte", "nb": 1 },
-      { "id": 20, "name": "Coupe mini-dreadlocks", "nb": 1 },
-      { "id": 21, "name": "Chapeau rastafari", "nb": 1 },
-      { "id": 22, "name": "Toque en fourrure russe", "nb": 1 },
-      { "id": 23, "name": "Toque canadienne", "nb": 1 },
-      { "id": 24, "name": "Chapeau melon", "nb": 1 },
-      { "id": 25, "name": "Bonnet de f\u00eate", "nb": 1 },
-      { "id": 26, "name": "Masque kamai", "nb": 1 },
-      { "id": 27, "name": "Masque wata", "nb": 1 },
-      { "id": 28, "name": "Coupe blonde", "nb": 1 },
-      { "id": 29, "name": "Coupe \u00e0 pics blanche", "nb": 1 },
-      { "id": 30, "name": "Grosses dreads blanches", "nb": 1 },
-      { "id": 31, "name": "Coupe \u00e0 couettes courtes", "nb": 1 },
-      { "id": 32, "name": "Coupe de mari\u00e9e", "nb": 1 },
-      { "id": 33, "name": "Cheveux blancs avec natte", "nb": 1 },
-      { "id": 34, "name": "Coupe tintin blanche", "nb": 1 },
-      { "id": 35, "name": "Coupe avec couettes", "nb": 1 },
-      { "id": 36, "name": "Coupe \u00e0 pics fashion", "nb": 1 },
-      { "id": 46, "name": "Caca sur la t\u00eate", "nb": 1 },
-      { "id": 50, "name": "Turban orange", "nb": 6 },
-      { "id": 51, "name": "Chapeau nowel", "nb": 1 },
-      { "id": 53, "name": "Chapeau supporter", "nb": 1 },
-      { "id": 54, "name": "Chapeau supporter", "nb": 1 },
-      { "id": 55, "name": "Casquette redromic rouge", "nb": 1 },
-      { "id": 56, "name": "Casquette redromic bleue", "nb": 1 },
-      { "id": 57, "name": "Bob aloha i", "nb": 1 },
-      { "id": 58, "name": "Coupe vahin\u00e9 aloha i", "nb": 2 },
-      { "id": 59, "name": "Coupe aloha ii", "nb": 1 },
-      { "id": 60, "name": "Coupe vahin\u00e9 aloha ii", "nb": 1 },
-      { "id": 64, "name": "Chapeau far west i", "nb": 2 },
-      { "id": 66, "name": "Chapeau big basta i", "nb": 1 },
-      { "id": 67, "name": "Chapeau far-west ii", "nb": 1 },
-      { "id": 68, "name": "Chapeau far-west ii", "nb": 2 },
-      { "id": 69, "name": "Chapeau sorcier", "nb": 1 },
-      { "id": 70, "name": "Chapeau vampire", "nb": 1 },
-      { "id": 71, "name": "Chapeau halloween", "nb": 1 },
-      { "id": 75, "name": "Coupe ketou", "nb": 1 },
-      { "id": 77, "name": "Chapeau oldskool", "nb": 1 },
-      { "id": 78, "name": "Chapeau gangstar", "nb": 1 },
-      { "id": 80, "name": "Chapeau lovaz", "nb": 1 },
-      { "id": 81, "name": "Chapeau lovaz", "nb": 1 },
-      { "id": 85, "name": "Chapeau p\u00e2ques", "nb": 1 },
-      { "id": 88, "name": "Couronne du king", "nb": 1 },
-      { "id": 89, "name": "Casque mazo or", "nb": 1 },
-      { "id": 92, "name": "Coupe ultimoz fille", "nb": 1 },
-      { "id": 93, "name": "Coupe ultimoz mec", "nb": 1 },
-      { "id": 94, "name": "Chapeau 7tiz", "nb": 1 },
-      { "id": 95, "name": "Chapeau 7tiz", "nb": 1 },
-      { "id": 97, "name": "Chapeau goth", "nb": 2 },
-      { "id": 98, "name": "Chapeau patoune", "nb": 1 },
-      { "id": 99, "name": "Chapeau patoune", "nb": 1 },
-      { "id": 100, "name": "Kagoul bleue", "nb": 1 },
-      { "id": 101, "name": "Cagoule grise", "nb": 1 },
-      { "id": 102, "name": "Kagoul rouge", "nb": 3 },
-      { "id": 103, "name": "Kagoul rose", "nb": 2 },
-      { "id": 104, "name": "Cagoule ninjaz yin-yang", "nb": 1 },
-      { "id": 105, "name": "Chapeau ninjaz anonyme", "nb": 1 },
-      { "id": 106, "name": "Chapo nowel", "nb": 1 },
-      { "id": 108, "name": "Bonnet lutin glace", "nb": 1 },
-      { "id": 109, "name": "Coupe princesse glace", "nb": 1 },
-      { "id": 110, "name": "Bonnet lutin terre", "nb": 2 },
-      { "id": 111, "name": "Coupe princesse terre", "nb": 2 },
-      { "id": 114, "name": "Chapeau harajuku", "nb": 1 },
-      { "id": 115, "name": "Chapeau harajuku", "nb": 1 },
-      { "id": 118, "name": "Cr\u00eate color\u00e9e punk", "nb": 1 },
-      { "id": 119, "name": "Coupe punkette chapati", "nb": 1 },
-      { "id": 122, "name": "Chapeau mariage", "nb": 1 },
-      { "id": 124, "name": "Coupe de feu carnaval rio", "nb": 1 },
-      { "id": 125, "name": "Parure rouge carnaval", "nb": 1 },
-      { "id": 126, "name": "Chapeau p\u00e9p\u00e9", "nb": 1 },
-      { "id": 128, "name": "Casquette bboyz classic", "nb": 1 },
-      { "id": 129, "name": "Casquette bboyz fille", "nb": 1 },
-      { "id": 130, "name": "Chapeau saint-patrick", "nb": 1 },
-      { "id": 131, "name": "Chapeau saint-patrick", "nb": 1 },
-      { "id": 132, "name": "Chapeau cromignon", "nb": 1 },
-      { "id": 135, "name": "Chapeau jardinage", "nb": 1 },
-      { "id": 136, "name": "Oreilles choco lait", "nb": 1 },
-      { "id": 137, "name": "Oreilles choco noeud bleu", "nb": 2 },
-      { "id": 138, "name": "Oreilles choco noeud lila", "nb": 2 },
-      { "id": 141, "name": "Chapeau chocolapin", "nb": 1 },
-      { "id": 142, "name": "Chapeau chocolapin", "nb": 1 },
-      { "id": 143, "name": "Chapeau chocolapin", "nb": 1 },
-      { "id": 144, "name": "Chapeau chocolapin", "nb": 2 },
-      { "id": 145, "name": "Chapeau chocolapin", "nb": 1 },
-      { "id": 148, "name": "Chapeau peplum", "nb": 4 },
-      { "id": 149, "name": "Chapeau peplum", "nb": 4 },
-      { "id": 150, "name": "Casque gladiateur bleu", "nb": 1 },
-      { "id": 156, "name": "Afro lovaz", "nb": 1 },
-      { "id": 158, "name": "Coupe rasta", "nb": 1 },
-      { "id": 160, "name": "Coupe sayan blanche", "nb": 1 },
-      { "id": 165, "name": "Manga hunter", "nb": 1 },
-      { "id": 166, "name": "Manga punky", "nb": 2 },
-      { "id": 168, "name": "Chapeau hockey bleu", "nb": 1 },
-      { "id": 169, "name": "Chapeau hockey rouge", "nb": 1 },
-      { "id": 171, "name": "Chapeau mousquetaire", "nb": 2 },
-      { "id": 172, "name": "Chapeau mousquetaire", "nb": 2 },
-      { "id": 173, "name": "Chapeau agent X", "nb": 1 },
-      { "id": 174, "name": "Chapeau agent X", "nb": 1 },
-      { "id": 175, "name": "Chapeau pompier", "nb": 3 },
-      { "id": 179, "name": "Chapeau foot us", "nb": 1 },
-      { "id": 180, "name": "Chapeau foot us", "nb": 1 },
-      { "id": 182, "name": "Chapeau sherazad", "nb": 1 },
-      { "id": 184, "name": "Coiffure chaotiz", "nb": 1 },
-      { "id": 185, "name": "Casquette cheveux rockaz", "nb": 2 },
-      { "id": 186, "name": "Cheveux \u00e9lectriques rock", "nb": 1 },
-      { "id": 189, "name": "Emoz coupe seule", "nb": 1 },
-      { "id": 190, "name": "Coupe de cheveux emoz", "nb": 1 },
-      { "id": 192, "name": "Chapeau hippiz", "nb": 1 },
-      { "id": 193, "name": "Animo hippo", "nb": 1 },
-      { "id": 195, "name": "Animo ham", "nb": 1 },
-      { "id": 196, "name": "Animo cat", "nb": 1 },
-      { "id": 197, "name": "Chapeau animo bat", "nb": 2 },
-      { "id": 198, "name": "Chapeau robotiz", "nb": 1 },
-      { "id": 201, "name": "Chapeau pharaon", "nb": 1 },
-      { "id": 202, "name": "Chapeau apache", "nb": 1 },
-      { "id": 203, "name": "Chapeau apache", "nb": 1 },
-      { "id": 208, "name": "Sombrero desperadoz", "nb": 1 },
-      { "id": 211, "name": "Chapeau cosmoz", "nb": 1 },
-      { "id": 212, "name": "Coiffure barbare", "nb": 1 },
-      { "id": 213, "name": "Chapeau barbare", "nb": 1 },
-      { "id": 218, "name": "Chapeau cuisto crado", "nb": 1 },
-      { "id": 220, "name": "Chapeau magik druide", "nb": 4 },
-      { "id": 224, "name": "Chapeau niouzeur", "nb": 2 },
-      { "id": 226, "name": "Pique fashionz blond", "nb": 3 },
-      { "id": 228, "name": "Pique fashionz star", "nb": 3 },
-      { "id": 229, "name": "Casque de chantier", "nb": 2 },
-      { "id": 232, "name": "Chapeau fighter judo", "nb": 1 },
-      { "id": 233, "name": "Chapeau bigup lascar", "nb": 1 },
-      { "id": 234, "name": "Chapeau bigup starlette", "nb": 2 },
-      { "id": 237, "name": "D\u00e9mon cornu", "nb": 2 },
-      { "id": 238, "name": "D\u00e9mon bleu", "nb": 1 },
-      { "id": 241, "name": "Coupe m\u00e9dusa", "nb": 1 },
-      { "id": 242, "name": "Chapeau docteur", "nb": 1 },
-      { "id": 243, "name": "Chapeau infirmi\u00e8re", "nb": 1 },
-      { "id": 245, "name": "Bandage sur la t\u00eate", "nb": 2 },
-      { "id": 248, "name": "Chapeau clubz blonde", "nb": 2 },
-      { "id": 250, "name": "Chapeau clubz blonde", "nb": 2 },
-      { "id": 251, "name": "Chapeau urbanz fille", "nb": 1 },
-      { "id": 254, "name": "Chapeau ork princesse", "nb": 1 },
-      { "id": 255, "name": "Capuche eskimok", "nb": 2 },
-      { "id": 256, "name": "Chapeau doudoune grise", "nb": 1 },
-      { "id": 257, "name": "Chapeau doudoune rouge", "nb": 2 },
-      { "id": 262, "name": "Perou cute", "nb": 1 },
-      { "id": 265, "name": "Perou cendre", "nb": 3 },
-      { "id": 266, "name": "Chapeau pingouin", "nb": 2 },
-      { "id": 267, "name": "Manga princess roz", "nb": 1 },
-      { "id": 268, "name": "Manga princess noire", "nb": 1 },
-      { "id": 274, "name": "Manga rock noir", "nb": 1 },
-      { "id": 278, "name": "Manga hunter electric", "nb": 1 },
-      { "id": 279, "name": "Manga hunter martian", "nb": 1 },
-      { "id": 280, "name": "Manga punky rouge", "nb": 2 },
-      { "id": 283, "name": "Bboyz mec bleu", "nb": 1 },
-      { "id": 285, "name": "Bboyz fille prune", "nb": 1 },
-      { "id": 289, "name": "Rock garage mec noir", "nb": 1 },
-      { "id": 290, "name": "Casquette rock garage", "nb": 2 },
-      { "id": 293, "name": "Rock garage fille brune", "nb": 3 },
-      { "id": 294, "name": "Chapeau rock goth", "nb": 2 },
-      { "id": 296, "name": "Chapeau goth violet", "nb": 2 },
-      { "id": 298, "name": "Rock goth fille rouge", "nb": 1 },
-      { "id": 299, "name": "Rock goth fille noire", "nb": 3 },
-      { "id": 301, "name": "Casquette etoile rouge", "nb": 1 },
-      { "id": 302, "name": "Casquette bboyz break", "nb": 1 },
-      { "id": 307, "name": "Yojimboz coupe geisha", "nb": 1 },
-      { "id": 310, "name": "Coupe emoz mec freestyle", "nb": 3 },
-      { "id": 311, "name": "Coupe emoz fille princess", "nb": 1 },
-      { "id": 312, "name": "Coupe emoz mec kyo", "nb": 1 },
-      { "id": 314, "name": "Bandana pirate", "nb": 2 },
-      { "id": 315, "name": "Coupe pirate", "nb": 1 },
-      { "id": 316, "name": "Coupe pirate rackham", "nb": 2 }
+      {
+        "id": 105,
+        "name": "Anonymous ninjaz hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 106,
+        "name": "Hat xmas",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 108,
+        "name": "Ice cream elf beanie",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 109,
+        "name": "Ice princess haircut",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 110,
+        "name": "Earth elf beanie",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 111,
+        "name": "Earth princess haircut",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 114,
+        "name": "Harajuku hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 115,
+        "name": "Harajuku hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 118,
+        "name": "Punk colorful crest",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 119,
+        "name": "Chimboz punk haircut",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 122,
+        "name": "Wedding hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 124,
+        "name": "Haircut rio's carnival",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 125,
+        "name": "Carnival red adornment",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 126,
+        "name": "Grandpa hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 128,
+        "name": "Bboyz classic cap",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 129,
+        "name": "Bboyz girl cap",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 130,
+        "name": "St. patrick's hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 131,
+        "name": "St. patrick's hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 132,
+        "name": "Caveman hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 133,
+        "name": "Caveman hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 135,
+        "name": "Gardening hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 136,
+        "name": "Milk chocolate ears",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 137,
+        "name": "Blue bow chocolate ears",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 138,
+        "name": "Choco lila knot ears",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 141,
+        "name": "Chocolate rabbit hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 142,
+        "name": "Chocolate rabbit hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 143,
+        "name": "Chocolate rabbit hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 144,
+        "name": "Chocolate rabbit hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 145,
+        "name": "Chocolate rabbit hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 146,
+        "name": "Chocolate rabbit hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 148,
+        "name": "Peplum hat",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 149,
+        "name": "Peplum hat",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 150,
+        "name": "Blue gladiator helmet",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 151,
+        "name": "Dubstyle",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 155,
+        "name": "Mighty dread haircut",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 156,
+        "name": "Afro lovaz",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 157,
+        "name": "Rasta cap and dreads",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 158,
+        "name": "Rasta haircut",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 160,
+        "name": "White sayan haircut",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 162,
+        "name": "Manga princess",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 165,
+        "name": "Manga hunter",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 166,
+        "name": "Manga punky",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 168,
+        "name": "Blue hockey hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 169,
+        "name": "Red hockey hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 170,
+        "name": "Blue hockey hat",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 171,
+        "name": "Musketeer hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 172,
+        "name": "Musketeer hat",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 173,
+        "name": "Agent x hat",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 174,
+        "name": "Agent x hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 175,
+        "name": "Firefighter hat",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 179,
+        "name": "Chapeau foot us",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 180,
+        "name": "Chapeau foot us",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 182,
+        "name": "Sherazad hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 184,
+        "name": "Chaotiz hairstyle",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 185,
+        "name": "Rockaz hair cap",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 186,
+        "name": "Electric rock hair",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 189,
+        "name": "Emoz haircut alone",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 190,
+        "name": "Emoz haircut",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 191,
+        "name": "Hippie hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 192,
+        "name": "Hippie hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 193,
+        "name": "Hippopotamus hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 195,
+        "name": "Hamster hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 196,
+        "name": "Cat hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 197,
+        "name": "Bat hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 198,
+        "name": "Robotiz hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 199,
+        "name": "Robotiz hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 201,
+        "name": "Pharaoh hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 202,
+        "name": "Apache hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 203,
+        "name": "Apache hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 208,
+        "name": "Sombrero desperadoz",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 211,
+        "name": "Cosmoz hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 212,
+        "name": "Barbarian hairstyle",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 213,
+        "name": "Barbarian hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 218,
+        "name": "Filthy cook hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 220,
+        "name": "Druid magick hat",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 224,
+        "name": "Newser hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 226,
+        "name": "Pique trendy blond",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 228,
+        "name": "Pique trendy star",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 229,
+        "name": "Construction helmet",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 230,
+        "name": "Judo fighter haircut",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 232,
+        "name": "Chapeau fighter judo",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 233,
+        "name": "Lascar bigup hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 234,
+        "name": "Bigup starlet hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 235,
+        "name": "Casque fantasy hero",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 237,
+        "name": "Horned demon",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 238,
+        "name": "Blue demon",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 241,
+        "name": "Medusa haircut",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 242,
+        "name": "Doctor hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 243,
+        "name": "Nurse hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 245,
+        "name": "Bandage on the head",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 248,
+        "name": "Blonde clubz hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 249,
+        "name": "Brown clubz hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 250,
+        "name": "Blonde clubz hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 251,
+        "name": "Girl's urbanz hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 254,
+        "name": "Princess ork hat",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 255,
+        "name": "Eskimo hood",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 256,
+        "name": "Gray puffer hat",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 257,
+        "name": "Red puffer hat",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 259,
+        "name": "Camo puffer hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 260,
+        "name": "Pinky puffer hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 261,
+        "name": "Azure puffer hat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 262,
+        "name": "Perou cute",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 265,
+        "name": "Peru ash",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 266,
+        "name": "Penguin hat",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 267,
+        "name": "Manga princess roz",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 268,
+        "name": "Black princess manga",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 274,
+        "name": "Black manga rock",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 278,
+        "name": "Manga hunter electric",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 279,
+        "name": "Manga hunter martian",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 280,
+        "name": "Manga punky rouge",
+        "nb": 6,
+        "rarity": "common"
+      },
+      {
+        "id": 283,
+        "name": "Bboyz blue guy",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 285,
+        "name": "Plum girl bboyz",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 289,
+        "name": "Rock garage black guy",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 290,
+        "name": "Garage rock cap",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 293,
+        "name": "Rock garage brunette girl",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 294,
+        "name": "Chapeau rock goth",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 295,
+        "name": "Rock goth guy red",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 296,
+        "name": "Purple goth hat",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 298,
+        "name": "Rock goth girl red",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 299,
+        "name": "Rock goth black girl",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 301,
+        "name": "Red star cap",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 302,
+        "name": "Bboyz break cap",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 307,
+        "name": "Yojimboz coupe geisha",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 309,
+        "name": "Yojimboz bride hat",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 310,
+        "name": "Freestyle emoz haircut",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 311,
+        "name": "Princess emoz haircut",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 312,
+        "name": "Haircut emoz kyo",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 314,
+        "name": "Pirate bandana",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 315,
+        "name": "Pirate haircut",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 316,
+        "name": "Coupe pirate rackham",
+        "nb": 2,
+        "rarity": "unique"
+      }
     ],
     "body": [
-      { "id": 318, "name": "Corps par d\u00e9fault", "nb": 1 },
-      { "id": 319, "name": "Corps jaune", "nb": 1 },
-      { "id": 320, "name": "Corps vert rayures", "nb": 1 },
-      { "id": 321, "name": "Corps rose", "nb": 1 },
-      { "id": 322, "name": "Slip rouge du d\u00e9butant", "nb": 1 },
-      { "id": 323, "name": "Corps violet", "nb": 1 },
-      { "id": 324, "name": "Corps bleu-ciel", "nb": 1 },
-      { "id": 325, "name": "Corps robotique", "nb": 1 },
-      { "id": 326, "name": "Corps robotique", "nb": 1 },
-      { "id": 327, "name": "Costard du noob", "nb": 1 },
-      { "id": 328, "name": "Robe rose de noob", "nb": 1 },
-      { "id": 329, "name": "Robe noire", "nb": 1 },
-      { "id": 330, "name": "Corps bleu", "nb": 1 },
-      { "id": 331, "name": "Corps gris", "nb": 1 },
-      { "id": 332, "name": "Corps noir", "nb": 1 },
-      { "id": 333, "name": "Corps de patate", "nb": 1 },
-      { "id": 334, "name": "Corps de z\u00e8bre", "nb": 1 },
-      { "id": 335, "name": "Corps z\u00e9br\u00e9 jaune", "nb": 1 },
-      { "id": 336, "name": "Tshirt 21", "nb": 1 },
-      { "id": 337, "name": "Corps vert ray\u00e9", "nb": 1 },
-      { "id": 338, "name": "Corps rouge ray\u00e9", "nb": 1 },
-      { "id": 339, "name": "Slip rouge avec ceinture", "nb": 1 },
-      { "id": 340, "name": "Slip vert avec ceinture", "nb": 1 },
-      { "id": 341, "name": "Pull vert", "nb": 1 },
-      { "id": 342, "name": "Echarpe rouge", "nb": 1 },
-      { "id": 343, "name": "Robe de jeune mari\u00e9e", "nb": 1 },
-      { "id": 348, "name": "Kimono des D\u00e9failleurs", "nb": 1 },
-      { "id": 353, "name": "Corps sapin guirlande", "nb": 3 },
-      { "id": 356, "name": "Corps kinderz", "nb": 1 },
-      { "id": 358, "name": "Corps m_jaune", "nb": 1 },
-      { "id": 364, "name": "Corps supporter", "nb": 2 },
-      { "id": 365, "name": "Corps supporter", "nb": 1 },
-      { "id": 366, "name": "Tenue redromic rouge", "nb": 1 },
-      { "id": 367, "name": "Tenue redromic bleue", "nb": 1 },
-      { "id": 368, "name": "Chemise hawaienne aloha i", "nb": 4 },
-      { "id": 369, "name": "Mumu hawaien aloha i", "nb": 1 },
-      { "id": 370, "name": "Pagne hawaien aloha ii", "nb": 1 },
-      { "id": 371, "name": "Robe v\u00e9g\u00e9tale aloha ii", "nb": 1 },
-      { "id": 372, "name": "Short de bain orange", "nb": 1 },
-      { "id": 373, "name": "Maillot de bain bleu", "nb": 1 },
-      { "id": 374, "name": "Mini short rouge", "nb": 1 },
-      { "id": 375, "name": "Maillot de bain 2 pi\u00e8ces", "nb": 1 },
-      { "id": 376, "name": "Maillot summer bleu", "nb": 1 },
-      { "id": 377, "name": "Maillot summer vert", "nb": 1 },
-      { "id": 379, "name": "Corps big basta i", "nb": 1 },
-      { "id": 381, "name": "Corps far-west ii", "nb": 1 },
-      { "id": 383, "name": "Sweat des Modopros", "nb": 1 },
-      { "id": 384, "name": "Corps sorcier", "nb": 1 },
-      { "id": 386, "name": "Corps vampire", "nb": 2 },
-      { "id": 388, "name": "Corps sorcier", "nb": 2 },
-      { "id": 389, "name": "Corps vampire", "nb": 1 },
-      { "id": 390, "name": "Tenue nowel", "nb": 1 },
-      { "id": 391, "name": "Robe nowel", "nb": 1 },
-      { "id": 393, "name": "Corps oldskool", "nb": 1 },
-      { "id": 396, "name": "Corps lovaz", "nb": 1 },
-      { "id": 397, "name": "Corps lovaz", "nb": 3 },
-      { "id": 398, "name": "Corps r\u00e9tro", "nb": 1 },
-      { "id": 399, "name": "Corps r\u00e9tro", "nb": 1 },
-      { "id": 400, "name": "Corps Paque point", "nb": 1 },
-      { "id": 401, "name": "Corps Paque fleuri", "nb": 2 },
-      { "id": 402, "name": "Corps Paque multicolore", "nb": 1 },
-      { "id": 403, "name": "Corps Paque bicolore", "nb": 2 },
-      { "id": 404, "name": "Corps p\u00e2ques", "nb": 1 },
-      { "id": 405, "name": "Corps p\u00e2ques", "nb": 3 },
-      { "id": 406, "name": "Corps p\u00e2ques", "nb": 2 },
-      { "id": 408, "name": "Yojimboz kimono okasan", "nb": 1 },
-      { "id": 409, "name": "Blouson ultimoz fille", "nb": 1 },
-      { "id": 410, "name": "Blouson ultimoz mec", "nb": 1 },
-      { "id": 412, "name": "Corps 7tiz", "nb": 1 },
-      { "id": 413, "name": "Maillot foot argentine", "nb": 1 },
-      { "id": 415, "name": "Maillot foot allemagne", "nb": 1 },
-      { "id": 417, "name": "Maillot foot espagne", "nb": 2 },
-      { "id": 418, "name": "Maillot foot angleterre", "nb": 1 },
-      { "id": 419, "name": "Maillot foot br\u00e9sil", "nb": 3 },
-      { "id": 424, "name": "Combinaison verte amfibiz", "nb": 5 },
-      { "id": 427, "name": "Corps playaz", "nb": 1 },
-      { "id": 428, "name": "Corps goth", "nb": 1 },
-      { "id": 429, "name": "Corps goth", "nb": 2 },
-      { "id": 430, "name": "Corps patoune", "nb": 2 },
-      { "id": 432, "name": "Kimono ninjaz sang", "nb": 1 },
-      { "id": 433, "name": "Kimono bleu ninjaz", "nb": 1 },
-      { "id": 436, "name": "Tenue lutin terre", "nb": 1 },
-      { "id": 437, "name": "Robe princesse terre", "nb": 1 },
-      { "id": 440, "name": "Corps harajuku", "nb": 1 },
-      { "id": 444, "name": "Tenue punk", "nb": 2 },
-      { "id": 445, "name": "Tenue punkette", "nb": 1 },
-      { "id": 446, "name": "Corps courtiz", "nb": 1 },
-      { "id": 447, "name": "Corps courtiz", "nb": 2 },
-      { "id": 448, "name": "Corps mariage", "nb": 5 },
-      { "id": 449, "name": "Corps mariage", "nb": 1 },
-      { "id": 450, "name": "Tenue carnaval rio", "nb": 2 },
-      { "id": 451, "name": "Maillot carnaval de rio", "nb": 1 },
-      { "id": 452, "name": "Corps p\u00e9p\u00e9", "nb": 2 },
-      { "id": 455, "name": "Bboyz camouflage", "nb": 1 },
-      { "id": 457, "name": "Corps saint-patrick", "nb": 1 },
-      { "id": 458, "name": "Corps cromignon", "nb": 1 },
-      { "id": 464, "name": "Corps chocolapin", "nb": 2 },
-      { "id": 465, "name": "Corps chocolapin", "nb": 1 },
-      { "id": 466, "name": "Corps chocolapin", "nb": 2 },
-      { "id": 468, "name": "Corps chocolapin", "nb": 1 },
-      { "id": 469, "name": "Corps chocolapin", "nb": 1 },
-      { "id": 470, "name": "Corps peplum", "nb": 1 },
-      { "id": 471, "name": "Corps peplum", "nb": 3 },
-      { "id": 472, "name": "Tenue de gladiateur", "nb": 1 },
-      { "id": 474, "name": "Corps alienator", "nb": 1 },
-      { "id": 475, "name": "Maillot jamaica rasta", "nb": 3 },
-      { "id": 477, "name": "Corps miniking", "nb": 1 },
-      { "id": 478, "name": "Corps hockey rouge", "nb": 2 },
-      { "id": 480, "name": "Corps hockey rouge", "nb": 4 },
-      { "id": 483, "name": "Corps mousquetaire", "nb": 1 },
-      { "id": 484, "name": "Corps agent X", "nb": 2 },
-      { "id": 485, "name": "Corps agent X", "nb": 3 },
-      { "id": 487, "name": "Corps pyromane", "nb": 1 },
-      { "id": 489, "name": "Robe de princesse heroic", "nb": 1 },
-      { "id": 490, "name": "Corps foot us", "nb": 2 },
-      { "id": 491, "name": "Corps foot us", "nb": 1 },
-      { "id": 492, "name": "Corps sherazad", "nb": 2 },
-      { "id": 496, "name": "Sweat rockaz", "nb": 1 },
-      { "id": 497, "name": "Tenue rockaz star", "nb": 1 },
-      { "id": 499, "name": "Look emoz robe squelette", "nb": 1 },
-      { "id": 500, "name": "Corps hippiz", "nb": 1 },
-      { "id": 502, "name": "Short summer noir jaune", "nb": 1 },
-      { "id": 505, "name": "Look summer par\u00e9o", "nb": 1 },
-      { "id": 507, "name": "Maillot bleu summer dive", "nb": 1 },
-      { "id": 510, "name": "Corps robotiz", "nb": 1 },
-      { "id": 512, "name": "Corps pharaon", "nb": 2 },
-      { "id": 514, "name": "Corps apache", "nb": 2 },
-      { "id": 516, "name": "Robe flamenca desperadaz", "nb": 2 },
-      { "id": 517, "name": "Corps cosmoz", "nb": 3 },
-      { "id": 518, "name": "Corps cosmoz", "nb": 1 },
-      { "id": 522, "name": "Uniforme boy rouge", "nb": 1 },
-      { "id": 524, "name": "Corps college girl", "nb": 1 },
-      { "id": 529, "name": "Corps cuisto cute", "nb": 1 },
-      { "id": 530, "name": "Corps magik druide", "nb": 1 },
-      { "id": 531, "name": "Corps magik merlin", "nb": 1 },
-      { "id": 536, "name": "Corps fighter judo", "nb": 1 },
-      { "id": 538, "name": "Corps bigup starlette", "nb": 1 },
-      { "id": 541, "name": "Ailes de d\u00e9mon", "nb": 1 },
-      { "id": 543, "name": "Ailes roses", "nb": 1 },
-      { "id": 544, "name": "Ailes grises", "nb": 1 },
-      { "id": 546, "name": "Corps infirmi\u00e8re", "nb": 2 },
-      { "id": 547, "name": "Clubz baggy", "nb": 1 },
-      { "id": 549, "name": "Corps urbanz fille", "nb": 1 },
-      { "id": 552, "name": "Corps ork princesse", "nb": 2 },
-      { "id": 553, "name": "Corps godzi", "nb": 2 },
-      { "id": 554, "name": "Veste eskimok", "nb": 2 },
-      { "id": 555, "name": "Veste eskimoz capuche", "nb": 1 },
-      { "id": 556, "name": "Corps doudoune grise", "nb": 3 },
-      { "id": 557, "name": "Corps doudoune rouge", "nb": 1 },
-      { "id": 560, "name": "Corps doudoune pinky", "nb": 3 },
-      { "id": 561, "name": "Corps doudoune azur", "nb": 1 },
-      { "id": 564, "name": "Yetiz gris", "nb": 1 },
-      { "id": 565, "name": "Yetiz blanc", "nb": 1 },
-      { "id": 566, "name": "Clubiz mec vert uranium", "nb": 2 },
-      { "id": 567, "name": "Clubiz mec death", "nb": 1 },
-      { "id": 568, "name": "Clubiz mec tekto rouge", "nb": 1 },
-      { "id": 569, "name": "Clubiz thunderbolt", "nb": 2 },
-      { "id": 571, "name": "Clubz breakingluv", "nb": 2 },
-      { "id": 572, "name": "Clubz fille luv violet", "nb": 3 },
-      { "id": 573, "name": "Clubz fille diamz bleu", "nb": 1 },
-      { "id": 575, "name": "Body bboyz mec bleu", "nb": 1 },
-      { "id": 577, "name": "Corps bboyz dark violet", "nb": 1 },
-      { "id": 579, "name": "Body emoz mec violet", "nb": 1 },
-      { "id": 581, "name": "Body emoz fille darkblue", "nb": 1 },
-      { "id": 583, "name": "Sweat des D\u00e9failleurs", "nb": 1 },
-      { "id": 584, "name": "Sweat des Agoraz", "nb": 1 },
-      { "id": 585, "name": "Sweat des Royaltiz", "nb": 1 },
-      { "id": 586, "name": "Sweat des Aideurs", "nb": 1 },
-      { "id": 587, "name": "Sweat des Chapafanz", "nb": 1 },
-      { "id": 589, "name": "Corps bboyz break", "nb": 2 },
-      { "id": 590, "name": "Corps bboyz fille yello", "nb": 1 },
-      { "id": 591, "name": "Corps bboyz guerillaz", "nb": 1 },
-      { "id": 593, "name": "Yojimboz armure guerrier", "nb": 1 },
-      { "id": 594, "name": "Yojimboz kimono geisha", "nb": 1 },
-      { "id": 595, "name": "Yojimboz kimono mari\u00e9", "nb": 1 },
-      { "id": 596, "name": "Yojimboz kimono mari\u00e9e", "nb": 1 },
-      { "id": 597, "name": "Look emoz mec freestyle", "nb": 2 },
-      { "id": 598, "name": "Look emoz fille princess", "nb": 2 },
-      { "id": 600, "name": "Look emoz fille kyo", "nb": 3 },
-      { "id": 602, "name": "Robe pirate bonaventure", "nb": 1 },
-      { "id": 603, "name": "Tenue pirate rackham", "nb": 1 },
-      { "id": 604, "name": "Tenue capitaine pirate", "nb": 1 },
-      { "id": 1018, "name": "Corps m bluzz", "nb": 1 },
-      { "id": 1019, "name": "Corps m buenoz", "nb": 1 },
-      { "id": 1020, "name": "Corps m vivioz", "nb": 1 },
-      { "id": 1021, "name": "Corps m burnz", "nb": 1 },
-      { "id": 1022, "name": "Corps m rozy", "nb": 1 },
-      { "id": 1023, "name": "Corps m flowerz", "nb": 1 },
-      { "id": 1024, "name": "Corps m zeus", "nb": 1 }
-    ],
-    "shoe": [
-      { "id": 606, "name": "Chaussures par d\u00e9faut", "nb": 1 },
-      { "id": 607, "name": "Baskets rouges \u00e0 bandes", "nb": 1 },
-      { "id": 608, "name": "Chaussures grises neutres", "nb": 1 },
-      { "id": 609, "name": "Chaussures bleues lacet", "nb": 1 },
-      { "id": 610, "name": "Chaussures noires", "nb": 1 },
-      { "id": 611, "name": "Babouches jaunes", "nb": 1 },
-      { "id": 612, "name": "Pattounes neko", "nb": 1 },
-      { "id": 613, "name": "Baskets roses", "nb": 1 },
-      { "id": 614, "name": "Baskets dor\u00e9es", "nb": 1 },
-      { "id": 615, "name": "Chaussure buchette sapin", "nb": 4 },
-      { "id": 618, "name": "Chaussure far-west ii", "nb": 1 },
-      { "id": 619, "name": "Chaussure far-west ii", "nb": 1 },
-      { "id": 620, "name": "Chaussure mafiaz classe", "nb": 1 },
-      { "id": 622, "name": "Chaussure far west i", "nb": 2 },
-      { "id": 623, "name": "Chaussure far west i", "nb": 1 },
-      { "id": 624, "name": "Basket nowel", "nb": 4 },
-      { "id": 625, "name": "Chaussure \u00e0 ponpon nowel", "nb": 2 },
-      { "id": 626, "name": "Chaussure supporter", "nb": 1 },
-      { "id": 627, "name": "Chaussure supporter", "nb": 1 },
-      { "id": 628, "name": "Baskets redromic rouges", "nb": 1 },
-      { "id": 629, "name": "Baskets redromic bleues", "nb": 1 },
-      { "id": 630, "name": "Tong v\u00e9g\u00e9tale aloha i", "nb": 1 },
-      { "id": 632, "name": "Petite tong aloha ii", "nb": 1 },
-      { "id": 633, "name": "Sandale \u00e0 fleur aloha ii", "nb": 2 },
-      { "id": 635, "name": "Chaussure vampire", "nb": 1 },
-      { "id": 636, "name": "Chaussure halloween", "nb": 1 },
-      { "id": 637, "name": "Chaussure sorcier", "nb": 1 },
-      { "id": 638, "name": "Chaussure vampire", "nb": 1 },
-      { "id": 639, "name": "Baskets noires blanches", "nb": 1 },
-      { "id": 642, "name": "Chaussure gangstar", "nb": 2 },
-      { "id": 644, "name": "Chaussure lovaz", "nb": 2 },
-      { "id": 645, "name": "Chaussure retro", "nb": 1 },
-      { "id": 646, "name": "Chaussure retro", "nb": 2 },
-      { "id": 648, "name": "Yojimboz gueta okasan", "nb": 1 },
-      { "id": 649, "name": "Baskets ultimoz fille", "nb": 1 },
-      { "id": 650, "name": "Baskets ultimoz mec", "nb": 1 },
-      { "id": 651, "name": "Chaussure 7tiz", "nb": 2 },
-      { "id": 652, "name": "Chaussure 7tiz", "nb": 1 },
-      { "id": 654, "name": "Palme de plong\u00e9e amfibiz", "nb": 1 },
-      { "id": 655, "name": "Chaussure goth", "nb": 1 },
-      { "id": 656, "name": "Chaussure goth", "nb": 1 },
-      { "id": 662, "name": "Ballerines f\u00e9\u00e9rik glace", "nb": 1 },
-      { "id": 664, "name": "Ballerines f\u00e9\u00e9rik terre", "nb": 2 },
-      { "id": 665, "name": "Bottes pirate robuste", "nb": 1 },
-      { "id": 667, "name": "Chaussure harajuku", "nb": 1 },
-      { "id": 669, "name": "Chaussure xin nian", "nb": 1 },
-      { "id": 671, "name": "Rangers lacets verts", "nb": 1 },
-      { "id": 673, "name": "Chaussure courtiz", "nb": 3 },
-      { "id": 675, "name": "Chaussure mariage", "nb": 1 },
-      { "id": 676, "name": "Chaussure mariage", "nb": 1 },
-      { "id": 677, "name": "Tong carnaval rio", "nb": 4 },
-      { "id": 678, "name": "Chaussures \u00e0 talons rio", "nb": 1 },
       {
-        "id": 679,
-        "name": "Chaussure dp\u00e9p\u00e9 m\u00e9m\u00e9",
+        "id": 318,
+        "name": "Corps par défault",
         "nb": 1
       },
-      { "id": 681, "name": "Basket bboyz classic", "nb": 4 },
-      { "id": 682, "name": "Basket bboyz classic", "nb": 1 },
-      { "id": 683, "name": "Chaussure saint-patrick", "nb": 1 },
-      { "id": 684, "name": "Chaussure saint-patrick", "nb": 1 },
-      { "id": 685, "name": "Chaussure cromignon", "nb": 1 },
-      { "id": 686, "name": "Chaussure cromignon", "nb": 3 },
-      { "id": 689, "name": "P-max rouge", "nb": 1 },
-      { "id": 690, "name": "P-max aqua", "nb": 2 },
-      { "id": 691, "name": "Shawk classic", "nb": 1 },
-      { "id": 693, "name": "Chaussure jardinage", "nb": 1 },
-      { "id": 694, "name": "Chaussure jardinage", "nb": 1 },
-      { "id": 697, "name": "Chaussure chocolapin", "nb": 2 },
-      { "id": 698, "name": "Pattes chocolapin noir", "nb": 1 },
-      { "id": 700, "name": "Chaussure peplum", "nb": 3 },
-      { "id": 701, "name": "Chaussure starlite", "nb": 3 },
-      { "id": 704, "name": "Sandales rasta", "nb": 1 },
-      { "id": 705, "name": "Chaussure hockey rouge", "nb": 2 },
-      { "id": 707, "name": "Chaussure hockey rouge", "nb": 1 },
-      { "id": 708, "name": "Chaussure hockey bleu", "nb": 1 },
-      { "id": 709, "name": "Chaussure mousquetaire", "nb": 1 },
-      { "id": 710, "name": "Chaussure mousquetaire", "nb": 2 },
-      { "id": 711, "name": "Chaussure agent X", "nb": 1 },
-      { "id": 712, "name": "Chaussure agent X", "nb": 1 },
-      { "id": 713, "name": "Chaussure pompier", "nb": 1 },
-      { "id": 715, "name": "Chausse chevalier-dragon", "nb": 2 },
-      { "id": 716, "name": "Ballerine princesse", "nb": 2 },
-      { "id": 717, "name": "Chaussure foot us", "nb": 1 },
-      { "id": 718, "name": "Chaussure foot us", "nb": 3 },
-      { "id": 721, "name": "Chaussure chaotiz", "nb": 1 },
-      { "id": 722, "name": "Chaussure chaotiz", "nb": 1 },
-      { "id": 723, "name": "Chaussures rockaz rouges", "nb": 2 },
-      { "id": 724, "name": "Chaussure rockaz kill", "nb": 1 },
-      { "id": 725, "name": "Botte emoz", "nb": 1 },
-      { "id": 728, "name": "Chaussure hippiz", "nb": 1 },
-      { "id": 729, "name": "Tong summer tatoo", "nb": 2 },
-      { "id": 732, "name": "Tong summer par\u00e9o", "nb": 1 },
-      { "id": 733, "name": "Tong summer salsa", "nb": 1 },
-      { "id": 735, "name": "Chaussure robotiz", "nb": 1 },
-      { "id": 736, "name": "Chaussure robotiz", "nb": 3 },
-      { "id": 737, "name": "Chaussure pharaon", "nb": 1 },
-      { "id": 738, "name": "Chaussure pharaon", "nb": 1 },
-      { "id": 739, "name": "Chaussure apache", "nb": 3 },
-      { "id": 740, "name": "Bottes en cuir desperadoz", "nb": 1 },
-      { "id": 741, "name": "Chaussures flamenca", "nb": 1 },
-      { "id": 742, "name": "Chaussure cosmoz", "nb": 1 },
-      { "id": 743, "name": "Chaussure cosmoz", "nb": 2 },
-      { "id": 744, "name": "Chaussure barbare", "nb": 4 },
-      { "id": 746, "name": "Chaussure college boy", "nb": 1 },
-      { "id": 748, "name": "Chaussure magik druide", "nb": 1 },
-      { "id": 750, "name": "Fashionz pink", "nb": 1 },
-      { "id": 751, "name": "Fashionz zebre", "nb": 2 },
-      { "id": 752, "name": "Fighter tiger", "nb": 1 },
-      { "id": 753, "name": "Fighter armada", "nb": 1 },
-      { "id": 754, "name": "Basket bigup lascar", "nb": 2 },
-      { "id": 755, "name": "Bottine bigup starlette", "nb": 1 },
-      { "id": 756, "name": "Chausse fantasy hero", "nb": 1 },
-      { "id": 758, "name": "Chaussure docteur", "nb": 2 },
-      { "id": 759, "name": "Chaussure infirmi\u00e8re", "nb": 1 },
-      { "id": 760, "name": "Basket urbanz fille", "nb": 3 },
-      { "id": 761, "name": "Basket urbanz mec", "nb": 1 },
-      { "id": 762, "name": "Chaussure ork princesse", "nb": 2 },
-      { "id": 763, "name": "Chaussure godzi", "nb": 1 },
-      { "id": 765, "name": "Chaussure doudoune grise", "nb": 1 },
-      { "id": 766, "name": "Chaussure doudoune rouge", "nb": 1 },
-      { "id": 768, "name": "Chaussure doudoune camo", "nb": 1 },
-      { "id": 770, "name": "Chaussure doudoune azur", "nb": 1 },
-      { "id": 775, "name": "Shoes bboyz mec break", "nb": 1 },
-      { "id": 776, "name": "Shoes bboyz fille yello", "nb": 2 },
-      { "id": 777, "name": "Shoes bboyz mec guerillaz", "nb": 1 },
-      { "id": 778, "name": "Chaussures Bboyz", "nb": 1 },
-      { "id": 780, "name": "Yojimboz gueta geisha", "nb": 1 },
-      { "id": 781, "name": "Yojimboz gueta mari\u00e9", "nb": 2 },
-      { "id": 783, "name": "Basket emoz freestyle", "nb": 1 },
-      { "id": 784, "name": "Shoes emoz princess", "nb": 2 },
-      { "id": 786, "name": "Chaussure emoz kyo", "nb": 1 },
-      { "id": 787, "name": "Botte pirate rouge", "nb": 2 },
-      { "id": 788, "name": "Bottines pirate", "nb": 1 },
-      { "id": 789, "name": "Botte pirate rackham", "nb": 2 },
-      { "id": 1010, "name": "Baskets classik bleu", "nb": 1 },
-      { "id": 1011, "name": "Baskets classik beiges", "nb": 1 },
-      { "id": 1012, "name": "Baskets classik vertes", "nb": 1 },
-      { "id": 1013, "name": "Baskets classik grises", "nb": 1 },
-      { "id": 1014, "name": "Baskets classik ocres", "nb": 1 },
-      { "id": 1015, "name": "Baskets classik dor\u00e9es", "nb": 2 },
-      { "id": 1016, "name": "Baskets classik oranges", "nb": 1 },
-      { "id": 1017, "name": "Baskets classik violettes", "nb": 1 }
+      {
+        "id": 319,
+        "name": "Yellow body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 320,
+        "name": "Body green stripes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 321,
+        "name": "Pink body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 322,
+        "name": "Beginner's red brief",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 323,
+        "name": "Purple body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 324,
+        "name": "Sky-blue body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 325,
+        "name": "Robotic body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 326,
+        "name": "Robotic body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 327,
+        "name": "Noob suit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 328,
+        "name": "Noob's pink dress",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 329,
+        "name": "Black dress",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 330,
+        "name": "Blue body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 331,
+        "name": "Gray body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 332,
+        "name": "Black body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 333,
+        "name": "Potato body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 334,
+        "name": "Zebra body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 335,
+        "name": "Yellow striped body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 336,
+        "name": "Tshirt 21",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 337,
+        "name": "Striped green body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 338,
+        "name": "Striped red body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 339,
+        "name": "Red brief with belt",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 340,
+        "name": "Green brief with belt",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 341,
+        "name": "Pull vert",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 342,
+        "name": "Red scarf",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 343,
+        "name": "Bride dress",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 348,
+        "name": "Defaulter kimono",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 353,
+        "name": "Garland tree body",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 356,
+        "name": "Body childz",
+        "nb": 1,
+        "rarity": "mythic"
+      },
+      {
+        "id": 358,
+        "name": "Body m_yellow",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 363,
+        "name": "Corps far west i",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 364,
+        "name": "Body bear",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 365,
+        "name": "Body bear",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 366,
+        "name": "Redromic outfit red",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 367,
+        "name": "Blue redromic outfit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 368,
+        "name": "Chemise hawaienne love i",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 369,
+        "name": "Mumu hawaien loves i",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 370,
+        "name": "Pagne hawaien aloha ii",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 371,
+        "name": "Vegetable dress first ii",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 372,
+        "name": "Orange swim shorts",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 373,
+        "name": "Blue swimsuit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 374,
+        "name": "Mini short rouge",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 375,
+        "name": "Swimsuit 2 pieces",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 376,
+        "name": "Blue summer jersey",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 377,
+        "name": "Green summer jersey",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 378,
+        "name": "Corps big basta i",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 379,
+        "name": "Corps big basta i",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 381,
+        "name": "Body far west ii",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 383,
+        "name": "Modopros sweatshirt",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 384,
+        "name": "Wizarding body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 386,
+        "name": "Vampire body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 388,
+        "name": "Body witch",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 389,
+        "name": "Vampire body",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 390,
+        "name": "Christmas outfit",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 391,
+        "name": "Christmas dress",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 392,
+        "name": "Corps oldskool",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 393,
+        "name": "Corps oldskool",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 396,
+        "name": "Lovaz body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 397,
+        "name": "Lovaz body",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 398,
+        "name": "Retro body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 399,
+        "name": "Retro body",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 400,
+        "name": "Corps paque point",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 401,
+        "name": "Flowery easter body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 402,
+        "name": "Paque multicolored body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 403,
+        "name": "Two-tone paque body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 404,
+        "name": "Easter body",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 405,
+        "name": "Easter body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 406,
+        "name": "Easter body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 407,
+        "name": "Yojimboz kimono chogoune",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 408,
+        "name": "Yo jimbo z kimono okasan",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 409,
+        "name": "Girl's ultimoz jacket",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 410,
+        "name": "Ultimoz jacket man",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 412,
+        "name": "7tiz body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 413,
+        "name": "Argentina football shirt",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 415,
+        "name": "Germany football shirt",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 416,
+        "name": "France football shirt",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 417,
+        "name": "Spain football shirt",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 418,
+        "name": "England football shirt",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 419,
+        "name": "Brazil football shirt",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 420,
+        "name": "Portugal football shirt",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 424,
+        "name": "Amfibiz green jumpsuit",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 427,
+        "name": "Playaz body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 428,
+        "name": "Corps goth",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 429,
+        "name": "Corps goth",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 430,
+        "name": "Corps tread",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 432,
+        "name": "Kimono ninjaz sang",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 433,
+        "name": "Ninja blue kimono",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 436,
+        "name": "Earth leprechaun outfit",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 437,
+        "name": "Earth princess dress",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 438,
+        "name": "Pirate outfit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 439,
+        "name": "Sailor pirate outfit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 440,
+        "name": "Corps harajuku",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 441,
+        "name": "Corps harajuku",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 442,
+        "name": "Corps new year",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 443,
+        "name": "Corps new year",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 444,
+        "name": "Punk outfit",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 445,
+        "name": "Tenue punkette",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 446,
+        "name": "Courted body",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 447,
+        "name": "Courted body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 448,
+        "name": "Wedding body",
+        "nb": 5,
+        "rarity": "rare"
+      },
+      {
+        "id": 449,
+        "name": "Wedding body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 450,
+        "name": "Tenue carnival river",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 451,
+        "name": "Rio carnival leotard",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 452,
+        "name": "Grandpa body",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 453,
+        "name": "Granny body",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 455,
+        "name": "Bboyz camouflage",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 457,
+        "name": "St. patrick's corps",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 458,
+        "name": "Cromignon body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 459,
+        "name": "Cromignon body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 461,
+        "name": "Body gardening",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 464,
+        "name": "Chocolate rabbit body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 465,
+        "name": "Chocolate rabbit body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 466,
+        "name": "Chocolate rabbit body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 467,
+        "name": "Chocolate rabbit body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 468,
+        "name": "Chocolate rabbit body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 469,
+        "name": "Chocolate rabbit body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 470,
+        "name": "Peplum body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 471,
+        "name": "Peplum body",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 472,
+        "name": "Gladiator outfit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 474,
+        "name": "Corps alienator",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 475,
+        "name": "Rasta jamaica jersey",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 476,
+        "name": "Robette jamaica rasta",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 477,
+        "name": "Body miniking",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 478,
+        "name": "Red hockey body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 480,
+        "name": "Red hockey body",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 483,
+        "name": "Musketeer corps",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 484,
+        "name": "Body agent x",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 485,
+        "name": "Body agent x",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 486,
+        "name": "Fire brigade",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 487,
+        "name": "Pyromaniac body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 488,
+        "name": "Dragon knight armor",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 489,
+        "name": "Heroic princess dress",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 490,
+        "name": "Corps foot us",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 491,
+        "name": "Corps foot us",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 492,
+        "name": "Corps sherazad",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 495,
+        "name": "Chaotiz body",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 496,
+        "name": "Sweat rockaz",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 497,
+        "name": "Rockaz star outfit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 499,
+        "name": "Look emoz skeleton dress",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 500,
+        "name": "Body hippiz",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 501,
+        "name": "Body hippiz",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 502,
+        "name": "Black yellow summer short",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 503,
+        "name": "Short summer camouflage",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 505,
+        "name": "Look summer paréo",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 507,
+        "name": "Blue summer swimsuit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 510,
+        "name": "Corps robotiz",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 511,
+        "name": "Pharaoh body",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 512,
+        "name": "Pharaoh body",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 513,
+        "name": "Corps apache",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 514,
+        "name": "Corps apache",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 515,
+        "name": "Dim desperate",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 516,
+        "name": "Desperate flamenco robe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 517,
+        "name": "Cosmoz body",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 518,
+        "name": "Cosmoz body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 520,
+        "name": "Barbaric body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 522,
+        "name": "Red boy uniform",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 524,
+        "name": "Corps college girl",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 527,
+        "name": "Chef cook body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 529,
+        "name": "Cute cook body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 530,
+        "name": "Druid magick body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 531,
+        "name": "Merlin magick body",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 532,
+        "name": "Fashionz tecred",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 533,
+        "name": "Fashionz tecblack",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 536,
+        "name": "Corps fighter judo",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 538,
+        "name": "Body bigup starlet",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 539,
+        "name": "Armure fantasy hero",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 540,
+        "name": "Robe fantasy fatal",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 541,
+        "name": "Demon wings",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 543,
+        "name": "Pink wings",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 544,
+        "name": "Gray wings",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 545,
+        "name": "Body doctor",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 546,
+        "name": "Nurse body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 547,
+        "name": "Clubz baggy",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 548,
+        "name": "Clubz topcute",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 549,
+        "name": "Body urbanz girl",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 550,
+        "name": "Body urbanz man",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 552,
+        "name": "Princess ork body",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 553,
+        "name": "Corps reconciles",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 554,
+        "name": "Veste eskimo",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 555,
+        "name": "Eskimoz hooded jacket",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 556,
+        "name": "Gray down jacket body",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 557,
+        "name": "Red down jacket body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 559,
+        "name": "Camo down jacket body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 560,
+        "name": "Body down jacket pinky",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 561,
+        "name": "Azure down jacket body",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 564,
+        "name": "Brown yetiz",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 565,
+        "name": "White yetiz",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 566,
+        "name": "Clubiz uranium green guy",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 567,
+        "name": "Clubiz mec death",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 568,
+        "name": "Clubiz dude tekto red",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 569,
+        "name": "Clubiz thunderbolt",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 570,
+        "name": "Clubiz girl diamz purple",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 571,
+        "name": "Clubz breakingluv",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 572,
+        "name": "Clubz girl luv purple",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 573,
+        "name": "Clubz girl diamz blue",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 575,
+        "name": "Bboyz blue guy bodysuit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 576,
+        "name": "Body bboyz girl purple",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 577,
+        "name": "Corps bboyz dark violet",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 579,
+        "name": "Body emoz mec violet",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 581,
+        "name": "Bodysuit emoz girl darkbl",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 583,
+        "name": "Defaulter sweatshirt",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 584,
+        "name": "Sveat see market",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 585,
+        "name": "Sweat des royaltiz",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 586,
+        "name": "Helpers sweatshirt",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 587,
+        "name": "Sweat des chapafanz",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 589,
+        "name": "Corps bboyz break",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 590,
+        "name": "Body bboyz girl yello",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 591,
+        "name": "Corps bboyz guerillaz",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 593,
+        "name": "Yojimboz warrior armor",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 594,
+        "name": "Yojimboz kimono geisha",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 595,
+        "name": "Groom kimono yojimboz",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 596,
+        "name": "Yojimboz bridal kimono",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 597,
+        "name": "Look emoz mec freestyle",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 598,
+        "name": "Princess girl emoz look",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 600,
+        "name": "Look emoz girl kyo",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 601,
+        "name": "Black pirate outfit",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 602,
+        "name": "Bonaventure pirate dress",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 603,
+        "name": "Tenue pirate rackham",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 604,
+        "name": "Pirate captain outfit",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 1018,
+        "name": "Body m bluzz",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 1019,
+        "name": "Body m buenoz",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 1020,
+        "name": "Body m vivioz",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 1022,
+        "name": "Corps m rozy",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 1023,
+        "name": "Corps m flowerz",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 1024,
+        "name": "Body m zeus",
+        "nb": 1,
+        "rarity": "unique"
+      }
+    ],
+    "shoe": [
+      {
+        "id": 606,
+        "name": "Chaussures par défaut",
+        "nb": 1
+      },
+      {
+        "id": 607,
+        "name": "Red sneakers with stripes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 608,
+        "name": "Neutral gray shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 609,
+        "name": "Blue lace shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 610,
+        "name": "Black shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 611,
+        "name": "Yellow slippers",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 612,
+        "name": "Pat ridges cat",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 613,
+        "name": "Baskets roses",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 614,
+        "name": "Golden sneakers",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 615,
+        "name": "Fir log shoe",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 616,
+        "name": "Big shoe is enough",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 617,
+        "name": "Big shoe is enough",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 618,
+        "name": "Far west shoe ii",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 619,
+        "name": "Far west shoe ii",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 620,
+        "name": "Classy mafiaz shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 622,
+        "name": "Wild west shoe i",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 623,
+        "name": "Wild west shoe i",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 624,
+        "name": "Christmas basket",
+        "nb": 6,
+        "rarity": "common"
+      },
+      {
+        "id": 625,
+        "name": "Christmas pom pom shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 626,
+        "name": "Footwear supporter",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 627,
+        "name": "Footwear supporter",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 628,
+        "name": "Redromic sneakers red",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 629,
+        "name": "Blue redromic sneakers",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 630,
+        "name": "Tong vegetable first i",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 631,
+        "name": "Tong vahiné aloha i",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 632,
+        "name": "Petite tong aloha ii",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 633,
+        "name": "Aloha ii flower sandal",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 635,
+        "name": "Vampire shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 636,
+        "name": "Halloween shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 637,
+        "name": "Wizard shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 638,
+        "name": "Vampire shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 639,
+        "name": "White black sneakers",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 640,
+        "name": "Oldskool shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 641,
+        "name": "Oldskool shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 642,
+        "name": "Gangstar shoe",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 644,
+        "name": "Lovaz shoe",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 645,
+        "name": "Retro shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 646,
+        "name": "Retro shoe",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 648,
+        "name": "Yo jimbo z i got okasan",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 649,
+        "name": "Girl's ultimoz trainers",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 650,
+        "name": "Basketball ultimoz mec",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 651,
+        "name": "7tiz shoe",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 652,
+        "name": "7tiz shoe",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 653,
+        "name": "Amfibiz diving fin",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 654,
+        "name": "Amfibiz diving fin",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 655,
+        "name": "Gothic shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 656,
+        "name": "Gothic shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 659,
+        "name": "Ninja slippers",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 662,
+        "name": "Ice fairy ballerinas",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 664,
+        "name": "Earth fairy ballerinas",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 665,
+        "name": "Rugged pirate boots",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 667,
+        "name": "Harajuku shoe",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 669,
+        "name": "Cha us sure new year",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 671,
+        "name": "Green lace-up rangers",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 673,
+        "name": "Courtiz shoe",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 675,
+        "name": "Wedding shoes",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 676,
+        "name": "Wedding shoes",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 677,
+        "name": "Tong carnival river",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 678,
+        "name": "Rio heeled shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 679,
+        "name": "Granny grandpa shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 681,
+        "name": "Basket bboyz classic",
+        "nb": 4,
+        "rarity": "legendary"
+      },
+      {
+        "id": 682,
+        "name": "Basket bboyz classic",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 683,
+        "name": "St. patrick's shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 684,
+        "name": "St. patrick's shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 685,
+        "name": "Shoe cromignon",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 686,
+        "name": "Shoe cromignon",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 689,
+        "name": "P-max red",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 690,
+        "name": "P-max aqua",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 691,
+        "name": "Shawk classic",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 693,
+        "name": "Gardening shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 694,
+        "name": "Gardening shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 697,
+        "name": "Chocolate rabbit shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 698,
+        "name": "Dark chocolate rabbit paw",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 699,
+        "name": "Peplum shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 700,
+        "name": "Peplum shoe",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 701,
+        "name": "Starlite shoe",
+        "nb": 3,
+        "rarity": "unique"
+      },
+      {
+        "id": 703,
+        "name": "Rasta shoe",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 704,
+        "name": "Rasta sandals",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 705,
+        "name": "Red hockey shoe",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 707,
+        "name": "Red hockey shoe",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 708,
+        "name": "Blue hockey shoe",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 709,
+        "name": "Musketeer shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 710,
+        "name": "Musketeer shoe",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 711,
+        "name": "Agent x shoes",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 712,
+        "name": "Agent x shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 713,
+        "name": "Firefighter shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 715,
+        "name": "Dragonknight shoe",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 716,
+        "name": "Princess ballerina",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 717,
+        "name": "Chaussure foot us",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 718,
+        "name": "Chaussure foot us",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 721,
+        "name": "Chaotiz shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 722,
+        "name": "Chaotiz shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 723,
+        "name": "Red rockaz shoes",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 724,
+        "name": "Rockaz kill shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 725,
+        "name": "Botte emojis",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 728,
+        "name": "Hippiz shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 729,
+        "name": "Tong summer tattoo",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 732,
+        "name": "Tong summer sarong",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 733,
+        "name": "Tong summer salsa",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 735,
+        "name": "Robotiz shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 736,
+        "name": "Robotiz shoes",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 737,
+        "name": "Pharaoh shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 738,
+        "name": "Pharaoh shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 739,
+        "name": "Apache shoes",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 740,
+        "name": "Desperate leather boots",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 741,
+        "name": "Flamenco shoes",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 742,
+        "name": "Cosmoz shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 743,
+        "name": "Cosmoz shoe",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 744,
+        "name": "Barbaric shoe",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 745,
+        "name": "Barbaric shoe",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 746,
+        "name": "College boy shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 748,
+        "name": "Druid magick shoe",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 750,
+        "name": "Fashionz pink",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 751,
+        "name": "Fashionz zebre",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 752,
+        "name": "Fighter tiger",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 753,
+        "name": "Fighter armada",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 754,
+        "name": "Basket bigup lascar",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 755,
+        "name": "Starlet big-up ankle boot",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 756,
+        "name": "Chausse fantasy hero",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 757,
+        "name": "Escarpin fantasy fatal",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 758,
+        "name": "Shoe doctor",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 759,
+        "name": "Nurse shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 760,
+        "name": "Girl's urbanz trainers",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 761,
+        "name": "Basket urbanz mec",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 762,
+        "name": "Princess ork shoe",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 763,
+        "name": "Godzi shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 764,
+        "name": "Eskimo boots",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 765,
+        "name": "Gray down jacket shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 766,
+        "name": "Red down jacket shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 768,
+        "name": "Camo down jacket shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 769,
+        "name": "Pinky down jacket shoe",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 770,
+        "name": "Azure padded shoe",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 771,
+        "name": "Penguin shoe",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 775,
+        "name": "Shoes bboyz mec break",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 776,
+        "name": "Shoes bboyz fille yello",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 777,
+        "name": "Shoes bboyz mec guerillaz",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 778,
+        "name": "Bboyz shoes",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 780,
+        "name": "Yo jimbo z geisha who got",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 781,
+        "name": "Yojimbo guetta married",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 783,
+        "name": "Basket emoz freestyle",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 784,
+        "name": "Shoes emoz princess",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 786,
+        "name": "Chau thread picture is al",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 787,
+        "name": "Red pirate boot",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 788,
+        "name": "Pirate boots",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 789,
+        "name": "Botte pirate rackham",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1010,
+        "name": "Blue classik sneakers",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1011,
+        "name": "Baskets classik beiges",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1012,
+        "name": "Baskets classik vertes",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1013,
+        "name": "Baskets classik grises",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1014,
+        "name": "Baskets classik ocres",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1015,
+        "name": "Gold classik sneakers",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1016,
+        "name": "Baskets classik oranges",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1017,
+        "name": "Baskets classik violettes",
+        "nb": 1,
+        "rarity": "legendary"
+      }
     ],
     "item0": [
-      { "id": 792, "name": "", "nb": 1 },
-      { "id": 794, "name": "Bandeau de chimborgne", "nb": 1 },
-      { "id": 796, "name": "Lunettes etoiles", "nb": 1 },
-      { "id": 797, "name": "Lunettes rouges", "nb": 2 },
-      { "id": 798, "name": "Lunettes luv", "nb": 1 },
-      { "id": 799, "name": "Lunettes stereo", "nb": 2 },
-      { "id": 800, "name": "Loup noir", "nb": 2 },
-      { "id": 801, "name": "Loup orange", "nb": 2 },
-      { "id": 802, "name": "Vieux masque chapaking", "nb": 1 },
-      { "id": 803, "name": "Masque chat", "nb": 3 },
-      { "id": 804, "name": "Masque cr\u00e2ne", "nb": 1 },
-      { "id": 805, "name": "Masque hurleur", "nb": 1 },
-      { "id": 806, "name": "Masque de hockey horreur", "nb": 2 },
-      { "id": 807, "name": "Accessoire goth", "nb": 1 },
-      { "id": 808, "name": "Moustache pattoune", "nb": 2 },
-      { "id": 809, "name": "Masque gris ninjaz", "nb": 1 },
-      { "id": 810, "name": "Bandeau pirate", "nb": 3 },
-      { "id": 811, "name": "Masque dragon", "nb": 2 },
-      { "id": 812, "name": "Accessoire coolboarderz", "nb": 3 },
-      { "id": 813, "name": "Accessoire coolboarderz", "nb": 1 },
-      { "id": 814, "name": "Accessoire coolboarderz", "nb": 4 },
-      { "id": 815, "name": "Accessoire coolboarderz", "nb": 1 },
-      { "id": 817, "name": "Maquillage foot italie", "nb": 2 },
-      { "id": 818, "name": "Maquillage foot allemagne", "nb": 1 },
-      { "id": 819, "name": "Maquillage foot france", "nb": 3 },
-      { "id": 820, "name": "Maquillage foot espagne", "nb": 2 },
-      { "id": 822, "name": "Maquillage foot br\u00e9sil", "nb": 3 },
-      { "id": 823, "name": "Maquillage foot portugal", "nb": 2 },
-      { "id": 824, "name": "Accessoire coolboarderz", "nb": 4 },
-      { "id": 825, "name": "Accessoire coolboarderz", "nb": 4 },
-      { "id": 826, "name": "Accessoire coolboarderz", "nb": 1 },
-      { "id": 827, "name": "Accessoire coolboarderz", "nb": 1 },
-      { "id": 828, "name": "Accessoire coolboarderz", "nb": 1 },
-      { "id": 830, "name": "Accessoire coolboarderz", "nb": 3 },
-      { "id": 831, "name": "Accessoire coolboarderz", "nb": 2 },
-      { "id": 832, "name": "Accessoire coolboarderz", "nb": 2 },
-      { "id": 833, "name": "Accessoire coolboarderz", "nb": 2 },
-      { "id": 834, "name": "Accessoire coolboarderz", "nb": 2 },
-      { "id": 835, "name": "Lunettes de ski bleu", "nb": 1 },
-      { "id": 836, "name": "Lunettes ski relev\u00e9es", "nb": 1 },
-      { "id": 837, "name": "Lunettes de ski rose", "nb": 1 },
-      { "id": 838, "name": "Maquillage foot canada", "nb": 3 },
-      { "id": 839, "name": "Maquillage foot suisse", "nb": 3 },
-      { "id": 840, "name": "Maquillage foot belgique", "nb": 2 },
-      { "id": 841, "name": "Lunettes plong\u00e9e amfibiz", "nb": 4 },
-      { "id": 842, "name": "Lunettes plong\u00e9e amfibiz", "nb": 6 },
-      { "id": 843, "name": "Lunettes plong\u00e9e amfibiz", "nb": 4 },
-      { "id": 844, "name": "Lunettes plong\u00e9e amfibiz", "nb": 5 },
-      { "id": 845, "name": "Lunettes de ski relev\u00e9es", "nb": 4 },
-      { "id": 846, "name": "Monocle courtiz", "nb": 2 },
-      { "id": 847, "name": "Masque roswell", "nb": 5 },
-      { "id": 848, "name": "Accessoire starlite", "nb": 1 },
-      { "id": 849, "name": "Accessoire alienator", "nb": 1 },
-      { "id": 851, "name": "Accessoire pyromane", "nb": 2 },
-      { "id": 852, "name": "Accessoire playaz", "nb": 2 },
-      { "id": 853, "name": "Accessoire playaz", "nb": 2 },
-      { "id": 854, "name": "Accessoire hippiz", "nb": 2 },
-      { "id": 855, "name": "Masque anti-covid", "nb": 8 },
-      { "id": 856, "name": "Lunettes soudeur bleues", "nb": 4 },
-      { "id": 857, "name": "Lunettes natation rouges", "nb": 1 },
-      { "id": 858, "name": "Casque animateur radio", "nb": 1 },
-      { "id": 859, "name": "Lunettes noires fashion", "nb": 3 },
-      { "id": 860, "name": "Lunettes fashionz", "nb": 5 },
-      { "id": 861, "name": "Lunettes fashionz or", "nb": 3 },
-      { "id": 863, "name": "Lunettes bigup", "nb": 4 },
-      { "id": 864, "name": "Lunettes soudeur oranges", "nb": 4 },
-      { "id": 865, "name": "Lunettes soudeur rouges", "nb": 2 },
-      { "id": 866, "name": "Lunettes soudeur jaunes", "nb": 4 },
-      { "id": 867, "name": "Lunettes soudeur vertes", "nb": 1 }
+      {
+        "id": 792,
+        "name": "",
+        "nb": 1
+      },
+      {
+        "id": 794,
+        "name": "Chemborgne headband",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 795,
+        "name": "Grandma accessory",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 796,
+        "name": "Star glasses",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 797,
+        "name": "Red glasses",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 798,
+        "name": "Lunettes luv",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 799,
+        "name": "Lunettes stereo",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 800,
+        "name": "Black wolf",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 801,
+        "name": "Orange wolf",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 802,
+        "name": "Old chapaking mask",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 803,
+        "name": "Cat mask",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 804,
+        "name": "Skull mask",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 805,
+        "name": "Screamer mask",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 806,
+        "name": "Horror hockey mask",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 807,
+        "name": "Accessoire goth",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 808,
+        "name": "Mustache pattoune",
+        "nb": 6,
+        "rarity": "rare"
+      },
+      {
+        "id": 809,
+        "name": "Ninjaz gray mask",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 810,
+        "name": "Pirate headband",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 811,
+        "name": "Dragon mask",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 812,
+        "name": "Coolboarderz accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 813,
+        "name": "Coolboarderz accessory",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 814,
+        "name": "Coolboarderz accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 815,
+        "name": "Coolboarderz accessory",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 817,
+        "name": "Italian football makeup",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 818,
+        "name": "German football makeup",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 819,
+        "name": "French football makeup",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 820,
+        "name": "Spain football makeup",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 822,
+        "name": "Brazilian football makeup",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 823,
+        "name": "Portugal football makeup",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 824,
+        "name": "Coolboarderz accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 825,
+        "name": "Coolboarderz accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 826,
+        "name": "Coolboarderz accessory",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 827,
+        "name": "Coolboarderz accessory",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 828,
+        "name": "Coolboarderz accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 829,
+        "name": "Coolboarderz accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 830,
+        "name": "Coolboarderz accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 831,
+        "name": "Coolboarderz accessory",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 832,
+        "name": "Coolboarderz accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 833,
+        "name": "Coolboarderz accessory",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 834,
+        "name": "Coolboarderz accessory",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 835,
+        "name": "Blue ski goggles",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 836,
+        "name": "Raised ski goggles",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 837,
+        "name": "Pink ski goggles",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 838,
+        "name": "Football canada makeup",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 839,
+        "name": "Swiss football make-up",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 840,
+        "name": "Belgian football make-up",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 841,
+        "name": "Amfibiz diving goggles",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 842,
+        "name": "Amfibiz diving goggles",
+        "nb": 9,
+        "rarity": "common"
+      },
+      {
+        "id": 843,
+        "name": "Amfibiz diving goggles",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 844,
+        "name": "Amfibiz diving goggles",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 845,
+        "name": "Ski goggles up",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 846,
+        "name": "Monocle courtiz",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 847,
+        "name": "Masque roswell",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 848,
+        "name": "Starlite accessory",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 849,
+        "name": "Alienator accessory",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 851,
+        "name": "Pyromaniac accessory",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 852,
+        "name": "Playaz accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 853,
+        "name": "Playaz accessory",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 854,
+        "name": "Hippie accessory",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 855,
+        "name": "Anti covid mask",
+        "nb": 8,
+        "rarity": "common"
+      },
+      {
+        "id": 856,
+        "name": "Blue welding goggles",
+        "nb": 6,
+        "rarity": "common"
+      },
+      {
+        "id": 857,
+        "name": "Red swim goggles",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 858,
+        "name": "Radio presenter headphone",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 859,
+        "name": "Fashion black glasses",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 860,
+        "name": "Lunettes fashionz",
+        "nb": 5,
+        "rarity": "legendary"
+      },
+      {
+        "id": 861,
+        "name": "Lunettes fashionz or",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 863,
+        "name": "Bigup glasses",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 864,
+        "name": "Orange welding goggles",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 865,
+        "name": "Red welding goggles",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 866,
+        "name": "Yellow welding goggles",
+        "nb": 5,
+        "rarity": "rare"
+      },
+      {
+        "id": 867,
+        "name": "Green welding goggles",
+        "nb": 1,
+        "rarity": "rare"
+      }
     ],
     "item1": [
-      { "id": 868, "name": "", "nb": 1 },
-      { "id": 869, "name": "Katana ninjaz", "nb": 8 },
-      { "id": 870, "name": "Barbe blanche des anciens", "nb": 1 },
-      { "id": 871, "name": "Ep\u00e9e pirate et ceinturon", "nb": 4 },
-      { "id": 872, "name": "Planche coolboarderz", "nb": 1 },
-      { "id": 873, "name": "Planche coolboarderz", "nb": 1 },
-      { "id": 874, "name": "Planche coolboarderz", "nb": 4 },
-      { "id": 875, "name": "Planche snowboard royal", "nb": 1 },
-      { "id": 876, "name": "Planche snowboard ethnic", "nb": 1 },
-      { "id": 877, "name": "Rajhastani mustach", "nb": 2 },
-      { "id": 878, "name": "Accessoire courtiz", "nb": 3 },
+      {
+        "id": 868,
+        "name": "",
+        "nb": 1
+      },
+      {
+        "id": 869,
+        "name": "Katana ninjaz",
+        "nb": 8,
+        "rarity": "legendary"
+      },
+      {
+        "id": 870,
+        "name": "Whitebeard of the ancient",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 871,
+        "name": "Pirate sword and belt",
+        "nb": 4,
+        "rarity": "legendary"
+      },
+      {
+        "id": 872,
+        "name": "Board coolboarderz",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 873,
+        "name": "Board coolboarderz",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 874,
+        "name": "Board coolboarderz",
+        "nb": 6,
+        "rarity": "common"
+      },
+      {
+        "id": 875,
+        "name": "Snowboard royal",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 876,
+        "name": "Ethnic snowboard",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 877,
+        "name": "Rajasthani mustache",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 878,
+        "name": "Courtiz accessory",
+        "nb": 3,
+        "rarity": "common"
+      },
       {
         "id": 879,
-        "name": "Accessoire p\u00e9p\u00e9 m\u00e9m\u00e9",
-        "nb": 2
+        "name": "Grandma accessory",
+        "nb": 2,
+        "rarity": "common"
       },
-      { "id": 880, "name": "Accessoire p\u00eache", "nb": 4 },
-      { "id": 881, "name": "Poisson d'avril", "nb": 6 },
-      { "id": 882, "name": "Hippocampe d'avril", "nb": 3 },
-      { "id": 884, "name": "Etoiles d'avril", "nb": 1 },
-      { "id": 885, "name": "Baleine d'avril", "nb": 1 },
-      { "id": 886, "name": "Homard d'avril", "nb": 2 },
-      { "id": 887, "name": "Requin d'avril", "nb": 3 },
-      { "id": 888, "name": "Carapace de tortue", "nb": 4 },
-      { "id": 889, "name": "Sac d'oeufs", "nb": 3 },
-      { "id": 890, "name": "Accessoire peplum", "nb": 3 },
-      { "id": 891, "name": "Beubar mighty dread", "nb": 4 },
-      { "id": 892, "name": "Crosse de hockey rouge", "nb": 1 },
-      { "id": 893, "name": "Crosse de hockey bleu", "nb": 5 },
-      { "id": 894, "name": "Ponpons hockey rouges", "nb": 1 },
-      { "id": 896, "name": "Accessoire mousquetaire", "nb": 1 },
-      { "id": 897, "name": "Accessoire mousquetaire", "nb": 1 },
-      { "id": 898, "name": "Accessoire pompier", "nb": 3 },
-      { "id": 899, "name": "Accessoire pyromane", "nb": 3 },
-      { "id": 900, "name": "Bouclier chevalier dragon", "nb": 2 },
-      { "id": 902, "name": "Moustaches chaotiz", "nb": 1 },
-      { "id": 903, "name": "Guitare gibzone rouge", "nb": 6 },
-      { "id": 904, "name": "Guitare rockaz gibzone", "nb": 2 },
-      { "id": 905, "name": "Guitare basse violette", "nb": 3 },
-      { "id": 906, "name": "Guitare basse noire", "nb": 3 },
-      { "id": 907, "name": "Bracelet summer salsa", "nb": 2 },
-      { "id": 908, "name": "Arc apach", "nb": 4 },
-      { "id": 910, "name": "Bracelet dor\u00e9", "nb": 2 },
-      { "id": 911, "name": "Barbe barbare", "nb": 3 },
-      { "id": 912, "name": "Glaive barbar", "nb": 6 },
-      { "id": 913, "name": "Accessoire magik druide", "nb": 3 },
-      { "id": 914, "name": "Accessoire magik merlin", "nb": 1 },
-      { "id": 915, "name": "Appareil photo chaparazzi", "nb": 2 },
-      { "id": 916, "name": "Fashionz green", "nb": 4 },
-      { "id": 917, "name": "Fashionz cuir", "nb": 3 },
-      { "id": 918, "name": "Fantasy glaive", "nb": 2 },
-      { "id": 919, "name": "Carz rouge", "nb": 2 },
-      { "id": 920, "name": "Carz noire", "nb": 3 },
-      { "id": 921, "name": "Carz orange", "nb": 3 },
-      { "id": 922, "name": "Cartable", "nb": 1 },
-      { "id": 923, "name": "Chapack boy", "nb": 3 },
-      { "id": 924, "name": "Chapack girl", "nb": 2 },
-      { "id": 926, "name": "Chapack yellow", "nb": 2 },
-      { "id": 927, "name": "Chapack blue", "nb": 1 },
-      { "id": 928, "name": "Accessoire playaz", "nb": 6 },
-      { "id": 929, "name": "Accessoire playaz", "nb": 2 },
-      { "id": 930, "name": "Clubz vynile bleu", "nb": 1 },
-      { "id": 931, "name": "Clubz vynile orange", "nb": 5 },
-      { "id": 932, "name": "Yojimboz protections", "nb": 6 },
-      { "id": 933, "name": "Yojimboz eventail geisha", "nb": 3 },
-      { "id": 934, "name": "Yojimboz eventail mari\u00e9", "nb": 4 },
-      { "id": 935, "name": "Pistolet pirate", "nb": 1 },
-      { "id": 936, "name": "Bague emeraude", "nb": 2 }
+      {
+        "id": 880,
+        "name": "Fishing accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 881,
+        "name": "April fool",
+        "nb": 6,
+        "rarity": "common"
+      },
+      {
+        "id": 882,
+        "name": "April seahorse",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 884,
+        "name": "April stars",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 885,
+        "name": "April whale",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 886,
+        "name": "April lobster",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 887,
+        "name": "April shark",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 888,
+        "name": "Turtle shell",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 889,
+        "name": "Bag of eggs",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 890,
+        "name": "Peplum accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 891,
+        "name": "Beubar mighty dread",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 892,
+        "name": "Red hockey stick",
+        "nb": 1,
+        "rarity": "rare"
+      },
+      {
+        "id": 893,
+        "name": "Blue hockey stick",
+        "nb": 5,
+        "rarity": "rare"
+      },
+      {
+        "id": 894,
+        "name": "Red hockey pom poms",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 896,
+        "name": "Musketeer accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 897,
+        "name": "Musketeer accessory",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 898,
+        "name": "Firefighter accessory",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 899,
+        "name": "Pyromaniac accessory",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 900,
+        "name": "Dragon knight shield",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 901,
+        "name": "Accessory sherazad",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 902,
+        "name": "Chaotiz whiskers",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 903,
+        "name": "Red gibzone guitar",
+        "nb": 6,
+        "rarity": "unique"
+      },
+      {
+        "id": 904,
+        "name": "Gibzone rockaz guitar",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 905,
+        "name": "Purple bass guitar",
+        "nb": 3,
+        "rarity": "unique"
+      },
+      {
+        "id": 906,
+        "name": "Black bass guitar",
+        "nb": 3,
+        "rarity": "unique"
+      },
+      {
+        "id": 907,
+        "name": "Bracelet summer salsa",
+        "nb": 2,
+        "rarity": "unique"
+      },
+      {
+        "id": 908,
+        "name": "Arc apach",
+        "nb": 4,
+        "rarity": "legendary"
+      },
+      {
+        "id": 910,
+        "name": "Golden bracelet",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 911,
+        "name": "Barbarian beard",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 912,
+        "name": "Barbarian glaive",
+        "nb": 6,
+        "rarity": "legendary"
+      },
+      {
+        "id": 913,
+        "name": "Druid magick accessory",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 914,
+        "name": "Accessory magic merlin",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 915,
+        "name": "Chaparazzi camera",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 916,
+        "name": "Fashionz green",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 917,
+        "name": "Fashionz cuir",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 918,
+        "name": "Fantasy sword",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 919,
+        "name": "Carz rouge",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 920,
+        "name": "Carz black",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 921,
+        "name": "Carz orange",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 922,
+        "name": "Satchel",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 923,
+        "name": "Chapack boy",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 924,
+        "name": "Chapack girl",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 926,
+        "name": "Chapack yellow",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 927,
+        "name": "Chapack blue",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 928,
+        "name": "Playaz accessory",
+        "nb": 6,
+        "rarity": "legendary"
+      },
+      {
+        "id": 929,
+        "name": "Playaz accessory",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 930,
+        "name": "Clubz blue vinyl",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 931,
+        "name": "Clubz vinyl orange",
+        "nb": 5,
+        "rarity": "legendary"
+      },
+      {
+        "id": 932,
+        "name": "Yojimboz protections",
+        "nb": 7,
+        "rarity": "legendary"
+      },
+      {
+        "id": 933,
+        "name": "Yojimboz eventail geisha",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 934,
+        "name": "Yojimboz married fan",
+        "nb": 4,
+        "rarity": "legendary"
+      },
+      {
+        "id": 935,
+        "name": "Pirate gun",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 936,
+        "name": "Emerald ring",
+        "nb": 2,
+        "rarity": "common"
+      }
     ],
     "item2": [
-      { "id": 938, "name": "", "nb": 1 },
-      { "id": 939, "name": "Accessoire goth", "nb": 27 },
-      { "id": 940, "name": "Collier pirate", "nb": 3 },
-      { "id": 941, "name": "Collier pepettes or", "nb": 3 },
-      { "id": 942, "name": "Grosse cloche chocolapin", "nb": 3 },
-      { "id": 943, "name": "Collier chocolapin", "nb": 4 },
-      { "id": 944, "name": "Accessoire peplum", "nb": 3 },
-      { "id": 945, "name": "Accessoire peplum", "nb": 2 },
-      { "id": 946, "name": "Accessoire starlite", "nb": 3 },
-      { "id": 947, "name": "Collier afronation", "nb": 1 },
-      { "id": 948, "name": "Collier afro rasta", "nb": 3 },
-      { "id": 950, "name": "Badge ruban rouge", "nb": 1 },
-      { "id": 951, "name": "Accessoire 7tiz", "nb": 1 },
-      { "id": 953, "name": "Badge recyclable", "nb": 1 },
-      { "id": 954, "name": "Badge argentine", "nb": 1 },
-      { "id": 955, "name": "Badge italie", "nb": 1 },
-      { "id": 956, "name": "Badge allemagne", "nb": 1 },
-      { "id": 957, "name": "Badge france", "nb": 1 },
-      { "id": 958, "name": "Badge espagne", "nb": 1 },
-      { "id": 959, "name": "Badge angleterre", "nb": 1 },
-      { "id": 960, "name": "Badge br\u00e9sil", "nb": 1 },
-      { "id": 961, "name": "Badge portugal", "nb": 1 },
-      { "id": 963, "name": "Collier heroic", "nb": 1 },
-      { "id": 966, "name": "Accessoire chaotiz", "nb": 3 },
-      { "id": 970, "name": "Badge suisse", "nb": 1 },
-      { "id": 971, "name": "Badge belgique", "nb": 1 },
-      { "id": 972, "name": "Badge canada", "nb": 1 },
-      { "id": 973, "name": "Badge usa", "nb": 1 },
-      { "id": 974, "name": "Badge alg\u00e9rie", "nb": 1 },
-      { "id": 975, "name": "Badge turquie", "nb": 1 },
-      { "id": 976, "name": "Badge maroc", "nb": 1 },
-      { "id": 977, "name": "Badge tunisie", "nb": 1 },
-      { "id": 978, "name": "Badge inde", "nb": 1 },
-      { "id": 979, "name": "Badge irlande", "nb": 1 },
-      { "id": 980, "name": "Badge japon", "nb": 1 },
-      { "id": 981, "name": "Badge s\u00e9n\u00e9gal", "nb": 1 },
-      { "id": 982, "name": "Badge ethiopie", "nb": 1 },
-      { "id": 983, "name": "Badge jamaique", "nb": 1 },
-      { "id": 984, "name": "Collier rockaz", "nb": 4 },
-      { "id": 985, "name": "Accessoire hippiz", "nb": 2 },
-      { "id": 986, "name": "Accessoire hippiz", "nb": 2 },
-      { "id": 987, "name": "Accessoire pharaon", "nb": 3 },
-      { "id": 988, "name": "Accessoire apache", "nb": 2 },
-      { "id": 989, "name": "Ceinturon", "nb": 2 },
-      { "id": 990, "name": "Eventail", "nb": 2 },
-      { "id": 991, "name": "Badge qu\u00e9bec", "nb": 1 },
-      { "id": 992, "name": "Hache barbar", "nb": 1 },
-      { "id": 993, "name": "Collier barbar", "nb": 3 },
-      { "id": 994, "name": "Echarpe cuisto crado", "nb": 4 },
-      { "id": 995, "name": "Magik fiole", "nb": 2 },
-      { "id": 996, "name": "Magik serpe", "nb": 2 },
-      { "id": 998, "name": "Bigup cha\u00eene", "nb": 3 },
-      { "id": 999, "name": "Bigup perle", "nb": 3 },
-      { "id": 1000, "name": "Stethoscope de docteur", "nb": 3 },
-      { "id": 1002, "name": "Cha\u00eene argent croix", "nb": 5 },
-      { "id": 1003, "name": "Cha\u00eene argent gamepad", "nb": 2 },
-      { "id": 1004, "name": "Yojimboz lance guerrier", "nb": 2 },
-      { "id": 1005, "name": "Yojimboz shamisen geisha", "nb": 1 },
-      { "id": 1007, "name": "Crochet en or", "nb": 4 },
-      { "id": 1008, "name": "Epee d'abordage", "nb": 2 },
-      { "id": 1009, "name": "Cage", "nb": 24 }
+      {
+        "id": 938,
+        "name": "",
+        "nb": 1
+      },
+      {
+        "id": 939,
+        "name": "Accessoire goth",
+        "nb": 29,
+        "rarity": "common"
+      },
+      {
+        "id": 940,
+        "name": "Pirate necklace",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 941,
+        "name": "Collier pepettes or",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 942,
+        "name": "Big bell chocolapin",
+        "nb": 6,
+        "rarity": "common"
+      },
+      {
+        "id": 943,
+        "name": "Chocolate rabbit necklace",
+        "nb": 7,
+        "rarity": "common"
+      },
+      {
+        "id": 944,
+        "name": "Peplum accessory",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 945,
+        "name": "Peplum accessory",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 946,
+        "name": "Starlite accessory",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 947,
+        "name": "Collier afronation",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 948,
+        "name": "Afro rasta necklace",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 950,
+        "name": "Red ribbon badge",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 951,
+        "name": "7tiz accessory",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 953,
+        "name": "Badge recyclable",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 954,
+        "name": "Badge argentine",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 955,
+        "name": "Badge italie",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 956,
+        "name": "Germany badge",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 957,
+        "name": "Badge france",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 958,
+        "name": "Spain badge",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 959,
+        "name": "England badge",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 960,
+        "name": "Brazil badge",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 961,
+        "name": "Badge portugal",
+        "nb": 1,
+        "rarity": "common"
+      },
+      {
+        "id": 963,
+        "name": "Collier heroic",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 966,
+        "name": "Accessory chaotiz",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 970,
+        "name": "Swiss badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 971,
+        "name": "Belgium badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 972,
+        "name": "Badge canada",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 973,
+        "name": "Badge usa",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 974,
+        "name": "Algeria badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 975,
+        "name": "Turkey badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 976,
+        "name": "Badge maroc",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 977,
+        "name": "Badge tunisie",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 978,
+        "name": "Badge inside",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 979,
+        "name": "Irish badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 980,
+        "name": "Badge japon",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 981,
+        "name": "Senegal badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 982,
+        "name": "Badge ethiopie",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 983,
+        "name": "Jamaica badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 984,
+        "name": "Rockaz necklace",
+        "nb": 4,
+        "rarity": "rare"
+      },
+      {
+        "id": 985,
+        "name": "Hippie accessory",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 986,
+        "name": "Hippie accessory",
+        "nb": 2,
+        "rarity": "rare"
+      },
+      {
+        "id": 987,
+        "name": "Pharaoh accessory",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 988,
+        "name": "Apache accessory",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 989,
+        "name": "Belt",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 990,
+        "name": "Eventail",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 991,
+        "name": "Quebec badge",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 992,
+        "name": "Repeatedly",
+        "nb": 1,
+        "rarity": "legendary"
+      },
+      {
+        "id": 993,
+        "name": "Barbarian necklace",
+        "nb": 3,
+        "rarity": "rare"
+      },
+      {
+        "id": 994,
+        "name": "Dirty cook scarf",
+        "nb": 5,
+        "rarity": "rare"
+      },
+      {
+        "id": 995,
+        "name": "Magic vials",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 996,
+        "name": "Magic snake",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 998,
+        "name": "Bigup chain",
+        "nb": 4,
+        "rarity": "common"
+      },
+      {
+        "id": 999,
+        "name": "Bigup pearl",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 1000,
+        "name": "Doctor's stethoscope",
+        "nb": 3,
+        "rarity": "common"
+      },
+      {
+        "id": 1002,
+        "name": "Silver cross chain",
+        "nb": 5,
+        "rarity": "common"
+      },
+      {
+        "id": 1003,
+        "name": "Gamepad silver chain",
+        "nb": 2,
+        "rarity": "common"
+      },
+      {
+        "id": 1004,
+        "name": "Yojimboz throws warrior",
+        "nb": 2,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1005,
+        "name": "Yo jimbo z shamisen geish",
+        "nb": 1,
+        "rarity": "unique"
+      },
+      {
+        "id": 1007,
+        "name": "Gold hook",
+        "nb": 4,
+        "rarity": "unique"
+      },
+      {
+        "id": 1008,
+        "name": "Boarding sword",
+        "nb": 3,
+        "rarity": "legendary"
+      },
+      {
+        "id": 1949,
+        "name": "Badge liban",
+        "nb": 1,
+        "rarity": "unique"
+      }
     ]
   },
-  "credits": 469,
-  "level": 25,
-  "gender": "Chimbo",
-  "motto": "Nitens lux, horrenda procella, tenebris aeternis involuta",
-  "centres": ["Musique", "informatique", "mathématiques", "Sayaka"],
-  "website": "http://last.fm/user/Tigriz",
-  "emote": "zzz",
-  "ppt": 469,
+  "mannequin": [
+    {
+      "id": 30,
+      "look": {
+        "avatar": 0,
+        "emote": "neutral",
+        "hat": 7,
+        "body": 334,
+        "shoe": 612,
+        "item0": 808,
+        "item1": 868,
+        "item2": 938
+      }
+    }
+  ],
+  "bacteria": {
+    "score": 1035,
+    "rank": 40,
+    "players": 10,
+    "stats": {
+      "win": 8,
+      "lose": 2,
+      "draw": 0
+    }
+  },
+  "patojdur": {
+    "score": 4360,
+    "rank": 6,
+    "players": 573,
+    "stats": {
+      "record": 27,
+      "best": 1,
+      "today": 1,
+      "yesterday": 1
+    }
+  },
+  "mazo": {
+    "score": 15,
+    "rank": 1,
+    "players": 844
+  },
   "pm": [
     {
-      "author": { "name": "Owned", "id": 2, "color": "#900" },
-      "date": 1626723644981,
-      "new": true
+      "id": "5",
+      "author": {
+        "name": "ChAtEuX",
+        "id": "9",
+        "color": ""
+      },
+      "date": 1646386775000,
+      "new": false
     },
     {
-      "author": { "name": "Owned", "id": 2, "color": "#900" },
-      "date": 1626723644981,
+      "id": "34",
+      "author": {
+        "name": "ChAtEuX",
+        "id": "9",
+        "color": ""
+      },
+      "date": 1640360984000,
+      "new": false
+    },
+    {
+      "id": "5",
+      "author": {
+        "name": "ChAtEuX",
+        "id": "9",
+        "color": ""
+      },
+      "date": 1639080705000,
       "new": false
     }
   ],
   "forum": [
     {
-      "id": 1,
+      "id": "8604",
+      "date": 1670157566000,
       "topic": {
-        "title": "test",
-        "id": 2,
-        "page": 3
+        "id": "185",
+        "title": "test"
       },
       "forum": {
-        "name": "Agora",
-        "id": 2
+        "name": "Forum pour tester",
+        "id": "9"
+      }
+    },
+    {
+      "id": "8603",
+      "date": 1670156817000,
+      "topic": {
+        "id": "185",
+        "title": "test"
+      },
+      "forum": {
+        "name": "Forum pour tester",
+        "id": "9"
+      }
+    },
+    {
+      "id": "8602",
+      "date": 1670156785000,
+      "topic": {
+        "id": "185",
+        "title": "test"
+      },
+      "forum": {
+        "name": "Forum pour tester",
+        "id": "9"
       }
     }
   ],
   "friends": [
     {
-      "user": { "name": "Owned", "id": 2, "color": "#900" },
-      "status": {
-        "connected": true,
-        "room": "La Colline Sacrée"
-      }
-    },
-    {
-      "user": { "name": "Owned", "id": 2, "color": "#900" },
+      "user": {
+        "name": "Owned",
+        "id": 2,
+        "color": ""
+      },
       "status": {
         "connected": false
       }
     },
     {
-      "user": { "name": "Owned", "id": 2, "color": "#900" },
+      "user": {
+        "name": "ChAtEuX",
+        "id": 9,
+        "color": ""
+      },
       "status": {
-        "connected": true
+        "connected": false
       }
     },
     {
-      "user": { "name": "Owned", "id": 2, "color": "#900" },
+      "user": {
+        "name": "Froidasse",
+        "id": 20,
+        "color": ""
+      },
       "status": {
-        "connected": true,
-        "room": "La Colline Sacrée"
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Pheniix",
+        "id": 87,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Kageyama",
+        "id": 41,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "MiiCkiE",
+        "id": 13,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "BeLLaTrix",
+        "id": 150,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Tagada",
+        "id": 415,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Lucie",
+        "id": 237,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Koko",
+        "id": 272,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Mitski",
+        "id": 487,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Rouly",
+        "id": 482,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Bdo",
+        "id": 422,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "ChapFlappy",
+        "id": 439,
+        "color": ""
+      },
+      "status": {
+        "connected": false
+      }
+    },
+    {
+      "user": {
+        "name": "Gucci",
+        "id": 170,
+        "color": ""
+      },
+      "status": {
+        "connected": false
       }
     }
   ],
   "groups": [
     {
-      "name": "Les Créateurs",
-      "id": 1,
-      "color": "#900",
+      "id": 20,
+      "name": "Ligolégende",
+      "color": "",
       "owner": false
     },
     {
+      "id": 21,
+      "name": "Chimboz",
+      "color": "",
+      "owner": false
+    },
+    {
+      "id": 10,
+      "name": "L'Église",
+      "color": "",
+      "owner": true
+    },
+    {
+      "id": 7,
       "name": "La Chatterie",
-      "id": 2,
-      "color": "#000",
+      "color": "",
       "owner": true
     }
-  ],
-  "bacteria": {
-    "rank": 1,
-    "players": 120,
-    "score": 120,
-    "stats": {
-      "win": 5,
-      "draw": 5,
-      "lose": 5
-    }
-  },
-  "patojdur": {
-    "rank": 1,
-    "players": 1200,
-    "score": 120,
-    "stats": {
-      "record": 28000,
-      "best": 28200,
-      "today": 29000,
-      "yesterday": 30000
-    }
-  },
-  "mazo": {
-    "rank": 1,
-    "players": 1234,
-    "score": 20
-  }
+  ]
 }

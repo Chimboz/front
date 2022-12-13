@@ -194,7 +194,6 @@ fetchData(async () => {
   data.value = (await api.get("members")).data;
 })
 
-// /api/members.json
 // meta title section.members
 </script>
 <style lang="scss" scoped>

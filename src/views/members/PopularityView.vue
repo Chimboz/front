@@ -450,7 +450,6 @@ fetchData(async () => {
   data.value.stats.yesterday = data.value.stats.today;
 });
 
-// /api/popularity.json
 // meta title section.popularity
 </script>
 

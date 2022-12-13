@@ -153,7 +153,6 @@ fetchData(async () => {
   api.get("https://chimboz.fr/sanctum/csrf-cookie");
 });
 
-// /api/login.json
 // meta title section.login
 </script>
 <style lang="scss">

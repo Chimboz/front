@@ -72,7 +72,6 @@ fetchData(async () => {
   data.value = (await api.get("online")).data;
 });
 
-// /api/online.json
 // meta title section.online
 </script>
 
