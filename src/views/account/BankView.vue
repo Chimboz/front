@@ -13,7 +13,7 @@
         route="banklogs"
         class="fullwidth"
         :maxHeight="300"
-        @scroll-data="(results: any[]) => (data.logs = [...data.logs, ...results])"
+        @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <table class="w-100">
           <colgroup>
@@ -27,7 +27,7 @@
             <th style="text-align: right">Solde</th>
           </thead>
           <tr
-            v-for="line of data.logs"
+            v-for="line of data"
             :key="line.date"
             class="bank-line"
             :class="{ loss: line.value < 0 }"
@@ -65,7 +65,7 @@
         width="17"
       /><b> Balance sur 7 jours</b> <br /><br />
       <BarChart
-        :chartData="bankData"
+        :chartData="bankData()"
         :options="{
           elements: {
             line: { borderColor: '#ffb907' },
@@ -105,6 +105,9 @@ import {
 import { ref } from "vue";
 import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+import api from "@/modules/api";
+import { fetchData, asset } from "@/utils";
+import { useAuthStore } from "@/stores/auth";
 const locales = { fr, enGB };
 
 Chart.register(
@@ -119,11 +122,20 @@ Chart.register(
   LineElement
 );
 
+const auth = useAuthStore();
+
 // @vuese
 // @group View/Account
 // Bank page
 
 const data = ref<any>(undefined);
+
+fetchData(async () => {
+  // data.value = (await api.get("bank")).data;
+  // TODO remove
+  data.value = (await api.get(`http://localhost:5173/api/bank.json`)).data;
+});
+
 
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {
@@ -149,14 +161,14 @@ function bankData() {
       { type: "bar", label: "Balance", data: [], backgroundColor: [] },
     ],
   };
-  let balance = data.value.balance;
+  let balance = +auth.user!.money;
   let i = 0;
   const today = new Date();
   for (const day of eachDayOfInterval({
     start: subDays(today, 6),
     end: today,
   }).reverse()) {
-    const chartData: any = data.value.logs.filter((el: any) =>
+    const chartData: any = data.value.filter((el: any) =>
       isSameDay(el.date, day)
     );
     let value = 0;
