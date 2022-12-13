@@ -8,7 +8,7 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <router-view></router-view>
+    <RouterView />
     <GlobalCard color="yellow" v-if="data" style="position: relative">
       <div class="gallery" @scroll.passive="onScroll">
         <div v-for="image of data" :key="image.name" class="gallery-image">
@@ -18,7 +18,7 @@
               :alt="image.name"
               @contextmenu.prevent
               :src="`/gallery/${image.name}`"
-              :src-placeholder="require('@/assets/img/loading.svg')"
+              :src-placeholder="asset('img/loading.svg')"
             />
           </router-link>
           <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
@@ -45,6 +45,7 @@ import VLazyImage from "v-lazy-image";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { asset } from "@/utils";
 const locales = { fr, enGB };
 
 // @vuese

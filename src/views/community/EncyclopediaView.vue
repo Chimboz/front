@@ -8,7 +8,7 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <router-view></router-view>
+    <RouterView />
     <GlobalCard color="yellow" v-if="data" style="position: relative">
       <ScrollableContainer
         route="encyclopedia"
@@ -46,7 +46,7 @@
                   @contextmenu.prevent
                   :alt="item.name"
                   :src="`/item/${item.type}/${item.id}.svg`"
-                  :src-placeholder="require('@/assets/img/loading.svg')"
+                  :src-placeholder="asset('img/loading.svg')"
                 /></button></router-link
           ></Tooltip>
         </div>
@@ -152,6 +152,8 @@ import ScrollableContainer from "@/components/core/ScrollableContainerComponent.
 import VLazyImage from "v-lazy-image";
 import Tooltip from "@/components/core/TooltipComponent.vue";
 import { ref } from "vue";
+import { fetchData, asset } from "@/utils";
+import api from "@/modules/api";
 
 // @vuese
 // @group View/Community
@@ -208,6 +210,10 @@ const checkedRarities = ref([
 const search = ref("");
 
 function onSearch() {}
+
+fetchData(async () => {
+  data.value = (await api.get(`https://chimboz.fr/public/api/encyclopedia?lang=${navigator.language.split("-")[0]}&page=0`)).data;
+})
 
 // /api/encyclopedia/${vm.page}.json
 // meta title section.encyclopedia

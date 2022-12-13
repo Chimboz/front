@@ -142,7 +142,7 @@
                     @contextmenu.prevent
                     v-else
                     :src="`/blazon/${name}/${item}.svg`"
-                    :src-placeholder="require('@/assets/img/loading.svg')"
+                    :src-placeholder="asset('img/loading.svg')"
                   />
                 </button>
               </div>
@@ -158,6 +158,7 @@
 import Blazon from "@/components/blazon/BlazonComponent.vue";
 import VLazyImage from "v-lazy-image";
 import { ref } from "vue";
+import { asset } from "@/utils";
 
 // @vuese
 // @group Blazon

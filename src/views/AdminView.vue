@@ -19,7 +19,7 @@
         </ScrollableContainer></GlobalCard
       ></template
     >
-    <router-view></router-view>
+    <RouterView />
     <template #right-column
       ><GlobalCard color="blue">
         <template #button>

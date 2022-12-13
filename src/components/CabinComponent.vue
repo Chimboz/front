@@ -314,7 +314,7 @@
                     @contextmenu.prevent
                     v-else
                     :src="`/item/${name}/${item.id}.svg`"
-                    src-placeholder="@/assets/img/loading.svg"
+                    :src-placeholder="asset('img/loading.svg')"
                   />
                   <div class="quantity">{{ item.nb }}</div>
                 </button>

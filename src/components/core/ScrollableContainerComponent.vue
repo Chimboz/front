@@ -23,7 +23,10 @@
 // @group Core
 // Generic scrollable container for infinite scroll
 
+import api from "@/modules/api";
 import { ref } from "vue";
+
+const emit = defineEmits<{(e: 'scrollData', data: any[]): void}>();
 
 const page = ref(0);
 const isLoading = ref(false);
@@ -38,22 +41,17 @@ const props = withDefaults(
   }
 );
 
-function onScroll(){}
-/*
-functionfunction onScroll({ target: { scrollTop, clientHeight, scrollHeight } }: Event) {
-      if (scrollTop + clientHeight >= scrollHeight && !hasEnded) {
-        isLoading.value = true;
-        api.get(`/api/${props.route}/${++page.value}.json`).then(
-          (res: any) => {
-            $emit("scrollData", res.data);
-            isLoading.value = false;
-          },
-          () => {
-            isLoading.value = false;
-          }
-        );
-      }
-    };*/
+async function onScroll({ target }: UIEvent) {
+  const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement;
+  if (scrollTop + clientHeight >= scrollHeight && !isLoading.value) {
+    isLoading.value = true;
+    emit(
+      "scrollData",
+      (await api.get(`${props.route}?&page=${++page.value}`)).data
+    );
+    isLoading.value = false;
+  }
+}
 </script>
 <style style="scss" scoped>
 .scrollable {

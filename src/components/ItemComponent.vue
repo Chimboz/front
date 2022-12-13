@@ -57,12 +57,18 @@
 </template>
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
+import api from "@/modules/api";
+import { fetchData, asset } from "@/utils";
 import { ref } from "vue";
 
 // @vuese
 // @group Default
 
 const data = ref<any>(undefined);
+
+fetchData(async (params) => {
+  data.value = (await api.get(`item/${params.id}?lang=${navigator.language.split("-")[0]}`)).data;
+});
 // /api/item/${vm.$route.params.id}.json
 </script>
 <style lang="scss" scoped>
