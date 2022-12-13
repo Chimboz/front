@@ -151,9 +151,10 @@
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import VLazyImage from "v-lazy-image";
 import Tooltip from "@/components/core/TooltipComponent.vue";
-import { ref } from "vue";
-import { fetchData, asset } from "@/utils";
+import { onBeforeMount, ref } from "vue";
+import { asset } from "@/utils";
 import api from "@/modules/api";
+import { RouterView, RouterLink } from "vue-router";
 
 // @vuese
 // @group View/Community
@@ -211,9 +212,15 @@ const search = ref("");
 
 function onSearch() {}
 
-fetchData(async () => {
-  data.value = (await api.get(`https://chimboz.fr/public/api/encyclopedia?lang=${navigator.language.split("-")[0]}&page=0`)).data;
-})
+onBeforeMount(async () => {
+  data.value = (
+    await api.get(
+      `https://chimboz.fr/public/api/encyclopedia?lang=${
+        navigator.language.split("-")[0]
+      }&page=0`
+    )
+  ).data;
+});
 
 // /api/encyclopedia/${vm.page}.json
 // meta title section.encyclopedia

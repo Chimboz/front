@@ -26,7 +26,7 @@
 import api from "@/modules/api";
 import { ref } from "vue";
 
-const emit = defineEmits<{(e: 'scrollData', data: any[]): void}>();
+const emit = defineEmits<{ (e: "scrollData", data: any[]): void }>();
 
 const page = ref(0);
 const isLoading = ref(false);
@@ -43,7 +43,7 @@ const props = withDefaults(
 
 async function onScroll({ target }: UIEvent) {
   const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement;
-  if (scrollTop + clientHeight >= scrollHeight && !isLoading.value) {
+  if (scrollTop + clientHeight >= scrollHeight - 2 && !isLoading.value) {
     isLoading.value = true;
     emit(
       "scrollData",
