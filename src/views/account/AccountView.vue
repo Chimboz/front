@@ -425,7 +425,7 @@ Chart.register(
 // @group View/Account
 // Account page
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 
 function formatDate(date: number) {
   return formatDistanceToNowStrict(new Date(date), {

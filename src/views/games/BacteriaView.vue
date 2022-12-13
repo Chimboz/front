@@ -323,7 +323,7 @@ import { ref } from "vue";
 // @group View/Games
 // Bacteria page
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 // /api/bacteria.json
 // meta title section.bacteria
 </script>

@@ -136,7 +136,7 @@ const locales = { fr, enGB };
 // @group View/Account
 // Friends page
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 
 function formatDate(date: number) {
   return formatDistanceToNowStrict(new Date(date), {

@@ -140,7 +140,7 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members/Group
 // Group view page
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 const authenticated = true;
 
 function formatDescription() {

@@ -365,7 +365,7 @@ import { ref } from 'vue';
 // @group View/Members/Group
 // Groups management page
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 
 function cancel(id: number) {
       console.log("Annulé " + id);

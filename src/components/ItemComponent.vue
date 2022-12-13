@@ -62,7 +62,7 @@ import { ref } from "vue";
 // @vuese
 // @group Default
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 // /api/item/${vm.$route.params.id}.json
 </script>
 <style lang="scss" scoped>

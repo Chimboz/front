@@ -396,7 +396,7 @@ const user = auth.user;
 // @group View/Members/Group
 // Groups page
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 const authenticated = true;
 // /api/groups.json
 // meta title section.groups

@@ -286,7 +286,7 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Members/Group
 // Group edition page
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 
 function formatDate(date: number) {
   return format(new Date(data.value.date), "PPp", {

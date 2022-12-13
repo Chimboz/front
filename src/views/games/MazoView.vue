@@ -188,7 +188,7 @@ const locales = { fr, enGB };
 // @group View/Games
 // Mazo page
 
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {

@@ -88,7 +88,7 @@ const locales = { fr, enGB };
 // @vuese
 // @group View/Account
 // Messenger page
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 
 function formatDate(date: number) {
   return formatDistanceToNowStrict(new Date(date), {

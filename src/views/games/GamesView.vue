@@ -227,7 +227,7 @@
 import { ref } from 'vue';
 
   
-const data = ref<any>(null);
+const data = ref<any>(undefined);
 // /api/games.json
 // meta title section.games
 </script>
