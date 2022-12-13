@@ -34,7 +34,10 @@
           style="float: right"
         />
       </div>
-      <div class="markdown-body description" v-html="formatDescription"></div>
+      <div
+        class="markdown-body description"
+        v-html="messageRender(data.description)"
+      ></div>
       <br />
       <GlobalCard v-if="data" class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
@@ -73,33 +76,33 @@
       </GlobalCard>
       <br />
       Groupe no. <b>{{ $route.params.id }}</b> créé le
-      <b>{{ formatDate() }} ({{ formatDistance }} jours)</b><br />
-      <br />
-      <GlobalCard v-if="data" class="justified"
+      <b>{{ formatDate() }} ({{ formatDistance() }} jours)</b><br />
+      <br v-if="data.bacteria" />
+      <GlobalCard v-if="data.bacteria" class="justified"
         ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
           >Bacteria</b
         ><br /><br />
         Classé : <b>{{ data.bacteria.rank }}</b
         >/<b>{{ data.bacteria.total }}</b> avec
         <b>{{ data.bacteria.points }}</b> points.</GlobalCard
-      ><br />
-      <GlobalCard v-if="data" class="justified"
+      ><br v-if="data.patojdur" />
+      <GlobalCard v-if="data.patojdur" class="justified"
         ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
           >Patojdur</b
         ><br /><br />
         Classé : <b>{{ data.patojdur.rank }}</b
         >/<b>{{ data.patojdur.total }}</b> avec
         <b>{{ data.patojdur.points }}</b> points.</GlobalCard
-      ><br />
-      <GlobalCard v-if="data" class="justified"
+      ><br v-if="data.popularity" />
+      <GlobalCard v-if="data.popularity" class="justified"
         ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
           >Popularity</b
         ><br /><br />
         Classé : <b>{{ data.popularity.rank }}</b
         >/<b>{{ data.popularity.total }}</b> avec
         <b>{{ data.popularity.points }}</b> points.</GlobalCard
-      ><br />
-      <GlobalCard v-if="data" class="justified">
+      ><br v-if="data.global" />
+      <GlobalCard v-if="data.global" class="justified">
         Classement général : <b>{{ data.global.rank }}</b
         >/<b>{{ data.global.total }}</b> avec
         <b>{{ data.global.points }}</b> points.</GlobalCard
@@ -128,7 +131,9 @@
 <script setup lang="ts">
 import Blazon from "@/components/blazon/BlazonComponent.vue";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
+import api from "@/modules/api";
 import messageRender from "@/modules/messageRender";
+import { fetchData, asset } from "@/utils";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 // import { useAuthStore } from "@/stores/auth";
@@ -143,9 +148,6 @@ const locales = { fr, enGB };
 const data = ref<any>(undefined);
 const authenticated = true;
 
-function formatDescription() {
-  return messageRender(data.value.description);
-}
 function formatDate() {
   return format(new Date(data.value.date), "PPp", {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
@@ -162,6 +164,11 @@ function formatDistance() {
 function join() {
   console.log("Rejoins " /*+ $route.params.id*/);
 }
+
+fetchData(async (params) => {
+  data.value = (await api.get(`groups/${params.id}`)).data;
+  data.value.level = 25;
+});
 
 // /api/group.json
 // meta title section.group

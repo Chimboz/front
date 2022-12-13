@@ -55,12 +55,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.official" :key="index">
+          <tr v-for="group in data.officials" :key="group.id">
             <td>
               <b>{{ group.id }}</b>
             </td>
             <td><GroupLink :group="group" /></td>
-            <td>{{ group.type }}</td>
+            <td>{{ group.genre }}</td>
           </tr>
         </tbody>
       </table>
@@ -87,12 +87,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.new" :key="index">
+          <tr v-for="group in data.members" :key="group.id">
             <td>
               <b>{{ group.id }}</b>
             </td>
             <td><GroupLink :group="group" /></td>
-            <td>{{ group.type }}</td>
+            <td>{{ group.genre }}</td>
           </tr>
         </tbody>
       </table>
@@ -126,7 +126,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(group, index) in data.best" :key="index">
+          <tr v-for="group in data.best" :key="group.id">
             <td>
               <b>{{ group.id }}</b>
             </td>
@@ -371,9 +371,10 @@
           draggable="false"
           @contextmenu.prevent
           height="17"
-          width="17" />Le nombre de groupes que tu peux rejoindre tel que décrit
-        dans le <router-link to="/levels">tableau des niveaux</router-link>,
-        comprend uniquement les <b>groupes des membres</b>, les
+          width="17" />
+        Le nombre de groupes que tu peux rejoindre tel que décrit dans le
+        <router-link to="/levels">tableau des niveaux</router-link>, comprend
+        uniquement les <b>groupes des membres</b>, les
         <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -387,7 +388,9 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
+import { fetchData } from "@/utils";
 import { ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user;
@@ -398,6 +401,10 @@ const user = auth.user;
 
 const data = ref<any>(undefined);
 const authenticated = true;
+
+fetchData(async () => {
+  data.value = (await api.get("groups")).data;
+});
 // /api/groups.json
 // meta title section.groups
 </script>
