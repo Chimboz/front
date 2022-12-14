@@ -266,10 +266,6 @@ function formatDate() {
 
 // meta title section.home
 </script>
-
-<style src="@/assets/css/bbs/markdown.css"></style>
-<style src="katex/dist/katex.min.css"></style>
-<style src="@/assets/css/bbs/code.css"></style>
 <style lang="scss">
 .packs .card-btn {
   background: linear-gradient(

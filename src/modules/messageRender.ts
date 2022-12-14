@@ -2,6 +2,9 @@ import { marked } from "marked";
 import DOMPurify from "dompurify";
 import katex from "katex";
 import hljs from "highlight.js";
+import "@/assets/css/bbs/markdown.css";
+import "highlight.js/styles/github-dark.css";
+import "katex/dist/katex.min.css";
 
 const allowed_uri = ["http", "https"];
 const allowed_images = [

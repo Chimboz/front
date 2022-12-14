@@ -246,7 +246,21 @@ import eventBus from "@/modules/eventBus";
 import { computed, ref, type SelectHTMLAttributes } from "vue";
 import { useI18n } from "vue-i18n";
 const auth = useAuthStore();
-const user = computed(() => auth.user);
+const user: any = computed(() => ({
+  ...auth.user,
+  name: auth.user!.pseudo,
+  color: "",
+  look: {
+    avatar: 0,
+    emote: auth.user!.avatar_mood,
+    hat: +auth.user!.avatar_design.split(";")[1],
+    body: +auth.user!.avatar_design.split(";")[2],
+    shoe: +auth.user!.avatar_design.split(";")[3],
+    item0: +auth.user!.avatar_design.split(";")[4],
+    item1: +auth.user!.avatar_design.split(";")[5],
+    item2: +auth.user!.avatar_design.split(";")[6],
+  },
+}));
 
 // @vuese
 // @group BBS

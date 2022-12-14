@@ -132,6 +132,7 @@ const props = withDefaults(
 );
 onMounted(() => {
   if (route.hash) scrollTo(route.hash);
+  console.log(props.message.author)
 });
 
 function formatDate() {
@@ -153,9 +154,6 @@ function quote() {
   console.log();
 }
 </script>
-<style src="@/assets/css/bbs/markdown.css"></style>
-<style src="katex/dist/katex.min.css"></style>
-<style src="@/assets/css/bbs/code.css"></style>
 <style lang="scss">
 .info-sm .tiz {
   margin-bottom: -25px;
