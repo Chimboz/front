@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard color="yellow">
+  <Card color="yellow">
     <template #subtop>Chaparadio</template>
     <div class="flex">
       <img
@@ -51,10 +51,11 @@
       </div>
     </div>
     <audio @timeupdate="onProgress" :src="'/radio/' + src" ref="player"></audio>
-  </GlobalCard>
+  </Card>
 </template>
 
 <script setup lang="ts">
+import Card from "./core/global/CardComponent.vue";
 import { ref } from "vue";
 // @vuese
 // @group Default
