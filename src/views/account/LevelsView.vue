@@ -50,6 +50,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import { asset } from "@/utils";
 import { ref } from "vue";
 // @vuese
 // @group View/Account

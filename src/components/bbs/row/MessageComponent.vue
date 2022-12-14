@@ -71,7 +71,7 @@
             v-if="
               (message.author.id === user.id &&
                 Date.now() - message.date < 600) ||
-              user.role > 50
+              +user.user_level > 3
             "
             @click.prevent="eventBus.emit('edit', message.content)"
           >
@@ -86,7 +86,7 @@
           >&nbsp;
           <button
             class="btn-action"
-            v-if="message.author.id === user.id || user.role > 50"
+            v-if="message.author.id === user.id || +user.user_level > 3"
             @click.prevent="delete"
           >
             x

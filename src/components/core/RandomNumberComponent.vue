@@ -15,7 +15,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-
+import { asset } from "@/utils";
 import { onMounted, ref } from "vue";
 
 const props = withDefaults(

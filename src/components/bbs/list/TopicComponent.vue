@@ -50,7 +50,7 @@
   </table>
   <br />
   <div style="text-align: end" v-if="authenticated">
-    <button class="btn-action" v-if="user.role > 50" @click.prevent="move">
+    <button class="btn-action" v-if="+user.user_level > 3" @click.prevent="move">
       <img
         src="@/assets/img/bbs/icon/arrow.svg"
         width="10"
@@ -60,7 +60,7 @@
         @contextmenu.prevent
       />&nbsp;Déplacer</button
     >&nbsp;
-    <button class="btn-action" v-if="user.role > 50" @click.prevent="lock">
+    <button class="btn-action" v-if="+user.user_level > 3" @click.prevent="lock">
       <img
         src="@/assets/img/bbs/icon/lock.svg"
         width="9"
@@ -72,7 +72,7 @@
     >&nbsp;
     <button
       class="btn-action"
-      v-if="user.role > 50"
+      v-if="+user.user_level > 3"
       @click.prevent="deleteTopic"
     >
       x&nbsp;Supprimer

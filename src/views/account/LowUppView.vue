@@ -65,10 +65,7 @@ const user = computed(() => auth.user);
 // @group View/Account
 // Capitalization page
 
-const pseudo = ref("");
-function mounted() {
-  pseudo.value = user!.name.slice();
-}
+const pseudo = ref(user.value!.pseudo.slice());
 
 function changeCase(index: number) {
   let letter;
