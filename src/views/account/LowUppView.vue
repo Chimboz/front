@@ -57,9 +57,9 @@
 </template>
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/auth";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const auth = useAuthStore();
-const user = auth.user;
+const user = computed(() => auth.user);
 
 // @vuese
 // @group View/Account

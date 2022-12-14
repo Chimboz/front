@@ -110,9 +110,9 @@ import api from "@/modules/api";
 import eventBus from "@/modules/eventBus";
 import { useAuthStore } from "@/stores/auth";
 import { fetchData } from "@/utils";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const auth = useAuthStore();
-const user = auth.user;
+const user = computed(() => auth.user);
 
 // @vuese
 // @group View/Community
@@ -130,7 +130,7 @@ function show(pack: any) {
 }
 function buy() {
   buyAudio.value!.play();
-  console.log("Acheté " + shown.name);
+  console.log("Acheté " + shown.value.name);
   eventBus.emit("confirmation", {
     message: "success.buy",
     callback: "/api/success.json",

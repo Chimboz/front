@@ -139,7 +139,7 @@ import { fr, enGB } from "date-fns/locale";
 // import { useAuthStore } from "@/stores/auth";
 import { ref } from "vue";
 // const auth = useAuthStore();
-// const user = auth.user;
+// const user = computed(() => auth.user);
 const locales = { fr, enGB };
 
 // @vuese

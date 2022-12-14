@@ -391,9 +391,9 @@
 import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
 import { fetchData } from "@/utils";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const auth = useAuthStore();
-const user = auth.user;
+const user = computed(() => auth.user);
 
 // @vuese
 // @group View/Members/Group

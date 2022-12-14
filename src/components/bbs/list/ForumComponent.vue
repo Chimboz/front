@@ -64,7 +64,7 @@ import Topic from "../row/TopicComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
 // import { useAuthStore } from "@/stores/auth";
 // const auth = useAuthStore();
-// const user = auth.user;
+// const user = computed(() => auth.user);
 
 // @vuese
 // @group BBS/List

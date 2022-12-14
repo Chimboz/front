@@ -21,9 +21,11 @@
           draggable="false"
           @contextmenu.prevent
           :src="
-            asset(`img/bbs/folder${bbs.new ? '_new' : ''}${
-              bbs.locked ? '_lock' : ''
-            }.svg`)
+            asset(
+              `img/bbs/folder${bbs.new ? '_new' : ''}${
+                bbs.locked ? '_lock' : ''
+              }.svg`
+            )
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
@@ -86,7 +88,7 @@ const locales = { fr, enGB };
 // @group BBS/Row
 
 const hide = ref(false);
-const props = defineProps<{
+defineProps<{
   category: any;
 }>();
 

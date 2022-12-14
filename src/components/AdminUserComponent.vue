@@ -76,7 +76,7 @@
     <button class="btn-action btn-danger" @click="action('resetinfo')">
       Réinitialiser ses informations
     </button>
-    <div v-if="user.role == 100">
+    <div v-if="+user.admin">
       <button class="btn-action btn-danger" @click="action('resetitem')">
         Réinitialiser ses items
       </button>
@@ -174,7 +174,7 @@
         width="17"
       /><b> Inventaire</b>
     </div>
-    <div v-if="user.role == 100">
+    <div v-if="+user.admin">
       <form class="flex">
         <input
           required

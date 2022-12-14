@@ -46,9 +46,9 @@
                 width="19"
                 height="21"
                 :src="
-                  asset(`img/number/${
-                    line.value < 0 ? 'pink/' : ''
-                  }${number}.svg`)
+                  asset(
+                    `img/number/${line.value < 0 ? 'pink/' : ''}${number}.svg`
+                  )
                 "
               />
             </td>
@@ -133,9 +133,8 @@ const data = ref<any>(undefined);
 fetchData(async () => {
   // data.value = (await api.get("bank")).data;
   // TODO remove
-  data.value = (await api.get(`http://localhost:5173/api/bank.json`)).data;
+  data.value = (await api.get("http://localhost:5173/api/bank.json")).data;
 });
-
 
 function formatDate(date: number) {
   return format(new Date(date), "PPp", {

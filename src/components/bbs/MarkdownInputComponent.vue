@@ -243,9 +243,10 @@ import Emotes from "@/components/core/EmotesComponent.vue";
 import Message from "@/components/bbs/row/MessageComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import eventBus from "@/modules/eventBus";
-import { ref, type SelectHTMLAttributes } from "vue";
+import { computed, ref, type SelectHTMLAttributes } from "vue";
+import { useI18n } from "vue-i18n";
 const auth = useAuthStore();
-const user = auth.user;
+const user = computed(() => auth.user);
 
 // @vuese
 // @group BBS
@@ -257,6 +258,7 @@ const preview = ref("");
 const signature = ref(true);
 const selectionRange = ref([0, 0]);
 const mode = ref("post");
+const { t } = useI18n();
 
 defineProps<{
   isTopic?: boolean;
@@ -280,9 +282,7 @@ function submit() {
   } else console.log("Edité!");
   message.value = "";
 }
-function scrollTo(anchor: any) {
-  location.href = anchor;
-}
+
 function focusHandler() {
   textarea.value!.focus();
   select();
@@ -327,14 +327,14 @@ function formatCode() {
   message.value =
     message.value.substring(0, selectionRange.value[0]) +
     "\n```" +
-    $t("format.language") +
+    t("format.language") +
     "\n" +
     message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
     "\n```\n" +
     message.value.substring(selectionRange.value[1]);
   selectionRange.value = [
     selectionRange.value[0] + 4,
-    selectionRange.value[0] + 4 + $t("format.language").length,
+    selectionRange.value[0] + 4 + t("format.language").length,
   ];
   focusHandler();
 }

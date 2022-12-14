@@ -22,7 +22,7 @@ import { fetchData } from "@/utils";
 // import { useAuthStore } from "@/stores/auth";
 import { ref } from "vue";
 // const auth = useAuthStore();
-// const user = auth.user;
+// const user = computed(() => auth.user);
 
 // @vuese
 // @group View/Community/BBS

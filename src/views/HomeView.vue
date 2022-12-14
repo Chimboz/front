@@ -133,7 +133,10 @@
         />
         {{ data.news.title }}
       </template>
-      <div class="markdown-body" v-html="messageRender(data.news.content)"></div>
+      <div
+        class="markdown-body"
+        v-html="messageRender(data.news.content)"
+      ></div>
       <div class="news-date">{{ data.news.author }}, {{ formatDate() }}</div>
     </GlobalCard>
     <br />
@@ -238,7 +241,7 @@ const gain = ref(0);
 fetchData(async () => {
   // data.value = (await api.get("home")).data;
   // TODO remove
-  data.value = (await api.get(`http://localhost:5173/api/home.json`)).data
+  data.value = (await api.get("http://localhost:5173/api/home.json")).data;
 });
 
 async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {

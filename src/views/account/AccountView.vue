@@ -466,7 +466,7 @@ function statsPatojdur() {
 fetchData(async () => {
   // data.value = (await api.get(`account?lang=${navigator.language.split("-")[0]}`)).data;
   // TODO remove
-  data.value = (await api.get(`http://localhost:5173/api/account.json`)).data;
+  data.value = (await api.get("http://localhost:5173/api/account.json")).data;
 });
 
 // /api/account.json
