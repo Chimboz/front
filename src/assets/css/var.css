@@ -62,8 +62,8 @@
   --dark-button: var(--dark-pink);
 
   /* BBS Table */
-  --light-bbs: #c9dfef;
-  --dark-bbs: #d6e7f3;
+  --light-bbs: #d6e7f3;
+  --dark-bbs: #c9dfef;
 
   /* Rarities */
   --rare: #69c;

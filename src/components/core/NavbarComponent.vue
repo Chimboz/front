@@ -67,7 +67,7 @@
     </div>
   </div>
   <div id="nav" class="flex">
-    <router-link to="/"
+    <router-link to="/" :class="{ active: ($route.meta.section as string[])?.includes('Home') }"
       ><button class="nav-btn flex centered">
         <img
           draggable="false"
@@ -106,7 +106,10 @@
           src="@/assets/img/arrow.svg"
         /></button
     ></a>
-    <router-link v-if="user" to="/account"
+    <router-link
+      v-if="user"
+      to="/account"
+      :class="{ active: ($route.meta.section as string[])?.includes('Account') }"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -124,7 +127,9 @@
         </div>
       </button></router-link
     >
-    <router-link to="/games"
+    <router-link
+      to="/games"
+      :class="{ active: ($route.meta.section as string[])?.includes('Games') }"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -142,7 +147,9 @@
         </div>
       </button></router-link
     >
-    <router-link to="/members"
+    <router-link
+      to="/members"
+      :class="{ active: ($route.meta.section as string[])?.includes('Members') }"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -160,7 +167,9 @@
         </div>
       </button></router-link
     >
-    <router-link to="/bbs"
+    <router-link
+      to="/bbs"
+      :class="{ active: ($route.meta.section as string[])?.includes('Community') }"
       ><button class="nav-btn flex centered">
         <div class="nav-text">
           <img
@@ -186,6 +195,7 @@ import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { asset } from "@/utils";
 import { computed } from "vue";
+import { useRoute } from "vue-router";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
@@ -302,7 +312,7 @@ document.body.className = "h" + hours;
 
 .nav-btn:hover .nav-icon,
 .nav-btn:active .nav-icon,
-#nav a.router-link-exact-active .nav-icon {
+#nav a.active .nav-icon {
   filter: none;
 }
 
@@ -328,7 +338,7 @@ document.body.className = "h" + hours;
 
 .nav-btn:hover,
 .nav-btn:active,
-#nav a.router-link-exact-active .nav-btn {
+#nav a.active .nav-btn {
   background-image: linear-gradient(
     to bottom,
     var(--light),
@@ -342,7 +352,7 @@ document.body.className = "h" + hours;
 
 #nav a:first-child .nav-btn:hover,
 #nav a:first-child .nav-btn:active,
-#nav a:first-child.router-link-exact-active .nav-btn {
+#nav a:first-child.active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--light) 0%,
@@ -356,8 +366,8 @@ document.body.className = "h" + hours;
 #nav a:first-child .nav-btn:hover,
 #nav a:nth-child(2) .nav-btn:active,
 #nav a:first-child .nav-btn:active,
-#nav a:first-child.router-link-exact-active .nav-btn,
-#nav a:nth-child(2).router-link-exact-active .nav-btn {
+#nav a:first-child.active .nav-btn,
+#nav a:nth-child(2).active .nav-btn {
   border-left-color: var(--orange);
 }
 
@@ -365,8 +375,8 @@ document.body.className = "h" + hours;
 #nav a:first-child .nav-btn:hover,
 #nav a:last-child .nav-btn:active,
 #nav a:first-child .nav-btn:active,
-#nav a:last-child.router-link-exact-active .nav-btn,
-#nav a:first-child.router-link-exact-active .nav-btn {
+#nav a:last-child.active .nav-btn,
+#nav a:first-child.active .nav-btn {
   border-right-color: var(--orange);
 }
 
@@ -418,7 +428,7 @@ a:hover {
 
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
-  #nav a.router-link-exact-active .nav-text {
+  #nav a.active .nav-text {
     stroke: var(--dark-orange);
   }
 

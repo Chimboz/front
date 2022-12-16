@@ -3,7 +3,7 @@ table.bbs {
   border-spacing: 0;
   box-shadow: 0 0 3px var(--dark);
   border-radius: calc(var(--border-radius) / 3);
-  background: var(--light-bbs);
+  background: var(--dark-bbs);
   padding: calc(var(--gap) / 2) 0;
 }
 
@@ -15,9 +15,9 @@ table.bbs {
   height: 24px;
   background-image: linear-gradient(
     to bottom,
-    var(--light-bbs) 0px,
-    var(--light-bbs) 50%,
-    var(--dark-bbs) 100%
+    var(--dark-bbs) 0px,
+    var(--dark-bbs) 50%,
+    var(--light-bbs) 100%
   );
   border-bottom: 1px solid var(--dark);
 }

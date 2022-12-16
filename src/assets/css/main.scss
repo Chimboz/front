@@ -10,6 +10,7 @@
 
 html {
   font-size: var(--font-size);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -61,6 +62,12 @@ body {
     0 1px 0 var(--dark-orange), 0 -1px 0 var(--dark-orange),
     0.7px 0.7px var(--dark-orange), -0.7px -0.7px 0 var(--dark-orange),
     0.7px -0.7px 0 var(--dark-orange), -0.7px 0.7px 0 var(--dark-orange);
+}
+
+// Highlight targeted element
+:target {
+  background: var(--light-bbs);
+  transition: .3s;
 }
 
 // Default tags

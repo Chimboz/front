@@ -292,7 +292,7 @@
           <router-link
             v-for="message of data.forum"
             :key="message.id"
-            :to="`/topic/${message.topic.id}/${message.topic.page}#${message.id}`"
+            :to="`/topic/${message.topic.id}/${message.topic.page}#p${message.id}`"
           >
             <div class="list fullwidth col" style="align-items: flex-start">
               <div>

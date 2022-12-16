@@ -142,7 +142,7 @@ textarea.btn-md {
   border-radius: calc(var(--border-radius) / 3);
   padding: 0 var(--md-gap);
   align-items: center;
-  background: linear-gradient(to bottom, var(--light), var(--light-bbs));
+  background: linear-gradient(to bottom, var(--light), var(--dark-bbs));
   border: 1px solid var(--blue);
   font-family: "Cocon";
   text-transform: lowercase;

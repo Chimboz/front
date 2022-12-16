@@ -52,7 +52,7 @@
         <router-link
           :to="`/topic/${$route.params.id}/${topic.id}/${Math.floor(
             topic.reply / 10 + 1
-          )}#${topic.last_msg.msgid}`"
+          )}#p${topic.last_msg.msgid}`"
           ><img
             draggable="false"
             @contextmenu.prevent

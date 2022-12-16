@@ -1,5 +1,5 @@
 <template>
-  <tr :id="message.id">
+  <tr :id="`p${message.id}`">
     <td class="info" valign="top">
       <GlobalAvatar
         :avatar="message.author.look.avatar"
@@ -32,7 +32,7 @@
         </div>
       </h2>
       <div class="head flex">
-        <a :href="`#${message.id}`">
+        <a :href="`#p${message.id}`">
           <img
             draggable="false"
             alt="Lien du message"

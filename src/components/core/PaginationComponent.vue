@@ -24,10 +24,15 @@ const props = withDefaults(
 function array() {
   return [
     ...new Set([
+      // First 3 pages
       ...Array(Math.min(props.total, 3)).keys(),
+      // Previous page
       props.current - 2,
+      // Current page
       props.current - 1,
+      // Next page
       props.current,
+      // Last 3 pages
       props.total - 3,
       props.total - 2,
       props.total - 1,
