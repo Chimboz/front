@@ -70,7 +70,9 @@
 </template>
 <script setup lang="ts">
 import Bank from "@/components/BankComponent.vue";
+import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
+import { randomInt } from "@/utils";
 import { ref, computed } from "vue";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -84,8 +86,8 @@ const pseudo = ref("");
 function submit() {
   console.log(`Envoyé ${pseudo.value}!`);
 }
-function generatePseudo() {
-  pseudo.value = "test";
+async function generatePseudo() {
+  pseudo.value = (await api.get(`generator/${randomInt(3,15)}/${randomInt(1,2)}`)).data.pseudo;
 }
 
 // meta title section.eraser

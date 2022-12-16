@@ -109,10 +109,13 @@
 </template>
 <script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
+import api from "@/modules/api";
 import messageRender from "@/modules/messageRender";
+import { fetchData } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 
 // @vuese
@@ -149,6 +152,12 @@ function send() {
   });
   message.value = "";
 }
+
+fetchData(async () => {
+  // data.value = (await api.get("mi/${useRoute().params.id}")).data;
+  // TODO remove
+  data.value = (await api.get("http://localhost:5173/api/mi5.json")).data;
+});
 
 // /api/conversation.json
 // meta title section.conversation

@@ -79,9 +79,12 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 const locales = { fr, enGB };
 
@@ -108,6 +111,13 @@ function hashColor(str: string) {
   }
   return colour;
 }
+
+fetchData(async () => {
+  // data.value = (await api.get("mi")).data;
+  // TODO remove
+  data.value = (await api.get("http://localhost:5173/api/mi.json")).data;
+});
+
 // /api/messenger.json
 // meta title section.messenger
 </script>

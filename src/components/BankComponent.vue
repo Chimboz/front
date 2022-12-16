@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import AnimatedNumber from "@/components/core/AnimatedNumberComponent.vue";
 import { useAuthStore } from "@/stores/auth";
-import { asset } from "@/utils";
+import { asset, randomInt } from "@/utils";
 import { onMounted, ref } from "vue";
 const auth = useAuthStore();
 const user = auth.user!;
@@ -132,12 +132,6 @@ onMounted(() => {
   requestAnimationFrame(tween);
 });
 
-function randomInt(min: number, max: number) {
-  return (
-    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
-    Math.ceil(min)
-  );
-}
 function tween() {
   if (coins.value >= +user.money || coins.value > 1760) return;
   coins.value += Math.max(Math.floor(+user.money / 60 / props.delay), 1);

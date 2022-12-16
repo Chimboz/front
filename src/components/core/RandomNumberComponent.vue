@@ -15,7 +15,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-import { asset } from "@/utils";
+import { asset, randomInt } from "@/utils";
 import { onMounted, ref } from "vue";
 
 const props = withDefaults(
@@ -37,12 +37,6 @@ onMounted(() => {
   requestAnimationFrame(tween);
 });
 
-function randomInt(min: number, max: number) {
-  return (
-    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
-    Math.ceil(min)
-  );
-}
 function bezier(
   time: number,
   startValue: number,

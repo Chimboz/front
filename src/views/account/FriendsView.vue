@@ -131,6 +131,9 @@ import ScrollableContainer from "../../components/core/ScrollableContainerCompon
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
+import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 // @vuese
 // @group View/Account
@@ -216,6 +219,13 @@ function addFriend(form: any) {
     }
   }
 }
+
+fetchData(async () => {
+  // data.value = (await api.get("friends")).data;
+  // TODO remove
+  data.value = (await api.get("http://localhost:5173/api/friends.json")).data;
+});
+
 // /api/friends.json
 // meta title section.friends
 </script>

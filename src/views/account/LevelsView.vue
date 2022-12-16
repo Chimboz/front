@@ -35,9 +35,7 @@
             width="200"
             height="200"
             :alt="'Level' + data[selected].level"
-            :src="
-              require('@/assets/img/level/' + data[selected].level + '.png')
-            "
+            :src="asset(`img/level/${data[selected].level}.png`)"
           />
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
@@ -50,7 +48,8 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
+import api from "@/modules/api";
+import { asset, fetchData } from "@/utils";
 import { ref } from "vue";
 // @vuese
 // @group View/Account
@@ -58,6 +57,12 @@ import { ref } from "vue";
 
 const data: any = ref(undefined);
 const selected = ref(0);
+
+fetchData(async () => {
+  // data.value = (await api.get("account/levels")).data;
+  // TODO remove
+  data.value = (await api.get("http://localhost:5173/api/levels.json")).data;
+});
 // /api/levels.json
 // meta title level
 </script>
@@ -66,15 +71,15 @@ const selected = ref(0);
 .level-list {
   max-height: 450px;
   overflow-y: scroll;
+  direction: rtl;
+  div {
+    background: var(--dark-card-yellow);
+    border: 2px solid var(--main-card-yellow);
+    padding: var(--gap);
+    border-radius: var(--border-radius);
+    direction: ltr;
+  }
 }
-
-.level-list div {
-  background: var(--dark-card-yellow);
-  border: 2px solid var(--main-card-yellow);
-  padding: var(--gap);
-  border-radius: var(--border-radius);
-}
-
 .level-description {
   flex-direction: column;
   justify-content: center;
