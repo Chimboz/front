@@ -132,7 +132,6 @@ const props = withDefaults(
 );
 onMounted(() => {
   if (route.hash) scrollTo(route.hash);
-  console.log(props.message.author)
 });
 
 function formatDate() {

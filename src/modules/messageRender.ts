@@ -10,10 +10,7 @@ const allowed_uri = ["http", "https"];
 const allowed_images = [
   "i.imgur.com",
   "image.noelshack.com",
-  "chimboz.fr",
-  "chimbozfront.web.app",
-  // TODO: remove in prod
-  "localhost",
+  location.hostname
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
