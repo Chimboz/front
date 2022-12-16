@@ -7,7 +7,7 @@
             <div class="arrows flex">
               <button
                 type="button"
-                v-for="(_, name) of data.items"
+                v-for="name of categories"
                 :key="name"
                 :disabled="
                   data.items[name]
@@ -42,7 +42,7 @@
             <div class="arrows flex">
               <button
                 type="button"
-                v-for="(_, name) of data.items"
+                v-for="name of categories"
                 :key="name"
                 :disabled="
                   data.items[name]
@@ -243,7 +243,7 @@
             <div class="category-selection" @contextmenu.prevent>
               <button
                 type="button"
-                v-for="category of data.items"
+                v-for="category of categories"
                 :key="category"
                 :class="{ active: checked.includes(category) }"
                 @click="
@@ -372,10 +372,11 @@ const props = defineProps<{
   centred: string;
 }>();
 
+const categories = ["item0", "hat", "item1", "body", "item2", "shoe"];
 const profile = ref(true);
 const loadInventory = ref(false);
 const info = ref("");
-const checked = ref(["item0", "hat", "item1", "body", "item2", "shoe"]);
+const checked = ref(categories);
 const gender = ref(props.data.gender);
 
 function submit() {
