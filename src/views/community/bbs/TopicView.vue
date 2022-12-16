@@ -10,7 +10,7 @@
     /></template>
     <TopicList v-if="data" :topic="data" />
     <br />
-    <MarkdownInput v-if="authenticated && data && !data.locked" />
+    <MarkdownInput v-if="user && data && !data.locked" />
   </GlobalContainer>
 </template>
 
@@ -19,17 +19,16 @@ import TopicList from "@/components/bbs/list/TopicComponent.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-// import { useAuthStore } from "@/stores/auth";
-import { ref } from "vue";
-// const auth = useAuthStore();
-// const user = computed(() => auth.user);
+import { useAuthStore } from "@/stores/auth";
+import { ref, computed } from "vue";
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
 // @vuese
 // @group View/Community/BBS
 // Topic page
 
 const data: any = ref(undefined);
-const authenticated = true;
 
 fetchData(async (params) => {
   data.value = (

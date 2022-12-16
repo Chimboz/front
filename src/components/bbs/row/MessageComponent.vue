@@ -44,7 +44,7 @@
         >&nbsp;
         <b class="ellipsis justified title">{{ message.title }}</b>
         &nbsp;
-        <div v-if="authenticated">
+        <div v-if="user">
           <button
             class="btn-action"
             @click.prevent="
@@ -112,12 +112,11 @@ import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/modules/messageRender";
 import { useAuthStore } from "@/stores/auth";
 import { useRoute } from "vue-router";
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
 import eventBus from "@/modules/eventBus";
 const locales = { fr, enGB };
 const auth = useAuthStore();
-const authenticated = true;
-const user = auth.user!;
+const user = computed(() => auth.user);
 const route = useRoute();
 
 // @vuese

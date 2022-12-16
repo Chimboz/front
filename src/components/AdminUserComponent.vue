@@ -204,10 +204,10 @@
 import { useAuthStore } from "@/stores/auth";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import eventBus from "@/modules/eventBus";
 const auth = useAuthStore();
-const user = auth.user!;
+const user = computed(() => auth.user);
 const locales = { fr, enGB };
 
 // @vuese

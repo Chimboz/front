@@ -137,7 +137,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard v-if="authenticated">
+    <GlobalCard v-if="user">
       <template #header>Moi et mes groupes</template>
 
       <router-link to="/groups/manage"
@@ -400,7 +400,6 @@ const user = computed(() => auth.user);
 // Groups page
 
 const data = ref<any>(undefined);
-const authenticated = true;
 
 fetchData(async () => {
   data.value = (await api.get("groups")).data;

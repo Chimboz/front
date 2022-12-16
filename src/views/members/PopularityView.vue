@@ -341,7 +341,7 @@
           </table>
         </div></div></GlobalCard
     ><br />
-    <GlobalCard id="vote" v-if="authenticated"
+    <GlobalCard id="vote" v-if="user"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
@@ -435,7 +435,6 @@ const user = computed(() => auth.user);
 // @group View/Members
 // Popularity page
 const data = ref<any>(undefined);
-const authenticated = true;
 
 function vote() {
   console.log("Envoyé!");

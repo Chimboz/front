@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard color="yellow" v-if="authenticated">
+  <GlobalCard color="yellow" v-if="user">
     <template #button>
       <router-link to="/bank"
         ><GlobalButton color="yellow" icon="credits.svg">{{
@@ -46,9 +46,9 @@
 import AnimatedNumber from "@/components/core/AnimatedNumberComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { asset, randomInt } from "@/utils";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 const auth = useAuthStore();
-const user = auth.user!;
+const user = computed(() => auth.user);
 
 // @vuese
 // @group Default
@@ -59,8 +59,6 @@ const props = withDefaults(
   }>(),
   { delay: 5 }
 );
-
-const authenticated = true;
 
 const coins = ref(7);
 const coinsPosition = [
@@ -116,8 +114,8 @@ const coinsPosition = [
 ];
 
 onMounted(() => {
-  if (!authenticated) return;
-  for (let i = 8; i <= Math.min(Math.floor(+user.money / 10), 360); i++) {
+  if (!user) return;
+  for (let i = 8; i <= Math.min(Math.floor(+user.value!.money / 10), 360); i++) {
     const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
     const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
     const filter = coinsPosition[i % 8].filter;
@@ -133,9 +131,9 @@ onMounted(() => {
 });
 
 function tween() {
-  if (coins.value >= +user.money || coins.value > 1760) return;
-  coins.value += Math.max(Math.floor(+user.money / 60 / props.delay), 1);
-  if (coins.value < +user.money) requestAnimationFrame(tween);
+  if (coins.value >= +user.value!.money || coins.value > 1760) return;
+  coins.value += Math.max(Math.floor(+user.value!.money / 60 / props.delay), 1);
+  if (coins.value < +user.value!.money) requestAnimationFrame(tween);
 }
 </script>
 <style lang="scss" scoped>

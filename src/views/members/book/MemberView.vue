@@ -257,7 +257,7 @@
       }}</router-link>
     </GlobalCard>
     <template #right-column
-      ><router-link v-if="+user.admin > 0" :to="'/admin/' + $route.params.id"
+      ><router-link v-if="user && +user.admin > 0" :to="'/admin/' + $route.params.id"
         ><GlobalButton icon="rules.svg">Modérer</GlobalButton></router-link
       ></template
     >
@@ -268,15 +268,14 @@
 import { asset, fetchData } from "@/utils";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { useAuthStore } from "@/stores/auth";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import type User from "@/types/User";
 import api from "@/modules/api";
 import { RouterLink } from "vue-router";
 const locales = { fr, enGB };
 const auth = useAuthStore();
-const user = auth.user as User;
+const user = computed(() => auth.user);
 
 // @vuese
 // @group View/Members/Book

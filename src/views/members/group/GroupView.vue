@@ -117,7 +117,7 @@
             style="float: left; margin-right: 4px"
           />
           {{ $t(`group.${data.status}`) }}
-          <div v-if="authenticated">
+          <div v-if="user">
             <br />
             <a @click.prevent="join" style="cursor: var(--pointer)"
               >Rejoindre ce groupe</a
@@ -136,17 +136,16 @@ import messageRender from "@/modules/messageRender";
 import { fetchData, asset } from "@/utils";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-// import { useAuthStore } from "@/stores/auth";
-import { ref } from "vue";
-// const auth = useAuthStore();
-// const user = computed(() => auth.user);
+import { useAuthStore } from "@/stores/auth";
+import { ref, computed } from "vue";
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Group
 // Group view page
 const data = ref<any>(undefined);
-const authenticated = true;
 
 function formatDate() {
   return format(new Date(data.value.date), "PPp", {

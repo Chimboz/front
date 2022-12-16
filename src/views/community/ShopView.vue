@@ -80,7 +80,7 @@
               color="yellow"
               icon="credits.svg"
               @click.prevent="buy()"
-              v-if="authenticated"
+              v-if="user"
             >
               Acheter</GlobalButton
             >
@@ -120,7 +120,6 @@ const user = computed(() => auth.user);
 
 const data: any = ref(undefined);
 const shown = ref<any>(undefined);
-const authenticated = true;
 const buyAudio = ref<null | HTMLAudioElement>(null);
 const clickAudio = ref<null | HTMLAudioElement>(null);
 

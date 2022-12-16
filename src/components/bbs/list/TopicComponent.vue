@@ -49,8 +49,12 @@
     </tr>
   </table>
   <br />
-  <div style="text-align: end" v-if="authenticated">
-    <button class="btn-action" v-if="+user.user_level > 3" @click.prevent="move">
+  <div style="text-align: end" v-if="user">
+    <button
+      class="btn-action"
+      v-if="+user.user_level > 3"
+      @click.prevent="move"
+    >
       <img
         src="@/assets/img/bbs/icon/arrow.svg"
         width="10"
@@ -60,7 +64,11 @@
         @contextmenu.prevent
       />&nbsp;Déplacer</button
     >&nbsp;
-    <button class="btn-action" v-if="+user.user_level > 3" @click.prevent="lock">
+    <button
+      class="btn-action"
+      v-if="+user.user_level > 3"
+      @click.prevent="lock"
+    >
       <img
         src="@/assets/img/bbs/icon/lock.svg"
         width="9"
@@ -85,9 +93,9 @@ import Pagination from "../../core/PaginationComponent.vue";
 import Message from "../row/MessageComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRoute } from "vue-router";
+import { computed } from "vue";
 const auth = useAuthStore();
-const user = auth.user!;
-const authenticated = true;
+const user = computed(() => auth.user);
 const route = useRoute();
 
 // @vuese
