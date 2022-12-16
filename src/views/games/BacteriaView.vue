@@ -3,7 +3,7 @@
     <template #left-column
       ><GlobalCard color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="games" />
+          <SideNavEntries section="Games" />
         </div> </GlobalCard
       ><br />
       <GlobalRules bot />

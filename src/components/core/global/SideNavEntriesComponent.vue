@@ -30,102 +30,120 @@ const sideNavEntries = [
   {
     label: "section.account",
     url: "/account",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.messenger",
     url: "/messenger",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.groups",
     url: "/groups/manage",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.friends",
     url: "/friends",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.password",
     url: "/notsmart",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.eraser",
     url: "/eraser",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.capitalization",
     url: "/lowupp",
-    section: "account",
+    section: "Account",
   },
   {
     label: "section.games",
     url: "/games",
-    section: "games",
+    section: "Games",
   },
   {
     label: "section.bacteria",
     url: "/games/bacteria",
-    section: "games",
+    section: "Games",
   },
   {
     label: "section.patojdur",
     url: "/games/patojdur",
-    section: "games",
+    section: "Games",
   },
   {
     label: "section.mazo",
     url: "/games/mazo",
-    section: "games",
+    section: "Games",
   },
   {
     label: "section.members",
     url: "/members",
-    section: "members",
+    section: "Members",
   },
   {
     label: "section.book",
     url: "/book",
-    section: "members",
+    section: "Members",
   },
   {
     label: "section.popularity",
     url: "/popularity",
-    section: "members",
+    section: "Members",
   },
   {
     label: "section.wedding",
     url: "/weddings",
-    section: "members",
+    section: "Members",
   },
   {
     label: "section.groups",
     url: "/groups",
-    section: "members",
+    section: "Members",
   },
   {
     label: "section.forum",
     url: "/bbs",
-    section: "community",
+    section: "Community",
   },
   {
     label: "section.shop",
     url: "/shop",
-    section: "community",
+    section: "Community",
   },
   {
     label: "section.encyclopedia",
     url: "/encyclopedia",
-    section: "community",
+    section: "Community",
   },
   {
     label: "section.chaparazzi",
     url: "/chaparazzi",
-    section: "community",
+    section: "Community",
   },
 ];
 </script>
+<style scoped>
+.router-link-active .list,
+.active .list {
+  background: transparent
+    linear-gradient(
+      to right,
+      var(--main-card-blue),
+      var(--pink) 10%,
+      var(--pink) 90%,
+      var(--main-card-blue)
+    ) !important;
+}
+
+.card .router-link-active,
+.card .active {
+  color: var(--light);
+}
+</style>

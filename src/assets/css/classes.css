@@ -212,23 +212,6 @@ textarea.btn-md {
     );
 }
 
-.router-link-active .list,
-.active .list {
-  background: transparent
-    linear-gradient(
-      to right,
-      var(--main-card-blue),
-      var(--pink) 10%,
-      var(--pink) 90%,
-      var(--main-card-blue)
-    ) !important;
-}
-
-.card .router-link-active,
-.card .active {
-  color: var(--light);
-}
-
 #loadtime {
   text-align: center;
 }

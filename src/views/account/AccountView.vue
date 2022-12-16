@@ -19,7 +19,7 @@
             </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries section="account" /></div></GlobalCard
+          <SideNavEntries section="Account" /></div></GlobalCard
       ><br />
       <Bank
     /></template>

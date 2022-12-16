@@ -1,4 +1,4 @@
-import { onBeforeMount } from "vue";
+import { onBeforeMount, onBeforeUpdate } from "vue";
 import { onBeforeRouteUpdate, useRoute, type RouteParams } from "vue-router";
 
 export function asset(path: string) {
@@ -14,5 +14,5 @@ export function randomInt(min: number, max: number) {
 
 export async function fetchData(callback: (params: RouteParams) => void) {
   onBeforeMount(() => callback(useRoute().params));
-  onBeforeRouteUpdate((to) => callback(to.params));
+  onBeforeUpdate(() => callback(useRoute().params));
 }
