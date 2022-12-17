@@ -225,7 +225,7 @@ const router = createRouter({
       },
     },
     {
-      // TODO: remove topic parameter
+      // TODO: remove forum parameter
       path: "/topic/:forum/:topic/:page?",
       name: "Topic",
       component: () => import("../views/community/bbs/TopicView.vue"),
@@ -275,11 +275,6 @@ const router = createRouter({
       component: () => import("../views/ErrorView.vue"),
     },
   ],
-});
-
-router.beforeEach((to, from, next) => {
-  console.log(to, from);
-  next();
 });
 
 export default router;

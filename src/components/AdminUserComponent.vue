@@ -207,7 +207,7 @@ import { fr, enGB } from "date-fns/locale";
 import { ref, computed } from "vue";
 import eventBus from "@/modules/eventBus";
 const auth = useAuthStore();
-const user = computed(() => auth.user);
+const user = computed(() => auth.user!);
 const locales = { fr, enGB };
 
 // @vuese

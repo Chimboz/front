@@ -9,7 +9,6 @@ export const useAuthStore = defineStore("auth", () => {
     // await api.post("auth/login", { pseudo, password, device_name: "browser" });
     // user.value = (await api.get("user")).data;
     // FIXME
-    console.log(pseudo, password);
     user.value = (await api.get("http://localhost:5173/api/user.json")).data;
   }
 
