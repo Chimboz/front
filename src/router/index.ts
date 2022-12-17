@@ -16,23 +16,21 @@ const router = createRouter({
   },
   routes: [
     {
+      path: "/login",
+      name: "Login",
+      component: () => import("../views/LoginView.vue"),
+    },
+    {
       path: "/",
       name: "Home",
       component: () => import("../views/HomeView.vue"),
       meta: { sitemap: { ignoreRoute: true }, section: ["Home"] },
     },
     {
-      path: "/admin",
-      name: "Admin",
-      component: () => import("../views/AdminView.vue"),
-      meta: { sitemap: { ignoreRoute: true } },
-      children: [
-        {
-          path: ":id",
-          component: () => import("../components/AdminUserComponent.vue"),
-          meta: { sitemap: { ignoreRoute: true } },
-        },
-      ],
+      path: "/online",
+      name: "Online",
+      component: () => import("../views/members/OnlineView.vue"),
+      meta: { section: ["Home"] },
     },
     {
       path: "/account",
@@ -56,7 +54,7 @@ const router = createRouter({
       path: "/messenger/:id",
       name: "Conversation",
       component: () => import("../views/account/ConversationView.vue"),
-      meta: { sitemap: { ignoreRoute: true }, section: ["Account"] },
+      meta: { sitemap: { ignoreRoute: true }, section: ["Account", "messenger"] },
     },
     {
       path: "/friends",
@@ -138,7 +136,7 @@ const router = createRouter({
         sitemap: {
           slugs: [1],
         },
-        section: ["Members"],
+        section: ["Members", "book"],
       },
     },
     {
@@ -167,38 +165,32 @@ const router = createRouter({
         sitemap: {
           slugs: [1],
         },
-        section: ["Members"],
+        section: ["Members", "groups"],
       },
     },
     {
       path: "/groups/manage",
       name: "Group Manage",
       component: () => import("../views/members/group/ManageView.vue"),
-      meta: { sitemap: { ignoreRoute: true }, section: ["Members"] },
+      meta: { sitemap: { ignoreRoute: true }, section: ["Members", "groups"] },
     },
     {
       path: "/groups/edit/:id",
       name: "Group Edit",
       component: () => import("../views/members/group/EditView.vue"),
-      meta: { sitemap: { ignoreRoute: true }, section: ["Members"] },
+      meta: { sitemap: { ignoreRoute: true }, section: ["Members", "groups"] },
     },
     {
       path: "/groups/create",
       name: "Group Create",
       component: () => import("../views/members/group/CreateView.vue"),
-      meta: { sitemap: { ignoreRoute: true }, section: ["Members"] },
-    },
-    {
-      path: "/online",
-      name: "Online",
-      component: () => import("../views/members/OnlineView.vue"),
-      meta: { section: ["Home"] },
+      meta: { sitemap: { ignoreRoute: true }, section: ["Members", "groups"] },
     },
     {
       path: "/bbs",
       name: "BBS",
       component: () => import("../views/community/bbs/BBSView.vue"),
-      meta: { section: ["Community"] },
+      meta: { section: ["Community", "forum"] },
     },
     {
       path: "/bbs/:id/:page?",
@@ -221,7 +213,7 @@ const router = createRouter({
             { id: 13, page: 1 },
           ],
         },
-        section: ["Community"],
+        section: ["Community", "forum"],
       },
     },
     {
@@ -229,7 +221,7 @@ const router = createRouter({
       path: "/topic/:forum/:topic/:page?",
       name: "Topic",
       component: () => import("../views/community/bbs/TopicView.vue"),
-      meta: { sitemap: { ignoreRoute: true }, section: ["Community"] },
+      meta: { sitemap: { ignoreRoute: true }, section: ["Community", "forum"] },
     },
     {
       path: "/shop",
@@ -264,9 +256,17 @@ const router = createRouter({
       ],
     },
     {
-      path: "/login",
-      name: "Login",
-      component: () => import("../views/LoginView.vue"),
+      path: "/admin",
+      name: "Admin",
+      component: () => import("../views/AdminView.vue"),
+      meta: { sitemap: { ignoreRoute: true } },
+      children: [
+        {
+          path: ":id",
+          component: () => import("../components/AdminUserComponent.vue"),
+          meta: { sitemap: { ignoreRoute: true } },
+        },
+      ],
     },
     // 404
     {

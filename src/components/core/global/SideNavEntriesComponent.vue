@@ -1,6 +1,7 @@
 <template>
   <router-link
     :to="entry.url"
+    :class="{ active: ($route.meta.section as string[]).includes(entry.label.split('.')[1]) }"
     v-for="(entry, i) of sideNavEntries.filter(
       (entry) => entry.section == section
     )"
