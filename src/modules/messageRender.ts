@@ -12,8 +12,6 @@ const ALLOWED_IMAGES = [
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
-const ALLOWED_PROPERTIES = ["color"];
-const ALLOW_CSS_FUNCTIONS = true;
 const ALLOWED_TAGS = [
   "p",
   "span",
@@ -46,7 +44,10 @@ const ALLOWED_TAGS = [
   "a",
   "img",
 ];
-const ALLOWED_ATTR = ["style", "class", "alt", "rel", "src", "href", "target"];
+const ALLOWED_ATTR = ["style", "class", "alt", "src", "href"];
+const ALLOWED_PROPERTIES = ["color"];
+const ALLOW_CSS_FUNCTIONS = true;
+const ALLOWED_CLASS = "hljs-";
 
 function markedRender(string: string) {
   // Custom emotes
@@ -61,7 +62,7 @@ function markedRender(string: string) {
       if (lang) return hljs.highlight(code, { language: lang }).value;
       return hljs.highlightAuto(code).value;
     },
-    langPrefix: "hljs language-",
+    langPrefix: "",
     pedantic: false,
     gfm: true,
     breaks: true,
@@ -96,32 +97,15 @@ function dompurifyRender(string: string) {
     });
   }
 
-  /**
-   * Take CSS rules and analyze them, create string wrapper to
-   * apply them to the DOM later on. Note that only selector rules
-   * are supported right now
-   */
-  function addCSSRules(output: any, cssRules: any) {
-    for (let index = cssRules.length - 1; index >= 0; index--) {
-      const rule = cssRules[index];
-      // check for rules with selector
-      if (rule.type === 1 && rule.selectorText) {
-        output.push(`${rule.selectorText}{`);
-        if (rule.style) {
-          validateStyles(output, rule.style);
-        }
-        output.push("}");
-      }
-    }
-  }
-
   // Add a hook to enforce CSS element sanitization
-  DOMPurify.addHook("uponSanitizeElement", (node: any, data) => {
-    if (data.tagName === "style") {
-      const output: any = [];
-      addCSSRules(output, node.sheet.cssRules);
-      node.textContent = output.join("\n");
-    }
+  DOMPurify.addHook("uponSanitizeElement", (node) => {
+    const classes = node.classList;
+    if (!classes) return;
+    classes.forEach((name) => {
+      if (!name.includes(ALLOWED_CLASS))
+        (node as HTMLElement).classList.remove(name);
+    });
+    if (classes.length === 0) node.removeAttribute("class");
   });
 
   // Add a hook to enforce CSS attribute sanitization
