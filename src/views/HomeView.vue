@@ -91,7 +91,7 @@
         <div>{{ $t("lottery.firstLine") }}</div>
         {{ $t("lottery.secondLine") }}
       </div>
-      <RandomNumber v-else :max="30" :value="gain" :duration="5000" /> <br /><br
+      <RandomNumber v-else :max="30" :value="gain" /> <br /><br
         v-if="!lottery"
       />
       <GlobalButton color="orange" @click="handle"
@@ -249,9 +249,11 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   lottery.value = false;
   currentTarget.disabled = true;
 
-  // TODO branch api
-  const req = await api.get("/api/lottery.json");
-  gain.value = req.data.gain;
+  // data.value = (await api.get("lottery")).data;
+  // TODO remove
+  gain.value = (
+    await api.get("http://localhost:5173/api/lottery.json")
+  ).data.gain;
 }
 function formatDatePhotos(date: number) {
   return format(new Date(date), "PP", {

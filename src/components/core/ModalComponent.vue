@@ -85,41 +85,30 @@
 // @vuese
 // @group Core
 
+import api from "@/modules/api";
 import eventBus from "@/modules/eventBus";
 import { ref } from "vue";
 
 const isVisible = ref(false);
 const message = ref("error.default");
 const type = ref("error");
-const callback = ref("");
-const params = ref({});
 
-function error(req: any) {
+function notice(modalType: string, modalMessage: string) {
   isVisible.value = true;
-  type.value = "error";
-  message.value = req.message;
+  type.value = modalType;
+  message.value = modalMessage;
 }
-function success(req: any) {
-  isVisible.value = true;
-  type.value = "success";
-  message.value = req.message;
-}
-function failure(req: any) {
-  isVisible.value = true;
-  type.value = "failure";
-  message.value = req.message;
-}
-function confirmation(req: any) {
+
+async function confirmation(req: any) {
   isVisible.value = true;
   type.value = "confirmation";
   message.value = req.message;
-  callback.value = req.callback;
-  params.value = req.params;
+  await api.get(req.callback, req.params);
 }
 
-eventBus.on("error", (req) => error(req));
-eventBus.on("success", (req) => success(req));
-eventBus.on("failure", (req) => failure(req));
+eventBus.on("error", (msg) => notice("error", msg));
+eventBus.on("success", (msg) => notice("success", msg));
+eventBus.on("failure", (msg) => notice("failure", msg));
 eventBus.on("confirmation", (req) => confirmation(req));
 
 async function request() {

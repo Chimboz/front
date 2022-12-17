@@ -145,7 +145,7 @@ function buy() {
   console.log(`Acheté ${shown.value.name}`);
   eventBus.emit("confirmation", {
     message: "success.buy",
-    callback: "/api/success.json",
+    api: "/api/success.json",
   });
 }
 

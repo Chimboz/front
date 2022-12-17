@@ -15,11 +15,12 @@ const api = axios.create({
 api.interceptors.response.use(null, (error) => {
   switch (error.response.status) {
     case 401: // 401 Unauthorized Error
-      eventBus.emit("error", { message: "error.login" });
+      eventBus.emit("error", "error.login");
       break;
     case 404: // 404 Not Found
-      eventBus.emit("error", { message: "error.notfound" });
+      eventBus.emit("error", "error.notfound");
       break;
+    default:
   }
   return Promise.reject(error);
 });

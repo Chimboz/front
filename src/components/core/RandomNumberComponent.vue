@@ -20,12 +20,12 @@ import { onMounted, ref } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    min: number;
+    min?: number;
     max: number;
     value: number;
-    duration: number;
+    duration?: number;
   }>(),
-  { min: 0, duration: 2000 }
+  { min: 0, duration: 5000 }
 );
 
 const displayNumber = ref(props.max.toString());
@@ -39,10 +39,8 @@ function bezier(
   change: number,
   duration: number
 ) {
-  // eslint-disable-next-line no-param-reassign
   time /= duration / 2;
   if (time < 1) return (change / 2) * time * time + startValue;
-  // eslint-disable-next-line no-param-reassign
   time--;
   return (-change / 2) * (time * (time - 2) - 1) + startValue;
 }

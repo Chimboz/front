@@ -257,7 +257,7 @@ function formatDate(date: number) {
 function action(type: string, params?: object) {
   eventBus.emit("confirmation", {
     message: `admin.modal.${type}`,
-    callback: `/api/${type}.json`,
+    api: `/api/${type}.json`,
     params,
   });
 }

@@ -145,14 +145,8 @@ function formatDate() {
   });
 }
 
-function edit() {
-  console.log(`edit ${props.message.id}`);
-}
 function deleteMessage() {
   console.log(`delete ${props.message.id}`);
-}
-function quote() {
-  console.log();
 }
 </script>
 <style lang="scss">

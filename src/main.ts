@@ -66,7 +66,7 @@ app.mount("#app");
 // Router progress bar
 router.beforeEach((to, from, next) => {
   if (typeof to.matched[0].components?.default === "function") {
-    eventBus.emit("asyncComponentLoading", to);
+    eventBus.emit("asyncComponentLoading");
   }
   next();
 });
