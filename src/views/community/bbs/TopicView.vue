@@ -21,8 +21,10 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { useAuthStore } from "@/stores/auth";
 import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
+const route = useRoute();
 
 // @vuese
 // @group View/Community/BBS
@@ -36,6 +38,13 @@ fetchData(async (params) => {
       `bbs/topic/${params.forum}/${params.topic}?page=${params.page}`
     )
   ).data;
+  if (route.hash)
+    scroll({
+      top:
+        document.getElementById(route.hash.slice(1))?.getBoundingClientRect()
+          .top! + window.scrollY,
+      behavior: "smooth",
+    });
 });
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.topic

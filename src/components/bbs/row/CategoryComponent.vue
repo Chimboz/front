@@ -59,7 +59,7 @@
         <UserLink :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link
-          :to="`/topic/${bbs.id}/${bbs.last_msg.topicid}#p${bbs.last_msg.msgid}`"
+          :to="`/topic/${bbs.id}/${bbs.last_msg.topicid}/${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"
           ><img
             draggable="false"
             @contextmenu.prevent
