@@ -358,6 +358,7 @@
             name="id"
             type="number"
             class="btn-md"
+            aria-label="Wedding number"
             :placeholder="$t('placeholder.weddingid')"
           /><button type="submit" class="btn-action">go</button>
         </form>
@@ -372,6 +373,7 @@
             type="text"
             class="btn-md"
             autocomplete="username"
+            aria-label="Username"
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">go</button>
         </form>
@@ -479,7 +481,7 @@ tr td:first-child {
   padding: var(--md-gap);
 }
 
-#today .fullwidth:nth-child(2n + 1) {
+#today .fullwidth:nth-child(odd) {
   background: var(--light);
 }
 </style>

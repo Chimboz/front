@@ -19,7 +19,6 @@
     "date-fns": "^2.29.3",
     "dompurify": "^2.4.1",
     "highlight.js": "^11.7.0",
-    "katex": "^0.16.3",
     "marked": "^4.2.4",
     "mitt": "^3.0.0",
     "modern-normalize": "^1.1.0",

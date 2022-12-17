@@ -56,37 +56,6 @@
   margin-bottom: var(--sm-gap);
 }
 
-/* Custom checkboxes */
-.markdown-body [type="checkbox"]:disabled {
-  width: 0;
-  height: 0;
-  filter: none !important;
-}
-
-.markdown-body [type="checkbox"]:not(:checked):before,
-.markdown-body [type="checkbox"]:checked:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1em;
-  height: 1em;
-  border: 1px solid #0005;
-  background: var(--light);
-  border-radius: 0.2em;
-}
-
-.markdown-body [type="checkbox"]:checked:before {
-  background: var(--color-accent-fg);
-  border: 1px solid transparent;
-}
-
-/* Markdown lists and checkboxes */
-.markdown-body li input[type="checkbox"] {
-  margin-left: -16px;
-  position: absolute;
-}
-
 /* Markdown custom styling */
 .markdown-body img {
   background: transparent !important;
@@ -94,6 +63,10 @@
 
 .markdown-body i {
   font-style: normal;
+}
+
+.markdown-body table tr:nth-child(odd) {
+  background: var(--light-bbs);
 }
 
 /* Custom buttons */
@@ -201,7 +174,7 @@ textarea.btn-md {
   padding: var(--sm-gap) var(--md-gap);
 }
 
-.card a:nth-child(2n + 1) .list {
+.card a:nth-child(odd) .list {
   background: var(--light-blue)
     linear-gradient(
       to right,

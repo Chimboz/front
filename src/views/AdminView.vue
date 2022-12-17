@@ -97,7 +97,7 @@ function formatDate(date: number) {
   padding: var(--md-gap);
 }
 
-.log:nth-child(2n + 1) {
+.log:nth-child(odd) {
   background: #fff3;
 }
 

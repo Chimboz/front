@@ -235,7 +235,7 @@ function submit() {}
   transform: scaleX(-1);
 }
 
-.arrows button:nth-child(2n) img {
+.arrows button:nth-child(even) img {
   height: 30px;
 }
 
