@@ -9,10 +9,10 @@
     >
       <img
         draggable="false"
-        @contextmenu.prevent
         alt="Neutral emote"
         height="23"
         :src="asset(`img/icon/emote/${emote}.svg`)"
+        @contextmenu.prevent
       />
     </button>
   </div>
@@ -20,8 +20,8 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-import { asset } from '@/utils';
-import type Emote from '@/types/Emotes';
+import { asset } from "@/utils";
+import type Emote from "@/types/Emotes";
 
 const emotes: Emote[] = [
   "neutral",

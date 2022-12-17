@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard color="yellow" v-if="user">
+  <GlobalCard v-if="user" color="yellow">
     <template #button>
       <router-link to="/bank"
         ><GlobalButton color="yellow" icon="credits.svg">{{
@@ -9,24 +9,24 @@
     </template>
     <div class="bank relative fullwidth">
       <img
-        draggable="false"
-        @contextmenu.prevent
-        class="coin"
-        alt="Coin"
         v-for="(_, n) in Math.min(Math.floor(+user.money / 10), 176)"
-        :style="coinsPosition[n]"
         v-show="n <= Math.min(Math.floor(coins / 10), 176)"
         :key="n"
+        draggable="false"
+        class="coin"
+        alt="Coin"
+        :style="coinsPosition[n]"
         src="@/assets/img/bank/coin.svg"
+        @contextmenu.prevent
       />
       <object
         width="154"
         height="124"
         draggable="false"
         aria-label="Bank vault"
-        @contextmenu.prevent
         type="image/svg+xml"
         :data="asset('img/bank/door.svg')"
+        @contextmenu.prevent
       ></object>
     </div>
 
@@ -114,8 +114,12 @@ const coinsPosition = [
 ];
 
 onMounted(() => {
-  if (!user) return;
-  for (let i = 8; i <= Math.min(Math.floor(+user.value!.money / 10), 360); i++) {
+  if (!user.value) return;
+  for (
+    let i = 8;
+    i <= Math.min(Math.floor(+user.value!.money / 10), 360);
+    i++
+  ) {
     const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
     const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
     const filter = coinsPosition[i % 8].filter;

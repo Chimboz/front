@@ -67,7 +67,9 @@ import { ref } from "vue";
 const data = ref<any>(undefined);
 
 fetchData(async (params) => {
-  data.value = (await api.get(`item/${params.id}?lang=${navigator.language.split("-")[0]}`)).data;
+  data.value = (
+    await api.get(`item/${params.id}?lang=${navigator.language.split("-")[0]}`)
+  ).data;
 });
 // /api/item/${vm.$route.params.id}.json
 </script>

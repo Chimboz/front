@@ -9,7 +9,7 @@ const router = createRouter({
     if (to.hash) {
       return {
         el: to.hash,
-        behavior: "smooth"
+        behavior: "smooth",
       };
     }
     return { top: 0, behavior: "smooth" };
@@ -54,7 +54,10 @@ const router = createRouter({
       path: "/messenger/:id",
       name: "Conversation",
       component: () => import("../views/account/ConversationView.vue"),
-      meta: { sitemap: { ignoreRoute: true }, section: ["Account", "messenger"] },
+      meta: {
+        sitemap: { ignoreRoute: true },
+        section: ["Account", "messenger"],
+      },
     },
     {
       path: "/friends",

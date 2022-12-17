@@ -27,21 +27,21 @@
     ></GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top
         color="blue"
         justified
-        v-if="data"
       >
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />Le record de connectés est de <b>{{ data.record.online }}</b> le
         <b>{{ formatDate() }}</b
         >.

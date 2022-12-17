@@ -1,13 +1,13 @@
 <template>
   <img
-    draggable="false"
-    @contextmenu.prevent
-    :alt="digit"
     v-for="(digit, index) in displayNumber.toString(10)"
     :key="index"
+    draggable="false"
+    :alt="digit"
     width="19"
     height="21"
     :src="asset(`img/number/${digit}.svg`)"
+    @contextmenu.prevent
   />
 </template>
 

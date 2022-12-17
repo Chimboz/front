@@ -5,33 +5,33 @@
         <div class="demo-btn hstack">
           <button
             class="home"
-            @click="demo = 0"
             :class="{ active: demo == 0 }"
+            @click="demo = 0"
           ></button>
           <button
             class="mode"
-            @click="demo = 1"
             :class="{ active: demo == 1 }"
+            @click="demo = 1"
           ></button>
           <button
             class="tchat"
-            @click="demo = 2"
             :class="{ active: demo == 2 }"
+            @click="demo = 2"
           ></button>
           <button
             class="wedding"
-            @click="demo = 3"
             :class="{ active: demo == 3 }"
+            @click="demo = 3"
           ></button>
           <button
             class="group"
-            @click="demo = 4"
             :class="{ active: demo == 4 }"
+            @click="demo = 4"
           ></button>
           <button
             class="bacteria"
-            @click="demo = 5"
             :class="{ active: demo == 5 }"
+            @click="demo = 5"
           ></button>
           <button class="empty"></button>
           <button class="empty"></button>
@@ -44,48 +44,48 @@
             <div class="demo-info">{{ $t("demo.info1") }}</div>
             <img
               draggable="false"
-              @contextmenu.prevent
               src="@/assets/img/demo/0.png"
+              @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 1 }">
             <div class="demo-info">{{ $t("demo.info2") }}</div>
             <img
               draggable="false"
-              @contextmenu.prevent
               src="@/assets/img/demo/1.png"
+              @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 2 }">
             <div class="demo-info">{{ $t("demo.info3") }}</div>
             <img
               draggable="false"
-              @contextmenu.prevent
               src="@/assets/img/demo/2.png"
+              @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 3 }">
             <div class="demo-info">{{ $t("demo.info4") }}</div>
             <img
               draggable="false"
-              @contextmenu.prevent
               src="@/assets/img/demo/3.png"
+              @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 4 }">
             <div class="demo-info">{{ $t("demo.info5") }}</div>
             <img
               draggable="false"
-              @contextmenu.prevent
               src="@/assets/img/demo/4.png"
+              @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 5 }">
             <div class="demo-info">{{ $t("demo.info6") }}</div>
             <img
               draggable="false"
-              @contextmenu.prevent
               src="@/assets/img/demo/5.png"
+              @contextmenu.prevent
             />
           </section>
         </div>
@@ -129,7 +129,7 @@
           class="btn-md"
         />
         <div class="flex">
-          <GlobalButton @click="section = 1" type="button">{{
+          <GlobalButton type="button" @click="section = 1">{{
             $t("button.signin")
           }}</GlobalButton>
           <GlobalButton color="green"
@@ -137,10 +137,10 @@
               ><img
                 type="submit"
                 draggable="false"
-                @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
-                src="@/assets/img/arrow.svg" /></template
+                src="@/assets/img/arrow.svg"
+                @contextmenu.prevent /></template
             >{{ $t("button.register") }}</GlobalButton
           >
         </div>
@@ -156,23 +156,23 @@
         <br />
         <div>
           <input
+            v-model="username"
             required
             autofocus
             minlength="2"
             maxlength="15"
             name="username"
             type="text"
-            v-model="username"
             pattern="[\w\.\-_@]{2,15}"
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
           />
           <input
+            v-model="password"
             required
             name="password"
             type="password"
-            v-model="password"
             :placeholder="$t('placeholder.password')"
             autocomplete="current-password"
             class="btn-md"
@@ -192,17 +192,17 @@
           />
         </div>-->
         <div class="flex">
-          <GlobalButton @click="section = 0" type="button">{{
+          <GlobalButton type="button" @click="section = 0">{{
             $t("button.register")
           }}</GlobalButton>
           <GlobalButton type="submit" color="green"
             ><template #prepend
               ><img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
-                src="@/assets/img/arrow.svg" /></template
+                src="@/assets/img/arrow.svg"
+                @contextmenu.prevent /></template
             >{{ $t("button.signin") }}</GlobalButton
           >
         </div>
@@ -211,8 +211,8 @@
     <a href="/tchat" class="try pointer"
       >{{ $t("demo.try") }}&nbsp;&nbsp;<img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/puce.svg"
+        @contextmenu.prevent
     /></a>
   </div>
 </template>
@@ -222,10 +222,10 @@
 import { useAuthStore } from "@/stores/auth";
 import { onMounted, ref } from "vue";
 
-const auth = useAuthStore()
+const auth = useAuthStore();
 
-const username = ref('');
-const password = ref('');
+const username = ref("");
+const password = ref("");
 const section = ref(1);
 const demo = ref(0);
 

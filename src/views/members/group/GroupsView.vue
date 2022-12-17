@@ -27,7 +27,7 @@
       par le chef du groupe... A toi de faire tes preuves !
     </GlobalCard>
     <br />
-    <GlobalCard color="blue" justified v-if="data">
+    <GlobalCard v-if="data" color="blue" justified>
       <template #header>Groupes officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
@@ -66,7 +66,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Groupes de membre</template>
       <template #subtitle
         >Les 20 derniers groupes créés par les membres</template
@@ -98,7 +98,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Classement général des groupes, par jeu</template>
       <template #subtitle
         >Les 10 meilleurs groupes, tous les jeux réunis
@@ -145,24 +145,24 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />
         Gérer mes groupes</router-link
       >
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="blue" header="ensavoirplus.webp" v-if="data">
+      ><GlobalCard v-if="data" color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Group : <b>{{ data.stats.type.group }}</b
           >&nbsp;
@@ -174,9 +174,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Klub : <b>{{ data.stats.type.klub }}</b
           >&nbsp;
@@ -188,9 +188,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Clan : <b>{{ data.stats.type.clan }}</b
           >&nbsp;
@@ -202,9 +202,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Ekip : <b>{{ data.stats.type.ekip }}</b
           >&nbsp;
@@ -217,9 +217,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Skwat : <b>{{ data.stats.type.skwat }}</b
           >&nbsp;
@@ -231,9 +231,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Guild : <b>{{ data.stats.type.guild }}</b
           >&nbsp;
@@ -245,9 +245,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Alliance : <b>{{ data.stats.type.alliance }}</b
           >&nbsp;
@@ -259,9 +259,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Empire : <b>{{ data.stats.type.empire }}</b
           >&nbsp;
@@ -273,9 +273,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Sekt : <b>{{ data.stats.type.sekt }}</b
           >&nbsp;
@@ -287,9 +287,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Skool : <b>{{ data.stats.type.skool }}</b
           >&nbsp;
@@ -301,9 +301,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Hord : <b>{{ data.stats.type.hord }}</b
           >&nbsp;
@@ -315,9 +315,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Meute : <b>{{ data.stats.type.meute }}</b
           >&nbsp;
@@ -329,9 +329,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Gang : <b>{{ data.stats.type.gang }}</b
           >&nbsp;
@@ -343,9 +343,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Triad : <b>{{ data.stats.type.triad }}</b
           >&nbsp;
@@ -359,9 +359,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
-          width="17" />
+          width="17"
+          @contextmenu.prevent />
         Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as besoin
         d'avoir un certain
         <router-link to="/levels">niveau</router-link>.<br /><br />
@@ -369,9 +369,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
-          width="17" />
+          width="17"
+          @contextmenu.prevent />
         Le nombre de groupes que tu peux rejoindre tel que décrit dans le
         <router-link to="/levels">tableau des niveaux</router-link>, comprend
         uniquement les <b>groupes des membres</b>, les
@@ -379,9 +379,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
-          width="17" />
+          width="17"
+          @contextmenu.prevent />
         Projecteur sur :
         <div><GroupLink :group="data.random" /></div></GlobalCard
     ></template>

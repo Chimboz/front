@@ -13,44 +13,44 @@
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Le gameplay</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Les meilleurs</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
-            @contextmenu.prevent
             width="14"
             height="13"
             alt="Help icon"
             src="@/assets/img/icon/button/help.svg"
+            @contextmenu.prevent
           />&nbsp;Comment jouer&nbsp;?
         </router-link>
       </div>
       <br />
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/mazo/preview.webp"
         alt="Un coup gagnant"
         width="200"
         height="145"
         title="Un coup gagnant"
         style="float: left; margin-right: 16px"
+        @contextmenu.prevent
       />
       <br />
       <b>MaZo</b> est un pur jeu de hasard/chance style roulette-russe !
@@ -106,7 +106,7 @@
       - Le temps que met à s'afficher le résultat n'indique pas un bon/mauvais
       coup.<br />
     </GlobalCard>
-    <br /><GlobalCard id="best" v-if="data">
+    <br /><GlobalCard v-if="data" id="best">
       <template #header>Les 20 plus mazo de l'Archipel</template>
       <template #subtitle>Continuera ? Continuera pas ? &lt;:D</template>
       <table class="fullwidth">
@@ -131,7 +131,9 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ formatDate(rank.date || 1670928217153) /* TODO remove */ }}</td>
+            <td>
+              {{ formatDate(rank.date || 1670928217153) /* TODO remove */ }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -150,27 +152,27 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> MaZo</b> est actuellement en version beta (version de test)<br />
         <br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> MaZo (beta)</b> est accessible uniquement pour les membres de
         <b>niveau 15</b> et plus.<br /><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />
         Le classement est mis à jour toutes les <b>10 minutes.</b
         ><br /> </GlobalCard

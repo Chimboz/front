@@ -37,9 +37,7 @@
             draggable="false"
             alt="Lien du message"
             title="Lien du message"
-            :src="
-              asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)
-            "
+            :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
           /> </a
         >&nbsp;
         <b class="ellipsis justified title">{{ message.title }}</b>
@@ -67,12 +65,12 @@
             />&nbsp;Citer</button
           >&nbsp;
           <button
-            class="btn-action"
             v-if="
               (message.author.id === user.id &&
                 Date.now() - message.date < 600) ||
               +user.user_level > 3
             "
+            class="btn-action"
             @click.prevent="eventBus.emit('edit', message.content)"
           >
             <img
@@ -85,8 +83,8 @@
             />&nbsp;Éditer</button
           >&nbsp;
           <button
-            class="btn-action"
             v-if="message.author.id === user.id || +user.user_level > 3"
+            class="btn-action"
             @click.prevent="delete"
           >
             x

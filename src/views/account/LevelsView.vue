@@ -8,7 +8,7 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard color="yellow" v-if="data" justified
+    <GlobalCard v-if="data" color="yellow" justified
       ><template #subtop>Niveaux</template>
       <div class="flex">
         <div class="level-list">
@@ -19,14 +19,14 @@
             @click="selected = rank.level"
           >
             <img
-              draggable="false"
-              @contextmenu.prevent
-              :alt="number"
               v-for="number in rank.level.toString(10)"
               :key="number.index"
+              draggable="false"
+              :alt="number"
               width="19"
               height="21"
               :src="asset(`img/number/${number}.svg`)"
+              @contextmenu.prevent
             />&nbsp;<b>{{ rank.name }}</b>
           </div>
         </div>

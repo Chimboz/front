@@ -2,12 +2,12 @@
   <button class="btn flex" :class="color">
     <slot name="prepend"></slot>
     <img
-      draggable="false"
-      @contextmenu.prevent
       v-if="icon"
+      draggable="false"
       class="btn-icon"
       alt="Button icon"
       :src="asset(`img/icon/button/${props.icon}`)"
+      @contextmenu.prevent
     />
     <div class="btn-text">
       <StrokeText><slot></slot></StrokeText>

@@ -26,8 +26,9 @@
       />
       <div style="display: inline-block">
         <h1>{{ $t("book.search") }}</h1>
-        <form @submit.prevent="search()" class="flex">
+        <form class="flex" @submit.prevent="search()">
           <input
+            v-model="username"
             required
             autofocus
             minlength="3"
@@ -38,13 +39,12 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-            v-model="username"
-            v-on:keyup="onKeypressValue()"
-            v-on:keydown="onKeypressValue()"
+            @keyup="onKeypressValue()"
+            @keydown="onKeypressValue()"
           />
           <button type="submit" class="btn-action">go</button>
         </form>
-        <div class="suggestions" v-if="suggestionsHere && username != ''">
+        <div v-if="suggestionsHere && username != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <router-link :to="'/book/' + suggestion.mid">{{
@@ -81,21 +81,21 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top
         color="blue"
         justified
-        v-if="data"
       >
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b>{{ data.total }}</b> membres en tout.<br />
         <br />
         <b>Nouveaux</b><br />
@@ -103,17 +103,17 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b>{{ data.day }}</b> depuis 24h!<br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b>{{ data.month }}</b> depuis 1 mois!<br />
         <br />
         <b>Les Genres :</b><br />
@@ -121,9 +121,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />Fille(s) : <b>{{ data.female }}</b
         >&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub
         ><br />
@@ -131,9 +131,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />Garçon(s) : <b>{{ data.male }}</b
         >&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub
         ><br />
@@ -141,9 +141,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />Inconnu(s) : <b>{{ data.total - data.female - data.male }}</b
         >&nbsp;
         <sub
@@ -178,7 +178,7 @@ const suggestionsHere = ref<any>(null);
 
 fetchData(async () => {
   data.value = (await api.get("book")).data;
-})
+});
 
 function onKeypressValue() {
   /*if (username != undefined && username.value != "") {

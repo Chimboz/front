@@ -10,7 +10,7 @@
           class="fullwidth"
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
-          <div class="log" v-for="(log, index) in data" :key="index">
+          <div v-for="(log, index) in data" :key="index" class="log">
             <b>{{ formatDate(log.date) }}</b
             ><em> par <UserLink :user="log.moderator" /></em><br />
             <b>{{ log.type }} de <UserLink :user="log.author" /></b><br />
@@ -25,8 +25,9 @@
         <template #button>
           <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
-        <form @submit.prevent="search()" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="search()">
           <input
+            v-model="username"
             required
             autofocus
             minlength="3"
@@ -37,13 +38,12 @@
             class="btn-md"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-            v-model="username"
-            v-on:keyup="onKeypressValue()"
-            v-on:keydown="onKeypressValue()"
+            @keyup="onKeypressValue()"
+            @keydown="onKeypressValue()"
           />
           <button type="submit" class="btn-action">go</button>
         </form>
-        <div class="suggestions" v-if="suggestionsHere && username != ''">
+        <div v-if="suggestionsHere && username != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <router-link :to="'/admin/' + suggestion.mid">{{

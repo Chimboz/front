@@ -24,7 +24,7 @@
       ton propre club ? Si tu as un super niveau, go !
     </GlobalCard>
     <br />
-    <GlobalCard color="blue" justified v-if="data">
+    <GlobalCard v-if="data" color="blue" justified>
       <template #header>Mes inscriptions</template>
       <template #subtitle
         >Faire partie de ce groupe c'est ce qu'y a de plus classe...</template
@@ -46,8 +46,8 @@
             <td>
               [<span
                 class="link"
-                @click.prevent="leave(group.id)"
                 style="cursor: var(--pointer)"
+                @click.prevent="leave(group.id)"
                 >Se désinscrire</span
               >]
             </td>
@@ -56,7 +56,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Mes demandes en attente </template>
       <template #subtitle>Tout vient à point à qui sait attendre !</template>
       <table class="centered fullwidth">
@@ -76,8 +76,8 @@
             <td>
               [<span
                 class="link"
-                @click.prevent="cancel(group.id)"
                 style="cursor: var(--pointer)"
+                @click.prevent="cancel(group.id)"
                 >Annuler</span
               >]
             </td>
@@ -86,7 +86,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Mes groupes </template>
       <template #subtitle
         >Ils étaient bien sûr les meilleurs groupes de la communauté...
@@ -118,23 +118,23 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;Créer un nouveau groupe</router-link
       >
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="blue" header="ensavoirplus.webp" v-if="data">
+      ><GlobalCard v-if="data" color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Group : <b>{{ data.stats.type.group }}</b
           >&nbsp;
@@ -146,9 +146,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Klub : <b>{{ data.stats.type.klub }}</b
           >&nbsp;
@@ -160,9 +160,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Clan : <b>{{ data.stats.type.clan }}</b
           >&nbsp;
@@ -174,9 +174,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Ekip : <b>{{ data.stats.type.ekip }}</b
           >&nbsp;
@@ -189,9 +189,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Skwat : <b>{{ data.stats.type.skwat }}</b
           >&nbsp;
@@ -203,9 +203,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Guild : <b>{{ data.stats.type.guild }}</b
           >&nbsp;
@@ -217,9 +217,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Alliance : <b>{{ data.stats.type.alliance }}</b
           >&nbsp;
@@ -231,9 +231,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Empire : <b>{{ data.stats.type.empire }}</b
           >&nbsp;
@@ -245,9 +245,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Sekt : <b>{{ data.stats.type.sekt }}</b
           >&nbsp;
@@ -259,9 +259,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Skool : <b>{{ data.stats.type.skool }}</b
           >&nbsp;
@@ -273,9 +273,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Hord : <b>{{ data.stats.type.hord }}</b
           >&nbsp;
@@ -287,9 +287,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Meute : <b>{{ data.stats.type.meute }}</b
           >&nbsp;
@@ -301,9 +301,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Gang : <b>{{ data.stats.type.gang }}</b
           >&nbsp;
@@ -315,9 +315,9 @@
             src="@/assets/img/puce.svg"
             alt="Caret"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           Triad : <b>{{ data.stats.type.triad }}</b
           >&nbsp;
@@ -331,9 +331,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
-          width="17" />
+          width="17"
+          @contextmenu.prevent />
         Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as besoin
         d'avoir un certain
         <router-link to="/levels">niveau</router-link>.<br /><br />
@@ -341,25 +341,26 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
-          width="17" />Le nombre de groupes que tu peux rejoindre tel que décrit
-        dans le <router-link to="/levels">tableau des niveaux</router-link>,
-        comprend uniquement les <b>groupes des membres</b>, les
+          width="17"
+          @contextmenu.prevent />Le nombre de groupes que tu peux rejoindre tel
+        que décrit dans le
+        <router-link to="/levels">tableau des niveaux</router-link>, comprend
+        uniquement les <b>groupes des membres</b>, les
         <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
-          width="17" />
+          width="17"
+          @contextmenu.prevent />
         Projecteur sur :
         <div><GroupLink :group="data.random" /></div></GlobalCard
     ></template>
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 // @vuese
 // @group View/Members/Group
@@ -368,11 +369,11 @@ import { ref } from 'vue';
 const data = ref<any>(undefined);
 
 function cancel(id: number) {
-      console.log("Annulé " + id);
-    };
+  console.log("Annulé " + id);
+}
 function leave(id: number) {
-      console.log("Quitté " + id);
-    };
+  console.log("Quitté " + id);
+}
 // /api/manage.json
 // meta title section.groups
 </script>

@@ -9,10 +9,10 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
+      v-if="data"
       color="yellow"
       header="shop.svg"
       :height="109"
-      v-if="data"
       style="position: relative"
     >
       <audio autoplay>
@@ -30,12 +30,12 @@
       <div class="preview fullwidth flex">
         <img
           draggable="false"
-          @contextmenu.prevent
           class="pack-preview"
           alt="Pack preview"
           height="196"
           width="468"
           src="@/assets/img/shop/cabin.svg"
+          @contextmenu.prevent
         />
         <div class="preview-tiz flex centered">
           <GlobalAvatar
@@ -65,8 +65,8 @@
               width="58"
               height="57"
               draggable="false"
-              @contextmenu.prevent
               alt="Shop price"
+              @contextmenu.prevent
             />
             <span>{{ shown.cost }}p.</span>
           </div>
@@ -77,10 +77,10 @@
             <h3>Pack {{ shown.name }}</h3>
             {{ shown.description }}<br /><br />
             <GlobalButton
+              v-if="user"
               color="yellow"
               icon="credits.svg"
               @click.prevent="buy()"
-              v-if="user"
             >
               Acheter</GlobalButton
             >
@@ -91,11 +91,11 @@
       <div class="menu flex">
         <div class="flex hstack">
           <Pack
-            @click.prevent="show(pack)"
             v-for="pack of data.packs"
             :key="pack.name"
             :name="pack.name"
             :looks="pack.looks"
+            @click.prevent="show(pack)"
           />
         </div>
       </div>

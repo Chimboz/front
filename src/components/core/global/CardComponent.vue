@@ -1,24 +1,24 @@
 <template>
   <div :class="[color, { justified: justified }]" class="card-container">
     <img
+      v-if="header"
       draggable="false"
-      @contextmenu.prevent
       alt="Card header"
       class="card-header"
       :width="width"
       :height="height"
-      v-if="header"
       :src="asset(`img/card/header/${header}`)"
+      @contextmenu.prevent
     />
     <img
+      v-else-if="top"
       draggable="false"
-      @contextmenu.prevent
       alt="Card header"
       class="card-header"
-      v-else-if="top"
       src="@/assets/img/card/header/default.webp"
       width="154"
       height="42"
+      @contextmenu.prevent
     />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)"
@@ -48,13 +48,13 @@
       </div>
     </div>
     <img
-      draggable="false"
-      @contextmenu.prevent
-      alt="Card footer"
       v-if="bot"
+      draggable="false"
+      alt="Card footer"
       src="@/assets/img/card/footer/default.gif"
       width="154"
       height="44"
+      @contextmenu.prevent
     />
   </div>
 </template>

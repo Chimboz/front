@@ -9,11 +9,11 @@
       <GlobalRules bot />
     </template>
     <RouterView />
-    <GlobalCard color="yellow" v-if="data" style="position: relative">
+    <GlobalCard v-if="data" color="yellow" style="position: relative">
       <ScrollableContainer
         route="encyclopedia"
         class="fullwidth"
-        :maxHeight="450"
+        :max-height="450"
         @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
       >
         <div
@@ -43,10 +43,10 @@
               >
                 <VLazyImage
                   draggable="false"
-                  @contextmenu.prevent
                   :alt="item.name"
                   :src="`/item/${item.type}/${item.id}.svg`"
                   :src-placeholder="asset('img/loading.svg')"
+                  @contextmenu.prevent
                 /></button></router-link
           ></Tooltip>
         </div>
@@ -57,12 +57,12 @@
         ><template #button>
           <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
-        <form @submit.prevent="onSearch" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="onSearch">
           <input
+            v-model="search"
             name="username"
             type="text"
             class="btn-md"
-            v-model="search"
             :placeholder="$t('placeholder.item')"
           /><button type="submit" class="btn-action">go</button>
         </form>
@@ -71,17 +71,18 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> Type d'item :</b>
         <div class="fullwidth centered" @contextmenu.prevent>
           <button
-            type="button"
             v-for="category of categories"
-            :aria-label="category"
             :key="category"
+            type="button"
+            :aria-label="category"
             :class="{ active: checkedCategories.includes(category) }"
+            class="item pointer filter"
             @click="
               checkedCategories.includes(category) &&
               checkedCategories.length == 1
@@ -96,13 +97,12 @@
                   )
                 : checkedCategories.push(category)
             "
-            class="item pointer filter"
           >
             <img
               draggable="false"
-              @contextmenu.prevent
               :alt="category"
               :src="asset(`img/icon/item_category/${category}.svg`)"
+              @contextmenu.prevent
             />
           </button>
         </div>
@@ -110,20 +110,21 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> Rareté :</b>
         <div class="fullwidth centered">
           <button
-            type="button"
             v-for="rarity of rarities"
-            :aria-label="rarity"
             :key="rarity"
+            type="button"
+            :aria-label="rarity"
             :class="[
               rarity,
               checkedRarities.includes(rarity) ? 'active' : false,
             ]"
+            class="item pointer filter"
             @click="
               checkedRarities.includes(rarity) && checkedRarities.length == 1
                 ? (checkedRarities = rarities)
@@ -134,13 +135,12 @@
                 ? checkedRarities.splice(checkedRarities.indexOf(rarity), 1)
                 : checkedRarities.push(rarity)
             "
-            class="item pointer filter"
           >
             <img
               draggable="false"
-              @contextmenu.prevent
               :alt="rarity"
               :src="asset(`img/icon/rarity/${rarity}.png`)"
+              @contextmenu.prevent
             />
           </button>
         </div> </GlobalCard

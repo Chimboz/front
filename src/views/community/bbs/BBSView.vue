@@ -16,37 +16,37 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             :alt="$t('bbs.lock_new')"
             :title="$t('bbs.lock_new')"
             src="@/assets/img/bbs/folder_new_lock.svg"
+            @contextmenu.prevent
           />&nbsp;{{ $t("bbs.lock_new") }}&nbsp;
         </div>
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             :alt="$t('bbs.lock')"
             title="$t('bbs.lock')"
             src="@/assets/img/bbs/folder_lock.svg"
+            @contextmenu.prevent
           />&nbsp;{{ $t("bbs.lock") }}&nbsp;
         </div>
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             :alt="$t('bbs.new')"
             :title="$t('bbs.new')"
             src="@/assets/img/bbs/folder_new.svg"
+            @contextmenu.prevent
           />&nbsp;{{ $t("bbs.new") }}&nbsp;
         </div>
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             :alt="$t('bbs.nonew')"
             :title="$t('bbs.nonew')"
             src="@/assets/img/bbs/folder.svg"
+            @contextmenu.prevent
           />&nbsp;{{ $t("bbs.nonew") }}&nbsp;
         </div>
       </div></GlobalCard

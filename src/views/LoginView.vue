@@ -1,7 +1,7 @@
 <template>
   <GlobalContainer>
     <template #left-column>
-      <GlobalCard color="blue" top v-if="data">
+      <GlobalCard v-if="data" color="blue" top>
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -13,12 +13,12 @@
       ><br />
       <router-link to="/shop">
         <GlobalCard
+          v-if="data"
           color="yellow"
           header="packs.webp"
           :width="154"
           :height="96"
           class="packs"
-          v-if="data"
         >
           <template #button>
             <GlobalButton color="yellow" icon="register.svg">Pack</GlobalButton>
@@ -38,17 +38,17 @@
       >
       <div class="gallery flex">
         <div
-          class="flex col photo"
           v-for="photo of data.gallery"
           :key="photo.name"
+          class="flex col photo"
           style="margin: auto"
         >
           <router-link :to="'/chaparazzi/' + photo.name">
             <img
               draggable="false"
-              @contextmenu.prevent
               :src="`gallery/${photo.name}`"
-              :alt="photo.name" /></router-link
+              :alt="photo.name"
+              @contextmenu.prevent /></router-link
           ><b>{{ formatDatePhotos(photo.date) }}</b>
         </div>
       </div>
@@ -58,16 +58,16 @@
             src="@/assets/img/puce.svg"
             alt="Puce"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           {{ $t("chaparazzi.more") }}
         </router-link>
       </div>
     </GlobalCard>
     <template #right-column>
-      <GlobalCard color="blue" header="games.gif" v-if="data">
+      <GlobalCard v-if="data" color="blue" header="games.gif">
         <div class="fullwidth">
           <img src="@/assets/img/game/bacteria/head.gif" />
           <img src="@/assets/img/game/bacteria/bg.gif" />

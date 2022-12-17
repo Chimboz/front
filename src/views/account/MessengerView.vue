@@ -8,7 +8,7 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard color="yellow" v-if="data" justified header="mi.svg">
+    <GlobalCard v-if="data" color="yellow" justified header="mi.svg">
       <div class="flex">
         <input
           required
@@ -25,13 +25,13 @@
       <ScrollableContainer
         class="fullwidth"
         route="messages"
-        :maxHeight="450"
+        :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <router-link
-          class="message flex"
           v-for="message of data"
           :key="message.user.id"
+          class="message flex"
           :to="'/messenger/' + message.user.id"
           :class="{ active: message.new }"
         >

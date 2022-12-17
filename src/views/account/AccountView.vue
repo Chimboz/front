@@ -5,16 +5,16 @@
         <router-link to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
-            <div class="number" v-if="data">
+            <div v-if="data" class="number">
               <img
-                draggable="false"
-                @contextmenu.prevent
-                :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
+                draggable="false"
+                :alt="number"
                 width="19"
                 height="21"
                 :src="asset(`img/number/${number}.svg`)"
+                @contextmenu.prevent
               />
             </div></div></router-link
         ><br />
@@ -26,7 +26,13 @@
 
     <Cabin
       v-if="data"
+      v-model:motto="data.motto"
+      v-model:website="data.website"
+      v-model:centrea="data.centres[0]"
+      v-model:centreb="data.centres[1]"
+      v-model:centrec="data.centres[2]"
       :data="data"
+      v-model:centred="data.centres[3]"
       @update-item="(name: any, item: any) => (data.look[name] = item)"
       @emote="(emote:any) => (data.look.emote = emote)"
       @previous-item="
@@ -46,62 +52,56 @@
             ].id)
       "
       @change-gender="(gender: any) => (data.gender = gender)"
-      v-model:motto="data.motto"
-      v-model:website="data.website"
-      v-model:centrea="data.centres[0]"
-      v-model:centreb="data.centres[1]"
-      v-model:centrec="data.centres[2]"
-      v-model:centred="data.centres[3]"
     />
     <br />
     <div class="games">
       <GlobalCard
+        v-if="data && data.bacteria"
         header="bacteria.svg"
         :height="74"
         justified
-        v-if="data && data.bacteria"
       >
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.bacteria.rank.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <b> sur </b>
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.bacteria.players.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <br />
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.bacteria.score.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <b> point(s)</b><br /><br />
         <DoughnutChart
-          :chartData="statsBacteria()"
+          :chart-data="statsBacteria()"
           :options="{
             elements: {
               arc: {
@@ -114,71 +114,71 @@
         <div class="centered">
           <div class="number">
             <img
-              draggable="false"
-              @contextmenu.prevent
-              :alt="number"
               v-for="number in (
                 data.bacteria.stats.win +
                 data.bacteria.stats.draw +
                 data.bacteria.stats.lose
               ).toString(10)"
               :key="number.index"
+              draggable="false"
+              :alt="number"
               width="19"
               height="21"
               :src="asset(`img/number/${number}.svg`)"
+              @contextmenu.prevent
             />
           </div>
           <b> parties</b>
         </div>
       </GlobalCard>
       <GlobalCard
+        v-if="data && data.patojdur"
         header="patojdur.svg"
         :height="56"
         justified
-        v-if="data && data.patojdur"
       >
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.patojdur.rank.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <b> sur </b>
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.patojdur.players.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <br />
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.patojdur.score.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <b> point(s)</b>
         <br /><br />
         <BarChart
-          :chartData="statsPatojdur()"
+          :chart-data="statsPatojdur()"
           :options="{
             plugins: {
               legend: {
@@ -192,70 +192,70 @@
         />
       </GlobalCard>
       <GlobalCard
+        v-if="data && data.mazo"
         header="mazo.svg"
         :height="52"
         justified
-        v-if="data && data.mazo"
       >
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.mazo.rank.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <b> sur </b>
         <div class="number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.mazo.players.toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <br />
         <img
-          draggable="false"
-          @contextmenu.prevent
-          :alt="number"
           v-for="number in data.mazo.score.toString(10)"
           :key="number.index"
+          draggable="false"
+          :alt="number"
           width="19"
           height="21"
           :src="asset(`img/number/${number}.svg`)"
+          @contextmenu.prevent
         />
         <b> point(s)</b>
       </GlobalCard>
     </div>
     <template #right-column>
       <GlobalCard
+        v-if="data"
         color="blue"
         header="messages.gif"
         :width="154"
         :height="56"
-        v-if="data"
       >
         <div class="pm-number">
           <img
-            draggable="false"
-            @contextmenu.prevent
-            :alt="number"
             v-for="number in data.pm
               .reduce((prev: number, curr: any) => prev + +curr.new, 0)
               .toString(10)"
             :key="number.index"
+            draggable="false"
+            :alt="number"
             width="19"
             height="21"
             :src="asset(`img/number/pink/${number}.svg`)"
+            @contextmenu.prevent
           />
         </div>
         <div style="margin-top: -21px">
@@ -269,10 +269,10 @@
               <div>
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
+                  @contextmenu.prevent
                 />&nbsp;<UserLink :user="message.author" />
               </div>
               <div>{{ formatDate(message.date) }}</div>
@@ -281,11 +281,11 @@
         </div></GlobalCard
       ><br />
       <GlobalCard
+        v-if="data"
         color="blue"
         header="forum.gif"
         :width="154"
         :height="45"
-        v-if="data"
       >
         <StrokeText class="forum-title">Forum</StrokeText>
         <div style="margin-top: -16px">
@@ -303,16 +303,16 @@
               <div>
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   src="@/assets/img/bbs/msg.svg"
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
+                  @contextmenu.prevent
                 />&nbsp;{{ message.topic.title }}
               </div>
             </div>
           </router-link>
         </div></GlobalCard
-      ><br /><GlobalCard color="blue" v-if="data">
+      ><br /><GlobalCard v-if="data" color="blue">
         <template #button>
           <GlobalButton icon="register.svg">{{
             $t("profile.friendsList")
@@ -354,7 +354,7 @@
         >
       </GlobalCard>
       <br />
-      <GlobalCard color="blue" v-if="data">
+      <GlobalCard v-if="data" color="blue">
         <template #button>
           <GlobalButton icon="register.svg">{{
             $t("profile.groupsList")

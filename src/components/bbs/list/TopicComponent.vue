@@ -9,7 +9,7 @@
     ></span
   >
   <router-link :to="'/topic/' + $route.params.topic" class="pink"
-    ><h1 class="justified ellipsis" v-if="topic.messages[0]">
+    ><h1 v-if="topic.messages[0]" class="justified ellipsis">
       {{ topic.messages[0].title }}
     </h1></router-link
   >
@@ -49,10 +49,10 @@
     </tr>
   </table>
   <br />
-  <div style="text-align: end" v-if="user">
+  <div v-if="user" style="text-align: end">
     <button
-      class="btn-action"
       v-if="+user.user_level > 3"
+      class="btn-action"
       @click.prevent="move"
     >
       <img
@@ -65,8 +65,8 @@
       />&nbsp;Déplacer</button
     >&nbsp;
     <button
-      class="btn-action"
       v-if="+user.user_level > 3"
+      class="btn-action"
       @click.prevent="lock"
     >
       <img
@@ -79,8 +79,8 @@
       />&nbsp;Verrouiller</button
     >&nbsp;
     <button
-      class="btn-action"
       v-if="+user.user_level > 3"
+      class="btn-action"
       @click.prevent="deleteTopic"
     >
       x&nbsp;Supprimer

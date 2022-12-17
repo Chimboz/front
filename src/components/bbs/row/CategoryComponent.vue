@@ -2,8 +2,8 @@
   <thead>
     <tr
       class="category justified pointer"
-      @click="hide = !hide"
       :class="{ arrow: hide }"
+      @click="hide = !hide"
     >
       <th valign="middle" colspan="5" height="28">
         <span class="link">{{ category.category }}</span>
@@ -19,7 +19,6 @@
       <td style="text-align: center" valign="middle" height="50">
         <img
           draggable="false"
-          @contextmenu.prevent
           :src="
             asset(
               `img/bbs/folder${bbs.new ? '_new' : ''}${
@@ -29,6 +28,7 @@
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
+          @contextmenu.prevent
         />
       </td>
       <td style="text-align: left" width="100%">
@@ -62,10 +62,10 @@
           :to="`/topic/${bbs.id}/${bbs.last_msg.topicid}/${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"
           ><img
             draggable="false"
-            @contextmenu.prevent
             :src="asset(`img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
+            @contextmenu.prevent
         /></router-link>
       </td>
     </tr>

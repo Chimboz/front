@@ -2,10 +2,10 @@
   <div class="blazon">
     <img src="@/assets/img/group/ribbons.svg" class="ribbons" />
     <div class="blazon-body">
-      <background :primary="primary" :secondary="secondary" :id="shape" />
-      <div class="top" v-if="top != -1"><top :color="primary" :id="top" /></div>
+      <background :id="shape" :primary="primary" :secondary="secondary" />
+      <div v-if="top != -1" class="top"><top :id="top" :color="primary" /></div>
       <div class="bot" :class="{ lone: top == -1 }">
-        <bot :color="primary" :id="bot" />
+        <bot :id="bot" :color="primary" />
       </div>
       <div class="reflection"><reflection :id="shape" /></div>
     </div>

@@ -6,9 +6,9 @@
           <div class="cabin flex centered">
             <div class="arrows flex">
               <button
-                type="button"
                 v-for="name of categories"
                 :key="name"
+                type="button"
                 :disabled="
                   data.items[name]
                     .map((item: any) => item.id)
@@ -18,11 +18,11 @@
               >
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   alt="Puce"
                   height="30"
                   width="30"
                   src="@/assets/img/puce.svg"
+                  @contextmenu.prevent
                 />
               </button>
             </div>
@@ -41,9 +41,9 @@
             </div>
             <div class="arrows flex">
               <button
-                type="button"
                 v-for="name of categories"
                 :key="name"
+                type="button"
                 :disabled="
                   data.items[name]
                     .map((item: any) => item.id)
@@ -54,11 +54,11 @@
               >
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   alt="Puce"
                   height="30"
                   width="30"
                   src="@/assets/img/puce.svg"
+                  @contextmenu.prevent
                 />
               </button>
             </div>
@@ -75,10 +75,10 @@
             >
               <img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Male gender"
                 title="Male gender"
                 src="@/assets/img/icon/gender/male.svg"
+                @contextmenu.prevent
               /></button
             ><button
               type="button"
@@ -90,10 +90,10 @@
             >
               <img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Female gender"
                 title="Female gender"
                 src="@/assets/img/icon/gender/female.svg"
+                @contextmenu.prevent
               /></button
             ><button
               type="button"
@@ -105,10 +105,10 @@
             >
               <img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Unknown gender"
                 title="Unknown gender"
                 src="@/assets/img/icon/gender/unknown.svg"
+                @contextmenu.prevent
               />
             </button>
           </div>
@@ -120,31 +120,31 @@
             <GlobalButton
               type="button"
               :class="{ active: profile }"
-              @click="profile = !profile"
               :aria-label="$t('profile.profileSection')"
+              @click="profile = !profile"
               >{{ $t("profile.profileSection") }}</GlobalButton
             ><GlobalButton
               type="button"
               :class="{ active: !profile }"
+              :aria-label="$t('profile.invSection')"
               @click="
                 profile = !profile;
                 loadInventory = true;
               "
-              :aria-label="$t('profile.invSection')"
               >{{ $t("profile.invSection") }}</GlobalButton
             >
           </div>
-          <div id="profile" v-show="profile">
+          <div v-show="profile" id="profile">
             <Emotes @emote="(emote: any) => $emit('emote', emote)" />
             <br />
             <div class="justified">
               <label for="motto">{{ $t("profile.motto") }}</label>
             </div>
             <input
+              id="motto"
               minlength="0"
               maxlength="200"
               type="text"
-              id="motto"
               :value="motto"
               @input="
                 $emit(
@@ -157,10 +157,10 @@
               <label for="website">{{ $t("profile.website") }}</label>
             </div>
             <input
+              id="website"
               minlength="0"
               maxlength="100"
               type="text"
-              id="website"
               :value="website"
               @input="
                 $emit(
@@ -175,11 +175,11 @@
             <ol>
               <li>
                 <input
+                  id="interesta"
                   minlength="0"
                   maxlength="100"
                   type="text"
                   :value="centrea"
-                  id="interesta"
                   aria-label="Interest A"
                   @input="
                     $emit(
@@ -191,11 +191,11 @@
               </li>
               <li>
                 <input
+                  id="interestb"
                   minlength="0"
                   maxlength="100"
                   type="text"
                   :value="centreb"
-                  id="interestb"
                   aria-label="Interest B"
                   @input="
                     $emit(
@@ -207,11 +207,11 @@
               </li>
               <li>
                 <input
+                  id="interestc"
                   minlength="0"
                   maxlength="100"
                   type="text"
                   :value="centrec"
-                  id="interestc"
                   aria-label="Interest C"
                   @input="
                     $emit(
@@ -223,11 +223,11 @@
               </li>
               <li>
                 <input
+                  id="interestd"
                   minlength="0"
                   maxlength="100"
                   type="text"
                   :value="centred"
-                  id="interestd"
                   aria-label="Interest D"
                   @input="
                     $emit(
@@ -239,13 +239,14 @@
               </li>
             </ol>
           </div>
-          <div id="inventory" v-if="loadInventory" v-show="!profile">
+          <div v-if="loadInventory" v-show="!profile" id="inventory">
             <div class="category-selection" @contextmenu.prevent>
               <button
-                type="button"
                 v-for="category of categories"
                 :key="category"
+                type="button"
                 :class="{ active: checked.includes(category) }"
+                class="item pointer"
                 @click="
                   checked.includes(category) && checked.length == 1
                     ? (checked = [
@@ -263,18 +264,16 @@
                     ? checked.splice(checked.indexOf(category), 1)
                     : checked.push(category)
                 "
-                class="item pointer"
               >
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   :src="asset(`img/icon/item_category/${category}.svg`)"
+                  @contextmenu.prevent
                 />
               </button>
             </div>
             <div class="chest">
               <div
-                class="category"
                 v-for="(category, name) of {
                   item0: checked.includes('item0') ? data.items.item0 : [],
                   hat: checked.includes('hat') ? data.items.hat : [],
@@ -284,8 +283,11 @@
                   shoe: checked.includes('shoe') ? data.items.shoe : [],
                 }"
                 :key="name"
+                class="category"
               >
                 <button
+                  v-for="item of category"
+                  :key="item.id"
                   type="button"
                   class="item"
                   :class="[
@@ -293,28 +295,26 @@
                     item.rarity,
                     data.look[name] == item.id ? 'active' : false,
                   ]"
-                  v-for="item of category"
-                  :key="item.id"
                   @click="$emit('updateItem', name, item.id)"
                   @mouseover="info = item.name"
                 >
                   <img
-                    draggable="false"
-                    @contextmenu.prevent
                     v-if="
                       item.id == 1 ||
                       item.id == 792 ||
                       item.id == 868 ||
                       item.id == 938
                     "
+                    draggable="false"
                     src="@/assets/img/icon/cross.svg"
+                    @contextmenu.prevent
                   />
                   <VLazyImage
-                    draggable="false"
-                    @contextmenu.prevent
                     v-else
+                    draggable="false"
                     :src="`/item/${name}/${item.id}.svg`"
                     :src-placeholder="asset('img/loading.svg')"
+                    @contextmenu.prevent
                   />
                   <div class="quantity">{{ item.nb }}</div>
                 </button>
@@ -329,23 +329,23 @@
           ><template #prepend
             ><img
               draggable="false"
-              @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
               width="40"
               height="33"
-              src="@/assets/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg"
+              @contextmenu.prevent /></template
           >{{ $t("button.save") }}</GlobalButton
         ><router-link :to="`/book/${data.id}`" class="btn">
           <GlobalButton type="button" style="width: 150px"
             ><template #prepend
               ><img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Profile icon"
                 width="24"
                 height="24"
-                src="@/assets/img/icon/profile.svg" /></template
+                src="@/assets/img/icon/profile.svg"
+                @contextmenu.prevent /></template
             >{{ $t("button.card") }}</GlobalButton
           ></router-link
         >

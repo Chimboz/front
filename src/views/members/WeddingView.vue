@@ -14,52 +14,52 @@
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;{{ $t("wedding.section.today") }}</router-link
         >
         <router-link to="#divorce" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;{{ $t("wedding.section.divorces") }}</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;{{ $t("wedding.section.holding") }}</router-link
         >
         <router-link to="#broken" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;{{ $t("wedding.section.held") }}</router-link
         >
       </div>
       <br />
       <span v-html="$t('wedding.description')"></span>
     </GlobalCard>
-    <br /><GlobalCard id="last" v-if="data">
+    <br /><GlobalCard v-if="data" id="last">
       <template #header>{{ $t("wedding.section.last") }}</template>
       {{ $t("date.on") }} <b>{{ formatDate(data.last.date, "PPp") }}</b
       >, <b>{{ data.last.id }}</b
@@ -67,9 +67,9 @@
       <div class="wedding">
         <img
           draggable="false"
-          @contextmenu.prevent
           alt="Star"
           src="@/assets/img/social/wedding/wedding.svg"
+          @contextmenu.prevent
         />
         <GlobalAvatar
           class="witness witness1"
@@ -124,7 +124,7 @@
       <UserLink :user="data.last.witness1" /> &amp;
       <UserLink :user="data.last.witness2" />. </GlobalCard
     ><br />
-    <GlobalCard id="today" v-if="data">
+    <GlobalCard v-if="data" id="today">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -136,7 +136,7 @@
       {{ $t("date.Today") }}, <b>{{ formatDate(Date.now(), "PP") }}</b
       >, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
       <br /><br />
-      <div class="fullwidth" v-for="wedding of data.today" :key="wedding.id">
+      <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
         {{ $t("date.On") }} <b>{{ formatDate(wedding.date, "PPp") }}</b
         >,<br />
         <UserLink :user="wedding.married1" /> &amp;
@@ -153,7 +153,7 @@
       </div>
     </GlobalCard>
     <br />
-    <GlobalCard id="best" v-if="data">
+    <GlobalCard v-if="data" id="best">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -202,7 +202,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard id="divorce" v-if="data">
+    <GlobalCard v-if="data" id="divorce">
       <template #header
         ><img
           src="@/assets/img/social/wedding/divorce2.webp"
@@ -252,7 +252,7 @@
       </table>
     </GlobalCard>
     <br />
-    <GlobalCard id="broken" v-if="data">
+    <GlobalCard v-if="data" id="broken">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -300,20 +300,20 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top
-        v-if="data"
         color="blue"
       >
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />
         En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
         <br /><br />
@@ -321,18 +321,18 @@
           src="@/assets/img/social/wedding/divorce.webp"
           alt="Divorce"
           draggable="false"
-          @contextmenu.prevent
           width="56"
           height="39"
+          @contextmenu.prevent
         /><br />
         <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br /><br />
         <img
           src="@/assets/img/social/wedding/mariage.webp"
           alt="Wedding"
           draggable="false"
-          @contextmenu.prevent
           width="56"
           height="39"
+          @contextmenu.prevent
         /><br />
         En ce moment, <b>{{ data.stats.total - data.stats.divorce }}</b> couples
         sont heureux, donc ça laisse
@@ -343,14 +343,14 @@
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Wedding"
           draggable="false"
-          @contextmenu.prevent
           width="130"
           height="58"
           style="width: 100%"
+          @contextmenu.prevent
         /><br />
         <h3>Archive de tous les mariages</h3>
         <br />
-        <form @submit.prevent="search()" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="search()">
           <input
             required
             min="1"
@@ -362,7 +362,7 @@
           /><button type="submit" class="btn-action">go</button>
         </form>
         <br />
-        <form @submit.prevent="search()" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="search()">
           <input
             required
             minlength="3"

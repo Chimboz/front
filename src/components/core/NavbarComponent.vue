@@ -7,47 +7,47 @@
   >
     <router-link to="/"
       ><img
+        id="logo"
         draggable="false"
-        @contextmenu.prevent
         alt="Logo Chimboz"
         width="240"
         height="70"
-        id="logo"
         src="@/assets/img/logo.svg"
+        @contextmenu.prevent
     /></router-link>
     <div class="login flex">
       <div style="margin-top: -10px">
         <UserLink
-          :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           id="username"
+          :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           style="display: inherit"
         />
         <button
+          v-if="user"
           id="connect"
           class="centered"
           style="display: inline-flex"
           @click="auth.logout()"
-          v-if="user"
         >
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Disconnect icon"
             height="11"
             width="11"
             src="@/assets/img/icon/failure.svg"
+            @contextmenu.prevent
           />
           {{ $t("navbar.logout") }}
         </button>
         <button v-else>
-          <router-link to="/login" id="connect" class="flex">
+          <router-link id="connect" to="/login" class="flex">
             <img
               draggable="false"
-              @contextmenu.prevent
               alt="Connect icon"
               height="11"
               width="11"
               src="@/assets/img/icon/success.svg"
+              @contextmenu.prevent
             />
             {{ $t("navbar.login") }}
           </router-link>
@@ -67,17 +67,19 @@
     </div>
   </div>
   <div id="nav" class="flex">
-    <router-link to="/" :class="{ active: ($route.meta.section as string[])?.includes('Home') }"
+    <router-link
+      to="/"
+      :class="{ active: ($route.meta.section as string[])?.includes('Home') }"
       ><button class="nav-btn flex centered">
         <img
           draggable="false"
-          @contextmenu.prevent
           alt="Home icon"
           class="nav-icon"
           src="@/assets/img/navbar/icon/home.svg"
           width="20"
           height="20"
           style="margin: 2px; padding: 1px"
+          @contextmenu.prevent
         /></button
     ></router-link>
     <a target="_blank" href="/tchat"
@@ -85,12 +87,12 @@
         <div class="nav-text">
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Tchat icon"
             class="nav-icon"
             src="@/assets/img/navbar/icon/tchat.svg"
             width="28"
             height="21"
+            @contextmenu.prevent
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.play")
@@ -98,12 +100,12 @@
         </div>
         <img
           draggable="false"
-          @contextmenu.prevent
           alt="Arrow icon"
           class="arrow jitter"
           width="40"
           height="33"
           src="@/assets/img/arrow.svg"
+          @contextmenu.prevent
         /></button
     ></a>
     <router-link
@@ -114,12 +116,12 @@
         <div class="nav-text">
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Account icon"
             class="nav-icon"
             width="21"
             height="21"
             src="@/assets/img/navbar/icon/account.svg"
+            @contextmenu.prevent
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.account")
@@ -134,12 +136,12 @@
         <div class="nav-text">
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Games icon"
             class="nav-icon"
             width="20"
             height="21"
             src="@/assets/img/navbar/icon/games.svg"
+            @contextmenu.prevent
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.games")
@@ -154,12 +156,12 @@
         <div class="nav-text">
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Member icon"
             class="nav-icon"
             width="21"
             height="21"
             src="@/assets/img/navbar/icon/members.svg"
+            @contextmenu.prevent
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.members")
@@ -174,12 +176,12 @@
         <div class="nav-text">
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Community icon"
             class="nav-icon"
             width="21"
             height="21"
             src="@/assets/img/navbar/icon/community.svg"
+            @contextmenu.prevent
           />
           <StrokeText style="z-index: 1" class="btn-label">{{
             $t("navbar.community")

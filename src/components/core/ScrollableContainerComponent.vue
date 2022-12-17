@@ -1,8 +1,8 @@
 <template>
   <div
     class="scrollable"
-    @scroll.passive="onScroll"
     :style="{ maxHeight: maxHeight + 'px' }"
+    @scroll.passive="onScroll"
   >
     <slot></slot>
     <div v-show="isLoading" class="spinner-loading">

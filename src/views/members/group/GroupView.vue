@@ -10,10 +10,10 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
+      v-if="data"
       header="group.webp"
       :height="70"
       color="blue"
-      v-if="data"
       justified
     >
       <div class="group-header">
@@ -51,8 +51,8 @@
         Membres du groupe:
         <UserLink
           v-for="(user, index) of data.members"
-          :user="user"
           :key="user.id"
+          :user="user"
           :separator="index < data.members.length - 1"
         /><br /><br />
         Localisation : <b>{{ data.localisation }}</b
@@ -61,14 +61,14 @@
           <div style="line-height: 10px">Niveau moyen</div>
           <div>
             <img
-              draggable="false"
-              @contextmenu.prevent
-              :alt="digit"
               v-for="digit in data.level.toString(10)"
               :key="digit.index"
+              draggable="false"
+              :alt="digit"
               width="19"
               height="21"
               :src="asset(`img/number/${digit}.svg`)"
+              @contextmenu.prevent
             />
           </div>
         </div>
@@ -109,7 +109,7 @@
       >
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="blue" v-if="data">
+      ><GlobalCard v-if="data" color="blue">
         <template #header> Inscription pour rejoindre ce groupe </template>
         <div class="justified">
           <img
@@ -119,7 +119,7 @@
           {{ $t(`group.${data.status}`) }}
           <div v-if="user">
             <br />
-            <a @click.prevent="join" style="cursor: var(--pointer)"
+            <a style="cursor: var(--pointer)" @click.prevent="join"
               >Rejoindre ce groupe</a
             >
           </div>

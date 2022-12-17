@@ -2,71 +2,71 @@
   <GlobalContainer>
     <template #left-column>
       <GlobalCard color="blue" top>
-        <router-link to="/levels" v-if="data">
+        <router-link v-if="data" to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
             <div class="number">
               <img
-                draggable="false"
-                @contextmenu.prevent
-                :alt="number"
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
+                draggable="false"
+                :alt="number"
                 width="19"
                 height="21"
                 :src="asset(`img/number/${number}.svg`)"
+                @contextmenu.prevent
               />
             </div>
           </div>
         </router-link>
-        <router-link to="/mi" v-if="data">
+        <router-link to="/mi">
           <div class="messages">
-            <div>
+            <div v-if="data">
               <img
-                draggable="false"
-                @contextmenu.prevent
-                :alt="number"
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
+                draggable="false"
+                :alt="number"
                 width="19"
                 height="21"
                 :src="asset(`img/number/pink/${number}.svg`)"
+                @contextmenu.prevent
               />
             </div>
             <img
               draggable="false"
-              @contextmenu.prevent
               alt="Messages"
               src="@/assets/img/home/messages.png"
               width="154"
               height="67"
               class="fullwidth"
+              @contextmenu.prevent
             />
           </div>
           {{ $t("mi.message", data.messages) }}
         </router-link>
-        <router-link to="/friends" v-if="data">
+        <router-link to="/friends">
           <div class="friends">
-            <div>
+            <div v-if="data">
               <img
-                draggable="false"
-                @contextmenu.prevent
-                :alt="number"
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
+                draggable="false"
+                :alt="number"
                 width="19"
                 height="21"
                 :src="asset(`img/number/pink/${number}.svg`)"
+                @contextmenu.prevent
               />
             </div>
             <img
               draggable="false"
-              @contextmenu.prevent
               alt="Friends"
               src="@/assets/img/home/friends.png"
               width="154"
               height="67"
               class="fullwidth"
+              @contextmenu.prevent
             />
           </div>
           {{ $t("friends.online", data.friends) }}
@@ -77,15 +77,15 @@
     </template>
     <img
       draggable="false"
-      @contextmenu.prevent
       src="/announce/img.svg"
       alt="Announcement"
       width="468"
       height="137"
       style="width: 100%"
+      @contextmenu.prevent
     />
     <br />
-    <GlobalCard header="lottery.webp" v-if="data && data.lottery">
+    <GlobalCard v-if="data && data.lottery" header="lottery.webp">
       <template #header> </template>
       <div v-if="lottery">
         <div>{{ $t("lottery.firstLine") }}</div>
@@ -98,38 +98,38 @@
         ><template #prepend
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Lottery handle"
+            v-if="lottery"
             class="handle"
             height="33"
             width="16"
             src="@/assets/img/lottery/up.svg"
-            v-if="lottery" /><img
+            @contextmenu.prevent /><img
             draggable="false"
-            @contextmenu.prevent
             alt="Lottery handle"
+            v-else
             class="handle"
             height="33"
             width="16"
             src="@/assets/img/lottery/down.svg"
-            v-else /></template
+            @contextmenu.prevent /></template
         >{{ $t("button.lottery") }}</GlobalButton
       ></GlobalCard
     >
     <br />
     <Radio src="track.flac" />
     <br />
-    <GlobalCard color="yellow" justified v-if="data">
+    <GlobalCard v-if="data" color="yellow" justified>
       <template #subtop>{{ $t("section.chapaniouz") }}</template>
       <template #header
         ><img
           draggable="false"
-          @contextmenu.prevent
           src="@/assets/img/home/chimboking.webp"
           width="130"
           height="70"
           alt="Chimboking portrait"
           style="float: left; margin: 0 16px 16px 0"
+          @contextmenu.prevent
         />
         {{ data.news.title }}
       </template>
@@ -148,17 +148,17 @@
       >
       <div class="gallery flex">
         <div
-          class="flex col photo"
           v-for="photo of data.gallery"
           :key="photo.name"
+          class="flex col photo"
           style="margin: auto"
         >
           <router-link :to="'/chaparazzi/' + photo.name">
             <img
               draggable="false"
-              @contextmenu.prevent
               :src="`gallery/${photo.name}`"
-              :alt="photo.name" /></router-link
+              :alt="photo.name"
+              @contextmenu.prevent /></router-link
           ><b>{{ formatDatePhotos(photo.date) }}</b>
         </div>
       </div>
@@ -168,16 +168,16 @@
             src="@/assets/img/puce.svg"
             alt="Puce"
             draggable="false"
-            @contextmenu.prevent
             height="17"
             width="17"
+            @contextmenu.prevent
           />
           {{ $t("chaparazzi.more") }}
         </router-link>
       </div>
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="blue" top v-if="data">
+      ><GlobalCard v-if="data" color="blue" top>
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -191,12 +191,12 @@
       ><br />
       <router-link to="/shop">
         <GlobalCard
+          v-if="data"
           color="yellow"
           header="packs.webp"
           :width="154"
           :height="96"
           class="packs"
-          v-if="data"
         >
           <template #button>
             <GlobalButton color="yellow" icon="item.svg">{{

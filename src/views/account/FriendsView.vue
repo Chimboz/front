@@ -8,14 +8,14 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard color="yellow" v-if="data" justified
+    <GlobalCard v-if="data" color="yellow" justified
       ><template #subtop>Friends</template>
       <ScrollableContainer
         route="friends"
-        :maxHeight="450"
+        :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
-        <div class="friend" v-for="friend of data" :key="friend.user.id">
+        <div v-for="friend of data" :key="friend.user.id" class="friend">
           <router-link
             :to="'/book/' + friend.user.id"
             :class="{ pending: friend.status.hasOwnProperty('sent') }"
@@ -40,8 +40,8 @@
           <div v-if="friend.status.sent">
             <span
               class="link"
-              @click.prevent="cancel(friend)"
               style="color: red; cursor: var(--pointer)"
+              @click.prevent="cancel(friend)"
               ><img
                 src="@/assets/img/icon/failure.svg"
                 width="11"
@@ -60,8 +60,8 @@
           >
             <span
               class="link"
-              @click.prevent="accept(friend)"
               style="color: green; cursor: var(--pointer)"
+              @click.prevent="accept(friend)"
               ><img
                 src="@/assets/img/icon/success.svg"
                 width="11"
@@ -73,8 +73,8 @@
               />Accepter</span
             ><br /><span
               class="link"
-              @click.prevent="decline(friend)"
               style="color: red; cursor: var(--pointer)"
+              @click.prevent="decline(friend)"
               ><img
                 src="@/assets/img/icon/failure.svg"
                 width="11"
@@ -96,11 +96,11 @@
             >
               <img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Online"
                 height="20"
                 width="17"
                 src="@/assets/img/tiz/tiz_shape.svg"
+                @contextmenu.prevent
               />&nbsp;<b>En ligne</b>
             </div>
             <b>{{ friend.status.room }}</b>
@@ -110,7 +110,7 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard color="blue" top>
-        <form @submit.prevent="addFriend" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="addFriend">
           <input
             required
             minlength="3"

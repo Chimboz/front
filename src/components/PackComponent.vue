@@ -92,14 +92,14 @@
 // @vuese
 // @group Default
 
-import { ref } from 'vue';
+import { ref } from "vue";
 
 defineProps<{
   name: string;
   looks: any[];
 }>();
 
-const audio = ref<null | HTMLAudioElement>(null)
+const audio = ref<null | HTMLAudioElement>(null);
 
 function play() {
   audio.value!.play();

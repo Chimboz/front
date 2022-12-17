@@ -43,13 +43,13 @@
           <td><b>Sujet</b></td>
           <td>
             <input
+              v-model="title"
               :required="isTopic"
               :minlength="isTopic ? '3' : '0'"
               maxlength="100"
               name="title"
               class="btn-md"
               type="text"
-              v-model="title"
               placeholder="Titre"
             />
           </td>
@@ -79,11 +79,11 @@
               >
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   alt="Image embed"
                   src="@/assets/img/favicon.svg"
                   height="22"
                   style="height: 100%"
+                  @contextmenu.prevent
                 />
               </button>
               <select
@@ -176,6 +176,8 @@
           </td>
           <td>
             <textarea
+              ref="textarea"
+              v-model="message"
               placeholder="Message"
               required
               minlength="3"
@@ -183,9 +185,7 @@
               spellcheck="true"
               maxlength="60000"
               class="btn-md"
-              ref="textarea"
               style="font-family: monospace; padding: var(--gap)"
-              v-model="message"
               @focus="focusHandler"
               @select="selectionHandler"
             />
@@ -196,39 +196,39 @@
             <div class="flex">
               <GlobalButton
                 type="button"
-                @click.prevent="preview = message"
                 aria-label="Preview"
+                @click.prevent="preview = message"
                 >Prévisualiser</GlobalButton
               >
-              <GlobalButton type="submit" color="green" v-if="mode == 'post'"
+              <GlobalButton v-if="mode == 'post'" type="submit" color="green"
                 ><template #prepend
                   ><img
                     draggable="false"
-                    @contextmenu.prevent
                     alt="Arrow icon"
                     class="arrow jitter green"
                     aria-label="Send"
-                    src="@/assets/img/arrow.svg" /></template
+                    src="@/assets/img/arrow.svg"
+                    @contextmenu.prevent /></template
                 >Envoyer</GlobalButton
               >
               <GlobalButton
+                v-if="mode == 'edit'"
                 type="button"
                 color="red"
-                v-if="mode == 'edit'"
-                @click="mode = 'post'"
                 aria-label="Cancel"
+                @click="mode = 'post'"
               >
                 Annuler</GlobalButton
               >
-              <GlobalButton type="submit" color="green" v-if="mode == 'edit'"
+              <GlobalButton v-if="mode == 'edit'" type="submit" color="green"
                 ><template #prepend
                   ><img
                     draggable="false"
-                    @contextmenu.prevent
                     alt="Arrow icon"
                     class="arrow jitter green"
                     aria-label="Edit"
-                    src="@/assets/img/arrow.svg" /></template
+                    src="@/assets/img/arrow.svg"
+                    @contextmenu.prevent /></template
                 >Editer</GlobalButton
               >
             </div>

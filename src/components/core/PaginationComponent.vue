@@ -1,6 +1,5 @@
 <template>
-  <div v-for="page of array()"
-    :key="page + 1"></div>
+  <div v-for="page of array()" :key="page + 1"></div>
   <router-link
     v-for="page of array()"
     :key="page + 1"
@@ -37,7 +36,9 @@ function array() {
       props.total - 2,
       props.total - 1,
     ]),
-  ].filter((page) => page >= 0 && page < props.total).sort((a, b) => a - b);
+  ]
+    .filter((page) => page >= 0 && page < props.total)
+    .sort((a, b) => a - b);
 }
 </script>
 <style lang="scss" scoped>

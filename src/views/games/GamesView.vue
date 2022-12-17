@@ -18,12 +18,12 @@
     >
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/bacteria/visuel.webp"
         width="150"
         height="150"
         alt="Bacteria preview"
         style="float: left; margin-right: 16px"
+        @contextmenu.prevent
       />
       <b>Le jeu culte de l'archipel</b>
       <br /><br />
@@ -35,11 +35,11 @@
       <router-link class="btn-sm pink-bg" to="/games/bacteria">
         <img
           draggable="false"
-          @contextmenu.prevent
           width="14"
           height="13"
           src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
+          @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </GlobalCard>
@@ -53,12 +53,12 @@
     >
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/patojdur/visuel.webp"
         alt="Patojdur preview"
         width="150"
         height="150"
         style="float: left; margin-right: 16px"
+        @contextmenu.prevent
       />
       <b>La course la plus humide du web !</b>
       <br />
@@ -70,11 +70,11 @@
       <router-link class="btn-sm pink-bg" to="/games/patojdur">
         <img
           draggable="false"
-          @contextmenu.prevent
           width="14"
           height="13"
           alt="Help icon"
           src="@/assets/img/icon/button/help.svg"
+          @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </GlobalCard>
@@ -88,12 +88,12 @@
     >
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/mazo/visuel.webp"
         width="150"
         height="150"
         alt="Mazo preview"
         style="float: left; margin-right: 16px"
+        @contextmenu.prevent
       />
       <b>Fais bosser ta bonne étoile !</b>
       <br />
@@ -105,19 +105,19 @@
       <router-link class="btn-sm pink-bg" to="/games/mazo">
         <img
           draggable="false"
-          @contextmenu.prevent
           width="14"
           height="13"
           src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
+          @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
     </GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         color="blue"
         header="games.gif"
-        v-if="data"
         :width="154"
         :height="49"
       >

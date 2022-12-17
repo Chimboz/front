@@ -54,7 +54,7 @@ function random(min: number, max: number) {
 }
 
 function loop() {
-  if (timeoutId) {
+  if (timeoutId.value) {
     clearTimeout(timeoutId.value);
   }
   if (progress.value >= endingPoint) {
@@ -77,7 +77,7 @@ function stop() {
   progress.value = 100;
   clearTimeout(timeoutId.value);
   setTimeout(() => {
-    if (!isLoading) {
+    if (!isLoading.value) {
       isVisible.value = false;
     }
   }, 2000);

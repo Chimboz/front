@@ -9,11 +9,11 @@
       <GlobalRules bot />
     </template>
     <RouterView />
-    <GlobalCard color="yellow" v-if="data" style="position: relative">
+    <GlobalCard v-if="data" color="yellow" style="position: relative">
       <ScrollableContainer
         route="gallery"
         class="fullwidth"
-        :maxHeight="450"
+        :max-height="450"
         @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
       >
         <div v-for="image of data" :key="image.name" class="gallery-image">
@@ -21,9 +21,9 @@
             <VLazyImage
               draggable="false"
               :alt="image.name"
-              @contextmenu.prevent
               :src="`/gallery/${image.name}`"
               :src-placeholder="asset('img/loading.svg')"
+              @contextmenu.prevent
             />
           </router-link>
           <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />

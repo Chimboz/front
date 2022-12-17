@@ -48,12 +48,12 @@
           ><template #prepend
             ><img
               draggable="false"
-              @contextmenu.prevent
               alt="Arrow icon"
               class="arrow jitter green"
               width="40"
               height="33"
-              src="@/assets/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg"
+              @contextmenu.prevent /></template
           >Envoyer</GlobalButton
         >
       </form>

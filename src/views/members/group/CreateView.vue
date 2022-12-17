@@ -45,10 +45,10 @@
         ><template #prepend
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Arrow icon"
             class="arrow green jitter"
-            src="@/assets/img/arrow.svg" /></template
+            src="@/assets/img/arrow.svg"
+            @contextmenu.prevent /></template
         >Sauver</GlobalButton
       >
     </form>

@@ -13,11 +13,11 @@
     <button style="text-align: left">
       <img
         v-if="!post && data && !data.locked"
-        @click="post = true"
         src="@/assets/img/bbs/post.gif"
+        @click="post = true"
       />
     </button>
-    <MarkdownInput isTopic v-if="post && data && !data.locked" />
+    <MarkdownInput v-if="post && data && !data.locked" is-topic />
     <br />
     <GlobalCard>
       <div class="columns">
@@ -88,7 +88,7 @@ fetchData(async (params) => {
   data.value = (
     await api.get(`bbs/forum/${params.id}?page=${params.page}`)
   ).data;
-})
+});
 
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.forum

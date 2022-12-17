@@ -1,67 +1,67 @@
 <template>
-  <div class="modal" v-if="isVisible">
+  <div v-if="isVisible" class="modal">
     <div class="modal-content">
       <img
-        draggable="false"
-        @contextmenu.prevent
         v-if="type == 'error'"
+        draggable="false"
         width="46"
         height="35"
         src="@/assets/img/icon/warning2.svg"
+        @contextmenu.prevent
       />
       <img
-        draggable="false"
-        @contextmenu.prevent
         v-if="type == 'success'"
+        draggable="false"
         width="46"
         height="46"
         src="@/assets/img/icon/success.svg"
+        @contextmenu.prevent
       />
       <img
-        draggable="false"
-        @contextmenu.prevent
         v-if="type == 'failure'"
+        draggable="false"
         width="46"
         height="46"
         src="@/assets/img/icon/failure.svg"
+        @contextmenu.prevent
       />
       <img
-        draggable="false"
-        @contextmenu.prevent
         v-if="type == 'confirmation'"
+        draggable="false"
         width="46"
         height="42"
         src="@/assets/img/icon/confirmation.svg"
+        @contextmenu.prevent
       />
       <p>{{ $t(message) }}</p>
       <button
-        class="btn-pink ok"
-        @click="request"
-        style="filter: hue-rotate(180deg)"
         v-if="type == 'confirmation'"
+        class="btn-pink ok"
+        style="filter: hue-rotate(180deg)"
+        @click="request"
       >
         <img
           draggable="false"
-          @contextmenu.prevent
           src="@/assets/img/icon/ok.svg"
+          @contextmenu.prevent
         />
       </button>
-      <button class="btn-pink ok" @click="isVisible = false" v-else>
+      <button v-else class="btn-pink ok" @click="isVisible = false">
         <img
           draggable="false"
-          @contextmenu.prevent
           src="@/assets/img/icon/ok.svg"
+          @contextmenu.prevent
         />
       </button>
       <button
+        v-if="type == 'confirmation'"
         class="btn-pink ko"
         @click="isVisible = false"
-        v-if="type == 'confirmation'"
       >
         <img
           draggable="false"
-          @contextmenu.prevent
           src="@/assets/img/icon/ko.svg"
+          @contextmenu.prevent
         />
       </button>
     </div>

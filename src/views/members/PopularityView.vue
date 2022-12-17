@@ -14,56 +14,56 @@
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Classement du jour</router-link
         >
         <router-link to="#general" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Classement général</router-link
         >
         <router-link to="#yesterday" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Champions du jour</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Classement des groupes</router-link
         >
         <router-link to="#vote" class="btn-sm blue-bg">
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Voter</router-link
         >
       </div>
@@ -89,7 +89,7 @@
       <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
       <b>- aimé</b> gagne une crotte pour la journée !
     </GlobalCard>
-    <br /><GlobalCard id="today" v-if="data">
+    <br /><GlobalCard v-if="data" id="today">
       <template #header>Classement du jour !</template>
       Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
       quelqu'un !<br />
@@ -98,11 +98,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -126,11 +126,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -154,7 +154,7 @@
       </div>
     </GlobalCard>
     <br />
-    <GlobalCard id="yesterday" v-if="data">
+    <GlobalCard v-if="data" id="yesterday">
       <template #header>Champions du jour !</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
 
@@ -162,11 +162,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -190,11 +190,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -216,7 +216,7 @@
           </table>
         </div></div></GlobalCard
     ><br />
-    <GlobalCard id="general" v-if="data">
+    <GlobalCard v-if="data" id="general">
       <template #header>Classement général !</template>
       <template #subtitle
         >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
@@ -225,11 +225,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -253,11 +253,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -280,18 +280,18 @@
         </div>
       </div>
     </GlobalCard>
-    <br /><GlobalCard id="groups" v-if="data">
+    <br /><GlobalCard v-if="data" id="groups">
       <template #header>Classement des groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
       <div class="grid fullwidth">
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/star.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -315,11 +315,11 @@
         <div>
           <img
             draggable="false"
-            @contextmenu.prevent
             alt="Star"
             src="@/assets/img/social/popularity/poop.webp"
             width="141"
             height="58"
+            @contextmenu.prevent
           />
           <table>
             <colgroup>
@@ -341,12 +341,12 @@
           </table>
         </div></div></GlobalCard
     ><br />
-    <GlobalCard id="vote" v-if="user"
+    <GlobalCard v-if="user" id="vote"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
       <br /><br />
-      <form @submit.prevent="vote()" class="flex">
+      <form class="flex" @submit.prevent="vote()">
         <select class="btn-md" required>
           <option value="for">Pour</option>
           <option value="against">Contre</option></select
@@ -364,21 +364,21 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top
         color="blue"
         justified
-        v-if="data"
       >
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;Hier
         <b>{{ data.stats.yesterday.for + data.stats.yesterday.against }}</b>
         votes.<br />
@@ -399,9 +399,9 @@
           src="@/assets/img/puce.svg"
           alt="Caret"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />Aujourd'hui
         <b>{{ data.stats.today.for + data.stats.today.against }}</b>
         votes.<br />

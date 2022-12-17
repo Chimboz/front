@@ -8,19 +8,19 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard color="yellow" v-if="data" justified
+    <GlobalCard v-if="data" color="yellow" justified
       ><template #subtop>{{ data.user.name }}</template>
       <ScrollableContainer
         route="messages"
         class="messages fullwidth flex"
-        :maxHeight="450"
+        :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <div
-          class="message flex"
-          :class="{ you: message.you }"
           v-for="(message, index) of data.messages.slice().reverse()"
           :key="index"
+          class="message flex"
+          :class="{ you: message.you }"
         >
           <div
             v-if="!message.you"
@@ -56,34 +56,34 @@
             </div>
             <span
               class="content"
-              v-html="messageRender(message.content)"
               :style="{ background: hashColor(data.user.name) }"
+              v-html="messageRender(message.content)"
             ></span>
           </div>
         </div>
       </ScrollableContainer>
-      <form @submit.prevent="send" class="flex fullwidth">
+      <form class="flex fullwidth" @submit.prevent="send">
         <input
+          v-model="message"
           required
           minlength="1"
           name="message"
           type="text"
           class="btn-md"
-          v-model="message"
           :placeholder="$t('placeholder.message')"
         /><button type="submit" class="btn-action">➤</button>
       </form>
     </GlobalCard>
     <template #right-column
-      ><GlobalCard color="yellow" v-if="data" justified header="mi_sm.svg">
+      ><GlobalCard v-if="data" color="yellow" justified header="mi_sm.svg">
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"
         >
           <router-link
-            class="message flex"
             v-for="user of data.recent"
             :key="user.id"
+            class="message flex"
             :to="'/messenger/' + user.id"
           >
             <div

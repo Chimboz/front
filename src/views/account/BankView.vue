@@ -8,11 +8,11 @@
       ><br />
       <GlobalRules bot />
     </template>
-    <GlobalCard color="yellow" v-if="data" justified header="bank.gif">
+    <GlobalCard v-if="data" color="yellow" justified header="bank.gif">
       <ScrollableContainer
         route="banklogs"
         class="fullwidth"
-        :maxHeight="300"
+        :max-height="300"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <table class="w-100">
@@ -38,11 +38,10 @@
             <td>{{ line.description }}</td>
             <td style="text-align: right">
               <img
-                draggable="false"
-                @contextmenu.prevent
-                :alt="number"
                 v-for="number in Math.abs(line.value).toString(10)"
                 :key="number"
+                draggable="false"
+                :alt="number"
                 width="19"
                 height="21"
                 :src="
@@ -50,6 +49,7 @@
                     `img/number/${line.value < 0 ? 'pink/' : ''}${number}.svg`
                   )
                 "
+                @contextmenu.prevent
               />
             </td>
           </tr>
@@ -60,12 +60,12 @@
         src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
-        @contextmenu.prevent
         height="17"
         width="17"
+        @contextmenu.prevent
       /><b> Balance sur 7 jours</b> <br /><br />
       <BarChart
-        :chartData="bankData()"
+        :chart-data="bankData()"
         :options="{
           elements: {
             line: { borderColor: '#ffb907' },

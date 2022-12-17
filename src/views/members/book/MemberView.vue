@@ -14,7 +14,7 @@
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <GlobalCard class="member" :class="[data.gender]" v-if="data" justified>
+    <GlobalCard v-if="data" class="member" :class="[data.gender]" justified>
       <div class="member-header">
         <GlobalAvatar
           :avatar="data.look.avatar"
@@ -55,9 +55,9 @@
             >
               <img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Online"
                 src="@/assets/img/tiz/tiz_shape.svg"
+                @contextmenu.prevent
               />&nbsp;<b>En ligne</b>
             </div>
             <b>{{ data.status.room }}</b>
@@ -103,8 +103,8 @@
             Inscrit aux groupes :
             <GroupLink
               v-for="(group, index) of data.groups"
-              :group="group"
               :key="group.id"
+              :group="group"
               :separator="index < data.groups.length - 1"
             />
           </p>
@@ -116,7 +116,6 @@
             <!--TODO svg pas bien size-->
             <img
               draggable="false"
-              @contextmenu.prevent
               :alt="
                 data.gender.charAt(0).toUpperCase() +
                 data.gender.slice(1) +
@@ -125,6 +124,7 @@
               height="20"
               width="20"
               :src="asset(`img/member/${data.gender}/${data.gender}.svg`)"
+              @contextmenu.prevent
             />
           </div>
           &nbsp;
@@ -132,14 +132,14 @@
             <div>Niveau</div>
             <div>
               <img
-                draggable="false"
-                @contextmenu.prevent
-                :alt="digit"
                 v-for="digit in data.level.toString(10)"
                 :key="digit.index"
+                draggable="false"
+                :alt="digit"
                 width="19"
                 height="21"
                 :src="asset(`img/number/${digit}.svg`)"
+                @contextmenu.prevent
               />
             </div>
           </div>
@@ -154,13 +154,13 @@
         </div>
       </div>
       <br />
-      <div class="member-section" v-if="data.bacteria">
+      <div v-if="data.bacteria" class="member-section">
         <img
           draggable="false"
-          @contextmenu.prevent
           :src="asset(`img/member/${data.gender}/bacteria.svg`)"
           alt="Bacteria"
           style="float: left"
+          @contextmenu.prevent
         />
         <span
           >Classement : <b>{{ data.bacteria.rank }}</b
@@ -177,13 +177,13 @@
         >
       </div>
       <br v-if="data.bacteria" />
-      <div class="member-section" v-if="data.patojdur">
+      <div v-if="data.patojdur" class="member-section">
         <img
           draggable="false"
-          @contextmenu.prevent
           :src="asset(`img/member/${data.gender}/patojdur.svg`)"
           alt="Patojdur"
           style="float: left"
+          @contextmenu.prevent
         />
         <span
           >Classement : <b>{{ data.patojdur.rank }}</b
@@ -200,13 +200,13 @@
         >
       </div>
       <br v-if="data.patojdur" />
-      <div class="member-section" v-if="data.mazo">
+      <div v-if="data.mazo" class="member-section">
         <img
           draggable="false"
-          @contextmenu.prevent
           :src="asset(`img/member/${data.gender}/mazo.svg`)"
           alt="Mazo"
           style="float: left"
+          @contextmenu.prevent
         />
         <span
           >Classement : <b>{{ data.mazo.rank }}</b
@@ -215,13 +215,13 @@
         >
       </div>
       <br v-if="data.mazo" />
-      <div class="member-section" v-if="data.popularity">
+      <div v-if="data.popularity" class="member-section">
         <img
           draggable="false"
-          @contextmenu.prevent
           :src="asset(`img/member/${data.gender}/popularity.svg`)"
           alt="Popularity"
           style="float: left"
+          @contextmenu.prevent
         />
         <span
           >Classement : <b>{{ data.popularity.rank }}</b
@@ -257,7 +257,9 @@
       }}</router-link>
     </GlobalCard>
     <template #right-column
-      ><router-link v-if="user && +user.admin > 0" :to="'/admin/' + $route.params.id"
+      ><router-link
+        v-if="user && +user.admin > 0"
+        :to="'/admin/' + $route.params.id"
         ><GlobalButton icon="rules.svg">Modérer</GlobalButton></router-link
       ></template
     >

@@ -13,68 +13,68 @@
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Les records</router-link
         >
         <router-link to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Les meilleurs</router-link
         >
         <router-link to="#worst" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Les pires</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
             style="image-rendering: pixelated"
+            @contextmenu.prevent
           />&nbsp;Les groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
-            @contextmenu.prevent
             width="14"
             height="13"
             alt="Help icon"
             src="@/assets/img/icon/button/help.svg"
+            @contextmenu.prevent
           />&nbsp;Comment jouer&nbsp;?
         </router-link>
       </div>
       <br />
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/bacteria/preview.webp"
         width="200"
         height="191"
         alt="A game of bacteria"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
+        @contextmenu.prevent
       />
       Bacteria est le jeu ancestral de notre île. Depuis des milliers d'années,
       des membres dédient leur vie à s'entraîner à cet art si complexe et
@@ -94,13 +94,13 @@
 
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/bacteria/howto.png"
         alt="A game of bacteria"
         width="194"
         height="128"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
+        @contextmenu.prevent
       />
       Il y a 2 endroits pour jouer: <b>Bacteria débutants</b> et
       <b>Bacteria Pro</b> Si tu ne sais pas comment y aller demande ton chemin
@@ -112,7 +112,7 @@
       jouer qu'en <b>Bacteria débutants</b>, les cabines de
       <b>Bacteria Pro</b> sont réservées aux membres ! </GlobalCard
     ><br />
-    <GlobalCard id="records" v-if="data">
+    <GlobalCard v-if="data" id="records">
       <template #header>Records !</template>
       <template #subtitle
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -141,7 +141,7 @@
         {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
     </GlobalCard>
-    <br /><GlobalCard id="best" v-if="data">
+    <br /><GlobalCard v-if="data" id="best">
       <template #header>Les 20 plus acharnés de Bacteria !</template>
       <template #subtitle
         >Des heures de phagocytage acharné pour en arriver la...</template
@@ -185,7 +185,7 @@
         </tbody>
       </table>
     </GlobalCard>
-    <br /><GlobalCard id="worst" v-if="data">
+    <br /><GlobalCard v-if="data" id="worst">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       <table class="fullwidth">
@@ -224,7 +224,7 @@
         </tbody>
       </table>
     </GlobalCard>
-    <br /><GlobalCard id="groups" v-if="data">
+    <br /><GlobalCard v-if="data" id="groups">
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="fullwidth">
@@ -253,11 +253,11 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top
-        v-if="data"
         color="blue"
         justified
       >
@@ -266,9 +266,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;<router-link to="/bbs/5">BBS de Bacteria</router-link><br />
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
@@ -276,9 +276,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;<router-link to="bacteria/story">Bacteria Sanctuary</router-link
         ><br />
         <br />
@@ -286,9 +286,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;<b>{{ data.stats.player }}</b> membres joueurs de
         <b>Bacteria</b>.<br />
         <br />
@@ -296,18 +296,18 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;<b>{{ data.stats.games }}</b> parties ont été jouées.<br />
         <br />
         <img
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         />&nbsp;<b>{{ data.stats.yesterday }}</b> parties hier.
       </GlobalCard></template
     >

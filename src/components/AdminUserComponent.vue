@@ -1,14 +1,14 @@
 <template>
-  <GlobalCard justified v-if="data">
+  <GlobalCard v-if="data" justified>
     <template #subtop>{{ data.name }}</template>
     <div class="header fullwidth">
       <img
         src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
-        @contextmenu.prevent
         height="17"
         width="17"
+        @contextmenu.prevent
       /><b> Registre personnel</b>
     </div>
     <table class="fullwidth">
@@ -47,9 +47,9 @@
         src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
-        @contextmenu.prevent
         height="17"
         width="17"
+        @contextmenu.prevent
       /><b> Actions</b>
     </div>
     <form class="flex">
@@ -87,9 +87,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> Comptes partageant la même IP</b>
       </div>
       <router-link
@@ -103,9 +103,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> Adresses IP</b>
       </div>
       <div v-for="ip in data.ip" :key="ip">
@@ -121,9 +121,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> Groupes</b>
       </div>
       <div v-for="group in data.groups" :key="group.id">
@@ -148,9 +148,9 @@
           src="@/assets/img/puce.svg"
           alt="Puce"
           draggable="false"
-          @contextmenu.prevent
           height="17"
           width="17"
+          @contextmenu.prevent
         /><b> Jeux</b>
       </div>
       <div class="flex">
@@ -169,9 +169,9 @@
         src="@/assets/img/puce.svg"
         alt="Puce"
         draggable="false"
-        @contextmenu.prevent
         height="17"
         width="17"
+        @contextmenu.prevent
       /><b> Inventaire</b>
     </div>
     <div v-if="+user.admin">

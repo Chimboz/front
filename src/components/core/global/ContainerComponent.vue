@@ -10,8 +10,8 @@
       <slot></slot>
     </div>
     <div
-      style=""
       v-if="$slots['right-column']"
+      style=""
       class="side-column right-column column flex"
     >
       <slot name="right-column"></slot>

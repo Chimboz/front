@@ -7,8 +7,8 @@ const api = axios.create({
   // Force JSON format
   headers: {
     Accept: "application/json",
-    "Content-Type": "application/json"
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 // Emit errors for Modal to show when request fails

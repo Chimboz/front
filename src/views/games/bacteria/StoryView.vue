@@ -249,6 +249,5 @@
 // @group View/Games/Bacteria
 // Bacteria's story page
 
-  
 // meta title section.bacteriaStory
 </script>

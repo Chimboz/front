@@ -6,17 +6,17 @@
           <div class="cabin flex centered">
             <div class="arrows flex">
               <button
-                type="button"
                 v-for="(category, name) of data.items"
                 :key="name"
+                type="button"
                 :disabled="data.items[name].indexOf(data.blazon[name]) < 1"
                 @click="$emit('previousItem', name)"
               >
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   alt="Puce"
                   src="@/assets/img/puce.svg"
+                  @contextmenu.prevent
                 />
               </button>
             </div>
@@ -29,9 +29,9 @@
             />
             <div class="arrows flex">
               <button
-                type="button"
                 v-for="(category, name) of data.items"
                 :key="name"
+                type="button"
                 :disabled="
                   data.items[name].indexOf(data.blazon[name]) >
                   data.items[name].length - 2
@@ -40,9 +40,9 @@
               >
                 <img
                   draggable="false"
-                  @contextmenu.prevent
                   alt="Puce"
                   src="@/assets/img/puce.svg"
+                  @contextmenu.prevent
                 />
               </button>
             </div>
@@ -52,10 +52,11 @@
           <div id="inventory">
             <div class="category-selection" @contextmenu.prevent>
               <button
-                type="button"
                 v-for="category of data.items"
                 :key="category"
+                type="button"
                 :class="{ active: checked.includes(category) }"
+                class="item pointer"
                 @click="
                   checked.includes(category) && checked.length == 1
                     ? (checked = [
@@ -72,20 +73,16 @@
                     ? checked.splice(checked.indexOf(category), 1)
                     : checked.push(category)
                 "
-                class="item pointer"
               >
                 <img
                   draggable="false"
+                  :src="asset(`img/icon/item_category/${category}.svg`)"
                   @contextmenu.prevent
-                  :src="
-                    asset(`img/icon/item_category/${category}.svg`)
-                  "
                 />
               </button>
             </div>
             <div class="chest">
               <div
-                class="category"
                 v-for="(category, name) of {
                   shape: checked.includes('shape') ? data.items.shape : [],
                   top: checked.includes('top') ? data.items.top : [],
@@ -98,15 +95,16 @@
                     : [],
                 }"
                 :key="name"
+                class="category"
               >
                 <button
+                  v-for="item of category"
+                  :key="item"
                   type="button"
                   class="item"
                   :class="{
                     active: data.blazon[name] == item,
                   }"
-                  v-for="item of category"
-                  :key="item"
                   @click="$emit('updateItem', name, item)"
                   @mouseover="info = name + ' ' + item"
                 >
@@ -132,17 +130,17 @@
                     />
                   </svg>
                   <img
-                    draggable="false"
-                    @contextmenu.prevent
                     v-else-if="item == -1"
+                    draggable="false"
                     src="@/assets/img/icon/cross.svg"
+                    @contextmenu.prevent
                   />
                   <VLazyImage
-                    draggable="false"
-                    @contextmenu.prevent
                     v-else
+                    draggable="false"
                     :src="`/blazon/${name}/${item}.svg`"
                     :src-placeholder="asset('img/loading.svg')"
+                    @contextmenu.prevent
                   />
                 </button>
               </div>

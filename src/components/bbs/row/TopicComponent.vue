@@ -4,7 +4,6 @@
       <td style="text-align: center" valign="middle" height="50">
         <img
           draggable="false"
-          @contextmenu.prevent
           :src="
             asset(
               `img/bbs/folder${topic.sticky ? '_sticky' : ''}${
@@ -23,6 +22,7 @@
           "
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
+          @contextmenu.prevent
         />
       </td>
       <td width="100%" height="50" style="text-align: left">
@@ -55,10 +55,10 @@
           )}#p${topic.last_msg.msgid}`"
           ><img
             draggable="false"
-            @contextmenu.prevent
             :src="asset(`img/bbs/msg${topic.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
+            @contextmenu.prevent
         /></router-link>
       </td>
     </tr>

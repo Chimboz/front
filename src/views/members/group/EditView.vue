@@ -10,10 +10,10 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
+      v-if="data"
       header="group.webp"
       :height="70"
       color="blue"
-      v-if="data"
       justified
     >
       <div class="group-header">
@@ -34,19 +34,6 @@
     <br />
     <Cabin
       v-if="data"
-      @update-item="(name: any, item: any) => (data.blazon[name] = item)"
-      @previous-item="
-        (name: any) =>
-          (data.blazon[name] =
-            data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
-      "
-      @next-item="
-        (name: any) =>
-          (data.blazon[name] =
-            data.items[name][
-              data.items[name].indexOf(data.blazon[name]) + 1
-            ])
-      "
       :data="{
         blazon: {
           shape: data.blazon.shape,
@@ -106,20 +93,34 @@
           ],
         },
       }"
+      @update-item="(name: any, item: any) => (data.blazon[name] = item)"
+      @previous-item="
+        (name: any) =>
+          (data.blazon[name] =
+            data.items[name][data.items[name].indexOf(data.blazon[name]) - 1])
+      "
+      @next-item="
+        (name: any) =>
+          (data.blazon[name] =
+            data.items[name][
+              data.items[name].indexOf(data.blazon[name]) + 1
+            ])
+      "
     />
     <br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Informations</template>
       <form>
         <input
+          v-model="data.motto"
           maxlength="100"
           name="title"
           class="btn-md"
           type="text"
-          v-model="data.motto"
           placeholder="Motto"
         /><br /><br />
         <textarea
+          v-model="data.description"
           placeholder="Description"
           required
           minlength="3"
@@ -127,23 +128,22 @@
           spellcheck="true"
           maxlength="60000"
           class="btn-md description"
-          v-model="data.description"
           @focus="focusHandler"
           @select="selectionHandler"
         /><br /><br />
         <input
+          v-model="data.localisation"
           maxlength="100"
           name="title"
           class="btn-md"
           type="text"
-          v-model="data.localisation"
           placeholder="Localisation"
         />
         <br /><br />
         <input
+          id="open"
           type="radio"
           name="status"
-          id="open"
           value="open"
           :checked="data.status == 'open'"
         /><label for="open"
@@ -156,9 +156,9 @@
             @contextmenu.prevent
         /></label>
         <input
+          id="demand"
           type="radio"
           name="status"
-          id="demand"
           value="demand"
           :checked="data.status == 'demand'"
         /><label for="demand"
@@ -171,9 +171,9 @@
             @contextmenu.prevent
         /></label>
         <input
+          id="close"
           type="radio"
           name="status"
-          id="close"
           value="close"
           :checked="data.status == 'close'"
         /><label for="close"
@@ -190,49 +190,49 @@
           ><template #prepend
             ><img
               draggable="false"
-              @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
-              src="@/assets/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg"
+              @contextmenu.prevent /></template
           >Sauver</GlobalButton
         >
       </form></GlobalCard
     ><br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Membres</template>
-      <div class="inline" v-for="user of data.members" :key="user.id">
+      <div v-for="user of data.members" :key="user.id" class="inline">
         <UserLink :user="user" :separator="false" /><img
-          @click.prevent="removeMember(user.id)"
           src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
           alt="Close"
           draggable="false"
           class="pointer"
+          @click.prevent="removeMember(user.id)"
           @contextmenu.prevent
         />
       </div> </GlobalCard
     ><br />
-    <GlobalCard color="blue" v-if="data">
+    <GlobalCard v-if="data" color="blue">
       <template #header>Demandes</template>
-      <div class="inline" v-for="user of data.demands" :key="user.id">
+      <div v-for="user of data.demands" :key="user.id" class="inline">
         <UserLink :user="user" :separator="false" /><img
-          @click.prevent="acceptDemand(user.id)"
           src="@/assets/img/icon/success.svg"
           width="11"
           height="11"
           alt="Close"
           draggable="false"
           class="pointer"
+          @click.prevent="acceptDemand(user.id)"
           @contextmenu.prevent
         /><img
-          @click.prevent="rejectDemand(user.id)"
           src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
           alt="Close"
           draggable="false"
           class="pointer"
+          @click.prevent="rejectDemand(user.id)"
           @contextmenu.prevent
         /></div></GlobalCard
     ><br />
@@ -266,8 +266,8 @@
       <b>{{ data.global.points }}</b> points.</GlobalCard
     ><br /><GlobalCard
       ><a
-        @click.prevent="deleteGroup()"
         style="color: red; cursor: var(--pointer)"
+        @click.prevent="deleteGroup()"
         >Supprimer le groupe</a
       ></GlobalCard
     >

@@ -28,11 +28,11 @@
       <form @submit.prevent="submit">
         <div class="centered">
           <button
-            class="letter"
-            @click="changeCase(index)"
-            type="button"
             v-for="(letter, index) of pseudo"
             :key="index"
+            class="letter"
+            type="button"
+            @click="changeCase(index)"
           >
             {{ letter }}
           </button>
@@ -42,12 +42,12 @@
           ><template #prepend
             ><img
               draggable="false"
-              @contextmenu.prevent
               alt="Arrow icon"
               class="arrow green jitter"
               width="40"
               height="33"
-              src="@/assets/img/arrow.svg" /></template
+              src="@/assets/img/arrow.svg"
+              @contextmenu.prevent /></template
           >Sauver</GlobalButton
         >
       </form>

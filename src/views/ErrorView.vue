@@ -4,11 +4,11 @@
     <GlobalCard color="red">
       <img
         draggable="false"
-        @contextmenu.prevent
         alt="Error icon"
         width="39"
         height="32"
         src="@/assets/img/icon/warning.svg"
+        @contextmenu.prevent
       /><b
         >&nbsp;{{
           $route.params.message

@@ -10,11 +10,11 @@
       <GlobalRules bot />
     </template>
     <GlobalCard
+      v-if="data"
       header="new.webp"
       bg="new.png"
       :height="70"
       color="blue"
-      v-if="data"
     >
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.new" :key="user.id" class="flex col">
@@ -22,9 +22,9 @@
             src="@/assets/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
-            @contextmenu.prevent
             height="93"
             width="100"
+            @contextmenu.prevent
           /><GlobalAvatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
@@ -49,11 +49,11 @@
     </GlobalCard>
     <br />
     <GlobalCard
+      v-if="data"
       header="popularity_blue.webp"
       bg="popularity_blue.png"
       :height="75"
       color="blue"
-      v-if="data"
     >
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.popularity" :key="user.id" class="flex col">
@@ -61,9 +61,9 @@
             src="@/assets/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
-            @contextmenu.prevent
             height="93"
             width="100"
+            @contextmenu.prevent
           /><GlobalAvatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
@@ -88,10 +88,10 @@
     </GlobalCard>
     <br />
     <GlobalCard
+      v-if="data"
       header="wedding_blue.webp"
       bg="wedding_blue.png"
       color="blue"
-      v-if="data"
     >
       <div class="flex" style="justify-content: space-evenly">
         <div
@@ -104,9 +104,9 @@
             src="@/assets/img/member/spotlight.svg"
             alt="Spotlight"
             draggable="false"
-            @contextmenu.prevent
             height="93"
             width="100"
+            @contextmenu.prevent
           />
           <div class="flex" style="justify-content: center">
             <GlobalAvatar
@@ -145,7 +145,7 @@
         <template #button>
           <GlobalButton icon="search.svg">Chercher</GlobalButton>
         </template>
-        <form @submit.prevent="search()" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="search()">
           <input
             required
             minlength="3"
@@ -159,7 +159,7 @@
           /><button type="submit" class="btn-action">go</button>
         </form>
         <br />
-        <form @submit.prevent="search()" class="flex fullwidth">
+        <form class="flex fullwidth" @submit.prevent="search()">
           <input
             required
             minlength="3"
@@ -176,10 +176,10 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import api from '@/modules/api';
-import { fetchData } from '@/utils';
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
+import { ref } from "vue";
+import { RouterLink } from "vue-router";
 
 // @vuese
 // @group View/Members
@@ -192,7 +192,7 @@ function search() {
 
 fetchData(async () => {
   data.value = (await api.get("members")).data;
-})
+});
 
 // meta title section.members
 </script>

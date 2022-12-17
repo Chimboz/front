@@ -5,52 +5,52 @@
       <img
         draggable="false"
         alt="Chaparadio"
-        @contextmenu.prevent
         height="38"
         width="65"
         src="@/assets/img/radio/logo.svg"
+        @contextmenu.prevent
       />
       <img
+        v-if="!playing"
         class="btn-radio pointer"
         draggable="false"
         alt="Play button"
-        @contextmenu.prevent
-        v-if="!playing"
-        @click.prevent="play"
         height="18"
         width="18"
         src="@/assets/img/radio/play.svg"
+        @contextmenu.prevent
+        @click.prevent="play"
       />
       <img
         v-else
         class="btn-radio pointer"
         draggable="false"
         alt="Pause button"
-        @contextmenu.prevent
-        @click.prevent="pause"
         height="18"
         width="18"
         src="@/assets/img/radio/pause.svg"
+        @contextmenu.prevent
+        @click.prevent="pause"
       />
       <img
         class="btn-radio pointer"
         draggable="false"
         alt="Stop button"
-        @contextmenu.prevent
-        @click.prevent="stop"
         height="18"
         width="18"
         src="@/assets/img/radio/stop.svg"
+        @contextmenu.prevent
+        @click.prevent="stop"
       />
-      <div class="progress pointer" @click.prevent="skip" ref="progress">
+      <div ref="progress" class="progress pointer" @click.prevent="skip">
         <div
+          ref="progressBar"
           class="progress-bar"
           :class="{ playing: playing }"
-          ref="progressBar"
         ></div>
       </div>
     </div>
-    <audio @timeupdate="onProgress" :src="'/radio/' + src" ref="player"></audio>
+    <audio ref="player" :src="'/radio/' + src" @timeupdate="onProgress"></audio>
   </Card>
 </template>
 

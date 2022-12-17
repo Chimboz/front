@@ -42,20 +42,20 @@
         <div class="flex">
           <GlobalButton
             type="button"
-            @click="generatePseudo()"
             aria-label="Generate nickname"
+            @click="generatePseudo()"
             >Générer un pseudo</GlobalButton
           >
           <GlobalButton color="green" type="submit" aria-label="Save"
             ><template #prepend
               ><img
                 draggable="false"
-                @contextmenu.prevent
                 alt="Arrow icon"
                 class="arrow green jitter"
                 width="40"
                 height="33"
-                src="@/assets/img/arrow.svg" /></template
+                src="@/assets/img/arrow.svg"
+                @contextmenu.prevent /></template
             >Sauver</GlobalButton
           >
         </div>
@@ -87,7 +87,9 @@ function submit() {
   console.log(`Envoyé ${pseudo.value}!`);
 }
 async function generatePseudo() {
-  pseudo.value = (await api.get(`generator/${randomInt(3,15)}/${randomInt(1,2)}`)).data.pseudo;
+  pseudo.value = (
+    await api.get(`generator/${randomInt(3, 15)}/${randomInt(1, 2)}`)
+  ).data.pseudo;
 }
 
 // meta title section.eraser

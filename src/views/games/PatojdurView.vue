@@ -13,104 +13,104 @@
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Le gameplay</router-link
         >
         <router-link to="#modes" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Les modes</router-link
         >
         <router-link to="#races" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Les courses</router-link
         >
         <router-link to="#yesterday" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Champion du jour</router-link
         >
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Classement du jour</router-link
         >
         <router-link to="#general" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Classement général</router-link
         >
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Les records</router-link
         >
         <router-link to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
-            @contextmenu.prevent
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
             width="3"
             height="6"
+            @contextmenu.prevent
           />&nbsp;Les groupes</router-link
         >
         <router-link to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
-            @contextmenu.prevent
             width="14"
             height="13"
             alt="Help icon"
             src="@/assets/img/icon/button/help.svg"
+            @contextmenu.prevent
           />&nbsp;Comment jouer&nbsp;?
         </router-link>
       </div>
       <br />
       <img
         draggable="false"
-        @contextmenu.prevent
         src="@/assets/img/game/patojdur/preview.webp"
         width="200"
         height="170"
         alt="A game of bacteria"
         title="A game of bacteria"
         style="float: left; margin-right: 16px; border: 3px solid #6699cc"
+        @contextmenu.prevent
       />
       Patojdur est un jeu de style course-labyrinthe qui consiste à traverser à
       la nage les marécages le plus vite possible. A toi d’éviter les roseaux,
@@ -174,7 +174,7 @@
       Durant la phase de test de <b>Patojdur</b>, seule la course n°1
       (<b>Burnin'Flak</b>) est accessible.</GlobalCard
     ><br />
-    <GlobalCard id="records" v-if="data">
+    <GlobalCard v-if="data" id="records">
       <template #header>Records !</template>
       <template #subtitle>Ce jour là, il a comme volé sur l'eau...</template>
       <table class="fullwidth">
@@ -207,7 +207,7 @@
         </tbody>
       </table>
     </GlobalCard>
-    <br /><GlobalCard id="yesterday" v-if="data">
+    <br /><GlobalCard v-if="data" id="yesterday">
       <template #header>Les champions du jour !</template>
       <template #subtitle
         >Hier, ils ont cloué le bec des grenouilles... et des autres membres
@@ -243,7 +243,7 @@
         </tbody>
       </table>
     </GlobalCard>
-    <br /><GlobalCard id="general" v-if="data">
+    <br /><GlobalCard v-if="data" id="general">
       <template #header
         >Classement général single {{ data.day - 1 }}e journée</template
       >
@@ -274,7 +274,7 @@
           </tr>
         </tbody>
       </table> </GlobalCard
-    ><br /><GlobalCard id="today" v-if="data">
+    ><br /><GlobalCard v-if="data" id="today">
       <template #header
         >{{ data.day }}e journée ! {{ data.stats.today }} patojeurs !</template
       >
@@ -306,7 +306,7 @@
         </tbody>
       </table>
     </GlobalCard>
-    <br /><GlobalCard id="groups" v-if="data">
+    <br /><GlobalCard v-if="data" id="groups">
       <template #header>Classement des groupes !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="fullwidth">
@@ -335,13 +335,13 @@
     </GlobalCard>
     <template #right-column
       ><GlobalCard
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top
         color="blue"
         justified
-        v-if="data"
       >
         <img
           src="@/assets/img/puce.svg"

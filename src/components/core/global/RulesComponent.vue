@@ -4,11 +4,11 @@
       <div>
         <img
           draggable="false"
-          @contextmenu.prevent
           alt="Rules icon"
           width="36"
           height="22"
           src="@/assets/img/icon/rules.svg"
+          @contextmenu.prevent
         />
         <div class="rule-number">
           <b>{{ rule + 1 }}</b>
