@@ -80,3 +80,4 @@ export default app;
 
 // TODO check forms submit
 // TODO better quotes
+// TODO verif v-if data

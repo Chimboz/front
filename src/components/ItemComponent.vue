@@ -1,6 +1,6 @@
 <template>
-  <GlobalCard v-if="data" style="position: relative">
-    <div class="relative">
+  <GlobalCard style="position: relative">
+    <div v-if="data" class="relative">
       <StrokeText justified class="item-name" :class="data.rarity">{{
         data.name
       }}</StrokeText>
@@ -21,7 +21,7 @@
         />
       </div>
     </div>
-    <div class="flex" style="align-items: flex-start">
+    <div v-if="data" class="flex" style="align-items: flex-start">
       <img
         :src="`/item/${data.type}/${data.id}.svg`"
         :alt="data.name"
@@ -67,7 +67,6 @@ import { ref } from "vue";
 const data = ref<any>(undefined);
 
 fetchData(async (params) => {
-  console.log("he", params);
   data.value = (
     await api.get(`item/${params.id}?lang=${navigator.language.split("-")[0]}`)
   ).data;
