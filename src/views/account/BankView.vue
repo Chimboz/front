@@ -107,7 +107,7 @@ import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 
 const locales = { fr, enGB };
 

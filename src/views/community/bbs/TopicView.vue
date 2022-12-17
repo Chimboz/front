@@ -19,7 +19,7 @@ import TopicList from "@/components/bbs/list/TopicComponent.vue";
 import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 

@@ -20,6 +20,7 @@
         src="@/assets/img/radio/play.svg"
         @contextmenu.prevent
         @click.prevent="play"
+        @keyup.prevent="play"
       />
       <img
         v-else
@@ -31,6 +32,7 @@
         src="@/assets/img/radio/pause.svg"
         @contextmenu.prevent
         @click.prevent="pause"
+        @keyup.prevent="pause"
       />
       <img
         class="btn-radio pointer"
@@ -41,7 +43,9 @@
         src="@/assets/img/radio/stop.svg"
         @contextmenu.prevent
         @click.prevent="stop"
+        @keyup.prevent="stop"
       />
+      <!--eslint-disable-next-line vuejs-accessibility/click-events-have-key-events-->
       <div ref="progress" class="progress pointer" @click.prevent="skip">
         <div
           ref="progressBar"
@@ -50,7 +54,10 @@
         ></div>
       </div>
     </div>
-    <audio ref="player" :src="'/radio/' + src" @timeupdate="onProgress"></audio>
+    <audio ref="player" @timeupdate="onProgress">
+      <source :src="`/radio/${src}`" />
+      <track default kind="captions" :src="`/radio/${src.split('.')[0]}.vtt`" />
+    </audio>
   </Card>
 </template>
 

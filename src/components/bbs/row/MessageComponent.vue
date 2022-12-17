@@ -108,7 +108,7 @@ import { asset } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import messageRender from "@/modules/messageRender";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { onMounted, computed } from "vue";
 import eventBus from "@/modules/eventBus";

@@ -3,9 +3,11 @@
     class="pack flex animated pointer"
     @contextmenu.prevent
     @mouseenter="play"
+    @focus="play"
   >
     <audio ref="audio">
       <source src="@/assets/sound/shop/hover.mp3" type="audio/wav" />
+      <track default kind="captions" :src="asset('sound/shop/hover.vtt')" />
     </audio>
     <img src="@/assets/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
     <svg
@@ -93,6 +95,7 @@
 // @group Default
 
 import { ref } from "vue";
+import { asset } from "@/utils";
 
 defineProps<{
   name: string;

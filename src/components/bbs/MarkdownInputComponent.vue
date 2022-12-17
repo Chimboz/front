@@ -241,7 +241,7 @@
 <script setup lang="ts">
 import Emotes from "@/components/core/EmotesComponent.vue";
 import Message from "@/components/bbs/row/MessageComponent.vue";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import eventBus from "@/modules/eventBus";
 import { computed, ref, type SelectHTMLAttributes } from "vue";
 import { useI18n } from "vue-i18n";

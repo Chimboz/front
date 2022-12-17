@@ -56,7 +56,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 
 const auth = useAuthStore();

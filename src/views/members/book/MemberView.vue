@@ -94,7 +94,7 @@
             Page perso :
             <a
               target="_blank"
-              rel="noreferrer noopennr nofollower"
+              rel="noreferrer noopener nofollow"
               :href="data.website"
               >{{ data.website }}</a
             >
@@ -269,7 +269,7 @@
 <script setup lang="ts">
 import { asset, fetchData } from "@/utils";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";

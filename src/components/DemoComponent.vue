@@ -4,85 +4,97 @@
       <div class="demo">
         <div class="demo-btn hstack">
           <button
+            type="button"
             class="home"
             :class="{ active: demo == 0 }"
             @click="demo = 0"
           ></button>
           <button
+            type="button"
             class="mode"
             :class="{ active: demo == 1 }"
             @click="demo = 1"
           ></button>
           <button
+            type="button"
             class="tchat"
             :class="{ active: demo == 2 }"
             @click="demo = 2"
           ></button>
           <button
+            type="button"
             class="wedding"
             :class="{ active: demo == 3 }"
             @click="demo = 3"
           ></button>
           <button
+            type="button"
             class="group"
             :class="{ active: demo == 4 }"
             @click="demo = 4"
           ></button>
           <button
+            type="button"
             class="bacteria"
             :class="{ active: demo == 5 }"
             @click="demo = 5"
           ></button>
-          <button class="empty"></button>
-          <button class="empty"></button>
-          <button class="empty"></button>
-          <button class="empty"></button>
-          <button class="empty"></button>
+          <button class="empty" type="button"></button>
+          <button class="empty" type="button"></button>
+          <button class="empty" type="button"></button>
+          <button class="empty" type="button"></button>
+          <button class="empty" type="button"></button>
         </div>
         <div class="demo-picture relative">
           <section :class="{ display: demo == 0 }">
-            <div class="demo-info">{{ $t("demo.info1") }}</div>
+            <div class="demo-info">{{ $t("demo.info0") }}</div>
             <img
+              :alt="$t('demo.info0')"
               draggable="false"
               src="@/assets/img/demo/0.png"
               @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 1 }">
-            <div class="demo-info">{{ $t("demo.info2") }}</div>
+            <div class="demo-info">{{ $t("demo.info1") }}</div>
             <img
+              :alt="$t('demo.info1')"
               draggable="false"
               src="@/assets/img/demo/1.png"
               @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 2 }">
-            <div class="demo-info">{{ $t("demo.info3") }}</div>
+            <div class="demo-info">{{ $t("demo.info2") }}</div>
             <img
+              :alt="$t('demo.info2')"
               draggable="false"
               src="@/assets/img/demo/2.png"
               @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 3 }">
-            <div class="demo-info">{{ $t("demo.info4") }}</div>
+            <div class="demo-info">{{ $t("demo.info3") }}</div>
             <img
+              :alt="$t('demo.info3')"
               draggable="false"
               src="@/assets/img/demo/3.png"
               @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 4 }">
-            <div class="demo-info">{{ $t("demo.info5") }}</div>
+            <div class="demo-info">{{ $t("demo.info4") }}</div>
             <img
+              :alt="$t('demo.info4')"
               draggable="false"
               src="@/assets/img/demo/4.png"
               @contextmenu.prevent
             />
           </section>
           <section :class="{ display: demo == 5 }">
-            <div class="demo-info">{{ $t("demo.info6") }}</div>
+            <div class="demo-info">{{ $t("demo.info5") }}</div>
             <img
+              :alt="$t('demo.info5')"
               draggable="false"
               src="@/assets/img/demo/5.png"
               @contextmenu.prevent
@@ -94,7 +106,6 @@
         <br />
         <input
           required
-          autofocus
           minlength="3"
           maxlength="15"
           pattern="[\w\.\-_@]{3,15}"
@@ -102,6 +113,7 @@
           type="text"
           class="btn-md"
           autocomplete="username"
+          aria-label="Username"
           :placeholder="$t('placeholder.username')"
         />
         <input
@@ -112,12 +124,14 @@
           autocomplete="email"
           inputmode="email"
           class="btn-md"
+          aria-label="Email"
           :placeholder="$t('placeholder.mail')"
         />
         <input
           required
           name="password"
           type="password"
+          aria-label="Password"
           :placeholder="$t('placeholder.password')"
           class="btn-md"
         />
@@ -125,6 +139,7 @@
           required
           name="password_confirm"
           type="password"
+          aria-label="Password confirm"
           :placeholder="$t('placeholder.password_confirm')"
           class="btn-md"
         />
@@ -158,13 +173,13 @@
           <input
             v-model="username"
             required
-            autofocus
             minlength="2"
             maxlength="15"
             name="username"
             type="text"
             pattern="[\w\.\-_@]{2,15}"
             class="btn-md"
+            aria-label="Username"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
           />
@@ -173,6 +188,7 @@
             required
             name="password"
             type="password"
+            aria-label="Password"
             :placeholder="$t('placeholder.password')"
             autocomplete="current-password"
             class="btn-md"
@@ -210,6 +226,7 @@
     </div>
     <a href="/tchat" class="try pointer"
       >{{ $t("demo.try") }}&nbsp;&nbsp;<img
+        :alt="$t('demo.try')"
         draggable="false"
         src="@/assets/img/puce.svg"
         @contextmenu.prevent
@@ -219,7 +236,7 @@
 <script setup lang="ts">
 // @vuese
 // @group Default
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { onMounted, ref } from "vue";
 
 const auth = useAuthStore();
@@ -230,7 +247,9 @@ const section = ref(1);
 const demo = ref(0);
 
 onMounted(() => {
-  setInterval(() => (demo.value = (demo.value + 1) % 6), 7000);
+  setInterval(() => {
+    demo.value = (demo.value + 1) % 6;
+  }, 7000);
 });
 </script>
 <style lang="scss" scoped>

@@ -424,7 +424,7 @@
 
 <script setup lang="ts">
 import api from "@/modules/api";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";

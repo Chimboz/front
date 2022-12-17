@@ -29,13 +29,13 @@
           <input
             v-model="username"
             required
-            autofocus
             minlength="3"
             maxlength="15"
             pattern="[\w\.\-_@]{3,15}"
             name="username"
             type="text"
             class="btn-md"
+            aria-label="Username"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
             @keyup="onKeypressValue()"
@@ -72,7 +72,7 @@ const username = ref("");
 const suggestionsHere = ref<any[]>([]);
 
 function onKeypressValue() {
-  if (username.value != undefined && username.value != "") {
+  if (username.value !== undefined && username.value !== "") {
     /* api.get("/api/test.json").then((res: any) => {
           if (res.data && res.data.length > 0) {
             suggestionsHere.value = res.data;

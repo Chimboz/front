@@ -136,7 +136,7 @@ import messageRender from "@/modules/messageRender";
 import { fetchData, asset } from "@/utils";
 import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 
 const auth = useAuthStore();

@@ -194,7 +194,7 @@
 
 <script setup lang="ts">
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { asset } from "@/utils";
 import { computed } from "vue";
 import { useRoute } from "vue-router";

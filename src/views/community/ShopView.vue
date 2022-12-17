@@ -17,15 +17,27 @@
     >
       <audio autoplay>
         <source src="@/assets/sound/shop/moving_stars.flac" type="audio/flac" />
+        <track
+          default
+          kind="captions"
+          :src="asset('sound/shop/moving_stars.vtt')"
+        />
       </audio>
       <audio autoplay>
-        <source src="@/assets/sound/shop/preview.mp3" type="audio/wav" />
+        <source src="@/assets/sound/shop/preview.mp3" type="audio/mpeg" />
+        <track default kind="captions" :src="asset('sound/shop/preview.vtt')" />
       </audio>
       <audio ref="clickAudio">
         <source src="@/assets/sound/shop/show.wav" type="audio/wav" />
+        <track default kind="captions" :src="asset('sound/shop/show.vtt')" />
       </audio>
       <audio ref="buyAudio">
         <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg" />
+        <track
+          default
+          kind="captions"
+          :src="asset('sound/shop/selected.vtt')"
+        />
       </audio>
       <div class="preview fullwidth flex">
         <img
@@ -108,8 +120,8 @@ import Bank from "@/components/BankComponent.vue";
 import Pack from "@/components/PackComponent.vue";
 import api from "@/modules/api";
 import eventBus from "@/modules/eventBus";
-import { useAuthStore } from "@/stores/auth";
-import { fetchData } from "@/utils";
+import useAuthStore from "@/stores/auth";
+import { fetchData, asset } from "@/utils";
 import { ref, computed } from "vue";
 
 const auth = useAuthStore();
@@ -139,7 +151,7 @@ function buy() {
 
 fetchData(async () => {
   data.value = (await api.get("shop")).data;
-  shown.value = data.value.packs[0];
+  [shown.value] = data.value.packs;
 });
 
 // /api/shop.json

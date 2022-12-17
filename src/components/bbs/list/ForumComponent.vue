@@ -62,7 +62,7 @@
 <script setup lang="ts">
 import Topic from "../row/TopicComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
-// import { useAuthStore } from "@/stores/auth";
+// import useAuthStore from "@/stores/auth";
 // const auth = useAuthStore();
 // const user = computed(() => auth.user);
 

@@ -44,7 +44,7 @@
 </template>
 <script setup lang="ts">
 import AnimatedNumber from "@/components/core/AnimatedNumberComponent.vue";
-import { useAuthStore } from "@/stores/auth";
+import useAuthStore from "@/stores/auth";
 import { asset, randomInt } from "@/utils";
 import { onMounted, ref, computed } from "vue";
 

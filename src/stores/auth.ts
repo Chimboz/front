@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import type User from "@/types/User";
 import api from "@/modules/api";
 
-export const useAuthStore = defineStore("auth", () => {
+export default defineStore("auth", () => {
   const user = ref<undefined | User>(undefined);
   async function login(pseudo: string, password: string) {
     // await api.post("auth/login", { pseudo, password, device_name: "browser" });
