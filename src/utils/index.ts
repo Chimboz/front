@@ -1,5 +1,5 @@
 import { onBeforeMount, onBeforeUpdate } from "vue";
-import { onBeforeRouteUpdate, useRoute, type RouteParams } from "vue-router";
+import { useRoute, type RouteParams } from "vue-router";
 
 export function asset(path: string) {
   return new URL(`../assets/${path}`, import.meta.url).href;
