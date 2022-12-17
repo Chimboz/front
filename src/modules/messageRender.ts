@@ -109,14 +109,16 @@ function dompurifyRender(string: string) {
   });
 
   // Add a hook to enforce CSS attribute sanitization
-  DOMPurify.addHook("afterSanitizeAttributes", (node: any) => {
+  DOMPurify.addHook("afterSanitizeAttributes", (node) => {
     let anchor: HTMLAnchorElement;
     // Sanitizing anchors
     if (node.hasAttribute("href")) {
       anchor = document.createElement("a");
       anchor.href = node.getAttribute("href")!;
-      node.setAttribute("target", "_blank");
-      node.setAttribute("rel", "noreferrer noopener nofollow");
+      if (anchor.hostname !== window.location.hostname) {
+        node.setAttribute("target", "_blank");
+        node.setAttribute("rel", "noreferrer noopener nofollow");
+      }
       if (anchor.protocol && !anchor.protocol.match(REGEX_URI)) {
         node.removeAttribute("href");
       }
@@ -144,7 +146,7 @@ function dompurifyRender(string: string) {
     if (node.hasAttribute("style")) {
       const output: Array<string> = [];
       // re-add styles in case any are left
-      validateStyles(output, node.style);
+      validateStyles(output, (node as HTMLElement).style);
       if (output.length) node.setAttribute("style", output.join(""));
       else node.removeAttribute("style");
     }
