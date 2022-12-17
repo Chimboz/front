@@ -6,11 +6,13 @@
           <div class="cabin flex centered">
             <div class="arrows flex">
               <button
-                v-for="(category, name) of data.items"
-                :key="name"
+                v-for="category of categories"
+                :key="category"
                 type="button"
-                :disabled="data.items[name].indexOf(data.blazon[name]) < 1"
-                @click="$emit('previousItem', name)"
+                :disabled="
+                  data.items[category].indexOf(data.blazon[category]) < 1
+                "
+                @click="emit('previousItem', category)"
               >
                 <img
                   draggable="false"
@@ -29,14 +31,14 @@
             />
             <div class="arrows flex">
               <button
-                v-for="(category, name) of data.items"
-                :key="name"
+                v-for="category of categories"
+                :key="category"
                 type="button"
                 :disabled="
-                  data.items[name].indexOf(data.blazon[name]) >
-                  data.items[name].length - 2
+                  data.items[category].indexOf(data.blazon[category]) >
+                  data.items[category].length - 2
                 "
-                @click="$emit('nextItem', name)"
+                @click="emit('nextItem', category)"
               >
                 <img
                   draggable="false"
@@ -52,7 +54,7 @@
           <div id="inventory">
             <div class="category-selection" @contextmenu.prevent>
               <button
-                v-for="category of data.items"
+                v-for="category of categories"
                 :key="category"
                 type="button"
                 :class="{ active: checked.includes(category) }"
@@ -77,6 +79,7 @@
                 <img
                   draggable="false"
                   :src="asset(`img/icon/item_category/${category}.svg`)"
+                  :alt="category"
                   @contextmenu.prevent
                 />
               </button>
@@ -105,8 +108,9 @@
                   :class="{
                     active: data.blazon[name] == item,
                   }"
-                  @click="$emit('updateItem', name, item)"
+                  @click="emit('updateItem', name, item)"
                   @mouseover="info = name + ' ' + item"
+                  @focus="info = name + ' ' + item"
                 >
                   <svg
                     v-if="name == 'primary'"
@@ -132,6 +136,7 @@
                   <img
                     v-else-if="item == -1"
                     draggable="false"
+                    alt="No item"
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
                   />
@@ -157,6 +162,7 @@ import Blazon from "@/components/blazon/BlazonComponent.vue";
 import VLazyImage from "v-lazy-image";
 import { ref } from "vue";
 import { asset } from "@/utils";
+import type { BlazonCategory } from "@/types/Item";
 
 // @vuese
 // @group Blazon
@@ -165,12 +171,23 @@ defineProps<{
   data: any;
 }>();
 
-const info = ref("");
-const checked = ref(["shape", "top", "bot", "primary", "secondary"]);
+const emit = defineEmits<{
+  (e: "previousItem", name: BlazonCategory): void;
+  (e: "nextItem", name: BlazonCategory): void;
+  (e: "updateItem", name: BlazonCategory, item: string | number): void;
+}>();
 
-function submit() {
-  console.log("Envoyé!");
-}
+const categories: BlazonCategory[] = [
+  "shape",
+  "top",
+  "bot",
+  "primary",
+  "secondary",
+];
+const info = ref("");
+const checked = ref(categories);
+
+function submit() {}
 </script>
 <style lang="scss">
 .cabin .blazon {

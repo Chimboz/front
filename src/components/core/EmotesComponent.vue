@@ -5,7 +5,7 @@
       :key="emote"
       type="button"
       class="btn-pink"
-      @click="$emit('emote', emote)"
+      @click="emit('emote', emote)"
     >
       <img
         draggable="false"
@@ -22,6 +22,10 @@
 // @group Core
 import { asset } from "@/utils";
 import type Emote from "@/types/Emotes";
+
+const emit = defineEmits<{
+  (e: "emote", emote: Emote): void;
+}>();
 
 const emotes: Emote[] = [
   "neutral",

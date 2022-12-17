@@ -6,15 +6,15 @@
           <div class="cabin flex centered">
             <div class="arrows flex">
               <button
-                v-for="name of categories"
-                :key="name"
+                v-for="category of categories"
+                :key="category"
                 type="button"
                 :disabled="
-                  data.items[name]
+                  data.items[category]
                     .map((item: any) => item.id)
-                    .indexOf(data.look[name]) < 1
+                    .indexOf(data.look[category]) < 1
                 "
-                @click="$emit('previousItem', name)"
+                @click="emit('previousItem', category)"
               >
                 <img
                   draggable="false"
@@ -41,16 +41,16 @@
             </div>
             <div class="arrows flex">
               <button
-                v-for="name of categories"
-                :key="name"
+                v-for="category of categories"
+                :key="category"
                 type="button"
                 :disabled="
-                  data.items[name]
+                  data.items[category]
                     .map((item: any) => item.id)
-                    .indexOf(data.look[name]) >
-                  data.items[name].length - 2
+                    .indexOf(data.look[category]) >
+                  data.items[category].length - 2
                 "
-                @click="$emit('nextItem', name)"
+                @click="emit('nextItem', category)"
               >
                 <img
                   draggable="false"
@@ -70,8 +70,10 @@
               class="btn-pink"
               :class="{ active: data.gender == 'Chimbo' }"
               @mouseenter="gender = 'Chimbo'"
+              @focus="gender = 'Chimbo'"
               @mouseleave="gender = data.gender"
-              @click="$emit('changeGender', gender)"
+              @blur="gender = data.gender"
+              @click="emit('changeGender', gender)"
             >
               <img
                 draggable="false"
@@ -85,8 +87,10 @@
               class="btn-pink"
               :class="{ active: data.gender == 'Chimbette' }"
               @mouseenter="gender = 'Chimbette'"
+              @focus="gender = 'Chimbette'"
               @mouseleave="gender = data.gender"
-              @click="$emit('changeGender', gender)"
+              @blur="gender = data.gender"
+              @click="emit('changeGender', gender)"
             >
               <img
                 draggable="false"
@@ -100,8 +104,10 @@
               class="btn-pink"
               :class="{ active: data.gender == 'Chimbi' }"
               @mouseenter="gender = 'Chimbi'"
+              @focus="gender = 'Chimbi'"
               @mouseleave="gender = data.gender"
-              @click="$emit('changeGender', gender)"
+              @blur="gender = data.gender"
+              @click="emit('changeGender', gender)"
             >
               <img
                 draggable="false"
@@ -135,109 +141,116 @@
             >
           </div>
           <div v-show="profile" id="profile">
-            <Emotes @emote="(emote: any) => $emit('emote', emote)" />
+            <Emotes @emote="(emote: any) => emit('emote', emote)" />
             <br />
-            <div class="justified">
-              <label for="motto">{{ $t("profile.motto") }}</label>
+            <div class="left">
+              <label for="motto" class="justified"
+                >{{ $t("profile.motto") }}
+                <input
+                  id="motto"
+                  minlength="0"
+                  maxlength="200"
+                  type="text"
+                  :value="motto"
+                  @input="
+                    emit(
+                      'update:motto',
+                      ($event.target as InputHTMLAttributes).value
+                    )
+                  "
+                />
+              </label>
             </div>
-            <input
-              id="motto"
-              minlength="0"
-              maxlength="200"
-              type="text"
-              :value="motto"
-              @input="
-                $emit(
-                  'update:motto',
-                  ($event.target as InputHTMLAttributes).value
-                )
-              "
-            />
-            <div class="justified">
-              <label for="website">{{ $t("profile.website") }}</label>
+            <div class="left">
+              <label for="website"
+                >{{ $t("profile.website") }}
+
+                <input
+                  id="website"
+                  minlength="0"
+                  maxlength="100"
+                  type="text"
+                  :value="website"
+                  @input="
+                    emit(
+                      'update:website',
+                      ($event.target as InputHTMLAttributes).value
+                    )
+                  "
+                />
+              </label>
             </div>
-            <input
-              id="website"
-              minlength="0"
-              maxlength="100"
-              type="text"
-              :value="website"
-              @input="
-                $emit(
-                  'update:website',
-                  ($event.target as InputHTMLAttributes).value
-                )
-              "
-            />
-            <div class="justified">
-              <label>{{ $t("profile.interests") }}</label>
+            <div class="left">
+              <label
+                >{{ $t("profile.interests") }}
+                <ol>
+                  <li>
+                    <input
+                      id="interesta"
+                      minlength="0"
+                      maxlength="100"
+                      type="text"
+                      :value="centrea"
+                      aria-label="Interest A"
+                      @input="
+                        emit(
+                          'update:centrea',
+                          ($event.target as InputHTMLAttributes).value
+                        )
+                      "
+                    />
+                  </li>
+                  <li>
+                    <input
+                      id="interestb"
+                      minlength="0"
+                      maxlength="100"
+                      type="text"
+                      :value="centreb"
+                      aria-label="Interest B"
+                      @input="
+                        emit(
+                          'update:centreb',
+                          ($event.target as InputHTMLAttributes).value
+                        )
+                      "
+                    />
+                  </li>
+                  <li>
+                    <input
+                      id="interestc"
+                      minlength="0"
+                      maxlength="100"
+                      type="text"
+                      :value="centrec"
+                      aria-label="Interest C"
+                      @input="
+                        emit(
+                          'update:centrec',
+                          ($event.target as InputHTMLAttributes).value
+                        )
+                      "
+                    />
+                  </li>
+                  <li>
+                    <input
+                      id="interestd"
+                      minlength="0"
+                      maxlength="100"
+                      type="text"
+                      :value="centred"
+                      aria-label="Interest D"
+                      @input="
+                        emit(
+                          'update:centred',
+                          ($event.target as InputHTMLAttributes).value
+                        )
+                      "
+                    />
+                  </li>
+                </ol>
+              </label>
             </div>
-            <ol>
-              <li>
-                <input
-                  id="interesta"
-                  minlength="0"
-                  maxlength="100"
-                  type="text"
-                  :value="centrea"
-                  aria-label="Interest A"
-                  @input="
-                    $emit(
-                      'update:centrea',
-                      ($event.target as InputHTMLAttributes).value
-                    )
-                  "
-                />
-              </li>
-              <li>
-                <input
-                  id="interestb"
-                  minlength="0"
-                  maxlength="100"
-                  type="text"
-                  :value="centreb"
-                  aria-label="Interest B"
-                  @input="
-                    $emit(
-                      'update:centreb',
-                      ($event.target as InputHTMLAttributes).value
-                    )
-                  "
-                />
-              </li>
-              <li>
-                <input
-                  id="interestc"
-                  minlength="0"
-                  maxlength="100"
-                  type="text"
-                  :value="centrec"
-                  aria-label="Interest C"
-                  @input="
-                    $emit(
-                      'update:centrec',
-                      ($event.target as InputHTMLAttributes).value
-                    )
-                  "
-                />
-              </li>
-              <li>
-                <input
-                  id="interestd"
-                  minlength="0"
-                  maxlength="100"
-                  type="text"
-                  :value="centred"
-                  aria-label="Interest D"
-                  @input="
-                    $emit(
-                      'update:centred',
-                      ($event.target as InputHTMLAttributes).value
-                    )
-                  "
-                />
-              </li>
-            </ol>
           </div>
           <div v-if="loadInventory" v-show="!profile" id="inventory">
             <div class="category-selection" @contextmenu.prevent>
@@ -268,6 +281,7 @@
                 <img
                   draggable="false"
                   :src="asset(`img/icon/item_category/${category}.svg`)"
+                  :alt="category"
                   @contextmenu.prevent
                 />
               </button>
@@ -295,8 +309,9 @@
                     item.rarity,
                     data.look[name] == item.id ? 'active' : false,
                   ]"
-                  @click="$emit('updateItem', name, item.id)"
+                  @click="emit('updateItem', name, item.id)"
                   @mouseover="info = item.name"
+                  @focus="info = item.name"
                 >
                   <img
                     v-if="
@@ -306,6 +321,7 @@
                       item.id == 938
                     "
                     draggable="false"
+                    alt="No item"
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
                   />
@@ -358,6 +374,8 @@ import Emotes from "@/components/core/EmotesComponent.vue";
 import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import { ref, type InputHTMLAttributes } from "vue";
+import type { LookCategory } from "@/types/Item";
+import type Emote from "@/types/Emotes";
 
 // @vuese
 // @group Default
@@ -372,16 +390,35 @@ const props = defineProps<{
   centred: string;
 }>();
 
-const categories = ["item0", "hat", "item1", "body", "item2", "shoe"];
+const emit = defineEmits<{
+  (e: "previousItem", category: LookCategory): void;
+  (e: "nextItem", category: LookCategory): void;
+  (e: "changeGender", gender: "Chimbo" | "Chimbette" | "Chimbi"): void;
+  (e: "emote", emote: Emote): void;
+  (e: "update:motto", value: string): void;
+  (e: "update:website", value: string): void;
+  (e: "update:centrea", value: string): void;
+  (e: "update:centreb", value: string): void;
+  (e: "update:centrec", value: string): void;
+  (e: "update:centred", value: string): void;
+  (e: "updateItem", category: LookCategory, id: number): void;
+}>();
+
+const categories: LookCategory[] = [
+  "item0",
+  "hat",
+  "item1",
+  "body",
+  "item2",
+  "shoe",
+];
 const profile = ref(true);
 const loadInventory = ref(false);
 const info = ref("");
 const checked = ref(categories);
 const gender = ref(props.data.gender);
 
-function submit() {
-  console.log("Envoyé!");
-}
+function submit() {}
 </script>
 <style lang="scss">
 .cabin-scene .tiz {

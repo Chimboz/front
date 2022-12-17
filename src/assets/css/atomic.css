@@ -47,6 +47,10 @@
   text-align: justify;
 }
 
+.left {
+  text-align: left;
+}
+
 .relative {
   position: relative;
 }
