@@ -114,6 +114,12 @@ const coinsPosition = [
   },
 ];
 
+function tween() {
+  if (coins.value >= +user.value!.money || coins.value > 1760) return;
+  coins.value += Math.max(Math.floor(+user.value!.money / 60 / props.delay), 1);
+  if (coins.value < +user.value!.money) requestAnimationFrame(tween);
+}
+
 onMounted(() => {
   if (!user.value) return;
   for (
@@ -134,12 +140,6 @@ onMounted(() => {
   }
   requestAnimationFrame(tween);
 });
-
-function tween() {
-  if (coins.value >= +user.value!.money || coins.value > 1760) return;
-  coins.value += Math.max(Math.floor(+user.value!.money / 60 / props.delay), 1);
-  if (coins.value < +user.value!.money) requestAnimationFrame(tween);
-}
 </script>
 <style lang="scss" scoped>
 .bank {

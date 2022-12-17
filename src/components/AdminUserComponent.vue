@@ -52,13 +52,14 @@
         @contextmenu.prevent
       /><b> Actions</b>
     </div>
-    <form class="flex">
+    <form class="flex" @submit="action('ban')">
       <input
         required
         name="duration"
         type="number"
         class="btn-md"
         min="0"
+        :aria-label="$t('placeholder.duration')"
         :placeholder="$t('placeholder.duration')"
       />&nbsp;<input
         required
@@ -66,18 +67,31 @@
         type="text"
         class="btn-md"
         :placeholder="$t('placeholder.reason')"
-      />&nbsp;<button class="btn-action btn-danger" @click="action('ban')">
+        :aria-label="$t('placeholder.reason')"
+      />&nbsp;<button type="submit" class="btn-action btn-danger">
         Bannir
       </button>
     </form>
-    <button class="btn-action btn-danger" @click="action('eradicate')">
+    <button
+      type="button"
+      class="btn-action btn-danger"
+      @click="action('eradicate')"
+    >
       Supprimer tous ses messages
     </button>
-    <button class="btn-action btn-danger" @click="action('resetinfo')">
+    <button
+      type="button"
+      class="btn-action btn-danger"
+      @click="action('resetinfo')"
+    >
       Réinitialiser ses informations
     </button>
     <div v-if="+user.admin">
-      <button class="btn-action btn-danger" @click="action('resetitem')">
+      <button
+        class="btn-action btn-danger"
+        type="button"
+        @click="action('resetitem')"
+      >
         Réinitialiser ses items
       </button>
       <br />
@@ -93,10 +107,10 @@
         /><b> Comptes partageant la même IP</b>
       </div>
       <router-link
-        v-for="user in data.shared"
-        :key="user.id"
-        :to="user.id.toString()"
-        >{{ user.name }}<br /></router-link
+        v-for="account in data.shared"
+        :key="account.id"
+        :to="account.id.toString()"
+        >{{ account.name }}<br /></router-link
       ><br />
       <div class="header fullwidth">
         <img
@@ -110,9 +124,15 @@
       </div>
       <div v-for="ip in data.ip" :key="ip">
         <pre class="inline">{{ ip }}</pre>
-        &nbsp;<button class="btn-action btn-danger">Bannir cette IP</button>
+        &nbsp;<button class="btn-action btn-danger" type="button">
+          Bannir cette IP
+        </button>
       </div>
-      <button class="btn-action btn-danger" @click="action('banip')">
+      <button
+        class="btn-action btn-danger"
+        type="button"
+        @click="action('banip')"
+      >
         Bannir toutes les IP
       </button>
       <br /><br />
@@ -127,20 +147,29 @@
         /><b> Groupes</b>
       </div>
       <div v-for="group in data.groups" :key="group.id">
-        <GroupLink :group="group" />&nbsp;<button class="btn-action btn-danger">
+        <GroupLink :group="group" />&nbsp;<button
+          class="btn-action btn-danger"
+          type="button"
+        >
           Retirer du groupe</button
-        >&nbsp;<button class="btn-action btn-danger">
+        >&nbsp;<button class="btn-action btn-danger" type="button">
           Supprimer le groupe
         </button>
       </div>
       <br />
       <div class="flex">
-        <select class="btn-md" style="padding: var(--md-gap) var(--md-gap)">
+        <select
+          aria-label="Groups"
+          class="btn-md"
+          style="padding: var(--md-gap) var(--md-gap)"
+        >
           <option value="bacteria">Les Créateurs</option>
           <option value="patojdur">Patojdur</option>
           <option value="mazo">Mazo</option></select
         >&nbsp;
-        <button class="btn-action btn-success inline">Ajouter au groupe</button>
+        <button class="btn-action btn-success inline" type="button">
+          Ajouter au groupe
+        </button>
       </div>
       <br />
       <div class="header fullwidth">
@@ -154,11 +183,11 @@
         /><b> Jeux</b>
       </div>
       <div class="flex">
-        <select class="btn-md">
+        <select class="btn-md" aria-label="Games">
           <option value="bacteria">Bacteria</option>
           <option value="patojdur">Patojdur</option>
           <option value="mazo">Mazo</option></select
-        >&nbsp;<button class="btn-action btn-danger">
+        >&nbsp;<button class="btn-action btn-danger" type="button">
           Réinitialiser les statistiques du jeu
         </button>
       </div>
@@ -182,8 +211,11 @@
           type="number"
           class="btn-md"
           min="1"
+          aria-label="Item"
           :placeholder="$t('placeholder.item')"
-        />&nbsp;<button class="btn-action btn-success">Donner un item</button>
+        />&nbsp;<button class="btn-action btn-success" type="button">
+          Donner un item
+        </button>
       </form>
     </div>
     <form class="flex">
@@ -193,8 +225,9 @@
         type="number"
         class="btn-md"
         min="0"
+        aria-label="Credits"
         :placeholder="$t('placeholder.balance')"
-      />&nbsp;<button class="btn-action btn-success">
+      />&nbsp;<button class="btn-action btn-success" type="button">
         Donner des pépettes
       </button>
     </form>

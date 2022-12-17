@@ -44,6 +44,7 @@
         &nbsp;
         <div v-if="user">
           <button
+            type="button"
             class="btn-action"
             @click.prevent="
               eventBus.emit(
@@ -70,6 +71,7 @@
                 Date.now() - message.date < 600) ||
               +user.user_level > 3
             "
+            type="button"
             class="btn-action"
             @click.prevent="eventBus.emit('edit', message.content)"
           >
@@ -84,6 +86,7 @@
           >&nbsp;
           <button
             v-if="message.author.id === user.id || +user.user_level > 3"
+            type="button"
             class="btn-action"
             @click.prevent="deleteMessage"
           >
@@ -128,8 +131,12 @@ const props = withDefaults(
   }>(),
   { separator: true }
 );
+
 onMounted(() => {
-  if (route.hash) scrollTo(route.hash);
+  if (route.hash)
+    setTimeout(() => {
+      window.location.href = route.hash;
+    }, 0);
 });
 
 function formatDate() {
@@ -138,9 +145,6 @@ function formatDate() {
   });
 }
 
-function scrollTo(anchor: string) {
-  location.href = anchor;
-}
 function edit() {
   console.log(`edit ${props.message.id}`);
 }

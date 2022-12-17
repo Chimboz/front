@@ -27,6 +27,7 @@
           id="connect"
           class="centered"
           style="display: inline-flex"
+          type="button"
           @click="auth.logout()"
         >
           <img
@@ -39,7 +40,7 @@
           />
           {{ $t("navbar.logout") }}
         </button>
-        <button v-else>
+        <button v-else type="button">
           <router-link id="connect" to="/login" class="flex">
             <img
               draggable="false"
@@ -70,7 +71,7 @@
     <router-link
       to="/"
       :class="{ active: ($route.meta.section as string[])?.includes('Home') }"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" type="button">
         <img
           draggable="false"
           alt="Home icon"
@@ -83,7 +84,7 @@
         /></button
     ></router-link>
     <a target="_blank" href="/tchat"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -112,7 +113,7 @@
       v-if="user"
       to="/account"
       :class="{ active: ($route.meta.section as string[])?.includes('Account') }"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -132,7 +133,7 @@
     <router-link
       to="/games"
       :class="{ active: ($route.meta.section as string[])?.includes('Games') }"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -152,7 +153,7 @@
     <router-link
       to="/members"
       :class="{ active: ($route.meta.section as string[])?.includes('Members') }"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -172,7 +173,7 @@
     <router-link
       to="/bbs"
       :class="{ active: ($route.meta.section as string[])?.includes('Community') }"
-      ><button class="nav-btn flex centered">
+      ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -197,7 +198,6 @@ import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import useAuthStore from "@/stores/auth";
 import { asset } from "@/utils";
 import { computed } from "vue";
-import { useRoute } from "vue-router";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

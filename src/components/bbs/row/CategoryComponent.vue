@@ -41,10 +41,10 @@
         <div>
           Modérateurs&nbsp;:
           <GroupLink
-            v-for="(mod, index) in bbs.mods"
+            v-for="(mod, indexBbs) in bbs.mods"
             :key="mod.id"
             :group="mod"
-            :separator="index < bbs.mods.length - 1"
+            :separator="indexBbs < bbs.mods.length - 1"
           />
         </div>
       </td>

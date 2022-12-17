@@ -40,10 +40,12 @@
       </thead>
       <tbody>
         <tr>
-          <td><b>Sujet</b></td>
+          <td><label for="subject">Sujet</label></td>
           <td>
             <input
+              id="subject"
               v-model="title"
+              aria-label="Subject"
               :required="isTopic"
               :minlength="isTopic ? '3' : '0'"
               maxlength="100"
@@ -88,6 +90,7 @@
               </button>
               <select
                 class="btn-md"
+                aria-label="Color"
                 style="padding: 0"
                 @change="(event) => formatColor((event.target as SelectHTMLAttributes).value)"
               >
@@ -129,6 +132,7 @@
               <select
                 class="btn-md"
                 style="padding: 0"
+                aria-label="Size"
                 @change="(event) => formatMultiline((event.target as SelectHTMLAttributes).value)"
               >
                 <option value="##### ">Trop minuscule</option>
@@ -185,6 +189,7 @@
               spellcheck="true"
               maxlength="60000"
               class="btn-md"
+              aria-label="Message"
               style="font-family: monospace; padding: var(--gap)"
               @focus="focusHandler"
               @select="selectionHandler"
@@ -292,10 +297,17 @@ eventBus.on("edit", (editedMessage) => {
 });
 
 function submit() {
-  if (mode.value == "post") {
+  if (mode.value === "post") {
     console.log("Envoyé!");
   } else console.log("Edité!");
   message.value = "";
+}
+
+function select() {
+  textarea.value!.setSelectionRange(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  );
 }
 
 function focusHandler() {
@@ -308,12 +320,7 @@ function selectionHandler(e: any) {
     e.currentTarget.selectionEnd,
   ];
 }
-function select() {
-  textarea.value!.setSelectionRange(
-    selectionRange.value[0],
-    selectionRange.value[1]
-  );
-}
+
 function format(pattern: string) {
   message.value =
     message.value.substring(0, selectionRange.value[0]) +
@@ -354,8 +361,8 @@ function formatCode() {
 function formatMultiline(pattern: string) {
   message.value = `${
     message.value.substring(0, selectionRange.value[0]) +
-    (message.value.charAt(selectionRange.value[0] - 1) == "\n" ||
-    selectionRange.value[0] == 0
+    (message.value.charAt(selectionRange.value[0] - 1) === "\n" ||
+    selectionRange.value[0] === 0
       ? pattern
       : `\n${pattern}`) +
     message.value

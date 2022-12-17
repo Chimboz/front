@@ -39,13 +39,6 @@ fetchData(async (params) => {
       `bbs/topic/${params.forum}/${params.topic}?page=${params.page}`
     )
   ).data;
-  if (route.hash)
-    scroll({
-      top:
-        document.getElementById(route.hash.slice(1))?.getBoundingClientRect()
-          .top! + window.scrollY,
-      behavior: "smooth",
-    });
 });
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 // meta title section.topic

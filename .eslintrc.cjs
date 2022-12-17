@@ -19,6 +19,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
   },
+  globals: {
+    NodeJS: true,
+  },
   rules: {
     "no-plusplus": "off",
   },

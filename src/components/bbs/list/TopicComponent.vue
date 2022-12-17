@@ -53,6 +53,7 @@
     <button
       v-if="+user.user_level > 3"
       class="btn-action"
+      type="button"
       @click.prevent="move"
     >
       <img
@@ -67,6 +68,7 @@
     <button
       v-if="+user.user_level > 3"
       class="btn-action"
+      type="button"
       @click.prevent="lock"
     >
       <img
@@ -81,6 +83,7 @@
     <button
       v-if="+user.user_level > 3"
       class="btn-action"
+      type="button"
       @click.prevent="deleteTopic"
     >
       x&nbsp;Supprimer

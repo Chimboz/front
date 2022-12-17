@@ -7,6 +7,7 @@
         width="46"
         height="35"
         src="@/assets/img/icon/warning2.svg"
+        alt="Error"
         @contextmenu.prevent
       />
       <img
@@ -15,6 +16,7 @@
         width="46"
         height="46"
         src="@/assets/img/icon/success.svg"
+        alt="Success"
         @contextmenu.prevent
       />
       <img
@@ -23,6 +25,7 @@
         width="46"
         height="46"
         src="@/assets/img/icon/failure.svg"
+        alt="Failure"
         @contextmenu.prevent
       />
       <img
@@ -30,12 +33,14 @@
         draggable="false"
         width="46"
         height="42"
+        alt="Confirmation"
         src="@/assets/img/icon/confirmation.svg"
         @contextmenu.prevent
       />
       <p>{{ $t(message) }}</p>
       <button
         v-if="type == 'confirmation'"
+        type="button"
         class="btn-pink ok"
         style="filter: hue-rotate(180deg)"
         @click="request"
@@ -43,23 +48,32 @@
         <img
           draggable="false"
           src="@/assets/img/icon/ok.svg"
+          alt="Ok"
           @contextmenu.prevent
         />
       </button>
-      <button v-else class="btn-pink ok" @click="isVisible = false">
+      <button
+        v-else
+        type="button"
+        class="btn-pink ok"
+        @click="isVisible = false"
+      >
         <img
           draggable="false"
           src="@/assets/img/icon/ok.svg"
+          alt="Ok"
           @contextmenu.prevent
         />
       </button>
       <button
         v-if="type == 'confirmation'"
+        type="button"
         class="btn-pink ko"
         @click="isVisible = false"
       >
         <img
           draggable="false"
+          alt="Ko"
           src="@/assets/img/icon/ko.svg"
           @contextmenu.prevent
         />
@@ -79,11 +93,6 @@ const message = ref("error.default");
 const type = ref("error");
 const callback = ref("");
 const params = ref({});
-
-eventBus.on("error", (req) => error(req));
-eventBus.on("success", (req) => success(req));
-eventBus.on("failure", (req) => failure(req));
-eventBus.on("confirmation", (req) => confirmation(req));
 
 function error(req: any) {
   isVisible.value = true;
@@ -107,6 +116,12 @@ function confirmation(req: any) {
   callback.value = req.callback;
   params.value = req.params;
 }
+
+eventBus.on("error", (req) => error(req));
+eventBus.on("success", (req) => success(req));
+eventBus.on("failure", (req) => failure(req));
+eventBus.on("confirmation", (req) => confirmation(req));
+
 async function request() {
   /* const req = await api.post(callback, params);
   if (req.data.success) {

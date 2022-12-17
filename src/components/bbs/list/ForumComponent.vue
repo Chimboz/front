@@ -45,6 +45,7 @@
   <div style="text-align: end">
     <button
       class="btn-action"
+      type="button"
       @click.prevent="lock($route.params.id as string)"
     >
       <img

@@ -25,7 +25,7 @@
 // @vuese
 // @group Core
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     win: number;
     draw: number;

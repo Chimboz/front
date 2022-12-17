@@ -1,6 +1,6 @@
 <template>
   <div class="blazon">
-    <img src="@/assets/img/group/ribbons.svg" class="ribbons" />
+    <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="" />
     <div class="blazon-body">
       <background :id="shape" :primary="primary" :secondary="secondary" />
       <div v-if="top != -1" class="top"><top :id="top" :color="primary" /></div>

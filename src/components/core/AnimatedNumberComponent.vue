@@ -27,10 +27,6 @@ const props = withDefaults(
 
 const displayNumber = ref(0);
 
-onMounted(() => {
-  requestAnimationFrame(tween);
-});
-
 function tween() {
   displayNumber.value += Math.max(
     Math.floor(props.number / 60 / props.delay),
@@ -40,4 +36,8 @@ function tween() {
     displayNumber.value = props.number;
   } else requestAnimationFrame(tween);
 }
+
+onMounted(() => {
+  requestAnimationFrame(tween);
+});
 </script>

@@ -15,6 +15,7 @@
 </template>
 <script setup lang="ts">
 import eventBus from "@/modules/eventBus";
+import { randomInt } from "@/utils";
 import { ref } from "vue";
 
 // Assume that loading will complete under this amount of time.
@@ -36,23 +37,6 @@ const isVisible = ref(false); // Once animate finish, set display: none
 const progress = ref(startingPoint);
 const timeoutId = ref<NodeJS.Timeout | undefined>(undefined);
 
-eventBus.on("asyncComponentLoading", start);
-eventBus.on("asyncComponentLoaded", stop);
-
-function start() {
-  isLoading.value = true;
-  isVisible.value = true;
-  progress.value = startingPoint;
-  loop();
-}
-
-function random(min: number, max: number) {
-  return (
-    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
-    Math.ceil(min)
-  );
-}
-
 function loop() {
   if (timeoutId.value) {
     clearTimeout(timeoutId.value);
@@ -63,13 +47,23 @@ function loop() {
   const size =
     (endingPoint - startingPoint) / (defaultDuration / defaultInterval);
   const p = Math.round(
-    progress.value + random(size * (1 - variation), size * (1 + variation))
+    progress.value + randomInt(size * (1 - variation), size * (1 + variation))
   );
   progress.value = Math.min(p, endingPoint);
   timeoutId.value = setTimeout(
     loop,
-    random(defaultInterval * (1 - variation), defaultInterval * (1 + variation))
+    randomInt(
+      defaultInterval * (1 - variation),
+      defaultInterval * (1 + variation)
+    )
   );
+}
+
+function start() {
+  isLoading.value = true;
+  isVisible.value = true;
+  progress.value = startingPoint;
+  loop();
 }
 
 function stop() {
@@ -82,6 +76,9 @@ function stop() {
     }
   }, 2000);
 }
+
+eventBus.on("asyncComponentLoading", start);
+eventBus.on("asyncComponentLoaded", stop);
 </script>
 <style scoped>
 .loading-container {
