@@ -143,7 +143,7 @@
     <template #right-column
       ><GlobalCard color="blue">
         <template #button>
-          <GlobalButton icon="search.svg">Chercher</GlobalButton>
+          <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
         </template>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
@@ -155,6 +155,7 @@
             type="text"
             class="btn-md"
             autocomplete="username"
+            aria-label="Username"
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">go</button>
         </form>
@@ -168,6 +169,7 @@
             type="text"
             class="btn-md"
             autocomplete="group"
+            aria-label="Group"
             :placeholder="$t('placeholder.group')"
           /><button type="submit" class="btn-action">go</button>
         </form></GlobalCard

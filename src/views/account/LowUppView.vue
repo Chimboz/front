@@ -70,7 +70,7 @@ const pseudo = ref(user.value!.pseudo.slice());
 
 function changeCase(index: number) {
   let letter;
-  if (pseudo.value[index].toUpperCase() == pseudo.value[index])
+  if (pseudo.value[index].toUpperCase() === pseudo.value[index])
     letter = pseudo.value[index].toLowerCase();
   else letter = pseudo.value[index].toUpperCase();
   pseudo.value =

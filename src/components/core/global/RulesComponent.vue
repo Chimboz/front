@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="fullwidth">
-      <GlobalButton icon="rules.svg">Règles</GlobalButton>
+      <GlobalButton icon="rules.svg" type="button">Règles</GlobalButton>
     </div>
   </GlobalCard>
 </template>

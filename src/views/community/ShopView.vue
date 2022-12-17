@@ -90,6 +90,7 @@
             {{ shown.description }}<br /><br />
             <GlobalButton
               v-if="user"
+              type="button"
               color="yellow"
               icon="credits.svg"
               @click.prevent="buy()"

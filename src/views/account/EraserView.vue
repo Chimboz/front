@@ -28,13 +28,13 @@
         <input
           v-model="pseudo"
           required
-          autofocus
           minlength="3"
           maxlength="15"
           pattern="[\w\.\-_@]{3,15}"
           name="username"
           type="text"
           class="btn-md"
+          aria-label="Username"
           autocomplete="username"
           :placeholder="$t('placeholder.username')"
         />

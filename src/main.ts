@@ -77,3 +77,5 @@ router.beforeResolve((to, from, next) => {
 });
 
 export default app;
+
+// TODO check forms submit

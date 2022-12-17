@@ -25,6 +25,7 @@
           required
           name="password"
           type="password"
+          aria-label="$t('placeholder.currentpassword')"
           :placeholder="$t('placeholder.currentpassword')"
           autocomplete="current-password"
           class="btn-md"
@@ -33,6 +34,7 @@
           required
           name="password"
           type="password"
+          aria-label="$t('placeholder.newpassword')"
           :placeholder="$t('placeholder.newpassword')"
           class="btn-md"
         />
@@ -40,6 +42,7 @@
           required
           name="password_confirm"
           type="password"
+          aria-label="$t('placeholder.confirmpassword')"
           :placeholder="$t('placeholder.confirmpassword')"
           class="btn-md"
         />

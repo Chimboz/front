@@ -94,7 +94,7 @@
       <RandomNumber v-else :max="30" :value="gain" /> <br /><br
         v-if="!lottery"
       />
-      <GlobalButton color="orange" @click="handle"
+      <GlobalButton type="button" color="orange" @click="handle"
         ><template #prepend
           ><img
             v-if="lottery"
@@ -199,7 +199,7 @@
           class="packs"
         >
           <template #button>
-            <GlobalButton color="yellow" icon="item.svg">{{
+            <GlobalButton type="button" color="yellow" icon="item.svg">{{
               $t("shop.pack")
             }}</GlobalButton>
           </template>
@@ -207,9 +207,12 @@
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
           /><br /><br />
-          <GlobalButton color="yellow" icon="item.svg" class="fullwidth">{{
-            $t("shop.item")
-          }}</GlobalButton
+          <GlobalButton
+            type="button"
+            color="yellow"
+            icon="item.svg"
+            class="fullwidth"
+            >{{ $t("shop.item") }}</GlobalButton
           ><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
         </GlobalCard>

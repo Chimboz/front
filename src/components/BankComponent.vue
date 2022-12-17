@@ -2,7 +2,7 @@
   <GlobalCard v-if="user" color="yellow">
     <template #button>
       <router-link to="/bank"
-        ><GlobalButton color="yellow" icon="credits.svg">{{
+        ><GlobalButton color="yellow" icon="credits.svg" type="button">{{
           $t("credit.title", +user.money)
         }}</GlobalButton></router-link
       >

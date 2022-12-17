@@ -21,7 +21,9 @@
           class="packs"
         >
           <template #button>
-            <GlobalButton color="yellow" icon="register.svg">Pack</GlobalButton>
+            <GlobalButton type="button" color="yellow" icon="register.svg"
+              >Pack</GlobalButton
+            >
           </template>
           <Pack name="supporter" :looks="data.shop.looks" />
         </GlobalCard>
@@ -69,8 +71,8 @@
     <template #right-column>
       <GlobalCard v-if="data" color="blue" header="games.gif">
         <div class="fullwidth">
-          <img src="@/assets/img/game/bacteria/head.gif" />
-          <img src="@/assets/img/game/bacteria/bg.gif" />
+          <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria" />
+          <img src="@/assets/img/game/bacteria/bg.gif" alt="" />
           <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
@@ -87,8 +89,8 @@
               $t("champion.bacteria")
             }}
           </div>
-          <img src="@/assets/img/game/patojdur/head.gif" />
-          <img src="@/assets/img/game/patojdur/bg.gif" />
+          <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur" />
+          <img src="@/assets/img/game/patojdur/bg.gif" alt="" />
           <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
@@ -105,8 +107,8 @@
               $t("champion.patojdur")
             }}
           </div>
-          <img src="@/assets/img/game/mazo/head.gif" />
-          <img src="@/assets/img/game/mazo/bg.gif" />
+          <img src="@/assets/img/game/mazo/head.gif" alt="Mazo" />
+          <img src="@/assets/img/game/mazo/bg.gif" alt="" />
           <GlobalAvatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"

@@ -1,12 +1,12 @@
 <template>
-  <button class="btn flex" :class="color">
+  <button class="btn flex" :class="color" :type="type">
     <slot name="prepend"></slot>
     <img
       v-if="icon"
       draggable="false"
       class="btn-icon"
       alt="Button icon"
-      :src="asset(`img/icon/button/${props.icon}`)"
+      :src="asset(`img/icon/button/${icon}`)"
       @contextmenu.prevent
     />
     <div class="btn-text">
@@ -22,9 +22,10 @@ import { asset } from "@/utils";
 // @group Core/Global
 // A default button
 
-const props = defineProps<{
+defineProps<{
   icon?: string;
   color?: "red" | "green" | "yellow" | "orange";
+  type: "button" | "submit" | "reset";
 }>();
 </script>
 <style lang="scss" scoped>

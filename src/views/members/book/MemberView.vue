@@ -260,7 +260,9 @@
       ><router-link
         v-if="user && +user.admin > 0"
         :to="'/admin/' + $route.params.id"
-        ><GlobalButton icon="rules.svg">Modérer</GlobalButton></router-link
+        ><GlobalButton type="button" icon="rules.svg"
+          >Modérer</GlobalButton
+        ></router-link
       ></template
     >
   </GlobalContainer>
@@ -311,6 +313,7 @@ fetchData(async (params) => {
     case "inconnu":
       data.value.gender = "unknown";
       break;
+    default:
   }
 });
 // /api/member.json

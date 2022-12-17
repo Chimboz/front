@@ -147,7 +147,7 @@
           <GlobalButton type="button" @click="section = 1">{{
             $t("button.signin")
           }}</GlobalButton>
-          <GlobalButton color="green"
+          <GlobalButton color="green" type="button"
             ><template #prepend
               ><img
                 type="submit"

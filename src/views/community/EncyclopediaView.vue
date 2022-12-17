@@ -55,7 +55,7 @@
     <template #right-column
       ><GlobalCard justified
         ><template #button>
-          <GlobalButton icon="search.svg">Chercher</GlobalButton>
+          <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
         </template>
         <form class="flex fullwidth" @submit.prevent="onSearch">
           <input
@@ -63,6 +63,7 @@
             name="username"
             type="text"
             class="btn-md"
+            aria-label="Username"
             :placeholder="$t('placeholder.item')"
           /><button type="submit" class="btn-action">go</button>
         </form>

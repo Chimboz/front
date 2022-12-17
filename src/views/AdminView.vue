@@ -3,7 +3,7 @@
     <template #left-column
       ><GlobalCard color="blue" justified>
         <template #button>
-          <GlobalButton icon="rules.svg">Registre</GlobalButton>
+          <GlobalButton icon="rules.svg" type="button">Registre</GlobalButton>
         </template>
         <ScrollableContainer
           route="adminlogs"
@@ -23,7 +23,7 @@
     <template #right-column
       ><GlobalCard color="blue">
         <template #button>
-          <GlobalButton icon="search.svg">Chercher</GlobalButton>
+          <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
         </template>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input

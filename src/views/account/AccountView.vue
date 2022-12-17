@@ -314,7 +314,7 @@
         </div></GlobalCard
       ><br /><GlobalCard v-if="data" color="blue">
         <template #button>
-          <GlobalButton icon="register.svg">{{
+          <GlobalButton type="button" icon="register.svg">{{
             $t("profile.friendsList")
           }}</GlobalButton>
         </template>
@@ -356,7 +356,7 @@
       <br />
       <GlobalCard v-if="data" color="blue">
         <template #button>
-          <GlobalButton icon="register.svg">{{
+          <GlobalButton type="button" icon="register.svg">{{
             $t("profile.groupsList")
           }}</GlobalButton>
         </template>
