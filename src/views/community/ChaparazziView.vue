@@ -1,5 +1,5 @@
 <template>
-  <GlobalContainer v-if="data">
+  <GlobalContainer>
     <template #left-column>
       <GlobalCard color="blue" top>
         <div class="flex col fullwidth">
