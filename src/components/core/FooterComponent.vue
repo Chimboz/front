@@ -52,7 +52,7 @@
         title="Front version"
         width="96"
         height="20"
-        :src="`https://img.shields.io/badge/version-v${version}-blue`"
+        src="https://img.shields.io/github/package-json/v/Chimboz/ChimbozFront"
         @contextmenu.prevent /></a
     >&nbsp;
     <a href="/doc/#"
@@ -70,8 +70,6 @@
 <script setup lang="ts">
 // @vuese
 // @group Core
-// eslint-disable-next-line no-undef
-const version = APP_VERSION;
 </script>
 
 <style lang="scss" scoped>
