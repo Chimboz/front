@@ -85,7 +85,7 @@ const props = withDefaults(
     // Display a default header image
     top?: boolean;
   }>(),
-  { width: 468, height: 77 }
+  { width: 468, height: 77, color: undefined, bg: undefined, header: undefined }
 );
 </script>
 <style lang="scss" scoped>
