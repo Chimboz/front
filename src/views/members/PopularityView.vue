@@ -428,6 +428,7 @@ import { useAuthStore } from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 

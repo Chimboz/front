@@ -1,4 +1,4 @@
-/*import { createApp } from 'vue'
+/* import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -11,16 +11,16 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-app.mount('#app')*/
+app.mount('#app') */
 
 import { createApp } from "vue";
+import { createPinia } from "pinia";
+import { createMetaManager, plugin as metaPlugin } from "vue-meta";
 import App from "./App.vue";
 // External plugins
 import router from "./router";
-import { createPinia } from "pinia";
 import i18n from "./modules/i18n";
 import eventBus from "./modules/eventBus";
-import { createMetaManager, plugin as metaPlugin } from "vue-meta";
 // Modules
 // import api from "./modules/api";
 // import "./modules/registerServiceWorker";

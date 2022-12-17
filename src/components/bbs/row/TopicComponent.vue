@@ -75,6 +75,7 @@ import Pagination from "@/components/core/PaginationComponent.vue";
 import { asset } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+
 const locales = { fr, enGB };
 
 // @vuese

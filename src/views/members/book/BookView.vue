@@ -166,6 +166,7 @@ import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 
 // @vuese
@@ -181,16 +182,16 @@ fetchData(async () => {
 });
 
 function onKeypressValue() {
-  /*if (username != undefined && username.value != "") {
+  /* if (username != undefined && username.value != "") {
     api.get("api/test.json").then((res) => {
       if (res.data && res.data.length > 0) {
         suggestionsHere = res.data;
       }
     });
-  }*/
+  } */
 }
 function search() {
-  let id = 1;
+  const id = 1;
   // $router.push(`/book/${id}`);
 }
 function formatDate(date: number) {

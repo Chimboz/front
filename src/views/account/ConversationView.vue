@@ -116,6 +116,7 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 
 // @vuese
@@ -132,19 +133,19 @@ function formatDate(date: number) {
   });
 }
 function hashColor(str: string) {
-  var hash = 0;
+  let hash = 0;
   for (var i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
-  var colour = "#";
+  let colour = "#";
   for (i = 0; i < 3; i++) {
-    var value = (hash >> (i * 8)) & 0xff;
-    colour += ("00" + value.toString(16)).substr(-2);
+    const value = (hash >> (i * 8)) & 0xff;
+    colour += `00${value.toString(16)}`.substr(-2);
   }
   return colour;
 }
 function send() {
-  console.log("Envoyé " + message.value);
+  console.log(`Envoyé ${message.value}`);
   data.value.messages.push({
     you: true,
     content: message,

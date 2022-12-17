@@ -1,5 +1,6 @@
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
+
 const locales = { fr, enGB };
 
 export function formatDate(date: number) {

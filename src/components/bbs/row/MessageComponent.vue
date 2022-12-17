@@ -112,6 +112,7 @@ import { useAuthStore } from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { onMounted, computed } from "vue";
 import eventBus from "@/modules/eventBus";
+
 const locales = { fr, enGB };
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -141,10 +142,10 @@ function scrollTo(anchor: string) {
   location.href = anchor;
 }
 function edit() {
-  console.log("edit " + props.message.id);
+  console.log(`edit ${props.message.id}`);
 }
 function deleteMessage() {
-  console.log("delete " + props.message.id);
+  console.log(`delete ${props.message.id}`);
 }
 function quote() {
   console.log();

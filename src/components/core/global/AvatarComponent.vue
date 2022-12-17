@@ -148,7 +148,7 @@
 // @group Core/Global
 // Main component for showing avatars. Handle movements and emotes too.
 
-//TODO refacto
+// TODO refacto
 
 import type { ImgHTMLAttributes } from "vue";
 

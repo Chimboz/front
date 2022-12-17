@@ -387,6 +387,7 @@ import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 
 // @vuese
@@ -402,9 +403,9 @@ function formatDate(date: number, formatPattern: string) {
 function formatDistance(datebegin: number, dateend: number) {
   return differenceInCalendarDays(
     new Date(dateend),
-    new Date(datebegin) /*{
+    new Date(datebegin) /* {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  }*/
+  } */
   );
 }
 function search() {

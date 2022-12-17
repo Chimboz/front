@@ -245,6 +245,7 @@ import { useAuthStore } from "@/stores/auth";
 import eventBus from "@/modules/eventBus";
 import { computed, ref, type SelectHTMLAttributes } from "vue";
 import { useI18n } from "vue-i18n";
+
 const auth = useAuthStore();
 const user: any = computed(() => ({
   ...auth.user,
@@ -281,7 +282,7 @@ defineProps<{
 eventBus.on("quote", (quotedMessage) => {
   if (message.value.slice(-1) === "\n" || message.value.slice(-1) === "")
     message.value += quotedMessage;
-  else message.value += "\n" + quotedMessage;
+  else message.value += `\n${quotedMessage}`;
   if (textarea.value!) textarea.value!.focus();
 });
 eventBus.on("edit", (editedMessage) => {
@@ -319,33 +320,31 @@ function format(pattern: string) {
     pattern +
     message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
     (/<[a-z0-9]+>/.test(pattern)
-      ? pattern.substring(0, 1) + "/" + pattern.substring(1)
+      ? `${pattern.substring(0, 1)}/${pattern.substring(1)}`
       : pattern) +
     message.value.substring(selectionRange.value[1]);
   focusHandler();
 }
 function formatLink(image: boolean) {
-  message.value =
-    message.value.substring(0, selectionRange.value[0]) +
-    `${image ? "!" : ""}[${message.value.substring(
-      selectionRange.value[0],
-      selectionRange.value[1]
-    )}](${message.value.substring(
-      selectionRange.value[0],
-      selectionRange.value[1]
-    )})` +
-    message.value.substring(selectionRange.value[1]);
+  message.value = `${message.value.substring(0, selectionRange.value[0])}${
+    image ? "!" : ""
+  }[${message.value.substring(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  )}](${message.value.substring(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  )})${message.value.substring(selectionRange.value[1])}`;
   focusHandler();
 }
 function formatCode() {
-  message.value =
-    message.value.substring(0, selectionRange.value[0]) +
-    "\n```" +
-    t("format.language") +
-    "\n" +
-    message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
-    "\n```\n" +
-    message.value.substring(selectionRange.value[1]);
+  message.value = `${message.value.substring(
+    0,
+    selectionRange.value[0]
+  )}\n\`\`\`${t("format.language")}\n${message.value.substring(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  )}\n\`\`\`\n${message.value.substring(selectionRange.value[1])}`;
   selectionRange.value = [
     selectionRange.value[0] + 4,
     selectionRange.value[0] + 4 + t("format.language").length,
@@ -353,27 +352,27 @@ function formatCode() {
   focusHandler();
 }
 function formatMultiline(pattern: string) {
-  message.value =
+  message.value = `${
     message.value.substring(0, selectionRange.value[0]) +
     (message.value.charAt(selectionRange.value[0] - 1) == "\n" ||
     selectionRange.value[0] == 0
       ? pattern
-      : "\n" + pattern) +
+      : `\n${pattern}`) +
     message.value
       .substring(selectionRange.value[0], selectionRange.value[1])
       .split("\n")
-      .reduce((prev, curr) => `${prev}\n${pattern}${curr}`) +
-    "\n" +
-    message.value.substring(selectionRange.value[1]);
+      .reduce((prev, curr) => `${prev}\n${pattern}${curr}`)
+  }\n${message.value.substring(selectionRange.value[1])}`;
   focusHandler();
 }
 function formatColor(hex: string) {
-  message.value =
-    message.value.substring(0, selectionRange.value[0]) +
-    `<i style="color:${hex}">` +
-    message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
-    "</i>" +
-    message.value.substring(selectionRange.value[1]);
+  message.value = `${message.value.substring(
+    0,
+    selectionRange.value[0]
+  )}<i style="color:${hex}">${message.value.substring(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  )}</i>${message.value.substring(selectionRange.value[1])}`;
   focusHandler();
 }
 </script>

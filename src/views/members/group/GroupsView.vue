@@ -392,6 +392,7 @@ import api from "@/modules/api";
 import { useAuthStore } from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 

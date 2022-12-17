@@ -61,6 +61,7 @@ import ScrollableContainer from "@/components/core/ScrollableContainerComponent.
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+
 const locales = { fr, enGB };
 
 // @vuese
@@ -72,11 +73,11 @@ const suggestionsHere = ref<any[]>([]);
 
 function onKeypressValue() {
   if (username.value != undefined && username.value != "") {
-    /*api.get("/api/test.json").then((res: any) => {
+    /* api.get("/api/test.json").then((res: any) => {
           if (res.data && res.data.length > 0) {
             suggestionsHere.value = res.data;
           }
-        });*/
+        }); */
   }
 }
 

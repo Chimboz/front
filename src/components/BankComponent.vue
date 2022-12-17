@@ -47,6 +47,7 @@ import AnimatedNumber from "@/components/core/AnimatedNumberComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { asset, randomInt } from "@/utils";
 import { onMounted, ref, computed } from "vue";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
@@ -63,51 +64,51 @@ const props = withDefaults(
 const coins = ref(7);
 const coinsPosition = [
   {
-    left: randomInt(33, 52) + "px",
-    top: randomInt(65, 69) + "px",
+    left: `${randomInt(33, 52)}px`,
+    top: `${randomInt(65, 69)}px`,
     filter: "brightness(.7)",
     transform: "scale(.8)",
   },
   {
-    left: randomInt(74, 96) + "px",
-    top: randomInt(65, 69) + "px",
+    left: `${randomInt(74, 96)}px`,
+    top: `${randomInt(65, 69)}px`,
     filter: "brightness(.7)",
     transform: "scale(.8)",
   },
 
   {
-    left: randomInt(22, 32) + "px",
-    top: randomInt(77, 81) + "px",
+    left: `${randomInt(22, 32)}px`,
+    top: `${randomInt(77, 81)}px`,
     filter: "brightness(.85)",
     transform: "scale(.9)",
   },
   {
-    left: randomInt(56, 68) + "px",
-    top: randomInt(77, 81) + "px",
+    left: `${randomInt(56, 68)}px`,
+    top: `${randomInt(77, 81)}px`,
     filter: "brightness(.85)",
     transform: "scale(.9)",
   },
   {
-    left: randomInt(92, 102) + "px",
-    top: randomInt(77, 81) + "px",
+    left: `${randomInt(92, 102)}px`,
+    top: `${randomInt(77, 81)}px`,
     filter: "brightness(.85)",
     transform: "scale(.9)",
   },
   {
-    left: randomInt(22, 32) + "px",
-    top: randomInt(88, 93) + "px",
+    left: `${randomInt(22, 32)}px`,
+    top: `${randomInt(88, 93)}px`,
     filter: "brightness(1)",
     transform: "scale(1)",
   },
   {
-    left: randomInt(56, 68) + "px",
-    top: randomInt(88, 93) + "px",
+    left: `${randomInt(56, 68)}px`,
+    top: `${randomInt(88, 93)}px`,
     filter: "brightness(1)",
     transform: "scale(1)",
   },
   {
-    left: randomInt(92, 102) + "px",
-    top: randomInt(88, 93) + "px",
+    left: `${randomInt(92, 102)}px`,
+    top: `${randomInt(88, 93)}px`,
     filter: "brightness(1)",
     transform: "scale(1)",
   },
@@ -122,13 +123,13 @@ onMounted(() => {
   ) {
     const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
     const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
-    const filter = coinsPosition[i % 8].filter;
-    const transform = coinsPosition[i % 8].transform;
+    const { filter } = coinsPosition[i % 8];
+    const { transform } = coinsPosition[i % 8];
     coinsPosition.push({
-      left: left + "px",
-      top: top + "px",
-      filter: filter,
-      transform: transform,
+      left: `${left}px`,
+      top: `${top}px`,
+      filter,
+      transform,
     });
   }
   requestAnimationFrame(tween);

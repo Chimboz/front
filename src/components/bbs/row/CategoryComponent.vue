@@ -82,6 +82,7 @@ import { asset } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+
 const locales = { fr, enGB };
 
 // @vuese

@@ -44,6 +44,7 @@ import { asset } from "@/utils";
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import api from "@/modules/api";
 import { RouterView, RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 
 // @vuese

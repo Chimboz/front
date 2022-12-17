@@ -74,6 +74,6 @@ defineProps<{
 }>();
 
 function lock(id: string) {
-  console.log("verrouille" + id);
+  console.log(`verrouille${id}`);
 }
 </script>

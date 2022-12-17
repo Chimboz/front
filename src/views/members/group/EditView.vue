@@ -281,6 +281,7 @@ import Cabin from "@/components/blazon/CabinComponent.vue";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+
 const locales = { fr, enGB };
 
 // @vuese
@@ -297,13 +298,13 @@ function deleteGroup() {
   console.log("Suppression");
 }
 function removeMember(id: number) {
-  console.log("Suppression du membre " + id);
+  console.log(`Suppression du membre ${id}`);
 }
 function acceptDemand(id: number) {
-  console.log("Acceptation du membre " + id);
+  console.log(`Acceptation du membre ${id}`);
 }
 function rejectDemand(id: number) {
-  console.log("Rejection du membre " + id);
+  console.log(`Rejection du membre ${id}`);
 }
 
 function focusHandler() {}

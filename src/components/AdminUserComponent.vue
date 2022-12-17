@@ -206,6 +206,7 @@ import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref, computed } from "vue";
 import eventBus from "@/modules/eventBus";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user!);
 const locales = { fr, enGB };
@@ -224,7 +225,7 @@ function action(type: string, params?: object) {
   eventBus.emit("confirmation", {
     message: `admin.modal.${type}`,
     callback: `/api/${type}.json`,
-    params: params,
+    params,
   });
 }
 // /api/admin/${to.params.id}.json

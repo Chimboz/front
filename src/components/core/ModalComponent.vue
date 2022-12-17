@@ -108,12 +108,12 @@ function confirmation(req: any) {
   params.value = req.params;
 }
 async function request() {
-  /*const req = await api.post(callback, params);
+  /* const req = await api.post(callback, params);
   if (req.data.success) {
     success({ message: "success.buy" });
   } else {
     failure({ message: "failure.buy" });
-  }*/
+  } */
 }
 </script>
 <style lang="scss" scoped>

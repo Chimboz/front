@@ -5,6 +5,7 @@ module.exports = {
   root: true,
   extends: [
     "plugin:vue/vue3-recommended",
+    "@vue/eslint-config-airbnb-with-typescript",
     "eslint:recommended",
     "@vue/eslint-config-typescript",
     "@vue/eslint-config-prettier",

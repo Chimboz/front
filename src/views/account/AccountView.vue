@@ -31,8 +31,8 @@
       v-model:centrea="data.centres[0]"
       v-model:centreb="data.centres[1]"
       v-model:centrec="data.centres[2]"
-      :data="data"
       v-model:centred="data.centres[3]"
+      :data="data"
       @update-item="(name: any, item: any) => (data.look[name] = item)"
       @emote="(emote:any) => (data.look.emote = emote)"
       @previous-item="
@@ -407,6 +407,7 @@ import {
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
 import { RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 
 Chart.register(

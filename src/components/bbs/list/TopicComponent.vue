@@ -89,11 +89,12 @@
 </template>
 
 <script setup lang="ts">
-import Pagination from "../../core/PaginationComponent.vue";
-import Message from "../row/MessageComponent.vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
+import Message from "../row/MessageComponent.vue";
+import Pagination from "../../core/PaginationComponent.vue";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 const route = useRoute();
@@ -106,13 +107,13 @@ defineProps<{
 }>();
 
 function lock() {
-  console.log("Lock " + route.params.topic);
+  console.log(`Lock ${route.params.topic}`);
 }
 function deleteTopic() {
-  console.log("Delete " + route.params.topic);
+  console.log(`Delete ${route.params.topic}`);
 }
 function move() {
-  console.log("Move " + route.params.topic);
+  console.log(`Move ${route.params.topic}`);
 }
 </script>
 <style lang="scss" scoped>

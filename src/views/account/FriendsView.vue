@@ -127,13 +127,14 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { RouterLink } from "vue-router";
+import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
+
 const locales = { fr, enGB };
 // @vuese
 // @group View/Account
@@ -148,24 +149,24 @@ function formatDate(date: number) {
   });
 }
 function hashColor(str: string) {
-  var hash = 0;
+  let hash = 0;
   for (var i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
-  var colour = "#";
+  let colour = "#";
   for (i = 0; i < 3; i++) {
-    var value = (hash >> (i * 8)) & 0xff;
-    colour += ("00" + value.toString(16)).substr(-2);
+    const value = (hash >> (i * 8)) & 0xff;
+    colour += `00${value.toString(16)}`.substr(-2);
   }
   return colour;
 }
 function cancel(friend: any) {
-  console.log("Cancel " + friend.user.id);
+  console.log(`Cancel ${friend.user.id}`);
   // API Call returning true if friend removed
   data.value.splice(data.value.indexOf(friend), 1);
 }
 function accept(friend: any) {
-  console.log("Accept " + friend.user.id);
+  console.log(`Accept ${friend.user.id}`);
   // API Call returning new friend infos (status)
   data.value.splice(data.value.indexOf(friend), 1, {
     user: {
@@ -190,11 +191,11 @@ function accept(friend: any) {
   });
 }
 function decline(friend: any) {
-  console.log("Decline " + friend.user.id);
+  console.log(`Decline ${friend.user.id}`);
   data.value.splice(data.value.indexOf(friend), 1);
 }
 function addFriend(form: any) {
-  for (let element of form.target.elements) {
+  for (const element of form.target.elements) {
     if (element.name == "friend") {
       console.log(`Ajouté ${element.value} en ami`);
       data.value.push({

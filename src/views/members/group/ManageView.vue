@@ -369,10 +369,10 @@ import { ref } from "vue";
 const data = ref<any>(undefined);
 
 function cancel(id: number) {
-  console.log("Annulé " + id);
+  console.log(`Annulé ${id}`);
 }
 function leave(id: number) {
-  console.log("Quitté " + id);
+  console.log(`Quitté ${id}`);
 }
 // /api/manage.json
 // meta title section.groups

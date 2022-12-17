@@ -55,8 +55,8 @@
 </template>
 
 <script setup lang="ts">
-import Card from "./core/global/CardComponent.vue";
 import { ref } from "vue";
+import Card from "./core/global/CardComponent.vue";
 // @vuese
 // @group Default
 withDefaults(
@@ -87,8 +87,9 @@ function skip(e: MouseEvent) {
     (e.offsetX / progress.value!.offsetWidth) * player.value!.duration;
 }
 function onProgress() {
-  progressBar.value!.style.width =
-    (player.value!.currentTime / player.value!.duration) * 100 + "%";
+  progressBar.value!.style.width = `${
+    (player.value!.currentTime / player.value!.duration) * 100
+  }%`;
 }
 </script>
 

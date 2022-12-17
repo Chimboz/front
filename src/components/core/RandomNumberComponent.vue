@@ -54,7 +54,7 @@ function tween(timestamp: number) {
 
   if (previousTimeStamp.value !== timestamp) {
     const random = randomInt(props.min, props.max);
-    displayNumber.value = random < 10 ? "0" + random : random.toString();
+    displayNumber.value = random < 10 ? `0${random}` : random.toString();
   }
 
   if (elapsed.value < props.duration) {

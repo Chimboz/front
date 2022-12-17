@@ -275,6 +275,7 @@ import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import api from "@/modules/api";
 import { RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -295,7 +296,7 @@ function formatDistance(date: number) {
   return differenceInCalendarDays(new Date(), new Date(date));
 }
 function ban() {
-  console.log("Banni" + /*$route.params.id +*/ " durée " + duration * 86400);
+  console.log(`Banni` + /* $route.params.id +*/ ` durée ${duration * 86400}`);
 }
 
 fetchData(async (params) => {

@@ -97,17 +97,17 @@
       <GlobalButton color="orange" @click="handle"
         ><template #prepend
           ><img
+            v-if="lottery"
             draggable="false"
             alt="Lottery handle"
-            v-if="lottery"
             class="handle"
             height="33"
             width="16"
             src="@/assets/img/lottery/up.svg"
             @contextmenu.prevent /><img
+            v-else
             draggable="false"
             alt="Lottery handle"
-            v-else
             class="handle"
             height="33"
             width="16"
@@ -229,6 +229,7 @@ import { ref } from "vue";
 import messageRender from "@/modules/messageRender";
 import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
+
 const locales = { fr, enGB };
 
 // @vuese

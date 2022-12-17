@@ -38,7 +38,6 @@ function tween() {
   );
   if (props.number <= displayNumber.value) {
     displayNumber.value = props.number;
-    return;
   } else requestAnimationFrame(tween);
 }
 </script>

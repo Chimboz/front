@@ -94,15 +94,16 @@ const markedRender = function (string: string) {
       try {
         render = katex.renderToString(expr, { displayMode: true, maxSize: 2 });
       } catch (e) {
-        console.warn("Invalid LaTeX block" + e);
+        console.warn(`Invalid LaTeX block${e}`);
       }
       return render;
-    } else if (expr.match(/^\$[\s\S]*\$$/)) {
+    }
+    if (expr.match(/^\$[\s\S]*\$$/)) {
       expr = expr.slice(1, -1);
       try {
         render = katex.renderToString(expr, { displayMode: false, maxSize: 2 });
       } catch (e) {
-        console.warn("Invalid LaTeX line" + e);
+        console.warn(`Invalid LaTeX line${e}`);
       }
       return render;
     }
@@ -116,7 +117,7 @@ const markedRender = function (string: string) {
 
   // marked options
   marked.setOptions({
-    renderer: renderer,
+    renderer,
     highlight: (code, lang) => {
       if (lang) return hljs.highlight(code, { language: lang }).value;
       return hljs.highlightAuto(code).value;
@@ -137,7 +138,7 @@ const markedRender = function (string: string) {
 
 const dompurifyRender = function (string: string) {
   // Allowed URI schemes
-  const regex_uri = RegExp("^(" + allowed_uri.join("|") + "):", "gim");
+  const regex_uri = RegExp(`^(${allowed_uri.join("|")}):`, "gim");
 
   /**
    *  Take CSS property-value pairs and validate against allow-list,
@@ -149,7 +150,7 @@ const dompurifyRender = function (string: string) {
       if (typeof styles[prop] === "string") {
         if (styles[prop] && allowed_properties.indexOf(prop) > -1) {
           if (allow_css_functions || !/\w+\(/.test(styles[prop])) {
-            output.push(prop + ":" + styles[prop] + ";");
+            output.push(`${prop}:${styles[prop]};`);
           }
         }
       }
@@ -166,7 +167,7 @@ const dompurifyRender = function (string: string) {
       const rule = cssRules[index];
       // check for rules with selector
       if (rule.type == 1 && rule.selectorText) {
-        output.push(rule.selectorText + "{");
+        output.push(`${rule.selectorText}{`);
         if (rule.style) {
           validateStyles(output, rule.style);
         }

@@ -198,6 +198,7 @@ import { useAuthStore } from "@/stores/auth";
 import { asset } from "@/utils";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
@@ -205,7 +206,7 @@ const user = computed(() => auth.user);
 // @group Core
 
 const hours = new Date().getHours();
-document.body.className = "h" + hours;
+document.body.className = `h${hours}`;
 </script>
 <style lang="scss" scoped>
 .header {

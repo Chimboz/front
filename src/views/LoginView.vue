@@ -135,6 +135,7 @@ import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+
 const locales = { fr, enGB };
 
 // @vuese

@@ -138,6 +138,7 @@ import { format, differenceInCalendarDays } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { useAuthStore } from "@/stores/auth";
 import { ref, computed } from "vue";
+
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 const locales = { fr, enGB };
@@ -155,13 +156,13 @@ function formatDate() {
 function formatDistance() {
   return differenceInCalendarDays(
     new Date(),
-    new Date(data.value.date) /*, {
+    new Date(data.value.date) /* , {
         locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-      }*/
+      } */
   );
 }
 function join() {
-  console.log("Rejoins " /*+ $route.params.id*/);
+  console.log("Rejoins " /* + $route.params.id */);
 }
 
 fetchData(async (params) => {

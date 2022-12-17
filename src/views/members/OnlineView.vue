@@ -55,6 +55,7 @@ import { fetchData } from "@/utils";
 import { format } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
+
 const locales = { fr, enGB };
 
 // @vuese
