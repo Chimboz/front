@@ -71,11 +71,8 @@
 <script setup lang="ts">
 import Bank from "@/components/BankComponent.vue";
 import api from "@/modules/api";
-import { useAuthStore } from "@/stores/auth";
 import { randomInt } from "@/utils";
-import { ref, computed } from "vue";
-const auth = useAuthStore();
-const user = computed(() => auth.user);
+import { ref } from "vue";
 
 // @vuese
 // @group View/Community

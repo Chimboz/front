@@ -50,9 +50,9 @@
         >)<br /><br />
         Membres du groupe:
         <UserLink
-          v-for="(user, index) of data.members"
-          :key="user.id"
-          :user="user"
+          v-for="(member, index) of data.members"
+          :key="member.id"
+          :user="member"
           :separator="index < data.members.length - 1"
         /><br /><br />
         Localisation : <b>{{ data.localisation }}</b

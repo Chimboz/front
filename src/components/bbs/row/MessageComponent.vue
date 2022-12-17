@@ -85,7 +85,7 @@
           <button
             v-if="message.author.id === user.id || +user.user_level > 3"
             class="btn-action"
-            @click.prevent="delete"
+            @click.prevent="deleteMessage"
           >
             x
           </button>
