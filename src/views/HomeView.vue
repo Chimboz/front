@@ -19,9 +19,9 @@
             </div>
           </div>
         </router-link>
-        <router-link to="/mi">
+        <router-link v-if="data" to="/mi">
           <div class="messages">
-            <div v-if="data">
+            <div>
               <img
                 v-for="number in data.messages.toString(10)"
                 :key="number.index"
@@ -45,9 +45,9 @@
           </div>
           {{ $t("mi.message", data.messages) }}
         </router-link>
-        <router-link to="/friends">
+        <router-link v-if="data" to="/friends">
           <div class="friends">
-            <div v-if="data">
+            <div>
               <img
                 v-for="number in data.friends.toString(10)"
                 :key="number.index"
