@@ -126,6 +126,11 @@ textarea.btn-md {
 .btn-action:hover {
   border-color: var(--orange);
   color: var(--orange);
+  background: linear-gradient(to bottom, var(--light), var(--dark-card-yellow));
+}
+
+.btn-action:hover img {
+  filter: invert(51%) sepia(55%) saturate(1488%) hue-rotate(0deg) brightness(103%) contrast(102%);
 }
 .btn-action img {
   vertical-align: top;

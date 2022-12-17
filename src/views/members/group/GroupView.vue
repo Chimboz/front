@@ -75,7 +75,7 @@
         &nbsp;<img :src="asset(`img/group/${data.status}.png`)" />
       </GlobalCard>
       <br />
-      Groupe no. <b>{{ $route.params.id }}</b> créé le
+      Groupe no. <b>{{ data.id }}</b> créé le
       <b>{{ formatDate() }} ({{ formatDistance() }} jours)</b><br />
       <br v-if="data.bacteria" />
       <GlobalCard v-if="data.bacteria" class="justified"
@@ -162,7 +162,7 @@ function formatDistance() {
   );
 }
 function join() {
-  console.log("Rejoins " /* + $route.params.id */);
+  console.log(`Rejoins ${data.value.id}`);
 }
 
 fetchData(async (params) => {

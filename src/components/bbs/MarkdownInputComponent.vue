@@ -40,7 +40,9 @@
       </thead>
       <tbody>
         <tr>
-          <td><label for="subject">Sujet</label></td>
+          <td>
+            <label for="subject"><b>Sujet</b></label>
+          </td>
           <td>
             <input
               id="subject"

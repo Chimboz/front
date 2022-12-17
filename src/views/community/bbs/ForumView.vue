@@ -10,11 +10,11 @@
     /></template>
     <ForumList v-if="data" :forum="data" />
     <br />
-    <button style="text-align: left">
+    <button type="button" style="text-align: left" @click="post = true">
       <img
         v-if="!post && data && !data.locked"
+        alt="New topic"
         src="@/assets/img/bbs/post.gif"
-        @click="post = true"
       />
     </button>
     <MarkdownInput v-if="post && data && !data.locked" is-topic />

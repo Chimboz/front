@@ -40,7 +40,7 @@
         {{ topic.reply }}
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
-        <UserLink :user="topic.author" />
+        <UserLink :user="topic.author" ellipsis />
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
         {{ topic.view }}

@@ -1,5 +1,4 @@
 <template>
-  <div v-for="page of array()" :key="page + 1"></div>
   <router-link
     v-for="page of array()"
     :key="page + 1"

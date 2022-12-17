@@ -241,7 +241,7 @@
       <br v-if="data.popularity" />
       <div class="member-section registration">
         <span
-          >Membre n°<b>{{ $route.params.id }}</b
+          >Membre n°<b>{{ data.id }}</b
           ><br />
           Dans la communauté depuis le
           <b>{{ formatDate(data.register) }}</b> (<b>{{
@@ -252,14 +252,10 @@
       </div>
       <br />
       Messages sur le forum :
-      <router-link :to="'/bbs/author/' + $route.params.id">{{
-        data.posts
-      }}</router-link>
+      <router-link :to="'/bbs/author/' + data.id">{{ data.posts }}</router-link>
     </GlobalCard>
     <template #right-column
-      ><router-link
-        v-if="user && +user.admin > 0"
-        :to="'/admin/' + $route.params.id"
+      ><router-link v-if="user && +user.admin > 0" :to="'/admin/' + data.id"
         ><GlobalButton type="button" icon="rules.svg"
           >Modérer</GlobalButton
         ></router-link
@@ -298,7 +294,7 @@ function formatDistance(date: number) {
   return differenceInCalendarDays(new Date(), new Date(date));
 }
 function ban() {
-  console.log(`Banni` + /* $route.params.id +*/ ` durée ${duration * 86400}`);
+  console.log(`Banni ${data.value.id} durée ${duration * 86400}`);
 }
 
 fetchData(async (params) => {

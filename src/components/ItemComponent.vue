@@ -5,7 +5,7 @@
         data.name
       }}</StrokeText>
       <div class="item-icons">
-        n°{{ $route.params.id }}
+        n°{{ data.id }}
         <img
           :src="asset(`img/icon/rarity/${data.rarity}.png`)"
           :title="data.rarity"
@@ -67,11 +67,11 @@ import { ref } from "vue";
 const data = ref<any>(undefined);
 
 fetchData(async (params) => {
+  console.log("he", params);
   data.value = (
     await api.get(`item/${params.id}?lang=${navigator.language.split("-")[0]}`)
   ).data;
 });
-// /api/item/${vm.$route.params.id}.json
 </script>
 <style lang="scss" scoped>
 .item-name {
