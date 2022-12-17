@@ -10,7 +10,7 @@ const allowed_uri = ["http", "https"];
 const allowed_images = [
   "i.imgur.com",
   "image.noelshack.com",
-  location.hostname
+  location.hostname,
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
@@ -117,7 +117,8 @@ const markedRender = function (string: string) {
   // marked options
   marked.setOptions({
     renderer: renderer,
-    highlight: (code) => {
+    highlight: (code, lang) => {
+      if (lang) return hljs.highlight(code, { language: lang }).value;
       return hljs.highlightAuto(code).value;
     },
     langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
