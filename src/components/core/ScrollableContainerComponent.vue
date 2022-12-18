@@ -31,15 +31,10 @@ const emit = defineEmits<{ (e: "scrollData", data: any[]): void }>();
 const page = ref(0);
 const isLoading = ref(false);
 
-const props = withDefaults(
-  defineProps<{
-    route: string;
-    maxHeight: number;
-  }>(),
-  {
-    maxHeight: 200,
-  }
-);
+const props = defineProps<{
+  route: string;
+  maxHeight: number;
+}>();
 
 async function onScroll({ target }: UIEvent) {
   const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement;

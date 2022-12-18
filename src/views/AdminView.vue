@@ -8,6 +8,7 @@
         <ScrollableContainer
           route="adminlogs"
           class="fullwidth"
+          :max-height="600"
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div v-for="(log, index) in data" :key="index" class="log">

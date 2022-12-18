@@ -255,7 +255,9 @@
       <router-link :to="'/bbs/author/' + data.id">{{ data.posts }}</router-link>
     </GlobalCard>
     <template #right-column
-      ><router-link v-if="user && +user.admin > 0" :to="'/admin/' + data.id"
+      ><router-link
+        v-if="data && user && +user.user_level > 2"
+        :to="'/admin/' + data.id"
         ><GlobalButton type="button" icon="rules.svg"
           >Modérer</GlobalButton
         ></router-link
@@ -281,11 +283,6 @@ const user = computed(() => auth.user);
 // Member page
 
 const data: any = ref(undefined);
-const duration = 1;
-
-function ban() {
-  console.log(`Banni ${data.value.id} durée ${duration * 86400}`);
-}
 
 fetchData(async (params) => {
   data.value = (await api.get(`book/${params.id}`)).data;
