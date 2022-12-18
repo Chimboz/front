@@ -82,7 +82,12 @@
       </GlobalCard>
       <br />
       Groupe no. <b>{{ data.id }}</b> créé le
-      <b>{{ formatDate() }} ({{ formatDistance() }} jours)</b><br />
+      <b
+        >{{ format(data.date, "PPp") }} ({{
+          distance(Date.now(), data.date)
+        }}
+        jours)</b
+      ><br />
       <br v-if="data.bacteria" />
       <GlobalCard v-if="data.bacteria" class="justified"
         ><img
@@ -153,33 +158,18 @@ import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import api from "@/modules/api";
 import messageRender from "@/modules/messageRender";
 import { fetchData, asset } from "@/utils";
-import { format, differenceInCalendarDays } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Group
 // Group view page
 const data = ref<any>(undefined);
 
-function formatDate() {
-  return format(new Date(data.value.date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
-function formatDistance() {
-  return differenceInCalendarDays(
-    new Date(),
-    new Date(data.value.date) /* , {
-        locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-      } */
-  );
-}
 function join() {
   console.log(`Rejoins ${data.value.id}`);
 }

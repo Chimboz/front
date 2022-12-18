@@ -46,7 +46,7 @@
             />
           </div>
           <div v-if="!data.status.connected">
-            Dernière visite le <b>{{ formatDate(data.status.date) }}</b>
+            Dernière visite le <b>{{ format(data.status.date, "PPp") }}</b>
           </div>
           <div v-else>
             <div
@@ -79,7 +79,7 @@
               >
               avec
               <UserLink :user="data.wedding.user" /> depuis
-              {{ formatDistance(data.wedding.time) }} jours
+              {{ distance(Date.now(), data.wedding.time) }} jours
             </span>
             <span v-else><b>Célibataire</b></span>
           </p>
@@ -244,8 +244,8 @@
           >Membre n°<b>{{ data.id }}</b
           ><br />
           Dans la communauté depuis le
-          <b>{{ formatDate(data.register) }}</b> (<b>{{
-            formatDistance(data.register)
+          <b>{{ format(data.register, "PPp") }}</b> (<b>{{
+            distance(Date.now(), data.register)
           }}</b>
           jours)</span
         >
@@ -266,15 +266,13 @@
 
 <script setup lang="ts">
 import { asset, fetchData } from "@/utils";
+import { format, distance } from "@/utils/date";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
-import { format, differenceInCalendarDays } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import api from "@/modules/api";
 import { RouterLink } from "vue-router";
 
-const locales = { fr, enGB };
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
@@ -285,14 +283,6 @@ const user = computed(() => auth.user);
 const data: any = ref(undefined);
 const duration = 1;
 
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
-function formatDistance(date: number) {
-  return differenceInCalendarDays(new Date(), new Date(date));
-}
 function ban() {
   console.log(`Banni ${data.value.id} durée ${duration * 86400}`);
 }

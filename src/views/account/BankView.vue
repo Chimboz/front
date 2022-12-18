@@ -33,7 +33,7 @@
             :class="{ loss: line.value < 0 }"
           >
             <td class="centered">
-              <b>{{ formatDate(line.date) }}</b>
+              <b>{{ format(line.date, "PPp") }}</b>
             </td>
             <td>{{ line.description }}</td>
             <td style="text-align: right">
@@ -103,13 +103,11 @@ import {
   type ChartData,
 } from "chart.js";
 import { ref } from "vue";
-import { format, isSameDay, eachDayOfInterval, subDays } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { isSameDay, eachDayOfInterval, subDays } from "date-fns";
+import { format } from "@/utils/date";
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
-
-const locales = { fr, enGB };
 
 Chart.register(
   Tooltip,
@@ -137,16 +135,6 @@ fetchData(async () => {
   data.value = (await api.get("http://localhost:5173/api/bank.json")).data;
 });
 
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
-function formatDateStats(date: Date) {
-  return format(date, "d MMM", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 function bankData() {
   const dataset: ChartData<any> = {
     labels: [] as any[],
@@ -180,7 +168,7 @@ function bankData() {
           (prev: any, curr: any) => prev.value + curr.value
         );
       if (i > 0) balance -= dataset.datasets[1].data[i - 1];
-      dataset.labels!.push(formatDateStats(day));
+      dataset.labels!.push(format(day, "d MMM"));
       dataset.datasets[1].data.push(value);
       dataset.datasets[0].data.push(balance);
       dataset.datasets[1].backgroundColor.push(value > 0 ? "#5b3" : "#fb0d0d");

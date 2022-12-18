@@ -61,7 +61,7 @@
     </GlobalCard>
     <br /><GlobalCard v-if="data" id="last">
       <template #header>{{ $t("wedding.section.last") }}</template>
-      {{ $t("date.on") }} <b>{{ formatDate(data.last.date, "PPp") }}</b
+      {{ $t("date.on") }} <b>{{ format(data.last.date, "PPp") }}</b
       >, <b>{{ data.last.id }}</b
       ><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br /><br />
       <div class="wedding">
@@ -133,11 +133,11 @@
           height="64"
         /><br />{{ $t("wedding.title.today") }}
       </template>
-      {{ $t("date.Today") }}, <b>{{ formatDate(Date.now(), "PP") }}</b
+      {{ $t("date.Today") }}, <b>{{ format(Date.now(), "PP") }}</b
       >, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
       <br /><br />
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
-        {{ $t("date.On") }} <b>{{ formatDate(wedding.date, "PPp") }}</b
+        {{ $t("date.On") }} <b>{{ format(wedding.date, "PPp") }}</b
         >,<br />
         <UserLink :user="wedding.married1" /> &amp;
         <UserLink :user="wedding.married2" /> {{ $t("wedding.gotmarried")
@@ -195,7 +195,7 @@
               >
             </td>
             <td>
-              <b>{{ formatDistance(wedding.date, Date.now()) }}</b>
+              <b>{{ distance(Date.now(), wedding.date) }}</b>
             </td>
           </tr>
         </tbody>
@@ -232,7 +232,7 @@
         </thead>
         <tbody>
           <tr v-for="(wedding, index) in data.divorce" :key="index">
-            <td>{{ formatDate(wedding.dateend, "p") }}</td>
+            <td>{{ format(wedding.dateend, "p") }}</td>
             <td>
               <UserLink :user="wedding.married1" /> a plaqué
               <UserLink :user="wedding.married2" />
@@ -245,7 +245,7 @@
               >
             </td>
             <td>
-              <b>{{ formatDistance(wedding.datebegin, wedding.dateend) }}</b>
+              <b>{{ distance(wedding.datebegin, wedding.dateend) }}</b>
             </td>
           </tr>
         </tbody>
@@ -292,7 +292,7 @@
               >
             </td>
             <td>
-              <b>{{ formatDistance(wedding.datebegin, wedding.dateend) }}</b>
+              <b>{{ distance(wedding.datebegin, wedding.dateend) }}</b>
             </td>
           </tr>
         </tbody>
@@ -385,31 +385,15 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { format, differenceInCalendarDays } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { distance, format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
 // Wedding page
 const data = ref<any>(undefined);
 
-function formatDate(date: number, formatPattern: string) {
-  return format(new Date(date), formatPattern, {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
-function formatDistance(datebegin: number, dateend: number) {
-  return differenceInCalendarDays(
-    new Date(dateend),
-    new Date(datebegin) /* {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  } */
-  );
-}
 function search() {
   console.log("Envoyé!");
 }
