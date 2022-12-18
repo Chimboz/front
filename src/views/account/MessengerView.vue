@@ -19,6 +19,7 @@
           type="text"
           class="btn-md"
           autocomplete="username"
+          aria-label="Username"
           :placeholder="$t('placeholder.username')"
         /><button type="button" class="btn-action">go</button>
       </div>
@@ -80,7 +81,7 @@
 </template>
 <script setup lang="ts">
 import api from "@/modules/api";
-import { fetchData } from "@/utils";
+import { fetchData, hashColor } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
@@ -99,18 +100,6 @@ function formatDate(date: number) {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
     addSuffix: true,
   });
-}
-function hashColor(str: string) {
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  let colour = "#";
-  for (i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff;
-    colour += `00${value.toString(16)}`.substr(-2);
-  }
-  return colour;
 }
 
 fetchData(async () => {

@@ -38,10 +38,12 @@
             </div>
           </router-link>
           <div v-if="friend.status.sent">
+            ·
             <span
               class="link"
               style="color: red; cursor: var(--pointer)"
               @click.prevent="cancel(friend)"
+              @keyup.prevent="cancel(friend)"
               ><img
                 src="@/assets/img/icon/failure.svg"
                 width="11"
@@ -62,6 +64,7 @@
               class="link"
               style="color: green; cursor: var(--pointer)"
               @click.prevent="accept(friend)"
+              @keyup.prevent="accept(friend)"
               ><img
                 src="@/assets/img/icon/success.svg"
                 width="11"
@@ -75,6 +78,7 @@
               class="link"
               style="color: red; cursor: var(--pointer)"
               @click.prevent="decline(friend)"
+              @keyup.prevent="decline(friend)"
               ><img
                 src="@/assets/img/icon/failure.svg"
                 width="11"
@@ -119,6 +123,7 @@
             type="text"
             class="btn-md"
             autocomplete="username"
+            aria-label="Username"
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button>
         </form>
@@ -131,7 +136,7 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import api from "@/modules/api";
-import { fetchData } from "@/utils";
+import { fetchData, hashColor } from "@/utils";
 import { RouterLink } from "vue-router";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
@@ -148,18 +153,7 @@ function formatDate(date: number) {
     addSuffix: true,
   });
 }
-function hashColor(str: string) {
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  let colour = "#";
-  for (i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff;
-    colour += `00${value.toString(16)}`.substr(-2);
-  }
-  return colour;
-}
+
 function cancel(friend: any) {
   console.log(`Cancel ${friend.user.id}`);
   // API Call returning true if friend removed
@@ -195,30 +189,7 @@ function decline(friend: any) {
   data.value.splice(data.value.indexOf(friend), 1);
 }
 function addFriend(form: any) {
-  for (const element of form.target.elements) {
-    if (element.name == "friend") {
-      console.log(`Ajouté ${element.value} en ami`);
-      data.value.push({
-        user: {
-          name: "Owned",
-          id: 2,
-          look: {
-            avatar: 0,
-            emote: "neutral",
-            hat: 7,
-            body: 334,
-            shoe: 612,
-            item0: 808,
-            item1: 868,
-            item2: 938,
-          },
-        },
-        status: {
-          sent: true,
-        },
-      });
-    }
-  }
+  console.log(data);
 }
 
 fetchData(async () => {

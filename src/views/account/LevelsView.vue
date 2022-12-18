@@ -17,6 +17,7 @@
             :key="rank.level"
             class="pointer"
             @click="selected = rank.level"
+            @keyup="selected = rank.level"
           >
             <img
               v-for="number in rank.level.toString(10)"

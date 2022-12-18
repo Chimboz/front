@@ -25,18 +25,21 @@
         alt="Search icon"
       />
       <div style="display: inline-block">
-        <h1>{{ $t("book.search") }}</h1>
+        <label for="search"
+          ><h1>{{ $t("book.search") }}</h1></label
+        >
         <form class="flex" @submit.prevent="search()">
           <input
+            id="search"
             v-model="username"
             required
-            autofocus
             minlength="3"
             maxlength="15"
             pattern="[\w\.\-_@]{3,15}"
             name="username"
             type="text"
             class="btn-md"
+            :aria-label="$t('book.search')"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
             @keyup="onKeypressValue()"

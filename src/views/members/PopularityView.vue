@@ -347,7 +347,7 @@
       Tu trouves un membre sympa ? Donne lui ta voix !
       <br /><br />
       <form class="flex" @submit.prevent="vote()">
-        <select class="btn-md" required>
+        <select class="btn-md" required aria-label="Type of vote">
           <option value="for">Pour</option>
           <option value="against">Contre</option></select
         ><input
@@ -357,7 +357,8 @@
           name="group"
           type="text"
           class="btn-md"
-          autocomplete="group"
+          autocomplete="username"
+          aria-label="Username"
           :placeholder="$t('placeholder.username')"
         /><button type="submit" class="btn-action">go</button>
       </form>

@@ -70,6 +70,7 @@
           name="message"
           type="text"
           class="btn-md"
+          aria-label="Message"
           :placeholder="$t('placeholder.message')"
         /><button type="submit" class="btn-action">➤</button>
       </form>
@@ -111,7 +112,7 @@
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import api from "@/modules/api";
 import messageRender from "@/modules/messageRender";
-import { fetchData } from "@/utils";
+import { fetchData, hashColor } from "@/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
@@ -132,18 +133,7 @@ function formatDate(date: number) {
     addSuffix: true,
   });
 }
-function hashColor(str: string) {
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  let colour = "#";
-  for (i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff;
-    colour += `00${value.toString(16)}`.substr(-2);
-  }
-  return colour;
-}
+
 function send() {
   console.log(`Envoyé ${message.value}`);
   data.value.messages.push({
