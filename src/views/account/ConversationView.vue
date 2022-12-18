@@ -50,7 +50,7 @@
               <h3>
                 <UserLink v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
-                  >{{ formatDate(message.date) }}</span
+                  >{{ distanceToNow(message.date) }}</span
                 >
               </h3>
             </div>
@@ -113,12 +113,9 @@ import ScrollableContainer from "@/components/core/ScrollableContainerComponent.
 import api from "@/modules/api";
 import messageRender from "@/modules/messageRender";
 import { fetchData, hashColor } from "@/utils";
-import { formatDistanceToNowStrict } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Account
@@ -126,13 +123,6 @@ const locales = { fr, enGB };
 
 const data: any = ref(undefined);
 const message = ref("");
-
-function formatDate(date: number) {
-  return formatDistanceToNowStrict(new Date(date), {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-    addSuffix: true,
-  });
-}
 
 function send() {
   console.log(`Envoyé ${message.value}`);

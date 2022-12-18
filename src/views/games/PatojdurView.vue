@@ -200,7 +200,7 @@
             </td>
             <td><UserLink :user="rank.user" /></td>
             <td class="justified">
-              <b>{{ formatDate(rank.date) }}</b
+              <b>{{ format(rank.date, "PPp") }}</b
               ><br /><i>{{ rank.day }}e journée</i>
             </td>
           </tr>
@@ -238,7 +238,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ formatHour(rank.date) }}</td>
+            <td>{{ format(rank.date, "p") }}</td>
           </tr>
         </tbody>
       </table>
@@ -301,7 +301,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ formatHour(rank.date) }}</td>
+            <td>{{ format(rank.date, "p") }}</td>
           </tr>
         </tbody>
       </table>
@@ -371,29 +371,15 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Games
 // Patojdur (Wild Wade) page
 
 const data = ref<any>(undefined);
-
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
-function formatHour(date: number) {
-  return format(new Date(date), "p", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 
 fetchData(async () => {
   data.value = (await api.get("games/patoj")).data;

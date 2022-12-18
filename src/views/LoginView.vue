@@ -51,7 +51,7 @@
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
               @contextmenu.prevent /></router-link
-          ><b>{{ formatDatePhotos(photo.date) }}</b>
+          ><b>{{ format(photo.date, "PP") }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -133,23 +133,14 @@ import Demo from "@/components/DemoComponent.vue";
 import Pack from "@/components/PackComponent.vue";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View
 // Login page
 const data: any = ref(undefined);
-
-function formatDatePhotos(date: number) {
-  return format(new Date(date), "PP", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 
 fetchData(async () => {
   data.value = (await api.get("right")).data;

@@ -91,7 +91,7 @@
             >
           </div>
           <div v-else-if="!friend.status.connected">
-            Dernière visite le <b>{{ formatDate(friend.status.date) }}</b>
+            Dernière visite <b>{{ distanceToNow(friend.status.date) }}</b>
           </div>
           <div v-else>
             <div
@@ -132,27 +132,18 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import { formatDistanceToNowStrict } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import api from "@/modules/api";
 import { fetchData, hashColor } from "@/utils";
+import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
-const locales = { fr, enGB };
 // @vuese
 // @group View/Account
 // Friends page
 
 const data = ref<any>(undefined);
-
-function formatDate(date: number) {
-  return formatDistanceToNowStrict(new Date(date), {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-    addSuffix: true,
-  });
-}
 
 function cancel(friend: any) {
   console.log(`Cancel ${friend.user.id}`);

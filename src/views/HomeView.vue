@@ -137,7 +137,9 @@
         class="markdown-body"
         v-html="messageRender(data.news.content)"
       ></div>
-      <div class="news-date">{{ data.news.author }}, {{ formatDate() }}</div>
+      <div class="news-date">
+        {{ data.news.author }}, {{ format(data.news.date, "PPp") }}
+      </div>
     </GlobalCard>
     <br />
     <GlobalCard v-if="data">
@@ -159,7 +161,7 @@
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
               @contextmenu.prevent /></router-link
-          ><b>{{ formatDatePhotos(photo.date) }}</b>
+          ><b>{{ format(photo.date, "PP") }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -226,14 +228,11 @@ import Radio from "@/components/RadioComponent.vue";
 import RandomNumber from "@/components/core/RandomNumberComponent.vue";
 import Bank from "@/components/BankComponent.vue";
 import Pack from "@/components/PackComponent.vue";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import messageRender from "@/modules/messageRender";
 import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
-
-const locales = { fr, enGB };
+import { format } from "@/utils/date";
 
 // @vuese
 // @group View
@@ -257,17 +256,6 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   gain.value = (
     await api.get("http://localhost:5173/api/lottery.json")
   ).data.gain;
-}
-function formatDatePhotos(date: number) {
-  return format(new Date(date), "PP", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
-
-function formatDate() {
-  return format(new Date(data.value.news.date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
 }
 
 // meta title section.home

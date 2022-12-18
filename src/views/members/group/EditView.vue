@@ -27,7 +27,7 @@
         <div class="flex col centered">
           <StrokeText class="group-name">{{ data.name }}</StrokeText>
           Groupe n°{{ data.id }}<br />
-          Créé le {{ formatDate() }}
+          Créé le {{ format(data.date, "PPp") }}
         </div>
       </div>
     </GlobalCard>
@@ -288,22 +288,14 @@
 import Blazon from "@/components/blazon/BlazonComponent.vue";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import Cabin from "@/components/blazon/CabinComponent.vue";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
-
-const locales = { fr, enGB };
+import { format } from "@/utils/date";
 
 // @vuese
 // @group View/Members/Group
 // Group edition page
 const data = ref<any>(undefined);
 
-function formatDate() {
-  return format(new Date(data.value.date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 function deleteGroup() {
   console.log("Suppression");
 }

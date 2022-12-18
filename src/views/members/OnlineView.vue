@@ -43,7 +43,7 @@
           width="17"
           @contextmenu.prevent
         />Le record de connectés est de <b>{{ data.record.online }}</b> le
-        <b>{{ formatDate() }}</b
+        <b>{{ format(data.record.date, "PPp") }}</b
         >.
       </GlobalCard></template
     >
@@ -52,22 +52,13 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import { ref } from "vue";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members
 // Online page
 const data: any = ref(undefined);
-
-function formatDate() {
-  return format(new Date(data.value.record.date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 
 fetchData(async () => {
   data.value = (await api.get("online")).data;

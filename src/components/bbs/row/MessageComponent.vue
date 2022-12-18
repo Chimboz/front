@@ -11,7 +11,7 @@
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
       /><UserLink :user="message.author" ellipsis /><span class="date">{{
-        formatDate()
+        format(message.date, "PPpp")
       }}</span>
     </td>
     <td class="justified" valign="top">
@@ -28,7 +28,7 @@
         />&nbsp;&nbsp;
         <div class="ellipsis">
           <UserLink :user="message.author" />&nbsp;le
-          <span class="date">{{ formatDate() }}</span>
+          <span class="date">{{ format(message.date, "PPpp") }}</span>
         </div>
       </h2>
       <div class="head flex">
@@ -108,15 +108,13 @@
 
 <script setup lang="ts">
 import { asset } from "@/utils";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import messageRender from "@/modules/messageRender";
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { onMounted, computed } from "vue";
 import eventBus from "@/modules/eventBus";
 
-const locales = { fr, enGB };
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 const route = useRoute();
@@ -138,12 +136,6 @@ onMounted(() => {
       window.location.href = route.hash;
     }, 0);
 });
-
-function formatDate() {
-  return format(new Date(props.message.date), "PPpp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 
 function deleteMessage() {
   console.log(`delete ${props.message.id}`);

@@ -132,7 +132,7 @@
               <b>{{ rank.score }}</b>
             </td>
             <td>
-              {{ formatDate(rank.date || 1670928217153) /* TODO remove */ }}
+              {{ format(rank.date || 1670928217153, "PPp") /* TODO remove */ }}
             </td>
           </tr>
         </tbody>
@@ -183,24 +183,15 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Games
 // Mazo page
 
 const data = ref<any>(undefined);
-
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 
 fetchData(async () => {
   data.value = (await api.get("games/mazo")).data;

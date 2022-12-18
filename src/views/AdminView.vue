@@ -11,7 +11,7 @@
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div v-for="(log, index) in data" :key="index" class="log">
-            <b>{{ formatDate(log.date) }}</b
+            <b>{{ format(log.date, "PPp") }}</b
             ><em> par <UserLink :user="log.moderator" /></em><br />
             <b>{{ log.type }} de <UserLink :user="log.author" /></b><br />
             {{ log.reason }}
@@ -58,11 +58,8 @@
 </template>
 <script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
-
-const locales = { fr, enGB };
+import { format } from "@/utils/date";
 
 // @vuese
 // @group View
@@ -83,11 +80,6 @@ function onKeypressValue() {
 
 function search() {
   return true;
-}
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
 }
 // /api/admin.json
 // meta title section.admin

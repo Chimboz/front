@@ -77,7 +77,7 @@
           <tr v-for="(member, index) in data.members" :key="index">
             <td>{{ member.id }}</td>
             <td><UserLink :user="member" /></td>
-            <td>{{ formatDate(member.date) }}</td>
+            <td>{{ format(member.date, "PPp") }}</td>
           </tr>
         </tbody>
       </table>
@@ -165,12 +165,9 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Members/Book
@@ -196,11 +193,6 @@ function onKeypressValue() {
 function search() {
   const id = 1;
   // $router.push(`/book/${id}`);
-}
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
 }
 // /api/book.json
 // meta title section.popularity

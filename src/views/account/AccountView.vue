@@ -275,7 +275,7 @@
                   @contextmenu.prevent
                 />&nbsp;<UserLink :user="message.author" />
               </div>
-              <div>{{ formatDate(message.date) }}</div>
+              <div>{{ distanceToNow(message.date) }}</div>
             </div>
           </router-link>
         </div></GlobalCard
@@ -389,8 +389,6 @@
 import Cabin from "@/components/CabinComponent.vue";
 import Bank from "@/components/BankComponent.vue";
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
-import { formatDistanceToNowStrict } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import { ref } from "vue";
 import { DoughnutChart, BarChart } from "vue-chart-3";
 import {
@@ -406,9 +404,8 @@ import {
 } from "chart.js";
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
+import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 Chart.register(
   Legend,
@@ -427,12 +424,6 @@ Chart.register(
 
 const data = ref<any>(undefined);
 
-function formatDate(date: number) {
-  return formatDistanceToNowStrict(new Date(date), {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-    addSuffix: true,
-  });
-}
 function statsBacteria() {
   return {
     labels: ["Win", "Draw", "Lose"],

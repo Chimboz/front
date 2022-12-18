@@ -46,7 +46,7 @@
         {{ topic.view }}
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
-        <div>{{ formatDate() }}</div>
+        <div>{{ distanceToNow(topic.last_msg.date) }}</div>
         <UserLink :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link
@@ -73,10 +73,7 @@
 <script setup lang="ts">
 import Pagination from "@/components/core/PaginationComponent.vue";
 import { asset } from "@/utils";
-import { formatDistanceToNowStrict } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
-
-const locales = { fr, enGB };
+import { distanceToNow } from "@/utils/date";
 
 // @vuese
 // @group BBS/Row
@@ -88,11 +85,4 @@ const props = withDefaults(
   }>(),
   { separator: true }
 );
-
-function formatDate() {
-  return formatDistanceToNowStrict(new Date(props.topic.last_msg.date), {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-    addSuffix: true,
-  });
-}
 </script>

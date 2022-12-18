@@ -28,7 +28,7 @@
           </router-link>
           <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
           <UserLink :user="image.author" /><br />
-          {{ formatDate(image.date) }}
+          {{ format(image.date, "PPp") }}
         </div>
       </ScrollableContainer>
     </GlobalCard>
@@ -37,26 +37,17 @@
 
 <script setup lang="ts">
 import VLazyImage from "v-lazy-image";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
 import { onBeforeMount, ref } from "vue";
 import { asset } from "@/utils";
+import { format } from "@/utils/date";
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import api from "@/modules/api";
 import { RouterView, RouterLink } from "vue-router";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Community
 // Chaparazzi page
 const data: any = ref(undefined);
-
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 
 onBeforeMount(async () => {
   data.value = (await api.get(`gallery?page=0`)).data;

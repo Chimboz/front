@@ -67,7 +67,7 @@
                     font-weight: normal;
                     font-size: var(--font-size);
                   "
-                  >{{ formatDate(message.date) }}</span
+                  >{{ distanceToNow(message.date) }}</span
                 >
               </h3>
             </div>
@@ -82,25 +82,15 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { fetchData, hashColor } from "@/utils";
-import { formatDistanceToNowStrict } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group View/Account
 // Messenger page
 const data = ref<any>(undefined);
-
-function formatDate(date: number) {
-  return formatDistanceToNowStrict(new Date(date), {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-    addSuffix: true,
-  });
-}
 
 fetchData(async () => {
   // data.value = (await api.get("mi")).data;

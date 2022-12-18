@@ -55,7 +55,7 @@
         {{ bbs.messages }}
       </td>
       <td style="text-align: center" valign="middle">
-        <div>{{ formatDate(bbs.last_msg.date) }}</div>
+        <div>{{ distanceToNow(bbs.last_msg.date) }}</div>
         <UserLink :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <router-link
@@ -79,11 +79,8 @@
 
 <script setup lang="ts">
 import { asset } from "@/utils";
-import { formatDistanceToNowStrict } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
-
-const locales = { fr, enGB };
 
 // @vuese
 // @group BBS/Row
@@ -92,13 +89,6 @@ const hide = ref(false);
 defineProps<{
   category: any;
 }>();
-
-function formatDate(date: number) {
-  return formatDistanceToNowStrict(new Date(date), {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-    addSuffix: true,
-  });
-}
 </script>
 
 <style lang="scss" scoped>

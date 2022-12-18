@@ -36,7 +36,7 @@
           </td>
           <td><UserLink :user="log.moderator" /></td>
           <td>
-            {{ formatDate(log.date) }}
+            {{ format(log.date, "PPp") }}
           </td>
         </tr>
       </tbody>
@@ -235,25 +235,18 @@
 </template>
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
-import { format } from "date-fns";
-import { fr, enGB } from "date-fns/locale";
+import { format } from "@/utils/date";
 import { ref, computed } from "vue";
 import eventBus from "@/modules/eventBus";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user!);
-const locales = { fr, enGB };
 
 // @vuese
 // @group Default
 
 const data = ref<any>(undefined);
 
-function formatDate(date: number) {
-  return format(new Date(date), "PPp", {
-    locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
-  });
-}
 function action(type: string, params?: object) {
   eventBus.emit("confirmation", {
     message: `admin.modal.${type}`,
