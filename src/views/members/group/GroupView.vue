@@ -31,7 +31,9 @@
         <img
           v-if="data.official"
           src="@/assets/img/group/official.svg"
+          alt="Official"
           style="float: right"
+          @contextmenu.prevent
         />
       </div>
       <div
@@ -72,32 +74,45 @@
             />
           </div>
         </div>
-        &nbsp;<img :src="asset(`img/group/${data.status}.png`)" />
+        &nbsp;<img
+          :src="asset(`img/group/${data.status}.png`)"
+          :alt="data.status"
+          @contextmenu.prevent
+        />
       </GlobalCard>
       <br />
       Groupe no. <b>{{ data.id }}</b> créé le
       <b>{{ formatDate() }} ({{ formatDistance() }} jours)</b><br />
       <br v-if="data.bacteria" />
       <GlobalCard v-if="data.bacteria" class="justified"
-        ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
-          >Bacteria</b
-        ><br /><br />
+        ><img
+          src="@/assets/img/group/bacteria.gif"
+          alt="Bacteria"
+          style="float: left"
+          @contextmenu.prevent
+        /><b>Bacteria</b><br /><br />
         Classé : <b>{{ data.bacteria.rank }}</b
         >/<b>{{ data.bacteria.total }}</b> avec
         <b>{{ data.bacteria.points }}</b> points.</GlobalCard
       ><br v-if="data.patojdur" />
       <GlobalCard v-if="data.patojdur" class="justified"
-        ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
-          >Patojdur</b
-        ><br /><br />
+        ><img
+          src="@/assets/img/group/patojdur.gif"
+          alt="Patojdur"
+          style="float: left"
+          @contextmenu.prevent
+        /><b>Patojdur</b><br /><br />
         Classé : <b>{{ data.patojdur.rank }}</b
         >/<b>{{ data.patojdur.total }}</b> avec
         <b>{{ data.patojdur.points }}</b> points.</GlobalCard
       ><br v-if="data.popularity" />
       <GlobalCard v-if="data.popularity" class="justified"
-        ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
-          >Popularity</b
-        ><br /><br />
+        ><img
+          src="@/assets/img/group/popularity.gif"
+          alt="Popularity"
+          style="float: left"
+          @contextmenu.prevent
+        /><b>Popularity</b><br /><br />
         Classé : <b>{{ data.popularity.rank }}</b
         >/<b>{{ data.popularity.total }}</b> avec
         <b>{{ data.popularity.points }}</b> points.</GlobalCard
@@ -114,12 +129,16 @@
         <div class="justified">
           <img
             :src="asset(`img/group/${data.status}.png`)"
+            :alt="data.status"
             style="float: left; margin-right: 4px"
           />
           {{ $t(`group.${data.status}`) }}
           <div v-if="user">
             <br />
-            <a style="cursor: var(--pointer)" @click.prevent="join"
+            <a
+              style="cursor: var(--pointer)"
+              @click.prevent="join"
+              @keyup.prevent="join"
               >Rejoindre ce groupe</a
             >
           </div>

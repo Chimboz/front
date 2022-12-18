@@ -27,7 +27,7 @@
         <div class="flex col centered">
           <StrokeText class="group-name">{{ data.name }}</StrokeText>
           Groupe n°{{ data.id }}<br />
-          Créé le {{ formatDate(data.date) }}
+          Créé le {{ formatDate() }}
         </div>
       </div>
     </GlobalCard>
@@ -209,6 +209,7 @@
           draggable="false"
           class="pointer"
           @click.prevent="removeMember(user.id)"
+          @keyup.prevent="removeMember(user.id)"
           @contextmenu.prevent
         />
       </div> </GlobalCard
@@ -224,6 +225,7 @@
           draggable="false"
           class="pointer"
           @click.prevent="acceptDemand(user.id)"
+          @keyup.prevent="acceptDemand(user.id)"
           @contextmenu.prevent
         /><img
           src="@/assets/img/icon/failure.svg"
@@ -233,29 +235,36 @@
           draggable="false"
           class="pointer"
           @click.prevent="rejectDemand(user.id)"
+          @keyup.prevent="rejectDemand(user.id)"
           @contextmenu.prevent
         /></div></GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
-      ><img src="@/assets/img/group/bacteria.gif" style="float: left" /><b
-        >Bacteria</b
-      ><br /><br />
+      ><img
+        src="@/assets/img/group/bacteria.gif"
+        alt="Bacteria"
+        style="float: left"
+      /><b>Bacteria</b><br /><br />
       Classé : <b>{{ data.bacteria.rank }}</b
       >/<b>{{ data.bacteria.total }}</b> avec
       <b>{{ data.bacteria.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
-      ><img src="@/assets/img/group/patojdur.gif" style="float: left" /><b
-        >Patojdur</b
-      ><br /><br />
+      ><img
+        src="@/assets/img/group/patojdur.gif"
+        alt="Patojdur"
+        style="float: left"
+      /><b>Patojdur</b><br /><br />
       Classé : <b>{{ data.patojdur.rank }}</b
       >/<b>{{ data.patojdur.total }}</b> avec
       <b>{{ data.patojdur.points }}</b> points.</GlobalCard
     ><br />
     <GlobalCard v-if="data" class="justified"
-      ><img src="@/assets/img/group/popularity.gif" style="float: left" /><b
-        >Popularity</b
-      ><br /><br />
+      ><img
+        src="@/assets/img/group/popularity.gif"
+        alt="Popularity"
+        style="float: left"
+      /><b>Popularity</b><br /><br />
       Classé : <b>{{ data.popularity.rank }}</b
       >/<b>{{ data.popularity.total }}</b> avec
       <b>{{ data.popularity.points }}</b> points.</GlobalCard
@@ -267,7 +276,8 @@
     ><br /><GlobalCard
       ><a
         style="color: red; cursor: var(--pointer)"
-        @click.prevent="deleteGroup()"
+        @click.prevent="deleteGroup"
+        @keyup.prevent="deleteGroup"
         >Supprimer le groupe</a
       ></GlobalCard
     >
@@ -289,7 +299,7 @@ const locales = { fr, enGB };
 // Group edition page
 const data = ref<any>(undefined);
 
-function formatDate(date: number) {
+function formatDate() {
   return format(new Date(data.value.date), "PPp", {
     locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
   });

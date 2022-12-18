@@ -48,6 +48,7 @@
                 class="link"
                 style="cursor: var(--pointer)"
                 @click.prevent="leave(group.id)"
+                @keyup.prevent="leave(group.id)"
                 >Se désinscrire</span
               >]
             </td>
@@ -78,6 +79,7 @@
                 class="link"
                 style="cursor: var(--pointer)"
                 @click.prevent="cancel(group.id)"
+                @keyup.prevent="cancel(group.id)"
                 >Annuler</span
               >]
             </td>

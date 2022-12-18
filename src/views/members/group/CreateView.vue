@@ -14,12 +14,12 @@
         <input
           ref="groupname"
           required
-          autofocus
           minlength="3"
           maxlength="32"
           name="groupname"
           type="text"
           class="btn-md"
+          aria-label="Group"
           :placeholder="$t('placeholder.groupname')"
         />
       </GlobalCard>
