@@ -32,7 +32,9 @@
       <div
         class="card-bg"
         :style="{
-          backgroundImage: `url(${asset(`img/card/background/${props.bg}`)})`,
+          backgroundImage: bg
+            ? `url(${asset(`img/card/background/${bg}`)})`
+            : undefined,
         }"
       >
         <h2>
