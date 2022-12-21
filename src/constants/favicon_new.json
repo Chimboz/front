@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "apple-touch-icon",
+    "sizes": "180x180",
+    "href": "/favicon/new/apple-touch-icon.png"
+  },
+  {
+    "rel": "icon",
+    "type": "image/png",
+    "sizes": "32x32",
+    "href": "/favicon/new/favicon-32x32.png"
+  },
+  {
+    "rel": "icon",
+    "type": "image/png",
+    "sizes": "16x16",
+    "href": "/favicon/new/favicon-16x16.png"
+  },
+  { "rel": "manifest", "href": "/favicon/new/site.webmanifest" },
+  {
+    "rel": "mask-icon",
+    "href": "/favicon/new/safari-pinned-tab.svg",
+    "color": "#6090be"
+  },
+  { "rel": "shortcut,icon", "href": "/favicon/new/favicon.ico" },
+  { "name": "msapplication-TileColor", "content": "#6090be" },
+  {
+    "name": "msapplication-config",
+    "content": "/favicon/new/browserconfig.xml"
+  },
+  { "name": "theme-color", "content": "#6090be" }
+]

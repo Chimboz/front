@@ -7,7 +7,7 @@
   <metainfo>
     <template #title="{ content }"
       >{{
-        notifications !== 0
+        notifications
           ? notifications
               .toString()
               .replace(/[0-9]/g, (c) => "⁰¹²³⁴⁵⁶⁷⁸⁹".charAt(+c))
@@ -23,13 +23,18 @@ import Navbar from "@/components/core/NavbarComponent.vue";
 import Footer from "@/components/core/FooterComponent.vue";
 import Modal from "@/components/core/ModalComponent.vue";
 import useAuthStore from "@/stores/auth";
-import { computed } from "vue";
+import { computed, watchEffect } from "vue";
 import { useMeta } from "vue-meta";
+import favicon from "@/constants/favicon.json";
+import faviconNew from "@/constants/favicon_new.json";
 
 const notifications = computed(() => useAuthStore().notifications);
 
-useMeta({
-  title: "test",
+watchEffect(() => {
+  useMeta({
+    title: "test",
+    link: notifications.value ? faviconNew : favicon,
+  });
 });
 </script>
 
