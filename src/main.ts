@@ -15,14 +15,13 @@ app.mount('#app') */
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import { createMetaManager, plugin as metaPlugin } from "vue-meta";
+import { createMetaManager } from "vue-meta";
 import App from "./App.vue";
 // External plugins
 import router from "./router";
 import i18n from "./modules/i18n";
 import eventBus from "./modules/eventBus";
 // Modules
-// import api from "./modules/api";
 // import "./modules/registerServiceWorker";
 // Internal CSS
 import "modern-normalize/modern-normalize.css"; // Reset
@@ -45,8 +44,7 @@ const app = createApp(App)
   .use(i18n)
   .use(router)
   .use(createPinia())
-  .use(createMetaManager())
-  .use(metaPlugin);
+  .use(createMetaManager());
 
 // Globally accessible modules
 app.config.globalProperties.eventBus = eventBus; // Event hub

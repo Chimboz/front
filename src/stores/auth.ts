@@ -5,6 +5,7 @@ import api from "@/modules/api";
 
 export default defineStore("auth", () => {
   const user = ref<undefined | User>(undefined);
+  const notifications = ref(10);
   async function login(pseudo: string, password: string) {
     // await api.post("auth/login", { pseudo, password, device_name: "browser" });
     // user.value = (await api.get("user")).data;
@@ -20,5 +21,5 @@ export default defineStore("auth", () => {
   // FIXME
   login("", "");
 
-  return { user, login, logout };
+  return { user, notifications, login, logout };
 });
