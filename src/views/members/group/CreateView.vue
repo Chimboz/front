@@ -12,7 +12,7 @@
     <form method="POST" @submit.prevent="create()">
       <GlobalCard header="group.webp" :height="70" color="blue" justified>
         <input
-          ref="groupname"
+          v-model="name"
           required
           minlength="3"
           maxlength="32"
@@ -57,7 +57,8 @@
 </template>
 <script setup lang="ts">
 import Cabin from "@/components/blazon/CabinComponent.vue";
-import { reactive } from "vue";
+import api from "@/modules/api";
+import { reactive, ref } from "vue";
 import { useMeta } from "vue-meta";
 
 const data = reactive({
@@ -120,8 +121,10 @@ const data = reactive({
   },
 });
 
+const name = ref("");
+
 function create() {
-  console.log(data, true);
+  api.post("groups/createok", { name: name.value, blazon: data.blazon });
 }
 
 useMeta({ title: "section.groupedit" });
