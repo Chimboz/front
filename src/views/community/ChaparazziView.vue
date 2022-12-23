@@ -43,10 +43,8 @@ import { format } from "@/utils/date";
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import api from "@/modules/api";
 import { RouterView, RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Community
-// Chaparazzi page
 const data: any = ref(undefined);
 
 onBeforeMount(async () => {
@@ -54,7 +52,7 @@ onBeforeMount(async () => {
 });
 
 // /api/chaparazzi/${vm.page}.json
-// meta title section.chaparazzi
+useMeta({ title: "section.chaparazzi" });
 </script>
 <style lang="scss" scoped>
 .gallery {

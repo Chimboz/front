@@ -24,9 +24,6 @@
 <script setup lang="ts">
 import Category from "../row/CategoryComponent.vue";
 
-// @vuese
-// @group BBS/List
-
 defineProps<{
   boards: any[];
 }>();

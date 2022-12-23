@@ -7,9 +7,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core/Global/Link
-
 defineProps<{
   group: any;
   separator?: boolean;

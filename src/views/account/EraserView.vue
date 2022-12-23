@@ -73,10 +73,7 @@ import Bank from "@/components/BankComponent.vue";
 import api from "@/modules/api";
 import { randomInt } from "@/utils";
 import { ref } from "vue";
-
-// @vuese
-// @group View/Community
-// Eraser page
+import { useMeta } from "vue-meta";
 
 const pseudo = ref("");
 
@@ -89,7 +86,7 @@ async function generatePseudo() {
   ).data.pseudo;
 }
 
-// meta title section.eraser
+useMeta({ title: "section.eraser" });
 </script>
 
 <style lang="scss" scoped>

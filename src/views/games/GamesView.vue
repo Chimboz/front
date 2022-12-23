@@ -220,10 +220,7 @@
 </template>
 
 <script setup lang="ts">
-// @vuese
-// @group View/Games
-// Games page
-
+import { useMeta } from "vue-meta";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
@@ -234,7 +231,7 @@ fetchData(async () => {
   data.value = (await api.get("games")).data;
 });
 // /api/games.json
-// meta title section.games
+useMeta({ title: "section.games" });
 </script>
 <style lang="scss" scoped>
 .game-champion {

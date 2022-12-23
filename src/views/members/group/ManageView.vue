@@ -363,10 +363,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-
-// @vuese
-// @group View/Members/Group
-// Groups management page
+import { useMeta } from "vue-meta";
 
 const data = ref<any>(undefined);
 
@@ -377,5 +374,5 @@ function leave(id: number) {
   console.log(`Quitté ${id}`);
 }
 // /api/manage.json
-// meta title section.groups
+useMeta({ title: "section.groups" });
 </script>

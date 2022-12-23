@@ -270,9 +270,6 @@ const user: any = computed(() => ({
   },
 }));
 
-// @vuese
-// @group BBS
-
 const textarea = ref<null | HTMLTextAreaElement>(null);
 const message = ref("");
 const title = ref("");

@@ -60,11 +60,9 @@
 <script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import { ref } from "vue";
+import { useMeta } from "vue-meta";
 import { format } from "@/utils/date";
 
-// @vuese
-// @group View
-// Admin page.
 const data = ref<any[]>([]);
 const username = ref("");
 const suggestionsHere = ref<any[]>([]);
@@ -83,7 +81,7 @@ function search() {
   return true;
 }
 // /api/admin.json
-// meta title section.admin
+useMeta({ title: "section.admin" });
 </script>
 <style lang="scss" scoped>
 .log {

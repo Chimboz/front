@@ -30,11 +30,12 @@ import faviconNew from "@/constants/favicon_new.json";
 
 const notifications = computed(() => useAuthStore().notifications);
 
+const { meta } = useMeta({
+  link: notifications.value ? faviconNew : favicon,
+});
+
 watchEffect(() => {
-  useMeta({
-    title: "test",
-    link: notifications.value ? faviconNew : favicon,
-  });
+  meta.link = notifications.value ? faviconNew : favicon;
 });
 </script>
 

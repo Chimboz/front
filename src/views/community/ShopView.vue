@@ -124,13 +124,10 @@ import eventBus from "@/modules/eventBus";
 import useAuthStore from "@/stores/auth";
 import { fetchData, asset } from "@/utils";
 import { ref, computed } from "vue";
+import { useMeta } from "vue-meta";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-
-// @vuese
-// @group View/Community
-// Shop page
 
 const data: any = ref(undefined);
 const shown = ref<any>(undefined);
@@ -156,7 +153,7 @@ fetchData(async () => {
 });
 
 // /api/shop.json
-// meta title section.shop
+useMeta({ title: "section.shop" });
 </script>
 <style lang="scss">
 .menu .pack {

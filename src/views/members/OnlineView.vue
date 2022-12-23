@@ -54,17 +54,15 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Members
-// Online page
 const data: any = ref(undefined);
 
 fetchData(async () => {
   data.value = (await api.get("online")).data;
 });
 
-// meta title section.online
+useMeta({ title: "section.online" });
 </script>
 
 <style lang="scss" scoped></style>

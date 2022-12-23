@@ -21,15 +21,10 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
+import { useMeta } from "vue-meta";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-const route = useRoute();
-
-// @vuese
-// @group View/Community/BBS
-// Topic page
 
 const data: any = ref(undefined);
 
@@ -41,6 +36,6 @@ fetchData(async (params) => {
   ).data;
 });
 // /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
-// meta title section.topic
+useMeta({ title: "section.topic" });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

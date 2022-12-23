@@ -18,10 +18,6 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-// @vuese
-// @group Core/Global
-</script>
 <style lang="scss" scoped>
 .row {
   padding: 0 var(--gap);

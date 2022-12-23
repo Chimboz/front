@@ -102,9 +102,6 @@ const auth = useAuthStore();
 const user = computed(() => auth.user);
 const route = useRoute();
 
-// @vuese
-// @group BBS/List
-
 defineProps<{
   topic: any;
 }>();

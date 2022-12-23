@@ -4,10 +4,6 @@
     <span class="tooltiptext"><slot name="tooltip"></slot></span>
   </div>
 </template>
-<script setup lang="ts">
-// @vuese
-// @group Core
-</script>
 <style lang="scss" scoped>
 .tooltip {
   position: relative;

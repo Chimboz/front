@@ -65,10 +65,7 @@
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { asset } from "@/utils";
 
-// @vuese
-// @group Core/Global
-
-const props = withDefaults(
+withDefaults(
   defineProps<{
     // A header image, automatically prefixed by `/assets/img/card/header/`
     header?: string;

@@ -58,10 +58,8 @@
 <script setup lang="ts">
 import Cabin from "@/components/blazon/CabinComponent.vue";
 import { reactive } from "vue";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Members/Group
-// Group creation page
 const data = reactive({
   blazon: {
     shape: 0,
@@ -126,7 +124,7 @@ function create() {
   console.log(data, true);
 }
 
-// meta title section.groupedit
+useMeta({ title: "section.groupedit" });
 </script>
 <style lang="scss" scoped>
 .blazon {

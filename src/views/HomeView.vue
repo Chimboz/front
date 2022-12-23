@@ -229,14 +229,12 @@ import RandomNumber from "@/components/core/RandomNumberComponent.vue";
 import Bank from "@/components/BankComponent.vue";
 import Pack from "@/components/PackComponent.vue";
 import { ref } from "vue";
+import { useMeta } from "vue-meta";
 import messageRender from "@/modules/messageRender";
 import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
-// @vuese
-// @group View
-// Home page
 const data: any = ref(undefined);
 const lottery = ref(true);
 const gain = ref(0);
@@ -258,7 +256,7 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   ).data.gain;
 }
 
-// meta title section.home
+useMeta({ title: "section.home" });
 </script>
 <style lang="scss">
 .packs .card-btn {

@@ -82,9 +82,6 @@ import { asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 
-// @vuese
-// @group BBS/Row
-
 const hide = ref(false);
 defineProps<{
   category: any;

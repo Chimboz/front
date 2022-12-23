@@ -20,9 +20,6 @@
   </router-link>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core/Global
-
 defineProps<{
   section: string;
 }>();

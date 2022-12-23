@@ -186,10 +186,7 @@ import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-// @vuese
-// @group View/Games
-// Mazo page
+import { useMeta } from "vue-meta";
 
 const data = ref<any>(undefined);
 
@@ -197,7 +194,7 @@ fetchData(async () => {
   data.value = (await api.get("games/mazo")).data;
 });
 // /api/mazo.json
-// meta title section.mazo
+useMeta({ title: "section.mazo" });
 </script>
 
 <style lang="scss" scoped>

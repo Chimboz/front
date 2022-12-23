@@ -377,9 +377,6 @@ import { ref, type InputHTMLAttributes } from "vue";
 import type { LookCategory } from "@/types/Item";
 import type Emote from "@/types/Emotes";
 
-// @vuese
-// @group Default
-
 const props = defineProps<{
   data: any;
   motto: string;

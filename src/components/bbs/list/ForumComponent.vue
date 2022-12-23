@@ -67,9 +67,6 @@ import Pagination from "../../core/PaginationComponent.vue";
 // const auth = useAuthStore();
 // const user = computed(() => auth.user);
 
-// @vuese
-// @group BBS/List
-
 defineProps<{
   forum: any;
 }>();

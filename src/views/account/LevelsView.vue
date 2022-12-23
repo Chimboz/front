@@ -52,9 +52,7 @@
 import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
 import { ref } from "vue";
-// @vuese
-// @group View/Account
-// Levels page
+import { useMeta } from "vue-meta";
 
 const data: any = ref(undefined);
 const selected = ref(0);
@@ -65,7 +63,7 @@ fetchData(async () => {
   data.value = (await api.get("http://localhost:5173/api/levels.json")).data;
 });
 // /api/levels.json
-// meta title level
+useMeta({ title: "section.levels" });
 </script>
 
 <style lang="scss" scoped>

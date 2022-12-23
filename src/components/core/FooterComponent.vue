@@ -67,11 +67,6 @@
     /></a>
   </footer>
 </template>
-<script setup lang="ts">
-// @vuese
-// @group Core
-</script>
-
 <style lang="scss" scoped>
 footer {
   margin-top: var(--gap);

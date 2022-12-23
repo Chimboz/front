@@ -19,7 +19,3 @@
   </GlobalCard>
   <br />
 </template>
-<script setup lang="ts">
-// @vuese
-// @group Default
-</script>

@@ -144,10 +144,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core/Global
-// Main component for showing avatars. Handle movements and emotes too.
-
 // TODO refacto
 
 import type { ImgHTMLAttributes } from "vue";

@@ -58,13 +58,10 @@
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
+import { useMeta } from "vue-meta";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-
-// @vuese
-// @group View/Account
-// Capitalization page
 
 const pseudo = ref(user.value!.pseudo.slice());
 
@@ -80,7 +77,7 @@ function submit() {
   console.log(`Envoyé ${pseudo.value}!`);
 }
 
-// meta title section.capitalization
+useMeta({ title: "section.capitalization" });
 </script>
 
 <style lang="scss" scoped>

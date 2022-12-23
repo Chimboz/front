@@ -168,10 +168,7 @@ import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-// @vuese
-// @group View/Members/Book
-// Book page
+import { useMeta } from "vue-meta";
 
 const data: any = ref(undefined);
 const username = ref("");
@@ -195,7 +192,7 @@ function search() {
   // $router.push(`/book/${id}`);
 }
 // /api/book.json
-// meta title section.popularity
+useMeta({ title: "section.popularity" });
 </script>
 
 <style lang="scss" scoped>

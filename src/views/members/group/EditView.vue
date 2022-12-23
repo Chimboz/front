@@ -290,10 +290,8 @@ import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import Cabin from "@/components/blazon/CabinComponent.vue";
 import { ref } from "vue";
 import { format } from "@/utils/date";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Members/Group
-// Group edition page
 const data = ref<any>(undefined);
 
 function deleteGroup() {
@@ -313,7 +311,7 @@ function focusHandler() {}
 function selectionHandler() {}
 
 // /api/edit.json
-// meta title section.groupedit
+useMeta({ title: "section.groupedit" });
 </script>
 <style lang="scss" scoped>
 .blazon {

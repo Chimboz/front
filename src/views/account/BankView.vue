@@ -108,6 +108,7 @@ import { format } from "@/utils/date";
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
+import { useMeta } from "vue-meta";
 
 Chart.register(
   Tooltip,
@@ -122,10 +123,6 @@ Chart.register(
 );
 
 const auth = useAuthStore();
-
-// @vuese
-// @group View/Account
-// Bank page
 
 const data = ref<any>(undefined);
 
@@ -177,7 +174,7 @@ function bankData() {
   return dataset;
 }
 // /api/bank.json
-// meta title section.bank
+useMeta({ title: "section.bank" });
 </script>
 
 <style lang="scss" scoped>

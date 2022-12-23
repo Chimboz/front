@@ -321,10 +321,7 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-// @vuese
-// @group View/Games
-// Bacteria page
+import { useMeta } from "vue-meta";
 
 const data = ref<any>(undefined);
 
@@ -338,7 +335,7 @@ fetchData(async () => {
 });
 
 // /api/bacteria.json
-// meta title section.bacteria
+useMeta({ title: "section.bacteria" });
 </script>
 
 <style lang="scss" scoped>

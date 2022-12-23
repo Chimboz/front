@@ -29,9 +29,6 @@ const startingPoint = 0;
 // Limiting how far the progress bar will get to before loading is complete
 const endingPoint = 90;
 
-// @vuese
-// @group Core
-
 const isLoading = ref(true); // Once loading is done, start fading away
 const isVisible = ref(false); // Once animate finish, set display: none
 const progress = ref(startingPoint);

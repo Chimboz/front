@@ -22,9 +22,6 @@
 </template>
 
 <script setup lang="ts">
-// @vuese
-// @group Core
-
 withDefaults(
   defineProps<{
     win: number;

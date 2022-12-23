@@ -202,9 +202,6 @@ import { computed } from "vue";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-// @vuese
-// @group Core
-
 const hours = new Date().getHours();
 document.body.className = `h${hours}`;
 </script>

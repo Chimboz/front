@@ -161,13 +161,11 @@ import { fetchData, asset } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
+import { useMeta } from "vue-meta";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-// @vuese
-// @group View/Members/Group
-// Group view page
 const data = ref<any>(undefined);
 
 function join() {
@@ -180,7 +178,7 @@ fetchData(async (params) => {
 });
 
 // /api/group.json
-// meta title section.group
+useMeta({ title: "section.group" });
 </script>
 <style lang="scss" scoped>
 .blazon {

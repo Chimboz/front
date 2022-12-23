@@ -8,8 +8,6 @@
     <svg v-if="id==5" height="67.75" width="69.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><path :fill="primary" d="M66.15 33.25q0 13.05-9.25 22.3T34.55 64.8q-13.05 0-22.3-9.25-9.2-9.25-9.2-22.35 0-13.05 9.2-22.3 9.25-9.2 22.3-9.2 13.1 0 22.35 9.2 9.25 9.25 9.25 22.35z"/><path :fill="secondary" d="M61.45 33.15q-.05 11-7.8 18.8-7.85 7.8-18.85 7.8-11 0-18.8-7.8-7.75-7.8-7.75-18.85 0-11 7.75-18.8 7.8-7.75 18.8-7.75t18.85 7.75q7.75 7.8 7.8 18.85"/></svg>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Blazon
 withDefaults(
   defineProps<{
     id: number;

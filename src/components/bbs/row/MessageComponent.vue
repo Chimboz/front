@@ -105,7 +105,6 @@
     <td colspan="2" style="background: var(--light)"><hr /></td>
   </tr>
 </template>
-
 <script setup lang="ts">
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
@@ -118,9 +117,6 @@ import eventBus from "@/modules/eventBus";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 const route = useRoute();
-
-// @vuese
-// @group BBS/Row
 
 const props = withDefaults(
   defineProps<{

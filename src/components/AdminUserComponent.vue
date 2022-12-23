@@ -242,9 +242,6 @@ import eventBus from "@/modules/eventBus";
 const auth = useAuthStore();
 const user = computed(() => auth.user!);
 
-// @vuese
-// @group Default
-
 const data = ref<any>(undefined);
 
 function action(type: string, params?: object) {

@@ -392,13 +392,10 @@ import api from "@/modules/api";
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
+import { useMeta } from "vue-meta";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-
-// @vuese
-// @group View/Members/Group
-// Groups page
 
 const data = ref<any>(undefined);
 
@@ -406,5 +403,5 @@ fetchData(async () => {
   data.value = (await api.get("groups")).data;
 });
 // /api/groups.json
-// meta title section.groups
+useMeta({ title: "section.groups" });
 </script>

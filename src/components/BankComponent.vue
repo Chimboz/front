@@ -51,9 +51,6 @@ import { onMounted, ref, computed } from "vue";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-// @vuese
-// @group Default
-
 const props = withDefaults(
   defineProps<{
     delay?: number;

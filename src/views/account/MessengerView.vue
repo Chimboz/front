@@ -85,11 +85,9 @@ import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
-// @vuese
-// @group View/Account
-// Messenger page
 const data = ref<any>(undefined);
 
 fetchData(async () => {
@@ -99,7 +97,7 @@ fetchData(async () => {
 });
 
 // /api/messenger.json
-// meta title section.messenger
+useMeta({ title: "section.messenger" });
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

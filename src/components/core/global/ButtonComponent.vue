@@ -18,10 +18,6 @@
 import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import { asset } from "@/utils";
 
-// @vuese
-// @group Core/Global
-// A default button
-
 defineProps<{
   icon?: string;
   color?: "red" | "green" | "yellow" | "orange";

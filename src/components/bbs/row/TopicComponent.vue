@@ -69,16 +69,12 @@
     </tr>
   </tbody>
 </template>
-
 <script setup lang="ts">
 import Pagination from "@/components/core/PaginationComponent.vue";
 import { asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 
-// @vuese
-// @group BBS/Row
-
-const props = withDefaults(
+withDefaults(
   defineProps<{
     topic: any;
     separator: boolean;

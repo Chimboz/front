@@ -234,8 +234,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Default
 import useAuthStore from "@/stores/auth";
 import { onMounted, ref } from "vue";
 

@@ -82,9 +82,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core
-
 import api from "@/modules/api";
 import eventBus from "@/modules/eventBus";
 import { ref } from "vue";

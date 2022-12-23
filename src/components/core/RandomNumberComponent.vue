@@ -13,8 +13,6 @@
 </template>
 
 <script setup lang="ts">
-// @vuese
-// @group Core
 import { asset, randomInt } from "@/utils";
 import { onMounted, ref } from "vue";
 

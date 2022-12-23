@@ -59,10 +59,7 @@ import BBSList from "@/components/bbs/list/BBSComponent.vue";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
-
-// @vuese
-// @group View/Community/BBS
-// BBS page
+import { useMeta } from "vue-meta";
 
 const data: any = ref(undefined);
 
@@ -71,7 +68,7 @@ fetchData(async () => {
 });
 
 // /api/bbs.json
-// meta title section.bbs
+useMeta({ title: "section.bbs" });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

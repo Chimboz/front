@@ -11,9 +11,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core/Global/Link
-
 defineProps<{
   user: any;
   separator?: boolean;

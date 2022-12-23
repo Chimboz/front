@@ -405,6 +405,7 @@ import {
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
+import { useMeta } from "vue-meta";
 import { RouterLink } from "vue-router";
 
 Chart.register(
@@ -417,10 +418,6 @@ Chart.register(
   CategoryScale,
   LinearScale
 );
-
-// @vuese
-// @group View/Account
-// Account page
 
 const data = ref<any>(undefined);
 
@@ -462,7 +459,7 @@ fetchData(async () => {
 });
 
 // /api/account.json
-// meta title section.account
+useMeta({ title: "section.account" });
 </script>
 <style lang="scss">
 .games .card {

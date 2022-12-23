@@ -8,9 +8,6 @@
   >
 </template>
 <script setup lang="ts">
-// @vuese
-// @group BBS
-
 const props = withDefaults(
   defineProps<{
     current?: number;

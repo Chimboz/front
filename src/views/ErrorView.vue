@@ -22,9 +22,7 @@
 </template>
 
 <script setup lang="ts">
-// @vuese
-// @group View
-// Error page. You can define an error message using route parameter `message`.
+import { useMeta } from "vue-meta";
 
-// meta title section.error
+useMeta({ title: "section.error" });
 </script>

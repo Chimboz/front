@@ -116,10 +116,7 @@ import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-
-// @vuese
-// @group View/Account
-// Conversation page (view for 1-to-1 messaging)
+import { useMeta } from "vue-meta";
 
 const data: any = ref(undefined);
 const message = ref("");
@@ -141,7 +138,7 @@ fetchData(async () => {
 });
 
 // /api/conversation.json
-// meta title section.conversation
+useMeta({ title: "section.conversation" });
 </script>
 
 <style lang="scss" scoped>

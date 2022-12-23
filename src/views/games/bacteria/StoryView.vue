@@ -245,9 +245,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group View/Games/Bacteria
-// Bacteria's story page
+import { useMeta } from "vue-meta";
 
-// meta title section.bacteriaStory
+useMeta({ title: "section.bacteriaStory" });
 </script>

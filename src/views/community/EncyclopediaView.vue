@@ -156,10 +156,8 @@ import { onBeforeMount, ref } from "vue";
 import { asset } from "@/utils";
 import api from "@/modules/api";
 import { RouterView, RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Community
-// Encyclopedia page
 const data: any = ref(undefined);
 const categories = [
   "body",
@@ -224,7 +222,7 @@ onBeforeMount(async () => {
 });
 
 // /api/encyclopedia/${vm.page}.json
-// meta title section.encyclopedia
+useMeta({ title: "section.encyclopedia" });
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container

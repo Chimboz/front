@@ -91,9 +91,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Default
-
 import { ref } from "vue";
 import { asset } from "@/utils";
 

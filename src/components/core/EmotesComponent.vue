@@ -18,8 +18,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core
 import { asset } from "@/utils";
 import type Emote from "@/types/Emotes";
 

@@ -182,10 +182,8 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Members
-// Members page
 const data: any = ref(undefined);
 
 function search() {
@@ -196,7 +194,7 @@ fetchData(async () => {
   data.value = (await api.get("members")).data;
 });
 
-// meta title section.members
+useMeta({ title: "section.members" });
 </script>
 <style lang="scss" scoped>
 img[src*="spotlight"] {

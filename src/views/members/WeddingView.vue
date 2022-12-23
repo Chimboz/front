@@ -388,10 +388,8 @@ import { fetchData } from "@/utils";
 import { distance, format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 
-// @vuese
-// @group View/Members
-// Wedding page
 const data = ref<any>(undefined);
 
 function search() {
@@ -403,7 +401,7 @@ fetchData(async () => {
 });
 
 // /api/weddings.json
-// meta title section.wedding
+useMeta({ title: "section.wedding" });
 </script>
 
 <style lang="scss" scoped>

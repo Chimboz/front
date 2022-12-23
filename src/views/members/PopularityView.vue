@@ -429,13 +429,11 @@ import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-// @vuese
-// @group View/Members
-// Popularity page
 const data = ref<any>(undefined);
 
 function vote() {
@@ -451,7 +449,7 @@ fetchData(async () => {
   data.value.stats.yesterday = data.value.stats.today;
 });
 
-// meta title section.popularity
+useMeta({ title: "section.popularity" });
 </script>
 
 <style lang="scss" scoped>

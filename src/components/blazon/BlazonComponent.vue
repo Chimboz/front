@@ -17,9 +17,6 @@ import Reflection from "./ReflectionComponent.vue";
 import Top from "./TopComponent.vue";
 import Bot from "./BotComponent.vue";
 
-// @vuese
-// @group Blazon
-
 withDefaults(
   defineProps<{
     primary: string;

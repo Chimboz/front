@@ -68,12 +68,10 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group View/Account
-// Notsmart page
+import { useMeta } from "vue-meta";
 
 function changePassword() {
   console.log("Change password");
 }
-// meta title section.notsmart
+useMeta({ title: "section.notsmart" });
 </script>

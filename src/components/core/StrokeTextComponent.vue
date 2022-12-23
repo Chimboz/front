@@ -17,9 +17,6 @@
   </svg>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core
-
 defineProps<{
   justified?: boolean;
 }>();

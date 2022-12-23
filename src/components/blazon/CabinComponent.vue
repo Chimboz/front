@@ -164,9 +164,6 @@ import { ref } from "vue";
 import { asset } from "@/utils";
 import type { BlazonCategory } from "@/types/Item";
 
-// @vuese
-// @group Blazon
-
 defineProps<{
   data: any;
 }>();

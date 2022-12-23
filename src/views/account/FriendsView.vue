@@ -137,11 +137,8 @@ import api from "@/modules/api";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
+import { useMeta } from "vue-meta";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
-
-// @vuese
-// @group View/Account
-// Friends page
 
 const data = ref<any>(undefined);
 
@@ -190,7 +187,7 @@ fetchData(async () => {
 });
 
 // /api/friends.json
-// meta title section.friends
+useMeta({ title: "section.friends" });
 </script>
 
 <style lang="scss" scoped>

@@ -61,9 +61,6 @@ import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
 import { ref } from "vue";
 
-// @vuese
-// @group Default
-
 const data = ref<any>(undefined);
 
 fetchData(async (params) => {

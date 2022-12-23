@@ -4,7 +4,7 @@
     :style="{ maxHeight: maxHeight + 'px' }"
     @scroll.passive="onScroll"
   >
-    <slot></slot>
+    <slot />
     <div v-show="isLoading" class="spinner-loading">
       <img
         src="@/assets/img/loading.svg"
@@ -19,10 +19,6 @@
 </template>
 
 <script setup lang="ts">
-// @vuese
-// @group Core
-// Generic scrollable container for infinite scroll
-
 import api from "@/modules/api";
 import { ref } from "vue";
 

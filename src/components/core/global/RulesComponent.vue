@@ -24,9 +24,6 @@
   </GlobalCard>
 </template>
 <script setup lang="ts">
-// @vuese
-// @group Core/Global
-
 import { ref } from "vue";
 
 const rule = ref(0);
