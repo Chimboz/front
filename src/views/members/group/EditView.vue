@@ -291,6 +291,8 @@ import Cabin from "@/components/blazon/CabinComponent.vue";
 import { ref } from "vue";
 import { format } from "@/utils/date";
 import { useMeta } from "vue-meta";
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 
 const data = ref<any>(undefined);
 
@@ -309,6 +311,14 @@ function rejectDemand(id: number) {
 
 function focusHandler() {}
 function selectionHandler() {}
+
+fetchData(async (params) => {
+  // data.value = (await api.get(`groups/edit/${params.id}`)).data;
+  // TODO remove
+  data.value = (
+    await api.get("http://localhost:5173/api/groups_edit.json")
+  ).data;
+});
 
 // /api/edit.json
 useMeta({ title: "section.groupedit" });

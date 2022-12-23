@@ -362,8 +362,11 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from "@/modules/api";
+import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { useMeta } from "vue-meta";
+import { RouterLink } from "vue-router";
 
 const data = ref<any>(undefined);
 
@@ -373,6 +376,14 @@ function cancel(id: number) {
 function leave(id: number) {
   console.log(`Quitté ${id}`);
 }
-// /api/manage.json
+
+fetchData(async () => {
+  // data.value = (await api.get("groups/manage")).data;
+  // TODO remove
+  data.value = (
+    await api.get("http://localhost:5173/api/groups_manage.json")
+  ).data;
+});
+
 useMeta({ title: "section.groups" });
 </script>
