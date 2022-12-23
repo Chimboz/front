@@ -9,7 +9,7 @@
     />
     <meta
       name="keywords"
-      content="chimboz chapatiz tchat chat flash godot online en ligne amis friends avatar mariage wedding groups groupes games jeux bacteria patojdur wide wade mazo"
+      content="chimboz chapatiz muniz tchat chat flash godot online en ligne amis friends avatar mariage wedding groups groupes games jeux bacteria patojdur wide wade mazo chimbo chimbi chimbette chapato chapata chapati forum"
     />
     <meta
       name="description"
@@ -26,16 +26,117 @@
     </script>
   </head>
   <body>
-    <noscript><!--TODO: design noscript-->
-      <strong
-        >We're sorry but Chimboz doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      >
+    <noscript>
+      <div class="modal">
+        <div class="modal-content">
+          <img
+            v-if="type == 'error'"
+            draggable="false"
+            width="46"
+            height="46"
+            src="failure.svg"
+            alt="Failure"
+          />
+          <p>
+            We're sorry but <strong>Chimboz</strong> doesn't work properly without JavaScript
+            enabled. Please enable it to continue.
+          </p>
+          <a href="/">
+            <button
+              type="button"
+              class="btn-pink ok"
+            >
+              <img
+                draggable="false"
+                src="ok.svg"
+                alt="Ok"
+              />
+            </button>
+          </a>
+        </div>
+      </div>
+      <style>
+        body {
+          background-color: #6090be;
+          font-family: Helvetica, "Helvetica Fallback", sans-serif;
+          font-size: 12px;
+        }
+
+        p, button {
+          margin: 0;
+          padding: 0;
+          background: none;
+        }
+
+        .modal {
+          position: fixed;
+          z-index: 3;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: #0006;
+        }
+
+        .modal-content {
+          background-color: #69c;
+          position: relative;
+          margin: 15% auto;
+          padding: 20px;
+          color: #fff;
+          border: 2px solid;
+          border-color: #7fbcff #184672 #184672 #7fbcff;
+          border-radius: calc(var(--border-radius) / 2);
+          width: 362px;
+          height: 103px;
+        }
+
+        .modal-content > img {
+          margin-right: 12px;
+          float: left;
+        }
+
+        .btn-pink::before {
+          content: "";
+          position: absolute;
+          width: 23.452px;
+          height: 23.45px;
+          background-image: url(bg_pink.svg);
+          background-position: center;
+          background-size: cover;
+        }
+
+        .btn-pink img {
+          position: relative;
+          height: 23.45px;
+        }
+
+        .btn-pink:active::before {
+          transform: rotate(180deg);
+        }
+
+        .btn-pink {
+          border-radius: 100%;
+          border: 2px solid transparent;
+          width: 27.452px;
+          height: 27.45px;
+        }
+
+        .btn-pink.active {
+          border: 2px solid var(--light);
+        }
+
+        .ok {
+          position: absolute;
+          bottom: 4px;
+          right: 4px;
+        }
+      </style>
     </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
     <div id="loadtime"></div>
-    <br />
     <script type="text/javascript">
       window.addEventListener("load", function () {
         const $img = document.createElement("img");
