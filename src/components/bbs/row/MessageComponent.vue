@@ -73,7 +73,12 @@
             "
             type="button"
             class="btn-action"
-            @click.prevent="eventBus.emit('edit', message.content)"
+            @click.prevent="
+              eventBus.emit('edit', {
+                id: message.id,
+                content: message.content,
+              })
+            "
           >
             <img
               src="@/assets/img/bbs/icon/pen.svg"

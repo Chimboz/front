@@ -4,7 +4,7 @@ const eventBus = mitt<{
   asyncComponentLoading: void;
   asyncComponentLoaded: void;
   quote: string;
-  edit: string;
+  edit: { id: number; content: string };
   error: string;
   success: string;
   failure: string;

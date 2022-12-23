@@ -17,8 +17,8 @@
           date: Date.now(),
           id: 'reply',
           new: true,
-          signature: signature,
-          title: title,
+          signature: true,
+          title,
         }"
         :separator="false"
       />
@@ -252,7 +252,10 @@ import useAuthStore from "@/stores/auth";
 import eventBus from "@/modules/eventBus";
 import { computed, ref, type SelectHTMLAttributes } from "vue";
 import { useI18n } from "vue-i18n";
+import api from "@/modules/api";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
 const auth = useAuthStore();
 const user: any = computed(() => ({
   ...auth.user,
@@ -274,12 +277,12 @@ const textarea = ref<null | HTMLTextAreaElement>(null);
 const message = ref("");
 const title = ref("");
 const preview = ref("");
-const signature = ref(true);
 const selectionRange = ref([0, 0]);
 const mode = ref("post");
 const { t } = useI18n();
+let id = 0;
 
-defineProps<{
+const props = defineProps<{
   isTopic?: boolean;
 }>();
 
@@ -290,15 +293,42 @@ eventBus.on("quote", (quotedMessage) => {
   if (textarea.value!) textarea.value!.focus();
 });
 eventBus.on("edit", (editedMessage) => {
-  message.value = editedMessage as string;
+  message.value = editedMessage.content;
+  id = editedMessage.id;
   mode.value = "edit";
   if (textarea.value!) textarea.value!.focus();
 });
 
 function submit() {
-  if (mode.value === "post") {
-    console.log("Envoyé!");
-  } else console.log("Edité!");
+  if (props.isTopic)
+    api.post("bbs/topic", {
+      bbcode: false,
+      signature: true,
+      edit: 0,
+      message: message.value,
+      param: route.params.id.toString(),
+      title: title.value,
+    });
+  else {
+    if (mode.value === "post")
+      api.post("bbs/post", {
+        bbcode: false,
+        signature: true,
+        edit: 0,
+        message: message.value,
+        param: route.params.topic.toString(),
+        title: "",
+      });
+    if (mode.value === "edit")
+      api.post("bbs/edit", {
+        bbcode: false,
+        signature: true,
+        edit: id,
+        message: message.value,
+        param: route.params.topic.toString(),
+        title: "",
+      });
+  }
   message.value = "";
 }
 

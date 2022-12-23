@@ -249,7 +249,7 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   lottery.value = false;
   currentTarget.disabled = true;
 
-  // data.value = (await api.get("lottery")).data;
+  // data.value = (await api.get("randomppt")).data;
   // TODO remove
   gain.value = (
     await api.get("http://localhost:5173/api/lottery.json")
