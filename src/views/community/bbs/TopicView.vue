@@ -10,7 +10,9 @@
     /></template>
     <TopicList v-if="data" :topic="data" />
     <br />
-    <MarkdownInput v-if="user && (!data.locked || +user.user_level > 3)" />
+    <MarkdownInput
+      v-if="user && data && (!data.locked || +user.user_level > 3)"
+    />
   </GlobalContainer>
 </template>
 
