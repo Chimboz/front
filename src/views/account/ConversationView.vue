@@ -115,14 +115,14 @@ import messageRender from "@/modules/messageRender";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 import { useMeta } from "vue-meta";
 
 const data = ref<any>(undefined);
 const message = ref("");
 
 function send() {
-  console.log(`Envoyé ${message.value}`);
+  api.post("mi/reply", { conv: useRoute().params.id, message: message.value });
   data.value.messages.push({
     you: true,
     content: message,

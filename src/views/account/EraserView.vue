@@ -78,7 +78,7 @@ import { useMeta } from "vue-meta";
 const pseudo = ref("");
 
 function submit() {
-  console.log(`Envoyé ${pseudo.value}!`);
+  api.post("account/name", { pseudo: pseudo.value });
 }
 async function generatePseudo() {
   pseudo.value = (

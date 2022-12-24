@@ -109,7 +109,7 @@
       <router-link
         v-for="account in data.shared"
         :key="account.id"
-        :to="account.id.toString()"
+        :to="account.id"
         >{{ account.name }}<br /></router-link
       ><br />
       <div class="header fullwidth">

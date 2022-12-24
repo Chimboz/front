@@ -307,7 +307,7 @@ async function submit() {
       signature: true,
       edit: 0,
       message: message.value,
-      param: route.params.id.toString(),
+      param: route.params.id,
       title: title.value,
     });
     router.push(`/topic/${route.params.id}/${data.id}`);
@@ -318,7 +318,7 @@ async function submit() {
         signature: true,
         edit: 0,
         message: message.value,
-        param: route.params.topic.toString(),
+        param: route.params.topic,
         title: "",
       });
       router.push(
@@ -331,7 +331,7 @@ async function submit() {
         signature: true,
         edit: id,
         message: message.value,
-        param: route.params.topic.toString(),
+        param: route.params.topic,
         title: "",
       });
       router.push(

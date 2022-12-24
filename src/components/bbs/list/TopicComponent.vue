@@ -48,13 +48,35 @@
       </th>
     </tr>
   </table>
+  <br v-if="movePanel" />
+  <GlobalCard v-if="movePanel">
+    <template #header> Déplacer le sujet </template>
+    <form @submit.prevent="move">
+      <select v-model="targetMove" aria-label="Forum">
+        <optgroup
+          v-for="category of categories"
+          :key="category"
+          :label="category.category"
+        >
+          <option
+            v-for="forum of category.bbs"
+            :key="forum.id"
+            :value="forum.id"
+          >
+            {{ forum.name }}
+          </option>
+        </optgroup></select
+      >&nbsp;
+      <button type="submit" class="btn-action">go</button>
+    </form>
+  </GlobalCard>
   <br />
   <div v-if="user" style="text-align: end">
     <button
       v-if="+user.user_level > 3"
       class="btn-action"
       type="button"
-      @click.prevent="move"
+      @click.prevent="openMovePanel"
     >
       <img
         src="@/assets/img/bbs/icon/arrow.svg"
@@ -94,26 +116,40 @@
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import api from "@/modules/api";
 import Message from "../row/MessageComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 const route = useRoute();
+const categories = ref<any[]>([]);
+const movePanel = ref(false);
+const targetMove = ref(1);
 
 defineProps<{
   topic: any;
 }>();
 
 function lock() {
-  console.log(`Lock ${route.params.topic}`);
+  api.get(`bbs/powers/lock/${route.params.topic}`);
 }
 function deleteTopic() {
-  console.log(`Delete ${route.params.topic}`);
+  api.post("bbs/deletetopic", { topic: route.params.topic });
 }
+async function openMovePanel() {
+  movePanel.value = true;
+  categories.value = (await api.get("bbs")).data;
+}
+
 function move() {
-  console.log(`Move ${route.params.topic}`);
+  api.post("bbs/powers/move", {
+    forum: route.params.forum,
+    go: targetMove.value,
+    topic: route.params.topic,
+  });
+  movePanel.value = false;
 }
 </script>
 <style lang="scss" scoped>

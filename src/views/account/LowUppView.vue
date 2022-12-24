@@ -56,6 +56,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from "@/modules/api";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import { useMeta } from "vue-meta";
@@ -74,7 +75,7 @@ function changeCase(index: number) {
     pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1);
 }
 function submit() {
-  console.log(`Envoyé ${pseudo.value}!`);
+  api.post("account/majmin", { pseudo: pseudo.value });
 }
 
 useMeta({ title: "section.capitalization" });

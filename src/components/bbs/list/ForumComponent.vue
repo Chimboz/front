@@ -72,6 +72,6 @@ defineProps<{
 }>();
 
 function lock(id: string) {
-  console.log(`verrouille${id}`);
+  // TODO api forum lock
 }
 </script>

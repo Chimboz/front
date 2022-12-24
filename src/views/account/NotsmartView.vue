@@ -22,6 +22,7 @@
       <br />
       <form @submit.prevent="changePassword">
         <input
+          v-model="currentPassword"
           required
           name="password"
           type="password"
@@ -31,6 +32,7 @@
           class="btn-md"
         />
         <input
+          v-model="newPassword"
           required
           name="password"
           type="password"
@@ -39,6 +41,7 @@
           class="btn-md"
         />
         <input
+          v-model="confirmPassword"
           required
           name="password_confirm"
           type="password"
@@ -68,10 +71,20 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
+import api from "@/modules/api";
+import { ref } from "vue";
 import { useMeta } from "vue-meta";
 
+const currentPassword = ref("");
+const newPassword = ref("");
+const confirmPassword = ref("");
+
 function changePassword() {
-  console.log("Change password");
+  api.post("account/password", {
+    pass: currentPassword.value,
+    new: newPassword.value,
+    confirm: confirmPassword.value,
+  });
 }
 useMeta({ title: "section.notsmart" });
 </script>

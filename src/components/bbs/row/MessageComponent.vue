@@ -118,6 +118,7 @@ import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { onMounted, computed } from "vue";
 import eventBus from "@/modules/eventBus";
+import api from "@/modules/api";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -139,7 +140,7 @@ onMounted(() => {
 });
 
 function deleteMessage() {
-  console.log(`delete ${props.message.id}`);
+  api.post("bbs/delete", { post: props.message.id, topic: route.params.topic });
 }
 </script>
 <style lang="scss">
