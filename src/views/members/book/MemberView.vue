@@ -110,8 +110,8 @@
           </p>
           <br />
           <div class="icon flex centered col">
-            <div v-if="data.gender == 'male'">Chimbo</div>
-            <div v-else-if="data.gender == 'female'">Chimbette</div>
+            <div v-if="data.gender === 'male'">Chimbo</div>
+            <div v-else-if="data.gender === 'female'">Chimbette</div>
             <div v-else>Chimbi</div>
             <!--TODO svg pas bien size-->
             <img
@@ -164,7 +164,7 @@
         />
         <span
           >Classement : <b>{{ data.bacteria.rank }}</b
-          ><sup v-if="data.bacteria.rank == 1">er</sup><sup v-else>ème</sup
+          ><sup v-if="data.bacteria.rank === 1">er</sup><sup v-else>ème</sup
           ><br /><b>{{
             data.bacteria.win + data.bacteria.lose + data.bacteria.draw
           }}</b>
@@ -187,14 +187,14 @@
         />
         <span
           >Classement : <b>{{ data.patojdur.rank }}</b
-          ><sup v-if="data.patojdur.rank == 1">er</sup
+          ><sup v-if="data.patojdur.rank === 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.patojdur.score }}</b> points<br />Aujourd'hui
           <b>{{ data.patojdur.today.rank }}</b
-          ><sup v-if="data.patojdur.today.rank == 1">er</sup
+          ><sup v-if="data.patojdur.today.rank === 1">er</sup
           ><sup v-else>ème</sup> avec <b>{{ data.patojdur.today.score }}</b>
           <br />Hier <b>{{ data.patojdur.yesterday.rank }}</b
-          ><sup v-if="data.patojdur.yesterday.rank == 1">er</sup
+          ><sup v-if="data.patojdur.yesterday.rank === 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.patojdur.yesterday.score }}</b></span
         >
@@ -210,7 +210,7 @@
         />
         <span
           >Classement : <b>{{ data.mazo.rank }}</b
-          ><sup v-if="data.mazo.rank == 1">er</sup><sup v-else>ème</sup> avec
+          ><sup v-if="data.mazo.rank === 1">er</sup><sup v-else>ème</sup> avec
           <b>{{ data.mazo.score }}</b> points</span
         >
       </div>
@@ -225,15 +225,15 @@
         />
         <span
           >Classement : <b>{{ data.popularity.rank }}</b
-          ><sup v-if="data.popularity.rank == 1">er</sup
+          ><sup v-if="data.popularity.rank === 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.popularity.score }}</b> points<br />Aujourd'hui
           <b>{{ data.popularity.today.rank }}</b
-          ><sup v-if="data.popularity.today.rank == 1">er</sup
+          ><sup v-if="data.popularity.today.rank === 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.popularity.today.score }}</b> points<br />Hier
           <b>{{ data.popularity.yesterday.rank }}</b
-          ><sup v-if="data.popularity.yesterday.rank == 1">er</sup
+          ><sup v-if="data.popularity.yesterday.rank === 1">er</sup
           ><sup v-else>ème</sup> avec
           <b>{{ data.popularity.yesterday.score }}</b> points</span
         >

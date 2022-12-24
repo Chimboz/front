@@ -60,7 +60,7 @@
                 :class="{ active: checked.includes(category) }"
                 class="item pointer"
                 @click="
-                  checked.includes(category) && checked.length == 1
+                  checked.includes(category) && checked.length === 1
                     ? (checked = [
                         'shape',
                         'top',
@@ -106,14 +106,14 @@
                   type="button"
                   class="item"
                   :class="{
-                    active: data.blazon[name] == item,
+                    active: data.blazon[name] === item,
                   }"
                   @click="emit('updateItem', name, item)"
                   @mouseover="info = name + ' ' + item"
                   @focus="info = name + ' ' + item"
                 >
                   <svg
-                    v-if="name == 'primary'"
+                    v-if="name === 'primary'"
                     viewBox="0 0 69.2 67.75"
                     mlns="http://www.w3.org/2000/svg"
                   >
@@ -124,7 +124,7 @@
                     />
                   </svg>
                   <svg
-                    v-else-if="name == 'secondary'"
+                    v-else-if="name === 'secondary'"
                     viewBox="0 0 69.2 67.75"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -134,7 +134,7 @@
                     />
                   </svg>
                   <img
-                    v-else-if="item == -1"
+                    v-else-if="item === -1"
                     draggable="false"
                     alt="No item"
                     src="@/assets/img/icon/cross.svg"

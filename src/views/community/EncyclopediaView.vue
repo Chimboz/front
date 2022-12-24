@@ -37,7 +37,7 @@
                 :class="[
                   item.type,
                   item.rarity,
-                  $route.params.id == item.id ? 'active' : false,
+                  $route.params.id === item.id ? 'active' : false,
                 ]"
                 :aria-label="item.name"
               >
@@ -86,7 +86,7 @@
             class="item pointer filter"
             @click="
               checkedCategories.includes(category) &&
-              checkedCategories.length == 1
+              checkedCategories.length === 1
                 ? (checkedCategories = categories)
                 : (checkedCategories = [`${category}`])
             "
@@ -127,7 +127,7 @@
             ]"
             class="item pointer filter"
             @click="
-              checkedRarities.includes(rarity) && checkedRarities.length == 1
+              checkedRarities.includes(rarity) && checkedRarities.length === 1
                 ? (checkedRarities = rarities)
                 : (checkedRarities = [`${rarity}`])
             "

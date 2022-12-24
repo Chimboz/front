@@ -6,37 +6,37 @@
           <button
             type="button"
             class="home"
-            :class="{ active: demo == 0 }"
+            :class="{ active: demo === 0 }"
             @click="demo = 0"
           ></button>
           <button
             type="button"
             class="mode"
-            :class="{ active: demo == 1 }"
+            :class="{ active: demo === 1 }"
             @click="demo = 1"
           ></button>
           <button
             type="button"
             class="tchat"
-            :class="{ active: demo == 2 }"
+            :class="{ active: demo === 2 }"
             @click="demo = 2"
           ></button>
           <button
             type="button"
             class="wedding"
-            :class="{ active: demo == 3 }"
+            :class="{ active: demo === 3 }"
             @click="demo = 3"
           ></button>
           <button
             type="button"
             class="group"
-            :class="{ active: demo == 4 }"
+            :class="{ active: demo === 4 }"
             @click="demo = 4"
           ></button>
           <button
             type="button"
             class="bacteria"
-            :class="{ active: demo == 5 }"
+            :class="{ active: demo === 5 }"
             @click="demo = 5"
           ></button>
           <button class="empty" type="button"></button>
@@ -46,7 +46,7 @@
           <button class="empty" type="button"></button>
         </div>
         <div class="demo-picture relative">
-          <section :class="{ display: demo == 0 }">
+          <section :class="{ display: demo === 0 }">
             <div class="demo-info">{{ $t("demo.info0") }}</div>
             <img
               :alt="$t('demo.info0')"
@@ -55,7 +55,7 @@
               @contextmenu.prevent
             />
           </section>
-          <section :class="{ display: demo == 1 }">
+          <section :class="{ display: demo === 1 }">
             <div class="demo-info">{{ $t("demo.info1") }}</div>
             <img
               :alt="$t('demo.info1')"
@@ -64,7 +64,7 @@
               @contextmenu.prevent
             />
           </section>
-          <section :class="{ display: demo == 2 }">
+          <section :class="{ display: demo === 2 }">
             <div class="demo-info">{{ $t("demo.info2") }}</div>
             <img
               :alt="$t('demo.info2')"
@@ -73,7 +73,7 @@
               @contextmenu.prevent
             />
           </section>
-          <section :class="{ display: demo == 3 }">
+          <section :class="{ display: demo === 3 }">
             <div class="demo-info">{{ $t("demo.info3") }}</div>
             <img
               :alt="$t('demo.info3')"
@@ -82,7 +82,7 @@
               @contextmenu.prevent
             />
           </section>
-          <section :class="{ display: demo == 4 }">
+          <section :class="{ display: demo === 4 }">
             <div class="demo-info">{{ $t("demo.info4") }}</div>
             <img
               :alt="$t('demo.info4')"
@@ -91,7 +91,7 @@
               @contextmenu.prevent
             />
           </section>
-          <section :class="{ display: demo == 5 }">
+          <section :class="{ display: demo === 5 }">
             <div class="demo-info">{{ $t("demo.info5") }}</div>
             <img
               :alt="$t('demo.info5')"
@@ -102,7 +102,7 @@
           </section>
         </div>
       </div>
-      <form v-if="section == 0" autocomplete="on">
+      <form v-if="section === 0" autocomplete="on">
         <br />
         <input
           required
@@ -161,7 +161,7 @@
         </div>
       </form>
       <form
-        v-if="section == 1"
+        v-if="section === 1"
         autocomplete="on"
         @submit.prevent="
           auth.login(username, password);

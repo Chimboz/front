@@ -8,7 +8,7 @@ const eventBus = mitt<{
   error: string;
   success: string;
   failure: string;
-  confirmation: { message: string; api: string; params?: object };
+  confirmation: { message: string; api: string; payload?: object };
 }>();
 
 export default eventBus;

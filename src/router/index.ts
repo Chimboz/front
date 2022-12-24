@@ -304,7 +304,7 @@ router.beforeEach((to, from, next) => {
     "Group Edit",
     "Group Create"
   ];
-  if (to.path == "/tchat")
+  if (to.path === "/tchat")
     router.push({ name: "Error", params: { message: "error.tchat" } });
   if (store.getters["auth/authenticated"]) {
     if (guestOnly.includes(to.name))

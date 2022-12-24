@@ -96,7 +96,7 @@
                 style="padding: 0"
                 @change="(event) => formatColor((event.target as SelectHTMLAttributes).value)"
               >
-                <option style="color: #444444" value="#444444">Couleur</option>
+                <option value="">Couleur</option>
                 <option style="color: #cecece" value="#CECECE">
                   Gris triste
                 </option>
@@ -207,7 +207,7 @@
                 @click.prevent="preview = message"
                 >Prévisualiser</GlobalButton
               >
-              <GlobalButton v-if="mode == 'post'" type="submit" color="green"
+              <GlobalButton v-if="mode === 'post'" type="submit" color="green"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -219,7 +219,7 @@
                 >Envoyer</GlobalButton
               >
               <GlobalButton
-                v-if="mode == 'edit'"
+                v-if="mode === 'edit'"
                 type="button"
                 color="red"
                 aria-label="Cancel"
@@ -227,7 +227,7 @@
               >
                 Annuler</GlobalButton
               >
-              <GlobalButton v-if="mode == 'edit'" type="submit" color="green"
+              <GlobalButton v-if="mode === 'edit'" type="submit" color="green"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -412,14 +412,16 @@ function formatMultiline(pattern: string) {
   focusHandler();
 }
 function formatColor(hex: string) {
-  message.value = `${message.value.substring(
-    0,
-    selectionRange.value[0]
-  )}<i style="color:${hex}">${message.value.substring(
-    selectionRange.value[0],
-    selectionRange.value[1]
-  )}</i>${message.value.substring(selectionRange.value[1])}`;
-  focusHandler();
+  if (hex) {
+    message.value = `${message.value.substring(
+      0,
+      selectionRange.value[0]
+    )}<i style="color:${hex}">${message.value.substring(
+      selectionRange.value[0],
+      selectionRange.value[1]
+    )}</i>${message.value.substring(selectionRange.value[1])}`;
+    focusHandler();
+  }
 }
 </script>
 <style lang="scss" scoped>

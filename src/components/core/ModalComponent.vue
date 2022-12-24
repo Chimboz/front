@@ -2,7 +2,7 @@
   <div v-if="isVisible" class="modal">
     <div class="modal-content">
       <img
-        v-if="type == 'error'"
+        v-if="type === 'error'"
         draggable="false"
         width="46"
         height="35"
@@ -11,7 +11,7 @@
         @contextmenu.prevent
       />
       <img
-        v-if="type == 'success'"
+        v-if="type === 'success'"
         draggable="false"
         width="46"
         height="46"
@@ -20,7 +20,7 @@
         @contextmenu.prevent
       />
       <img
-        v-if="type == 'failure'"
+        v-if="type === 'failure'"
         draggable="false"
         width="46"
         height="46"
@@ -29,7 +29,7 @@
         @contextmenu.prevent
       />
       <img
-        v-if="type == 'confirmation'"
+        v-if="type === 'confirmation'"
         draggable="false"
         width="46"
         height="42"
@@ -39,7 +39,7 @@
       />
       <p>{{ $t(message) }}</p>
       <button
-        v-if="type == 'confirmation'"
+        v-if="type === 'confirmation'"
         type="button"
         class="btn-pink ok"
         style="filter: hue-rotate(180deg)"
@@ -66,7 +66,7 @@
         />
       </button>
       <button
-        v-if="type == 'confirmation'"
+        v-if="type === 'confirmation'"
         type="button"
         class="btn-pink ko"
         @click="isVisible = false"
@@ -89,6 +89,7 @@ import { ref } from "vue";
 const isVisible = ref(false);
 const message = ref("error.default");
 const type = ref("error");
+const prepare = { api: "", payload: {} };
 
 function notice(modalType: string, modalMessage: string) {
   isVisible.value = true;
@@ -96,11 +97,16 @@ function notice(modalType: string, modalMessage: string) {
   message.value = modalMessage;
 }
 
-async function confirmation(req: any) {
+async function confirmation(req: {
+  message: string;
+  api: string;
+  payload?: object | undefined;
+}) {
   isVisible.value = true;
   type.value = "confirmation";
   message.value = req.message;
-  await api.get(req.callback, req.params);
+  prepare.api = req.api;
+  prepare.payload = req.payload!;
 }
 
 eventBus.on("error", (msg) => notice("error", msg));
@@ -109,12 +115,12 @@ eventBus.on("failure", (msg) => notice("failure", msg));
 eventBus.on("confirmation", (req) => confirmation(req));
 
 async function request() {
-  /* const req = await api.post(callback, params);
+  const req = await api.post(prepare.api, prepare.payload);
   if (req.data.success) {
-    success({ message: "success.buy" });
+    notice("success", "success.buy");
   } else {
-    failure({ message: "failure.buy" });
-  } */
+    notice("failure", "failure.buy");
+  }
 }
 </script>
 <style lang="scss" scoped>

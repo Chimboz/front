@@ -144,5 +144,6 @@
   "Pseudo": "Pseudo",
   "admin.last": "Registre des dernières sanctions",
   "admin.modal.ban": "Confirmer le bannissement de ce membre ?",
-  "section.levels": "Niveaux"
+  "section.levels": "Niveaux",
+  "confirm.buy": "Confirmer l'achat de ce pack ?"
 }

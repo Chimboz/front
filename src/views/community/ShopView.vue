@@ -61,7 +61,7 @@
             :item2="shown.looks[0].item2"
           />
           <GlobalAvatar
-            v-if="shown.looks.length == 2"
+            v-if="shown.looks.length === 2"
             :avatar="shown.looks[1].avatar"
             :emote="shown.looks[1].emote"
             :hat="shown.looks[1].hat"
@@ -140,10 +140,12 @@ function show(pack: any) {
 }
 function buy() {
   buyAudio.value!.play();
-  console.log(`Acheté ${shown.value.name}`);
   eventBus.emit("confirmation", {
-    message: "success.buy",
-    api: "/api/success.json",
+    message: "confirm.buy",
+    api: "shop/buy",
+    payload: {
+      id: shown.value.id,
+    },
   });
 }
 

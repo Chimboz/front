@@ -52,7 +52,7 @@
   <GlobalCard v-if="movePanel">
     <template #header> Déplacer le sujet </template>
     <form @submit.prevent="move">
-      <select v-model="targetMove" aria-label="Forum">
+      <select v-model="targetMove" aria-label="Forum" class="btn-md">
         <optgroup
           v-for="category of categories"
           :key="category"

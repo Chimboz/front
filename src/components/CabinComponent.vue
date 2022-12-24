@@ -68,7 +68,7 @@
             <button
               type="button"
               class="btn-pink"
-              :class="{ active: data.gender == 'Chimbo' }"
+              :class="{ active: data.gender === 'Chimbo' }"
               @mouseenter="gender = 'Chimbo'"
               @focus="gender = 'Chimbo'"
               @mouseleave="gender = data.gender"
@@ -85,7 +85,7 @@
             ><button
               type="button"
               class="btn-pink"
-              :class="{ active: data.gender == 'Chimbette' }"
+              :class="{ active: data.gender === 'Chimbette' }"
               @mouseenter="gender = 'Chimbette'"
               @focus="gender = 'Chimbette'"
               @mouseleave="gender = data.gender"
@@ -102,7 +102,7 @@
             ><button
               type="button"
               class="btn-pink"
-              :class="{ active: data.gender == 'Chimbi' }"
+              :class="{ active: data.gender === 'Chimbi' }"
               @mouseenter="gender = 'Chimbi'"
               @focus="gender = 'Chimbi'"
               @mouseleave="gender = data.gender"
@@ -261,7 +261,7 @@
                 :class="{ active: checked.includes(category) }"
                 class="item pointer"
                 @click="
-                  checked.includes(category) && checked.length == 1
+                  checked.includes(category) && checked.length === 1
                     ? (checked = [
                         'item0',
                         'hat',
@@ -307,7 +307,7 @@
                   :class="[
                     name,
                     item.rarity,
-                    data.look[name] == item.id ? 'active' : false,
+                    data.look[name] === item.id ? 'active' : false,
                   ]"
                   @click="emit('updateItem', name, item.id)"
                   @mouseover="info = item.name"
@@ -315,10 +315,10 @@
                 >
                   <img
                     v-if="
-                      item.id == 1 ||
-                      item.id == 792 ||
-                      item.id == 868 ||
-                      item.id == 938
+                      item.id === 1 ||
+                      item.id === 792 ||
+                      item.id === 868 ||
+                      item.id === 938
                     "
                     draggable="false"
                     alt="No item"

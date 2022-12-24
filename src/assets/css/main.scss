@@ -64,10 +64,16 @@ body {
     0.7px -0.7px 0 var(--dark-orange), -0.7px 0.7px 0 var(--dark-orange);
 }
 
+// Custom select
+select option:checked {
+  background: var(--pink);
+  color: var(--light);
+}
+
 // Highlight targeted element
 :target {
   background: var(--light-bbs);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 // Default tags

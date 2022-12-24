@@ -1,7 +1,7 @@
 <template>
   <router-link
     v-for="(entry, i) of sideNavEntries.filter(
-      (entry) => entry.section == section
+      (entry) => entry.section === section
     )"
     :key="i"
     :to="entry.url"

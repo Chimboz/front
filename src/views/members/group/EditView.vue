@@ -145,7 +145,7 @@
           type="radio"
           name="status"
           value="open"
-          :checked="data.status == 'open'"
+          :checked="data.status === 'open'"
         /><label for="open"
           ><img
             src="@/assets/img/group/open.png"
@@ -160,7 +160,7 @@
           type="radio"
           name="status"
           value="demand"
-          :checked="data.status == 'demand'"
+          :checked="data.status === 'demand'"
         /><label for="demand"
           ><img
             src="@/assets/img/group/demand.png"
@@ -175,7 +175,7 @@
           type="radio"
           name="status"
           value="close"
-          :checked="data.status == 'close'"
+          :checked="data.status === 'close'"
         /><label for="close"
           ><img
             src="@/assets/img/group/close.png"

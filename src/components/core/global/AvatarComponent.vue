@@ -20,7 +20,7 @@
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
       />
       <img
-        v-if="shoe == 0 && avatar === 6"
+        v-if="shoe === 0 && avatar === 6"
         class="item shoe1"
         alt="Shoe"
         draggable="false"
@@ -29,7 +29,7 @@
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
       />
       <img
-        v-if="shoe == 0 && avatar === 6"
+        v-if="shoe === 0 && avatar === 6"
         class="item shoe2"
         draggable="false"
         alt="Shoe"

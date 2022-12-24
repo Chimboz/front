@@ -4,7 +4,7 @@
     <div class="blazon-body">
       <background :id="shape" :primary="primary" :secondary="secondary" />
       <div v-if="top != -1" class="top"><top :id="top" :color="primary" /></div>
-      <div class="bot" :class="{ lone: top == -1 }">
+      <div class="bot" :class="{ lone: top === -1 }">
         <bot :id="bot" :color="primary" />
       </div>
       <div class="reflection"><reflection :id="shape" /></div>
