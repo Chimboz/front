@@ -253,9 +253,10 @@ import eventBus from "@/modules/eventBus";
 import { computed, ref, type SelectHTMLAttributes } from "vue";
 import { useI18n } from "vue-i18n";
 import api from "@/modules/api";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const router = useRouter();
 const auth = useAuthStore();
 const user: any = computed(() => ({
   ...auth.user,
@@ -299,9 +300,9 @@ eventBus.on("edit", (editedMessage) => {
   if (textarea.value!) textarea.value!.focus();
 });
 
-function submit() {
-  if (props.isTopic)
-    api.post("bbs/topic", {
+async function submit() {
+  if (props.isTopic) {
+    const { data } = await api.post("bbs/topic", {
       bbcode: false,
       signature: true,
       edit: 0,
@@ -309,9 +310,10 @@ function submit() {
       param: route.params.id.toString(),
       title: title.value,
     });
-  else {
-    if (mode.value === "post")
-      api.post("bbs/post", {
+    router.push(`/topic/${route.params.id}/${data.id}`);
+  } else {
+    if (mode.value === "post") {
+      const { data } = await api.post("bbs/post", {
         bbcode: false,
         signature: true,
         edit: 0,
@@ -319,7 +321,11 @@ function submit() {
         param: route.params.topic.toString(),
         title: "",
       });
-    if (mode.value === "edit")
+      router.push(
+        `/topic/${route.params.forum}/${route.params.topic}/${route.params.page}#${data.add.id}`
+      );
+    }
+    if (mode.value === "edit") {
       api.post("bbs/edit", {
         bbcode: false,
         signature: true,
@@ -328,6 +334,10 @@ function submit() {
         param: route.params.topic.toString(),
         title: "",
       });
+      router.push(
+        `/topic/${route.params.forum}/${route.params.topic}/${route.params.page}#${id}`
+      );
+    }
   }
   message.value = "";
 }
