@@ -56,7 +56,7 @@ import { format } from "@/utils/date";
 import { ref } from "vue";
 import { useMeta } from "vue-meta";
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 
 fetchData(async () => {
   data.value = (await api.get("online")).data;

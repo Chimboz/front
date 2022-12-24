@@ -235,7 +235,7 @@ import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 const lottery = ref(true);
 const gain = ref(0);
 

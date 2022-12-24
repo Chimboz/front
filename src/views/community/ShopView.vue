@@ -129,7 +129,7 @@ import { useMeta } from "vue-meta";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 const shown = ref<any>(undefined);
 const buyAudio = ref<null | HTMLAudioElement>(null);
 const clickAudio = ref<null | HTMLAudioElement>(null);

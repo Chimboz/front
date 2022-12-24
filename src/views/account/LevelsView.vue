@@ -54,7 +54,7 @@ import { asset, fetchData } from "@/utils";
 import { ref } from "vue";
 import { useMeta } from "vue-meta";
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 const selected = ref(0);
 
 fetchData(async () => {

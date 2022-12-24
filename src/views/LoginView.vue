@@ -138,7 +138,7 @@ import { ref } from "vue";
 import { useMeta } from "vue-meta";
 import { RouterLink } from "vue-router";
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 
 fetchData(async () => {
   data.value = (await api.get("right")).data;

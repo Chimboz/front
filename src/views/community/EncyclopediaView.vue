@@ -158,7 +158,7 @@ import api from "@/modules/api";
 import { RouterView, RouterLink } from "vue-router";
 import { useMeta } from "vue-meta";
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 const categories = [
   "body",
   "bot",

@@ -279,7 +279,7 @@ import { useMeta } from "vue-meta";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 
 fetchData(async (params) => {
   data.value = (await api.get(`book/${params.id}`)).data;

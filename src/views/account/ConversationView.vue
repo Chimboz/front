@@ -118,7 +118,7 @@ import { ref } from "vue";
 import { RouterLink } from "vue-router";
 import { useMeta } from "vue-meta";
 
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 const message = ref("");
 
 function send() {

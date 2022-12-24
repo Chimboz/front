@@ -25,10 +25,11 @@ import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import { useMeta } from "vue-meta";
 
-const auth = useAuthStore();
-const user = computed(() => auth.user);
+useMeta({ title: "section.topic" });
 
-const data: any = ref(undefined);
+const user = computed(() => useAuthStore().user);
+
+const data = ref<any>(undefined);
 
 fetchData(async (params) => {
   data.value = (
@@ -37,7 +38,5 @@ fetchData(async (params) => {
     )
   ).data;
 });
-// /api/topic/${vm.$route.params.page ? vm.$route.params.page : 1}.json
-useMeta({ title: "section.topic" });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

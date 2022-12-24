@@ -79,7 +79,7 @@ const iconDescriptions = [
   },
 ];
 const post = ref(false);
-const data: any = ref(undefined);
+const data = ref<any>(undefined);
 
 fetchData(async (params) => {
   data.value = (
