@@ -1,8 +1,6 @@
 <template>
   <GlobalCard color="yellow">
-    <template #header>{{
-      String($route.params.name).replace(/\.[^/.]+$/, "")
-    }}</template>
+    <template #header>{{ name }}</template>
     <a
       target="_blank"
       rel="noopener noreferrer"
@@ -12,10 +10,15 @@
         draggable="false"
         :src="'/gallery/' + $route.params.name"
         style="width: 100%"
-        :alt="($route.params.name as string).split('.')[0]"
+        :alt="name"
         @contextmenu.prevent
       />
     </a>
   </GlobalCard>
   <br />
 </template>
+<script setup lang="ts">
+import { useRoute } from "vue-router";
+
+const name = (useRoute().params.name as string).split(".")[0];
+</script>
