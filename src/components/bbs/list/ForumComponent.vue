@@ -42,7 +42,7 @@
     </tr>
   </table>
   <br />
-  <div style="text-align: end">
+  <div v-if="user && +user.user_level > 3" style="text-align: end">
     <button
       class="btn-action"
       type="button"
@@ -61,11 +61,13 @@
 </template>
 
 <script setup lang="ts">
+import useAuthStore from "@/stores/auth";
+import { computed } from "vue";
 import Topic from "../row/TopicComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
-// import useAuthStore from "@/stores/auth";
-// const auth = useAuthStore();
-// const user = computed(() => auth.user);
+
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
 defineProps<{
   forum: any;
@@ -73,5 +75,6 @@ defineProps<{
 
 function lock(id: string) {
   // TODO api forum lock
+  console.log(id);
 }
 </script>

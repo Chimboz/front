@@ -67,6 +67,7 @@
     /></a>
   </footer>
 </template>
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
 footer {
   margin-top: var(--gap);
