@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import { createMetaManager } from "vue-meta";
+import metaManager from "@/modules/metaManager";
 import App from "./App.vue";
 // External plugins
 import router from "./router";
@@ -29,7 +29,7 @@ const app = createApp(App)
   .use(i18n)
   .use(router)
   .use(createPinia())
-  .use(createMetaManager());
+  .use(metaManager);
 
 // Globally accessible modules
 app.config.globalProperties.eventBus = eventBus; // Event hub
@@ -69,3 +69,4 @@ export default app;
 // TODO wedding id view
 // TODO search all user messages on bbs
 // TODO search messages on bbs
+// TODO opengraph https://ogp.me/
