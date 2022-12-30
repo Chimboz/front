@@ -6,6 +6,10 @@
   <a href="https://github.com/Chimboz/ChimbozFront/issues"><img alt="Number of issues" src="https://img.shields.io/github/issues/Chimboz/ChimbozFront" /></a>
 </p>
 
+## Commit convention
+Commit are done through commitizen with [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary).  
+Run `npm run commit` to format your commit.
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
