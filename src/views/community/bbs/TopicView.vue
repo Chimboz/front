@@ -42,6 +42,10 @@ fetchData(async (params) => {
     title: `Topic "${data.value.messages[0].title}"`,
     meta: [
       {
+        name: "description",
+        content: DOM.innerText,
+      },
+      {
         property: "og:description",
         content: DOM.innerText,
       },

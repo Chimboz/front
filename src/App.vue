@@ -33,6 +33,11 @@ useHead({
   link: notifications.value ? faviconNew : favicon,
   meta: [
     {
+      name: "description",
+      content:
+        "Chimboz est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
+    },
+    {
       property: "og:description",
       content:
         "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
