@@ -244,11 +244,11 @@ const user = computed(() => auth.user!);
 
 const data = ref<any>(undefined);
 
-function action(type: string, params?: object) {
+function action(type: string, payload?: object) {
   eventBus.emit("confirmation", {
     message: `admin.modal.${type}`,
     api: `/api/${type}.json`,
-    params,
+    payload,
   });
 }
 // /api/admin/${to.params.id}.json
