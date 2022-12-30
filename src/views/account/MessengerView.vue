@@ -93,7 +93,7 @@ const data = ref<any>(undefined);
 fetchData(async () => {
   // data.value = (await api.get("mi")).data;
   // TODO remove
-  data.value = (await api.get("http://localhost:5173/api/mi.json")).data;
+  data.value = (await api.get(`${window.location.origin}/api/mi.json`)).data;
 });
 
 // /api/messenger.json

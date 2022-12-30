@@ -242,7 +242,7 @@ const gain = ref(0);
 fetchData(async () => {
   // data.value = (await api.get("home")).data;
   // TODO remove
-  data.value = (await api.get("http://localhost:5173/api/home.json")).data;
+  data.value = (await api.get(`${window.location.origin}/api/home.json`)).data;
 });
 
 async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
@@ -252,7 +252,7 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   // data.value = (await api.get("randomppt")).data;
   // TODO remove
   gain.value = (
-    await api.get("http://localhost:5173/api/lottery.json")
+    await api.get(`${window.location.origin}/api/lottery.json`)
   ).data.gain;
 }
 

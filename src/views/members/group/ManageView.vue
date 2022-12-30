@@ -381,7 +381,7 @@ fetchData(async () => {
   // data.value = (await api.get("groups/manage")).data;
   // TODO remove
   data.value = (
-    await api.get("http://localhost:5173/api/groups_manage.json")
+    await api.get(`${window.location.origin}/api/groups_manage.json`)
   ).data;
 });
 

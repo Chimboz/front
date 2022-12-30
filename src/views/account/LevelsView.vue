@@ -60,7 +60,7 @@ const selected = ref(0);
 fetchData(async () => {
   // data.value = (await api.get("account/levels")).data;
   // TODO remove
-  data.value = (await api.get("http://localhost:5173/api/levels.json")).data;
+  data.value = (await api.get(`${window.location.origin}/api/levels.json`)).data;
 });
 // /api/levels.json
 useMeta({ title: "section.levels" });

@@ -129,7 +129,7 @@ const data = ref<any>(undefined);
 fetchData(async () => {
   // data.value = (await api.get("bank")).data;
   // TODO remove
-  data.value = (await api.get("http://localhost:5173/api/bank.json")).data;
+  data.value = (await api.get(`${window.location.origin}/api/bank.json`)).data;
 });
 
 function bankData() {

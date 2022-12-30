@@ -173,7 +173,7 @@ async function addFriend() {
 fetchData(async () => {
   // data.value = (await api.get("friends")).data;
   // TODO remove
-  data.value = (await api.get("http://localhost:5173/api/friends.json")).data;
+  data.value = (await api.get(`${window.location.origin}/api/friends.json`)).data;
 });
 
 // /api/friends.json

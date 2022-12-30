@@ -321,7 +321,7 @@ fetchData(async (params) => {
   // data.value = (await api.get(`groups/edit/${params.id}`)).data;
   // TODO remove
   data.value = (
-    await api.get("http://localhost:5173/api/groups_edit.json")
+    await api.get(`${window.location.origin}/api/groups_edit.json`)
   ).data;
 });
 

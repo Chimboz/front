@@ -134,7 +134,7 @@ function send() {
 fetchData(async () => {
   // data.value = (await api.get("mi/${useRoute().params.id}")).data;
   // TODO remove
-  data.value = (await api.get("http://localhost:5173/api/mi5.json")).data;
+  data.value = (await api.get(`${window.location.origin}/api/mi5.json`)).data;
 });
 
 // /api/conversation.json

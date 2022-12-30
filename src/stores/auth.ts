@@ -10,7 +10,9 @@ export default defineStore("auth", () => {
     // await api.post("auth/login", { pseudo, password, device_name: "browser" });
     // user.value = (await api.get("user")).data;
     // FIXME
-    user.value = (await api.get("http://localhost:5173/api/user.json")).data;
+    user.value = (
+      await api.get(`${window.location.origin}/api/user.json`)
+    ).data;
   }
 
   async function logout() {
