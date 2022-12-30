@@ -145,5 +145,6 @@
   "admin.modal.ban": "Confirm member ban?",
   "group.open": "This group is open, you may join it immediately.",
   "section.levels": "Levels",
-  "confirm.buy": "Do you confirm buying this pack?"
+  "confirm.buy": "Do you confirm buying this pack?",
+  "confirm.group.delete": "Do you really want to definitively delete this group?"
 }

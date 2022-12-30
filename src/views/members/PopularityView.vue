@@ -346,21 +346,39 @@
       t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
       <br /><br />
-      <form class="flex" @submit.prevent="vote()">
-        <select class="btn-md" required aria-label="Type of vote">
-          <option value="for">Pour</option>
-          <option value="against">Contre</option></select
-        ><input
-          required
-          minlength="3"
-          maxlength="15"
-          name="group"
-          type="text"
-          class="btn-md"
-          autocomplete="username"
-          aria-label="Username"
-          :placeholder="$t('placeholder.username')"
-        /><button type="submit" class="btn-action">go</button>
+      <form @submit.prevent="vote()">
+        <div class="flex centered">
+          <vue-recaptcha
+            ref="recaptcha"
+            theme="dark"
+            sitekey="6LebtM8iAAAAAMjLDIYvDXTCZHkHx9cdqE1jNOke"
+            @verify="onCaptchaVerified"
+            @expired="onCaptchaExpired"
+          ></vue-recaptcha>
+        </div>
+        <br />
+        <div class="flex">
+          <select
+            v-model="mode"
+            class="btn-md"
+            required
+            aria-label="Type of vote"
+          >
+            <option value="for">Pour</option>
+            <option value="against">Contre</option></select
+          ><input
+            v-model="pseudo"
+            required
+            minlength="3"
+            maxlength="15"
+            name="group"
+            type="text"
+            class="btn-md"
+            autocomplete="username"
+            aria-label="Username"
+            :placeholder="$t('placeholder.username')"
+          /><button type="submit" class="btn-action">go</button>
+        </div>
       </form>
     </GlobalCard>
     <template #right-column
@@ -430,15 +448,33 @@ import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import { useMeta } from "vue-meta";
+import { VueRecaptcha } from "vue-recaptcha";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
 const data = ref<any>(undefined);
+const mode = ref<"for" | "against">("for");
+const pseudo = ref("");
+const recaptcha = ref<null | VueRecaptcha>(null);
+const token = ref("");
 
 function vote() {
-  console.log("Envoyé!");
+  api.post("popularity/vote", {
+    pseudo: pseudo.value,
+    mode: mode.value,
+    recaptcha: token.value,
+  });
 }
+
+function onCaptchaVerified(recaptchaToken: string) {
+  token.value = recaptchaToken;
+}
+
+function onCaptchaExpired() {
+  recaptcha.value!.reset();
+}
+
 fetchData(async () => {
   data.value = (await api.get("popularity")).data;
   // TODO remove

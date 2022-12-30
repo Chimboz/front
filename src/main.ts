@@ -65,3 +65,7 @@ export default app;
 // TODO better quotes
 // TODO verif v-if data
 // TODO sitemap and robots.txt generator
+// TODO dynamic suggestions
+// TODO wedding id view
+// TODO search all user messages on bbs
+// TODO search messages on bbs

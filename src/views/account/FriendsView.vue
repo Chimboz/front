@@ -116,6 +116,7 @@
       ><GlobalCard color="blue" top>
         <form class="flex fullwidth" @submit.prevent="addFriend">
           <input
+            v-model="pseudo"
             required
             minlength="3"
             maxlength="15"
@@ -141,43 +142,32 @@ import { useMeta } from "vue-meta";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
 const data = ref<any>(undefined);
+const pseudo = ref("");
 
-function cancel(friend: any) {
-  console.log(`Cancel ${friend.user.id}`);
-  // API Call returning true if friend removed
-  data.value.splice(data.value.indexOf(friend), 1);
+async function cancel(friend: any) {
+  if (
+    (await api.get(`friends/cancel/${friend.user.id}`)).data.result ===
+    "success"
+  )
+    data.value.splice(data.value.indexOf(friend), 1);
 }
-function accept(friend: any) {
-  console.log(`Accept ${friend.user.id}`);
-  // API Call returning new friend infos (status)
-  data.value.splice(data.value.indexOf(friend), 1, {
-    user: {
-      name: "Owned",
-      id: 2,
-      look: {
-        avatar: 0,
-        emote: "neutral",
-        hat: 7,
-        body: 334,
-        shoe: 612,
-        item0: 808,
-        item1: 868,
-        item2: 938,
-      },
-    },
-    status: {
-      connected: true,
-      room: "La Colline Sacrée",
-      date: 1630075662000,
-    },
-  });
+
+async function accept(friend: any) {
+  const res = (await api.get(`friends/accept/${friend.user.id}`)).data;
+  data.value.splice(data.value.indexOf(friend), 1, res.add);
 }
-function decline(friend: any) {
-  console.log(`Decline ${friend.user.id}`);
-  data.value.splice(data.value.indexOf(friend), 1);
+
+async function decline(friend: any) {
+  if (
+    (await api.get(`friends/decline/${friend.user.id}`)).data.result ===
+    "success"
+  )
+    data.value.splice(data.value.indexOf(friend), 1);
 }
-function addFriend(form: any) {
-  console.log(data);
+
+async function addFriend() {
+  const res = (await api.get(`friends/add/${pseudo.value}`)).data;
+  if (res.result === "success") data.value.push(res.data);
 }
 
 fetchData(async () => {

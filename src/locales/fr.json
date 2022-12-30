@@ -145,5 +145,6 @@
   "admin.last": "Registre des dernières sanctions",
   "admin.modal.ban": "Confirmer le bannissement de ce membre ?",
   "section.levels": "Niveaux",
-  "confirm.buy": "Confirmer l'achat de ce pack ?"
+  "confirm.buy": "Confirmer l'achat de ce pack ?",
+  "confirm.group.delete": "Voulez-vous définitivement supprimer ce groupe ?"
 }

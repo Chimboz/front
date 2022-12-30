@@ -352,9 +352,10 @@
         <br />
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
+            v-model="idSearch"
             required
             min="1"
-            :max="data.stats.total"
+            :max="data.last.id"
             name="id"
             type="number"
             class="btn-md"
@@ -365,6 +366,7 @@
         <br />
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
+            v-model="userSearch"
             required
             minlength="3"
             maxlength="15"
@@ -387,20 +389,22 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { distance, format } from "@/utils/date";
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { useMeta } from "vue-meta";
 
+const router = useRouter();
 const data = ref<any>(undefined);
+const idSearch = ref<undefined | number>(undefined);
+const userSearch = ref("");
 
 function search() {
-  console.log("Envoyé!");
+  router.push(`/weddings/${idSearch.value}`);
 }
 
 fetchData(async () => {
   data.value = (await api.get("weddings")).data;
 });
 
-// /api/weddings.json
 useMeta({ title: "section.wedding" });
 </script>
 

@@ -169,7 +169,7 @@ const user = computed(() => auth.user);
 const data = ref<any>(undefined);
 
 function join() {
-  console.log(`Rejoins ${data.value.id}`);
+  api.get(`groups/demand/${data.value.id}`);
 }
 
 fetchData(async (params) => {

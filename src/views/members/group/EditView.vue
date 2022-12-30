@@ -293,20 +293,25 @@ import { format } from "@/utils/date";
 import { useMeta } from "vue-meta";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
+import eventBus from "@/modules/eventBus";
 
 const data = ref<any>(undefined);
 
 function deleteGroup() {
-  console.log("Suppression");
+  // TODO
+  eventBus.emit("confirmation", {
+    message: "confirm.group.delete",
+    api: `groups/manage/delete?id=${data.value.id}`,
+  });
 }
 function removeMember(id: number) {
-  console.log(`Suppression du membre ${id}`);
+  api.get(`groups/delete/${id}/${data.value.id}`);
 }
 function acceptDemand(id: number) {
-  console.log(`Acceptation du membre ${id}`);
+  api.get(`groups/accept/${id}/${data.value.id}`);
 }
 function rejectDemand(id: number) {
-  console.log(`Rejection du membre ${id}`);
+  api.get(`groups/refuse/${id}/${data.value.id}`);
 }
 
 function focusHandler() {}

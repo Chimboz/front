@@ -145,8 +145,9 @@
         <template #button>
           <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
         </template>
-        <form class="flex fullwidth" @submit.prevent="search()">
+        <form class="flex fullwidth" @submit.prevent="searchUser()">
           <input
+            v-model="userSearch"
             required
             minlength="3"
             maxlength="15"
@@ -160,8 +161,9 @@
           /><button type="submit" class="btn-action">go</button>
         </form>
         <br />
-        <form class="flex fullwidth" @submit.prevent="search()">
+        <form class="flex fullwidth" @submit.prevent="searchGroup()">
           <input
+            v-model="groupSearch"
             required
             minlength="3"
             maxlength="15"
@@ -181,13 +183,26 @@
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { useMeta } from "vue-meta";
 
+const router = useRouter();
 const data = ref<any>(undefined);
+const userSearch = ref("");
+const groupSearch = ref("");
 
-function search() {
-  console.log("Envoyé!");
+async function searchUser() {
+  router.push(
+    `/book/${
+      (await api.get(`book/search/${userSearch.value}/search`)).data.mid
+    }`
+  );
+}
+
+async function searchGroup() {
+  router.push(
+    `/groups/${(await api.get(`groups/search/${groupSearch.value}`)).data.mid}`
+  );
 }
 
 fetchData(async () => {

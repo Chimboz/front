@@ -371,10 +371,10 @@ import { RouterLink } from "vue-router";
 const data = ref<any>(undefined);
 
 function cancel(id: number) {
-  console.log(`Annulé ${id}`);
+  api.get(`groups/manage/${id}/0`);
 }
 function leave(id: number) {
-  console.log(`Quitté ${id}`);
+  api.get(`groups/manage/${id}/1`);
 }
 
 fetchData(async () => {

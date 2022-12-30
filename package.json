@@ -29,6 +29,7 @@
     "vue-chart-3": "^3.1.8",
     "vue-i18n": "^9.2.2",
     "vue-meta": "^3.0.0-alpha.10",
+    "vue-recaptcha": "^2.0.3",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

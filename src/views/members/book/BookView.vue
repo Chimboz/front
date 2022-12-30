@@ -31,7 +31,7 @@
         <form class="flex" @submit.prevent="search()">
           <input
             id="search"
-            v-model="username"
+            v-model="userSearch"
             required
             minlength="3"
             maxlength="15"
@@ -42,12 +42,10 @@
             :aria-label="$t('book.search')"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-            @keyup="onKeypressValue()"
-            @keydown="onKeypressValue()"
           />
           <button type="submit" class="btn-action">go</button>
         </form>
-        <div v-if="suggestionsHere && username != ''" class="suggestions">
+        <div v-if="suggestionsHere && userSearch != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <router-link :to="'/book/' + suggestion.mid">{{
@@ -167,31 +165,26 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { useMeta } from "vue-meta";
 
+const router = useRouter();
 const data = ref<any>(undefined);
-const username = ref("");
+const userSearch = ref("");
 const suggestionsHere = ref<any>(null);
 
 fetchData(async () => {
   data.value = (await api.get("book")).data;
 });
 
-function onKeypressValue() {
-  /* if (username != undefined && username.value != "") {
-    api.get("api/test.json").then((res) => {
-      if (res.data && res.data.length > 0) {
-        suggestionsHere = res.data;
-      }
-    });
-  } */
+async function search() {
+  router.push(
+    `/book/${
+      (await api.get(`book/search/${userSearch.value}/search`)).data.mid
+    }`
+  );
 }
-function search() {
-  const id = 1;
-  // $router.push(`/book/${id}`);
-}
-// /api/book.json
+
 useMeta({ title: "section.popularity" });
 </script>
 
