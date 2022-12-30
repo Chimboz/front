@@ -135,7 +135,7 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import { RouterLink } from "vue-router";
 
 const data = ref<any>(undefined);
@@ -145,7 +145,7 @@ fetchData(async () => {
   api.get("https://chimboz.fr/sanctum/csrf-cookie");
 });
 
-useMeta({ title: "section.login" });
+useHead({ title: "section.login" });
 </script>
 <style lang="scss">
 .packs .card-btn {

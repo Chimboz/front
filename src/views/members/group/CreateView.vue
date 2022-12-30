@@ -59,7 +59,7 @@
 import Cabin from "@/components/blazon/CabinComponent.vue";
 import api from "@/modules/api";
 import { reactive, ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const data = reactive({
   blazon: {
@@ -127,7 +127,7 @@ function create() {
   api.post("groups/createok", { name: name.value, blazon: data.blazon });
 }
 
-useMeta({ title: "section.groupedit" });
+useHead({ title: "section.groupedit" });
 </script>
 <style lang="scss" scoped>
 .blazon {

@@ -447,7 +447,7 @@ import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import { VueRecaptcha } from "vue-recaptcha";
 
 const auth = useAuthStore();
@@ -485,7 +485,7 @@ fetchData(async () => {
   data.value.stats.yesterday = data.value.stats.today;
 });
 
-useMeta({ title: "section.popularity" });
+useHead({ title: "section.popularity" });
 </script>
 
 <style lang="scss" scoped>

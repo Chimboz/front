@@ -42,7 +42,7 @@ import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
 import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const iconDescriptions = [
   {
@@ -88,7 +88,7 @@ fetchData(async (params) => {
 });
 
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
-useMeta({ title: "section.forum" });
+useHead({ title: "section.forum" });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

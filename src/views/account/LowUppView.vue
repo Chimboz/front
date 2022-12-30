@@ -59,7 +59,7 @@
 import api from "@/modules/api";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -78,7 +78,7 @@ function submit() {
   api.post("account/majmin", { pseudo: pseudo.value });
 }
 
-useMeta({ title: "section.capitalization" });
+useHead({ title: "section.capitalization" });
 </script>
 
 <style lang="scss" scoped>

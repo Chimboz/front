@@ -116,7 +116,7 @@ import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);
 const message = ref("");
@@ -138,7 +138,7 @@ fetchData(async () => {
 });
 
 // /api/conversation.json
-useMeta({ title: "section.conversation" });
+useHead({ title: "section.conversation" });
 </script>
 
 <style lang="scss" scoped>

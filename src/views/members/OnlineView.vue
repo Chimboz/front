@@ -54,7 +54,7 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);
 
@@ -62,7 +62,7 @@ fetchData(async () => {
   data.value = (await api.get("online")).data;
 });
 
-useMeta({ title: "section.online" });
+useHead({ title: "section.online" });
 </script>
 
 <style lang="scss" scoped></style>

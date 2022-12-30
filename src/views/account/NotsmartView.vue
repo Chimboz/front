@@ -73,7 +73,7 @@
 <script setup lang="ts">
 import api from "@/modules/api";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const currentPassword = ref("");
 const newPassword = ref("");
@@ -86,5 +86,5 @@ function changePassword() {
     confirm: confirmPassword.value,
   });
 }
-useMeta({ title: "section.notsmart" });
+useHead({ title: "section.notsmart" });
 </script>

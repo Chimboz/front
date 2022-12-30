@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import metaManager from "@/modules/metaManager";
+import { createHead } from "@vueuse/head";
 import App from "./App.vue";
 // External plugins
 import router from "./router";
@@ -29,7 +29,7 @@ const app = createApp(App)
   .use(i18n)
   .use(router)
   .use(createPinia())
-  .use(metaManager);
+  .use(createHead());
 
 // Globally accessible modules
 app.config.globalProperties.eventBus = eventBus; // Event hub

@@ -229,7 +229,7 @@ import RandomNumber from "@/components/core/RandomNumberComponent.vue";
 import Bank from "@/components/BankComponent.vue";
 import Pack from "@/components/PackComponent.vue";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import messageRender from "@/modules/messageRender";
 import api from "@/modules/api";
 import { asset, fetchData } from "@/utils";
@@ -256,7 +256,7 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   ).data.gain;
 }
 
-useMeta({ title: "section.home" });
+useHead({ title: "section.home" });
 </script>
 <style lang="scss">
 .packs .card-btn {

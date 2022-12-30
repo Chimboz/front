@@ -23,8 +23,7 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
-import { useMeta } from "vue-meta";
-import metaManager from "@/modules/metaManager";
+import { useHead } from "@vueuse/head";
 import messageRender from "@/modules/messageRender";
 
 const user = computed(() => useAuthStore().user);
@@ -39,22 +38,19 @@ fetchData(async (params) => {
   ).data;
   const DOM = document.createElement("div");
   DOM.innerHTML = messageRender(data.value.messages[0].content);
-  useMeta(
-    {
-      title: `Topic "${data.value.messages[0].title}"`,
-      meta: [
-        {
-          property: "og:description",
-          content: DOM.innerText,
-        },
-        {
-          property: "og:title",
-          content: `Chimboz Topic "${data.value.messages[0].title}"`,
-        },
-      ],
-    },
-    metaManager
-  );
+  useHead({
+    title: `Topic "${data.value.messages[0].title}"`,
+    meta: [
+      {
+        property: "og:description",
+        content: DOM.innerText,
+      },
+      {
+        property: "og:title",
+        content: `Chimboz Topic "${data.value.messages[0].title}"`,
+      },
+    ],
+  });
 });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

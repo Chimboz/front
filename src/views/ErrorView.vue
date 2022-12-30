@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
-useMeta({ title: "section.error" });
+useHead({ title: "section.error" });
 </script>

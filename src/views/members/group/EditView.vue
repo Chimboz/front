@@ -290,7 +290,7 @@ import StrokeText from "@/components/core/StrokeTextComponent.vue";
 import Cabin from "@/components/blazon/CabinComponent.vue";
 import { ref } from "vue";
 import { format } from "@/utils/date";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import eventBus from "@/modules/eventBus";
@@ -326,7 +326,7 @@ fetchData(async (params) => {
 });
 
 // /api/edit.json
-useMeta({ title: "section.groupedit" });
+useHead({ title: "section.groupedit" });
 </script>
 <style lang="scss" scoped>
 .blazon {

@@ -392,7 +392,7 @@ import api from "@/modules/api";
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -403,5 +403,5 @@ fetchData(async () => {
   data.value = (await api.get("groups")).data;
 });
 // /api/groups.json
-useMeta({ title: "section.groups" });
+useHead({ title: "section.groups" });
 </script>

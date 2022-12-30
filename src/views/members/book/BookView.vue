@@ -166,7 +166,7 @@ import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const router = useRouter();
 const data = ref<any>(undefined);
@@ -185,7 +185,7 @@ async function search() {
   );
 }
 
-useMeta({ title: "section.popularity" });
+useHead({ title: "section.popularity" });
 </script>
 
 <style lang="scss" scoped>

@@ -138,7 +138,7 @@ import api from "@/modules/api";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
 const data = ref<any>(undefined);
@@ -177,7 +177,7 @@ fetchData(async () => {
 });
 
 // /api/friends.json
-useMeta({ title: "section.friends" });
+useHead({ title: "section.friends" });
 </script>
 
 <style lang="scss" scoped>

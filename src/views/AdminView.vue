@@ -60,7 +60,7 @@
 <script setup lang="ts">
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import { format } from "@/utils/date";
 
 const data = ref<any[]>([]);
@@ -81,7 +81,7 @@ function search() {
   return true;
 }
 // /api/admin.json
-useMeta({ title: "section.admin" });
+useHead({ title: "section.admin" });
 </script>
 <style lang="scss" scoped>
 .log {

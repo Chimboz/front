@@ -245,7 +245,7 @@
   </GlobalContainer>
 </template>
 <script setup lang="ts">
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
-useMeta({ title: "section.bacteriaStory" });
+useHead({ title: "section.bacteriaStory" });
 </script>

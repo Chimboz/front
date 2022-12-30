@@ -374,7 +374,7 @@ import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);
 
@@ -387,7 +387,7 @@ fetchData(async () => {
 });
 
 // /api/patojdur.json
-useMeta({ title: "section.patojdur" });
+useHead({ title: "section.patojdur" });
 </script>
 
 <style lang="scss" scoped>

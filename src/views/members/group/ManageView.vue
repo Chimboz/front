@@ -365,7 +365,7 @@
 import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import { RouterLink } from "vue-router";
 
 const data = ref<any>(undefined);
@@ -385,5 +385,5 @@ fetchData(async () => {
   ).data;
 });
 
-useMeta({ title: "section.groups" });
+useHead({ title: "section.groups" });
 </script>

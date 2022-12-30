@@ -85,7 +85,7 @@ import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
 const data = ref<any>(undefined);
@@ -97,7 +97,7 @@ fetchData(async () => {
 });
 
 // /api/messenger.json
-useMeta({ title: "section.messenger" });
+useHead({ title: "section.messenger" });
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

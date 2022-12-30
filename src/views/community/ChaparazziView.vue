@@ -43,7 +43,7 @@ import { format } from "@/utils/date";
 import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
 import api from "@/modules/api";
 import { RouterView, RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);
 
@@ -52,7 +52,7 @@ onBeforeMount(async () => {
 });
 
 // /api/chaparazzi/${vm.page}.json
-useMeta({ title: "section.chaparazzi" });
+useHead({ title: "section.chaparazzi" });
 </script>
 <style lang="scss" scoped>
 .gallery {

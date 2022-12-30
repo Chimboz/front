@@ -390,7 +390,7 @@ import { fetchData } from "@/utils";
 import { distance, format } from "@/utils/date";
 import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const router = useRouter();
 const data = ref<any>(undefined);
@@ -405,7 +405,7 @@ fetchData(async () => {
   data.value = (await api.get("weddings")).data;
 });
 
-useMeta({ title: "section.wedding" });
+useHead({ title: "section.wedding" });
 </script>
 
 <style lang="scss" scoped>

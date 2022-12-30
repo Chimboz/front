@@ -321,7 +321,7 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);
 
@@ -335,7 +335,7 @@ fetchData(async () => {
 });
 
 // /api/bacteria.json
-useMeta({ title: "section.bacteria" });
+useHead({ title: "section.bacteria" });
 </script>
 
 <style lang="scss" scoped>

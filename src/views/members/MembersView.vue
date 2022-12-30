@@ -184,7 +184,7 @@ import api from "@/modules/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const router = useRouter();
 const data = ref<any>(undefined);
@@ -209,7 +209,7 @@ fetchData(async () => {
   data.value = (await api.get("members")).data;
 });
 
-useMeta({ title: "section.members" });
+useHead({ title: "section.members" });
 </script>
 <style lang="scss" scoped>
 img[src*="spotlight"] {

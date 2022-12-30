@@ -274,7 +274,7 @@ import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import api from "@/modules/api";
 import { RouterLink } from "vue-router";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -297,7 +297,7 @@ fetchData(async (params) => {
   }
 });
 // /api/member.json
-useMeta({ title: "section.member" });
+useHead({ title: "section.member" });
 </script>
 <style lang="scss">
 .card {

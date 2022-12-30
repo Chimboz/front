@@ -161,7 +161,7 @@ import { fetchData, asset } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
@@ -178,7 +178,7 @@ fetchData(async (params) => {
 });
 
 // /api/group.json
-useMeta({ title: "section.group" });
+useHead({ title: "section.group" });
 </script>
 <style lang="scss" scoped>
 .blazon {

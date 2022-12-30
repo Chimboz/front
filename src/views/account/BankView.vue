@@ -108,7 +108,7 @@ import { format } from "@/utils/date";
 import api from "@/modules/api";
 import { fetchData, asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
-import { useMeta } from "vue-meta";
+import { useHead } from "@vueuse/head";
 
 Chart.register(
   Tooltip,
@@ -174,7 +174,7 @@ function bankData() {
   return dataset;
 }
 // /api/bank.json
-useMeta({ title: "section.bank" });
+useHead({ title: "section.bank" });
 </script>
 
 <style lang="scss" scoped>
