@@ -20,23 +20,23 @@
         <track
           default
           kind="captions"
-          :src="asset('sound/shop/moving_stars.vtt')"
+          src="@/assets/sound/shop/moving_stars.vtt"
         />
       </audio>
       <audio autoplay>
         <source src="@/assets/sound/shop/preview.mp3" type="audio/mpeg" />
-        <track default kind="captions" :src="asset('sound/shop/preview.vtt')" />
+        <track default kind="captions" src="@/assets/sound/shop/preview.vtt" />
       </audio>
       <audio ref="clickAudio">
         <source src="@/assets/sound/shop/show.wav" type="audio/wav" />
-        <track default kind="captions" :src="asset('sound/shop/show.vtt')" />
+        <track default kind="captions" src="@/assets/sound/shop/show.vtt" />
       </audio>
       <audio ref="buyAudio">
         <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg" />
         <track
           default
           kind="captions"
-          :src="asset('sound/shop/selected.vtt')"
+          src="@/assets/sound/shop/selected.vtt"
         />
       </audio>
       <div class="preview fullwidth flex">
