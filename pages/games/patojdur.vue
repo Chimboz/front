@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard header="patojdur.webp" justified bg="patojdur.gif" :height="77">
+    <Card header="patojdur.webp" justified bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
@@ -121,9 +121,9 @@
       Les grenouilles seront là pour t’encourager ou se moquer de toi, mais seul
       ton courage et ta persévérance te permettront de devenir le meilleur
       patojeur !
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard id="tutorial" justified>
+    <Card id="tutorial" justified>
       <template #header>Comment jouer&nbsp;?</template>
       <b>Attention : les visiteurs ne peuvent pas jouer !</b><br />
       Il faut te rendre dans les marécages, demande ton chemin si tu ne sais pas
@@ -136,9 +136,9 @@
       nageant le plus vite possible !<br />
       <br />
       Bonne Chance ! tu en auras besoin, la concurrence sera rude ! La victoire
-      au millième près !</GlobalCard
+      au millième près !</Card
     ><br />
-    <GlobalCard id="gameplay" justified>
+    <Card id="gameplay" justified>
       <template #header>Gameplay</template>
       <b>Patojdur</b> se joue aux touches directionnelles (les flèches).<br />
       Avance dans la direction de ton choix (haut, bas, droite ou gauche), quand
@@ -160,21 +160,21 @@
       Droite, Flèche Haut, Flèche Droite. (GGDHD)<br />
       <br />
       <b>Indice</b> : pour <b>Burnin'Flak</b>, la bonne combinaison commence par
-      Flèche Gauche, Flèche Haut... (GH...)</GlobalCard
+      Flèche Gauche, Flèche Haut... (GH...)</Card
     ><br />
-    <GlobalCard id="modes" justified>
+    <Card id="modes" justified>
       <template #header>Les modes</template>
-      Pour le moment, seul le mode <b>single</b> est accessible.</GlobalCard
+      Pour le moment, seul le mode <b>single</b> est accessible.</Card
     ><br />
-    <GlobalCard id="races" justified>
+    <Card id="races" justified>
       <template #header>Les courses</template>
       <b>10 courses différentes</b>, plus ou moins difficiles. Chaque jour une
       course différente, un classement différent !<br />
       <br />
       Durant la phase de test de <b>Patojdur</b>, seule la course n°1
-      (<b>Burnin'Flak</b>) est accessible.</GlobalCard
+      (<b>Burnin'Flak</b>) est accessible.</Card
     ><br />
-    <GlobalCard v-if="data" id="records">
+    <Card v-if="data" id="records">
       <template #header>Records !</template>
       <template #subtitle>Ce jour là, il a comme volé sur l'eau...</template>
       <table class="fullwidth">
@@ -206,8 +206,8 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="yesterday">
+    </Card>
+    <br /><Card v-if="data" id="yesterday">
       <template #header>Les champions du jour !</template>
       <template #subtitle
         >Hier, ils ont cloué le bec des grenouilles... et des autres membres
@@ -242,8 +242,8 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="general">
+    </Card>
+    <br /><Card v-if="data" id="general">
       <template #header
         >Classement général single {{ data.day - 1 }}e journée</template
       >
@@ -273,8 +273,8 @@
             <td>{{ rank.races }}</td>
           </tr>
         </tbody>
-      </table> </GlobalCard
-    ><br /><GlobalCard v-if="data" id="today">
+      </table> </Card
+    ><br /><Card v-if="data" id="today">
       <template #header
         >{{ data.day }}e journée ! {{ data.stats.today }} patojeurs !</template
       >
@@ -305,8 +305,8 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="groups">
+    </Card>
+    <br /><Card v-if="data" id="groups">
       <template #header>Classement des groupes !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="fullwidth">
@@ -332,9 +332,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         header="ensavoirplus.webp"
         :width="154"
@@ -363,13 +363,13 @@
           draggable="false"
           @contextmenu.prevent
         />&nbsp;Aujourd'hui, il y a
-        {{ data.stats.today }} Patojeurs.<br /> </GlobalCard
+        {{ data.stats.today }} Patojeurs.<br /> </Card
     ></template>
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";

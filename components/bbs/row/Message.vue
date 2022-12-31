@@ -1,7 +1,7 @@
 <template>
   <tr :id="`p${message.id}`">
     <td class="info" valign="top">
-      <GlobalAvatar
+      <Avatar
         :avatar="message.author.look.avatar"
         :emote="message.author.look.emote"
         :hat="message.author.look.hat"
@@ -16,7 +16,7 @@
     </td>
     <td class="justified" valign="top">
       <h2 class="head flex info-sm ellipsis">
-        <GlobalAvatar
+        <Avatar
           :avatar="message.author.look.avatar"
           :emote="message.author.look.emote"
           :hat="message.author.look.hat"
@@ -113,12 +113,12 @@
 <script setup lang="ts">
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
-import messageRender from "@/modules/messageRender";
+import messageRender from "@/plugins/messageRender";
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { onMounted, computed } from "vue";
-import eventBus from "@/modules/eventBus";
-import api from "@/modules/api";
+import eventBus from "@/plugins/eventBus";
+import api from "@/plugins/api";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

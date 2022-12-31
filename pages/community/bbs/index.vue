@@ -1,17 +1,17 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
     <BBSList v-if="data" :boards="data"></BBSList>
     <br />
-    <GlobalCard
+    <Card
       ><div class="columns">
         <div>
           <img
@@ -49,14 +49,14 @@
             @contextmenu.prevent
           />&nbsp;{{ $t("bbs.nonew") }}&nbsp;
         </div>
-      </div></GlobalCard
+      </div></Card
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import BBSList from "@/components/bbs/list/BBSComponent.vue";
-import api from "@/modules/api";
+
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";

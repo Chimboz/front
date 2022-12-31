@@ -1,16 +1,16 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
     <form method="POST" @submit.prevent="create()">
-      <GlobalCard header="group.webp" :height="70" color="blue" justified>
+      <Card header="group.webp" :height="70" color="blue" justified>
         <input
           v-model="name"
           required
@@ -22,7 +22,7 @@
           aria-label="Group"
           :placeholder="$t('placeholder.groupname')"
         />
-      </GlobalCard>
+      </Card>
       <br />
       <Cabin
         v-if="data"
@@ -41,7 +41,7 @@
               ])
         "
       /><br />
-      <GlobalButton color="green" type="submit"
+      <Button color="green" type="submit"
         ><template #prepend
           ><img
             draggable="false"
@@ -49,15 +49,15 @@
             class="arrow green jitter"
             src="@/assets/img/arrow.svg"
             @contextmenu.prevent /></template
-        >Sauver</GlobalButton
+        >Sauver</Button
       >
     </form>
     <template #right-column> </template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import Cabin from "@/components/blazon/CabinComponent.vue";
-import api from "@/modules/api";
+
+import api from "@/plugins/api";
 import { reactive, ref } from "vue";
 import { useHead } from "@vueuse/head";
 

@@ -201,13 +201,13 @@
         <tr>
           <td colspan="2">
             <div class="flex">
-              <GlobalButton
+              <Button
                 type="button"
                 aria-label="Preview"
                 @click.prevent="preview = message"
-                >Prévisualiser</GlobalButton
+                >Prévisualiser</Button
               >
-              <GlobalButton v-if="mode === 'post'" type="submit" color="green"
+              <Button v-if="mode === 'post'" type="submit" color="green"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -216,18 +216,18 @@
                     aria-label="Send"
                     src="@/assets/img/arrow.svg"
                     @contextmenu.prevent /></template
-                >Envoyer</GlobalButton
+                >Envoyer</Button
               >
-              <GlobalButton
+              <Button
                 v-if="mode === 'edit'"
                 type="button"
                 color="red"
                 aria-label="Cancel"
                 @click="mode = 'post'"
               >
-                Annuler</GlobalButton
+                Annuler</Button
               >
-              <GlobalButton v-if="mode === 'edit'" type="submit" color="green"
+              <Button v-if="mode === 'edit'" type="submit" color="green"
                 ><template #prepend
                   ><img
                     draggable="false"
@@ -236,7 +236,7 @@
                     aria-label="Edit"
                     src="@/assets/img/arrow.svg"
                     @contextmenu.prevent /></template
-                >Editer</GlobalButton
+                >Editer</Button
               >
             </div>
           </td>
@@ -246,13 +246,13 @@
   </form>
 </template>
 <script setup lang="ts">
-import Emotes from "@/components/core/EmotesComponent.vue";
-import Message from "@/components/bbs/row/MessageComponent.vue";
+
+
 import useAuthStore from "@/stores/auth";
-import eventBus from "@/modules/eventBus";
+import eventBus from "@/plugins/eventBus";
 import { computed, ref, type SelectHTMLAttributes } from "vue";
 import { useI18n } from "vue-i18n";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();

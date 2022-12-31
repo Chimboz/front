@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard v-if="data" color="yellow" justified header="mi.svg">
+    <Card v-if="data" color="yellow" justified header="mi.svg">
       <div class="flex">
         <input
           required
@@ -40,7 +40,7 @@
             class="tiz-portrait"
             :style="{ background: hashColor(message.user.name) }"
           >
-            <GlobalAvatar
+            <Avatar
               :avatar="message.user.look.avatar"
               :emote="message.user.look.emote"
               :hat="message.user.look.hat"
@@ -75,12 +75,12 @@
           </div>
         </router-link>
       </ScrollableContainer>
-    </GlobalCard>
+    </Card>
     <template #right-column></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
@@ -93,7 +93,7 @@ const data = ref<any>(undefined);
 fetchData(async () => {
   // data.value = (await useFetch("mi")).data;
   // TODO remove
-  data.value = (await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/mi.json`)).data;
+  data.value = (await useFetch(`https://localhost:3000/api/mi.json`)).data;
 });
 
 // /api/messenger.json

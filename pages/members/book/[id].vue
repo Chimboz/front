@@ -1,22 +1,22 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
     <span class="pink justified">
       <router-link to="/book" class="pink"
         >» Retour à l'annuaire</router-link
       > </span
     ><br />
-    <GlobalCard v-if="data" class="member" :class="[data.gender]" justified>
+    <Card v-if="data" class="member" :class="[data.gender]" justified>
       <div class="member-header">
-        <GlobalAvatar
+        <Avatar
           :avatar="data.look.avatar"
           :emote="data.look.emote"
           :hat="data.look.hat"
@@ -34,7 +34,7 @@
       <div class="member-body">
         <div class="member-portrait centered">
           <div class="portrait flex">
-            <GlobalAvatar
+            <Avatar
               :avatar="data.look.avatar"
               :emote="data.look.emote"
               :hat="data.look.hat"
@@ -253,26 +253,26 @@
       <br />
       Messages sur le forum :
       <router-link :to="'/bbs/author/' + data.id">{{ data.posts }}</router-link>
-    </GlobalCard>
+    </Card>
     <template #right-column
       ><router-link
         v-if="data && user && +user.user_level > 2"
         :to="'/admin/' + data.id"
-        ><GlobalButton type="button" icon="rules.svg"
-          >Modérer</GlobalButton
+        ><Button type="button" icon="rules.svg"
+          >Modérer</Button
         ></router-link
       ></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
 import { asset, fetchData } from "@/utils";
 import { format, distance } from "@/utils/date";
-import StrokeText from "@/components/core/StrokeTextComponent.vue";
+
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

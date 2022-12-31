@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard color="blue">
+  <Card color="blue">
     <form @submit.prevent="submit">
       <div class="container-blz flex">
         <div class="left-blz flex">
@@ -155,10 +155,10 @@
         </div>
       </div>
     </form>
-  </GlobalCard>
+  </Card>
 </template>
 <script setup lang="ts">
-import Blazon from "@/components/blazon/BlazonComponent.vue";
+
 import { ref } from "vue";
 import { asset } from "@/utils";
 import type { BlazonCategory } from "@/types/Item";

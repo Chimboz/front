@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard v-if="data" color="yellow" justified
+    <Card v-if="data" color="yellow" justified
       ><template #subtop>Niveaux</template>
       <div class="flex">
         <div class="level-list">
@@ -44,12 +44,12 @@
           <b>Membres ayant ce niveau :</b> {{ data[selected].number }}
         </div>
       </div>
-    </GlobalCard>
+    </Card>
     <template #right-column> </template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { asset, fetchData } from "@/utils";
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";
@@ -60,7 +60,7 @@ const selected = ref(0);
 fetchData(async () => {
   // data.value = (await useFetch("account/levels")).data;
   // TODO remove
-  data.value = (await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/levels.json`)).data;
+  data.value = (await useFetch(`https://localhost:3000/api/levels.json`)).data;
 });
 // /api/levels.json
 useHead({ title: "section.levels" });

@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       header="group.webp"
       bg="groups.gif"
       :height="70"
@@ -25,9 +25,9 @@
       tu peux rejoindre un ou des groupes ; et même en créer. Pour certains
       groupes, ton entrée est immédiate, pour d'autres tu devras être approuvé
       par le chef du groupe... A toi de faire tes preuves !
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" color="blue" justified>
+    <Card v-if="data" color="blue" justified>
       <template #header>Groupes officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
@@ -64,9 +64,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Groupes de membre</template>
       <template #subtitle
         >Les 20 derniers groupes créés par les membres</template
@@ -96,9 +96,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Classement général des groupes, par jeu</template>
       <template #subtitle
         >Les 10 meilleurs groupes, tous les jeux réunis
@@ -135,9 +135,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="user">
+    <Card v-if="user">
       <template #header>Moi et mes groupes</template>
 
       <router-link to="/groups/manage"
@@ -151,9 +151,9 @@
         />
         Gérer mes groupes</router-link
       >
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard v-if="data" color="blue" header="ensavoirplus.webp">
+      ><Card v-if="data" color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img
@@ -383,12 +383,12 @@
           width="17"
           @contextmenu.prevent />
         Projecteur sur :
-        <div><GroupLink :group="data.random" /></div></GlobalCard
+        <div><GroupLink :group="data.random" /></div></Card
     ></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";

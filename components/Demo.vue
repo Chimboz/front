@@ -144,10 +144,10 @@
           class="btn-md"
         />
         <div class="flex">
-          <GlobalButton type="button" @click="section = 1">{{
+          <Button type="button" @click="section = 1">{{
             $t("button.signin")
-          }}</GlobalButton>
-          <GlobalButton color="green" type="button"
+          }}</Button>
+          <Button color="green" type="button"
             ><template #prepend
               ><img
                 type="submit"
@@ -156,7 +156,7 @@
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent /></template
-            >{{ $t("button.register") }}</GlobalButton
+            >{{ $t("button.register") }}</Button
           >
         </div>
       </form>
@@ -208,10 +208,10 @@
           />
         </div>-->
         <div class="flex">
-          <GlobalButton type="button" @click="section = 0">{{
+          <Button type="button" @click="section = 0">{{
             $t("button.register")
-          }}</GlobalButton>
-          <GlobalButton type="submit" color="green"
+          }}</Button>
+          <Button type="submit" color="green"
             ><template #prepend
               ><img
                 draggable="false"
@@ -219,7 +219,7 @@
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent /></template
-            >{{ $t("button.signin") }}</GlobalButton
+            >{{ $t("button.signin") }}</Button
           >
         </div>
       </form>

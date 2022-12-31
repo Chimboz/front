@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard class="rules" color="blue" :bot="bot" :top="top">
+  <Card class="rules" color="blue" :bot="bot" :top="top">
     <div class="rule-container fullwidth">
       <div>
         <img
@@ -19,9 +19,9 @@
       </div>
     </div>
     <div class="fullwidth">
-      <GlobalButton icon="rules.svg" type="button">Règles</GlobalButton>
+      <Button icon="rules.svg" type="button">Règles</Button>
     </div>
-  </GlobalCard>
+  </Card>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";

@@ -4,11 +4,14 @@ import hljs from "highlight.js";
 import "@/assets/css/bbs/markdown.css";
 import "highlight.js/styles/github-dark.css";
 
+export default defineNuxtPlugin(nuxtApp => {
+  // Doing something with nuxtApp
+
 const ALLOWED_URI = ["http", "https"];
 const ALLOWED_IMAGES = [
   "i.imgur.com",
   "image.noelshack.com",
-  useNuxtApp().ssrContext.event.node.req.headers.hostname,
+  "localhost:3000",
 ];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
@@ -115,7 +118,7 @@ function dompurifyRender(string: string) {
     if (node.hasAttribute("href")) {
       anchor = document.createElement("a");
       anchor.href = node.getAttribute("href")!;
-      if (anchor.hostname !== useNuxtApp().ssrContext.event.node.req.headers.hostname) {
+      if (anchor.hostname !== "localhost:3000") {
         node.setAttribute("target", "_blank");
         node.setAttribute("rel", "noreferrer noopener nofollow");
       }
@@ -158,7 +161,7 @@ function dompurifyRender(string: string) {
   });
 }
 
-export default function messageRender(string: string) {
+return function messageRender(string: string) {
   const result = dompurifyRender(markedRender(string));
 
   // Custom embeds
@@ -179,3 +182,4 @@ export default function messageRender(string: string) {
 
   return DOM.innerHTML;
 }
+})

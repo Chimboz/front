@@ -1,32 +1,32 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard v-if="data"
+    <Card v-if="data"
       ><template #subtop>Sur le tchat</template
       ><span
         v-for="user in data.tchat"
         :key="user.id"
         style="display: inline-block"
         ><UserLink :user="user" />&nbsp;({{ user.room }})&nbsp;
-      </span></GlobalCard
+      </span></Card
     ><br />
-    <GlobalCard v-if="data"
+    <Card v-if="data"
       ><template #subtop>Sur le site</template
       ><span v-for="(user, index) in data.site" :key="user.id"
         ><UserLink
           :user="user"
           :separator="index < data.tchat.length - 1" /></span
-    ></GlobalCard>
+    ></Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         header="ensavoirplus.webp"
         :width="154"
@@ -45,12 +45,12 @@
         />Le record de connectés est de <b>{{ data.record.online }}</b> le
         <b>{{ format(data.record.date, "PPp") }}</b
         >.
-      </GlobalCard></template
+      </Card></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";

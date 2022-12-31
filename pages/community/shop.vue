@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       v-if="data"
       color="yellow"
       header="shop.svg"
@@ -50,7 +50,7 @@
           @contextmenu.prevent
         />
         <div class="preview-tiz flex centered">
-          <GlobalAvatar
+          <Avatar
             :avatar="shown.looks[0].avatar"
             :emote="shown.looks[0].emote"
             :hat="shown.looks[0].hat"
@@ -60,7 +60,7 @@
             :item1="shown.looks[0].item1"
             :item2="shown.looks[0].item2"
           />
-          <GlobalAvatar
+          <Avatar
             v-if="shown.looks.length === 2"
             :avatar="shown.looks[1].avatar"
             :emote="shown.looks[1].emote"
@@ -88,14 +88,14 @@
             <br /><br />
             <h3>Pack {{ shown.name }}</h3>
             {{ shown.description }}<br /><br />
-            <GlobalButton
+            <Button
               v-if="user"
               type="button"
               color="yellow"
               icon="credits.svg"
               @click.prevent="buy()"
             >
-              Acheter</GlobalButton
+              Acheter</Button
             >
           </div>
         </div>
@@ -112,15 +112,15 @@
           />
         </div>
       </div>
-    </GlobalCard>
+    </Card>
     <template #right-column><Bank /></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import Bank from "@/components/BankComponent.vue";
-import Pack from "@/components/PackComponent.vue";
-import api from "@/modules/api";
-import eventBus from "@/modules/eventBus";
+
+
+import api from "@/plugins/api";
+import eventBus from "@/plugins/eventBus";
 import useAuthStore from "@/stores/auth";
 import { fetchData, asset } from "@/utils";
 import { ref, computed } from "vue";

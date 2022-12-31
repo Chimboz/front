@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard header="wedding.webp" justified bg="wedding.gif">
+    <Card header="wedding.webp" justified bg="wedding.gif">
       <div class="flex centered hstack">
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
@@ -58,8 +58,8 @@
       </div>
       <br />
       <span v-html="$t('wedding.description')"></span>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="last">
+    </Card>
+    <br /><Card v-if="data" id="last">
       <template #header>{{ $t("wedding.section.last") }}</template>
       {{ $t("date.on") }} <b>{{ format(data.last.date, "PPp") }}</b
       >, <b>{{ data.last.id }}</b
@@ -71,7 +71,7 @@
           src="@/assets/img/social/wedding/wedding.svg"
           @contextmenu.prevent
         />
-        <GlobalAvatar
+        <Avatar
           class="witness witness1"
           :avatar="data.last.witness1.look.avatar"
           emote="kawai"
@@ -82,7 +82,7 @@
           :item1="data.last.witness1.look.item1"
           :item2="data.last.witness1.look.item2"
         />
-        <GlobalAvatar
+        <Avatar
           class="married married1"
           :avatar="data.last.married1.look.avatar"
           emote="luv"
@@ -93,7 +93,7 @@
           :item1="data.last.married1.look.item1"
           :item2="data.last.married1.look.item2"
         />
-        <GlobalAvatar
+        <Avatar
           class="married married2"
           :avatar="data.last.married2.look.avatar"
           emote="luv"
@@ -104,7 +104,7 @@
           :item1="data.last.married2.look.item1"
           :item2="data.last.married2.look.item2"
         />
-        <GlobalAvatar
+        <Avatar
           class="witness witness2"
           :avatar="data.last.witness2.look.avatar"
           emote="kawai"
@@ -122,9 +122,9 @@
       <UserLink :user="data.last.married2" /><br />
       <span v-html="$t('wedding.marriedbyguruji')"></span><br />
       <UserLink :user="data.last.witness1" /> &amp;
-      <UserLink :user="data.last.witness2" />. </GlobalCard
+      <UserLink :user="data.last.witness2" />. </Card
     ><br />
-    <GlobalCard v-if="data" id="today">
+    <Card v-if="data" id="today">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -151,9 +151,9 @@
           ><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i
         >
       </div>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" id="best">
+    <Card v-if="data" id="best">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -200,9 +200,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" id="divorce">
+    <Card v-if="data" id="divorce">
       <template #header
         ><img
           src="@/assets/img/social/wedding/divorce2.webp"
@@ -250,9 +250,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" id="broken">
+    <Card v-if="data" id="broken">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -297,9 +297,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         header="ensavoirplus.webp"
         :width="154"
@@ -379,13 +379,13 @@
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">go</button>
         </form>
-      </GlobalCard></template
+      </Card></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { distance, format } from "@/utils/date";
 import { ref } from "vue";

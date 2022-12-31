@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       v-if="data"
       header="new.webp"
       bg="new.png"
@@ -25,7 +25,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          /><GlobalAvatar
+          /><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -46,9 +46,9 @@
 
       <br />
       <router-link to="/book">Voir la liste des nouveaux arrivants</router-link>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard
+    <Card
       v-if="data"
       header="popularity_blue.webp"
       bg="popularity_blue.png"
@@ -64,7 +64,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          /><GlobalAvatar
+          /><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -85,9 +85,9 @@
 
       <br />
       <router-link to="/popularity">Voir la page popularité</router-link>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard
+    <Card
       v-if="data"
       header="wedding_blue.webp"
       bg="wedding_blue.png"
@@ -109,7 +109,7 @@
             @contextmenu.prevent
           />
           <div class="flex" style="justify-content: center">
-            <GlobalAvatar
+            <Avatar
               :avatar="couple.user1.look.avatar"
               emote="luv"
               :hat="couple.user1.look.hat"
@@ -118,7 +118,7 @@
               :item0="couple.user1.look.item0"
               :item1="couple.user1.look.item1"
               :item2="couple.user1.look.item2"
-            /><GlobalAvatar
+            /><Avatar
               :avatar="couple.user2.look.avatar"
               emote="luv"
               :hat="couple.user2.look.hat"
@@ -139,11 +139,11 @@
       Les derniers mariages célébrés par Guruji
       <br />
       <router-link to="/weddings">Voir la page des mariages</router-link>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard color="blue">
+      ><Card color="blue">
         <template #button>
-          <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
+          <Button type="button" icon="search.svg">Chercher</Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="searchUser()">
           <input
@@ -174,13 +174,13 @@
             aria-label="Group"
             :placeholder="$t('placeholder.group')"
           /><button type="submit" class="btn-action">go</button>
-        </form></GlobalCard
+        </form></Card
       ></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";

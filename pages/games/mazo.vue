@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard header="mazo.webp" justified bg="mazo.gif">
+    <Card header="mazo.webp" justified bg="mazo.gif">
       <div class="flex centered hstack">
         <router-link to="#gameplay" class="btn-sm blue-bg"
           ><img
@@ -69,9 +69,9 @@
       à la 10e place gagnent un item trêfle.
 
       <br />
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard id="tutorial" justified>
+    <Card id="tutorial" justified>
       <template #header>Comment jouer&nbsp;!</template>
       <template #subtitle
         >Attention : les visiteurs ne peuvent pas jouer !</template
@@ -84,9 +84,9 @@
       main gauche, avec une cuillere de nutella dans la bouche...<br />
       <br />
       C'est comme tu le sens, n'oublie jamais: un coup de travers et tu perds
-      !!! </GlobalCard
+      !!! </Card
     ><br />
-    <GlobalCard id="gameplay" justified>
+    <Card id="gameplay" justified>
       <template #header>Gameplay</template>
       <b>MaZo</b> (toujours en version béta - version de test - pour le moment)
       se joue avec une commande de chat: tape <b>!mazo</b> pour jouer un coup,
@@ -105,8 +105,8 @@
       quand tu le sens.<br />
       - Le temps que met à s'afficher le résultat n'indique pas un bon/mauvais
       coup.<br />
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="best">
+    </Card>
+    <br /><Card v-if="data" id="best">
       <template #header>Les 20 plus mazo de l'Archipel</template>
       <template #subtitle>Continuera ? Continuera pas ? &lt;:D</template>
       <table class="fullwidth">
@@ -137,10 +137,10 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
 
     <template #right-column
-      ><GlobalCard
+      ><Card
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
@@ -175,13 +175,13 @@
           @contextmenu.prevent
         />
         Le classement est mis à jour toutes les <b>10 minutes.</b
-        ><br /> </GlobalCard
+        ><br /> </Card
     ></template>
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";

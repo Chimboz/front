@@ -14,7 +14,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import eventBus from "@/modules/eventBus";
+import eventBus from "@/plugins/eventBus";
 import { randomInt } from "@/utils";
 import { ref } from "vue";
 

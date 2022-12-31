@@ -49,7 +49,7 @@
     </tr>
   </table>
   <br v-if="movePanel" />
-  <GlobalCard v-if="movePanel">
+  <Card v-if="movePanel">
     <template #header> Déplacer le sujet </template>
     <form @submit.prevent="move">
       <select v-model="targetMove" aria-label="Forum" class="btn-md">
@@ -69,7 +69,7 @@
       >&nbsp;
       <button type="submit" class="btn-action">go</button>
     </form>
-  </GlobalCard>
+  </Card>
   <br />
   <div v-if="user" style="text-align: end">
     <button
@@ -117,7 +117,7 @@
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
 import { computed, ref } from "vue";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import Message from "../row/MessageComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
 

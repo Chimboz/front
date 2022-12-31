@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard v-if="data" color="yellow" justified
+    <Card v-if="data" color="yellow" justified
       ><template #subtop>Friends</template>
       <ScrollableContainer
         route="friends"
@@ -25,7 +25,7 @@
               class="tiz-portrait"
               :style="{ background: hashColor(friend.user.name) }"
             >
-              <GlobalAvatar
+              <Avatar
                 :avatar="friend.user.look.avatar"
                 :emote="friend.user.look.emote"
                 :hat="friend.user.look.hat"
@@ -111,9 +111,9 @@
           </div>
         </div>
       </ScrollableContainer>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <form class="flex fullwidth" @submit.prevent="addFriend">
           <input
             v-model="pseudo"
@@ -128,13 +128,13 @@
             :placeholder="$t('placeholder.username')"
           /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button>
         </form>
-      </GlobalCard>
+      </Card>
     </template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
@@ -173,7 +173,7 @@ async function addFriend() {
 fetchData(async () => {
   // data.value = (await useFetch("friends")).data;
   // TODO remove
-  data.value = (await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/friends.json`)).data;
+  data.value = (await useFetch(`https://localhost:3000/api/friends.json`)).data;
 });
 
 // /api/friends.json

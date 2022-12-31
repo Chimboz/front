@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
     <RouterView />
-    <GlobalCard v-if="data" color="yellow" style="position: relative">
+    <Card v-if="data" color="yellow" style="position: relative">
       <ScrollableContainer
         route="gallery"
         class="fullwidth"
@@ -31,16 +31,16 @@
           {{ format(image.date, "PPp") }}
         </div>
       </ScrollableContainer>
-    </GlobalCard>
-  </GlobalContainer>
+    </Card>
+  </Container>
 </template>
 
 <script setup lang="ts">
 import { onBeforeMount, ref } from "vue";
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
-import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
-import api from "@/modules/api";
+
+import api from "@/plugins/api";
 import { RouterView, RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

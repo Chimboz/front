@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard color="yellow" justified
+    <Card color="yellow" justified
       ><template #subtop>Effaceur</template>
       <template #header
         >SOS pseudo moisi, changez de pseudo pour 200 pepettes !</template
@@ -40,13 +40,13 @@
         />
         <br /><br />
         <div class="flex">
-          <GlobalButton
+          <Button
             type="button"
             aria-label="Generate nickname"
             @click="generatePseudo()"
-            >Générer un pseudo</GlobalButton
+            >Générer un pseudo</Button
           >
-          <GlobalButton color="green" type="submit" aria-label="Save"
+          <Button color="green" type="submit" aria-label="Save"
             ><template #prepend
               ><img
                 draggable="false"
@@ -56,7 +56,7 @@
                 height="33"
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent /></template
-            >Sauver</GlobalButton
+            >Sauver</Button
           >
         </div>
         <br />
@@ -64,13 +64,13 @@
         possèdes déjà un pseudo et que tu en rachètes un, le nouveau remplacera
         l'ancien.
       </form>
-    </GlobalCard>
+    </Card>
     <template #right-column><Bank /></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import Bank from "@/components/BankComponent.vue";
-import api from "@/modules/api";
+
+import api from "@/plugins/api";
 import { randomInt } from "@/utils";
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";

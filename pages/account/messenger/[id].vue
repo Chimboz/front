@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard v-if="data" color="yellow" justified
+    <Card v-if="data" color="yellow" justified
       ><template #subtop>{{ data.user.name }}</template>
       <ScrollableContainer
         route="messages"
@@ -27,7 +27,7 @@
             class="tiz-portrait"
             :style="{ background: hashColor(data.user.name) }"
           >
-            <GlobalAvatar
+            <Avatar
               :avatar="data.user.look.avatar"
               :emote="data.user.look.emote"
               :hat="data.user.look.hat"
@@ -74,9 +74,9 @@
           :placeholder="$t('placeholder.message')"
         /><button type="submit" class="btn-action">➤</button>
       </form>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard v-if="data" color="yellow" justified header="mi_sm.svg">
+      ><Card v-if="data" color="yellow" justified header="mi_sm.svg">
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"
@@ -91,7 +91,7 @@
               class="tiz-portrait"
               :style="{ background: hashColor(user.name) }"
             >
-              <GlobalAvatar
+              <Avatar
                 :avatar="user.look.avatar"
                 :emote="user.look.emote"
                 :hat="user.look.hat"
@@ -104,14 +104,14 @@
             </div>
           </router-link>
         </div>
-      </GlobalCard>
+      </Card>
     </template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
-import api from "@/modules/api";
-import messageRender from "@/modules/messageRender";
+
+import api from "@/plugins/api";
+import messageRender from "@/plugins/messageRender";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { ref } from "vue";
@@ -134,7 +134,7 @@ function send() {
 fetchData(async () => {
   // data.value = (await useFetch("mi/${useRoute().params.id}")).data;
   // TODO remove
-  data.value = (await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/mi5.json`)).data;
+  data.value = (await useFetch(`https://localhost:3000/api/mi5.json`)).data;
 });
 
 // /api/conversation.json

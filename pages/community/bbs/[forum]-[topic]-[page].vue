@@ -1,30 +1,30 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot
+      <Rules bot
     /></template>
     <TopicList v-if="data" :topic="data" />
     <br />
     <MarkdownInput
       v-if="user && data && (!data.locked || +user.user_level > 3)"
     />
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import TopicList from "@/components/bbs/list/TopicComponent.vue";
-import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
-import api from "@/modules/api";
+
+
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import { useHead } from "@vueuse/head";
-import messageRender from "@/modules/messageRender";
+import messageRender from "@/plugins/messageRender";
 
 const user = computed(() => useAuthStore().user);
 

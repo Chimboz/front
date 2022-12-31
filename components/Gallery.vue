@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard color="yellow">
+  <Card color="yellow">
     <template #header>{{ name }}</template>
     <a
       target="_blank"
@@ -14,7 +14,7 @@
         @contextmenu.prevent
       />
     </a>
-  </GlobalCard>
+  </Card>
   <br />
 </template>
 <script setup lang="ts">

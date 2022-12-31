@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard v-if="data" justified>
+  <Card v-if="data" justified>
     <template #subtop>{{ data.name }}</template>
     <div class="header fullwidth">
       <img
@@ -231,13 +231,13 @@
         Donner des pépettes
       </button>
     </form>
-  </GlobalCard>
+  </Card>
 </template>
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { format } from "@/utils/date";
 import { ref, computed } from "vue";
-import eventBus from "@/modules/eventBus";
+import eventBus from "@/plugins/eventBus";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user!);

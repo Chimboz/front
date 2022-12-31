@@ -63,7 +63,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import Card from "./core/global/CardComponent.vue";
 
 withDefaults(
   defineProps<{

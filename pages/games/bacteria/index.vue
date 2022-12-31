@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard header="bacteria.webp" justified bg="bacteria.gif">
+    <Card header="bacteria.webp" justified bg="bacteria.gif">
       <div class="flex centered hstack">
         <router-link to="#records" class="btn-sm blue-bg"
           ><img
@@ -87,9 +87,9 @@
       <a href="#top">classement des champions</a> et toute les infos dont tu as
       besoin, pour devenir toi aussi, un <b>guerrier Bacteria</b> .<br />
       <br />
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard id="tutorial" justified>
+    <Card id="tutorial" justified>
       <template #header>Comment jouer&nbsp;?</template>
 
       <img
@@ -110,9 +110,9 @@
       t'accepte, et quand un membre ou un visiteur va dans l'autre cabine, la
       partie démarre !<br /><b>Attention</b>&nbsp;: Les visiteurs ne peuvent
       jouer qu'en <b>Bacteria débutants</b>, les cabines de
-      <b>Bacteria Pro</b> sont réservées aux membres ! </GlobalCard
+      <b>Bacteria Pro</b> sont réservées aux membres ! </Card
     ><br />
-    <GlobalCard v-if="data" id="records">
+    <Card v-if="data" id="records">
       <template #header>Records !</template>
       <template #subtitle
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -140,8 +140,8 @@
         <UserLink :user="data.records.draw.user" /> avec
         {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="best">
+    </Card>
+    <br /><Card v-if="data" id="best">
       <template #header>Les 20 plus acharnés de Bacteria !</template>
       <template #subtitle
         >Des heures de phagocytage acharné pour en arriver la...</template
@@ -184,8 +184,8 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="worst">
+    </Card>
+    <br /><Card v-if="data" id="worst">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       <table class="fullwidth">
@@ -223,8 +223,8 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="groups">
+    </Card>
+    <br /><Card v-if="data" id="groups">
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="fullwidth">
@@ -250,9 +250,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         header="ensavoirplus.webp"
         :width="154"
@@ -309,15 +309,15 @@
           width="17"
           @contextmenu.prevent
         />&nbsp;<b>{{ data.stats.yesterday }}</b> parties hier.
-      </GlobalCard></template
+      </Card></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import Progress from "@/components/core/ProgressComponent.vue";
-import Tooltip from "@/components/core/TooltipComponent.vue";
-import api from "@/modules/api";
+
+
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";

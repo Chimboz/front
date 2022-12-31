@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard header="popularity.gif" justified bg="popularity.gif">
+    <Card header="popularity.gif" justified bg="popularity.gif">
       <div class="flex centered hstack">
         <router-link to="#today" class="btn-sm blue-bg"
           ><img
@@ -88,8 +88,8 @@
       Le <b>+ populaire du jour</b> gagne les lunettes pour la journée, les 3
       <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
       <b>- aimé</b> gagne une crotte pour la journée !
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="today">
+    </Card>
+    <br /><Card v-if="data" id="today">
       <template #header>Classement du jour !</template>
       Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
       quelqu'un !<br />
@@ -152,9 +152,9 @@
           </table>
         </div>
       </div>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" id="yesterday">
+    <Card v-if="data" id="yesterday">
       <template #header>Champions du jour !</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
 
@@ -214,9 +214,9 @@
               </tr>
             </tbody>
           </table>
-        </div></div></GlobalCard
+        </div></div></Card
     ><br />
-    <GlobalCard v-if="data" id="general">
+    <Card v-if="data" id="general">
       <template #header>Classement général !</template>
       <template #subtitle
         >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
@@ -279,8 +279,8 @@
           </table>
         </div>
       </div>
-    </GlobalCard>
-    <br /><GlobalCard v-if="data" id="groups">
+    </Card>
+    <br /><Card v-if="data" id="groups">
       <template #header>Classement des groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
       <div class="grid fullwidth">
@@ -339,9 +339,9 @@
               </tr>
             </tbody>
           </table>
-        </div></div></GlobalCard
+        </div></div></Card
     ><br />
-    <GlobalCard v-if="user" id="vote"
+    <Card v-if="user" id="vote"
       ><template #header>Voter Pour/Contre un membre !</template> Un membre
       t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
@@ -380,9 +380,9 @@
           /><button type="submit" class="btn-action">go</button>
         </div>
       </form>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         header="ensavoirplus.webp"
         :width="154"
@@ -436,13 +436,13 @@
             (data.stats.today.for + data.stats.today.against)
           ).toFixed(0)
         }}%)
-      </GlobalCard></template
+      </Card></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 import { ref, computed } from "vue";

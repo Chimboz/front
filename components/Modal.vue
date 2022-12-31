@@ -82,8 +82,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
-import eventBus from "@/modules/eventBus";
+import api from "@/plugins/api";
+import eventBus from "@/plugins/eventBus";
 import { ref } from "vue";
 
 const isVisible = ref(false);

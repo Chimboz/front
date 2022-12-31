@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard v-if="data" color="yellow" justified header="bank.gif">
+    <Card v-if="data" color="yellow" justified header="bank.gif">
       <ScrollableContainer
         route="banklogs"
         class="fullwidth"
@@ -81,13 +81,13 @@
           },
         }"
       />
-    </GlobalCard>
+    </Card>
     <template #right-column><Bank /></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import Bank from "@/components/BankComponent.vue";
-import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
+
+
 import { BarChart } from "vue-chart-3";
 import {
   Chart,
@@ -105,7 +105,7 @@ import {
 import { ref } from "vue";
 import { isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { format } from "@/utils/date";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData, asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
 import { useHead } from "@vueuse/head";
@@ -129,7 +129,7 @@ const data = ref<any>(undefined);
 fetchData(async () => {
   // data.value = (await useFetch("bank")).data;
   // TODO remove
-  data.value = (await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/bank.json`)).data;
+  data.value = (await useFetch(`https://localhost:3000/api/bank.json`)).data;
 });
 
 function bankData() {

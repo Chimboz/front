@@ -1,9 +1,9 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" justified>
+      ><Card color="blue" justified>
         <template #button>
-          <GlobalButton icon="rules.svg" type="button">Registre</GlobalButton>
+          <Button icon="rules.svg" type="button">Registre</Button>
         </template>
         <ScrollableContainer
           route="adminlogs"
@@ -17,14 +17,14 @@
             <b>{{ log.type }} de <UserLink :user="log.author" /></b><br />
             {{ log.reason }}
           </div>
-        </ScrollableContainer></GlobalCard
+        </ScrollableContainer></Card
       ></template
     >
     <RouterView />
     <template #right-column
-      ><GlobalCard color="blue">
+      ><Card color="blue">
         <template #button>
-          <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
+          <Button type="button" icon="search.svg">Chercher</Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
@@ -52,13 +52,13 @@
               }}</router-link>
             </li>
           </ul>
-        </div></GlobalCard
+        </div></Card
       ></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
+
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";
 import { format } from "@/utils/date";

@@ -44,7 +44,7 @@ app.component("GlobalRules", Rules);
 app.component("SideNavEntries", SideNavEntries);
 app.component("UserLink", User);
 
-app.mount("#app");
+app.mount("#__nuxt");
 
 // Router progress bar
 router.beforeEach((to, from, next) => {

@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
 import type User from "@/types/User";
-import api from "@/modules/api";
+import api from "~~/plugins/api";
 
 export default defineStore("auth", () => {
   const user = ref<undefined | User>(undefined);
@@ -11,7 +11,7 @@ export default defineStore("auth", () => {
     // user.value = (await useFetch("user")).data;
     // FIXME
     user.value = (
-      await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/user.json`)
+      await useFetch(`http://localhost:3000/api/user.json`)
     ).data;
   }
 

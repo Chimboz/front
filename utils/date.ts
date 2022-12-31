@@ -9,7 +9,8 @@ import { fr, enGB } from "date-fns/locale";
 const locales = { fr, enGB };
 
 setDefaultOptions({
-  locale: locales[navigator.language.split("-")[0] as keyof typeof locales],
+  //locales[useBrowserLocale()!.split("-")[0] as keyof typeof locales]
+  locale: fr,
 });
 
 export function distanceToNow(date: number) {

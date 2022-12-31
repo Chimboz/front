@@ -1,22 +1,22 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard header="book.webp" justified color="yellow">
+    <Card header="book.webp" justified color="yellow">
       <div
         style="float: right; margin-top: -80px; width: 50%; position: relative"
       >
         <span v-html="$t('book.description')"></span>
       </div>
-    </GlobalCard>
-    <br /><GlobalCard>
+    </Card>
+    <br /><Card>
       <img
         style="float: left"
         src="@/assets/img/book/search.webp"
@@ -54,9 +54,9 @@
             </li>
           </ul>
         </div>
-      </div></GlobalCard
+      </div></Card
     ><br />
-    <GlobalCard v-if="data"
+    <Card v-if="data"
       ><template #header>{{ $t("book.last") }}</template>
       <table class="fullwidth">
         <colgroup>
@@ -79,9 +79,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         header="ensavoirplus.webp"
         :width="154"
@@ -155,13 +155,13 @@
             ).toFixed(2)
           }}%)</sub
         >
-      </GlobalCard></template
+      </Card></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 import { ref } from "vue";

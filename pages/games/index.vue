@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       header="bacteria_blue.webp"
       :height="74"
       color="blue"
@@ -42,9 +42,9 @@
           @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard
+    <Card
       header="patojdur_blue.webp"
       :height="56"
       color="blue"
@@ -77,9 +77,9 @@
           @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard
+    <Card
       header="mazo_blue.webp"
       :height="52"
       color="blue"
@@ -112,9 +112,9 @@
           @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
       </router-link>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard
+      ><Card
         v-if="data"
         color="blue"
         header="games.gif"
@@ -138,7 +138,7 @@
             draggable="false"
             @contextmenu.prevent
           />
-          <GlobalAvatar
+          <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
             :emote="data.bacteria.user.look.emote"
@@ -168,7 +168,7 @@
             draggable="false"
             @contextmenu.prevent
           />
-          <GlobalAvatar
+          <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
             :emote="data.patojdur.user.look.emote"
@@ -198,7 +198,7 @@
             draggable="false"
             @contextmenu.prevent
           />
-          <GlobalAvatar
+          <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
             :emote="data.mazo.user.look.emote"
@@ -213,15 +213,15 @@
             <UserLink :user="data.mazo.user" /><br />est un des meilleurs
             Mazoteurs du moment !
           </div>
-        </div></GlobalCard
+        </div></Card
       ></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
 import { useHead } from "@vueuse/head";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";

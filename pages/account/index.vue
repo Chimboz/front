@@ -1,7 +1,7 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <router-link to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -19,7 +19,7 @@
             </div></div></router-link
         ><br />
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" /></div></GlobalCard
+          <SideNavEntries section="Account" /></div></Card
       ><br />
       <Bank
     /></template>
@@ -55,7 +55,7 @@
     />
     <br />
     <div class="games">
-      <GlobalCard
+      <Card
         v-if="data && data.bacteria"
         header="bacteria.svg"
         :height="74"
@@ -130,8 +130,8 @@
           </div>
           <b> parties</b>
         </div>
-      </GlobalCard>
-      <GlobalCard
+      </Card>
+      <Card
         v-if="data && data.patojdur"
         header="patojdur.svg"
         :height="56"
@@ -190,8 +190,8 @@
             },
           }"
         />
-      </GlobalCard>
-      <GlobalCard
+      </Card>
+      <Card
         v-if="data && data.mazo"
         header="mazo.svg"
         :height="52"
@@ -234,10 +234,10 @@
           @contextmenu.prevent
         />
         <b> point(s)</b>
-      </GlobalCard>
+      </Card>
     </div>
     <template #right-column>
-      <GlobalCard
+      <Card
         v-if="data"
         color="blue"
         header="messages.gif"
@@ -278,9 +278,9 @@
               <div>{{ distanceToNow(message.date) }}</div>
             </div>
           </router-link>
-        </div></GlobalCard
+        </div></Card
       ><br />
-      <GlobalCard
+      <Card
         v-if="data"
         color="blue"
         header="forum.gif"
@@ -311,12 +311,12 @@
               </div>
             </div>
           </router-link>
-        </div></GlobalCard
-      ><br /><GlobalCard v-if="data" color="blue">
+        </div></Card
+      ><br /><Card v-if="data" color="blue">
         <template #button>
-          <GlobalButton type="button" icon="register.svg">{{
+          <Button type="button" icon="register.svg">{{
             $t("profile.friendsList")
-          }}</GlobalButton>
+          }}</Button>
         </template>
         <router-link
           v-for="friend of data.friends.sort(
@@ -352,13 +352,13 @@
             </div>
           </div></router-link
         >
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalCard v-if="data" color="blue">
+      <Card v-if="data" color="blue">
         <template #button>
-          <GlobalButton type="button" icon="register.svg">{{
+          <Button type="button" icon="register.svg">{{
             $t("profile.groupsList")
-          }}</GlobalButton>
+          }}</Button>
         </template>
         <router-link
           v-for="group of data.groups"
@@ -380,15 +380,15 @@
               <GroupLink :group="group" />
             </div></div
         ></router-link>
-      </GlobalCard>
+      </Card>
     </template>
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import Cabin from "@/components/CabinComponent.vue";
-import Bank from "@/components/BankComponent.vue";
-import StrokeText from "@/components/core/StrokeTextComponent.vue";
+
+
+
 import { ref } from "vue";
 import { DoughnutChart, BarChart } from "vue-chart-3";
 import {
@@ -402,7 +402,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData, asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { useHead } from "@vueuse/head";
@@ -453,9 +453,9 @@ function statsPatojdur() {
 }
 
 fetchData(async () => {
-  // data.value = (await useFetch(`account?lang=${navigator.language.split("-")[0]}`)).data;
+  // data.value = (await useFetch(`account?lang=${useBrowserLocale()!.split("-")[0]}`)).data;
   // TODO remove
-  data.value = (await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/account.json`)).data;
+  data.value = (await useFetch(`https://localhost:3000/api/account.json`)).data;
 });
 
 // /api/account.json

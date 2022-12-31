@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard color="blue">
+  <Card color="blue">
     <form @submit.prevent="submit">
       <div class="container-acc flex">
         <div class="left-acc flex">
@@ -27,7 +27,7 @@
               </button>
             </div>
             <div class="cabin-scene relative flex" tabindex="0">
-              <GlobalAvatar
+              <Avatar
                 :avatar="data.look.avatar"
                 :emote="data.look.emote"
                 :hat="data.look.hat"
@@ -123,13 +123,13 @@
         </div>
         <div class="right-acc flex">
           <div class="flex">
-            <GlobalButton
+            <Button
               type="button"
               :class="{ active: profile }"
               :aria-label="$t('profile.profileSection')"
               @click="profile = !profile"
-              >{{ $t("profile.profileSection") }}</GlobalButton
-            ><GlobalButton
+              >{{ $t("profile.profileSection") }}</Button
+            ><Button
               type="button"
               :class="{ active: !profile }"
               :aria-label="$t('profile.invSection')"
@@ -137,7 +137,7 @@
                 profile = !profile;
                 loadInventory = true;
               "
-              >{{ $t("profile.invSection") }}</GlobalButton
+              >{{ $t("profile.invSection") }}</Button
             >
           </div>
           <div v-show="profile" id="profile">
@@ -341,7 +341,7 @@
         </div>
       </div>
       <div class="flex centered">
-        <GlobalButton color="green" type="submit" style="width: 150px"
+        <Button color="green" type="submit" style="width: 150px"
           ><template #prepend
             ><img
               draggable="false"
@@ -351,9 +351,9 @@
               height="33"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent /></template
-          >{{ $t("button.save") }}</GlobalButton
+          >{{ $t("button.save") }}</Button
         ><router-link :to="`/book/${data.id}`" class="btn">
-          <GlobalButton type="button" style="width: 150px"
+          <Button type="button" style="width: 150px"
             ><template #prepend
               ><img
                 draggable="false"
@@ -362,15 +362,14 @@
                 height="24"
                 src="@/assets/img/icon/profile.svg"
                 @contextmenu.prevent /></template
-            >{{ $t("button.card") }}</GlobalButton
+            >{{ $t("button.card") }}</Button
           ></router-link
         >
       </div>
     </form>
-  </GlobalCard>
+  </Card>
 </template>
 <script setup lang="ts">
-import Emotes from "@/components/core/EmotesComponent.vue";
 import { asset } from "@/utils";
 import { ref, type InputHTMLAttributes } from "vue";
 import type { LookCategory } from "@/types/Item";

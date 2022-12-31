@@ -15,7 +15,7 @@
   </button>
 </template>
 <script setup lang="ts">
-import StrokeText from "@/components/core/StrokeTextComponent.vue";
+
 import { asset } from "@/utils";
 
 defineProps<{

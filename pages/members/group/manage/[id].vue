@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       header="group.webp"
       bg="groups.gif"
       :height="70"
@@ -22,9 +22,9 @@
       Ils n'étaient en fait qu'une bande de nazes ? Désinscris-toi ! Alors, le
       gang de tes rêves t'as pris ? Découvre-le tout de suite ! Envie de fonder
       ton propre club ? Si tu as un super niveau, go !
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" color="blue" justified>
+    <Card v-if="data" color="blue" justified>
       <template #header>Mes inscriptions</template>
       <template #subtitle
         >Faire partie de ce groupe c'est ce qu'y a de plus classe...</template
@@ -55,9 +55,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Mes demandes en attente </template>
       <template #subtitle>Tout vient à point à qui sait attendre !</template>
       <table class="centered fullwidth">
@@ -86,9 +86,9 @@
           </tr>
         </tbody>
       </table>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Mes groupes </template>
       <template #subtitle
         >Ils étaient bien sûr les meilleurs groupes de la communauté...
@@ -125,9 +125,9 @@
           @contextmenu.prevent
         />&nbsp;Créer un nouveau groupe</router-link
       >
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard v-if="data" color="blue" header="ensavoirplus.webp">
+      ><Card v-if="data" color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img
@@ -357,12 +357,12 @@
           width="17"
           @contextmenu.prevent />
         Projecteur sur :
-        <div><GroupLink :group="data.random" /></div></GlobalCard
+        <div><GroupLink :group="data.random" /></div></Card
     ></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";
@@ -381,7 +381,7 @@ fetchData(async () => {
   // data.value = (await useFetch("groups/manage")).data;
   // TODO remove
   data.value = (
-    await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/groups_manage.json`)
+    await useFetch(`https://localhost:3000/api/groups_manage.json`)
   ).data;
 });
 

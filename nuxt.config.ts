@@ -8,5 +8,6 @@ export default defineNuxtConfig({
       baseURL: 'https://chimboz.fr/api/',
     },
   },
-  modules: ['@nuxtjs/i18n','@pinia/nuxt'],
+  modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
+  css: ['@/assets/css/var.css', '@/assets/css/main.scss', '@/assets/css/fonts.css', '@/assets/css/classes.css', '@/assets/css/atomic.css'],
 });

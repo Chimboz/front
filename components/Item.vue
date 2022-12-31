@@ -1,5 +1,5 @@
 <template>
-  <GlobalCard style="position: relative">
+  <Card style="position: relative">
     <div v-if="data" class="relative">
       <StrokeText justified class="item-name" :class="data.rarity">{{
         data.name
@@ -52,14 +52,14 @@
         </table>
       </div>
     </div>
-  </GlobalCard>
+  </Card>
   <br />
 </template>
 <script setup lang="ts">
-import StrokeText from "@/components/core/StrokeTextComponent.vue";
+
 import { asset } from "@/utils";
 
-const { data } = await useFetch(`item/${useRoute().params.id}?lang=${navigator.language.split("-")[0]}`)
+const { data } = await useFetch(`item/${useRoute().params.id}?lang=${useBrowserLocale()!.split("-")[0]}`)
 
 </script>
 <style lang="scss" scoped>

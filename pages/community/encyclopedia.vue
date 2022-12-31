@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
     <RouterView />
-    <GlobalCard v-if="data" color="yellow" style="position: relative">
+    <Card v-if="data" color="yellow" style="position: relative">
       <ScrollableContainer
         route="encyclopedia"
         class="fullwidth"
@@ -51,11 +51,11 @@
           ></Tooltip>
         </div>
       </ScrollableContainer>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard justified
+      ><Card justified
         ><template #button>
-          <GlobalButton type="button" icon="search.svg">Chercher</GlobalButton>
+          <Button type="button" icon="search.svg">Chercher</Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="onSearch">
           <input
@@ -144,16 +144,16 @@
               @contextmenu.prevent
             />
           </button>
-        </div> </GlobalCard
+        </div> </Card
     ></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import ScrollableContainer from "@/components/core/ScrollableContainerComponent.vue";
-import Tooltip from "@/components/core/TooltipComponent.vue";
+
+
 import { onBeforeMount, ref } from "vue";
 import { asset } from "@/utils";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { RouterView, RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 
@@ -214,7 +214,7 @@ onBeforeMount(async () => {
   data.value = (
     await useFetch(
       `https://chimboz.fr/public/api/encyclopedia?lang=${
-        navigator.language.split("-")[0]
+        useBrowserLocale()!.split("-")[0]
       }&page=0`
     )
   ).data;

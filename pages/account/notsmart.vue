@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard color="yellow" justified>
+    <Card color="yellow" justified>
       <template #subtop>Pamalin</template>
       On t'a dit que tu allais avoir des nouvelles fringues, que tu allais
       pouvoir devenir modo, que tu allais gagner des points ou un niveau, et tu
@@ -50,7 +50,7 @@
           class="btn-md"
         />
         <br />
-        <GlobalButton type="submit" color="green"
+        <Button type="submit" color="green"
           ><template #prepend
             ><img
               draggable="false"
@@ -60,18 +60,18 @@
               height="33"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent /></template
-          >Envoyer</GlobalButton
+          >Envoyer</Button
         >
       </form>
       <br />
       Par contre, si tu as donné ton mot de passe de compte e-mail, tu es le
       dernier des pamalins et nous ne pouvons plus rien pour toi ...
-    </GlobalCard>
+    </Card>
     <template #right-column></template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";
 

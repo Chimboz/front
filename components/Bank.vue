@@ -1,10 +1,10 @@
 <template>
-  <GlobalCard v-if="user" color="yellow">
+  <Card v-if="user" color="yellow">
     <template #button>
       <router-link to="/bank"
-        ><GlobalButton color="yellow" icon="credits.svg" type="button">{{
+        ><Button color="yellow" icon="credits.svg" type="button">{{
           $t("credit.title", +user.money)
-        }}</GlobalButton></router-link
+        }}</Button></router-link
       >
     </template>
     <div class="bank relative fullwidth">
@@ -36,14 +36,13 @@
       <div>{{ $t("credit.text", +user.money) }}</div></router-link
     >
     <!--<router-link to="/reflooz" class="btn-route"
-      ><GlobalButton color="orange" icon="reflooz.svg"
-        >Reflooz</GlobalButton
+      ><Button color="orange" icon="reflooz.svg"
+        >Reflooz</Button
       ></router-link
-    >--></GlobalCard
+    >--></Card
   >
 </template>
 <script setup lang="ts">
-import AnimatedNumber from "@/components/core/AnimatedNumberComponent.vue";
 import useAuthStore from "@/stores/auth";
 import { asset, randomInt } from "@/utils";
 import { onMounted, ref, computed } from "vue";

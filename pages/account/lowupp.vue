@@ -1,14 +1,14 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard color="yellow" justified
+    <Card color="yellow" justified
       ><template #subtop>MajMin</template>
       <template #header>Changer de MajMiN</template>
       <template #subtitle
@@ -38,7 +38,7 @@
           </button>
         </div>
         <br />
-        <GlobalButton color="green" type="submit" aria-label="Save"
+        <Button color="green" type="submit" aria-label="Save"
           ><template #prepend
             ><img
               draggable="false"
@@ -48,15 +48,15 @@
               height="33"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent /></template
-          >Sauver</GlobalButton
+          >Sauver</Button
         >
       </form>
-    </GlobalCard>
+    </Card>
     <template #right-column> </template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import useAuthStore from "@/stores/auth";
 import { ref, computed } from "vue";
 import { useHead } from "@vueuse/head";

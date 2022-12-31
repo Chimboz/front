@@ -1,12 +1,12 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column
-      ><GlobalCard color="blue" top>
+      ><Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </GlobalCard
+        </div> </Card
       ><br />
-      <GlobalRules bot
+      <Rules bot
     /></template>
     <ForumList v-if="data" :forum="data" />
     <br />
@@ -19,7 +19,7 @@
     </button>
     <MarkdownInput v-if="post && data && !data.locked" is-topic />
     <br />
-    <GlobalCard>
+    <Card>
       <div class="columns">
         <div v-for="(description, i) in iconDescriptions" :key="i">
           <img
@@ -32,14 +32,14 @@
           {{ description.label }}
         </div>
       </div>
-    </GlobalCard>
-  </GlobalContainer>
+    </Card>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import ForumList from "@/components/bbs/list/ForumComponent.vue";
-import MarkdownInput from "@/components/bbs/MarkdownInputComponent.vue";
-import api from "@/modules/api";
+
+
+import api from "@/plugins/api";
 import { asset, fetchData } from "@/utils";
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";

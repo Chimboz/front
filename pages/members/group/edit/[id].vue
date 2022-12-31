@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       v-if="data"
       header="group.webp"
       :height="70"
@@ -30,7 +30,7 @@
           Créé le {{ format(data.date, "PPp") }}
         </div>
       </div>
-    </GlobalCard>
+    </Card>
     <br />
     <Cabin
       v-if="data"
@@ -108,7 +108,7 @@
       "
     />
     <br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Informations</template>
       <form>
         <input
@@ -186,7 +186,7 @@
             @contextmenu.prevent
         /></label>
         <br /><br />
-        <GlobalButton color="green" type="submit"
+        <Button color="green" type="submit"
           ><template #prepend
             ><img
               draggable="false"
@@ -194,11 +194,11 @@
               class="arrow green jitter"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent /></template
-          >Sauver</GlobalButton
+          >Sauver</Button
         >
-      </form></GlobalCard
+      </form></Card
     ><br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Membres</template>
       <div v-for="user of data.members" :key="user.id" class="inline">
         <UserLink :user="user" :separator="false" /><img
@@ -212,9 +212,9 @@
           @keyup.prevent="removeMember(user.id)"
           @contextmenu.prevent
         />
-      </div> </GlobalCard
+      </div> </Card
     ><br />
-    <GlobalCard v-if="data" color="blue">
+    <Card v-if="data" color="blue">
       <template #header>Demandes</template>
       <div v-for="user of data.demands" :key="user.id" class="inline">
         <UserLink :user="user" :separator="false" /><img
@@ -237,9 +237,9 @@
           @click.prevent="rejectDemand(user.id)"
           @keyup.prevent="rejectDemand(user.id)"
           @contextmenu.prevent
-        /></div></GlobalCard
+        /></div></Card
     ><br />
-    <GlobalCard v-if="data && data.bacteria" class="justified"
+    <Card v-if="data && data.bacteria" class="justified"
       ><img
         src="@/assets/img/group/bacteria.gif"
         alt="Bacteria"
@@ -247,9 +247,9 @@
       /><b>Bacteria</b><br /><br />
       Classé : <b>{{ data.bacteria.rank }}</b
       >/<b>{{ data.bacteria.total }}</b> avec
-      <b>{{ data.bacteria.points }}</b> points.</GlobalCard
+      <b>{{ data.bacteria.points }}</b> points.</Card
     ><br />
-    <GlobalCard v-if="data && data.patojdur" class="justified"
+    <Card v-if="data && data.patojdur" class="justified"
       ><img
         src="@/assets/img/group/patojdur.gif"
         alt="Patojdur"
@@ -257,9 +257,9 @@
       /><b>Patojdur</b><br /><br />
       Classé : <b>{{ data.patojdur.rank }}</b
       >/<b>{{ data.patojdur.total }}</b> avec
-      <b>{{ data.patojdur.points }}</b> points.</GlobalCard
+      <b>{{ data.patojdur.points }}</b> points.</Card
     ><br />
-    <GlobalCard v-if="data && data.popularity" class="justified"
+    <Card v-if="data && data.popularity" class="justified"
       ><img
         src="@/assets/img/group/popularity.gif"
         alt="Popularity"
@@ -267,33 +267,33 @@
       /><b>Popularity</b><br /><br />
       Classé : <b>{{ data.popularity.rank }}</b
       >/<b>{{ data.popularity.total }}</b> avec
-      <b>{{ data.popularity.points }}</b> points.</GlobalCard
+      <b>{{ data.popularity.points }}</b> points.</Card
     ><br />
-    <GlobalCard v-if="data && data.global" class="justified">
+    <Card v-if="data && data.global" class="justified">
       Classement général : <b>{{ data.global.rank }}</b
       >/<b>{{ data.global.total }}</b> avec
-      <b>{{ data.global.points }}</b> points.</GlobalCard
-    ><br /><GlobalCard
+      <b>{{ data.global.points }}</b> points.</Card
+    ><br /><Card
       ><a
         style="color: red; cursor: var(--pointer)"
         @click.prevent="deleteGroup"
         @keyup.prevent="deleteGroup"
         >Supprimer le groupe</a
-      ></GlobalCard
+      ></Card
     >
     <template #right-column> </template>
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import Blazon from "@/components/blazon/BlazonComponent.vue";
-import StrokeText from "@/components/core/StrokeTextComponent.vue";
-import Cabin from "@/components/blazon/CabinComponent.vue";
+
+
+
 import { ref } from "vue";
 import { format } from "@/utils/date";
 import { useHead } from "@vueuse/head";
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { fetchData } from "@/utils";
-import eventBus from "@/modules/eventBus";
+import eventBus from "@/plugins/eventBus";
 
 const data = ref<any>(undefined);
 
@@ -321,7 +321,7 @@ fetchData(async (params) => {
   // data.value = (await useFetch(`groups/edit/${params.id}`)).data;
   // TODO remove
   data.value = (
-    await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/groups_edit.json`)
+    await useFetch(`https://localhost:3000/api/groups_edit.json`)
   ).data;
 });
 

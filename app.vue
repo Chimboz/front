@@ -7,10 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import ProgressBar from "@/components/core/ProgressBarComponent.vue";
-import Navbar from "@/components/core/NavbarComponent.vue";
-import Footer from "@/components/core/FooterComponent.vue";
-import Modal from "@/components/core/ModalComponent.vue";
 import useAuthStore from "@/stores/auth";
 import { computed, watchEffect } from "vue";
 import { useHead } from "@vueuse/head";
@@ -55,7 +51,7 @@ watchEffect(() => {
 </script>
 
 <style>
-#app {
+#__nuxt {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

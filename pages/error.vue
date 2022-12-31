@@ -1,7 +1,7 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column></template>
-    <GlobalCard color="red">
+    <Card color="red">
       <img
         draggable="false"
         alt="Error icon"
@@ -16,9 +16,9 @@
             : $t("error.default")
         }}</b
       >
-    </GlobalCard>
+    </Card>
     <template #right-column></template>
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">

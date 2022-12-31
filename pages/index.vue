@@ -1,7 +1,7 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <router-link v-if="data" to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -71,7 +71,7 @@
           </div>
           {{ $t("friends.online", data.friends) }}
         </router-link>
-      </GlobalCard>
+      </Card>
       <br />
       <Bank />
     </template>
@@ -85,7 +85,7 @@
       @contextmenu.prevent
     />
     <br />
-    <GlobalCard v-if="data && data.lottery" header="lottery.webp">
+    <Card v-if="data && data.lottery" header="lottery.webp">
       <template #header> </template>
       <div v-if="lottery">
         <div>{{ $t("lottery.firstLine") }}</div>
@@ -94,7 +94,7 @@
       <RandomNumber v-else :max="30" :value="gain" /> <br /><br
         v-if="!lottery"
       />
-      <GlobalButton type="button" color="orange" @click="handle"
+      <Button type="button" color="orange" @click="handle"
         ><template #prepend
           ><img
             v-if="lottery"
@@ -113,13 +113,13 @@
             width="16"
             src="@/assets/img/lottery/down.svg"
             @contextmenu.prevent /></template
-        >{{ $t("button.lottery") }}</GlobalButton
-      ></GlobalCard
+        >{{ $t("button.lottery") }}</Button
+      ></Card
     >
     <br />
     <Radio src="track.flac" />
     <br />
-    <GlobalCard v-if="data" color="yellow" justified>
+    <Card v-if="data" color="yellow" justified>
       <template #subtop>{{ $t("section.chapaniouz") }}</template>
       <template #header
         ><img
@@ -140,9 +140,9 @@
       <div class="news-date">
         {{ data.news.author }}, {{ format(data.news.date, "PPp") }}
       </div>
-    </GlobalCard>
+    </Card>
     <br />
-    <GlobalCard v-if="data">
+    <Card v-if="data">
       <template #subtop
         ><router-link to="/chaparazzi" class="chaparazzi-link">{{
           $t("section.chaparazzi")
@@ -177,9 +177,9 @@
           {{ $t("chaparazzi.more") }}
         </router-link>
       </div>
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard v-if="data" color="blue" top>
+      ><Card v-if="data" color="blue" top>
         <template #header
           ><router-link to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -189,10 +189,10 @@
         <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
         <div>
           {{ data.last24 }} {{ $t("members.past", data.last24) }}
-        </div></GlobalCard
+        </div></Card
       ><br />
       <router-link to="/shop">
-        <GlobalCard
+        <Card
           v-if="data"
           color="yellow"
           header="packs.webp"
@@ -201,43 +201,43 @@
           class="packs"
         >
           <template #button>
-            <GlobalButton type="button" color="yellow" icon="item.svg">{{
+            <Button type="button" color="yellow" icon="item.svg">{{
               $t("shop.pack")
-            }}</GlobalButton>
+            }}</Button>
           </template>
           <Pack
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
           /><br /><br />
-          <GlobalButton
+          <Button
             type="button"
             color="yellow"
             icon="item.svg"
             class="fullwidth"
-            >{{ $t("shop.item") }}</GlobalButton
+            >{{ $t("shop.item") }}</Button
           ><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
-        </GlobalCard>
+        </Card>
       </router-link>
     </template>
-  </GlobalContainer>
+  </Container>
 </template>
 
 <script setup lang="ts">
-import Radio from "@/components/RadioComponent.vue";
-import RandomNumber from "@/components/core/RandomNumberComponent.vue";
-import Bank from "@/components/BankComponent.vue";
-import Pack from "@/components/PackComponent.vue";
+
+
+
+
 import { ref } from "vue";
 import { useHead } from "@vueuse/head";
-import messageRender from "@/modules/messageRender";
-import api from "@/modules/api";
+import messageRender from "@/plugins/messageRender";
+import api from "@/plugins/api";
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
 // data.value = (await useFetch("home")).data;
 // TODO remove
-const { data } = await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/home.json`)
+const { data } = await useFetch(`https://localhost:3000/api/home.json`)
 const lottery = ref(true);
 const gain = ref(0);
 
@@ -248,7 +248,7 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   // data.value = (await useFetch("randomppt")).data;
   // TODO remove
   gain.value = (
-    await useFetch(`${useNuxtApp().ssrContext.event.node.req.headers.origin}/api/lottery.json`)
+    await useFetch(`https://localhost:3000/api/lottery.json`)
   ).data.gain;
 }
 

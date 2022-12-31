@@ -1,15 +1,15 @@
 <template>
-  <GlobalContainer>
+  <Container>
     <template #left-column>
-      <GlobalCard color="blue" top>
+      <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Members" />
         </div>
-      </GlobalCard>
+      </Card>
       <br />
-      <GlobalRules bot />
+      <Rules bot />
     </template>
-    <GlobalCard
+    <Card
       v-if="data"
       header="group.webp"
       :height="70"
@@ -41,7 +41,7 @@
         v-html="messageRender(data.description)"
       ></div>
       <br />
-      <GlobalCard v-if="data" class="justified">
+      <Card v-if="data" class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
         <UserLink :user="data.leader" />
         <br /><br />
@@ -79,7 +79,7 @@
           :alt="data.status"
           @contextmenu.prevent
         />
-      </GlobalCard>
+      </Card>
       <br />
       Groupe no. <b>{{ data.id }}</b> créé le
       <b
@@ -89,7 +89,7 @@
         jours)</b
       ><br />
       <br v-if="data.bacteria" />
-      <GlobalCard v-if="data.bacteria" class="justified"
+      <Card v-if="data.bacteria" class="justified"
         ><img
           src="@/assets/img/group/bacteria.gif"
           alt="Bacteria"
@@ -98,9 +98,9 @@
         /><b>Bacteria</b><br /><br />
         Classé : <b>{{ data.bacteria.rank }}</b
         >/<b>{{ data.bacteria.total }}</b> avec
-        <b>{{ data.bacteria.points }}</b> points.</GlobalCard
+        <b>{{ data.bacteria.points }}</b> points.</Card
       ><br v-if="data.patojdur" />
-      <GlobalCard v-if="data.patojdur" class="justified"
+      <Card v-if="data.patojdur" class="justified"
         ><img
           src="@/assets/img/group/patojdur.gif"
           alt="Patojdur"
@@ -109,9 +109,9 @@
         /><b>Patojdur</b><br /><br />
         Classé : <b>{{ data.patojdur.rank }}</b
         >/<b>{{ data.patojdur.total }}</b> avec
-        <b>{{ data.patojdur.points }}</b> points.</GlobalCard
+        <b>{{ data.patojdur.points }}</b> points.</Card
       ><br v-if="data.popularity" />
-      <GlobalCard v-if="data.popularity" class="justified"
+      <Card v-if="data.popularity" class="justified"
         ><img
           src="@/assets/img/group/popularity.gif"
           alt="Popularity"
@@ -120,16 +120,16 @@
         /><b>Popularity</b><br /><br />
         Classé : <b>{{ data.popularity.rank }}</b
         >/<b>{{ data.popularity.total }}</b> avec
-        <b>{{ data.popularity.points }}</b> points.</GlobalCard
+        <b>{{ data.popularity.points }}</b> points.</Card
       ><br v-if="data.global" />
-      <GlobalCard v-if="data.global" class="justified">
+      <Card v-if="data.global" class="justified">
         Classement général : <b>{{ data.global.rank }}</b
         >/<b>{{ data.global.total }}</b> avec
-        <b>{{ data.global.points }}</b> points.</GlobalCard
+        <b>{{ data.global.points }}</b> points.</Card
       >
-    </GlobalCard>
+    </Card>
     <template #right-column
-      ><GlobalCard v-if="data" color="blue">
+      ><Card v-if="data" color="blue">
         <template #header> Inscription pour rejoindre ce groupe </template>
         <div class="justified">
           <img
@@ -148,15 +148,15 @@
             >
           </div>
         </div>
-      </GlobalCard></template
+      </Card></template
     >
-  </GlobalContainer>
+  </Container>
 </template>
 <script setup lang="ts">
-import Blazon from "@/components/blazon/BlazonComponent.vue";
-import StrokeText from "@/components/core/StrokeTextComponent.vue";
-import api from "@/modules/api";
-import messageRender from "@/modules/messageRender";
+
+
+import api from "@/plugins/api";
+import messageRender from "@/plugins/messageRender";
 import { fetchData, asset } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";

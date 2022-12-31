@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/modules/api";
+import api from "@/plugins/api";
 import { ref } from "vue";
 
 const emit = defineEmits<{ (e: "scrollData", data: any[]): void }>();
