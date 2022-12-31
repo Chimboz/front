@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <BBSList v-if="data" :boards="data"></BBSList>
+    <BbsList :boards="data"></BbsList>
     <br />
     <Card
       ><div class="columns">
@@ -55,19 +55,10 @@
 </template>
 
 <script setup lang="ts">
-
-
-import { fetchData } from "@/utils";
-
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/bbs");
 
-fetchData(async () => {
-  data.value = (await useFetch("bbs")).data;
-});
-
-// /api/bbs.json
 useHead({ title: "section.bbs" });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

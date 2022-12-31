@@ -7,7 +7,7 @@
       class="card-header"
       :width="width"
       :height="height"
-      :src="asset(`@/assets/img/card/header/${header}`)"
+      :src="asset(`img/card/header/${header}`)"
       @contextmenu.prevent
     />
     <img

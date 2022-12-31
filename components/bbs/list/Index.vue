@@ -16,14 +16,12 @@
       </tr>
     </thead>
 
-    <Category v-for="category in boards" :key="category" :category="category">
-    </Category>
+    <BbsRowCategory v-for="category in boards" :key="category" :category="category">
+    </BbsRowCategory>
   </table>
 </template>
 
 <script setup lang="ts">
-import Category from "../row/CategoryComponent.vue";
-
 defineProps<{
   boards: any[];
 }>();
