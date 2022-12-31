@@ -250,9 +250,9 @@
 
 import useAuthStore from "@/stores/auth";
 import eventBus from "@/plugins/eventBus";
-import { computed, ref, type SelectHTMLAttributes } from "vue";
+
 import { useI18n } from "vue-i18n";
-import api from "@/plugins/api";
+
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();

@@ -102,10 +102,10 @@ import {
   LineElement,
   type ChartData,
 } from "chart.js";
-import { ref } from "vue";
+
 import { isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { format } from "@/utils/date";
-import api from "@/plugins/api";
+
 import { fetchData, asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
 import { useHead } from "@vueuse/head";

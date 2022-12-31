@@ -5,7 +5,7 @@
       backgroundImage: `url(${asset(`img/navbar/svg/${hours}.svg`)})`,
     }"
   >
-    <router-link to="/"
+    <NuxtLink to="/"
       ><img
         id="logo"
         draggable="false"
@@ -14,10 +14,10 @@
         height="70"
         src="@/assets/img/logo.svg"
         @contextmenu.prevent
-    /></router-link>
+    /></NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
-        <UserLink
+        <LinkUser
           id="username"
           :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           style="display: inherit"
@@ -41,7 +41,7 @@
           {{ $t("navbar.logout") }}
         </button>
         <button v-else type="button">
-          <router-link id="connect" to="/login" class="flex">
+          <NuxtLink id="connect" to="/login" class="flex">
             <img
               draggable="false"
               alt="Connect icon"
@@ -51,7 +51,7 @@
               @contextmenu.prevent
             />
             {{ $t("navbar.login") }}
-          </router-link>
+          </NuxtLink>
         </button>
       </div>
       <Avatar
@@ -68,7 +68,7 @@
     </div>
   </div>
   <div id="nav" class="flex">
-    <router-link
+    <NuxtLink
       to="/"
       :class="{ active: ($route.meta.section as string[])?.includes('Home') }"
       ><button class="nav-btn flex centered" type="button">
@@ -82,7 +82,7 @@
           style="margin: 2px; padding: 1px"
           @contextmenu.prevent
         /></button
-    ></router-link>
+    ></NuxtLink>
     <a target="_blank" href="/tchat"
       ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
@@ -109,7 +109,7 @@
           @contextmenu.prevent
         /></button
     ></a>
-    <router-link
+    <NuxtLink
       v-if="user"
       to="/account"
       :class="{ active: ($route.meta.section as string[])?.includes('Account') }"
@@ -128,9 +128,9 @@
             $t("navbar.account")
           }}</StrokeText>
         </div>
-      </button></router-link
+      </button></NuxtLink
     >
-    <router-link
+    <NuxtLink
       to="/games"
       :class="{ active: ($route.meta.section as string[])?.includes('Games') }"
       ><button class="nav-btn flex centered" type="button">
@@ -148,9 +148,9 @@
             $t("navbar.games")
           }}</StrokeText>
         </div>
-      </button></router-link
+      </button></NuxtLink
     >
-    <router-link
+    <NuxtLink
       to="/members"
       :class="{ active: ($route.meta.section as string[])?.includes('Members') }"
       ><button class="nav-btn flex centered" type="button">
@@ -168,9 +168,9 @@
             $t("navbar.members")
           }}</StrokeText>
         </div>
-      </button></router-link
+      </button></NuxtLink
     >
-    <router-link
+    <NuxtLink
       to="/bbs"
       :class="{ active: ($route.meta.section as string[])?.includes('Community') }"
       ><button class="nav-btn flex centered" type="button">
@@ -188,7 +188,7 @@
             $t("navbar.community")
           }}</StrokeText>
         </div>
-      </button></router-link
+      </button></NuxtLink
     >
   </div>
 </template>
@@ -197,7 +197,7 @@
 
 import useAuthStore from "@/stores/auth";
 import { asset } from "@/utils";
-import { computed } from "vue";
+
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

@@ -48,7 +48,7 @@
           >
             <div>
               <h3>
-                <UserLink v-if="!message.you" :user="data.user" />&nbsp;<span
+                <LinkUser v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
                   >{{ distanceToNow(message.date) }}</span
                 >
@@ -81,7 +81,7 @@
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"
         >
-          <router-link
+          <NuxtLink
             v-for="user of data.recent"
             :key="user.id"
             class="message flex"
@@ -102,7 +102,7 @@
                 :item2="user.look.item2"
               />
             </div>
-          </router-link>
+          </NuxtLink>
         </div>
       </Card>
     </template>
@@ -110,11 +110,11 @@
 </template>
 <script setup lang="ts">
 
-import api from "@/plugins/api";
+
 import messageRender from "@/plugins/messageRender";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-import { ref } from "vue";
+
 import { RouterLink, useRoute } from "vue-router";
 import { useHead } from "@vueuse/head";
 

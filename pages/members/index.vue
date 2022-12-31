@@ -10,7 +10,6 @@
       <Rules bot />
     </template>
     <Card
-      v-if="data"
       header="new.webp"
       bg="new.png"
       :height="70"
@@ -35,7 +34,7 @@
             :item1="user.look.item1"
             :item2="user.look.item2"
           />
-          <UserLink :user="user" />
+          <LinkUser :user="user" />
           <span
             >Membre n°<b>{{ user.id }}</b></span
           >
@@ -45,11 +44,10 @@
       Les derniers membres qui ont rejoint l'archipel !
 
       <br />
-      <router-link to="/book">Voir la liste des nouveaux arrivants</router-link>
+      <NuxtLink to="/book">Voir la liste des nouveaux arrivants</NuxtLink>
     </Card>
     <br />
     <Card
-      v-if="data"
       header="popularity_blue.webp"
       bg="popularity_blue.png"
       :height="75"
@@ -74,7 +72,7 @@
             :item1="user.look.item1"
             :item2="user.look.item2"
           />
-          <UserLink :user="user" />
+          <LinkUser :user="user" />
           <span
             >Avec <b>{{ user.score }}</b> points</span
           >
@@ -84,11 +82,10 @@
       Les membres les plus populaire de l'archipel !
 
       <br />
-      <router-link to="/popularity">Voir la page popularité</router-link>
+      <NuxtLink to="/popularity">Voir la page popularité</NuxtLink>
     </Card>
     <br />
     <Card
-      v-if="data"
       header="wedding_blue.webp"
       bg="wedding_blue.png"
       color="blue"
@@ -130,15 +127,15 @@
             />
           </div>
           <span>
-            <UserLink :user="couple.user1" /> &amp;
-            <UserLink :user="couple.user2"
+            <LinkUser :user="couple.user1" /> &amp;
+            <LinkUser :user="couple.user2"
           /></span>
         </div>
       </div>
       <br />
       Les derniers mariages célébrés par Guruji
       <br />
-      <router-link to="/weddings">Voir la page des mariages</router-link>
+      <NuxtLink to="/weddings">Voir la page des mariages</NuxtLink>
     </Card>
     <template #right-column
       ><Card color="blue">
@@ -180,14 +177,11 @@
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
-import { fetchData } from "@/utils";
-import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import { useHead } from "@vueuse/head";
 
 const router = useRouter();
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/members");
 const userSearch = ref("");
 const groupSearch = ref("");
 
@@ -204,10 +198,6 @@ async function searchGroup() {
     `/groups/${(await useFetch(`groups/search/${groupSearch.value}`)).data.mid}`
   );
 }
-
-fetchData(async () => {
-  data.value = (await useFetch("members")).data;
-});
 
 useHead({ title: "section.members" });
 </script>

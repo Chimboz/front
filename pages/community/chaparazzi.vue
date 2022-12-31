@@ -17,7 +17,7 @@
         @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
       >
         <div v-for="image of data" :key="image.name" class="gallery-image">
-          <router-link :to="'/chaparazzi/' + image.name">
+          <NuxtLink :to="'/chaparazzi/' + image.name">
             <nuxt-img
               draggable="false"
               :alt="image.name"
@@ -25,9 +25,9 @@
               :src-placeholder="asset('img/loading.svg')"
               @contextmenu.prevent
             />
-          </router-link>
+          </NuxtLink>
           <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
-          <UserLink :user="image.author" /><br />
+          <LinkUser :user="image.author" /><br />
           {{ format(image.date, "PPp") }}
         </div>
       </ScrollableContainer>
@@ -36,11 +36,11 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, ref } from "vue";
+
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
 
-import api from "@/plugins/api";
+
 import { RouterView, RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

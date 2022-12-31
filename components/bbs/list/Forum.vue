@@ -1,9 +1,9 @@
 <template>
   <span class="pink justified">
-    <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link :to="'/bbs/' + $route.params.id" class="pink">{{
+    <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
+    <NuxtLink :to="'/bbs/' + $route.params.id" class="pink">{{
       forum.name
-    }}</router-link></span
+    }}</NuxtLink></span
   >
   <br />
   <table class="bbs board">
@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
-import { computed } from "vue";
+
 import Topic from "../row/TopicComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
 

@@ -1,4 +1,4 @@
-import { createApp } from "vue";
+
 import { createPinia } from "pinia";
 import { createHead } from "@vueuse/head";
 import App from "./App.vue";
@@ -39,10 +39,10 @@ app.component("GlobalAvatar", Avatar);
 app.component("GlobalButton", Button);
 app.component("GlobalCard", Card);
 app.component("GlobalContainer", Container);
-app.component("GroupLink", Group);
+app.component("LinkGroup", Group);
 app.component("GlobalRules", Rules);
 app.component("SideNavEntries", SideNavEntries);
-app.component("UserLink", User);
+app.component("LinkUser", User);
 
 app.mount("#__nuxt");
 

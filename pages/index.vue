@@ -2,7 +2,7 @@
   <Container>
     <template #left-column>
       <Card color="blue" top>
-        <router-link v-if="data" to="/levels">
+        <NuxtLink v-if="data" to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
             <div class="number">
@@ -18,8 +18,8 @@
               />
             </div>
           </div>
-        </router-link>
-        <router-link v-if="data" to="/mi">
+        </NuxtLink>
+        <NuxtLink v-if="data" to="/mi">
           <div class="messages">
             <div>
               <img
@@ -44,8 +44,8 @@
             />
           </div>
           {{ $t("mi.message", data.messages) }}
-        </router-link>
-        <router-link v-if="data" to="/friends">
+        </NuxtLink>
+        <NuxtLink v-if="data" to="/friends">
           <div class="friends">
             <div>
               <img
@@ -70,7 +70,7 @@
             />
           </div>
           {{ $t("friends.online", data.friends) }}
-        </router-link>
+        </NuxtLink>
       </Card>
       <br />
       <Bank />
@@ -144,9 +144,9 @@
     <br />
     <Card v-if="data">
       <template #subtop
-        ><router-link to="/chaparazzi" class="chaparazzi-link">{{
+        ><NuxtLink to="/chaparazzi" class="chaparazzi-link">{{
           $t("section.chaparazzi")
-        }}</router-link></template
+        }}</NuxtLink></template
       >
       <div class="gallery flex">
         <div
@@ -155,17 +155,17 @@
           class="flex col photo"
           style="margin: auto"
         >
-          <router-link :to="'/chaparazzi/' + photo.name">
+          <NuxtLink :to="'/chaparazzi/' + photo.name">
             <img
               draggable="false"
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
-              @contextmenu.prevent /></router-link
+              @contextmenu.prevent /></NuxtLink
           ><b>{{ format(photo.date, "PP") }}</b>
         </div>
       </div>
       <div style="text-align: right">
-        <router-link to="/chaparazzi">
+        <NuxtLink to="/chaparazzi">
           <img
             src="@/assets/img/puce.svg"
             alt="Puce"
@@ -175,15 +175,15 @@
             @contextmenu.prevent
           />
           {{ $t("chaparazzi.more") }}
-        </router-link>
+        </NuxtLink>
       </div>
     </Card>
     <template #right-column
       ><Card v-if="data" color="blue" top>
         <template #header
-          ><router-link to="/online"
+          ><NuxtLink to="/online"
             ><h1>{{ data.connected }}</h1>
-            {{ $t("online", data.connected) }}</router-link
+            {{ $t("online", data.connected) }}</NuxtLink
           ></template
         >
         <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
@@ -191,7 +191,7 @@
           {{ data.last24 }} {{ $t("members.past", data.last24) }}
         </div></Card
       ><br />
-      <router-link to="/shop">
+      <NuxtLink to="/shop">
         <Card
           v-if="data"
           color="yellow"
@@ -218,20 +218,14 @@
           ><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
         </Card>
-      </router-link>
+      </NuxtLink>
     </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-
-
-
-
-import { ref } from "vue";
 import { useHead } from "@vueuse/head";
 import messageRender from "@/plugins/messageRender";
-import api from "@/plugins/api";
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
 

@@ -2,21 +2,16 @@
   <div class="blazon">
     <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="" />
     <div class="blazon-body">
-      <background :id="shape" :primary="primary" :secondary="secondary" />
-      <div v-if="top != -1" class="top"><top :id="top" :color="primary" /></div>
+      <BlazonBackground :id="shape" :primary="primary" :secondary="secondary" />
+      <div v-if="top != -1" class="top"><BlazonTop :id="top" :color="primary" /></div>
       <div class="bot" :class="{ lone: top === -1 }">
-        <bot :id="bot" :color="primary" />
+        <BlazonBot :id="bot" :color="primary" />
       </div>
-      <div class="reflection"><reflection :id="shape" /></div>
+      <div class="reflection"><BlazonReflection :id="shape" /></div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import Background from "./BackgroundComponent.vue";
-import Reflection from "./ReflectionComponent.vue";
-import Top from "./TopComponent.vue";
-import Bot from "./BotComponent.vue";
-
 withDefaults(
   defineProps<{
     primary: string;

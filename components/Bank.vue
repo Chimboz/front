@@ -1,10 +1,10 @@
 <template>
   <Card v-if="user" color="yellow">
     <template #button>
-      <router-link to="/bank"
+      <NuxtLink to="/bank"
         ><Button color="yellow" icon="credits.svg" type="button">{{
           $t("credit.title", +user.money)
-        }}</Button></router-link
+        }}</Button></NuxtLink
       >
     </template>
     <div class="bank relative fullwidth">
@@ -30,22 +30,22 @@
       ></object>
     </div>
 
-    <router-link to="/bank">
+    <NuxtLink to="/bank">
       <div>{{ $t("credit.youGot") }}</div>
       <AnimatedNumber :number="+user.money" :delay="delay" />
-      <div>{{ $t("credit.text", +user.money) }}</div></router-link
+      <div>{{ $t("credit.text", +user.money) }}</div></NuxtLink
     >
-    <!--<router-link to="/reflooz" class="btn-route"
+    <!--<NuxtLink to="/reflooz" class="btn-route"
       ><Button color="orange" icon="reflooz.svg"
         >Reflooz</Button
-      ></router-link
+      ></NuxtLink
     >--></Card
   >
 </template>
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { asset, randomInt } from "@/utils";
-import { onMounted, ref, computed } from "vue";
+
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

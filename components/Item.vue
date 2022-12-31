@@ -43,7 +43,7 @@
           </thead>
           <tbody>
             <tr v-for="owner of data.owner" :key="owner.user.id">
-              <td><UserLink :user="owner.user" /></td>
+              <td><LinkUser :user="owner.user" /></td>
               <td>
                 <b>{{ owner.quantity }}</b>
               </td>

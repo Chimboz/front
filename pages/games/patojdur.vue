@@ -10,7 +10,7 @@
     </template>
     <Card header="patojdur.webp" justified bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
-        <router-link to="#gameplay" class="btn-sm blue-bg"
+        <NuxtLink to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -18,9 +18,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Le gameplay</router-link
+          />&nbsp;Le gameplay</NuxtLink
         >
-        <router-link to="#modes" class="btn-sm blue-bg"
+        <NuxtLink to="#modes" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -28,9 +28,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Les modes</router-link
+          />&nbsp;Les modes</NuxtLink
         >
-        <router-link to="#races" class="btn-sm blue-bg"
+        <NuxtLink to="#races" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -38,9 +38,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Les courses</router-link
+          />&nbsp;Les courses</NuxtLink
         >
-        <router-link to="#yesterday" class="btn-sm blue-bg"
+        <NuxtLink to="#yesterday" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -48,9 +48,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Champion du jour</router-link
+          />&nbsp;Champion du jour</NuxtLink
         >
-        <router-link to="#today" class="btn-sm blue-bg"
+        <NuxtLink to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -58,9 +58,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Classement du jour</router-link
+          />&nbsp;Classement du jour</NuxtLink
         >
-        <router-link to="#general" class="btn-sm blue-bg"
+        <NuxtLink to="#general" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -68,9 +68,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Classement général</router-link
+          />&nbsp;Classement général</NuxtLink
         >
-        <router-link to="#records" class="btn-sm blue-bg"
+        <NuxtLink to="#records" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -78,9 +78,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Les records</router-link
+          />&nbsp;Les records</NuxtLink
         >
-        <router-link to="#groups" class="btn-sm blue-bg"
+        <NuxtLink to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -88,9 +88,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Les groupes</router-link
+          />&nbsp;Les groupes</NuxtLink
         >
-        <router-link to="#tutorial" class="btn-sm pink-bg">
+        <NuxtLink to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
             width="14"
@@ -99,7 +99,7 @@
             src="@/assets/img/icon/button/help.svg"
             @contextmenu.prevent
           />&nbsp;Comment jouer&nbsp;?
-        </router-link>
+        </NuxtLink>
       </div>
       <br />
       <img
@@ -198,7 +198,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td class="justified">
               <b>{{ format(rank.date, "PPp") }}</b
               ><br /><i>{{ rank.day }}e journée</i>
@@ -234,7 +234,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.yesterday" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -266,7 +266,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.general" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -297,7 +297,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.today" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -325,7 +325,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><GroupLink :group="rank.group" /></td>
+            <td><LinkGroup :group="rank.group" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -348,7 +348,7 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<router-link to="bbs/6">BBS de Patojdur</router-link><br />
+        />&nbsp;<NuxtLink to="bbs/6">BBS de Patojdur</NuxtLink><br />
         <br />
         <img
           src="@/assets/img/puce.svg"
@@ -369,10 +369,10 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

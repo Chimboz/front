@@ -34,13 +34,13 @@
         <b>chimboz.fr</b>.</template
       >
       Les membres de ces groupes sont nommés par
-      <router-link to="/groups/1">les créateurs du site</router-link>, et se
-      voient attribuer des rubriques à modérer (<router-link to="photos"
-        >albums</router-link
-      >, <router-link to="faq">faq</router-link>,
-      <router-link to="bbs">BBS</router-link>...)ou même un poste sur le chat
-      (<router-link to="/groups/3">modos officiels</router-link>,
-      <router-link to="/groups/9">aideurs officiels</router-link>). <br /><br />
+      <NuxtLink to="/groups/1">les créateurs du site</NuxtLink>, et se
+      voient attribuer des rubriques à modérer (<NuxtLink to="photos"
+        >albums</NuxtLink
+      >, <NuxtLink to="faq">faq</NuxtLink>,
+      <NuxtLink to="bbs">BBS</NuxtLink>...)ou même un poste sur le chat
+      (<NuxtLink to="/groups/3">modos officiels</NuxtLink>,
+      <NuxtLink to="/groups/9">aideurs officiels</NuxtLink>). <br /><br />
       <table class="centered fullwidth">
         <colgroup>
           <col width="30" />
@@ -59,7 +59,7 @@
             <td>
               <b>{{ group.id }}</b>
             </td>
-            <td><GroupLink :group="group" /></td>
+            <td><LinkGroup :group="group" /></td>
             <td>{{ group.genre }}</td>
           </tr>
         </tbody>
@@ -91,7 +91,7 @@
             <td>
               <b>{{ group.id }}</b>
             </td>
-            <td><GroupLink :group="group" /></td>
+            <td><LinkGroup :group="group" /></td>
             <td>{{ group.genre }}</td>
           </tr>
         </tbody>
@@ -130,7 +130,7 @@
             <td>
               <b>{{ group.id }}</b>
             </td>
-            <td><GroupLink :group="group" /></td>
+            <td><LinkGroup :group="group" /></td>
             <td>{{ group.score }}</td>
           </tr>
         </tbody>
@@ -140,7 +140,7 @@
     <Card v-if="user">
       <template #header>Moi et mes groupes</template>
 
-      <router-link to="/groups/manage"
+      <NuxtLink to="/groups/manage"
         ><img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -149,7 +149,7 @@
           width="17"
           @contextmenu.prevent
         />
-        Gérer mes groupes</router-link
+        Gérer mes groupes</NuxtLink
       >
     </Card>
     <template #right-column
@@ -364,7 +364,7 @@
           @contextmenu.prevent />
         Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as besoin
         d'avoir un certain
-        <router-link to="/levels">niveau</router-link>.<br /><br />
+        <NuxtLink to="/levels">niveau</NuxtLink>.<br /><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -373,7 +373,7 @@
           width="17"
           @contextmenu.prevent />
         Le nombre de groupes que tu peux rejoindre tel que décrit dans le
-        <router-link to="/levels">tableau des niveaux</router-link>, comprend
+        <NuxtLink to="/levels">tableau des niveaux</NuxtLink>, comprend
         uniquement les <b>groupes des membres</b>, les
         <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
           src="@/assets/img/puce.svg"
@@ -383,15 +383,15 @@
           width="17"
           @contextmenu.prevent />
         Projecteur sur :
-        <div><GroupLink :group="data.random" /></div></Card
+        <div><LinkGroup :group="data.random" /></div></Card
     ></template>
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
-import { ref, computed } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();

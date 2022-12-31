@@ -229,7 +229,7 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<router-link to="/bbs/5">BBS de Bacteria</router-link><br />
+        />&nbsp;<NuxtLink to="/bbs/5">BBS de Bacteria</NuxtLink><br />
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
@@ -237,8 +237,8 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<router-link to="bacteria/story"
-          >Bacteria Sanctuary</router-link
+        />&nbsp;<NuxtLink to="bacteria/story"
+          >Bacteria Sanctuary</NuxtLink
         >
       </Card></template
     >

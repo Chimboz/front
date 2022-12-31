@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import eventBus from "@/plugins/eventBus";
 import { randomInt } from "@/utils";
-import { ref } from "vue";
+
 
 // Assume that loading will complete under this amount of time.
 const defaultDuration = 4000;

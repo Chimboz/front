@@ -10,7 +10,7 @@
     </template>
     <Card header="bacteria.webp" justified bg="bacteria.gif">
       <div class="flex centered hstack">
-        <router-link to="#records" class="btn-sm blue-bg"
+        <NuxtLink to="#records" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -19,9 +19,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Les records</router-link
+          />&nbsp;Les records</NuxtLink
         >
-        <router-link to="#best" class="btn-sm blue-bg"
+        <NuxtLink to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -30,9 +30,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Les meilleurs</router-link
+          />&nbsp;Les meilleurs</NuxtLink
         >
-        <router-link to="#worst" class="btn-sm blue-bg"
+        <NuxtLink to="#worst" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -41,9 +41,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Les pires</router-link
+          />&nbsp;Les pires</NuxtLink
         >
-        <router-link to="#groups" class="btn-sm blue-bg"
+        <NuxtLink to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -52,9 +52,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Les groupes</router-link
+          />&nbsp;Les groupes</NuxtLink
         >
-        <router-link to="#tutorial" class="btn-sm pink-bg">
+        <NuxtLink to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
             width="14"
@@ -63,7 +63,7 @@
             src="@/assets/img/icon/button/help.svg"
             @contextmenu.prevent
           />&nbsp;Comment jouer&nbsp;?
-        </router-link>
+        </NuxtLink>
       </div>
       <br />
       <img
@@ -119,25 +119,25 @@
       >
       <b>parties jouées</b><br />
       <div class="fullwidth light">
-        <UserLink :user="data.records.played.user" /> avec
+        <LinkUser :user="data.records.played.user" /> avec
         {{ data.records.played.record }} parties jouées&nbsp;!
       </div>
       <br />
       <b>parties gagnées</b><br />
       <div class="fullwidth light">
-        <UserLink :user="data.records.win.user" /> avec
+        <LinkUser :user="data.records.win.user" /> avec
         {{ data.records.win.record }} parties gagnées&nbsp;!
       </div>
       <br />
       <b>parties perdues</b><br />
       <div class="fullwidth light">
-        <UserLink :user="data.records.lost.user" /> avec
+        <LinkUser :user="data.records.lost.user" /> avec
         {{ data.records.lost.record }} parties perdues&nbsp;!
       </div>
       <br />
       <b>match nuls</b><br />
       <div class="fullwidth light">
-        <UserLink :user="data.records.draw.user" /> avec
+        <LinkUser :user="data.records.draw.user" /> avec
         {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
     </Card>
@@ -167,7 +167,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -206,7 +206,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.worst" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -243,7 +243,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><GroupLink :group="rank.group" /></td>
+            <td><LinkGroup :group="rank.group" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -269,7 +269,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />&nbsp;<router-link to="/bbs/5">BBS de Bacteria</router-link><br />
+        />&nbsp;<NuxtLink to="/bbs/5">BBS de Bacteria</NuxtLink><br />
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
@@ -279,7 +279,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />&nbsp;<router-link to="bacteria/story">Bacteria Sanctuary</router-link
+        />&nbsp;<NuxtLink to="bacteria/story">Bacteria Sanctuary</NuxtLink
         ><br />
         <br />
         <img
@@ -317,9 +317,9 @@
 <script setup lang="ts">
 
 
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
-import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

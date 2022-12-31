@@ -11,7 +11,7 @@
     </template>
     <Card header="popularity.gif" justified bg="popularity.gif">
       <div class="flex centered hstack">
-        <router-link to="#today" class="btn-sm blue-bg"
+        <NuxtLink to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -20,9 +20,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Classement du jour</router-link
+          />&nbsp;Classement du jour</NuxtLink
         >
-        <router-link to="#general" class="btn-sm blue-bg"
+        <NuxtLink to="#general" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -31,9 +31,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Classement général</router-link
+          />&nbsp;Classement général</NuxtLink
         >
-        <router-link to="#yesterday" class="btn-sm blue-bg"
+        <NuxtLink to="#yesterday" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -42,9 +42,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Champions du jour</router-link
+          />&nbsp;Champions du jour</NuxtLink
         >
-        <router-link to="#groups" class="btn-sm blue-bg"
+        <NuxtLink to="#groups" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -53,9 +53,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Classement des groupes</router-link
+          />&nbsp;Classement des groupes</NuxtLink
         >
-        <router-link to="#vote" class="btn-sm blue-bg">
+        <NuxtLink to="#vote" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -64,7 +64,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;Voter</router-link
+          />&nbsp;Voter</NuxtLink
         >
       </div>
       <br />
@@ -118,7 +118,7 @@
             <tbody>
               <tr v-for="rank in data.today.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><UserLink :user="rank.user" /></td>
+                <td><LinkUser :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -146,7 +146,7 @@
             <tbody>
               <tr v-for="rank in data.today.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><UserLink :user="rank.user" /></td>
+                <td><LinkUser :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -182,7 +182,7 @@
             <tbody>
               <tr v-for="rank in data.yesterday.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><UserLink :user="rank.user" /></td>
+                <td><LinkUser :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -210,7 +210,7 @@
             <tbody>
               <tr v-for="rank in data.yesterday.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><UserLink :user="rank.user" /></td>
+                <td><LinkUser :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -245,7 +245,7 @@
             <tbody>
               <tr v-for="rank in data.general.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><UserLink :user="rank.user" /></td>
+                <td><LinkUser :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -273,7 +273,7 @@
             <tbody>
               <tr v-for="rank in data.general.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><UserLink :user="rank.user" /></td>
+                <td><LinkUser :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -307,7 +307,7 @@
             <tbody>
               <tr v-for="rank in data.groups.best" :key="rank.group.id">
                 <td>{{ rank.score }}</td>
-                <td><GroupLink :group="rank.group" /></td>
+                <td><LinkGroup :group="rank.group" /></td>
               </tr>
             </tbody>
           </table>
@@ -335,7 +335,7 @@
             <tbody>
               <tr v-for="rank in data.groups.worst" :key="rank.group.id">
                 <td>{{ rank.score }}</td>
-                <td><GroupLink :group="rank.group" /></td>
+                <td><LinkGroup :group="rank.group" /></td>
               </tr>
             </tbody>
           </table>
@@ -442,10 +442,10 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
-import { ref, computed } from "vue";
+
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 import { VueRecaptcha } from "vue-recaptcha";

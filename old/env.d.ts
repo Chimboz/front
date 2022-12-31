@@ -14,9 +14,9 @@ declare module "@vue/runtime-core" {
     GlobalButton: typeof Button;
     GlobalCard: typeof Card;
     GlobalContainer: typeof Container;
-    GroupLink: typeof Group;
+    LinkGroup: typeof Group;
     GlobalRules: typeof Rules;
     SideNavEntries: typeof SideNavEntries;
-    UserLink: typeof User;
+    LinkUser: typeof User;
   }
 }

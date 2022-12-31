@@ -56,9 +56,9 @@
 
 <script setup lang="ts">
 
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
-import { ref } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);

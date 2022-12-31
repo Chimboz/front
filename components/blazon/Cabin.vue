@@ -159,7 +159,7 @@
 </template>
 <script setup lang="ts">
 
-import { ref } from "vue";
+
 import { asset } from "@/utils";
 import type { BlazonCategory } from "@/types/Item";
 

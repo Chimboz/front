@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "clean": "nuxi clean"
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",

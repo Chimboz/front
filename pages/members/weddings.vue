@@ -11,7 +11,7 @@
     </template>
     <Card header="wedding.webp" justified bg="wedding.gif">
       <div class="flex centered hstack">
-        <router-link to="#today" class="btn-sm blue-bg"
+        <NuxtLink to="#today" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -20,9 +20,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.today") }}</router-link
+          />&nbsp;{{ $t("wedding.section.today") }}</NuxtLink
         >
-        <router-link to="#divorce" class="btn-sm blue-bg"
+        <NuxtLink to="#divorce" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -31,9 +31,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.divorces") }}</router-link
+          />&nbsp;{{ $t("wedding.section.divorces") }}</NuxtLink
         >
-        <router-link to="#best" class="btn-sm blue-bg"
+        <NuxtLink to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -42,9 +42,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.holding") }}</router-link
+          />&nbsp;{{ $t("wedding.section.holding") }}</NuxtLink
         >
-        <router-link to="#broken" class="btn-sm blue-bg"
+        <NuxtLink to="#broken" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -53,7 +53,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.held") }}</router-link
+          />&nbsp;{{ $t("wedding.section.held") }}</NuxtLink
         >
       </div>
       <br />
@@ -118,11 +118,11 @@
       </div>
       <br />
       {{ $t("wedding.wishes") }}<br />
-      <UserLink :user="data.last.married1" /> &amp;
-      <UserLink :user="data.last.married2" /><br />
+      <LinkUser :user="data.last.married1" /> &amp;
+      <LinkUser :user="data.last.married2" /><br />
       <span v-html="$t('wedding.marriedbyguruji')"></span><br />
-      <UserLink :user="data.last.witness1" /> &amp;
-      <UserLink :user="data.last.witness2" />. </Card
+      <LinkUser :user="data.last.witness1" /> &amp;
+      <LinkUser :user="data.last.witness2" />. </Card
     ><br />
     <Card v-if="data" id="today">
       <template #header
@@ -139,15 +139,15 @@
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
         {{ $t("date.On") }} <b>{{ format(wedding.date, "PPp") }}</b
         >,<br />
-        <UserLink :user="wedding.married1" /> &amp;
-        <UserLink :user="wedding.married2" /> {{ $t("wedding.gotmarried")
+        <LinkUser :user="wedding.married1" /> &amp;
+        <LinkUser :user="wedding.married2" /> {{ $t("wedding.gotmarried")
         }}<br />
-        {{ $t("wedding.gotwitnessed") }} <UserLink :user="wedding.witness1" />
-        {{ $t("wedding.andof") }} <UserLink :user="wedding.witness2" /><br />
+        {{ $t("wedding.gotwitnessed") }} <LinkUser :user="wedding.witness1" />
+        {{ $t("wedding.andof") }} <LinkUser :user="wedding.witness2" /><br />
         <i
-          ><router-link :to="'/weddings/' + wedding.id">{{
+          ><NuxtLink :to="'/weddings/' + wedding.id">{{
             wedding.id
-          }}</router-link
+          }}</NuxtLink
           ><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i
         >
       </div>
@@ -184,14 +184,14 @@
           <tr v-for="(wedding, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
             <td>
-              <UserLink :user="wedding.married1" /> et
-              <UserLink :user="wedding.married2" />
+              <LinkUser :user="wedding.married1" /> et
+              <LinkUser :user="wedding.married2" />
             </td>
             <td>
               <i
-                >n°<router-link :to="'/weddings/' + wedding.id">{{
+                >n°<NuxtLink :to="'/weddings/' + wedding.id">{{
                   wedding.id
-                }}</router-link></i
+                }}</NuxtLink></i
               >
             </td>
             <td>
@@ -234,14 +234,14 @@
           <tr v-for="(wedding, index) in data.divorce" :key="index">
             <td>{{ format(wedding.dateend, "p") }}</td>
             <td>
-              <UserLink :user="wedding.married1" /> a plaqué
-              <UserLink :user="wedding.married2" />
+              <LinkUser :user="wedding.married1" /> a plaqué
+              <LinkUser :user="wedding.married2" />
             </td>
             <td>
               <i
-                >n°<router-link :to="'/weddings/' + wedding.id">{{
+                >n°<NuxtLink :to="'/weddings/' + wedding.id">{{
                   wedding.id
-                }}</router-link></i
+                }}</NuxtLink></i
               >
             </td>
             <td>
@@ -281,14 +281,14 @@
           <tr v-for="(wedding, index) in data.broken" :key="index">
             <td>{{ index + 1 }}</td>
             <td>
-              <UserLink :user="wedding.married1" /> et
-              <UserLink :user="wedding.married2" />
+              <LinkUser :user="wedding.married1" /> et
+              <LinkUser :user="wedding.married2" />
             </td>
             <td>
               <i
-                >n°<router-link :to="'/weddings/' + wedding.id">{{
+                >n°<NuxtLink :to="'/weddings/' + wedding.id">{{
                   wedding.id
-                }}</router-link></i
+                }}</NuxtLink></i
               >
             </td>
             <td>
@@ -385,10 +385,10 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import { distance, format } from "@/utils/date";
-import { ref } from "vue";
+
 import { RouterLink, useRouter } from "vue-router";
 import { useHead } from "@vueuse/head";
 

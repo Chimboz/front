@@ -10,7 +10,7 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><UserLink :user="message.author" ellipsis /><span class="date">{{
+      /><LinkUser :user="message.author" ellipsis /><span class="date">{{
         format(message.date, "PPpp")
       }}</span>
     </td>
@@ -27,7 +27,7 @@
           :item2="message.author.look.item2"
         />&nbsp;&nbsp;
         <div class="ellipsis">
-          <UserLink :user="message.author" />&nbsp;le
+          <LinkUser :user="message.author" />&nbsp;le
           <span class="date">{{ format(message.date, "PPpp") }}</span>
         </div>
       </h2>
@@ -116,9 +116,9 @@ import { format } from "@/utils/date";
 import messageRender from "@/plugins/messageRender";
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
-import { onMounted, computed } from "vue";
+
 import eventBus from "@/plugins/eventBus";
-import api from "@/plugins/api";
+
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

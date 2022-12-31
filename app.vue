@@ -8,7 +8,6 @@
 
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
-import { computed, watchEffect } from "vue";
 import { useHead } from "@vueuse/head";
 import favicon from "@/constants/favicon.json";
 import faviconNew from "@/constants/favicon_new.json";

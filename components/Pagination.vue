@@ -1,10 +1,10 @@
 <template>
-  <router-link
+  <NuxtLink
     v-for="page of array()"
     :key="page + 1"
     class="btn-action"
     :to="callback(page + 1)"
-    >{{ page + 1 }}</router-link
+    >{{ page + 1 }}</NuxtLink
   >
 </template>
 <script setup lang="ts">
@@ -38,7 +38,7 @@ function array() {
 }
 </script>
 <style lang="scss" scoped>
-.btn-action:not(.router-link-active) {
+.btn-action:not(.NuxtLink-active) {
   border: unset;
 }
 </style>

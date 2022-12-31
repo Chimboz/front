@@ -42,7 +42,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.member" :key="index">
-            <td><GroupLink :group="group" /></td>
+            <td><LinkGroup :group="group" /></td>
             <td>
               [<span
                 class="link"
@@ -73,7 +73,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.pending" :key="index">
-            <td><GroupLink :group="group" /></td>
+            <td><LinkGroup :group="group" /></td>
             <td>
               [<span
                 class="link"
@@ -106,16 +106,16 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.owner" :key="index">
-            <td><GroupLink :group="group" /></td>
+            <td><LinkGroup :group="group" /></td>
             <td>
-              [<router-link :to="'/groups/edit/' + group.id">Gérer</router-link
+              [<NuxtLink :to="'/groups/edit/' + group.id">Gérer</NuxtLink
               >]
             </td>
           </tr>
         </tbody>
       </table>
       <br />
-      <router-link to="/groups/create"
+      <NuxtLink to="/groups/create"
         ><img
           src="@/assets/img/puce.svg"
           alt="Puce"
@@ -123,7 +123,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />&nbsp;Créer un nouveau groupe</router-link
+        />&nbsp;Créer un nouveau groupe</NuxtLink
       >
     </Card>
     <template #right-column
@@ -338,7 +338,7 @@
           @contextmenu.prevent />
         Pour <b>rejoindre</b> un groupe <b>ou pour en créer un</b>, tu as besoin
         d'avoir un certain
-        <router-link to="/levels">niveau</router-link>.<br /><br />
+        <NuxtLink to="/levels">niveau</NuxtLink>.<br /><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -347,7 +347,7 @@
           width="17"
           @contextmenu.prevent />Le nombre de groupes que tu peux rejoindre tel
         que décrit dans le
-        <router-link to="/levels">tableau des niveaux</router-link>, comprend
+        <NuxtLink to="/levels">tableau des niveaux</NuxtLink>, comprend
         uniquement les <b>groupes des membres</b>, les
         <b>Groupes Officiels</b> ne sont pas comptés.<br /><img
           src="@/assets/img/puce.svg"
@@ -357,14 +357,14 @@
           width="17"
           @contextmenu.prevent />
         Projecteur sur :
-        <div><GroupLink :group="data.random" /></div></Card
+        <div><LinkGroup :group="data.random" /></div></Card
     ></template>
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
-import { ref } from "vue";
+
 import { useHead } from "@vueuse/head";
 import { RouterLink } from "vue-router";
 

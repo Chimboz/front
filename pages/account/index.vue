@@ -2,7 +2,7 @@
   <Container>
     <template #left-column
       ><Card color="blue" top>
-        <router-link to="/levels">
+        <NuxtLink to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
             <div v-if="data" class="number">
@@ -16,7 +16,7 @@
                 :src="asset(`img/number/${number}.svg`)"
                 @contextmenu.prevent
               />
-            </div></div></router-link
+            </div></div></NuxtLink
         ><br />
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" /></div></Card
@@ -259,7 +259,7 @@
           />
         </div>
         <div style="margin-top: -21px">
-          <router-link
+          <NuxtLink
             v-for="message of data.pm"
             :key="message.author.id"
             :to="`/messenger/${message.author.id}`"
@@ -273,11 +273,11 @@
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
                   @contextmenu.prevent
-                />&nbsp;<UserLink :user="message.author" />
+                />&nbsp;<LinkUser :user="message.author" />
               </div>
               <div>{{ distanceToNow(message.date) }}</div>
             </div>
-          </router-link>
+          </NuxtLink>
         </div></Card
       ><br />
       <Card
@@ -289,16 +289,16 @@
       >
         <StrokeText class="forum-title">Forum</StrokeText>
         <div style="margin-top: -16px">
-          <router-link
+          <NuxtLink
             v-for="message of data.forum"
             :key="message.id"
             :to="`/topic/${message.topic.id}/${message.topic.page}#p${message.id}`"
           >
             <div class="list fullwidth col" style="align-items: flex-start">
               <div>
-                <router-link :to="`/bbs/${message.forum.id}`">{{
+                <NuxtLink :to="`/bbs/${message.forum.id}`">{{
                   message.forum.name
-                }}</router-link>
+                }}</NuxtLink>
               </div>
               <div>
                 <img
@@ -310,7 +310,7 @@
                 />&nbsp;{{ message.topic.title }}
               </div>
             </div>
-          </router-link>
+          </NuxtLink>
         </div></Card
       ><br /><Card v-if="data" color="blue">
         <template #button>
@@ -318,7 +318,7 @@
             $t("profile.friendsList")
           }}</Button>
         </template>
-        <router-link
+        <NuxtLink
           v-for="friend of data.friends.sort(
             (a: any, b: any) =>
               b.status.connected +
@@ -347,10 +347,10 @@
               src="@/assets/img/icon/account/offline.png"
             />&nbsp;
             <div class="flex col" style="align-items: flex-start">
-              <UserLink :user="friend.user" />
+              <LinkUser :user="friend.user" />
               {{ friend.status.connected ? friend.status.room : "" }}
             </div>
-          </div></router-link
+          </div></NuxtLink
         >
       </Card>
       <br />
@@ -360,7 +360,7 @@
             $t("profile.groupsList")
           }}</Button>
         </template>
-        <router-link
+        <NuxtLink
           v-for="group of data.groups"
           :key="group.id"
           :to="'/groups/' + group.id"
@@ -377,9 +377,9 @@
               src="@/assets/img/icon/account/leader.svg"
             />&nbsp;
             <div class="flex col" style="align-items: flex-start">
-              <GroupLink :group="group" />
+              <LinkGroup :group="group" />
             </div></div
-        ></router-link>
+        ></NuxtLink>
       </Card>
     </template>
   </Container>
@@ -389,7 +389,7 @@
 
 
 
-import { ref } from "vue";
+
 import { DoughnutChart, BarChart } from "vue-chart-3";
 import {
   Chart,
@@ -402,7 +402,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
-import api from "@/plugins/api";
+
 import { fetchData, asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { useHead } from "@vueuse/head";

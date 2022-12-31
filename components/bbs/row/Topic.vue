@@ -26,9 +26,9 @@
         />
       </td>
       <td width="100%" height="50" style="text-align: left">
-        <router-link :to="`/topic/${$route.params.id}/${topic.id}`">{{
+        <NuxtLink :to="`/topic/${$route.params.id}/${topic.id}`">{{
           topic.title
-        }}</router-link>
+        }}</NuxtLink>
         <br />
         <Pagination
           v-if="topic.reply > 9"
@@ -40,16 +40,16 @@
         {{ topic.reply }}
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
-        <UserLink :user="topic.author" ellipsis />
+        <LinkUser :user="topic.author" ellipsis />
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
         {{ topic.view }}
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
         <div>{{ distanceToNow(topic.last_msg.date) }}</div>
-        <UserLink :user="topic.last_msg.author" />
+        <LinkUser :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
-        <router-link
+        <NuxtLink
           :to="`/topic/${$route.params.id}/${topic.id}/${Math.floor(
             topic.reply / 10 + 1
           )}#p${topic.last_msg.msgid}`"
@@ -59,7 +59,7 @@
             alt="Voir le dernier message"
             title="Voir le dernier message"
             @contextmenu.prevent
-        /></router-link>
+        /></NuxtLink>
       </td>
     </tr>
     <tr v-if="separator">

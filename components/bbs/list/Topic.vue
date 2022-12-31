@@ -1,17 +1,17 @@
 <template>
   <span class="pink justified" style="text-align: left">
-    <router-link to="/bbs" class="pink">BBS</router-link> »
-    <router-link
+    <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
+    <NuxtLink
       v-if="topic"
       :to="'/bbs/' + $route.params.forum"
       class="pink"
-      >{{ topic.name }}</router-link
+      >{{ topic.name }}</NuxtLink
     ></span
   >
-  <router-link :to="'/topic/' + $route.params.topic" class="pink"
+  <NuxtLink :to="'/topic/' + $route.params.topic" class="pink"
     ><h1 v-if="topic.messages[0]" class="justified ellipsis">
       {{ topic.messages[0].title }}
-    </h1></router-link
+    </h1></NuxtLink
   >
   <br />
   <table class="bbs">
@@ -116,8 +116,8 @@
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
-import { computed, ref } from "vue";
-import api from "@/plugins/api";
+
+
 import Message from "../row/MessageComponent.vue";
 import Pagination from "../../core/PaginationComponent.vue";
 

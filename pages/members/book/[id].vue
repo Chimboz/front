@@ -10,8 +10,8 @@
       <Rules bot />
     </template>
     <span class="pink justified">
-      <router-link to="/book" class="pink"
-        >» Retour à l'annuaire</router-link
+      <NuxtLink to="/book" class="pink"
+        >» Retour à l'annuaire</NuxtLink
       > </span
     ><br />
     <Card v-if="data" class="member" :class="[data.gender]" justified>
@@ -74,11 +74,11 @@
               @contextmenu.prevent
             />&nbsp;
             <span v-if="data.wedding">
-              <router-link :to="'/weddings/' + data.wedding.id"
-                >Marié</router-link
+              <NuxtLink :to="'/weddings/' + data.wedding.id"
+                >Marié</NuxtLink
               >
               avec
-              <UserLink :user="data.wedding.user" /> depuis
+              <LinkUser :user="data.wedding.user" /> depuis
               {{ distance(Date.now(), data.wedding.time) }} jours
             </span>
             <span v-else><b>Célibataire</b></span>
@@ -101,7 +101,7 @@
           </p>
           <p>
             Inscrit aux groupes :
-            <GroupLink
+            <LinkGroup
               v-for="(group, index) of data.groups"
               :key="group.id"
               :group="group"
@@ -252,15 +252,15 @@
       </div>
       <br />
       Messages sur le forum :
-      <router-link :to="'/bbs/author/' + data.id">{{ data.posts }}</router-link>
+      <NuxtLink :to="'/bbs/author/' + data.id">{{ data.posts }}</NuxtLink>
     </Card>
     <template #right-column
-      ><router-link
+      ><NuxtLink
         v-if="data && user && +user.user_level > 2"
         :to="'/admin/' + data.id"
         ><Button type="button" icon="rules.svg"
           >Modérer</Button
-        ></router-link
+        ></NuxtLink
       ></template
     >
   </Container>
@@ -271,8 +271,8 @@ import { asset, fetchData } from "@/utils";
 import { format, distance } from "@/utils/date";
 
 import useAuthStore from "@/stores/auth";
-import { ref, computed } from "vue";
-import api from "@/plugins/api";
+
+
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

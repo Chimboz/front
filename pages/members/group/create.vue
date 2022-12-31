@@ -57,8 +57,8 @@
 </template>
 <script setup lang="ts">
 
-import api from "@/plugins/api";
-import { reactive, ref } from "vue";
+
+
 import { useHead } from "@vueuse/head";
 
 const data = reactive({

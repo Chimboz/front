@@ -39,9 +39,9 @@
 <script setup lang="ts">
 
 
-import api from "@/plugins/api";
+
 import { asset, fetchData } from "@/utils";
-import { ref } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const iconDescriptions = [

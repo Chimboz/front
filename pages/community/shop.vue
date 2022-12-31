@@ -119,11 +119,11 @@
 <script setup lang="ts">
 
 
-import api from "@/plugins/api";
+
 import eventBus from "@/plugins/eventBus";
 import useAuthStore from "@/stores/auth";
 import { fetchData, asset } from "@/utils";
-import { ref, computed } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();

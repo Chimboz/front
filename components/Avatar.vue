@@ -146,7 +146,7 @@
 <script setup lang="ts">
 // TODO refacto
 
-import type { ImgHTMLAttributes } from "vue";
+
 
 withDefaults(
   defineProps<{

@@ -48,9 +48,9 @@
         <div v-if="suggestionsHere && userSearch != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
-              <router-link :to="'/book/' + suggestion.mid">{{
+              <NuxtLink :to="'/book/' + suggestion.mid">{{
                 suggestion.pseudo
-              }}</router-link>
+              }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -74,7 +74,7 @@
         <tbody>
           <tr v-for="(member, index) in data.members" :key="index">
             <td>{{ member.id }}</td>
-            <td><UserLink :user="member" /></td>
+            <td><LinkUser :user="member" /></td>
             <td>{{ format(member.date, "PPp") }}</td>
           </tr>
         </tbody>
@@ -161,10 +161,10 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-import { ref } from "vue";
+
 import { RouterLink, useRouter } from "vue-router";
 import { useHead } from "@vueuse/head";
 

@@ -34,7 +34,7 @@
           <td>
             {{ log.reason }}
           </td>
-          <td><UserLink :user="log.moderator" /></td>
+          <td><LinkUser :user="log.moderator" /></td>
           <td>
             {{ format(log.date, "PPp") }}
           </td>
@@ -106,11 +106,11 @@
           @contextmenu.prevent
         /><b> Comptes partageant la même IP</b>
       </div>
-      <router-link
+      <NuxtLink
         v-for="account in data.shared"
         :key="account.id"
         :to="account.id"
-        >{{ account.name }}<br /></router-link
+        >{{ account.name }}<br /></NuxtLink
       ><br />
       <div class="header fullwidth">
         <img
@@ -147,7 +147,7 @@
         /><b> Groupes</b>
       </div>
       <div v-for="group in data.groups" :key="group.id">
-        <GroupLink :group="group" />&nbsp;<button
+        <LinkGroup :group="group" />&nbsp;<button
           class="btn-action btn-danger"
           type="button"
         >
@@ -236,7 +236,7 @@
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { format } from "@/utils/date";
-import { ref, computed } from "vue";
+
 import eventBus from "@/plugins/eventBus";
 
 const auth = useAuthStore();

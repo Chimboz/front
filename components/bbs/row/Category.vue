@@ -33,14 +33,14 @@
       </td>
       <td style="text-align: left" width="100%">
         <div>
-          <router-link :to="'/bbs/' + bbs.id" class="pink">{{
+          <NuxtLink :to="'/bbs/' + bbs.id" class="pink">{{
             bbs.name
-          }}</router-link>
+          }}</NuxtLink>
         </div>
         <div>{{ bbs.desc }}</div>
         <div>
           Modérateurs&nbsp;:
-          <GroupLink
+          <LinkGroup
             v-for="(mod, indexBbs) in bbs.mods"
             :key="mod.id"
             :group="mod"
@@ -56,9 +56,9 @@
       </td>
       <td style="text-align: center" valign="middle">
         <div>{{ distanceToNow(bbs.last_msg.date) }}</div>
-        <UserLink :user="bbs.last_msg.author" />
+        <LinkUser :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
-        <router-link
+        <NuxtLink
           :to="`/topic/${bbs.id}/${bbs.last_msg.topicid}/${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"
           ><img
             draggable="false"
@@ -66,7 +66,7 @@
             alt="Voir le dernier message"
             title="Voir le dernier message"
             @contextmenu.prevent
-        /></router-link>
+        /></NuxtLink>
       </td>
     </tr>
     <tr v-if="index != category.bbs.length - 1">
@@ -80,7 +80,7 @@
 <script setup lang="ts">
 import { asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-import { ref } from "vue";
+
 
 const hide = ref(false);
 defineProps<{

@@ -56,9 +56,9 @@
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import useAuthStore from "@/stores/auth";
-import { ref, computed } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();

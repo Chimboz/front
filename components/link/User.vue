@@ -1,10 +1,10 @@
 <template>
   <div :class="{ ellipsis: ellipsis }">
-    <router-link
+    <NuxtLink
       v-if="user.id"
       :to="'/book/' + user.id"
       :style="{ color: user.color }"
-      >{{ user.name }}</router-link
+      >{{ user.name }}</NuxtLink
     >
     <div v-else>{{ user.name }}</div>
     <div v-if="separator">,&nbsp;</div>

@@ -10,7 +10,7 @@
     </template>
     <Card header="mazo.webp" justified bg="mazo.gif">
       <div class="flex centered hstack">
-        <router-link to="#gameplay" class="btn-sm blue-bg"
+        <NuxtLink to="#gameplay" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -18,9 +18,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Le gameplay</router-link
+          />&nbsp;Le gameplay</NuxtLink
         >
-        <router-link to="#best" class="btn-sm blue-bg"
+        <NuxtLink to="#best" class="btn-sm blue-bg"
           ><img
             draggable="false"
             alt="Caret"
@@ -28,9 +28,9 @@
             width="3"
             height="6"
             @contextmenu.prevent
-          />&nbsp;Les meilleurs</router-link
+          />&nbsp;Les meilleurs</NuxtLink
         >
-        <router-link to="#tutorial" class="btn-sm pink-bg">
+        <NuxtLink to="#tutorial" class="btn-sm pink-bg">
           <img
             draggable="false"
             width="14"
@@ -39,7 +39,7 @@
             src="@/assets/img/icon/button/help.svg"
             @contextmenu.prevent
           />&nbsp;Comment jouer&nbsp;?
-        </router-link>
+        </NuxtLink>
       </div>
       <br />
       <img
@@ -57,8 +57,8 @@
       <br /><br />
       Le principe est simple: gagner le plus de fois possibles !<br />
       Contrairement à des jeux comme
-      <router-link to="bacteria">Bacteria</router-link> ou
-      <router-link to="patojdur">Patojdur</router-link> qui demandent des
+      <NuxtLink to="bacteria">Bacteria</NuxtLink> ou
+      <NuxtLink to="patojdur">Patojdur</NuxtLink> qui demandent des
       semaines d'entrainement pour devenir pro et atteindre le haut du
       classement, <b>MaZo</b> est un jeu ou tu peux devenir 1er du classement en
       quelques minutes... ou passer des premières places à dernier du classement
@@ -127,7 +127,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.mazo" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><UserLink :user="rank.user" /></td>
+            <td><LinkUser :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -181,10 +181,10 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

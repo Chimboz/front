@@ -29,7 +29,7 @@
         :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
-        <router-link
+        <NuxtLink
           v-for="message of data"
           :key="message.user.id"
           class="message flex"
@@ -61,7 +61,7 @@
           >
             <div>
               <h3>
-                <UserLink :user="message.user" /><span
+                <LinkUser :user="message.user" /><span
                   style="
                     float: right;
                     font-weight: normal;
@@ -73,17 +73,17 @@
             </div>
             <span>{{ message.content.slice(0, 64) }}</span>
           </div>
-        </router-link>
+        </NuxtLink>
       </ScrollableContainer>
     </Card>
     <template #right-column></template>
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";

@@ -19,10 +19,10 @@
 <script setup lang="ts">
 
 
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import useAuthStore from "@/stores/auth";
-import { ref, computed } from "vue";
+
 import { useHead } from "@vueuse/head";
 import messageRender from "@/plugins/messageRender";
 

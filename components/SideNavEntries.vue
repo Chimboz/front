@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <NuxtLink
     v-for="(entry, i) of sideNavEntries.filter(
       (entry) => entry.section === section
     )"
@@ -16,7 +16,7 @@
         @contextmenu.prevent
       />&nbsp;{{ $t(entry.label) }}
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 <script setup lang="ts">
 defineProps<{
@@ -127,7 +127,7 @@ const sideNavEntries = [
 ];
 </script>
 <style scoped>
-.router-link-active .list,
+.NuxtLink-active .list,
 .active .list {
   background: transparent
     linear-gradient(
@@ -139,7 +139,7 @@ const sideNavEntries = [
     ) !important;
 }
 
-.card .router-link-active,
+.card .NuxtLink-active,
 .card .active {
   color: var(--light);
 }

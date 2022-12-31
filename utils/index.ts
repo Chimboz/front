@@ -1,8 +1,10 @@
-import { onBeforeMount, onBeforeUpdate } from "vue";
-import { useRoute, type RouteParams } from "vue-router";
-
 export function asset(path: string) {
-  return new URL(`../assets/${path}`, import.meta.url).href;
+  return "test";
+  const assets = import.meta.glob('@/assets/**/*', {
+    eager: true,
+    import: 'default',
+  })
+  return assets['/assets/' + path]
 }
 
 export function randomInt(min: number, max: number) {
@@ -10,11 +12,6 @@ export function randomInt(min: number, max: number) {
     Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
     Math.ceil(min)
   );
-}
-
-export async function fetchData(callback: (params: RouteParams) => void) {
-  onBeforeMount(() => callback(useRoute().params));
-  onBeforeUpdate(() => callback(useRoute().params));
 }
 
 export function hashColor(str: string) {

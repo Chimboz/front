@@ -7,7 +7,7 @@
   >
     <audio ref="audio">
       <source src="@/assets/sound/shop/hover.mp3" type="audio/wav" />
-      <track default kind="captions" :src="asset('sound/shop/hover.vtt')" />
+      <track default kind="captions" src="@/sound/shop/hover.vtt" />
     </audio>
     <img src="@/assets/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
     <svg
@@ -91,9 +91,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-import { asset } from "@/utils";
-
 defineProps<{
   name: string;
   looks: any[];

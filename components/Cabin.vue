@@ -352,7 +352,7 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent /></template
           >{{ $t("button.save") }}</Button
-        ><router-link :to="`/book/${data.id}`" class="btn">
+        ><NuxtLink :to="`/book/${data.id}`" class="btn">
           <Button type="button" style="width: 150px"
             ><template #prepend
               ><img
@@ -363,7 +363,7 @@
                 src="@/assets/img/icon/profile.svg"
                 @contextmenu.prevent /></template
             >{{ $t("button.card") }}</Button
-          ></router-link
+          ></NuxtLink
         >
       </div>
     </form>
@@ -371,7 +371,7 @@
 </template>
 <script setup lang="ts">
 import { asset } from "@/utils";
-import { ref, type InputHTMLAttributes } from "vue";
+
 import type { LookCategory } from "@/types/Item";
 import type Emote from "@/types/Emotes";
 

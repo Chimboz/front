@@ -43,7 +43,7 @@
       <br />
       <Card v-if="data" class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
-        <UserLink :user="data.leader" />
+        <LinkUser :user="data.leader" />
         <br /><br />
         Occupation du groupe:
         <b>{{ (((data.members.length + 1) / data.size) * 100).toFixed(0) }}%</b>
@@ -51,7 +51,7 @@
         >/<b>{{ data.size }}</b
         >)<br /><br />
         Membres du groupe:
-        <UserLink
+        <LinkUser
           v-for="(member, index) of data.members"
           :key="member.id"
           :user="member"
@@ -155,12 +155,12 @@
 <script setup lang="ts">
 
 
-import api from "@/plugins/api";
+
 import messageRender from "@/plugins/messageRender";
 import { fetchData, asset } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
-import { ref, computed } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();

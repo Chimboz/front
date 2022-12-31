@@ -1,4 +1,4 @@
-import { ref } from "vue";
+
 import { defineStore } from "pinia";
 import type User from "@/types/User";
 import api from "~~/plugins/api";

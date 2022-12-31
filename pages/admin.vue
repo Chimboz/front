@@ -13,8 +13,8 @@
         >
           <div v-for="(log, index) in data" :key="index" class="log">
             <b>{{ format(log.date, "PPp") }}</b
-            ><em> par <UserLink :user="log.moderator" /></em><br />
-            <b>{{ log.type }} de <UserLink :user="log.author" /></b><br />
+            ><em> par <LinkUser :user="log.moderator" /></em><br />
+            <b>{{ log.type }} de <LinkUser :user="log.author" /></b><br />
             {{ log.reason }}
           </div>
         </ScrollableContainer></Card
@@ -47,9 +47,9 @@
         <div v-if="suggestionsHere && username != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
-              <router-link :to="'/admin/' + suggestion.mid">{{
+              <NuxtLink :to="'/admin/' + suggestion.mid">{{
                 suggestion.pseudo
-              }}</router-link>
+              }}</NuxtLink>
             </li>
           </ul>
         </div></Card
@@ -59,7 +59,7 @@
 </template>
 <script setup lang="ts">
 
-import { ref } from "vue";
+
 import { useHead } from "@vueuse/head";
 import { format } from "@/utils/date";
 

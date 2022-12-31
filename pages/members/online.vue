@@ -15,13 +15,13 @@
         v-for="user in data.tchat"
         :key="user.id"
         style="display: inline-block"
-        ><UserLink :user="user" />&nbsp;({{ user.room }})&nbsp;
+        ><LinkUser :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span></Card
     ><br />
     <Card v-if="data"
       ><template #subtop>Sur le site</template
       ><span v-for="(user, index) in data.site" :key="user.id"
-        ><UserLink
+        ><LinkUser
           :user="user"
           :separator="index < data.tchat.length - 1" /></span
     ></Card>
@@ -50,10 +50,10 @@
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-import { ref } from "vue";
+
 import { useHead } from "@vueuse/head";
 
 const data = ref<any>(undefined);

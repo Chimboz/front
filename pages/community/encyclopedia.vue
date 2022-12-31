@@ -30,7 +30,7 @@
             <template #tooltip
               ><b>{{ item.name }}</b></template
             >
-            <router-link :to="'/encyclopedia/' + item.id">
+            <NuxtLink :to="'/encyclopedia/' + item.id">
               <button
                 type="button"
                 class="item"
@@ -47,7 +47,7 @@
                   :src="`/item/${item.type}/${item.id}.svg`"
                   :src-placeholder="asset('img/loading.svg')"
                   @contextmenu.prevent
-                /></button></router-link
+                /></button></NuxtLink
           ></Tooltip>
         </div>
       </ScrollableContainer>
@@ -151,9 +151,9 @@
 <script setup lang="ts">
 
 
-import { onBeforeMount, ref } from "vue";
+
 import { asset } from "@/utils";
-import api from "@/plugins/api";
+
 import { RouterView, RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

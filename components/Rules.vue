@@ -24,7 +24,7 @@
   </Card>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+
 
 const rule = ref(0);
 defineProps<{

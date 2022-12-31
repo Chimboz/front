@@ -3,15 +3,15 @@
     <template #left-column>
       <Card v-if="data" color="blue" top>
         <template #header
-          ><router-link to="/online"
+          ><NuxtLink to="/online"
             ><h1>{{ data.connected }}</h1>
-            {{ $t("online", data.connected) }}</router-link
+            {{ $t("online", data.connected) }}</NuxtLink
           ></template
         >
         <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
         {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
       ><br />
-      <router-link to="/shop">
+      <NuxtLink to="/shop">
         <Card
           v-if="data"
           color="yellow"
@@ -27,16 +27,16 @@
           </template>
           <Pack name="supporter" :looks="data.shop.looks" />
         </Card>
-      </router-link>
+      </NuxtLink>
       <br />
     </template>
     <Demo />
     <br />
     <Card v-if="data">
       <template #subtop
-        ><router-link to="/chaparazzi" class="chaparazzi-link">{{
+        ><NuxtLink to="/chaparazzi" class="chaparazzi-link">{{
           $t("section.chaparazzi")
-        }}</router-link></template
+        }}</NuxtLink></template
       >
       <div class="gallery flex">
         <div
@@ -45,17 +45,17 @@
           class="flex col photo"
           style="margin: auto"
         >
-          <router-link :to="'/chaparazzi/' + photo.name">
+          <NuxtLink :to="'/chaparazzi/' + photo.name">
             <img
               draggable="false"
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
-              @contextmenu.prevent /></router-link
+              @contextmenu.prevent /></NuxtLink
           ><b>{{ format(photo.date, "PP") }}</b>
         </div>
       </div>
       <div style="text-align: right">
-        <router-link to="/chaparazzi">
+        <NuxtLink to="/chaparazzi">
           <img
             src="@/assets/img/puce.svg"
             alt="Puce"
@@ -65,7 +65,7 @@
             @contextmenu.prevent
           />
           {{ $t("chaparazzi.more") }}
-        </router-link>
+        </NuxtLink>
       </div>
     </Card>
     <template #right-column>
@@ -85,7 +85,7 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.bacteria.user" /><br />{{
+            <LinkUser :user="data.bacteria.user" /><br />{{
               $t("champion.bacteria")
             }}
           </div>
@@ -103,7 +103,7 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br />{{
+            <LinkUser :user="data.patojdur.user" /><br />{{
               $t("champion.patojdur")
             }}
           </div>
@@ -121,7 +121,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.mazo.user" /><br />{{ $t("champion.mazo") }}
+            <LinkUser :user="data.mazo.user" /><br />{{ $t("champion.mazo") }}
           </div>
         </div></Card
       >
@@ -131,10 +131,10 @@
 <script setup lang="ts">
 
 
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-import { ref } from "vue";
+
 import { useHead } from "@vueuse/head";
 import { RouterLink } from "vue-router";
 

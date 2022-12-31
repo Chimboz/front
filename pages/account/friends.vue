@@ -16,11 +16,11 @@
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
         <div v-for="friend of data" :key="friend.user.id" class="friend">
-          <router-link
+          <NuxtLink
             :to="'/book/' + friend.user.id"
             :class="{ pending: friend.status.hasOwnProperty('sent') }"
           >
-            <UserLink :user="friend.user" class="ellipsis" />
+            <LinkUser :user="friend.user" class="ellipsis" />
             <div
               class="tiz-portrait"
               :style="{ background: hashColor(friend.user.name) }"
@@ -36,7 +36,7 @@
                 :item2="friend.user.look.item2"
               />
             </div>
-          </router-link>
+          </NuxtLink>
           <div v-if="friend.status.sent">
             ·
             <span
@@ -133,8 +133,8 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-import api from "@/plugins/api";
+
+
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";

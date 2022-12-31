@@ -201,7 +201,7 @@
     <Card v-if="data" color="blue">
       <template #header>Membres</template>
       <div v-for="user of data.members" :key="user.id" class="inline">
-        <UserLink :user="user" :separator="false" /><img
+        <LinkUser :user="user" :separator="false" /><img
           src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
@@ -217,7 +217,7 @@
     <Card v-if="data" color="blue">
       <template #header>Demandes</template>
       <div v-for="user of data.demands" :key="user.id" class="inline">
-        <UserLink :user="user" :separator="false" /><img
+        <LinkUser :user="user" :separator="false" /><img
           src="@/assets/img/icon/success.svg"
           width="11"
           height="11"
@@ -288,10 +288,10 @@
 
 
 
-import { ref } from "vue";
+
 import { format } from "@/utils/date";
 import { useHead } from "@vueuse/head";
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
 import eventBus from "@/plugins/eventBus";
 

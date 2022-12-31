@@ -71,8 +71,8 @@
   </Container>
 </template>
 <script setup lang="ts">
-import api from "@/plugins/api";
-import { ref } from "vue";
+
+
 import { useHead } from "@vueuse/head";
 
 const currentPassword = ref("");

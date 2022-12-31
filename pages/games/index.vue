@@ -32,7 +32,7 @@
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
       Stratégie incontournable sur l'archipel !<br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/games/bacteria">
+      <NuxtLink class="btn-sm pink-bg" to="/games/bacteria">
         <img
           draggable="false"
           width="14"
@@ -41,7 +41,7 @@
           alt="Help icon"
           @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
-      </router-link>
+      </NuxtLink>
     </Card>
     <br />
     <Card
@@ -67,7 +67,7 @@
       haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/games/patojdur">
+      <NuxtLink class="btn-sm pink-bg" to="/games/patojdur">
         <img
           draggable="false"
           width="14"
@@ -76,7 +76,7 @@
           src="@/assets/img/icon/button/help.svg"
           @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
-      </router-link>
+      </NuxtLink>
     </Card>
     <br />
     <Card
@@ -102,7 +102,7 @@
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
       patience, pour rivaliser avec les meilleurs !<br />
       <br />
-      <router-link class="btn-sm pink-bg" to="/games/mazo">
+      <NuxtLink class="btn-sm pink-bg" to="/games/mazo">
         <img
           draggable="false"
           width="14"
@@ -111,7 +111,7 @@
           alt="Help icon"
           @contextmenu.prevent
         />&nbsp;Comment jouer&nbsp;?
-      </router-link>
+      </NuxtLink>
     </Card>
     <template #right-column
       ><Card
@@ -150,7 +150,7 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria !
+            <LinkUser :user="data.bacteria.user" /><br />est champion Bacteria !
           </div>
           <img
             src="@/assets/img/game/patojdur/head.gif"
@@ -180,7 +180,7 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur !
+            <LinkUser :user="data.patojdur.user" /><br />est champion Patojdur !
           </div>
           <img
             src="@/assets/img/game/mazo/head.gif"
@@ -210,7 +210,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.mazo.user" /><br />est un des meilleurs
+            <LinkUser :user="data.mazo.user" /><br />est un des meilleurs
             Mazoteurs du moment !
           </div>
         </div></Card
@@ -221,9 +221,9 @@
 
 <script setup lang="ts">
 import { useHead } from "@vueuse/head";
-import api from "@/plugins/api";
+
 import { fetchData } from "@/utils";
-import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 
 const data = ref<any>(undefined);

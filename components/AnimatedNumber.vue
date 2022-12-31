@@ -12,7 +12,7 @@
 </template>
 <script setup lang="ts">
 import { asset } from "@/utils";
-import { onMounted, ref } from "vue";
+
 
 const props = withDefaults(
   defineProps<{
