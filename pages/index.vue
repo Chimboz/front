@@ -227,10 +227,10 @@
 import { useHead } from "@vueuse/head";
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
-import data from "public/api/home.json";
 
 // data.value = (await useFetch("home")).data;
 // TODO remove
+const { data } = await useFetch("/api/home");
 const lottery = ref(true);
 const gain = ref(0);
 
@@ -241,7 +241,7 @@ async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   // data.value = (await useFetch("randomppt")).data;
   // TODO remove
   gain.value = (
-    await useFetch(`https://localhost:3000/api/lottery.json`)
+    await useFetch(`/api/lottery`)
   ).data.gain;
 }
 

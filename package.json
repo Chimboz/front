@@ -20,6 +20,7 @@
     "date-fns": "^2.29.3",
     "dompurify": "^2.4.1",
     "highlight.js": "^11.7.0",
+    "jsdom": "^20.0.3",
     "marked": "^4.2.5",
     "pinia": "^2.0.28",
     "vue-recaptcha": "^2.0.3"
