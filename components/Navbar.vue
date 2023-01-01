@@ -58,12 +58,12 @@
         style="margin-right: 16px"
         :avatar="user ? 0 : 0"
         :emote="user ? user.avatar_mood : 'neutral'"
-        :hat="1"
-        :body="318"
-        :shoe="606"
-        :item0="792"
-        :item1="868"
-        :item2="938"
+        :hat="user ? +user.avatar_design.split(';')[1] : 1"
+        :body="user ? +user.avatar_design.split(';')[2] : 318"
+        :shoe="user ? +user.avatar_design.split(';')[3] : 606"
+        :item0="user ? +user.avatar_design.split(';')[4] : 792"
+        :item1="user ? +user.avatar_design.split(';')[5] : 868"
+        :item2="user ? +user.avatar_design.split(';')[6] : 938"
       />
     </div>
   </div>
