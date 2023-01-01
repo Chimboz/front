@@ -49,7 +49,7 @@
             @click.prevent="
               eventBus.emit(
                 'quote',
-                `**[🗩](#p${message.id}) [<i style='color:${message.author.color}'>${message.author.name}</i>](/book/${message.author.id}) a écrit :**\n${message.content}`.replace(
+                `**[🗩](#p${message.id}) [<i style='color:${message.author.color}'>${message.author.name}</i>](/members/book/${message.author.id}) a écrit :**\n${message.content}`.replace(
                   /^/gm,
                   '> '
                 ) + '\n\n'

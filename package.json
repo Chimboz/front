@@ -21,6 +21,7 @@
     "dompurify": "^2.4.1",
     "highlight.js": "^11.7.0",
     "marked": "^4.2.5",
-    "pinia": "^2.0.28"
+    "pinia": "^2.0.28",
+    "vue-recaptcha": "^2.0.3"
   }
 }

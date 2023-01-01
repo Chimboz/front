@@ -44,7 +44,7 @@
       Les derniers membres qui ont rejoint l'archipel !
 
       <br />
-      <NuxtLink to="/book">Voir la liste des nouveaux arrivants</NuxtLink>
+      <NuxtLink to="/members/book">Voir la liste des nouveaux arrivants</NuxtLink>
     </Card>
     <br />
     <Card
@@ -187,7 +187,7 @@ const groupSearch = ref("");
 
 async function searchUser() {
   router.push(
-    `/book/${
+    `/members/book/${
       (await useFetch(`book/search/${userSearch.value}/search`)).data.mid
     }`
   );

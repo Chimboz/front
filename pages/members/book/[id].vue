@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <span class="pink justified">
-      <NuxtLink to="/book" class="pink"
+      <NuxtLink to="/members/book" class="pink"
         >» Retour à l'annuaire</NuxtLink
       > </span
     ><br />
@@ -269,33 +269,14 @@
 <script setup lang="ts">
 import { asset, fetchData } from "@/utils";
 import { format, distance } from "@/utils/date";
-
 import useAuthStore from "@/stores/auth";
-
-
-import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data = ref<any>(undefined);
+const {data} = await useFetch(`https://chimboz.fr/api/book/${useRoute().params.id}`);
 
-fetchData(async (params) => {
-  data.value = (await useFetch(`book/${params.id}`)).data;
-  switch (data.value.gender) {
-    case "chimbo":
-      data.value.gender = "male";
-      break;
-    case "chimbette":
-      data.value.gender = "female";
-      break;
-    case "inconnu":
-      data.value.gender = "unknown";
-      break;
-    default:
-  }
-});
 // /api/member.json
 useHead({ title: "section.member" });
 </script>

@@ -327,7 +327,7 @@
               (a.status.room ? 1 : 0)
           )"
           :key="friend.user.id"
-          :to="'/book/' + friend.user.id"
+          :to="'/members/book/' + friend.user.id"
         >
           <div
             class="list fullwidth flex-centered"
