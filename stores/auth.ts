@@ -1,7 +1,7 @@
 
 import { defineStore } from "pinia";
 import type User from "@/types/User";
-import api from "~~/plugins/api";
+import userData from "public/api/user.json";
 
 export default defineStore("auth", () => {
   const user = ref<undefined | User>(undefined);
@@ -10,9 +10,7 @@ export default defineStore("auth", () => {
     // await api.post("auth/login", { pseudo, password, device_name: "browser" });
     // user.value = (await useFetch("user")).data;
     // FIXME
-    user.value = (
-      await useFetch(`http://localhost:3000/api/user.json`)
-    ).data;
+    user.value = userData;
   }
 
   async function logout() {

@@ -57,7 +57,7 @@
             <span
               class="content"
               :style="{ background: hashColor(data.user.name) }"
-              v-html="messageRender(message.content)"
+              v-html="$messageRender(message.content)"
             ></span>
           </div>
         </div>
@@ -109,9 +109,6 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
-import messageRender from "@/plugins/messageRender";
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 

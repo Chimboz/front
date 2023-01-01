@@ -135,7 +135,7 @@
       </template>
       <div
         class="markdown-body"
-        v-html="messageRender(data.news.content)"
+        v-html="$messageRender(data.news.content)"
       ></div>
       <div class="news-date">
         {{ data.news.author }}, {{ format(data.news.date, "PPp") }}
@@ -225,13 +225,12 @@
 
 <script setup lang="ts">
 import { useHead } from "@vueuse/head";
-import messageRender from "@/plugins/messageRender";
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
+import data from "public/api/home.json";
 
 // data.value = (await useFetch("home")).data;
 // TODO remove
-const { data } = await useFetch(`https://localhost:3000/api/home.json`)
 const lottery = ref(true);
 const gain = ref(0);
 

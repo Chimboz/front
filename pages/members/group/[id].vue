@@ -38,7 +38,7 @@
       </div>
       <div
         class="markdown-body description"
-        v-html="messageRender(data.description)"
+        v-html="$messageRender(data.description)"
       ></div>
       <br />
       <Card v-if="data" class="justified">
@@ -153,10 +153,6 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
-
-import messageRender from "@/plugins/messageRender";
 import { fetchData, asset } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";

@@ -100,7 +100,7 @@
         </div>
       </div>
       <hr style="margin: 2px 0" />
-      <div class="markdown-body" v-html="messageRender(message.content)"></div>
+      <div class="markdown-body" v-html="$messageRender(message.content)"></div>
       <div v-if="message.signature">
         <i><br />"{{ message.author.signature }}"</i>
       </div>
@@ -113,7 +113,6 @@
 <script setup lang="ts">
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
-import messageRender from "@/plugins/messageRender";
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
 

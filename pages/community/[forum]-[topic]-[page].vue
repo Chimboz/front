@@ -24,7 +24,6 @@ import { fetchData } from "@/utils";
 import useAuthStore from "@/stores/auth";
 
 import { useHead } from "@vueuse/head";
-import messageRender from "@/plugins/messageRender";
 
 const user = computed(() => useAuthStore().user);
 
@@ -37,7 +36,7 @@ fetchData(async (params) => {
     )
   ).data;
   const DOM = document.createElement("div");
-  DOM.innerHTML = messageRender(data.value.messages[0].content);
+  DOM.innerHTML = $messageRender(data.value.messages[0].content);
   useHead({
     title: `Topic "${data.value.messages[0].title}"`,
     meta: [
