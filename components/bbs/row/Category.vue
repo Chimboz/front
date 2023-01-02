@@ -33,7 +33,7 @@
       </td>
       <td style="text-align: left" width="100%">
         <div>
-          <NuxtLink :to="'/bbs/' + bbs.id" class="pink">{{
+          <NuxtLink :to="`/bbs/${bbs.id}-1`" class="pink">{{
             bbs.name
           }}</NuxtLink>
         </div>

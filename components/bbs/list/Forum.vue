@@ -1,7 +1,7 @@
 <template>
   <span class="pink justified">
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
-    <NuxtLink :to="`/bbs/${$route.params.id}-1`" class="pink">{{
+    <NuxtLink :to="`/bbs/${$route.params.forum}-1`" class="pink">{{
       forum.name
     }}</NuxtLink></span
   >
@@ -25,7 +25,7 @@
       </tr>
     </thead>
 
-    <Topic
+    <BbsRowTopic
       v-for="(topic, index) in forum.subject"
       :key="topic.id"
       :topic="topic"
@@ -46,7 +46,7 @@
     <button
       class="btn-action"
       type="button"
-      @click.prevent="lock($route.params.id as string)"
+      @click.prevent="lock($route.params.forum as string)"
     >
       <img
         src="@/assets/img/bbs/icon/lock.svg"
@@ -62,9 +62,6 @@
 
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
-
-import Topic from "../row/TopicComponent.vue";
-import Pagination from "../../core/PaginationComponent.vue";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

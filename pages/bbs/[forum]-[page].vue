@@ -8,7 +8,7 @@
       ><br />
       <Rules bot
     /></template>
-    <ForumList v-if="data" :forum="data" />
+    <BbsListForum :forum="data" />
     <br />
     <button type="button" style="text-align: left" @click="post = true">
       <img
@@ -17,7 +17,7 @@
         src="@/assets/img/bbs/post.gif"
       />
     </button>
-    <MarkdownInput v-if="post && data && !data.locked" is-topic />
+    <BbsMarkdownInput v-if="post && !data.locked" is-topic />
     <br />
     <Card>
       <div class="columns">
@@ -78,14 +78,9 @@ const iconDescriptions = [
     label: "Post-it",
   },
 ];
+const route = useRoute();
 const post = ref(false);
-const data = ref<any>(undefined);
-
-fetchData(async (params) => {
-  data.value = (
-    await useFetch(`bbs/forum/${params.id}?page=${params.page}`)
-  ).data;
-});
+const { data } = await useFetch(`https://chimboz.fr/api/bbs/forum/${route.params.forum}?page=${route.params.page}`);
 
 // /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 useHead({ title: "section.forum" });

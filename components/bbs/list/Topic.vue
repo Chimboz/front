@@ -31,7 +31,7 @@
       </tr>
     </thead>
     <tbody>
-      <Message
+      <BbsRowMessage
         v-for="(message, index) in topic.messages"
         :key="message.id"
         :message="message"
@@ -116,10 +116,6 @@
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
-
-
-import Message from "../row/MessageComponent.vue";
-import Pagination from "../../core/PaginationComponent.vue";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
