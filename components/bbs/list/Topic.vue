@@ -8,7 +8,7 @@
       >{{ topic.name }}</NuxtLink
     ></span
   >
-  <NuxtLink :to="'/topic/' + $route.params.topic" class="pink"
+  <NuxtLink :to="`/bbs/${$route.params.forum}-${$route.params.topic}-1`" class="pink"
     ><h1 v-if="topic.messages[0]" class="justified ellipsis">
       {{ topic.messages[0].title }}
     </h1></NuxtLink
@@ -25,7 +25,7 @@
           <Pagination
             :current="$route.params.page ? +$route.params.page : 1"
             :total="topic.pages"
-            :callback="(page: number) => `/topic/${$route.params.forum}/${$route.params.topic}/${page}`"
+            :callback="(page: number) => `/bbs/${$route.params.forum}-${$route.params.topic}-${page}`"
           />
         </th>
       </tr>
@@ -43,7 +43,7 @@
         <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
           :total="topic.pages"
-          :callback="(page: number) => `/topic/${$route.params.forum}/${$route.params.topic}/${page}`"
+          :callback="(page: number) => `/bbs/${$route.params.forum}-${$route.params.topic}-${page}`"
         />
       </th>
     </tr>

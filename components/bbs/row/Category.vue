@@ -59,7 +59,7 @@
         <LinkUser :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <NuxtLink
-          :to="`/topic/${bbs.id}/${bbs.last_msg.topicid}/${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"
+          :to="`/bbs/${bbs.id}-${bbs.last_msg.topicid}-${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"
           ><img
             draggable="false"
             :src="asset(`img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"

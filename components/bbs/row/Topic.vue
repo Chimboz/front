@@ -26,14 +26,14 @@
         />
       </td>
       <td width="100%" height="50" style="text-align: left">
-        <NuxtLink :to="`/topic/${$route.params.id}/${topic.id}`">{{
+        <NuxtLink :to="`/bbs/${$route.params.forum}-${topic.id}-1`">{{
           topic.title
         }}</NuxtLink>
         <br />
         <Pagination
           v-if="topic.reply > 9"
           :total="Math.floor(topic.reply / 10 + 1)"
-          :callback="(page: number) => `/topic/${$route.params.id}/${topic.id}/${page}`"
+          :callback="(page: number) => `/bbs/${$route.params.forum}-${topic.id}-${page}`"
         />
       </td>
       <td class="row2" style="text-align: center" valign="middle" height="50">
@@ -50,7 +50,7 @@
         <LinkUser :user="topic.last_msg.author" />
         &nbsp;»&nbsp;
         <NuxtLink
-          :to="`/topic/${$route.params.id}/${topic.id}/${Math.floor(
+          :to="`/bbs/${$route.params.forum}-${topic.id}-${Math.floor(
             topic.reply / 10 + 1
           )}#p${topic.last_msg.msgid}`"
           ><img

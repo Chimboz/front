@@ -310,7 +310,7 @@ async function submit() {
       param: route.params.id,
       title: title.value,
     }});
-    router.push(`/topic/${route.params.id}/${data.id}`);
+    router.push(`/bbs/${route.params.forum}-${data.id}-1`);
   } else {
     if (mode.value === "post") {
       const { data } = await useFetch("bbs/post", {body:{
@@ -322,7 +322,7 @@ async function submit() {
         title: "",
       }});
       router.push(
-        `/topic/${route.params.forum}/${route.params.topic}/${route.params.page}#${data.add.id}`
+        `/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${data.add.id}`
       );
     }
     if (mode.value === "edit") {
@@ -335,7 +335,7 @@ async function submit() {
         title: "",
       }});
       router.push(
-        `/topic/${route.params.forum}/${route.params.topic}/${route.params.page}#${id}`
+        `/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${id}`
       );
     }
   }

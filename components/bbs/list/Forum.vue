@@ -1,7 +1,7 @@
 <template>
   <span class="pink justified">
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
-    <NuxtLink :to="'/bbs/' + $route.params.id" class="pink">{{
+    <NuxtLink :to="`/bbs/${$route.params.id}-1`" class="pink">{{
       forum.name
     }}</NuxtLink></span
   >
@@ -36,7 +36,7 @@
         <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
           :total="forum.pages"
-          :callback="(page: number) => `/bbs/${$route.params.id}/${page}`"
+          :callback="(page: number) => `/bbs/${$route.params.forum}-${page}`"
         />
       </th>
     </tr>
