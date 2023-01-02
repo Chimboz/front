@@ -133,15 +133,14 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
-import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
-const data = ref<any>(undefined);
+  // data.value = (await useFetch("friends")).data;
+  // TODO remove
+const { data } = await useFetch("api/friends");
 const pseudo = ref("");
 
 async function cancel(friend: any) {
@@ -169,12 +168,6 @@ async function addFriend() {
   const res = (await useFetch(`friends/add/${pseudo.value}`)).data;
   if (res.result === "success") data.value.push(res.data);
 }
-
-fetchData(async () => {
-  // data.value = (await useFetch("friends")).data;
-  // TODO remove
-  data.value = (await useFetch(`https://localhost:3000/api/friends.json`)).data;
-});
 
 // /api/friends.json
 useHead({ title: "section.friends" });

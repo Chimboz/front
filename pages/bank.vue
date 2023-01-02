@@ -86,8 +86,6 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
 import { BarChart } from "vue-chart-3";
 import {
   Chart,

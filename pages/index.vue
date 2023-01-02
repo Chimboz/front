@@ -19,7 +19,7 @@
             </div>
           </div>
         </NuxtLink>
-        <NuxtLink v-if="data" to="/mi">
+        <NuxtLink v-if="data" to="/messenger">
           <div class="messages">
             <div>
               <img

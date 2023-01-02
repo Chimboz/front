@@ -86,7 +86,6 @@ import { distanceToNow } from "@/utils/date";
 
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
-import ScrollableContainer from "../../components/core/ScrollableContainerComponent.vue";
 
 const data = ref<any>(undefined);
 
