@@ -2,7 +2,7 @@
   <div :class="{ ellipsis: ellipsis }">
     <NuxtLink
       v-if="user.id"
-      :to="'/members/book/' + user.id"
+      :to="'/book/' + user.id"
       :style="{ color: user.color }"
       >{{ user.name }}</NuxtLink
     >

@@ -352,7 +352,7 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent /></template
           >{{ $t("button.save") }}</Button
-        ><NuxtLink :to="`/members/book/${data.id}`" class="btn">
+        ><NuxtLink :to="`/book/${data.id}`" class="btn">
           <Button type="button" style="width: 150px"
             ><template #prepend
               ><img

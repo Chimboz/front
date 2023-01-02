@@ -48,7 +48,7 @@
         <div v-if="suggestionsHere && userSearch != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
-              <NuxtLink :to="'/members/book/' + suggestion.mid">{{
+              <NuxtLink :to="'/book/' + suggestion.mid">{{
                 suggestion.pseudo
               }}</NuxtLink>
             </li>
@@ -179,7 +179,7 @@ fetchData(async () => {
 
 async function search() {
   router.push(
-    `/members/book/${
+    `/book/${
       (await useFetch(`book/search/${userSearch.value}/search`)).data.mid
     }`
   );

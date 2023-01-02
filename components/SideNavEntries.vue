@@ -31,32 +31,32 @@ const sideNavEntries = [
   },
   {
     label: "section.messenger",
-    url: "/account/messenger",
+    url: "/messenger",
     section: "Account",
   },
   {
     label: "section.groups",
-    url: "/members/groups/manage",
+    url: "/groups/manage",
     section: "Account",
   },
   {
     label: "section.friends",
-    url: "/account/friends",
+    url: "/friends",
     section: "Account",
   },
   {
     label: "section.password",
-    url: "/account/notsmart",
+    url: "/notsmart",
     section: "Account",
   },
   {
     label: "section.eraser",
-    url: "/account/eraser",
+    url: "/eraser",
     section: "Account",
   },
   {
     label: "section.capitalization",
-    url: "/account/lowupp",
+    url: "/lowupp",
     section: "Account",
   },
   {
@@ -86,42 +86,42 @@ const sideNavEntries = [
   },
   {
     label: "section.book",
-    url: "/members/book",
+    url: "/book",
     section: "Members",
   },
   {
     label: "section.popularity",
-    url: "/members/popularity",
+    url: "/popularity",
     section: "Members",
   },
   {
     label: "section.wedding",
-    url: "/members/weddings",
+    url: "/weddings",
     section: "Members",
   },
   {
     label: "section.groups",
-    url: "/members/groups",
+    url: "/groups",
     section: "Members",
   },
   {
     label: "section.forum",
-    url: "/community/bbs",
+    url: "/bbs",
     section: "Community",
   },
   {
     label: "section.shop",
-    url: "/community/shop",
+    url: "/shop",
     section: "Community",
   },
   {
     label: "section.encyclopedia",
-    url: "/community/encyclopedia",
+    url: "/encyclopedia",
     section: "Community",
   },
   {
     label: "section.chaparazzi",
-    url: "/community/chaparazzi",
+    url: "/chaparazzi",
     section: "Community",
   },
 ];

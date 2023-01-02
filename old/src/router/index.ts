@@ -128,13 +128,13 @@ const router = createRouter({
     {
       path: "/book",
       name: "Book",
-      component: () => import("@/views/members/book/BookView.vue"),
+      component: () => import("@/views/book/BookView.vue"),
       meta: { section: ["Members"] },
     },
     {
       path: "/book/:id",
       name: "Member",
-      component: () => import("@/views/members/book/MemberView.vue"),
+      component: () => import("@/views/book/MemberView.vue"),
       meta: {
         sitemap: {
           slugs: [1],

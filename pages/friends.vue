@@ -17,7 +17,7 @@
       >
         <div v-for="friend of data" :key="friend.user.id" class="friend">
           <NuxtLink
-            :to="'/members/book/' + friend.user.id"
+            :to="'/book/' + friend.user.id"
             :class="{ pending: friend.status.hasOwnProperty('sent') }"
           >
             <LinkUser :user="friend.user" class="ellipsis" />

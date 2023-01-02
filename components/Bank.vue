@@ -1,7 +1,7 @@
 <template>
   <Card v-if="user" color="yellow">
     <template #button>
-      <NuxtLink to="/account/bank"
+      <NuxtLink to="/bank"
         ><Button color="yellow" icon="credits.svg" type="button">{{
           $t("credit.title", +user.money)
         }}</Button></NuxtLink

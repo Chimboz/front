@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <span class="pink justified">
-      <NuxtLink to="/members/book" class="pink"
+      <NuxtLink to="/book" class="pink"
         >» Retour à l'annuaire</NuxtLink
       > </span
     ><br />

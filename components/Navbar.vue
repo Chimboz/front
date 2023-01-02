@@ -171,7 +171,7 @@
       </button></NuxtLink
     >
     <NuxtLink
-      to="/community"
+      to="/bbs"
       :class="{ active: ($route.meta.section as string[])?.includes('Community') }"
       ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
