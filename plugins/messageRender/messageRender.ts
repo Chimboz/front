@@ -51,7 +51,10 @@ function markedRender(string: string) {
   // Marked options
   marked.setOptions({
     highlight: (code, lang) => {
-      if (lang) return hljs.highlight(code, { language: lang }).value;
+      if (lang) {
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        return hljs.highlight(code, { language }).value;
+      }
       return hljs.highlightAuto(code).value;
     },
     langPrefix: '',
@@ -68,7 +71,7 @@ function markedRender(string: string) {
   return marked(string);
 }
 
-function dompurifyRender(purify: DOMPurify, string: string) {
+function dompurifyRender(purify: DOMPurify, window, string: string) {
   // Allowed URI schemes
   const REGEX_URI = RegExp(`^(${ALLOWED_URI.join('|')}):`, 'gim');
 
@@ -104,7 +107,7 @@ function dompurifyRender(purify: DOMPurify, string: string) {
     let anchor: HTMLAnchorElement;
     // Sanitizing anchors
     if (node.hasAttribute('href')) {
-      anchor = document.createElement('a');
+      anchor = window.document.createElement('a');
       anchor.href = node.getAttribute('href')!;
       if (anchor.hostname !== 'localhost:3000') {
         node.setAttribute('target', '_blank');
@@ -117,7 +120,7 @@ function dompurifyRender(purify: DOMPurify, string: string) {
 
     // Whitelist images
     if (node.hasAttribute('src')) {
-      anchor = document.createElement('a');
+      anchor = window.document.createElement('a');
       anchor.href = node.getAttribute('src')!;
       if (anchor.hostname && !ALLOWED_IMAGES.includes(anchor.hostname)) {
         node.removeAttribute('src');
@@ -129,8 +132,8 @@ function dompurifyRender(purify: DOMPurify, string: string) {
     // Sanitizing CSS
     // Nasty hack to fix baseURI + CSS problems in Chrome
     if (!node.ownerDocument.baseURI) {
-      const base = document.createElement('base');
-      base.href = document.baseURI;
+      const base = window.document.createElement('base');
+      base.href = window.document.baseURI;
       node.ownerDocument.head.appendChild(base);
     }
     // Check all style attribute values and validate them
@@ -151,14 +154,14 @@ function dompurifyRender(purify: DOMPurify, string: string) {
 
 export default function messageRender(window: any) {
   return (string: string): string => {
-    const result = dompurifyRender(DOMPurify(window), markedRender(string));
+    const result = dompurifyRender(DOMPurify(window), window, markedRender(string));
 
     // Custom embeds
     const DOM = window.document.createElement('div');
     DOM.innerHTML = result;
     DOM.querySelectorAll('a').forEach((el) => {
       if (el.href.match(youtube)) {
-        const iframe = document.createElement('iframe');
+        const iframe = window.document.createElement('iframe');
         iframe.setAttribute('src', el.href.replace(youtube, `https://youtube.com/embed/$5$6`));
         iframe.setAttribute('allowfullscreen', 'true');
         iframe.setAttribute('title', 'Youtube Video');

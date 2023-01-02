@@ -23,25 +23,7 @@ const user = computed(() => useAuthStore().user);
 const route = useRoute();
 
 const { data } = await useFetch(`https://chimboz.fr/api/bbs/topic/${route.params.forum}/${route.params.topic}?page=${route.params.page}`);
-/*
-const { $messageRender } = useNuxtApp();
 
-useHead({
-  title: `Topic "${data.value.messages[0].title}"`,
-  meta: [
-    {
-      name: 'description',
-      content: $messageRender(data.value.messages[0].content),
-    },
-    {
-      property: 'og:description',
-      content: $messageRender(data.value.messages[0].content),
-    },
-    {
-      property: 'og:title',
-      content: `Chimboz Topic "${data.value.messages[0].title}"`,
-    },
-  ],
-});*/
+useHead({ title: `Topic "${data.value.messages[0].title}"` });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
