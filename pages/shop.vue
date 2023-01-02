@@ -113,8 +113,8 @@ const { $eventBus } = useNuxtApp();
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data = ref<any>(undefined);
-const shown = ref<any>(undefined);
+const { data } = await useFetch(`https://chimboz.fr/api/shop`);
+const shown = ref<any>(data.value.packs[0]);
 const buyAudio = ref<null | HTMLAudioElement>(null);
 const clickAudio = ref<null | HTMLAudioElement>(null);
 
@@ -132,11 +132,6 @@ function buy() {
     },
   });
 }
-
-fetchData(async () => {
-  data.value = (await useFetch("shop")).data;
-  [shown.value] = data.value.packs;
-});
 
 // /api/shop.json
 useHead({ title: "section.shop" });
