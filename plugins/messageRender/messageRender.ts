@@ -1,4 +1,3 @@
-import { JSDOM } from "jsdom";
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import hljs from 'highlight.js';
@@ -45,9 +44,6 @@ const ALLOWED_PROPERTIES = ['color'];
 const ALLOW_CSS_FUNCTIONS = true;
 const ALLOWED_CLASS = 'hljs-';
 
-const window = new JSDOM('').window;
-const purify = DOMPurify(window);
-
 function markedRender(string: string) {
   // Custom emotes
   string = string.replace(/:[a-z]+:/g, (match) => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`);
@@ -72,7 +68,7 @@ function markedRender(string: string) {
   return marked(string);
 }
 
-function dompurifyRender(string: string) {
+function dompurifyRender(purify: DOMPurify, string: string) {
   // Allowed URI schemes
   const REGEX_URI = RegExp(`^(${ALLOWED_URI.join('|')}):`, 'gim');
 
@@ -153,29 +149,23 @@ function dompurifyRender(string: string) {
   });
 }
 
-function messageRender(string: string) {
-  const result = dompurifyRender(markedRender(string));
+export default function messageRender(window: any) {
+  return (string: string): string => {
+    const result = dompurifyRender(DOMPurify(window), markedRender(string));
 
-  // Custom embeds
-  const DOM = window.document.createElement('div');
-  DOM.innerHTML = result;
-  DOM.querySelectorAll('a').forEach((el) => {
-    if (el.href.match(youtube)) {
-      const iframe = document.createElement('iframe');
-      iframe.setAttribute('src', el.href.replace(youtube, `https://youtube.com/embed/$5$6`));
-      iframe.setAttribute('allowfullscreen', 'true');
-      iframe.setAttribute('title', 'Youtube Video');
-      el.parentNode!.replaceChild(iframe, el);
-    }
-  });
+    // Custom embeds
+    const DOM = window.document.createElement('div');
+    DOM.innerHTML = result;
+    DOM.querySelectorAll('a').forEach((el) => {
+      if (el.href.match(youtube)) {
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', el.href.replace(youtube, `https://youtube.com/embed/$5$6`));
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.setAttribute('title', 'Youtube Video');
+        el.parentNode!.replaceChild(iframe, el);
+      }
+    });
 
-  return DOM.innerHTML;
-}
-
-export default defineNuxtPlugin((nuxtApp) => {
-  return {
-    provide: {
-      messageRender,
-    },
+    return DOM.innerHTML;
   };
-});
+}
