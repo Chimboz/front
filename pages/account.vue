@@ -296,7 +296,7 @@
           >
             <div class="list fullwidth col" style="align-items: flex-start">
               <div>
-                <NuxtLink :to="`/bbs/${message.forum.id}`">{{
+                <NuxtLink :to="`/bbs/${message.forum.id}-1`">{{
                   message.forum.name
                 }}</NuxtLink>
               </div>

@@ -3,7 +3,7 @@
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
     <NuxtLink
       v-if="topic"
-      :to="'/bbs/' + $route.params.forum"
+      :to="`/bbs/${$route.params.forum}-1`"
       class="pink"
       >{{ topic.name }}</NuxtLink
     ></span
