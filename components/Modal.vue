@@ -82,10 +82,7 @@
   </div>
 </template>
 <script setup lang="ts">
-
-import eventBus from "@/plugins/eventBus";
-
-
+const { $eventBus } = useNuxtApp();
 const isVisible = ref(false);
 const message = ref("error.default");
 const type = ref("error");
@@ -109,10 +106,10 @@ async function confirmation(req: {
   prepare.payload = req.payload!;
 }
 
-eventBus.on("error", (msg) => notice("error", msg));
-eventBus.on("success", (msg) => notice("success", msg));
-eventBus.on("failure", (msg) => notice("failure", msg));
-eventBus.on("confirmation", (req) => confirmation(req));
+$eventBus.on("error", (msg) => notice("error", msg));
+$eventBus.on("success", (msg) => notice("success", msg));
+$eventBus.on("failure", (msg) => notice("failure", msg));
+$eventBus.on("confirmation", (req) => confirmation(req));
 
 async function request() {
   const {data} = await useFetch(prepare.api, {body: prepare.payload});

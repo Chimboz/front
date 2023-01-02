@@ -105,15 +105,11 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
-
-import eventBus from "@/plugins/eventBus";
 import useAuthStore from "@/stores/auth";
 import { fetchData, asset } from "@/utils";
-
 import { useHead } from "@vueuse/head";
 
+const { $eventBus } = useNuxtApp();
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
@@ -128,7 +124,7 @@ function show(pack: any) {
 }
 function buy() {
   buyAudio.value!.play();
-  eventBus.emit("confirmation", {
+  $eventBus.emit("confirmation", {
     message: "confirm.buy",
     api: "shop/buy",
     payload: {

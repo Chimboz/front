@@ -285,21 +285,16 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
-
-
 import { format } from "@/utils/date";
 import { useHead } from "@vueuse/head";
-
 import { fetchData } from "@/utils";
-import eventBus from "@/plugins/eventBus";
 
+const { $eventBus } = useNuxtApp();
 const data = ref<any>(undefined);
 
 function deleteGroup() {
   // TODO
-  eventBus.emit("confirmation", {
+  $eventBus.emit("confirmation", {
     message: "confirm.group.delete",
     api: `groups/manage/delete?id=${data.value.id}`,
   });

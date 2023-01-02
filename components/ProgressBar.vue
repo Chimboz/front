@@ -14,9 +14,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import eventBus from "@/plugins/eventBus";
 import { randomInt } from "@/utils";
-
 
 // Assume that loading will complete under this amount of time.
 const defaultDuration = 4000;
@@ -74,8 +72,9 @@ function stop() {
   }, 2000);
 }
 
-eventBus.on("asyncComponentLoading", start);
-eventBus.on("asyncComponentLoaded", stop);
+const { $eventBus } = useNuxtApp();
+$eventBus.on("asyncComponentLoading", start);
+$eventBus.on("asyncComponentLoaded", stop);
 </script>
 <style scoped>
 .loading-container {

@@ -237,15 +237,14 @@
 import useAuthStore from "@/stores/auth";
 import { format } from "@/utils/date";
 
-import eventBus from "@/plugins/eventBus";
-
+const { $eventBus } = useNuxtApp();
 const auth = useAuthStore();
 const user = computed(() => auth.user!);
 
 const data = ref<any>(undefined);
 
 function action(type: string, payload?: object) {
-  eventBus.emit("confirmation", {
+  $eventBus.emit("confirmation", {
     message: `admin.modal.${type}`,
     api: `/api/${type}.json`,
     payload,

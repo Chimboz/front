@@ -246,15 +246,11 @@
   </form>
 </template>
 <script setup lang="ts">
-
-
 import useAuthStore from "@/stores/auth";
-import eventBus from "@/plugins/eventBus";
-
 import { useI18n } from "vue-i18n";
-
 import { useRoute, useRouter } from "vue-router";
 
+const { $eventBus } = useNuxtApp();
 const route = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
@@ -287,13 +283,13 @@ const props = defineProps<{
   isTopic?: boolean;
 }>();
 
-eventBus.on("quote", (quotedMessage) => {
+$eventBus.on("quote", (quotedMessage) => {
   if (message.value.slice(-1) === "\n" || message.value.slice(-1) === "")
     message.value += quotedMessage;
   else message.value += `\n${quotedMessage}`;
   if (textarea.value!) textarea.value!.focus();
 });
-eventBus.on("edit", (editedMessage) => {
+$eventBus.on("edit", (editedMessage) => {
   message.value = editedMessage.content;
   id = editedMessage.id;
   mode.value = "edit";

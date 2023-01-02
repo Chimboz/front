@@ -47,7 +47,7 @@
             type="button"
             class="btn-action"
             @click.prevent="
-              eventBus.emit(
+              $eventBus.emit(
                 'quote',
                 `**[🗩](#p${message.id}) [<i style='color:${message.author.color}'>${message.author.name}</i>](/book/${message.author.id}) a écrit :**\n${message.content}`.replace(
                   /^/gm,
@@ -74,7 +74,7 @@
             type="button"
             class="btn-action"
             @click.prevent="
-              eventBus.emit('edit', {
+              $eventBus.emit('edit', {
                 id: message.id,
                 content: message.content,
               })
@@ -115,9 +115,6 @@ import { asset } from "@/utils";
 import { format } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
 import { useRoute } from "vue-router";
-
-import eventBus from "@/plugins/eventBus";
-
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
