@@ -292,7 +292,7 @@
           <NuxtLink
             v-for="message of data.forum"
             :key="message.id"
-            :to="`/bbs/${message.topic.forum}-${message.topic.id}-${message.topic.page}#p${message.id}`"
+            :to="`/bbs/${message.forum.id}-${message.topic.id}-${message.topic.page ?? 1}#p${message.id}`"
           >
             <div class="list fullwidth col" style="align-items: flex-start">
               <div>
