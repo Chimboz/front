@@ -419,7 +419,7 @@ Chart.register(
   LinearScale
 );
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("api/account");
 
 function statsBacteria() {
   return {
@@ -451,12 +451,6 @@ function statsPatojdur() {
     ],
   };
 }
-
-fetchData(async () => {
-  // data.value = (await useFetch(`account?lang=${useBrowserLocale()!.split("-")[0]}`)).data;
-  // TODO remove
-  data.value = (await useFetch(`https://localhost:3000/api/account.json`)).data;
-});
 
 // /api/account.json
 useHead({ title: "section.account" });

@@ -9,14 +9,21 @@ export default defineNuxtConfig({
   },*/
 
   modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
-  css: ['@/assets/css/var.css', '@/assets/css/main.scss', '@/assets/css/fonts.css', '@/assets/css/classes.css', '@/assets/css/atomic.css'],
+  css: [
+    'modern-normalize/modern-normalize.css',
+    '@/assets/css/var.css',
+    '@/assets/css/main.scss',
+    '@/assets/css/fonts.css',
+    '@/assets/css/classes.css',
+    '@/assets/css/atomic.css',
+  ],
   i18n: {
     locales: [
       { code: 'en', file: 'en.json' },
-      { code: 'fr', file: 'fr.json' }
+      { code: 'fr', file: 'fr.json' },
     ],
-    defaultLocale: "fr",
+    defaultLocale: 'fr',
     lazy: true,
-    langDir: "locales/",
-  }
+    langDir: 'locales/',
+  },
 });
