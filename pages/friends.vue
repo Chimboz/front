@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card v-if="data" color="yellow" justified
+    <Card color="yellow" justified
       ><template #subtop>Friends</template>
       <ScrollableContainer
         route="friends"

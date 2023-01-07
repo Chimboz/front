@@ -112,7 +112,7 @@
       jouer qu'en <b>Bacteria débutants</b>, les cabines de
       <b>Bacteria Pro</b> sont réservées aux membres ! </Card
     ><br />
-    <Card v-if="data" id="records">
+    <Card id="records">
       <template #header>Records !</template>
       <template #subtitle
         >Dans le bon ou le mauvais, ce sont les meilleurs !</template
@@ -141,7 +141,7 @@
         {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
     </Card>
-    <br /><Card v-if="data" id="best">
+    <br /><Card id="best">
       <template #header>Les 20 plus acharnés de Bacteria !</template>
       <template #subtitle
         >Des heures de phagocytage acharné pour en arriver la...</template
@@ -185,7 +185,7 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card v-if="data" id="worst">
+    <br /><Card id="worst">
       <template #header>Les 20 pires brèles de Bacteria ! </template>
       <template #subtitle>Les meilleurs... en partant du bas !</template>
       <table class="fullwidth">
@@ -224,7 +224,7 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card v-if="data" id="groups">
+    <br /><Card id="groups">
       <template #header>Les 10 meilleurs groupes de Bacteria !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="fullwidth">
@@ -253,7 +253,7 @@
     </Card>
     <template #right-column
       ><Card
-        v-if="data"
+       
         header="ensavoirplus.webp"
         :width="154"
         :height="46"

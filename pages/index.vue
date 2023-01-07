@@ -2,7 +2,7 @@
   <Container>
     <template #left-column>
       <Card color="blue" top>
-        <NuxtLink v-if="data" to="/levels">
+        <NuxtLink to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
             <div class="number">
@@ -19,7 +19,7 @@
             </div>
           </div>
         </NuxtLink>
-        <NuxtLink v-if="data" to="/messenger">
+        <NuxtLink to="/messenger">
           <div class="messages">
             <div>
               <img
@@ -45,7 +45,7 @@
           </div>
           {{ $t("mi.message", data.messages) }}
         </NuxtLink>
-        <NuxtLink v-if="data" to="/friends">
+        <NuxtLink to="/friends">
           <div class="friends">
             <div>
               <img
@@ -119,7 +119,7 @@
     <br />
     <Radio src="track.flac" />
     <br />
-    <Card v-if="data" color="yellow" justified>
+    <Card color="yellow" justified>
       <template #subtop>{{ $t("section.chapaniouz") }}</template>
       <template #header
         ><img
@@ -142,7 +142,7 @@
       </div>
     </Card>
     <br />
-    <Card v-if="data">
+    <Card>
       <template #subtop
         ><NuxtLink to="/chaparazzi" class="chaparazzi-link">{{
           $t("section.chaparazzi")
@@ -179,7 +179,7 @@
       </div>
     </Card>
     <template #right-column
-      ><Card v-if="data" color="blue" top>
+      ><Card color="blue" top>
         <template #header
           ><NuxtLink to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -193,7 +193,7 @@
       ><br />
       <NuxtLink to="/shop">
         <Card
-          v-if="data"
+         
           color="yellow"
           header="packs.webp"
           :width="154"

@@ -325,7 +325,7 @@
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
                   />
-                  <nuxt-img
+                  <VLazyImage
                     v-else
                     draggable="false"
                     :src="`/item/${name}/${item.id}.svg`"
@@ -371,7 +371,7 @@
 </template>
 <script setup lang="ts">
 import { asset } from "@/utils";
-
+import VLazyImage from "v-lazy-image";
 import type { LookCategory } from "@/types/Item";
 import type Emote from "@/types/Emotes";
 

@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <Card
-      v-if="data"
+     
       header="group.webp"
       :height="70"
       color="blue"
@@ -41,7 +41,7 @@
         v-html="$messageRender(data.description)"
       ></div>
       <br />
-      <Card v-if="data" class="justified">
+      <Card class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
         <LinkUser :user="data.leader" />
         <br /><br />
@@ -129,7 +129,7 @@
       >
     </Card>
     <template #right-column
-      ><Card v-if="data" color="blue">
+      ><Card color="blue">
         <template #header> Inscription pour rejoindre ce groupe </template>
         <div class="justified">
           <img

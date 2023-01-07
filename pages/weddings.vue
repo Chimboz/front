@@ -59,7 +59,7 @@
       <br />
       <span v-html="$t('wedding.description')"></span>
     </Card>
-    <br /><Card v-if="data" id="last">
+    <br /><Card id="last">
       <template #header>{{ $t("wedding.section.last") }}</template>
       {{ $t("date.on") }} <b>{{ format(data.last.date, "PPp") }}</b
       >, <b>{{ data.last.id }}</b
@@ -124,7 +124,7 @@
       <LinkUser :user="data.last.witness1" /> &amp;
       <LinkUser :user="data.last.witness2" />. </Card
     ><br />
-    <Card v-if="data" id="today">
+    <Card id="today">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -153,7 +153,7 @@
       </div>
     </Card>
     <br />
-    <Card v-if="data" id="best">
+    <Card id="best">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -202,7 +202,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data" id="divorce">
+    <Card id="divorce">
       <template #header
         ><img
           src="@/assets/img/social/wedding/divorce2.webp"
@@ -252,7 +252,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data" id="broken">
+    <Card id="broken">
       <template #header
         ><img
           src="@/assets/img/social/wedding/mariage2.webp"
@@ -300,7 +300,7 @@
     </Card>
     <template #right-column
       ><Card
-        v-if="data"
+       
         header="ensavoirplus.webp"
         :width="154"
         :height="34"

@@ -9,7 +9,7 @@
       <br />
       <Rules bot />
     </template>
-    <Card v-if="data"
+    <Card
       ><template #subtop>Sur le tchat</template
       ><span
         v-for="user in data.tchat"
@@ -18,7 +18,7 @@
         ><LinkUser :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span></Card
     ><br />
-    <Card v-if="data"
+    <Card
       ><template #subtop>Sur le site</template
       ><span v-for="(user, index) in data.site" :key="user.id"
         ><LinkUser
@@ -27,7 +27,7 @@
     ></Card>
     <template #right-column
       ><Card
-        v-if="data"
+       
         header="ensavoirplus.webp"
         :width="154"
         :height="34"

@@ -1,5 +1,5 @@
 <template>
-  <Card v-if="data" justified>
+  <Card justified>
     <template #subtop>{{ data.name }}</template>
     <div class="header fullwidth">
       <img

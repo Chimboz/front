@@ -23,12 +23,6 @@ body {
   background-position-y: -0.8px;
 }
 
-@for $i from 0 through 23 {
-  .h#{$i} {
-    background-image: url(../img/navbar/background/#{$i}.png);
-  }
-}
-
 // Custom scrollbar (chromium based browsers)
 ::-webkit-scrollbar {
   width: 16px;

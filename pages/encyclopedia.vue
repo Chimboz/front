@@ -9,7 +9,7 @@
       <Rules bot />
     </template>
     <RouterView />
-    <Card v-if="data" color="yellow" style="position: relative">
+    <Card color="yellow" style="position: relative">
       <ScrollableContainer
         route="encyclopedia"
         class="fullwidth"
@@ -41,7 +41,7 @@
                 ]"
                 :aria-label="item.name"
               >
-                <nuxt-img
+                <VLazyImage
                   draggable="false"
                   :alt="item.name"
                   :src="`/item/${item.type}/${item.id}.svg`"
@@ -149,11 +149,8 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
-
+import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
-
 import { RouterView, RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

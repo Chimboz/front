@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card v-if="data" color="yellow" justified
+    <Card color="yellow" justified
       ><template #subtop>Niveaux</template>
       <div class="flex">
         <div class="level-list">

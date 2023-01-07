@@ -14,7 +14,7 @@
         >» Retour à l'annuaire</NuxtLink
       > </span
     ><br />
-    <Card v-if="data" class="member" :class="[data.gender]" justified>
+    <Card class="member" :class="[data.gender]" justified>
       <div class="member-header">
         <Avatar
           :avatar="data.look.avatar"

@@ -9,7 +9,6 @@
     "clean": "nuxi clean"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxtjs/i18n": "^8.0.0-beta.7",
     "mitt": "^3.0.0",
     "nuxt": "3.0.0",
@@ -24,6 +23,7 @@
     "marked": "^4.2.5",
     "modern-normalize": "^1.1.0",
     "pinia": "^2.0.28",
+    "v-lazy-image": "^2.1.1",
     "vue-chart-3": "^3.1.8",
     "vue-recaptcha": "^2.0.3"
   }

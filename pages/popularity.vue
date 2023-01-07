@@ -89,7 +89,7 @@
       <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
       <b>- aimé</b> gagne une crotte pour la journée !
     </Card>
-    <br /><Card v-if="data" id="today">
+    <br /><Card id="today">
       <template #header>Classement du jour !</template>
       Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
       quelqu'un !<br />
@@ -154,7 +154,7 @@
       </div>
     </Card>
     <br />
-    <Card v-if="data" id="yesterday">
+    <Card id="yesterday">
       <template #header>Champions du jour !</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
 
@@ -216,7 +216,7 @@
           </table>
         </div></div></Card
     ><br />
-    <Card v-if="data" id="general">
+    <Card id="general">
       <template #header>Classement général !</template>
       <template #subtitle
         >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
@@ -280,7 +280,7 @@
         </div>
       </div>
     </Card>
-    <br /><Card v-if="data" id="groups">
+    <br /><Card id="groups">
       <template #header>Classement des groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
       <div class="grid fullwidth">
@@ -383,7 +383,7 @@
     </Card>
     <template #right-column
       ><Card
-        v-if="data"
+       
         header="ensavoirplus.webp"
         :width="154"
         :height="46"

@@ -9,7 +9,7 @@
       <Rules bot />
     </template>
     <Card
-      v-if="data"
+     
       color="yellow"
       header="shop.svg"
       :height="109"

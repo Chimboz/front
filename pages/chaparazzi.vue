@@ -9,7 +9,7 @@
       <Rules bot />
     </template>
     <RouterView />
-    <Card v-if="data" color="yellow" style="position: relative">
+    <Card color="yellow" style="position: relative">
       <ScrollableContainer
         route="gallery"
         class="fullwidth"
@@ -18,7 +18,7 @@
       >
         <div v-for="image of data" :key="image.name" class="gallery-image">
           <NuxtLink :to="'/chaparazzi/' + image.name">
-            <nuxt-img
+            <VLazyImage
               draggable="false"
               :alt="image.name"
               :src="`/gallery/${image.name}`"
@@ -36,11 +36,9 @@
 </template>
 
 <script setup lang="ts">
-
+import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
-
-
 import { RouterView, RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 

@@ -25,7 +25,7 @@
       </Card>
       <br />
       <Cabin
-        v-if="data"
+       
         :data="data"
         @update-item="(name: 'shape'|'top'|'bot'|'primary'|'secondary', item: number|string ) => ((data.blazon[name] as number|string) = item)"
         @previous-item="

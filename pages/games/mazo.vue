@@ -106,7 +106,7 @@
       - Le temps que met à s'afficher le résultat n'indique pas un bon/mauvais
       coup.<br />
     </Card>
-    <br /><Card v-if="data" id="best">
+    <br /><Card id="best">
       <template #header>Les 20 plus mazo de l'Archipel</template>
       <template #subtitle>Continuera ? Continuera pas ? &lt;:D</template>
       <table class="fullwidth">

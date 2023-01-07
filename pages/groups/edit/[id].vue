@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <Card
-      v-if="data"
+     
       header="group.webp"
       :height="70"
       color="blue"
@@ -33,7 +33,7 @@
     </Card>
     <br />
     <Cabin
-      v-if="data"
+     
       :data="{
         blazon: {
           shape: data.blazon.shape,
@@ -108,7 +108,7 @@
       "
     />
     <br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Informations</template>
       <form>
         <input
@@ -198,7 +198,7 @@
         >
       </form></Card
     ><br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Membres</template>
       <div v-for="user of data.members" :key="user.id" class="inline">
         <LinkUser :user="user" :separator="false" /><img
@@ -214,7 +214,7 @@
         />
       </div> </Card
     ><br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Demandes</template>
       <div v-for="user of data.demands" :key="user.id" class="inline">
         <LinkUser :user="user" :separator="false" /><img

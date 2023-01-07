@@ -140,7 +140,7 @@
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
                   />
-                  <nuxt-img
+                  <VLazyImage
                     v-else
                     draggable="false"
                     :src="`/blazon/${name}/${item}.svg`"
@@ -158,8 +158,7 @@
   </Card>
 </template>
 <script setup lang="ts">
-
-
+import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import type { BlazonCategory } from "@/types/Item";
 

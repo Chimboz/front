@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card v-if="data" color="blue" top>
+      <Card color="blue" top>
         <template #header
           ><NuxtLink to="/online"
             ><h1>{{ data.connected }}</h1>
@@ -13,7 +13,7 @@
       ><br />
       <NuxtLink to="/shop">
         <Card
-          v-if="data"
+         
           color="yellow"
           header="packs.webp"
           :width="154"
@@ -32,7 +32,7 @@
     </template>
     <Demo />
     <br />
-    <Card v-if="data">
+    <Card>
       <template #subtop
         ><NuxtLink to="/chaparazzi" class="chaparazzi-link">{{
           $t("section.chaparazzi")
@@ -69,7 +69,7 @@
       </div>
     </Card>
     <template #right-column>
-      <Card v-if="data" color="blue" header="games.gif">
+      <Card color="blue" header="games.gif">
         <div class="fullwidth">
           <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria" />
           <img src="@/assets/img/game/bacteria/bg.gif" alt="" />

@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card v-if="data" color="yellow" justified header="bank.gif">
+    <Card color="yellow" justified header="bank.gif">
       <ScrollableContainer
         route="banklogs"
         class="fullwidth"

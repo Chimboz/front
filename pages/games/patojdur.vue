@@ -174,7 +174,7 @@
       Durant la phase de test de <b>Patojdur</b>, seule la course n°1
       (<b>Burnin'Flak</b>) est accessible.</Card
     ><br />
-    <Card v-if="data" id="records">
+    <Card id="records">
       <template #header>Records !</template>
       <template #subtitle>Ce jour là, il a comme volé sur l'eau...</template>
       <table class="fullwidth">
@@ -207,7 +207,7 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card v-if="data" id="yesterday">
+    <br /><Card id="yesterday">
       <template #header>Les champions du jour !</template>
       <template #subtitle
         >Hier, ils ont cloué le bec des grenouilles... et des autres membres
@@ -243,7 +243,7 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card v-if="data" id="general">
+    <br /><Card id="general">
       <template #header
         >Classement général single {{ data.day - 1 }}e journée</template
       >
@@ -274,7 +274,7 @@
           </tr>
         </tbody>
       </table> </Card
-    ><br /><Card v-if="data" id="today">
+    ><br /><Card id="today">
       <template #header
         >{{ data.day }}e journée ! {{ data.stats.today }} patojeurs !</template
       >
@@ -306,7 +306,7 @@
         </tbody>
       </table>
     </Card>
-    <br /><Card v-if="data" id="groups">
+    <br /><Card id="groups">
       <template #header>Classement des groupes !</template>
       <template #subtitle>Plus on est de fous...</template>
       <table class="fullwidth">
@@ -335,7 +335,7 @@
     </Card>
     <template #right-column
       ><Card
-        v-if="data"
+       
         header="ensavoirplus.webp"
         :width="154"
         :height="46"

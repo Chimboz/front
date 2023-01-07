@@ -27,7 +27,7 @@
       par le chef du groupe... A toi de faire tes preuves !
     </Card>
     <br />
-    <Card v-if="data" color="blue" justified>
+    <Card color="blue" justified>
       <template #header>Groupes officiels</template>
       <template #subtitle
         >Ce sont les groupes qui participent directement à
@@ -66,7 +66,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Groupes de membre</template>
       <template #subtitle
         >Les 20 derniers groupes créés par les membres</template
@@ -98,7 +98,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Classement général des groupes, par jeu</template>
       <template #subtitle
         >Les 10 meilleurs groupes, tous les jeux réunis
@@ -153,7 +153,7 @@
       >
     </Card>
     <template #right-column
-      ><Card v-if="data" color="blue" header="ensavoirplus.webp">
+      ><Card color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img

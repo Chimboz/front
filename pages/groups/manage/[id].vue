@@ -24,7 +24,7 @@
       ton propre club ? Si tu as un super niveau, go !
     </Card>
     <br />
-    <Card v-if="data" color="blue" justified>
+    <Card color="blue" justified>
       <template #header>Mes inscriptions</template>
       <template #subtitle
         >Faire partie de ce groupe c'est ce qu'y a de plus classe...</template
@@ -57,7 +57,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Mes demandes en attente </template>
       <template #subtitle>Tout vient à point à qui sait attendre !</template>
       <table class="centered fullwidth">
@@ -88,7 +88,7 @@
       </table>
     </Card>
     <br />
-    <Card v-if="data" color="blue">
+    <Card color="blue">
       <template #header>Mes groupes </template>
       <template #subtitle
         >Ils étaient bien sûr les meilleurs groupes de la communauté...
@@ -127,7 +127,7 @@
       >
     </Card>
     <template #right-column
-      ><Card v-if="data" color="blue" header="ensavoirplus.webp">
+      ><Card color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br />
         <div class="justified">
           <img

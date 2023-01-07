@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card v-if="data" color="yellow" justified
+    <Card color="yellow" justified
       ><template #subtop>{{ data.user.name }}</template>
       <ScrollableContainer
         route="messages"
@@ -76,7 +76,7 @@
       </form>
     </Card>
     <template #right-column
-      ><Card v-if="data" color="yellow" justified header="mi_sm.svg">
+      ><Card color="yellow" justified header="mi_sm.svg">
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"

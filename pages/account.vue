@@ -5,7 +5,7 @@
         <NuxtLink to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
-            <div v-if="data" class="number">
+            <div class="number">
               <img
                 v-for="number in data.level.toString(10)"
                 :key="number.index"
@@ -25,7 +25,7 @@
     /></template>
 
     <Cabin
-      v-if="data"
+     
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"
@@ -238,7 +238,7 @@
     </div>
     <template #right-column>
       <Card
-        v-if="data"
+       
         color="blue"
         header="messages.gif"
         :width="154"
@@ -281,7 +281,7 @@
         </div></Card
       ><br />
       <Card
-        v-if="data"
+       
         color="blue"
         header="forum.gif"
         :width="154"
@@ -312,7 +312,7 @@
             </div>
           </NuxtLink>
         </div></Card
-      ><br /><Card v-if="data" color="blue">
+      ><br /><Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">{{
             $t("profile.friendsList")
@@ -354,7 +354,7 @@
         >
       </Card>
       <br />
-      <Card v-if="data" color="blue">
+      <Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">{{
             $t("profile.groupsList")

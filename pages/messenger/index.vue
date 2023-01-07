@@ -8,7 +8,7 @@
       ><br />
       <Rules bot />
     </template>
-    <Card v-if="data" color="yellow" justified header="mi.svg">
+    <Card color="yellow" justified header="mi.svg">
       <div class="flex">
         <input
           required

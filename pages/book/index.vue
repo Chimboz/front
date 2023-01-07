@@ -56,7 +56,7 @@
         </div>
       </div></Card
     ><br />
-    <Card v-if="data"
+    <Card
       ><template #header>{{ $t("book.last") }}</template>
       <table class="fullwidth">
         <colgroup>
@@ -82,7 +82,7 @@
     </Card>
     <template #right-column
       ><Card
-        v-if="data"
+       
         header="ensavoirplus.webp"
         :width="154"
         :height="34"

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     },
   },*/
 
-  modules: ['@nuxtjs/i18n', '@pinia/nuxt','@nuxt/image-edge'],
+  modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
   css: [
     'modern-normalize/modern-normalize.css',
     '@/assets/css/var.css',
