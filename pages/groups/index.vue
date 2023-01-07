@@ -35,10 +35,10 @@
       >
       Les membres de ces groupes sont nommés par
       <NuxtLink to="/groups/1">les créateurs du site</NuxtLink>, et se
-      voient attribuer des rubriques à modérer (<NuxtLink to="photos"
+      voient attribuer des rubriques à modérer (<NuxtLink to="/chaparazzi"
         >albums</NuxtLink
-      >, <NuxtLink to="faq">faq</NuxtLink>,
-      <NuxtLink to="bbs">BBS</NuxtLink>...)ou même un poste sur le chat
+      >, <NuxtLink to="/wiki">faq</NuxtLink>,
+      <NuxtLink to="/bbs">BBS</NuxtLink>...)ou même un poste sur le chat
       (<NuxtLink to="/groups/3">modos officiels</NuxtLink>,
       <NuxtLink to="/groups/9">aideurs officiels</NuxtLink>). <br /><br />
       <table class="centered fullwidth">
@@ -397,11 +397,7 @@ import { useHead } from "@vueuse/head";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/groups");
 
-fetchData(async () => {
-  data.value = (await useFetch("groups")).data;
-});
-// /api/groups.json
 useHead({ title: "section.groups" });
 </script>

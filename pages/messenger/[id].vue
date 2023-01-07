@@ -115,7 +115,7 @@ import { distanceToNow } from "@/utils/date";
 import { RouterLink, useRoute } from "vue-router";
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://localhost:3000/api/mi5");
 const message = ref("");
 
 function send() {
@@ -128,13 +128,6 @@ function send() {
   message.value = "";
 }
 
-fetchData(async () => {
-  // data.value = (await useFetch("mi/${useRoute().params.id}")).data;
-  // TODO remove
-  data.value = (await useFetch(`https://localhost:3000/api/mi5.json`)).data;
-});
-
-// /api/conversation.json
 useHead({ title: "section.conversation" });
 </script>
 

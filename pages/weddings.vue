@@ -393,17 +393,13 @@ import { RouterLink, useRouter } from "vue-router";
 import { useHead } from "@vueuse/head";
 
 const router = useRouter();
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/weddings");
 const idSearch = ref<undefined | number>(undefined);
 const userSearch = ref("");
 
 function search() {
   router.push(`/weddings/${idSearch.value}`);
 }
-
-fetchData(async () => {
-  data.value = (await useFetch("weddings")).data;
-});
 
 useHead({ title: "section.wedding" });
 </script>

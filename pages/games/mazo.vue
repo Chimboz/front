@@ -188,12 +188,8 @@ import { format } from "@/utils/date";
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/games/mazo");
 
-fetchData(async () => {
-  data.value = (await useFetch("games/mazo")).data;
-});
-// /api/mazo.json
 useHead({ title: "section.mazo" });
 </script>
 

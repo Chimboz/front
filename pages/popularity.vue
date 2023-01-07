@@ -89,7 +89,7 @@
       <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
       <b>- aimé</b> gagne une crotte pour la journée !
     </Card>
-    <br /><Card id="today">
+    <br /><Card v-if="data" id="today">
       <template #header>Classement du jour !</template>
       Classement toujours en cours ! <br />Tu peux encore descendre ou remonter
       quelqu'un !<br />
@@ -154,7 +154,7 @@
       </div>
     </Card>
     <br />
-    <Card id="yesterday">
+    <Card v-if="data" id="yesterday">
       <template #header>Champions du jour !</template>
       <template #subtitle>Hier, ils ont été héroïques... ou nazes !!!</template>
 
@@ -216,7 +216,7 @@
           </table>
         </div></div></Card
     ><br />
-    <Card id="general">
+    <Card v-if="data" id="general">
       <template #header>Classement général !</template>
       <template #subtitle
         >Les membres qui gagnent à être connus... et ceux à éviter !!!</template
@@ -280,7 +280,7 @@
         </div>
       </div>
     </Card>
-    <br /><Card id="groups">
+    <br /><Card v-if="data" id="groups">
       <template #header>Classement des groupes ! </template>
       <template #subtitle>Plus on est de fous...</template>
       <div class="grid fullwidth">
@@ -383,7 +383,7 @@
     </Card>
     <template #right-column
       ><Card
-       
+        v-if="data"
         header="ensavoirplus.webp"
         :width="154"
         :height="46"
@@ -453,7 +453,7 @@ import { VueRecaptcha } from "vue-recaptcha";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/popularity");
 const mode = ref<"for" | "against">("for");
 const pseudo = ref("");
 const recaptcha = ref<null | VueRecaptcha>(null);
@@ -474,16 +474,6 @@ function onCaptchaVerified(recaptchaToken: string) {
 function onCaptchaExpired() {
   recaptcha.value!.reset();
 }
-
-fetchData(async () => {
-  data.value = (await useFetch("popularity")).data;
-  // TODO remove
-  data.value.groups = {
-    best: [],
-    worst: [],
-  };
-  data.value.stats.yesterday = data.value.stats.today;
-});
 
 useHead({ title: "section.popularity" });
 </script>

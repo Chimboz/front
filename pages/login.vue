@@ -138,12 +138,7 @@ import { format } from "@/utils/date";
 import { useHead } from "@vueuse/head";
 import { RouterLink } from "vue-router";
 
-const data = ref<any>(undefined);
-
-fetchData(async () => {
-  data.value = (await useFetch("right")).data;
-  useFetch("https://chimboz.fr/sanctum/csrf-cookie");
-});
+const { data } = await useFetch("https://chimboz.fr/api/right");
 
 useHead({ title: "section.login" });
 </script>

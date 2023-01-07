@@ -323,18 +323,8 @@ import { fetchData } from "@/utils";
 import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/games/bacteria");
 
-fetchData(async () => {
-  data.value = (await useFetch("games/bacteria")).data;
-  data.value.stats = {
-    player: 1,
-    games: 2,
-    yesterday: 3,
-  };
-});
-
-// /api/bacteria.json
 useHead({ title: "section.bacteria" });
 </script>
 

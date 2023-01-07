@@ -169,13 +169,9 @@ import { RouterLink, useRouter } from "vue-router";
 import { useHead } from "@vueuse/head";
 
 const router = useRouter();
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://chimboz.fr/api/book");
 const userSearch = ref("");
 const suggestionsHere = ref<any>(null);
-
-fetchData(async () => {
-  data.value = (await useFetch("book")).data;
-});
 
 async function search() {
   router.push(

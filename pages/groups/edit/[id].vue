@@ -290,7 +290,7 @@ import { useHead } from "@vueuse/head";
 import { fetchData } from "@/utils";
 
 const { $eventBus } = useNuxtApp();
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://localhost:3000/api/groups_edit");
 
 function deleteGroup() {
   // TODO
@@ -312,15 +312,6 @@ function rejectDemand(id: number) {
 function focusHandler() {}
 function selectionHandler() {}
 
-fetchData(async (params) => {
-  // data.value = (await useFetch(`groups/edit/${params.id}`)).data;
-  // TODO remove
-  data.value = (
-    await useFetch(`https://localhost:3000/api/groups_edit.json`)
-  ).data;
-});
-
-// /api/edit.json
 useHead({ title: "section.groupedit" });
 </script>
 <style lang="scss" scoped>

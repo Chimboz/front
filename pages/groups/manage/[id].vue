@@ -368,7 +368,7 @@ import { fetchData } from "@/utils";
 import { useHead } from "@vueuse/head";
 import { RouterLink } from "vue-router";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://localhost:3000/api/groups_manage");
 
 function cancel(id: number) {
   useFetch(`groups/manage/${id}/0`);
@@ -376,14 +376,6 @@ function cancel(id: number) {
 function leave(id: number) {
   useFetch(`groups/manage/${id}/1`);
 }
-
-fetchData(async () => {
-  // data.value = (await useFetch("groups/manage")).data;
-  // TODO remove
-  data.value = (
-    await useFetch(`https://localhost:3000/api/groups_manage.json`)
-  ).data;
-});
 
 useHead({ title: "section.groups" });
 </script>

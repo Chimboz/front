@@ -56,11 +56,7 @@ import { format } from "@/utils/date";
 
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
-
-fetchData(async () => {
-  data.value = (await useFetch("online")).data;
-});
+const { data } = await useFetch("https://chimboz.fr/api/online");
 
 useHead({ title: "section.online" });
 </script>

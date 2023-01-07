@@ -80,22 +80,12 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-import { fetchData, hashColor } from "@/utils";
+import { hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-
-import { RouterLink } from "vue-router";
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://localhost:3000/api/mi");
 
-fetchData(async () => {
-  // data.value = (await useFetch("mi")).data;
-  // TODO remove
-  data.value = (await useFetch(`https://localhost:3000/api/mi.json`)).data;
-});
-
-// /api/messenger.json
 useHead({ title: "section.messenger" });
 </script>
 <style lang="scss"></style>

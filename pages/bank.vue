@@ -122,13 +122,7 @@ Chart.register(
 
 const auth = useAuthStore();
 
-const data = ref<any>(undefined);
-
-fetchData(async () => {
-  // data.value = (await useFetch("bank")).data;
-  // TODO remove
-  data.value = (await useFetch(`https://localhost:3000/api/bank.json`)).data;
-});
+const { data } = await useFetch("https://localhost:3000/api/bank");
 
 function bankData() {
   const dataset: ChartData<any> = {

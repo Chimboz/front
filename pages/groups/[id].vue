@@ -162,18 +162,12 @@ import { useHead } from "@vueuse/head";
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
-const data = ref<any>(undefined);
+const { data } = await useFetch(`https://chimboz.fr/api/groups/${useRoute().params.id}`);
 
 function join() {
   useFetch(`groups/demand/${data.value.id}`);
 }
 
-fetchData(async (params) => {
-  data.value = (await useFetch(`groups/${params.id}`)).data;
-  data.value.level = 25;
-});
-
-// /api/group.json
 useHead({ title: "section.group" });
 </script>
 <style lang="scss" scoped>

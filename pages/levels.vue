@@ -54,15 +54,9 @@ import { asset, fetchData } from "@/utils";
 
 import { useHead } from "@vueuse/head";
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("https://localhost:3000/api/levels");
 const selected = ref(0);
 
-fetchData(async () => {
-  // data.value = (await useFetch("account/levels")).data;
-  // TODO remove
-  data.value = (await useFetch(`https://localhost:3000/api/levels.json`)).data;
-});
-// /api/levels.json
 useHead({ title: "section.levels" });
 </script>
 
