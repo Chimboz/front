@@ -1,6 +1,5 @@
 <template>
-  {{ data }}test
-  <Container v-if="false">
+  <Container>
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
@@ -363,7 +362,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-const { data } = await useFetch("https://localhost:3000/api/account");
+const { data } = await useFetch("https://localhost:3000/api/groups_manage");
 
 function cancel(id: number) {
   useFetch(`groups/manage/${id}/0`);

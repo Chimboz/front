@@ -49,10 +49,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-import { asset, fetchData } from "@/utils";
-
-
+import { asset } from "@/utils";
 
 const { data } = await useFetch("https://localhost:3000/api/levels");
 const selected = ref(0);

@@ -287,8 +287,6 @@
 <script setup lang="ts">
 import { format } from "@/utils/date";
 
-import { fetchData } from "@/utils";
-
 const { $eventBus } = useNuxtApp();
 const { data } = await useFetch("https://localhost:3000/api/groups_edit");
 
