@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from "@vueuse/head";
+
 
 const { data } = await useFetch("https://chimboz.fr/api/bbs");
 

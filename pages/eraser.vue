@@ -73,7 +73,7 @@
 
 import { randomInt } from "@/utils";
 
-import { useHead } from "@vueuse/head";
+
 
 const pseudo = ref("");
 

@@ -405,7 +405,7 @@ import {
 
 import { fetchData, asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-import { useHead } from "@vueuse/head";
+
 import { RouterLink } from "vue-router";
 
 Chart.register(

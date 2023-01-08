@@ -109,7 +109,7 @@
       <NuxtLink
         v-for="account in data.shared"
         :key="account.id"
-        :to="account.id"
+        :to="`/admin/${account.id}`"
         >{{ account.name }}<br /></NuxtLink
       ><br />
       <div class="header fullwidth">

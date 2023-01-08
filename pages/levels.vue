@@ -52,7 +52,7 @@
 
 import { asset, fetchData } from "@/utils";
 
-import { useHead } from "@vueuse/head";
+
 
 const { data } = await useFetch("https://localhost:3000/api/levels");
 const selected = ref(0);

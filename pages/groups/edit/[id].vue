@@ -286,7 +286,7 @@
 </template>
 <script setup lang="ts">
 import { format } from "@/utils/date";
-import { useHead } from "@vueuse/head";
+
 import { fetchData } from "@/utils";
 
 const { $eventBus } = useNuxtApp();

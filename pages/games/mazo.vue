@@ -57,8 +57,8 @@
       <br /><br />
       Le principe est simple: gagner le plus de fois possibles !<br />
       Contrairement à des jeux comme
-      <NuxtLink to="bacteria">Bacteria</NuxtLink> ou
-      <NuxtLink to="patojdur">Patojdur</NuxtLink> qui demandent des
+      <NuxtLink to="/games/bacteria">Bacteria</NuxtLink> ou
+      <NuxtLink to="/games/patojdur">Patojdur</NuxtLink> qui demandent des
       semaines d'entrainement pour devenir pro et atteindre le haut du
       classement, <b>MaZo</b> est un jeu ou tu peux devenir 1er du classement en
       quelques minutes... ou passer des premières places à dernier du classement
@@ -186,7 +186,7 @@ import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
 import { RouterLink } from "vue-router";
-import { useHead } from "@vueuse/head";
+
 
 const { data } = await useFetch("https://chimboz.fr/api/games/mazo");
 

@@ -54,7 +54,7 @@
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
-import { useHead } from "@vueuse/head";
+
 
 const { data } = await useFetch("https://chimboz.fr/api/online");
 

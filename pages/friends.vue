@@ -136,7 +136,7 @@
 import { fetchData, hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 import { RouterLink } from "vue-router";
-import { useHead } from "@vueuse/head";
+
 
   // data.value = (await useFetch("friends")).data;
   // TODO remove

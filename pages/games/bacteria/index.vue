@@ -269,7 +269,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />&nbsp;<NuxtLink to="/bbs/5">BBS de Bacteria</NuxtLink><br />
+        />&nbsp;<NuxtLink to="/bbs/5-1">BBS de Bacteria</NuxtLink><br />
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
@@ -279,7 +279,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />&nbsp;<NuxtLink to="bacteria/story">Bacteria Sanctuary</NuxtLink
+        />&nbsp;<NuxtLink to="/games/bacteria/story">Bacteria Sanctuary</NuxtLink
         ><br />
         <br />
         <img
@@ -315,15 +315,12 @@
 </template>
 
 <script setup lang="ts">
-
-
-
-import { fetchData } from "@/utils";
-
-import { RouterLink } from "vue-router";
-import { useHead } from "@vueuse/head";
-
 const { data } = await useFetch("https://chimboz.fr/api/games/bacteria");
+data.value.stats = {
+    player: 1,
+    games: 2,
+    yesterday: 3,
+  };
 
 useHead({ title: "section.bacteria" });
 </script>

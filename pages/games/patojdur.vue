@@ -348,7 +348,7 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<NuxtLink to="bbs/6">BBS de Patojdur</NuxtLink><br />
+        />&nbsp;<NuxtLink to="/bbs/6-1">BBS de Patojdur</NuxtLink><br />
         <br />
         <img
           src="@/assets/img/puce.svg"
@@ -369,14 +369,13 @@
 </template>
 
 <script setup lang="ts">
-
-import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
-import { RouterLink } from "vue-router";
-import { useHead } from "@vueuse/head";
-
 const { data } = await useFetch("https://chimboz.fr/api/games/patoj");
+data.value.stats = {
+    today: 1,
+    yesterday: 2,
+  };
 
 useHead({ title: "section.patojdur" });
 </script>

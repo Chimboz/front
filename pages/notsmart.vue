@@ -73,7 +73,7 @@
 <script setup lang="ts">
 
 
-import { useHead } from "@vueuse/head";
+
 
 const currentPassword = ref("");
 const newPassword = ref("");

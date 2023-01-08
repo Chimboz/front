@@ -135,7 +135,7 @@
 import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
 
-import { useHead } from "@vueuse/head";
+
 import { RouterLink } from "vue-router";
 
 const { data } = await useFetch("https://chimboz.fr/api/right");

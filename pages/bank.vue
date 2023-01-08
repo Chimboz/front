@@ -106,7 +106,7 @@ import { format } from "@/utils/date";
 
 import { fetchData, asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
-import { useHead } from "@vueuse/head";
+
 
 Chart.register(
   Tooltip,

@@ -392,7 +392,7 @@
 import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 
-import { useHead } from "@vueuse/head";
+
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

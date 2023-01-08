@@ -42,7 +42,7 @@
 
 import { asset, fetchData } from "@/utils";
 
-import { useHead } from "@vueuse/head";
+
 
 const iconDescriptions = [
   {

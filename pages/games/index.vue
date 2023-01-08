@@ -122,6 +122,7 @@
 import { useHead } from '@vueuse/head';
 
 const { data } = await useFetch('https://chimboz.fr/api/games');
+data.value = JSON.parse(data.value);
 
 useHead({ title: 'section.games' });
 </script>

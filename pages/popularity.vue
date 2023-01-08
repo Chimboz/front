@@ -447,7 +447,7 @@ import useAuthStore from "@/stores/auth";
 import { fetchData } from "@/utils";
 
 import { RouterLink } from "vue-router";
-import { useHead } from "@vueuse/head";
+
 import { VueRecaptcha } from "vue-recaptcha";
 
 const auth = useAuthStore();

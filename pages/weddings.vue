@@ -390,7 +390,7 @@ import { fetchData } from "@/utils";
 import { distance, format } from "@/utils/date";
 
 import { RouterLink, useRouter } from "vue-router";
-import { useHead } from "@vueuse/head";
+
 
 const router = useRouter();
 const { data } = await useFetch("https://chimboz.fr/api/weddings");

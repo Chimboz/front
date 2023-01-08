@@ -237,7 +237,7 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<NuxtLink to="bacteria/story"
+        />&nbsp;<NuxtLink to="/games/bacteria/story"
           >Bacteria Sanctuary</NuxtLink
         >
       </Card></template
@@ -245,7 +245,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { useHead } from "@vueuse/head";
+
 
 useHead({ title: "section.bacteriaStory" });
 </script>

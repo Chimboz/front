@@ -270,7 +270,7 @@
 import { asset, fetchData } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
-import { useHead } from "@vueuse/head";
+
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);

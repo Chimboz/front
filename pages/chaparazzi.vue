@@ -40,7 +40,7 @@ import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
 import { RouterView, RouterLink } from "vue-router";
-import { useHead } from "@vueuse/head";
+
 
 const data = ref<any>(undefined);
 

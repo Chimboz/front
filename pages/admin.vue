@@ -60,7 +60,7 @@
 <script setup lang="ts">
 
 
-import { useHead } from "@vueuse/head";
+
 import { format } from "@/utils/date";
 
 const data = ref<any[]>([]);

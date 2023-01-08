@@ -59,7 +59,7 @@
 
 
 
-import { useHead } from "@vueuse/head";
+
 
 const data = reactive({
   blazon: {

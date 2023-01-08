@@ -224,7 +224,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from "@vueuse/head";
+
 import { asset, fetchData } from "@/utils";
 import { format } from "@/utils/date";
 

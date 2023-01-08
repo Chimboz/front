@@ -107,7 +107,7 @@
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
 import { fetchData, asset } from "@/utils";
-import { useHead } from "@vueuse/head";
+
 
 const { $eventBus } = useNuxtApp();
 const auth = useAuthStore();

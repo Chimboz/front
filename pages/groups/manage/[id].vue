@@ -365,7 +365,7 @@
 
 import { fetchData } from "@/utils";
 
-import { useHead } from "@vueuse/head";
+
 import { RouterLink } from "vue-router";
 
 const { data } = await useFetch("https://localhost:3000/api/groups_manage");
