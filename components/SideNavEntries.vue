@@ -127,7 +127,7 @@ const sideNavEntries = [
 ];
 </script>
 <style scoped>
-.NuxtLink-active .list,
+.router-link-active .list,
 .active .list {
   background: transparent
     linear-gradient(
@@ -139,7 +139,7 @@ const sideNavEntries = [
     ) !important;
 }
 
-.card .NuxtLink-active,
+.card .router-link-active,
 .card .active {
   color: var(--light);
 }

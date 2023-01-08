@@ -340,7 +340,7 @@ useHead({ title: "section.member" });
 .portrait {
   justify-content: center;
   align-items: center;
-  background: url(../../../assets/img/member/portrait.png);
+  background: url(@/assets/img/member/portrait.png);
   height: 112px;
   width: 104px;
   margin-bottom: 6px;

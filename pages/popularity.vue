@@ -442,18 +442,18 @@
 </template>
 
 <script setup lang="ts">
-
 import useAuthStore from "@/stores/auth";
-import { fetchData } from "@/utils";
-
-import { RouterLink } from "vue-router";
-
 import { VueRecaptcha } from "vue-recaptcha";
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
 const { data } = await useFetch("https://chimboz.fr/api/popularity");
+data.value.groups = {
+    best: [],
+    worst: [],
+  };
+  data.value.stats.yesterday = data.value.stats.today;
 const mode = ref<"for" | "against">("for");
 const pseudo = ref("");
 const recaptcha = ref<null | VueRecaptcha>(null);

@@ -70,7 +70,6 @@
   <div id="nav" class="flex">
     <NuxtLink
       to="/"
-      :class="{ active: ($route.meta.section as string[])?.includes('Home') }"
       ><button class="nav-btn flex centered" type="button">
         <img
           draggable="false"
@@ -112,7 +111,6 @@
     <NuxtLink
       v-if="user"
       to="/account"
-      :class="{ active: ($route.meta.section as string[])?.includes('Account') }"
       ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -132,7 +130,6 @@
     >
     <NuxtLink
       to="/games"
-      :class="{ active: ($route.meta.section as string[])?.includes('Games') }"
       ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -152,7 +149,6 @@
     >
     <NuxtLink
       to="/members"
-      :class="{ active: ($route.meta.section as string[])?.includes('Members') }"
       ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -172,7 +168,6 @@
     >
     <NuxtLink
       to="/bbs"
-      :class="{ active: ($route.meta.section as string[])?.includes('Community') }"
       ><button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -312,7 +307,7 @@ const hours = new Date().getHours();
 
 .nav-btn:hover .nav-icon,
 .nav-btn:active .nav-icon,
-#nav a.active .nav-icon {
+#nav a.router-link-active .nav-icon {
   filter: none;
 }
 
@@ -338,7 +333,7 @@ const hours = new Date().getHours();
 
 .nav-btn:hover,
 .nav-btn:active,
-#nav a.active .nav-btn {
+#nav a.router-link-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
     var(--light),
@@ -352,7 +347,7 @@ const hours = new Date().getHours();
 
 #nav a:first-child .nav-btn:hover,
 #nav a:first-child .nav-btn:active,
-#nav a:first-child.active .nav-btn {
+#nav a:first-child.router-link-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--light) 0%,
@@ -366,8 +361,8 @@ const hours = new Date().getHours();
 #nav a:first-child .nav-btn:hover,
 #nav a:nth-child(2) .nav-btn:active,
 #nav a:first-child .nav-btn:active,
-#nav a:first-child.active .nav-btn,
-#nav a:nth-child(2).active .nav-btn {
+#nav a:first-child.router-link-active .nav-btn,
+#nav a:nth-child(2).router-link-active .nav-btn {
   border-left-color: var(--orange);
 }
 
@@ -375,8 +370,8 @@ const hours = new Date().getHours();
 #nav a:first-child .nav-btn:hover,
 #nav a:last-child .nav-btn:active,
 #nav a:first-child .nav-btn:active,
-#nav a:last-child.active .nav-btn,
-#nav a:first-child.active .nav-btn {
+#nav a:last-child.router-link-active .nav-btn,
+#nav a:first-child.router-link-active .nav-btn {
   border-right-color: var(--orange);
 }
 
@@ -428,7 +423,7 @@ a:hover {
 
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
-  #nav a.active .nav-text {
+  #nav a.router-link-active .nav-text {
     stroke: var(--dark-orange);
   }
 

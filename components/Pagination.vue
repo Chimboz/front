@@ -38,7 +38,7 @@ function array() {
 }
 </script>
 <style lang="scss" scoped>
-.btn-action:not(.NuxtLink-active) {
+.btn-action:not(.router-link-active) {
   border: unset;
 }
 </style>
