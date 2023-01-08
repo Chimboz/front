@@ -1,5 +1,6 @@
 <template>
-  <Container>
+  {{ data }}test
+  <Container v-if="false">
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
@@ -362,13 +363,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-import { fetchData } from "@/utils";
-
-
-import { RouterLink } from "vue-router";
-
-const { data } = await useFetch("https://localhost:3000/api/groups_manage");
+const { data } = await useFetch("https://localhost:3000/api/account");
 
 function cancel(id: number) {
   useFetch(`groups/manage/${id}/0`);

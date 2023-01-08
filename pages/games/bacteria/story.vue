@@ -229,7 +229,7 @@
           alt="Puce"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<NuxtLink to="/bbs/5">BBS de Bacteria</NuxtLink><br />
+        />&nbsp;<NuxtLink to="/bbs/5-1">BBS de Bacteria</NuxtLink><br />
         <br />
         Lis l'histoire sur <b>Bacteria</b> écrite par <b>Kunu</b>.<br />
         <img
