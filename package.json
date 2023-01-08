@@ -17,9 +17,9 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
     "date-fns": "^2.29.3",
-    "dompurify": "^2.4.1",
+    "dompurify": "^2.4.3",
     "highlight.js": "^11.7.0",
-    "jsdom": "^20.0.3",
+    "jsdom": "^21.0.0",
     "marked": "^4.2.5",
     "modern-normalize": "^1.1.0",
     "pinia": "^2.0.28",
