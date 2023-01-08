@@ -386,10 +386,6 @@
 </template>
 
 <script setup lang="ts">
-
-
-
-
 import { DoughnutChart, BarChart } from "vue-chart-3";
 import {
   Chart,
@@ -402,11 +398,8 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
-
-import { fetchData, asset } from "@/utils";
+import { asset } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-
-import { RouterLink } from "vue-router";
 
 Chart.register(
   Legend,
@@ -419,7 +412,7 @@ Chart.register(
   LinearScale
 );
 
-const { data } = await useFetch("api/account");
+const { data } = await useFetch("/api/account");
 
 function statsBacteria() {
   return {

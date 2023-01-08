@@ -362,7 +362,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-const { data } = await useFetch("https://localhost:3000/api/groups_manage");
+const { data } = await useFetch("/api/groups_manage");
 
 function cancel(id: number) {
   useFetch(`groups/manage/${id}/0`);

@@ -115,7 +115,7 @@ import { distanceToNow } from "@/utils/date";
 import { RouterLink, useRoute } from "vue-router";
 
 
-const { data } = await useFetch("https://localhost:3000/api/mi5");
+const { data } = await useFetch("/api/mi5");
 const message = ref("");
 
 function send() {

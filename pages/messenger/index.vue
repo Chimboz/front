@@ -84,7 +84,7 @@ import { hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
 
 
-const { data } = await useFetch("https://localhost:3000/api/mi");
+const { data } = await useFetch("/api/mi");
 
 useHead({ title: "section.messenger" });
 </script>

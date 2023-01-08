@@ -288,7 +288,7 @@
 import { format } from "@/utils/date";
 
 const { $eventBus } = useNuxtApp();
-const { data } = await useFetch("https://localhost:3000/api/groups_edit");
+const { data } = await useFetch("/api/groups_edit");
 
 function deleteGroup() {
   // TODO

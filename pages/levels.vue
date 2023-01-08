@@ -51,7 +51,7 @@
 <script setup lang="ts">
 import { asset } from "@/utils";
 
-const { data } = await useFetch("https://localhost:3000/api/levels");
+const { data } = await useFetch("/api/levels");
 const selected = ref(0);
 
 useHead({ title: "section.levels" });
