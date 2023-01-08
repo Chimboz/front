@@ -145,9 +145,6 @@
 </template>
 <script setup lang="ts">
 // TODO refacto
-
-
-
 withDefaults(
   defineProps<{
     avatar: number;

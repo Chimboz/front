@@ -8,7 +8,6 @@
 
 <script setup lang="ts">
 import useAuthStore from '@/stores/auth';
-import { useHead } from '@vueuse/head';
 import favicon from '@/constants/favicon.json';
 import faviconNew from '@/constants/favicon_new.json';
 import { useI18n } from 'vue-i18n';

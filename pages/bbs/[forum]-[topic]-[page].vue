@@ -15,9 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { fetchData } from '@/utils';
 import useAuthStore from '@/stores/auth';
-import { useHead } from '@vueuse/head';
 
 const user = computed(() => useAuthStore().user);
 const route = useRoute();
