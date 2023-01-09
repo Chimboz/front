@@ -11,6 +11,8 @@ import useAuthStore from '@/stores/auth';
 import favicon from '@/constants/favicon.json';
 import faviconNew from '@/constants/favicon_new.json';
 import { useI18n } from 'vue-i18n';
+import { NuxtPage, NuxtPage } from '@nuxt/schema';
+import { ProgressBar, Navbar, Footer, Modal } from './.nuxt/components';
 
 const notifications = computed(() => useAuthStore().notifications);
 const { t } = useI18n();
@@ -56,6 +58,7 @@ watchEffect(() => {
 // TODO search messages on bbs
 // TODO opengraph https://ogp.me/
 // TODO check prototype pollution
+// TODO forget password page
 // TODO replace marked emoji support by extension + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 </script>
 
