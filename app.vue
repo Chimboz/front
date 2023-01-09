@@ -45,6 +45,18 @@ useHead({
 watchEffect(() => {
   useHead({ link: notifications.value ? faviconNew : favicon });
 });
+
+// TODO check forms submit
+// TODO better quotes
+// TODO verif v-if data
+// TODO sitemap and robots.txt generator
+// TODO dynamic suggestions
+// TODO wedding id view
+// TODO search all user messages on bbs
+// TODO search messages on bbs
+// TODO opengraph https://ogp.me/
+// TODO check prototype pollution
+// TODO replace marked emoji support by extension + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 </script>
 
 <style>
