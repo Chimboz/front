@@ -133,10 +133,8 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { fetchData, hashColor } from "@/utils";
+import { hashColor } from "@/utils";
 import { distanceToNow } from "@/utils/date";
-import { RouterLink } from "vue-router";
-
 
   // data.value = (await useFetch("friends")).data;
   // TODO remove
@@ -169,7 +167,6 @@ async function addFriend() {
   if (res.result === "success") data.value.push(res.data);
 }
 
-// /api/friends.json
 useHead({ title: "section.friends" });
 </script>
 

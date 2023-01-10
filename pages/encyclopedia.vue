@@ -151,8 +151,7 @@
 <script setup lang="ts">
 import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
-import { RouterView, RouterLink } from "vue-router";
-
+import { RouterView } from "vue-router";
 
 const data = ref<any>(undefined);
 const categories = [
@@ -217,7 +216,6 @@ onBeforeMount(async () => {
   ).data;
 });
 
-// /api/encyclopedia/${vm.page}.json
 useHead({ title: "section.encyclopedia" });
 </script>
 <style lang="scss" scoped>

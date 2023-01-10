@@ -250,7 +250,6 @@ function action(type: string, payload?: object) {
     payload,
   });
 }
-// /api/admin/${to.params.id}.json
 </script>
 <style lang="scss" scoped>
 .pseudo {

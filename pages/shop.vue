@@ -106,8 +106,6 @@
 </template>
 <script setup lang="ts">
 import useAuthStore from "@/stores/auth";
-import { fetchData, asset } from "@/utils";
-
 
 const { $eventBus } = useNuxtApp();
 const auth = useAuthStore();
@@ -133,7 +131,6 @@ function buy() {
   });
 }
 
-// /api/shop.json
 useHead({ title: "section.shop" });
 </script>
 <style lang="scss">

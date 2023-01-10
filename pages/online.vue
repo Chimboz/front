@@ -50,11 +50,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-
-
 
 const { data } = await useFetch("https://chimboz.fr/api/online");
 

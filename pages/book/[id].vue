@@ -267,17 +267,15 @@
 </template>
 
 <script setup lang="ts">
-import { asset, fetchData } from "@/utils";
+import { asset } from "@/utils";
 import { format, distance } from "@/utils/date";
 import useAuthStore from "@/stores/auth";
-
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
 
 const {data} = await useFetch(`https://chimboz.fr/api/book/${useRoute().params.id}`);
 
-// /api/member.json
 useHead({ title: "section.member" });
 </script>
 <style lang="scss">

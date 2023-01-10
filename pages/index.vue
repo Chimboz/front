@@ -224,8 +224,7 @@
 </template>
 
 <script setup lang="ts">
-
-import { asset, fetchData } from "@/utils";
+import { asset } from "@/utils";
 import { format } from "@/utils/date";
 
 // data.value = (await useFetch("home")).data;

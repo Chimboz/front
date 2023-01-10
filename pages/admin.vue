@@ -80,7 +80,7 @@ function onKeypressValue() {
 function search() {
   return true;
 }
-// /api/admin.json
+
 useHead({ title: "section.admin" });
 </script>
 <style lang="scss" scoped>

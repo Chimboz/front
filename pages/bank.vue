@@ -100,13 +100,10 @@ import {
   LineElement,
   type ChartData,
 } from "chart.js";
-
 import { isSameDay, eachDayOfInterval, subDays } from "date-fns";
 import { format } from "@/utils/date";
-
-import { fetchData, asset } from "@/utils";
+import { asset } from "@/utils";
 import useAuthStore from "@/stores/auth";
-
 
 Chart.register(
   Tooltip,
@@ -165,7 +162,7 @@ function bankData() {
     });
   return dataset;
 }
-// /api/bank.json
+
 useHead({ title: "section.bank" });
 </script>
 

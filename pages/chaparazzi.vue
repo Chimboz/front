@@ -39,7 +39,7 @@
 import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import { format } from "@/utils/date";
-import { RouterView, RouterLink } from "vue-router";
+import { RouterView } from "vue-router";
 
 
 const data = ref<any>(undefined);
@@ -48,7 +48,6 @@ onBeforeMount(async () => {
   data.value = (await useFetch(`gallery?page=0`)).data;
 });
 
-// /api/chaparazzi/${vm.page}.json
 useHead({ title: "section.chaparazzi" });
 </script>
 <style lang="scss" scoped>

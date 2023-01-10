@@ -11,8 +11,6 @@ import useAuthStore from '@/stores/auth';
 import favicon from '@/constants/favicon.json';
 import faviconNew from '@/constants/favicon_new.json';
 import { useI18n } from 'vue-i18n';
-import { NuxtPage, NuxtPage } from '@nuxt/schema';
-import { ProgressBar, Navbar, Footer, Modal } from './.nuxt/components';
 
 const notifications = computed(() => useAuthStore().notifications);
 const { t } = useI18n();

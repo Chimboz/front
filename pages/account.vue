@@ -445,7 +445,6 @@ function statsPatojdur() {
   };
 }
 
-// /api/account.json
 useHead({ title: "section.account" });
 </script>
 <style lang="scss">

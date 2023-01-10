@@ -37,13 +37,6 @@
 </template>
 
 <script setup lang="ts">
-
-
-
-import { asset, fetchData } from "@/utils";
-
-
-
 const iconDescriptions = [
   {
     src: asset("img/bbs/folder_new.svg"),
@@ -82,7 +75,6 @@ const route = useRoute();
 const post = ref(false);
 const { data } = await useFetch(`https://chimboz.fr/api/bbs/forum/${route.params.forum}?page=${route.params.page}`);
 
-// /api/forum/${vm.$route.params.page ? vm.$route.params.page : 1}.json
 useHead({ title: "section.forum" });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

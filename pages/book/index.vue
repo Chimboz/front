@@ -161,12 +161,8 @@
 </template>
 
 <script setup lang="ts">
-
-import { fetchData } from "@/utils";
 import { format } from "@/utils/date";
-
-import { RouterLink, useRouter } from "vue-router";
-
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const { data } = await useFetch("https://chimboz.fr/api/book");
