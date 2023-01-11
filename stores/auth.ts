@@ -3,7 +3,7 @@ import type User from "@/types/User";
 
 export default defineStore("auth", () => {
   const user = ref<undefined | User>(undefined);
-  const notifications = ref(10);
+  const notifications = ref(0);
   async function login(pseudo: string, password: string) {
     // await useFetch("auth/login", {body:{ pseudo, password, device_name: "browser" }});
     // user.value = (await useFetch("user")).data;
