@@ -15,7 +15,7 @@
         v-for="user in data.tchat"
         :key="user.id"
         style="display: inline-block"
-        ><LinkUser :user="user" />&nbsp;({{ user.room }})&#32;
+        ><LinkUser :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span></Card
     ><br />
     <Card
