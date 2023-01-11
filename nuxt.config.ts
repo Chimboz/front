@@ -1,13 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-/*  typescript: {
+  typescript: {
     strict: true,
+    typeCheck: true,
   },
-  runtimeConfig: {
-    public: {
-      baseURL: 'https://chimboz.fr/api/',
-    },
-  },*/
   modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
   css: [
     'modern-normalize/modern-normalize.css',
