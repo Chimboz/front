@@ -1,6 +1,5 @@
 <template>
   <Card color="blue">
-    <form @submit.prevent="submit">
       <div class="container-blz flex">
         <div class="left-blz flex">
           <div class="cabin flex centered">
@@ -154,7 +153,6 @@
           </div>
         </div>
       </div>
-    </form>
   </Card>
 </template>
 <script setup lang="ts">
@@ -181,8 +179,6 @@ const categories: BlazonCategory[] = [
 ];
 const info = ref("");
 const checked = ref(categories);
-
-function submit() {}
 </script>
 <style lang="scss">
 .cabin .blazon {
