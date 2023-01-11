@@ -1,5 +1,5 @@
 <template>
-  <table class="bbs preview" :class="{ display: preview }">
+  <table class="bbs preview" v-if="preview">
     <colgroup>
       <col width="100" class="info" />
       <col width="100%" />
@@ -354,10 +354,6 @@ textarea {
 }
 
 .preview {
-  display: none;
-}
-
-.preview.display {
   display: table;
 }
 
