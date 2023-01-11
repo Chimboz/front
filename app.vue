@@ -48,9 +48,12 @@ watchEffect(() => {
 
 // TODO check forms submit
 // TODO better quotes
-// TODO verif v-if data v-if=".*data[^"]*"
+// TODO add commitlint
+// TODO configure eslint
 // TODO sitemap and robots.txt generator
-// TODO dynamic suggestions
+// TODO dynamic suggestions components
+// TODO remove hardcoded blazon
+// TODO alert when javascript is disabled
 // TODO wedding id view
 // TODO search all user messages on bbs
 // TODO search messages on bbs

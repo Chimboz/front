@@ -10,6 +10,7 @@
 
 .link:hover {
   text-decoration: underline;
+  cursor: var(--pointer);
 }
 
 /* Pink icon */
@@ -179,7 +180,7 @@ textarea.btn-md {
   padding: var(--sm-gap) var(--md-gap);
 }
 
-.card a:nth-child(odd) .list {
+.card a:nth-child(odd) .list, .card .link:nth-child(odd).list {
   background: var(--light-blue)
     linear-gradient(
       to right,

@@ -2,7 +2,7 @@
   <div
     class="header"
     :style="{
-      backgroundImage: `url(${asset(`img/navbar/svg/${hours}.svg`)})`,
+      backgroundImage: `url(${asset(`img/navbar/svg/${new Date().getHours()}.svg`)})`,
     }"
   >
     <NuxtLink to="/"
@@ -193,12 +193,8 @@
 import useAuthStore from "@/stores/auth";
 import { asset } from "@/utils";
 
-
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-
-const hours = new Date().getHours();
-// TODO document.body.className = `h${hours}`;
 </script>
 <style lang="scss" scoped>
 .header {

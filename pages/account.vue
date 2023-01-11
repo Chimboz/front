@@ -235,7 +235,6 @@
     </div>
     <template #right-column>
       <Card
-       
         color="blue"
         header="messages.gif"
         :width="154"
@@ -256,13 +255,11 @@
           />
         </div>
         <div style="margin-top: -21px">
-          <NuxtLink
+            <div class="list fullwidth col pm link"
             v-for="message of data.pm"
             :key="message.author.id"
-            :to="`/messenger/${message.author.id}`"
-            :class="{ active: message.new }"
-          >
-            <div class="list fullwidth col pm">
+            @click="$router.push(`/messenger/${message.author.id}`)"
+            :class="{ active: message.new }">
               <div>
                 <img
                   draggable="false"
@@ -270,11 +267,10 @@
                   alt="Voir le dernier message"
                   title="Voir le dernier message"
                   @contextmenu.prevent
-                />&nbsp;<LinkUser :user="message.author" />
+                />&nbsp;<LinkUser @click.stop :user="message.author" />
               </div>
               <div>{{ distanceToNow(message.date) }}</div>
             </div>
-          </NuxtLink>
         </div></Card
       ><br />
       <Card
@@ -286,14 +282,12 @@
       >
         <StrokeText class="forum-title">Forum</StrokeText>
         <div style="margin-top: -16px">
-          <NuxtLink
+            <div class="list fullwidth col link" style="align-items: flex-start"
             v-for="message of data.forum"
             :key="message.id"
-            :to="`/bbs/${message.forum.id}-${message.topic.id}-${message.topic.page ?? 1}#p${message.id}`"
-          >
-            <div class="list fullwidth col" style="align-items: flex-start">
+            @click.prevent="$router.push(`/bbs/${message.forum.id}-${message.topic.id}-${message.topic.page ?? 1}#p${message.id}`)">
               <div>
-                <NuxtLink :to="`/bbs/${message.forum.id}-1`">{{
+                <NuxtLink @click.stop :to="`/bbs/${message.forum.id}-1`">{{
                   message.forum.name
                 }}</NuxtLink>
               </div>
@@ -307,7 +301,6 @@
                 />&nbsp;{{ message.topic.title }}
               </div>
             </div>
-          </NuxtLink>
         </div></Card
       ><br /><Card color="blue">
         <template #button>
@@ -315,8 +308,9 @@
             $t("profile.friendsList")
           }}</Button>
         </template>
-        <NuxtLink
-          v-for="friend of data.friends.sort(
+          <div
+            class="list fullwidth flex-centered link"
+            v-for="friend of data.friends.sort(
             (a: any, b: any) =>
               b.status.connected +
               (b.status.room ? 1 : 0) -
@@ -324,10 +318,7 @@
               (a.status.room ? 1 : 0)
           )"
           :key="friend.user.id"
-          :to="'/book/' + friend.user.id"
-        >
-          <div
-            class="list fullwidth flex-centered"
+          @click="$router.push(`/book/${friend.user.id}`)"
             style="justify-content: flex-start"
           >
             <img
@@ -347,8 +338,7 @@
               <LinkUser :user="friend.user" />
               {{ friend.status.connected ? friend.status.room : "" }}
             </div>
-          </div></NuxtLink
-        >
+          </div>
       </Card>
       <br />
       <Card color="blue">
@@ -357,14 +347,12 @@
             $t("profile.groupsList")
           }}</Button>
         </template>
-        <NuxtLink
-          v-for="group of data.groups"
-          :key="group.id"
-          :to="'/groups/' + group.id"
-        >
           <div
-            class="list fullwidth flex-centered"
+            class="list fullwidth flex-centered link"
             style="justify-content: flex-start"
+            v-for="group of data.groups.sort((a,b) => b.owner || -a.owner)"
+          :key="group.id"
+          @click="$router.push(`/groups/${group.id}`)"
           >
             <img
               :style="{ opacity: group.owner ? '1' : '0' }"
@@ -376,7 +364,7 @@
             <div class="flex col" style="align-items: flex-start">
               <LinkGroup :group="group" />
             </div></div
-        ></NuxtLink>
+        >
       </Card>
     </template>
   </Container>
@@ -459,7 +447,7 @@ useHead({ title: "section.account" });
   align-items: flex-start;
 }
 
-.active .pm div:first-child {
+.pm.active div:first-child {
   filter: drop-shadow(0 0 2px var(--light)) drop-shadow(0 0 1px var(--light));
 }
 
