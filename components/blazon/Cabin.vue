@@ -232,6 +232,7 @@ function submit() {}
 
 .arrows button:nth-child(even) img {
   height: 30px;
+  width: 30px;
 }
 
 .arrows button:hover,

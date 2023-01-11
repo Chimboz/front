@@ -32,7 +32,7 @@
       </div>
     </Card>
     <br />
-    <Cabin
+    <BlazonCabin
      
       :data="{
         blazon: {
