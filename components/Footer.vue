@@ -70,7 +70,7 @@
 <script setup lang="ts"></script>
 <style lang="scss" scoped>
 footer {
-  margin-top: var(--gap);
+  margin: var(--gap) 0;
   padding: 0 10px;
   text-align: center;
 }

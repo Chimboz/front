@@ -37,8 +37,8 @@
         :message="message"
         :separator="index < topic.messages.length - 1"
       />
-    </tbody>
-    <tr>
+    
+    <tr style="background: var(--dark-bbs)">
       <th valign="bottom" colspan="2" height="25" nowrap="nowrap">
         <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
@@ -47,6 +47,7 @@
         />
       </th>
     </tr>
+  </tbody>
   </table>
   <br v-if="movePanel" />
   <Card v-if="movePanel">

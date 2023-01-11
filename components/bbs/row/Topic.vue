@@ -1,5 +1,4 @@
 <template>
-  <tbody>
     <tr>
       <td style="text-align: center" valign="middle" height="50">
         <img
@@ -67,7 +66,6 @@
         <hr />
       </td>
     </tr>
-  </tbody>
 </template>
 <script setup lang="ts">
 

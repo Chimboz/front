@@ -24,14 +24,15 @@
         <th valign="top" nowrap="nowrap">Dernier message</th>
       </tr>
     </thead>
-
+    <tbody>
     <BbsRowTopic
       v-for="(topic, index) in forum.subject"
       :key="topic.id"
       :topic="topic"
       :separator="index < forum.subject.length - 1"
     />
-    <tr>
+    
+    <tr style="background: var(--dark-bbs)">
       <th valign="bottom" colspan="6" height="25" nowrap="nowrap">
         <Pagination
           :current="$route.params.page ? +$route.params.page : 1"
@@ -40,6 +41,7 @@
         />
       </th>
     </tr>
+  </tbody>
   </table>
   <br />
   <div v-if="user && +user.user_level > 3" style="text-align: end">
