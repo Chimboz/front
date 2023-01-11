@@ -109,7 +109,7 @@ function dompurifyRender(purify: DOMPurify, window, string: string) {
     if (node.hasAttribute('href')) {
       anchor = window.document.createElement('a');
       anchor.href = node.getAttribute('href')!;
-      if (anchor.hostname !== 'localhost:3000') {
+      if (anchor.host !== 'localhost:3000') {
         node.setAttribute('target', '_blank');
         node.setAttribute('rel', 'noreferrer noopener nofollow');
       }
@@ -122,7 +122,7 @@ function dompurifyRender(purify: DOMPurify, window, string: string) {
     if (node.hasAttribute('src')) {
       anchor = window.document.createElement('a');
       anchor.href = node.getAttribute('src')!;
-      if (anchor.hostname && !ALLOWED_IMAGES.includes(anchor.hostname)) {
+      if (anchor.host && !ALLOWED_IMAGES.includes(anchor.host)) {
         node.removeAttribute('src');
       }
     }
