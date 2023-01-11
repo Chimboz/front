@@ -20,7 +20,7 @@
         </ScrollableContainer></Card
       ></template
     >
-    <RouterView />
+    <NuxtPage />
     <template #right-column
       ><Card color="blue">
         <template #button>

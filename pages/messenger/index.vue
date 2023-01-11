@@ -29,11 +29,11 @@
         :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
-        <NuxtLink
+        <div
           v-for="message of data"
           :key="message.user.id"
-          class="message flex"
-          :to="'/messenger/' + message.user.id"
+          class="message flex pointer"
+          @click="$router.push('/messenger/' + message.user.id)"
           :class="{ active: message.new }"
         >
           <div
@@ -73,7 +73,7 @@
             </div>
             <span>{{ message.content.slice(0, 64) }}</span>
           </div>
-        </NuxtLink>
+        </div>
       </ScrollableContainer>
     </Card>
     <template #right-column></template>

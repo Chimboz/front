@@ -241,7 +241,7 @@ const { $eventBus } = useNuxtApp();
 const auth = useAuthStore();
 const user = computed(() => auth.user!);
 
-const data = ref<any>(undefined);
+const { data } = await useFetch("/api/admin_user");
 
 function action(type: string, payload?: object) {
   $eventBus.emit("confirmation", {
@@ -250,6 +250,8 @@ function action(type: string, payload?: object) {
     payload,
   });
 }
+
+useHead({ title: "section.admin" });
 </script>
 <style lang="scss" scoped>
 .pseudo {

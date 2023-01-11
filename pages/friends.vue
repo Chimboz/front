@@ -138,7 +138,7 @@ import { distanceToNow } from "@/utils/date";
 
   // data.value = (await useFetch("friends")).data;
   // TODO remove
-const { data } = await useFetch("api/friends");
+const { data } = await useFetch("/api/friends");
 const pseudo = ref("");
 
 async function cancel(friend: any) {

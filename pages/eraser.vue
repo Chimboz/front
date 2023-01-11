@@ -69,21 +69,17 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
 import { randomInt } from "@/utils";
-
-
 
 const pseudo = ref("");
 
 function submit() {
   useFetch("account/name", {body:{ pseudo: pseudo.value }});
 }
+
 async function generatePseudo() {
-  pseudo.value = (
-    await useFetch(`generator/${randomInt(3, 15)}/${randomInt(1, 2)}`)
-  ).data.pseudo;
+  const {data} = await useFetch(`https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`)
+  pseudo.value = JSON.parse(data.value).pseudo;
 }
 
 useHead({ title: "section.eraser" });
