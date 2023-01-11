@@ -1,5 +1,5 @@
 <template>
-  <Card color="blue">
+  <Card color="blue" :style="{ '--blazon-primary': data.blazon.primary, '--blazon-secondary': data.blazon.secondary }">
       <div class="container-blz flex">
         <div class="left-blz flex">
           <div class="cabin flex centered">
@@ -112,25 +112,11 @@
                   @focus="info = name + ' ' + item"
                 >
                   <svg
-                    v-if="name === 'primary'"
+                    v-if="name === 'primary' || name === 'secondary'"
                     viewBox="0 0 69.2 67.75"
                     mlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      :fill="item"
-                      d="m11.047 23.264-.205.111c-2.724 1.441-5.707 2.628-8.95 3.56.032 5.3.912 9.332 2.64 12.098.773 1.25 1.72 2.242 2.843 2.973 1.07.7 2.294 1.165 3.672 1.398 6.337-1.176 9.39-6.666 9.156-16.468-3.454-.827-6.507-2.05-9.156-3.672zm-.205 1.972h.205l.017.016.032.016c2.13 1.303 4.583 2.284 7.36 2.941.18 7.863-2.246 12.303-7.28 13.32l-.018-.08-.062-.174.047.254-.112.032c-1.42-.244-2.639-.794-3.656-1.653l-.873-.875c-1.897-2.215-2.856-5.822-2.877-10.824 2.607-.752 5.012-1.744 7.217-2.973z"
-                      transform="translate(0 -72.677) scale(3.14545)"
-                    />
-                  </svg>
-                  <svg
-                    v-else-if="name === 'secondary'"
-                    viewBox="0 0 69.2 67.75"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      :fill="item"
-                      d="M34.1 6.7c-6.934 3.866-14.5 6.984-22.7 9.35.067 15.734 3.083 27.083 9.05 34.05l2.75 2.75c3.2 2.7 7.033 4.434 11.5 5.2l.35-.1-.15-.8.2.55.05.25c15.834-3.2 23.467-17.166 22.9-41.9C49.318 13.985 41.6 10.9 34.9 6.8l-.1-.05-.05-.05Z"
-                    />
+                    <use :href="`/item/blazon/${name}/item.svg#root`" :fill="item"></use>
                   </svg>
                   <img
                     v-else-if="item === -1"
@@ -139,13 +125,9 @@
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
                   />
-                  <VLazyImage
-                    v-else
-                    draggable="false"
-                    :src="`/blazon/${name}/${item}.svg`"
-                    :src-placeholder="asset('img/loading.svg')"
-                    @contextmenu.prevent
-                  />
+                  <svg @contextmenu.prevent :viewBox="viewBox(name)">
+                    <use :href="`/item/blazon/${name}/${item}.svg#root`" fill="var(--blazon-primary)"></use>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -156,7 +138,6 @@
   </Card>
 </template>
 <script setup lang="ts">
-import VLazyImage from "v-lazy-image";
 import { asset } from "@/utils";
 import type { BlazonCategory } from "@/types/Item";
 
@@ -179,6 +160,17 @@ const categories: BlazonCategory[] = [
 ];
 const info = ref("");
 const checked = ref(categories);
+
+function viewBox(category){
+  switch(category){
+    case "shape":
+      return "0 0 69.2 67.75"
+    case "top":
+      return "0 0 44.6 35.1"
+    case "bot":
+      return "0 0 44.45 27.6"
+  }
+}
 </script>
 <style lang="scss">
 .cabin .blazon {
