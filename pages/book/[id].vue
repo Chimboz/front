@@ -256,7 +256,7 @@
     </Card>
     <template #right-column
       ><NuxtLink
-        v-if="data && user && +user.user_level > 2"
+        v-if="+user.user_level > 2"
         :to="'/admin/' + data.id"
         ><Button type="button" icon="rules.svg"
           >Modérer</Button

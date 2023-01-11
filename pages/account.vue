@@ -56,7 +56,6 @@
     <br />
     <div class="games">
       <Card
-        v-if="data && data.bacteria"
         header="bacteria.svg"
         :height="74"
         justified
@@ -132,7 +131,6 @@
         </div>
       </Card>
       <Card
-        v-if="data && data.patojdur"
         header="patojdur.svg"
         :height="56"
         justified
@@ -192,7 +190,6 @@
         />
       </Card>
       <Card
-        v-if="data && data.mazo"
         header="mazo.svg"
         :height="52"
         justified

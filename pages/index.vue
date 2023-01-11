@@ -85,7 +85,7 @@
       @contextmenu.prevent
     />
     <br />
-    <Card v-if="data && data.lottery" header="lottery.webp">
+    <Card header="lottery.webp">
       <template #header> </template>
       <div v-if="lottery">
         <div>{{ $t("lottery.firstLine") }}</div>
@@ -94,7 +94,7 @@
       <RandomNumber v-else :max="30" :value="gain" /> <br /><br
         v-if="!lottery"
       />
-      <Button type="button" color="orange" @click="handle"
+      <Button type="button" color="orange" @click="handle" :disabled="!lottery"
         ><template #prepend
           ><img
             v-if="lottery"
@@ -235,7 +235,6 @@ const gain = ref(0);
 
 async function handle({ currentTarget }: { currentTarget: HTMLButtonElement }) {
   lottery.value = false;
-  currentTarget.disabled = true;
 
   // data.value = (await useFetch("randomppt")).data;
   // TODO remove

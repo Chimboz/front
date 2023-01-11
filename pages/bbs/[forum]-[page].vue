@@ -12,7 +12,7 @@
     <br />
     <button type="button" style="text-align: left" @click="post = true">
       <img
-        v-if="!post && data && !data.locked"
+        v-if="!post && !data.locked"
         alt="New topic"
         src="@/assets/img/bbs/post.gif"
       />

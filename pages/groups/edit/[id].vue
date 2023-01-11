@@ -239,7 +239,7 @@
           @contextmenu.prevent
         /></div></Card
     ><br />
-    <Card v-if="data && data.bacteria" class="justified"
+    <Card v-if="data.bacteria" class="justified"
       ><img
         src="@/assets/img/group/bacteria.gif"
         alt="Bacteria"
@@ -249,7 +249,7 @@
       >/<b>{{ data.bacteria.total }}</b> avec
       <b>{{ data.bacteria.points }}</b> points.</Card
     ><br />
-    <Card v-if="data && data.patojdur" class="justified"
+    <Card v-if="data.patojdur" class="justified"
       ><img
         src="@/assets/img/group/patojdur.gif"
         alt="Patojdur"
@@ -259,7 +259,7 @@
       >/<b>{{ data.patojdur.total }}</b> avec
       <b>{{ data.patojdur.points }}</b> points.</Card
     ><br />
-    <Card v-if="data && data.popularity" class="justified"
+    <Card v-if="data.popularity" class="justified"
       ><img
         src="@/assets/img/group/popularity.gif"
         alt="Popularity"
@@ -269,7 +269,7 @@
       >/<b>{{ data.popularity.total }}</b> avec
       <b>{{ data.popularity.points }}</b> points.</Card
     ><br />
-    <Card v-if="data && data.global" class="justified">
+    <Card v-if="data.global" class="justified">
       Classement général : <b>{{ data.global.rank }}</b
       >/<b>{{ data.global.total }}</b> avec
       <b>{{ data.global.points }}</b> points.</Card
