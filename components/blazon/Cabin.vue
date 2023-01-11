@@ -152,10 +152,10 @@ const emit = defineEmits<{
 }>();
 
 const categories: BlazonCategory[] = [
-  "shape",
-  "top",
-  "bot",
   "primary",
+  "top",
+  "shape",
+  "bot",
   "secondary",
 ];
 const info = ref("");

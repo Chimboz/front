@@ -161,6 +161,7 @@ const auth = useAuthStore();
 const user = computed(() => auth.user);
 
 const { data } = await useFetch(`https://chimboz.fr/api/groups/${useRoute().params.id}`);
+data.value.level = 25;
 
 function join() {
   useFetch(`groups/demand/${data.value.id}`);
