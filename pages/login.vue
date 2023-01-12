@@ -12,7 +12,13 @@
         {{ data.last24 }} {{ $t('members.past', data.last24) }}
       </Card><br>
       <NuxtLink to="/shop">
-        <Card color="yellow" header="packs.webp" :width="154" :height="96" class="packs">
+        <Card
+          color="yellow"
+          header="packs.webp"
+          :width="154"
+          :height="96"
+          class="packs"
+        >
           <template #button>
             <Button type="button" color="yellow" icon="register.svg">
               Pack
@@ -32,9 +38,19 @@
         </NuxtLink>
       </template>
       <div class="gallery flex">
-        <div v-for="photo of data.gallery" :key="photo.name" class="flex col photo" style="margin: auto">
+        <div
+          v-for="photo of data.gallery"
+          :key="photo.name"
+          class="flex col photo"
+          style="margin: auto"
+        >
           <NuxtLink :to="'/chaparazzi/' + photo.name">
-            <img draggable="false" :src="`gallery/${photo.name}`" :alt="photo.name" @contextmenu.prevent>
+            <img
+              draggable="false"
+              :src="`gallery/${photo.name}`"
+              :alt="photo.name"
+              @contextmenu.prevent
+            >
           </NuxtLink><b>{{ format(photo.date, 'PP') }}</b>
         </div>
       </div>
@@ -69,7 +85,9 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.bacteria.user" /><br>{{ $t('champion.bacteria') }}
+            <LinkUser :user="data.bacteria.user" /><br>{{
+              $t('champion.bacteria')
+            }}
           </div>
           <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur">
           <img src="@/assets/img/game/patojdur/bg.gif" alt="">
@@ -85,7 +103,9 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.patojdur.user" /><br>{{ $t('champion.patojdur') }}
+            <LinkUser :user="data.patojdur.user" /><br>{{
+              $t('champion.patojdur')
+            }}
           </div>
           <img src="@/assets/img/game/mazo/head.gif" alt="Mazo">
           <img src="@/assets/img/game/mazo/bg.gif" alt="">
@@ -117,7 +137,12 @@ useHead({ title: 'section.login' })
 </script>
 <style lang="scss">
 .packs .card-btn {
-  background: linear-gradient(to bottom, var(--dark-card-blue), var(--dark-card-blue) 50%, var(--main-card-yellow) 50%) !important;
+  background: linear-gradient(
+    to bottom,
+    var(--dark-card-blue),
+    var(--dark-card-blue) 50%,
+    var(--main-card-yellow) 50%
+  ) !important;
 }
 </style>
 <style lang="scss" scoped>
