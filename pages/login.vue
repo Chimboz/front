@@ -2,56 +2,40 @@
   <Container>
     <template #left-column>
       <Card color="blue" top>
-        <template #header
-          ><NuxtLink to="/online"
-            ><h1>{{ data.connected }}</h1>
-            {{ $t("online", data.connected) }}</NuxtLink
-          ></template
-        >
-        <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
-        {{ data.last24 }} {{ $t("members.past", data.last24) }} </Card
-      ><br />
+        <template #header>
+          <NuxtLink to="/online">
+            <h1>{{ data.connected }}</h1>
+            {{ $t('online', data.connected) }}
+          </NuxtLink>
+        </template>
+        <div>{{ data.members }} {{ $t('members.text', data.members) }}</div>
+        {{ data.last24 }} {{ $t('members.past', data.last24) }}
+      </Card><br>
       <NuxtLink to="/shop">
-        <Card
-         
-          color="yellow"
-          header="packs.webp"
-          :width="154"
-          :height="96"
-          class="packs"
-        >
+        <Card color="yellow" header="packs.webp" :width="154" :height="96" class="packs">
           <template #button>
-            <Button type="button" color="yellow" icon="register.svg"
-              >Pack</Button
-            >
+            <Button type="button" color="yellow" icon="register.svg">
+              Pack
+            </Button>
           </template>
           <Pack name="supporter" :looks="data.shop.looks" />
         </Card>
       </NuxtLink>
-      <br />
+      <br>
     </template>
     <Demo />
-    <br />
+    <br>
     <Card>
-      <template #subtop
-        ><NuxtLink to="/chaparazzi" class="chaparazzi-link">{{
-          $t("section.chaparazzi")
-        }}</NuxtLink></template
-      >
+      <template #subtop>
+        <NuxtLink to="/chaparazzi" class="chaparazzi-link">
+          {{ $t('section.chaparazzi') }}
+        </NuxtLink>
+      </template>
       <div class="gallery flex">
-        <div
-          v-for="photo of data.gallery"
-          :key="photo.name"
-          class="flex col photo"
-          style="margin: auto"
-        >
+        <div v-for="photo of data.gallery" :key="photo.name" class="flex col photo" style="margin: auto">
           <NuxtLink :to="'/chaparazzi/' + photo.name">
-            <img
-              draggable="false"
-              :src="`gallery/${photo.name}`"
-              :alt="photo.name"
-              @contextmenu.prevent /></NuxtLink
-          ><b>{{ format(photo.date, "PP") }}</b>
+            <img draggable="false" :src="`gallery/${photo.name}`" :alt="photo.name" @contextmenu.prevent>
+          </NuxtLink><b>{{ format(photo.date, 'PP') }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -63,16 +47,16 @@
             height="17"
             width="17"
             @contextmenu.prevent
-          />
-          {{ $t("chaparazzi.more") }}
+          >
+          {{ $t('chaparazzi.more') }}
         </NuxtLink>
       </div>
     </Card>
     <template #right-column>
       <Card color="blue" header="games.gif">
         <div class="fullwidth">
-          <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria" />
-          <img src="@/assets/img/game/bacteria/bg.gif" alt="" />
+          <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria">
+          <img src="@/assets/img/game/bacteria/bg.gif" alt="">
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
@@ -85,12 +69,10 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.bacteria.user" /><br />{{
-              $t("champion.bacteria")
-            }}
+            <LinkUser :user="data.bacteria.user" /><br>{{ $t('champion.bacteria') }}
           </div>
-          <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur" />
-          <img src="@/assets/img/game/patojdur/bg.gif" alt="" />
+          <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur">
+          <img src="@/assets/img/game/patojdur/bg.gif" alt="">
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
@@ -103,12 +85,10 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.patojdur.user" /><br />{{
-              $t("champion.patojdur")
-            }}
+            <LinkUser :user="data.patojdur.user" /><br>{{ $t('champion.patojdur') }}
           </div>
-          <img src="@/assets/img/game/mazo/head.gif" alt="Mazo" />
-          <img src="@/assets/img/game/mazo/bg.gif" alt="" />
+          <img src="@/assets/img/game/mazo/head.gif" alt="Mazo">
+          <img src="@/assets/img/game/mazo/bg.gif" alt="">
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
@@ -121,28 +101,23 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.mazo.user" /><br />{{ $t("champion.mazo") }}
+            <LinkUser :user="data.mazo.user" /><br>{{ $t('champion.mazo') }}
           </div>
-        </div></Card
-      >
+        </div>
+      </Card>
     </template>
   </Container>
 </template>
 <script setup lang="ts">
-import { format } from "@/utils/date";
+import { format } from '@/utils/date'
 
-const { data } = await useFetch("https://chimboz.fr/api/right");
+const { data } = await useFetch<any>('https://chimboz.fr/api/right')
 
-useHead({ title: "section.login" });
+useHead({ title: 'section.login' })
 </script>
 <style lang="scss">
 .packs .card-btn {
-  background: linear-gradient(
-    to bottom,
-    var(--dark-card-blue),
-    var(--dark-card-blue) 50%,
-    var(--main-card-yellow) 50%
-  ) !important;
+  background: linear-gradient(to bottom, var(--dark-card-blue), var(--dark-card-blue) 50%, var(--main-card-yellow) 50%) !important;
 }
 </style>
 <style lang="scss" scoped>
