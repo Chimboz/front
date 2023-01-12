@@ -1,7 +1,7 @@
 <template>
   <Container>
-    <template #left-column
-      ><Card color="blue" top>
+    <template #left-column>
+      <Card color="blue" top>
         <NuxtLink to="/levels">
           <div class="level fullwidth">
             {{ $t("level") }}
@@ -15,17 +15,19 @@
                 height="21"
                 :src="asset(`img/number/${number}.svg`)"
                 @contextmenu.prevent
-              />
-            </div></div></NuxtLink
-        ><br />
+              >
+            </div>
+          </div>
+        </NuxtLink><br>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" /></div></Card
-      ><br />
-      <Bank
-    /></template>
+          <SideNavEntries section="Account" />
+        </div>
+      </Card><br>
+      <Bank />
+    </template>
 
     <Cabin
-     
+
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"
@@ -40,7 +42,7 @@
           (data.look[name] =
             data.items[name][
               data.items[name].map((item: any) => item.id).indexOf(data.look[name]) -
-                1
+              1
             ].id)
       "
       @next-item="
@@ -48,12 +50,12 @@
           (data.look[name] =
             data.items[name][
               data.items[name].map((item: any) => item.id).indexOf(data.look[name]) +
-                1
+              1
             ].id)
       "
       @change-gender="(gender: any) => (data.gender = gender)"
     />
-    <br />
+    <br>
     <div class="games">
       <Card
         header="bacteria.svg"
@@ -70,7 +72,7 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
         <b> sur </b>
         <div class="number">
@@ -83,9 +85,9 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
-        <br />
+        <br>
         <div class="number">
           <img
             v-for="number in data.bacteria.score.toString(10)"
@@ -96,9 +98,9 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
-        <b> point(s)</b><br /><br />
+        <b> point(s)</b><br><br>
         <DoughnutChart
           :chart-data="statsBacteria()"
           :options="{
@@ -109,7 +111,7 @@
             },
           }"
         />
-        <br />
+        <br>
         <div class="centered">
           <div class="number">
             <img
@@ -125,7 +127,7 @@
               height="21"
               :src="asset(`img/number/${number}.svg`)"
               @contextmenu.prevent
-            />
+            >
           </div>
           <b> parties</b>
         </div>
@@ -145,7 +147,7 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
         <b> sur </b>
         <div class="number">
@@ -158,9 +160,9 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
-        <br />
+        <br>
         <div class="number">
           <img
             v-for="number in data.patojdur.score.toString(10)"
@@ -171,10 +173,10 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
         <b> point(s)</b>
-        <br /><br />
+        <br><br>
         <BarChart
           :chart-data="statsPatojdur()"
           :options="{
@@ -204,7 +206,7 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
         <b> sur </b>
         <div class="number">
@@ -217,9 +219,9 @@
             height="21"
             :src="asset(`img/number/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
-        <br />
+        <br>
         <img
           v-for="number in data.mazo.score.toString(10)"
           :key="number.index"
@@ -229,7 +231,7 @@
           height="21"
           :src="asset(`img/number/${number}.svg`)"
           @contextmenu.prevent
-        />
+        >
         <b> point(s)</b>
       </Card>
     </div>
@@ -252,65 +254,75 @@
             height="21"
             :src="asset(`img/number/pink/${number}.svg`)"
             @contextmenu.prevent
-          />
+          >
         </div>
         <div style="margin-top: -21px">
-            <div class="list fullwidth col pm link"
+          <div
             v-for="message of data.pm"
             :key="message.author.id"
+            class="list fullwidth col pm link"
+            :class="{ active: message.new }"
             @click="$router.push(`/messenger/${message.author.id}`)"
-            :class="{ active: message.new }">
-              <div>
-                <img
-                  draggable="false"
-                  :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
-                  alt="Voir le dernier message"
-                  title="Voir le dernier message"
-                  @contextmenu.prevent
-                />&nbsp;<LinkUser @click.stop :user="message.author" />
-              </div>
-              <div>{{ distanceToNow(message.date) }}</div>
+          >
+            <div>
+              <img
+                draggable="false"
+                :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
+                alt="Voir le dernier message"
+                title="Voir le dernier message"
+                @contextmenu.prevent
+              >&nbsp;<LinkUser :user="message.author" @click.stop />
             </div>
-        </div></Card
-      ><br />
+            <div>{{ distanceToNow(message.date) }}</div>
+          </div>
+        </div>
+      </Card><br>
       <Card
-       
+
         color="blue"
         header="forum.gif"
         :width="154"
         :height="45"
       >
-        <StrokeText class="forum-title">Forum</StrokeText>
+        <StrokeText class="forum-title">
+          Forum
+        </StrokeText>
         <div style="margin-top: -16px">
-            <div class="list fullwidth col link" style="align-items: flex-start"
+          <div
             v-for="message of data.forum"
             :key="message.id"
-            @click.prevent="$router.push(`/bbs/${message.forum.id}-${message.topic.id}-${message.topic.page ?? 1}#p${message.id}`)">
-              <div>
-                <NuxtLink @click.stop :to="`/bbs/${message.forum.id}-1`">{{
+            class="list fullwidth col link"
+            style="align-items: flex-start"
+            @click.prevent="$router.push(`/bbs/${message.forum.id}-${message.topic.id}-${message.topic.page ?? 1}#p${message.id}`)"
+          >
+            <div>
+              <NuxtLink :to="`/bbs/${message.forum.id}-1`" @click.stop>
+                {{
                   message.forum.name
-                }}</NuxtLink>
-              </div>
-              <div>
-                <img
-                  draggable="false"
-                  src="@/assets/img/bbs/msg.svg"
-                  alt="Voir le dernier message"
-                  title="Voir le dernier message"
-                  @contextmenu.prevent
-                />&nbsp;{{ message.topic.title }}
-              </div>
+                }}
+              </NuxtLink>
             </div>
-        </div></Card
-      ><br /><Card color="blue">
+            <div>
+              <img
+                draggable="false"
+                src="@/assets/img/bbs/msg.svg"
+                alt="Voir le dernier message"
+                title="Voir le dernier message"
+                @contextmenu.prevent
+              >&nbsp;{{ message.topic.title }}
+            </div>
+          </div>
+        </div>
+      </Card><br><Card color="blue">
         <template #button>
-          <Button type="button" icon="register.svg">{{
-            $t("profile.friendsList")
-          }}</Button>
+          <Button type="button" icon="register.svg">
+            {{
+              $t("profile.friendsList")
+            }}
+          </Button>
         </template>
-          <div
-            class="list fullwidth flex-centered link"
-            v-for="friend of data.friends.sort(
+        <div
+          v-for="friend of data.friends.sort(
             (a: any, b: any) =>
               b.status.connected +
               (b.status.room ? 1 : 0) -
@@ -318,60 +330,63 @@
               (a.status.room ? 1 : 0)
           )"
           :key="friend.user.id"
+          class="list fullwidth flex-centered link"
+          style="justify-content: flex-start"
           @click="$router.push(`/book/${friend.user.id}`)"
-            style="justify-content: flex-start"
-          >
-            <img
-              v-if="friend.status.connected && friend.status.room"
-              alt="Online on tchat"
-              src="@/assets/img/icon/account/online_tchat.png"
-            /><img
-              v-else-if="friend.status.connected"
-              alt="Online on website"
-              src="@/assets/img/icon/account/online.png"
-            /><img
-              v-else
-              alt="Offline"
-              src="@/assets/img/icon/account/offline.png"
-            />&nbsp;
-            <div class="flex col" style="align-items: flex-start">
-              <LinkUser :user="friend.user" />
-              {{ friend.status.connected ? friend.status.room : "" }}
-            </div>
+        >
+          <img
+            v-if="friend.status.connected && friend.status.room"
+            alt="Online on tchat"
+            src="@/assets/img/icon/account/online_tchat.png"
+          ><img
+            v-else-if="friend.status.connected"
+            alt="Online on website"
+            src="@/assets/img/icon/account/online.png"
+          ><img
+            v-else
+            alt="Offline"
+            src="@/assets/img/icon/account/offline.png"
+          >&nbsp;
+          <div class="flex col" style="align-items: flex-start">
+            <LinkUser :user="friend.user" />
+            {{ friend.status.connected ? friend.status.room : "" }}
           </div>
+        </div>
       </Card>
-      <br />
+      <br>
       <Card color="blue">
         <template #button>
-          <Button type="button" icon="register.svg">{{
-            $t("profile.groupsList")
-          }}</Button>
+          <Button type="button" icon="register.svg">
+            {{
+              $t("profile.groupsList")
+            }}
+          </Button>
         </template>
-          <div
-            class="list fullwidth flex-centered link"
-            style="justify-content: flex-start"
-            v-for="group of data.groups.sort((a,b) => b.owner || -a.owner)"
+        <div
+          v-for="group of data.groups.sort((a,b) => b.owner || -a.owner)"
           :key="group.id"
+          class="list fullwidth flex-centered link"
+          style="justify-content: flex-start"
           @click="$router.push(`/groups/${group.id}`)"
-          >
-            <img
-              :style="{ opacity: group.owner ? '1' : '0' }"
-              alt="Group owner"
-              width="22"
-              height="22"
-              src="@/assets/img/icon/account/leader.svg"
-            />&nbsp;
-            <div class="flex col" style="align-items: flex-start">
-              <LinkGroup :group="group" />
-            </div></div
         >
+          <img
+            :style="{ opacity: group.owner ? '1' : '0' }"
+            alt="Group owner"
+            width="22"
+            height="22"
+            src="@/assets/img/icon/account/leader.svg"
+          >&nbsp;
+          <div class="flex col" style="align-items: flex-start">
+            <LinkGroup :group="group" />
+          </div>
+        </div>
       </Card>
     </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-import { DoughnutChart, BarChart } from "vue-chart-3";
+import { DoughnutChart, BarChart } from 'vue-chart-3'
 import {
   Chart,
   Legend,
@@ -381,10 +396,10 @@ import {
   BarController,
   BarElement,
   CategoryScale,
-  LinearScale,
-} from "chart.js";
-import { asset } from "@/utils";
-import { distanceToNow } from "@/utils/date";
+  LinearScale
+} from 'chart.js'
+import { asset } from '@/utils'
+import { distanceToNow } from '@/utils/date'
 
 Chart.register(
   Legend,
@@ -395,42 +410,42 @@ Chart.register(
   BarElement,
   CategoryScale,
   LinearScale
-);
+)
 
-const { data } = await useFetch("/api/account");
+const { data } = await useFetch<any>('/api/account')
 
-function statsBacteria() {
+function statsBacteria () {
   return {
-    labels: ["Win", "Draw", "Lose"],
+    labels: ['Win', 'Draw', 'Lose'],
     datasets: [
       {
         data: [
           data.value.bacteria.stats.win,
           data.value.bacteria.stats.draw,
-          data.value.bacteria.stats.lose,
+          data.value.bacteria.stats.lose
         ],
-        backgroundColor: ["#5b3", "#fff", "#fb0d0d"],
-      },
-    ],
-  };
+        backgroundColor: ['#5b3', '#fff', '#fb0d0d']
+      }
+    ]
+  }
 }
-function statsPatojdur() {
+function statsPatojdur () {
   return {
-    labels: ["Best", "Today", "Yesterday"],
+    labels: ['Best', 'Today', 'Yesterday'],
     datasets: [
       {
         data: [
           data.value.patojdur.stats.best,
           data.value.patojdur.stats.today,
-          data.value.patojdur.stats.yesterday,
+          data.value.patojdur.stats.yesterday
         ],
-        backgroundColor: ["#fc0", "#6ebef0", "#5aa1cd"],
-      },
-    ],
-  };
+        backgroundColor: ['#fc0', '#6ebef0', '#5aa1cd']
+      }
+    ]
+  }
 }
 
-useHead({ title: "section.account" });
+useHead({ title: 'section.account' })
 </script>
 <style lang="scss">
 .games .card {

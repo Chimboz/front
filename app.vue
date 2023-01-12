@@ -7,44 +7,44 @@
 </template>
 
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth';
-import favicon from '@/constants/favicon.json';
-import faviconNew from '@/constants/favicon_new.json';
-import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n'
+import useAuthStore from '@/stores/auth'
+import favicon from '@/constants/favicon.json'
+import faviconNew from '@/constants/favicon_new.json'
 
-const notifications = computed(() => useAuthStore().notifications);
-const { t } = useI18n();
+const notifications = computed(() => useAuthStore().notifications)
+const { t } = useI18n()
 
 useHead({
-  titleTemplate: (title) =>
-    `${notifications.value ? notifications.value.toString().replace(/[0-9]/g, (c) => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c)) : ''}Chimboz ${t(title as string)}`,
+  titleTemplate: title =>
+    `${notifications.value ? notifications.value.toString().replace(/[0-9]/g, c => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c)) : ''}Chimboz ${t(title as string)}`,
   link: notifications.value ? faviconNew : favicon,
   meta: [
     {
       name: 'description',
       content:
-        "Chimboz est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
+        "Chimboz est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
     },
     {
       property: 'og:description',
       content:
-        "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !",
+        "Chimboz.fr est un site pour s'amuser : tu peux tchater et te faire des amis, créer et faire évoluer ton personnage, jouer seul ou à plusieurs, fonder des groupes et même te marier !"
     },
     {
       property: 'og:title',
-      content: 'Chimboz',
-    },
+      content: 'Chimboz'
+    }
   ],
   style: [
     {
-      children: `body { background-image: url(${asset(`img/navbar/background/${new Date().getHours()}.png`)}) }`,
-    },
-  ],
-});
+      children: `body { background-image: url(${asset(`img/navbar/background/${new Date().getHours()}.png`)}) }`
+    }
+  ]
+})
 
 watchEffect(() => {
-  useHead({ link: notifications.value ? faviconNew : favicon });
-});
+  useHead({ link: notifications.value ? faviconNew : favicon })
+})
 
 // TODO check forms submit
 // TODO better quotes

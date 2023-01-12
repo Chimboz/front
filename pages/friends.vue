@@ -4,12 +4,17 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified
-      ><template #subtop>Friends</template>
+    <Card
+      color="yellow"
+      justified
+    >
+      <template #subtop>
+        Friends
+      </template>
       <ScrollableContainer
         route="friends"
         :max-height="450"
@@ -44,16 +49,15 @@
               style="color: red; cursor: var(--pointer)"
               @click.prevent="cancel(friend)"
               @keyup.prevent="cancel(friend)"
-              ><img
-                src="@/assets/img/icon/failure.svg"
-                width="11"
-                height="11"
-                alt="Close"
-                draggable="false"
-                style="margin: 0 2px"
-                @contextmenu.prevent
-              />Annuler</span
-            >
+            ><img
+              src="@/assets/img/icon/failure.svg"
+              width="11"
+              height="11"
+              alt="Close"
+              draggable="false"
+              style="margin: 0 2px"
+              @contextmenu.prevent
+            >Annuler</span>
           </div>
           <div
             v-else-if="
@@ -65,30 +69,28 @@
               style="color: green; cursor: var(--pointer)"
               @click.prevent="accept(friend)"
               @keyup.prevent="accept(friend)"
-              ><img
-                src="@/assets/img/icon/success.svg"
-                width="11"
-                height="11"
-                alt="Close"
-                draggable="false"
-                style="margin: 0 2px"
-                @contextmenu.prevent
-              />Accepter</span
-            ><br /><span
+            ><img
+              src="@/assets/img/icon/success.svg"
+              width="11"
+              height="11"
+              alt="Close"
+              draggable="false"
+              style="margin: 0 2px"
+              @contextmenu.prevent
+            >Accepter</span><br><span
               class="link"
               style="color: red; cursor: var(--pointer)"
               @click.prevent="decline(friend)"
               @keyup.prevent="decline(friend)"
-              ><img
-                src="@/assets/img/icon/failure.svg"
-                width="11"
-                height="11"
-                alt="Close"
-                draggable="false"
-                style="margin: 0 2px"
-                @contextmenu.prevent
-              />Décliner</span
-            >
+            ><img
+              src="@/assets/img/icon/failure.svg"
+              width="11"
+              height="11"
+              alt="Close"
+              draggable="false"
+              style="margin: 0 2px"
+              @contextmenu.prevent
+            >Décliner</span>
           </div>
           <div v-else-if="!friend.status.connected">
             Dernière visite <b>{{ distanceToNow(friend.status.date) }}</b>
@@ -105,15 +107,15 @@
                 width="17"
                 src="@/assets/img/tiz/tiz_shape.svg"
                 @contextmenu.prevent
-              />&nbsp;<b>En ligne</b>
+              >&nbsp;<b>En ligne</b>
             </div>
             <b>{{ friend.status.room }}</b>
           </div>
         </div>
       </ScrollableContainer>
     </Card>
-    <template #right-column
-      ><Card color="blue" top>
+    <template #right-column>
+      <Card color="blue" top>
         <form class="flex fullwidth" @submit.prevent="addFriend">
           <input
             v-model="pseudo"
@@ -126,48 +128,48 @@
             autocomplete="username"
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button>
+          ><button type="submit" class="btn-action">
+            &nbsp;+&nbsp;
+          </button>
         </form>
       </Card>
     </template>
   </Container>
 </template>
 <script setup lang="ts">
-import { hashColor } from "@/utils";
-import { distanceToNow } from "@/utils/date";
+import { hashColor } from '@/utils'
+import { distanceToNow } from '@/utils/date'
 
-  // data.value = (await useFetch("friends")).data;
-  // TODO remove
-const { data } = await useFetch("/api/friends");
-const pseudo = ref("");
+// data.value = (await useFetch("friends")).data;
+// TODO remove
+const { data } = await useFetch<any>('/api/friends')
+const pseudo = ref('')
 
-async function cancel(friend: any) {
+async function cancel (friend: any) {
   if (
     (await useFetch(`friends/cancel/${friend.user.id}`)).data.result ===
-    "success"
-  )
-    data.value.splice(data.value.indexOf(friend), 1);
+    'success'
+  ) { data.value.splice(data.value.indexOf(friend), 1) }
 }
 
-async function accept(friend: any) {
-  const res = (await useFetch(`friends/accept/${friend.user.id}`)).data;
-  data.value.splice(data.value.indexOf(friend), 1, res.add);
+async function accept (friend: any) {
+  const res = (await useFetch(`friends/accept/${friend.user.id}`)).data
+  data.value.splice(data.value.indexOf(friend), 1, res.add)
 }
 
-async function decline(friend: any) {
+async function decline (friend: any) {
   if (
     (await useFetch(`friends/decline/${friend.user.id}`)).data.result ===
-    "success"
-  )
-    data.value.splice(data.value.indexOf(friend), 1);
+    'success'
+  ) { data.value.splice(data.value.indexOf(friend), 1) }
 }
 
-async function addFriend() {
-  const res = (await useFetch(`friends/add/${pseudo.value}`)).data;
-  if (res.result === "success") data.value.push(res.data);
+async function addFriend () {
+  const res = (await useFetch(`friends/add/${pseudo.value}`)).data
+  if (res.result === 'success') { data.value.push(res.data) }
 }
 
-useHead({ title: "section.friends" });
+useHead({ title: 'section.friends' })
 </script>
 
 <style lang="scss" scoped>

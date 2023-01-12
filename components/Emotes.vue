@@ -13,46 +13,46 @@
         height="23"
         :src="asset(`img/icon/emote/${emote}.svg`)"
         @contextmenu.prevent
-      />
+      >
     </button>
   </div>
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
-import type Emote from "@/types/Emotes";
+import { asset } from '@/utils'
+import type Emote from '@/types/Emotes'
 
 const emit = defineEmits<{
-  (e: "emote", emote: Emote): void;
-}>();
+  (e: 'emote', emote: Emote): void;
+}>()
 
 const emotes: Emote[] = [
-  "neutral",
-  "yo",
-  "lol",
-  "sad",
-  "cry",
-  "angry",
-  "wink",
-  "korbak",
-  "tongue",
-  "luv",
-  "oh",
-  "zzz",
-  "flag",
-  "neko",
-  "irritated",
-  "left",
-  "focused",
-  "vv",
-  "shameful",
-  "oops",
-  "kawai",
-  "parano",
-  "crazy",
-  "fearful",
-  "smirk",
-  "croon",
-];
+  'neutral',
+  'yo',
+  'lol',
+  'sad',
+  'cry',
+  'angry',
+  'wink',
+  'korbak',
+  'tongue',
+  'luv',
+  'oh',
+  'zzz',
+  'flag',
+  'neko',
+  'irritated',
+  'left',
+  'focused',
+  'vv',
+  'shameful',
+  'oops',
+  'kawai',
+  'parano',
+  'crazy',
+  'fearful',
+  'smirk',
+  'croon'
+]
 </script>
 <style lang="scss" scoped>
 .btn-pink {

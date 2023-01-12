@@ -5,19 +5,19 @@
       role="progressbar"
       aria-label="Win progress bar"
       :style="`width:${(win * 100) / (win + draw + lose)}%`"
-    ></div>
+    />
     <div
       class="progress-bar progress-bar-light"
       role="progressbar"
       aria-label="Draw progress bar"
       :style="`width:${(draw * 100) / (win + draw + lose)}%`"
-    ></div>
+    />
     <div
       class="progress-bar active progress-bar-lose"
       role="progressbar"
       aria-label="Lose progress bar"
       :style="`width:${(lose * 100) / (win + draw + lose)}%`"
-    ></div>
+    />
   </div>
 </template>
 
@@ -29,7 +29,7 @@ withDefaults(
     lose: number;
   }>(),
   { win: (1 / 3) * 100, draw: (1 / 3) * 100, lose: (1 / 3) * 100 }
-);
+)
 </script>
 
 <style lang="scss" scoped>

@@ -6,28 +6,26 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <Card header="book.webp" justified color="yellow">
       <div
         style="float: right; margin-top: -80px; width: 50%; position: relative"
       >
-        <span v-html="$t('book.description')"></span>
+        <span v-html="$t('book.description')" />
       </div>
     </Card>
-    <br /><Card>
+    <br><Card>
       <img
         style="float: left"
         src="@/assets/img/book/search.webp"
         height="71"
         width="107"
         alt="Search icon"
-      />
+      >
       <div style="display: inline-block">
-        <label for="search"
-          ><h1>{{ $t("book.search") }}</h1></label
-        >
+        <label for="search"><h1>{{ $t("book.search") }}</h1></label>
         <form class="flex" @submit.prevent="search()">
           <input
             id="search"
@@ -42,27 +40,33 @@
             :aria-label="$t('book.search')"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          />
-          <button type="submit" class="btn-action">go</button>
+          >
+          <button type="submit" class="btn-action">
+            go
+          </button>
         </form>
         <div v-if="suggestionsHere && userSearch != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
-              <NuxtLink :to="'/book/' + suggestion.mid">{{
-                suggestion.pseudo
-              }}</NuxtLink>
+              <NuxtLink :to="'/book/' + suggestion.mid">
+                {{
+                  suggestion.pseudo
+                }}
+              </NuxtLink>
             </li>
           </ul>
         </div>
-      </div></Card
-    ><br />
-    <Card
-      ><template #header>{{ $t("book.last") }}</template>
+      </div>
+    </Card><br>
+    <Card>
+      <template #header>
+        {{ $t("book.last") }}
+      </template>
       <table class="fullwidth">
         <colgroup>
-          <col width="10%" />
-          <col width="45%" />
-          <col width="45%" />
+          <col width="10%">
+          <col width="45%">
+          <col width="45%">
         </colgroup>
         <thead>
           <tr>
@@ -80,9 +84,9 @@
         </tbody>
       </table>
     </Card>
-    <template #right-column
-      ><Card
-       
+    <template #right-column>
+      <Card
+
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
@@ -97,9 +101,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        /><b>{{ data.total }}</b> membres en tout.<br />
-        <br />
-        <b>Nouveaux</b><br />
+        ><b>{{ data.total }}</b> membres en tout.<br>
+        <br>
+        <b>Nouveaux</b><br>
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -107,7 +111,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        /><b>{{ data.day }}</b> depuis 24h!<br />
+        ><b>{{ data.day }}</b> depuis 24h!<br>
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -115,9 +119,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        /><b>{{ data.month }}</b> depuis 1 mois!<br />
-        <br />
-        <b>Les Genres :</b><br />
+        ><b>{{ data.month }}</b> depuis 1 mois!<br>
+        <br>
+        <b>Les Genres :</b><br>
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -125,9 +129,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />Fille(s) : <b>{{ data.female }}</b
-        >&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub
-        ><br />
+        >Fille(s) : <b>{{ data.female }}</b>&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub><br>
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -135,9 +137,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />Garçon(s) : <b>{{ data.male }}</b
-        >&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub
-        ><br />
+        >Garçon(s) : <b>{{ data.male }}</b>&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub><br>
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -145,39 +145,36 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />Inconnu(s) : <b>{{ data.total - data.female - data.male }}</b
-        >&nbsp;
-        <sub
-          >({{
-            (
-              ((data.total - data.female - data.male) / data.total) *
-              100
-            ).toFixed(2)
-          }}%)</sub
-        >
-      </Card></template
-    >
+        >Inconnu(s) : <b>{{ data.total - data.female - data.male }}</b>&nbsp;
+        <sub>({{
+          (
+            ((data.total - data.female - data.male) / data.total) *
+            100
+          ).toFixed(2)
+        }}%)</sub>
+      </Card>
+    </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-import { format } from "@/utils/date";
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router'
+import { format } from '@/utils/date'
 
-const router = useRouter();
-const { data } = await useFetch("https://chimboz.fr/api/book");
-const userSearch = ref("");
-const suggestionsHere = ref<any>(null);
+const router = useRouter()
+const { data } = await useFetch<any>('https://chimboz.fr/api/book')
+const userSearch = ref('')
+const suggestionsHere = ref<any>(null)
 
-async function search() {
+async function search () {
   router.push(
     `/book/${
       (await useFetch(`book/search/${userSearch.value}/search`)).data.mid
     }`
-  );
+  )
 }
 
-useHead({ title: "section.popularity" });
+useHead({ title: 'section.popularity' })
 </script>
 
 <style lang="scss" scoped>

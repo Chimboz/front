@@ -1,4 +1,4 @@
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return {
     name: "L'Église",
     type: 'sekt',
@@ -12,43 +12,43 @@ export default defineEventHandler((event) => {
       top: 19,
       bot: 44,
       primary: '#FF3399',
-      secondary: '#FFFFFF',
+      secondary: '#FFFFFF'
     },
     motto: 'Amen',
     leader: {
       name: 'Tigriz',
       id: 3,
-      color: '',
+      color: ''
     },
     members: [
       {
         id: 184,
-        name: 'zirgiT',
+        name: 'zirgiT'
       },
       {
         id: 25,
-        name: 'J-J',
+        name: 'J-J'
       },
       {
         id: 49,
-        name: 'IceTeaZouneT',
+        name: 'IceTeaZouneT'
       },
       {
         id: 358,
-        name: 'ZaZinOu',
+        name: 'ZaZinOu'
       },
       {
         id: 39,
-        name: 'Sugus',
+        name: 'Sugus'
       },
       {
         id: 272,
-        name: 'Koko',
+        name: 'Koko'
       },
       {
         id: 678,
-        name: 'LoLiPoP',
-      },
+        name: 'LoLiPoP'
+      }
     ],
     localisation: "L'Église",
     date: 1623838551000,
@@ -72,13 +72,13 @@ export default defineEventHandler((event) => {
         '#FF3399',
         '#E40173',
         '#FFFFFF',
-        '#000000',
+        '#000000'
       ],
       top: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
       shape: [0, 1, 2, 3, 4, 5],
       bot: [
         2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
-        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58,
+        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58
       ],
       secondary: [
         '#444444',
@@ -98,8 +98,8 @@ export default defineEventHandler((event) => {
         '#FF3399',
         '#E40173',
         '#FFFFFF',
-        '#000000',
-      ],
-    },
-  };
-});
+        '#000000'
+      ]
+    }
+  }
+})

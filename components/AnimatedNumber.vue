@@ -8,11 +8,10 @@
     height="21"
     :src="asset(`img/number/${digit}.svg`)"
     @contextmenu.prevent
-  />
+  >
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
-
+import { asset } from '@/utils'
 
 const props = withDefaults(
   defineProps<{
@@ -20,21 +19,21 @@ const props = withDefaults(
     delay?: number;
   }>(),
   { number: 0, delay: 5 }
-);
+)
 
-const displayNumber = ref(0);
+const displayNumber = ref(0)
 
-function tween() {
+function tween () {
   displayNumber.value += Math.max(
     Math.floor(props.number / 60 / props.delay),
     1
-  );
+  )
   if (props.number <= displayNumber.value) {
-    displayNumber.value = props.number;
-  } else requestAnimationFrame(tween);
+    displayNumber.value = props.number
+  } else { requestAnimationFrame(tween) }
 }
 
 onMounted(() => {
-  requestAnimationFrame(tween);
-});
+  requestAnimationFrame(tween)
+})
 </script>

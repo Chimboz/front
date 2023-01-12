@@ -9,12 +9,11 @@
     height="21"
     :src="asset(`img/number/${digit}.svg`)"
     @contextmenu.prevent
-  />
+  >
 </template>
 
 <script setup lang="ts">
-import { asset, randomInt } from "@/utils";
-
+import { asset, randomInt } from '@/utils'
 
 const props = withDefaults(
   defineProps<{
@@ -24,46 +23,46 @@ const props = withDefaults(
     duration?: number;
   }>(),
   { min: 0, duration: 5000 }
-);
+)
 
-const displayNumber = ref(props.max.toString());
-const start = ref(0);
-const previousTimeStamp = ref(Date.now());
-const elapsed = ref(0);
+const displayNumber = ref(props.max.toString())
+const start = ref(0)
+const previousTimeStamp = ref(Date.now())
+const elapsed = ref(0)
 
-function bezier(
+function bezier (
   time: number,
   startValue: number,
   change: number,
   duration: number
 ) {
-  time /= duration / 2;
-  if (time < 1) return (change / 2) * time * time + startValue;
-  time--;
-  return (-change / 2) * (time * (time - 2) - 1) + startValue;
+  time /= duration / 2
+  if (time < 1) { return (change / 2) * time * time + startValue }
+  time--
+  return (-change / 2) * (time * (time - 2) - 1) + startValue
 }
 
-function tween(timestamp: number) {
-  if (start.value === 0) start.value = timestamp;
-  elapsed.value = timestamp - start.value;
+function tween (timestamp: number) {
+  if (start.value === 0) { start.value = timestamp }
+  elapsed.value = timestamp - start.value
 
   if (previousTimeStamp.value !== timestamp) {
-    const random = randomInt(props.min, props.max);
-    displayNumber.value = random < 10 ? `0${random}` : random.toString();
+    const random = randomInt(props.min, props.max)
+    displayNumber.value = random < 10 ? `0${random}` : random.toString()
   }
 
   if (elapsed.value < props.duration) {
-    previousTimeStamp.value = timestamp;
+    previousTimeStamp.value = timestamp
     setTimeout(
       () => requestAnimationFrame(tween),
       bezier(elapsed.value, 0, 500, props.duration)
-    );
-  } else displayNumber.value = props.value.toString();
+    )
+  } else { displayNumber.value = props.value.toString() }
 }
 
 onMounted(() => {
-  requestAnimationFrame(tween);
-});
+  requestAnimationFrame(tween)
+})
 </script>
 <style scoped>
 .win {

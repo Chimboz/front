@@ -29,13 +29,15 @@
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           @contextmenu.prevent
-        />
+        >
       </td>
       <td style="text-align: left" width="100%">
         <div>
-          <NuxtLink :to="`/bbs/${bbs.id}-1`" class="pink">{{
-            bbs.name
-          }}</NuxtLink>
+          <NuxtLink :to="`/bbs/${bbs.id}-1`" class="pink">
+            {{
+              bbs.name
+            }}
+          </NuxtLink>
         </div>
         <div>{{ bbs.desc }}</div>
         <div>
@@ -60,32 +62,33 @@
         &nbsp;»&nbsp;
         <NuxtLink
           :to="`/bbs/${bbs.id}-${bbs.last_msg.topicid}-${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"
-          ><img
+        >
+          <img
             draggable="false"
             :src="asset(`img/bbs/msg${bbs.new ? '_new' : ''}.svg`)"
             alt="Voir le dernier message"
             title="Voir le dernier message"
             @contextmenu.prevent
-        /></NuxtLink>
+          >
+        </NuxtLink>
       </td>
     </tr>
     <tr v-if="index != category.bbs.length - 1">
       <td valign="middle" colspan="5">
-        <hr />
+        <hr>
       </td>
     </tr>
   </tbody>
 </template>
 
 <script setup lang="ts">
-import { asset } from "@/utils";
-import { distanceToNow } from "@/utils/date";
+import { asset } from '@/utils'
+import { distanceToNow } from '@/utils/date'
 
-
-const hide = ref(false);
+const hide = ref(false)
 defineProps<{
   category: any;
-}>();
+}>()
 </script>
 
 <style lang="scss" scoped>

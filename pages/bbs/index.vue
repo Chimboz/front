@@ -6,13 +6,13 @@
           <SideNavEntries section="Community" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
-    <BbsList :boards="data"></BbsList>
-    <br />
-    <Card
-      ><div class="columns">
+    <BbsList :boards="data" />
+    <br>
+    <Card>
+      <div class="columns">
         <div>
           <img
             draggable="false"
@@ -20,7 +20,7 @@
             :title="$t('bbs.lock_new')"
             src="@/assets/img/bbs/folder_new_lock.svg"
             @contextmenu.prevent
-          />&nbsp;{{ $t("bbs.lock_new") }}&nbsp;
+          >&nbsp;{{ $t("bbs.lock_new") }}&nbsp;
         </div>
         <div>
           <img
@@ -29,7 +29,7 @@
             title="$t('bbs.lock')"
             src="@/assets/img/bbs/folder_lock.svg"
             @contextmenu.prevent
-          />&nbsp;{{ $t("bbs.lock") }}&nbsp;
+          >&nbsp;{{ $t("bbs.lock") }}&nbsp;
         </div>
         <div>
           <img
@@ -38,7 +38,7 @@
             :title="$t('bbs.new')"
             src="@/assets/img/bbs/folder_new.svg"
             @contextmenu.prevent
-          />&nbsp;{{ $t("bbs.new") }}&nbsp;
+          >&nbsp;{{ $t("bbs.new") }}&nbsp;
         </div>
         <div>
           <img
@@ -47,19 +47,18 @@
             :title="$t('bbs.nonew')"
             src="@/assets/img/bbs/folder.svg"
             @contextmenu.prevent
-          />&nbsp;{{ $t("bbs.nonew") }}&nbsp;
+          >&nbsp;{{ $t("bbs.nonew") }}&nbsp;
         </div>
-      </div></Card
-    >
+      </div>
+    </Card>
   </Container>
 </template>
 
 <script setup lang="ts">
 
+const { data } = await useFetch<any>('https://chimboz.fr/api/bbs')
 
-const { data } = await useFetch("https://chimboz.fr/api/bbs");
-
-useHead({ title: "section.bbs" });
+useHead({ title: 'section.bbs' })
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   typescript: {
     strict: true,
-    typeCheck: true,
+    typeCheck: true
   },
   modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
   css: [
@@ -11,15 +11,15 @@ export default defineNuxtConfig({
     '@/assets/css/main.scss',
     '@/assets/css/fonts.css',
     '@/assets/css/classes.css',
-    '@/assets/css/atomic.css',
+    '@/assets/css/atomic.css'
   ],
   i18n: {
     locales: [
       { code: 'en', file: 'en.json' },
-      { code: 'fr', file: 'fr.json' },
+      { code: 'fr', file: 'fr.json' }
     ],
     defaultLocale: 'fr',
     lazy: true,
-    langDir: 'locales/',
-  },
-});
+    langDir: 'locales/'
+  }
+})

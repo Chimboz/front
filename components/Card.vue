@@ -9,7 +9,7 @@
       :height="height"
       :src="asset(`img/card/header/${header}`)"
       @contextmenu.prevent
-    />
+    >
     <img
       v-else-if="top"
       draggable="false"
@@ -19,14 +19,14 @@
       width="154"
       height="42"
       @contextmenu.prevent
-    />
+    >
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
-      <StrokeText style="transform: translateX(-40%)"
-        ><slot name="subtop"></slot
-      ></StrokeText>
+      <StrokeText style="transform: translateX(-40%)">
+        <slot name="subtop" />
+      </StrokeText>
     </div>
     <div v-if="$slots['button']" class="card-btn">
-      <slot name="button"></slot>
+      <slot name="button" />
     </div>
     <div class="card" :class="{ bot: bot }">
       <div
@@ -38,14 +38,14 @@
         }"
       >
         <h2>
-          <slot name="header"></slot>
+          <slot name="header" />
         </h2>
         <div style="text-align: center">
-          <em v-if="$slots['subtitle']">"<slot name="subtitle"></slot>"</em>
+          <em v-if="$slots['subtitle']">"<slot name="subtitle" />"</em>
         </div>
-        <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
+        <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default">
         <main>
-          <slot></slot>
+          <slot />
         </main>
       </div>
     </div>
@@ -57,13 +57,13 @@
       width="154"
       height="44"
       @contextmenu.prevent
-    />
+    >
   </div>
 </template>
 
 <script setup lang="ts">
 
-import { asset } from "@/utils";
+import { asset } from '@/utils'
 
 withDefaults(
   defineProps<{
@@ -76,7 +76,7 @@ withDefaults(
     // Height of the header image
     height?: number;
     // Color of the card
-    color?: "yellow" | "blue" | "red";
+    color?: 'yellow' | 'blue' | 'red';
     // Whether the text is left aligned
     justified?: boolean;
     // Display a default footer image
@@ -85,7 +85,7 @@ withDefaults(
     top?: boolean;
   }>(),
   { width: 468, height: 77, color: undefined, bg: undefined, header: undefined }
-);
+)
 </script>
 <style lang="scss" scoped>
 $colors: ("yellow", "blue", "red");

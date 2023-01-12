@@ -6,14 +6,14 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <span class="pink justified">
-      <NuxtLink to="/book" class="pink"
-        >» Retour à l'annuaire</NuxtLink
-      > </span
-    ><br />
+      <NuxtLink
+        to="/book"
+        class="pink"
+      >» Retour à l'annuaire</NuxtLink> </span><br>
     <Card class="member" :class="[data.gender]" justified>
       <div class="member-header">
         <Avatar
@@ -27,8 +27,12 @@
           :item2="data.look.item2"
         />
         <div class="flex col" style="z-index: 1; position: relative">
-          <StrokeText class="pseudo" justified>{{ data.name }}</StrokeText>
-          <div class="motto">"{{ data.motto }}"</div>
+          <StrokeText class="pseudo" justified>
+            {{ data.name }}
+          </StrokeText>
+          <div class="motto">
+            "{{ data.motto }}"
+          </div>
         </div>
       </div>
       <div class="member-body">
@@ -58,7 +62,7 @@
                 alt="Online"
                 src="@/assets/img/tiz/tiz_shape.svg"
                 @contextmenu.prevent
-              />&nbsp;<b>En ligne</b>
+              >&nbsp;<b>En ligne</b>
             </div>
             <b>{{ data.status.room }}</b>
           </div>
@@ -72,11 +76,9 @@
               alt="Wedding icon"
               draggable="false"
               @contextmenu.prevent
-            />&nbsp;
+            >&nbsp;
             <span v-if="data.wedding">
-              <NuxtLink :to="'/weddings/' + data.wedding.id"
-                >Marié</NuxtLink
-              >
+              <NuxtLink :to="'/weddings/' + data.wedding.id">Marié</NuxtLink>
               avec
               <LinkUser :user="data.wedding.user" /> depuis
               {{ distance(Date.now(), data.wedding.time) }} jours
@@ -85,10 +87,11 @@
           </p>
           <p>
             Intérêts :
-            <b v-for="(interest, index) of data.centres" :key="index"
-              >{{ interest
-              }}<span v-if="index < data.centres.length - 1">, </span></b
-            >
+            <b
+              v-for="(interest, index) of data.centres"
+              :key="index"
+            >{{ interest
+            }}<span v-if="index < data.centres.length - 1">, </span></b>
           </p>
           <p>
             Page perso :
@@ -96,8 +99,7 @@
               target="_blank"
               rel="noreferrer noopener nofollow"
               :href="data.website"
-              >{{ data.website }}</a
-            >
+            >{{ data.website }}</a>
           </p>
           <p>
             Inscrit aux groupes :
@@ -108,24 +110,30 @@
               :separator="index < data.groups.length - 1"
             />
           </p>
-          <br />
+          <br>
           <div class="icon flex centered col">
-            <div v-if="data.gender === 'male'">Chimbo</div>
-            <div v-else-if="data.gender === 'female'">Chimbette</div>
-            <div v-else>Chimbi</div>
+            <div v-if="data.gender === 'male'">
+              Chimbo
+            </div>
+            <div v-else-if="data.gender === 'female'">
+              Chimbette
+            </div>
+            <div v-else>
+              Chimbi
+            </div>
             <!--TODO svg pas bien size-->
             <img
               draggable="false"
               :alt="
                 data.gender.charAt(0).toUpperCase() +
-                data.gender.slice(1) +
-                ' gender'
+                  data.gender.slice(1) +
+                  ' gender'
               "
               height="20"
               width="20"
               :src="asset(`img/member/${data.gender}/${data.gender}.svg`)"
               @contextmenu.prevent
-            />
+            >
           </div>
           &nbsp;
           <div class="icon flex centered col">
@@ -140,10 +148,10 @@
                 height="21"
                 :src="asset(`img/number/${digit}.svg`)"
                 @contextmenu.prevent
-              />
+              >
             </div>
           </div>
-          <br /><br />
+          <br><br>
           <p>
             Vérification du nom :
             <b>{{ data.name.toLowerCase() }}, {{ data.name.toUpperCase() }}</b>
@@ -153,7 +161,7 @@
           </p>
         </div>
       </div>
-      <br />
+      <br>
       <div v-if="data.bacteria" class="member-section">
         <img
           draggable="false"
@@ -161,22 +169,18 @@
           alt="Bacteria"
           style="float: left"
           @contextmenu.prevent
-        />
-        <span
-          >Classement : <b>{{ data.bacteria.rank }}</b
-          ><sup v-if="data.bacteria.rank === 1">er</sup><sup v-else>ème</sup
-          ><br /><b>{{
-            data.bacteria.win + data.bacteria.lose + data.bacteria.draw
-          }}</b>
+        >
+        <span>Classement : <b>{{ data.bacteria.rank }}</b><sup v-if="data.bacteria.rank === 1">er</sup><sup v-else>ème</sup><br><b>{{
+          data.bacteria.win + data.bacteria.lose + data.bacteria.draw
+        }}</b>
           parties, <b>{{ data.bacteria.win }}</b> gagnées,
           <b>{{ data.bacteria.lose }}</b> perdues,
-          <b>{{ data.bacteria.draw }}</b> nulles<br /><b>{{
+          <b>{{ data.bacteria.draw }}</b> nulles<br><b>{{
             data.bacteria.score
           }}</b>
-          points</span
-        >
+          points</span>
       </div>
-      <br v-if="data.bacteria" />
+      <br v-if="data.bacteria">
       <div v-if="data.patojdur" class="member-section">
         <img
           draggable="false"
@@ -184,22 +188,14 @@
           alt="Patojdur"
           style="float: left"
           @contextmenu.prevent
-        />
-        <span
-          >Classement : <b>{{ data.patojdur.rank }}</b
-          ><sup v-if="data.patojdur.rank === 1">er</sup
-          ><sup v-else>ème</sup> avec
-          <b>{{ data.patojdur.score }}</b> points<br />Aujourd'hui
-          <b>{{ data.patojdur.today.rank }}</b
-          ><sup v-if="data.patojdur.today.rank === 1">er</sup
-          ><sup v-else>ème</sup> avec <b>{{ data.patojdur.today.score }}</b>
-          <br />Hier <b>{{ data.patojdur.yesterday.rank }}</b
-          ><sup v-if="data.patojdur.yesterday.rank === 1">er</sup
-          ><sup v-else>ème</sup> avec
-          <b>{{ data.patojdur.yesterday.score }}</b></span
         >
+        <span>Classement : <b>{{ data.patojdur.rank }}</b><sup v-if="data.patojdur.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.patojdur.score }}</b> points<br>Aujourd'hui
+          <b>{{ data.patojdur.today.rank }}</b><sup v-if="data.patojdur.today.rank === 1">er</sup><sup v-else>ème</sup> avec <b>{{ data.patojdur.today.score }}</b>
+          <br>Hier <b>{{ data.patojdur.yesterday.rank }}</b><sup v-if="data.patojdur.yesterday.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.patojdur.yesterday.score }}</b></span>
       </div>
-      <br v-if="data.patojdur" />
+      <br v-if="data.patojdur">
       <div v-if="data.mazo" class="member-section">
         <img
           draggable="false"
@@ -207,14 +203,11 @@
           alt="Mazo"
           style="float: left"
           @contextmenu.prevent
-        />
-        <span
-          >Classement : <b>{{ data.mazo.rank }}</b
-          ><sup v-if="data.mazo.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.mazo.score }}</b> points</span
         >
+        <span>Classement : <b>{{ data.mazo.rank }}</b><sup v-if="data.mazo.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.mazo.score }}</b> points</span>
       </div>
-      <br v-if="data.mazo" />
+      <br v-if="data.mazo">
       <div v-if="data.popularity" class="member-section">
         <img
           draggable="false"
@@ -222,61 +215,56 @@
           alt="Popularity"
           style="float: left"
           @contextmenu.prevent
-        />
-        <span
-          >Classement : <b>{{ data.popularity.rank }}</b
-          ><sup v-if="data.popularity.rank === 1">er</sup
-          ><sup v-else>ème</sup> avec
-          <b>{{ data.popularity.score }}</b> points<br />Aujourd'hui
-          <b>{{ data.popularity.today.rank }}</b
-          ><sup v-if="data.popularity.today.rank === 1">er</sup
-          ><sup v-else>ème</sup> avec
-          <b>{{ data.popularity.today.score }}</b> points<br />Hier
-          <b>{{ data.popularity.yesterday.rank }}</b
-          ><sup v-if="data.popularity.yesterday.rank === 1">er</sup
-          ><sup v-else>ème</sup> avec
-          <b>{{ data.popularity.yesterday.score }}</b> points</span
         >
+        <span>Classement : <b>{{ data.popularity.rank }}</b><sup v-if="data.popularity.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.score }}</b> points<br>Aujourd'hui
+          <b>{{ data.popularity.today.rank }}</b><sup v-if="data.popularity.today.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.today.score }}</b> points<br>Hier
+          <b>{{ data.popularity.yesterday.rank }}</b><sup v-if="data.popularity.yesterday.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.yesterday.score }}</b> points</span>
       </div>
-      <br v-if="data.popularity" />
+      <br v-if="data.popularity">
       <div class="member-section registration">
-        <span
-          >Membre n°<b>{{ data.id }}</b
-          ><br />
+        <span>Membre n°<b>{{ data.id }}</b><br>
           Dans la communauté depuis le
           <b>{{ format(data.register, "PPp") }}</b> (<b>{{
             distance(Date.now(), data.register)
           }}</b>
-          jours)</span
-        >
+          jours)</span>
       </div>
-      <br />
+      <br>
       Messages sur le forum :
-      <NuxtLink :to="'/bbs/author/' + data.id">{{ data.posts }}</NuxtLink>
+      <NuxtLink :to="'/bbs/author/' + data.id">
+        {{ data.posts }}
+      </NuxtLink>
     </Card>
-    <template #right-column
-      ><NuxtLink
+    <template #right-column>
+      <NuxtLink
         v-if="+user.user_level > 2"
         :to="'/admin/' + data.id"
-        ><Button type="button" icon="rules.svg"
-          >Modérer</Button
-        ></NuxtLink
-      ></template
-    >
+      >
+        <Button
+          type="button"
+          icon="rules.svg"
+        >
+          Modérer
+        </Button>
+      </NuxtLink>
+    </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-import { asset } from "@/utils";
-import { format, distance } from "@/utils/date";
-import useAuthStore from "@/stores/auth";
+import { asset } from '@/utils'
+import { format, distance } from '@/utils/date'
+import useAuthStore from '@/stores/auth'
 
-const auth = useAuthStore();
-const user = computed(() => auth.user);
+const auth = useAuthStore()
+const user = computed(() => auth.user)
 
-const {data} = await useFetch(`https://chimboz.fr/api/book/${useRoute().params.id}`);
+const { data } = await useFetch<any>(`https://chimboz.fr/api/book/${useRoute().params.id}`)
 
-useHead({ title: "section.member" });
+useHead({ title: 'section.member' })
 </script>
 <style lang="scss">
 .card {

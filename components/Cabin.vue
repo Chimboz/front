@@ -23,7 +23,7 @@
                   width="30"
                   src="@/assets/img/puce.svg"
                   @contextmenu.prevent
-                />
+                >
               </button>
             </div>
             <div class="cabin-scene relative flex" tabindex="0">
@@ -37,7 +37,7 @@
                 :item1="data.look.item1"
                 :item2="data.look.item2"
               />
-              <div class="circle"></div>
+              <div class="circle" />
             </div>
             <div class="arrows flex">
               <button
@@ -48,7 +48,7 @@
                   data.items[category]
                     .map((item: any) => item.id)
                     .indexOf(data.look[category]) >
-                  data.items[category].length - 2
+                    data.items[category].length - 2
                 "
                 @click="emit('nextItem', category)"
               >
@@ -59,11 +59,11 @@
                   width="30"
                   src="@/assets/img/puce.svg"
                   @contextmenu.prevent
-                />
+                >
               </button>
             </div>
           </div>
-          <br />
+          <br>
           <div class="gender">
             <button
               type="button"
@@ -81,8 +81,8 @@
                 title="Male gender"
                 src="@/assets/img/icon/gender/male.svg"
                 @contextmenu.prevent
-              /></button
-            ><button
+              >
+            </button><button
               type="button"
               class="btn-pink"
               :class="{ active: data.gender === 'Chimbette' }"
@@ -98,8 +98,8 @@
                 title="Female gender"
                 src="@/assets/img/icon/gender/female.svg"
                 @contextmenu.prevent
-              /></button
-            ><button
+              >
+            </button><button
               type="button"
               class="btn-pink"
               :class="{ active: data.gender === 'Chimbi' }"
@@ -115,11 +115,13 @@
                 title="Unknown gender"
                 src="@/assets/img/icon/gender/unknown.svg"
                 @contextmenu.prevent
-              />
+              >
             </button>
           </div>
-          <br />
-          <div class="gender">{{ gender }}</div>
+          <br>
+          <div class="gender">
+            {{ gender }}
+          </div>
         </div>
         <div class="right-acc flex">
           <div class="flex">
@@ -128,8 +130,9 @@
               :class="{ active: profile }"
               :aria-label="$t('profile.profileSection')"
               @click="profile = !profile"
-              >{{ $t("profile.profileSection") }}</Button
-            ><Button
+            >
+              {{ $t("profile.profileSection") }}
+            </Button><Button
               type="button"
               :class="{ active: !profile }"
               :aria-label="$t('profile.invSection')"
@@ -137,15 +140,18 @@
                 profile = !profile;
                 loadInventory = true;
               "
-              >{{ $t("profile.invSection") }}</Button
             >
+              {{ $t("profile.invSection") }}
+            </Button>
           </div>
           <div v-show="profile" id="profile">
             <Emotes @emote="(emote: any) => emit('emote', emote)" />
-            <br />
+            <br>
             <div class="left">
-              <label for="motto" class="justified"
-                >{{ $t("profile.motto") }}
+              <label
+                for="motto"
+                class="justified"
+              >{{ $t("profile.motto") }}
                 <input
                   id="motto"
                   minlength="0"
@@ -158,12 +164,11 @@
                       ($event.target as InputHTMLAttributes).value
                     )
                   "
-                />
+                >
               </label>
             </div>
             <div class="left">
-              <label for="website"
-                >{{ $t("profile.website") }}
+              <label for="website">{{ $t("profile.website") }}
 
                 <input
                   id="website"
@@ -177,12 +182,11 @@
                       ($event.target as InputHTMLAttributes).value
                     )
                   "
-                />
+                >
               </label>
             </div>
             <div class="left">
-              <label
-                >{{ $t("profile.interests") }}
+              <label>{{ $t("profile.interests") }}
                 <ol>
                   <li>
                     <input
@@ -198,7 +202,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    />
+                    >
                   </li>
                   <li>
                     <input
@@ -214,7 +218,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    />
+                    >
                   </li>
                   <li>
                     <input
@@ -230,7 +234,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    />
+                    >
                   </li>
                   <li>
                     <input
@@ -246,7 +250,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    />
+                    >
                   </li>
                 </ol>
               </label>
@@ -263,13 +267,13 @@
                 @click="
                   checked.includes(category) && checked.length === 1
                     ? (checked = [
-                        'item0',
-                        'hat',
-                        'item1',
-                        'body',
-                        'item2',
-                        'shoe',
-                      ])
+                      'item0',
+                      'hat',
+                      'item1',
+                      'body',
+                      'item2',
+                      'shoe',
+                    ])
                     : (checked = [`${category}`])
                 "
                 @contextmenu.prevent="
@@ -283,7 +287,7 @@
                   :src="asset(`img/icon/item_category/${category}.svg`)"
                   :alt="category"
                   @contextmenu.prevent
-                />
+                >
               </button>
             </div>
             <div class="chest">
@@ -316,15 +320,15 @@
                   <img
                     v-if="
                       item.id === 1 ||
-                      item.id === 792 ||
-                      item.id === 868 ||
-                      item.id === 938
+                        item.id === 792 ||
+                        item.id === 868 ||
+                        item.id === 938
                     "
                     draggable="false"
                     alt="No item"
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
-                  />
+                  >
                   <VLazyImage
                     v-else
                     draggable="false"
@@ -332,48 +336,61 @@
                     :src-placeholder="asset('img/loading.svg')"
                     @contextmenu.prevent
                   />
-                  <div class="quantity">{{ item.nb }}</div>
+                  <div class="quantity">
+                    {{ item.nb }}
+                  </div>
                 </button>
               </div>
             </div>
-            <div class="info">{{ info }}</div>
+            <div class="info">
+              {{ info }}
+            </div>
           </div>
         </div>
       </div>
       <div class="flex centered">
-        <Button color="green" type="submit" style="width: 150px"
-          ><template #prepend
-            ><img
+        <Button
+          color="green"
+          type="submit"
+          style="width: 150px"
+        >
+          <template #prepend>
+            <img
               draggable="false"
               alt="Arrow icon"
               class="arrow green jitter"
               width="40"
               height="33"
               src="@/assets/img/arrow.svg"
-              @contextmenu.prevent /></template
-          >{{ $t("button.save") }}</Button
-        ><NuxtLink :to="`/book/${data.id}`" class="btn">
-          <Button type="button" style="width: 150px"
-            ><template #prepend
-              ><img
+              @contextmenu.prevent
+            >
+          </template>{{ $t("button.save") }}
+        </Button><NuxtLink :to="`/book/${data.id}`" class="btn">
+          <Button
+            type="button"
+            style="width: 150px"
+          >
+            <template #prepend>
+              <img
                 draggable="false"
                 alt="Profile icon"
                 width="24"
                 height="24"
                 src="@/assets/img/icon/profile.svg"
-                @contextmenu.prevent /></template
-            >{{ $t("button.card") }}</Button
-          ></NuxtLink
-        >
+                @contextmenu.prevent
+              >
+            </template>{{ $t("button.card") }}
+          </Button>
+        </NuxtLink>
       </div>
     </form>
   </Card>
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
-import VLazyImage from "v-lazy-image";
-import type { LookCategory } from "@/types/Item";
-import type Emote from "@/types/Emotes";
+import VLazyImage from 'v-lazy-image'
+import { asset } from '@/utils'
+import type { LookCategory } from '@/types/Item'
+import type Emote from '@/types/Emotes'
 
 const props = defineProps<{
   data: any;
@@ -383,37 +400,37 @@ const props = defineProps<{
   centreb: string;
   centrec: string;
   centred: string;
-}>();
+}>()
 
 const emit = defineEmits<{
-  (e: "previousItem", category: LookCategory): void;
-  (e: "nextItem", category: LookCategory): void;
-  (e: "changeGender", gender: "Chimbo" | "Chimbette" | "Chimbi"): void;
-  (e: "emote", emote: Emote): void;
-  (e: "update:motto", value: string): void;
-  (e: "update:website", value: string): void;
-  (e: "update:centrea", value: string): void;
-  (e: "update:centreb", value: string): void;
-  (e: "update:centrec", value: string): void;
-  (e: "update:centred", value: string): void;
-  (e: "updateItem", category: LookCategory, id: number): void;
-}>();
+  (e: 'previousItem', category: LookCategory): void;
+  (e: 'nextItem', category: LookCategory): void;
+  (e: 'changeGender', gender: 'Chimbo' | 'Chimbette' | 'Chimbi'): void;
+  (e: 'emote', emote: Emote): void;
+  (e: 'update:motto', value: string): void;
+  (e: 'update:website', value: string): void;
+  (e: 'update:centrea', value: string): void;
+  (e: 'update:centreb', value: string): void;
+  (e: 'update:centrec', value: string): void;
+  (e: 'update:centred', value: string): void;
+  (e: 'updateItem', category: LookCategory, id: number): void;
+}>()
 
 const categories: LookCategory[] = [
-  "item0",
-  "hat",
-  "item1",
-  "body",
-  "item2",
-  "shoe",
-];
-const profile = ref(true);
-const loadInventory = ref(false);
-const info = ref("");
-const checked = ref(categories);
-const gender = ref(props.data.gender);
+  'item0',
+  'hat',
+  'item1',
+  'body',
+  'item2',
+  'shoe'
+]
+const profile = ref(true)
+const loadInventory = ref(false)
+const info = ref('')
+const checked = ref(categories)
+const gender = ref(props.data.gender)
 
-function submit() {}
+function submit () {}
 </script>
 <style lang="scss">
 .cabin-scene .tiz {

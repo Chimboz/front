@@ -8,102 +8,114 @@
             class="home"
             :class="{ active: demo === 0 }"
             @click="demo = 0"
-          ></button>
+          />
           <button
             type="button"
             class="mode"
             :class="{ active: demo === 1 }"
             @click="demo = 1"
-          ></button>
+          />
           <button
             type="button"
             class="tchat"
             :class="{ active: demo === 2 }"
             @click="demo = 2"
-          ></button>
+          />
           <button
             type="button"
             class="wedding"
             :class="{ active: demo === 3 }"
             @click="demo = 3"
-          ></button>
+          />
           <button
             type="button"
             class="group"
             :class="{ active: demo === 4 }"
             @click="demo = 4"
-          ></button>
+          />
           <button
             type="button"
             class="bacteria"
             :class="{ active: demo === 5 }"
             @click="demo = 5"
-          ></button>
-          <button class="empty" type="button"></button>
-          <button class="empty" type="button"></button>
-          <button class="empty" type="button"></button>
-          <button class="empty" type="button"></button>
-          <button class="empty" type="button"></button>
+          />
+          <button class="empty" type="button" />
+          <button class="empty" type="button" />
+          <button class="empty" type="button" />
+          <button class="empty" type="button" />
+          <button class="empty" type="button" />
         </div>
         <div class="demo-picture relative">
           <section :class="{ display: demo === 0 }">
-            <div class="demo-info">{{ $t("demo.info0") }}</div>
+            <div class="demo-info">
+              {{ $t("demo.info0") }}
+            </div>
             <img
               :alt="$t('demo.info0')"
               draggable="false"
               src="@/assets/img/demo/0.png"
               @contextmenu.prevent
-            />
+            >
           </section>
           <section :class="{ display: demo === 1 }">
-            <div class="demo-info">{{ $t("demo.info1") }}</div>
+            <div class="demo-info">
+              {{ $t("demo.info1") }}
+            </div>
             <img
               :alt="$t('demo.info1')"
               draggable="false"
               src="@/assets/img/demo/1.png"
               @contextmenu.prevent
-            />
+            >
           </section>
           <section :class="{ display: demo === 2 }">
-            <div class="demo-info">{{ $t("demo.info2") }}</div>
+            <div class="demo-info">
+              {{ $t("demo.info2") }}
+            </div>
             <img
               :alt="$t('demo.info2')"
               draggable="false"
               src="@/assets/img/demo/2.png"
               @contextmenu.prevent
-            />
+            >
           </section>
           <section :class="{ display: demo === 3 }">
-            <div class="demo-info">{{ $t("demo.info3") }}</div>
+            <div class="demo-info">
+              {{ $t("demo.info3") }}
+            </div>
             <img
               :alt="$t('demo.info3')"
               draggable="false"
               src="@/assets/img/demo/3.png"
               @contextmenu.prevent
-            />
+            >
           </section>
           <section :class="{ display: demo === 4 }">
-            <div class="demo-info">{{ $t("demo.info4") }}</div>
+            <div class="demo-info">
+              {{ $t("demo.info4") }}
+            </div>
             <img
               :alt="$t('demo.info4')"
               draggable="false"
               src="@/assets/img/demo/4.png"
               @contextmenu.prevent
-            />
+            >
           </section>
           <section :class="{ display: demo === 5 }">
-            <div class="demo-info">{{ $t("demo.info5") }}</div>
+            <div class="demo-info">
+              {{ $t("demo.info5") }}
+            </div>
             <img
               :alt="$t('demo.info5')"
               draggable="false"
               src="@/assets/img/demo/5.png"
               @contextmenu.prevent
-            />
+            >
           </section>
         </div>
       </div>
       <form v-if="section === 0" autocomplete="on">
-        <br />
+        <br>
         <input
           required
           minlength="3"
@@ -115,7 +127,7 @@
           autocomplete="username"
           aria-label="Username"
           :placeholder="$t('placeholder.username')"
-        />
+        >
         <input
           required
           type="email"
@@ -126,7 +138,7 @@
           class="btn-md"
           aria-label="Email"
           :placeholder="$t('placeholder.mail')"
-        />
+        >
         <input
           required
           name="password"
@@ -134,7 +146,7 @@
           aria-label="Password"
           :placeholder="$t('placeholder.password')"
           class="btn-md"
-        />
+        >
         <input
           required
           name="password_confirm"
@@ -142,22 +154,28 @@
           aria-label="Password confirm"
           :placeholder="$t('placeholder.password_confirm')"
           class="btn-md"
-        />
+        >
         <div class="flex">
-          <Button type="button" @click="section = 1">{{
-            $t("button.signin")
-          }}</Button>
-          <Button color="green" type="button"
-            ><template #prepend
-              ><img
+          <Button type="button" @click="section = 1">
+            {{
+              $t("button.signin")
+            }}
+          </Button>
+          <Button
+            color="green"
+            type="button"
+          >
+            <template #prepend>
+              <img
                 type="submit"
                 draggable="false"
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg"
-                @contextmenu.prevent /></template
-            >{{ $t("button.register") }}</Button
-          >
+                @contextmenu.prevent
+              >
+            </template>{{ $t("button.register") }}
+          </Button>
         </div>
       </form>
       <form
@@ -168,7 +186,7 @@
           $router.push('/');
         "
       >
-        <br />
+        <br>
         <div>
           <input
             v-model="username"
@@ -182,7 +200,7 @@
             aria-label="Username"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          />
+          >
           <input
             v-model="password"
             required
@@ -192,7 +210,7 @@
             :placeholder="$t('placeholder.password')"
             autocomplete="current-password"
             class="btn-md"
-          />
+          >
         </div>
         <!-- TODO: Two-Factor Authentication
         <div>
@@ -208,47 +226,54 @@
           />
         </div>-->
         <div class="flex">
-          <Button type="button" @click="section = 0">{{
-            $t("button.register")
-          }}</Button>
-          <Button type="submit" color="green"
-            ><template #prepend
-              ><img
+          <Button type="button" @click="section = 0">
+            {{
+              $t("button.register")
+            }}
+          </Button>
+          <Button
+            type="submit"
+            color="green"
+          >
+            <template #prepend>
+              <img
                 draggable="false"
                 alt="Arrow icon"
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg"
-                @contextmenu.prevent /></template
-            >{{ $t("button.signin") }}</Button
-          >
+                @contextmenu.prevent
+              >
+            </template>{{ $t("button.signin") }}
+          </Button>
         </div>
       </form>
     </div>
-    <a href="/tchat" class="try pointer"
-      >{{ $t("demo.try") }}&nbsp;&nbsp;<img
-        :alt="$t('demo.try')"
-        draggable="false"
-        src="@/assets/img/puce.svg"
-        @contextmenu.prevent
-    /></a>
+    <a
+      href="/tchat"
+      class="try pointer"
+    >{{ $t("demo.try") }}&nbsp;&nbsp;<img
+      :alt="$t('demo.try')"
+      draggable="false"
+      src="@/assets/img/puce.svg"
+      @contextmenu.prevent
+    ></a>
   </div>
 </template>
 <script setup lang="ts">
-import useAuthStore from "@/stores/auth";
+import useAuthStore from '@/stores/auth'
 
+const auth = useAuthStore()
 
-const auth = useAuthStore();
-
-const username = ref("");
-const password = ref("");
-const section = ref(1);
-const demo = ref(0);
+const username = ref('')
+const password = ref('')
+const section = ref(1)
+const demo = ref(0)
 
 onMounted(() => {
   setInterval(() => {
-    demo.value = (demo.value + 1) % 6;
-  }, 7000);
-});
+    demo.value = (demo.value + 1) % 6
+  }, 7000)
+})
 </script>
 <style lang="scss" scoped>
 .background {

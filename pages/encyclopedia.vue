@@ -4,8 +4,8 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
     <RouterView />
@@ -27,9 +27,9 @@
           class="item-wrapper"
         >
           <Tooltip>
-            <template #tooltip
-              ><b>{{ item.name }}</b></template
-            >
+            <template #tooltip>
+              <b>{{ item.name }}</b>
+            </template>
             <NuxtLink :to="'/encyclopedia/' + item.id">
               <button
                 type="button"
@@ -47,15 +47,19 @@
                   :src="`/item/${item.type}/${item.id}.svg`"
                   :src-placeholder="asset('img/loading.svg')"
                   @contextmenu.prevent
-                /></button></NuxtLink
-          ></Tooltip>
+                />
+              </button>
+            </NuxtLink>
+          </Tooltip>
         </div>
       </ScrollableContainer>
     </Card>
-    <template #right-column
-      ><Card justified
-        ><template #button>
-          <Button type="button" icon="search.svg">Chercher</Button>
+    <template #right-column>
+      <Card justified>
+        <template #button>
+          <Button type="button" icon="search.svg">
+            Chercher
+          </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="onSearch">
           <input
@@ -65,9 +69,11 @@
             class="btn-md"
             aria-label="Username"
             :placeholder="$t('placeholder.item')"
-          /><button type="submit" class="btn-action">go</button>
+          ><button type="submit" class="btn-action">
+            go
+          </button>
         </form>
-        <br />
+        <br>
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -75,7 +81,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        /><b> Type d'item :</b>
+        ><b> Type d'item :</b>
         <div class="fullwidth centered" @contextmenu.prevent>
           <button
             v-for="category of categories"
@@ -86,16 +92,16 @@
             class="item pointer filter"
             @click="
               checkedCategories.includes(category) &&
-              checkedCategories.length === 1
+                checkedCategories.length === 1
                 ? (checkedCategories = categories)
                 : (checkedCategories = [`${category}`])
             "
             @contextmenu.prevent="
               checkedCategories.includes(category)
                 ? checkedCategories.splice(
-                    checkedCategories.indexOf(category),
-                    1
-                  )
+                  checkedCategories.indexOf(category),
+                  1
+                )
                 : checkedCategories.push(category)
             "
           >
@@ -104,7 +110,7 @@
               :alt="category"
               :src="asset(`img/icon/item_category/${category}.svg`)"
               @contextmenu.prevent
-            />
+            >
           </button>
         </div>
         <img
@@ -114,7 +120,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        /><b> Rareté :</b>
+        ><b> Rareté :</b>
         <div class="fullwidth centered">
           <button
             v-for="rarity of rarities"
@@ -142,81 +148,82 @@
               :alt="rarity"
               :src="asset(`img/icon/rarity/${rarity}.png`)"
               @contextmenu.prevent
-            />
+            >
           </button>
-        </div> </Card
-    ></template>
+        </div>
+      </Card>
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
-import VLazyImage from "v-lazy-image";
-import { asset } from "@/utils";
-import { RouterView } from "vue-router";
+import VLazyImage from 'v-lazy-image'
+import { RouterView } from 'vue-router'
+import { asset } from '@/utils'
 
-const data = ref<any>(undefined);
+const data = ref<any>(undefined)
 const categories = [
-  "body",
-  "bot",
-  "etc",
-  "floor",
-  "frame",
-  "furniture",
-  "hat",
-  "item0",
-  "item1",
-  "item2",
-  "pet",
-  "power",
-  "primary",
-  "secondary",
-  "shape",
-  "shoe",
-  "top",
-  "wall",
-];
+  'body',
+  'bot',
+  'etc',
+  'floor',
+  'frame',
+  'furniture',
+  'hat',
+  'item0',
+  'item1',
+  'item2',
+  'pet',
+  'power',
+  'primary',
+  'secondary',
+  'shape',
+  'shoe',
+  'top',
+  'wall'
+]
 const checkedCategories = ref([
-  "body",
-  "bot",
-  "etc",
-  "floor",
-  "frame",
-  "furniture",
-  "hat",
-  "item0",
-  "item1",
-  "item2",
-  "pet",
-  "power",
-  "primary",
-  "secondary",
-  "shape",
-  "shoe",
-  "top",
-  "wall",
-]);
-const rarities = ["common", "rare", "mythic", "legendary", "unique"];
+  'body',
+  'bot',
+  'etc',
+  'floor',
+  'frame',
+  'furniture',
+  'hat',
+  'item0',
+  'item1',
+  'item2',
+  'pet',
+  'power',
+  'primary',
+  'secondary',
+  'shape',
+  'shoe',
+  'top',
+  'wall'
+])
+const rarities = ['common', 'rare', 'mythic', 'legendary', 'unique']
 const checkedRarities = ref([
-  "common",
-  "rare",
-  "mythic",
-  "legendary",
-  "unique",
-]);
-const search = ref("");
+  'common',
+  'rare',
+  'mythic',
+  'legendary',
+  'unique'
+])
+const search = ref('')
 
-function onSearch() {}
+function onSearch () {}
 
 onBeforeMount(async () => {
   data.value = (
     await useFetch(
       `https://chimboz.fr/public/api/encyclopedia?lang=${
-        useBrowserLocale()!.split("-")[0]
+        useBrowserLocale()!.split('-')[0]
       }&page=0`
     )
-  ).data;
-});
+  ).data
+})
 
-useHead({ title: "section.encyclopedia" });
+useHead({ title: 'section.encyclopedia' })
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container

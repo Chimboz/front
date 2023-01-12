@@ -6,11 +6,11 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <Card
-     
+
       header="group.webp"
       :height="70"
       color="blue"
@@ -25,8 +25,12 @@
           :secondary="data.blazon.secondary"
         />
         <div class="flex col">
-          <StrokeText class="group-name">{{ data.name }}</StrokeText>
-          <div class="motto">"{{ data.motto }}"</div>
+          <StrokeText class="group-name">
+            {{ data.name }}
+          </StrokeText>
+          <div class="motto">
+            "{{ data.motto }}"
+          </div>
         </div>
         <img
           v-if="data.official"
@@ -34,33 +38,32 @@
           alt="Official"
           style="float: right"
           @contextmenu.prevent
-        />
+        >
       </div>
       <div
         class="markdown-body description"
         v-html="$messageRender(data.description)"
-      ></div>
-      <br />
+      />
+      <br>
       <Card class="justified">
         {{ $t(`group.leader.${data.type}`) }}:
         <LinkUser :user="data.leader" />
-        <br /><br />
+        <br><br>
         Occupation du groupe:
         <b>{{ (((data.members.length + 1) / data.size) * 100).toFixed(0) }}%</b>
-        (<b>{{ data.members.length + 1 }}</b
-        >/<b>{{ data.size }}</b
-        >)<br /><br />
+        (<b>{{ data.members.length + 1 }}</b>/<b>{{ data.size }}</b>)<br><br>
         Membres du groupe:
         <LinkUser
           v-for="(member, index) of data.members"
           :key="member.id"
           :user="member"
           :separator="index < data.members.length - 1"
-        /><br /><br />
-        Localisation : <b>{{ data.localisation }}</b
-        ><br /><br />
+        /><br><br>
+        Localisation : <b>{{ data.localisation }}</b><br><br>
         <div class="icon flex col centered">
-          <div style="line-height: 10px">Niveau moyen</div>
+          <div style="line-height: 10px">
+            Niveau moyen
+          </div>
           <div>
             <img
               v-for="digit in data.level.toString(10)"
@@ -71,103 +74,107 @@
               height="21"
               :src="asset(`img/number/${digit}.svg`)"
               @contextmenu.prevent
-            />
+            >
           </div>
         </div>
         &nbsp;<img
           :src="asset(`img/group/${data.status}.png`)"
           :alt="data.status"
           @contextmenu.prevent
-        />
+        >
       </Card>
-      <br />
+      <br>
       Groupe no. <b>{{ data.id }}</b> créé le
-      <b
-        >{{ format(data.date, "PPp") }} ({{
-          distance(Date.now(), data.date)
-        }}
-        jours)</b
-      ><br />
-      <br v-if="data.bacteria" />
-      <Card v-if="data.bacteria" class="justified"
-        ><img
+      <b>{{ format(data.date, "PPp") }} ({{
+        distance(Date.now(), data.date)
+      }}
+        jours)</b><br>
+      <br v-if="data.bacteria">
+      <Card
+        v-if="data.bacteria"
+        class="justified"
+      >
+        <img
           src="@/assets/img/group/bacteria.gif"
           alt="Bacteria"
           style="float: left"
           @contextmenu.prevent
-        /><b>Bacteria</b><br /><br />
-        Classé : <b>{{ data.bacteria.rank }}</b
-        >/<b>{{ data.bacteria.total }}</b> avec
-        <b>{{ data.bacteria.points }}</b> points.</Card
-      ><br v-if="data.patojdur" />
-      <Card v-if="data.patojdur" class="justified"
-        ><img
+        ><b>Bacteria</b><br><br>
+        Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
+        <b>{{ data.bacteria.points }}</b> points.
+      </Card><br v-if="data.patojdur">
+      <Card
+        v-if="data.patojdur"
+        class="justified"
+      >
+        <img
           src="@/assets/img/group/patojdur.gif"
           alt="Patojdur"
           style="float: left"
           @contextmenu.prevent
-        /><b>Patojdur</b><br /><br />
-        Classé : <b>{{ data.patojdur.rank }}</b
-        >/<b>{{ data.patojdur.total }}</b> avec
-        <b>{{ data.patojdur.points }}</b> points.</Card
-      ><br v-if="data.popularity" />
-      <Card v-if="data.popularity" class="justified"
-        ><img
+        ><b>Patojdur</b><br><br>
+        Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
+        <b>{{ data.patojdur.points }}</b> points.
+      </Card><br v-if="data.popularity">
+      <Card
+        v-if="data.popularity"
+        class="justified"
+      >
+        <img
           src="@/assets/img/group/popularity.gif"
           alt="Popularity"
           style="float: left"
           @contextmenu.prevent
-        /><b>Popularity</b><br /><br />
-        Classé : <b>{{ data.popularity.rank }}</b
-        >/<b>{{ data.popularity.total }}</b> avec
-        <b>{{ data.popularity.points }}</b> points.</Card
-      ><br v-if="data.global" />
+        ><b>Popularity</b><br><br>
+        Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
+        <b>{{ data.popularity.points }}</b> points.
+      </Card><br v-if="data.global">
       <Card v-if="data.global" class="justified">
-        Classement général : <b>{{ data.global.rank }}</b
-        >/<b>{{ data.global.total }}</b> avec
-        <b>{{ data.global.points }}</b> points.</Card
-      >
+        Classement général : <b>{{ data.global.rank }}</b>/<b>{{ data.global.total }}</b> avec
+        <b>{{ data.global.points }}</b> points.
+      </Card>
     </Card>
-    <template #right-column
-      ><Card color="blue">
-        <template #header> Inscription pour rejoindre ce groupe </template>
+    <template #right-column>
+      <Card color="blue">
+        <template #header>
+          Inscription pour rejoindre ce groupe
+        </template>
         <div class="justified">
           <img
             :src="asset(`img/group/${data.status}.png`)"
             :alt="data.status"
             style="float: left; margin-right: 4px"
-          />
+          >
           {{ $t(`group.${data.status}`) }}
           <div v-if="user">
-            <br />
+            <br>
             <a
               style="cursor: var(--pointer)"
               @click.prevent="join"
               @keyup.prevent="join"
-              >Rejoindre ce groupe</a
-            >
+            >Rejoindre ce groupe</a>
           </div>
         </div>
-      </Card></template
-    >
+      </Card>
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
-import { format, distance } from "@/utils/date";
-import useAuthStore from "@/stores/auth";
+import { asset } from '@/utils'
+import { format, distance } from '@/utils/date'
+import useAuthStore from '@/stores/auth'
 
-const auth = useAuthStore();
-const user = computed(() => auth.user);
+const auth = useAuthStore()
+const user = computed(() => auth.user)
 
-const { data } = await useFetch(`https://chimboz.fr/api/groups/${useRoute().params.id}`);
-data.value.level = 25;
+const { data } = await useFetch<any>(`https://chimboz.fr/api/groups/${useRoute().params.id}`)
+data.value.level = 25
 
-function join() {
-  useFetch(`groups/demand/${data.value.id}`);
+function join () {
+  useFetch(`groups/demand/${data.value.id}`)
 }
 
-useHead({ title: "section.group" });
+useHead({ title: 'section.group' })
 </script>
 <style lang="scss" scoped>
 .blazon {

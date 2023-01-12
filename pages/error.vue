@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <template #left-column></template>
+    <template #left-column />
     <Card color="red">
       <img
         draggable="false"
@@ -9,20 +9,17 @@
         height="32"
         src="@/assets/img/icon/warning.svg"
         @contextmenu.prevent
-      /><b
-        >&nbsp;{{
-          $route.params.message
-            ? $t($route.params.message as string)
-            : $t("error.default")
-        }}</b
-      >
+      ><b>&nbsp;{{
+        $route.params.message
+          ? $t($route.params.message as string)
+          : $t("error.default")
+      }}</b>
     </Card>
-    <template #right-column></template>
+    <template #right-column />
   </Container>
 </template>
 
 <script setup lang="ts">
 
-
-useHead({ title: "section.error" });
+useHead({ title: 'section.error' })
 </script>

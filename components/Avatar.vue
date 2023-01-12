@@ -9,7 +9,7 @@
         :src="`/item/shoe/${shoe}.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      />
+      >
       <img
         v-if="shoe > 0 && (avatar === 0 || avatar === 6)"
         class="item shoe2"
@@ -18,7 +18,7 @@
         :src="`/item/shoe/${shoe}.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      />
+      >
       <img
         v-if="shoe === 0 && avatar === 6"
         class="item shoe1"
@@ -27,7 +27,7 @@
         :src="`/avatar/6/shoe.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      />
+      >
       <img
         v-if="shoe === 0 && avatar === 6"
         class="item shoe2"
@@ -36,7 +36,7 @@
         :src="`/avatar/6/shoe.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      />
+      >
       <div v-if="avatar === 6" class="body-parts">
         <img
           v-if="avatar === 6"
@@ -46,7 +46,7 @@
           :src="`/avatar/6/body.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
       </div>
       <div v-else class="body-parts">
         <img
@@ -57,7 +57,7 @@
           :src="`/avatar/2/body.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           v-if="body > 0 && avatar === 0"
           class="item body"
@@ -66,7 +66,7 @@
           :src="`/item/body/${body}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           class="item emote"
           draggable="false"
@@ -74,7 +74,7 @@
           :src="`/avatar/0/emote/${emote}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           src="/avatar/0/hands.svg"
           draggable="false"
@@ -82,7 +82,7 @@
           alt="Hands"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           v-if="item2 > 0"
           class="item item2"
@@ -91,7 +91,7 @@
           :src="`/item/item2/${item2}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           v-if="item1 > 0"
           class="item item1"
@@ -100,7 +100,7 @@
           :src="`/item/item1/${item1}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           v-if="hat > 0"
           class="item hat"
@@ -109,7 +109,7 @@
           :src="`/item/hat/${hat}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
         <img
           v-if="item0 > 0"
           class="item item0"
@@ -118,7 +118,7 @@
           :src="`/item/item0/${item0}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        />
+        >
       </div>
     </div>
     <div v-if="avatar === 1 || avatar === 3 || avatar === 4 || avatar === 7">
@@ -128,7 +128,7 @@
         :src="`/avatar/${avatar}/body.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      />
+      >
     </div>
     <div v-if="avatar === 5" class="body-parts">
       <img
@@ -138,9 +138,9 @@
         :src="`/avatar/${avatar}/body.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      />
+      >
     </div>
-    <div class="shadow"></div>
+    <div class="shadow" />
   </div>
 </template>
 <script setup lang="ts">
@@ -158,15 +158,15 @@ withDefaults(
   }>(),
   {
     avatar: 0,
-    emote: "neutral",
+    emote: 'neutral',
     hat: 1,
     body: 318,
     shoe: 606,
     item0: 792,
     item1: 868,
-    item2: 938,
+    item2: 938
   }
-);
+)
 </script>
 <style lang="scss" scoped>
 .tiz {

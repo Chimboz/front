@@ -6,7 +6,7 @@
           <SideNavEntries section="Games" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <Card header="bacteria_blue.webp" :height="74" color="blue" justified bg="bacteria_blue.gif">
@@ -17,18 +17,26 @@
         height="150"
         alt="Bacteria preview"
         style="float: left; margin-right: 16px"
-        @contextmenu.prevent />
+        @contextmenu.prevent
+      >
       <b>Le jeu culte de l'archipel</b>
-      <br /><br />
+      <br><br>
       Des millions des parties jouées, des centaines de milliers de joueurs ! Depuis des millénaires, les Watas, bactéries rouges enflammée,
-      affrontent les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de Stratégie incontournable sur l'archipel !<br />
-      <br />
+      affrontent les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de Stratégie incontournable sur l'archipel !<br>
+      <br>
       <NuxtLink class="btn-sm pink-bg" to="/games/bacteria">
-        <img draggable="false" width="14" height="13" src="@/assets/img/icon/button/help.svg" alt="Help icon" @contextmenu.prevent />&nbsp;Comment
+        <img
+          draggable="false"
+          width="14"
+          height="13"
+          src="@/assets/img/icon/button/help.svg"
+          alt="Help icon"
+          @contextmenu.prevent
+        >&nbsp;Comment
         jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <br />
+    <br>
     <Card header="patojdur_blue.webp" :height="56" color="blue" justified bg="patojdur_blue.gif">
       <img
         draggable="false"
@@ -37,19 +45,27 @@
         width="150"
         height="150"
         style="float: left; margin-right: 16px"
-        @contextmenu.prevent />
+        @contextmenu.prevent
+      >
       <b>La course la plus humide du web !</b>
-      <br />
-      <br />
+      <br>
+      <br>
       Viens affronter les plus rapides patojeurs dans une course d'obstacles haute en couleur ! Seul les plus rapides entreront dans la légende !
-      <br />
-      <br />
+      <br>
+      <br>
       <NuxtLink class="btn-sm pink-bg" to="/games/patojdur">
-        <img draggable="false" width="14" height="13" alt="Help icon" src="@/assets/img/icon/button/help.svg" @contextmenu.prevent />&nbsp;Comment
+        <img
+          draggable="false"
+          width="14"
+          height="13"
+          alt="Help icon"
+          src="@/assets/img/icon/button/help.svg"
+          @contextmenu.prevent
+        >&nbsp;Comment
         jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <br />
+    <br>
     <Card header="mazo_blue.webp" :height="52" color="blue" justified bg="mazo_blue.gif">
       <img
         draggable="false"
@@ -58,23 +74,45 @@
         height="150"
         alt="Mazo preview"
         style="float: left; margin-right: 16px"
-        @contextmenu.prevent />
+        @contextmenu.prevent
+      >
       <b>Fais bosser ta bonne étoile !</b>
-      <br />
-      <br />
+      <br>
+      <br>
       Le premier jeu de hasard sur Chimboz ! Des millions de parties jouées, un suspens insoutenable ! Il va falloir garder son sang froid et s'armer
-      de patience, pour rivaliser avec les meilleurs !<br />
-      <br />
+      de patience, pour rivaliser avec les meilleurs !<br>
+      <br>
       <NuxtLink class="btn-sm pink-bg" to="/games/mazo">
-        <img draggable="false" width="14" height="13" src="@/assets/img/icon/button/help.svg" alt="Help icon" @contextmenu.prevent />&nbsp;Comment
+        <img
+          draggable="false"
+          width="14"
+          height="13"
+          src="@/assets/img/icon/button/help.svg"
+          alt="Help icon"
+          @contextmenu.prevent
+        >&nbsp;Comment
         jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <template #right-column
-      ><Card color="blue" header="games.gif" :width="154" :height="49">
+    <template #right-column>
+      <Card color="blue" header="games.gif" :width="154" :height="49">
         <div class="fullwidth">
-          <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria header" width="154" height="50" draggable="false" @contextmenu.prevent />
-          <img src="@/assets/img/game/bacteria/bg.gif" alt="Bacteria background" width="154" height="84" draggable="false" @contextmenu.prevent />
+          <img
+            src="@/assets/img/game/bacteria/head.gif"
+            alt="Bacteria header"
+            width="154"
+            height="50"
+            draggable="false"
+            @contextmenu.prevent
+          >
+          <img
+            src="@/assets/img/game/bacteria/bg.gif"
+            alt="Bacteria background"
+            width="154"
+            height="84"
+            draggable="false"
+            @contextmenu.prevent
+          >
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
@@ -84,10 +122,27 @@
             :shoe="data.bacteria.user.look.shoe"
             :item0="data.bacteria.user.look.item0"
             :item1="data.bacteria.user.look.item1"
-            :item2="data.bacteria.user.look.item2" />
-          <div class="game-champion"><LinkUser :user="data.bacteria.user" /><br />est champion Bacteria !</div>
-          <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur header" width="154" height="50" draggable="false" @contextmenu.prevent />
-          <img src="@/assets/img/game/patojdur/bg.gif" alt="Patojdur background" width="154" height="84" draggable="false" @contextmenu.prevent />
+            :item2="data.bacteria.user.look.item2"
+          />
+          <div class="game-champion">
+            <LinkUser :user="data.bacteria.user" /><br>est champion Bacteria !
+          </div>
+          <img
+            src="@/assets/img/game/patojdur/head.gif"
+            alt="Patojdur header"
+            width="154"
+            height="50"
+            draggable="false"
+            @contextmenu.prevent
+          >
+          <img
+            src="@/assets/img/game/patojdur/bg.gif"
+            alt="Patojdur background"
+            width="154"
+            height="84"
+            draggable="false"
+            @contextmenu.prevent
+          >
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
@@ -97,10 +152,27 @@
             :shoe="data.patojdur.user.look.shoe"
             :item0="data.patojdur.user.look.item0"
             :item1="data.patojdur.user.look.item1"
-            :item2="data.patojdur.user.look.item2" />
-          <div class="game-champion"><LinkUser :user="data.patojdur.user" /><br />est champion Patojdur !</div>
-          <img src="@/assets/img/game/mazo/head.gif" alt="Mazo header" width="154" height="50" draggable="false" @contextmenu.prevent />
-          <img src="@/assets/img/game/mazo/bg.gif" alt="Mazo background" width="154" height="84" draggable="false" @contextmenu.prevent />
+            :item2="data.patojdur.user.look.item2"
+          />
+          <div class="game-champion">
+            <LinkUser :user="data.patojdur.user" /><br>est champion Patojdur !
+          </div>
+          <img
+            src="@/assets/img/game/mazo/head.gif"
+            alt="Mazo header"
+            width="154"
+            height="50"
+            draggable="false"
+            @contextmenu.prevent
+          >
+          <img
+            src="@/assets/img/game/mazo/bg.gif"
+            alt="Mazo background"
+            width="154"
+            height="84"
+            draggable="false"
+            @contextmenu.prevent
+          >
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
@@ -110,21 +182,24 @@
             :shoe="data.mazo.user.look.shoe"
             :item0="data.mazo.user.look.item0"
             :item1="data.mazo.user.look.item1"
-            :item2="data.mazo.user.look.item2" />
-          <div class="game-champion"><LinkUser :user="data.mazo.user" /><br />est un des meilleurs Mazoteurs du moment !</div>
-        </div></Card
-      ></template
-    >
+            :item2="data.mazo.user.look.item2"
+          />
+          <div class="game-champion">
+            <LinkUser :user="data.mazo.user" /><br>est un des meilleurs Mazoteurs du moment !
+          </div>
+        </div>
+      </Card>
+    </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@vueuse/head';
+import { useHead } from '@vueuse/head'
 
-const { data } = await useFetch('https://chimboz.fr/api/games');
-data.value = JSON.parse(data.value);
+const { data } = await useFetch<any>('https://chimboz.fr/api/games')
+data.value = JSON.parse(data.value)
 
-useHead({ title: 'section.games' });
+useHead({ title: 'section.games' })
 </script>
 <style lang="scss" scoped>
 .game-champion {

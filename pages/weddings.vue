@@ -6,13 +6,16 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <Card header="wedding.webp" justified bg="wedding.gif">
       <div class="flex centered hstack">
-        <NuxtLink to="#today" class="btn-sm blue-bg"
-          ><img
+        <NuxtLink
+          to="#today"
+          class="btn-sm blue-bg"
+        >
+          <img
             draggable="false"
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
@@ -20,10 +23,13 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.today") }}</NuxtLink
+          >&nbsp;{{ $t("wedding.section.today") }}
+        </NuxtLink>
+        <NuxtLink
+          to="#divorce"
+          class="btn-sm blue-bg"
         >
-        <NuxtLink to="#divorce" class="btn-sm blue-bg"
-          ><img
+          <img
             draggable="false"
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
@@ -31,10 +37,13 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.divorces") }}</NuxtLink
+          >&nbsp;{{ $t("wedding.section.divorces") }}
+        </NuxtLink>
+        <NuxtLink
+          to="#best"
+          class="btn-sm blue-bg"
         >
-        <NuxtLink to="#best" class="btn-sm blue-bg"
-          ><img
+          <img
             draggable="false"
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
@@ -42,10 +51,13 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.holding") }}</NuxtLink
+          >&nbsp;{{ $t("wedding.section.holding") }}
+        </NuxtLink>
+        <NuxtLink
+          to="#broken"
+          class="btn-sm blue-bg"
         >
-        <NuxtLink to="#broken" class="btn-sm blue-bg"
-          ><img
+          <img
             draggable="false"
             alt="Caret"
             src="@/assets/img/icon/caret.webp"
@@ -53,24 +65,24 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          />&nbsp;{{ $t("wedding.section.held") }}</NuxtLink
-        >
+          >&nbsp;{{ $t("wedding.section.held") }}
+        </NuxtLink>
       </div>
-      <br />
-      <span v-html="$t('wedding.description')"></span>
+      <br>
+      <span v-html="$t('wedding.description')" />
     </Card>
-    <br /><Card id="last">
-      <template #header>{{ $t("wedding.section.last") }}</template>
-      {{ $t("date.on") }} <b>{{ format(data.last.date, "PPp") }}</b
-      >, <b>{{ data.last.id }}</b
-      ><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br /><br />
+    <br><Card id="last">
+      <template #header>
+        {{ $t("wedding.section.last") }}
+      </template>
+      {{ $t("date.on") }} <b>{{ format(data.last.date, "PPp") }}</b>, <b>{{ data.last.id }}</b><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br><br>
       <div class="wedding">
         <img
           draggable="false"
           alt="Star"
           src="@/assets/img/social/wedding/wedding.svg"
           @contextmenu.prevent
-        />
+        >
         <Avatar
           class="witness witness1"
           :avatar="data.last.witness1.look.avatar"
@@ -116,61 +128,56 @@
           :item2="data.last.witness2.look.item2"
         />
       </div>
-      <br />
-      {{ $t("wedding.wishes") }}<br />
+      <br>
+      {{ $t("wedding.wishes") }}<br>
       <LinkUser :user="data.last.married1" /> &amp;
-      <LinkUser :user="data.last.married2" /><br />
-      <span v-html="$t('wedding.marriedbyguruji')"></span><br />
+      <LinkUser :user="data.last.married2" /><br>
+      <span v-html="$t('wedding.marriedbyguruji')" /><br>
       <LinkUser :user="data.last.witness1" /> &amp;
-      <LinkUser :user="data.last.witness2" />. </Card
-    ><br />
+      <LinkUser :user="data.last.witness2" />.
+    </Card><br>
     <Card id="today">
-      <template #header
-        ><img
+      <template #header>
+        <img
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
-        /><br />{{ $t("wedding.title.today") }}
+        ><br>{{ $t("wedding.title.today") }}
       </template>
-      {{ $t("date.Today") }}, <b>{{ format(Date.now(), "PP") }}</b
-      >, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
-      <br /><br />
+      {{ $t("date.Today") }}, <b>{{ format(Date.now(), "PP") }}</b>, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
+      <br><br>
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
-        {{ $t("date.On") }} <b>{{ format(wedding.date, "PPp") }}</b
-        >,<br />
+        {{ $t("date.On") }} <b>{{ format(wedding.date, "PPp") }}</b>,<br>
         <LinkUser :user="wedding.married1" /> &amp;
         <LinkUser :user="wedding.married2" /> {{ $t("wedding.gotmarried")
-        }}<br />
+        }}<br>
         {{ $t("wedding.gotwitnessed") }} <LinkUser :user="wedding.witness1" />
-        {{ $t("wedding.andof") }} <LinkUser :user="wedding.witness2" /><br />
-        <i
-          ><NuxtLink :to="'/weddings/' + wedding.id">{{
-            wedding.id
-          }}</NuxtLink
-          ><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i
-        >
+        {{ $t("wedding.andof") }} <LinkUser :user="wedding.witness2" /><br>
+        <i><NuxtLink :to="'/weddings/' + wedding.id">{{
+          wedding.id
+        }}</NuxtLink><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i>
       </div>
     </Card>
-    <br />
+    <br>
     <Card id="best">
-      <template #header
-        ><img
+      <template #header>
+        <img
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
-        /><br />Les 20 mariages qui tiennent&nbsp;!
+        ><br>Les 20 mariages qui tiennent&nbsp;!
       </template>
-      <template #subtitle
-        >Ça commence pour un jour... ça fini pour toujours !</template
-      >
+      <template #subtitle>
+        Ça commence pour un jour... ça fini pour toujours !
+      </template>
       <table class="fullwidth">
         <colgroup>
-          <col width="30" />
-          <col width="100%" />
-          <col width="50" />
-          <col width="50" />
+          <col width="30">
+          <col width="100%">
+          <col width="50">
+          <col width="50">
         </colgroup>
         <thead>
           <tr>
@@ -188,11 +195,9 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i
-                >n°<NuxtLink :to="'/weddings/' + wedding.id">{{
-                  wedding.id
-                }}</NuxtLink></i
-              >
+              <i>n°<NuxtLink :to="'/weddings/' + wedding.id">{{
+                wedding.id
+              }}</NuxtLink></i>
             </td>
             <td>
               <b>{{ distance(Date.now(), wedding.date) }}</b>
@@ -201,26 +206,26 @@
         </tbody>
       </table>
     </Card>
-    <br />
+    <br>
     <Card id="divorce">
-      <template #header
-        ><img
+      <template #header>
+        <img
           src="@/assets/img/social/wedding/divorce2.webp"
           alt="Divorce icon"
           width="143"
           height="64"
-        /><br />Les divorces depuis 24 heures
+        ><br>Les divorces depuis 24 heures
       </template>
-      <template #subtitle
-        >Le mariage est virtuel mais la douleur est réelle&nbsp;!</template
-      >
-      <b>{{ data.divorce.length }}</b> couples ont été brisés&nbsp;!<br /><br />
+      <template #subtitle>
+        Le mariage est virtuel mais la douleur est réelle&nbsp;!
+      </template>
+      <b>{{ data.divorce.length }}</b> couples ont été brisés&nbsp;!<br><br>
       <table class="fullwidth">
         <colgroup>
-          <col width="100" />
-          <col width="100%" />
-          <col width="50" />
-          <col width="50" />
+          <col width="100">
+          <col width="100%">
+          <col width="50">
+          <col width="50">
         </colgroup>
         <thead>
           <tr>
@@ -238,11 +243,9 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i
-                >n°<NuxtLink :to="'/weddings/' + wedding.id">{{
-                  wedding.id
-                }}</NuxtLink></i
-              >
+              <i>n°<NuxtLink :to="'/weddings/' + wedding.id">{{
+                wedding.id
+              }}</NuxtLink></i>
             </td>
             <td>
               <b>{{ distance(wedding.datebegin, wedding.dateend) }}</b>
@@ -251,23 +254,25 @@
         </tbody>
       </table>
     </Card>
-    <br />
+    <br>
     <Card id="broken">
-      <template #header
-        ><img
+      <template #header>
+        <img
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
-        /><br />Les 20 mariages qui ont tenu !
+        ><br>Les 20 mariages qui ont tenu !
       </template>
-      <template #subtitle>C'est fini... mais ça a duré !!! </template>
+      <template #subtitle>
+        C'est fini... mais ça a duré !!!
+      </template>
       <table class="fullwidth">
         <colgroup>
-          <col width="30" />
-          <col width="100%" />
-          <col width="50" />
-          <col width="50" />
+          <col width="30">
+          <col width="100%">
+          <col width="50">
+          <col width="50">
         </colgroup>
         <thead>
           <tr>
@@ -285,11 +290,9 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i
-                >n°<NuxtLink :to="'/weddings/' + wedding.id">{{
-                  wedding.id
-                }}</NuxtLink></i
-              >
+              <i>n°<NuxtLink :to="'/weddings/' + wedding.id">{{
+                wedding.id
+              }}</NuxtLink></i>
             </td>
             <td>
               <b>{{ distance(wedding.datebegin, wedding.dateend) }}</b>
@@ -298,9 +301,9 @@
         </tbody>
       </table>
     </Card>
-    <template #right-column
-      ><Card
-       
+    <template #right-column>
+      <Card
+
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
@@ -314,9 +317,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        />
+        >
         En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
-        <br /><br />
+        <br><br>
         <img
           src="@/assets/img/social/wedding/divorce.webp"
           alt="Divorce"
@@ -324,8 +327,8 @@
           width="56"
           height="39"
           @contextmenu.prevent
-        /><br />
-        <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br /><br />
+        ><br>
+        <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br><br>
         <img
           src="@/assets/img/social/wedding/mariage.webp"
           alt="Wedding"
@@ -333,13 +336,13 @@
           width="56"
           height="39"
           @contextmenu.prevent
-        /><br />
+        ><br>
         En ce moment, <b>{{ data.stats.total - data.stats.divorce }}</b> couples
         sont heureux, donc ça laisse
         <b>{{
           data.stats.members - (data.stats.total - data.stats.divorce) * 2
         }}</b>
-        célibs !!! <br /><img
+        célibs !!! <br><img
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Wedding"
           draggable="false"
@@ -347,9 +350,9 @@
           height="58"
           style="width: 100%"
           @contextmenu.prevent
-        /><br />
+        ><br>
         <h3>Archive de tous les mariages</h3>
-        <br />
+        <br>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
             v-model="idSearch"
@@ -361,9 +364,11 @@
             class="btn-md"
             aria-label="Wedding number"
             :placeholder="$t('placeholder.weddingid')"
-          /><button type="submit" class="btn-action">go</button>
+          ><button type="submit" class="btn-action">
+            go
+          </button>
         </form>
-        <br />
+        <br>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
             v-model="userSearch"
@@ -377,27 +382,29 @@
             autocomplete="username"
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">go</button>
+          ><button type="submit" class="btn-action">
+            go
+          </button>
         </form>
-      </Card></template
-    >
+      </Card>
+    </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-import { distance, format } from "@/utils/date";
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router'
+import { distance, format } from '@/utils/date'
 
-const router = useRouter();
-const { data } = await useFetch("https://chimboz.fr/api/weddings");
-const idSearch = ref<undefined | number>(undefined);
-const userSearch = ref("");
+const router = useRouter()
+const { data } = await useFetch<any>('https://chimboz.fr/api/weddings')
+const idSearch = ref<undefined | number>(undefined)
+const userSearch = ref('')
 
-function search() {
-  router.push(`/weddings/${idSearch.value}`);
+function search () {
+  router.push(`/weddings/${idSearch.value}`)
 }
 
-useHead({ title: "section.wedding" });
+useHead({ title: 'section.wedding' })
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,8 @@
 <template>
   <Card color="yellow">
-    <template #header>{{ name }}</template>
+    <template #header>
+      {{ name }}
+    </template>
     <a
       target="_blank"
       rel="noopener noreferrer"
@@ -12,13 +14,13 @@
         style="width: 100%"
         :alt="name"
         @contextmenu.prevent
-      />
+      >
     </a>
   </Card>
-  <br />
+  <br>
 </template>
 <script setup lang="ts">
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router'
 
-const name = (useRoute().params.name as string).split(".")[0];
+const name = (useRoute().params.name as string).split('.')[0]
 </script>

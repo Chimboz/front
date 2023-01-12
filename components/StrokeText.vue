@@ -19,5 +19,5 @@
 <script setup lang="ts">
 defineProps<{
   justified?: boolean;
-}>();
+}>()
 </script>

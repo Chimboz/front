@@ -9,7 +9,7 @@
           height="22"
           src="@/assets/img/icon/rules.svg"
           @contextmenu.prevent
-        />
+        >
         <div class="rule-number">
           <b>{{ rule + 1 }}</b>
         </div>
@@ -19,21 +19,22 @@
       </div>
     </div>
     <div class="fullwidth">
-      <Button icon="rules.svg" type="button">Règles</Button>
+      <Button icon="rules.svg" type="button">
+        Règles
+      </Button>
     </div>
   </Card>
 </template>
 <script setup lang="ts">
 
-
-const rule = ref(0);
+const rule = ref(0)
 defineProps<{
   bot?: boolean;
   top?: boolean;
-}>();
+}>()
 setInterval(() => {
-  rule.value = ++rule.value % 6;
-}, 3000);
+  rule.value = ++rule.value % 6
+}, 3000)
 </script>
 <style lang="scss">
 .rules .card-bg {

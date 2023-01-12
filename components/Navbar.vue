@@ -5,8 +5,8 @@
       backgroundImage: `url(${asset(`img/navbar/svg/${new Date().getHours()}.svg`)})`,
     }"
   >
-    <NuxtLink to="/"
-      ><img
+    <NuxtLink to="/">
+      <img
         id="logo"
         draggable="false"
         alt="Logo Chimboz"
@@ -14,7 +14,8 @@
         height="70"
         src="@/assets/img/logo.svg"
         @contextmenu.prevent
-    /></NuxtLink>
+      >
+    </NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
         <LinkUser
@@ -37,7 +38,7 @@
             width="11"
             src="@/assets/img/icon/failure.svg"
             @contextmenu.prevent
-          />
+          >
           {{ $t("navbar.logout") }}
         </button>
         <button v-else type="button">
@@ -49,7 +50,7 @@
               width="11"
               src="@/assets/img/icon/success.svg"
               @contextmenu.prevent
-            />
+            >
             {{ $t("navbar.login") }}
           </NuxtLink>
         </button>
@@ -70,7 +71,8 @@
   <div id="nav" class="flex">
     <NuxtLink
       to="/"
-      ><button class="nav-btn flex centered" type="button">
+    >
+      <button class="nav-btn flex centered" type="button">
         <img
           draggable="false"
           alt="Home icon"
@@ -80,38 +82,41 @@
           height="20"
           style="margin: 2px; padding: 1px"
           @contextmenu.prevent
-        /></button
-    ></NuxtLink>
-    <a target="_blank" href="/tchat"
-      ><button class="nav-btn flex centered" type="button">
-        <div class="nav-text">
-          <img
-            draggable="false"
-            alt="Tchat icon"
-            class="nav-icon"
-            src="@/assets/img/navbar/icon/tchat.svg"
-            width="28"
-            height="21"
-            @contextmenu.prevent
-          />
-          <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("navbar.play")
-          }}</StrokeText>
-        </div>
+        >
+      </button>
+    </NuxtLink>
+    <a
+      target="_blank"
+      href="/tchat"
+    ><button class="nav-btn flex centered" type="button">
+      <div class="nav-text">
         <img
           draggable="false"
-          alt="Arrow icon"
-          class="arrow jitter"
-          width="40"
-          height="33"
-          src="@/assets/img/arrow.svg"
+          alt="Tchat icon"
+          class="nav-icon"
+          src="@/assets/img/navbar/icon/tchat.svg"
+          width="28"
+          height="21"
           @contextmenu.prevent
-        /></button
-    ></a>
+        >
+        <StrokeText style="z-index: 1" class="btn-label">{{
+          $t("navbar.play")
+        }}</StrokeText>
+      </div>
+      <img
+        draggable="false"
+        alt="Arrow icon"
+        class="arrow jitter"
+        width="40"
+        height="33"
+        src="@/assets/img/arrow.svg"
+        @contextmenu.prevent
+      ></button></a>
     <NuxtLink
       v-if="user"
       to="/account"
-      ><button class="nav-btn flex centered" type="button">
+    >
+      <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -121,16 +126,19 @@
             height="21"
             src="@/assets/img/navbar/icon/account.svg"
             @contextmenu.prevent
-          />
-          <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("navbar.account")
-          }}</StrokeText>
+          >
+          <StrokeText style="z-index: 1" class="btn-label">
+            {{
+              $t("navbar.account")
+            }}
+          </StrokeText>
         </div>
-      </button></NuxtLink
-    >
+      </button>
+    </NuxtLink>
     <NuxtLink
       to="/games"
-      ><button class="nav-btn flex centered" type="button">
+    >
+      <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -140,16 +148,19 @@
             height="21"
             src="@/assets/img/navbar/icon/games.svg"
             @contextmenu.prevent
-          />
-          <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("navbar.games")
-          }}</StrokeText>
+          >
+          <StrokeText style="z-index: 1" class="btn-label">
+            {{
+              $t("navbar.games")
+            }}
+          </StrokeText>
         </div>
-      </button></NuxtLink
-    >
+      </button>
+    </NuxtLink>
     <NuxtLink
       to="/members"
-      ><button class="nav-btn flex centered" type="button">
+    >
+      <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -159,16 +170,19 @@
             height="21"
             src="@/assets/img/navbar/icon/members.svg"
             @contextmenu.prevent
-          />
-          <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("navbar.members")
-          }}</StrokeText>
+          >
+          <StrokeText style="z-index: 1" class="btn-label">
+            {{
+              $t("navbar.members")
+            }}
+          </StrokeText>
         </div>
-      </button></NuxtLink
-    >
+      </button>
+    </NuxtLink>
     <NuxtLink
       to="/bbs"
-      ><button class="nav-btn flex centered" type="button">
+    >
+      <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -178,23 +192,25 @@
             height="21"
             src="@/assets/img/navbar/icon/community.svg"
             @contextmenu.prevent
-          />
-          <StrokeText style="z-index: 1" class="btn-label">{{
-            $t("navbar.community")
-          }}</StrokeText>
+          >
+          <StrokeText style="z-index: 1" class="btn-label">
+            {{
+              $t("navbar.community")
+            }}
+          </StrokeText>
         </div>
-      </button></NuxtLink
-    >
+      </button>
+    </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import useAuthStore from "@/stores/auth";
-import { asset } from "@/utils";
+import useAuthStore from '@/stores/auth'
+import { asset } from '@/utils'
 
-const auth = useAuthStore();
-const user = computed(() => auth.user);
+const auth = useAuthStore()
+const user = computed(() => auth.user)
 </script>
 <style lang="scss" scoped>
 .header {

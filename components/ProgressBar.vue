@@ -8,73 +8,73 @@
     }"
   >
     <div class="loader" :style="{ width: progress + '%' }">
-      <div class="light animated"></div>
+      <div class="light animated" />
     </div>
-    <div class="glow"></div>
+    <div class="glow" />
   </div>
 </template>
 <script setup lang="ts">
-import { randomInt } from "@/utils";
+import { randomInt } from '@/utils'
 
 // Assume that loading will complete under this amount of time.
-const defaultDuration = 4000;
+const defaultDuration = 4000
 // How frequently to update
-const defaultInterval = 200;
+const defaultInterval = 200
 // 0 - 1. Add some variation to how much the bar will grow at each interval
-const variation = 0.5;
+const variation = 0.5
 // 0 - 100. Where the progress bar should start from.
-const startingPoint = 0;
+const startingPoint = 0
 // Limiting how far the progress bar will get to before loading is complete
-const endingPoint = 90;
+const endingPoint = 90
 
-const isLoading = ref(true); // Once loading is done, start fading away
-const isVisible = ref(false); // Once animate finish, set display: none
-const progress = ref(startingPoint);
-const timeoutId = ref<NodeJS.Timeout | undefined>(undefined);
+const isLoading = ref(true) // Once loading is done, start fading away
+const isVisible = ref(false) // Once animate finish, set display: none
+const progress = ref(startingPoint)
+const timeoutId = ref<NodeJS.Timeout | undefined>(undefined)
 
-function loop() {
+function loop () {
   if (timeoutId.value) {
-    clearTimeout(timeoutId.value);
+    clearTimeout(timeoutId.value)
   }
   if (progress.value >= endingPoint) {
-    return;
+    return
   }
   const size =
-    (endingPoint - startingPoint) / (defaultDuration / defaultInterval);
+    (endingPoint - startingPoint) / (defaultDuration / defaultInterval)
   const p = Math.round(
     progress.value + randomInt(size * (1 - variation), size * (1 + variation))
-  );
-  progress.value = Math.min(p, endingPoint);
+  )
+  progress.value = Math.min(p, endingPoint)
   timeoutId.value = setTimeout(
     loop,
     randomInt(
       defaultInterval * (1 - variation),
       defaultInterval * (1 + variation)
     )
-  );
+  )
 }
 
-function start() {
-  isLoading.value = true;
-  isVisible.value = true;
-  progress.value = startingPoint;
-  loop();
+function start () {
+  isLoading.value = true
+  isVisible.value = true
+  progress.value = startingPoint
+  loop()
 }
 
-function stop() {
-  isLoading.value = false;
-  progress.value = 100;
-  clearTimeout(timeoutId.value);
+function stop () {
+  isLoading.value = false
+  progress.value = 100
+  clearTimeout(timeoutId.value)
   setTimeout(() => {
     if (!isLoading.value) {
-      isVisible.value = false;
+      isVisible.value = false
     }
-  }, 2000);
+  }, 2000)
 }
 
-const { $eventBus } = useNuxtApp();
-$eventBus.on("asyncComponentLoading", start);
-$eventBus.on("asyncComponentLoaded", stop);
+const { $eventBus } = useNuxtApp()
+$eventBus.on('asyncComponentLoading', start)
+$eventBus.on('asyncComponentLoaded', stop)
 </script>
 <style scoped>
 .loading-container {

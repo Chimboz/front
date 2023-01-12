@@ -4,15 +4,20 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified
-      ><template #subtop>Effaceur</template>
-      <template #header
-        >SOS pseudo moisi, changez de pseudo pour 200 pepettes !</template
-      >
+    <Card
+      color="yellow"
+      justified
+    >
+      <template #subtop>
+        Effaceur
+      </template>
+      <template #header>
+        SOS pseudo moisi, changez de pseudo pour 200 pepettes !
+      </template>
       <img
         src="@/assets/img/shop/effaceur.webp"
         height="91"
@@ -21,9 +26,9 @@
         draggable="false"
         style="width: 100%"
         @contextmenu.prevent
-      />
+      >
 
-      <br />
+      <br>
       <form @submit.prevent="submit">
         <input
           v-model="pseudo"
@@ -37,52 +42,60 @@
           aria-label="Username"
           autocomplete="username"
           :placeholder="$t('placeholder.username')"
-        />
-        <br /><br />
+        >
+        <br><br>
         <div class="flex">
           <Button
             type="button"
             aria-label="Generate nickname"
             @click="generatePseudo()"
-            >Générer un pseudo</Button
           >
-          <Button color="green" type="submit" aria-label="Save"
-            ><template #prepend
-              ><img
+            Générer un pseudo
+          </Button>
+          <Button
+            color="green"
+            type="submit"
+            aria-label="Save"
+          >
+            <template #prepend>
+              <img
                 draggable="false"
                 alt="Arrow icon"
                 class="arrow green jitter"
                 width="40"
                 height="33"
                 src="@/assets/img/arrow.svg"
-                @contextmenu.prevent /></template
-            >Sauver</Button
-          >
+                @contextmenu.prevent
+              >
+            </template>Sauver
+          </Button>
         </div>
-        <br />
+        <br>
         <b>Attention</b>, tu ne peux avoir qu'un seul pseudo à la fois. Si tu
         possèdes déjà un pseudo et que tu en rachètes un, le nouveau remplacera
         l'ancien.
       </form>
     </Card>
-    <template #right-column><Bank /></template>
+    <template #right-column>
+      <Bank />
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
-import { randomInt } from "@/utils";
+import { randomInt } from '@/utils'
 
-const pseudo = ref("");
+const pseudo = ref('')
 
-function submit() {
-  useFetch("account/name", {body:{ pseudo: pseudo.value }});
+function submit () {
+  useFetch('account/name', { body: { pseudo: pseudo.value } })
 }
 
-async function generatePseudo() {
-  const {data} = await useFetch(`https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`)
-  pseudo.value = JSON.parse(data.value).pseudo;
+async function generatePseudo () {
+  const { data } = await useFetch<any>(`https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`)
+  pseudo.value = JSON.parse(data.value).pseudo
 }
 
-useHead({ title: "section.eraser" });
+useHead({ title: 'section.eraser' })
 </script>
 
 <style lang="scss" scoped>

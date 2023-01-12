@@ -4,24 +4,31 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified
-      ><template #subtop>MajMin</template>
-      <template #header>Changer de MajMiN</template>
-      <template #subtitle
-        >Un bon MajMiN, c'est un plus pour ta reconnaissance dans la
-        communauté...</template
-      >
-      <b>Un MajMiN c'est quoi ?</b><br />
+    <Card
+      color="yellow"
+      justified
+    >
+      <template #subtop>
+        MajMin
+      </template>
+      <template #header>
+        Changer de MajMiN
+      </template>
+      <template #subtitle>
+        Un bon MajMiN, c'est un plus pour ta reconnaissance dans la
+        communauté...
+      </template>
+      <b>Un MajMiN c'est quoi ?</b><br>
       Le MajMiN ( <b>Maj</b>uscules <b>Min</b>uscules ) c'est l'apparence de ton
-      pseudo.<br />
+      pseudo.<br>
       Par exemple, Andre et AnDRe c'est le même pseudo, c'est juste le MajMiN
-      qui change.<br />
-      <br />
-      <b>Tu peux changer de MajMiN quand tu le souhaites.</b><br />
+      qui change.<br>
+      <br>
+      <b>Tu peux changer de MajMiN quand tu le souhaites.</b><br>
       Tu peux changer uniquement le MajMiN des lettres, tu ne peux pas en
       rajouter, tu ne peux pas en enlever, tu ne peux pas échanger une lettre
       par une autre.
@@ -37,48 +44,49 @@
             {{ letter }}
           </button>
         </div>
-        <br />
-        <Button color="green" type="submit" aria-label="Save"
-          ><template #prepend
-            ><img
+        <br>
+        <Button
+          color="green"
+          type="submit"
+          aria-label="Save"
+        >
+          <template #prepend>
+            <img
               draggable="false"
               alt="Arrow icon"
               class="arrow green jitter"
               width="40"
               height="33"
               src="@/assets/img/arrow.svg"
-              @contextmenu.prevent /></template
-          >Sauver</Button
-        >
+              @contextmenu.prevent
+            >
+          </template>Sauver
+        </Button>
       </form>
     </Card>
-    <template #right-column> </template>
+    <template #right-column />
   </Container>
 </template>
 <script setup lang="ts">
 
-import useAuthStore from "@/stores/auth";
+import useAuthStore from '@/stores/auth'
 
+const auth = useAuthStore()
+const user = computed(() => auth.user)
 
+const pseudo = ref(user.value!.pseudo.slice())
 
-const auth = useAuthStore();
-const user = computed(() => auth.user);
-
-const pseudo = ref(user.value!.pseudo.slice());
-
-function changeCase(index: number) {
-  let letter;
-  if (pseudo.value[index].toUpperCase() === pseudo.value[index])
-    letter = pseudo.value[index].toLowerCase();
-  else letter = pseudo.value[index].toUpperCase();
+function changeCase (index: number) {
+  let letter
+  if (pseudo.value[index].toUpperCase() === pseudo.value[index]) { letter = pseudo.value[index].toLowerCase() } else { letter = pseudo.value[index].toUpperCase() }
   pseudo.value =
-    pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1);
+    pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1)
 }
-function submit() {
-  useFetch("account/majmin",  {body:{ pseudo: pseudo.value }});
+function submit () {
+  useFetch('account/majmin', { body: { pseudo: pseudo.value } })
 }
 
-useHead({ title: "section.capitalization" });
+useHead({ title: 'section.capitalization' })
 </script>
 
 <style lang="scss" scoped>

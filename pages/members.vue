@@ -6,7 +6,7 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <Card
@@ -24,7 +24,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          /><Avatar
+          ><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -35,18 +35,18 @@
             :item2="user.look.item2"
           />
           <LinkUser :user="user" />
-          <span
-            >Membre n°<b>{{ user.id }}</b></span
-          >
+          <span>Membre n°<b>{{ user.id }}</b></span>
         </div>
       </div>
-      <br />
+      <br>
       Les derniers membres qui ont rejoint l'archipel !
 
-      <br />
-      <NuxtLink to="/book">Voir la liste des nouveaux arrivants</NuxtLink>
+      <br>
+      <NuxtLink to="/book">
+        Voir la liste des nouveaux arrivants
+      </NuxtLink>
     </Card>
-    <br />
+    <br>
     <Card
       header="popularity_blue.webp"
       bg="popularity_blue.png"
@@ -62,7 +62,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          /><Avatar
+          ><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -73,18 +73,18 @@
             :item2="user.look.item2"
           />
           <LinkUser :user="user" />
-          <span
-            >Avec <b>{{ user.score }}</b> points</span
-          >
+          <span>Avec <b>{{ user.score }}</b> points</span>
         </div>
       </div>
-      <br />
+      <br>
       Les membres les plus populaire de l'archipel !
 
-      <br />
-      <NuxtLink to="/popularity">Voir la page popularité</NuxtLink>
+      <br>
+      <NuxtLink to="/popularity">
+        Voir la page popularité
+      </NuxtLink>
     </Card>
-    <br />
+    <br>
     <Card
       header="wedding_blue.webp"
       bg="wedding_blue.png"
@@ -104,7 +104,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          />
+          >
           <div class="flex" style="justify-content: center">
             <Avatar
               :avatar="couple.user1.look.avatar"
@@ -128,19 +128,22 @@
           </div>
           <span>
             <LinkUser :user="couple.user1" /> &amp;
-            <LinkUser :user="couple.user2"
-          /></span>
+            <LinkUser :user="couple.user2" /></span>
         </div>
       </div>
-      <br />
+      <br>
       Les derniers mariages célébrés par Guruji
-      <br />
-      <NuxtLink to="/weddings">Voir la page des mariages</NuxtLink>
+      <br>
+      <NuxtLink to="/weddings">
+        Voir la page des mariages
+      </NuxtLink>
     </Card>
-    <template #right-column
-      ><Card color="blue">
+    <template #right-column>
+      <Card color="blue">
         <template #button>
-          <Button type="button" icon="search.svg">Chercher</Button>
+          <Button type="button" icon="search.svg">
+            Chercher
+          </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="searchUser()">
           <input
@@ -155,9 +158,11 @@
             autocomplete="username"
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
-          /><button type="submit" class="btn-action">go</button>
+          ><button type="submit" class="btn-action">
+            go
+          </button>
         </form>
-        <br />
+        <br>
         <form class="flex fullwidth" @submit.prevent="searchGroup()">
           <input
             v-model="groupSearch"
@@ -170,35 +175,37 @@
             autocomplete="group"
             aria-label="Group"
             :placeholder="$t('placeholder.group')"
-          /><button type="submit" class="btn-action">go</button>
-        </form></Card
-      ></template
-    >
+          ><button type="submit" class="btn-action">
+            go
+          </button>
+        </form>
+      </Card>
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router'
 
-const router = useRouter();
-const { data } = await useFetch("https://chimboz.fr/api/members");
-const userSearch = ref("");
-const groupSearch = ref("");
+const router = useRouter()
+const { data } = await useFetch<any>('https://chimboz.fr/api/members')
+const userSearch = ref('')
+const groupSearch = ref('')
 
-async function searchUser() {
+async function searchUser () {
   router.push(
     `/book/${
       (await useFetch(`book/search/${userSearch.value}/search`)).data.mid
     }`
-  );
+  )
 }
 
-async function searchGroup() {
+async function searchGroup () {
   router.push(
     `/groups/${(await useFetch(`groups/search/${groupSearch.value}`)).data.mid}`
-  );
+  )
 }
 
-useHead({ title: "section.members" });
+useHead({ title: 'section.members' })
 </script>
 <style lang="scss" scoped>
 img[src*="spotlight"] {

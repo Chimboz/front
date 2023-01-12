@@ -4,17 +4,17 @@
       v-if="$slots['left-column']"
       class="side-column left-column column flex"
     >
-      <slot name="left-column"></slot>
+      <slot name="left-column" />
     </div>
     <div class="main-column column flex">
-      <slot></slot>
+      <slot />
     </div>
     <div
       v-if="$slots['right-column']"
       style=""
       class="side-column right-column column flex"
     >
-      <slot name="right-column"></slot>
+      <slot name="right-column" />
     </div>
   </div>
 </template>

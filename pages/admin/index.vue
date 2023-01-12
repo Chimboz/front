@@ -1,9 +1,11 @@
 <template>
   <Container>
-    <template #left-column
-      ><Card color="blue" justified>
+    <template #left-column>
+      <Card color="blue" justified>
         <template #button>
-          <Button icon="rules.svg" type="button">Registre</Button>
+          <Button icon="rules.svg" type="button">
+            Registre
+          </Button>
         </template>
         <ScrollableContainer
           route="adminlogs"
@@ -12,19 +14,20 @@
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div v-for="(log, index) in data" :key="index" class="log">
-            <b>{{ format(log.date, "PPp") }}</b
-            ><em> par <LinkUser :user="log.moderator" /></em><br />
-            <b>{{ log.type }} de <LinkUser :user="log.author" /></b><br />
+            <b>{{ format(log.date, "PPp") }}</b><em> par <LinkUser :user="log.moderator" /></em><br>
+            <b>{{ log.type }} de <LinkUser :user="log.author" /></b><br>
             {{ log.reason }}
           </div>
-        </ScrollableContainer></Card
-      ></template
-    >
+        </ScrollableContainer>
+      </Card>
+    </template>
     <NuxtPage />
-    <template #right-column
-      ><Card color="blue">
+    <template #right-column>
+      <Card color="blue">
         <template #button>
-          <Button type="button" icon="search.svg">Chercher</Button>
+          <Button type="button" icon="search.svg">
+            Chercher
+          </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
@@ -41,34 +44,36 @@
             :placeholder="$t('placeholder.username')"
             @keyup="onKeypressValue()"
             @keydown="onKeypressValue()"
-          />
-          <button type="submit" class="btn-action">go</button>
+          >
+          <button type="submit" class="btn-action">
+            go
+          </button>
         </form>
         <div v-if="suggestionsHere && username != ''" class="suggestions">
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
-              <NuxtLink :to="'/admin/' + suggestion.mid">{{
-                suggestion.pseudo
-              }}</NuxtLink>
+              <NuxtLink :to="'/admin/' + suggestion.mid">
+                {{
+                  suggestion.pseudo
+                }}
+              </NuxtLink>
             </li>
           </ul>
-        </div></Card
-      ></template
-    >
+        </div>
+      </Card>
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
 
+import { format } from '@/utils/date'
 
+const data = ref<any[]>([])
+const username = ref('')
+const suggestionsHere = ref<any[]>([])
 
-import { format } from "@/utils/date";
-
-const data = ref<any[]>([]);
-const username = ref("");
-const suggestionsHere = ref<any[]>([]);
-
-function onKeypressValue() {
-  if (username.value !== undefined && username.value !== "") {
+function onKeypressValue () {
+  if (username.value !== undefined && username.value !== '') {
     /* useFetch("/api/test.json").then((res: any) => {
           if (res.data && res.data.length > 0) {
             suggestionsHere.value = res.data;
@@ -77,11 +82,11 @@ function onKeypressValue() {
   }
 }
 
-function search() {
-  return true;
+function search () {
+  return true
 }
 
-useHead({ title: "section.admin" });
+useHead({ title: 'section.admin' })
 </script>
 <style lang="scss" scoped>
 .log {

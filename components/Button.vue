@@ -1,6 +1,6 @@
 <template>
   <button class="btn flex" :class="color" :type="type">
-    <slot name="prepend"></slot>
+    <slot name="prepend" />
     <img
       v-if="icon"
       draggable="false"
@@ -8,21 +8,21 @@
       alt="Button icon"
       :src="asset(`img/icon/button/${icon}`)"
       @contextmenu.prevent
-    />
+    >
     <div class="btn-text">
-      <StrokeText><slot></slot></StrokeText>
+      <StrokeText><slot /></StrokeText>
     </div>
   </button>
 </template>
 <script setup lang="ts">
 
-import { asset } from "@/utils";
+import { asset } from '@/utils'
 
 defineProps<{
   icon?: string;
-  color?: "red" | "green" | "yellow" | "orange";
-  type: "button" | "submit" | "reset";
-}>();
+  color?: 'red' | 'green' | 'yellow' | 'orange';
+  type: 'button' | 'submit' | 'reset';
+}>()
 </script>
 <style lang="scss" scoped>
 $colors: ("yellow", "orange", "red", "green");

@@ -4,22 +4,24 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
     <Card color="yellow" justified>
-      <template #subtop>Pamalin</template>
+      <template #subtop>
+        Pamalin
+      </template>
       On t'a dit que tu allais avoir des nouvelles fringues, que tu allais
       pouvoir devenir modo, que tu allais gagner des points ou un niveau, et tu
-      as donné ton mot de passe à quelqu'un !<br />
-      <br />
+      as donné ton mot de passe à quelqu'un !<br>
+      <br>
       Et évidemment, tu y a cru...
       <h3>T'es pas malin !</h3>
-      <br />
-      <br />
-      Il ne te reste plus qu'a changer de mot de passe rapidement :<br />
-      <br />
+      <br>
+      <br>
+      Il ne te reste plus qu'a changer de mot de passe rapidement :<br>
+      <br>
       <form @submit.prevent="changePassword">
         <input
           v-model="currentPassword"
@@ -30,7 +32,7 @@
           :placeholder="$t('placeholder.currentpassword')"
           autocomplete="current-password"
           class="btn-md"
-        />
+        >
         <input
           v-model="newPassword"
           required
@@ -39,7 +41,7 @@
           aria-label="$t('placeholder.newpassword')"
           :placeholder="$t('placeholder.newpassword')"
           class="btn-md"
-        />
+        >
         <input
           v-model="confirmPassword"
           required
@@ -48,43 +50,46 @@
           aria-label="$t('placeholder.confirmpassword')"
           :placeholder="$t('placeholder.confirmpassword')"
           class="btn-md"
-        />
-        <br />
-        <Button type="submit" color="green"
-          ><template #prepend
-            ><img
+        >
+        <br>
+        <Button
+          type="submit"
+          color="green"
+        >
+          <template #prepend>
+            <img
               draggable="false"
               alt="Arrow icon"
               class="arrow jitter green"
               width="40"
               height="33"
               src="@/assets/img/arrow.svg"
-              @contextmenu.prevent /></template
-          >Envoyer</Button
-        >
+              @contextmenu.prevent
+            >
+          </template>Envoyer
+        </Button>
       </form>
-      <br />
+      <br>
       Par contre, si tu as donné ton mot de passe de compte e-mail, tu es le
       dernier des pamalins et nous ne pouvons plus rien pour toi ...
     </Card>
-    <template #right-column></template>
+    <template #right-column />
   </Container>
 </template>
 <script setup lang="ts">
 
+const currentPassword = ref('')
+const newPassword = ref('')
+const confirmPassword = ref('')
 
-
-
-const currentPassword = ref("");
-const newPassword = ref("");
-const confirmPassword = ref("");
-
-function changePassword() {
-  useFetch("account/password", {body:{
-    pass: currentPassword.value,
-    new: newPassword.value,
-    confirm: confirmPassword.value,
-  }});
+function changePassword () {
+  useFetch('account/password', {
+    body: {
+      pass: currentPassword.value,
+      new: newPassword.value,
+      confirm: confirmPassword.value
+    }
+  })
 }
-useHead({ title: "section.notsmart" });
+useHead({ title: 'section.notsmart' })
 </script>

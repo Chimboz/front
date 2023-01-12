@@ -4,8 +4,8 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
     <Card color="yellow" justified header="bank.gif">
@@ -17,14 +17,18 @@
       >
         <table class="w-100">
           <colgroup>
-            <col width="100" />
-            <col width="100%" />
-            <col width="100" />
+            <col width="100">
+            <col width="100%">
+            <col width="100">
           </colgroup>
           <thead style="background: var(--dark-card-yellow)">
-            <th class="centered">Date</th>
+            <th class="centered">
+              Date
+            </th>
             <th>Description</th>
-            <th style="text-align: right">Solde</th>
+            <th style="text-align: right">
+              Solde
+            </th>
           </thead>
           <tr
             v-for="line of data"
@@ -50,12 +54,12 @@
                   )
                 "
                 @contextmenu.prevent
-              />
+              >
             </td>
           </tr>
         </table>
       </ScrollableContainer>
-      <br />
+      <br>
       <img
         src="@/assets/img/puce.svg"
         alt="Puce"
@@ -63,7 +67,7 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      /><b> Balance sur 7 jours</b> <br /><br />
+      ><b> Balance sur 7 jours</b> <br><br>
       <BarChart
         :chart-data="bankData()"
         :options="{
@@ -82,11 +86,13 @@
         }"
       />
     </Card>
-    <template #right-column><Bank /></template>
+    <template #right-column>
+      <Bank />
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
-import { BarChart } from "vue-chart-3";
+import { BarChart } from 'vue-chart-3'
 import {
   Chart,
   Legend,
@@ -98,12 +104,12 @@ import {
   LineController,
   PointElement,
   LineElement,
-  type ChartData,
-} from "chart.js";
-import { isSameDay, eachDayOfInterval, subDays } from "date-fns";
-import { format } from "@/utils/date";
-import { asset } from "@/utils";
-import useAuthStore from "@/stores/auth";
+  type ChartData
+} from 'chart.js'
+import { isSameDay, eachDayOfInterval, subDays } from 'date-fns'
+import { format } from '@/utils/date'
+import { asset } from '@/utils'
+import useAuthStore from '@/stores/auth'
 
 Chart.register(
   Tooltip,
@@ -115,55 +121,56 @@ Chart.register(
   LineController,
   PointElement,
   LineElement
-);
+)
 
-const auth = useAuthStore();
+const auth = useAuthStore()
 
-const { data } = await useFetch("/api/bank");
+const { data } = await useFetch<any>('/api/bank')
 
-function bankData() {
+function bankData () {
   const dataset: ChartData<any> = {
     labels: [] as any[],
     datasets: [
       {
-        type: "line",
-        label: "Total",
+        type: 'line',
+        label: 'Total',
         data: [],
-        backgroundColor: ["#ffb907"],
-        tension: 0.4,
+        backgroundColor: ['#ffb907'],
+        tension: 0.4
       },
-      { type: "bar", label: "Balance", data: [], backgroundColor: [] },
-    ],
-  };
-  let balance = +auth.user!.money;
-  let i = 0;
-  const today = new Date();
+      { type: 'bar', label: 'Balance', data: [], backgroundColor: [] }
+    ]
+  }
+  let balance = +auth.user!.money
+  let i = 0
+  const today = new Date()
   eachDayOfInterval({
     start: subDays(today, 6),
-    end: today,
+    end: today
   })
     .reverse()
     .forEach((day) => {
       const chartData: any = data.value.filter((el: any) =>
         isSameDay(el.date, day)
-      );
-      let value = 0;
-      if (chartData.length === 1) value = chartData[0].value;
-      if (chartData.length > 1)
+      )
+      let value = 0
+      if (chartData.length === 1) { value = chartData[0].value }
+      if (chartData.length > 1) {
         value = chartData.reduce(
           (prev: any, curr: any) => prev.value + curr.value
-        );
-      if (i > 0) balance -= dataset.datasets[1].data[i - 1];
-      dataset.labels!.push(format(day, "d MMM"));
-      dataset.datasets[1].data.push(value);
-      dataset.datasets[0].data.push(balance);
-      dataset.datasets[1].backgroundColor.push(value > 0 ? "#5b3" : "#fb0d0d");
-      i++;
-    });
-  return dataset;
+        )
+      }
+      if (i > 0) { balance -= dataset.datasets[1].data[i - 1] }
+      dataset.labels!.push(format(day, 'd MMM'))
+      dataset.datasets[1].data.push(value)
+      dataset.datasets[0].data.push(balance)
+      dataset.datasets[1].backgroundColor.push(value > 0 ? '#5b3' : '#fb0d0d')
+      i++
+    })
+  return dataset
 }
 
-useHead({ title: "section.bank" });
+useHead({ title: 'section.bank' })
 </script>
 
 <style lang="scss" scoped>

@@ -1,174 +1,176 @@
 <template>
   <Card color="blue" :style="{ '--blazon-primary': data.blazon.primary, '--blazon-secondary': data.blazon.secondary }">
-      <div class="container-blz flex">
-        <div class="left-blz flex">
-          <div class="cabin flex centered">
-            <div class="arrows flex">
-              <button
-                v-for="category of categories"
-                :key="category"
-                type="button"
-                :disabled="
-                  data.items[category].indexOf(data.blazon[category]) < 1
-                "
-                @click="emit('previousItem', category)"
+    <div class="container-blz flex">
+      <div class="left-blz flex">
+        <div class="cabin flex centered">
+          <div class="arrows flex">
+            <button
+              v-for="category of categories"
+              :key="category"
+              type="button"
+              :disabled="
+                data.items[category].indexOf(data.blazon[category]) < 1
+              "
+              @click="emit('previousItem', category)"
+            >
+              <img
+                draggable="false"
+                alt="Puce"
+                src="@/assets/img/puce.svg"
+                @contextmenu.prevent
               >
-                <img
-                  draggable="false"
-                  alt="Puce"
-                  src="@/assets/img/puce.svg"
-                  @contextmenu.prevent
-                />
-              </button>
-            </div>
-            <Blazon
-              :shape="data.blazon.shape"
-              :top="data.blazon.top"
-              :bot="data.blazon.bot"
-              :primary="data.blazon.primary"
-              :secondary="data.blazon.secondary"
-            />
-            <div class="arrows flex">
-              <button
-                v-for="category of categories"
-                :key="category"
-                type="button"
-                :disabled="
-                  data.items[category].indexOf(data.blazon[category]) >
-                  data.items[category].length - 2
-                "
-                @click="emit('nextItem', category)"
-              >
-                <img
-                  draggable="false"
-                  alt="Puce"
-                  src="@/assets/img/puce.svg"
-                  @contextmenu.prevent
-                />
-              </button>
-            </div>
+            </button>
           </div>
-        </div>
-        <div class="right-blz flex">
-          <div id="inventory">
-            <div class="category-selection" @contextmenu.prevent>
-              <button
-                v-for="category of categories"
-                :key="category"
-                type="button"
-                :class="{ active: checked.includes(category) }"
-                class="item pointer"
-                @click="
-                  checked.includes(category) && checked.length === 1
-                    ? (checked = [
-                        'shape',
-                        'top',
-                        'bot',
-                        'primary',
-                        'secondary',
-                      ])
-                    : (checked = [`${category}`])
-                "
-                @contextmenu.prevent="
-                  checked.includes(category)
-                    ? checked.splice(checked.indexOf(category), 1)
-                    : checked.push(category)
-                "
+          <Blazon
+            :shape="data.blazon.shape"
+            :top="data.blazon.top"
+            :bot="data.blazon.bot"
+            :primary="data.blazon.primary"
+            :secondary="data.blazon.secondary"
+          />
+          <div class="arrows flex">
+            <button
+              v-for="category of categories"
+              :key="category"
+              type="button"
+              :disabled="
+                data.items[category].indexOf(data.blazon[category]) >
+                  data.items[category].length - 2
+              "
+              @click="emit('nextItem', category)"
+            >
+              <img
+                draggable="false"
+                alt="Puce"
+                src="@/assets/img/puce.svg"
+                @contextmenu.prevent
               >
-                <img
-                  draggable="false"
-                  :src="asset(`img/icon/item_category/${category}.svg`)"
-                  :alt="category"
-                  @contextmenu.prevent
-                />
-              </button>
-            </div>
-            <div class="chest">
-              <div
-                v-for="(category, name) of {
-                  shape: checked.includes('shape') ? data.items.shape : [],
-                  top: checked.includes('top') ? data.items.top : [],
-                  bot: checked.includes('bot') ? data.items.bot : [],
-                  primary: checked.includes('primary')
-                    ? data.items.primary
-                    : [],
-                  secondary: checked.includes('secondary')
-                    ? data.items.secondary
-                    : [],
-                }"
-                :key="name"
-                class="category"
-              >
-                <button
-                  v-for="item of category"
-                  :key="item"
-                  type="button"
-                  class="item"
-                  :class="{
-                    active: data.blazon[name] === item,
-                  }"
-                  @click="emit('updateItem', name, item)"
-                  @mouseover="info = name + ' ' + item"
-                  @focus="info = name + ' ' + item"
-                >
-                  <svg
-                    v-if="name === 'primary' || name === 'secondary'"
-                    viewBox="0 0 69.2 67.75"
-                    mlns="http://www.w3.org/2000/svg"
-                  >
-                    <use :href="`/item/blazon/${name}/item.svg#root`" :fill="item"></use>
-                  </svg>
-                  <img
-                    v-else-if="item === -1"
-                    draggable="false"
-                    alt="No item"
-                    src="@/assets/img/icon/cross.svg"
-                    @contextmenu.prevent
-                  />
-                  <svg @contextmenu.prevent :viewBox="viewBox(name)">
-                    <use :href="`/item/blazon/${name}/${item}.svg#root`" fill="var(--blazon-primary)"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="info">{{ info }}</div>
+            </button>
           </div>
         </div>
       </div>
+      <div class="right-blz flex">
+        <div id="inventory">
+          <div class="category-selection" @contextmenu.prevent>
+            <button
+              v-for="category of categories"
+              :key="category"
+              type="button"
+              :class="{ active: checked.includes(category) }"
+              class="item pointer"
+              @click="
+                checked.includes(category) && checked.length === 1
+                  ? (checked = [
+                    'shape',
+                    'top',
+                    'bot',
+                    'primary',
+                    'secondary',
+                  ])
+                  : (checked = [`${category}`])
+              "
+              @contextmenu.prevent="
+                checked.includes(category)
+                  ? checked.splice(checked.indexOf(category), 1)
+                  : checked.push(category)
+              "
+            >
+              <img
+                draggable="false"
+                :src="asset(`img/icon/item_category/${category}.svg`)"
+                :alt="category"
+                @contextmenu.prevent
+              >
+            </button>
+          </div>
+          <div class="chest">
+            <div
+              v-for="(category, name) of {
+                shape: checked.includes('shape') ? data.items.shape : [],
+                top: checked.includes('top') ? data.items.top : [],
+                bot: checked.includes('bot') ? data.items.bot : [],
+                primary: checked.includes('primary')
+                  ? data.items.primary
+                  : [],
+                secondary: checked.includes('secondary')
+                  ? data.items.secondary
+                  : [],
+              }"
+              :key="name"
+              class="category"
+            >
+              <button
+                v-for="item of category"
+                :key="item"
+                type="button"
+                class="item"
+                :class="{
+                  active: data.blazon[name] === item,
+                }"
+                @click="emit('updateItem', name, item)"
+                @mouseover="info = name + ' ' + item"
+                @focus="info = name + ' ' + item"
+              >
+                <svg
+                  v-if="name === 'primary' || name === 'secondary'"
+                  viewBox="0 0 69.2 67.75"
+                  mlns="http://www.w3.org/2000/svg"
+                >
+                  <use :href="`/item/blazon/${name}/item.svg#root`" :fill="item" />
+                </svg>
+                <img
+                  v-else-if="item === -1"
+                  draggable="false"
+                  alt="No item"
+                  src="@/assets/img/icon/cross.svg"
+                  @contextmenu.prevent
+                >
+                <svg :viewBox="viewBox(name)" @contextmenu.prevent>
+                  <use :href="`/item/blazon/${name}/${item}.svg#root`" fill="var(--blazon-primary)" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="info">
+            {{ info }}
+          </div>
+        </div>
+      </div>
+    </div>
   </Card>
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
-import type { BlazonCategory } from "@/types/Item";
+import { asset } from '@/utils'
+import type { BlazonCategory } from '@/types/Item'
 
 defineProps<{
   data: any;
-}>();
+}>()
 
 const emit = defineEmits<{
-  (e: "previousItem", name: BlazonCategory): void;
-  (e: "nextItem", name: BlazonCategory): void;
-  (e: "updateItem", name: BlazonCategory, item: string | number): void;
-}>();
+  (e: 'previousItem', name: BlazonCategory): void;
+  (e: 'nextItem', name: BlazonCategory): void;
+  (e: 'updateItem', name: BlazonCategory, item: string | number): void;
+}>()
 
 const categories: BlazonCategory[] = [
-  "primary",
-  "top",
-  "shape",
-  "bot",
-  "secondary",
-];
-const info = ref("");
-const checked = ref(categories);
+  'primary',
+  'top',
+  'shape',
+  'bot',
+  'secondary'
+]
+const info = ref('')
+const checked = ref(categories)
 
-function viewBox(category){
-  switch(category){
-    case "shape":
-      return "0 0 69.2 67.75"
-    case "top":
-      return "0 0 44.6 35.1"
-    case "bot":
-      return "0 0 44.45 27.6"
+function viewBox (category) {
+  switch (category) {
+    case 'shape':
+      return '0 0 69.2 67.75'
+    case 'top':
+      return '0 0 44.6 35.1'
+    case 'bot':
+      return '0 0 44.45 27.6'
   }
 }
 </script>

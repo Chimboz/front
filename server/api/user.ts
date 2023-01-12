@@ -1,4 +1,4 @@
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return {
     id: 3,
     pseudo: 'Tigriz',
@@ -11,7 +11,7 @@ export default defineEventHandler((event) => {
     website: 'http://last.fm/user/Tigriz',
     interest1: 'Musique',
     interest2: 'informatique',
-    interest3: 'math\u00e9matiques',
+    interest3: 'math\u00E9matiques',
     interest4: 'Sayaka',
     posts: '153',
     avatar_mood: 'zzz',
@@ -30,6 +30,6 @@ export default defineEventHandler((event) => {
     sid: 'EIgG3ViTqPQ2XwRXmrKLT4lFdNJv4IRptZu',
     loterie: '1',
     fermla: null,
-    updated_at: '2022-12-12 22:35:30',
-  };
-});
+    updated_at: '2022-12-12 22:35:30'
+  }
+})

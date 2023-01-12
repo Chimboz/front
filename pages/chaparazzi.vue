@@ -4,8 +4,8 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
     <RouterView />
@@ -26,8 +26,8 @@
               @contextmenu.prevent
             />
           </NuxtLink>
-          <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br />
-          <LinkUser :user="image.author" /><br />
+          <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br>
+          <LinkUser :user="image.author" /><br>
           {{ format(image.date, "PPp") }}
         </div>
       </ScrollableContainer>
@@ -36,19 +36,18 @@
 </template>
 
 <script setup lang="ts">
-import VLazyImage from "v-lazy-image";
-import { asset } from "@/utils";
-import { format } from "@/utils/date";
-import { RouterView } from "vue-router";
+import VLazyImage from 'v-lazy-image'
+import { RouterView } from 'vue-router'
+import { asset } from '@/utils'
+import { format } from '@/utils/date'
 
-
-const data = ref<any>(undefined);
+const data = ref<any>(undefined)
 
 onBeforeMount(async () => {
-  data.value = (await useFetch(`gallery?page=0`)).data;
-});
+  data.value = (await useFetch('gallery?page=0')).data
+})
 
-useHead({ title: "section.chaparazzi" });
+useHead({ title: 'section.chaparazzi' })
 </script>
 <style lang="scss" scoped>
 .gallery {

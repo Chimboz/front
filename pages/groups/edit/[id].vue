@@ -6,11 +6,11 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
+      <br>
       <Rules bot />
     </template>
     <Card
-     
+
       header="group.webp"
       :height="70"
       color="blue"
@@ -25,15 +25,17 @@
           :secondary="data.blazon.secondary"
         />
         <div class="flex col centered">
-          <StrokeText class="group-name">{{ data.name }}</StrokeText>
-          Groupe n°{{ data.id }}<br />
+          <StrokeText class="group-name">
+            {{ data.name }}
+          </StrokeText>
+          Groupe n°{{ data.id }}<br>
           Créé le {{ format(data.date, "PPp") }}
         </div>
       </div>
     </Card>
-    <br />
+    <br>
     <BlazonCabin
-     
+
       :data="{
         blazon: {
           shape: data.blazon.shape,
@@ -107,9 +109,11 @@
             ])
       "
     />
-    <br />
+    <br>
     <Card color="blue">
-      <template #header>Informations</template>
+      <template #header>
+        Informations
+      </template>
       <form>
         <input
           v-model="data.motto"
@@ -118,7 +122,7 @@
           class="btn-md"
           type="text"
           placeholder="Motto"
-        /><br /><br />
+        ><br><br>
         <textarea
           v-model="data.description"
           placeholder="Description"
@@ -130,7 +134,7 @@
           class="btn-md description"
           @focus="focusHandler"
           @select="selectionHandler"
-        /><br /><br />
+        /><br><br>
         <input
           v-model="data.localisation"
           maxlength="100"
@@ -138,68 +142,71 @@
           class="btn-md"
           type="text"
           placeholder="Localisation"
-        />
-        <br /><br />
+        >
+        <br><br>
         <input
           id="open"
           type="radio"
           name="status"
           value="open"
           :checked="data.status === 'open'"
-        /><label for="open"
-          ><img
-            src="@/assets/img/group/open.png"
-            width="50"
-            height="50"
-            alt="Open"
-            draggable="false"
-            @contextmenu.prevent
-        /></label>
+        ><label for="open"><img
+          src="@/assets/img/group/open.png"
+          width="50"
+          height="50"
+          alt="Open"
+          draggable="false"
+          @contextmenu.prevent
+        ></label>
         <input
           id="demand"
           type="radio"
           name="status"
           value="demand"
           :checked="data.status === 'demand'"
-        /><label for="demand"
-          ><img
-            src="@/assets/img/group/demand.png"
-            width="50"
-            height="50"
-            alt="Demand"
-            draggable="false"
-            @contextmenu.prevent
-        /></label>
+        ><label for="demand"><img
+          src="@/assets/img/group/demand.png"
+          width="50"
+          height="50"
+          alt="Demand"
+          draggable="false"
+          @contextmenu.prevent
+        ></label>
         <input
           id="close"
           type="radio"
           name="status"
           value="close"
           :checked="data.status === 'close'"
-        /><label for="close"
-          ><img
-            src="@/assets/img/group/close.png"
-            width="50"
-            height="50"
-            alt="Close"
-            draggable="false"
-            @contextmenu.prevent
-        /></label>
-        <br /><br />
-        <Button color="green" type="submit"
-          ><template #prepend
-            ><img
+        ><label for="close"><img
+          src="@/assets/img/group/close.png"
+          width="50"
+          height="50"
+          alt="Close"
+          draggable="false"
+          @contextmenu.prevent
+        ></label>
+        <br><br>
+        <Button
+          color="green"
+          type="submit"
+        >
+          <template #prepend>
+            <img
               draggable="false"
               alt="Arrow icon"
               class="arrow green jitter"
               src="@/assets/img/arrow.svg"
-              @contextmenu.prevent /></template
-          >Sauver</Button
-        >
-      </form></Card
-    ><br />
+              @contextmenu.prevent
+            >
+          </template>Sauver
+        </Button>
+      </form>
+    </Card><br>
     <Card color="blue">
-      <template #header>Membres</template>
+      <template #header>
+        Membres
+      </template>
       <div v-for="user of data.members" :key="user.id" class="inline">
         <LinkUser :user="user" :separator="false" /><img
           src="@/assets/img/icon/failure.svg"
@@ -211,11 +218,13 @@
           @click.prevent="removeMember(user.id)"
           @keyup.prevent="removeMember(user.id)"
           @contextmenu.prevent
-        />
-      </div> </Card
-    ><br />
+        >
+      </div>
+    </Card><br>
     <Card color="blue">
-      <template #header>Demandes</template>
+      <template #header>
+        Demandes
+      </template>
       <div v-for="user of data.demands" :key="user.id" class="inline">
         <LinkUser :user="user" :separator="false" /><img
           src="@/assets/img/icon/success.svg"
@@ -227,7 +236,7 @@
           @click.prevent="acceptDemand(user.id)"
           @keyup.prevent="acceptDemand(user.id)"
           @contextmenu.prevent
-        /><img
+        ><img
           src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
@@ -237,80 +246,85 @@
           @click.prevent="rejectDemand(user.id)"
           @keyup.prevent="rejectDemand(user.id)"
           @contextmenu.prevent
-        /></div></Card
-    ><br />
-    <Card v-if="data.bacteria" class="justified"
-      ><img
+        >
+      </div>
+    </Card><br>
+    <Card
+      v-if="data.bacteria"
+      class="justified"
+    >
+      <img
         src="@/assets/img/group/bacteria.gif"
         alt="Bacteria"
         style="float: left"
-      /><b>Bacteria</b><br /><br />
-      Classé : <b>{{ data.bacteria.rank }}</b
-      >/<b>{{ data.bacteria.total }}</b> avec
-      <b>{{ data.bacteria.points }}</b> points.</Card
-    ><br />
-    <Card v-if="data.patojdur" class="justified"
-      ><img
+      ><b>Bacteria</b><br><br>
+      Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
+      <b>{{ data.bacteria.points }}</b> points.
+    </Card><br>
+    <Card
+      v-if="data.patojdur"
+      class="justified"
+    >
+      <img
         src="@/assets/img/group/patojdur.gif"
         alt="Patojdur"
         style="float: left"
-      /><b>Patojdur</b><br /><br />
-      Classé : <b>{{ data.patojdur.rank }}</b
-      >/<b>{{ data.patojdur.total }}</b> avec
-      <b>{{ data.patojdur.points }}</b> points.</Card
-    ><br />
-    <Card v-if="data.popularity" class="justified"
-      ><img
+      ><b>Patojdur</b><br><br>
+      Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
+      <b>{{ data.patojdur.points }}</b> points.
+    </Card><br>
+    <Card
+      v-if="data.popularity"
+      class="justified"
+    >
+      <img
         src="@/assets/img/group/popularity.gif"
         alt="Popularity"
         style="float: left"
-      /><b>Popularity</b><br /><br />
-      Classé : <b>{{ data.popularity.rank }}</b
-      >/<b>{{ data.popularity.total }}</b> avec
-      <b>{{ data.popularity.points }}</b> points.</Card
-    ><br />
+      ><b>Popularity</b><br><br>
+      Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
+      <b>{{ data.popularity.points }}</b> points.
+    </Card><br>
     <Card v-if="data.global" class="justified">
-      Classement général : <b>{{ data.global.rank }}</b
-      >/<b>{{ data.global.total }}</b> avec
-      <b>{{ data.global.points }}</b> points.</Card
-    ><br /><Card
-      ><a
+      Classement général : <b>{{ data.global.rank }}</b>/<b>{{ data.global.total }}</b> avec
+      <b>{{ data.global.points }}</b> points.
+    </Card><br><Card>
+      <a
         style="color: red; cursor: var(--pointer)"
         @click.prevent="deleteGroup"
         @keyup.prevent="deleteGroup"
-        >Supprimer le groupe</a
-      ></Card
-    >
-    <template #right-column> </template>
+      >Supprimer le groupe</a>
+    </Card>
+    <template #right-column />
   </Container>
 </template>
 <script setup lang="ts">
-import { format } from "@/utils/date";
+import { format } from '@/utils/date'
 
-const { $eventBus } = useNuxtApp();
-const { data } = await useFetch("/api/groups_edit");
+const { $eventBus } = useNuxtApp()
+const { data } = await useFetch<any>('/api/groups_edit')
 
-function deleteGroup() {
+function deleteGroup () {
   // TODO
-  $eventBus.emit("confirmation", {
-    message: "confirm.group.delete",
-    api: `groups/manage/delete?id=${data.value.id}`,
-  });
+  $eventBus.emit('confirmation', {
+    message: 'confirm.group.delete',
+    api: `groups/manage/delete?id=${data.value.id}`
+  })
 }
-function removeMember(id: number) {
-  useFetch(`groups/delete/${id}/${data.value.id}`);
+function removeMember (id: number) {
+  useFetch(`groups/delete/${id}/${data.value.id}`)
 }
-function acceptDemand(id: number) {
-  useFetch(`groups/accept/${id}/${data.value.id}`);
+function acceptDemand (id: number) {
+  useFetch(`groups/accept/${id}/${data.value.id}`)
 }
-function rejectDemand(id: number) {
-  useFetch(`groups/refuse/${id}/${data.value.id}`);
+function rejectDemand (id: number) {
+  useFetch(`groups/refuse/${id}/${data.value.id}`)
 }
 
-function focusHandler() {}
-function selectionHandler() {}
+function focusHandler () {}
+function selectionHandler () {}
 
-useHead({ title: "section.groupedit" });
+useHead({ title: 'section.groupedit' })
 </script>
 <style lang="scss" scoped>
 .blazon {

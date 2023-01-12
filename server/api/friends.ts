@@ -1,4 +1,4 @@
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return [
     {
       user: {
@@ -12,13 +12,13 @@ export default defineEventHandler((event) => {
           shoe: 612,
           item0: 792,
           item1: 868,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
         connected: false,
-        date: 1670076179000,
-      },
+        date: 1670076179000
+      }
     },
     {
       user: {
@@ -32,13 +32,13 @@ export default defineEventHandler((event) => {
           shoe: 1015,
           item0: 800,
           item1: 937,
-          item2: 974,
-        },
+          item2: 974
+        }
       },
       status: {
         connected: false,
-        date: 1671204759000,
-      },
+        date: 1671204759000
+      }
     },
     {
       user: {
@@ -52,13 +52,13 @@ export default defineEventHandler((event) => {
           shoe: 1016,
           item0: 808,
           item1: 868,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
         connected: false,
-        date: 1670264831000,
-      },
+        date: 1670264831000
+      }
     },
     {
       user: {
@@ -72,13 +72,13 @@ export default defineEventHandler((event) => {
           shoe: 752,
           item0: 808,
           item1: 910,
-          item2: 990,
-        },
+          item2: 990
+        }
       },
       status: {
         connected: false,
-        date: 1654381853000,
-      },
+        date: 1654381853000
+      }
     },
     {
       user: {
@@ -92,13 +92,13 @@ export default defineEventHandler((event) => {
           shoe: 609,
           item0: 792,
           item1: 868,
-          item2: 953,
-        },
+          item2: 953
+        }
       },
       status: {
         connected: false,
-        date: 1663001242000,
-      },
+        date: 1663001242000
+      }
     },
     {
       user: {
@@ -112,12 +112,12 @@ export default defineEventHandler((event) => {
           shoe: 625,
           item0: 792,
           item1: 868,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
-        connected: true,
-      },
+        connected: true
+      }
     },
     {
       user: {
@@ -131,13 +131,13 @@ export default defineEventHandler((event) => {
           shoe: 612,
           item0: 807,
           item1: 923,
-          item2: 939,
-        },
+          item2: 939
+        }
       },
       status: {
         connected: false,
-        date: 1671055931000,
-      },
+        date: 1671055931000
+      }
     },
     {
       user: {
@@ -151,12 +151,12 @@ export default defineEventHandler((event) => {
           shoe: 1015,
           item0: 850,
           item1: 919,
-          item2: 971,
-        },
+          item2: 971
+        }
       },
       status: {
-        sent: true,
-      },
+        sent: true
+      }
     },
     {
       user: {
@@ -170,13 +170,13 @@ export default defineEventHandler((event) => {
           shoe: 1017,
           item0: 796,
           item1: 868,
-          item2: 997,
-        },
+          item2: 997
+        }
       },
       status: {
         connected: false,
-        date: 1671197360000,
-      },
+        date: 1671197360000
+      }
     },
     {
       user: {
@@ -190,13 +190,13 @@ export default defineEventHandler((event) => {
           shoe: 658,
           item0: 855,
           item1: 868,
-          item2: 1000,
-        },
+          item2: 1000
+        }
       },
       status: {
         connected: false,
-        date: 1670879847000,
-      },
+        date: 1670879847000
+      }
     },
     {
       user: {
@@ -210,12 +210,12 @@ export default defineEventHandler((event) => {
           shoe: 625,
           item0: 792,
           item1: 868,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
-        connected: true,
-      },
+        connected: true
+      }
     },
     {
       user: {
@@ -229,12 +229,12 @@ export default defineEventHandler((event) => {
           shoe: 644,
           item0: 854,
           item1: 879,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
-        sent: true,
-      },
+        sent: true
+      }
     },
     {
       user: {
@@ -248,13 +248,13 @@ export default defineEventHandler((event) => {
           shoe: 1017,
           item0: 858,
           item1: 868,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
         connected: false,
-        date: 1663004707000,
-      },
+        date: 1663004707000
+      }
     },
     {
       user: {
@@ -268,13 +268,13 @@ export default defineEventHandler((event) => {
           shoe: 610,
           item0: 792,
           item1: 868,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
         connected: false,
-        date: 1649270917000,
-      },
+        date: 1649270917000
+      }
     },
     {
       user: {
@@ -288,13 +288,13 @@ export default defineEventHandler((event) => {
           shoe: 639,
           item0: 807,
           item1: 906,
-          item2: 989,
-        },
+          item2: 989
+        }
       },
       status: {
         connected: false,
-        date: 1654817641000,
-      },
+        date: 1654817641000
+      }
     },
     {
       user: {
@@ -308,13 +308,13 @@ export default defineEventHandler((event) => {
           shoe: 612,
           item0: 797,
           item1: 929,
-          item2: 989,
-        },
+          item2: 989
+        }
       },
       status: {
         connected: false,
-        date: 1669748102000,
-      },
+        date: 1669748102000
+      }
     },
     {
       user: {
@@ -328,13 +328,13 @@ export default defineEventHandler((event) => {
           shoe: 1013,
           item0: 807,
           item1: 870,
-          item2: 938,
-        },
+          item2: 938
+        }
       },
       status: {
         connected: false,
-        date: 1668204298000,
-      },
-    },
-  ];
-});
+        date: 1668204298000
+      }
+    }
+  ]
+})

@@ -1,9 +1,9 @@
-import messageRender from './messageRender';
+import messageRender from './messageRender'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   return {
     provide: {
-      messageRender: messageRender(window),
-    },
-  };
-});
+      messageRender: messageRender(window)
+    }
+  }
+})

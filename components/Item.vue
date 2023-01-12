@@ -1,9 +1,11 @@
 <template>
   <Card style="position: relative">
     <div class="relative">
-      <StrokeText justified class="item-name" :class="data.rarity">{{
-        data.name
-      }}</StrokeText>
+      <StrokeText justified class="item-name" :class="data.rarity">
+        {{
+          data.name
+        }}
+      </StrokeText>
       <div class="item-icons">
         n°{{ data.id }}
         <img
@@ -12,13 +14,13 @@
           :alt="data.rarity"
           draggable="false"
           @contextmenu.prevent
-        />&nbsp;<img
+        >&nbsp;<img
           :src="asset(`img/icon/item_category/${data.type}.svg`)"
           :title="data.type"
           :alt="data.type"
           draggable="false"
           @contextmenu.prevent
-        />
+        >
       </div>
     </div>
     <div class="flex" style="align-items: flex-start">
@@ -28,12 +30,12 @@
         class="item-preview"
         draggable="false"
         @contextmenu.prevent
-      />
+      >
       <div class="owners">
         <table>
           <colgroup>
-            <col width="100%" />
-            <col width="60" />
+            <col width="100%">
+            <col width="60">
           </colgroup>
           <thead>
             <tr>
@@ -53,13 +55,13 @@
       </div>
     </div>
   </Card>
-  <br />
+  <br>
 </template>
 <script setup lang="ts">
 
-import { asset } from "@/utils";
+import { asset } from '@/utils'
 
-const { data } = await useFetch(`item/${useRoute().params.id}?lang=${useBrowserLocale()!.split("-")[0]}`)
+const { data } = await useFetch<any>(`item/${useRoute().params.id}?lang=${useBrowserLocale()!.split('-')[0]}`)
 
 </script>
 <style lang="scss" scoped>

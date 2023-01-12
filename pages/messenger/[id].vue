@@ -4,12 +4,17 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified
-      ><template #subtop>{{ data.user.name }}</template>
+    <Card
+      color="yellow"
+      justified
+    >
+      <template #subtop>
+        {{ data.user.name }}
+      </template>
       <ScrollableContainer
         route="messages"
         class="messages fullwidth flex"
@@ -50,15 +55,14 @@
               <h3>
                 <LinkUser v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
-                  >{{ distanceToNow(message.date) }}</span
-                >
+                >{{ distanceToNow(message.date) }}</span>
               </h3>
             </div>
             <span
               class="content"
               :style="{ background: hashColor(data.user.name) }"
               v-html="$messageRender(message.content)"
-            ></span>
+            />
           </div>
         </div>
       </ScrollableContainer>
@@ -72,11 +76,13 @@
           class="btn-md"
           aria-label="Message"
           :placeholder="$t('placeholder.message')"
-        /><button type="submit" class="btn-action">➤</button>
+        ><button type="submit" class="btn-action">
+          ➤
+        </button>
       </form>
     </Card>
-    <template #right-column
-      ><Card color="yellow" justified header="mi_sm.svg">
+    <template #right-column>
+      <Card color="yellow" justified header="mi_sm.svg">
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"
@@ -109,24 +115,24 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { hashColor } from "@/utils";
-import { distanceToNow } from "@/utils/date";
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router'
+import { hashColor } from '@/utils'
+import { distanceToNow } from '@/utils/date'
 
-const { data } = await useFetch("/api/mi5");
-const message = ref("");
+const { data } = await useFetch<any>('/api/mi5')
+const message = ref('')
 
-function send() {
-  useFetch("mi/reply", {body:{ conv: useRoute().params.id, message: message.value }});
+function send () {
+  useFetch('mi/reply', { body: { conv: useRoute().params.id, message: message.value } })
   data.value.messages.push({
     you: true,
     content: message,
-    date: Date.now(),
-  });
-  message.value = "";
+    date: Date.now()
+  })
+  message.value = ''
 }
 
-useHead({ title: "section.conversation" });
+useHead({ title: 'section.conversation' })
 </script>
 
 <style lang="scss" scoped>

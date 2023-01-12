@@ -1,19 +1,21 @@
 <template>
   <div class="blazon" :style="{ '--blazon-primary': primary, '--blazon-secondary': secondary }">
-    <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="" />
+    <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="">
     <div class="blazon-body">
       <BlazonBackground :id="shape" :primary="primary" :secondary="secondary" />
       <div v-if="top != -1" class="top">
-        <svg @contextmenu.prevent width="44.6" height="35.1">
-          <use :href="`/item/blazon/top/${top}.svg#root`" fill="var(--blazon-primary)"></use>
+        <svg width="44.6" height="35.1" @contextmenu.prevent>
+          <use :href="`/item/blazon/top/${top}.svg#root`" fill="var(--blazon-primary)" />
         </svg>
       </div>
       <div class="bot" :class="{ lone: top === -1 }">
-        <svg @contextmenu.prevent width="44.45" height="27.6">
-          <use :href="`/item/blazon/bot/${bot}.svg#root`" fill="var(--blazon-primary)"></use>
+        <svg width="44.45" height="27.6" @contextmenu.prevent>
+          <use :href="`/item/blazon/bot/${bot}.svg#root`" fill="var(--blazon-primary)" />
         </svg>
       </div>
-      <div class="reflection"><BlazonReflection :id="shape" /></div>
+      <div class="reflection">
+        <BlazonReflection :id="shape" />
+      </div>
     </div>
   </div>
 </template>
@@ -31,9 +33,9 @@ withDefaults(
     secondary: 'var(--light)',
     shape: 1,
     top: 1,
-    bot: 1,
+    bot: 1
   }
-);
+)
 </script>
 <style lang="scss" scoped>
 .blazon,

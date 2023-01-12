@@ -4,12 +4,17 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified
-      ><template #subtop>Niveaux</template>
+    <Card
+      color="yellow"
+      justified
+    >
+      <template #subtop>
+        Niveaux
+      </template>
       <div class="flex">
         <div class="level-list">
           <div
@@ -28,7 +33,7 @@
               height="21"
               :src="asset(`img/number/${number}.svg`)"
               @contextmenu.prevent
-            />&nbsp;<b>{{ rank.name }}</b>
+            >&nbsp;<b>{{ rank.name }}</b>
           </div>
         </div>
         <div class="level-description flex centered">
@@ -37,7 +42,7 @@
             height="200"
             :alt="'Level' + data[selected].level"
             :src="asset(`img/level/${data[selected].level}.png`)"
-          />
+          >
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
           </div>
@@ -45,16 +50,16 @@
         </div>
       </div>
     </Card>
-    <template #right-column> </template>
+    <template #right-column />
   </Container>
 </template>
 <script setup lang="ts">
-import { asset } from "@/utils";
+import { asset } from '@/utils'
 
-const { data } = await useFetch("/api/levels");
-const selected = ref(0);
+const { data } = await useFetch<any>('/api/levels')
+const selected = ref(0)
 
-useHead({ title: "section.levels" });
+useHead({ title: 'section.levels' })
 </script>
 
 <style lang="scss" scoped>

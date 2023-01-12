@@ -4,28 +4,28 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
     <Card
-     
+
       color="yellow"
       header="shop.svg"
       :height="109"
       style="position: relative"
     >
       <audio autoplay>
-        <source src="@/assets/sound/shop/moving_stars.flac" type="audio/flac" />
+        <source src="@/assets/sound/shop/moving_stars.flac" type="audio/flac">
       </audio>
       <audio autoplay>
-        <source src="@/assets/sound/shop/preview.mp3" type="audio/mpeg" />
+        <source src="@/assets/sound/shop/preview.mp3" type="audio/mpeg">
       </audio>
       <audio ref="clickAudio">
-        <source src="@/assets/sound/shop/show.wav" type="audio/wav" />
+        <source src="@/assets/sound/shop/show.wav" type="audio/wav">
       </audio>
       <audio ref="buyAudio">
-        <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg" />
+        <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg">
       </audio>
       <div class="preview fullwidth flex">
         <img
@@ -36,7 +36,7 @@
           width="468"
           src="@/assets/img/shop/cabin.svg"
           @contextmenu.prevent
-        />
+        >
         <div class="preview-tiz flex centered">
           <Avatar
             :avatar="shown.looks[0].avatar"
@@ -67,15 +67,15 @@
               draggable="false"
               alt="Shop price"
               @contextmenu.prevent
-            />
+            >
             <span>{{ shown.cost }}p.</span>
           </div>
         </div>
         <div>
           <div class="preview-infos">
-            <br /><br />
+            <br><br>
             <h3>Pack {{ shown.name }}</h3>
-            {{ shown.description }}<br /><br />
+            {{ shown.description }}<br><br>
             <Button
               v-if="user"
               type="button"
@@ -83,8 +83,8 @@
               icon="credits.svg"
               @click.prevent="buy()"
             >
-              Acheter</Button
-            >
+              Acheter
+            </Button>
           </div>
         </div>
       </div>
@@ -101,37 +101,39 @@
         </div>
       </div>
     </Card>
-    <template #right-column><Bank /></template>
+    <template #right-column>
+      <Bank />
+    </template>
   </Container>
 </template>
 <script setup lang="ts">
-import useAuthStore from "@/stores/auth";
+import useAuthStore from '@/stores/auth'
 
-const { $eventBus } = useNuxtApp();
-const auth = useAuthStore();
-const user = computed(() => auth.user);
+const { $eventBus } = useNuxtApp()
+const auth = useAuthStore()
+const user = computed(() => auth.user)
 
-const { data } = await useFetch(`https://chimboz.fr/api/shop`);
-const shown = ref<any>(data.value.packs[0]);
-const buyAudio = ref<null | HTMLAudioElement>(null);
-const clickAudio = ref<null | HTMLAudioElement>(null);
+const { data } = await useFetch<any>('https://chimboz.fr/api/shop')
+const shown = ref<any>(data.value.packs[0])
+const buyAudio = ref<null | HTMLAudioElement>(null)
+const clickAudio = ref<null | HTMLAudioElement>(null)
 
-function show(pack: any) {
-  shown.value = pack;
-  clickAudio.value!.play();
+function show (pack: any) {
+  shown.value = pack
+  clickAudio.value!.play()
 }
-function buy() {
-  buyAudio.value!.play();
-  $eventBus.emit("confirmation", {
-    message: "confirm.buy",
-    api: "shop/buy",
+function buy () {
+  buyAudio.value!.play()
+  $eventBus.emit('confirmation', {
+    message: 'confirm.buy',
+    api: 'shop/buy',
     payload: {
-      id: shown.value.id,
-    },
-  });
+      id: shown.value.id
+    }
+  })
 }
 
-useHead({ title: "section.shop" });
+useHead({ title: 'section.shop' })
 </script>
 <style lang="scss">
 .menu .pack {

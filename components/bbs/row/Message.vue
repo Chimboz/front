@@ -9,7 +9,8 @@
         :shoe="message.author.look.shoe"
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
-        :item2="message.author.look.item2" /><LinkUser :user="message.author" ellipsis /><span class="date">{{ format(message.date, 'PPpp') }}</span>
+        :item2="message.author.look.item2"
+      /><LinkUser :user="message.author" ellipsis /><span class="date">{{ format(message.date, 'PPpp') }}</span>
     </td>
     <td class="justified" valign="top">
       <h2 class="head flex info-sm ellipsis">
@@ -21,7 +22,8 @@
           :shoe="message.author.look.shoe"
           :item0="message.author.look.item0"
           :item1="message.author.look.item1"
-          :item2="message.author.look.item2" />&nbsp;&nbsp;
+          :item2="message.author.look.item2"
+        />&nbsp;&nbsp;
         <div class="ellipsis">
           <LinkUser :user="message.author" />&nbsp;le
           <span class="date">{{ format(message.date, 'PPpp') }}</span>
@@ -29,8 +31,7 @@
       </h2>
       <div class="head flex">
         <a :href="`#p${message.id}`">
-          <img draggable="false" alt="Lien du message" title="Lien du message" :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)" /> </a
-        >&nbsp;
+          <img draggable="false" alt="Lien du message" title="Lien du message" :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"> </a>&nbsp;
         <b class="ellipsis justified title">{{ message.title }}</b>
         &nbsp;
         <div v-if="user">
@@ -45,15 +46,17 @@
                   '> '
                 ) + '\n\n'
               )
-            ">
+            "
+          >
             <img
               src="@/assets/img/bbs/icon/bubble.svg"
               width="14"
               height="12"
               draggable="false"
               alt="Bubble"
-              @contextmenu.prevent />&nbsp;Citer</button
-          >&nbsp;
+              @contextmenu.prevent
+            >&nbsp;Citer
+          </button>&nbsp;
           <button
             v-if="(message.author.id === user.id && Date.now() - message.date < 600) || +user.user_level > 3"
             type="button"
@@ -63,34 +66,44 @@
                 id: message.id,
                 content: message.content,
               })
-            ">
-            <img src="@/assets/img/bbs/icon/pen.svg" width="12" height="12" draggable="false" alt="Pen" @contextmenu.prevent />&nbsp;Éditer</button
-          >&nbsp;
+            "
+          >
+            <img
+              src="@/assets/img/bbs/icon/pen.svg"
+              width="12"
+              height="12"
+              draggable="false"
+              alt="Pen"
+              @contextmenu.prevent
+            >&nbsp;Éditer
+          </button>&nbsp;
           <button v-if="message.author.id === user.id || +user.user_level > 3" type="button" class="btn-action" @click.prevent="deleteMessage">
             x
           </button>
         </div>
       </div>
-      <hr style="margin: 2px 0" />
-      <div class="markdown-body" v-html="$messageRender(message.content)"></div>
+      <hr style="margin: 2px 0">
+      <div class="markdown-body" v-html="$messageRender(message.content)" />
       <div v-if="message.signature">
-        <i><br />"{{ message.author.signature }}"</i>
+        <i><br>"{{ message.author.signature }}"</i>
       </div>
     </td>
   </tr>
   <tr v-if="separator">
-    <td colspan="2" style="background: var(--light)"><hr /></td>
+    <td colspan="2" style="background: var(--light)">
+      <hr>
+    </td>
   </tr>
 </template>
 <script setup lang="ts">
-import { asset } from '@/utils';
-import { format } from '@/utils/date';
-import useAuthStore from '@/stores/auth';
-import { useRoute } from 'vue-router';
+import { useRoute } from 'vue-router'
+import { asset } from '@/utils'
+import { format } from '@/utils/date'
+import useAuthStore from '@/stores/auth'
 
-const auth = useAuthStore();
-const user = computed(() => auth.user);
-const route = useRoute();
+const auth = useAuthStore()
+const user = computed(() => auth.user)
+const route = useRoute()
 
 const props = withDefaults(
   defineProps<{
@@ -98,10 +111,10 @@ const props = withDefaults(
     separator: boolean;
   }>(),
   { separator: true }
-);
+)
 
-function deleteMessage() {
-  useFetch('bbs/delete', { body: { post: props.message.id, topic: route.params.topic } });
+function deleteMessage () {
+  useFetch('bbs/delete', { body: { post: props.message.id, topic: route.params.topic } })
 }
 </script>
 <style lang="scss">

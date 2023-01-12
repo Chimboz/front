@@ -4,8 +4,8 @@
       <Card color="blue" top>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
-        </div> </Card
-      ><br />
+        </div>
+      </Card><br>
       <Rules bot />
     </template>
     <Card color="yellow" justified header="mi.svg">
@@ -21,7 +21,9 @@
           autocomplete="username"
           aria-label="Username"
           :placeholder="$t('placeholder.username')"
-        /><button type="button" class="btn-action">go</button>
+        ><button type="button" class="btn-action">
+          go
+        </button>
       </div>
       <ScrollableContainer
         class="fullwidth"
@@ -33,8 +35,8 @@
           v-for="message of data"
           :key="message.user.id"
           class="message flex pointer"
-          @click="$router.push('/messenger/' + message.user.id)"
           :class="{ active: message.new }"
+          @click="$router.push('/messenger/' + message.user.id)"
         >
           <div
             class="tiz-portrait"
@@ -67,8 +69,7 @@
                     font-weight: normal;
                     font-size: var(--font-size);
                   "
-                  >{{ distanceToNow(message.date) }}</span
-                >
+                >{{ distanceToNow(message.date) }}</span>
               </h3>
             </div>
             <span>{{ message.content.slice(0, 64) }}</span>
@@ -76,17 +77,16 @@
         </div>
       </ScrollableContainer>
     </Card>
-    <template #right-column></template>
+    <template #right-column />
   </Container>
 </template>
 <script setup lang="ts">
-import { hashColor } from "@/utils";
-import { distanceToNow } from "@/utils/date";
+import { hashColor } from '@/utils'
+import { distanceToNow } from '@/utils/date'
 
+const { data } = await useFetch<any>('/api/mi')
 
-const { data } = await useFetch("/api/mi");
-
-useHead({ title: "section.messenger" });
+useHead({ title: 'section.messenger' })
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

@@ -4,8 +4,9 @@
     :key="page + 1"
     class="btn-action"
     :to="callback(page + 1)"
-    >{{ page + 1 }}</NuxtLink
   >
+    {{ page + 1 }}
+  </NuxtLink>
 </template>
 <script setup lang="ts">
 const props = withDefaults(
@@ -14,9 +15,9 @@ const props = withDefaults(
     total: number;
     callback: Function;
   }>(),
-  { current: 0, total: 0, callback: (page) => page }
-);
-function array() {
+  { current: 0, total: 0, callback: page => page }
+)
+function array () {
   return [
     ...new Set([
       // First 3 pages
@@ -30,11 +31,11 @@ function array() {
       // Last 3 pages
       props.total - 3,
       props.total - 2,
-      props.total - 1,
-    ]),
+      props.total - 1
+    ])
   ]
-    .filter((page) => page >= 0 && page < props.total)
-    .sort((a, b) => a - b);
+    .filter(page => page >= 0 && page < props.total)
+    .sort((a, b) => a - b)
 }
 </script>
 <style lang="scss" scoped>

@@ -13,34 +13,32 @@
         width="200"
         height="200"
         @contextmenu.prevent
-      />
+      >
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 
+const emit = defineEmits<{(e: 'scrollData', data: any[]): void }>()
 
-
-const emit = defineEmits<{ (e: "scrollData", data: any[]): void }>();
-
-const page = ref(0);
-const isLoading = ref(false);
+const page = ref(0)
+const isLoading = ref(false)
 
 const props = defineProps<{
   route: string;
   maxHeight: number;
-}>();
+}>()
 
-async function onScroll({ target }: UIEvent) {
-  const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement;
+async function onScroll ({ target }: UIEvent) {
+  const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement
   if (scrollTop + clientHeight >= scrollHeight - 2 && !isLoading.value) {
-    isLoading.value = true;
+    isLoading.value = true
     emit(
-      "scrollData",
+      'scrollData',
       (await useFetch(`${props.route}?&page=${++page.value}`)).data
-    );
-    isLoading.value = false;
+    )
+    isLoading.value = false
   }
 }
 </script>

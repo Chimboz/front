@@ -1,7 +1,7 @@
 <template>
   <div class="tooltip">
-    <slot></slot>
-    <span class="tooltiptext"><slot name="tooltip"></slot></span>
+    <slot />
+    <span class="tooltiptext"><slot name="tooltip" /></span>
   </div>
 </template>
 <script setup lang="ts"></script>
