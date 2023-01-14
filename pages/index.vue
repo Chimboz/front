@@ -81,7 +81,7 @@
       alt="Announcement"
       width="468"
       height="137"
-      style="width: 100%"
+      style="width: 100%; height: auto"
       @contextmenu.prevent
     >
     <br>
