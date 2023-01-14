@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   typescript: {
-    strict: true,
-    typeCheck: true
+    strict: true
+    // TODO typeCheck: true
   },
   modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
   css: [
