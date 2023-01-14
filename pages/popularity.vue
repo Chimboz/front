@@ -378,16 +378,6 @@
       Tu trouves un membre sympa ? Donne lui ta voix !
       <br><br>
       <form @submit.prevent="vote()">
-        <div class="flex centered">
-          <vue-recaptcha
-            ref="recaptcha"
-            theme="dark"
-            sitekey="6LebtM8iAAAAAMjLDIYvDXTCZHkHx9cdqE1jNOke"
-            @verify="onCaptchaVerified"
-            @expired="onCaptchaExpired"
-          />
-        </div>
-        <br>
         <div class="flex">
           <select
             v-model="mode"
@@ -478,7 +468,6 @@
 </template>
 
 <script setup lang="ts">
-import { VueRecaptcha } from 'vue-recaptcha'
 import useAuthStore from '@/stores/auth'
 
 const auth = useAuthStore()
@@ -492,25 +481,14 @@ data.value.groups = {
 data.value.stats.yesterday = data.value.stats.today
 const mode = ref<'for' | 'against'>('for')
 const pseudo = ref('')
-const recaptcha = ref<null | VueRecaptcha>(null)
-const token = ref('')
 
 function vote () {
   useFetch('popularity/vote', {
     body: {
       pseudo: pseudo.value,
-      mode: mode.value,
-      recaptcha: token.value
+      mode: mode.value
     }
   })
-}
-
-function onCaptchaVerified (recaptchaToken: string) {
-  token.value = recaptchaToken
-}
-
-function onCaptchaExpired () {
-  recaptcha.value!.reset()
 }
 
 useHead({ title: 'section.popularity' })
