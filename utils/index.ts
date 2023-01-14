@@ -3,7 +3,7 @@ export function asset (path: string) {
     eager: true,
     import: 'default'
   })
-  return assets['/assets/' + path]
+  return assets['/assets/' + path] as unknown as string // FIXME hacky typing
 }
 
 export function randomInt (min: number, max: number) {
