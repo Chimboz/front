@@ -1,9 +1,11 @@
 <template>
-  <ProgressBar />
-  <Navbar />
-  <NuxtPage />
-  <Footer />
-  <Modal />
+  <main>
+    <ProgressBar />
+    <Navbar />
+    <NuxtPage />
+    <Footer />
+    <Modal />
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +19,13 @@ const { t } = useI18n()
 
 useHead({
   titleTemplate: title =>
-    `${notifications.value ? notifications.value.toString().replace(/[0-9]/g, c => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c)) : ''}Chimboz ${t(title as string)}`,
+    `${
+      notifications.value
+        ? notifications.value
+            .toString()
+            .replace(/[0-9]/g, c => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c))
+        : ''
+    }Chimboz ${t(title as string)}`,
   link: notifications.value ? faviconNew : favicon,
   meta: [
     {
@@ -37,7 +45,9 @@ useHead({
   ],
   style: [
     {
-      children: `body { background-image: url(${asset(`img/navbar/background/${new Date().getHours()}.png`)}) }`
+      children: `body { background-image: url(${asset(
+        `img/navbar/background/${new Date().getHours()}.png`
+      )}) }`
     }
   ]
 })

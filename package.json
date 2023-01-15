@@ -13,7 +13,9 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/i18n": "^8.0.0-beta.7",
+    "@types/dompurify": "^2.4.0",
     "@types/jsdom": "^20.0.1",
+    "@types/marked": "^4.0.8",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",

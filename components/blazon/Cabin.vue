@@ -147,8 +147,7 @@ defineProps<{
   data: any;
 }>()
 
-const emit = defineEmits<{
-  (e: 'previousItem', name: BlazonCategory): void;
+const emit = defineEmits<{(e: 'previousItem', name: BlazonCategory): void;
   (e: 'nextItem', name: BlazonCategory): void;
   (e: 'updateItem', name: BlazonCategory, item: string | number): void;
 }>()
@@ -163,7 +162,7 @@ const categories: BlazonCategory[] = [
 const info = ref('')
 const checked = ref(categories)
 
-function viewBox (category) {
+function viewBox (category: BlazonCategory) {
   switch (category) {
     case 'shape':
       return '0 0 69.2 67.75'

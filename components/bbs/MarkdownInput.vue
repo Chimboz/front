@@ -301,11 +301,11 @@ const props = defineProps<{
   isTopic?: boolean;
 }>()
 
-$eventBus.on('quote', (quotedMessage) => {
+$eventBus.on('quote', (quotedMessage: string) => {
   if (message.value.slice(-1) === '\n' || message.value.slice(-1) === '') { message.value += quotedMessage } else { message.value += `\n${quotedMessage}` }
   if (textarea.value!) { textarea.value!.focus() }
 })
-$eventBus.on('edit', (editedMessage) => {
+$eventBus.on('edit', (editedMessage: any) => {
   message.value = editedMessage.content
   id = editedMessage.id
   mode.value = 'edit'
@@ -324,7 +324,7 @@ async function submit () {
         title: title.value
       }
     })
-    router.push(`/bbs/${route.params.forum}-${data.id}-1`)
+    router.push(`/bbs/${route.params.forum}-${data.value.id}-1`)
   } else {
     if (mode.value === 'post') {
       const { data } = await useFetch<any>('bbs/post', {
@@ -337,7 +337,7 @@ async function submit () {
           title: ''
         }
       })
-      router.push(`/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${data.add.id}`)
+      router.push(`/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${data.value.add.id}`)
     }
     if (mode.value === 'edit') {
       useFetch('bbs/edit', {

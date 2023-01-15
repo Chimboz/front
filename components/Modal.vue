@@ -9,7 +9,7 @@
         src="@/assets/img/icon/warning2.svg"
         alt="Error"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="type === 'success'"
         draggable="false"
@@ -18,7 +18,7 @@
         src="@/assets/img/icon/success.svg"
         alt="Success"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="type === 'failure'"
         draggable="false"
@@ -27,7 +27,7 @@
         src="@/assets/img/icon/failure.svg"
         alt="Failure"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="type === 'confirmation'"
         draggable="false"
@@ -36,7 +36,7 @@
         alt="Confirmation"
         src="@/assets/img/icon/confirmation.svg"
         @contextmenu.prevent
-      >
+      />
       <p>{{ $t(message) }}</p>
       <button
         v-if="type === 'confirmation'"
@@ -50,7 +50,7 @@
           src="@/assets/img/icon/ok.svg"
           alt="Ok"
           @contextmenu.prevent
-        >
+        />
       </button>
       <button
         v-else
@@ -63,7 +63,7 @@
           src="@/assets/img/icon/ok.svg"
           alt="Ok"
           @contextmenu.prevent
-        >
+        />
       </button>
       <button
         v-if="type === 'confirmation'"
@@ -76,7 +76,7 @@
           alt="Ko"
           src="@/assets/img/icon/ko.svg"
           @contextmenu.prevent
-        >
+        />
       </button>
     </div>
   </div>
@@ -94,10 +94,10 @@ function notice (modalType: string, modalMessage: string) {
   message.value = modalMessage
 }
 
-async function confirmation (req: {
-  message: string;
-  api: string;
-  payload?: object | undefined;
+function confirmation (req: {
+  message: string
+  api: string
+  payload?: object | undefined
 }) {
   isVisible.value = true
   type.value = 'confirmation'
@@ -106,14 +106,18 @@ async function confirmation (req: {
   prepare.payload = req.payload!
 }
 
-$eventBus.on('error', msg => notice('error', msg))
-$eventBus.on('success', msg => notice('success', msg))
-$eventBus.on('failure', msg => notice('failure', msg))
-$eventBus.on('confirmation', req => confirmation(req))
+$eventBus.on('error', (msg: string) => notice('error', msg))
+$eventBus.on('success', (msg: string) => notice('success', msg))
+$eventBus.on('failure', (msg: string) => notice('failure', msg))
+$eventBus.on(
+  'confirmation',
+  (req: { message: string; api: string; payload?: object | undefined }) =>
+    confirmation(req)
+)
 
 async function request () {
   const { data } = await useFetch<any>(prepare.api, { body: prepare.payload })
-  if (data.success) {
+  if (data.value.success) {
     notice('success', 'success.buy')
   } else {
     notice('failure', 'failure.buy')

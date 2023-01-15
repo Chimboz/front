@@ -248,14 +248,11 @@ const { data } = await useFetch<any>('/api/home')
 const lottery = ref(true)
 const gain = ref(0)
 
-async function handle ({ currentTarget }: { currentTarget: HTMLButtonElement }) {
+async function handle () {
   lottery.value = false
-
-  // data.value = (await useFetch("randomppt")).data;
-  // TODO remove
   gain.value = (
-    await useFetch('/api/lottery')
-  ).data.gain
+    await useFetch<any>('/api/lottery')
+  ).data.value.gain
 }
 
 useHead({ title: 'section.home' })

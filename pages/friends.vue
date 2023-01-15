@@ -147,25 +147,25 @@ const pseudo = ref('')
 
 async function cancel (friend: any) {
   if (
-    (await useFetch(`friends/cancel/${friend.user.id}`)).data.result ===
+    (await useFetch<any>(`friends/cancel/${friend.user.id}`)).data.value!.result ===
     'success'
   ) { data.value.splice(data.value.indexOf(friend), 1) }
 }
 
 async function accept (friend: any) {
-  const res = (await useFetch(`friends/accept/${friend.user.id}`)).data
+  const res = (await useFetch<any>(`friends/accept/${friend.user.id}`)).data.value
   data.value.splice(data.value.indexOf(friend), 1, res.add)
 }
 
 async function decline (friend: any) {
   if (
-    (await useFetch(`friends/decline/${friend.user.id}`)).data.result ===
+    (await useFetch<any>(`friends/decline/${friend.user.id}`)).data.value!.result ===
     'success'
   ) { data.value.splice(data.value.indexOf(friend), 1) }
 }
 
 async function addFriend () {
-  const res = (await useFetch(`friends/add/${pseudo.value}`)).data
+  const res = (await useFetch<any>(`friends/add/${pseudo.value}`)).data.value
   if (res.result === 'success') { data.value.push(res.data) }
 }
 

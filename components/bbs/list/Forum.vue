@@ -83,6 +83,6 @@ defineProps<{
 
 function lock (id: string) {
   // TODO api forum lock
-  console.log(id)
+  useFetch(`/lock/${id}`)
 }
 </script>

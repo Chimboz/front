@@ -402,8 +402,7 @@ const props = defineProps<{
   centred: string;
 }>()
 
-const emit = defineEmits<{
-  (e: 'previousItem', category: LookCategory): void;
+const emit = defineEmits<{(e: 'previousItem', category: LookCategory): void;
   (e: 'nextItem', category: LookCategory): void;
   (e: 'changeGender', gender: 'Chimbo' | 'Chimbette' | 'Chimbi'): void;
   (e: 'emote', emote: Emote): void;

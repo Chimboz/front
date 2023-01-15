@@ -363,7 +363,7 @@
           </Button>
         </template>
         <div
-          v-for="group of data.groups.sort((a,b) => b.owner || -a.owner)"
+          v-for="group of data.groups.sort((a: any, b:any) => b.owner || -a.owner)"
           :key="group.id"
           class="list fullwidth flex-centered link"
           style="justify-content: flex-start"

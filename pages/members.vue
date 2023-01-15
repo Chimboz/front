@@ -194,14 +194,14 @@ const groupSearch = ref('')
 async function searchUser () {
   router.push(
     `/book/${
-      (await useFetch(`book/search/${userSearch.value}/search`)).data.mid
+      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value!.mid
     }`
   )
 }
 
 async function searchGroup () {
   router.push(
-    `/groups/${(await useFetch(`groups/search/${groupSearch.value}`)).data.mid}`
+    `/groups/${(await useFetch<any>(`groups/search/${groupSearch.value}`)).data.value!.mid}`
   )
 }
 

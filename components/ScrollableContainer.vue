@@ -36,7 +36,7 @@ async function onScroll ({ target }: UIEvent) {
     isLoading.value = true
     emit(
       'scrollData',
-      (await useFetch(`${props.route}?&page=${++page.value}`)).data
+      (await useFetch<any[]>(`${props.route}?&page=${++page.value}`)).data.value!
     )
     isLoading.value = false
   }

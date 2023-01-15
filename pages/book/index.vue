@@ -169,7 +169,7 @@ const suggestionsHere = ref<any>(null)
 async function search () {
   router.push(
     `/book/${
-      (await useFetch(`book/search/${userSearch.value}/search`)).data.mid
+      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value.mid
     }`
   )
 }

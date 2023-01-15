@@ -68,7 +68,7 @@
       </ScrollableContainer>
       <form class="flex fullwidth" @submit.prevent="send">
         <input
-          v-model="message"
+          v-model="input"
           required
           minlength="1"
           name="message"
@@ -120,16 +120,16 @@ import { hashColor } from '@/utils'
 import { distanceToNow } from '@/utils/date'
 
 const { data } = await useFetch<any>('/api/mi5')
-const message = ref('')
+const input = ref('')
 
 function send () {
-  useFetch('mi/reply', { body: { conv: useRoute().params.id, message: message.value } })
+  useFetch('mi/reply', { body: { conv: useRoute().params.id, message: input.value } })
   data.value.messages.push({
     you: true,
-    content: message,
+    content: input.value,
     date: Date.now()
   })
-  message.value = ''
+  input.value = ''
 }
 
 useHead({ title: 'section.conversation' })

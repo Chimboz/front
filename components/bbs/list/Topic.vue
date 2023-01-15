@@ -142,7 +142,7 @@ function deleteTopic () {
 }
 async function openMovePanel () {
   movePanel.value = true
-  categories.value = (await useFetch('bbs')).data
+  categories.value = (await useFetch<any[]>('bbs')).data.value!
 }
 
 function move () {

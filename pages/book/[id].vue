@@ -240,7 +240,7 @@
     </Card>
     <template #right-column>
       <NuxtLink
-        v-if="+user.user_level > 2"
+        v-if="+user!.user_level > 2"
         :to="'/admin/' + data.id"
       >
         <Button

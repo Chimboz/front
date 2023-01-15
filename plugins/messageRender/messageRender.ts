@@ -3,6 +3,7 @@ import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import '@/assets/css/bbs/markdown.css'
 import 'highlight.js/styles/github-dark.css'
+import { AnchorHTMLAttributes } from 'nuxt/dist/app/compat/capi'
 
 const ALLOWED_URI = ['http', 'https']
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', 'localhost:3000']
@@ -50,7 +51,7 @@ function markedRender (string: string) {
 
   // Marked options
   marked.setOptions({
-    highlight: (code, lang) => {
+    highlight: (code: string, lang: string) => {
       if (lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext'
         return hljs.highlight(code, { language }).value
@@ -71,7 +72,7 @@ function markedRender (string: string) {
   return marked(string)
 }
 
-function dompurifyRender (purify: DOMPurify, window, string: string) {
+function dompurifyRender (purify: typeof DOMPurify, window: any, string: string) {
   // Allowed URI schemes
   const REGEX_URI = RegExp(`^(${ALLOWED_URI.join('|')}):`, 'gim')
 
@@ -158,10 +159,10 @@ export default function messageRender (window: any) {
     // Custom embeds
     const DOM = window.document.createElement('div')
     DOM.innerHTML = result
-    DOM.querySelectorAll('a').forEach((el) => {
-      if (el.href.match(youtube)) {
+    DOM.querySelectorAll('a').forEach((el: AnchorHTMLAttributes) => {
+      if (el.href!.match(youtube)) {
         const iframe = window.document.createElement('iframe')
-        iframe.setAttribute('src', el.href.replace(youtube, 'https://youtube.com/embed/$5$6'))
+        iframe.setAttribute('src', el.href!.replace(youtube, 'https://youtube.com/embed/$5$6'))
         iframe.setAttribute('allowfullscreen', 'true')
         iframe.setAttribute('title', 'Youtube Video')
         el.parentNode!.replaceChild(iframe, el)

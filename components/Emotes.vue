@@ -13,7 +13,7 @@
         height="23"
         :src="asset(`img/icon/emote/${emote}.svg`)"
         @contextmenu.prevent
-      >
+      />
     </button>
   </div>
 </template>
@@ -21,9 +21,7 @@
 import { asset } from '@/utils'
 import type Emote from '@/types/Emotes'
 
-const emit = defineEmits<{
-  (e: 'emote', emote: Emote): void;
-}>()
+const emit = defineEmits<{(e: 'emote', emote: Emote): void }>()
 
 const emotes: Emote[] = [
   'neutral',
