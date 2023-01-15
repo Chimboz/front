@@ -8,13 +8,13 @@
       </Card><br>
       <Rules bot />
     </template>
-    <RouterView />
+    <NuxtPage />
     <Card color="yellow" style="position: relative">
       <ScrollableContainer
-        route="gallery"
+        route="https://chimboz.fr/api/gallery"
         class="fullwidth"
         :max-height="450"
-        @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
+        @scroll-data="(results: any[]) => (data = [...new Set([...data!, ...results])])"
       >
         <div v-for="image of data" :key="image.name" class="gallery-image">
           <NuxtLink :to="'/chaparazzi/' + image.name">
@@ -41,11 +41,7 @@ import { RouterView } from 'vue-router'
 import { asset } from '@/utils'
 import { format } from '@/utils/date'
 
-const data = ref<any>(undefined)
-
-onBeforeMount(async () => {
-  data.value = (await useFetch('gallery?page=0')).data
-})
+const { data } = await useFetch<any[]>('https://chimboz.fr/public/api/gallery?page=0')
 
 useHead({ title: 'section.chaparazzi' })
 </script>

@@ -8,17 +8,17 @@
       </Card><br>
       <Rules bot />
     </template>
-    <RouterView />
+    <NuxtPage />
     <Card color="yellow" style="position: relative">
       <ScrollableContainer
-        route="encyclopedia"
+        route="https://chimboz.fr/api/encyclopedia"
         class="fullwidth"
         :max-height="450"
-        @scroll-data="(results: any[]) => (data = [...new Set([...data, ...results])])"
+        @scroll-data="(results: any[]) => (data = [...new Set([...data!, ...results])])"
       >
         <div
-          v-for="item of data.filter(
-            (item:any) =>
+          v-for="item of data!.filter(
+            (item: any) =>
               checkedCategories.includes(item.type) &&
               checkedRarities.includes(item.rarity) &&
               item.name.includes(search)
@@ -157,10 +157,13 @@
 </template>
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image'
-import { RouterView } from 'vue-router'
 import { asset } from '@/utils'
 
-const data = ref<any>(undefined)
+const { data } = await useFetch<any[]>(
+      `https://chimboz.fr/public/api/encyclopedia?lang=${
+        useBrowserLocale()!.split('-')[0]
+      }&page=0`)
+
 const categories = [
   'body',
   'bot',
@@ -212,16 +215,6 @@ const checkedRarities = ref([
 const search = ref('')
 
 function onSearch () {}
-
-onBeforeMount(async () => {
-  data.value = (
-    await useFetch(
-      `https://chimboz.fr/public/api/encyclopedia?lang=${
-        useBrowserLocale()!.split('-')[0]
-      }&page=0`
-    )
-  ).data
-})
 
 useHead({ title: 'section.encyclopedia' })
 </script>
