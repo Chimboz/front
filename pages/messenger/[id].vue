@@ -16,7 +16,7 @@
         {{ data.user.name }}
       </template>
       <ScrollableContainer
-        route="messages"
+        route="https://chimboz.fr/api/messages"
         class="messages fullwidth flex"
         :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"

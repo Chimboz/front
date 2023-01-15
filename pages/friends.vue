@@ -16,7 +16,7 @@
         Friends
       </template>
       <ScrollableContainer
-        route="friends"
+        route="https://chimboz.fr/api/friends"
         :max-height="450"
         @scroll-data="(results: any[]) => (data = [...data, ...results])"
       >
