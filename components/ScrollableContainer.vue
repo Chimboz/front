@@ -28,11 +28,12 @@ const isLoading = ref(false)
 const props = defineProps<{
   route: string;
   maxHeight: number;
+  reverse?: boolean;
 }>()
 
 async function onScroll ({ target }: UIEvent) {
   const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement
-  if (scrollTop + clientHeight >= scrollHeight - 2 && !isLoading.value) {
+  if (((!props.reverse && scrollTop + clientHeight >= scrollHeight - 2) || (props.reverse && -scrollTop + clientHeight >= scrollHeight - 2)) && !isLoading.value) {
     isLoading.value = true
     emit(
       'scrollData',

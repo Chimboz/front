@@ -51,19 +51,19 @@ export default defineEventHandler(() => {
       },
       {
         id: 133,
-        content: '![](/avatar/body/358.svg)',
+        content: '![](/item/body/358.svg)',
         date: 1638974173000,
         you: true
       },
       {
         id: 134,
-        content: '![](https://chimboz.fr/avatar/body/358.svg)',
+        content: '![](https://chimboz.fr/item/body/358.svg)',
         date: 1638974218000,
         you: true
       },
       {
         id: 135,
-        content: '![test](https://chimboz.fr/avatar/body/358.svg)',
+        content: '![test](https://chimboz.fr/item/body/358.svg)',
         date: 1638974241000,
         you: true
       },

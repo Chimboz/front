@@ -16,6 +16,7 @@
         {{ data.user.name }}
       </template>
       <ScrollableContainer
+        reverse
         route="https://chimboz.fr/api/messages"
         class="messages fullwidth flex"
         :max-height="450"
