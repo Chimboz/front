@@ -59,10 +59,10 @@ watchEffect(() => {
 // TODO check forms submit
 // TODO better quotes
 // TODO add commitlint
-// TODO configure eslint
+// FIXME configure eslint
+// TODO mannequin/refactor avatar
 // TODO sitemap and robots.txt generator
 // TODO dynamic suggestions components
-// TODO remove hardcoded blazon
 // TODO alert when javascript is disabled
 // TODO wedding id view
 // TODO search all user messages on bbs

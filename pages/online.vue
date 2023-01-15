@@ -27,7 +27,7 @@
         :key="user.id"
       ><LinkUser
         :user="user"
-        :separator="index < data.tchat.length"
+        :separator="index < data.tchat.length - 1"
       /></span>
     </Card>
     <template #right-column>

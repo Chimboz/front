@@ -54,15 +54,6 @@
       height="20"
       src="https://img.shields.io/github/package-json/v/Chimboz/ChimbozFront"
       @contextmenu.prevent
-    ></a>&nbsp;
-    <a href="/doc/#"><img
-      draggable="false"
-      alt="Documentation"
-      title="Documentation"
-      width="96"
-      height="20"
-      src="https://img.shields.io/badge/-documentation-informational"
-      @contextmenu.prevent
     ></a>
   </footer>
 </template>
