@@ -3,11 +3,12 @@ import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import '@/assets/css/bbs/markdown.css'
 import 'highlight.js/styles/github-dark.css'
-import { AnchorHTMLAttributes } from 'nuxt/dist/app/compat/capi'
+import { AnchorHTMLAttributes } from 'vue'
 
 const ALLOWED_URI = ['http', 'https']
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', 'localhost:3000']
-const youtube = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi
+const youtube =
+  /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi
 const ALLOWED_TAGS = [
   'p',
   'span',
@@ -47,7 +48,10 @@ const ALLOWED_CLASS = 'hljs-'
 
 function markedRender (string: string) {
   // Custom emotes
-  string = string.replace(/:[a-z]+:/g, match => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`)
+  string = string.replace(
+    /:[a-z]+:/g,
+    match => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`
+  )
 
   // Marked options
   marked.setOptions({
@@ -72,7 +76,8 @@ function markedRender (string: string) {
   return marked(string)
 }
 
-function dompurifyRender (purify: typeof DOMPurify, window: any, string: string) {
+function dompurifyRender (window: any, string: string) {
+  const purify = DOMPurify(window)
   // Allowed URI schemes
   const REGEX_URI = RegExp(`^(${ALLOWED_URI.join('|')}):`, 'gim')
 
@@ -96,11 +101,17 @@ function dompurifyRender (purify: typeof DOMPurify, window: any, string: string)
   // Add a hook to enforce CSS element sanitization
   purify.addHook('uponSanitizeElement', (node) => {
     const classes = node.classList
-    if (!classes) { return }
+    if (!classes) {
+      return
+    }
     classes.forEach((name) => {
-      if (!name.includes(ALLOWED_CLASS)) { (node as HTMLElement).classList.remove(name) }
+      if (!name.includes(ALLOWED_CLASS)) {
+        (node as HTMLElement).classList.remove(name)
+      }
     })
-    if (classes.length === 0) { node.removeAttribute('class') }
+    if (classes.length === 0) {
+      node.removeAttribute('class')
+    }
   })
 
   // Add a hook to enforce CSS attribute sanitization
@@ -142,7 +153,11 @@ function dompurifyRender (purify: typeof DOMPurify, window: any, string: string)
       const output: Array<string> = []
       // re-add styles in case any are left
       validateStyles(output, (node as HTMLElement).style)
-      if (output.length) { node.setAttribute('style', output.join('')) } else { node.removeAttribute('style') }
+      if (output.length) {
+        node.setAttribute('style', output.join(''))
+      } else {
+        node.removeAttribute('style')
+      }
     }
   })
 
@@ -154,7 +169,7 @@ function dompurifyRender (purify: typeof DOMPurify, window: any, string: string)
 
 export default function messageRender (window: any) {
   return (string: string): string => {
-    const result = dompurifyRender(DOMPurify(window), window, markedRender(string))
+    const result = dompurifyRender(window, markedRender(string))
 
     // Custom embeds
     const DOM = window.document.createElement('div')
@@ -162,10 +177,14 @@ export default function messageRender (window: any) {
     DOM.querySelectorAll('a').forEach((el: AnchorHTMLAttributes) => {
       if (el.href!.match(youtube)) {
         const iframe = window.document.createElement('iframe')
-        iframe.setAttribute('src', el.href!.replace(youtube, 'https://youtube.com/embed/$5$6'))
+        iframe.setAttribute(
+          'src',
+          el.href!.replace(youtube, 'https://youtube.com/embed/$5$6')
+        )
         iframe.setAttribute('allowfullscreen', 'true')
         iframe.setAttribute('title', 'Youtube Video')
-        el.parentNode!.replaceChild(iframe, el)
+        // @ts-expect-error
+        el.parentNode.replaceChild(iframe, el)
       }
     })
 
