@@ -264,6 +264,7 @@
   </form>
 </template>
 <script setup lang="ts">
+import { SelectHTMLAttributes } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import useAuthStore from '@/stores/auth'

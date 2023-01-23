@@ -37,7 +37,6 @@
 
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image'
-import { RouterView } from 'vue-router'
 import { asset } from '@/utils'
 import { format } from '@/utils/date'
 

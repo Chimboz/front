@@ -144,6 +144,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ImgHTMLAttributes } from 'vue'
 // TODO refacto
 withDefaults(
   defineProps<{
