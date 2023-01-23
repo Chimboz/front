@@ -85,8 +85,8 @@
       </Card>
       <br>
       Groupe no. <b>{{ data.id }}</b> créé le
-      <b>{{ format(data.date, "PPp") }} ({{
-        distance(Date.now(), data.date)
+      <b>{{ $format(data.date, "PPp") }} ({{
+        $distance(Date.now(), data.date)
       }}
         jours)</b><br>
       <br v-if="data.bacteria">

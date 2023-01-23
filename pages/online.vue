@@ -48,7 +48,7 @@
           width="17"
           @contextmenu.prevent
         >Le record de connectés est de <b>{{ data.record.online }}</b> le
-        <b>{{ format(data.record.date, "PPp") }}</b>.
+        <b>{{ $format(data.record.date, "PPp") }}</b>.
       </Card>
     </template>
   </Container>

@@ -38,7 +38,7 @@
           </td>
           <td><LinkUser :user="log.moderator" /></td>
           <td>
-            {{ format(log.date, "PPp") }}
+            {{ $format(log.date, "PPp") }}
           </td>
         </tr>
       </tbody>

@@ -93,7 +93,7 @@
             >Décliner</span>
           </div>
           <div v-else-if="!friend.status.connected">
-            Dernière visite <b>{{ distanceToNow(friend.status.date) }}</b>
+            Dernière visite <b>{{ $distanceToNow(friend.status.date) }}</b>
           </div>
           <div v-else>
             <div

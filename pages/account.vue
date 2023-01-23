@@ -273,7 +273,7 @@
                 @contextmenu.prevent
               >&nbsp;<LinkUser :user="message.author" @click.stop />
             </div>
-            <div>{{ distanceToNow(message.date) }}</div>
+            <div>{{ $distanceToNow(message.date) }}</div>
           </div>
         </div>
       </Card><br>

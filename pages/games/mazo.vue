@@ -150,7 +150,7 @@
               <b>{{ rank.score }}</b>
             </td>
             <td>
-              {{ format(rank.date || 1670928217153, "PPp") /* TODO remove */ }}
+              {{ $format(rank.date || 1670928217153, "PPp") /* TODO remove */ }}
             </td>
           </tr>
         </tbody>

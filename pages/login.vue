@@ -51,7 +51,7 @@
               :alt="photo.name"
               @contextmenu.prevent
             >
-          </NuxtLink><b>{{ format(photo.date, 'PP') }}</b>
+          </NuxtLink><b>{{ $format(photo.date, 'PP') }}</b>
         </div>
       </div>
       <div style="text-align: right">

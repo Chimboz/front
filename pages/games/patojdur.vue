@@ -236,7 +236,7 @@
             </td>
             <td><LinkUser :user="rank.user" /></td>
             <td class="justified">
-              <b>{{ format(rank.date, "PPp") }}</b><br><i>{{ rank.day }}e journée</i>
+              <b>{{ $format(rank.date, "PPp") }}</b><br><i>{{ rank.day }}e journée</i>
             </td>
           </tr>
         </tbody>
@@ -275,7 +275,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ format(rank.date, "p") }}</td>
+            <td>{{ $format(rank.date, "p") }}</td>
           </tr>
         </tbody>
       </table>
@@ -340,7 +340,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ format(rank.date, "p") }}</td>
+            <td>{{ $format(rank.date, "p") }}</td>
           </tr>
         </tbody>
       </table>

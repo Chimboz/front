@@ -29,7 +29,7 @@
             {{ data.name }}
           </StrokeText>
           Groupe n°{{ data.id }}<br>
-          Créé le {{ format(data.date, "PPp") }}
+          Créé le {{ $format(data.date, "PPp") }}
         </div>
       </div>
     </Card>

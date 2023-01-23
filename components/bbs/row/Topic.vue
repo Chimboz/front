@@ -47,7 +47,7 @@
       {{ topic.view }}
     </td>
     <td class="row2" style="text-align: center" valign="middle" height="50">
-      <div>{{ distanceToNow(topic.last_msg.date) }}</div>
+      <div>{{ $distanceToNow(topic.last_msg.date) }}</div>
       <LinkUser :user="topic.last_msg.author" />
       &nbsp;»&nbsp;
       <NuxtLink

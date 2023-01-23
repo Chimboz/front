@@ -10,7 +10,7 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><LinkUser :user="message.author" ellipsis /><span class="date">{{ format(message.date, 'PPpp') }}</span>
+      /><LinkUser :user="message.author" ellipsis /><span class="date">{{ $format(message.date, 'PPpp') }}</span>
     </td>
     <td class="justified" valign="top">
       <h2 class="head flex info-sm ellipsis">
@@ -26,7 +26,7 @@
         />&nbsp;&nbsp;
         <div class="ellipsis">
           <LinkUser :user="message.author" />&nbsp;le
-          <span class="date">{{ format(message.date, 'PPpp') }}</span>
+          <span class="date">{{ $format(message.date, 'PPpp') }}</span>
         </div>
       </h2>
       <div class="head flex">

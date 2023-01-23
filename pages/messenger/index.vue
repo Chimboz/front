@@ -69,7 +69,7 @@
                     font-weight: normal;
                     font-size: var(--font-size);
                   "
-                >{{ distanceToNow(message.date) }}</span>
+                >{{ $distanceToNow(message.date) }}</span>
               </h3>
             </div>
             <span>{{ message.content.slice(0, 64) }}</span>

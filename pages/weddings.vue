@@ -75,7 +75,7 @@
       <template #header>
         {{ $t("wedding.section.last") }}
       </template>
-      {{ $t("date.on") }} <b>{{ format(data.last.date, "PPp") }}</b>, <b>{{ data.last.id }}</b><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br><br>
+      {{ $t("date.on") }} <b>{{ $format(data.last.date, "PPp") }}</b>, <b>{{ data.last.id }}</b><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br><br>
       <div class="wedding">
         <img
           draggable="false"
@@ -145,10 +145,10 @@
           height="64"
         ><br>{{ $t("wedding.title.today") }}
       </template>
-      {{ $t("date.Today") }}, <b>{{ format(Date.now(), "PP") }}</b>, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
+      {{ $t("date.Today") }}, <b>{{ $format(Date.now(), "PP") }}</b>, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
       <br><br>
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
-        {{ $t("date.On") }} <b>{{ format(wedding.date, "PPp") }}</b>,<br>
+        {{ $t("date.On") }} <b>{{ $format(wedding.date, "PPp") }}</b>,<br>
         <LinkUser :user="wedding.married1" /> &amp;
         <LinkUser :user="wedding.married2" /> {{ $t("wedding.gotmarried")
         }}<br>
@@ -200,7 +200,7 @@
               }}</NuxtLink></i>
             </td>
             <td>
-              <b>{{ distance(Date.now(), wedding.date) }}</b>
+              <b>{{ $distance(Date.now(), wedding.date) }}</b>
             </td>
           </tr>
         </tbody>
@@ -237,7 +237,7 @@
         </thead>
         <tbody>
           <tr v-for="(wedding, index) in data.divorce" :key="index">
-            <td>{{ format(wedding.dateend, "p") }}</td>
+            <td>{{ $format(wedding.dateend, "p") }}</td>
             <td>
               <LinkUser :user="wedding.married1" /> a plaqué
               <LinkUser :user="wedding.married2" />
@@ -248,7 +248,7 @@
               }}</NuxtLink></i>
             </td>
             <td>
-              <b>{{ distance(wedding.datebegin, wedding.dateend) }}</b>
+              <b>{{ $distance(wedding.datebegin, wedding.dateend) }}</b>
             </td>
           </tr>
         </tbody>
@@ -295,7 +295,7 @@
               }}</NuxtLink></i>
             </td>
             <td>
-              <b>{{ distance(wedding.datebegin, wedding.dateend) }}</b>
+              <b>{{ $distance(wedding.datebegin, wedding.dateend) }}</b>
             </td>
           </tr>
         </tbody>

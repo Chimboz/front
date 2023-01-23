@@ -37,7 +37,7 @@
             :class="{ loss: line.value < 0 }"
           >
             <td class="centered">
-              <b>{{ format(line.date, "PPp") }}</b>
+              <b>{{ $format(line.date, "PPp") }}</b>
             </td>
             <td>{{ line.description }}</td>
             <td style="text-align: right">
@@ -161,7 +161,7 @@ function bankData () {
         )
       }
       if (i > 0) { balance -= dataset.datasets[1].data[i - 1] }
-      dataset.labels!.push(format(day, 'd MMM'))
+      dataset.labels!.push($format(day, 'd MMM'))
       dataset.datasets[1].data.push(value)
       dataset.datasets[0].data.push(balance)
       dataset.datasets[1].backgroundColor.push(value > 0 ? '#5b3' : '#fb0d0d')

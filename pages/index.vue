@@ -147,7 +147,7 @@
         v-html="$messageRender(data.news.content)"
       />
       <div class="news-date">
-        {{ data.news.author }}, {{ format(data.news.date, "PPp") }}
+        {{ data.news.author }}, {{ $format(data.news.date, "PPp") }}
       </div>
     </Card>
     <br>
@@ -173,7 +173,7 @@
               :alt="photo.name"
               @contextmenu.prevent
             >
-          </NuxtLink><b>{{ format(photo.date, "PP") }}</b>
+          </NuxtLink><b>{{ $format(photo.date, "PP") }}</b>
         </div>
       </div>
       <div style="text-align: right">

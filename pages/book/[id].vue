@@ -50,7 +50,7 @@
             />
           </div>
           <div v-if="!data.status.connected">
-            Dernière visite le <b>{{ format(data.status.date, "PPp") }}</b>
+            Dernière visite le <b>{{ $format(data.status.date, "PPp") }}</b>
           </div>
           <div v-else>
             <div
@@ -81,7 +81,7 @@
               <NuxtLink :to="'/weddings/' + data.wedding.id">Marié</NuxtLink>
               avec
               <LinkUser :user="data.wedding.user" /> depuis
-              {{ distance(Date.now(), data.wedding.time) }} jours
+              {{ $distance(Date.now(), data.wedding.time) }} jours
             </span>
             <span v-else><b>Célibataire</b></span>
           </p>
@@ -227,8 +227,8 @@
       <div class="member-section registration">
         <span>Membre n°<b>{{ data.id }}</b><br>
           Dans la communauté depuis le
-          <b>{{ format(data.register, "PPp") }}</b> (<b>{{
-            distance(Date.now(), data.register)
+          <b>{{ $format(data.register, "PPp") }}</b> (<b>{{
+            $distance(Date.now(), data.register)
           }}</b>
           jours)</span>
       </div>

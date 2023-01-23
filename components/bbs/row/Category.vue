@@ -57,7 +57,7 @@
         {{ bbs.messages }}
       </td>
       <td style="text-align: center" valign="middle">
-        <div>{{ distanceToNow(bbs.last_msg.date) }}</div>
+        <div>{{ $distanceToNow(bbs.last_msg.date) }}</div>
         <LinkUser :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <NuxtLink

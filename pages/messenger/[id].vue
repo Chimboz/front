@@ -56,7 +56,7 @@
               <h3>
                 <LinkUser v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
-                >{{ distanceToNow(message.date) }}</span>
+                >{{ $distanceToNow(message.date) }}</span>
               </h3>
             </div>
             <span
