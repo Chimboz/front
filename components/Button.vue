@@ -16,7 +16,7 @@
 </template>
 <script setup lang="ts">
 
-import { asset } from '@/utils'
+
 
 defineProps<{
   icon?: string;

@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { asset, randomInt } from '@/utils'
+
 
 const props = withDefaults(
   defineProps<{

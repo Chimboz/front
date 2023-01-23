@@ -73,8 +73,8 @@
 </template>
 <script setup lang="ts">
 
-import { asset } from '@/utils'
-import { distanceToNow } from '@/utils/date'
+
+
 
 withDefaults(
   defineProps<{

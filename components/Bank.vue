@@ -46,7 +46,7 @@
 </template>
 <script setup lang="ts">
 import useAuthStore from '@/stores/auth'
-import { asset, randomInt } from '@/utils'
+
 
 const auth = useAuthStore()
 const user = computed(() => auth.user)

@@ -82,7 +82,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { randomInt } from '@/utils'
+
 
 const pseudo = ref('')
 

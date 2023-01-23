@@ -63,7 +63,7 @@
 
 <script setup lang="ts">
 
-import { asset } from '@/utils'
+
 
 withDefaults(
   defineProps<{

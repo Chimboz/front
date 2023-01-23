@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { asset } from '@/utils'
+
 import type Emote from '@/types/Emotes'
 
 const emit = defineEmits<{(e: 'emote', emote: Emote): void }>()

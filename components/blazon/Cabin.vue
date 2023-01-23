@@ -140,7 +140,7 @@
   </Card>
 </template>
 <script setup lang="ts">
-import { asset } from '@/utils'
+
 import type { BlazonCategory } from '@/types/Item'
 
 defineProps<{

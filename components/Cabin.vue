@@ -389,7 +389,7 @@
 <script setup lang="ts">
 import { InputHTMLAttributes } from 'vue'
 import VLazyImage from 'v-lazy-image'
-import { asset } from '@/utils'
+
 import type { LookCategory } from '@/types/Item'
 import type Emote from '@/types/Emotes'
 

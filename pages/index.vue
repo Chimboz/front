@@ -239,9 +239,6 @@
 </template>
 
 <script setup lang="ts">
-import { asset } from '@/utils'
-import { format } from '@/utils/date'
-
 // data.value = (await useFetch("home")).data;
 // TODO remove
 const { data } = await useFetch<any>('/api/home')

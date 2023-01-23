@@ -393,7 +393,7 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { distance, format } from '@/utils/date'
+
 
 const router = useRouter()
 const { data } = await useFetch<any>('https://chimboz.fr/api/weddings')

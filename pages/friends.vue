@@ -137,8 +137,8 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { hashColor } from '@/utils'
-import { distanceToNow } from '@/utils/date'
+
+
 
 // data.value = (await useFetch("friends")).data;
 // TODO remove

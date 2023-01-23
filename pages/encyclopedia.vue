@@ -157,7 +157,7 @@
 </template>
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image'
-import { asset } from '@/utils'
+
 
 const { data } = await useFetch<any[]>(
       `https://chimboz.fr/public/api/encyclopedia?lang=${

@@ -14,7 +14,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { randomInt } from '@/utils'
+
 
 // Assume that loading will complete under this amount of time.
 const defaultDuration = 4000

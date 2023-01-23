@@ -117,8 +117,8 @@
 </template>
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { hashColor } from '@/utils'
-import { distanceToNow } from '@/utils/date'
+
+
 
 const { data } = await useFetch<any>('/api/mi5')
 const input = ref('')

@@ -159,7 +159,7 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { format } from '@/utils/date'
+
 
 const router = useRouter()
 const { data } = await useFetch<any>('https://chimboz.fr/api/book')

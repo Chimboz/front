@@ -81,8 +81,8 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { hashColor } from '@/utils'
-import { distanceToNow } from '@/utils/date'
+
+
 
 const { data } = await useFetch<any>('/api/mi')
 

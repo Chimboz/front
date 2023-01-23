@@ -37,8 +37,8 @@
 
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image'
-import { asset } from '@/utils'
-import { format } from '@/utils/date'
+
+
 
 const { data } = await useFetch<any[]>('https://chimboz.fr/public/api/gallery?page=0')
 

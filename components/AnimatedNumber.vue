@@ -11,7 +11,7 @@
   >
 </template>
 <script setup lang="ts">
-import { asset } from '@/utils'
+
 
 const props = withDefaults(
   defineProps<{

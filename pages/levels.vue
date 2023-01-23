@@ -54,7 +54,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { asset } from '@/utils'
+
 
 const { data } = await useFetch<any>('/api/levels')
 const selected = ref(0)

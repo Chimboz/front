@@ -398,8 +398,8 @@ import {
   CategoryScale,
   LinearScale
 } from 'chart.js'
-import { asset } from '@/utils'
-import { distanceToNow } from '@/utils/date'
+
+
 
 Chart.register(
   Legend,
