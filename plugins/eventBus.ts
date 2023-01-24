@@ -11,8 +11,7 @@ const eventBus = mitt<{
   confirmation: { message: string; api: string; payload?: object };
 }>()
 
-export default defineNuxtPlugin((nuxtApp) => {
-  console.log(nuxtApp.$i18n)
+export default defineNuxtPlugin(() => {
   return {
     provide: {
       eventBus
