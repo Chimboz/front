@@ -107,8 +107,6 @@ import {
   type ChartData
 } from 'chart.js'
 import { isSameDay, eachDayOfInterval, subDays } from 'date-fns'
-
-
 import useAuthStore from '@/stores/auth'
 
 Chart.register(
@@ -124,6 +122,7 @@ Chart.register(
 )
 
 const auth = useAuthStore()
+const { $format } = useNuxtApp()
 
 const { data } = await useFetch<any>('/api/bank')
 

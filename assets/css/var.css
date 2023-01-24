@@ -1,5 +1,6 @@
 /* TODO: verify subsisting colors #[0-9a-fA-F]{3,8}*/
 :root {
+  color-scheme: light dark;
   /* mode(light)-class(button)-name(blue)-type(color) */
 
   /* Global style */

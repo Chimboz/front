@@ -41,6 +41,10 @@ useHead({
     {
       property: 'og:title',
       content: 'Chimboz'
+    },
+    {
+      name: 'color-scheme',
+      content: 'dark light'
     }
   ],
   style: [
@@ -72,10 +76,3 @@ watchEffect(() => {
 // TODO forget password page
 // TODO replace marked emoji support by extension + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 </script>
-
-<style>
-#__nuxt {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
