@@ -115,7 +115,7 @@ function onProgress () {
 
 .progress-bar {
   height: var(--lg-font-size);
-  border-radius: var(--border-radius);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   background: url("../assets/img/progress.svg"), var(--pink);
   background-blend-mode: hard-light;
   background-size: 56.7px;
