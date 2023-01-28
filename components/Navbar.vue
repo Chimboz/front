@@ -116,7 +116,7 @@
       />
     </div>
   </header>
-  <div id="nav" class="flex">
+  <nav class="flex">
     <NuxtLink to="/">
       <button class="nav-btn flex centered" type="button">
         <img
@@ -230,7 +230,7 @@
         </div>
       </button>
     </NuxtLink>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
@@ -325,17 +325,17 @@ const user = computed(() => auth.user)
   box-shadow: 0 2px 1px var(--dark);
 }
 
-#nav a:not(:first-child) {
+nav a:not(:first-child) {
   display: contents;
 }
 
-#nav a:nth-child(2) .nav-btn {
+nav a:nth-child(2) .nav-btn {
   border-left-color: var(--pink);
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   border-left-width: 5px;
 }
 
-#nav a:last-child .nav-btn {
+nav a:last-child .nav-btn {
   border-right-color: var(--pink);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   border-right-width: 5px;
@@ -348,11 +348,11 @@ const user = computed(() => auth.user)
 
 .nav-btn:hover .nav-icon,
 .nav-btn:active .nav-icon,
-#nav a.router-link-active .nav-icon {
+nav a.router-link-active .nav-icon {
   filter: none;
 }
 
-#nav a:first-child .nav-btn {
+nav a:first-child .nav-btn {
   border-right-color: var(--pink);
   border-left-color: var(--pink);
   background-image: radial-gradient(
@@ -367,14 +367,14 @@ const user = computed(() => auth.user)
   margin-right: var(--gap);
 }
 
-#nav {
+nav {
   justify-content: center;
   padding-bottom: 10px;
 }
 
 .nav-btn:hover,
 .nav-btn:active,
-#nav a.router-link-active .nav-btn {
+nav a.router-link-active .nav-btn {
   background-image: linear-gradient(
     to bottom,
     var(--light),
@@ -386,9 +386,9 @@ const user = computed(() => auth.user)
   border-color: var(--orange) var(--orange) var(--dark-orange) var(--orange);
 }
 
-#nav a:first-child .nav-btn:hover,
-#nav a:first-child .nav-btn:active,
-#nav a:first-child.router-link-active .nav-btn {
+nav a:first-child .nav-btn:hover,
+nav a:first-child .nav-btn:active,
+nav a:first-child.router-link-active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--light) 0%,
@@ -398,21 +398,21 @@ const user = computed(() => auth.user)
   );
 }
 
-#nav a:nth-child(2) .nav-btn:hover,
-#nav a:first-child .nav-btn:hover,
-#nav a:nth-child(2) .nav-btn:active,
-#nav a:first-child .nav-btn:active,
-#nav a:first-child.router-link-active .nav-btn,
-#nav a:nth-child(2).router-link-active .nav-btn {
+nav a:nth-child(2) .nav-btn:hover,
+nav a:first-child .nav-btn:hover,
+nav a:nth-child(2) .nav-btn:active,
+nav a:first-child .nav-btn:active,
+nav a:first-child.router-link-active .nav-btn,
+nav a:nth-child(2).router-link-active .nav-btn {
   border-left-color: var(--orange);
 }
 
-#nav a:last-child .nav-btn:hover,
-#nav a:first-child .nav-btn:hover,
-#nav a:last-child .nav-btn:active,
-#nav a:first-child .nav-btn:active,
-#nav a:last-child.router-link-active .nav-btn,
-#nav a:first-child.router-link-active .nav-btn {
+nav a:last-child .nav-btn:hover,
+nav a:first-child .nav-btn:hover,
+nav a:last-child .nav-btn:active,
+nav a:first-child .nav-btn:active,
+nav a:last-child.router-link-active .nav-btn,
+nav a:first-child.router-link-active .nav-btn {
   border-right-color: var(--orange);
 }
 
@@ -430,7 +430,7 @@ a:hover {
   ) !important;
 }
 
-#nav a:first-child .nav-btn:active {
+nav a:first-child .nav-btn:active {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--orange),
@@ -464,7 +464,7 @@ a:hover {
 
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
-  #nav a.router-link-active .nav-text {
+  nav a.router-link-active .nav-text {
     stroke: var(--dark-orange);
   }
 
