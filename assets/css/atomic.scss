@@ -1,0 +1,85 @@
+@use 'sass:string';
+
+.font-ch {
+  font-family: 'Chimboz Heavy';
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.pink-bg {
+  background: var(--pink);
+}
+
+.blue-bg {
+  background: var(--main-bg);
+}
+
+.pointer {
+  cursor: var(--pointer);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline {
+  display: inline-flex;
+}
+
+.flex.centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.centered {
+  text-align: center;
+}
+
+.justified {
+  text-align: justify;
+}
+
+.left {
+  text-align: left;
+}
+
+.relative {
+  position: relative;
+}
+
+$spaces: ('margin', 'padding');
+$negative: ('', '-');
+$types: (
+  'top': 'y',
+  'bottom': 'y',
+  'right': 'x',
+  'left': 'x'
+);
+@each $space in $spaces {
+  @each $unit in $negative {
+    @for $i from 0 through 20 {
+      .#{$unit}#{string.slice($space,1,1)}-#{$i} {
+        #{$space}: calc(var(--unit) * #{$unit}#{$i}) !important;
+      }
+    }
+
+    @each $type, $axis in $types {
+      @for $i from 0 through 20 {
+        .#{$unit}#{string.slice($space,1,1)}#{string.slice($type,1,1)}-#{$i},
+        .#{$unit}#{string.slice($space,1,1)}#{string.slice($axis,1,1)}-#{$i} {
+          #{$space}-#{$type}: calc(var(--unit) * #{$unit}#{$i}) !important;
+        }
+      }
+    }
+  }
+}

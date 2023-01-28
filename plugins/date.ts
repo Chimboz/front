@@ -18,6 +18,9 @@ function distanceToNow (date: number) {
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
+  setDefaultOptions({
+    locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales]
+  })
   nuxtApp.$i18n.onBeforeLanguageSwitch = (_oldLocale: string, newLocale: string) => {
     setDefaultOptions({
       locale: locales[newLocale as keyof typeof locales]

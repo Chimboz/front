@@ -1,0 +1,150 @@
+/* TODO: verify subsisting colors #[0-9a-fA-F]{3,8}*/
+:root {
+  color-scheme: light dark;
+  /* mode(light)-class(button)-name(blue)-type(color) */
+
+  --unit: 4px;
+  /* Global style */
+  --font-family: Helvetica, 'Helvetica Fallback', sans-serif;
+  --sm-gap: calc(var(--unit) * 0.5);
+  --md-gap: calc(2 * var(--unit));
+  --gap: calc(3 * var(--unit));
+  --border-radius: 12px;
+  --padding: 20px;
+  --font-size: 12px;
+  --lg-font-size: 18px;
+  --round: 99px;
+  --pointer: url(../img/pointer.svg) 4 2, pointer;
+
+  /* Colors */
+  --text: #284555;
+  --text-button: #fff;
+  --dark: #0006;
+  --light: #fff;
+  --main-bg: #6090be;
+  --blue: #096ea8;
+  --light-blue: #a8dfff;
+  --pink: #f0009c;
+  --dark-pink: #c10276;
+  --orange: #f80;
+  --dark-orange: #d15503;
+  --red: #fb0d0d;
+
+  /* Cards */
+  /* Yellow */
+  --main-card-yellow: #fff4d5;
+  --dark-card-yellow: #ffe5a3;
+  --title-card-yellow: #963d00;
+  /* Blue */
+  --main-card-blue: #6ebef0;
+  --dark-card-blue: #5aa1cd;
+  /* Red */
+  --main-card-red: #ff5454;
+  --dark-card-red: #e00c0c;
+  /* Default */
+  --main-card: #d5e6f3;
+  --dark-card: #a5cbe9;
+  --title-card: #004b7d;
+
+  /* Button */
+  /* Yellow */
+  --main-button-yellow: #ffb907;
+  --dark-button-yellow: #e58900;
+  /* Orange */
+  --main-button-orange: var(--orange);
+  --dark-button-orange: var(--dark-orange);
+  /* Red */
+  --main-button-red: #fb0d0d;
+  --dark-button-red: #d10303;
+  /* Green */
+  --main-button-green: #5b3;
+  --dark-button-green: #371;
+  /* Default */
+  --main-button: var(--pink);
+  --dark-button: var(--dark-pink);
+
+  /* BBS Table */
+  --light-bbs: #d6e7f3;
+  --dark-bbs: #c9dfef;
+
+  /* Rarities */
+  --rare: #69c;
+  --mythic: #9412fe;
+  --legendary: #fc0;
+  --unique: #c00;
+}
+
+.dark-mode {
+  /* Colors */
+  --text: hsl(201, 36%, 75%);
+  --text-button: #fff;
+  --dark: #fff6;
+  --light: #000;
+  --main-bg: #000;
+  --blue: hsl(202, 90%, 65%);
+  --light-blue: hsl(202, 100%, 17%);
+  --pink: hsl(321, 100%, 43%);
+  --dark-pink: hsl(324, 98%, 52%);
+  --orange: hsl(32, 100%, 40%);
+  --dark-orange: hsl(24, 97%, 48%);
+  --red: hsl(0, 97%, 38%);
+
+  /* Cards */
+  /* Yellow */
+  --main-card-yellow: hsl(44, 100%, 8%);
+  --dark-card-yellow: hsl(43, 100%, 18%);
+  --title-card-yellow: hsl(24, 100%, 71%);
+  /* Blue */
+  --main-card-blue: hsl(203, 81%, 31%);
+  --dark-card-blue: hsl(203, 53%, 42%);
+  /* Red */
+  --main-card-red: hsl(0, 100%, 34%);
+  --dark-card-red: hsl(0, 90%, 54%);
+  /* Default */
+  --main-card: hsl(206, 56%, 11%);
+  --dark-card: hsl(206, 61%, 22%);
+  --title-card: hsl(204, 100%, 75%);
+
+  /* Button */
+  /* Yellow */
+  --main-button-yellow: hsl(43, 100%, 49%);
+  --dark-button-yellow: hsl(36, 100%, 55%);
+  /* Orange */
+  --main-button-orange: var(--orange);
+  --dark-button-orange: var(--dark-orange);
+  /* Red */
+  --main-button-red: hsl(0, 97%, 48%);
+  --dark-button-red: hsl(0, 97%, 58%);
+  /* Green */
+  --main-button-green: hsl(105, 57%, 53%);
+  --dark-button-green: hsl(100, 75%, 73%);
+  /* Default */
+  --main-button: var(--pink);
+  --dark-button: var(--dark-pink);
+
+  /* BBS Table */
+  --light-bbs: hsl(205, 55%, 10%);
+  --dark-bbs: hsl(205, 54%, 14%);
+
+  // Filter images
+  img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  .card-bg {
+    background: none !important;
+  }
+
+  .bbs tbody,
+  .bbs td {
+    background: hsl(205, 54%, 4%) !important;
+  }
+
+  .tiz img,
+  img[alt='Spotlight'],
+  .item img,
+  img[alt*='preview'],
+  .markdown-body img {
+    filter: none;
+  }
+}

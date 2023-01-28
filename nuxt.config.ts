@@ -4,22 +4,19 @@ export default defineNuxtConfig({
     strict: true
     // TODO typeCheck: true
   },
-  modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
+  modules: ['@nuxtjs/i18n', '@pinia/nuxt', '@nuxtjs/color-mode'],
   css: [
     'modern-normalize/modern-normalize.css',
-    '@/assets/css/var.css',
+    '@/assets/css/var.scss',
     '@/assets/css/main.scss',
     '@/assets/css/fonts.css',
     '@/assets/css/classes.css',
-    '@/assets/css/atomic.css'
+    '@/assets/css/atomic.scss'
   ],
   i18n: {
     vueI18n: {
       legacy: false,
       fallbackLocale: 'en'
-    },
-    detectBrowserLanguage: {
-      useCookie: false
     },
     strategy: 'no_prefix',
     locales: [

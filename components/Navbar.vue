@@ -1,8 +1,10 @@
 <template>
-  <div
+  <header
     class="header"
     :style="{
-      backgroundImage: `url(${asset(`img/navbar/svg/${new Date().getHours()}.svg`)})`,
+      backgroundImage: `url(${asset(
+        `img/navbar/svg/${new Date().getHours()}.svg`
+      )})`
     }"
   >
     <NuxtLink to="/">
@@ -14,7 +16,7 @@
         height="70"
         src="@/assets/img/logo.svg"
         @contextmenu.prevent
-      >
+      />
     </NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
@@ -23,37 +25,83 @@
           :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           style="display: inherit"
         />
-        <button
-          v-if="user"
-          id="connect"
-          class="centered"
-          style="display: inline-flex"
-          type="button"
-          @click="auth.logout()"
-        >
-          <img
-            draggable="false"
-            alt="Disconnect icon"
-            height="11"
-            width="11"
-            src="@/assets/img/icon/failure.svg"
-            @contextmenu.prevent
+        <div>
+          <button
+            class="btn-header btn-toggle mr-2"
+            type="button"
+            @click="
+              $colorMode.value !== 'dark'
+                ? ($colorMode.preference = 'dark')
+                : ($colorMode.preference = 'light')
+            "
           >
-          {{ $t("navbar.logout") }}
-        </button>
-        <button v-else type="button">
-          <NuxtLink id="connect" to="/login" class="flex">
             <img
+              draggable="false"
+              :alt="$colorMode.value !== 'dark' ? 'light' : 'dark' + ' theme'"
+              height="16"
+              width="16"
+              :src="
+                asset(
+                  `img/icon/theme/${
+                    $colorMode.value !== 'dark' ? 'light' : 'dark'
+                  }.svg`
+                )
+              "
+              @contextmenu.prevent
+            />
+          </button>
+          <button
+            class="btn-header btn-toggle mr-2 p-0"
+            type="button"
+            @click="$i18n.setLocale($i18n.locale === 'fr' ? 'en' : 'fr')"
+          >
+            <img
+              draggable="false"
+              :alt="$i18n.locale"
+              height="20"
+              width="20"
+              style="filter: none"
+              :src="asset(`img/icon/locale/${$i18n.locale}.svg`)"
+              @contextmenu.prevent
+            />
+          </button>
+          <button
+            v-if="user"
+            id="connect"
+            class="btn-header"
+            type="button"
+            @click="auth.logout()"
+          >
+            <img
+              class="mx-1"
+              draggable="false"
+              alt="Disconnect icon"
+              height="11"
+              width="11"
+              src="@/assets/img/icon/failure.svg"
+              @contextmenu.prevent
+            />
+            {{ $t('navbar.logout') }}
+          </button>
+          <button
+            v-else
+            id="connect"
+            type="button"
+            class="btn-header"
+            @click="$router.push('/login')"
+          >
+            <img
+              class="mx-1"
               draggable="false"
               alt="Connect icon"
               height="11"
               width="11"
               src="@/assets/img/icon/success.svg"
               @contextmenu.prevent
-            >
-            {{ $t("navbar.login") }}
-          </NuxtLink>
-        </button>
+            />
+            {{ $t('navbar.login') }}
+          </button>
+        </div>
       </div>
       <Avatar
         style="margin-right: 16px"
@@ -67,11 +115,9 @@
         :item2="user ? +user.avatar_design.split(';')[6] : 938"
       />
     </div>
-  </div>
+  </header>
   <div id="nav" class="flex">
-    <NuxtLink
-      to="/"
-    >
+    <NuxtLink to="/">
       <button class="nav-btn flex centered" type="button">
         <img
           draggable="false"
@@ -82,7 +128,7 @@
           height="20"
           style="margin: 2px; padding: 1px"
           @contextmenu.prevent
-        >
+        />
       </button>
     </NuxtLink>
     <a
@@ -98,9 +144,9 @@
           width="28"
           height="21"
           @contextmenu.prevent
-        >
+        />
         <StrokeText style="z-index: 1" class="btn-label">{{
-          $t("navbar.play")
+          $t('navbar.play')
         }}</StrokeText>
       </div>
       <img
@@ -111,11 +157,8 @@
         height="33"
         src="@/assets/img/arrow.svg"
         @contextmenu.prevent
-      ></button></a>
-    <NuxtLink
-      v-if="user"
-      to="/account"
-    >
+      /></button></a>
+    <NuxtLink v-if="user" to="/account">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -126,18 +169,14 @@
             height="21"
             src="@/assets/img/navbar/icon/account.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
-            {{
-              $t("navbar.account")
-            }}
+            {{ $t('navbar.account') }}
           </StrokeText>
         </div>
       </button>
     </NuxtLink>
-    <NuxtLink
-      to="/games"
-    >
+    <NuxtLink to="/games">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -148,18 +187,14 @@
             height="21"
             src="@/assets/img/navbar/icon/games.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
-            {{
-              $t("navbar.games")
-            }}
+            {{ $t('navbar.games') }}
           </StrokeText>
         </div>
       </button>
     </NuxtLink>
-    <NuxtLink
-      to="/members"
-    >
+    <NuxtLink to="/members">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -170,18 +205,14 @@
             height="21"
             src="@/assets/img/navbar/icon/members.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
-            {{
-              $t("navbar.members")
-            }}
+            {{ $t('navbar.members') }}
           </StrokeText>
         </div>
       </button>
     </NuxtLink>
-    <NuxtLink
-      to="/bbs"
-    >
+    <NuxtLink to="/bbs">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -192,11 +223,9 @@
             height="21"
             src="@/assets/img/navbar/icon/community.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
-            {{
-              $t("navbar.community")
-            }}
+            {{ $t('navbar.community') }}
           </StrokeText>
         </div>
       </button>
@@ -205,9 +234,7 @@
 </template>
 
 <script setup lang="ts">
-
 import useAuthStore from '@/stores/auth'
-
 
 const auth = useAuthStore()
 const user = computed(() => auth.user)
@@ -232,7 +259,7 @@ const user = computed(() => auth.user)
 }
 
 #username {
-  font-family: "Pixelated Verdana 12";
+  font-family: 'Pixelated Verdana 12';
   font-weight: bold;
   font-size: 16px;
   color: var(--blue);
@@ -253,29 +280,31 @@ const user = computed(() => auth.user)
   height: calc(var(--font-size) * 2);
 }
 
-#connect {
-  font-family: "Pixelated Verdana 12";
+.btn-header {
+  font-family: 'Pixelated Verdana 12';
   font-size: 1.3rem;
   font-weight: normal;
   color: var(--text);
   border-radius: var(--round);
   padding: 2px;
   line-height: 1;
-  margin-right: -20px;
-  border: none;
   background: var(--light);
-  margin-left: var(--gap);
-  align-items: center;
-  width: 130px;
+  height: 20px;
+  text-align: left;
 }
 
-#connect img {
-  margin-right: 4px;
-}
-
-#connect:hover {
+.btn-header:hover {
   background: var(--light-blue);
-  font-weight: bold;
+  text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
+}
+
+.btn-toggle {
+  width: 20px;
+}
+
+#connect {
+  margin-right: -20px;
+  padding-right: 24px;
 }
 
 .nav-btn {
@@ -412,7 +441,7 @@ a:hover {
 }
 
 .nav-text {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-weight: normal;
   font-size: var(--lg-font-size);
   height: 100%;
