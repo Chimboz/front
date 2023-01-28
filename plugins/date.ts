@@ -1,10 +1,10 @@
-/* eslint-disable import/no-duplicates */
 import {
   differenceInCalendarDays as distance,
   format,
   formatDistanceToNowStrict
 } from 'date-fns'
-import { fr, enGB } from 'date-fns/locale'
+// @ts-ignore
+import { fr, enGB } from 'date-fns/locale/index'
 
 const locales = { fr, enGB }
 
