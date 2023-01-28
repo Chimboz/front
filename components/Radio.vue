@@ -116,7 +116,8 @@ function onProgress () {
 .progress-bar {
   height: var(--lg-font-size);
   border-radius: var(--border-radius);
-  background: url("../assets/img/progress.svg");
+  background: url("../assets/img/progress.svg"), var(--pink);
+  background-blend-mode: hard-light;
   background-size: 56.7px;
   animation: colorrush 2s infinite linear;
   animation-play-state: paused;
@@ -133,7 +134,7 @@ function onProgress () {
   flex: 1 0 0%;
   overflow: hidden;
   height: var(--lg-font-size);
-  background: var(--pink);
+  background: linear-gradient(to bottom, var(--dark-card-yellow), var(--light));
 }
 
 @keyframes colorrush {
