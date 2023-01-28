@@ -309,7 +309,6 @@ const user = computed(() => auth.user)
 }
 
 .nav-btn {
-  cursor: var(--pointer);
   height: 25px;
   background-image: linear-gradient(
     to bottom,
