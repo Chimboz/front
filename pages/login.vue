@@ -129,8 +129,6 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-
 const { data } = await useFetch<any>('https://chimboz.fr/api/right')
 
 useHead({ title: 'section.login' })
