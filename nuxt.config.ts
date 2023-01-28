@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     strict: true
     // TODO typeCheck: true
   },
-  modules: ['@nuxtjs/i18n-edge', '@pinia/nuxt'],
+  modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
   css: [
     'modern-normalize/modern-normalize.css',
     '@/assets/css/var.css',
