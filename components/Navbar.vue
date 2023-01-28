@@ -25,7 +25,7 @@
           :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           style="display: inherit"
         />
-        <div>
+        <div class="flex">
           <button
             class="btn-header btn-toggle mr-2"
             type="button"
@@ -51,7 +51,7 @@
             />
           </button>
           <button
-            class="btn-header btn-toggle mr-2 p-0"
+            class="mr-2"
             type="button"
             @click="$i18n.setLocale($i18n.locale === 'fr' ? 'en' : 'fr')"
           >
@@ -283,7 +283,6 @@ const user = computed(() => auth.user)
 .btn-header {
   font-family: 'Pixelated Verdana 12';
   font-size: 1.3rem;
-  font-weight: normal;
   color: var(--text);
   border-radius: var(--round);
   padding: 2px;
@@ -291,6 +290,8 @@ const user = computed(() => auth.user)
   background: var(--light);
   height: 20px;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .btn-header:hover {
