@@ -5,8 +5,8 @@ export default defineEventHandler(() => {
     last24: 48,
     lottery: true,
     level: '25',
-    messages: 0,
-    friends: 0,
+    messages: 99,
+    friends: 99,
     gallery: [
       {
         name: 'unknown.png',

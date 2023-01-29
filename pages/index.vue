@@ -4,7 +4,7 @@
       <Card color="blue" top>
         <NuxtLink to="/levels">
           <div class="level fullwidth">
-            {{ $t("level") }}
+            {{ $t('level') }}
             <div class="number">
               <img
                 v-for="number in data.level.toString(10)"
@@ -15,12 +15,21 @@
                 height="21"
                 :src="asset(`img/number/${number}.svg`)"
                 @contextmenu.prevent
-              >
+              />
             </div>
           </div>
         </NuxtLink>
         <NuxtLink to="/messenger">
           <div class="messages">
+            <img
+              draggable="false"
+              alt="Messages"
+              src="@/assets/img/home/messages.png"
+              width="154"
+              height="67"
+              class="fullwidth"
+              @contextmenu.prevent
+            />
             <div>
               <img
                 v-for="number in data.messages.toString(10)"
@@ -31,22 +40,22 @@
                 height="21"
                 :src="asset(`img/number/pink/${number}.svg`)"
                 @contextmenu.prevent
-              >
+              />
             </div>
+          </div>
+          {{ $t('mi.message', data.messages) }}
+        </NuxtLink>
+        <NuxtLink to="/friends">
+          <div class="friends">
             <img
               draggable="false"
-              alt="Messages"
-              src="@/assets/img/home/messages.png"
+              alt="Friends"
+              src="@/assets/img/home/friends.png"
               width="154"
               height="67"
               class="fullwidth"
               @contextmenu.prevent
-            >
-          </div>
-          {{ $t("mi.message", data.messages) }}
-        </NuxtLink>
-        <NuxtLink to="/friends">
-          <div class="friends">
+            />
             <div>
               <img
                 v-for="number in data.friends.toString(10)"
@@ -57,22 +66,13 @@
                 height="21"
                 :src="asset(`img/number/pink/${number}.svg`)"
                 @contextmenu.prevent
-              >
+              />
             </div>
-            <img
-              draggable="false"
-              alt="Friends"
-              src="@/assets/img/home/friends.png"
-              width="154"
-              height="67"
-              class="fullwidth"
-              @contextmenu.prevent
-            >
           </div>
-          {{ $t("friends.online", data.friends) }}
+          {{ $t('friends.online', data.friends) }}
         </NuxtLink>
       </Card>
-      <br>
+      <br />
       <Bank />
     </template>
     <img
@@ -83,23 +83,18 @@
       height="137"
       style="width: 100%; height: auto"
       @contextmenu.prevent
-    >
-    <br>
+    />
+    <br />
     <Card header="lottery.webp">
       <template #header />
       <div v-if="lottery">
-        <div>{{ $t("lottery.firstLine") }}</div>
-        {{ $t("lottery.secondLine") }}
+        <div>{{ $t('lottery.firstLine') }}</div>
+        {{ $t('lottery.secondLine') }}
       </div>
-      <RandomNumber v-else :max="30" :value="gain" /> <br><br
+      <RandomNumber v-else :max="30" :value="gain" /> <br /><br
         v-if="!lottery"
-      >
-      <Button
-        type="button"
-        color="orange"
-        :disabled="!lottery"
-        @click="handle"
-      >
+      />
+      <Button type="button" color="orange" :disabled="!lottery" @click="handle">
         <template #prepend>
           <img
             v-if="lottery"
@@ -110,7 +105,7 @@
             width="16"
             src="@/assets/img/lottery/up.svg"
             @contextmenu.prevent
-          ><img
+          /><img
             v-else
             draggable="false"
             alt="Lottery handle"
@@ -119,16 +114,16 @@
             width="16"
             src="@/assets/img/lottery/down.svg"
             @contextmenu.prevent
-          >
-        </template>{{ $t("button.lottery") }}
+          />
+        </template>{{ $t('button.lottery') }}
       </Button>
     </Card>
-    <br>
+    <br />
     <Radio src="track.flac" />
-    <br>
+    <br />
     <Card color="yellow" justified>
       <template #subtop>
-        {{ $t("section.chapaniouz") }}
+        {{ $t('section.chapaniouz') }}
       </template>
       <template #header>
         <img
@@ -139,24 +134,19 @@
           alt="Chimboking portrait"
           style="float: left; margin: 0 16px 16px 0"
           @contextmenu.prevent
-        >
+        />
         {{ data.news.title }}
       </template>
-      <div
-        class="markdown-body"
-        v-html="$messageRender(data.news.content)"
-      />
+      <div class="markdown-body" v-html="$messageRender(data.news.content)" />
       <div class="news-date">
-        {{ data.news.author }}, {{ $format(data.news.date, "PPp") }}
+        {{ data.news.author }}, {{ $format(data.news.date, 'PPp') }}
       </div>
     </Card>
-    <br>
+    <br />
     <Card>
       <template #subtop>
         <NuxtLink to="/chaparazzi" class="chaparazzi-link">
-          {{
-            $t("section.chaparazzi")
-          }}
+          {{ $t('section.chaparazzi') }}
         </NuxtLink>
       </template>
       <div class="gallery flex">
@@ -172,8 +162,8 @@
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
               @contextmenu.prevent
-            >
-          </NuxtLink><b>{{ $format(photo.date, "PP") }}</b>
+            />
+          </NuxtLink><b>{{ $format(photo.date, 'PP') }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -185,8 +175,8 @@
             height="17"
             width="17"
             @contextmenu.prevent
-          >
-          {{ $t("chaparazzi.more") }}
+          />
+          {{ $t('chaparazzi.more') }}
         </NuxtLink>
       </div>
     </Card>
@@ -195,17 +185,16 @@
         <template #header>
           <NuxtLink to="/online">
             <h1>{{ data.connected }}</h1>
-            {{ $t("online", data.connected) }}
+            {{ $t('online', data.connected) }}
           </NuxtLink>
         </template>
-        <div>{{ data.members }} {{ $t("members.text", data.members) }}</div>
+        <div>{{ data.members }} {{ $t('members.text', data.members) }}</div>
         <div>
-          {{ data.last24 }} {{ $t("members.past", data.last24) }}
+          {{ data.last24 }} {{ $t('members.past', data.last24) }}
         </div>
-      </Card><br>
+      </Card><br />
       <NuxtLink to="/shop">
         <Card
-
           color="yellow"
           header="packs.webp"
           :width="154"
@@ -214,23 +203,21 @@
         >
           <template #button>
             <Button type="button" color="yellow" icon="item.svg">
-              {{
-                $t("shop.pack")
-              }}
+              {{ $t('shop.pack') }}
             </Button>
           </template>
           <Pack
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
-          /><br><br>
+          /><br /><br />
           <Button
             type="button"
             color="yellow"
             icon="item.svg"
             class="fullwidth"
           >
-            {{ $t("shop.item") }}
-          </Button><br>
+            {{ $t('shop.item') }}
+          </Button><br />
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
         </Card>
       </NuxtLink>
@@ -247,9 +234,7 @@ const gain = ref(0)
 
 async function handle () {
   lottery.value = false
-  gain.value = (
-    await useFetch<any>('/api/lottery')
-  ).data.value.gain
+  gain.value = (await useFetch<any>('/api/lottery')).data.value.gain
 }
 
 useHead({ title: 'section.home' })
@@ -290,11 +275,11 @@ useHead({ title: 'section.home' })
 }
 
 .messages div {
-  transform: translate3d(20%, 200%, 0);
+  transform: translate3d(20%, -210%, 0);
 }
 
 .friends div {
-  transform: translate3d(0, 210%, 0);
+  transform: translate3d(0, -205%, 0);
 }
 
 .handle {
