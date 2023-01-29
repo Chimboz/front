@@ -9,7 +9,7 @@
     "clean": "nuxi clean",
     "typecheck": "vue-tsc",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "i18n:report": "vue-i18n-extract report --vueFiles '**/*.vue' --languageFiles './locales/*.json'",
+    "i18n:report": "vue-i18n-extract report --vueFiles './@(components|pages)/**/*.vue' --languageFiles './locales/*.json'",
     "optimize": "pngquant -f --skip-if-larger --speed 1 -v --ext .png public/**/*.png src/assets/img/**/*.png && npx svgo -rf src/assets/img --multipass && svgo -rf public/announce --multipass && svgo -rf public/blazon --multipass && svgo -rf public/emoticon --multipass && svgo -rf public/item --multipass "
   },
   "devDependencies": {
