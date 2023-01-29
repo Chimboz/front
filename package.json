@@ -9,6 +9,7 @@
     "clean": "nuxi clean",
     "typecheck": "vue-tsc",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "i18n:report": "vue-i18n-extract report --vueFiles '**/*.vue' --languageFiles './locales/*.json'",
     "optimize": "pngquant -f --skip-if-larger --speed 1 -v --ext .png public/**/*.png src/assets/img/**/*.png && npx svgo -rf src/assets/img --multipass && svgo -rf public/announce --multipass && svgo -rf public/blazon --multipass && svgo -rf public/emoticon --multipass && svgo -rf public/item --multipass "
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "sass": "^1.57.1",
     "typescript": "^4.9.4",
     "vite-plugin-eslint": "^1.8.1",
+    "vue-i18n-extract": "^2.0.7",
     "vue-tsc": "^1.0.24"
   },
   "dependencies": {
