@@ -3,7 +3,9 @@
     class="header"
     :style="{
       backgroundImage: `url(${asset(
-        `img/navbar/svg/${new Date().getHours()}.svg`
+        `img/navbar/svg/${
+          $colorMode.value !== 'dark' ? new Date().getHours() : 0
+        }.svg`
       )})`
     }"
   >
@@ -27,6 +29,7 @@
         />
         <div class="flex">
           <button
+            id="theme-toggler"
             class="btn-header btn-toggle mr-2"
             type="button"
             @click="
@@ -34,22 +37,7 @@
                 ? ($colorMode.preference = 'dark')
                 : ($colorMode.preference = 'light')
             "
-          >
-            <img
-              draggable="false"
-              :alt="$colorMode.value !== 'dark' ? 'light' : 'dark' + ' theme'"
-              height="16"
-              width="16"
-              :src="
-                asset(
-                  `img/icon/theme/${
-                    $colorMode.value !== 'dark' ? 'light' : 'dark'
-                  }.svg`
-                )
-              "
-              @contextmenu.prevent
-            />
-          </button>
+          ></button>
           <button
             class="mr-2"
             type="button"
@@ -301,6 +289,13 @@ const user = computed(() => auth.user)
 
 .btn-toggle {
   width: 20px;
+}
+
+#theme-toggler {
+  background-size: 16px;
+  background-position: 2px;
+  background-repeat: no-repeat;
+  background-image: url(@/assets/img/icon/theme/light.svg);
 }
 
 #connect {

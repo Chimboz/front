@@ -51,6 +51,8 @@ useHead({
     {
       children: `body { background-image: url(${asset(
         `img/navbar/background/${new Date().getHours()}.png`
+      )}) } .header { url(${asset(
+        `img/navbar/svg/${new Date().getHours()}.svg`
       )}) }`
     }
   ]

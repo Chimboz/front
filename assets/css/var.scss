@@ -126,6 +126,19 @@
   --light-bbs: hsl(205, 55%, 10%);
   --dark-bbs: hsl(205, 54%, 14%);
 
+  // Dark background
+  body {
+    background-image: url(../img/navbar/background/0.png);
+  }
+
+  .header {
+    background-image: url(../img/navbar/svg/0.svg) !important;
+  }
+
+  #theme-toggler {
+    background-image: url(../img/icon/theme/dark.svg) !important;
+  }
+
   // Filter images
   img {
     filter: invert(1) hue-rotate(180deg);
