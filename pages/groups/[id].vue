@@ -145,7 +145,7 @@
             :alt="data.status"
             style="float: left; margin-right: 4px"
           >
-          {{ $t(`group.${data.status}`) }}
+          {{ $t(`group.status.${data.status}`) }}
           <div v-if="user">
             <br>
             <a
