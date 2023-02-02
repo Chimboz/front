@@ -1,7 +1,7 @@
 module.exports = {
   vueFiles: './@(components|pages)/**/*.vue',
   languageFiles: './locales/*.json',
-  exclude: ['rules.rule', 'admin.modal', 'group.leader'],
+  exclude: ['rules.rule', 'admin.modal', 'group.leader', 'group.status'],
   output: false,
   add: false,
   remove: false,

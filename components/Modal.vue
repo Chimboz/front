@@ -37,7 +37,7 @@
         src="@/assets/img/icon/confirmation.svg"
         @contextmenu.prevent
       />
-      <p>{{ $t(message) }}</p>
+      <p>{{ message }}</p>
       <button
         v-if="type === 'confirmation'"
         type="button"
@@ -83,8 +83,9 @@
 </template>
 <script setup lang="ts">
 const { $eventBus } = useNuxtApp()
+const { t } = useI18n()
 const isVisible = ref(false)
-const message = ref('error.default')
+const message = ref(t('error.default'))
 const type = ref('error')
 const prepare = { api: '', payload: {} }
 
@@ -118,9 +119,9 @@ $eventBus.on(
 async function request () {
   const { data } = await useFetch<any>(prepare.api, { body: prepare.payload })
   if (data.value.success) {
-    notice('success', 'success.buy')
+    notice('success', t('success.buy'))
   } else {
-    notice('failure', 'failure.buy')
+    notice('failure', t('failure.buy'))
   }
 }
 </script>
