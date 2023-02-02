@@ -199,7 +199,8 @@ import { useHead } from '@vueuse/head'
 const { data } = await useFetch<any>('https://chimboz.fr/api/games')
 data.value = JSON.parse(data.value)
 
-useHead({ title: 'section.games' })
+const { t } = useI18n()
+useHead({ title: t('section.games') })
 </script>
 <style lang="scss" scoped>
 .game-champion {

@@ -91,5 +91,6 @@ function changePassword () {
     }
   })
 }
-useHead({ title: 'section.notsmart' })
+const { t } = useI18n()
+useHead({ title: t('section.notsmart') })
 </script>

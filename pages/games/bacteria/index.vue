@@ -347,7 +347,8 @@ data.value.stats = {
   yesterday: 3
 }
 
-useHead({ title: 'section.bacteria' })
+const { t } = useI18n()
+useHead({ title: t('section.bacteria') })
 </script>
 
 <style lang="scss" scoped>

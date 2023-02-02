@@ -251,22 +251,22 @@
 <script setup lang="ts">
 import useAuthStore from '@/stores/auth'
 
-
 const { $eventBus } = useNuxtApp()
 const auth = useAuthStore()
 const user = computed(() => auth.user!)
+const { t } = useI18n()
 
 const { data } = await useFetch<any>('/api/admin_user')
 
 function action (type: string, payload?: object) {
   $eventBus.emit('confirmation', {
-    message: `admin.modal.${type}`,
+    message: t(`admin.modal.${type}`),
     api: `/api/${type}.json`,
     payload
   })
 }
 
-useHead({ title: 'section.admin' })
+useHead({ title: t('section.admin') })
 </script>
 <style lang="scss" scoped>
 .pseudo {

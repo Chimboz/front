@@ -86,7 +86,8 @@ function submit () {
   useFetch('account/majmin', { body: { pseudo: pseudo.value } })
 }
 
-useHead({ title: 'section.capitalization' })
+const { t } = useI18n()
+useHead({ title: t('section.capitalization') })
 </script>
 
 <style lang="scss" scoped>

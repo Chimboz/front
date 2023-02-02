@@ -131,7 +131,8 @@
 <script setup lang="ts">
 const { data } = await useFetch<any>('https://chimboz.fr/api/right')
 
-useHead({ title: 'section.login' })
+const { t } = useI18n()
+useHead({ title: t('section.login') })
 </script>
 <style lang="scss">
 .packs .card-btn {

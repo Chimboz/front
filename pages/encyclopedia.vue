@@ -158,7 +158,6 @@
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image'
 
-
 const { data } = await useFetch<any[]>(
       `https://chimboz.fr/public/api/encyclopedia?lang=${
         useBrowserLocale()!.split('-')[0]
@@ -216,7 +215,8 @@ const search = ref('')
 
 function onSearch () {}
 
-useHead({ title: 'section.encyclopedia' })
+const { t } = useI18n()
+useHead({ title: t('section.encyclopedia') })
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container

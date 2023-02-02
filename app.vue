@@ -9,13 +9,11 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import useAuthStore from '@/stores/auth'
 import favicon from '@/constants/favicon.json'
 import faviconNew from '@/constants/favicon_new.json'
 
 const notifications = computed(() => useAuthStore().notifications)
-const { t } = useI18n()
 
 useHead({
   titleTemplate: title =>
@@ -25,7 +23,7 @@ useHead({
             .toString()
             .replace(/[0-9]/g, c => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c))
         : ''
-    }Chimboz ${t(title as string)}`,
+    }Chimboz ${title}`,
   link: notifications.value ? faviconNew : favicon,
   meta: [
     {

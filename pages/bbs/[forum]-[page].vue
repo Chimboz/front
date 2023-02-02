@@ -75,7 +75,8 @@ const route = useRoute()
 const post = ref(false)
 const { data } = await useFetch<any>(`https://chimboz.fr/api/bbs/forum/${route.params.forum}?page=${route.params.page}`)
 
-useHead({ title: 'section.forum' })
+const { t } = useI18n()
+useHead({ title: t('section.forum') })
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

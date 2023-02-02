@@ -127,7 +127,8 @@ function create () {
   useFetch('groups/createok', { body: { name: name.value, blazon: data.blazon } })
 }
 
-useHead({ title: 'section.groupedit' })
+const { t } = useI18n()
+useHead({ title: t('section.groupedit') })
 </script>
 <style lang="scss" scoped>
 .blazon {

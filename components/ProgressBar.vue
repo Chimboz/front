@@ -14,8 +14,6 @@
   </div>
 </template>
 <script setup lang="ts">
-
-
 // Assume that loading will complete under this amount of time.
 const defaultDuration = 4000
 // How frequently to update

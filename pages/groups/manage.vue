@@ -346,5 +346,6 @@ function leave (id: number) {
   useFetch(`groups/manage/${id}/1`)
 }
 
-useHead({ title: 'section.groups' })
+const { t } = useI18n()
+useHead({ title: t('section.groups') })
 </script>

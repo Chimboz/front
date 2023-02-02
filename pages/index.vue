@@ -237,7 +237,8 @@ async function handle () {
   gain.value = (await useFetch<any>('/api/lottery')).data.value.gain
 }
 
-useHead({ title: 'section.home' })
+const { t } = useI18n()
+useHead({ title: t('section.home') })
 </script>
 <style lang="scss">
 .packs .card-btn {

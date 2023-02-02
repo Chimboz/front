@@ -250,5 +250,6 @@
 </template>
 <script setup lang="ts">
 
-useHead({ title: 'section.bacteriaStory' })
+const { t } = useI18n()
+useHead({ title: t('section.bacteriaStory') })
 </script>

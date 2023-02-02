@@ -138,8 +138,6 @@
 </template>
 <script setup lang="ts">
 
-
-
 // data.value = (await useFetch("friends")).data;
 // TODO remove
 const { data } = await useFetch<any>('/api/friends')
@@ -169,7 +167,8 @@ async function addFriend () {
   if (res.result === 'success') { data.value.push(res.data) }
 }
 
-useHead({ title: 'section.friends' })
+const { t } = useI18n()
+useHead({ title: t('section.friends') })
 </script>
 
 <style lang="scss" scoped>

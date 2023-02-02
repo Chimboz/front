@@ -38,11 +38,10 @@
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image'
 
-
-
 const { data } = await useFetch<any[]>('https://chimboz.fr/public/api/gallery?page=0')
 
-useHead({ title: 'section.chaparazzi' })
+const { t } = useI18n()
+useHead({ title: t('section.chaparazzi') })
 </script>
 <style lang="scss" scoped>
 .gallery {

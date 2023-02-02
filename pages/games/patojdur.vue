@@ -416,14 +416,14 @@
 
 <script setup lang="ts">
 
-
 const { data } = await useFetch<any>('https://chimboz.fr/api/games/patoj')
 data.value.stats = {
   today: 1,
   yesterday: 2
 }
 
-useHead({ title: 'section.patojdur' })
+const { t } = useI18n()
+useHead({ title: t('section.patojdur') })
 </script>
 
 <style lang="scss" scoped>

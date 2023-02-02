@@ -66,8 +66,6 @@
 </template>
 <script setup lang="ts">
 
-
-
 const data = ref<any[]>([])
 const username = ref('')
 const suggestionsHere = ref<any[]>([])
@@ -86,7 +84,8 @@ function search () {
   return true
 }
 
-useHead({ title: 'section.admin' })
+const { t } = useI18n()
+useHead({ title: t('section.admin') })
 </script>
 <style lang="scss" scoped>
 .log {

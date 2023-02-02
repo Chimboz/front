@@ -118,8 +118,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 
-
-
 const { data } = await useFetch<any>('/api/mi5')
 const input = ref('')
 
@@ -133,7 +131,8 @@ function send () {
   input.value = ''
 }
 
-useHead({ title: 'section.conversation' })
+const { t } = useI18n()
+useHead({ title: t('section.conversation') })
 </script>
 
 <style lang="scss" scoped>

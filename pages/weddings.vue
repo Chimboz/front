@@ -394,7 +394,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 
-
 const router = useRouter()
 const { data } = await useFetch<any>('https://chimboz.fr/api/weddings')
 const idSearch = ref<undefined | number>(undefined)
@@ -404,7 +403,8 @@ function search () {
   router.push(`/weddings/${idSearch.value}`)
 }
 
-useHead({ title: 'section.wedding' })
+const { t } = useI18n()
+useHead({ title: t('section.wedding') })
 </script>
 
 <style lang="scss" scoped>

@@ -83,7 +83,6 @@
 </template>
 <script setup lang="ts">
 
-
 const pseudo = ref('')
 
 function submit () {
@@ -95,7 +94,8 @@ async function generatePseudo () {
   pseudo.value = JSON.parse(data.value).pseudo
 }
 
-useHead({ title: 'section.eraser' })
+const { t } = useI18n()
+useHead({ title: t('section.eraser') })
 </script>
 
 <style lang="scss" scoped>

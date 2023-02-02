@@ -205,7 +205,8 @@ async function searchGroup () {
   )
 }
 
-useHead({ title: 'section.members' })
+const { t } = useI18n()
+useHead({ title: t('section.members') })
 </script>
 <style lang="scss" scoped>
 img[src*="spotlight"] {

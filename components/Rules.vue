@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="rule">
-        <b>{{ $t("rules.rule" + rule) }}</b>
+        <b>{{ $t(`rules.rule${rule}`) }}</b>
       </div>
     </div>
     <div class="fullwidth">

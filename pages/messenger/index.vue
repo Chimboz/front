@@ -86,7 +86,8 @@
 
 const { data } = await useFetch<any>('/api/mi')
 
-useHead({ title: 'section.messenger' })
+const { t } = useI18n()
+useHead({ title: t('section.messenger') })
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

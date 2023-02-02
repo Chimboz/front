@@ -112,6 +112,7 @@ import useAuthStore from '@/stores/auth'
 const { $eventBus } = useNuxtApp()
 const auth = useAuthStore()
 const user = computed(() => auth.user)
+const { t } = useI18n()
 
 const { data } = await useFetch<any>('https://chimboz.fr/api/shop')
 const shown = ref<any>(data.value.packs[0])
@@ -125,7 +126,7 @@ function show (pack: any) {
 function buy () {
   buyAudio.value!.play()
   $eventBus.emit('confirmation', {
-    message: 'confirm.buy',
+    message: t('confirm.buy'),
     api: 'shop/buy',
     payload: {
       id: shown.value.id
@@ -133,7 +134,7 @@ function buy () {
   })
 }
 
-useHead({ title: 'section.shop' })
+useHead({ title: t('section.shop') })
 </script>
 <style lang="scss">
 .menu .pack {

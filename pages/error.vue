@@ -21,5 +21,6 @@
 
 <script setup lang="ts">
 
-useHead({ title: 'section.error' })
+const { t } = useI18n()
+useHead({ title: t('section.error') })
 </script>

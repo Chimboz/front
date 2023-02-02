@@ -399,8 +399,6 @@ import {
   LinearScale
 } from 'chart.js'
 
-
-
 Chart.register(
   Legend,
   DoughnutController,
@@ -445,7 +443,8 @@ function statsPatojdur () {
   }
 }
 
-useHead({ title: 'section.account' })
+const { t } = useI18n()
+useHead({ title: t('section.account') })
 </script>
 <style lang="scss">
 .games .card {

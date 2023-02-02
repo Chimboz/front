@@ -264,7 +264,8 @@ const user = computed(() => auth.user)
 
 const { data } = await useFetch<any>(`https://chimboz.fr/api/book/${useRoute().params.id}`)
 
-useHead({ title: 'section.member' })
+const { t } = useI18n()
+useHead({ title: t('section.member') })
 </script>
 <style lang="scss">
 .card {

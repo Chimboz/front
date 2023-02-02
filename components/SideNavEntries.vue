@@ -14,117 +14,119 @@
         height="17"
         draggable="false"
         @contextmenu.prevent
-      >&nbsp;{{ $t(entry.label) }}
+      />&nbsp;{{ entry.label }}
     </div>
   </NuxtLink>
 </template>
 <script setup lang="ts">
 defineProps<{
-  section: string;
+  section: string
 }>()
 
-const sideNavEntries = [
+const { t } = useI18n()
+
+const sideNavEntries = computed(() => [
   {
-    label: 'section.account',
+    label: t('section.account'),
     url: '/account',
     section: 'Account'
   },
   {
-    label: 'section.messenger',
+    label: t('section.messenger'),
     url: '/messenger',
     section: 'Account'
   },
   {
-    label: 'section.groups',
+    label: t('section.groups'),
     url: '/groups/manage',
     section: 'Account'
   },
   {
-    label: 'section.friends',
+    label: t('section.friends'),
     url: '/friends',
     section: 'Account'
   },
   {
-    label: 'section.password',
+    label: t('section.password'),
     url: '/notsmart',
     section: 'Account'
   },
   {
-    label: 'section.eraser',
+    label: t('section.eraser'),
     url: '/eraser',
     section: 'Account'
   },
   {
-    label: 'section.capitalization',
+    label: t('section.capitalization'),
     url: '/lowupp',
     section: 'Account'
   },
   {
-    label: 'section.games',
+    label: t('section.games'),
     url: '/games',
     section: 'Games'
   },
   {
-    label: 'section.bacteria',
+    label: t('section.bacteria'),
     url: '/games/bacteria',
     section: 'Games'
   },
   {
-    label: 'section.patojdur',
+    label: t('section.patojdur'),
     url: '/games/patojdur',
     section: 'Games'
   },
   {
-    label: 'section.mazo',
+    label: t('section.mazo'),
     url: '/games/mazo',
     section: 'Games'
   },
   {
-    label: 'section.members',
+    label: t('section.members'),
     url: '/members',
     section: 'Members'
   },
   {
-    label: 'section.book',
+    label: t('section.book'),
     url: '/book',
     section: 'Members'
   },
   {
-    label: 'section.popularity',
+    label: t('section.popularity'),
     url: '/popularity',
     section: 'Members'
   },
   {
-    label: 'section.wedding',
+    label: t('section.wedding'),
     url: '/weddings',
     section: 'Members'
   },
   {
-    label: 'section.groups',
+    label: t('section.groups'),
     url: '/groups',
     section: 'Members'
   },
   {
-    label: 'section.forum',
+    label: t('section.forum'),
     url: '/bbs',
     section: 'Community'
   },
   {
-    label: 'section.shop',
+    label: t('section.shop'),
     url: '/shop',
     section: 'Community'
   },
   {
-    label: 'section.encyclopedia',
+    label: t('section.encyclopedia'),
     url: '/encyclopedia',
     section: 'Community'
   },
   {
-    label: 'section.chaparazzi',
+    label: t('section.chaparazzi'),
     url: '/chaparazzi',
     section: 'Community'
   }
-]
+])
 </script>
 <style scoped>
 .router-link-active .list,

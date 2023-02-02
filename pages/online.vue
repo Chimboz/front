@@ -55,10 +55,10 @@
 </template>
 <script setup lang="ts">
 
-
 const { data } = await useFetch<any>('https://chimboz.fr/api/online')
 
-useHead({ title: 'section.online' })
+const { t } = useI18n()
+useHead({ title: t('section.online') })
 </script>
 
 <style lang="scss" scoped></style>

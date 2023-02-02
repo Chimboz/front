@@ -300,14 +300,13 @@
 </template>
 <script setup lang="ts">
 
-
 const { $eventBus } = useNuxtApp()
+const { t } = useI18n()
 const { data } = await useFetch<any>('/api/groups_edit')
 
 function deleteGroup () {
-  // TODO
   $eventBus.emit('confirmation', {
-    message: 'confirm.group.delete',
+    message: t('confirm.group.delete'),
     api: `groups/manage/delete?id=${data.value.id}`
   })
 }
@@ -324,7 +323,7 @@ function rejectDemand (id: number) {
 function focusHandler () {}
 function selectionHandler () {}
 
-useHead({ title: 'section.groupedit' })
+useHead({ title: t('section.groupedit') })
 </script>
 <style lang="scss" scoped>
 .blazon {

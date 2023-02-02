@@ -375,5 +375,6 @@ const user = computed(() => auth.user)
 
 const { data } = await useFetch<any>('https://chimboz.fr/api/groups')
 
-useHead({ title: 'section.groups' })
+const { t } = useI18n()
+useHead({ title: t('section.groups') })
 </script>

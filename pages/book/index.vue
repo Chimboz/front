@@ -174,7 +174,8 @@ async function search () {
   )
 }
 
-useHead({ title: 'section.popularity' })
+const { t } = useI18n()
+useHead({ title: t('section.popularity') })
 </script>
 
 <style lang="scss" scoped>

@@ -55,11 +55,11 @@
 </template>
 <script setup lang="ts">
 
-
 const { data } = await useFetch<any>('/api/levels')
 const selected = ref(0)
 
-useHead({ title: 'section.levels' })
+const { t } = useI18n()
+useHead({ title: t('section.levels') })
 </script>
 
 <style lang="scss" scoped>

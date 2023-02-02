@@ -161,7 +161,6 @@
 </template>
 <script setup lang="ts">
 
-
 import useAuthStore from '@/stores/auth'
 
 const auth = useAuthStore()
@@ -174,7 +173,8 @@ function join () {
   useFetch(`groups/demand/${data.value.id}`)
 }
 
-useHead({ title: 'section.group' })
+const { t } = useI18n()
+useHead({ title: t('section.group') })
 </script>
 <style lang="scss" scoped>
 .blazon {
