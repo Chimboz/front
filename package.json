@@ -7,12 +7,14 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "clean": "nuxi clean",
+    "upgrade": "nuxi upgrade",
     "typecheck": "vue-tsc",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "i18n:report": "vue-i18n-extract",
     "optimize": "pngquant -f --skip-if-larger --speed 1 -v --ext .png public/**/*.png src/assets/img/**/*.png && npx svgo -rf src/assets/img --multipass && svgo -rf public/announce --multipass && svgo -rf public/blazon --multipass && svgo -rf public/emoticon --multipass && svgo -rf public/item --multipass "
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.1.0",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/i18n": "^8.0.0-beta.9",
@@ -24,7 +26,7 @@
     "eslint": "^8.31.0",
     "eslint-plugin-vue": "^9.8.0",
     "mitt": "^3.0.0",
-    "nuxt": "^3.1.1",
+    "nuxt": "^3.2.0",
     "prettier": "^2.8.2",
     "sass": "^1.57.1",
     "typescript": "^4.9.4",

@@ -4,7 +4,12 @@ export default defineNuxtConfig({
     strict: true
     // TODO typeCheck: true
   },
-  modules: ['@nuxtjs/i18n', '@pinia/nuxt', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxt/devtools'
+  ],
   css: [
     'modern-normalize/modern-normalize.css',
     '@/assets/css/var.scss',
