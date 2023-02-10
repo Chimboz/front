@@ -21,7 +21,7 @@
         >
           <template #button>
             <Button type="button" color="yellow" icon="register.svg">
-              Pack
+              {{ $t("button.pack") }}
             </Button>
           </template>
           <Pack name="supporter" :looks="data.shop.looks" />

@@ -5,5 +5,27 @@
     "i18n-ally.keystyle": "flat",
     "i18n-ally.sortKeys": true,
     "i18n-ally.sourceLanguage": "fr",
-    "i18n-ally.translate.deepl.useFreeApiEntry": true
+    "i18n-ally.translate.deepl.useFreeApiEntry": true,
+    "i18n-ally.keysInUse": [
+        "group.leader",
+        "group.leader.empire",
+        "group.leader.group",
+        "group.leader.guild",
+        "group.leader.meute",
+        "group.leader.skool",
+        "group.leader.skwat",
+        "group.leader.triad",
+        "group.leader.clan",
+        "group.leader.ekip",
+        "group.leader.gang",
+        "group.leader.hord",
+        "group.leader.klub",
+        "group.leader.sekt",
+        "rules.rule0",
+        "rules.rule1",
+        "rules.rule2",
+        "rules.rule3",
+        "rules.rule4",
+        "rules.rule5"
+    ]
 }

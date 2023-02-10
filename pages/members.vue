@@ -35,15 +35,14 @@
             :item2="user.look.item2"
           />
           <LinkUser :user="user" />
-          <span>Membre n°<b>{{ user.id }}</b></span>
+          <span>{{ $t("members.memberNumber") }}<b>{{ user.id }}</b></span>
         </div>
       </div>
       <br>
-      Les derniers membres qui ont rejoint l'archipel !
-
+      {{ $t("members.lastMembers") }}
       <br>
       <NuxtLink to="/book">
-        Voir la liste des nouveaux arrivants
+        {{ $t("members.showList") }}
       </NuxtLink>
     </Card>
     <br>
