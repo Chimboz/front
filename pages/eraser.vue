@@ -13,10 +13,10 @@
       justified
     >
       <template #subtop>
-        Effaceur
+        {{ $t("section.eraser") }}
       </template>
       <template #header>
-        SOS pseudo moisi, changez de pseudo pour 200 pepettes !
+        {{ $t("section.eraser.header") }}
       </template>
       <img
         src="@/assets/img/shop/effaceur.webp"
@@ -50,7 +50,7 @@
             aria-label="Generate nickname"
             @click="generatePseudo()"
           >
-            Générer un pseudo
+            {{ $t("section.eraser.button") }}
           </Button>
           <Button
             color="green"
@@ -71,9 +71,7 @@
           </Button>
         </div>
         <br>
-        <b>Attention</b>, tu ne peux avoir qu'un seul pseudo à la fois. Si tu
-        possèdes déjà un pseudo et que tu en rachètes un, le nouveau remplacera
-        l'ancien.
+        <span v-html="$t('section.eraser.description')"></span>
       </form>
     </Card>
     <template #right-column>

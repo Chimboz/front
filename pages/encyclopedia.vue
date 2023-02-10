@@ -58,7 +58,7 @@
       <Card justified>
         <template #button>
           <Button type="button" icon="search.svg">
-            Chercher
+            {{ $t("button.search") }}
           </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="onSearch">
@@ -81,7 +81,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> Type d'item :</b>
+        ><b> {{ $t("item.type") }}:</b>
         <div class="fullwidth centered" @contextmenu.prevent>
           <button
             v-for="category of categories"
@@ -120,7 +120,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> Rareté :</b>
+        ><b> {{ $t("item.rarity") }}:</b>
         <div class="fullwidth centered">
           <button
             v-for="rarity of rarities"
