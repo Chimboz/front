@@ -13,7 +13,7 @@
       justified
     >
       <template #subtop>
-        Niveaux
+        {{ $t("section.levels") }}
       </template>
       <div class="flex">
         <div class="level-list">
@@ -46,7 +46,7 @@
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
           </div>
-          <b>Membres ayant ce niveau :</b> {{ data[selected].number }}
+          <b>{{ $t("section.levels.membersHave") }}:</b> {{ data[selected].number }}
         </div>
       </div>
     </Card>

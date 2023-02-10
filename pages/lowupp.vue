@@ -13,25 +13,15 @@
       justified
     >
       <template #subtop>
-        MajMin
+        {{ $t("section.capitalization") }}
       </template>
       <template #header>
-        Changer de MajMiN
+        {{ $t("section.capitalization.header") }}
       </template>
       <template #subtitle>
-        Un bon MajMiN, c'est un plus pour ta reconnaissance dans la
-        communauté...
+        {{ $t("section.capitalization.subtitle") }}
       </template>
-      <b>Un MajMiN c'est quoi ?</b><br>
-      Le MajMiN ( <b>Maj</b>uscules <b>Min</b>uscules ) c'est l'apparence de ton
-      pseudo.<br>
-      Par exemple, Andre et AnDRe c'est le même pseudo, c'est juste le MajMiN
-      qui change.<br>
-      <br>
-      <b>Tu peux changer de MajMiN quand tu le souhaites.</b><br>
-      Tu peux changer uniquement le MajMiN des lettres, tu ne peux pas en
-      rajouter, tu ne peux pas en enlever, tu ne peux pas échanger une lettre
-      par une autre.
+      <span v-html="$t('section.capitalization.description')"></span>
       <form @submit.prevent="submit">
         <div class="centered">
           <button
@@ -60,7 +50,7 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
             >
-          </template>Sauver
+          </template>{{ $t("button.save") }}
         </Button>
       </form>
     </Card>

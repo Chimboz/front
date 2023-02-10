@@ -13,7 +13,7 @@
       justified
     >
       <template #subtop>
-        Friends
+        {{ $t("section.friends") }}
       </template>
       <ScrollableContainer
         route="https://chimboz.fr/api/friends"
