@@ -1,4 +1,25 @@
 {
+  "name": "chimboz-front",
+  "version": "0.1.0",
+  "description": "Chimboz front using Nuxt",
+  "keywords": [
+    "nuxt",
+    "node",
+    "typescript",
+    "ts",
+    "chapatiz",
+    "chimboz",
+    "muniz"
+  ],
+  "homepage": "https://github.com/Chimboz/ChimbozFront",
+  "bugs": {
+    "url": "https://github.com/Chimboz/ChimbozFront/issues"
+  },
+  "license": "CECILL-2.1",
+  "author": {
+    "name": "Tigriz",
+    "url": "https://github.com/Tigriz"
+  },
   "private": true,
   "config": {
     "commitizen": {
