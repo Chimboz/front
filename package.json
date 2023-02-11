@@ -23,7 +23,7 @@
   "private": true,
   "config": {
     "commitizen": {
-      "path": "@commitlint/prompt"
+      "path": "@commitlint/cz-commitlint"
     }
   },
   "scripts": {
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
-    "@commitlint/prompt": "^17.4.2",
+    "@commitlint/cz-commitlint": "^17.4.2",
     "@nuxt/devtools": "^0.1.0",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
@@ -57,6 +57,7 @@
     "eslint": "^8.31.0",
     "eslint-plugin-vue": "^9.8.0",
     "husky": "^8.0.3",
+    "inquirer": "^8.2.5",
     "mitt": "^3.0.0",
     "nuxt": "^3.2.0",
     "prettier": "^2.8.2",
