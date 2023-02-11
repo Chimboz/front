@@ -1,7 +1,13 @@
 {
   "private": true,
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  },
   "scripts": {
     "build": "nuxt build",
+    "commit": "git-cz",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -14,6 +20,9 @@
     "optimize": "pngquant -f --skip-if-larger --speed 1 -v --ext .png public/**/*.png src/assets/img/**/*.png && npx svgo -rf src/assets/img --multipass && svgo -rf public/announce --multipass && svgo -rf public/blazon --multipass && svgo -rf public/emoticon --multipass && svgo -rf public/item --multipass "
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/prompt": "^17.4.2",
     "@nuxt/devtools": "^0.1.0",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
@@ -23,8 +32,10 @@
     "@types/marked": "^4.0.8",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
+    "commitizen": "^4.3.0",
     "eslint": "^8.31.0",
     "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.3",
     "mitt": "^3.0.0",
     "nuxt": "^3.2.0",
     "prettier": "^2.8.2",
