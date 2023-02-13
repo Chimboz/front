@@ -20,7 +20,7 @@
           type="text"
           class="btn-md"
           aria-label="Group"
-          :placeholder="$t('placeholder.groupname')"
+          :placeholder="$t('placeholder.groupName')"
         >
       </Card>
       <br>
