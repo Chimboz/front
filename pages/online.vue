@@ -11,7 +11,7 @@
     </template>
     <Card>
       <template #subtop>
-        Sur le tchat
+        {{ $t('online.chat') }}
       </template><span
         v-for="user in data.tchat"
         :key="user.id"
@@ -21,7 +21,7 @@
     </Card><br>
     <Card>
       <template #subtop>
-        Sur le site
+        {{ $t('online.site') }}
       </template><span
         v-for="(user, index) in data.site"
         :key="user.id"
@@ -47,7 +47,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >Le record de connectés est de <b>{{ data.record.online }}</b> le
+        >{{ $t('online.record') }} <b>{{ data.record.online }}</b> {{ $t('date.on') }}
         <b>{{ $format(data.record.date, "PPp") }}</b>.
       </Card>
     </template>
