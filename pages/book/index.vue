@@ -72,7 +72,7 @@
           <tr>
             <th>{{ $t("No") }}</th>
             <th>{{ $t("Pseudo") }}</th>
-            <th>{{ $t("book.registeredon") }}</th>
+            <th>{{ $t("book.registeredOn") }}</th>
           </tr>
         </thead>
         <tbody>

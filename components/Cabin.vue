@@ -128,20 +128,20 @@
             <Button
               type="button"
               :class="{ active: profile }"
-              :aria-label="$t('profile.profileSection')"
+              :aria-label="$t('profile.profile')"
               @click="profile = !profile"
             >
-              {{ $t("profile.profileSection") }}
+              {{ $t("profile.profile") }}
             </Button><Button
               type="button"
               :class="{ active: !profile }"
-              :aria-label="$t('profile.invSection')"
+              :aria-label="$t('profile.inventory')"
               @click="
                 profile = !profile;
                 loadInventory = true;
               "
             >
-              {{ $t("profile.invSection") }}
+              {{ $t("profile.inventory") }}
             </Button>
           </div>
           <div v-show="profile" id="profile">

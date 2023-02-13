@@ -317,7 +317,7 @@
         <template #button>
           <Button type="button" icon="register.svg">
             {{
-              $t("profile.friendsList")
+              $t("profile.friends")
             }}
           </Button>
         </template>
@@ -358,7 +358,7 @@
         <template #button>
           <Button type="button" icon="register.svg">
             {{
-              $t("profile.groupsList")
+              $t("profile.groups")
             }}
           </Button>
         </template>

@@ -16,11 +16,11 @@
         <div>
           <img
             draggable="false"
-            :alt="$t('bbs.lock_new')"
-            :title="$t('bbs.lock_new')"
+            :alt="$t('bbs.lock.new')"
+            :title="$t('bbs.lock.new')"
             src="@/assets/img/bbs/folder_new_lock.svg"
             @contextmenu.prevent
-          >&nbsp;{{ $t("bbs.lock_new") }}&nbsp;
+          >&nbsp;{{ $t("bbs.lock.new") }}&nbsp;
         </div>
         <div>
           <img
@@ -43,11 +43,11 @@
         <div>
           <img
             draggable="false"
-            :alt="$t('bbs.nonew')"
-            :title="$t('bbs.nonew')"
+            :alt="$t('bbs.noNew')"
+            :title="$t('bbs.noNew')"
             src="@/assets/img/bbs/folder.svg"
             @contextmenu.prevent
-          >&nbsp;{{ $t("bbs.nonew") }}&nbsp;
+          >&nbsp;{{ $t("bbs.noNew") }}&nbsp;
         </div>
       </div>
     </Card>

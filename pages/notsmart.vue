@@ -19,8 +19,8 @@
           required
           name="password"
           type="password"
-          aria-label="$t('placeholder.currentpassword')"
-          :placeholder="$t('placeholder.currentpassword')"
+          aria-label="$t('placeholder.password.current')"
+          :placeholder="$t('placeholder.password.current')"
           autocomplete="current-password"
           class="btn-md"
         >
@@ -29,8 +29,8 @@
           required
           name="password"
           type="password"
-          aria-label="$t('placeholder.newpassword')"
-          :placeholder="$t('placeholder.newpassword')"
+          aria-label="$t('placeholder.password.new')"
+          :placeholder="$t('placeholder.password.new')"
           class="btn-md"
         >
         <input
@@ -38,8 +38,8 @@
           required
           name="password_confirm"
           type="password"
-          aria-label="$t('placeholder.confirmpassword')"
-          :placeholder="$t('placeholder.confirmpassword')"
+          aria-label="$t('placeholder.password.confirm')"
+          :placeholder="$t('placeholder.password.confirm')"
           class="btn-md"
         >
         <br>

@@ -152,7 +152,7 @@
           name="password_confirm"
           type="password"
           aria-label="Password confirm"
-          :placeholder="$t('placeholder.password_confirm')"
+          :placeholder="$t('placeholder.password.confirm')"
           class="btn-md"
         >
         <div class="flex">
