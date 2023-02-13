@@ -72,15 +72,14 @@
             :item2="user.look.item2"
           />
           <LinkUser :user="user" />
-          <span>Avec <b>{{ user.score }}</b> points</span>
+          <span v-html="$t('members.popularity.withPoints', {score: user.score})"></span>
         </div>
       </div>
       <br>
-      Les membres les plus populaire de l'archipel !
-
+      {{ $t('members.popularity.sub') }}
       <br>
       <NuxtLink to="/popularity">
-        Voir la page popularité
+        {{ $t("members.popularity.link") }}
       </NuxtLink>
     </Card>
     <br>
@@ -131,10 +130,10 @@
         </div>
       </div>
       <br>
-      Les derniers mariages célébrés par Guruji
+      {{ $t("members.weddings.sub") }}
       <br>
       <NuxtLink to="/weddings">
-        Voir la page des mariages
+        {{ $t("members.weddings.link") }}
       </NuxtLink>
     </Card>
     <template #right-column>

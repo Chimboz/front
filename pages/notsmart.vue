@@ -10,7 +10,7 @@
     </template>
     <Card color="yellow" justified>
       <template #subtop>
-        Pamalin
+        {{ $t("section.notsmart") }}
       </template>
       On t'a dit que tu allais avoir des nouvelles fringues, que tu allais
       pouvoir devenir modo, que tu allais gagner des points ou un niveau, et tu
