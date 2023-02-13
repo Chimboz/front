@@ -13,7 +13,7 @@
       justified
     >
       <template #subtop>
-        {{ $t("section.friends") }}
+        {{ $t("friends") }}
       </template>
       <ScrollableContainer
         route="https://chimboz.fr/api/friends"
@@ -168,7 +168,7 @@ async function addFriend () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.friends') })
+useHead({ title: t('friends') })
 </script>
 
 <style lang="scss" scoped>

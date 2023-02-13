@@ -224,7 +224,7 @@
           <b>{{ data.popularity.yesterday.score }}</b> points</span>
       </div>
       <br v-if="data.popularity">
-      <div class="member-section registration">
+      <div class="member-registration">
         <span>Membre n°<b>{{ data.id }}</b><br>
           Dans la communauté depuis le
           <b>{{ $format(data.register, "PPp") }}</b> (<b>{{
@@ -256,7 +256,6 @@
 
 <script setup lang="ts">
 
-
 import useAuthStore from '@/stores/auth'
 
 const auth = useAuthStore()
@@ -265,7 +264,7 @@ const user = computed(() => auth.user)
 const { data } = await useFetch<any>(`https://chimboz.fr/api/book/${useRoute().params.id}`)
 
 const { t } = useI18n()
-useHead({ title: t('section.member') })
+useHead({ title: t('member') })
 </script>
 <style lang="scss">
 .card {
@@ -375,7 +374,7 @@ useHead({ title: t('section.member') })
   border-radius: 4px;
 }
 
-.member-section img {
+.member-img {
   padding-right: 6px;
 }
 

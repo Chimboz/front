@@ -174,7 +174,7 @@ function join () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.group') })
+useHead({ title: t('group') })
 </script>
 <style lang="scss" scoped>
 .blazon {

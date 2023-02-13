@@ -23,6 +23,6 @@ const { t } = useI18n()
 
 const { data } = await useFetch<any>(`https://chimboz.fr/api/bbs/topic/${route.params.forum}/${route.params.topic}?page=${route.params.page}`)
 
-useHead({ title: `${t('section.topic')} "${data.value.messages[0].title}"` })
+useHead({ title: `${t('topic')} "${data.value.messages[0].title}"` })
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>

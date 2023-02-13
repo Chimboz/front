@@ -13,15 +13,15 @@
       justified
     >
       <template #subtop>
-        {{ $t("section.capitalization") }}
+        {{ $t("capitalization") }}
       </template>
       <template #header>
-        {{ $t("section.capitalization.header") }}
+        {{ $t("capitalization.header") }}
       </template>
       <template #subtitle>
-        {{ $t("section.capitalization.subtitle") }}
+        {{ $t("capitalization.subtitle") }}
       </template>
-      <span v-html="$t('section.capitalization.description')"></span>
+      <span v-html="$t('capitalization.description')"></span>
       <form @submit.prevent="submit">
         <div class="centered">
           <button
@@ -77,7 +77,7 @@ function submit () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.capitalization') })
+useHead({ title: t('capitalization') })
 </script>
 
 <style lang="scss" scoped>

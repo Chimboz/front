@@ -423,7 +423,7 @@ data.value.stats = {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.patojdur') })
+useHead({ title: t('patojdur') })
 </script>
 
 <style lang="scss" scoped>

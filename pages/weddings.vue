@@ -23,7 +23,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.section.today") }}
+          >&nbsp;{{ $t("wedding.today") }}
         </NuxtLink>
         <NuxtLink
           to="#divorce"
@@ -37,7 +37,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.section.divorces") }}
+          >&nbsp;{{ $t("wedding.divorces") }}
         </NuxtLink>
         <NuxtLink
           to="#best"
@@ -51,7 +51,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.section.holding") }}
+          >&nbsp;{{ $t("wedding.holding") }}
         </NuxtLink>
         <NuxtLink
           to="#broken"
@@ -65,7 +65,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.section.held") }}
+          >&nbsp;{{ $t("wedding.held") }}
         </NuxtLink>
       </div>
       <br>
@@ -73,7 +73,7 @@
     </Card>
     <br><Card id="last">
       <template #header>
-        {{ $t("wedding.section.last") }}
+        {{ $t("wedding.last") }}
       </template>
       {{ $t("date.on") }} <b>{{ $format(data.last.date, "PPp") }}</b>, <b>{{ data.last.id }}</b><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br><br>
       <div class="wedding">
@@ -404,7 +404,7 @@ function search () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.wedding') })
+useHead({ title: t('wedding') })
 </script>
 
 <style lang="scss" scoped>

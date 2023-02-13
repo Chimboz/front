@@ -34,7 +34,7 @@
     <Card>
       <template #subtop>
         <NuxtLink to="/chaparazzi" class="chaparazzi-link">
-          {{ $t('section.chaparazzi') }}
+          {{ $t('chaparazzi') }}
         </NuxtLink>
       </template>
       <div class="gallery flex">
@@ -132,7 +132,7 @@
 const { data } = await useFetch<any>('https://chimboz.fr/api/right')
 
 const { t } = useI18n()
-useHead({ title: t('section.login') })
+useHead({ title: t('login') })
 </script>
 <style lang="scss">
 .packs .card-btn {

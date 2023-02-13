@@ -134,7 +134,7 @@ function buy () {
   })
 }
 
-useHead({ title: t('section.shop') })
+useHead({ title: t('shop') })
 </script>
 <style lang="scss">
 .menu .pack {

@@ -59,7 +59,7 @@
 const { data } = await useFetch<any>('https://chimboz.fr/api/bbs')
 
 const { t } = useI18n()
-useHead({ title: t('section.bbs') })
+useHead({ title: t('bbs') })
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

@@ -160,7 +160,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 
-
 const router = useRouter()
 const { data } = await useFetch<any>('https://chimboz.fr/api/book')
 const userSearch = ref('')
@@ -175,7 +174,7 @@ async function search () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.popularity') })
+useHead({ title: t('popularity') })
 </script>
 
 <style lang="scss" scoped>

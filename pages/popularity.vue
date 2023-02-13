@@ -492,7 +492,7 @@ function vote () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.popularity') })
+useHead({ title: t('popularity') })
 </script>
 
 <style lang="scss" scoped>

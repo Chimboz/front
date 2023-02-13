@@ -200,11 +200,10 @@
 
 <script setup lang="ts">
 
-
 const { data } = await useFetch<any>('https://chimboz.fr/api/games/mazo')
 
 const { t } = useI18n()
-useHead({ title: t('section.mazo') })
+useHead({ title: t('mazo') })
 </script>
 
 <style lang="scss" scoped>

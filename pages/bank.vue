@@ -170,7 +170,7 @@ function bankData () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.bank') })
+useHead({ title: t('bank') })
 </script>
 
 <style lang="scss" scoped>

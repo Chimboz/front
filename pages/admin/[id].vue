@@ -266,7 +266,7 @@ function action (type: string, payload?: object) {
   })
 }
 
-useHead({ title: t('section.admin') })
+useHead({ title: t('admin') })
 </script>
 <style lang="scss" scoped>
 .pseudo {

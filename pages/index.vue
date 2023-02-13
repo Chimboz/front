@@ -123,7 +123,7 @@
     <br />
     <Card color="yellow" justified>
       <template #subtop>
-        {{ $t('section.chapaniouz') }}
+        {{ $t('chapaniouz') }}
       </template>
       <template #header>
         <img
@@ -146,7 +146,7 @@
     <Card>
       <template #subtop>
         <NuxtLink to="/chaparazzi" class="chaparazzi-link">
-          {{ $t('section.chaparazzi') }}
+          {{ $t('chaparazzi') }}
         </NuxtLink>
       </template>
       <div class="gallery flex">
@@ -238,7 +238,7 @@ async function handle () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.home') })
+useHead({ title: t('home') })
 </script>
 <style lang="scss">
 .packs .card-btn {

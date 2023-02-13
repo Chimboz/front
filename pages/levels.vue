@@ -13,7 +13,7 @@
       justified
     >
       <template #subtop>
-        {{ $t("section.levels") }}
+        {{ $t("levels") }}
       </template>
       <div class="flex">
         <div class="level-list">
@@ -46,7 +46,7 @@
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
           </div>
-          <b>{{ $t("section.levels.membersHave") }}:</b> {{ data[selected].number }}
+          <b>{{ $t("levels.membersHave") }}:</b> {{ data[selected].number }}
         </div>
       </div>
     </Card>
@@ -59,7 +59,7 @@ const { data } = await useFetch<any>('/api/levels')
 const selected = ref(0)
 
 const { t } = useI18n()
-useHead({ title: t('section.levels') })
+useHead({ title: t('levels') })
 </script>
 
 <style lang="scss" scoped>

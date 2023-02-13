@@ -41,7 +41,7 @@ import VLazyImage from 'v-lazy-image'
 const { data } = await useFetch<any[]>('https://chimboz.fr/public/api/gallery?page=0')
 
 const { t } = useI18n()
-useHead({ title: t('section.chaparazzi') })
+useHead({ title: t('chaparazzi') })
 </script>
 <style lang="scss" scoped>
 .gallery {

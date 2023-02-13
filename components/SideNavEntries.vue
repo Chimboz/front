@@ -27,102 +27,102 @@ const { t } = useI18n()
 
 const sideNavEntries = computed(() => [
   {
-    label: t('section.account'),
+    label: t('account'),
     url: '/account',
     section: 'Account'
   },
   {
-    label: t('section.messenger'),
+    label: t('messenger'),
     url: '/messenger',
     section: 'Account'
   },
   {
-    label: t('section.groups'),
+    label: t('groups'),
     url: '/groups/manage',
     section: 'Account'
   },
   {
-    label: t('section.friends'),
+    label: t('friends'),
     url: '/friends',
     section: 'Account'
   },
   {
-    label: t('section.password'),
+    label: t('password'),
     url: '/notsmart',
     section: 'Account'
   },
   {
-    label: t('section.eraser'),
+    label: t('eraser'),
     url: '/eraser',
     section: 'Account'
   },
   {
-    label: t('section.capitalization'),
+    label: t('capitalization'),
     url: '/lowupp',
     section: 'Account'
   },
   {
-    label: t('section.games'),
+    label: t('games'),
     url: '/games',
     section: 'Games'
   },
   {
-    label: t('section.bacteria'),
+    label: t('bacteria'),
     url: '/games/bacteria',
     section: 'Games'
   },
   {
-    label: t('section.patojdur'),
+    label: t('patojdur'),
     url: '/games/patojdur',
     section: 'Games'
   },
   {
-    label: t('section.mazo'),
+    label: t('mazo'),
     url: '/games/mazo',
     section: 'Games'
   },
   {
-    label: t('section.members'),
+    label: t('members'),
     url: '/members',
     section: 'Members'
   },
   {
-    label: t('section.book'),
+    label: t('book'),
     url: '/book',
     section: 'Members'
   },
   {
-    label: t('section.popularity'),
+    label: t('popularity'),
     url: '/popularity',
     section: 'Members'
   },
   {
-    label: t('section.wedding'),
+    label: t('wedding'),
     url: '/weddings',
     section: 'Members'
   },
   {
-    label: t('section.groups'),
+    label: t('groups'),
     url: '/groups',
     section: 'Members'
   },
   {
-    label: t('section.forum'),
+    label: t('forum'),
     url: '/bbs',
     section: 'Community'
   },
   {
-    label: t('section.shop'),
+    label: t('shop'),
     url: '/shop',
     section: 'Community'
   },
   {
-    label: t('section.encyclopedia'),
+    label: t('encyclopedia'),
     url: '/encyclopedia',
     section: 'Community'
   },
   {
-    label: t('section.chaparazzi'),
+    label: t('chaparazzi'),
     url: '/chaparazzi',
     section: 'Community'
   }

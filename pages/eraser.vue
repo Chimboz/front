@@ -13,10 +13,10 @@
       justified
     >
       <template #subtop>
-        {{ $t("section.eraser") }}
+        {{ $t("eraser") }}
       </template>
       <template #header>
-        {{ $t("section.eraser.header") }}
+        {{ $t("eraser.header") }}
       </template>
       <img
         src="@/assets/img/shop/effaceur.webp"
@@ -50,7 +50,7 @@
             aria-label="Generate nickname"
             @click="generatePseudo()"
           >
-            {{ $t("section.eraser.button") }}
+            {{ $t("eraser.button") }}
           </Button>
           <Button
             color="green"
@@ -71,7 +71,7 @@
           </Button>
         </div>
         <br>
-        <span v-html="$t('section.eraser.description')"></span>
+        <span v-html="$t('eraser.description')"></span>
       </form>
     </Card>
     <template #right-column>
@@ -93,7 +93,7 @@ async function generatePseudo () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.eraser') })
+useHead({ title: t('eraser') })
 </script>
 
 <style lang="scss" scoped>

@@ -85,7 +85,7 @@ function search () {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.admin') })
+useHead({ title: t('admin') })
 </script>
 <style lang="scss" scoped>
 .log {

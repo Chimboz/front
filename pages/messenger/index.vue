@@ -82,12 +82,10 @@
 </template>
 <script setup lang="ts">
 
-
-
 const { data } = await useFetch<any>('/api/mi')
 
 const { t } = useI18n()
-useHead({ title: t('section.messenger') })
+useHead({ title: t('messenger') })
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

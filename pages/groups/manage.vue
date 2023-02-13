@@ -347,5 +347,5 @@ function leave (id: number) {
 }
 
 const { t } = useI18n()
-useHead({ title: t('section.groups') })
+useHead({ title: t('groups') })
 </script>

@@ -216,7 +216,7 @@ const search = ref('')
 function onSearch () {}
 
 const { t } = useI18n()
-useHead({ title: t('section.encyclopedia') })
+useHead({ title: t('encyclopedia') })
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container
