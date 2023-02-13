@@ -12,16 +12,7 @@
       <template #subtop>
         {{ $t("notsmart") }}
       </template>
-      On t'a dit que tu allais avoir des nouvelles fringues, que tu allais
-      pouvoir devenir modo, que tu allais gagner des points ou un niveau, et tu
-      as donné ton mot de passe à quelqu'un !<br>
-      <br>
-      Et évidemment, tu y a cru...
-      <h3>T'es pas malin !</h3>
-      <br>
-      <br>
-      Il ne te reste plus qu'a changer de mot de passe rapidement :<br>
-      <br>
+      <span v-html="$t('notsmart.description')"></span>
       <form @submit.prevent="changePassword">
         <input
           v-model="currentPassword"
@@ -66,12 +57,11 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
             >
-          </template>Envoyer
+          </template>{{ $t("button.send") }}
         </Button>
       </form>
       <br>
-      Par contre, si tu as donné ton mot de passe de compte e-mail, tu es le
-      dernier des pamalins et nous ne pouvons plus rien pour toi ...
+      <span v-html="$t('notsmart.footer')"></span>
     </Card>
     <template #right-column />
   </Container>
