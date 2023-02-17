@@ -73,9 +73,6 @@
 </template>
 <script setup lang="ts">
 
-
-
-
 withDefaults(
   defineProps<{
     topic: any;

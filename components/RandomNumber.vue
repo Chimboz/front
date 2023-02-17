@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 
-
 const props = withDefaults(
   defineProps<{
     min?: number;

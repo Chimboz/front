@@ -63,8 +63,6 @@
 
 <script setup lang="ts">
 
-
-
 withDefaults(
   defineProps<{
     // A header image, automatically prefixed by `/assets/img/card/header/`

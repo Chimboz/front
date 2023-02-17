@@ -16,8 +16,6 @@
 </template>
 <script setup lang="ts">
 
-
-
 defineProps<{
   icon?: string;
   color?: 'red' | 'green' | 'yellow' | 'orange';

@@ -47,7 +47,6 @@
 <script setup lang="ts">
 import useAuthStore from '@/stores/auth'
 
-
 const auth = useAuthStore()
 const user = computed(() => auth.user)
 
