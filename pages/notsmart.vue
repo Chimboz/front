@@ -74,6 +74,7 @@ const confirmPassword = ref('')
 
 function changePassword () {
   useFetch('account/password', {
+    method: 'post',
     body: {
       pass: currentPassword.value,
       new: newPassword.value,

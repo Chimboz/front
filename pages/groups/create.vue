@@ -124,7 +124,7 @@ const data = reactive({
 const name = ref('')
 
 function create () {
-  useFetch('groups/createok', { body: { name: name.value, blazon: data.blazon } })
+  useFetch('groups/createok', { method: 'post', body: { name: name.value, blazon: data.blazon } })
 }
 
 const { t } = useI18n()

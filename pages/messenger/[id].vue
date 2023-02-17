@@ -122,7 +122,7 @@ const { data } = await useFetch<any>('/api/mi5')
 const input = ref('')
 
 function send () {
-  useFetch('mi/reply', { body: { conv: useRoute().params.id, message: input.value } })
+  useFetch('mi/reply', { method: 'post', body: { conv: useRoute().params.id, message: input.value } })
   data.value.messages.push({
     you: true,
     content: input.value,

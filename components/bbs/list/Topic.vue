@@ -138,7 +138,7 @@ function lock () {
   useFetch(`bbs/powers/lock/${route.params.topic}`)
 }
 function deleteTopic () {
-  useFetch('bbs/deletetopic', { body: { topic: route.params.topic } })
+  useFetch('bbs/deletetopic', { method: 'post', body: { topic: route.params.topic } })
 }
 async function openMovePanel () {
   movePanel.value = true
@@ -147,6 +147,7 @@ async function openMovePanel () {
 
 function move () {
   useFetch('bbs/powers/move', {
+    method: 'post',
     body: {
       forum: route.params.forum,
       go: targetMove.value,

@@ -84,7 +84,7 @@
 const pseudo = ref('')
 
 function submit () {
-  useFetch('account/name', { body: { pseudo: pseudo.value } })
+  useFetch('account/name', { method: 'post', body: { pseudo: pseudo.value } })
 }
 
 async function generatePseudo () {

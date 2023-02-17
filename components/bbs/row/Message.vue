@@ -98,7 +98,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 
-
 import useAuthStore from '@/stores/auth'
 
 const auth = useAuthStore()
@@ -114,7 +113,7 @@ const props = withDefaults(
 )
 
 function deleteMessage () {
-  useFetch('bbs/delete', { body: { post: props.message.id, topic: route.params.topic } })
+  useFetch('bbs/delete', { method: 'post', body: { post: props.message.id, topic: route.params.topic } })
 }
 </script>
 <style lang="scss">

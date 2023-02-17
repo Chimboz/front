@@ -484,6 +484,7 @@ const pseudo = ref('')
 
 function vote () {
   useFetch('popularity/vote', {
+    method: 'post',
     body: {
       pseudo: pseudo.value,
       mode: mode.value

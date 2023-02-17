@@ -315,7 +315,8 @@ $eventBus.on('edit', (editedMessage: any) => {
 
 async function submit () {
   if (props.isTopic) {
-    const { data } = await useFetch<any>('bbs/topic', {
+    const { data } = await useFetch<any, Error, string, 'post'>('bbs/topic', {
+      method: 'post',
       body: {
         bbcode: false,
         signature: true,
@@ -325,10 +326,11 @@ async function submit () {
         title: title.value
       }
     })
-    router.push(`/bbs/${route.params.forum}-${data.value.id}-1`)
+    if (data.value) { router.push(`/bbs/${route.params.forum}-${data.value.id}-1`) }
   } else {
     if (mode.value === 'post') {
-      const { data } = await useFetch<any>('bbs/post', {
+      const { data } = await useFetch<any, Error, string, 'post'>('bbs/post', {
+        method: 'post',
         body: {
           bbcode: false,
           signature: true,
@@ -342,6 +344,7 @@ async function submit () {
     }
     if (mode.value === 'edit') {
       useFetch('bbs/edit', {
+        method: 'post',
         body: {
           bbcode: false,
           signature: true,

@@ -73,7 +73,7 @@ function changeCase (index: number) {
     pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1)
 }
 function submit () {
-  useFetch('account/majmin', { body: { pseudo: pseudo.value } })
+  useFetch('account/majmin', { method: 'post', body: { pseudo: pseudo.value } })
 }
 
 const { t } = useI18n()
