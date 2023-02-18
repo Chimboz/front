@@ -38,7 +38,7 @@
         :height="34"
         top
         color="blue"
-        justified
+        left
       >
         <img
           src="@/assets/img/puce.svg"

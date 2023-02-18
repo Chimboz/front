@@ -14,7 +14,7 @@
       bg="groups.gif"
       :height="70"
       color="blue"
-      justified
+      left
     >
       <template #header>
         Gérer mes groupes
@@ -26,7 +26,7 @@
       ton propre club ? Si tu as un super niveau, go !
     </Card>
     <br>
-    <Card color="blue" justified>
+    <Card color="blue" left>
       <template #header>
         Mes inscriptions
       </template>
@@ -138,7 +138,7 @@
     <template #right-column>
       <Card color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br>
-        <div class="justified">
+        <div class="left">
           <img
             src="@/assets/img/puce.svg"
             alt="Caret"

@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card header="mazo.webp" justified bg="mazo.gif">
+    <Card header="mazo.webp" left bg="mazo.gif">
       <div class="flex centered hstack">
         <NuxtLink
           to="#gameplay"
@@ -81,7 +81,7 @@
       <br>
     </Card>
     <br>
-    <Card id="tutorial" justified>
+    <Card id="tutorial" left>
       <template #header>
         Comment jouer&nbsp;!
       </template>
@@ -98,7 +98,7 @@
       C'est comme tu le sens, n'oublie jamais: un coup de travers et tu perds
       !!!
     </Card><br>
-    <Card id="gameplay" justified>
+    <Card id="gameplay" left>
       <template #header>
         Gameplay
       </template>
@@ -164,7 +164,7 @@
         :height="34"
         top
         color="blue"
-        justified
+        left
       >
         <img
           src="@/assets/img/puce.svg"

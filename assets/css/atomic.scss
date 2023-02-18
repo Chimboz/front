@@ -42,15 +42,11 @@
 }
 
 .centered {
-  text-align: center;
-}
-
-.justified {
-  text-align: justify;
+  text-align: center !important;
 }
 
 .left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .relative {

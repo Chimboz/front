@@ -9,11 +9,12 @@
       <br>
       <Rules bot />
     </template>
-    <Card header="book.webp" justified color="yellow">
+    <Card header="book.webp" left color="yellow">
       <div
         style="float: right; margin-top: -80px; width: 50%; position: relative"
       >
-        <span v-html="$t('book.description')" />
+        {{ $t('book.description1') }}<br /><br />
+        {{ $t('book.description2') }}
       </div>
     </Card>
     <br><Card>
@@ -86,13 +87,12 @@
     </Card>
     <template #right-column>
       <Card
-
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
         top
         color="blue"
-        justified
+        left
       >
         <img
           src="@/assets/img/puce.svg"

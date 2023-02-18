@@ -150,7 +150,6 @@
             <div class="left">
               <label
                 for="motto"
-                class="justified"
               >{{ $t("profile.motto") }}
                 <input
                   id="motto"

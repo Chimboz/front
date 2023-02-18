@@ -60,7 +60,7 @@
       <Card
         header="bacteria.svg"
         :height="74"
-        justified
+        left
       >
         <div class="number">
           <img
@@ -135,7 +135,7 @@
       <Card
         header="patojdur.svg"
         :height="56"
-        justified
+        left
       >
         <div class="number">
           <img
@@ -194,7 +194,7 @@
       <Card
         header="mazo.svg"
         :height="52"
-        justified
+        left
       >
         <div class="number">
           <img

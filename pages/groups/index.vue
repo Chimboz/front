@@ -14,7 +14,7 @@
       bg="groups.gif"
       :height="70"
       color="blue"
-      justified
+      left
     >
       Envie de former un vrai gang avec tes potes ? Rejoindre une guilde de
       guerriers Bacteria ? Un fan club de ta star préférée avec tes copines ?
@@ -27,7 +27,7 @@
       par le chef du groupe... A toi de faire tes preuves !
     </Card>
     <br>
-    <Card color="blue" justified>
+    <Card color="blue" left>
       <template #header>
         Groupes officiels
       </template>
@@ -169,7 +169,7 @@
     <template #right-column>
       <Card color="blue" header="ensavoirplus.webp">
         <b>{{ data.stats.total }}</b> groupes ont été créés. <br>
-        <div class="justified">
+        <div class="left">
           <img
             src="@/assets/img/puce.svg"
             alt="Caret"

@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card header="bacteria.webp" justified bg="bacteria.gif">
+    <Card header="bacteria.webp" left bg="bacteria.gif">
       <template #header>
         Histoire de Bacteria
       </template>
@@ -223,7 +223,7 @@
         :height="46"
         top
         color="blue"
-        justified
+        left
       >
         Toutes les infos, les techniques, news.<br>
         <img

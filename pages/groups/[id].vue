@@ -6,16 +6,10 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
+      <br />
       <Rules bot />
     </template>
-    <Card
-
-      header="group.webp"
-      :height="70"
-      color="blue"
-      justified
-    >
+    <Card header="group.webp" :height="70" color="blue" left>
       <div class="group-header">
         <blazon
           :shape="data.blazon.shape"
@@ -38,28 +32,26 @@
           alt="Official"
           style="float: right"
           @contextmenu.prevent
-        >
+        />
       </div>
-      <div
-        class="markdown-body description"
-        v-html="$messageRender(data.description)"
-      />
-      <br>
-      <Card class="justified">
+      <!--eslint-disable-next-line vue/no-v-html description is sanitized-->
+      <div class="markdown-body" v-html="$messageRender(data.description)" />
+      <br />
+      <Card left>
         {{ $t(`group.leader.${data.type}`) }}:
         <LinkUser :user="data.leader" />
-        <br><br>
+        <br /><br />
         Occupation du groupe:
         <b>{{ (((data.members.length + 1) / data.size) * 100).toFixed(0) }}%</b>
-        (<b>{{ data.members.length + 1 }}</b>/<b>{{ data.size }}</b>)<br><br>
+        (<b>{{ data.members.length + 1 }}</b>/<b>{{ data.size }}</b>)<br /><br />
         Membres du groupe:
         <LinkUser
           v-for="(member, index) of data.members"
           :key="member.id"
           :user="member"
           :separator="index < data.members.length - 1"
-        /><br><br>
-        Localisation : <b>{{ data.localisation }}</b><br><br>
+        /><br /><br />
+        Localisation : <b>{{ data.localisation }}</b><br /><br />
         <div class="icon flex col centered">
           <div style="line-height: 10px">
             Niveau moyen
@@ -74,99 +66,89 @@
               height="21"
               :src="asset(`img/number/${digit}.svg`)"
               @contextmenu.prevent
-            >
+            />
           </div>
         </div>
         &nbsp;<img
           :src="asset(`img/group/${data.status}.png`)"
           :alt="data.status"
           @contextmenu.prevent
-        >
+        />
       </Card>
-      <br>
+      <br />
       Groupe no. <b>{{ data.id }}</b> créé le
-      <b>{{ $format(data.date, "PPp") }} ({{
+      <b>{{ $format(data.date, 'PPp') }} ({{
         $distance(Date.now(), data.date)
       }}
-        jours)</b><br>
-      <br v-if="data.bacteria">
-      <Card
-        v-if="data.bacteria"
-        class="justified"
-      >
+        jours)</b><br />
+      <br v-if="data.bacteria" />
+      <Card v-if="data.bacteria" left>
         <img
           src="@/assets/img/group/bacteria.gif"
           alt="Bacteria"
           style="float: left"
           @contextmenu.prevent
-        ><b>Bacteria</b><br><br>
+        /><b>Bacteria</b><br /><br />
         Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
         <b>{{ data.bacteria.points }}</b> points.
-      </Card><br v-if="data.patojdur">
-      <Card
-        v-if="data.patojdur"
-        class="justified"
-      >
+      </Card><br v-if="data.patojdur" />
+      <Card v-if="data.patojdur" left>
         <img
           src="@/assets/img/group/patojdur.gif"
           alt="Patojdur"
           style="float: left"
           @contextmenu.prevent
-        ><b>Patojdur</b><br><br>
+        /><b>Patojdur</b><br /><br />
         Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
         <b>{{ data.patojdur.points }}</b> points.
-      </Card><br v-if="data.popularity">
-      <Card
-        v-if="data.popularity"
-        class="justified"
-      >
+      </Card><br v-if="data.popularity" />
+      <Card v-if="data.popularity" left>
         <img
           src="@/assets/img/group/popularity.gif"
           alt="Popularity"
           style="float: left"
           @contextmenu.prevent
-        ><b>Popularity</b><br><br>
+        /><b>Popularity</b><br /><br />
         Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
         <b>{{ data.popularity.points }}</b> points.
-      </Card><br v-if="data.global">
-      <Card v-if="data.global" class="justified">
+      </Card><br v-if="data.global" />
+      <Card v-if="data.global" left>
         Classement général : <b>{{ data.global.rank }}</b>/<b>{{ data.global.total }}</b> avec
         <b>{{ data.global.points }}</b> points.
       </Card>
     </Card>
     <template #right-column>
-      <Card color="blue">
+      <Card color="blue" left>
         <template #header>
           Inscription pour rejoindre ce groupe
         </template>
-        <div class="justified">
-          <img
-            :src="asset(`img/group/${data.status}.png`)"
-            :alt="data.status"
-            style="float: left; margin-right: 4px"
-          >
-          {{ $t(`group.status.${data.status}`) }}
-          <div v-if="user">
-            <br>
-            <a
-              style="cursor: var(--pointer)"
-              @click.prevent="join"
-              @keyup.prevent="join"
-            >Rejoindre ce groupe</a>
-          </div>
+        <img
+          :src="asset(`img/group/${data.status}.png`)"
+          :alt="data.status"
+          style="float: left; margin-right: 4px"
+        />
+        {{ $t(`group.status.${data.status}`) }}
+        <div v-if="user">
+          <br />
+          <a
+            style="cursor: var(--pointer)"
+            @click.prevent="join"
+            @keyup.prevent="join"
+          >Rejoindre ce groupe</a>
         </div>
       </Card>
     </template>
   </Container>
 </template>
 <script setup lang="ts">
-
 import useAuthStore from '@/stores/auth'
 
 const auth = useAuthStore()
 const user = computed(() => auth.user)
 
-const { data } = await useFetch<any>(`https://chimboz.fr/api/groups/${useRoute().params.id}`)
+const { data } = await useFetch<any>(
+  `https://chimboz.fr/api/groups/${useRoute().params.id}`
+)
 data.value.level = 25
 
 function join () {
@@ -193,12 +175,8 @@ useHead({ title: t('group') })
   stroke-width: 4;
 }
 
-.description {
-  text-align: left;
-}
-
 .group-header {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   color: #3c556f;
   font-size: 16px;
   min-height: 90px;
@@ -206,7 +184,7 @@ useHead({ title: t('group') })
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelade";
+  font-family: 'Pixelade';
   font-size: 13px;
   justify-content: center;
   width: 50px;

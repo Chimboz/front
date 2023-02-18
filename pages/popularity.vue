@@ -9,7 +9,7 @@
       <br>
       <Rules bot />
     </template>
-    <Card header="popularity.gif" justified bg="popularity.gif">
+    <Card header="popularity.gif" left bg="popularity.gif">
       <div class="flex centered hstack">
         <NuxtLink
           to="#today"
@@ -415,7 +415,7 @@
         :height="46"
         top
         color="blue"
-        justified
+        left
       >
         <img
           src="@/assets/img/puce.svg"

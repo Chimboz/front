@@ -1,5 +1,5 @@
 <template>
-  <span class="pink justified" style="text-align: left">
+  <span class="pink">
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
     <NuxtLink
       v-if="topic"
@@ -10,7 +10,7 @@
     :to="`/bbs/${$route.params.forum}-${$route.params.topic}-1`"
     class="pink"
   >
-    <h1 v-if="topic.messages[0]" class="justified ellipsis">
+    <h1 v-if="topic.messages[0]" class="ellipsis">
       {{ topic.messages[0].title }}
     </h1>
   </NuxtLink>

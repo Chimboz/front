@@ -28,7 +28,6 @@
 }
 
 .column {
-  text-align: center;
   flex-direction: column;
   align-items: stretch;
   box-sizing: content-box;

@@ -10,7 +10,7 @@
     </template>
     <Card
       color="yellow"
-      justified
+      left
     >
       <template #subtop>
         {{ data.user.name }}
@@ -83,7 +83,7 @@
       </form>
     </Card>
     <template #right-column>
-      <Card color="yellow" justified header="mi_sm.svg">
+      <Card color="yellow" left header="mi_sm.svg">
         <div
           class="fullwidth flex"
           style="flex-wrap: wrap; justify-content: center"

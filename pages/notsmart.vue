@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified>
+    <Card color="yellow" left>
       <template #subtop>
         {{ $t("notsmart") }}
       </template>
@@ -61,7 +61,7 @@
         </Button>
       </form>
       <br>
-      <span v-html="$t('notsmart.footer')"></span>
+      {{ $t('notsmart.footer') }}
     </Card>
     <template #right-column />
   </Container>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="[color, { justified: justified }]" class="card-container">
+  <div :class="color" class="card-container">
     <img
       v-if="header"
       draggable="false"
@@ -9,7 +9,7 @@
       :height="height"
       :src="asset(`img/card/header/${header}`)"
       @contextmenu.prevent
-    >
+    />
     <img
       v-else-if="top"
       draggable="false"
@@ -19,7 +19,7 @@
       width="154"
       height="42"
       @contextmenu.prevent
-    >
+    />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)">
         <slot name="subtop" />
@@ -28,13 +28,13 @@
     <div v-if="$slots['button']" class="card-btn">
       <slot name="button" />
     </div>
-    <div class="card" :class="{ bot: bot }">
+    <div class="card" :class="{ bot: bot, left: left }">
       <div
         class="card-bg"
         :style="{
           backgroundImage: bg
             ? `url(${asset(`img/card/background/${bg}`)})`
-            : undefined,
+            : undefined
         }"
       >
         <h2>
@@ -43,7 +43,7 @@
         <div style="text-align: center">
           <em v-if="$slots['subtitle']">"<slot name="subtitle" />"</em>
         </div>
-        <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default">
+        <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
         <main>
           <slot />
         </main>
@@ -57,36 +57,35 @@
       width="154"
       height="44"
       @contextmenu.prevent
-    >
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-
 withDefaults(
   defineProps<{
     // A header image, automatically prefixed by `/assets/img/card/header/`
-    header?: string;
+    header?: string
     // A background image, automatically prefixed by `/assets/img/card/background/`
-    bg?: string;
+    bg?: string
     // Width of the header image
-    width?: number;
+    width?: number
     // Height of the header image
-    height?: number;
+    height?: number
     // Color of the card
-    color?: 'yellow' | 'blue' | 'red';
+    color?: 'yellow' | 'blue' | 'red'
     // Whether the text is left aligned
-    justified?: boolean;
+    left?: boolean
     // Display a default footer image
-    bot?: boolean;
+    bot?: boolean
     // Display a default header image
-    top?: boolean;
+    top?: boolean
   }>(),
   { width: 468, height: 77, color: undefined, bg: undefined, header: undefined }
 )
 </script>
 <style lang="scss" scoped>
-$colors: ("yellow", "blue", "red");
+$colors: ('yellow', 'blue', 'red');
 
 @each $color in $colors {
   .card-container.#{$color} {
@@ -153,7 +152,7 @@ img + .card > .card-bg {
   color: var(--light);
   border-top: 1px solid;
   padding-left: calc(2 * var(--gap));
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-size: var(--lg-font-size);
   height: calc(var(--gap) * 2);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -184,10 +183,6 @@ img + .card > .card-bg {
   border-radius: var(--border-radius);
 }
 
-.justified .card {
-  text-align: left;
-}
-
 .bot {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   display: block;
@@ -204,7 +199,7 @@ img + .card > .card-bg {
 }
 
 main:after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }

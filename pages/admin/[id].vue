@@ -1,5 +1,5 @@
 <template>
-  <Card justified>
+  <Card left>
     <template #subtop>
       {{ data.name }}
     </template>

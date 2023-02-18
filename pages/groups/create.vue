@@ -10,7 +10,7 @@
       <Rules bot />
     </template>
     <form method="POST" @submit.prevent="create()">
-      <Card header="group.webp" :height="70" color="blue" justified>
+      <Card header="group.webp" :height="70" color="blue" left>
         <input
           v-model="name"
           required

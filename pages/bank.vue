@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified header="bank.gif">
+    <Card color="yellow" left header="bank.gif">
       <ScrollableContainer
         route="banklogs"
         class="fullwidth"

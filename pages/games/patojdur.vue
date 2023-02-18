@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card header="patojdur.webp" justified bg="patojdur.gif" :height="77">
+    <Card header="patojdur.webp" left bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
         <NuxtLink
           to="#gameplay"
@@ -147,7 +147,7 @@
       patojeur !
     </Card>
     <br>
-    <Card id="tutorial" justified>
+    <Card id="tutorial" left>
       <template #header>
         Comment jouer&nbsp;?
       </template>
@@ -164,7 +164,7 @@
       Bonne Chance ! tu en auras besoin, la concurrence sera rude ! La victoire
       au millième près !
     </Card><br>
-    <Card id="gameplay" justified>
+    <Card id="gameplay" left>
       <template #header>
         Gameplay
       </template>
@@ -190,13 +190,13 @@
       <b>Indice</b> : pour <b>Burnin'Flak</b>, la bonne combinaison commence par
       Flèche Gauche, Flèche Haut... (GH...)
     </Card><br>
-    <Card id="modes" justified>
+    <Card id="modes" left>
       <template #header>
         Les modes
       </template>
       Pour le moment, seul le mode <b>single</b> est accessible.
     </Card><br>
-    <Card id="races" justified>
+    <Card id="races" left>
       <template #header>
         Les courses
       </template>
@@ -235,7 +235,7 @@
               <b>{{ rank.score }}</b>
             </td>
             <td><LinkUser :user="rank.user" /></td>
-            <td class="justified">
+            <td class="left">
               <b>{{ $format(rank.date, "PPp") }}</b><br><i>{{ rank.day }}e journée</i>
             </td>
           </tr>
@@ -378,13 +378,12 @@
     </Card>
     <template #right-column>
       <Card
-
         header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top
         color="blue"
-        justified
+        left
       >
         <img
           src="@/assets/img/puce.svg"

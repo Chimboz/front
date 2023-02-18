@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card header="bacteria.webp" justified bg="bacteria.gif">
+    <Card header="bacteria.webp" left bg="bacteria.gif">
       <div class="flex centered hstack">
         <NuxtLink
           to="#records"
@@ -101,7 +101,7 @@
       <br>
     </Card>
     <br>
-    <Card id="tutorial" justified>
+    <Card id="tutorial" left>
       <template #header>
         Comment jouer&nbsp;?
       </template>
@@ -275,13 +275,12 @@
     </Card>
     <template #right-column>
       <Card
-
         header="ensavoirplus.webp"
         :width="154"
         :height="46"
         top
         color="blue"
-        justified
+        left
       >
         Toutes les infos, les techniques, news.<br>
         <img

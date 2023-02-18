@@ -9,12 +9,12 @@
       <br>
       <Rules bot />
     </template>
-    <span class="pink justified">
+    <span class="pink">
       <NuxtLink
         to="/book"
         class="pink"
       >» Retour à l'annuaire</NuxtLink> </span><br>
-    <Card class="member" :class="[data.gender]" justified>
+    <Card class="member" :class="[data.gender]" left>
       <div class="member-header">
         <Avatar
           :avatar="data.look.avatar"
@@ -27,7 +27,7 @@
           :item2="data.look.item2"
         />
         <div class="flex col" style="z-index: 1; position: relative">
-          <StrokeText class="pseudo" justified>
+          <StrokeText class="pseudo" left>
             {{ data.name }}
           </StrokeText>
           <div class="motto">

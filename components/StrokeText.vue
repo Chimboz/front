@@ -7,10 +7,10 @@
   >
     <text
       stroke-linecap="round"
-      :x="justified ? '0%' : '50%'"
+      :x="left ? '0%' : '50%'"
       y="75%"
       paint-order="stroke"
-      :text-anchor="justified ? 'left' : 'middle'"
+      :text-anchor="left ? 'left' : 'middle'"
     >
       <slot />
     </text>
@@ -18,6 +18,6 @@
 </template>
 <script setup lang="ts">
 defineProps<{
-  justified?: boolean;
+  left?: boolean;
 }>()
 </script>

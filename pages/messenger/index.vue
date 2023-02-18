@@ -8,7 +8,7 @@
       </Card><br>
       <Rules bot />
     </template>
-    <Card color="yellow" justified header="mi.svg">
+    <Card color="yellow" left header="mi.svg">
       <div class="flex">
         <input
           required

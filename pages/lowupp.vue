@@ -10,7 +10,7 @@
     </template>
     <Card
       color="yellow"
-      justified
+      left
     >
       <template #subtop>
         {{ $t("capitalization") }}

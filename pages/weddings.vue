@@ -9,7 +9,7 @@
       <br>
       <Rules bot />
     </template>
-    <Card header="wedding.webp" justified bg="wedding.gif">
+    <Card header="wedding.webp" left bg="wedding.gif">
       <div class="flex centered hstack">
         <NuxtLink
           to="#today"

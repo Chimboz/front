@@ -55,7 +55,7 @@
       </ScrollableContainer>
     </Card>
     <template #right-column>
-      <Card justified>
+      <Card left>
         <template #button>
           <Button type="button" icon="search.svg">
             {{ $t("button.search") }}

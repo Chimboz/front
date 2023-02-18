@@ -1,7 +1,7 @@
 <template>
   <Container>
     <template #left-column>
-      <Card color="blue" justified>
+      <Card color="blue" left>
         <template #button>
           <Button icon="rules.svg" type="button">
             Registre

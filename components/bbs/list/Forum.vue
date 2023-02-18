@@ -1,5 +1,5 @@
 <template>
-  <span class="pink justified">
+  <span class="pink">
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
     <NuxtLink :to="`/bbs/${$route.params.forum}-1`" class="pink">{{
       forum.name

@@ -121,7 +121,7 @@
     <br />
     <Radio src="track.flac" />
     <br />
-    <Card color="yellow" justified>
+    <Card color="yellow" left>
       <template #subtop>
         {{ $t('chapaniouz') }}
       </template>
@@ -137,6 +137,7 @@
         />
         {{ data.news.title }}
       </template>
+      <!--eslint-disable-next-line vue/no-v-html description is sanitized-->
       <div class="markdown-body" v-html="$messageRender(data.news.content)" />
       <div class="news-date">
         {{ data.news.author }}, {{ $format(data.news.date, 'PPp') }}

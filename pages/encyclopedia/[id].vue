@@ -2,7 +2,7 @@
   <div>
     <Card style="position: relative">
       <div class="relative">
-        <StrokeText justified class="item-name" :class="data.rarity">
+        <StrokeText left class="item-name" :class="data.rarity">
           {{
             data.name
           }}

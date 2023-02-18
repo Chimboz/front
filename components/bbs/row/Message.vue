@@ -1,6 +1,6 @@
 <template>
   <tr :id="`p${message.id}`">
-    <td class="info" valign="top">
+    <td class="info centered" valign="top">
       <Avatar
         :avatar="message.author.look.avatar"
         :emote="message.author.look.emote"
@@ -10,9 +10,11 @@
         :item0="message.author.look.item0"
         :item1="message.author.look.item1"
         :item2="message.author.look.item2"
-      /><LinkUser :user="message.author" ellipsis /><span class="date">{{ $format(message.date, 'PPpp') }}</span>
+      /><LinkUser :user="message.author" ellipsis /><span class="date">{{
+        $format(message.date, 'PPpp')
+      }}</span>
     </td>
-    <td class="justified" valign="top">
+    <td valign="top">
       <h2 class="head flex info-sm ellipsis">
         <Avatar
           :avatar="message.author.look.avatar"
@@ -31,8 +33,13 @@
       </h2>
       <div class="head flex">
         <a :href="`#p${message.id}`">
-          <img draggable="false" alt="Lien du message" title="Lien du message" :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"> </a>&nbsp;
-        <b class="ellipsis justified title">{{ message.title }}</b>
+          <img
+            draggable="false"
+            alt="Lien du message"
+            title="Lien du message"
+            :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
+          /> </a>&nbsp;
+        <b class="ellipsis title">{{ message.title }}</b>
         &nbsp;
         <div v-if="user">
           <button
@@ -55,16 +62,20 @@
               draggable="false"
               alt="Bubble"
               @contextmenu.prevent
-            >&nbsp;Citer
+            />&nbsp;Citer
           </button>&nbsp;
           <button
-            v-if="(message.author.id === user.id && Date.now() - message.date < 600) || +user.user_level > 3"
+            v-if="
+              (message.author.id === user.id &&
+                Date.now() - message.date < 600) ||
+                +user.user_level > 3
+            "
             type="button"
             class="btn-action"
             @click.prevent="
               $eventBus.emit('edit', {
                 id: message.id,
-                content: message.content,
+                content: message.content
               })
             "
           >
@@ -75,23 +86,29 @@
               draggable="false"
               alt="Pen"
               @contextmenu.prevent
-            >&nbsp;Éditer
+            />&nbsp;Éditer
           </button>&nbsp;
-          <button v-if="message.author.id === user.id || +user.user_level > 3" type="button" class="btn-action" @click.prevent="deleteMessage">
+          <button
+            v-if="message.author.id === user.id || +user.user_level > 3"
+            type="button"
+            class="btn-action"
+            @click.prevent="deleteMessage"
+          >
             x
           </button>
         </div>
       </div>
-      <hr style="margin: 2px 0">
+      <hr style="margin: 2px 0" />
+      <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
       <div class="markdown-body" v-html="$messageRender(message.content)" />
       <div v-if="message.signature">
-        <i><br>"{{ message.author.signature }}"</i>
+        <i><br />"{{ message.author.signature }}"</i>
       </div>
     </td>
   </tr>
   <tr v-if="separator">
     <td colspan="2" style="background: var(--light)">
-      <hr>
+      <hr />
     </td>
   </tr>
 </template>
@@ -106,14 +123,17 @@ const route = useRoute()
 
 const props = withDefaults(
   defineProps<{
-    message: any;
-    separator: boolean;
+    message: any
+    separator: boolean
   }>(),
   { separator: true }
 )
 
 function deleteMessage () {
-  useFetch('bbs/delete', { method: 'post', body: { post: props.message.id, topic: route.params.topic } })
+  useFetch('bbs/delete', {
+    method: 'post',
+    body: { post: props.message.id, topic: route.params.topic }
+  })
 }
 </script>
 <style lang="scss">

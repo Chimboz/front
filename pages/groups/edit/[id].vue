@@ -10,11 +10,10 @@
       <Rules bot />
     </template>
     <Card
-
       header="group.webp"
       :height="70"
       color="blue"
-      justified
+      left
     >
       <div class="group-header">
         <blazon
@@ -251,7 +250,7 @@
     </Card><br>
     <Card
       v-if="data.bacteria"
-      class="justified"
+      left
     >
       <img
         src="@/assets/img/group/bacteria.gif"
@@ -263,7 +262,7 @@
     </Card><br>
     <Card
       v-if="data.patojdur"
-      class="justified"
+      left
     >
       <img
         src="@/assets/img/group/patojdur.gif"
@@ -275,7 +274,7 @@
     </Card><br>
     <Card
       v-if="data.popularity"
-      class="justified"
+      left
     >
       <img
         src="@/assets/img/group/popularity.gif"
@@ -285,7 +284,7 @@
       Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
       <b>{{ data.popularity.points }}</b> points.
     </Card><br>
-    <Card v-if="data.global" class="justified">
+    <Card v-if="data.global" left>
       Classement général : <b>{{ data.global.rank }}</b>/<b>{{ data.global.total }}</b> avec
       <b>{{ data.global.points }}</b> points.
     </Card><br><Card>
