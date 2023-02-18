@@ -56,7 +56,6 @@
         </div>
       </div>
     </Card>
-    <br>
   </div>
 </template>
 <script setup lang="ts">

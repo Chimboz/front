@@ -1,5 +1,5 @@
 <template>
-  <table v-if="preview" class="bbs preview">
+  <table v-if="preview" class="bbs preview mb-3">
     <colgroup>
       <col width="100" class="info">
       <col width="100%">
@@ -26,7 +26,6 @@
       />
     </tbody>
   </table>
-  <br v-if="preview">
   <form @submit.prevent="submit">
     <table class="bbs input">
       <colgroup>

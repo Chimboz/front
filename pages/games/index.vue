@@ -6,7 +6,6 @@
           <SideNavEntries section="Games" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card header="bacteria_blue.webp" :height="74" color="blue" left bg="bacteria_blue.gif">
@@ -36,7 +35,6 @@
         jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <br>
     <Card header="patojdur_blue.webp" :height="56" color="blue" left bg="patojdur_blue.gif">
       <img
         draggable="false"
@@ -65,7 +63,6 @@
         jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <br>
     <Card header="mazo_blue.webp" :height="52" color="blue" left bg="mazo_blue.gif">
       <img
         draggable="false"

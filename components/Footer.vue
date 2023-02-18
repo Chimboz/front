@@ -1,7 +1,6 @@
 <template>
   <footer>
-    <hr>
-    <br>
+    <hr class="mb-3">
     <a
       href="https://twitter.com/ChimbozOfficial"
       target="_blank"
@@ -60,7 +59,7 @@
 <script setup lang="ts"></script>
 <style lang="scss" scoped>
 footer {
-  margin: var(--gap) 0;
+  margin-bottom: var(--gap);
   padding: 0 10px;
   text-align: center;
 }

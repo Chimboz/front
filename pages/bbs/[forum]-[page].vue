@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <BbsListForum :forum="data" />

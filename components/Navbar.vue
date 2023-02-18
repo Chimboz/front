@@ -104,7 +104,7 @@
       />
     </div>
   </header>
-  <nav class="flex">
+  <nav class="flex mb-3">
     <NuxtLink to="/">
       <button class="nav-btn flex centered" type="button">
         <img
@@ -360,11 +360,6 @@ nav a:first-child .nav-btn {
   border-radius: var(--border-radius);
   border-width: 2px 5px;
   margin-right: var(--gap);
-}
-
-nav {
-  justify-content: center;
-  padding-bottom: 10px;
 }
 
 .nav-btn:hover,

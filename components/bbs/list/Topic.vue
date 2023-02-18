@@ -8,14 +8,13 @@
     >{{ topic.name }}</NuxtLink></span>
   <NuxtLink
     :to="`/bbs/${$route.params.forum}-${$route.params.topic}-1`"
-    class="pink"
+    class="pink mb-3"
   >
     <h1 v-if="topic.messages[0]" class="ellipsis">
       {{ topic.messages[0].title }}
     </h1>
   </NuxtLink>
-  <br>
-  <table class="bbs">
+  <table class="bbs mb-3">
     <colgroup>
       <col class="info" width="100">
       <col width="100%">
@@ -50,7 +49,6 @@
       </tr>
     </tbody>
   </table>
-  <br v-if="movePanel">
   <Card v-if="movePanel">
     <template #header>
       Déplacer le sujet
@@ -76,8 +74,7 @@
       </button>
     </form>
   </Card>
-  <br>
-  <div v-if="user" style="text-align: end">
+  <div v-if="user" style="text-align: end" class="mb-3">
     <button
       v-if="+user.user_level > 3"
       class="btn-action"

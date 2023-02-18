@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card header="wedding.webp" left bg="wedding.gif">
@@ -71,7 +70,7 @@
       <br>
       <span v-html="$t('wedding.description')" />
     </Card>
-    <br><Card id="last">
+    <Card id="last">
       <template #header>
         {{ $t("wedding.last") }}
       </template>
@@ -135,7 +134,7 @@
       <span v-html="$t('wedding.marriedByGuruji')" /><br>
       <LinkUser :user="data.last.witness1" /> &amp;
       <LinkUser :user="data.last.witness2" />.
-    </Card><br>
+    </Card>
     <Card id="today">
       <template #header>
         <img
@@ -159,7 +158,6 @@
         }}</NuxtLink><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i>
       </div>
     </Card>
-    <br>
     <Card id="best">
       <template #header>
         <img
@@ -206,7 +204,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card id="divorce">
       <template #header>
         <img
@@ -254,7 +251,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card id="broken">
       <template #header>
         <img

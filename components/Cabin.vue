@@ -3,7 +3,7 @@
     <form @submit.prevent="submit">
       <div class="container-acc flex">
         <div class="left-acc flex">
-          <div class="cabin flex centered">
+          <div class="cabin flex centered mb-3">
             <div class="arrows flex">
               <button
                 v-for="category of categories"
@@ -63,8 +63,7 @@
               </button>
             </div>
           </div>
-          <br>
-          <div class="gender">
+          <div class="gender mb-3">
             <button
               type="button"
               class="btn-pink"
@@ -118,7 +117,6 @@
               >
             </button>
           </div>
-          <br>
           <div class="gender">
             {{ gender }}
           </div>
@@ -146,8 +144,7 @@
           </div>
           <div v-show="profile" id="profile">
             <Emotes @emote="(emote: any) => emit('emote', emote)" />
-            <br>
-            <div class="left">
+            <div class="left mt-2">
               <label
                 for="motto"
               >{{ $t("profile.motto") }}
@@ -165,10 +162,7 @@
                   "
                 >
               </label>
-            </div>
-            <div class="left">
               <label for="website">{{ $t("profile.website") }}
-
                 <input
                   id="website"
                   minlength="0"
@@ -183,8 +177,6 @@
                   "
                 >
               </label>
-            </div>
-            <div class="left">
               <label>{{ $t("profile.interests") }}
                 <ol>
                   <li>

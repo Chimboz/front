@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card header="popularity.gif" left bg="popularity.gif">
@@ -101,7 +100,7 @@
       <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
       <b>- aimé</b> gagne une crotte pour la journée !
     </Card>
-    <br><Card id="today">
+    <Card id="today">
       <template #header>
         Classement du jour !
       </template>
@@ -167,7 +166,6 @@
         </div>
       </div>
     </Card>
-    <br>
     <Card id="yesterday">
       <template #header>
         Champions du jour !
@@ -234,7 +232,7 @@
           </table>
         </div>
       </div>
-    </Card><br>
+    </Card>
     <Card id="general">
       <template #header>
         Classement général !
@@ -301,7 +299,7 @@
         </div>
       </div>
     </Card>
-    <br><Card id="groups">
+    <Card id="groups">
       <template #header>
         Classement des groupes !
       </template>
@@ -366,7 +364,7 @@
           </table>
         </div>
       </div>
-    </Card><br>
+    </Card>
     <Card
       v-if="user"
       id="vote"

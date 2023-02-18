@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card
@@ -45,7 +44,6 @@
         {{ $t("members.showList") }}
       </NuxtLink>
     </Card>
-    <br>
     <Card
       header="popularity_blue.webp"
       bg="popularity_blue.png"
@@ -82,7 +80,6 @@
         {{ $t("members.popularity.link") }}
       </NuxtLink>
     </Card>
-    <br>
     <Card
       header="wedding_blue.webp"
       bg="wedding_blue.png"

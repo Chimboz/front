@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card header="bacteria.webp" left bg="bacteria.gif">

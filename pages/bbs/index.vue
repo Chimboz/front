@@ -6,7 +6,6 @@
           <SideNavEntries section="Community" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <BbsList :boards="data" />

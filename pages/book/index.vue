@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card header="book.webp" left color="yellow">
@@ -17,7 +16,7 @@
         {{ $t('book.description2') }}
       </div>
     </Card>
-    <br><Card>
+    <Card>
       <img
         style="float: left"
         src="@/assets/img/book/search.webp"
@@ -58,7 +57,7 @@
           </ul>
         </div>
       </div>
-    </Card><br>
+    </Card>
     <Card>
       <template #header>
         {{ $t("book.last") }}

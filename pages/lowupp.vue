@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card
@@ -23,7 +23,7 @@
       </template>
       <span v-html="$t('capitalization.description')"></span>
       <form @submit.prevent="submit">
-        <div class="centered">
+        <div class="centered my-3">
           <button
             v-for="(letter, index) of pseudo"
             :key="index"
@@ -34,7 +34,6 @@
             {{ letter }}
           </button>
         </div>
-        <br>
         <Button
           color="green"
           type="submit"

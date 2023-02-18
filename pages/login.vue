@@ -10,7 +10,7 @@
         </template>
         <div>{{ data.members }} {{ $t('members.text', data.members) }}</div>
         {{ data.last24 }} {{ $t('members.past', data.last24) }}
-      </Card><br>
+      </Card>
       <NuxtLink to="/shop">
         <Card
           color="yellow"
@@ -27,10 +27,8 @@
           <Pack name="supporter" :looks="data.shop.looks" />
         </Card>
       </NuxtLink>
-      <br>
     </template>
-    <Demo />
-    <br>
+    <Demo class="mb-3" />
     <Card>
       <template #subtop>
         <NuxtLink to="/chaparazzi" class="chaparazzi-link">

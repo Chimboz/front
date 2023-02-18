@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card
@@ -26,7 +25,6 @@
       groupes, ton entrée est immédiate, pour d'autres tu devras être approuvé
       par le chef du groupe... A toi de faire tes preuves !
     </Card>
-    <br>
     <Card color="blue" left>
       <template #header>
         Groupes officiels
@@ -77,7 +75,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card color="blue">
       <template #header>
         Groupes de membre
@@ -111,7 +108,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card color="blue">
       <template #header>
         Classement général des groupes, par jeu
@@ -148,7 +144,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card v-if="user">
       <template #header>
         Moi et mes groupes

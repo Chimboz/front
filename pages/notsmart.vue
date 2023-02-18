@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card color="yellow" left>
@@ -42,8 +42,8 @@
           :placeholder="$t('placeholder.password.confirm')"
           class="btn-md"
         >
-        <br>
         <Button
+          class="my-3"
           type="submit"
           color="green"
         >
@@ -60,7 +60,6 @@
           </template>{{ $t("button.send") }}
         </Button>
       </form>
-      <br>
       {{ $t('notsmart.footer') }}
     </Card>
     <template #right-column />

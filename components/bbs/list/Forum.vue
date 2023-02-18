@@ -1,11 +1,10 @@
 <template>
-  <span class="pink">
+  <span class="pink mb-3">
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
     <NuxtLink :to="`/bbs/${$route.params.forum}-1`" class="pink">{{
       forum.name
     }}</NuxtLink></span>
-  <br>
-  <table class="bbs board">
+  <table class="bbs board mb-3">
     <colgroup>
       <col width="60">
       <col width="100%">
@@ -52,7 +51,6 @@
       </tr>
     </tbody>
   </table>
-  <br>
   <div v-if="user && +user.user_level > 3" style="text-align: end">
     <button
       class="btn-action"

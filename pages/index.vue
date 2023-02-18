@@ -72,7 +72,6 @@
           {{ $t('friends.online', data.friends) }}
         </NuxtLink>
       </Card>
-      <br />
       <Bank />
     </template>
     <img
@@ -81,19 +80,19 @@
       alt="Announcement"
       width="468"
       height="137"
+      class="mb-3"
       style="width: 100%; height: auto"
       @contextmenu.prevent
     />
-    <br />
     <Card header="lottery.webp">
       <template #header />
-      <div v-if="lottery">
-        <div>{{ $t('lottery.firstLine') }}</div>
-        {{ $t('lottery.secondLine') }}
+      <div class="mb-3">
+        <div v-if="lottery">
+          <div>{{ $t('lottery.firstLine') }}</div>
+          {{ $t('lottery.secondLine') }}
+        </div>
+        <RandomNumber v-else :max="30" :value="gain" />
       </div>
-      <RandomNumber v-else :max="30" :value="gain" /> <br /><br
-        v-if="!lottery"
-      />
       <Button type="button" color="orange" :disabled="!lottery" @click="handle">
         <template #prepend>
           <img
@@ -118,9 +117,7 @@
         </template>{{ $t('button.lottery') }}
       </Button>
     </Card>
-    <br />
     <Radio src="track.flac" />
-    <br />
     <Card color="yellow" left>
       <template #subtop>
         {{ $t('chapaniouz') }}
@@ -143,7 +140,6 @@
         {{ data.news.author }}, {{ $format(data.news.date, 'PPp') }}
       </div>
     </Card>
-    <br />
     <Card>
       <template #subtop>
         <NuxtLink to="/chaparazzi" class="chaparazzi-link">
@@ -193,7 +189,7 @@
         <div>
           {{ data.last24 }} {{ $t('members.past', data.last24) }}
         </div>
-      </Card><br />
+      </Card>
       <NuxtLink to="/shop">
         <Card
           color="yellow"
@@ -210,15 +206,15 @@
           <Pack
             :name="data.shop[0].pack"
             :looks="data.shop[0].looks"
-          /><br /><br />
+          />
           <Button
             type="button"
             color="yellow"
             icon="item.svg"
-            class="fullwidth"
+            class="fullwidth my-3"
           >
             {{ $t('shop.item') }}
-          </Button><br />
+          </Button>
           <Pack :name="data.shop[1].pack" :looks="data.shop[1].looks" />
         </Card>
       </NuxtLink>

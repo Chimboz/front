@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br />
       <Rules bot />
     </template>
     <Card header="group.webp" :height="70" color="blue" left>
@@ -75,7 +74,6 @@
           @contextmenu.prevent
         />
       </Card>
-      <br />
       Groupe no. <b>{{ data.id }}</b> créé le
       <b>{{ $format(data.date, 'PPp') }} ({{
         $distance(Date.now(), data.date)
@@ -91,7 +89,7 @@
         /><b>Bacteria</b><br /><br />
         Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
         <b>{{ data.bacteria.points }}</b> points.
-      </Card><br v-if="data.patojdur" />
+      </Card>
       <Card v-if="data.patojdur" left>
         <img
           src="@/assets/img/group/patojdur.gif"
@@ -101,7 +99,7 @@
         /><b>Patojdur</b><br /><br />
         Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
         <b>{{ data.patojdur.points }}</b> points.
-      </Card><br v-if="data.popularity" />
+      </Card>
       <Card v-if="data.popularity" left>
         <img
           src="@/assets/img/group/popularity.gif"
@@ -111,7 +109,7 @@
         /><b>Popularity</b><br /><br />
         Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
         <b>{{ data.popularity.points }}</b> points.
-      </Card><br v-if="data.global" />
+      </Card>
       <Card v-if="data.global" left>
         Classement général : <b>{{ data.global.rank }}</b>/<b>{{ data.global.total }}</b> avec
         <b>{{ data.global.points }}</b> points.

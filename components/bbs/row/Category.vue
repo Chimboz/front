@@ -1,7 +1,7 @@
 <template>
   <thead>
     <tr
-      class="category pointer"
+      class="category pointer left"
       :class="{ arrow: hide }"
       @click="hide = !hide"
     >

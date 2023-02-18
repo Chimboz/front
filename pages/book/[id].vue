@@ -6,14 +6,14 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
-    <span class="pink">
-      <NuxtLink
-        to="/book"
-        class="pink"
-      >» Retour à l'annuaire</NuxtLink> </span><br>
+    <NuxtLink
+      to="/book"
+      class="pink mb-2"
+    >
+      » Retour à l'annuaire
+    </NuxtLink>
     <Card class="member" :class="[data.gender]" left>
       <div class="member-header">
         <Avatar

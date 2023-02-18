@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card color="yellow" left header="bank.gif">
@@ -17,9 +17,9 @@
       >
         <table class="w-100">
           <colgroup>
-            <col width="100">
-            <col width="100%">
-            <col width="100">
+            <col width="100" />
+            <col width="100%" />
+            <col width="100" />
           </colgroup>
           <thead style="background: var(--dark-card-yellow)">
             <th class="centered">
@@ -37,7 +37,7 @@
             :class="{ loss: line.value < 0 }"
           >
             <td class="centered">
-              <b>{{ $format(line.date, "PPp") }}</b>
+              <b>{{ $format(line.date, 'PPp') }}</b>
             </td>
             <td>{{ line.description }}</td>
             <td style="text-align: right">
@@ -54,12 +54,12 @@
                   )
                 "
                 @contextmenu.prevent
-              >
+              />
             </td>
           </tr>
         </table>
       </ScrollableContainer>
-      <br>
+      <br />
       <img
         src="@/assets/img/puce.svg"
         alt="Puce"
@@ -67,22 +67,22 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      ><b> Balance sur 7 jours</b> <br><br>
+      /><b> Balance sur 7 jours</b><br /><br />
       <BarChart
         :chart-data="bankData()"
         :options="{
           elements: {
             line: { borderColor: '#ffb907' },
-            point: { borderColor: '#ffb907', backgroundColor: '#ffb907' },
+            point: { borderColor: '#ffb907', backgroundColor: '#ffb907' }
           },
           scales: {
             x: {
               gridLines: {
-                offsetGridLines: false,
+                offsetGridLines: false
               },
-              reverse: true,
-            },
-          },
+              reverse: true
+            }
+          }
         }"
       />
     </Card>
@@ -153,13 +153,17 @@ function bankData () {
         isSameDay(el.date, day)
       )
       let value = 0
-      if (chartData.length === 1) { value = chartData[0].value }
+      if (chartData.length === 1) {
+        value = chartData[0].value
+      }
       if (chartData.length > 1) {
         value = chartData.reduce(
           (prev: any, curr: any) => prev.value + curr.value
         )
       }
-      if (i > 0) { balance -= dataset.datasets[1].data[i - 1] }
+      if (i > 0) {
+        balance -= dataset.datasets[1].data[i - 1]
+      }
       dataset.labels!.push($format(day, 'd MMM'))
       dataset.datasets[1].data.push(value)
       dataset.datasets[0].data.push(balance)

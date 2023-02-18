@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <NuxtLink to="/levels">
-          <div class="level fullwidth">
+          <div class="level fullwidth mb-3">
             {{ $t("level") }}
             <div class="number">
               <img
@@ -18,16 +18,15 @@
               >
             </div>
           </div>
-        </NuxtLink><br>
+        </NuxtLink>
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
         </div>
-      </Card><br>
+      </Card>
       <Bank />
     </template>
 
     <Cabin
-
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"
@@ -55,7 +54,6 @@
       "
       @change-gender="(gender: any) => (data.gender = gender)"
     />
-    <br>
     <div class="games">
       <Card
         header="bacteria.svg"
@@ -276,9 +274,8 @@
             <div>{{ $distanceToNow(message.date) }}</div>
           </div>
         </div>
-      </Card><br>
+      </Card>
       <Card
-
         color="blue"
         header="forum.gif"
         :width="154"
@@ -313,7 +310,7 @@
             </div>
           </div>
         </div>
-      </Card><br><Card color="blue">
+      </Card><Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">
             {{
@@ -353,7 +350,6 @@
           </div>
         </div>
       </Card>
-      <br>
       <Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">

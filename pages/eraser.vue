@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card
@@ -23,12 +23,11 @@
         height="91"
         width="444"
         alt="Eraser"
+        class="my-3"
         draggable="false"
         style="width: 100%"
         @contextmenu.prevent
       >
-
-      <br>
       <form @submit.prevent="submit">
         <input
           v-model="pseudo"
@@ -38,13 +37,12 @@
           pattern="[\w\.\-_@]{3,15}"
           name="username"
           type="text"
-          class="btn-md"
+          class="btn-md mb-3"
           aria-label="Username"
           autocomplete="username"
           :placeholder="$t('placeholder.username')"
         >
-        <br><br>
-        <div class="flex">
+        <div class="flex mb-3">
           <Button
             type="button"
             aria-label="Generate nickname"
@@ -70,7 +68,6 @@
             </template>Sauver
           </Button>
         </div>
-        <br>
         <span v-html="$t('eraser.description')"></span>
       </form>
     </Card>

@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card header="mazo.webp" left bg="mazo.gif">
@@ -80,7 +80,6 @@
 
       <br>
     </Card>
-    <br>
     <Card id="tutorial" left>
       <template #header>
         Comment jouer&nbsp;!
@@ -97,7 +96,7 @@
       <br>
       C'est comme tu le sens, n'oublie jamais: un coup de travers et tu perds
       !!!
-    </Card><br>
+    </Card>
     <Card id="gameplay" left>
       <template #header>
         Gameplay
@@ -120,7 +119,7 @@
       - Le temps que met à s'afficher le résultat n'indique pas un bon/mauvais
       coup.<br>
     </Card>
-    <br><Card id="best">
+    <Card id="best">
       <template #header>
         Les 20 plus mazo de l'Archipel
       </template>

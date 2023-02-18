@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card
@@ -75,9 +75,10 @@
           <div class="preview-infos">
             <br><br>
             <h3>Pack {{ shown.name }}</h3>
-            {{ shown.description }}<br><br>
+            {{ shown.description }}
             <Button
               v-if="user"
+              class="mt-3"
               type="button"
               color="yellow"
               icon="credits.svg"

@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card header="patojdur.webp" left bg="patojdur.gif" :height="77">
@@ -146,7 +146,6 @@
       ton courage et ta persévérance te permettront de devenir le meilleur
       patojeur !
     </Card>
-    <br>
     <Card id="tutorial" left>
       <template #header>
         Comment jouer&nbsp;?
@@ -163,7 +162,7 @@
       <br>
       Bonne Chance ! tu en auras besoin, la concurrence sera rude ! La victoire
       au millième près !
-    </Card><br>
+    </Card>
     <Card id="gameplay" left>
       <template #header>
         Gameplay
@@ -189,13 +188,13 @@
       <br>
       <b>Indice</b> : pour <b>Burnin'Flak</b>, la bonne combinaison commence par
       Flèche Gauche, Flèche Haut... (GH...)
-    </Card><br>
+    </Card>
     <Card id="modes" left>
       <template #header>
         Les modes
       </template>
       Pour le moment, seul le mode <b>single</b> est accessible.
-    </Card><br>
+    </Card>
     <Card id="races" left>
       <template #header>
         Les courses
@@ -205,7 +204,7 @@
       <br>
       Durant la phase de test de <b>Patojdur</b>, seule la course n°1
       (<b>Burnin'Flak</b>) est accessible.
-    </Card><br>
+    </Card>
     <Card id="records">
       <template #header>
         Records !
@@ -242,7 +241,7 @@
         </tbody>
       </table>
     </Card>
-    <br><Card id="yesterday">
+    <Card id="yesterday">
       <template #header>
         Les champions du jour !
       </template>
@@ -280,7 +279,7 @@
         </tbody>
       </table>
     </Card>
-    <br><Card id="general">
+    <Card id="general">
       <template #header>
         Classement général single {{ data.day - 1 }}e journée
       </template>
@@ -313,7 +312,7 @@
           </tr>
         </tbody>
       </table>
-    </Card><br><Card id="today">
+    </Card><Card id="today">
       <template #header>
         {{ data.day }}e journée ! {{ data.stats.today }} patojeurs !
       </template>
@@ -345,7 +344,7 @@
         </tbody>
       </table>
     </Card>
-    <br><Card id="groups">
+    <Card id="groups">
       <template #header>
         Classement des groupes !
       </template>

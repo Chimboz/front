@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card
@@ -25,7 +24,6 @@
       gang de tes rêves t'as pris ? Découvre-le tout de suite ! Envie de fonder
       ton propre club ? Si tu as un super niveau, go !
     </Card>
-    <br>
     <Card color="blue" left>
       <template #header>
         Mes inscriptions
@@ -59,7 +57,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card color="blue">
       <template #header>
         Mes demandes en attente
@@ -93,7 +90,6 @@
         </tbody>
       </table>
     </Card>
-    <br>
     <Card color="blue">
       <template #header>
         Mes groupes

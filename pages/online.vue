@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card>
@@ -18,7 +17,7 @@
         style="display: inline-block"
       ><LinkUser :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span>
-    </Card><br>
+    </Card>
     <Card>
       <template #subtop>
         {{ $t('online.site') }}

@@ -5,11 +5,10 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Community" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <BbsListTopic :topic="data" />
-    <br>
     <BbsMarkdownInput v-if="user && (!data.locked || +user.user_level > 3)" />
   </Container>
 </template>

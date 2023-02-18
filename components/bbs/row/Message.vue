@@ -101,9 +101,7 @@
       <hr style="margin: 2px 0" />
       <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
       <div class="markdown-body" v-html="$messageRender(message.content)" />
-      <div v-if="message.signature">
-        <i><br />"{{ message.author.signature }}"</i>
-      </div>
+      <br /><i>"{{ message.author.signature }}"</i>
     </td>
   </tr>
   <tr v-if="separator">

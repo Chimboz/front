@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <Card
@@ -32,7 +31,6 @@
         </div>
       </div>
     </Card>
-    <br>
     <BlazonCabin
 
       :data="{
@@ -201,7 +199,7 @@
           </template>Sauver
         </Button>
       </form>
-    </Card><br>
+    </Card>
     <Card color="blue">
       <template #header>
         Membres
@@ -219,7 +217,7 @@
           @contextmenu.prevent
         >
       </div>
-    </Card><br>
+    </Card>
     <Card color="blue">
       <template #header>
         Demandes
@@ -247,7 +245,7 @@
           @contextmenu.prevent
         >
       </div>
-    </Card><br>
+    </Card>
     <Card
       v-if="data.bacteria"
       left
@@ -259,7 +257,7 @@
       ><b>Bacteria</b><br><br>
       Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
       <b>{{ data.bacteria.points }}</b> points.
-    </Card><br>
+    </Card>
     <Card
       v-if="data.patojdur"
       left
@@ -271,7 +269,7 @@
       ><b>Patojdur</b><br><br>
       Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
       <b>{{ data.patojdur.points }}</b> points.
-    </Card><br>
+    </Card>
     <Card
       v-if="data.popularity"
       left
@@ -283,11 +281,11 @@
       ><b>Popularity</b><br><br>
       Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
       <b>{{ data.popularity.points }}</b> points.
-    </Card><br>
+    </Card>
     <Card v-if="data.global" left>
       Classement général : <b>{{ data.global.rank }}</b>/<b>{{ data.global.total }}</b> avec
       <b>{{ data.global.points }}</b> points.
-    </Card><br><Card>
+    </Card><Card>
       <a
         style="color: red; cursor: var(--pointer)"
         @click.prevent="deleteGroup"

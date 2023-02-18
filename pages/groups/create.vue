@@ -6,7 +6,6 @@
           <SideNavEntries section="Members" />
         </div>
       </Card>
-      <br>
       <Rules bot />
     </template>
     <form method="POST" @submit.prevent="create()">
@@ -23,7 +22,6 @@
           :placeholder="$t('placeholder.groupName')"
         >
       </Card>
-      <br>
       <BlazonCabin
 
         :data="data"

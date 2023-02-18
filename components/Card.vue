@@ -1,5 +1,5 @@
 <template>
-  <div :class="color" class="card-container">
+  <div :class="color" class="card-container mb-3">
     <img
       v-if="header"
       draggable="false"
@@ -40,10 +40,9 @@
         <h2>
           <slot name="header" />
         </h2>
-        <div style="text-align: center">
-          <em v-if="$slots['subtitle']">"<slot name="subtitle" />"</em>
+        <div v-if="$slots['subtitle']" class="centered mb-3">
+          <em>"<slot name="subtitle" />"</em>
         </div>
-        <br v-if="($slots['subtitle'] || $slots['header']) && $slots.default" />
         <main>
           <slot />
         </main>

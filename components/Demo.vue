@@ -114,8 +114,7 @@
           </section>
         </div>
       </div>
-      <form v-if="section === 0" autocomplete="on">
-        <br>
+      <form v-if="section === 0" autocomplete="on" class="mt-2">
         <input
           required
           minlength="3"
@@ -180,13 +179,13 @@
       </form>
       <form
         v-if="section === 1"
+        class="mt-2"
         autocomplete="on"
         @submit.prevent="
           auth.login(username, password);
           $router.push('/');
         "
       >
-        <br>
         <div>
           <input
             v-model="username"

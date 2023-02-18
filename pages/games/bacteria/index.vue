@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Games" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card header="bacteria.webp" left bg="bacteria.gif">
@@ -100,7 +100,6 @@
       besoin, pour devenir toi aussi, un <b>guerrier Bacteria</b> .<br>
       <br>
     </Card>
-    <br>
     <Card id="tutorial" left>
       <template #header>
         Comment jouer&nbsp;?
@@ -125,7 +124,7 @@
       partie démarre !<br><b>Attention</b>&nbsp;: Les visiteurs ne peuvent
       jouer qu'en <b>Bacteria débutants</b>, les cabines de
       <b>Bacteria Pro</b> sont réservées aux membres !
-    </Card><br>
+    </Card>
     <Card id="records">
       <template #header>
         Records !
@@ -157,7 +156,7 @@
         {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
     </Card>
-    <br><Card id="best">
+    <Card id="best">
       <template #header>
         Les 20 plus acharnés de Bacteria !
       </template>
@@ -201,7 +200,7 @@
         </tbody>
       </table>
     </Card>
-    <br><Card id="worst">
+    <Card id="worst">
       <template #header>
         Les 20 pires brèles de Bacteria !
       </template>
@@ -242,7 +241,7 @@
         </tbody>
       </table>
     </Card>
-    <br><Card id="groups">
+    <Card id="groups">
       <template #header>
         Les 10 meilleurs groupes de Bacteria !
       </template>

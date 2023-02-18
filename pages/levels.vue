@@ -5,7 +5,7 @@
         <div class="flex col fullwidth">
           <SideNavEntries section="Account" />
         </div>
-      </Card><br>
+      </Card>
       <Rules bot />
     </template>
     <Card

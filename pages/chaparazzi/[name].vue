@@ -18,7 +18,6 @@
         />
       </a>
     </Card>
-    <br />
   </div>
 </template>
 <script setup lang="ts">
