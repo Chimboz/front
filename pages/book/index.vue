@@ -42,7 +42,7 @@
             :placeholder="$t('placeholder.username')"
           >
           <button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
         <div v-if="suggestionsHere && userSearch != ''" class="suggestions">

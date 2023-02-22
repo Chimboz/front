@@ -22,7 +22,7 @@
           aria-label="Username"
           :placeholder="$t('placeholder.username')"
         ><button type="button" class="btn-action">
-          go
+          {{ $t('button.go') }}
         </button>
       </div>
       <ScrollableContainer

@@ -377,7 +377,7 @@
             aria-label="Wedding number"
             :placeholder="$t('placeholder.weddingNumber')"
           ><button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
         <br>
@@ -395,7 +395,7 @@
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
           ><button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
       </Card>

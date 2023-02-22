@@ -154,7 +154,7 @@
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
           ><button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
         <br>
@@ -171,7 +171,7 @@
             aria-label="Group"
             :placeholder="$t('placeholder.group')"
           ><button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
       </Card>

@@ -70,7 +70,7 @@
             aria-label="Username"
             :placeholder="$t('placeholder.item')"
           ><button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
         <br>

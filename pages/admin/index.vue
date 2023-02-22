@@ -46,7 +46,7 @@
             @keydown="onKeypressValue()"
           >
           <button type="submit" class="btn-action">
-            go
+            {{ $t('button.go') }}
           </button>
         </form>
         <div v-if="suggestionsHere && username != ''" class="suggestions">

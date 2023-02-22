@@ -70,7 +70,7 @@
         </optgroup>
       </select>&nbsp;
       <button type="submit" class="btn-action">
-        go
+        {{ $t('button.go') }}
       </button>
     </form>
   </Card>
