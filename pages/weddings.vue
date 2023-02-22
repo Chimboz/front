@@ -22,10 +22,10 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.today") }}
+          >&nbsp;{{ $t("wedding.today.link") }}
         </NuxtLink>
         <NuxtLink
-          to="#divorce"
+          to="#divorces"
           class="btn-sm blue-bg"
         >
           <img
@@ -36,10 +36,10 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.divorces") }}
+          >&nbsp;{{ $t("wedding.divorces.link") }}
         </NuxtLink>
         <NuxtLink
-          to="#best"
+          to="#holding"
           class="btn-sm blue-bg"
         >
           <img
@@ -50,7 +50,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.holding") }}
+          >&nbsp;{{ $t("wedding.holding.link") }}
         </NuxtLink>
         <NuxtLink
           to="#broken"
@@ -64,7 +64,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.held") }}
+          >&nbsp;{{ $t("wedding.broken.link") }}
         </NuxtLink>
       </div>
       <br>
@@ -142,9 +142,9 @@
           alt="Marriage icon"
           width="143"
           height="64"
-        ><br>{{ $t("wedding.title.today") }}
+        ><br>{{ $t("wedding.today.title") }}
       </template>
-      {{ $t("date.Today") }}, <b>{{ $format(Date.now(), "PP") }}</b>, <b>{{ data.today.length }}</b> {{ $t("wedding.celebrated") }}.
+      {{ $t("date.Today") }}, <b>{{ $format(Date.now(), "PP") }}</b>, <b>{{ data.today.length }}</b> {{ $t("wedding.today.celebrated") }}.
       <br><br>
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
         {{ $t("date.On") }} <b>{{ $format(wedding.date, "PPp") }}</b>,<br>
@@ -158,17 +158,18 @@
         }}</NuxtLink><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i>
       </div>
     </Card>
-    <Card id="best">
+    <Card id="holding">
       <template #header>
         <img
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Marriage icon"
           width="143"
           height="64"
-        ><br>Les 20 mariages qui tiennent&nbsp;!
+        ><br>
+        {{ $t('wedding.holding.title') }}
       </template>
       <template #subtitle>
-        Ça commence pour un jour... ça fini pour toujours !
+        {{ $t('wedding.holding.subtitle') }}
       </template>
       <table class="fullwidth">
         <colgroup>
@@ -180,9 +181,9 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Couple</th>
-            <th>Mariage</th>
-            <th>Jours</th>
+            <th>{{ $t('wedding.table.couple') }}</th>
+            <th>{{ $t('wedding.table.marriage') }}</th>
+            <th>{{ $t('wedding.table.days') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -193,7 +194,7 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i>n°<NuxtLink :to="'/weddings/' + wedding.id">{{
+              <i>{{ $t('no') }}<NuxtLink :to="'/weddings/' + wedding.id">{{
                 wedding.id
               }}</NuxtLink></i>
             </td>
@@ -204,19 +205,20 @@
         </tbody>
       </table>
     </Card>
-    <Card id="divorce">
+    <Card id="divorces">
       <template #header>
         <img
           src="@/assets/img/social/wedding/divorce2.webp"
           alt="Divorce icon"
           width="143"
           height="64"
-        ><br>Les divorces depuis 24 heures
+        ><br>
+        {{ $t('wedding.divorces.title') }}
       </template>
       <template #subtitle>
-        Le mariage est virtuel mais la douleur est réelle&nbsp;!
+        {{ $t('wedding.divorces.subtitle') }}
       </template>
-      <b>{{ data.divorce.length }}</b> couples ont été brisés&nbsp;!<br><br>
+      <b>{{ data.divorce.length }}</b> {{ $t('wedding.divorces.broken') }}<br><br>
       <table class="fullwidth">
         <colgroup>
           <col width="100">
@@ -226,21 +228,21 @@
         </colgroup>
         <thead>
           <tr>
-            <th>Heure</th>
-            <th>Couple brisé</th>
-            <th>Mariage</th>
-            <th>Jours</th>
+            <th>{{ $t('wedding.table.hour') }}</th>
+            <th>{{ $t('wedding.table.brokenCouple') }}</th>
+            <th>{{ $t('wedding.table.marriage') }}</th>
+            <th>{{ $t('wedding.table.days') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(wedding, index) in data.divorce" :key="index">
             <td>{{ $format(wedding.dateend, "p") }}</td>
             <td>
-              <LinkUser :user="wedding.married1" /> a plaqué
+              <LinkUser :user="wedding.married1" /> {{ $t('wedding.divorces.brokeWith') }}
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i>n°<NuxtLink :to="'/weddings/' + wedding.id">{{
+              <i>{{ $t('no') }}<NuxtLink :to="'/weddings/' + wedding.id">{{
                 wedding.id
               }}</NuxtLink></i>
             </td>
@@ -258,10 +260,10 @@
           alt="Marriage icon"
           width="143"
           height="64"
-        ><br>Les 20 mariages qui ont tenu !
+        ><br>{{ $t('wedding.broken.title') }}
       </template>
       <template #subtitle>
-        C'est fini... mais ça a duré !!!
+        {{ $t('wedding.broken.subtitle') }}
       </template>
       <table class="fullwidth">
         <colgroup>
@@ -273,9 +275,9 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Couple</th>
-            <th>Mariage</th>
-            <th>Jours</th>
+            <th>{{ $t('wedding.table.couple') }}</th>
+            <th>{{ $t('wedding.table.marriage') }}</th>
+            <th>{{ $t('wedding.table.days') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -286,7 +288,7 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i>n°<NuxtLink :to="'/weddings/' + wedding.id">{{
+              <i>{{ $t('no') }}<NuxtLink :to="'/weddings/' + wedding.id">{{
                 wedding.id
               }}</NuxtLink></i>
             </td>
@@ -299,7 +301,6 @@
     </Card>
     <template #right-column>
       <Card
-
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
@@ -313,8 +314,14 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >
-        En tout, <b>Guruji</b> a célébré <b>{{ data.stats.total }}</b> mariages.
+        > <i18n-t keypath="wedding.rightColumn.gurujiCelebrated">
+          <template #Guruji>
+            <b>Guruji</b>
+          </template>
+          <template #total>
+            <b>{{ data.stats.total }}</b>
+          </template>
+        </i18n-t>
         <br><br>
         <img
           src="@/assets/img/social/wedding/divorce.webp"
@@ -324,7 +331,11 @@
           height="39"
           @contextmenu.prevent
         ><br>
-        <b>{{ data.stats.divorce }}</b> mariés ont divorcé. <br><br>
+        <i18n-t keypath="wedding.rightColumn.divorced">
+          <template #total>
+            <b>{{ data.stats.divorce }}</b>
+          </template>
+        </i18n-t><br><br>
         <img
           src="@/assets/img/social/wedding/mariage.webp"
           alt="Wedding"
@@ -333,12 +344,17 @@
           height="39"
           @contextmenu.prevent
         ><br>
-        En ce moment, <b>{{ data.stats.total - data.stats.divorce }}</b> couples
-        sont heureux, donc ça laisse
-        <b>{{
-          data.stats.members - (data.stats.total - data.stats.divorce) * 2
-        }}</b>
-        célibs !!! <br><img
+        <i18n-t keypath="wedding.rightColumn.all">
+          <template #couples>
+            <b>{{ data.stats.divorce }}</b>
+          </template>
+          <template #singles>
+            <b>{{
+              data.stats.members - (data.stats.total - data.stats.divorce) * 2
+            }}</b>
+          </template>
+        </i18n-t>
+        <br><img
           src="@/assets/img/social/wedding/mariage2.webp"
           alt="Wedding"
           draggable="false"
@@ -347,7 +363,7 @@
           style="width: 100%"
           @contextmenu.prevent
         ><br>
-        <h3>Archive de tous les mariages</h3>
+        <h3>{{ $t('wedding.rightColumn.archives') }}</h3>
         <br>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
