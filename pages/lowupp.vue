@@ -21,7 +21,7 @@
       <template #subtitle>
         {{ $t("capitalization.subtitle") }}
       </template>
-      <span v-html="$t('capitalization.description')"></span>
+      <span v-html="$t('capitalization.description')" />
       <form @submit.prevent="submit">
         <div class="centered my-3">
           <button

@@ -22,7 +22,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;Classement du jour
+          >&nbsp;{{ $t('popularity.today.link') }}
         </NuxtLink>
         <NuxtLink
           to="#general"
@@ -36,7 +36,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;Classement général
+          >&nbsp;{{ $t('popularity.general.link') }}
         </NuxtLink>
         <NuxtLink
           to="#yesterday"
@@ -50,7 +50,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;Champions du jour
+          >&nbsp;{{ $t('popularity.yesterday.link') }}
         </NuxtLink>
         <NuxtLink
           to="#groups"
@@ -64,7 +64,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;Classement des groupes
+          >&nbsp;{{ $t('popularity.groups.link') }}
         </NuxtLink>
         <NuxtLink to="#vote" class="btn-sm blue-bg">
           <img
@@ -75,38 +75,20 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;Voter
+          >&nbsp;{{ $t('popularity.vote.link') }}
         </NuxtLink>
       </div>
       <br>
-
-      Il te <b>prend la tête</b> et tu as envie de lui faire sentir&nbsp;?
-      <br>
-      Tu ne <b>peux plus la voir</b> et tu veux que tout le monde le
-      sache&nbsp;?
-      <br>
-      Cette fille est <b>trop cool</b> et ceux qui ne l'aiment pas ne la
-      connaissent pas&nbsp;! <br>
-      Ce mec et son groupe <b>assurent grave</b> et tu as envie de le lui
-      prouver&nbsp;?
-      <br>
-      <br>
-      Viens tous les jours <b>régler tes comptes</b> ou <b>soutenir</b> tes amis
-      avec la <b>popularité</b>&nbsp;! <br>
-      Vote <b>POUR</b> elle et sa cote remonte, vote <b>CONTRE</b> lui et il
-      descend en flêche ! <br>
-      <br>
-      Le <b>+ populaire du jour</b> gagne les lunettes pour la journée, les 3
-      <b>+ populaires du jour</b> gagnent une auréole pour la journée, le
-      <b>- aimé</b> gagne une crotte pour la journée !
+      <span v-html="$t('popularity.description')" />
     </Card>
     <Card id="today">
       <template #header>
-        Classement du jour !
+        {{ $t('popularity.today.title') }}
       </template>
-      Classement toujours en cours ! <br>Tu peux encore descendre ou remonter
-      quelqu'un !<br>
+      {{ $t('popularity.today.description1') }}
       <br>
+      {{ $t('popularity.today.description2') }}
+      <br><br>
       <div class="grid fullwidth">
         <div>
           <img
@@ -124,8 +106,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -152,8 +134,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -168,12 +150,11 @@
     </Card>
     <Card id="yesterday">
       <template #header>
-        Champions du jour !
+        {{ $t('popularity.yesterday.title') }}
       </template>
       <template #subtitle>
-        Hier, ils ont été héroïques... ou nazes !!!
+        {{ $t('popularity.yesterday.subtitle') }}
       </template>
-
       <div class="grid fullwidth">
         <div>
           <img
@@ -191,8 +172,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -219,8 +200,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -235,10 +216,10 @@
     </Card>
     <Card id="general">
       <template #header>
-        Classement général !
+        {{ $t('popularity.general.title') }}
       </template>
       <template #subtitle>
-        Les membres qui gagnent à être connus... et ceux à éviter !!!
+        {{ $t('popularity.general.subtitle') }}
       </template>
       <div class="grid fullwidth">
         <div>
@@ -257,8 +238,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -285,8 +266,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -301,10 +282,10 @@
     </Card>
     <Card id="groups">
       <template #header>
-        Classement des groupes !
+        {{ $t('popularity.groups.title') }}
       </template>
       <template #subtitle>
-        Plus on est de fous...
+        {{ $t('popularity.groups.subtitle') }}
       </template>
       <div class="grid fullwidth">
         <div>
@@ -323,8 +304,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -351,8 +332,8 @@
             </colgroup>
             <thead>
               <tr>
-                <th>Pts</th>
-                <th>Membre</th>
+                <th>{{ $t('popularity.table.points') }}</th>
+                <th>{{ $t('popularity.table.member') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -384,10 +365,10 @@
             aria-label="Type of vote"
           >
             <option value="for">
-              Pour
+              {{ $t('popularity.vote.for') }}
             </option>
             <option value="against">
-              Contre
+              {{ $t('popularity.vote.against') }}
             </option>
           </select><input
             v-model="pseudo"

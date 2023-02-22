@@ -68,7 +68,7 @@
             </template>Sauver
           </Button>
         </div>
-        <span v-html="$t('eraser.description')"></span>
+        <span v-html="$t('eraser.description')" />
       </form>
     </Card>
     <template #right-column>
