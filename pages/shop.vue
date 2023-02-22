@@ -68,13 +68,13 @@
               alt="Shop price"
               @contextmenu.prevent
             >
-            <span>{{ shown.cost }}p.</span>
+            <span>{{ shown.cost }}{{ $t('credit.abbreviation') }}</span>
           </div>
         </div>
         <div>
           <div class="preview-infos">
             <br><br>
-            <h3>Pack {{ shown.name }}</h3>
+            <h3>{{ $t('shop.pack') }} {{ shown.name }}</h3>
             {{ shown.description }}
             <Button
               v-if="user"
@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <h3>Les dernières fringues</h3>
+      <h3>{{ $t('shop.new') }}</h3>
       <div class="menu flex">
         <div class="flex hstack">
           <Pack
