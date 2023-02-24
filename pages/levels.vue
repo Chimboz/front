@@ -24,16 +24,7 @@
             @click="selected = rank.level"
             @keyup="selected = rank.level"
           >
-            <img
-              v-for="number in rank.level.toString(10)"
-              :key="number.index"
-              draggable="false"
-              :alt="number"
-              width="19"
-              height="21"
-              :src="asset(`img/number/${number}.svg`)"
-              @contextmenu.prevent
-            >&nbsp;<b>{{ rank.name }}</b>
+            <Number :number="rank.level" />&nbsp;<b>{{ rank.name }}</b>
           </div>
         </div>
         <div class="level-description flex centered">

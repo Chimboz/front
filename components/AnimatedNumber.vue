@@ -1,38 +1,32 @@
 <template>
-  <img
-    v-for="(digit, index) in displayNumber.toString(10)"
-    :key="index"
-    draggable="false"
-    :alt="digit"
-    width="19"
-    height="21"
-    :src="asset(`img/number/${digit}.svg`)"
-    @contextmenu.prevent
-  >
+  <Number :number="displayNumber" :color="color" />
 </template>
 <script setup lang="ts">
-
 const props = withDefaults(
   defineProps<{
-    number: number;
-    delay?: number;
+    color?: 'yellow' | 'pink'
+    number: number
+    delay?: number
+    duration?: number
   }>(),
-  { number: 0, delay: 5 }
+  { color: 'yellow', number: 0, delay: 0, duration: 5 }
 )
 
 const displayNumber = ref(0)
 
 function tween () {
   displayNumber.value += Math.max(
-    Math.floor(props.number / 60 / props.delay),
+    Math.floor(props.number / 60 / props.duration),
     1
   )
   if (props.number <= displayNumber.value) {
     displayNumber.value = props.number
-  } else { requestAnimationFrame(tween) }
+  } else {
+    requestAnimationFrame(tween)
+  }
 }
 
 onMounted(() => {
-  requestAnimationFrame(tween)
+  setTimeout(() => requestAnimationFrame(tween), props.delay)
 })
 </script>

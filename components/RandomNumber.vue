@@ -1,30 +1,22 @@
 <template>
-  <img
-    v-for="(digit, index) in displayNumber"
-    :key="index"
-    :class="{ win: elapsed > duration }"
-    draggable="false"
-    :alt="digit"
-    width="19"
-    height="21"
-    :src="asset(`img/number/${digit}.svg`)"
-    @contextmenu.prevent
-  >
+  <i :class="{ win: elapsed > duration }">
+    <Number :number="displayNumber" :color="color" />
+  </i>
 </template>
 
 <script setup lang="ts">
-
 const props = withDefaults(
   defineProps<{
-    min?: number;
-    max: number;
-    value: number;
-    duration?: number;
+    color?: 'yellow' | 'pink'
+    min?: number
+    max: number
+    value: number
+    duration?: number
   }>(),
-  { min: 0, duration: 5000 }
+  { color: 'yellow', min: 0, duration: 5000 }
 )
 
-const displayNumber = ref(props.max.toString())
+const displayNumber = ref(props.max)
 const start = ref(0)
 const previousTimeStamp = ref(Date.now())
 const elapsed = ref(0)
@@ -36,18 +28,21 @@ function bezier (
   duration: number
 ) {
   time /= duration / 2
-  if (time < 1) { return (change / 2) * time * time + startValue }
+  if (time < 1) {
+    return (change / 2) * time * time + startValue
+  }
   time--
   return (-change / 2) * (time * (time - 2) - 1) + startValue
 }
 
 function tween (timestamp: number) {
-  if (start.value === 0) { start.value = timestamp }
+  if (start.value === 0) {
+    start.value = timestamp
+  }
   elapsed.value = timestamp - start.value
 
   if (previousTimeStamp.value !== timestamp) {
-    const random = randomInt(props.min, props.max)
-    displayNumber.value = random < 10 ? `0${random}` : random.toString()
+    displayNumber.value = randomInt(props.min, props.max)
   }
 
   if (elapsed.value < props.duration) {
@@ -56,7 +51,9 @@ function tween (timestamp: number) {
       () => requestAnimationFrame(tween),
       bezier(elapsed.value, 0, 500, props.duration)
     )
-  } else { displayNumber.value = props.value.toString() }
+  } else {
+    displayNumber.value = props.value
+  }
 }
 
 onMounted(() => {

@@ -6,16 +6,7 @@
           <div class="level fullwidth">
             {{ $t('level') }}
             <div class="number">
-              <img
-                v-for="number in data.level.toString(10)"
-                :key="number.index"
-                draggable="false"
-                :alt="number"
-                width="19"
-                height="21"
-                :src="asset(`img/number/${number}.svg`)"
-                @contextmenu.prevent
-              />
+              <Number :number="data.level" />
             </div>
           </div>
         </NuxtLink>
@@ -31,16 +22,7 @@
               @contextmenu.prevent
             />
             <div>
-              <img
-                v-for="number in data.messages.toString(10)"
-                :key="number.index"
-                draggable="false"
-                :alt="number"
-                width="19"
-                height="21"
-                :src="asset(`img/number/pink/${number}.svg`)"
-                @contextmenu.prevent
-              />
+              <Number :number="data.messages" color="pink" />
             </div>
           </div>
           {{ $t('mi.message', data.messages) }}
@@ -57,16 +39,7 @@
               @contextmenu.prevent
             />
             <div>
-              <img
-                v-for="number in data.friends.toString(10)"
-                :key="number.index"
-                draggable="false"
-                :alt="number"
-                width="19"
-                height="21"
-                :src="asset(`img/number/pink/${number}.svg`)"
-                @contextmenu.prevent
-              />
+              <Number :number="data.friends" color="pink" />
             </div>
           </div>
           {{ $t('friends.online', data.friends) }}

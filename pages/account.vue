@@ -6,16 +6,7 @@
           <div class="level fullwidth mb-3">
             {{ $t("level") }}
             <div class="number">
-              <img
-                v-for="number in data.level.toString(10)"
-                :key="number.index"
-                draggable="false"
-                :alt="number"
-                width="19"
-                height="21"
-                :src="asset(`img/number/${number}.svg`)"
-                @contextmenu.prevent
-              >
+              <Number :number="data.level" />
             </div>
           </div>
         </NuxtLink>
@@ -61,42 +52,15 @@
         left
       >
         <div class="number">
-          <img
-            v-for="number in data.bacteria.rank.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.bacteria.rank" />
         </div>
         <b> sur </b>
         <div class="number">
-          <img
-            v-for="number in data.bacteria.players.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.bacteria.players" />
         </div>
         <br>
         <div class="number">
-          <img
-            v-for="number in data.bacteria.score.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.bacteria.score" />
         </div>
         <b> point(s)</b><br><br>
         <DoughnutChart
@@ -112,20 +76,11 @@
         <br>
         <div class="centered">
           <div class="number">
-            <img
-              v-for="number in (
-                data.bacteria.stats.win +
+            <Number
+              :number="data.bacteria.stats.win +
                 data.bacteria.stats.draw +
-                data.bacteria.stats.lose
-              ).toString(10)"
-              :key="number.index"
-              draggable="false"
-              :alt="number"
-              width="19"
-              height="21"
-              :src="asset(`img/number/${number}.svg`)"
-              @contextmenu.prevent
-            >
+                data.bacteria.stats.lose"
+            />
           </div>
           <b> parties</b>
         </div>
@@ -136,42 +91,15 @@
         left
       >
         <div class="number">
-          <img
-            v-for="number in data.patojdur.rank.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.patojdur.rank" />
         </div>
         <b> sur </b>
         <div class="number">
-          <img
-            v-for="number in data.patojdur.players.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.patojdur.players" />
         </div>
         <br>
         <div class="number">
-          <img
-            v-for="number in data.patojdur.score.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.patojdur.score" />
         </div>
         <b> point(s)</b>
         <br><br>
@@ -195,41 +123,14 @@
         left
       >
         <div class="number">
-          <img
-            v-for="number in data.mazo.rank.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.mazo.rank" />
         </div>
         <b> sur </b>
         <div class="number">
-          <img
-            v-for="number in data.mazo.players.toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number :number="data.mazo.players" />
         </div>
         <br>
-        <img
-          v-for="number in data.mazo.score.toString(10)"
-          :key="number.index"
-          draggable="false"
-          :alt="number"
-          width="19"
-          height="21"
-          :src="asset(`img/number/${number}.svg`)"
-          @contextmenu.prevent
-        >
+        <Number :number="data.mazo.score" />
         <b> point(s)</b>
       </Card>
     </div>
@@ -241,18 +142,11 @@
         :height="56"
       >
         <div class="pm-number">
-          <img
-            v-for="number in data.pm
-              .reduce((prev: number, curr: any) => prev + +curr.new, 0)
-              .toString(10)"
-            :key="number.index"
-            draggable="false"
-            :alt="number"
-            width="19"
-            height="21"
-            :src="asset(`img/number/pink/${number}.svg`)"
-            @contextmenu.prevent
-          >
+          <Number
+            :number="data.pm
+              .reduce((prev: number, curr: any) => prev + +curr.new, 0)"
+            color="pink"
+          />
         </div>
         <div style="margin-top: -21px">
           <div

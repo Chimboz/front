@@ -3,9 +3,7 @@
     <template #button>
       <NuxtLink to="/bank">
         <Button color="yellow" icon="credits.svg" type="button">
-          {{
-            $t("credit.title", +user.money)
-          }}
+          {{ $t('credit.title', +user.money) }}
         </Button>
       </NuxtLink>
     </template>
@@ -20,22 +18,22 @@
         :style="coinsPosition[n]"
         src="@/assets/img/bank/coin.svg"
         @contextmenu.prevent
-      >
-      <object
+      />
+      <img
+        class="door"
         width="154"
         height="124"
         draggable="false"
-        aria-label="Bank vault"
-        type="image/svg+xml"
-        :data="asset('img/bank/door.svg')"
+        alt="Bank vault"
+        :src="`${asset('img/bank/door.svg')}?${reload}`"
         @contextmenu.prevent
       />
     </div>
 
     <NuxtLink to="/bank">
-      <div>{{ $t("credit.youGot") }}</div>
-      <AnimatedNumber :number="+user.money" :delay="delay" />
-      <div>{{ $t("credit.text", +user.money) }}</div>
+      <div>{{ $t('credit.youGot') }}</div>
+      <AnimatedNumber :number="+user.money" :duration="duration" :delay="delay" />
+      <div>{{ $t('credit.text', +user.money) }}</div>
     </NuxtLink>
     <!--<NuxtLink to="/reflooz" class="btn-route"
       ><Button color="orange" icon="reflooz.svg"
@@ -49,12 +47,14 @@ import useAuthStore from '@/stores/auth'
 
 const auth = useAuthStore()
 const user = computed(() => auth.user)
+const reload = Math.random()
 
 const props = withDefaults(
   defineProps<{
     delay?: number;
+    duration?: number
   }>(),
-  { delay: 5 }
+  { delay: 1600, duration: 3 }
 )
 
 const coins = ref(7)
@@ -110,31 +110,35 @@ const coinsPosition = [
   }
 ]
 
+for (
+  let i = 8;
+  i <= Math.min(Math.floor(+user.value!.money / 10), 360);
+  i++
+) {
+  const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3)
+  const top = +coinsPosition[i - 8].top.slice(0, -2) - 4
+  const { filter } = coinsPosition[i % 8]
+  const { transform } = coinsPosition[i % 8]
+  coinsPosition.push({
+    left: `${left}px`,
+    top: `${top}px`,
+    filter,
+    transform
+  })
+}
+
 function tween () {
-  if (coins.value >= +user.value!.money || coins.value > 1760) { return }
-  coins.value += Math.max(Math.floor(+user.value!.money / 60 / props.delay), 1)
-  if (coins.value < +user.value!.money) { requestAnimationFrame(tween) }
+  if (coins.value >= +user.value!.money || coins.value > 1760) {
+    return
+  }
+  coins.value += Math.max(Math.floor(+user.value!.money / 60 / props.duration), 1)
+  if (coins.value < +user.value!.money) {
+    requestAnimationFrame(tween)
+  }
 }
 
 onMounted(() => {
-  if (!user.value) { return }
-  for (
-    let i = 8;
-    i <= Math.min(Math.floor(+user.value!.money / 10), 360);
-    i++
-  ) {
-    const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3)
-    const top = +coinsPosition[i - 8].top.slice(0, -2) - 4
-    const { filter } = coinsPosition[i % 8]
-    const { transform } = coinsPosition[i % 8]
-    coinsPosition.push({
-      left: `${left}px`,
-      top: `${top}px`,
-      filter,
-      transform
-    })
-  }
-  requestAnimationFrame(tween)
+  setTimeout(() => requestAnimationFrame(tween), props.delay)
 })
 </script>
 <style lang="scss" scoped>
@@ -142,14 +146,12 @@ onMounted(() => {
   background: url(../assets/img/bank/bg.svg);
   background-size: contain;
   overflow: hidden;
-}
+  .door {
+    position: inherit;
+  }
 
-.bank object {
-  position: inherit;
-  width: 100%;
-}
-
-.coin {
-  position: absolute;
+  .coin {
+    position: absolute;
+  }
 }
 </style>

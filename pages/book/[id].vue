@@ -139,16 +139,7 @@
           <div class="icon flex centered col">
             <div>Niveau</div>
             <div>
-              <img
-                v-for="digit in data.level.toString(10)"
-                :key="digit.index"
-                draggable="false"
-                :alt="digit"
-                width="19"
-                height="21"
-                :src="asset(`img/number/${digit}.svg`)"
-                @contextmenu.prevent
-              >
+              <Number :number="data.level" />
             </div>
           </div>
           <br><br>

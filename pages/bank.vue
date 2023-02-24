@@ -41,19 +41,9 @@
             </td>
             <td>{{ line.description }}</td>
             <td style="text-align: right">
-              <img
-                v-for="number in Math.abs(line.value).toString(10)"
-                :key="number"
-                draggable="false"
-                :alt="number"
-                width="19"
-                height="21"
-                :src="
-                  asset(
-                    `img/number/${line.value < 0 ? 'pink/' : ''}${number}.svg`
-                  )
-                "
-                @contextmenu.prevent
+              <Number
+                :number="Math.abs(line.value)"
+                :color="line.value < 0 ? 'pink' : 'yellow'"
               />
             </td>
           </tr>
