@@ -1,5 +1,5 @@
 <template>
-  <div class="rcp__well" :style="{ 'background-color': modelValue }">
+  <div class="rcp__well" :style="{ 'background-color': modelValue }" @contextmenu.prevent="$emit('update:modelValue', reset || '#000000')">
     <input
       type="color"
       :value="modelValue"
@@ -13,6 +13,7 @@
 import { InputHTMLAttributes } from 'vue'
 
 defineProps<{
+  reset?: string,
   modelValue: string | undefined
 }>()
 

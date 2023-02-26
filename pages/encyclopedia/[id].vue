@@ -36,7 +36,7 @@
         <div>
           <HuePicker v-model="hue" />
           <ColorPicker v-model="add" />
-          <ColorPicker v-model="multiply" />
+          <ColorPicker v-model="multiply" reset="#ffffff" />
         </div>
         <div class="owners">
           <table>

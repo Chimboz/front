@@ -1,5 +1,5 @@
 <template>
-  <div class="hue-picker">
+  <div class="hue-picker" @contextmenu.prevent="$emit('update:modelValue', 0)">
     <color-picker
       :hue="modelValue"
       :mouse-scroll="true"
