@@ -15,7 +15,7 @@
 
 /* Pink icon */
 .btn-pink::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 23.452px;
   height: 23.45px;
@@ -91,7 +91,7 @@ textarea:valid:not(:placeholder-shown) {
 
 .btn-md:hover,
 .btn-md:active,
-input:not([type="checkbox"]).btn-md:focus,
+input:not([type='checkbox']).btn-md:focus,
 textarea.btn-md:focus {
   box-shadow: inset 1px 1px 1px var(--orange), inset -1px -1px 1px var(--orange);
 }
@@ -101,7 +101,7 @@ textarea:invalid:not(:placeholder-shown) {
   border-color: var(--red);
 }
 
-input:not([type="checkbox"]).btn-md,
+input:not([type='checkbox']).btn-md,
 textarea.btn-md {
   width: 100%;
 }
@@ -118,7 +118,7 @@ textarea.btn-md {
   align-items: center;
   background: linear-gradient(to bottom, var(--light), var(--dark-bbs));
   border: 1px solid var(--blue);
-  font-family: "Cocon";
+  font-family: 'Cocon';
   text-transform: lowercase;
   color: var(--blue);
   text-decoration: none !important;
@@ -131,7 +131,8 @@ textarea.btn-md {
 }
 
 .btn-action:hover img {
-  filter: invert(51%) sepia(55%) saturate(1488%) hue-rotate(0deg) brightness(103%) contrast(102%);
+  filter: invert(51%) sepia(55%) saturate(1488%) hue-rotate(0deg)
+    brightness(103%) contrast(102%);
 }
 .btn-action img {
   vertical-align: top;
@@ -180,7 +181,8 @@ textarea.btn-md {
   padding: var(--sm-gap) var(--md-gap);
 }
 
-.card a:nth-child(odd) .list, .card .link:nth-child(odd).list {
+.card a:nth-child(odd) .list,
+.card .link:nth-child(odd).list {
   background: var(--light-blue)
     linear-gradient(
       to right,

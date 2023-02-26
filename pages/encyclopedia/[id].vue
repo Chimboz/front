@@ -3,9 +3,7 @@
     <Card style="position: relative">
       <div class="relative">
         <StrokeText left class="item-name" :class="data.rarity">
-          {{
-            data.name
-          }}
+          {{ data.name }}
         </StrokeText>
         <div class="item-icons">
           n°{{ data.id }}
@@ -15,28 +13,36 @@
             :alt="data.rarity"
             draggable="false"
             @contextmenu.prevent
-          >&nbsp;<img
+          />&nbsp;<img
             :src="asset(`img/icon/item_category/${data.type}.svg`)"
             :title="data.type"
             :alt="data.type"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
         </div>
       </div>
       <div class="flex" style="align-items: flex-start">
-        <img
-          :src="`/item/${data.type}/${data.id}.svg`"
-          :alt="data.name"
-          class="item-preview"
-          draggable="false"
-          @contextmenu.prevent
-        >
+        <div>
+          <Item
+            :id="data.id"
+            class="item-preview"
+            :type="data.type"
+            :hue="hue"
+            :add="add"
+            :multiply="multiply"
+          />
+        </div>
+        <div>
+          <HuePicker v-model="hue" />
+          <ColorPicker v-model="add" />
+          <ColorPicker v-model="multiply" />
+        </div>
         <div class="owners">
           <table>
             <colgroup>
-              <col width="100%">
-              <col width="60">
+              <col width="100%" />
+              <col width="60" />
             </colgroup>
             <thead>
               <tr>
@@ -59,16 +65,22 @@
   </div>
 </template>
 <script setup lang="ts">
+const { data } = await useFetch<any>(
+  `https://chimboz.fr/public/api/item/${useRoute().params.id}?lang=${
+    useBrowserLocale()!.split('-')[0]
+  }`
+)
 
-const { data } = await useFetch<any>(`https://chimboz.fr/public/api/item/${useRoute().params.id}?lang=${useBrowserLocale()!.split('-')[0]}`)
-
+const hue = ref(0)
+const add = ref<string>('#000000')
+const multiply = ref<string>('#ffffff')
 </script>
 <style lang="scss" scoped>
 .item-name {
   fill: var(--text-button);
   height: calc(var(--gap) * 2);
   stroke-width: 3;
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-size: var(--lg-font-size);
   border-radius: calc(var(--border-radius) / 2) calc(var(--border-radius) / 2) 0
     0;
@@ -80,7 +92,7 @@ const { data } = await useFetch<any>(`https://chimboz.fr/public/api/item/${useRo
   right: 0;
   top: 0;
   color: var(--light);
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
 }
 
 .item-icons img {

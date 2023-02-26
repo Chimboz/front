@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   ],
   css: [
     'modern-normalize/modern-normalize.css',
+    '@radial-color-picker/vue-color-picker/dist/vue-color-picker.min.css',
     '@/assets/css/var.scss',
     '@/assets/css/main.scss',
     '@/assets/css/fonts.css',
