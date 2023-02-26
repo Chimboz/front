@@ -1,72 +1,10 @@
 <template>
   <div class="tiz animated" @contextmenu.prevent>
     <div v-if="avatar === 0 || avatar === 2 || avatar === 6" class="avatar">
-      <img
-        v-if="shoe > 0 && (avatar === 0 || avatar === 6)"
-        class="item shoe1"
-        alt="Shoe"
-        draggable="false"
-        :src="`/item/shoe/${shoe}.svg`"
-        @contextmenu.prevent
-        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      >
-      <img
-        v-if="shoe > 0 && (avatar === 0 || avatar === 6)"
-        class="item shoe2"
-        draggable="false"
-        alt="Shoe"
-        :src="`/item/shoe/${shoe}.svg`"
-        @contextmenu.prevent
-        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      >
-      <img
-        v-if="shoe === 0 && avatar === 6"
-        class="item shoe1"
-        alt="Shoe"
-        draggable="false"
-        :src="`/avatar/6/shoe.svg`"
-        @contextmenu.prevent
-        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      >
-      <img
-        v-if="shoe === 0 && avatar === 6"
-        class="item shoe2"
-        draggable="false"
-        alt="Shoe"
-        :src="`/avatar/6/shoe.svg`"
-        @contextmenu.prevent
-        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      >
-      <div v-if="avatar === 6" class="body-parts">
-        <img
-          v-if="avatar === 6"
-          class="item body"
-          draggable="false"
-          alt="Body"
-          :src="`/avatar/6/body.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
-      </div>
-      <div v-else class="body-parts">
-        <img
-          v-if="avatar === 2"
-          class="item body"
-          draggable="false"
-          alt="Body"
-          :src="`/avatar/2/body.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
-        <img
-          v-if="body > 0 && avatar === 0"
-          class="item body"
-          draggable="false"
-          alt="Body"
-          :src="`/item/body/${body}.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
+      <Item :id="shoe" type="shoe" class="shoe1" />
+      <Item :id="shoe" type="shoe" class="shoe2" />
+      <div class="body-parts">
+        <Item :id="body" type="body" />
         <img
           class="item emote"
           draggable="false"
@@ -83,62 +21,11 @@
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         >
-        <img
-          v-if="item2 > 0"
-          class="item item2"
-          draggable="false"
-          alt="Item 2"
-          :src="`/item/item2/${item2}.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
-        <img
-          v-if="item1 > 0"
-          class="item item1"
-          draggable="false"
-          alt="Item 1"
-          :src="`/item/item1/${item1}.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
-        <img
-          v-if="hat > 0"
-          class="item hat"
-          draggable="false"
-          alt="Hat"
-          :src="`/item/hat/${hat}.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
-        <img
-          v-if="item0 > 0"
-          class="item item0"
-          draggable="false"
-          alt="Item 0"
-          :src="`/item/item0/${item0}.svg`"
-          @contextmenu.prevent
-          @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
+        <Item :id="item2" type="item2" />
+        <Item :id="item1" type="item1" />
+        <Item :id="hat" type="hat" />
+        <Item :id="item0" type="item0" />
       </div>
-    </div>
-    <div v-if="avatar === 1 || avatar === 3 || avatar === 4 || avatar === 7">
-      <img
-        draggable="false"
-        alt="Body"
-        :src="`/avatar/${avatar}/body.svg`"
-        @contextmenu.prevent
-        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      >
-    </div>
-    <div v-if="avatar === 5" class="body-parts">
-      <img
-        draggable="false"
-        alt="Body"
-        style="margin-bottom: 30px"
-        :src="`/avatar/${avatar}/body.svg`"
-        @contextmenu.prevent
-        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-      >
     </div>
     <div class="shadow" />
   </div>

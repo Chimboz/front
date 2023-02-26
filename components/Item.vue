@@ -1,36 +1,37 @@
 <template>
-  <div class="item">
-    <img
-      class="reference"
-      :alt="type"
-      draggable="false"
-      :style="{
-        filter: `hue-rotate(${hue}deg) `
-      }"
-      :src="`/item/${type}/${id}.svg`"
-      @contextmenu.prevent
-      @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
-    />
-    <img
-      v-if="multiply && multiply !== '#ffffff'"
-      class="multiply"
-      :style="css(multiply)"
-      :alt="type"
-      draggable="false"
-      :src="`/item/${type}/${id}.svg`"
-      @contextmenu.prevent
-      @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
-    />
-    <img
-      v-if="add && add !== '#000000'"
-      class="add"
-      :style="css(add)"
-      :alt="type"
-      draggable="false"
-      :src="`/item/${type}/${id}.svg`"
-      @contextmenu.prevent
-      @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
-    />
+  <div class="item" :class="type">
+    <div class="relative">
+      <img
+        :alt="type"
+        draggable="false"
+        :style="{
+          filter: `hue-rotate(${hue}deg) `
+        }"
+        :src="`/item/${type}/${id}.svg`"
+        @contextmenu.prevent
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
+      />
+      <img
+        v-if="multiply && multiply !== '#ffffff'"
+        class="multiply"
+        :style="css(multiply)"
+        :alt="type"
+        draggable="false"
+        :src="`/item/${type}/${id}.svg`"
+        @contextmenu.prevent
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
+      />
+      <img
+        v-if="add && add !== '#000000'"
+        class="add"
+        :style="css(add)"
+        :alt="type"
+        draggable="false"
+        :src="`/item/${type}/${id}.svg`"
+        @contextmenu.prevent
+        @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
+      />
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -391,23 +392,22 @@ function css (target: string) {
   }
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .item {
   position: relative;
-}
+  .add,
+  .multiply {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
-.add,
-.multiply {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+  .add {
+    mix-blend-mode: plus-lighter;
+  }
 
-.add {
-  mix-blend-mode: plus-lighter;
-}
-
-.multiply {
-  mix-blend-mode: multiply;
+  .multiply {
+    mix-blend-mode: multiply;
+  }
 }
 </style>
