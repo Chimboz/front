@@ -4,7 +4,7 @@ export default defineEventHandler(() => {
     members: 842,
     last24: 48,
     lottery: true,
-    level: '25',
+    level: 25,
     messages: 99,
     friends: 99,
     gallery: [

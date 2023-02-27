@@ -21,7 +21,7 @@ export default defineEventHandler(() => {
     banned: null,
     admin: '0',
     user_level: '5',
-    level: '25',
+    level: 25,
     currentPet: '103',
     loginToHome: '1',
     sign: 'dragon rouge de terre',
