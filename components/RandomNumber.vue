@@ -13,7 +13,7 @@ const props = withDefaults(
     value: number
     duration?: number
   }>(),
-  { color: 'yellow', min: 0, duration: 5000 }
+  { color: 'yellow', min: 0, duration: 3000 }
 )
 
 const displayNumber = ref(props.max)
