@@ -59,18 +59,15 @@
         @contextmenu.prevent
       /><b> Balance sur 7 jours</b><br /><br />
       <BarChart
-        :chart-data="bankData()"
+        :chart-data="bankData"
         :options="{
-          elements: {
-            line: { borderColor: '#ffb907' },
-            point: { borderColor: '#ffb907', backgroundColor: '#ffb907' }
-          },
           scales: {
             x: {
-              gridLines: {
-                offsetGridLines: false
-              },
               reverse: true
+            },
+            y: {
+              min: Math.min(...bankData.datasets[0].data.flatMap((n: number) => n)),
+              max: Math.max(...bankData.datasets[0].data.flatMap((n: number) => n))
             }
           }
         }"
@@ -85,30 +82,22 @@
 import { BarChart } from 'vue-chart-3'
 import {
   Chart,
-  Legend,
   Tooltip,
   BarController,
   BarElement,
   CategoryScale,
   LinearScale,
-  LineController,
-  PointElement,
-  LineElement,
   type ChartData
 } from 'chart.js'
-import { isSameDay, eachDayOfInterval, subDays } from 'date-fns'
+import { isSameDay, eachDayOfInterval, subMonths } from 'date-fns'
 import useAuthStore from '@/stores/auth'
 
 Chart.register(
   Tooltip,
-  Legend,
   BarController,
   BarElement,
   CategoryScale,
-  LinearScale,
-  LineController,
-  PointElement,
-  LineElement
+  LinearScale
 )
 
 const auth = useAuthStore()
@@ -116,52 +105,30 @@ const { $format } = useNuxtApp()
 
 const { data } = await useFetch<any>('/api/bank')
 
-function bankData () {
+const bankData = computed(() => {
   const dataset: ChartData<any> = {
     labels: [] as any[],
     datasets: [
-      {
-        type: 'line',
-        label: 'Total',
-        data: [],
-        backgroundColor: ['#ffb907'],
-        tension: 0.4
-      },
-      { type: 'bar', label: 'Balance', data: [], backgroundColor: [] }
+      { type: 'bar', data: [], backgroundColor: [] }
     ]
   }
   let balance = +auth.user!.money
-  let i = 0
   const today = new Date()
   eachDayOfInterval({
-    start: subDays(today, 6),
+    start: subMonths(today, 1),
     end: today
   })
     .reverse()
-    .forEach((day) => {
-      const chartData: any = data.value.filter((el: any) =>
-        isSameDay(el.date, day)
-      )
-      let value = 0
-      if (chartData.length === 1) {
-        value = chartData[0].value
-      }
-      if (chartData.length > 1) {
-        value = chartData.reduce(
-          (prev: any, curr: any) => prev.value + curr.value
-        )
-      }
-      if (i > 0) {
-        balance -= dataset.datasets[1].data[i - 1]
-      }
+    .forEach((day, index) => {
+      const value: number = data.value.filter((el: any) => isSameDay(el.date, day))
+        .reduce((prev: any, curr: any) => prev.value + curr.value).value
+      if (index > 0) { balance -= value }
       dataset.labels!.push($format(day, 'd MMM'))
-      dataset.datasets[1].data.push(value)
-      dataset.datasets[0].data.push(balance)
-      dataset.datasets[1].backgroundColor.push(value > 0 ? '#5b3' : '#fb0d0d')
-      i++
+      dataset.datasets[0].data.push([balance, balance + value])
+      dataset.datasets[0].backgroundColor.push(value > 0 ? '#5b3' : '#fb0d0d')
     })
   return dataset
-}
+})
 
 const { t } = useI18n()
 useHead({ title: t('bank') })
