@@ -106,7 +106,16 @@ const { data } = await useFetch<any>('/api/bank')
 const bankData = computed(() => {
   const dataset: ChartData<any> = {
     labels: [] as string[],
-    datasets: [{ type: 'bar', data: [], backgroundColor: [] }]
+    datasets: [
+      {
+        type: 'bar',
+        data: [],
+        backgroundColor: [],
+        borderRadius: 9,
+        borderSkipped: false,
+        borderColor: '#f00'
+      }
+    ]
   }
   let balance = +auth.user!.money
   const today = new Date()
@@ -122,7 +131,9 @@ const bankData = computed(() => {
       balance -= value
       dataset.labels!.push($format(day, 'd MMM'))
       dataset.datasets[0].data.push([balance, balance + value])
-      dataset.datasets[0].backgroundColor.push(value > 0 ? '#5b3' : '#fb0d0d')
+      dataset.datasets[0].backgroundColor.push(
+        value > 0 ? '#5b3a' : '#fb0d0daa'
+      )
     })
   return dataset
 })
