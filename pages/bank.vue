@@ -22,31 +22,35 @@
             <col width="100" />
           </colgroup>
           <thead style="background: var(--dark-card-yellow)">
-            <th class="centered">
-              Date
-            </th>
-            <th>Description</th>
-            <th style="text-align: right">
-              Solde
-            </th>
+            <tr>
+              <th class="centered">
+                Date
+              </th>
+              <th>Description</th>
+              <th style="text-align: right">
+                Solde
+              </th>
+            </tr>
           </thead>
-          <tr
-            v-for="line of data"
-            :key="line.date"
-            class="bank-line"
-            :class="{ loss: line.value < 0 }"
-          >
-            <td class="centered">
-              <b>{{ $format(line.date, 'PPp') }}</b>
-            </td>
-            <td>{{ line.description }}</td>
-            <td style="text-align: right">
-              <Number
-                :number="Math.abs(line.value)"
-                :color="line.value < 0 ? 'pink' : 'yellow'"
-              />
-            </td>
-          </tr>
+          <tbody>
+            <tr
+              v-for="line of data"
+              :key="line.date"
+              class="bank-line"
+              :class="{ loss: line.value < 0 }"
+            >
+              <td class="centered">
+                <b>{{ $format(line.date, 'PPp') }}</b>
+              </td>
+              <td>{{ line.description }}</td>
+              <td style="text-align: right">
+                <Number
+                  :number="Math.abs(line.value)"
+                  :color="line.value < 0 ? 'pink' : 'yellow'"
+                />
+              </td>
+            </tr>
+          </tbody>
         </table>
       </ScrollableContainer>
       <br />
@@ -92,13 +96,7 @@ import {
 import { isSameDay, eachDayOfInterval, subMonths } from 'date-fns'
 import useAuthStore from '@/stores/auth'
 
-Chart.register(
-  Tooltip,
-  BarController,
-  BarElement,
-  CategoryScale,
-  LinearScale
-)
+Chart.register(Tooltip, BarController, BarElement, CategoryScale, LinearScale)
 
 const auth = useAuthStore()
 const { $format } = useNuxtApp()
@@ -107,10 +105,8 @@ const { data } = await useFetch<any>('/api/bank')
 
 const bankData = computed(() => {
   const dataset: ChartData<any> = {
-    labels: [] as any[],
-    datasets: [
-      { type: 'bar', data: [], backgroundColor: [] }
-    ]
+    labels: [] as string[],
+    datasets: [{ type: 'bar', data: [], backgroundColor: [] }]
   }
   let balance = +auth.user!.money
   const today = new Date()
@@ -119,10 +115,11 @@ const bankData = computed(() => {
     end: today
   })
     .reverse()
-    .forEach((day, index) => {
-      const value: number = data.value.filter((el: any) => isSameDay(el.date, day))
+    .forEach((day) => {
+      const value: number = data.value
+        .filter((el: any) => isSameDay(el.date, day))
         .reduce((prev: any, curr: any) => prev.value + curr.value).value
-      if (index > 0) { balance -= value }
+      balance -= value
       dataset.labels!.push($format(day, 'd MMM'))
       dataset.datasets[0].data.push([balance, balance + value])
       dataset.datasets[0].backgroundColor.push(value > 0 ? '#5b3' : '#fb0d0d')
