@@ -24,11 +24,11 @@
           <thead style="background: var(--dark-card-yellow)">
             <tr>
               <th class="centered">
-                Date
+                {{ $t('bank.table.date') }}
               </th>
-              <th>Description</th>
+              <th>{{ $t('bank.table.description') }}</th>
               <th style="text-align: right">
-                Solde
+                {{ $t('bank.table.balance') }}
               </th>
             </tr>
           </thead>
@@ -61,7 +61,9 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      /><b> Balance sur 7 jours</b><br /><br />
+      /><b> {{
+        $t('bank.balance.title', { duration: $duration({ months: 1 }) })
+      }}</b><br /><br />
       <BarChart
         :chart-data="bankData"
         :options="{
@@ -112,8 +114,7 @@ const bankData = computed(() => {
         data: [],
         backgroundColor: [],
         borderRadius: 9,
-        borderSkipped: false,
-        borderColor: '#f00'
+        borderSkipped: false
       }
     ]
   }

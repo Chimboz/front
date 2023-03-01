@@ -1,7 +1,8 @@
 import {
   differenceInCalendarDays as distance,
   format,
-  formatDistanceToNowStrict
+  formatDistanceToNowStrict,
+  formatDuration
 } from 'date-fns'
 // @ts-ignore
 import { fr, enGB } from 'date-fns/locale/index'
@@ -14,6 +15,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       distance,
       format: (date: number | Date, pattern: string) =>
         format(date, pattern, {
+          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales]
+        }),
+      duration: (date: Duration) =>
+        formatDuration(date, {
           locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales]
         }),
       distanceToNow: (date: number | Date) =>
