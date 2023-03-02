@@ -1,5 +1,5 @@
 <template>
-  <div class="item" :class="type">
+  <div v-if="id !== 0" class="item" :class="type">
     <div class="relative">
       <img
         :alt="type"
