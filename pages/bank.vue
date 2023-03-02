@@ -61,23 +61,11 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      /><b> {{
-        $t('bank.balance.title', { duration: $duration({ months: 1 }) })
-      }}</b><br /><br />
-      <BarChart
-        :chart-data="bankData"
-        :options="{
-          scales: {
-            x: {
-              reverse: true
-            },
-            y: {
-              min: Math.min(...bankData.datasets[0].data.flatMap((n: number) => n)),
-              max: Math.max(...bankData.datasets[0].data.flatMap((n: number) => n))
-            }
-          }
-        }"
-      />
+      /><b>
+        {{
+          $t('bank.balance.title', { duration: $duration({ months: 1 }) })
+        }}</b><br /><br />
+      <BarChart :chart-data="bankData" :options="options" />
     </Card>
     <template #right-column>
       <Bank />
@@ -138,6 +126,27 @@ const bankData = computed(() => {
     })
   return dataset
 })
+
+const options = {
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    x: {
+      reverse: true
+    },
+    y: {
+      min: Math.min(
+        ...bankData.value.datasets[0].data.flatMap((n: number) => n)
+      ),
+      max: Math.max(
+        ...bankData.value.datasets[0].data.flatMap((n: number) => n)
+      )
+    }
+  }
+}
 
 const { t } = useI18n()
 useHead({ title: t('bank') })
