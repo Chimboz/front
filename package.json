@@ -70,6 +70,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
     "@radial-color-picker/vue-color-picker": "^5.0.1",
+    "chart.js": "^3.9.1",
     "date-fns": "^2.29.3",
     "dompurify": "^3.0.0",
     "highlight.js": "^11.7.0",
