@@ -4726,9 +4726,9 @@ export default defineEventHandler(() => {
       players: 573,
       stats: {
         record: 27,
-        best: 1,
-        today: 1,
-        yesterday: 1
+        best: 28.5,
+        today: 27.3,
+        yesterday: 27.5
       }
     },
     mazo: {
