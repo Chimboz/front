@@ -93,6 +93,7 @@
           <p>
             Page perso :
             <a
+              v-if="data.website"
               target="_blank"
               rel="noreferrer noopener nofollow"
               :href="data.website"
