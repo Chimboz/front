@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/devtools'
   ],
+  plugins: [
+    { src: '~/plugins/messageRender/index.client.ts', mode: 'client' },
+    { src: '~/plugins/messageRender/index.server.ts', mode: 'server' }
+  ],
   css: [
     'modern-normalize/modern-normalize.css',
     '@radial-color-picker/vue-color-picker/dist/vue-color-picker.min.css',
