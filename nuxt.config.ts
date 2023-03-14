@@ -1,18 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   typescript: {
-    strict: true
+    strict: true,
     // TODO typeCheck: true
   },
   modules: [
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
-    '@nuxt/devtools'
+    '@nuxt/devtools',
   ],
   plugins: [
     { src: '~/plugins/messageRender/index.client.ts', mode: 'client' },
-    { src: '~/plugins/messageRender/index.server.ts', mode: 'server' }
+    { src: '~/plugins/messageRender/index.server.ts', mode: 'server' },
   ],
   css: [
     'modern-normalize/modern-normalize.css',
@@ -21,20 +21,23 @@ export default defineNuxtConfig({
     '@/assets/css/main.scss',
     '@/assets/css/fonts.css',
     '@/assets/css/classes.css',
-    '@/assets/css/atomic.scss'
+    '@/assets/css/atomic.scss',
   ],
   i18n: {
     vueI18n: {
       legacy: false,
-      fallbackLocale: 'en'
+      fallbackLocale: 'en',
     },
     strategy: 'no_prefix',
     locales: [
       { code: 'en', file: 'en.json' },
-      { code: 'fr', file: 'fr.json' }
+      { code: 'fr', file: 'fr.json' },
     ],
     defaultLocale: 'en',
     lazy: true,
-    langDir: 'locales/'
-  }
-})
+    langDir: 'locales/',
+  },
+  nitro: {
+    compressPublicAssets: true,
+  },
+});
