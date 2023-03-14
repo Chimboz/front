@@ -1,5 +1,8 @@
 <template>
-  <tr :id="`p${message.id}`">
+  <tr
+    :id="`p${message.id}`"
+    :class="{ target: message.id === +$router.currentRoute.value.hash.slice(2) }"
+  >
     <td class="info centered" valign="top">
       <Avatar
         :avatar="message.author.look.avatar"
@@ -105,7 +108,7 @@
     </td>
   </tr>
   <tr v-if="separator">
-    <td colspan="2" style="background: var(--light)">
+    <td colspan="2">
       <hr>
     </td>
   </tr>
