@@ -46,7 +46,7 @@ const { data } = await useFetch<any>('/api/levels');
 const selected = ref(0);
 
 const { t } = useI18n();
-useHead({ title: t('levels') });
+useHead({ title: computed(() => t('levels')) });
 </script>
 
 <style lang="scss" scoped>

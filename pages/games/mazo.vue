@@ -195,7 +195,7 @@
 const { data } = await useFetch<any>('https://chimboz.fr/api/games/mazo');
 
 const { t } = useI18n();
-useHead({ title: t('mazo') });
+useHead({ title: computed(() => t('mazo')) });
 </script>
 
 <style lang="scss" scoped>

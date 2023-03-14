@@ -394,7 +394,7 @@ data.value.stats = {
 };
 
 const { t } = useI18n();
-useHead({ title: t('patojdur') });
+useHead({ title: computed(() => t('patojdur')) });
 </script>
 
 <style lang="scss" scoped>

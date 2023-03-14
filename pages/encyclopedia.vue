@@ -217,7 +217,7 @@ const search = ref('');
 function onSearch () {}
 
 const { t } = useI18n();
-useHead({ title: t('encyclopedia') });
+useHead({ title: computed(() => t('encyclopedia')) });
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container

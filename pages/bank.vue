@@ -149,7 +149,7 @@ const options = {
 };
 
 const { t } = useI18n();
-useHead({ title: t('bank') });
+useHead({ title: computed(() => t('bank')) });
 </script>
 
 <style lang="scss" scoped>

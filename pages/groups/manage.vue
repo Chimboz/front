@@ -336,5 +336,5 @@ function leave (id: number) {
 }
 
 const { t } = useI18n();
-useHead({ title: t('groups') });
+useHead({ title: computed(() => t('groups')) });
 </script>

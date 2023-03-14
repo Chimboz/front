@@ -55,7 +55,7 @@
 const { data } = await useFetch<any>('https://chimboz.fr/api/online');
 
 const { t } = useI18n();
-useHead({ title: t('online') });
+useHead({ title: computed(() => t('online')) });
 </script>
 
 <style lang="scss" scoped></style>

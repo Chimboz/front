@@ -314,7 +314,7 @@ function statsPatojdur () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('account') });
+useHead({ title: computed(() => t('account')) });
 </script>
 <style lang="scss">
 .games .card {

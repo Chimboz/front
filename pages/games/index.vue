@@ -217,7 +217,7 @@ const { data } = await useFetch<any>('https://chimboz.fr/api/games');
 data.value = JSON.parse(data.value);
 
 const { t } = useI18n();
-useHead({ title: t('games') });
+useHead({ title: computed(() => t('games')) });
 </script>
 <style lang="scss" scoped>
 .game-champion {

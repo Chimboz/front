@@ -334,7 +334,7 @@ data.value.stats = {
 };
 
 const { t } = useI18n();
-useHead({ title: t('bacteria') });
+useHead({ title: computed(() => t('bacteria')) });
 </script>
 
 <style lang="scss" scoped>

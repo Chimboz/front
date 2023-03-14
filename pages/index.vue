@@ -203,7 +203,7 @@ async function handle () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('home') });
+useHead({ title: computed(() => t('home')) });
 </script>
 <style lang="scss">
 .packs .card-btn {

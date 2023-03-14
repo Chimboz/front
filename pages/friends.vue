@@ -171,7 +171,7 @@ async function addFriend () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('friends') });
+useHead({ title: computed(() => t('friends')) });
 </script>
 
 <style lang="scss" scoped>

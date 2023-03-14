@@ -198,7 +198,7 @@ async function searchGroup () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('members') });
+useHead({ title: computed(() => t('members')) });
 </script>
 <style lang="scss" scoped>
 img[src*='spotlight'] {

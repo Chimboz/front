@@ -408,7 +408,7 @@ function search () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('wedding') });
+useHead({ title: computed(() => t('wedding')) });
 </script>
 
 <style lang="scss" scoped>

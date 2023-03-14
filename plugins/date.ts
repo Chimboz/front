@@ -15,15 +15,18 @@ export default defineNuxtPlugin((nuxtApp) => {
       distance,
       format: (date: number | Date, pattern: string) =>
         format(date, pattern, {
+          // @ts-ignore
           locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales],
         }),
       duration: (date: Duration) =>
         formatDuration(date, {
+          // @ts-ignore
           locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales],
         }),
       distanceToNow: (date: number | Date) =>
         formatDistanceToNowStrict(date, {
           addSuffix: true,
+          // @ts-ignore
           locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales],
         }),
     },

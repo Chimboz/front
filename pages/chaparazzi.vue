@@ -43,7 +43,7 @@ const { data } = await useFetch<any[]>(
 );
 
 const { t } = useI18n();
-useHead({ title: t('chaparazzi') });
+useHead({ title: computed(() => t('chaparazzi')) });
 </script>
 <style lang="scss" scoped>
 .gallery {

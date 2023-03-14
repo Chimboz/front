@@ -84,7 +84,7 @@ async function generatePseudo () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('eraser') });
+useHead({ title: computed(() => t('eraser')) });
 </script>
 
 <style lang="scss" scoped>

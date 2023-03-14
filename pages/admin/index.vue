@@ -82,7 +82,7 @@ function search () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('admin') });
+useHead({ title: computed(() => t('admin')) });
 </script>
 <style lang="scss" scoped>
 .log {

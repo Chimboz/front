@@ -84,7 +84,7 @@
 const { data } = await useFetch<any>('/api/mi');
 
 const { t } = useI18n();
-useHead({ title: t('messenger') });
+useHead({ title: computed(() => t('messenger')) });
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>

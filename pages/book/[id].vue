@@ -247,7 +247,7 @@ const { data } = await useFetch<any>(
 );
 
 const { t } = useI18n();
-useHead({ title: t('member') });
+useHead({ title: computed(() => t('member')) });
 </script>
 <style lang="scss">
 .card {

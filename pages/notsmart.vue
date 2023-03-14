@@ -77,5 +77,5 @@ function changePassword () {
   });
 }
 const { t } = useI18n();
-useHead({ title: t('notsmart') });
+useHead({ title: computed(() => t('notsmart')) });
 </script>

@@ -75,7 +75,7 @@ function submit () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('capitalization') });
+useHead({ title: computed(() => t('capitalization')) });
 </script>
 
 <style lang="scss" scoped>

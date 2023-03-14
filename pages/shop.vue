@@ -134,7 +134,7 @@ function buy () {
   });
 }
 
-useHead({ title: t('shop') });
+useHead({ title: computed(() => t('shop')) });
 </script>
 <style lang="scss">
 .menu .pack {

@@ -78,7 +78,7 @@ const { data } = await useFetch<any>(
 );
 
 const { t } = useI18n();
-useHead({ title: t('forum') });
+useHead({ title: computed(() => t('forum')) });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

@@ -250,5 +250,5 @@
 </template>
 <script setup lang="ts">
 const { t } = useI18n();
-useHead({ title: t('bacteria.story') });
+useHead({ title: computed(() => t('bacteria.story')) });
 </script>

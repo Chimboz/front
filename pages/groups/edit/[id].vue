@@ -301,7 +301,7 @@ function rejectDemand (id: number) {
 function focusHandler () {}
 function selectionHandler () {}
 
-useHead({ title: t('groupedit') });
+useHead({ title: computed(() => t('groupedit')) });
 </script>
 <style lang="scss" scoped>
 .blazon {

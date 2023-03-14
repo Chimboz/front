@@ -457,7 +457,7 @@ function vote () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('popularity') });
+useHead({ title: computed(() => t('popularity')) });
 </script>
 
 <style lang="scss" scoped>

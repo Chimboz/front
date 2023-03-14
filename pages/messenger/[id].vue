@@ -132,7 +132,7 @@ function send () {
 }
 
 const { t } = useI18n();
-useHead({ title: t('conversation') });
+useHead({ title: computed(() => t('conversation')) });
 </script>
 
 <style lang="scss" scoped>
