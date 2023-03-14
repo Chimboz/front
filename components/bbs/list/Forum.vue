@@ -39,8 +39,9 @@
         :topic="topic"
         :separator="index < forum.subject.length - 1"
       />
-
-      <tr style="background: var(--dark-bbs)">
+    </tbody>
+    <tfoot>
+      <tr>
         <th valign="bottom" colspan="6" height="25" nowrap="nowrap">
           <Pagination
             :current="$route.params.page ? +$route.params.page : 1"
@@ -49,7 +50,7 @@
           />
         </th>
       </tr>
-    </tbody>
+    </tfoot>
   </table>
   <div v-if="user && +user.user_level > 3" style="text-align: end">
     <button

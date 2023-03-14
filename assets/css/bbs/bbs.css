@@ -22,6 +22,17 @@ table.bbs {
   border-bottom: 1px solid var(--dark);
 }
 
+.bbs > tfoot > tr > th {
+  height: 24px;
+  background-image: linear-gradient(
+    to top,
+    var(--dark-bbs) 0px,
+    var(--dark-bbs) 50%,
+    var(--light-bbs) 100%
+  );
+  border-top: 1px solid var(--dark);
+}
+
 .bbs > colgroup > col:nth-child(3),
 .bbs > colgroup > col:nth-child(4),
 .bbs > tbody > tr > td:nth-child(3),
