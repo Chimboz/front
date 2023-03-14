@@ -14,8 +14,12 @@ import favicon from '@/constants/favicon.json';
 import faviconNew from '@/constants/favicon_new.json';
 
 const notifications = computed(() => useAuthStore().notifications);
+const i18n = useI18n();
 
 useHead({
+  htmlAttrs: {
+    lang: i18n.locale.value,
+  },
   titleTemplate: title =>
     `${
       notifications.value
