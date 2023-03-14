@@ -70,17 +70,17 @@
 </template>
 
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
 defineProps<{
   forum: any;
-}>()
+}>();
 
 function lock (id: string) {
   // TODO api forum lock
-  useFetch(`/lock/${id}`)
+  useFetch(`/lock/${id}`);
 }
 </script>

@@ -8,13 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      header="group.webp"
-      bg="groups.gif"
-      :height="70"
-      color="blue"
-      left
-    >
+    <Card header="group.webp" bg="groups.gif" :height="70" color="blue" left>
       <template #header>
         Gérer mes groupes
       </template>
@@ -312,8 +306,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >Le nombre de groupes que tu peux rejoindre tel
-        que décrit dans le
+        >Le nombre de groupes que tu peux rejoindre tel que décrit dans le
         <NuxtLink to="/levels">
           tableau des niveaux
         </NuxtLink>, comprend
@@ -333,15 +326,15 @@
   </Container>
 </template>
 <script setup lang="ts">
-const { data } = await useFetch<any>('/api/groups_manage')
+const { data } = await useFetch<any>('/api/groups_manage');
 
 function cancel (id: number) {
-  useFetch(`groups/manage/${id}/0`)
+  useFetch(`groups/manage/${id}/0`);
 }
 function leave (id: number) {
-  useFetch(`groups/manage/${id}/1`)
+  useFetch(`groups/manage/${id}/1`);
 }
 
-const { t } = useI18n()
-useHead({ title: t('groups') })
+const { t } = useI18n();
+useHead({ title: t('groups') });
 </script>

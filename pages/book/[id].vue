@@ -8,10 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <NuxtLink
-      to="/book"
-      class="pink mb-2"
-    >
+    <NuxtLink to="/book" class="pink mb-2">
       » Retour à l'annuaire
     </NuxtLink>
     <Card class="member" :class="[data.gender]" left>
@@ -50,7 +47,7 @@
             />
           </div>
           <div v-if="!data.status.connected">
-            Dernière visite le <b>{{ $format(data.status.date, "PPp") }}</b>
+            Dernière visite le <b>{{ $format(data.status.date, 'PPp') }}</b>
           </div>
           <div v-else>
             <div
@@ -218,7 +215,7 @@
       <div class="member-registration">
         <span>Membre n°<b>{{ data.id }}</b><br>
           Dans la communauté depuis le
-          <b>{{ $format(data.register, "PPp") }}</b> (<b>{{
+          <b>{{ $format(data.register, 'PPp') }}</b> (<b>{{
             $distance(Date.now(), data.register)
           }}</b>
           jours)</span>
@@ -230,14 +227,8 @@
       </NuxtLink>
     </Card>
     <template #right-column>
-      <NuxtLink
-        v-if="+user!.user_level > 2"
-        :to="'/admin/' + data.id"
-      >
-        <Button
-          type="button"
-          icon="rules.svg"
-        >
+      <NuxtLink v-if="+user!.user_level > 2" :to="'/admin/' + data.id">
+        <Button type="button" icon="rules.svg">
           Modérer
         </Button>
       </NuxtLink>
@@ -246,16 +237,17 @@
 </template>
 
 <script setup lang="ts">
+import useAuthStore from '@/stores/auth';
 
-import useAuthStore from '@/stores/auth'
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
+const { data } = await useFetch<any>(
+  `https://chimboz.fr/api/book/${useRoute().params.id}`
+);
 
-const { data } = await useFetch<any>(`https://chimboz.fr/api/book/${useRoute().params.id}`)
-
-const { t } = useI18n()
-useHead({ title: t('member') })
+const { t } = useI18n();
+useHead({ title: t('member') });
 </script>
 <style lang="scss">
 .card {
@@ -289,7 +281,7 @@ useHead({ title: t('member') })
 }
 
 .member-header {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   color: #fff;
   font-size: 20px;
   text-shadow: 2px 1px #0008;
@@ -355,7 +347,7 @@ useHead({ title: t('member') })
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelade";
+  font-family: 'Pixelade';
   font-size: 13px;
   justify-content: space-evenly;
   width: 50px;
@@ -370,7 +362,7 @@ useHead({ title: t('member') })
 }
 
 .online {
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   color: var(--light);
   justify-content: center;

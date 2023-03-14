@@ -13,13 +13,13 @@ export default defineEventHandler(() => {
           shoe: 1015,
           item0: 800,
           item1: 937,
-          item2: 974
-        }
+          item2: 974,
+        },
       },
       id: 5,
       msgid: 169,
       date: 1646386775000,
-      content: 'Sowkenebe'
+      content: 'Sowkenebe',
     },
     {
       user: {
@@ -34,13 +34,13 @@ export default defineEventHandler(() => {
           shoe: 1015,
           item0: 800,
           item1: 937,
-          item2: 974
-        }
+          item2: 974,
+        },
       },
       id: 34,
       msgid: 154,
       date: 1640360984000,
-      content: 'bite bite bitten'
+      content: 'bite bite bitten',
     },
     {
       user: {
@@ -55,13 +55,13 @@ export default defineEventHandler(() => {
           shoe: 1010,
           item0: 808,
           item1: 868,
-          item2: 938
-        }
+          item2: 938,
+        },
       },
       id: 33,
       msgid: 148,
       date: 1639584520000,
-      content: 'test'
+      content: 'test',
     },
     {
       user: {
@@ -76,13 +76,13 @@ export default defineEventHandler(() => {
           shoe: 639,
           item0: 794,
           item1: 909,
-          item2: 938
-        }
+          item2: 938,
+        },
       },
       id: 14,
       msgid: 125,
       date: 1638867988000,
-      content: 'blabla 💬'
+      content: 'blabla 💬',
     },
     {
       user: {
@@ -97,13 +97,14 @@ export default defineEventHandler(() => {
           shoe: 640,
           item0: 808,
           item1: 879,
-          item2: 938
-        }
+          item2: 938,
+        },
       },
       id: 27,
       msgid: 86,
       date: 1631972244000,
-      content: 'Okay super ! \n\nSans soucis si je drop Ã§a je pense direct Ã  toi pour le trade ! \n\nEncore merci Ã  toi :)'
+      content:
+        'Okay super ! \n\nSans soucis si je drop Ã§a je pense direct Ã  toi pour le trade ! \n\nEncore merci Ã  toi :)',
     },
     {
       user: {
@@ -118,13 +119,14 @@ export default defineEventHandler(() => {
           shoe: 1016,
           item0: 808,
           item1: 868,
-          item2: 938
-        }
+          item2: 938,
+        },
       },
       id: 16,
       msgid: 54,
       date: 1622970493000,
-      content: 'Merci heureusement que t la calinou\nJv vite la recadrer.\nBisous luv '
-    }
-  ]
-})
+      content:
+        'Merci heureusement que t la calinou\nJv vite la recadrer.\nBisous luv ',
+    },
+  ];
+});

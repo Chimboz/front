@@ -19,27 +19,31 @@
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits<{ (e: 'scrollData', data: any[]): void }>();
 
-const emit = defineEmits<{(e: 'scrollData', data: any[]): void }>()
-
-const page = ref(0)
-const isLoading = ref(false)
+const page = ref(0);
+const isLoading = ref(false);
 
 const props = defineProps<{
   route: string;
   maxHeight: number;
   reverse?: boolean;
-}>()
+}>();
 
 async function onScroll ({ target }: UIEvent) {
-  const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement
-  if (((!props.reverse && scrollTop + clientHeight >= scrollHeight - 2) || (props.reverse && -scrollTop + clientHeight >= scrollHeight - 2)) && !isLoading.value) {
-    isLoading.value = true
+  const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement;
+  if (
+    ((!props.reverse && scrollTop + clientHeight >= scrollHeight - 2) ||
+      (props.reverse && -scrollTop + clientHeight >= scrollHeight - 2)) &&
+    !isLoading.value
+  ) {
+    isLoading.value = true;
     emit(
       'scrollData',
-      (await useFetch<any[]>(`${props.route}?&page=${++page.value}`)).data.value!
-    )
-    isLoading.value = false
+      (await useFetch<any[]>(`${props.route}?&page=${++page.value}`)).data
+        .value!
+    );
+    isLoading.value = false;
   }
 }
 </script>

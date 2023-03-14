@@ -8,18 +8,15 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      color="yellow"
-      left
-    >
+    <Card color="yellow" left>
       <template #subtop>
-        {{ $t("capitalization") }}
+        {{ $t('capitalization') }}
       </template>
       <template #header>
-        {{ $t("capitalization.header") }}
+        {{ $t('capitalization.header') }}
       </template>
       <template #subtitle>
-        {{ $t("capitalization.subtitle") }}
+        {{ $t('capitalization.subtitle') }}
       </template>
       <span v-html="$t('capitalization.description')" />
       <form @submit.prevent="submit">
@@ -34,11 +31,7 @@
             {{ letter }}
           </button>
         </div>
-        <Button
-          color="green"
-          type="submit"
-          aria-label="Save"
-        >
+        <Button color="green" type="submit" aria-label="Save">
           <template #prepend>
             <img
               draggable="false"
@@ -49,7 +42,7 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
             >
-          </template>{{ $t("button.save") }}
+          </template>{{ $t('button.save') }}
         </Button>
       </form>
     </Card>
@@ -57,26 +50,32 @@
   </Container>
 </template>
 <script setup lang="ts">
+import useAuthStore from '@/stores/auth';
 
-import useAuthStore from '@/stores/auth'
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
-
-const pseudo = ref(user.value!.pseudo.slice())
+const pseudo = ref(user.value!.pseudo.slice());
 
 function changeCase (index: number) {
-  let letter
-  if (pseudo.value[index].toUpperCase() === pseudo.value[index]) { letter = pseudo.value[index].toLowerCase() } else { letter = pseudo.value[index].toUpperCase() }
+  let letter;
+  if (pseudo.value[index].toUpperCase() === pseudo.value[index]) {
+    letter = pseudo.value[index].toLowerCase();
+  } else {
+    letter = pseudo.value[index].toUpperCase();
+  }
   pseudo.value =
-    pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1)
+    pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1);
 }
 function submit () {
-  useFetch('account/majmin', { method: 'post', body: { pseudo: pseudo.value } })
+  useFetch('account/majmin', {
+    method: 'post',
+    body: { pseudo: pseudo.value },
+  });
 }
 
-const { t } = useI18n()
-useHead({ title: t('capitalization') })
+const { t } = useI18n();
+useHead({ title: t('capitalization') });
 </script>
 
 <style lang="scss" scoped>
@@ -84,7 +83,7 @@ useHead({ title: t('capitalization') })
   text-align: center;
   font-size: 24px;
   width: 24px;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   border-bottom: 2px solid black;
   margin: 2px;
 }

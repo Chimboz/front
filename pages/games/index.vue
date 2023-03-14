@@ -8,7 +8,13 @@
       </Card>
       <Rules bot />
     </template>
-    <Card header="bacteria_blue.webp" :height="74" color="blue" left bg="bacteria_blue.gif">
+    <Card
+      header="bacteria_blue.webp"
+      :height="74"
+      color="blue"
+      left
+      bg="bacteria_blue.gif"
+    >
       <img
         draggable="false"
         src="@/assets/img/game/bacteria/visuel.webp"
@@ -20,8 +26,10 @@
       >
       <b>Le jeu culte de l'archipel</b>
       <br><br>
-      Des millions des parties jouées, des centaines de milliers de joueurs ! Depuis des millénaires, les Watas, bactéries rouges enflammée,
-      affrontent les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de Stratégie incontournable sur l'archipel !<br>
+      Des millions des parties jouées, des centaines de milliers de joueurs !
+      Depuis des millénaires, les Watas, bactéries rouges enflammée, affrontent
+      les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
+      Stratégie incontournable sur l'archipel !<br>
       <br>
       <NuxtLink class="btn-sm pink-bg" to="/games/bacteria">
         <img
@@ -31,11 +39,16 @@
           src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
           @contextmenu.prevent
-        >&nbsp;Comment
-        jouer&nbsp;?
+        >&nbsp;Comment jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <Card header="patojdur_blue.webp" :height="56" color="blue" left bg="patojdur_blue.gif">
+    <Card
+      header="patojdur_blue.webp"
+      :height="56"
+      color="blue"
+      left
+      bg="patojdur_blue.gif"
+    >
       <img
         draggable="false"
         src="@/assets/img/game/patojdur/visuel.webp"
@@ -48,7 +61,8 @@
       <b>La course la plus humide du web !</b>
       <br>
       <br>
-      Viens affronter les plus rapides patojeurs dans une course d'obstacles haute en couleur ! Seul les plus rapides entreront dans la légende !
+      Viens affronter les plus rapides patojeurs dans une course d'obstacles
+      haute en couleur ! Seul les plus rapides entreront dans la légende !
       <br>
       <br>
       <NuxtLink class="btn-sm pink-bg" to="/games/patojdur">
@@ -59,11 +73,16 @@
           alt="Help icon"
           src="@/assets/img/icon/button/help.svg"
           @contextmenu.prevent
-        >&nbsp;Comment
-        jouer&nbsp;?
+        >&nbsp;Comment jouer&nbsp;?
       </NuxtLink>
     </Card>
-    <Card header="mazo_blue.webp" :height="52" color="blue" left bg="mazo_blue.gif">
+    <Card
+      header="mazo_blue.webp"
+      :height="52"
+      color="blue"
+      left
+      bg="mazo_blue.gif"
+    >
       <img
         draggable="false"
         src="@/assets/img/game/mazo/visuel.webp"
@@ -76,8 +95,9 @@
       <b>Fais bosser ta bonne étoile !</b>
       <br>
       <br>
-      Le premier jeu de hasard sur Chimboz ! Des millions de parties jouées, un suspens insoutenable ! Il va falloir garder son sang froid et s'armer
-      de patience, pour rivaliser avec les meilleurs !<br>
+      Le premier jeu de hasard sur Chimboz ! Des millions de parties jouées, un
+      suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
+      patience, pour rivaliser avec les meilleurs !<br>
       <br>
       <NuxtLink class="btn-sm pink-bg" to="/games/mazo">
         <img
@@ -87,8 +107,7 @@
           src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
           @contextmenu.prevent
-        >&nbsp;Comment
-        jouer&nbsp;?
+        >&nbsp;Comment jouer&nbsp;?
       </NuxtLink>
     </Card>
     <template #right-column>
@@ -182,7 +201,8 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.mazo.user" /><br>est un des meilleurs Mazoteurs du moment !
+            <LinkUser :user="data.mazo.user" /><br>est un des meilleurs
+            Mazoteurs du moment !
           </div>
         </div>
       </Card>
@@ -191,13 +211,13 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@vueuse/head'
+import { useHead } from '@vueuse/head';
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/games')
-data.value = JSON.parse(data.value)
+const { data } = await useFetch<any>('https://chimboz.fr/api/games');
+data.value = JSON.parse(data.value);
 
-const { t } = useI18n()
-useHead({ title: t('games') })
+const { t } = useI18n();
+useHead({ title: t('games') });
 </script>
 <style lang="scss" scoped>
 .game-champion {

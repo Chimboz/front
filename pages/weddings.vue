@@ -10,10 +10,7 @@
     </template>
     <Card header="wedding.webp" left bg="wedding.gif">
       <div class="flex centered hstack">
-        <NuxtLink
-          to="#today"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#today" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -22,12 +19,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.today.link") }}
+          >&nbsp;{{ $t('wedding.today.link') }}
         </NuxtLink>
-        <NuxtLink
-          to="#divorces"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#divorces" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -36,12 +30,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.divorces.link") }}
+          >&nbsp;{{ $t('wedding.divorces.link') }}
         </NuxtLink>
-        <NuxtLink
-          to="#holding"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#holding" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -50,12 +41,9 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.holding.link") }}
+          >&nbsp;{{ $t('wedding.holding.link') }}
         </NuxtLink>
-        <NuxtLink
-          to="#broken"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#broken" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -64,7 +52,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t("wedding.broken.link") }}
+          >&nbsp;{{ $t('wedding.broken.link') }}
         </NuxtLink>
       </div>
       <br>
@@ -72,9 +60,9 @@
     </Card>
     <Card id="last">
       <template #header>
-        {{ $t("wedding.last") }}
+        {{ $t('wedding.last') }}
       </template>
-      {{ $t("date.on") }} <b>{{ $format(data.last.date, "PPp") }}</b>, <b>{{ data.last.id }}</b><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}. <br><br>
+      {{ $t('date.on') }} <b>{{ $format(data.last.date, 'PPp') }}</b>, <b>{{ data.last.id }}</b><sup>{{ $t('score.nth') }}</sup> {{ $t('wedding.name') }}. <br><br>
       <div class="wedding">
         <img
           draggable="false"
@@ -128,7 +116,7 @@
         />
       </div>
       <br>
-      {{ $t("wedding.wishes") }}<br>
+      {{ $t('wedding.wishes') }}<br>
       <LinkUser :user="data.last.married1" /> &amp;
       <LinkUser :user="data.last.married2" /><br>
       <span v-html="$t('wedding.marriedByGuruji')" /><br>
@@ -142,20 +130,18 @@
           alt="Marriage icon"
           width="143"
           height="64"
-        ><br>{{ $t("wedding.today.title") }}
+        ><br>{{ $t('wedding.today.title') }}
       </template>
-      {{ $t("date.Today") }}, <b>{{ $format(Date.now(), "PP") }}</b>, <b>{{ data.today.length }}</b> {{ $t("wedding.today.celebrated") }}.
+      {{ $t('date.Today') }}, <b>{{ $format(Date.now(), 'PP') }}</b>, <b>{{ data.today.length }}</b> {{ $t('wedding.today.celebrated') }}.
       <br><br>
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
-        {{ $t("date.On") }} <b>{{ $format(wedding.date, "PPp") }}</b>,<br>
+        {{ $t('date.On') }} <b>{{ $format(wedding.date, 'PPp') }}</b>,<br>
         <LinkUser :user="wedding.married1" /> &amp;
-        <LinkUser :user="wedding.married2" /> {{ $t("wedding.gotMarried")
+        <LinkUser :user="wedding.married2" /> {{ $t('wedding.gotMarried')
         }}<br>
-        {{ $t("wedding.gotWitnessed") }} <LinkUser :user="wedding.witness1" />
-        {{ $t("wedding.andOf") }} <LinkUser :user="wedding.witness2" /><br>
-        <i><NuxtLink :to="'/weddings/' + wedding.id">{{
-          wedding.id
-        }}</NuxtLink><sup>{{ $t("score.nth") }}</sup> {{ $t("wedding.name") }}</i>
+        {{ $t('wedding.gotWitnessed') }} <LinkUser :user="wedding.witness1" />
+        {{ $t('wedding.andOf') }} <LinkUser :user="wedding.witness2" /><br>
+        <i><NuxtLink :to="'/weddings/' + wedding.id">{{ wedding.id }}</NuxtLink><sup>{{ $t('score.nth') }}</sup> {{ $t('wedding.name') }}</i>
       </div>
     </Card>
     <Card id="holding">
@@ -194,7 +180,8 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i>{{ $t('no') }}<NuxtLink :to="'/weddings/' + wedding.id">{{
+              <i>{{ $t('no')
+              }}<NuxtLink :to="'/weddings/' + wedding.id">{{
                 wedding.id
               }}</NuxtLink></i>
             </td>
@@ -218,7 +205,8 @@
       <template #subtitle>
         {{ $t('wedding.divorces.subtitle') }}
       </template>
-      <b>{{ data.divorce.length }}</b> {{ $t('wedding.divorces.broken') }}<br><br>
+      <b>{{ data.divorce.length }}</b> {{ $t('wedding.divorces.broken')
+      }}<br><br>
       <table class="fullwidth">
         <colgroup>
           <col width="100">
@@ -236,13 +224,15 @@
         </thead>
         <tbody>
           <tr v-for="(wedding, index) in data.divorce" :key="index">
-            <td>{{ $format(wedding.dateend, "p") }}</td>
+            <td>{{ $format(wedding.dateend, 'p') }}</td>
             <td>
-              <LinkUser :user="wedding.married1" /> {{ $t('wedding.divorces.brokeWith') }}
+              <LinkUser :user="wedding.married1" />
+              {{ $t('wedding.divorces.brokeWith') }}
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i>{{ $t('no') }}<NuxtLink :to="'/weddings/' + wedding.id">{{
+              <i>{{ $t('no')
+              }}<NuxtLink :to="'/weddings/' + wedding.id">{{
                 wedding.id
               }}</NuxtLink></i>
             </td>
@@ -288,7 +278,8 @@
               <LinkUser :user="wedding.married2" />
             </td>
             <td>
-              <i>{{ $t('no') }}<NuxtLink :to="'/weddings/' + wedding.id">{{
+              <i>{{ $t('no')
+              }}<NuxtLink :to="'/weddings/' + wedding.id">{{
                 wedding.id
               }}</NuxtLink></i>
             </td>
@@ -314,7 +305,8 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        > <i18n-t keypath="wedding.rightColumn.gurujiCelebrated">
+        >
+        <i18n-t keypath="wedding.rightColumn.gurujiCelebrated">
           <template #Guruji>
             <b>Guruji</b>
           </template>
@@ -404,19 +396,19 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
-const { data } = await useFetch<any>('https://chimboz.fr/api/weddings')
-const idSearch = ref<undefined | number>(undefined)
-const userSearch = ref('')
+const router = useRouter();
+const { data } = await useFetch<any>('https://chimboz.fr/api/weddings');
+const idSearch = ref<undefined | number>(undefined);
+const userSearch = ref('');
 
 function search () {
-  router.push(`/weddings/${idSearch.value}`)
+  router.push(`/weddings/${idSearch.value}`);
 }
 
-const { t } = useI18n()
-useHead({ title: t('wedding') })
+const { t } = useI18n();
+useHead({ title: t('wedding') });
 </script>
 
 <style lang="scss" scoped>

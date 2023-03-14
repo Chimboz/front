@@ -93,12 +93,12 @@
 defineProps<{
   name: string;
   looks: any[];
-}>()
+}>();
 
-const audio = ref<null | HTMLAudioElement>(null)
+const audio = ref<null | HTMLAudioElement>(null);
 
 function play () {
-  audio.value!.play()
+  audio.value!.play();
 }
 </script>
 
@@ -154,7 +154,7 @@ function play () {
 .pack-content::before {
   position: absolute;
   z-index: 3;
-  content: "";
+  content: '';
   opacity: 1;
   width: 100%;
   height: 100%;
@@ -164,7 +164,7 @@ function play () {
 .pack-content::after {
   position: absolute;
   z-index: 3;
-  content: "";
+  content: '';
   opacity: 0;
   width: 50%;
   height: 200%;

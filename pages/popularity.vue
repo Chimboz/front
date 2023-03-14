@@ -10,10 +10,7 @@
     </template>
     <Card header="popularity.gif" left bg="popularity.gif">
       <div class="flex centered hstack">
-        <NuxtLink
-          to="#today"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#today" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -24,10 +21,7 @@
             @contextmenu.prevent
           >&nbsp;{{ $t('popularity.today.link') }}
         </NuxtLink>
-        <NuxtLink
-          to="#general"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#general" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -38,10 +32,7 @@
             @contextmenu.prevent
           >&nbsp;{{ $t('popularity.general.link') }}
         </NuxtLink>
-        <NuxtLink
-          to="#yesterday"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#yesterday" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -52,10 +43,7 @@
             @contextmenu.prevent
           >&nbsp;{{ $t('popularity.yesterday.link') }}
         </NuxtLink>
-        <NuxtLink
-          to="#groups"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#groups" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -346,10 +334,7 @@
         </div>
       </div>
     </Card>
-    <Card
-      v-if="user"
-      id="vote"
-    >
+    <Card v-if="user" id="vote">
       <template #header>
         Voter Pour/Contre un membre !
       </template> Un membre
@@ -447,32 +432,32 @@
 </template>
 
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/popularity')
+const { data } = await useFetch<any>('https://chimboz.fr/api/popularity');
 data.value.groups = {
   best: [],
-  worst: []
-}
-data.value.stats.yesterday = data.value.stats.today
-const mode = ref<'for' | 'against'>('for')
-const pseudo = ref('')
+  worst: [],
+};
+data.value.stats.yesterday = data.value.stats.today;
+const mode = ref<'for' | 'against'>('for');
+const pseudo = ref('');
 
 function vote () {
   useFetch('popularity/vote', {
     method: 'post',
     body: {
       pseudo: pseudo.value,
-      mode: mode.value
-    }
-  })
+      mode: mode.value,
+    },
+  });
 }
 
-const { t } = useI18n()
-useHead({ title: t('popularity') })
+const { t } = useI18n();
+useHead({ title: t('popularity') });
 </script>
 
 <style lang="scss" scoped>

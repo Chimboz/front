@@ -10,7 +10,7 @@
     </template>
     <Card color="yellow" left>
       <template #subtop>
-        {{ $t("notsmart") }}
+        {{ $t('notsmart') }}
       </template>
       <span v-html="$t('notsmart.description')" />
       <form @submit.prevent="changePassword">
@@ -42,11 +42,7 @@
           :placeholder="$t('placeholder.password.confirm')"
           class="btn-md"
         >
-        <Button
-          class="my-3"
-          type="submit"
-          color="green"
-        >
+        <Button class="my-3" type="submit" color="green">
           <template #prepend>
             <img
               draggable="false"
@@ -57,7 +53,7 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
             >
-          </template>{{ $t("button.send") }}
+          </template>{{ $t('button.send') }}
         </Button>
       </form>
       {{ $t('notsmart.footer') }}
@@ -66,10 +62,9 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-const currentPassword = ref('')
-const newPassword = ref('')
-const confirmPassword = ref('')
+const currentPassword = ref('');
+const newPassword = ref('');
+const confirmPassword = ref('');
 
 function changePassword () {
   useFetch('account/password', {
@@ -77,10 +72,10 @@ function changePassword () {
     body: {
       pass: currentPassword.value,
       new: newPassword.value,
-      confirm: confirmPassword.value
-    }
-  })
+      confirm: confirmPassword.value,
+    },
+  });
 }
-const { t } = useI18n()
-useHead({ title: t('notsmart') })
+const { t } = useI18n();
+useHead({ title: t('notsmart') });
 </script>

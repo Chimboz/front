@@ -1,5 +1,5 @@
 export default defineEventHandler(() => {
   return {
-    gain: 19
-  }
-})
+    gain: 19,
+  };
+});

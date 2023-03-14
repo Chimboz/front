@@ -40,43 +40,45 @@
 const iconDescriptions = [
   {
     src: asset('img/bbs/folder_new.svg'),
-    label: 'Nouveaux messages'
+    label: 'Nouveaux messages',
   },
   {
     src: asset('img/bbs/folder_new_hot.svg'),
-    label: 'Nouveaux messages [ Populaire ]'
+    label: 'Nouveaux messages [ Populaire ]',
   },
   {
     src: asset('img/bbs/folder_new_lock.svg'),
-    label: 'Nouveaux messages [ Verrouillé ]'
+    label: 'Nouveaux messages [ Verrouillé ]',
   },
   {
     src: asset('img/bbs/folder.svg'),
-    label: 'Pas de nouveaux messages'
+    label: 'Pas de nouveaux messages',
   },
   {
     src: asset('img/bbs/folder_hot.svg'),
-    label: 'Pas de nouveaux messages [ Populaire ]'
+    label: 'Pas de nouveaux messages [ Populaire ]',
   },
   {
     src: asset('img/bbs/folder_lock.svg'),
-    label: 'Pas de nouveaux messages [ Verrouillé ]'
+    label: 'Pas de nouveaux messages [ Verrouillé ]',
   },
   {
     src: asset('img/bbs/folder_announce.svg'),
-    label: 'Annonce'
+    label: 'Annonce',
   },
   {
     src: asset('img/bbs/folder_sticky.svg'),
-    label: 'Post-it'
-  }
-]
-const route = useRoute()
-const post = ref(false)
-const { data } = await useFetch<any>(`https://chimboz.fr/api/bbs/forum/${route.params.forum}?page=${route.params.page}`)
+    label: 'Post-it',
+  },
+];
+const route = useRoute();
+const post = ref(false);
+const { data } = await useFetch<any>(
+  `https://chimboz.fr/api/bbs/forum/${route.params.forum}?page=${route.params.page}`
+);
 
-const { t } = useI18n()
-useHead({ title: t('forum') })
+const { t } = useI18n();
+useHead({ title: t('forum') });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

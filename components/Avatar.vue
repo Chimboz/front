@@ -31,7 +31,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ImgHTMLAttributes } from 'vue'
+import { ImgHTMLAttributes } from 'vue';
 // TODO refacto
 withDefaults(
   defineProps<{
@@ -52,9 +52,9 @@ withDefaults(
     shoe: 606,
     item0: 792,
     item1: 868,
-    item2: 938
+    item2: 938,
   }
-)
+);
 </script>
 <style lang="scss" scoped>
 .tiz {

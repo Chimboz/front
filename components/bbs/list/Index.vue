@@ -24,12 +24,16 @@
       </tr>
     </thead>
 
-    <BbsRowCategory v-for="category in boards" :key="category" :category="category" />
+    <BbsRowCategory
+      v-for="category in boards"
+      :key="category"
+      :category="category"
+    />
   </table>
 </template>
 
 <script setup lang="ts">
 defineProps<{
   boards: any[];
-}>()
+}>();
 </script>

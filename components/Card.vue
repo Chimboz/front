@@ -9,7 +9,7 @@
       :height="height"
       :src="asset(`img/card/header/${header}`)"
       @contextmenu.prevent
-    />
+    >
     <img
       v-else-if="top"
       draggable="false"
@@ -19,7 +19,7 @@
       width="154"
       height="42"
       @contextmenu.prevent
-    />
+    >
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)">
         <slot name="subtop" />
@@ -34,7 +34,7 @@
         :style="{
           backgroundImage: bg
             ? `url(${asset(`img/card/background/${bg}`)})`
-            : undefined
+            : undefined,
         }"
       >
         <h2>
@@ -56,7 +56,7 @@
       width="154"
       height="44"
       @contextmenu.prevent
-    />
+    >
   </div>
 </template>
 
@@ -64,24 +64,24 @@
 withDefaults(
   defineProps<{
     // A header image, automatically prefixed by `/assets/img/card/header/`
-    header?: string
+    header?: string;
     // A background image, automatically prefixed by `/assets/img/card/background/`
-    bg?: string
+    bg?: string;
     // Width of the header image
-    width?: number
+    width?: number;
     // Height of the header image
-    height?: number
+    height?: number;
     // Color of the card
-    color?: 'yellow' | 'blue' | 'red'
+    color?: 'yellow' | 'blue' | 'red';
     // Whether the text is left aligned
-    left?: boolean
+    left?: boolean;
     // Display a default footer image
-    bot?: boolean
+    bot?: boolean;
     // Display a default header image
-    top?: boolean
+    top?: boolean;
   }>(),
   { width: 468, height: 77, color: undefined, bg: undefined, header: undefined }
-)
+);
 </script>
 <style lang="scss" scoped>
 $colors: ('yellow', 'blue', 'red');

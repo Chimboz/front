@@ -9,7 +9,6 @@
       <Rules bot />
     </template>
     <Card
-
       color="yellow"
       header="shop.svg"
       :height="109"
@@ -108,34 +107,34 @@
   </Container>
 </template>
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const { $eventBus } = useNuxtApp()
-const auth = useAuthStore()
-const user = computed(() => auth.user)
-const { t } = useI18n()
+const { $eventBus } = useNuxtApp();
+const auth = useAuthStore();
+const user = computed(() => auth.user);
+const { t } = useI18n();
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/shop')
-const shown = ref<any>(data.value.packs[0])
-const buyAudio = ref<null | HTMLAudioElement>(null)
-const clickAudio = ref<null | HTMLAudioElement>(null)
+const { data } = await useFetch<any>('https://chimboz.fr/api/shop');
+const shown = ref<any>(data.value.packs[0]);
+const buyAudio = ref<null | HTMLAudioElement>(null);
+const clickAudio = ref<null | HTMLAudioElement>(null);
 
 function show (pack: any) {
-  shown.value = pack
-  clickAudio.value!.play()
+  shown.value = pack;
+  clickAudio.value!.play();
 }
 function buy () {
-  buyAudio.value!.play()
+  buyAudio.value!.play();
   $eventBus.emit('confirmation', {
     message: t('confirm.buy'),
     api: 'shop/buy',
     payload: {
-      id: shown.value.id
-    }
-  })
+      id: shown.value.id,
+    },
+  });
 }
 
-useHead({ title: t('shop') })
+useHead({ title: t('shop') });
 </script>
 <style lang="scss">
 .menu .pack {
@@ -156,7 +155,7 @@ useHead({ title: t('shop') })
 
 h3 {
   border-bottom: 2px solid;
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-weight: normal;
   color: #ff2fac;
   font-size: var(--lg-font-size);
@@ -215,7 +214,7 @@ h3 {
   transform: translate(-50%, -50%) rotateZ(-20deg);
   color: var(--light);
   font-size: 20px;
-  font-family: "Impact";
+  font-family: 'Impact';
 }
 
 .preview-infos {
@@ -239,7 +238,7 @@ h3 {
 .btn-shop {
   text-transform: uppercase;
   border-radius: 4px;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   border: 1px solid;
   border-color: #f0e0b8 #f0e0b8 #b4aa6e #f0e0b8;
   color: var(--light);

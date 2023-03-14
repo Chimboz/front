@@ -4,26 +4,26 @@ export default defineEventHandler(() => {
     member: [
       {
         id: 20,
-        name: 'Ligolégende'
+        name: 'Ligolégende',
       },
       {
         id: 21,
-        name: 'Chimboz'
-      }
+        name: 'Chimboz',
+      },
     ],
     owner: [
       {
         id: 10,
-        name: "L'Église"
+        name: "L'Église",
       },
       {
         id: 7,
-        name: 'La Chatterie'
-      }
+        name: 'La Chatterie',
+      },
     ],
     random: {
       id: 19,
-      name: 'Mangemorts'
+      name: 'Mangemorts',
     },
     stats: {
       total: 29,
@@ -41,8 +41,8 @@ export default defineEventHandler(() => {
         hord: 0,
         meute: 1,
         gang: 0,
-        triad: 0
-      }
-    }
-  }
-})
+        triad: 0,
+      },
+    },
+  };
+});

@@ -116,12 +116,12 @@ h2 {
   font-size: 1.3rem;
 }
 
-img[src*="puce"] {
+img[src*='puce'] {
   width: 17px;
   height: 17px;
 }
 
-img[src*="/emoticon/"] {
+img[src*='/emoticon/'] {
   object-fit: none;
   height: 28px;
   width: 26px;

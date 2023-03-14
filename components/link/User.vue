@@ -20,7 +20,7 @@ defineProps<{
   user: any;
   separator?: boolean;
   ellipsis?: boolean;
-}>()
+}>();
 </script>
 <style lang="scss" scoped>
 div {

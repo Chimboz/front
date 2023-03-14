@@ -10,10 +10,7 @@
     </template>
     <Card header="mazo.webp" left bg="mazo.gif">
       <div class="flex centered hstack">
-        <NuxtLink
-          to="#gameplay"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#gameplay" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -23,10 +20,7 @@
             @contextmenu.prevent
           >&nbsp;Le gameplay
         </NuxtLink>
-        <NuxtLink
-          to="#best"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#best" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -149,7 +143,7 @@
               <b>{{ rank.score }}</b>
             </td>
             <td>
-              {{ $format(rank.date || 1670928217153, "PPp") /* TODO remove */ }}
+              {{ $format(rank.date || 1670928217153, 'PPp') /* TODO remove */ }}
             </td>
           </tr>
         </tbody>
@@ -198,11 +192,10 @@
 </template>
 
 <script setup lang="ts">
+const { data } = await useFetch<any>('https://chimboz.fr/api/games/mazo');
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/games/mazo')
-
-const { t } = useI18n()
-useHead({ title: t('mazo') })
+const { t } = useI18n();
+useHead({ title: t('mazo') });
 </script>
 
 <style lang="scss" scoped>

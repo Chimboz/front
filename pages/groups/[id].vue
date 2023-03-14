@@ -31,26 +31,26 @@
           alt="Official"
           style="float: right"
           @contextmenu.prevent
-        />
+        >
       </div>
       <!--eslint-disable-next-line vue/no-v-html description is sanitized-->
       <div class="markdown-body" v-html="$messageRender(data.description)" />
-      <br />
+      <br>
       <Card left>
         {{ $t(`group.leader.${data.type}`) }}:
         <LinkUser :user="data.leader" />
-        <br /><br />
+        <br><br>
         Occupation du groupe:
         <b>{{ (((data.members.length + 1) / data.size) * 100).toFixed(0) }}%</b>
-        (<b>{{ data.members.length + 1 }}</b>/<b>{{ data.size }}</b>)<br /><br />
+        (<b>{{ data.members.length + 1 }}</b>/<b>{{ data.size }}</b>)<br><br>
         Membres du groupe:
         <LinkUser
           v-for="(member, index) of data.members"
           :key="member.id"
           :user="member"
           :separator="index < data.members.length - 1"
-        /><br /><br />
-        Localisation : <b>{{ data.localisation }}</b><br /><br />
+        /><br><br>
+        Localisation : <b>{{ data.localisation }}</b><br><br>
         <div class="icon flex col centered">
           <div style="line-height: 10px">
             Niveau moyen
@@ -63,21 +63,21 @@
           :src="asset(`img/group/${data.status}.png`)"
           :alt="data.status"
           @contextmenu.prevent
-        />
+        >
       </Card>
       Groupe no. <b>{{ data.id }}</b> créé le
       <b>{{ $format(data.date, 'PPp') }} ({{
         $distance(Date.now(), data.date)
       }}
-        jours)</b><br />
-      <br v-if="data.bacteria" />
+        jours)</b><br>
+      <br v-if="data.bacteria">
       <Card v-if="data.bacteria" left>
         <img
           src="@/assets/img/group/bacteria.gif"
           alt="Bacteria"
           style="float: left"
           @contextmenu.prevent
-        /><b>Bacteria</b><br /><br />
+        ><b>Bacteria</b><br><br>
         Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
         <b>{{ data.bacteria.points }}</b> points.
       </Card>
@@ -87,7 +87,7 @@
           alt="Patojdur"
           style="float: left"
           @contextmenu.prevent
-        /><b>Patojdur</b><br /><br />
+        ><b>Patojdur</b><br><br>
         Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
         <b>{{ data.patojdur.points }}</b> points.
       </Card>
@@ -97,7 +97,7 @@
           alt="Popularity"
           style="float: left"
           @contextmenu.prevent
-        /><b>Popularity</b><br /><br />
+        ><b>Popularity</b><br><br>
         Classé : <b>{{ data.popularity.rank }}</b>/<b>{{ data.popularity.total }}</b> avec
         <b>{{ data.popularity.points }}</b> points.
       </Card>
@@ -115,10 +115,10 @@
           :src="asset(`img/group/${data.status}.png`)"
           :alt="data.status"
           style="float: left; margin-right: 4px"
-        />
+        >
         {{ $t(`group.status.${data.status}`) }}
         <div v-if="user">
-          <br />
+          <br>
           <a
             style="cursor: var(--pointer)"
             @click.prevent="join"
@@ -130,22 +130,22 @@
   </Container>
 </template>
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
 const { data } = await useFetch<any>(
   `https://chimboz.fr/api/groups/${useRoute().params.id}`
-)
-data.value.level = 25
+);
+data.value.level = 25;
 
 function join () {
-  useFetch(`groups/demand/${data.value.id}`)
+  useFetch(`groups/demand/${data.value.id}`);
 }
 
-const { t } = useI18n()
-useHead({ title: t('group') })
+const { t } = useI18n();
+useHead({ title: t('group') });
 </script>
 <style lang="scss" scoped>
 .blazon {

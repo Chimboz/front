@@ -23,7 +23,6 @@
         >
       </Card>
       <BlazonCabin
-
         :data="data"
         @update-item="(name: 'shape'|'top'|'bot'|'primary'|'secondary', item: number|string ) => ((data.blazon[name] as number|string) = item)"
         @previous-item="
@@ -39,10 +38,7 @@
               ])
         "
       /><br>
-      <Button
-        color="green"
-        type="submit"
-      >
+      <Button color="green" type="submit">
         <template #prepend>
           <img
             draggable="false"
@@ -58,14 +54,13 @@
   </Container>
 </template>
 <script setup lang="ts">
-
 const data = reactive({
   blazon: {
     shape: 0,
     top: -1,
     bot: 2,
     primary: '#444444',
-    secondary: '#CECECE'
+    secondary: '#CECECE',
   },
   items: {
     primary: [
@@ -86,7 +81,7 @@ const data = reactive({
       '#FF3399',
       '#E40173',
       '#FFFFFF',
-      '#000000'
+      '#000000',
     ],
     top: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
     shape: [0, 1, 2, 3, 4, 5],
@@ -94,7 +89,7 @@ const data = reactive({
       2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
       22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
       40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-      58
+      58,
     ],
     secondary: [
       '#444444',
@@ -114,19 +109,22 @@ const data = reactive({
       '#FF3399',
       '#E40173',
       '#FFFFFF',
-      '#000000'
-    ]
-  }
-})
+      '#000000',
+    ],
+  },
+});
 
-const name = ref('')
+const name = ref('');
 
 function create () {
-  useFetch('groups/createok', { method: 'post', body: { name: name.value, blazon: data.blazon } })
+  useFetch('groups/createok', {
+    method: 'post',
+    body: { name: name.value, blazon: data.blazon },
+  });
 }
 
-const { t } = useI18n()
-useHead({ title: t('groupedit') })
+const { t } = useI18n();
+useHead({ title: t('groupedit') });
 </script>
 <style lang="scss" scoped>
 .blazon {
@@ -150,7 +148,7 @@ useHead({ title: t('groupedit') })
 }
 
 .group-header {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   color: #3c556f;
   font-size: 16px;
   min-height: 90px;
@@ -158,7 +156,7 @@ useHead({ title: t('groupedit') })
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelade";
+  font-family: 'Pixelade';
   font-size: 13px;
   justify-content: center;
   width: 50px;

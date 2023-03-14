@@ -1,11 +1,9 @@
 <template>
   <span class="pink">
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
-    <NuxtLink
-      v-if="topic"
-      :to="`/bbs/${$route.params.forum}-1`"
-      class="pink"
-    >{{ topic.name }}</NuxtLink></span>
+    <NuxtLink v-if="topic" :to="`/bbs/${$route.params.forum}-1`" class="pink">{{
+      topic.name
+    }}</NuxtLink></span>
   <NuxtLink
     :to="`/bbs/${$route.params.forum}-${$route.params.topic}-1`"
     class="pink mb-3"
@@ -117,29 +115,32 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import useAuthStore from '@/stores/auth'
+import { useRoute } from 'vue-router';
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
-const route = useRoute()
-const categories = ref<any[]>([])
-const movePanel = ref(false)
-const targetMove = ref(1)
+const auth = useAuthStore();
+const user = computed(() => auth.user);
+const route = useRoute();
+const categories = ref<any[]>([]);
+const movePanel = ref(false);
+const targetMove = ref(1);
 
 defineProps<{
   topic: any;
-}>()
+}>();
 
 function lock () {
-  useFetch(`bbs/powers/lock/${route.params.topic}`)
+  useFetch(`bbs/powers/lock/${route.params.topic}`);
 }
 function deleteTopic () {
-  useFetch('bbs/deletetopic', { method: 'post', body: { topic: route.params.topic } })
+  useFetch('bbs/deletetopic', {
+    method: 'post',
+    body: { topic: route.params.topic },
+  });
 }
 async function openMovePanel () {
-  movePanel.value = true
-  categories.value = (await useFetch<any[]>('bbs')).data.value!
+  movePanel.value = true;
+  categories.value = (await useFetch<any[]>('bbs')).data.value!;
 }
 
 function move () {
@@ -148,10 +149,10 @@ function move () {
     body: {
       forum: route.params.forum,
       go: targetMove.value,
-      topic: route.params.topic
-    }
-  })
-  movePanel.value = false
+      topic: route.params.topic,
+    },
+  });
+  movePanel.value = false;
 }
 </script>
 <style lang="scss" scoped>

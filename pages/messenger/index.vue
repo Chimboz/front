@@ -81,11 +81,10 @@
   </Container>
 </template>
 <script setup lang="ts">
+const { data } = await useFetch<any>('/api/mi');
 
-const { data } = await useFetch<any>('/api/mi')
-
-const { t } = useI18n()
-useHead({ title: t('messenger') })
+const { t } = useI18n();
+useHead({ title: t('messenger') });
 </script>
 <style lang="scss"></style>
 <style lang="scss" scoped>
@@ -108,7 +107,7 @@ useHead({ title: t('messenger') })
 
 .message::after,
 .message .tiz::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }

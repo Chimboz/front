@@ -10,10 +10,7 @@
     </template>
     <Card header="bacteria.webp" left bg="bacteria.gif">
       <div class="flex centered hstack">
-        <NuxtLink
-          to="#records"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#records" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -24,10 +21,7 @@
             @contextmenu.prevent
           >&nbsp;Les records
         </NuxtLink>
-        <NuxtLink
-          to="#best"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#best" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -38,10 +32,7 @@
             @contextmenu.prevent
           >&nbsp;Les meilleurs
         </NuxtLink>
-        <NuxtLink
-          to="#worst"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#worst" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -52,10 +43,7 @@
             @contextmenu.prevent
           >&nbsp;Les pires
         </NuxtLink>
-        <NuxtLink
-          to="#groups"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#groups" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -338,15 +326,15 @@
 </template>
 
 <script setup lang="ts">
-const { data } = await useFetch<any>('https://chimboz.fr/api/games/bacteria')
+const { data } = await useFetch<any>('https://chimboz.fr/api/games/bacteria');
 data.value.stats = {
   player: 1,
   games: 2,
-  yesterday: 3
-}
+  yesterday: 3,
+};
 
-const { t } = useI18n()
-useHead({ title: t('bacteria') })
+const { t } = useI18n();
+useHead({ title: t('bacteria') });
 </script>
 
 <style lang="scss" scoped>

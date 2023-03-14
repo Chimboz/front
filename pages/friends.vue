@@ -8,12 +8,9 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      color="yellow"
-      left
-    >
+    <Card color="yellow" left>
       <template #subtop>
-        {{ $t("friends") }}
+        {{ $t('friends') }}
       </template>
       <ScrollableContainer
         route="https://chimboz.fr/api/friends"
@@ -137,38 +134,44 @@
   </Container>
 </template>
 <script setup lang="ts">
-
 // data.value = (await useFetch("friends")).data;
 // TODO remove
-const { data } = await useFetch<any>('/api/friends')
-const pseudo = ref('')
+const { data } = await useFetch<any>('/api/friends');
+const pseudo = ref('');
 
 async function cancel (friend: any) {
   if (
-    (await useFetch<any>(`friends/cancel/${friend.user.id}`)).data.value!.result ===
-    'success'
-  ) { data.value.splice(data.value.indexOf(friend), 1) }
+    (await useFetch<any>(`friends/cancel/${friend.user.id}`)).data.value!
+      .result === 'success'
+  ) {
+    data.value.splice(data.value.indexOf(friend), 1);
+  }
 }
 
 async function accept (friend: any) {
-  const res = (await useFetch<any>(`friends/accept/${friend.user.id}`)).data.value
-  data.value.splice(data.value.indexOf(friend), 1, res.add)
+  const res = (await useFetch<any>(`friends/accept/${friend.user.id}`)).data
+    .value;
+  data.value.splice(data.value.indexOf(friend), 1, res.add);
 }
 
 async function decline (friend: any) {
   if (
-    (await useFetch<any>(`friends/decline/${friend.user.id}`)).data.value!.result ===
-    'success'
-  ) { data.value.splice(data.value.indexOf(friend), 1) }
+    (await useFetch<any>(`friends/decline/${friend.user.id}`)).data.value!
+      .result === 'success'
+  ) {
+    data.value.splice(data.value.indexOf(friend), 1);
+  }
 }
 
 async function addFriend () {
-  const res = (await useFetch<any>(`friends/add/${pseudo.value}`)).data.value
-  if (res.result === 'success') { data.value.push(res.data) }
+  const res = (await useFetch<any>(`friends/add/${pseudo.value}`)).data.value;
+  if (res.result === 'success') {
+    data.value.push(res.data);
+  }
 }
 
-const { t } = useI18n()
-useHead({ title: t('friends') })
+const { t } = useI18n();
+useHead({ title: t('friends') });
 </script>
 
 <style lang="scss" scoped>
@@ -195,7 +198,7 @@ useHead({ title: t('friends') })
 }
 
 .online {
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   color: var(--light);
   justify-content: center;

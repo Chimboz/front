@@ -26,9 +26,7 @@
     </td>
     <td width="100%" height="50" style="text-align: left">
       <NuxtLink :to="`/bbs/${$route.params.forum}-${topic.id}-1`">
-        {{
-          topic.title
-        }}
+        {{ topic.title }}
       </NuxtLink>
       <br>
       <Pagination
@@ -72,12 +70,11 @@
   </tr>
 </template>
 <script setup lang="ts">
-
 withDefaults(
   defineProps<{
     topic: any;
     separator: boolean;
   }>(),
   { separator: true }
-)
+);
 </script>

@@ -14,119 +14,119 @@
         height="17"
         draggable="false"
         @contextmenu.prevent
-      />&nbsp;{{ entry.label }}
+      >&nbsp;{{ entry.label }}
     </div>
   </NuxtLink>
 </template>
 <script setup lang="ts">
 defineProps<{
-  section: string
-}>()
+  section: string;
+}>();
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const sideNavEntries = computed(() => [
   {
     label: t('account'),
     url: '/account',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('messenger'),
     url: '/messenger',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('groups'),
     url: '/groups/manage',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('friends'),
     url: '/friends',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('password'),
     url: '/notsmart',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('eraser'),
     url: '/eraser',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('capitalization'),
     url: '/lowupp',
-    section: 'Account'
+    section: 'Account',
   },
   {
     label: t('games'),
     url: '/games',
-    section: 'Games'
+    section: 'Games',
   },
   {
     label: t('bacteria'),
     url: '/games/bacteria',
-    section: 'Games'
+    section: 'Games',
   },
   {
     label: t('patojdur'),
     url: '/games/patojdur',
-    section: 'Games'
+    section: 'Games',
   },
   {
     label: t('mazo'),
     url: '/games/mazo',
-    section: 'Games'
+    section: 'Games',
   },
   {
     label: t('members'),
     url: '/members',
-    section: 'Members'
+    section: 'Members',
   },
   {
     label: t('book'),
     url: '/book',
-    section: 'Members'
+    section: 'Members',
   },
   {
     label: t('popularity'),
     url: '/popularity',
-    section: 'Members'
+    section: 'Members',
   },
   {
     label: t('wedding'),
     url: '/weddings',
-    section: 'Members'
+    section: 'Members',
   },
   {
     label: t('groups'),
     url: '/groups',
-    section: 'Members'
+    section: 'Members',
   },
   {
     label: t('forum'),
     url: '/bbs',
-    section: 'Community'
+    section: 'Community',
   },
   {
     label: t('shop'),
     url: '/shop',
-    section: 'Community'
+    section: 'Community',
   },
   {
     label: t('encyclopedia'),
     url: '/encyclopedia',
-    section: 'Community'
+    section: 'Community',
   },
   {
     label: t('chaparazzi'),
     url: '/chaparazzi',
-    section: 'Community'
-  }
-])
+    section: 'Community',
+  },
+]);
 </script>
 <style scoped>
 .router-link-active .list,

@@ -31,6 +31,7 @@
   "button.search": "Search",
   "button.send": "Send",
   "button.signin": "Sign in",
+  "button.theme": "Change theme",
   "capitalization": "LoWUpp",
   "capitalization.description": "<b>What is a LoWUpp?</b><br>The LoWUpp (<b>Low</b>ercase <b>Upp</b>ercase) is the appearance of your nickname.<br>For example, Andre and AndRe are the same nickname, it's just the MajMiN that changes.<br><br><b>You can change MajMiN whenever you want.</b><br>You can only change the MajMiN of the letters, you cannot add any, you cannot remove any, you cannot exchange one letter for another.",
   "capitalization.header": "Change your LoWUpp",

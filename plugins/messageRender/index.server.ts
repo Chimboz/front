@@ -1,12 +1,12 @@
-import { JSDOM } from 'jsdom'
-import messageRender from './messageRender'
+import { JSDOM } from 'jsdom';
+import messageRender from './messageRender';
 
-const { window } = new JSDOM('')
+const { window } = new JSDOM('');
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      messageRender: messageRender(window)
-    }
-  }
-})
+      messageRender: messageRender(window),
+    },
+  };
+});

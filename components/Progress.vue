@@ -29,7 +29,7 @@ withDefaults(
     lose: number;
   }>(),
   { win: (1 / 3) * 100, draw: (1 / 3) * 100, lose: (1 / 3) * 100 }
-)
+);
 </script>
 
 <style lang="scss" scoped>

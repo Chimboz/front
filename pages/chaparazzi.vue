@@ -26,9 +26,9 @@
               @contextmenu.prevent
             />
           </NuxtLink>
-          <em>"{{ image.name.replace(/\.[^/.]+$/, "") }}"</em><br>
+          <em>"{{ image.name.replace(/\.[^/.]+$/, '') }}"</em><br>
           <LinkUser :user="image.author" /><br>
-          {{ $format(image.date, "PPp") }}
+          {{ $format(image.date, 'PPp') }}
         </div>
       </ScrollableContainer>
     </Card>
@@ -36,12 +36,14 @@
 </template>
 
 <script setup lang="ts">
-import VLazyImage from 'v-lazy-image'
+import VLazyImage from 'v-lazy-image';
 
-const { data } = await useFetch<any[]>('https://chimboz.fr/public/api/gallery?page=0')
+const { data } = await useFetch<any[]>(
+  'https://chimboz.fr/public/api/gallery?page=0'
+);
 
-const { t } = useI18n()
-useHead({ title: t('chaparazzi') })
+const { t } = useI18n();
+useHead({ title: t('chaparazzi') });
 </script>
 <style lang="scss" scoped>
 .gallery {

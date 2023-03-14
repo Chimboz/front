@@ -129,7 +129,7 @@
               :aria-label="$t('profile.profile')"
               @click="profile = !profile"
             >
-              {{ $t("profile.profile") }}
+              {{ $t('profile.profile') }}
             </Button><Button
               type="button"
               :class="{ active: !profile }"
@@ -139,15 +139,13 @@
                 loadInventory = true;
               "
             >
-              {{ $t("profile.inventory") }}
+              {{ $t('profile.inventory') }}
             </Button>
           </div>
           <div v-show="profile" id="profile">
             <Emotes @emote="(emote: any) => emit('emote', emote)" />
             <div class="left mt-2">
-              <label
-                for="motto"
-              >{{ $t("profile.motto") }}
+              <label for="motto">{{ $t('profile.motto') }}
                 <input
                   id="motto"
                   minlength="0"
@@ -162,7 +160,7 @@
                   "
                 >
               </label>
-              <label for="website">{{ $t("profile.website") }}
+              <label for="website">{{ $t('profile.website') }}
                 <input
                   id="website"
                   minlength="0"
@@ -177,7 +175,7 @@
                   "
                 >
               </label>
-              <label>{{ $t("profile.interests") }}
+              <label>{{ $t('profile.interests') }}
                 <ol>
                   <li>
                     <input
@@ -340,11 +338,7 @@
         </div>
       </div>
       <div class="flex centered">
-        <Button
-          color="green"
-          type="submit"
-          style="width: 150px"
-        >
+        <Button color="green" type="submit" style="width: 150px">
           <template #prepend>
             <img
               draggable="false"
@@ -355,12 +349,9 @@
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
             >
-          </template>{{ $t("button.save") }}
+          </template>{{ $t('button.save') }}
         </Button><NuxtLink :to="`/book/${data.id}`" class="btn">
-          <Button
-            type="button"
-            style="width: 150px"
-          >
+          <Button type="button" style="width: 150px">
             <template #prepend>
               <img
                 draggable="false"
@@ -370,7 +361,7 @@
                 src="@/assets/img/icon/profile.svg"
                 @contextmenu.prevent
               >
-            </template>{{ $t("button.card") }}
+            </template>{{ $t('button.card') }}
           </Button>
         </NuxtLink>
       </div>
@@ -378,11 +369,11 @@
   </Card>
 </template>
 <script setup lang="ts">
-import { InputHTMLAttributes } from 'vue'
-import VLazyImage from 'v-lazy-image'
+import { InputHTMLAttributes } from 'vue';
+import VLazyImage from 'v-lazy-image';
 
-import type { LookCategory } from '@/types/Item'
-import type Emote from '@/types/Emotes'
+import type { LookCategory } from '@/types/Item';
+import type Emote from '@/types/Emotes';
 
 const props = defineProps<{
   data: any;
@@ -392,9 +383,10 @@ const props = defineProps<{
   centreb: string;
   centrec: string;
   centred: string;
-}>()
+}>();
 
-const emit = defineEmits<{(e: 'previousItem', category: LookCategory): void;
+const emit = defineEmits<{
+  (e: 'previousItem', category: LookCategory): void;
   (e: 'nextItem', category: LookCategory): void;
   (e: 'changeGender', gender: 'Chimbo' | 'Chimbette' | 'Chimbi'): void;
   (e: 'emote', emote: Emote): void;
@@ -405,7 +397,7 @@ const emit = defineEmits<{(e: 'previousItem', category: LookCategory): void;
   (e: 'update:centrec', value: string): void;
   (e: 'update:centred', value: string): void;
   (e: 'updateItem', category: LookCategory, id: number): void;
-}>()
+}>();
 
 const categories: LookCategory[] = [
   'item0',
@@ -413,13 +405,13 @@ const categories: LookCategory[] = [
   'item1',
   'body',
   'item2',
-  'shoe'
-]
-const profile = ref(true)
-const loadInventory = ref(false)
-const info = ref('')
-const checked = ref(categories)
-const gender = ref(props.data.gender)
+  'shoe',
+];
+const profile = ref(true);
+const loadInventory = ref(false);
+const info = ref('');
+const checked = ref(categories);
+const gender = ref(props.data.gender);
 
 function submit () {}
 </script>
@@ -432,9 +424,9 @@ function submit () {}
 }
 </style>
 <style lang="scss" scoped>
-input[type="text"] {
+input[type='text'] {
   text-align: center;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   color: var(--text);
   border: 2px solid;
@@ -447,7 +439,7 @@ input[type="text"] {
 }
 
 li::marker {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-size: var(--lg-font-size);
   color: #2a5380;
 }
@@ -457,7 +449,7 @@ li::marker {
 }
 
 #profile label {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-weight: normal;
   color: var(--light);
   font-size: var(--lg-font-size);
@@ -515,7 +507,7 @@ li::marker {
 .cabin-scene:before {
   background: linear-gradient(to bottom, #240026, transparent);
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 100%;
@@ -526,7 +518,7 @@ li::marker {
 }
 .cabin-scene:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 100%;
@@ -697,12 +689,12 @@ li::marker {
   vertical-align: middle;
 }
 
-.item img[src*="cross"],
-.item img[src*="loading"] {
+.item img[src*='cross'],
+.item img[src*='loading'] {
   transform: translate(0px, 0px);
 }
 
-.item img[src*="loading"] {
+.item img[src*='loading'] {
   width: 100%;
 }
 
@@ -716,7 +708,7 @@ li::marker {
   padding: var(--sm-gap);
   border-radius: var(--gap);
   font-weight: bold;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   background-image: linear-gradient(
     to top,
@@ -751,7 +743,7 @@ li::marker {
 }
 
 .info {
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -780,7 +772,7 @@ li::marker {
 }
 
 .gender {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   color: var(--light);
   font-size: 15px;
 }

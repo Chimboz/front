@@ -12,7 +12,7 @@
       <div
         style="float: right; margin-top: -80px; width: 50%; position: relative"
       >
-        {{ $t('book.description1') }}<br /><br />
+        {{ $t('book.description1') }}<br><br>
         {{ $t('book.description2') }}
       </div>
     </Card>
@@ -25,7 +25,7 @@
         alt="Search icon"
       >
       <div style="display: inline-block">
-        <label for="search"><h1>{{ $t("book.search") }}</h1></label>
+        <label for="search"><h1>{{ $t('book.search') }}</h1></label>
         <form class="flex" @submit.prevent="search()">
           <input
             id="search"
@@ -49,9 +49,7 @@
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <NuxtLink :to="'/book/' + suggestion.mid">
-                {{
-                  suggestion.pseudo
-                }}
+                {{ suggestion.pseudo }}
               </NuxtLink>
             </li>
           </ul>
@@ -60,7 +58,7 @@
     </Card>
     <Card>
       <template #header>
-        {{ $t("book.last") }}
+        {{ $t('book.last') }}
       </template>
       <table class="fullwidth">
         <colgroup>
@@ -70,16 +68,16 @@
         </colgroup>
         <thead>
           <tr>
-            <th>{{ $t("No") }}</th>
-            <th>{{ $t("Pseudo") }}</th>
-            <th>{{ $t("book.registeredOn") }}</th>
+            <th>{{ $t('No') }}</th>
+            <th>{{ $t('Pseudo') }}</th>
+            <th>{{ $t('book.registeredOn') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(member, index) in data.members" :key="index">
             <td>{{ member.id }}</td>
             <td><LinkUser :user="member" /></td>
-            <td>{{ $format(member.date, "PPp") }}</td>
+            <td>{{ $format(member.date, 'PPp') }}</td>
           </tr>
         </tbody>
       </table>
@@ -157,23 +155,24 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
-const { data } = await useFetch<any>('https://chimboz.fr/api/book')
-const userSearch = ref('')
-const suggestionsHere = ref<any>(null)
+const router = useRouter();
+const { data } = await useFetch<any>('https://chimboz.fr/api/book');
+const userSearch = ref('');
+const suggestionsHere = ref<any>(null);
 
 async function search () {
   router.push(
     `/book/${
-      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value.mid
+      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value
+        .mid
     }`
-  )
+  );
 }
 
-const { t } = useI18n()
-useHead({ title: t('popularity') })
+const { t } = useI18n();
+useHead({ title: t('popularity') });
 </script>
 
 <style lang="scss" scoped>

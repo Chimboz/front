@@ -18,7 +18,7 @@
         :style="coinsPosition[n]"
         src="@/assets/img/bank/coin.svg"
         @contextmenu.prevent
-      />
+      >
       <img
         class="door"
         width="154"
@@ -27,12 +27,16 @@
         alt="Bank vault"
         :src="`${asset('img/bank/door.svg')}?${reload}`"
         @contextmenu.prevent
-      />
+      >
     </div>
 
     <NuxtLink to="/bank">
       <div>{{ $t('credit.youGot') }}</div>
-      <AnimatedNumber :number="+user.money" :duration="duration" :delay="delay" />
+      <AnimatedNumber
+        :number="+user.money"
+        :duration="duration"
+        :delay="delay"
+      />
       <div>{{ $t('credit.text', +user.money) }}</div>
     </NuxtLink>
     <!--<NuxtLink to="/reflooz" class="btn-route"
@@ -43,103 +47,102 @@
   </Card>
 </template>
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
-const reload = Math.random()
+const auth = useAuthStore();
+const user = computed(() => auth.user);
+const reload = Math.random();
 
 const props = withDefaults(
   defineProps<{
     delay?: number;
-    duration?: number
+    duration?: number;
   }>(),
   { delay: 1600, duration: 3 }
-)
+);
 
-const coins = ref(7)
+const coins = ref(7);
 const coinsPosition = [
   {
     left: `${randomInt(33, 52)}px`,
     top: `${randomInt(65, 69)}px`,
     filter: 'brightness(.7)',
-    transform: 'scale(.8)'
+    transform: 'scale(.8)',
   },
   {
     left: `${randomInt(74, 96)}px`,
     top: `${randomInt(65, 69)}px`,
     filter: 'brightness(.7)',
-    transform: 'scale(.8)'
+    transform: 'scale(.8)',
   },
 
   {
     left: `${randomInt(22, 32)}px`,
     top: `${randomInt(77, 81)}px`,
     filter: 'brightness(.85)',
-    transform: 'scale(.9)'
+    transform: 'scale(.9)',
   },
   {
     left: `${randomInt(56, 68)}px`,
     top: `${randomInt(77, 81)}px`,
     filter: 'brightness(.85)',
-    transform: 'scale(.9)'
+    transform: 'scale(.9)',
   },
   {
     left: `${randomInt(92, 102)}px`,
     top: `${randomInt(77, 81)}px`,
     filter: 'brightness(.85)',
-    transform: 'scale(.9)'
+    transform: 'scale(.9)',
   },
   {
     left: `${randomInt(22, 32)}px`,
     top: `${randomInt(88, 93)}px`,
     filter: 'brightness(1)',
-    transform: 'scale(1)'
+    transform: 'scale(1)',
   },
   {
     left: `${randomInt(56, 68)}px`,
     top: `${randomInt(88, 93)}px`,
     filter: 'brightness(1)',
-    transform: 'scale(1)'
+    transform: 'scale(1)',
   },
   {
     left: `${randomInt(92, 102)}px`,
     top: `${randomInt(88, 93)}px`,
     filter: 'brightness(1)',
-    transform: 'scale(1)'
-  }
-]
+    transform: 'scale(1)',
+  },
+];
 
-for (
-  let i = 8;
-  i <= Math.min(Math.floor(+user.value!.money / 10), 360);
-  i++
-) {
-  const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3)
-  const top = +coinsPosition[i - 8].top.slice(0, -2) - 4
-  const { filter } = coinsPosition[i % 8]
-  const { transform } = coinsPosition[i % 8]
+for (let i = 8; i <= Math.min(Math.floor(+user.value!.money / 10), 360); i++) {
+  const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
+  const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
+  const { filter } = coinsPosition[i % 8];
+  const { transform } = coinsPosition[i % 8];
   coinsPosition.push({
     left: `${left}px`,
     top: `${top}px`,
     filter,
-    transform
-  })
+    transform,
+  });
 }
 
 function tween () {
   if (coins.value >= +user.value!.money || coins.value > 1760) {
-    return
+    return;
   }
-  coins.value += Math.max(Math.floor(+user.value!.money / 60 / props.duration), 1)
+  coins.value += Math.max(
+    Math.floor(+user.value!.money / 60 / props.duration),
+    1
+  );
   if (coins.value < +user.value!.money) {
-    requestAnimationFrame(tween)
+    requestAnimationFrame(tween);
   }
 }
 
 onMounted(() => {
-  setTimeout(() => requestAnimationFrame(tween), props.delay)
-})
+  setTimeout(() => requestAnimationFrame(tween), props.delay);
+});
 </script>
 <style lang="scss" scoped>
 .bank {

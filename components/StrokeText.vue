@@ -19,5 +19,5 @@
 <script setup lang="ts">
 defineProps<{
   left?: boolean;
-}>()
+}>();
 </script>

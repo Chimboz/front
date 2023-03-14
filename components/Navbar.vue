@@ -6,7 +6,7 @@
         `img/navbar/svg/${
           $colorMode.value !== 'dark' ? new Date().getHours() : 0
         }.svg`
-      )})`
+      )})`,
     }"
   >
     <NuxtLink to="/">
@@ -18,7 +18,7 @@
         height="70"
         src="@/assets/img/logo.svg"
         @contextmenu.prevent
-      />
+      >
     </NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
@@ -32,12 +32,13 @@
             id="theme-toggler"
             class="btn-header btn-toggle mr-2"
             type="button"
+            :aria-label="$t('button.theme')"
             @click="
               $colorMode.value !== 'dark'
                 ? ($colorMode.preference = 'dark')
                 : ($colorMode.preference = 'light')
             "
-          ></button>
+          />
           <button
             class="mr-2"
             type="button"
@@ -51,7 +52,7 @@
               style="filter: none"
               :src="asset(`img/icon/locale/${$i18n.locale}.svg`)"
               @contextmenu.prevent
-            />
+            >
           </button>
           <button
             v-if="user"
@@ -68,7 +69,7 @@
               width="11"
               src="@/assets/img/icon/failure.svg"
               @contextmenu.prevent
-            />
+            >
             {{ $t('navbar.logout') }}
           </button>
           <button
@@ -86,7 +87,7 @@
               width="11"
               src="@/assets/img/icon/success.svg"
               @contextmenu.prevent
-            />
+            >
             {{ $t('navbar.login') }}
           </button>
         </div>
@@ -116,7 +117,7 @@
           height="20"
           style="margin: 2px; padding: 1px"
           @contextmenu.prevent
-        />
+        >
       </button>
     </NuxtLink>
     <a
@@ -132,7 +133,7 @@
           width="28"
           height="21"
           @contextmenu.prevent
-        />
+        >
         <StrokeText style="z-index: 1" class="btn-label">{{
           $t('navbar.play')
         }}</StrokeText>
@@ -145,7 +146,7 @@
         height="33"
         src="@/assets/img/arrow.svg"
         @contextmenu.prevent
-      /></button></a>
+      ></button></a>
     <NuxtLink v-if="user" to="/account">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
@@ -157,7 +158,7 @@
             height="21"
             src="@/assets/img/navbar/icon/account.svg"
             @contextmenu.prevent
-          />
+          >
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.account') }}
           </StrokeText>
@@ -175,7 +176,7 @@
             height="21"
             src="@/assets/img/navbar/icon/games.svg"
             @contextmenu.prevent
-          />
+          >
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.games') }}
           </StrokeText>
@@ -193,7 +194,7 @@
             height="21"
             src="@/assets/img/navbar/icon/members.svg"
             @contextmenu.prevent
-          />
+          >
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.members') }}
           </StrokeText>
@@ -211,7 +212,7 @@
             height="21"
             src="@/assets/img/navbar/icon/community.svg"
             @contextmenu.prevent
-          />
+          >
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.community') }}
           </StrokeText>
@@ -222,10 +223,10 @@
 </template>
 
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 </script>
 <style lang="scss" scoped>
 .header {

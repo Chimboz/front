@@ -8,12 +8,9 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      color="yellow"
-      left
-    >
+    <Card color="yellow" left>
       <template #subtop>
-        {{ $t("levels") }}
+        {{ $t('levels') }}
       </template>
       <div class="flex">
         <div class="level-list">
@@ -37,7 +34,7 @@
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
           </div>
-          <b>{{ $t("levels.membersHave") }}:</b> {{ data[selected].number }}
+          <b>{{ $t('levels.membersHave') }}:</b> {{ data[selected].number }}
         </div>
       </div>
     </Card>
@@ -45,12 +42,11 @@
   </Container>
 </template>
 <script setup lang="ts">
+const { data } = await useFetch<any>('/api/levels');
+const selected = ref(0);
 
-const { data } = await useFetch<any>('/api/levels')
-const selected = ref(0)
-
-const { t } = useI18n()
-useHead({ title: t('levels') })
+const { t } = useI18n();
+useHead({ title: t('levels') });
 </script>
 
 <style lang="scss" scoped>

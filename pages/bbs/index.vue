@@ -19,7 +19,7 @@
             :title="$t('bbs.lock.new')"
             src="@/assets/img/bbs/folder_new_lock.svg"
             @contextmenu.prevent
-          >&nbsp;{{ $t("bbs.lock.new") }}&nbsp;
+          >&nbsp;{{ $t('bbs.lock.new') }}&nbsp;
         </div>
         <div>
           <img
@@ -28,7 +28,7 @@
             title="$t('bbs.lock')"
             src="@/assets/img/bbs/folder_lock.svg"
             @contextmenu.prevent
-          >&nbsp;{{ $t("bbs.lock") }}&nbsp;
+          >&nbsp;{{ $t('bbs.lock') }}&nbsp;
         </div>
         <div>
           <img
@@ -37,7 +37,7 @@
             :title="$t('bbs.new')"
             src="@/assets/img/bbs/folder_new.svg"
             @contextmenu.prevent
-          >&nbsp;{{ $t("bbs.new") }}&nbsp;
+          >&nbsp;{{ $t('bbs.new') }}&nbsp;
         </div>
         <div>
           <img
@@ -46,7 +46,7 @@
             :title="$t('bbs.noNew')"
             src="@/assets/img/bbs/folder.svg"
             @contextmenu.prevent
-          >&nbsp;{{ $t("bbs.noNew") }}&nbsp;
+          >&nbsp;{{ $t('bbs.noNew') }}&nbsp;
         </div>
       </div>
     </Card>
@@ -54,11 +54,10 @@
 </template>
 
 <script setup lang="ts">
+const { data } = await useFetch<any>('https://chimboz.fr/api/bbs');
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/bbs')
-
-const { t } = useI18n()
-useHead({ title: t('bbs') })
+const { t } = useI18n();
+useHead({ title: t('bbs') });
 </script>
 <style src="@/assets/css/bbs/bbs.css"></style>
 <style lang="scss" scoped>

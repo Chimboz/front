@@ -64,38 +64,37 @@
 </template>
 
 <script setup lang="ts">
-
 withDefaults(
   defineProps<{
     src: string;
   }>(),
   { src: 'track.mp3' }
-)
-const playing = ref(false)
-const player = ref<null | HTMLAudioElement>(null)
-const progress = ref<null | HTMLElement>(null)
-const progressBar = ref<null | HTMLElement>(null)
+);
+const playing = ref(false);
+const player = ref<null | HTMLAudioElement>(null);
+const progress = ref<null | HTMLElement>(null);
+const progressBar = ref<null | HTMLElement>(null);
 
 function play () {
-  playing.value = true
-  player.value!.play()
+  playing.value = true;
+  player.value!.play();
 }
 function pause () {
-  playing.value = false
-  player.value!.pause()
+  playing.value = false;
+  player.value!.pause();
 }
 function stop () {
-  pause()
-  player.value!.currentTime = 0
+  pause();
+  player.value!.currentTime = 0;
 }
 function skip (e: MouseEvent) {
   player.value!.currentTime =
-    (e.offsetX / progress.value!.offsetWidth) * player.value!.duration
+    (e.offsetX / progress.value!.offsetWidth) * player.value!.duration;
 }
 function onProgress () {
   progressBar.value!.style.width = `${
     (player.value!.currentTime / player.value!.duration) * 100
-  }%`
+  }%`;
 }
 </script>
 
@@ -116,7 +115,7 @@ function onProgress () {
 .progress-bar {
   height: var(--lg-font-size);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  background: url("../assets/img/progress.svg"), var(--pink);
+  background: url('../assets/img/progress.svg'), var(--pink);
   background-blend-mode: hard-light;
   background-size: 56.7px;
   animation: colorrush 2s infinite linear;

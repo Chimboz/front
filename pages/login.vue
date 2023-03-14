@@ -21,7 +21,7 @@
         >
           <template #button>
             <Button type="button" color="yellow" icon="register.svg">
-              {{ $t("button.pack") }}
+              {{ $t('button.pack') }}
             </Button>
           </template>
           <Pack name="supporter" :looks="data.shop.looks" />
@@ -127,10 +127,10 @@
   </Container>
 </template>
 <script setup lang="ts">
-const { data } = await useFetch<any>('https://chimboz.fr/api/right')
+const { data } = await useFetch<any>('https://chimboz.fr/api/right');
 
-const { t } = useI18n()
-useHead({ title: t('login') })
+const { t } = useI18n();
+useHead({ title: t('login') });
 </script>
 <style lang="scss">
 .packs .card-btn {

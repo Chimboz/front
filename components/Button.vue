@@ -15,15 +15,14 @@
   </button>
 </template>
 <script setup lang="ts">
-
 defineProps<{
   icon?: string;
   color?: 'red' | 'green' | 'yellow' | 'orange';
   type: 'button' | 'submit' | 'reset';
-}>()
+}>();
 </script>
 <style lang="scss" scoped>
-$colors: ("yellow", "orange", "red", "green");
+$colors: ('yellow', 'orange', 'red', 'green');
 
 @each $color in $colors {
   .btn.#{$color} {
@@ -38,7 +37,7 @@ $colors: ("yellow", "orange", "red", "green");
   cursor: var(--pointer);
   width: 100%;
   height: 25px;
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-weight: normal;
   background-image: linear-gradient(
     to bottom,

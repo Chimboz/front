@@ -34,9 +34,7 @@
       <td style="text-align: left" width="100%">
         <div>
           <NuxtLink :to="`/bbs/${bbs.id}-1`" class="pink">
-            {{
-              bbs.name
-            }}
+            {{ bbs.name }}
           </NuxtLink>
         </div>
         <div>{{ bbs.desc }}</div>
@@ -82,11 +80,10 @@
 </template>
 
 <script setup lang="ts">
-
-const hide = ref(false)
+const hide = ref(false);
 defineProps<{
   category: any;
-}>()
+}>();
 </script>
 
 <style lang="scss" scoped>
@@ -96,7 +93,7 @@ defineProps<{
 }
 
 .category .link::before {
-  content: "▼ ";
+  content: '▼ ';
   display: inline-block;
   will-change: transform;
   transition: 0.2s;

@@ -48,7 +48,7 @@
         <div class="demo-picture relative">
           <section :class="{ display: demo === 0 }">
             <div class="demo-info">
-              {{ $t("demo.info0") }}
+              {{ $t('demo.info0') }}
             </div>
             <img
               :alt="$t('demo.info0')"
@@ -59,7 +59,7 @@
           </section>
           <section :class="{ display: demo === 1 }">
             <div class="demo-info">
-              {{ $t("demo.info1") }}
+              {{ $t('demo.info1') }}
             </div>
             <img
               :alt="$t('demo.info1')"
@@ -70,7 +70,7 @@
           </section>
           <section :class="{ display: demo === 2 }">
             <div class="demo-info">
-              {{ $t("demo.info2") }}
+              {{ $t('demo.info2') }}
             </div>
             <img
               :alt="$t('demo.info2')"
@@ -81,7 +81,7 @@
           </section>
           <section :class="{ display: demo === 3 }">
             <div class="demo-info">
-              {{ $t("demo.info3") }}
+              {{ $t('demo.info3') }}
             </div>
             <img
               :alt="$t('demo.info3')"
@@ -92,7 +92,7 @@
           </section>
           <section :class="{ display: demo === 4 }">
             <div class="demo-info">
-              {{ $t("demo.info4") }}
+              {{ $t('demo.info4') }}
             </div>
             <img
               :alt="$t('demo.info4')"
@@ -103,7 +103,7 @@
           </section>
           <section :class="{ display: demo === 5 }">
             <div class="demo-info">
-              {{ $t("demo.info5") }}
+              {{ $t('demo.info5') }}
             </div>
             <img
               :alt="$t('demo.info5')"
@@ -156,14 +156,9 @@
         >
         <div class="flex">
           <Button type="button" @click="section = 1">
-            {{
-              $t("button.signin")
-            }}
+            {{ $t('button.signin') }}
           </Button>
-          <Button
-            color="green"
-            type="button"
-          >
+          <Button color="green" type="button">
             <template #prepend>
               <img
                 type="submit"
@@ -173,7 +168,7 @@
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent
               >
-            </template>{{ $t("button.register") }}
+            </template>{{ $t('button.register') }}
           </Button>
         </div>
       </form>
@@ -226,14 +221,9 @@
         </div>-->
         <div class="flex">
           <Button type="button" @click="section = 0">
-            {{
-              $t("button.register")
-            }}
+            {{ $t('button.register') }}
           </Button>
-          <Button
-            type="submit"
-            color="green"
-          >
+          <Button type="submit" color="green">
             <template #prepend>
               <img
                 draggable="false"
@@ -242,7 +232,7 @@
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent
               >
-            </template>{{ $t("button.signin") }}
+            </template>{{ $t('button.signin') }}
           </Button>
         </div>
       </form>
@@ -250,7 +240,7 @@
     <a
       href="/tchat"
       class="try pointer"
-    >{{ $t("demo.try") }}&nbsp;&nbsp;<img
+    >{{ $t('demo.try') }}&nbsp;&nbsp;<img
       :alt="$t('demo.try')"
       draggable="false"
       src="@/assets/img/puce.svg"
@@ -259,20 +249,20 @@
   </div>
 </template>
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
+const auth = useAuthStore();
 
-const username = ref('')
-const password = ref('')
-const section = ref(1)
-const demo = ref(0)
+const username = ref('');
+const password = ref('');
+const section = ref(1);
+const demo = ref(0);
 
 onMounted(() => {
   setInterval(() => {
-    demo.value = (demo.value + 1) % 6
-  }, 7000)
-})
+    demo.value = (demo.value + 1) % 6;
+  }, 7000);
+});
 </script>
 <style lang="scss" scoped>
 .background {
@@ -289,7 +279,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   font-weight: normal;
   text-decoration: none;
   color: var(--light);
@@ -374,7 +364,7 @@ section.display {
 
 .demo-picture section::before {
   position: absolute;
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   background-image: radial-gradient(
@@ -388,7 +378,7 @@ section.display {
 
 .demo-picture section::after {
   position: absolute;
-  content: "";
+  content: '';
   opacity: 0;
   top: -75%;
   width: 20%;
@@ -418,7 +408,7 @@ section.display {
   transform: translateY(-100%);
   transition: 0.5s;
   width: 100%;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   text-shadow: 0 0 2px var(--pink);
   color: var(--light);
@@ -437,7 +427,7 @@ section.display {
 .foreground form input {
   width: calc(50% - var(--md-gap));
   margin: 2px;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
 }
 

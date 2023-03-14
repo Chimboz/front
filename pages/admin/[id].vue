@@ -38,7 +38,7 @@
           </td>
           <td><LinkUser :user="log.moderator" /></td>
           <td>
-            {{ $format(log.date, "PPp") }}
+            {{ $format(log.date, 'PPp') }}
           </td>
         </tr>
       </tbody>
@@ -249,24 +249,24 @@
   </Card>
 </template>
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const { $eventBus } = useNuxtApp()
-const auth = useAuthStore()
-const user = computed(() => auth.user!)
-const { t } = useI18n()
+const { $eventBus } = useNuxtApp();
+const auth = useAuthStore();
+const user = computed(() => auth.user!);
+const { t } = useI18n();
 
-const { data } = await useFetch<any>('/api/admin_user')
+const { data } = await useFetch<any>('/api/admin_user');
 
 function action (type: string, payload?: object) {
   $eventBus.emit('confirmation', {
     message: t(`admin.modal.${type}`),
     api: `/api/${type}.json`,
-    payload
-  })
+    payload,
+  });
 }
 
-useHead({ title: t('admin') })
+useHead({ title: t('admin') });
 </script>
 <style lang="scss" scoped>
 .pseudo {
@@ -277,7 +277,7 @@ useHead({ title: t('admin') })
   text-shadow: -1px 3px #f39;
   height: var(--lg-font-size);
   overflow: visible;
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
 }
 
 .btn + .btn {

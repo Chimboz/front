@@ -14,7 +14,7 @@
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div v-for="(log, index) in data" :key="index" class="log">
-            <b>{{ $format(log.date, "PPp") }}</b><em> par <LinkUser :user="log.moderator" /></em><br>
+            <b>{{ $format(log.date, 'PPp') }}</b><em> par <LinkUser :user="log.moderator" /></em><br>
             <b>{{ log.type }} de <LinkUser :user="log.author" /></b><br>
             {{ log.reason }}
           </div>
@@ -53,9 +53,7 @@
           <ul>
             <li v-for="suggestion in suggestionsHere" :key="suggestion">
               <NuxtLink :to="'/admin/' + suggestion.mid">
-                {{
-                  suggestion.pseudo
-                }}
+                {{ suggestion.pseudo }}
               </NuxtLink>
             </li>
           </ul>
@@ -65,10 +63,9 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-const data = ref<any[]>([])
-const username = ref('')
-const suggestionsHere = ref<any[]>([])
+const data = ref<any[]>([]);
+const username = ref('');
+const suggestionsHere = ref<any[]>([]);
 
 function onKeypressValue () {
   if (username.value !== undefined && username.value !== '') {
@@ -81,11 +78,11 @@ function onKeypressValue () {
 }
 
 function search () {
-  return true
+  return true;
 }
 
-const { t } = useI18n()
-useHead({ title: t('admin') })
+const { t } = useI18n();
+useHead({ title: t('admin') });
 </script>
 <style lang="scss" scoped>
 .log {

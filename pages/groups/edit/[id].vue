@@ -8,12 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      header="group.webp"
-      :height="70"
-      color="blue"
-      left
-    >
+    <Card header="group.webp" :height="70" color="blue" left>
       <div class="group-header">
         <blazon
           :shape="data.blazon.shape"
@@ -27,12 +22,11 @@
             {{ data.name }}
           </StrokeText>
           Groupe n°{{ data.id }}<br>
-          Créé le {{ $format(data.date, "PPp") }}
+          Créé le {{ $format(data.date, 'PPp') }}
         </div>
       </div>
     </Card>
     <BlazonCabin
-
       :data="{
         blazon: {
           shape: data.blazon.shape,
@@ -184,10 +178,7 @@
           @contextmenu.prevent
         ></label>
         <br><br>
-        <Button
-          color="green"
-          type="submit"
-        >
+        <Button color="green" type="submit">
           <template #prepend>
             <img
               draggable="false"
@@ -246,10 +237,7 @@
         >
       </div>
     </Card>
-    <Card
-      v-if="data.bacteria"
-      left
-    >
+    <Card v-if="data.bacteria" left>
       <img
         src="@/assets/img/group/bacteria.gif"
         alt="Bacteria"
@@ -258,10 +246,7 @@
       Classé : <b>{{ data.bacteria.rank }}</b>/<b>{{ data.bacteria.total }}</b> avec
       <b>{{ data.bacteria.points }}</b> points.
     </Card>
-    <Card
-      v-if="data.patojdur"
-      left
-    >
+    <Card v-if="data.patojdur" left>
       <img
         src="@/assets/img/group/patojdur.gif"
         alt="Patojdur"
@@ -270,10 +255,7 @@
       Classé : <b>{{ data.patojdur.rank }}</b>/<b>{{ data.patojdur.total }}</b> avec
       <b>{{ data.patojdur.points }}</b> points.
     </Card>
-    <Card
-      v-if="data.popularity"
-      left
-    >
+    <Card v-if="data.popularity" left>
       <img
         src="@/assets/img/group/popularity.gif"
         alt="Popularity"
@@ -296,31 +278,30 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-const { $eventBus } = useNuxtApp()
-const { t } = useI18n()
-const { data } = await useFetch<any>('/api/groups_edit')
+const { $eventBus } = useNuxtApp();
+const { t } = useI18n();
+const { data } = await useFetch<any>('/api/groups_edit');
 
 function deleteGroup () {
   $eventBus.emit('confirmation', {
     message: t('confirm.group.delete'),
-    api: `groups/manage/delete?id=${data.value.id}`
-  })
+    api: `groups/manage/delete?id=${data.value.id}`,
+  });
 }
 function removeMember (id: number) {
-  useFetch(`groups/delete/${id}/${data.value.id}`)
+  useFetch(`groups/delete/${id}/${data.value.id}`);
 }
 function acceptDemand (id: number) {
-  useFetch(`groups/accept/${id}/${data.value.id}`)
+  useFetch(`groups/accept/${id}/${data.value.id}`);
 }
 function rejectDemand (id: number) {
-  useFetch(`groups/refuse/${id}/${data.value.id}`)
+  useFetch(`groups/refuse/${id}/${data.value.id}`);
 }
 
 function focusHandler () {}
 function selectionHandler () {}
 
-useHead({ title: t('groupedit') })
+useHead({ title: t('groupedit') });
 </script>
 <style lang="scss" scoped>
 .blazon {
@@ -344,7 +325,7 @@ useHead({ title: t('groupedit') })
 }
 
 .group-header {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   color: #3c556f;
   font-size: 16px;
   min-height: 90px;
@@ -352,7 +333,7 @@ useHead({ title: t('groupedit') })
 
 .icon {
   display: inline-flex;
-  font-family: "Pixelade";
+  font-family: 'Pixelade';
   font-size: 13px;
   justify-content: center;
   width: 50px;
@@ -368,7 +349,7 @@ useHead({ title: t('groupedit') })
   min-height: 240px;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   display: none;
 }
 

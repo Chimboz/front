@@ -2,12 +2,12 @@ import {
   differenceInCalendarDays as distance,
   format,
   formatDistanceToNowStrict,
-  formatDuration
-} from 'date-fns'
+  formatDuration,
+} from 'date-fns';
 // @ts-ignore
-import { fr, enGB } from 'date-fns/locale/index'
+import { fr, enGB } from 'date-fns/locale/index';
 
-const locales = { fr, enGB }
+const locales = { fr, enGB };
 
 export default defineNuxtPlugin((nuxtApp) => {
   return {
@@ -15,17 +15,17 @@ export default defineNuxtPlugin((nuxtApp) => {
       distance,
       format: (date: number | Date, pattern: string) =>
         format(date, pattern, {
-          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales]
+          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales],
         }),
       duration: (date: Duration) =>
         formatDuration(date, {
-          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales]
+          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales],
         }),
       distanceToNow: (date: number | Date) =>
         formatDistanceToNowStrict(date, {
           addSuffix: true,
-          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales]
-        })
-    }
-  }
-})
+          locale: locales[nuxtApp.$i18n.locale.value as keyof typeof locales],
+        }),
+    },
+  };
+});

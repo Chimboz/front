@@ -30,6 +30,6 @@ export default defineEventHandler(() => {
     sid: 'EIgG3ViTqPQ2XwRXmrKLT4lFdNJv4IRptZu',
     loterie: '1',
     fermla: null,
-    updated_at: '2022-12-12 22:35:30'
-  }
-})
+    updated_at: '2022-12-12 22:35:30',
+  };
+});

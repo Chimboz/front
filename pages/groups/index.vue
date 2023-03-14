@@ -8,13 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      header="group.webp"
-      bg="groups.gif"
-      :height="70"
-      color="blue"
-      left
-    >
+    <Card header="group.webp" bg="groups.gif" :height="70" color="blue" left>
       Envie de former un vrai gang avec tes potes ? Rejoindre une guilde de
       guerriers Bacteria ? Un fan club de ta star préférée avec tes copines ?
       Marre des faux groupes qui sont en réalité de simples messages de forum
@@ -36,8 +30,8 @@
       Les membres de ces groupes sont nommés par
       <NuxtLink to="/groups/1">
         les créateurs du site
-      </NuxtLink>, et se
-      voient attribuer des rubriques à modérer (<NuxtLink to="/chaparazzi">
+      </NuxtLink>, et se voient
+      attribuer des rubriques à modérer (<NuxtLink to="/chaparazzi">
         albums
       </NuxtLink>, <NuxtLink to="/wiki">
         faq
@@ -363,13 +357,13 @@
   </Container>
 </template>
 <script setup lang="ts">
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
+const auth = useAuthStore();
+const user = computed(() => auth.user);
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/groups')
+const { data } = await useFetch<any>('https://chimboz.fr/api/groups');
 
-const { t } = useI18n()
-useHead({ title: t('groups') })
+const { t } = useI18n();
+useHead({ title: t('groups') });
 </script>

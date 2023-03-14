@@ -8,12 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      header="new.webp"
-      bg="new.png"
-      :height="70"
-      color="blue"
-    >
+    <Card header="new.webp" bg="new.png" :height="70" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <div v-for="user of data.new" :key="user.id" class="flex col">
           <img
@@ -34,14 +29,14 @@
             :item2="user.look.item2"
           />
           <LinkUser :user="user" />
-          <span>{{ $t("members.memberNumber") }}<b>{{ user.id }}</b></span>
+          <span>{{ $t('members.memberNumber') }}<b>{{ user.id }}</b></span>
         </div>
       </div>
       <br>
-      {{ $t("members.lastMembers") }}
+      {{ $t('members.lastMembers') }}
       <br>
       <NuxtLink to="/book">
-        {{ $t("members.showList") }}
+        {{ $t('members.showList') }}
       </NuxtLink>
     </Card>
     <Card
@@ -70,21 +65,19 @@
             :item2="user.look.item2"
           />
           <LinkUser :user="user" />
-          <span v-html="$t('members.popularity.withPoints', {score: user.score})"></span>
+          <span
+            v-html="$t('members.popularity.withPoints', { score: user.score })"
+          />
         </div>
       </div>
       <br>
       {{ $t('members.popularity.sub') }}
       <br>
       <NuxtLink to="/popularity">
-        {{ $t("members.popularity.link") }}
+        {{ $t('members.popularity.link') }}
       </NuxtLink>
     </Card>
-    <Card
-      header="wedding_blue.webp"
-      bg="wedding_blue.png"
-      color="blue"
-    >
+    <Card header="wedding_blue.webp" bg="wedding_blue.png" color="blue">
       <div class="flex" style="justify-content: space-evenly">
         <div
           v-for="couple of data.wedding"
@@ -127,10 +120,10 @@
         </div>
       </div>
       <br>
-      {{ $t("members.weddings.sub") }}
+      {{ $t('members.weddings.sub') }}
       <br>
       <NuxtLink to="/weddings">
-        {{ $t("members.weddings.link") }}
+        {{ $t('members.weddings.link') }}
       </NuxtLink>
     </Card>
     <template #right-column>
@@ -179,32 +172,36 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
-const { data } = await useFetch<any>('https://chimboz.fr/api/members')
-const userSearch = ref('')
-const groupSearch = ref('')
+const router = useRouter();
+const { data } = await useFetch<any>('https://chimboz.fr/api/members');
+const userSearch = ref('');
+const groupSearch = ref('');
 
 async function searchUser () {
   router.push(
     `/book/${
-      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value!.mid
+      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data
+        .value!.mid
     }`
-  )
+  );
 }
 
 async function searchGroup () {
   router.push(
-    `/groups/${(await useFetch<any>(`groups/search/${groupSearch.value}`)).data.value!.mid}`
-  )
+    `/groups/${
+      (await useFetch<any>(`groups/search/${groupSearch.value}`)).data.value!
+        .mid
+    }`
+  );
 }
 
-const { t } = useI18n()
-useHead({ title: t('members') })
+const { t } = useI18n();
+useHead({ title: t('members') });
 </script>
 <style lang="scss" scoped>
-img[src*="spotlight"] {
+img[src*='spotlight'] {
   margin-bottom: -70px;
   pointer-events: none;
 }

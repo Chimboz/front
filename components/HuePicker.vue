@@ -9,13 +9,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import ColorPicker from '@radial-color-picker/vue-color-picker'
+import ColorPicker from '@radial-color-picker/vue-color-picker';
 
 defineProps<{
-  modelValue: number | undefined
-}>()
+  modelValue: number | undefined;
+}>();
 
-defineEmits<{(e: 'update:modelValue', value: number): void }>()
+defineEmits<{ (e: 'update:modelValue', value: number): void }>();
 </script>
 <style lang="scss">
 .hue-picker {

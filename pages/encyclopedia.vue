@@ -58,7 +58,7 @@
       <Card left>
         <template #button>
           <Button type="button" icon="search.svg">
-            {{ $t("button.search") }}
+            {{ $t('button.search') }}
           </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="onSearch">
@@ -81,7 +81,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> {{ $t("item.type") }}:</b>
+        ><b> {{ $t('item.type') }}:</b>
         <div class="fullwidth centered" @contextmenu.prevent>
           <button
             v-for="category of categories"
@@ -120,7 +120,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> {{ $t("item.rarity") }}:</b>
+        ><b> {{ $t('item.rarity') }}:</b>
         <div class="fullwidth centered">
           <button
             v-for="rarity of rarities"
@@ -156,12 +156,13 @@
   </Container>
 </template>
 <script setup lang="ts">
-import VLazyImage from 'v-lazy-image'
+import VLazyImage from 'v-lazy-image';
 
 const { data } = await useFetch<any[]>(
-      `https://chimboz.fr/public/api/encyclopedia?lang=${
-        useBrowserLocale()!.split('-')[0]
-      }&page=0`)
+  `https://chimboz.fr/public/api/encyclopedia?lang=${
+    useBrowserLocale()!.split('-')[0]
+  }&page=0`
+);
 
 const categories = [
   'body',
@@ -181,8 +182,8 @@ const categories = [
   'shape',
   'shoe',
   'top',
-  'wall'
-]
+  'wall',
+];
 const checkedCategories = ref([
   'body',
   'bot',
@@ -201,22 +202,22 @@ const checkedCategories = ref([
   'shape',
   'shoe',
   'top',
-  'wall'
-])
-const rarities = ['common', 'rare', 'mythic', 'legendary', 'unique']
+  'wall',
+]);
+const rarities = ['common', 'rare', 'mythic', 'legendary', 'unique'];
 const checkedRarities = ref([
   'common',
   'rare',
   'mythic',
   'legendary',
-  'unique'
-])
-const search = ref('')
+  'unique',
+]);
+const search = ref('');
 
 function onSearch () {}
 
-const { t } = useI18n()
-useHead({ title: t('encyclopedia') })
+const { t } = useI18n();
+useHead({ title: t('encyclopedia') });
 </script>
 <style lang="scss" scoped>
 // Encyclopedia container
@@ -240,7 +241,7 @@ useHead({ title: t('encyclopedia') })
 }
 
 // Loading circle
-.item img[src*="loading"] {
+.item img[src*='loading'] {
   transform: unset;
   width: 100%;
 }

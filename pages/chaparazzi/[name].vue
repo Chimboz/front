@@ -15,13 +15,13 @@
           style="width: 100%"
           :alt="name"
           @contextmenu.prevent
-        />
+        >
       </a>
     </Card>
   </div>
 </template>
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
 
-const name = (useRoute().params.name as string).split('.')[0]
+const name = (useRoute().params.name as string).split('.')[0];
 </script>

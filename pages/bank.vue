@@ -17,9 +17,9 @@
       >
         <table class="w-100">
           <colgroup>
-            <col width="100" />
-            <col width="100%" />
-            <col width="100" />
+            <col width="100">
+            <col width="100%">
+            <col width="100">
           </colgroup>
           <thead style="background: var(--dark-card-yellow)">
             <tr>
@@ -53,7 +53,7 @@
           </tbody>
         </table>
       </ScrollableContainer>
-      <br />
+      <br>
       <img
         src="@/assets/img/puce.svg"
         alt="Puce"
@@ -61,10 +61,10 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      /><b>
+      ><b>
         {{
           $t('bank.balance.title', { duration: $duration({ months: 1 }) })
-        }}</b><br /><br />
+        }}</b><br><br>
       <BarChart :chart-data="bankData" :options="options" />
     </Card>
     <template #right-column>
@@ -73,7 +73,7 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { BarChart } from 'vue-chart-3'
+import { BarChart } from 'vue-chart-3';
 import {
   Chart,
   Tooltip,
@@ -81,17 +81,17 @@ import {
   BarElement,
   CategoryScale,
   LinearScale,
-  type ChartData
-} from 'chart.js'
-import { isSameDay, eachDayOfInterval, subMonths } from 'date-fns'
-import useAuthStore from '@/stores/auth'
+  type ChartData,
+} from 'chart.js';
+import { isSameDay, eachDayOfInterval, subMonths } from 'date-fns';
+import useAuthStore from '@/stores/auth';
 
-Chart.register(Tooltip, BarController, BarElement, CategoryScale, LinearScale)
+Chart.register(Tooltip, BarController, BarElement, CategoryScale, LinearScale);
 
-const auth = useAuthStore()
-const { $format } = useNuxtApp()
+const auth = useAuthStore();
+const { $format } = useNuxtApp();
 
-const { data } = await useFetch<any>('/api/bank')
+const { data } = await useFetch<any>('/api/bank');
 
 const bankData = computed(() => {
   const dataset: ChartData<any> = {
@@ -102,40 +102,40 @@ const bankData = computed(() => {
         data: [],
         backgroundColor: [],
         borderRadius: 9,
-        borderSkipped: false
-      }
-    ]
-  }
-  let balance = +auth.user!.money
-  const today = new Date()
+        borderSkipped: false,
+      },
+    ],
+  };
+  let balance = +auth.user!.money;
+  const today = new Date();
   eachDayOfInterval({
     start: subMonths(today, 1),
-    end: today
+    end: today,
   })
     .reverse()
     .forEach((day) => {
       const value: number = data.value
         .filter((el: any) => isSameDay(el.date, day))
-        .reduce((prev: any, curr: any) => prev.value + curr.value).value
-      balance -= value
-      dataset.labels!.push($format(day, 'd MMM'))
-      dataset.datasets[0].data.push([balance, balance + value])
+        .reduce((prev: any, curr: any) => prev.value + curr.value).value;
+      balance -= value;
+      dataset.labels!.push($format(day, 'd MMM'));
+      dataset.datasets[0].data.push([balance, balance + value]);
       dataset.datasets[0].backgroundColor.push(
         value > 0 ? '#5b3a' : '#fb0d0daa'
-      )
-    })
-  return dataset
-})
+      );
+    });
+  return dataset;
+});
 
 const options = {
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   scales: {
     x: {
-      reverse: true
+      reverse: true,
     },
     y: {
       min: Math.min(
@@ -143,13 +143,13 @@ const options = {
       ),
       max: Math.max(
         ...bankData.value.datasets[0].data.flatMap((n: number) => n)
-      )
-    }
-  }
-}
+      ),
+    },
+  },
+};
 
-const { t } = useI18n()
-useHead({ title: t('bank') })
+const { t } = useI18n();
+useHead({ title: t('bank') });
 </script>
 
 <style lang="scss" scoped>

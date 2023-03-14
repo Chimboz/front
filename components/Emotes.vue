@@ -13,15 +13,14 @@
         height="23"
         :src="asset(`img/icon/emote/${emote}.svg`)"
         @contextmenu.prevent
-      />
+      >
     </button>
   </div>
 </template>
 <script setup lang="ts">
+import type Emote from '@/types/Emotes';
 
-import type Emote from '@/types/Emotes'
-
-const emit = defineEmits<{(e: 'emote', emote: Emote): void }>()
+const emit = defineEmits<{ (e: 'emote', emote: Emote): void }>();
 
 const emotes: Emote[] = [
   'neutral',
@@ -49,8 +48,8 @@ const emotes: Emote[] = [
   'crazy',
   'fearful',
   'smirk',
-  'croon'
-]
+  'croon',
+];
 </script>
 <style lang="scss" scoped>
 .btn-pink {

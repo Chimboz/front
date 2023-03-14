@@ -4,7 +4,7 @@
       <Card color="blue" top>
         <NuxtLink to="/levels">
           <div class="level fullwidth mb-3">
-            {{ $t("level") }}
+            {{ $t('level') }}
             <div class="number">
               <Number :number="data.level" />
             </div>
@@ -46,11 +46,7 @@
       @change-gender="(gender: any) => (data.gender = gender)"
     />
     <div class="games">
-      <Card
-        header="bacteria.svg"
-        :height="74"
-        left
-      >
+      <Card header="bacteria.svg" :height="74" left>
         <div class="number">
           <Number :number="data.bacteria.rank" />
         </div>
@@ -77,19 +73,17 @@
         <div class="centered">
           <div class="number">
             <Number
-              :number="data.bacteria.stats.win +
-                data.bacteria.stats.draw +
-                data.bacteria.stats.lose"
+              :number="
+                data.bacteria.stats.win +
+                  data.bacteria.stats.draw +
+                  data.bacteria.stats.lose
+              "
             />
           </div>
           <b> parties</b>
         </div>
       </Card>
-      <Card
-        header="patojdur.svg"
-        :height="56"
-        left
-      >
+      <Card header="patojdur.svg" :height="56" left>
         <div class="number">
           <Number :number="data.patojdur.rank" />
         </div>
@@ -117,11 +111,7 @@
           }"
         />
       </Card>
-      <Card
-        header="mazo.svg"
-        :height="52"
-        left
-      >
+      <Card header="mazo.svg" :height="52" left>
         <div class="number">
           <Number :number="data.mazo.rank" />
         </div>
@@ -135,12 +125,7 @@
       </Card>
     </div>
     <template #right-column>
-      <Card
-        color="blue"
-        header="messages.gif"
-        :width="154"
-        :height="56"
-      >
+      <Card color="blue" header="messages.gif" :width="154" :height="56">
         <div class="pm-number">
           <Number
             :number="data.pm
@@ -169,12 +154,7 @@
           </div>
         </div>
       </Card>
-      <Card
-        color="blue"
-        header="forum.gif"
-        :width="154"
-        :height="45"
-      >
+      <Card color="blue" header="forum.gif" :width="154" :height="45">
         <StrokeText class="forum-title">
           Forum
         </StrokeText>
@@ -184,13 +164,17 @@
             :key="message.id"
             class="list fullwidth col link"
             style="align-items: flex-start"
-            @click.prevent="$router.push(`/bbs/${message.forum.id}-${message.topic.id}-${message.topic.page ?? 1}#p${message.id}`)"
+            @click.prevent="
+              $router.push(
+                `/bbs/${message.forum.id}-${message.topic.id}-${
+                  message.topic.page ?? 1
+                }#p${message.id}`
+              )
+            "
           >
             <div>
               <NuxtLink :to="`/bbs/${message.forum.id}-1`" @click.stop>
-                {{
-                  message.forum.name
-                }}
+                {{ message.forum.name }}
               </NuxtLink>
             </div>
             <div>
@@ -207,9 +191,7 @@
       </Card><Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">
-            {{
-              $t("profile.friends")
-            }}
+            {{ $t('profile.friends') }}
           </Button>
         </template>
         <div
@@ -240,16 +222,14 @@
           >&nbsp;
           <div class="flex col" style="align-items: flex-start">
             <LinkUser :user="friend.user" />
-            {{ friend.status.connected ? friend.status.room : "" }}
+            {{ friend.status.connected ? friend.status.room : '' }}
           </div>
         </div>
       </Card>
       <Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">
-            {{
-              $t("profile.groups")
-            }}
+            {{ $t('profile.groups') }}
           </Button>
         </template>
         <div
@@ -276,7 +256,7 @@
 </template>
 
 <script setup lang="ts">
-import { DoughnutChart, BarChart } from 'vue-chart-3'
+import { DoughnutChart, BarChart } from 'vue-chart-3';
 import {
   Chart,
   Legend,
@@ -286,8 +266,8 @@ import {
   BarController,
   BarElement,
   CategoryScale,
-  LinearScale
-} from 'chart.js'
+  LinearScale,
+} from 'chart.js';
 
 Chart.register(
   Legend,
@@ -298,9 +278,9 @@ Chart.register(
   BarElement,
   CategoryScale,
   LinearScale
-)
+);
 
-const { data } = await useFetch<any>('/api/account')
+const { data } = await useFetch<any>('/api/account');
 
 function statsBacteria () {
   return {
@@ -310,12 +290,12 @@ function statsBacteria () {
         data: [
           data.value.bacteria.stats.win,
           data.value.bacteria.stats.draw,
-          data.value.bacteria.stats.lose
+          data.value.bacteria.stats.lose,
         ],
-        backgroundColor: ['#5b3', '#fff', '#fb0d0d']
-      }
-    ]
-  }
+        backgroundColor: ['#5b3', '#fff', '#fb0d0d'],
+      },
+    ],
+  };
 }
 function statsPatojdur () {
   return {
@@ -325,16 +305,16 @@ function statsPatojdur () {
         data: [
           data.value.patojdur.stats.best,
           data.value.patojdur.stats.today,
-          data.value.patojdur.stats.yesterday
+          data.value.patojdur.stats.yesterday,
         ],
-        backgroundColor: ['#fc0', '#6ebef0', '#5aa1cd']
-      }
-    ]
-  }
+        backgroundColor: ['#fc0', '#6ebef0', '#5aa1cd'],
+      },
+    ],
+  };
 }
 
-const { t } = useI18n()
-useHead({ title: t('account') })
+const { t } = useI18n();
+useHead({ title: t('account') });
 </script>
 <style lang="scss">
 .games .card {
@@ -356,7 +336,7 @@ useHead({ title: t('account') })
 }
 
 .forum-title {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   height: 16px;
   font-size: var(--lg-font-size);
   fill: var(--text-button);

@@ -59,7 +59,7 @@ $types: (
   'top': 'y',
   'bottom': 'y',
   'right': 'x',
-  'left': 'x'
+  'left': 'x',
 );
 @each $space in $spaces {
   @each $unit in $negative {

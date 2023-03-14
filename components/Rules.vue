@@ -26,15 +26,14 @@
   </Card>
 </template>
 <script setup lang="ts">
-
-const rule = ref(0)
+const rule = ref(0);
 defineProps<{
   bot?: boolean;
   top?: boolean;
-}>()
+}>();
 setInterval(() => {
-  rule.value = ++rule.value % 6
-}, 3000)
+  rule.value = ++rule.value % 6;
+}, 3000);
 </script>
 <style lang="scss">
 .rules .card-bg {

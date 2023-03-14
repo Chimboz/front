@@ -9,7 +9,7 @@
       draggable="false"
       alt="Twitter follow"
       title="Twitter follow"
-      width="89"
+      width="77"
       height="20"
       src="https://img.shields.io/twitter/follow/ChimbozOfficial?color=blue&amp;label=Twitter&amp;logo=twitter&amp;style=flat"
       @contextmenu.prevent

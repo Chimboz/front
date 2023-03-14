@@ -76,7 +76,12 @@
               <button type="button" class="btn-md" @click="formatLink(false)">
                 <a href="#" @click.prevent>a</a>
               </button>
-              <button type="button" class="btn-md" style="padding: 2px" @click="formatLink(true)">
+              <button
+                type="button"
+                class="btn-md"
+                style="padding: 2px"
+                @click="formatLink(true)"
+              >
                 <img
                   draggable="false"
                   alt="Image embed"
@@ -169,15 +174,27 @@
                   Trop trop gros
                 </option>
               </select>
-              <button type="button" class="btn-md" @click="formatMultiline('> ')">
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('> ')"
+              >
                 <blockquote style="margin-bottom: 0">
                   Quote
                 </blockquote>
               </button>
-              <button type="button" class="btn-md" @click="formatMultiline('1. ')">
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('1. ')"
+              >
                 1. List
               </button>
-              <button type="button" class="btn-md" @click="formatMultiline('- ')">
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('- ')"
+              >
                 • List
               </button>
               <button type="button" class="btn-md" @click="format('<kbd>')">
@@ -217,14 +234,14 @@
         <tr>
           <td colspan="2">
             <div class="flex">
-              <Button type="button" aria-label="Preview" @click.prevent="preview = message">
+              <Button
+                type="button"
+                aria-label="Preview"
+                @click.prevent="preview = message"
+              >
                 Prévisualiser
               </Button>
-              <Button
-                v-if="mode === 'post'"
-                type="submit"
-                color="green"
-              >
+              <Button v-if="mode === 'post'" type="submit" color="green">
                 <template #prepend>
                   <img
                     draggable="false"
@@ -236,14 +253,16 @@
                   >
                 </template>Envoyer
               </Button>
-              <Button v-if="mode === 'edit'" type="button" color="red" aria-label="Cancel" @click="mode = 'post'">
-                Annuler
-              </Button>
               <Button
                 v-if="mode === 'edit'"
-                type="submit"
-                color="green"
+                type="button"
+                color="red"
+                aria-label="Cancel"
+                @click="mode = 'post'"
               >
+                Annuler
+              </Button>
+              <Button v-if="mode === 'edit'" type="submit" color="green">
                 <template #prepend>
                   <img
                     draggable="false"
@@ -263,15 +282,15 @@
   </form>
 </template>
 <script setup lang="ts">
-import { SelectHTMLAttributes } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useRoute, useRouter } from 'vue-router'
-import useAuthStore from '@/stores/auth'
+import { SelectHTMLAttributes } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRoute, useRouter } from 'vue-router';
+import useAuthStore from '@/stores/auth';
 
-const { $eventBus } = useNuxtApp()
-const route = useRoute()
-const router = useRouter()
-const auth = useAuthStore()
+const { $eventBus } = useNuxtApp();
+const route = useRoute();
+const router = useRouter();
+const auth = useAuthStore();
 const user: any = computed(() => ({
   ...auth.user,
   name: auth.user!.pseudo,
@@ -284,33 +303,41 @@ const user: any = computed(() => ({
     shoe: +auth.user!.avatar_design.split(';')[3],
     item0: +auth.user!.avatar_design.split(';')[4],
     item1: +auth.user!.avatar_design.split(';')[5],
-    item2: +auth.user!.avatar_design.split(';')[6]
-  }
-}))
+    item2: +auth.user!.avatar_design.split(';')[6],
+  },
+}));
 
-const textarea = ref<null | HTMLTextAreaElement>(null)
-const message = ref('')
-const title = ref('')
-const preview = ref('')
-const selectionRange = ref([0, 0])
-const mode = ref('post')
-const { t } = useI18n()
-let id = 0
+const textarea = ref<null | HTMLTextAreaElement>(null);
+const message = ref('');
+const title = ref('');
+const preview = ref('');
+const selectionRange = ref([0, 0]);
+const mode = ref('post');
+const { t } = useI18n();
+let id = 0;
 
 const props = defineProps<{
   isTopic?: boolean;
-}>()
+}>();
 
 $eventBus.on('quote', (quotedMessage: string) => {
-  if (message.value.slice(-1) === '\n' || message.value.slice(-1) === '') { message.value += quotedMessage } else { message.value += `\n${quotedMessage}` }
-  if (textarea.value!) { textarea.value!.focus() }
-})
+  if (message.value.slice(-1) === '\n' || message.value.slice(-1) === '') {
+    message.value += quotedMessage;
+  } else {
+    message.value += `\n${quotedMessage}`;
+  }
+  if (textarea.value!) {
+    textarea.value!.focus();
+  }
+});
 $eventBus.on('edit', (editedMessage: any) => {
-  message.value = editedMessage.content
-  id = editedMessage.id
-  mode.value = 'edit'
-  if (textarea.value!) { textarea.value!.focus() }
-})
+  message.value = editedMessage.content;
+  id = editedMessage.id;
+  mode.value = 'edit';
+  if (textarea.value!) {
+    textarea.value!.focus();
+  }
+});
 
 async function submit () {
   if (props.isTopic) {
@@ -322,10 +349,12 @@ async function submit () {
         edit: 0,
         message: message.value,
         param: route.params.id,
-        title: title.value
-      }
-    })
-    if (data.value) { router.push(`/bbs/${route.params.forum}-${data.value.id}-1`) }
+        title: title.value,
+      },
+    });
+    if (data.value) {
+      router.push(`/bbs/${route.params.forum}-${data.value.id}-1`);
+    }
   } else {
     if (mode.value === 'post') {
       const { data } = await useFetch<any, Error, string, 'post'>('bbs/post', {
@@ -336,10 +365,12 @@ async function submit () {
           edit: 0,
           message: message.value,
           param: route.params.topic,
-          title: ''
-        }
-      })
-      router.push(`/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${data.value.add.id}`)
+          title: '',
+        },
+      });
+      router.push(
+        `/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${data.value.add.id}`
+      );
     }
     if (mode.value === 'edit') {
       useFetch('bbs/edit', {
@@ -350,25 +381,33 @@ async function submit () {
           edit: id,
           message: message.value,
           param: route.params.topic,
-          title: ''
-        }
-      })
-      router.push(`/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${id}`)
+          title: '',
+        },
+      });
+      router.push(
+        `/bbs/${route.params.forum}-${route.params.topic}-${route.params.page}#${id}`
+      );
     }
   }
-  message.value = ''
+  message.value = '';
 }
 
 function select () {
-  textarea.value!.setSelectionRange(selectionRange.value[0], selectionRange.value[1])
+  textarea.value!.setSelectionRange(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  );
 }
 
 function focusHandler () {
-  textarea.value!.focus()
-  select()
+  textarea.value!.focus();
+  select();
 }
 function selectionHandler (e: any) {
-  selectionRange.value = [e.currentTarget.selectionStart, e.currentTarget.selectionEnd]
+  selectionRange.value = [
+    e.currentTarget.selectionStart,
+    e.currentTarget.selectionEnd,
+  ];
 }
 
 function format (pattern: string) {
@@ -376,43 +415,62 @@ function format (pattern: string) {
     message.value.substring(0, selectionRange.value[0]) +
     pattern +
     message.value.substring(selectionRange.value[0], selectionRange.value[1]) +
-    (/<[a-z0-9]+>/.test(pattern) ? `${pattern.substring(0, 1)}/${pattern.substring(1)}` : pattern) +
-    message.value.substring(selectionRange.value[1])
-  focusHandler()
+    (/<[a-z0-9]+>/.test(pattern)
+      ? `${pattern.substring(0, 1)}/${pattern.substring(1)}`
+      : pattern) +
+    message.value.substring(selectionRange.value[1]);
+  focusHandler();
 }
 function formatLink (image: boolean) {
-  message.value = `${message.value.substring(0, selectionRange.value[0])}${image ? '!' : ''}[${message.value.substring(
+  message.value = `${message.value.substring(0, selectionRange.value[0])}${
+    image ? '!' : ''
+  }[${message.value.substring(
     selectionRange.value[0],
     selectionRange.value[1]
-  )}](${message.value.substring(selectionRange.value[0], selectionRange.value[1])})${message.value.substring(selectionRange.value[1])}`
-  focusHandler()
+  )}](${message.value.substring(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  )})${message.value.substring(selectionRange.value[1])}`;
+  focusHandler();
 }
 function formatCode () {
-  message.value = `${message.value.substring(0, selectionRange.value[0])}\n\`\`\`${t('format.language')}\n${message.value.substring(
+  message.value = `${message.value.substring(
+    0,
+    selectionRange.value[0]
+  )}\n\`\`\`${t('format.language')}\n${message.value.substring(
     selectionRange.value[0],
     selectionRange.value[1]
-  )}\n\`\`\`\n${message.value.substring(selectionRange.value[1])}`
-  selectionRange.value = [selectionRange.value[0] + 4, selectionRange.value[0] + 4 + t('format.language').length]
-  focusHandler()
+  )}\n\`\`\`\n${message.value.substring(selectionRange.value[1])}`;
+  selectionRange.value = [
+    selectionRange.value[0] + 4,
+    selectionRange.value[0] + 4 + t('format.language').length,
+  ];
+  focusHandler();
 }
 function formatMultiline (pattern: string) {
   message.value = `${
     message.value.substring(0, selectionRange.value[0]) +
-    (message.value.charAt(selectionRange.value[0] - 1) === '\n' || selectionRange.value[0] === 0 ? pattern : `\n${pattern}`) +
+    (message.value.charAt(selectionRange.value[0] - 1) === '\n' ||
+    selectionRange.value[0] === 0
+      ? pattern
+      : `\n${pattern}`) +
     message.value
       .substring(selectionRange.value[0], selectionRange.value[1])
       .split('\n')
       .reduce((prev, curr) => `${prev}\n${pattern}${curr}`)
-  }\n${message.value.substring(selectionRange.value[1])}`
-  focusHandler()
+  }\n${message.value.substring(selectionRange.value[1])}`;
+  focusHandler();
 }
 function formatColor (hex: string) {
   if (hex) {
-    message.value = `${message.value.substring(0, selectionRange.value[0])}<i style="color:${hex}">${message.value.substring(
+    message.value = `${message.value.substring(
+      0,
+      selectionRange.value[0]
+    )}<i style="color:${hex}">${message.value.substring(
       selectionRange.value[0],
       selectionRange.value[1]
-    )}</i>${message.value.substring(selectionRange.value[1])}`
-    focusHandler()
+    )}</i>${message.value.substring(selectionRange.value[1])}`;
+    focusHandler();
   }
 }
 </script>

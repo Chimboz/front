@@ -7,5 +7,5 @@ module.exports = {
   remove: false,
   ci: false,
   separator: '.',
-  noEmptyTranslation: ''
-}
+  noEmptyTranslation: '',
+};

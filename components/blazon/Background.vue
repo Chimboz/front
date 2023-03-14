@@ -15,5 +15,5 @@ withDefaults(
     secondary: string;
   }>(),
   { id: 0, primary: 'var(--light)', secondary: 'var(--light)' }
-)
+);
 </script>

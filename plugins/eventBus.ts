@@ -1,4 +1,4 @@
-import mitt from 'mitt'
+import mitt from 'mitt';
 
 const eventBus = mitt<{
   asyncComponentLoading: void;
@@ -9,12 +9,12 @@ const eventBus = mitt<{
   success: string;
   failure: string;
   confirmation: { message: string; api: string; payload?: object };
-}>()
+}>();
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      eventBus
-    }
-  }
-})
+      eventBus,
+    },
+  };
+});

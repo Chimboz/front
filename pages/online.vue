@@ -31,7 +31,6 @@
     </Card>
     <template #right-column>
       <Card
-
         header="ensavoirplus.webp"
         :width="154"
         :height="34"
@@ -46,18 +45,17 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >{{ $t('online.record') }} <b>{{ data.record.online }}</b> {{ $t('date.on') }}
-        <b>{{ $format(data.record.date, "PPp") }}</b>.
+        >{{ $t('online.record') }} <b>{{ data.record.online }}</b>
+        {{ $t('date.on') }} <b>{{ $format(data.record.date, 'PPp') }}</b>.
       </Card>
     </template>
   </Container>
 </template>
 <script setup lang="ts">
+const { data } = await useFetch<any>('https://chimboz.fr/api/online');
 
-const { data } = await useFetch<any>('https://chimboz.fr/api/online')
-
-const { t } = useI18n()
-useHead({ title: t('online') })
+const { t } = useI18n();
+useHead({ title: t('online') });
 </script>
 
 <style lang="scss" scoped></style>

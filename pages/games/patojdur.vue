@@ -10,10 +10,7 @@
     </template>
     <Card header="patojdur.webp" left bg="patojdur.gif" :height="77">
       <div class="flex centered hstack">
-        <NuxtLink
-          to="#gameplay"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#gameplay" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -23,10 +20,7 @@
             @contextmenu.prevent
           >&nbsp;Le gameplay
         </NuxtLink>
-        <NuxtLink
-          to="#modes"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#modes" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -36,10 +30,7 @@
             @contextmenu.prevent
           >&nbsp;Les modes
         </NuxtLink>
-        <NuxtLink
-          to="#races"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#races" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -49,10 +40,7 @@
             @contextmenu.prevent
           >&nbsp;Les courses
         </NuxtLink>
-        <NuxtLink
-          to="#yesterday"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#yesterday" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -62,10 +50,7 @@
             @contextmenu.prevent
           >&nbsp;Champion du jour
         </NuxtLink>
-        <NuxtLink
-          to="#today"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#today" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -75,10 +60,7 @@
             @contextmenu.prevent
           >&nbsp;Classement du jour
         </NuxtLink>
-        <NuxtLink
-          to="#general"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#general" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -88,10 +70,7 @@
             @contextmenu.prevent
           >&nbsp;Classement général
         </NuxtLink>
-        <NuxtLink
-          to="#records"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#records" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -101,10 +80,7 @@
             @contextmenu.prevent
           >&nbsp;Les records
         </NuxtLink>
-        <NuxtLink
-          to="#groups"
-          class="btn-sm blue-bg"
-        >
+        <NuxtLink to="#groups" class="btn-sm blue-bg">
           <img
             draggable="false"
             alt="Caret"
@@ -235,7 +211,7 @@
             </td>
             <td><LinkUser :user="rank.user" /></td>
             <td class="left">
-              <b>{{ $format(rank.date, "PPp") }}</b><br><i>{{ rank.day }}e journée</i>
+              <b>{{ $format(rank.date, 'PPp') }}</b><br><i>{{ rank.day }}e journée</i>
             </td>
           </tr>
         </tbody>
@@ -246,8 +222,7 @@
         Les champions du jour !
       </template>
       <template #subtitle>
-        Hier, ils ont cloué le bec des grenouilles... et des autres membres
-        !
+        Hier, ils ont cloué le bec des grenouilles... et des autres membres !
       </template>
       Les 10 premiers du classement remportent le
       <b>casque Patojdur</b> pour la journée.<br>
@@ -274,7 +249,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ $format(rank.date, "p") }}</td>
+            <td>{{ $format(rank.date, 'p') }}</td>
           </tr>
         </tbody>
       </table>
@@ -339,7 +314,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td>{{ $format(rank.date, "p") }}</td>
+            <td>{{ $format(rank.date, 'p') }}</td>
           </tr>
         </tbody>
       </table>
@@ -405,23 +380,21 @@
           alt="Caret"
           draggable="false"
           @contextmenu.prevent
-        >&nbsp;Aujourd'hui, il y a
-        {{ data.stats.today }} Patojeurs.<br>
+        >&nbsp;Aujourd'hui, il y a {{ data.stats.today }} Patojeurs.<br>
       </Card>
     </template>
   </Container>
 </template>
 
 <script setup lang="ts">
-
-const { data } = await useFetch<any>('https://chimboz.fr/api/games/patoj')
+const { data } = await useFetch<any>('https://chimboz.fr/api/games/patoj');
 data.value.stats = {
   today: 1,
-  yesterday: 2
-}
+  yesterday: 2,
+};
 
-const { t } = useI18n()
-useHead({ title: t('patojdur') })
+const { t } = useI18n();
+useHead({ title: t('patojdur') });
 </script>
 
 <style lang="scss" scoped>

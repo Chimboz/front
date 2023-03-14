@@ -16,7 +16,7 @@ const props = withDefaults(
     callback: Function;
   }>(),
   { current: 0, total: 0, callback: page => page }
-)
+);
 function array () {
   return [
     ...new Set([
@@ -31,11 +31,11 @@ function array () {
       // Last 3 pages
       props.total - 3,
       props.total - 2,
-      props.total - 1
-    ])
+      props.total - 1,
+    ]),
   ]
     .filter(page => page >= 0 && page < props.total)
-    .sort((a, b) => a - b)
+    .sort((a, b) => a - b);
 }
 </script>
 <style lang="scss" scoped>

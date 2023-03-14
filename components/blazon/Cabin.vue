@@ -1,5 +1,11 @@
 <template>
-  <Card color="blue" :style="{ '--blazon-primary': data.blazon.primary, '--blazon-secondary': data.blazon.secondary }">
+  <Card
+    color="blue"
+    :style="{
+      '--blazon-primary': data.blazon.primary,
+      '--blazon-secondary': data.blazon.secondary,
+    }"
+  >
     <div class="container-blz flex">
       <div class="left-blz flex">
         <div class="cabin flex centered">
@@ -60,13 +66,7 @@
               class="item pointer"
               @click="
                 checked.includes(category) && checked.length === 1
-                  ? (checked = [
-                    'shape',
-                    'top',
-                    'bot',
-                    'primary',
-                    'secondary',
-                  ])
+                  ? (checked = ['shape', 'top', 'bot', 'primary', 'secondary'])
                   : (checked = [`${category}`])
               "
               @contextmenu.prevent="
@@ -89,9 +89,7 @@
                 shape: checked.includes('shape') ? data.items.shape : [],
                 top: checked.includes('top') ? data.items.top : [],
                 bot: checked.includes('bot') ? data.items.bot : [],
-                primary: checked.includes('primary')
-                  ? data.items.primary
-                  : [],
+                primary: checked.includes('primary') ? data.items.primary : [],
                 secondary: checked.includes('secondary')
                   ? data.items.secondary
                   : [],
@@ -116,7 +114,10 @@
                   viewBox="0 0 69.2 67.75"
                   mlns="http://www.w3.org/2000/svg"
                 >
-                  <use :href="`/item/blazon/${name}/item.svg#root`" :fill="item" />
+                  <use
+                    :href="`/item/blazon/${name}/item.svg#root`"
+                    :fill="item"
+                  />
                 </svg>
                 <img
                   v-else-if="item === -1"
@@ -126,7 +127,10 @@
                   @contextmenu.prevent
                 >
                 <svg :viewBox="viewBox(name)" @contextmenu.prevent>
-                  <use :href="`/item/blazon/${name}/${item}.svg#root`" fill="var(--blazon-primary)" />
+                  <use
+                    :href="`/item/blazon/${name}/${item}.svg#root`"
+                    fill="var(--blazon-primary)"
+                  />
                 </svg>
               </button>
             </div>
@@ -140,36 +144,36 @@
   </Card>
 </template>
 <script setup lang="ts">
-
-import type { BlazonCategory } from '@/types/Item'
+import type { BlazonCategory } from '@/types/Item';
 
 defineProps<{
   data: any;
-}>()
+}>();
 
-const emit = defineEmits<{(e: 'previousItem', name: BlazonCategory): void;
+const emit = defineEmits<{
+  (e: 'previousItem', name: BlazonCategory): void;
   (e: 'nextItem', name: BlazonCategory): void;
   (e: 'updateItem', name: BlazonCategory, item: string | number): void;
-}>()
+}>();
 
 const categories: BlazonCategory[] = [
   'primary',
   'top',
   'shape',
   'bot',
-  'secondary'
-]
-const info = ref('')
-const checked = ref(categories)
+  'secondary',
+];
+const info = ref('');
+const checked = ref(categories);
 
 function viewBox (category: BlazonCategory) {
   switch (category) {
     case 'shape':
-      return '0 0 69.2 67.75'
+      return '0 0 69.2 67.75';
     case 'top':
-      return '0 0 44.6 35.1'
+      return '0 0 44.6 35.1';
     case 'bot':
-      return '0 0 44.45 27.6'
+      return '0 0 44.45 27.6';
   }
 }
 </script>
@@ -282,8 +286,8 @@ function viewBox (category: BlazonCategory) {
   vertical-align: middle;
 }
 
-.item img[src*="cross"],
-.item img[src*="loading"] {
+.item img[src*='cross'],
+.item img[src*='loading'] {
   transform: translate(0px, 0px);
   width: unset !important;
 }
@@ -305,7 +309,7 @@ function viewBox (category: BlazonCategory) {
 }
 
 .info {
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -340,7 +344,7 @@ function viewBox (category: BlazonCategory) {
 }
 
 .gender {
-  font-family: "Chimboz Heavy";
+  font-family: 'Chimboz Heavy';
   color: var(--light);
   font-size: 15px;
 }

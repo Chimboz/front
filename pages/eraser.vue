@@ -8,15 +8,12 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      color="yellow"
-      left
-    >
+    <Card color="yellow" left>
       <template #subtop>
-        {{ $t("eraser") }}
+        {{ $t('eraser') }}
       </template>
       <template #header>
-        {{ $t("eraser.header") }}
+        {{ $t('eraser.header') }}
       </template>
       <img
         src="@/assets/img/shop/effaceur.webp"
@@ -48,13 +45,9 @@
             aria-label="Generate nickname"
             @click="generatePseudo()"
           >
-            {{ $t("eraser.button") }}
+            {{ $t('eraser.button') }}
           </Button>
-          <Button
-            color="green"
-            type="submit"
-            aria-label="Save"
-          >
+          <Button color="green" type="submit" aria-label="Save">
             <template #prepend>
               <img
                 draggable="false"
@@ -77,20 +70,21 @@
   </Container>
 </template>
 <script setup lang="ts">
-
-const pseudo = ref('')
+const pseudo = ref('');
 
 function submit () {
-  useFetch('account/name', { method: 'post', body: { pseudo: pseudo.value } })
+  useFetch('account/name', { method: 'post', body: { pseudo: pseudo.value } });
 }
 
 async function generatePseudo () {
-  const { data } = await useFetch<any>(`https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`)
-  pseudo.value = JSON.parse(data.value).pseudo
+  const { data } = await useFetch<any>(
+    `https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`
+  );
+  pseudo.value = JSON.parse(data.value).pseudo;
 }
 
-const { t } = useI18n()
-useHead({ title: t('eraser') })
+const { t } = useI18n();
+useHead({ title: t('eraser') });
 </script>
 
 <style lang="scss" scoped>
@@ -98,7 +92,7 @@ useHead({ title: t('eraser') })
   text-align: center;
   font-size: 24px;
   width: 24px;
-  font-family: "Pixelated Verdana 10";
+  font-family: 'Pixelated Verdana 10';
   border-bottom: 2px solid black;
   margin: 2px;
 }

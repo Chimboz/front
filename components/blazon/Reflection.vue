@@ -274,5 +274,5 @@ withDefaults(
     id: number;
   }>(),
   { id: 0 }
-)
+);
 </script>

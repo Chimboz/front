@@ -8,10 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <Card
-      color="yellow"
-      left
-    >
+    <Card color="yellow" left>
       <template #subtop>
         {{ data.user.name }}
       </template>
@@ -116,23 +113,26 @@
   </Container>
 </template>
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
 
-const { data } = await useFetch<any>('/api/mi5')
-const input = ref('')
+const { data } = await useFetch<any>('/api/mi5');
+const input = ref('');
 
 function send () {
-  useFetch('mi/reply', { method: 'post', body: { conv: useRoute().params.id, message: input.value } })
+  useFetch('mi/reply', {
+    method: 'post',
+    body: { conv: useRoute().params.id, message: input.value },
+  });
   data.value.messages.push({
     you: true,
     content: input.value,
-    date: Date.now()
-  })
-  input.value = ''
+    date: Date.now(),
+  });
+  input.value = '';
 }
 
-const { t } = useI18n()
-useHead({ title: t('conversation') })
+const { t } = useI18n();
+useHead({ title: t('conversation') });
 </script>
 
 <style lang="scss" scoped>

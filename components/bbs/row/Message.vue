@@ -38,7 +38,7 @@
             alt="Lien du message"
             title="Lien du message"
             :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
-          /> </a>&nbsp;
+          > </a>&nbsp;
         <b class="ellipsis title">{{ message.title }}</b>
         &nbsp;
         <div v-if="user">
@@ -62,7 +62,7 @@
               draggable="false"
               alt="Bubble"
               @contextmenu.prevent
-            />&nbsp;Citer
+            >&nbsp;Citer
           </button>&nbsp;
           <button
             v-if="
@@ -75,7 +75,7 @@
             @click.prevent="
               $eventBus.emit('edit', {
                 id: message.id,
-                content: message.content
+                content: message.content,
               })
             "
           >
@@ -86,7 +86,7 @@
               draggable="false"
               alt="Pen"
               @contextmenu.prevent
-            />&nbsp;Éditer
+            >&nbsp;Éditer
           </button>&nbsp;
           <button
             v-if="message.author.id === user.id || +user.user_level > 3"
@@ -98,40 +98,40 @@
           </button>
         </div>
       </div>
-      <hr style="margin: 2px 0" />
+      <hr style="margin: 2px 0">
       <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
       <div class="markdown-body" v-html="$messageRender(message.content)" />
-      <br /><i>"{{ message.author.signature }}"</i>
+      <br><i>"{{ message.author.signature }}"</i>
     </td>
   </tr>
   <tr v-if="separator">
     <td colspan="2" style="background: var(--light)">
-      <hr />
+      <hr>
     </td>
   </tr>
 </template>
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
 
-import useAuthStore from '@/stores/auth'
+import useAuthStore from '@/stores/auth';
 
-const auth = useAuthStore()
-const user = computed(() => auth.user)
-const route = useRoute()
+const auth = useAuthStore();
+const user = computed(() => auth.user);
+const route = useRoute();
 
 const props = withDefaults(
   defineProps<{
-    message: any
-    separator: boolean
+    message: any;
+    separator: boolean;
   }>(),
   { separator: true }
-)
+);
 
 function deleteMessage () {
   useFetch('bbs/delete', {
     method: 'post',
-    body: { post: props.message.id, topic: route.params.topic }
-  })
+    body: { post: props.message.id, topic: route.params.topic },
+  });
 }
 </script>
 <style lang="scss">
