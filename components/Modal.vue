@@ -42,7 +42,7 @@
         v-if="type === 'confirmation'"
         type="button"
         class="btn-pink ok"
-        style="filter: hue-rotate(180deg)"
+        style="filter: hue-rotate(150deg)"
         @click="request"
       >
         <img

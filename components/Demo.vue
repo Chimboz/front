@@ -335,19 +335,19 @@ $categories: home, mode, tchat, wedding, group, bacteria, empty, empty, empty,
 
 @each $category in $categories {
   .#{$category} {
-    background: url(../assets/img/demo/#{$category}.svg);
-    border-image: url(../assets/img/demo/#{$category}_hover.svg);
+    background: url(@/assets/img/demo/#{$category}.svg);
+    border-image: url(@/assets/img/demo/#{$category}_hover.svg);
   }
 
   .#{$category}:hover,
   .#{$category}.active {
-    background: url(../assets/img/demo/#{$category}_hover.svg);
-    border-image: url(../assets/img/demo/#{$category}.svg);
+    background: url(@/assets/img/demo/#{$category}_hover.svg);
+    border-image: url(@/assets/img/demo/#{$category}.svg);
   }
 }
 
 .demo-picture {
-  background: url(../assets/img/demo/demo.svg);
+  background: url(@/assets/img/demo/demo.svg);
   background-size: cover;
   overflow: hidden;
   border-radius: var(--md-gap);
@@ -415,7 +415,7 @@ section.display {
   height: 45.25px;
   text-align: left;
   padding: var(--gap);
-  background: url(../assets/img/demo/info.svg);
+  background: url(@/assets/img/demo/info.svg);
   background-size: cover;
 }
 

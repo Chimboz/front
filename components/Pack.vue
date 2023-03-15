@@ -158,7 +158,7 @@ function play () {
   opacity: 1;
   width: 100%;
   height: 100%;
-  background: url(../assets/img/pack/reflect.svg);
+  background: url(@/assets/img/pack/reflect.svg);
 }
 
 .pack-content::after {

@@ -19,7 +19,7 @@
   position: absolute;
   width: 23.452px;
   height: 23.45px;
-  background-image: url(../img/icon/bg_pink.svg);
+  background-image: url(@/assets/img/icon/bg_pink.svg);
   background-position: center;
   background-size: cover;
 }

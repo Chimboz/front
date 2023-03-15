@@ -146,7 +146,7 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .bank {
-  background: url(../assets/img/bank/bg.svg);
+  background: url(@/assets/img/bank/bg.svg);
   background-size: contain;
   overflow: hidden;
   .door {

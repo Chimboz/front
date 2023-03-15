@@ -257,12 +257,12 @@ useHead({ title: computed(() => t('member')) });
 }
 .male .card,
 .unknown .card {
-  background-image: url(../../../assets/img/member/male/header.gif);
+  background-image: url(@/assets/img/member/male/header.gif);
   background-color: #d5e6f3;
 }
 
 .female .card {
-  background-image: url(../../../assets/img/member/female/header.gif);
+  background-image: url(@/assets/img/member/female/header.gif);
   background-color: #ff96da;
 }
 </style>

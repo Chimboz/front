@@ -14,7 +14,7 @@
   --font-size: 12px;
   --lg-font-size: 18px;
   --round: 99px;
-  --pointer: url(../img/pointer.svg) 4 2, pointer;
+  --pointer: url(@/assets/img/pointer.svg) 4 2, pointer;
 
   /* Colors */
   --text: #284555;
@@ -128,15 +128,15 @@
 
   // Dark background
   body {
-    background-image: url(../img/navbar/background/0.png) !important;
+    background-image: url(@/assets/img/navbar/background/0.png) !important;
   }
 
   header {
-    background-image: url(../img/navbar/svg/0.svg) !important;
+    background-image: url(@/assets/img/navbar/svg/0.svg) !important;
   }
 
   #theme-toggler {
-    background-image: url(../img/icon/theme/dark.svg) !important;
+    background-image: url(@/assets/img/icon/theme/dark.svg) !important;
   }
 
   // Filter images

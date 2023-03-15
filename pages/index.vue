@@ -251,6 +251,6 @@ useHead({ title: computed(() => t('home')) });
 .handle {
   margin-left: calc(-4% - 16px);
   margin-top: -16px;
-  border-image: url(../assets/img/lottery/down.svg);
+  border-image: url(@/assets/img/lottery/down.svg);
 }
 </style>
