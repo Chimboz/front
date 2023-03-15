@@ -16,6 +16,8 @@ import faviconNew from '@/constants/favicon_new.json';
 const notifications = computed(() => useAuthStore().notifications);
 const i18n = useI18n();
 
+const time = (new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000;
+
 useHead({
   htmlAttrs: {
     lang: i18n.locale.value,
@@ -51,11 +53,10 @@ useHead({
   ],
   style: [
     {
-      children: `body { background-image: url(${asset(
-        `img/navbar/background/${new Date().getHours()}.png`
-      )}) } .header { url(${asset(
-        `img/navbar/svg/${new Date().getHours()}.svg`
-      )}) }`,
+      children: `
+      body { animation-delay: -${time}s }
+      header { animation-delay: -${time}s }
+      `,
     },
   ],
 });
@@ -80,3 +81,162 @@ watchEffect(() => {
 // TODO forget password page
 // TODO replace marked emoji support by extension + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 </script>
+<style lang="css">
+@keyframes cycleBackground {
+  0% {
+    background-image: url('@/assets/img/navbar/background/0.png');
+  }
+  4.17% {
+    background-image: url('@/assets/img/navbar/background/1.png');
+  }
+  8.33% {
+    background-image: url('@/assets/img/navbar/background/2.png');
+  }
+  12.5% {
+    background-image: url('@/assets/img/navbar/background/3.png');
+  }
+  16.67% {
+    background-image: url('@/assets/img/navbar/background/4.png');
+  }
+  20.83% {
+    background-image: url('@/assets/img/navbar/background/5.png');
+  }
+  25% {
+    background-image: url('@/assets/img/navbar/background/6.png');
+  }
+  29.17% {
+    background-image: url('@/assets/img/navbar/background/7.png');
+  }
+  33.33% {
+    background-image: url('@/assets/img/navbar/background/8.png');
+  }
+  37.5% {
+    background-image: url('@/assets/img/navbar/background/9.png');
+  }
+  41.67% {
+    background-image: url('@/assets/img/navbar/background/10.png');
+  }
+  45.83% {
+    background-image: url('@/assets/img/navbar/background/11.png');
+  }
+  50% {
+    background-image: url('@/assets/img/navbar/background/12.png');
+  }
+  54.17% {
+    background-image: url('@/assets/img/navbar/background/13.png');
+  }
+  58.33% {
+    background-image: url('@/assets/img/navbar/background/14.png');
+  }
+  62.5% {
+    background-image: url('@/assets/img/navbar/background/15.png');
+  }
+  66.67% {
+    background-image: url('@/assets/img/navbar/background/16.png');
+  }
+  70.83% {
+    background-image: url('@/assets/img/navbar/background/17.png');
+  }
+  75% {
+    background-image: url('@/assets/img/navbar/background/18.png');
+  }
+  79.17% {
+    background-image: url('@/assets/img/navbar/background/18.png');
+  }
+  83.33% {
+    background-image: url('@/assets/img/navbar/background/20.png');
+  }
+  87.5% {
+    background-image: url('@/assets/img/navbar/background/21.png');
+  }
+  91.67% {
+    background-image: url('@/assets/img/navbar/background/22.png');
+  }
+  95.83% {
+    background-image: url('@/assets/img/navbar/background/23.png');
+  }
+}
+
+@keyframes cycleHeader {
+  0% {
+    background-image: url('@/assets/img/navbar/svg/0.svg');
+  }
+  4.17% {
+    background-image: url('@/assets/img/navbar/svg/1.svg');
+  }
+  8.33% {
+    background-image: url('@/assets/img/navbar/svg/2.svg');
+  }
+  12.5% {
+    background-image: url('@/assets/img/navbar/svg/3.svg');
+  }
+  16.67% {
+    background-image: url('@/assets/img/navbar/svg/4.svg');
+  }
+  20.83% {
+    background-image: url('@/assets/img/navbar/svg/5.svg');
+  }
+  25% {
+    background-image: url('@/assets/img/navbar/svg/6.svg');
+  }
+  29.17% {
+    background-image: url('@/assets/img/navbar/svg/7.svg');
+  }
+  33.33% {
+    background-image: url('@/assets/img/navbar/svg/8.svg');
+  }
+  37.5% {
+    background-image: url('@/assets/img/navbar/svg/9.svg');
+  }
+  41.67% {
+    background-image: url('@/assets/img/navbar/svg/10.svg');
+  }
+  45.83% {
+    background-image: url('@/assets/img/navbar/svg/11.svg');
+  }
+  50% {
+    background-image: url('@/assets/img/navbar/svg/12.svg');
+  }
+  54.17% {
+    background-image: url('@/assets/img/navbar/svg/13.svg');
+  }
+  58.33% {
+    background-image: url('@/assets/img/navbar/svg/14.svg');
+  }
+  62.5% {
+    background-image: url('@/assets/img/navbar/svg/15.svg');
+  }
+  66.67% {
+    background-image: url('@/assets/img/navbar/svg/16.svg');
+  }
+  70.83% {
+    background-image: url('@/assets/img/navbar/svg/17.svg');
+  }
+  75% {
+    background-image: url('@/assets/img/navbar/svg/18.svg');
+  }
+  79.17% {
+    background-image: url('@/assets/img/navbar/svg/18.svg');
+  }
+  83.33% {
+    background-image: url('@/assets/img/navbar/svg/20.svg');
+  }
+  87.5% {
+    background-image: url('@/assets/img/navbar/svg/21.svg');
+  }
+  91.67% {
+    background-image: url('@/assets/img/navbar/svg/22.svg');
+  }
+  95.83% {
+    background-image: url('@/assets/img/navbar/svg/23.svg');
+  }
+}
+
+body {
+  animation: cycleBackground 86400s step-end infinite;
+}
+
+header {
+  animation: cycleHeader 86400s step-end infinite;
+}
+</style>

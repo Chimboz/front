@@ -1,13 +1,6 @@
 <template>
   <header
     class="header"
-    :style="{
-      backgroundImage: `url(${asset(
-        `img/navbar/svg/${
-          $colorMode.value !== 'dark' ? new Date().getHours() : 0
-        }.svg`
-      )})`,
-    }"
   >
     <NuxtLink to="/">
       <img
