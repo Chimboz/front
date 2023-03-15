@@ -54,8 +54,18 @@ useHead({
   style: [
     {
       children: `
-      body { animation-delay: -${time}s }
-      header { animation-delay: -${time}s }
+      body {
+        background-image: url(${asset(
+          `img/navbar/background/${new Date().getHours()}.png`
+        )});
+        animation-delay: -${time}s;
+      }
+      header {
+        background-image: url(${asset(
+          `img/navbar/svg/${new Date().getHours()}.svg`
+        )});
+        animation-delay: -${time}s;
+      }
       `,
     },
   ],
