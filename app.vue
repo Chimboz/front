@@ -22,12 +22,12 @@ useHead({
   htmlAttrs: {
     lang: i18n.locale.value,
   },
-  titleTemplate: title =>
+  titleTemplate: (title) =>
     `${
       notifications.value
         ? notifications.value
             .toString()
-            .replace(/[0-9]/g, c => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c))
+            .replace(/[0-9]/g, (c) => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c))
         : ''
     }Chimboz ${title}`,
   link: notifications.value ? faviconNew : favicon,

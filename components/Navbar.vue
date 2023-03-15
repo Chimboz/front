@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="header"
-  >
+  <header class="header">
     <NuxtLink to="/">
       <img
         id="logo"

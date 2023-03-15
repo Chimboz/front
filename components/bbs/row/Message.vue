@@ -1,7 +1,9 @@
 <template>
   <tr
     :id="`p${message.id}`"
-    :class="{ target: message.id === +$router.currentRoute.value.hash.slice(2) }"
+    :class="{
+      target: message.id === +$router.currentRoute.value.hash.slice(2),
+    }"
   >
     <td class="info centered" valign="top">
       <Avatar

@@ -67,7 +67,8 @@ select option:checked {
 }
 
 // Highlight targeted element
-:target, .target {
+:target,
+.target {
   background: var(--light-bbs);
   transition: 0.3s;
 }

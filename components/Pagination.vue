@@ -15,7 +15,7 @@ const props = withDefaults(
     total: number;
     callback: Function;
   }>(),
-  { current: 0, total: 0, callback: page => page }
+  { current: 0, total: 0, callback: (page) => page }
 );
 function array () {
   return [
@@ -34,7 +34,7 @@ function array () {
       props.total - 1,
     ]),
   ]
-    .filter(page => page >= 0 && page < props.total)
+    .filter((page) => page >= 0 && page < props.total)
     .sort((a, b) => a - b);
 }
 </script>

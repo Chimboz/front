@@ -50,7 +50,7 @@ function markedRender (string: string) {
   // Custom emotes
   string = string.replace(
     /:[a-z]+:/g,
-    match => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`
+    (match) => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`
   );
 
   // Marked options

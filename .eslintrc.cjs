@@ -21,5 +21,6 @@ module.exports = {
     'comma-dangle': 'off',
     'func-call-spacing': 'off',
     semi: [2, 'always'],
+    'arrow-parens': [2, 'always'],
   },
 };
