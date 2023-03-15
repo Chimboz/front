@@ -1,6 +1,6 @@
 <template>
   <div v-if="isVisible" class="modal">
-    <div class="modal-content">
+    <dialog :open="isVisible" class="modal-content">
       <img
         v-if="type === 'error'"
         draggable="false"
@@ -78,7 +78,7 @@
           @contextmenu.prevent
         >
       </button>
-    </div>
+    </dialog>
   </div>
 </template>
 <script setup lang="ts">
