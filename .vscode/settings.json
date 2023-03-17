@@ -6,7 +6,6 @@
   "i18n-ally.extract.keygenStyle": "camelCase",
   "i18n-ally.translate.deepl.useFreeApiEntry": true,
   "i18n-ally.keysInUse": [
-    "group.leader",
     "group.leader.empire",
     "group.leader.group",
     "group.leader.guild",
@@ -25,6 +24,24 @@
     "rules.rule2",
     "rules.rule3",
     "rules.rule4",
-    "rules.rule5"
-  ]
+    "rules.rule5",
+    "group.leader.alliance",
+    "group.type.alliance",
+    "group.type.empire",
+    "group.type.group",
+    "group.type.guild",
+    "group.type.meute",
+    "group.type.skool",
+    "group.type.skwat",
+    "group.type.triad",
+    "group.type.clan",
+    "group.type.ekip",
+    "group.type.gang",
+    "group.type.hord",
+    "group.type.klub",
+    "group.type.sekt",
+    "group.status.close",
+    "group.status.open"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
