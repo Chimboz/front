@@ -1,11 +1,13 @@
 <template>
-  <main>
-    <ProgressBar />
-    <Navbar />
-    <NuxtPage />
-    <Footer />
-    <Modal />
-  </main>
+  <div id="app">
+    <main id="chimboz">
+      <ProgressBar />
+      <Navbar />
+      <NuxtPage />
+      <Footer />
+      <Modal />
+    </main>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -16,7 +18,9 @@ import faviconNew from '@/constants/favicon_new.json';
 const notifications = computed(() => useAuthStore().notifications);
 const i18n = useI18n();
 
-const time = (new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000;
+const delay = `-${
+  (new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000
+}s`;
 
 useHead({
   htmlAttrs: {
@@ -49,24 +53,6 @@ useHead({
     {
       name: 'color-scheme',
       content: 'dark light',
-    },
-  ],
-  style: [
-    {
-      children: `
-      body {
-        background-image: url(${asset(
-          `img/navbar/background/${new Date().getHours()}.png`
-        )});
-        animation-delay: -${time}s;
-      }
-      header {
-        background-image: url(${asset(
-          `img/navbar/svg/${new Date().getHours()}.svg`
-        )});
-        animation-delay: -${time}s;
-      }
-      `,
     },
   ],
 });
@@ -242,11 +228,13 @@ watchEffect(() => {
   }
 }
 
-body {
+#app {
   animation: cycleBackground 86400s step-end infinite;
+  animation-delay: v-bind(delay);
 }
 
 header {
   animation: cycleHeader 86400s step-end infinite;
+  animation-delay: v-bind(delay);
 }
 </style>

@@ -19,9 +19,12 @@ body {
   font-family: var(--font-family);
   color: var(--text);
   background-color: var(--main-bg);
+  overflow-x: hidden;
+}
+
+#app {
   background-repeat: repeat-x;
   background-attachment: scroll;
-  overflow-x: hidden;
   background-position-y: -0.8px;
 }
 
@@ -160,7 +163,7 @@ iframe {
 
 // App width
 @media (min-width: 800px) {
-  #__nuxt {
+  #chimboz {
     width: 800px;
     margin: auto;
   }
