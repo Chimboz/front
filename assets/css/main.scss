@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-#app {
+#body {
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-position-y: -0.8px;
@@ -163,7 +163,7 @@ iframe {
 
 // App width
 @media (min-width: 800px) {
-  #chimboz {
+  #main {
     width: 800px;
     margin: auto;
   }
@@ -183,4 +183,14 @@ button {
 // Code blocks
 pre code.hljs {
   padding: 0 !important;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.1s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }

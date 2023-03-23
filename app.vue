@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <main id="chimboz">
+  <div id="body">
+    <main id="main">
       <ProgressBar />
       <Navbar :time="time" />
       <Transition>
@@ -153,7 +153,7 @@ watchEffect(() => {
   }
 }
 
-#app {
+#body {
   animation: cycleBackground 86400s step-end infinite;
   animation-delay: v-bind(time);
 }

@@ -4,6 +4,10 @@ export default defineNuxtConfig({
     strict: true,
     // TODO typeCheck: true
   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    rootId: 'chimboz',
+  },
   modules: [
     '@nuxtjs/i18n',
     '@pinia/nuxt',
