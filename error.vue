@@ -3,15 +3,25 @@
     <main id="chimboz">
       <ProgressBar />
       <Navbar :time="time" />
-      <Transition>
-        <NuxtPage />
-      </Transition>
+      <Container>
+        <template #left-column />
+        <Card color="red">
+          <img
+            draggable="false"
+            alt="Error icon"
+            width="39"
+            height="32"
+            src="@/assets/img/icon/warning.svg"
+            @contextmenu.prevent
+          ><b>&nbsp;{{ error ? error.statusMessage : $t('error.unknown') }}</b>
+        </Card>
+        <template #right-column />
+      </Container>
       <Footer />
       <Modal />
     </main>
   </div>
 </template>
-
 <script setup lang="ts">
 import useAuthStore from '@/stores/auth';
 import favicon from '@/constants/favicon.json';
@@ -20,8 +30,11 @@ import faviconNew from '@/constants/favicon_new.json';
 const notifications = computed(() => useAuthStore().notifications);
 const i18n = useI18n();
 
-const time = `-${(new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000}s`;
+defineProps<{
+  error: any;
+}>();
 
+const time = `-${(new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000}s`;
 useHead({
   htmlAttrs: {
     lang: i18n.locale.value,
@@ -34,6 +47,7 @@ useHead({
             .replace(/[0-9]/g, (c) => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c))
         : ''
     }Chimboz ${title}`,
+  title: computed(() => i18n.t('error')),
   link: notifications.value ? faviconNew : favicon,
   meta: [
     {
@@ -60,22 +74,6 @@ useHead({
 watchEffect(() => {
   useHead({ link: notifications.value ? faviconNew : favicon });
 });
-
-// TODO check forms submit
-// TODO better quotes
-// TODO add commitlint
-// FIXME configure eslint
-// TODO mannequin/refactor avatar
-// TODO sitemap and robots.txt generator
-// TODO dynamic suggestions components
-// TODO alert when javascript is disabled
-// TODO wedding id view
-// TODO search all user messages on bbs
-// TODO search messages on bbs
-// TODO opengraph https://ogp.me/
-// TODO check prototype pollution
-// TODO forget password page
-// TODO replace marked emoji support by extension + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 </script>
 <style lang="css" scoped>
 @keyframes cycleBackground {

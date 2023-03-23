@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header>
     <NuxtLink to="/">
       <img
         id="logo"
@@ -218,9 +218,11 @@ import useAuthStore from '@/stores/auth';
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
+
+defineProps<{ time: string }>();
 </script>
 <style lang="scss" scoped>
-.header {
+header {
   width: 100%;
   height: 78px;
   background-position: center;
@@ -463,5 +465,85 @@ nav a:first-child .nav-btn:active {
     margin-right: -30px;
     z-index: 2;
   }
+}
+
+@keyframes cycleHeader {
+  0% {
+    background-image: url(@/assets/img/navbar/svg/0.svg);
+  }
+  4.17% {
+    background-image: url(@/assets/img/navbar/svg/1.svg);
+  }
+  8.33% {
+    background-image: url(@/assets/img/navbar/svg/2.svg);
+  }
+  12.5% {
+    background-image: url(@/assets/img/navbar/svg/3.svg);
+  }
+  16.67% {
+    background-image: url(@/assets/img/navbar/svg/4.svg);
+  }
+  20.83% {
+    background-image: url(@/assets/img/navbar/svg/5.svg);
+  }
+  25% {
+    background-image: url(@/assets/img/navbar/svg/6.svg);
+  }
+  29.17% {
+    background-image: url(@/assets/img/navbar/svg/7.svg);
+  }
+  33.33% {
+    background-image: url(@/assets/img/navbar/svg/8.svg);
+  }
+  37.5% {
+    background-image: url(@/assets/img/navbar/svg/9.svg);
+  }
+  41.67% {
+    background-image: url(@/assets/img/navbar/svg/10.svg);
+  }
+  45.83% {
+    background-image: url(@/assets/img/navbar/svg/11.svg);
+  }
+  50% {
+    background-image: url(@/assets/img/navbar/svg/12.svg);
+  }
+  54.17% {
+    background-image: url(@/assets/img/navbar/svg/13.svg);
+  }
+  58.33% {
+    background-image: url(@/assets/img/navbar/svg/14.svg);
+  }
+  62.5% {
+    background-image: url(@/assets/img/navbar/svg/15.svg);
+  }
+  66.67% {
+    background-image: url(@/assets/img/navbar/svg/16.svg);
+  }
+  70.83% {
+    background-image: url(@/assets/img/navbar/svg/17.svg);
+  }
+  75% {
+    background-image: url(@/assets/img/navbar/svg/18.svg);
+  }
+  79.17% {
+    background-image: url(@/assets/img/navbar/svg/18.svg);
+  }
+  83.33% {
+    background-image: url(@/assets/img/navbar/svg/20.svg);
+  }
+  87.5% {
+    background-image: url(@/assets/img/navbar/svg/21.svg);
+  }
+  91.67% {
+    background-image: url(@/assets/img/navbar/svg/22.svg);
+  }
+  95.83% {
+    background-image: url(@/assets/img/navbar/svg/23.svg);
+  }
+}
+
+header {
+  animation: cycleHeader 86400s step-end infinite;
+  animation-delay: v-bind(time);
 }
 </style>
