@@ -4,7 +4,9 @@
       <ProgressBar />
       <Navbar :time="time" />
       <Transition>
-        <NuxtPage />
+        <div>
+          <NuxtPage />
+        </div>
       </Transition>
       <Footer />
       <Modal />
@@ -20,7 +22,9 @@ import faviconNew from '@/constants/favicon_new.json';
 const notifications = computed(() => useAuthStore().notifications);
 const i18n = useI18n();
 
-const time = `-${(new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000}s`;
+const time = `-${
+  (new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000
+}s`;
 
 useHead({
   htmlAttrs: {
