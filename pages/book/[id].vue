@@ -11,7 +11,17 @@
     <NuxtLink to="/book" class="pink mb-2">
       » Retour à l'annuaire
     </NuxtLink>
-    <Card class="member" :class="[data.gender]" left>
+    <Card
+      class="member"
+      :class="[data.gender]"
+      left
+      :style="{
+        '--h': color.h,
+        '--s': color.s,
+        '--l': color.l,
+        color: 'hsl(var(--h),var(--s),calc(100% - var(--l)))',
+      }"
+    >
       <div class="member-header">
         <Avatar
           :avatar="data.look.avatar"
@@ -74,13 +84,15 @@
               draggable="false"
               @contextmenu.prevent
             >&nbsp;
-            <span v-if="data.wedding">
-              <NuxtLink :to="'/weddings/' + data.wedding.id">Marié</NuxtLink>
+            <template v-if="data.wedding">
+              <NuxtLink :to="'/weddings/' + data.wedding.id">
+                Marié
+              </NuxtLink>
               avec
               <LinkUser :user="data.wedding.user" /> depuis
               {{ $distance(Date.now(), data.wedding.time) }} jours
-            </span>
-            <span v-else><b>Célibataire</b></span>
+            </template>
+            <b v-else>Célibataire</b>
           </p>
           <p>
             Intérêts :
@@ -151,60 +163,56 @@
         </div>
       </div>
       <br>
-      <div v-if="data.bacteria" class="member-section">
-        <img
-          draggable="false"
-          :src="asset(`img/member/${data.gender}/bacteria.svg`)"
-          alt="Bacteria"
-          style="float: left"
-          @contextmenu.prevent
-        >
-        <span>Classement : <b>{{ data.bacteria.rank }}</b><sup v-if="data.bacteria.rank === 1">er</sup><sup v-else>ème</sup><br><b>{{
-          data.bacteria.win + data.bacteria.lose + data.bacteria.draw
+      <div v-if="data.bac" class="member-section">
+        <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
+          <use
+            :href="`${asset(`img/member/${data.gender}/bacteria.svg`)}#root`"
+            color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
+          />
+        </svg>
+        <span>Classement : <b>{{ data.bac.rank }}</b><sup v-if="data.bac.rank === 1">er</sup><sup v-else>ème</sup><br><b>{{
+          data.bac.win + data.bac.lost + data.bac.draw
         }}</b>
-          parties, <b>{{ data.bacteria.win }}</b> gagnées,
-          <b>{{ data.bacteria.lose }}</b> perdues,
-          <b>{{ data.bacteria.draw }}</b> nulles<br><b>{{
-            data.bacteria.score
+          parties, <b>{{ data.bac.win }}</b> gagnées,
+          <b>{{ data.bac.lost }}</b> perdues,
+          <b>{{ data.bac.draw }}</b> nulles<br><b>{{
+            data.bac.score
           }}</b>
           points</span>
       </div>
-      <br v-if="data.bacteria">
-      <div v-if="data.patojdur" class="member-section">
-        <img
-          draggable="false"
-          :src="asset(`img/member/${data.gender}/patojdur.svg`)"
-          alt="Patojdur"
-          style="float: left"
-          @contextmenu.prevent
-        >
-        <span>Classement : <b>{{ data.patojdur.rank }}</b><sup v-if="data.patojdur.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.patojdur.score }}</b> points<br>Aujourd'hui
-          <b>{{ data.patojdur.today.rank }}</b><sup v-if="data.patojdur.today.rank === 1">er</sup><sup v-else>ème</sup> avec <b>{{ data.patojdur.today.score }}</b>
-          <br>Hier <b>{{ data.patojdur.yesterday.rank }}</b><sup v-if="data.patojdur.yesterday.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.patojdur.yesterday.score }}</b></span>
+      <br v-if="data.bac">
+      <div v-if="data.patoj" class="member-section">
+        <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
+          <use
+            :href="`${asset(`img/member/${data.gender}/patojdur.svg`)}#root`"
+            color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
+          />
+        </svg>
+        <span>Classement : <b>{{ data.patoj.rank }}</b><sup v-if="data.patoj.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.patoj.score }}</b> points<br>Aujourd'hui
+          <b>{{ data.patoj.today.rank }}</b><sup v-if="data.patoj.today.rank === 1">er</sup><sup v-else>ème</sup> avec <b>{{ data.patoj.today.score }}</b>
+          <br>Hier <b>{{ data.patoj.yesterday.rank }}</b><sup v-if="data.patoj.yesterday.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.patoj.yesterday.score }}</b></span>
       </div>
-      <br v-if="data.patojdur">
+      <br v-if="data.patoj">
       <div v-if="data.mazo" class="member-section">
-        <img
-          draggable="false"
-          :src="asset(`img/member/${data.gender}/mazo.svg`)"
-          alt="Mazo"
-          style="float: left"
-          @contextmenu.prevent
-        >
+        <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
+          <use
+            :href="`${asset(`img/member/${data.gender}/mazo.svg`)}#root`"
+            color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
+          />
+        </svg>
         <span>Classement : <b>{{ data.mazo.rank }}</b><sup v-if="data.mazo.rank === 1">er</sup><sup v-else>ème</sup> avec
           <b>{{ data.mazo.score }}</b> points</span>
       </div>
       <br v-if="data.mazo">
       <div v-if="data.popularity" class="member-section">
-        <img
-          draggable="false"
-          :src="asset(`img/member/${data.gender}/popularity.svg`)"
-          alt="Popularity"
-          style="float: left"
-          @contextmenu.prevent
-        >
+        <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
+          <use
+            :href="`${asset(`img/member/${data.gender}/popularity.svg`)}#root`"
+            color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
+          />
+        </svg>
         <span>Classement : <b>{{ data.popularity.rank }}</b><sup v-if="data.popularity.rank === 1">er</sup><sup v-else>ème</sup> avec
           <b>{{ data.popularity.score }}</b> points<br>Aujourd'hui
           <b>{{ data.popularity.today.rank }}</b><sup v-if="data.popularity.today.rank === 1">er</sup><sup v-else>ème</sup> avec
@@ -213,7 +221,7 @@
           <b>{{ data.popularity.yesterday.score }}</b> points</span>
       </div>
       <br v-if="data.popularity">
-      <div class="member-registration">
+      <div class="member-section registration">
         <span>Membre n°<b>{{ data.id }}</b><br>
           Dans la communauté depuis le
           <b>{{ $format(data.register, 'PPp') }}</b> (<b>{{
@@ -247,6 +255,13 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
+data.value.gender = 'male';
+const color = ref({
+  h: 207,
+  s: '52%',
+  l: '78%',
+});
+
 const { t } = useI18n();
 useHead({ title: computed(() => t('member')) });
 </script>
@@ -258,7 +273,7 @@ useHead({ title: computed(() => t('member')) });
 .male .card,
 .unknown .card {
   background-image: url(@/assets/img/member/male/header.gif);
-  background-color: #d5e6f3;
+  background-color: hsl(var(--h), var(--s), calc(var(--l) + 10%));
 }
 
 .female .card {
@@ -268,6 +283,7 @@ useHead({ title: computed(() => t('member')) });
 </style>
 <style lang="scss" scoped>
 .member {
+  --blue: hsl(var(--h), calc(var(--s) + 40%), calc(var(--l) - 40%));
   overflow: hidden;
 }
 
@@ -277,7 +293,7 @@ useHead({ title: computed(() => t('member')) });
 }
 
 .member-body {
-  background: #eff5fa;
+  background: hsl(var(--h), var(--s), calc(var(--l) + 20%));
   clear: both;
 }
 
@@ -313,7 +329,7 @@ useHead({ title: computed(() => t('member')) });
   background: url(@/assets/img/member/portrait.png);
   height: 112px;
   width: 104px;
-  margin-bottom: 6px;
+  margin-bottom: var(--md-gap);
   overflow: hidden;
 }
 
@@ -326,19 +342,19 @@ useHead({ title: computed(() => t('member')) });
 
 .member-section,
 .member-text {
-  padding: 6px;
+  padding: var(--md-gap);
 }
 
 .member-portrait {
   float: right;
   background: var(--light);
   border-radius: var(--md-gap);
-  padding: 6px;
+  padding: var(--md-gap);
   width: 116px;
 }
 
 .member-section {
-  background: #a9cbe4;
+  background: hsl(var(--h), var(--s), var(--l));
   display: flex;
   align-items: center;
 }
@@ -353,13 +369,17 @@ useHead({ title: computed(() => t('member')) });
   justify-content: space-evenly;
   width: 50px;
   height: 50px;
-  border: 1px solid var(--main-bg);
-  background: linear-gradient(to bottom, #deeaf5, #a7c6e4);
+  border: 1px solid hsl(var(--h), var(--s), calc(var(--l) - 20%));
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--h), var(--s), calc(var(--l) + 20%)),
+    hsl(var(--h), var(--s), var(--l))
+  );
   border-radius: 4px;
 }
 
 .member-img {
-  padding-right: 6px;
+  padding-right: var(--md-gap);
 }
 
 .online {
