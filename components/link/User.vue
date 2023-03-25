@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ ellipsis: ellipsis }">
+  <span :class="{ ellipsis: ellipsis }">
     <NuxtLink
       v-if="user.id"
       :to="'/book/' + user.id"
@@ -7,13 +7,9 @@
     >
       {{ user.name }}
     </NuxtLink>
-    <div v-else>
-      {{ user.name }}
-    </div>
-    <div v-if="separator">
-      ,&nbsp;
-    </div>
-  </div>
+    <span v-else>{{ user.name }}</span>
+    <span v-if="separator">, </span>
+  </span>
 </template>
 <script setup lang="ts">
 defineProps<{

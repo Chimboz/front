@@ -1,12 +1,10 @@
 <template>
-  <div>
+  <span>
     <NuxtLink :to="'/groups/' + group.id" :style="{ color: group.color }">
       {{ group.name }}
     </NuxtLink>
-    <div v-if="separator">
-      ,&nbsp;
-    </div>
-  </div>
+    <span v-if="separator">, </span>
+  </span>
 </template>
 <script setup lang="ts">
 defineProps<{
@@ -14,8 +12,3 @@ defineProps<{
   separator?: boolean;
 }>();
 </script>
-<style lang="scss" scoped>
-div {
-  display: inline;
-}
-</style>
