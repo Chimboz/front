@@ -268,7 +268,7 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
-data.value.gender = 'male';
+data.value.gender = 'female';
 const color = ref({
   h: data.value.gender === 'female' ? 320 : 207,
   s: data.value.gender === 'female' ? '80%' : '50%',
@@ -400,9 +400,6 @@ useHead({ title: computed(() => t('member')) });
   background: hsl(var(--h), var(--s), var(--l));
   display: flex;
   align-items: center;
-}
-.female .member-section {
-  background: #f481cc;
 }
 
 .icon {
