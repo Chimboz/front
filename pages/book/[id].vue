@@ -143,7 +143,7 @@
                   ' gender'
               "
               height="20"
-              width="16"
+              width="18"
               :src="asset(`img/member/icons/gender/${data.gender}.svg`)"
               @contextmenu.prevent
             >
@@ -254,7 +254,7 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
-data.value.gender = 'female';
+data.value.gender = 'male';
 const color = ref({
   h: data.value.gender === 'female' ? 320 : 207,
   s: data.value.gender === 'female' ? '80%' : '50%',
