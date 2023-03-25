@@ -143,7 +143,7 @@
                   ' gender'
               "
               height="20"
-              width="20"
+              width="16"
               :src="asset(`img/member/icons/gender/${data.gender}.svg`)"
               @contextmenu.prevent
             >
@@ -254,10 +254,10 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
-data.value.gender = 'male';
+data.value.gender = 'female';
 const color = ref({
-  h: 207,
-  s: '50%',
+  h: data.value.gender === 'female' ? 320 : 207,
+  s: data.value.gender === 'female' ? '80%' : '50%',
   l: '75%',
   gradient: false,
   rainbow: false,
@@ -270,6 +270,7 @@ useHead({ title: computed(() => t('member')) });
 .card {
   background-size: contain;
   background-repeat: repeat-x;
+  background-blend-mode: color-burn;
   background-color: hsl(var(--h), var(--s), calc(var(--l) + 10%));
 }
 
@@ -281,11 +282,11 @@ useHead({ title: computed(() => t('member')) });
 }
 .male .card,
 .unknown .card {
-  background-image: url(@/assets/img/member/header/male.gif);
+  background-image: url(@/assets/img/member/header/male.svg);
 }
 
 .female .card {
-  background-image: url(@/assets/img/member/header/female.gif);
+  background-image: url(@/assets/img/member/header/female.svg);
 }
 
 @property --h {
@@ -351,7 +352,10 @@ useHead({ title: computed(() => t('member')) });
 .portrait {
   justify-content: center;
   align-items: center;
-  background: url(@/assets/img/member/portrait.png);
+  background-image: url(@/assets/img/member/portrait.svg);
+  background-size: cover;
+  background-color: hsl(var(--h), var(--s), calc(var(--l) + 10%));
+  border-radius: 12px;
   height: 112px;
   width: 104px;
   margin-bottom: var(--md-gap);
