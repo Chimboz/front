@@ -236,10 +236,24 @@
     </Card>
     <template #right-column>
       <NuxtLink v-if="+user!.user_level > 2" :to="'/admin/' + data.id">
-        <Button type="button" icon="rules.svg">
+        <Button type="button" icon="rules.svg" class="mb-2">
           Modérer
         </Button>
       </NuxtLink>
+      <Card left>
+        <template #button>
+          <Button type="button" icon="item.svg">
+            {{ $t('button.customize') }}
+          </Button>
+        </template>
+        <div class="flex">
+          <HuePicker v-model="color.h" class="mr-2" /> Teinte<br>
+        </div>
+        <label class="flex pointer my-2" style="position: relative">
+          <input v-model="color.gradient" type="checkbox" class="mr-4"> Mode dégradé
+        </label>
+        <label class="flex pointer" style="position: relative"><input v-model="color.rainbow" type="checkbox" class="mr-4"> Mode arc-en-ciel</label>
+      </Card>
     </template>
   </Container>
 </template>

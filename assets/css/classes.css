@@ -83,7 +83,7 @@
   box-shadow: inset 1px 1px 1px var(--dark), inset -1px -1px 1px var(--dark);
 }
 
-input:valid:not(:placeholder-shown),
+input:valid:not(:placeholder-shown):not([type='checkbox']),
 textarea:valid:not(:placeholder-shown) {
   box-shadow: inset 1px 1px 1px var(--main-button-green),
     inset -1px -1px 1px var(--dark-button-green);
@@ -96,7 +96,7 @@ textarea.btn-md:focus {
   box-shadow: inset 1px 1px 1px var(--orange), inset -1px -1px 1px var(--orange);
 }
 
-input:invalid:not(:placeholder-shown),
+input:invalid:not(:placeholder-shown):not([type='checkbox']),
 textarea:invalid:not(:placeholder-shown) {
   border-color: var(--red);
 }
