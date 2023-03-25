@@ -13,7 +13,7 @@
     </NuxtLink>
     <Card
       class="member"
-      :class="[data.gender]"
+      :class="[data.gender, { gradient: color.gradient }]"
       left
       :style="{
         '--h': color.h,
@@ -170,14 +170,10 @@
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
-        <span>Classement : <b>{{ data.bac.rank }}</b><sup v-if="data.bac.rank === 1">er</sup><sup v-else>ème</sup><br><b>{{
-          data.bac.win + data.bac.lost + data.bac.draw
-        }}</b>
+        <span>Classement : <b>{{ data.bac.rank }}</b><sup v-if="data.bac.rank === 1">er</sup><sup v-else>ème</sup><br><b>{{ data.bac.win + data.bac.lost + data.bac.draw }}</b>
           parties, <b>{{ data.bac.win }}</b> gagnées,
           <b>{{ data.bac.lost }}</b> perdues,
-          <b>{{ data.bac.draw }}</b> nulles<br><b>{{
-            data.bac.score
-          }}</b>
+          <b>{{ data.bac.draw }}</b> nulles<br><b>{{ data.bac.score }}</b>
           points</span>
       </div>
       <br v-if="data.bac">
@@ -260,6 +256,7 @@ const color = ref({
   h: 207,
   s: '52%',
   l: '78%',
+  gradient: true,
 });
 
 const { t } = useI18n();
@@ -403,5 +400,20 @@ useHead({ title: computed(() => t('member')) });
 
 .registration {
   padding: var(--gap);
+}
+
+.gradient {
+  .member-section {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--h), 0%, var(--l)),
+      hsl(var(--h), 100%, var(--l))
+    );
+  }
+
+  .pseudo {
+    stroke: hsl(var(--h), 100%, calc(var(--l) - 40%));
+    text-shadow: -1px 3px hsl(var(--h), 100%, calc(var(--l) - 40%));
+  }
 }
 </style>
