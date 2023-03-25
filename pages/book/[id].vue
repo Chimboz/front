@@ -141,7 +141,7 @@
               "
               height="20"
               width="20"
-              :src="asset(`img/member/${data.gender}/${data.gender}.svg`)"
+              :src="asset(`img/member/icons/gender/${data.gender}.svg`)"
               @contextmenu.prevent
             >
           </div>
@@ -166,7 +166,7 @@
       <div v-if="data.bac" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
-            :href="`${asset(`img/member/${data.gender}/bacteria.svg`)}#root`"
+            :href="`${asset(`img/member/icons/games/bacteria.svg`)}#root`"
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
@@ -180,7 +180,7 @@
       <div v-if="data.patoj" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
-            :href="`${asset(`img/member/${data.gender}/patojdur.svg`)}#root`"
+            :href="`${asset(`img/member/icons/games/patojdur.svg`)}#root`"
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
@@ -194,7 +194,7 @@
       <div v-if="data.mazo" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
-            :href="`${asset(`img/member/${data.gender}/mazo.svg`)}#root`"
+            :href="`${asset(`img/member/icons/games/mazo.svg`)}#root`"
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
@@ -205,7 +205,7 @@
       <div v-if="data.popularity" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
-            :href="`${asset(`img/member/${data.gender}/popularity.svg`)}#root`"
+            :href="`${asset(`img/member/icons/games/popularity.svg`)}#root`"
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
@@ -269,12 +269,12 @@ useHead({ title: computed(() => t('member')) });
 }
 .male .card,
 .unknown .card {
-  background-image: url(@/assets/img/member/male/header.gif);
+  background-image: url(@/assets/img/member/header/male.gif);
   background-color: hsl(var(--h), var(--s), calc(var(--l) + 10%));
 }
 
 .female .card {
-  background-image: url(@/assets/img/member/female/header.gif);
+  background-image: url(@/assets/img/member/header/female.gif);
   background-color: #ff96da;
 }
 </style>
