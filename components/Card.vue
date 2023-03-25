@@ -15,9 +15,9 @@
       draggable="false"
       alt="Card header"
       class="card-header"
-      src="@/assets/img/card/header/default.webp"
+      src="@/assets/img/card/header/default.svg"
       width="154"
-      height="42"
+      height="41"
       @contextmenu.prevent
     >
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
@@ -52,9 +52,9 @@
       v-if="bot"
       draggable="false"
       alt="Card footer"
-      src="@/assets/img/card/footer/default.gif"
+      src="@/assets/img/card/footer/default.svg"
       width="154"
-      height="44"
+      height="41"
       @contextmenu.prevent
     >
   </div>
@@ -112,7 +112,9 @@ $colors: ('yellow', 'blue', 'red');
     var(--selected-main-card) calc(100% - var(--border-radius)),
     var(--selected-dark-card) 100%
   );
-  box-shadow: 0 1px var(--dark);
+  &:not(.bot) {
+    box-shadow: 0 1px var(--dark);
+  }
 }
 
 .card-header {
