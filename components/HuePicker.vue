@@ -34,6 +34,10 @@ defineEmits<{ (e: 'update:modelValue', value: number): void }>();
       width: 24px;
       height: 24px;
       border: 3px solid #fff;
+      cursor: var(--pointer);
+    }
+    .rcp__rotator {
+      cursor: crosshair;
     }
   }
 }

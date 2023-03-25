@@ -6,6 +6,7 @@
   >
     <input
       type="color"
+      class="pointer"
       :value="modelValue"
       @input="
         $emit('update:modelValue', ($event.target as InputHTMLAttributes).value)
