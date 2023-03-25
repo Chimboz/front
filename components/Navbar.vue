@@ -96,7 +96,7 @@
       />
     </div>
   </header>
-  <nav class="flex mb-3">
+  <nav class="flex centered mb-3">
     <NuxtLink to="/">
       <button class="nav-btn flex centered" type="button">
         <img
