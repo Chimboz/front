@@ -13,7 +13,10 @@
     </NuxtLink>
     <Card
       class="member"
-      :class="[data.gender, { gradient: color.gradient }]"
+      :class="[
+        data.gender,
+        { gradient: color.gradient, rainbow: color.rainbow },
+      ]"
       left
       :style="{
         '--h': color.h,
@@ -254,9 +257,10 @@ const { data } = await useFetch<any>(
 data.value.gender = 'male';
 const color = ref({
   h: 207,
-  s: '52%',
-  l: '78%',
-  gradient: true,
+  s: '50%',
+  l: '75%',
+  gradient: false,
+  rainbow: false,
 });
 
 const { t } = useI18n();
@@ -266,21 +270,45 @@ useHead({ title: computed(() => t('member')) });
 .card {
   background-size: contain;
   background-repeat: repeat-x;
+  background-color: hsl(var(--h), var(--s), calc(var(--l) + 10%));
+}
+
+.member.rainbow {
+  animation: rainbow 5s infinite linear;
+  * {
+    animation: rainbow 5s infinite linear;
+  }
 }
 .male .card,
 .unknown .card {
   background-image: url(@/assets/img/member/header/male.gif);
-  background-color: hsl(var(--h), var(--s), calc(var(--l) + 10%));
 }
 
 .female .card {
   background-image: url(@/assets/img/member/header/female.gif);
-  background-color: #ff96da;
+}
+
+@property --h {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@keyframes rainbow {
+  from {
+    --h: 0;
+  }
+  to {
+    --h: 360;
+  }
 }
 </style>
 <style lang="scss" scoped>
 .member {
   --blue: hsl(var(--h), calc(var(--s) + 40%), calc(var(--l) - 40%));
+  .rainbow {
+    animation: rainbow 5s infinite linear;
+  }
   overflow: hidden;
 }
 
