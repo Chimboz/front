@@ -141,7 +141,7 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.bacteria.user" /><br>est champion Bacteria !
+            <UserLink :user="data.bacteria.user" /><br>est champion Bacteria !
           </div>
           <img
             src="@/assets/img/game/patojdur/head.gif"
@@ -171,7 +171,7 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.patojdur.user" /><br>est champion Patojdur !
+            <UserLink :user="data.patojdur.user" /><br>est champion Patojdur !
           </div>
           <img
             src="@/assets/img/game/mazo/head.gif"
@@ -201,7 +201,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.mazo.user" /><br>est un des meilleurs
+            <UserLink :user="data.mazo.user" /><br>est un des meilleurs
             Mazoteurs du moment !
           </div>
         </div>

@@ -27,7 +27,7 @@
             />
           </NuxtLink>
           <em>"{{ image.name.replace(/\.[^/.]+$/, '') }}"</em><br>
-          <LinkUser :user="image.author" /><br>
+          <UserLink :user="image.author" /><br>
           {{ $format(image.date, 'PPp') }}
         </div>
       </ScrollableContainer>

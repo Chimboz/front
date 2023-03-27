@@ -38,7 +38,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.member" :key="index">
-            <td><LinkGroup :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>
               [<span
                 class="link"
@@ -71,7 +71,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.pending" :key="index">
-            <td><LinkGroup :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>
               [<span
                 class="link"
@@ -104,7 +104,7 @@
         </thead>
         <tbody>
           <tr v-for="(group, index) in data.owner" :key="index">
-            <td><LinkGroup :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>
               [<NuxtLink :to="'/groups/edit/' + group.id">
                 Gérer
@@ -320,7 +320,7 @@
           @contextmenu.prevent
         >
         Projecteur sur :
-        <div><LinkGroup :group="data.random" /></div>
+        <div><GroupLink :group="data.random" /></div>
       </Card>
     </template>
   </Container>

@@ -8,8 +8,8 @@
       </Card>
       <Rules bot />
     </template>
-    <BbsListTopic :topic="data" />
-    <BbsMarkdownInput v-if="user && (!data.locked || +user.user_level > 3)" />
+    <Topics :topic="data" />
+    <Post v-if="user && (!data.locked || +user.user_level > 3)" />
   </Container>
 </template>
 

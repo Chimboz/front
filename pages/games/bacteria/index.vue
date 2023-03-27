@@ -122,25 +122,25 @@
       </template>
       <b>parties jouées</b><br>
       <div class="fullwidth light">
-        <LinkUser :user="data.records.played.user" /> avec
+        <UserLink :user="data.records.played.user" /> avec
         {{ data.records.played.record }} parties jouées&nbsp;!
       </div>
       <br>
       <b>parties gagnées</b><br>
       <div class="fullwidth light">
-        <LinkUser :user="data.records.win.user" /> avec
+        <UserLink :user="data.records.win.user" /> avec
         {{ data.records.win.record }} parties gagnées&nbsp;!
       </div>
       <br>
       <b>parties perdues</b><br>
       <div class="fullwidth light">
-        <LinkUser :user="data.records.lost.user" /> avec
+        <UserLink :user="data.records.lost.user" /> avec
         {{ data.records.lost.record }} parties perdues&nbsp;!
       </div>
       <br>
       <b>match nuls</b><br>
       <div class="fullwidth light">
-        <LinkUser :user="data.records.draw.user" /> avec
+        <UserLink :user="data.records.draw.user" /> avec
         {{ data.records.draw.record }} match nuls&nbsp;!
       </div>
     </Card>
@@ -172,7 +172,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -213,7 +213,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.worst" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -252,7 +252,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkGroup :group="rank.group" /></td>
+            <td><GroupLink :group="rank.group" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>

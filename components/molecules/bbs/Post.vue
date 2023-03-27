@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <BbsRowMessage
+      <Message
         :message="{
           author: user,
           content: preview,

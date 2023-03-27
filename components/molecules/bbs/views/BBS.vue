@@ -24,7 +24,7 @@
       </tr>
     </thead>
 
-    <BbsRowCategory
+    <Category
       v-for="category in boards"
       :key="category"
       :category="category"

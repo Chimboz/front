@@ -15,7 +15,7 @@
         v-for="user in data.tchat"
         :key="user.id"
         style="display: inline-block"
-      ><LinkUser :user="user" />&nbsp;({{ user.room }})&nbsp;
+      ><UserLink :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span>
     </Card>
     <Card>
@@ -24,7 +24,7 @@
       </template><span
         v-for="(user, index) in data.site"
         :key="user.id"
-      ><LinkUser
+      ><UserLink
         :user="user"
         :separator="index < data.tchat.length - 1"
       /></span>

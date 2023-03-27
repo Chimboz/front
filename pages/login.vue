@@ -83,7 +83,7 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.bacteria.user" /><br>{{
+            <UserLink :user="data.bacteria.user" /><br>{{
               $t('champion.bacteria')
             }}
           </div>
@@ -101,7 +101,7 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.patojdur.user" /><br>{{
+            <UserLink :user="data.patojdur.user" /><br>{{
               $t('champion.patojdur')
             }}
           </div>
@@ -119,7 +119,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <LinkUser :user="data.mazo.user" /><br>{{ $t('champion.mazo') }}
+            <UserLink :user="data.mazo.user" /><br>{{ $t('champion.mazo') }}
           </div>
         </div>
       </Card>

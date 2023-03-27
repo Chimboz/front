@@ -63,7 +63,7 @@
           >
             <div>
               <h3>
-                <LinkUser :user="message.user" /><span
+                <UserLink :user="message.user" /><span
                   style="
                     float: right;
                     font-weight: normal;

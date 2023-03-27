@@ -76,7 +76,7 @@
         <tbody>
           <tr v-for="(member, index) in data.members" :key="index">
             <td>{{ member.id }}</td>
-            <td><LinkUser :user="member" /></td>
+            <td><UserLink :user="member" /></td>
             <td>{{ $format(member.date, 'PPp') }}</td>
           </tr>
         </tbody>

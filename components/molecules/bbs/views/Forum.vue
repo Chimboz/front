@@ -33,7 +33,7 @@
       </tr>
     </thead>
     <tbody>
-      <BbsRowTopic
+      <Topic
         v-for="(topic, index) in forum.subject"
         :key="topic.id"
         :topic="topic"

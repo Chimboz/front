@@ -39,14 +39,14 @@
       {{ topic.reply }}
     </td>
     <td class="row2" style="text-align: center" valign="middle" height="50">
-      <LinkUser :user="topic.author" ellipsis />
+      <UserLink :user="topic.author" ellipsis />
     </td>
     <td class="row2" style="text-align: center" valign="middle" height="50">
       {{ topic.view }}
     </td>
     <td class="row2" style="text-align: center" valign="middle" height="50">
       <div>{{ $distanceToNow(topic.last_msg.date) }}</div>
-      <LinkUser :user="topic.last_msg.author" />
+      <UserLink :user="topic.last_msg.author" />
       &nbsp;»&nbsp;
       <NuxtLink
         :to="`/bbs/${$route.params.forum}-${topic.id}-${Math.floor(

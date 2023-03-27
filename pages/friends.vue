@@ -22,7 +22,7 @@
             :to="'/book/' + friend.user.id"
             :class="{ pending: friend.status.hasOwnProperty('sent') }"
           >
-            <LinkUser :user="friend.user" class="ellipsis" />
+            <UserLink :user="friend.user" class="ellipsis" />
             <div
               class="tiz-portrait"
               :style="{ background: hashColor(friend.user.name) }"

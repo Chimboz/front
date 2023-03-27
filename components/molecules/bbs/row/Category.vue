@@ -40,7 +40,7 @@
         <div>{{ bbs.desc }}</div>
         <div>
           Modérateurs&nbsp;:
-          <LinkGroup
+          <GroupLink
             v-for="(mod, indexBbs) in bbs.mods"
             :key="mod.id"
             :group="mod"
@@ -56,7 +56,7 @@
       </td>
       <td style="text-align: center" valign="middle">
         <div>{{ $distanceToNow(bbs.last_msg.date) }}</div>
-        <LinkUser :user="bbs.last_msg.author" />
+        <UserLink :user="bbs.last_msg.author" />
         &nbsp;»&nbsp;
         <NuxtLink
           :to="`/bbs/${bbs.id}-${bbs.last_msg.topicid}-${bbs.last_msg.page}#p${bbs.last_msg.msgid}`"

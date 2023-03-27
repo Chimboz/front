@@ -101,7 +101,7 @@
             <tbody>
               <tr v-for="rank in data.today.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkUser :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -129,7 +129,7 @@
             <tbody>
               <tr v-for="rank in data.today.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkUser :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -167,7 +167,7 @@
             <tbody>
               <tr v-for="rank in data.yesterday.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkUser :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -195,7 +195,7 @@
             <tbody>
               <tr v-for="rank in data.yesterday.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkUser :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -233,7 +233,7 @@
             <tbody>
               <tr v-for="rank in data.general.best" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkUser :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -261,7 +261,7 @@
             <tbody>
               <tr v-for="rank in data.general.worst" :key="rank.user.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkUser :user="rank.user" /></td>
+                <td><UserLink :user="rank.user" /></td>
               </tr>
             </tbody>
           </table>
@@ -299,7 +299,7 @@
             <tbody>
               <tr v-for="rank in data.groups.best" :key="rank.group.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkGroup :group="rank.group" /></td>
+                <td><GroupLink :group="rank.group" /></td>
               </tr>
             </tbody>
           </table>
@@ -327,7 +327,7 @@
             <tbody>
               <tr v-for="rank in data.groups.worst" :key="rank.group.id">
                 <td>{{ rank.score }}</td>
-                <td><LinkGroup :group="rank.group" /></td>
+                <td><GroupLink :group="rank.group" /></td>
               </tr>
             </tbody>
           </table>

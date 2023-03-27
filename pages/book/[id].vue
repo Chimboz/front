@@ -92,7 +92,7 @@
                 Marié
               </NuxtLink>
               avec
-              <LinkUser :user="data.wedding.user" /> depuis
+              <UserLink :user="data.wedding.user" /> depuis
               {{ $distance(Date.now(), data.wedding.time) }} jours
             </template>
             <b v-else>Célibataire</b>
@@ -116,7 +116,7 @@
           </p>
           <p>
             Inscrit aux groupes :
-            <LinkGroup
+            <GroupLink
               v-for="(group, index) of data.groups"
               :key="group.id"
               :group="group"

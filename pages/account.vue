@@ -17,7 +17,7 @@
       <Bank />
     </template>
 
-    <Cabin
+    <AccountCabin
       v-model:motto="data.motto"
       v-model:website="data.website"
       v-model:centrea="data.centres[0]"
@@ -148,7 +148,7 @@
                 alt="Voir le dernier message"
                 title="Voir le dernier message"
                 @contextmenu.prevent
-              >&nbsp;<LinkUser :user="message.author" @click.stop />
+              >&nbsp;<UserLink :user="message.author" @click.stop />
             </div>
             <div>{{ $distanceToNow(message.date) }}</div>
           </div>
@@ -221,7 +221,7 @@
             src="@/assets/img/icon/account/offline.png"
           >&nbsp;
           <div class="flex col" style="align-items: flex-start">
-            <LinkUser :user="friend.user" />
+            <UserLink :user="friend.user" />
             {{ friend.status.connected ? friend.status.room : '' }}
           </div>
         </div>
@@ -247,7 +247,7 @@
             src="@/assets/img/icon/account/leader.svg"
           >&nbsp;
           <div class="flex col" style="align-items: flex-start">
-            <LinkGroup :group="group" />
+            <GroupLink :group="group" />
           </div>
         </div>
       </Card>

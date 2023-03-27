@@ -1,7 +1,7 @@
 <template>
   <div id="body">
     <main id="main">
-      <ProgressBar />
+      <Loader />
       <Navbar :time="time" />
       <Transition>
         <div>

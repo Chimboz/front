@@ -13,7 +13,7 @@
     </NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
-        <LinkUser
+        <UserLink
           id="username"
           :user="{ name: user?.pseudo || 'Visiteur', id: user?.id }"
           style="display: inherit"

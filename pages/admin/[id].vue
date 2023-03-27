@@ -36,7 +36,7 @@
           <td>
             {{ log.reason }}
           </td>
-          <td><LinkUser :user="log.moderator" /></td>
+          <td><UserLink :user="log.moderator" /></td>
           <td>
             {{ $format(log.date, 'PPp') }}
           </td>
@@ -150,7 +150,7 @@
         ><b> Groupes</b>
       </div>
       <div v-for="group in data.groups" :key="group.id">
-        <LinkGroup :group="group" />&nbsp;<button
+        <GroupLink :group="group" />&nbsp;<button
           class="btn-action btn-danger"
           type="button"
         >

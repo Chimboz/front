@@ -8,7 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <BbsListForum :forum="data" />
+    <Forum :forum="data" />
     <br>
     <button type="button" style="text-align: left" @click="post = true">
       <img
@@ -17,7 +17,7 @@
         src="@/assets/img/bbs/post.gif"
       >
     </button>
-    <BbsMarkdownInput v-if="post && !data.locked" is-topic />
+    <Post v-if="post && !data.locked" is-topic />
     <br>
     <Card>
       <div class="columns">

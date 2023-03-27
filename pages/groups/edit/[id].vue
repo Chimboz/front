@@ -26,7 +26,7 @@
         </div>
       </div>
     </Card>
-    <BlazonCabin
+    <CoatCabin
       :data="{
         blazon: {
           shape: data.blazon.shape,
@@ -196,7 +196,7 @@
         Membres
       </template>
       <div v-for="user of data.members" :key="user.id" class="inline">
-        <LinkUser :user="user" :separator="false" /><img
+        <UserLink :user="user" :separator="false" /><img
           src="@/assets/img/icon/failure.svg"
           width="11"
           height="11"
@@ -214,7 +214,7 @@
         Demandes
       </template>
       <div v-for="user of data.demands" :key="user.id" class="inline">
-        <LinkUser :user="user" :separator="false" /><img
+        <UserLink :user="user" :separator="false" /><img
           src="@/assets/img/icon/success.svg"
           width="11"
           height="11"

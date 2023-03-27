@@ -4,6 +4,12 @@ export default defineNuxtConfig({
     strict: true,
     // TODO typeCheck: true
   },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     rootId: 'chimboz',

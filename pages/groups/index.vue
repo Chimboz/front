@@ -63,7 +63,7 @@
             <td>
               <b>{{ group.id }}</b>
             </td>
-            <td><LinkGroup :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>{{ group.genre }}</td>
           </tr>
         </tbody>
@@ -96,7 +96,7 @@
             <td>
               <b>{{ group.id }}</b>
             </td>
-            <td><LinkGroup :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>{{ group.genre }}</td>
           </tr>
         </tbody>
@@ -132,7 +132,7 @@
             <td>
               <b>{{ group.id }}</b>
             </td>
-            <td><LinkGroup :group="group" /></td>
+            <td><GroupLink :group="group" /></td>
             <td>{{ group.score }}</td>
           </tr>
         </tbody>
@@ -351,7 +351,7 @@
           @contextmenu.prevent
         >
         Projecteur sur :
-        <div><LinkGroup :group="data.random" /></div>
+        <div><GroupLink :group="data.random" /></div>
       </Card>
     </template>
   </Container>

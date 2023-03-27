@@ -117,11 +117,11 @@
       </div>
       <br>
       {{ $t('wedding.wishes') }}<br>
-      <LinkUser :user="data.last.married1" /> &amp;
-      <LinkUser :user="data.last.married2" /><br>
+      <UserLink :user="data.last.married1" /> &amp;
+      <UserLink :user="data.last.married2" /><br>
       <span v-html="$t('wedding.marriedByGuruji')" /><br>
-      <LinkUser :user="data.last.witness1" /> &amp;
-      <LinkUser :user="data.last.witness2" />.
+      <UserLink :user="data.last.witness1" /> &amp;
+      <UserLink :user="data.last.witness2" />.
     </Card>
     <Card id="today">
       <template #header>
@@ -136,11 +136,11 @@
       <br><br>
       <div v-for="wedding of data.today" :key="wedding.id" class="fullwidth">
         {{ $t('date.On') }} <b>{{ $format(wedding.date, 'PPp') }}</b>,<br>
-        <LinkUser :user="wedding.married1" /> &amp;
-        <LinkUser :user="wedding.married2" /> {{ $t('wedding.gotMarried')
+        <UserLink :user="wedding.married1" /> &amp;
+        <UserLink :user="wedding.married2" /> {{ $t('wedding.gotMarried')
         }}<br>
-        {{ $t('wedding.gotWitnessed') }} <LinkUser :user="wedding.witness1" />
-        {{ $t('wedding.andOf') }} <LinkUser :user="wedding.witness2" /><br>
+        {{ $t('wedding.gotWitnessed') }} <UserLink :user="wedding.witness1" />
+        {{ $t('wedding.andOf') }} <UserLink :user="wedding.witness2" /><br>
         <i><NuxtLink :to="'/weddings/' + wedding.id">{{ wedding.id }}</NuxtLink><sup>{{ $t('score.nth') }}</sup> {{ $t('wedding.name') }}</i>
       </div>
     </Card>
@@ -176,8 +176,8 @@
           <tr v-for="(wedding, index) in data.best" :key="index">
             <td>{{ index + 1 }}</td>
             <td>
-              <LinkUser :user="wedding.married1" /> et
-              <LinkUser :user="wedding.married2" />
+              <UserLink :user="wedding.married1" /> et
+              <UserLink :user="wedding.married2" />
             </td>
             <td>
               <i>{{ $t('no')
@@ -226,9 +226,9 @@
           <tr v-for="(wedding, index) in data.divorce" :key="index">
             <td>{{ $format(wedding.dateend, 'p') }}</td>
             <td>
-              <LinkUser :user="wedding.married1" />
+              <UserLink :user="wedding.married1" />
               {{ $t('wedding.divorces.brokeWith') }}
-              <LinkUser :user="wedding.married2" />
+              <UserLink :user="wedding.married2" />
             </td>
             <td>
               <i>{{ $t('no')
@@ -274,8 +274,8 @@
           <tr v-for="(wedding, index) in data.broken" :key="index">
             <td>{{ index + 1 }}</td>
             <td>
-              <LinkUser :user="wedding.married1" /> et
-              <LinkUser :user="wedding.married2" />
+              <UserLink :user="wedding.married1" /> et
+              <UserLink :user="wedding.married2" />
             </td>
             <td>
               <i>{{ $t('no')

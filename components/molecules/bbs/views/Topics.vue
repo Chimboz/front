@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <BbsRowMessage
+      <Message
         v-for="(message, index) in topic.messages"
         :key="message.id"
         :message="message"

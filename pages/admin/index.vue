@@ -14,8 +14,8 @@
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div v-for="(log, index) in data" :key="index" class="log">
-            <b>{{ $format(log.date, 'PPp') }}</b><em> par <LinkUser :user="log.moderator" /></em><br>
-            <b>{{ log.type }} de <LinkUser :user="log.author" /></b><br>
+            <b>{{ $format(log.date, 'PPp') }}</b><em> par <UserLink :user="log.moderator" /></em><br>
+            <b>{{ log.type }} de <UserLink :user="log.author" /></b><br>
             {{ log.reason }}
           </div>
         </ScrollableContainer>

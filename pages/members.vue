@@ -28,7 +28,7 @@
             :item1="user.look.item1"
             :item2="user.look.item2"
           />
-          <LinkUser :user="user" />
+          <UserLink :user="user" />
           <span>{{ $t('members.memberNumber') }}<b>{{ user.id }}</b></span>
         </div>
       </div>
@@ -64,7 +64,7 @@
             :item1="user.look.item1"
             :item2="user.look.item2"
           />
-          <LinkUser :user="user" />
+          <UserLink :user="user" />
           <span
             v-html="$t('members.popularity.withPoints', { score: user.score })"
           />
@@ -115,8 +115,8 @@
             />
           </div>
           <span>
-            <LinkUser :user="couple.user1" /> &amp;
-            <LinkUser :user="couple.user2" /></span>
+            <UserLink :user="couple.user1" /> &amp;
+            <UserLink :user="couple.user2" /></span>
         </div>
       </div>
       <br>

@@ -27,7 +27,7 @@
               >
             </button>
           </div>
-          <Blazon
+          <Coat
             :shape="data.blazon.shape"
             :top="data.blazon.top"
             :bot="data.blazon.bot"

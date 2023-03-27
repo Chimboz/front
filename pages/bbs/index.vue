@@ -8,7 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <BbsList :boards="data" />
+    <BBS :boards="data" />
     <br>
     <Card>
       <div class="columns">

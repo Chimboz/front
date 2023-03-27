@@ -5,7 +5,7 @@
   >
     <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="">
     <div class="blazon-body">
-      <BlazonBackground :id="shape" :primary="primary" :secondary="secondary" />
+      <CoatBackground :id="shape" :primary="primary" :secondary="secondary" />
       <div v-if="top != -1" class="top">
         <svg width="44.6" height="35.1" @contextmenu.prevent>
           <use
@@ -23,7 +23,7 @@
         </svg>
       </div>
       <div class="reflection">
-        <BlazonReflection :id="shape" />
+        <CoatReflection :id="shape" />
       </div>
     </div>
   </div>

@@ -38,13 +38,13 @@
       <br>
       <Card left>
         {{ $t(`group.leader.${data.type}`) }}:
-        <LinkUser :user="data.leader" />
+        <UserLink :user="data.leader" />
         <br><br>
         Occupation du groupe:
         <b>{{ (((data.members.length + 1) / data.size) * 100).toFixed(0) }}%</b>
         (<b>{{ data.members.length + 1 }}</b>/<b>{{ data.size }}</b>)<br><br>
         Membres du groupe:
-        <LinkUser
+        <UserLink
           v-for="(member, index) of data.members"
           :key="member.id"
           :user="member"

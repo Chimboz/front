@@ -209,7 +209,7 @@
             <td>
               <b>{{ rank.score }}</b>
             </td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td class="left">
               <b>{{ $format(rank.date, 'PPp') }}</b><br><i>{{ rank.day }}e journée</i>
             </td>
@@ -245,7 +245,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.yesterday" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -279,7 +279,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.general" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -310,7 +310,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.today" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
@@ -342,7 +342,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.groups" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkGroup :group="rank.group" /></td>
+            <td><GroupLink :group="rank.group" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>

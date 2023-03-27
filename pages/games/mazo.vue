@@ -138,7 +138,7 @@
         <tbody>
           <tr v-for="(rank, index) in data.mazo" :key="index">
             <td>{{ index + 1 }}</td>
-            <td><LinkUser :user="rank.user" /></td>
+            <td><UserLink :user="rank.user" /></td>
             <td>
               <b>{{ rank.score }}</b>
             </td>
