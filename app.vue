@@ -30,7 +30,7 @@ useHead({
   htmlAttrs: {
     lang: i18n.locale.value,
   },
-  titleTemplate: (title) =>
+  titleTemplate: (title: string) =>
     `${
       notifications.value
         ? notifications.value
@@ -66,8 +66,10 @@ watchEffect(() => {
 });
 
 // TODO check forms submit
+// TODO password reset page
 // TODO better quotes
 // TODO add commitlint
+// TODO custom markdown tags
 // FIXME configure eslint
 // TODO mannequin/refactor avatar
 // TODO sitemap and robots.txt generator
