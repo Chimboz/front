@@ -1,7 +1,7 @@
-name: PR Hooks
+name: PR Tests
 'on': pull_request
 jobs:
-  build_and_preview:
+  typecheck:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
