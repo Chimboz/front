@@ -1,7 +1,7 @@
 name: PR Tests
 'on': pull_request
 jobs:
-  tests:
+  hook:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
