@@ -1,5 +1,5 @@
 {
-  "functions": { "source": ".output/server" },
+  "functions": { "source": ".output/server/index.mjs" },
   "hosting": [
     {
       "site": "chimbozfront",
