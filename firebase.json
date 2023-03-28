@@ -1,12 +1,11 @@
 {
-  "hosting": {
-    "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "functions": { "source": ".output/server" },
+  "hosting": [
+    {
+      "site": "chimbozfront",
+      "public": ".output/public",
+      "cleanUrls": true,
+      "rewrites": [{ "source": "**", "function": "server" }]
+    }
+  ]
 }
