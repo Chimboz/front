@@ -9,9 +9,11 @@ jobs:
       - run: npm ci 
   typecheck:
     needs: [prepare]
+    runs-on: ubuntu-latest
     steps:
       - run: npm run typecheck
   test:
     needs: [prepare]
+    runs-on: ubuntu-latest
     steps:
       - run: npm run test
