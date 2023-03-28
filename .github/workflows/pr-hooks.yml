@@ -4,8 +4,9 @@ jobs:
   prepare:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v2
-    - run: npm ci 
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci 
   typecheck:
     needs: [prepare]
     steps:
@@ -14,3 +15,5 @@ jobs:
     needs: [prepare]
     steps:
       - run: npm run test
+
+      name: PR Hooks
