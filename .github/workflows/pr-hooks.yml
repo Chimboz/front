@@ -15,5 +15,3 @@ jobs:
     needs: [prepare]
     steps:
       - run: npm run test
-
-      name: PR Hooks
