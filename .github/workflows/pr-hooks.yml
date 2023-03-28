@@ -1,14 +1,10 @@
-name: PR Tests
-'on': pull_request
+name: PR Check
+on: pull_request
 jobs:
-  tests:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm run typecheck
-      name: Typecheck
-    - run: npm run test
-      name: Tests
-      
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
