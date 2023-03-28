@@ -78,6 +78,8 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
     "@radial-color-picker/vue-color-picker": "^5.0.1",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
     "chart.js": "^3.9.1",
     "date-fns": "^2.29.3",
     "dompurify": "^3.0.0",
