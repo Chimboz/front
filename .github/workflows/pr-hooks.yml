@@ -7,8 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: npm ci
-    - name: Typecheck
-    run: npm run typecheck
-    - name: Tests
-    run: npm run test
+    - run: npm run typecheck
+    - run: npm run test
       
