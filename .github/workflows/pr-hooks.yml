@@ -1,9 +1,16 @@
 name: PR Tests
 'on': pull_request
 jobs:
-  typecheck:
+  prepare:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+    - uses: actions/checkout@v2
+    - run: npm ci 
+  typecheck:
+    needs: [prepare]
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci && npm run typecheck
+      - run: npm run typecheck
+  test:
+    needs: [prepare]
+    steps:
+      - run: npm run test
