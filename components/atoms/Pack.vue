@@ -6,9 +6,9 @@
     @focus="play"
   >
     <audio ref="audio">
-      <source src="@/assets/sound/shop/hover.mp3" type="audio/wav">
+      <source src="@/assets/sound/shop/hover.mp3" type="audio/wav" />
     </audio>
-    <img src="@/assets/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve">
+    <img src="@/assets/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
     <svg
       viewBox="0 0 155.612 89.887"
       xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ defineProps<{
 
 const audio = ref<null | HTMLAudioElement>(null);
 
-function play () {
+function play() {
   audio.value!.play();
 }
 </script>

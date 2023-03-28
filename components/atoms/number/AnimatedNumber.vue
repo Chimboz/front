@@ -14,7 +14,7 @@ const props = withDefaults(
 
 const displayNumber = ref(0);
 
-function tween () {
+function tween() {
   displayNumber.value += Math.max(
     Math.floor(props.number / 60 / props.duration),
     1

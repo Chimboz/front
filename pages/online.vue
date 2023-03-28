@@ -9,24 +9,18 @@
       <Rules bot />
     </template>
     <Card>
-      <template #subtop>
-        {{ $t('online.chat') }}
-      </template><span
+      <template #subtop> {{ $t('online.chat') }} </template
+      ><span
         v-for="user in data.tchat"
         :key="user.id"
         style="display: inline-block"
-      ><UserLink :user="user" />&nbsp;({{ user.room }})&nbsp;
+        ><UserLink :user="user" />&nbsp;({{ user.room }})&nbsp;
       </span>
     </Card>
     <Card>
-      <template #subtop>
-        {{ $t('online.site') }}
-      </template><span
-        v-for="(user, index) in data.site"
-        :key="user.id"
-      ><UserLink
-        :user="user"
-        :separator="index < data.tchat.length - 1"
+      <template #subtop> {{ $t('online.site') }} </template
+      ><span v-for="(user, index) in data.site" :key="user.id"
+        ><UserLink :user="user" :separator="index < data.tchat.length - 1"
       /></span>
     </Card>
     <template #right-column>
@@ -45,8 +39,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >{{ $t('online.record') }} <b>{{ data.record.online }}</b>
-        {{ $t('date.on') }} <b>{{ $format(data.record.date, 'PPp') }}</b>.
+        />{{ $t('online.record') }} <b>{{ data.record.online }}</b>
+        {{ $t('date.on') }} <b>{{ $format(data.record.date, 'PPp') }}</b
+        >.
       </Card>
     </template>
   </Container>

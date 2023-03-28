@@ -24,7 +24,7 @@
         draggable="false"
         style="width: 100%"
         @contextmenu.prevent
-      >
+      />
       <form @submit.prevent="submit">
         <input
           v-model="pseudo"
@@ -38,7 +38,7 @@
           aria-label="Username"
           autocomplete="username"
           :placeholder="$t('placeholder.username')"
-        >
+        />
         <div class="flex mb-3">
           <Button
             type="button"
@@ -57,8 +57,8 @@
                 height="33"
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent
-              >
-            </template>Sauver
+              /> </template
+            >Sauver
           </Button>
         </div>
         <span v-html="$t('eraser.description')" />
@@ -72,11 +72,11 @@
 <script setup lang="ts">
 const pseudo = ref('');
 
-function submit () {
+function submit() {
   useFetch('account/name', { method: 'post', body: { pseudo: pseudo.value } });
 }
 
-async function generatePseudo () {
+async function generatePseudo() {
   const { data } = await useFetch<any>(
     `https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`
   );

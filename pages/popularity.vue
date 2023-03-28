@@ -19,7 +19,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t('popularity.today.link') }}
+          />&nbsp;{{ $t('popularity.today.link') }}
         </NuxtLink>
         <NuxtLink to="#general" class="btn-sm blue-bg">
           <img
@@ -30,7 +30,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t('popularity.general.link') }}
+          />&nbsp;{{ $t('popularity.general.link') }}
         </NuxtLink>
         <NuxtLink to="#yesterday" class="btn-sm blue-bg">
           <img
@@ -41,7 +41,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t('popularity.yesterday.link') }}
+          />&nbsp;{{ $t('popularity.yesterday.link') }}
         </NuxtLink>
         <NuxtLink to="#groups" class="btn-sm blue-bg">
           <img
@@ -52,7 +52,7 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t('popularity.groups.link') }}
+          />&nbsp;{{ $t('popularity.groups.link') }}
         </NuxtLink>
         <NuxtLink to="#vote" class="btn-sm blue-bg">
           <img
@@ -63,10 +63,10 @@
             height="6"
             style="image-rendering: pixelated"
             @contextmenu.prevent
-          >&nbsp;{{ $t('popularity.vote.link') }}
+          />&nbsp;{{ $t('popularity.vote.link') }}
         </NuxtLink>
       </div>
-      <br>
+      <br />
       <span v-html="$t('popularity.description')" />
     </Card>
     <Card id="today">
@@ -74,9 +74,9 @@
         {{ $t('popularity.today.title') }}
       </template>
       {{ $t('popularity.today.description1') }}
-      <br>
+      <br />
       {{ $t('popularity.today.description2') }}
-      <br><br>
+      <br /><br />
       <div class="grid fullwidth">
         <div>
           <img
@@ -86,11 +86,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -114,11 +114,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -152,11 +152,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -180,11 +180,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -218,11 +218,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -246,11 +246,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -284,11 +284,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -312,11 +312,11 @@
             width="141"
             height="58"
             @contextmenu.prevent
-          >
+          />
           <table>
             <colgroup>
-              <col width="30">
-              <col width="100%">
+              <col width="30" />
+              <col width="100%" />
             </colgroup>
             <thead>
               <tr>
@@ -335,12 +335,10 @@
       </div>
     </Card>
     <Card v-if="user" id="vote">
-      <template #header>
-        Voter Pour/Contre un membre !
-      </template> Un membre
-      t'ennuie ? Descends le !<br>
+      <template #header> Voter Pour/Contre un membre ! </template> Un membre
+      t'ennuie ? Descends le !<br />
       Tu trouves un membre sympa ? Donne lui ta voix !
-      <br><br>
+      <br /><br />
       <form @submit.prevent="vote()">
         <div class="flex">
           <select
@@ -354,8 +352,8 @@
             </option>
             <option value="against">
               {{ $t('popularity.vote.against') }}
-            </option>
-          </select><input
+            </option></select
+          ><input
             v-model="pseudo"
             required
             minlength="3"
@@ -366,7 +364,7 @@
             autocomplete="username"
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
-          ><button type="submit" class="btn-action">
+          /><button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
         </div>
@@ -388,22 +386,22 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >&nbsp;Hier
+        />&nbsp;Hier
         <b>{{ data.stats.yesterday.for + data.stats.yesterday.against }}</b>
-        votes.<br>
+        votes.<br />
         <b>POUR&nbsp;: {{ data.stats.yesterday.for }}</b> ({{
           (
             (data.stats.yesterday.for * 100) /
             (data.stats.yesterday.for + data.stats.yesterday.against)
           ).toFixed(2)
-        }}%)<br>
+        }}%)<br />
         <b>CONTRE&nbsp;: {{ data.stats.yesterday.against }}</b> ({{
           (
             (data.stats.yesterday.against * 100) /
             (data.stats.yesterday.for + data.stats.yesterday.against)
           ).toFixed(2)
-        }}%)<br>
-        <br>
+        }}%)<br />
+        <br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -411,15 +409,15 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >Aujourd'hui
+        />Aujourd'hui
         <b>{{ data.stats.today.for + data.stats.today.against }}</b>
-        votes.<br>
+        votes.<br />
         <b>POUR: {{ data.stats.today.for }}</b> ({{
           (
             (data.stats.today.for * 100) /
             (data.stats.today.for + data.stats.today.against)
           ).toFixed(0)
-        }}%)<br>
+        }}%)<br />
         <b>CONTRE: {{ data.stats.today.against }}</b> ({{
           (
             (data.stats.today.against * 100) /
@@ -446,7 +444,7 @@ data.value.stats.yesterday = data.value.stats.today;
 const mode = ref<'for' | 'against'>('for');
 const pseudo = ref('');
 
-function vote () {
+function vote() {
   useFetch('popularity/vote', {
     method: 'post',
     body: {

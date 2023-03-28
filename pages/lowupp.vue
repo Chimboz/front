@@ -41,8 +41,8 @@
               height="33"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
-            >
-          </template>{{ $t('button.save') }}
+            /> </template
+          >{{ $t('button.save') }}
         </Button>
       </form>
     </Card>
@@ -57,7 +57,7 @@ const user = computed(() => auth.user);
 
 const pseudo = ref(user.value!.pseudo.slice());
 
-function changeCase (index: number) {
+function changeCase(index: number) {
   let letter;
   if (pseudo.value[index].toUpperCase() === pseudo.value[index]) {
     letter = pseudo.value[index].toLowerCase();
@@ -67,7 +67,7 @@ function changeCase (index: number) {
   pseudo.value =
     pseudo.value.slice(0, index) + letter + pseudo.value.slice(index + 1);
 }
-function submit () {
+function submit() {
   useFetch('account/majmin', {
     method: 'post',
     body: { pseudo: pseudo.value },

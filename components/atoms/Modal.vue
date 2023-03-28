@@ -9,7 +9,7 @@
         src="@/assets/img/icon/warning2.svg"
         alt="Error"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="type === 'success'"
         draggable="false"
@@ -18,7 +18,7 @@
         src="@/assets/img/icon/success.svg"
         alt="Success"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="type === 'failure'"
         draggable="false"
@@ -27,7 +27,7 @@
         src="@/assets/img/icon/failure.svg"
         alt="Failure"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="type === 'confirmation'"
         draggable="false"
@@ -36,7 +36,7 @@
         alt="Confirmation"
         src="@/assets/img/icon/confirmation.svg"
         @contextmenu.prevent
-      >
+      />
       <p>{{ message }}</p>
       <button
         v-if="type === 'confirmation'"
@@ -50,7 +50,7 @@
           src="@/assets/img/icon/ok.svg"
           alt="Ok"
           @contextmenu.prevent
-        >
+        />
       </button>
       <button
         v-else
@@ -63,7 +63,7 @@
           src="@/assets/img/icon/ok.svg"
           alt="Ok"
           @contextmenu.prevent
-        >
+        />
       </button>
       <button
         v-if="type === 'confirmation'"
@@ -76,7 +76,7 @@
           alt="Ko"
           src="@/assets/img/icon/ko.svg"
           @contextmenu.prevent
-        >
+        />
       </button>
     </dialog>
   </div>
@@ -89,13 +89,13 @@ const message = ref(t('error.default'));
 const type = ref('error');
 const prepare = { api: '', payload: {} };
 
-function notice (modalType: string, modalMessage: string) {
+function notice(modalType: string, modalMessage: string) {
   isVisible.value = true;
   type.value = modalType;
   message.value = modalMessage;
 }
 
-function confirmation (req: {
+function confirmation(req: {
   message: string;
   api: string;
   payload?: object | undefined;
@@ -116,7 +116,7 @@ $eventBus.on(
     confirmation(req)
 );
 
-async function request () {
+async function request() {
   const { data } = await useFetch<any>(prepare.api, { body: prepare.payload });
   if (data.value.success) {
     notice('success', t('success.buy'));

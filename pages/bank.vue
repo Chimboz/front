@@ -17,9 +17,9 @@
       >
         <table class="w-100">
           <colgroup>
-            <col width="100">
-            <col width="100%">
-            <col width="100">
+            <col width="100" />
+            <col width="100%" />
+            <col width="100" />
           </colgroup>
           <thead style="background: var(--dark-card-yellow)">
             <tr>
@@ -53,7 +53,7 @@
           </tbody>
         </table>
       </ScrollableContainer>
-      <br>
+      <br />
       <img
         src="@/assets/img/puce.svg"
         alt="Puce"
@@ -61,10 +61,11 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      ><b>
+      /><b>
         {{
           $t('bank.balance.title', { duration: $duration({ months: 1 }) })
-        }}</b><br><br>
+        }}</b
+      ><br /><br />
       <BarChart :chart-data="bankData" :options="options" />
     </Card>
     <template #right-column>

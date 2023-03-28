@@ -55,7 +55,7 @@
               draggable="false"
               src="@/assets/img/demo/0.png"
               @contextmenu.prevent
-            >
+            />
           </section>
           <section :class="{ display: demo === 1 }">
             <div class="demo-info">
@@ -66,7 +66,7 @@
               draggable="false"
               src="@/assets/img/demo/1.png"
               @contextmenu.prevent
-            >
+            />
           </section>
           <section :class="{ display: demo === 2 }">
             <div class="demo-info">
@@ -77,7 +77,7 @@
               draggable="false"
               src="@/assets/img/demo/2.png"
               @contextmenu.prevent
-            >
+            />
           </section>
           <section :class="{ display: demo === 3 }">
             <div class="demo-info">
@@ -88,7 +88,7 @@
               draggable="false"
               src="@/assets/img/demo/3.png"
               @contextmenu.prevent
-            >
+            />
           </section>
           <section :class="{ display: demo === 4 }">
             <div class="demo-info">
@@ -99,7 +99,7 @@
               draggable="false"
               src="@/assets/img/demo/4.png"
               @contextmenu.prevent
-            >
+            />
           </section>
           <section :class="{ display: demo === 5 }">
             <div class="demo-info">
@@ -110,7 +110,7 @@
               draggable="false"
               src="@/assets/img/demo/5.png"
               @contextmenu.prevent
-            >
+            />
           </section>
         </div>
       </div>
@@ -126,7 +126,7 @@
           autocomplete="username"
           aria-label="Username"
           :placeholder="$t('placeholder.username')"
-        >
+        />
         <input
           required
           type="email"
@@ -137,7 +137,7 @@
           class="btn-md"
           aria-label="Email"
           :placeholder="$t('placeholder.mail')"
-        >
+        />
         <input
           required
           name="password"
@@ -145,7 +145,7 @@
           aria-label="Password"
           :placeholder="$t('placeholder.password')"
           class="btn-md"
-        >
+        />
         <input
           required
           name="password_confirm"
@@ -153,7 +153,7 @@
           aria-label="Password confirm"
           :placeholder="$t('placeholder.password.confirm')"
           class="btn-md"
-        >
+        />
         <div class="flex">
           <Button type="button" @click="section = 1">
             {{ $t('button.signin') }}
@@ -167,8 +167,8 @@
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent
-              >
-            </template>{{ $t('button.register') }}
+              /> </template
+            >{{ $t('button.register') }}
           </Button>
         </div>
       </form>
@@ -194,7 +194,7 @@
             aria-label="Username"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          >
+          />
           <input
             v-model="password"
             required
@@ -204,7 +204,7 @@
             :placeholder="$t('placeholder.password')"
             autocomplete="current-password"
             class="btn-md"
-          >
+          />
         </div>
         <!-- TODO: Two-Factor Authentication
         <div>
@@ -231,21 +231,19 @@
                 class="arrow green jitter"
                 src="@/assets/img/arrow.svg"
                 @contextmenu.prevent
-              >
-            </template>{{ $t('button.signin') }}
+              /> </template
+            >{{ $t('button.signin') }}
           </Button>
         </div>
       </form>
     </div>
-    <a
-      href="/tchat"
-      class="try pointer"
-    >{{ $t('demo.try') }}&nbsp;&nbsp;<img
-      :alt="$t('demo.try')"
-      draggable="false"
-      src="@/assets/img/puce.svg"
-      @contextmenu.prevent
-    ></a>
+    <a href="/tchat" class="try pointer"
+      >{{ $t('demo.try') }}&nbsp;&nbsp;<img
+        :alt="$t('demo.try')"
+        draggable="false"
+        src="@/assets/img/puce.svg"
+        @contextmenu.prevent
+    /></a>
   </div>
 </template>
 <script setup lang="ts">

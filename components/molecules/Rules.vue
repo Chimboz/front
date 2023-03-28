@@ -9,7 +9,7 @@
           height="22"
           src="@/assets/img/icon/rules.svg"
           @contextmenu.prevent
-        >
+        />
         <div class="rule-number">
           <b>{{ rule + 1 }}</b>
         </div>
@@ -19,9 +19,7 @@
       </div>
     </div>
     <div class="fullwidth">
-      <Button icon="rules.svg" type="button">
-        Règles
-      </Button>
+      <Button icon="rules.svg" type="button"> Règles </Button>
     </div>
   </Card>
 </template>

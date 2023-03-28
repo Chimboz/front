@@ -24,7 +24,7 @@
                 alt="Puce"
                 src="@/assets/img/puce.svg"
                 @contextmenu.prevent
-              >
+              />
             </button>
           </div>
           <Coat
@@ -41,7 +41,7 @@
               type="button"
               :disabled="
                 data.items[category].indexOf(data.blazon[category]) >
-                  data.items[category].length - 2
+                data.items[category].length - 2
               "
               @click="emit('nextItem', category)"
             >
@@ -50,7 +50,7 @@
                 alt="Puce"
                 src="@/assets/img/puce.svg"
                 @contextmenu.prevent
-              >
+              />
             </button>
           </div>
         </div>
@@ -80,7 +80,7 @@
                 :src="asset(`img/icon/item_category/${category}.svg`)"
                 :alt="category"
                 @contextmenu.prevent
-              >
+              />
             </button>
           </div>
           <div class="chest">
@@ -125,7 +125,7 @@
                   alt="No item"
                   src="@/assets/img/icon/cross.svg"
                   @contextmenu.prevent
-                >
+                />
                 <svg :viewBox="viewBox(name)" @contextmenu.prevent>
                   <use
                     :href="`/item/blazon/${name}/${item}.svg#root`"
@@ -166,7 +166,7 @@ const categories: BlazonCategory[] = [
 const info = ref('');
 const checked = ref(categories);
 
-function viewBox (category: BlazonCategory) {
+function viewBox(category: BlazonCategory) {
   switch (category) {
     case 'shape':
       return '0 0 69.2 67.75';

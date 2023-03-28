@@ -8,7 +8,7 @@
       alt="Button icon"
       :src="asset(`img/icon/button/${icon}`)"
       @contextmenu.prevent
-    >
+    />
     <div class="btn-text">
       <StrokeText><slot /></StrokeText>
     </div>

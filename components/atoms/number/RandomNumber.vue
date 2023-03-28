@@ -21,7 +21,7 @@ const start = ref(0);
 const previousTimeStamp = ref(Date.now());
 const elapsed = ref(0);
 
-function bezier (
+function bezier(
   time: number,
   startValue: number,
   change: number,
@@ -35,7 +35,7 @@ function bezier (
   return (-change / 2) * (time * (time - 2) - 1) + startValue;
 }
 
-function tween (timestamp: number) {
+function tween(timestamp: number) {
   if (start.value === 0) {
     start.value = timestamp;
   }

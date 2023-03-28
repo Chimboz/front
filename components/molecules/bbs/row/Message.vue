@@ -43,7 +43,8 @@
             alt="Lien du message"
             title="Lien du message"
             :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
-          > </a>&nbsp;
+          /> </a
+        >&nbsp;
         <b class="ellipsis title">{{ message.title }}</b>
         &nbsp;
         <div v-if="user">
@@ -67,13 +68,13 @@
               draggable="false"
               alt="Bubble"
               @contextmenu.prevent
-            >&nbsp;Citer
-          </button>&nbsp;
+            />&nbsp;Citer</button
+          >&nbsp;
           <button
             v-if="
               (message.author.id === user.id &&
                 Date.now() - message.date < 600) ||
-                +user.user_level > 3
+              +user.user_level > 3
             "
             type="button"
             class="btn-action"
@@ -91,8 +92,8 @@
               draggable="false"
               alt="Pen"
               @contextmenu.prevent
-            >&nbsp;Éditer
-          </button>&nbsp;
+            />&nbsp;Éditer</button
+          >&nbsp;
           <button
             v-if="message.author.id === user.id || +user.user_level > 3"
             type="button"
@@ -103,15 +104,15 @@
           </button>
         </div>
       </div>
-      <hr style="margin: 2px 0">
+      <hr style="margin: 2px 0" />
       <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
       <div class="markdown-body" v-html="$messageRender(message.content)" />
-      <br><i>"{{ message.author.signature }}"</i>
+      <br /><i>"{{ message.author.signature }}"</i>
     </td>
   </tr>
   <tr v-if="separator">
     <td colspan="2">
-      <hr>
+      <hr />
     </td>
   </tr>
 </template>
@@ -132,7 +133,7 @@ const props = withDefaults(
   { separator: true }
 );
 
-function deleteMessage () {
+function deleteMessage() {
   useFetch('bbs/delete', {
     method: 'post',
     body: { post: props.message.id, topic: route.params.topic },

@@ -21,7 +21,7 @@
           autocomplete="username"
           aria-label="Username"
           :placeholder="$t('placeholder.username')"
-        ><button type="button" class="btn-action">
+        /><button type="button" class="btn-action">
           {{ $t('button.go') }}
         </button>
       </div>
@@ -69,7 +69,8 @@
                     font-weight: normal;
                     font-size: var(--font-size);
                   "
-                >{{ $distanceToNow(message.date) }}</span>
+                  >{{ $distanceToNow(message.date) }}</span
+                >
               </h3>
             </div>
             <span>{{ message.content.slice(0, 64) }}</span>

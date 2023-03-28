@@ -46,7 +46,7 @@ const ALLOWED_PROPERTIES = ['color'];
 const ALLOW_CSS_FUNCTIONS = true;
 const ALLOWED_CLASS = 'hljs-';
 
-function markedRender (string: string) {
+function markedRender(string: string) {
   // Custom emotes
   string = string.replace(
     /:[a-z]+:/g,
@@ -76,7 +76,7 @@ function markedRender (string: string) {
   return marked(string);
 }
 
-function dompurifyRender (window: any, string: string) {
+function dompurifyRender(window: any, string: string) {
   const purify = DOMPurify(window);
   // Allowed URI schemes
   const REGEX_URI = RegExp(`^(${ALLOWED_URI.join('|')}):`, 'gim');
@@ -85,7 +85,7 @@ function dompurifyRender (window: any, string: string) {
    *  Take CSS property-value pairs and validate against allow-list,
    *  then add the styles to an array of property-value pairs
    */
-  function validateStyles (output: Array<string>, styles: any) {
+  function validateStyles(output: Array<string>, styles: any) {
     // Validate regular CSS properties
     Object.keys(styles).forEach((prop) => {
       if (typeof styles[prop] === 'string') {
@@ -167,7 +167,7 @@ function dompurifyRender (window: any, string: string) {
   });
 }
 
-export default function messageRender (window: any) {
+export default function messageRender(window: any) {
   return (string: string): string => {
     const result = dompurifyRender(window, markedRender(string));
 

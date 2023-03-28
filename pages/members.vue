@@ -18,7 +18,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          ><Avatar
+          /><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -29,12 +29,14 @@
             :item2="user.look.item2"
           />
           <UserLink :user="user" />
-          <span>{{ $t('members.memberNumber') }}<b>{{ user.id }}</b></span>
+          <span
+            >{{ $t('members.memberNumber') }}<b>{{ user.id }}</b></span
+          >
         </div>
       </div>
-      <br>
+      <br />
       {{ $t('members.lastMembers') }}
-      <br>
+      <br />
       <NuxtLink to="/book">
         {{ $t('members.showList') }}
       </NuxtLink>
@@ -54,7 +56,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          ><Avatar
+          /><Avatar
             :avatar="user.look.avatar"
             :emote="user.look.emote"
             :hat="user.look.hat"
@@ -70,9 +72,9 @@
           />
         </div>
       </div>
-      <br>
+      <br />
       {{ $t('members.popularity.sub') }}
-      <br>
+      <br />
       <NuxtLink to="/popularity">
         {{ $t('members.popularity.link') }}
       </NuxtLink>
@@ -92,7 +94,7 @@
             height="93"
             width="100"
             @contextmenu.prevent
-          >
+          />
           <div class="flex" style="justify-content: center">
             <Avatar
               :avatar="couple.user1.look.avatar"
@@ -116,12 +118,13 @@
           </div>
           <span>
             <UserLink :user="couple.user1" /> &amp;
-            <UserLink :user="couple.user2" /></span>
+            <UserLink :user="couple.user2"
+          /></span>
         </div>
       </div>
-      <br>
+      <br />
       {{ $t('members.weddings.sub') }}
-      <br>
+      <br />
       <NuxtLink to="/weddings">
         {{ $t('members.weddings.link') }}
       </NuxtLink>
@@ -129,9 +132,7 @@
     <template #right-column>
       <Card color="blue">
         <template #button>
-          <Button type="button" icon="search.svg">
-            Chercher
-          </Button>
+          <Button type="button" icon="search.svg"> Chercher </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="searchUser()">
           <input
@@ -146,11 +147,11 @@
             autocomplete="username"
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
-          ><button type="submit" class="btn-action">
+          /><button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
         </form>
-        <br>
+        <br />
         <form class="flex fullwidth" @submit.prevent="searchGroup()">
           <input
             v-model="groupSearch"
@@ -163,7 +164,7 @@
             autocomplete="group"
             aria-label="Group"
             :placeholder="$t('placeholder.group')"
-          ><button type="submit" class="btn-action">
+          /><button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
         </form>
@@ -179,7 +180,7 @@ const { data } = await useFetch<any>('https://chimboz.fr/api/members');
 const userSearch = ref('');
 const groupSearch = ref('');
 
-async function searchUser () {
+async function searchUser() {
   router.push(
     `/book/${
       (await useFetch<any>(`book/search/${userSearch.value}/search`)).data
@@ -188,7 +189,7 @@ async function searchUser () {
   );
 }
 
-async function searchGroup () {
+async function searchGroup() {
   router.push(
     `/groups/${
       (await useFetch<any>(`groups/search/${groupSearch.value}`)).data.value!

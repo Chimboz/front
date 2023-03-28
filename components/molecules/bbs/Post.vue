@@ -1,14 +1,12 @@
 <template>
   <table v-if="preview" class="bbs preview mb-3">
     <colgroup>
-      <col width="100" class="info">
-      <col width="100%">
+      <col width="100" class="info" />
+      <col width="100%" />
     </colgroup>
     <thead>
       <tr>
-        <th valign="top" colspan="2" nowrap="nowrap">
-          Prévisualisation
-        </th>
+        <th valign="top" colspan="2" nowrap="nowrap">Prévisualisation</th>
       </tr>
     </thead>
     <tbody>
@@ -29,8 +27,8 @@
   <form @submit.prevent="submit">
     <table class="bbs input">
       <colgroup>
-        <col width="100">
-        <col width="100%">
+        <col width="100" />
+        <col width="100%" />
       </colgroup>
       <thead>
         <tr>
@@ -56,7 +54,7 @@
               class="btn-md"
               type="text"
               placeholder="Titre"
-            >
+            />
           </td>
         </tr>
         <tr>
@@ -64,10 +62,10 @@
           <td class="markdown-body" style="vertical-align: middle">
             <div class="flex hstack">
               <button type="button" class="btn-md" @click="format('**')">
-                <b>B</b>
-              </button><button type="button" class="btn-md" @click="format('*')">
-                <i>i</i>
-              </button><button type="button" class="btn-md" @click="format('<u>')">
+                <b>B</b></button
+              ><button type="button" class="btn-md" @click="format('*')">
+                <i>i</i></button
+              ><button type="button" class="btn-md" @click="format('<u>')">
                 <u>u</u>
               </button>
               <button type="button" class="btn-md" @click="format('<s>')">
@@ -89,7 +87,7 @@
                   height="22"
                   style="height: 100%"
                   @contextmenu.prevent
-                >
+                />
               </button>
               <select
                 class="btn-md"
@@ -97,42 +95,26 @@
                 style="padding: 0"
                 @change="(event) => formatColor((event.target as SelectHTMLAttributes).value)"
               >
-                <option value="">
-                  Couleur
-                </option>
+                <option value="">Couleur</option>
                 <option style="color: #cecece" value="#CECECE">
                   Gris triste
                 </option>
                 <option style="color: #999999" value="#999999">
                   Gris divorce
                 </option>
-                <option style="color: #ff0000" value="#FF0000">
-                  Rouge
-                </option>
-                <option style="color: #cc6600" value="#CC6600">
-                  Chocolat
-                </option>
-                <option style="color: #fe9e01" value="#FE9E01">
-                  Orange
-                </option>
+                <option style="color: #ff0000" value="#FF0000">Rouge</option>
+                <option style="color: #cc6600" value="#CC6600">Chocolat</option>
+                <option style="color: #fe9e01" value="#FE9E01">Orange</option>
                 <option style="color: var(--light) f00" value="var(--light)F00">
                   Jaune
                 </option>
-                <option style="color: #ade76b" value="#ADE76B">
-                  Vert
-                </option>
-                <option style="color: #66cc00" value="#66CC00">
-                  Gilvert
-                </option>
-                <option style="color: #018352" value="#018352">
-                  Pelouse
-                </option>
+                <option style="color: #ade76b" value="#ADE76B">Vert</option>
+                <option style="color: #66cc00" value="#66CC00">Gilvert</option>
+                <option style="color: #018352" value="#018352">Pelouse</option>
                 <option style="color: #9412fe" value="#9412FE">
                   Violet du marié
                 </option>
-                <option style="color: #376da8" value="#376DA8">
-                  Bleu
-                </option>
+                <option style="color: #376da8" value="#376DA8">Bleu</option>
                 <option style="color: #6699cc" value="#6699CC">
                   Bleu Chimbo
                 </option>
@@ -145,12 +127,8 @@
                 <option style="color: #e40173" value="#E40173">
                   Gurujiolet
                 </option>
-                <option style="color: #ffffff" value="#FFFFFF">
-                  Blanc
-                </option>
-                <option style="color: #000" value="#000000">
-                  Noir
-                </option>
+                <option style="color: #ffffff" value="#FFFFFF">Blanc</option>
+                <option style="color: #000" value="#000000">Noir</option>
               </select>
               <select
                 class="btn-md"
@@ -158,30 +136,18 @@
                 aria-label="Size"
                 @change="(event) => formatMultiline((event.target as SelectHTMLAttributes).value)"
               >
-                <option value="##### ">
-                  Trop minuscule
-                </option>
-                <option value="#### " selected>
-                  Taille
-                </option>
-                <option value="### ">
-                  Grand
-                </option>
-                <option value="## ">
-                  Fat
-                </option>
-                <option value="# ">
-                  Trop trop gros
-                </option>
+                <option value="##### ">Trop minuscule</option>
+                <option value="#### " selected>Taille</option>
+                <option value="### ">Grand</option>
+                <option value="## ">Fat</option>
+                <option value="# ">Trop trop gros</option>
               </select>
               <button
                 type="button"
                 class="btn-md"
                 @click="formatMultiline('> ')"
               >
-                <blockquote style="margin-bottom: 0">
-                  Quote
-                </blockquote>
+                <blockquote style="margin-bottom: 0">Quote</blockquote>
               </button>
               <button
                 type="button"
@@ -250,8 +216,8 @@
                     aria-label="Send"
                     src="@/assets/img/arrow.svg"
                     @contextmenu.prevent
-                  >
-                </template>Envoyer
+                  /> </template
+                >Envoyer
               </Button>
               <Button
                 v-if="mode === 'edit'"
@@ -271,8 +237,8 @@
                     aria-label="Edit"
                     src="@/assets/img/arrow.svg"
                     @contextmenu.prevent
-                  >
-                </template>Editer
+                  /> </template
+                >Editer
               </Button>
             </div>
           </td>
@@ -339,7 +305,7 @@ $eventBus.on('edit', (editedMessage: any) => {
   }
 });
 
-async function submit () {
+async function submit() {
   if (props.isTopic) {
     const { data } = await useFetch<any, Error, string, 'post'>('bbs/topic', {
       method: 'post',
@@ -392,25 +358,25 @@ async function submit () {
   message.value = '';
 }
 
-function select () {
+function select() {
   textarea.value!.setSelectionRange(
     selectionRange.value[0],
     selectionRange.value[1]
   );
 }
 
-function focusHandler () {
+function focusHandler() {
   textarea.value!.focus();
   select();
 }
-function selectionHandler (e: any) {
+function selectionHandler(e: any) {
   selectionRange.value = [
     e.currentTarget.selectionStart,
     e.currentTarget.selectionEnd,
   ];
 }
 
-function format (pattern: string) {
+function format(pattern: string) {
   message.value =
     message.value.substring(0, selectionRange.value[0]) +
     pattern +
@@ -421,7 +387,7 @@ function format (pattern: string) {
     message.value.substring(selectionRange.value[1]);
   focusHandler();
 }
-function formatLink (image: boolean) {
+function formatLink(image: boolean) {
   message.value = `${message.value.substring(0, selectionRange.value[0])}${
     image ? '!' : ''
   }[${message.value.substring(
@@ -433,7 +399,7 @@ function formatLink (image: boolean) {
   )})${message.value.substring(selectionRange.value[1])}`;
   focusHandler();
 }
-function formatCode () {
+function formatCode() {
   message.value = `${message.value.substring(
     0,
     selectionRange.value[0]
@@ -447,7 +413,7 @@ function formatCode () {
   ];
   focusHandler();
 }
-function formatMultiline (pattern: string) {
+function formatMultiline(pattern: string) {
   message.value = `${
     message.value.substring(0, selectionRange.value[0]) +
     (message.value.charAt(selectionRange.value[0] - 1) === '\n' ||
@@ -461,7 +427,7 @@ function formatMultiline (pattern: string) {
   }\n${message.value.substring(selectionRange.value[1])}`;
   focusHandler();
 }
-function formatColor (hex: string) {
+function formatColor(hex: string) {
   if (hex) {
     message.value = `${message.value.substring(
       0,

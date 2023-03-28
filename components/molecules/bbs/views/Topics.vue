@@ -3,7 +3,8 @@
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
     <NuxtLink v-if="topic" :to="`/bbs/${$route.params.forum}-1`" class="pink">{{
       topic.name
-    }}</NuxtLink></span>
+    }}</NuxtLink></span
+  >
   <NuxtLink
     :to="`/bbs/${$route.params.forum}-${$route.params.topic}-1`"
     class="pink mb-3"
@@ -14,8 +15,8 @@
   </NuxtLink>
   <table class="bbs mb-3">
     <colgroup>
-      <col class="info" width="100">
-      <col width="100%">
+      <col class="info" width="100" />
+      <col width="100%" />
     </colgroup>
     <thead>
       <tr>
@@ -49,9 +50,7 @@
     </tfoot>
   </table>
   <Card v-if="movePanel">
-    <template #header>
-      Déplacer le sujet
-    </template>
+    <template #header> Déplacer le sujet </template>
     <form @submit.prevent="move">
       <select v-model="targetMove" aria-label="Forum" class="btn-md">
         <optgroup
@@ -66,8 +65,8 @@
           >
             {{ forum.name }}
           </option>
-        </optgroup>
-      </select>&nbsp;
+        </optgroup></select
+      >&nbsp;
       <button type="submit" class="btn-action">
         {{ $t('button.go') }}
       </button>
@@ -87,8 +86,8 @@
         draggable="false"
         alt="Arrow"
         @contextmenu.prevent
-      >&nbsp;Déplacer
-    </button>&nbsp;
+      />&nbsp;Déplacer</button
+    >&nbsp;
     <button
       v-if="+user.user_level > 3"
       class="btn-action"
@@ -102,8 +101,8 @@
         draggable="false"
         alt="Lock"
         @contextmenu.prevent
-      >&nbsp;Verrouiller
-    </button>&nbsp;
+      />&nbsp;Verrouiller</button
+    >&nbsp;
     <button
       v-if="+user.user_level > 3"
       class="btn-action"
@@ -130,21 +129,21 @@ defineProps<{
   topic: any;
 }>();
 
-function lock () {
+function lock() {
   useFetch(`bbs/powers/lock/${route.params.topic}`);
 }
-function deleteTopic () {
+function deleteTopic() {
   useFetch('bbs/deletetopic', {
     method: 'post',
     body: { topic: route.params.topic },
   });
 }
-async function openMovePanel () {
+async function openMovePanel() {
   movePanel.value = true;
   categories.value = (await useFetch<any[]>('bbs')).data.value!;
 }
 
-function move () {
+function move() {
   useFetch('bbs/powers/move', {
     method: 'post',
     body: {

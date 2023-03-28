@@ -14,7 +14,7 @@
         height="17"
         draggable="false"
         @contextmenu.prevent
-      >&nbsp;{{ entry.label }}
+      />&nbsp;{{ entry.label }}
     </div>
   </NuxtLink>
 </template>

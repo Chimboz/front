@@ -11,14 +11,14 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      ><b> Registre personnel</b>
+      /><b> Registre personnel</b>
     </div>
     <table class="fullwidth">
       <colgroup>
-        <col width="100">
-        <col width="100%">
-        <col width="100">
-        <col width="150">
+        <col width="100" />
+        <col width="100%" />
+        <col width="100" />
+        <col width="150" />
       </colgroup>
       <thead>
         <tr>
@@ -43,7 +43,7 @@
         </tr>
       </tbody>
     </table>
-    <br>
+    <br />
     <div class="header fullwidth">
       <img
         src="@/assets/img/puce.svg"
@@ -52,7 +52,7 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      ><b> Actions</b>
+      /><b> Actions</b>
     </div>
     <form class="flex" @submit="action('ban')">
       <input
@@ -63,14 +63,14 @@
         min="0"
         :aria-label="$t('placeholder.duration')"
         :placeholder="$t('placeholder.duration')"
-      >&nbsp;<input
+      />&nbsp;<input
         required
         name="reason"
         type="text"
         class="btn-md"
         :placeholder="$t('placeholder.reason')"
         :aria-label="$t('placeholder.reason')"
-      >&nbsp;<button type="submit" class="btn-action btn-danger">
+      />&nbsp;<button type="submit" class="btn-action btn-danger">
         Bannir
       </button>
     </form>
@@ -96,8 +96,8 @@
       >
         Réinitialiser ses items
       </button>
-      <br>
-      <br>
+      <br />
+      <br />
       <div class="header fullwidth">
         <img
           src="@/assets/img/puce.svg"
@@ -106,15 +106,15 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> Comptes partageant la même IP</b>
+        /><b> Comptes partageant la même IP</b>
       </div>
       <NuxtLink
         v-for="account in data.shared"
         :key="account.id"
         :to="`/admin/${account.id}`"
       >
-        {{ account.name }}<br>
-      </NuxtLink><br>
+        {{ account.name }}<br /> </NuxtLink
+      ><br />
       <div class="header fullwidth">
         <img
           src="@/assets/img/puce.svg"
@@ -123,7 +123,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> Adresses IP</b>
+        /><b> Adresses IP</b>
       </div>
       <div v-for="ip in data.ip" :key="ip">
         <pre class="inline">{{ ip }}</pre>
@@ -138,7 +138,7 @@
       >
         Bannir toutes les IP
       </button>
-      <br><br>
+      <br /><br />
       <div class="header fullwidth">
         <img
           src="@/assets/img/puce.svg"
@@ -147,40 +147,34 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> Groupes</b>
+        /><b> Groupes</b>
       </div>
       <div v-for="group in data.groups" :key="group.id">
         <GroupLink :group="group" />&nbsp;<button
           class="btn-action btn-danger"
           type="button"
         >
-          Retirer du groupe
-        </button>&nbsp;<button class="btn-action btn-danger" type="button">
+          Retirer du groupe</button
+        >&nbsp;<button class="btn-action btn-danger" type="button">
           Supprimer le groupe
         </button>
       </div>
-      <br>
+      <br />
       <div class="flex">
         <select
           aria-label="Groups"
           class="btn-md"
           style="padding: var(--md-gap) var(--md-gap)"
         >
-          <option value="bacteria">
-            Les Créateurs
-          </option>
-          <option value="patojdur">
-            Patojdur
-          </option>
-          <option value="mazo">
-            Mazo
-          </option>
-        </select>&nbsp;
+          <option value="bacteria">Les Créateurs</option>
+          <option value="patojdur">Patojdur</option>
+          <option value="mazo">Mazo</option></select
+        >&nbsp;
         <button class="btn-action btn-success inline" type="button">
           Ajouter au groupe
         </button>
       </div>
-      <br>
+      <br />
       <div class="header fullwidth">
         <img
           src="@/assets/img/puce.svg"
@@ -189,24 +183,18 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> Jeux</b>
+        /><b> Jeux</b>
       </div>
       <div class="flex">
         <select class="btn-md" aria-label="Games">
-          <option value="bacteria">
-            Bacteria
-          </option>
-          <option value="patojdur">
-            Patojdur
-          </option>
-          <option value="mazo">
-            Mazo
-          </option>
-        </select>&nbsp;<button class="btn-action btn-danger" type="button">
+          <option value="bacteria">Bacteria</option>
+          <option value="patojdur">Patojdur</option>
+          <option value="mazo">Mazo</option></select
+        >&nbsp;<button class="btn-action btn-danger" type="button">
           Réinitialiser les statistiques du jeu
         </button>
       </div>
-      <br>
+      <br />
     </div>
     <div class="header fullwidth">
       <img
@@ -216,7 +204,7 @@
         height="17"
         width="17"
         @contextmenu.prevent
-      ><b> Inventaire</b>
+      /><b> Inventaire</b>
     </div>
     <div v-if="+user.admin">
       <form class="flex">
@@ -228,7 +216,7 @@
           min="1"
           aria-label="Item"
           :placeholder="$t('placeholder.item')"
-        >&nbsp;<button class="btn-action btn-success" type="button">
+        />&nbsp;<button class="btn-action btn-success" type="button">
           Donner un item
         </button>
       </form>
@@ -242,7 +230,7 @@
         min="0"
         aria-label="Credits"
         :placeholder="$t('placeholder.balance')"
-      >&nbsp;<button class="btn-action btn-success" type="button">
+      />&nbsp;<button class="btn-action btn-success" type="button">
         Donner des pépettes
       </button>
     </form>
@@ -258,7 +246,7 @@ const { t } = useI18n();
 
 const { data } = await useFetch<any>('/api/admin_user');
 
-function action (type: string, payload?: object) {
+function action(type: string, payload?: object) {
   $eventBus.emit('confirmation', {
     message: t(`admin.modal.${type}`),
     api: `/api/${type}.json`,

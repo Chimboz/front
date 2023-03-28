@@ -3,7 +3,7 @@
     class="blazon"
     :style="{ '--blazon-primary': primary, '--blazon-secondary': secondary }"
   >
-    <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="">
+    <img src="@/assets/img/group/ribbons.svg" class="ribbons" alt="" />
     <div class="blazon-body">
       <CoatBackground :id="shape" :primary="primary" :secondary="secondary" />
       <div v-if="top != -1" class="top">

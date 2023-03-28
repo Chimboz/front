@@ -30,7 +30,7 @@
             height="200"
             :alt="'Level' + data[selected].level"
             :src="asset(`img/level/${data[selected].level}.png`)"
-          >
+          />
           <div v-for="(line, index) of data[selected].content" :key="index">
             {{ line }}
           </div>

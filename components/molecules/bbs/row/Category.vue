@@ -29,7 +29,7 @@
           alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
           @contextmenu.prevent
-        >
+        />
       </td>
       <td style="text-align: left" width="100%">
         <div>
@@ -67,13 +67,13 @@
             alt="Voir le dernier message"
             title="Voir le dernier message"
             @contextmenu.prevent
-          >
+          />
         </NuxtLink>
       </td>
     </tr>
     <tr v-if="index != category.bbs.length - 1">
       <td valign="middle" colspan="5">
-        <hr>
+        <hr />
       </td>
     </tr>
   </tbody>

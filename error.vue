@@ -13,7 +13,7 @@
             height="32"
             src="@/assets/img/icon/warning.svg"
             @contextmenu.prevent
-          ><b>&nbsp;{{ error ? error.statusMessage : $t('error.unknown') }}</b>
+          /><b>&nbsp;{{ error ? error.statusMessage : $t('error.unknown') }}</b>
         </Card>
         <template #right-column />
       </Container>
@@ -34,7 +34,9 @@ defineProps<{
   error: any;
 }>();
 
-const time = `-${(new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000}s`;
+const time = `-${
+  (new Date().getTime() - new Date().setHours(0, 0, 0, 0)) / 1000
+}s`;
 useHead({
   htmlAttrs: {
     lang: i18n.locale.value,

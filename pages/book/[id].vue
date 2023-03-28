@@ -8,9 +8,7 @@
       </Card>
       <Rules bot />
     </template>
-    <NuxtLink to="/book" class="pink mb-2">
-      » Retour à l'annuaire
-    </NuxtLink>
+    <NuxtLink to="/book" class="pink mb-2"> » Retour à l'annuaire </NuxtLink>
     <Card
       class="member"
       :class="[
@@ -40,9 +38,7 @@
           <StrokeText class="pseudo" left>
             {{ data.name }}
           </StrokeText>
-          <div class="motto">
-            "{{ data.motto }}"
-          </div>
+          <div class="motto">"{{ data.motto }}"</div>
         </div>
       </div>
       <div class="member-body">
@@ -72,7 +68,7 @@
                 alt="Online"
                 src="@/assets/img/tiz/tiz_shape.svg"
                 @contextmenu.prevent
-              >&nbsp;<b>En ligne</b>
+              />&nbsp;<b>En ligne</b>
             </div>
             <b>{{ data.status.room }}</b>
           </div>
@@ -86,11 +82,9 @@
               alt="Wedding icon"
               draggable="false"
               @contextmenu.prevent
-            >&nbsp;
+            />&nbsp;
             <template v-if="data.wedding">
-              <NuxtLink :to="'/weddings/' + data.wedding.id">
-                Marié
-              </NuxtLink>
+              <NuxtLink :to="'/weddings/' + data.wedding.id"> Marié </NuxtLink>
               avec
               <UserLink :user="data.wedding.user" /> depuis
               {{ $distance(Date.now(), data.wedding.time) }} jours
@@ -99,11 +93,10 @@
           </p>
           <p>
             Intérêts :
-            <b
-              v-for="(interest, index) of data.centres"
-              :key="index"
-            >{{ interest
-            }}<span v-if="index < data.centres.length - 1">, </span></b>
+            <b v-for="(interest, index) of data.centres" :key="index"
+              >{{ interest
+              }}<span v-if="index < data.centres.length - 1">, </span></b
+            >
           </p>
           <p>
             Page perso :
@@ -112,7 +105,8 @@
               target="_blank"
               rel="noreferrer noopener nofollow"
               :href="data.website"
-            >{{ data.website }}</a>
+              >{{ data.website }}</a
+            >
           </p>
           <p>
             Inscrit aux groupes :
@@ -123,30 +117,24 @@
               :separator="index < data.groups.length - 1"
             />
           </p>
-          <br>
+          <br />
           <div class="icon flex centered col">
-            <div v-if="data.gender === 'male'">
-              Chimbo
-            </div>
-            <div v-else-if="data.gender === 'female'">
-              Chimbette
-            </div>
-            <div v-else>
-              Chimbi
-            </div>
+            <div v-if="data.gender === 'male'">Chimbo</div>
+            <div v-else-if="data.gender === 'female'">Chimbette</div>
+            <div v-else>Chimbi</div>
             <!--TODO svg pas bien size-->
             <img
               draggable="false"
               :alt="
                 data.gender.charAt(0).toUpperCase() +
-                  data.gender.slice(1) +
-                  ' gender'
+                data.gender.slice(1) +
+                ' gender'
               "
               height="20"
               width="18"
               :src="asset(`img/member/icons/gender/${data.gender}.svg`)"
               @contextmenu.prevent
-            >
+            />
           </div>
           &nbsp;
           <div class="icon flex centered col">
@@ -155,7 +143,7 @@
               <Number :number="data.level" />
             </div>
           </div>
-          <br><br>
+          <br /><br />
           <p>
             Vérification du nom :
             <b>{{ data.name.toLowerCase() }}, {{ data.name.toUpperCase() }}</b>
@@ -165,7 +153,7 @@
           </p>
         </div>
       </div>
-      <br>
+      <br />
       <div v-if="data.bac" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
@@ -173,13 +161,17 @@
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
-        <span>Classement : <b>{{ data.bac.rank }}</b><sup v-if="data.bac.rank === 1">er</sup><sup v-else>ème</sup><br><b>{{ data.bac.win + data.bac.lost + data.bac.draw }}</b>
+        <span
+          >Classement : <b>{{ data.bac.rank }}</b
+          ><sup v-if="data.bac.rank === 1">er</sup><sup v-else>ème</sup
+          ><br /><b>{{ data.bac.win + data.bac.lost + data.bac.draw }}</b>
           parties, <b>{{ data.bac.win }}</b> gagnées,
           <b>{{ data.bac.lost }}</b> perdues,
-          <b>{{ data.bac.draw }}</b> nulles<br><b>{{ data.bac.score }}</b>
-          points</span>
+          <b>{{ data.bac.draw }}</b> nulles<br /><b>{{ data.bac.score }}</b>
+          points</span
+        >
       </div>
-      <br v-if="data.bac">
+      <br v-if="data.bac" />
       <div v-if="data.patoj" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
@@ -187,13 +179,20 @@
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
-        <span>Classement : <b>{{ data.patoj.rank }}</b><sup v-if="data.patoj.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.patoj.score }}</b> points<br>Aujourd'hui
-          <b>{{ data.patoj.today.rank }}</b><sup v-if="data.patoj.today.rank === 1">er</sup><sup v-else>ème</sup> avec <b>{{ data.patoj.today.score }}</b>
-          <br>Hier <b>{{ data.patoj.yesterday.rank }}</b><sup v-if="data.patoj.yesterday.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.patoj.yesterday.score }}</b></span>
+        <span
+          >Classement : <b>{{ data.patoj.rank }}</b
+          ><sup v-if="data.patoj.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.patoj.score }}</b> points<br />Aujourd'hui
+          <b>{{ data.patoj.today.rank }}</b
+          ><sup v-if="data.patoj.today.rank === 1">er</sup
+          ><sup v-else>ème</sup> avec <b>{{ data.patoj.today.score }}</b>
+          <br />Hier <b>{{ data.patoj.yesterday.rank }}</b
+          ><sup v-if="data.patoj.yesterday.rank === 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.patoj.yesterday.score }}</b></span
+        >
       </div>
-      <br v-if="data.patoj">
+      <br v-if="data.patoj" />
       <div v-if="data.mazo" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
@@ -201,10 +200,13 @@
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
-        <span>Classement : <b>{{ data.mazo.rank }}</b><sup v-if="data.mazo.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.mazo.score }}</b> points</span>
+        <span
+          >Classement : <b>{{ data.mazo.rank }}</b
+          ><sup v-if="data.mazo.rank === 1">er</sup><sup v-else>ème</sup> avec
+          <b>{{ data.mazo.score }}</b> points</span
+        >
       </div>
-      <br v-if="data.mazo">
+      <br v-if="data.mazo" />
       <div v-if="data.popularity" class="member-section">
         <svg width="59" height="58.45" class="mr-2" @contextmenu.prevent>
           <use
@@ -212,23 +214,34 @@
             color="hsl(var(--h), 100%, calc(var(--l) - 40%)"
           />
         </svg>
-        <span>Classement : <b>{{ data.popularity.rank }}</b><sup v-if="data.popularity.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.popularity.score }}</b> points<br>Aujourd'hui
-          <b>{{ data.popularity.today.rank }}</b><sup v-if="data.popularity.today.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.popularity.today.score }}</b> points<br>Hier
-          <b>{{ data.popularity.yesterday.rank }}</b><sup v-if="data.popularity.yesterday.rank === 1">er</sup><sup v-else>ème</sup> avec
-          <b>{{ data.popularity.yesterday.score }}</b> points</span>
+        <span
+          >Classement : <b>{{ data.popularity.rank }}</b
+          ><sup v-if="data.popularity.rank === 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.score }}</b> points<br />Aujourd'hui
+          <b>{{ data.popularity.today.rank }}</b
+          ><sup v-if="data.popularity.today.rank === 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.today.score }}</b> points<br />Hier
+          <b>{{ data.popularity.yesterday.rank }}</b
+          ><sup v-if="data.popularity.yesterday.rank === 1">er</sup
+          ><sup v-else>ème</sup> avec
+          <b>{{ data.popularity.yesterday.score }}</b> points</span
+        >
       </div>
-      <br v-if="data.popularity">
+      <br v-if="data.popularity" />
       <div class="member-section registration">
-        <span>Membre n°<b>{{ data.id }}</b><br>
+        <span
+          >Membre n°<b>{{ data.id }}</b
+          ><br />
           Dans la communauté depuis le
           <b>{{ $format(data.register, 'PPp') }}</b> (<b>{{
             $distance(Date.now(), data.register)
           }}</b>
-          jours)</span>
+          jours)</span
+        >
       </div>
-      <br>
+      <br />
       Messages sur le forum :
       <NuxtLink :to="'/bbs/author/' + data.id">
         {{ data.posts }}
@@ -236,9 +249,7 @@
     </Card>
     <template #right-column>
       <NuxtLink v-if="+user!.user_level > 2" :to="'/admin/' + data.id">
-        <Button type="button" icon="rules.svg" class="mb-2">
-          Modérer
-        </Button>
+        <Button type="button" icon="rules.svg" class="mb-2"> Modérer </Button>
       </NuxtLink>
       <Card left>
         <template #button>
@@ -247,12 +258,16 @@
           </Button>
         </template>
         <div class="flex">
-          <HuePicker v-model="color.h" class="mr-2" /> Teinte<br>
+          <HuePicker v-model="color.h" class="mr-2" /> Teinte<br />
         </div>
         <label class="flex pointer my-2" style="position: relative">
-          <input v-model="color.gradient" type="checkbox" class="mr-4"> Mode dégradé
+          <input v-model="color.gradient" type="checkbox" class="mr-4" /> Mode
+          dégradé
         </label>
-        <label class="flex pointer" style="position: relative"><input v-model="color.rainbow" type="checkbox" class="mr-4"> Mode arc-en-ciel</label>
+        <label class="flex pointer" style="position: relative"
+          ><input v-model="color.rainbow" type="checkbox" class="mr-4" /> Mode
+          arc-en-ciel</label
+        >
       </Card>
     </template>
   </Container>

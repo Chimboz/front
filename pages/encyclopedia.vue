@@ -69,11 +69,11 @@
             class="btn-md"
             aria-label="Username"
             :placeholder="$t('placeholder.item')"
-          ><button type="submit" class="btn-action">
+          /><button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
         </form>
-        <br>
+        <br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -81,7 +81,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> {{ $t('item.type') }}:</b>
+        /><b> {{ $t('item.type') }}:</b>
         <div class="fullwidth centered" @contextmenu.prevent>
           <button
             v-for="category of categories"
@@ -92,16 +92,16 @@
             class="item pointer filter"
             @click="
               checkedCategories.includes(category) &&
-                checkedCategories.length === 1
+              checkedCategories.length === 1
                 ? (checkedCategories = categories)
                 : (checkedCategories = [`${category}`])
             "
             @contextmenu.prevent="
               checkedCategories.includes(category)
                 ? checkedCategories.splice(
-                  checkedCategories.indexOf(category),
-                  1
-                )
+                    checkedCategories.indexOf(category),
+                    1
+                  )
                 : checkedCategories.push(category)
             "
           >
@@ -110,7 +110,7 @@
               :alt="category"
               :src="asset(`img/icon/item_category/${category}.svg`)"
               @contextmenu.prevent
-            >
+            />
           </button>
         </div>
         <img
@@ -120,7 +120,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b> {{ $t('item.rarity') }}:</b>
+        /><b> {{ $t('item.rarity') }}:</b>
         <div class="fullwidth centered">
           <button
             v-for="rarity of rarities"
@@ -148,7 +148,7 @@
               :alt="rarity"
               :src="asset(`img/icon/rarity/${rarity}.png`)"
               @contextmenu.prevent
-            >
+            />
           </button>
         </div>
       </Card>
@@ -214,7 +214,7 @@ const checkedRarities = ref([
 ]);
 const search = ref('');
 
-function onSearch () {}
+function onSearch() {}
 
 const { t } = useI18n();
 useHead({ title: computed(() => t('encyclopedia')) });

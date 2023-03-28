@@ -13,7 +13,7 @@
         width="200"
         height="200"
         @contextmenu.prevent
-      >
+      />
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ const props = defineProps<{
   reverse?: boolean;
 }>();
 
-async function onScroll ({ target }: UIEvent) {
+async function onScroll({ target }: UIEvent) {
   const { scrollTop, clientHeight, scrollHeight } = target as HTMLDivElement;
   if (
     ((!props.reverse && scrollTop + clientHeight >= scrollHeight - 2) ||

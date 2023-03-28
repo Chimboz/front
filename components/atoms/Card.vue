@@ -9,7 +9,7 @@
       :height="height"
       :src="asset(`img/card/header/${header}`)"
       @contextmenu.prevent
-    >
+    />
     <img
       v-else-if="top"
       draggable="false"
@@ -19,7 +19,7 @@
       width="154"
       height="41"
       @contextmenu.prevent
-    >
+    />
     <div v-else-if="$slots['subtop']" class="subtop flex centered">
       <StrokeText style="transform: translateX(-40%)">
         <slot name="subtop" />
@@ -56,7 +56,7 @@
       width="154"
       height="41"
       @contextmenu.prevent
-    >
+    />
   </div>
 </template>
 

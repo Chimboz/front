@@ -9,7 +9,7 @@
         height="70"
         src="@/assets/img/logo.svg"
         @contextmenu.prevent
-      >
+      />
     </NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
@@ -43,7 +43,7 @@
               style="filter: none"
               :src="asset(`img/icon/locale/${$i18n.locale}.svg`)"
               @contextmenu.prevent
-            >
+            />
           </button>
           <button
             v-if="user"
@@ -60,7 +60,7 @@
               width="11"
               src="@/assets/img/icon/failure.svg"
               @contextmenu.prevent
-            >
+            />
             {{ $t('navbar.logout') }}
           </button>
           <button
@@ -78,7 +78,7 @@
               width="11"
               src="@/assets/img/icon/success.svg"
               @contextmenu.prevent
-            >
+            />
             {{ $t('navbar.login') }}
           </button>
         </div>
@@ -108,36 +108,35 @@
           height="20"
           style="margin: 2px; padding: 1px"
           @contextmenu.prevent
-        >
+        />
       </button>
     </NuxtLink>
-    <a
-      target="_blank"
-      href="/tchat"
-    ><button class="nav-btn flex centered" type="button">
-      <div class="nav-text">
+    <a target="_blank" href="/tchat"
+      ><button class="nav-btn flex centered" type="button">
+        <div class="nav-text">
+          <img
+            draggable="false"
+            alt="Tchat icon"
+            class="nav-icon"
+            src="@/assets/img/navbar/icon/tchat.svg"
+            width="28"
+            height="21"
+            @contextmenu.prevent
+          />
+          <StrokeText style="z-index: 1" class="btn-label">{{
+            $t('navbar.play')
+          }}</StrokeText>
+        </div>
         <img
           draggable="false"
-          alt="Tchat icon"
-          class="nav-icon"
-          src="@/assets/img/navbar/icon/tchat.svg"
-          width="28"
-          height="21"
+          alt="Arrow icon"
+          class="arrow jitter"
+          width="40"
+          height="33"
+          src="@/assets/img/arrow.svg"
           @contextmenu.prevent
-        >
-        <StrokeText style="z-index: 1" class="btn-label">{{
-          $t('navbar.play')
-        }}</StrokeText>
-      </div>
-      <img
-        draggable="false"
-        alt="Arrow icon"
-        class="arrow jitter"
-        width="40"
-        height="33"
-        src="@/assets/img/arrow.svg"
-        @contextmenu.prevent
-      ></button></a>
+        /></button
+    ></a>
     <NuxtLink v-if="user" to="/account">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
@@ -149,7 +148,7 @@
             height="21"
             src="@/assets/img/navbar/icon/account.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.account') }}
           </StrokeText>
@@ -167,7 +166,7 @@
             height="21"
             src="@/assets/img/navbar/icon/games.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.games') }}
           </StrokeText>
@@ -185,7 +184,7 @@
             height="21"
             src="@/assets/img/navbar/icon/members.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.members') }}
           </StrokeText>
@@ -203,7 +202,7 @@
             height="21"
             src="@/assets/img/navbar/icon/community.svg"
             @contextmenu.prevent
-          >
+          />
           <StrokeText style="z-index: 1" class="btn-label">
             {{ $t('navbar.community') }}
           </StrokeText>

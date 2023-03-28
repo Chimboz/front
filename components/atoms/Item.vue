@@ -10,7 +10,7 @@
         :src="`/item/${type}/${id}.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
-      >
+      />
       <img
         v-if="multiply && multiply !== '#ffffff'"
         class="multiply"
@@ -20,7 +20,7 @@
         :src="`/item/${type}/${id}.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
-      >
+      />
       <img
         v-if="add && add !== '#000000'"
         class="add"
@@ -30,7 +30,7 @@
         :src="`/item/${type}/${id}.svg`"
         @contextmenu.prevent
         @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style = 'display: none')"
-      >
+      />
     </div>
   </div>
 </template>
@@ -54,23 +54,23 @@ class Color {
   public r = 0;
   public g = 0;
   public b = 0;
-  constructor (r: number, g: number, b: number) {
+  constructor(r: number, g: number, b: number) {
     this.set(r, g, b);
   }
 
-  toString () {
+  toString() {
     return `rgb(${Math.round(this.r)}, ${Math.round(this.g)}, ${Math.round(
       this.b
     )})`;
   }
 
-  set (r: number, g: number, b: number) {
+  set(r: number, g: number, b: number) {
     this.r = this.clamp(r);
     this.g = this.clamp(g);
     this.b = this.clamp(b);
   }
 
-  hueRotate (angle = 0) {
+  hueRotate(angle = 0) {
     angle = (angle / 180) * Math.PI;
     const sin = Math.sin(angle);
     const cos = Math.cos(angle);
@@ -88,7 +88,7 @@ class Color {
     ]);
   }
 
-  grayscale (value = 1) {
+  grayscale(value = 1) {
     this.multiply([
       0.2126 + 0.7874 * (1 - value),
       0.7152 - 0.7152 * (1 - value),
@@ -102,7 +102,7 @@ class Color {
     ]);
   }
 
-  sepia (value = 1) {
+  sepia(value = 1) {
     this.multiply([
       0.393 + 0.607 * (1 - value),
       0.769 - 0.769 * (1 - value),
@@ -116,7 +116,7 @@ class Color {
     ]);
   }
 
-  saturate (value = 1) {
+  saturate(value = 1) {
     this.multiply([
       0.213 + 0.787 * value,
       0.715 - 0.715 * value,
@@ -130,7 +130,7 @@ class Color {
     ]);
   }
 
-  multiply (
+  multiply(
     matrix: [
       number,
       number,
@@ -157,27 +157,27 @@ class Color {
     this.b = newB;
   }
 
-  brightness (value = 1) {
+  brightness(value = 1) {
     this.linear(value);
   }
 
-  contrast (value = 1) {
+  contrast(value = 1) {
     this.linear(value, -(0.5 * value) + 0.5);
   }
 
-  linear (slope = 1, intercept = 0) {
+  linear(slope = 1, intercept = 0) {
     this.r = this.clamp(this.r * slope + intercept * 255);
     this.g = this.clamp(this.g * slope + intercept * 255);
     this.b = this.clamp(this.b * slope + intercept * 255);
   }
 
-  invert (value = 1) {
+  invert(value = 1) {
     this.r = this.clamp((value + (this.r / 255) * (1 - 2 * value)) * 255);
     this.g = this.clamp((value + (this.g / 255) * (1 - 2 * value)) * 255);
     this.b = this.clamp((value + (this.b / 255) * (1 - 2 * value)) * 255);
   }
 
-  hsl () {
+  hsl() {
     // Code taken from https://stackoverflow.com/a/9493060/2688027, licensed under CC BY-SA.
     const r = this.r / 255;
     const g = this.g / 255;
@@ -216,7 +216,7 @@ class Color {
     };
   }
 
-  clamp (value: number) {
+  clamp(value: number) {
     if (value > 255) {
       value = 255;
     } else if (value < 0) {
@@ -235,12 +235,12 @@ class Solver {
     l: 0,
   };
 
-  constructor (target: Color) {
+  constructor(target: Color) {
     this.target = target;
     this.targetHSL = target.hsl();
   }
 
-  solve () {
+  solve() {
     const result = this.solveNarrow(this.solveWide());
     return {
       values: result.values,
@@ -249,7 +249,7 @@ class Solver {
     };
   }
 
-  solveWide () {
+  solveWide() {
     const A = 5;
     const c = 15;
     const a = [60, 180, 18000, 600, 1.2, 1.2];
@@ -268,7 +268,7 @@ class Solver {
     return best;
   }
 
-  solveNarrow (wide: { values: number[] | null; loss: number }) {
+  solveNarrow(wide: { values: number[] | null; loss: number }) {
     const A = wide.loss;
     const c = 2;
     const A1 = A + 1;
@@ -276,7 +276,7 @@ class Solver {
     return this.spsa(A, a, c, wide.values!, 500);
   }
 
-  spsa (A: number, a: number[], c: number, values: number[], iters: number) {
+  spsa(A: number, a: number[], c: number, values: number[], iters: number) {
     const alpha = 1;
     const gamma = 0.16666666666666666;
 
@@ -309,7 +309,7 @@ class Solver {
     }
     return { values: best, loss: bestLoss };
 
-    function fix (value: number, idx: number) {
+    function fix(value: number, idx: number) {
       let max = 100;
       if (idx === 2 /* saturate */) {
         max = 7500;
@@ -332,7 +332,7 @@ class Solver {
     }
   }
 
-  loss (filters: number[]) {
+  loss(filters: number[]) {
     // Argument is array of percentages.
     const color = this.baseColor;
     color.set(0, 0, 0);
@@ -355,8 +355,8 @@ class Solver {
     );
   }
 
-  css (filters: number[]) {
-    function fmt (idx: number, multiplier = 1) {
+  css(filters: number[]) {
+    function fmt(idx: number, multiplier = 1) {
       return Math.round(filters[idx] * multiplier);
     }
     return `filter: brightness(0) saturate(100%) invert(${fmt(0)}%) sepia(${fmt(
@@ -367,7 +367,7 @@ class Solver {
   }
 }
 
-function hexToRgb (hex: string) {
+function hexToRgb(hex: string) {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (_, r, g, b) => {
@@ -384,7 +384,7 @@ function hexToRgb (hex: string) {
     : null;
 }
 
-function css (target: string) {
+function css(target: string) {
   const rgb = hexToRgb(target);
   if (rgb) {
     const solver = new Solver(new Color(rgb[0], rgb[1], rgb[2]));

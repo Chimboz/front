@@ -23,14 +23,14 @@
         alt="Bacteria preview"
         style="float: left; margin-right: 16px"
         @contextmenu.prevent
-      >
+      />
       <b>Le jeu culte de l'archipel</b>
-      <br><br>
+      <br /><br />
       Des millions des parties jouées, des centaines de milliers de joueurs !
       Depuis des millénaires, les Watas, bactéries rouges enflammée, affrontent
       les Kamais, fameuse bactéries vertes mentholée ! <b>LE</b> jeu de
-      Stratégie incontournable sur l'archipel !<br>
-      <br>
+      Stratégie incontournable sur l'archipel !<br />
+      <br />
       <NuxtLink class="btn-sm pink-bg" to="/games/bacteria">
         <img
           draggable="false"
@@ -39,7 +39,7 @@
           src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
           @contextmenu.prevent
-        >&nbsp;Comment jouer&nbsp;?
+        />&nbsp;Comment jouer&nbsp;?
       </NuxtLink>
     </Card>
     <Card
@@ -57,14 +57,14 @@
         height="150"
         style="float: left; margin-right: 16px"
         @contextmenu.prevent
-      >
+      />
       <b>La course la plus humide du web !</b>
-      <br>
-      <br>
+      <br />
+      <br />
       Viens affronter les plus rapides patojeurs dans une course d'obstacles
       haute en couleur ! Seul les plus rapides entreront dans la légende !
-      <br>
-      <br>
+      <br />
+      <br />
       <NuxtLink class="btn-sm pink-bg" to="/games/patojdur">
         <img
           draggable="false"
@@ -73,7 +73,7 @@
           alt="Help icon"
           src="@/assets/img/icon/button/help.svg"
           @contextmenu.prevent
-        >&nbsp;Comment jouer&nbsp;?
+        />&nbsp;Comment jouer&nbsp;?
       </NuxtLink>
     </Card>
     <Card
@@ -91,14 +91,14 @@
         alt="Mazo preview"
         style="float: left; margin-right: 16px"
         @contextmenu.prevent
-      >
+      />
       <b>Fais bosser ta bonne étoile !</b>
-      <br>
-      <br>
+      <br />
+      <br />
       Le premier jeu de hasard sur Chimboz ! Des millions de parties jouées, un
       suspens insoutenable ! Il va falloir garder son sang froid et s'armer de
-      patience, pour rivaliser avec les meilleurs !<br>
-      <br>
+      patience, pour rivaliser avec les meilleurs !<br />
+      <br />
       <NuxtLink class="btn-sm pink-bg" to="/games/mazo">
         <img
           draggable="false"
@@ -107,7 +107,7 @@
           src="@/assets/img/icon/button/help.svg"
           alt="Help icon"
           @contextmenu.prevent
-        >&nbsp;Comment jouer&nbsp;?
+        />&nbsp;Comment jouer&nbsp;?
       </NuxtLink>
     </Card>
     <template #right-column>
@@ -120,7 +120,7 @@
             height="50"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           <img
             src="@/assets/img/game/bacteria/bg.gif"
             alt="Bacteria background"
@@ -128,7 +128,7 @@
             height="84"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
@@ -141,7 +141,7 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.bacteria.user" /><br>est champion Bacteria !
+            <UserLink :user="data.bacteria.user" /><br />est champion Bacteria !
           </div>
           <img
             src="@/assets/img/game/patojdur/head.gif"
@@ -150,7 +150,7 @@
             height="50"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           <img
             src="@/assets/img/game/patojdur/bg.gif"
             alt="Patojdur background"
@@ -158,7 +158,7 @@
             height="84"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
@@ -171,7 +171,7 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br>est champion Patojdur !
+            <UserLink :user="data.patojdur.user" /><br />est champion Patojdur !
           </div>
           <img
             src="@/assets/img/game/mazo/head.gif"
@@ -180,7 +180,7 @@
             height="50"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           <img
             src="@/assets/img/game/mazo/bg.gif"
             alt="Mazo background"
@@ -188,7 +188,7 @@
             height="84"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
@@ -201,7 +201,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.mazo.user" /><br>est un des meilleurs
+            <UserLink :user="data.mazo.user" /><br />est un des meilleurs
             Mazoteurs du moment !
           </div>
         </div>

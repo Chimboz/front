@@ -46,15 +46,16 @@
               style="color: red; cursor: var(--pointer)"
               @click.prevent="cancel(friend)"
               @keyup.prevent="cancel(friend)"
-            ><img
-              src="@/assets/img/icon/failure.svg"
-              width="11"
-              height="11"
-              alt="Close"
-              draggable="false"
-              style="margin: 0 2px"
-              @contextmenu.prevent
-            >Annuler</span>
+              ><img
+                src="@/assets/img/icon/failure.svg"
+                width="11"
+                height="11"
+                alt="Close"
+                draggable="false"
+                style="margin: 0 2px"
+                @contextmenu.prevent
+              />Annuler</span
+            >
           </div>
           <div
             v-else-if="
@@ -66,28 +67,30 @@
               style="color: green; cursor: var(--pointer)"
               @click.prevent="accept(friend)"
               @keyup.prevent="accept(friend)"
-            ><img
-              src="@/assets/img/icon/success.svg"
-              width="11"
-              height="11"
-              alt="Close"
-              draggable="false"
-              style="margin: 0 2px"
-              @contextmenu.prevent
-            >Accepter</span><br><span
+              ><img
+                src="@/assets/img/icon/success.svg"
+                width="11"
+                height="11"
+                alt="Close"
+                draggable="false"
+                style="margin: 0 2px"
+                @contextmenu.prevent
+              />Accepter</span
+            ><br /><span
               class="link"
               style="color: red; cursor: var(--pointer)"
               @click.prevent="decline(friend)"
               @keyup.prevent="decline(friend)"
-            ><img
-              src="@/assets/img/icon/failure.svg"
-              width="11"
-              height="11"
-              alt="Close"
-              draggable="false"
-              style="margin: 0 2px"
-              @contextmenu.prevent
-            >Décliner</span>
+              ><img
+                src="@/assets/img/icon/failure.svg"
+                width="11"
+                height="11"
+                alt="Close"
+                draggable="false"
+                style="margin: 0 2px"
+                @contextmenu.prevent
+              />Décliner</span
+            >
           </div>
           <div v-else-if="!friend.status.connected">
             Dernière visite <b>{{ $distanceToNow(friend.status.date) }}</b>
@@ -104,7 +107,7 @@
                 width="17"
                 src="@/assets/img/tiz/tiz_shape.svg"
                 @contextmenu.prevent
-              >&nbsp;<b>En ligne</b>
+              />&nbsp;<b>En ligne</b>
             </div>
             <b>{{ friend.status.room }}</b>
           </div>
@@ -125,9 +128,7 @@
             autocomplete="username"
             aria-label="Username"
             :placeholder="$t('placeholder.username')"
-          ><button type="submit" class="btn-action">
-            &nbsp;+&nbsp;
-          </button>
+          /><button type="submit" class="btn-action">&nbsp;+&nbsp;</button>
         </form>
       </Card>
     </template>
@@ -139,7 +140,7 @@
 const { data } = await useFetch<any>('/api/friends');
 const pseudo = ref('');
 
-async function cancel (friend: any) {
+async function cancel(friend: any) {
   if (
     (await useFetch<any>(`friends/cancel/${friend.user.id}`)).data.value!
       .result === 'success'
@@ -148,13 +149,13 @@ async function cancel (friend: any) {
   }
 }
 
-async function accept (friend: any) {
+async function accept(friend: any) {
   const res = (await useFetch<any>(`friends/accept/${friend.user.id}`)).data
     .value;
   data.value.splice(data.value.indexOf(friend), 1, res.add);
 }
 
-async function decline (friend: any) {
+async function decline(friend: any) {
   if (
     (await useFetch<any>(`friends/decline/${friend.user.id}`)).data.value!
       .result === 'success'
@@ -163,7 +164,7 @@ async function decline (friend: any) {
   }
 }
 
-async function addFriend () {
+async function addFriend() {
   const res = (await useFetch<any>(`friends/add/${pseudo.value}`)).data.value;
   if (res.result === 'success') {
     data.value.push(res.data);

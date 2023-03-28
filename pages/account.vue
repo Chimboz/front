@@ -54,11 +54,11 @@
         <div class="number">
           <Number :number="data.bacteria.players" />
         </div>
-        <br>
+        <br />
         <div class="number">
           <Number :number="data.bacteria.score" />
         </div>
-        <b> point(s)</b><br><br>
+        <b> point(s)</b><br /><br />
         <DoughnutChart
           :chart-data="statsBacteria()"
           :options="{
@@ -69,14 +69,14 @@
             },
           }"
         />
-        <br>
+        <br />
         <div class="centered">
           <div class="number">
             <Number
               :number="
                 data.bacteria.stats.win +
-                  data.bacteria.stats.draw +
-                  data.bacteria.stats.lose
+                data.bacteria.stats.draw +
+                data.bacteria.stats.lose
               "
             />
           </div>
@@ -91,12 +91,12 @@
         <div class="number">
           <Number :number="data.patojdur.players" />
         </div>
-        <br>
+        <br />
         <div class="number">
           <Number :number="data.patojdur.score" />
         </div>
         <b> point(s)</b>
-        <br><br>
+        <br /><br />
         <BarChart
           :chart-data="statsPatojdur()"
           :options="{
@@ -119,7 +119,7 @@
         <div class="number">
           <Number :number="data.mazo.players" />
         </div>
-        <br>
+        <br />
         <Number :number="data.mazo.score" />
         <b> point(s)</b>
       </Card>
@@ -148,16 +148,14 @@
                 alt="Voir le dernier message"
                 title="Voir le dernier message"
                 @contextmenu.prevent
-              >&nbsp;<UserLink :user="message.author" @click.stop />
+              />&nbsp;<UserLink :user="message.author" @click.stop />
             </div>
             <div>{{ $distanceToNow(message.date) }}</div>
           </div>
         </div>
       </Card>
       <Card color="blue" header="forum.gif" :width="154" :height="45">
-        <StrokeText class="forum-title">
-          Forum
-        </StrokeText>
+        <StrokeText class="forum-title"> Forum </StrokeText>
         <div style="margin-top: -16px">
           <div
             v-for="message of data.forum"
@@ -184,11 +182,11 @@
                 alt="Voir le dernier message"
                 title="Voir le dernier message"
                 @contextmenu.prevent
-              >&nbsp;{{ message.topic.title }}
+              />&nbsp;{{ message.topic.title }}
             </div>
           </div>
-        </div>
-      </Card><Card color="blue">
+        </div> </Card
+      ><Card color="blue">
         <template #button>
           <Button type="button" icon="register.svg">
             {{ $t('profile.friends') }}
@@ -211,15 +209,15 @@
             v-if="friend.status.connected && friend.status.room"
             alt="Online on tchat"
             src="@/assets/img/icon/account/online_tchat.png"
-          ><img
+          /><img
             v-else-if="friend.status.connected"
             alt="Online on website"
             src="@/assets/img/icon/account/online.png"
-          ><img
+          /><img
             v-else
             alt="Offline"
             src="@/assets/img/icon/account/offline.png"
-          >&nbsp;
+          />&nbsp;
           <div class="flex col" style="align-items: flex-start">
             <UserLink :user="friend.user" />
             {{ friend.status.connected ? friend.status.room : '' }}
@@ -245,7 +243,7 @@
             width="22"
             height="22"
             src="@/assets/img/icon/account/leader.svg"
-          >&nbsp;
+          />&nbsp;
           <div class="flex col" style="align-items: flex-start">
             <GroupLink :group="group" />
           </div>
@@ -282,7 +280,7 @@ Chart.register(
 
 const { data } = await useFetch<any>('/api/account');
 
-function statsBacteria () {
+function statsBacteria() {
   return {
     labels: ['Win', 'Draw', 'Lose'],
     datasets: [
@@ -297,7 +295,7 @@ function statsBacteria () {
     ],
   };
 }
-function statsPatojdur () {
+function statsPatojdur() {
   return {
     labels: ['Best', 'Today', 'Yesterday'],
     datasets: [

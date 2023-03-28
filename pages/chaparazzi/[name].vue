@@ -15,7 +15,7 @@
           style="width: 100%"
           :alt="name"
           @contextmenu.prevent
-        >
+        />
       </a>
     </Card>
   </div>

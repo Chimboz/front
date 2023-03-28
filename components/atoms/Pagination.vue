@@ -17,7 +17,7 @@ const props = withDefaults(
   }>(),
   { current: 0, total: 0, callback: (page) => page }
 );
-function array () {
+function array() {
   return [
     ...new Set([
       // First 3 pages

@@ -20,7 +20,7 @@
               height="67"
               class="fullwidth"
               @contextmenu.prevent
-            >
+            />
             <div>
               <Number :number="data.messages" color="pink" />
             </div>
@@ -37,7 +37,7 @@
               height="67"
               class="fullwidth"
               @contextmenu.prevent
-            >
+            />
             <div>
               <Number :number="data.friends" color="pink" />
             </div>
@@ -56,7 +56,7 @@
       class="mb-3"
       style="width: 100%; height: auto"
       @contextmenu.prevent
-    >
+    />
     <Card header="lottery.webp">
       <template #header />
       <div class="mb-3">
@@ -77,7 +77,7 @@
             width="16"
             src="@/assets/img/lottery/up.svg"
             @contextmenu.prevent
-          ><img
+          /><img
             v-else
             draggable="false"
             alt="Lottery handle"
@@ -86,8 +86,8 @@
             width="16"
             src="@/assets/img/lottery/down.svg"
             @contextmenu.prevent
-          >
-        </template>{{ $t('button.lottery') }}
+          /> </template
+        >{{ $t('button.lottery') }}
       </Button>
     </Card>
     <Radio src="track.flac" />
@@ -104,7 +104,7 @@
           alt="Chimboking portrait"
           style="float: left; margin: 0 16px 16px 0"
           @contextmenu.prevent
-        >
+        />
         {{ data.news.title }}
       </template>
       <!--eslint-disable-next-line vue/no-v-html description is sanitized-->
@@ -132,8 +132,8 @@
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
               @contextmenu.prevent
-            >
-          </NuxtLink><b>{{ $format(photo.date, 'PP') }}</b>
+            /> </NuxtLink
+          ><b>{{ $format(photo.date, 'PP') }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -145,7 +145,7 @@
             height="17"
             width="17"
             @contextmenu.prevent
-          >
+          />
           {{ $t('chaparazzi.more') }}
         </NuxtLink>
       </div>
@@ -197,7 +197,7 @@ const { data } = await useFetch<any>('/api/home');
 const lottery = ref(true);
 const gain = ref(0);
 
-async function handle () {
+async function handle() {
   lottery.value = false;
   gain.value = (await useFetch<any>('/api/lottery')).data.value.gain;
 }

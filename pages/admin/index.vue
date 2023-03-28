@@ -3,9 +3,7 @@
     <template #left-column>
       <Card color="blue" left>
         <template #button>
-          <Button icon="rules.svg" type="button">
-            Registre
-          </Button>
+          <Button icon="rules.svg" type="button"> Registre </Button>
         </template>
         <ScrollableContainer
           route="adminlogs"
@@ -14,8 +12,9 @@
           @scroll-data="(results: any[]) => (data = [...data, ...results])"
         >
           <div v-for="(log, index) in data" :key="index" class="log">
-            <b>{{ $format(log.date, 'PPp') }}</b><em> par <UserLink :user="log.moderator" /></em><br>
-            <b>{{ log.type }} de <UserLink :user="log.author" /></b><br>
+            <b>{{ $format(log.date, 'PPp') }}</b
+            ><em> par <UserLink :user="log.moderator" /></em><br />
+            <b>{{ log.type }} de <UserLink :user="log.author" /></b><br />
             {{ log.reason }}
           </div>
         </ScrollableContainer>
@@ -25,9 +24,7 @@
     <template #right-column>
       <Card color="blue">
         <template #button>
-          <Button type="button" icon="search.svg">
-            Chercher
-          </Button>
+          <Button type="button" icon="search.svg"> Chercher </Button>
         </template>
         <form class="flex fullwidth" @submit.prevent="search()">
           <input
@@ -44,7 +41,7 @@
             :placeholder="$t('placeholder.username')"
             @keyup="onKeypressValue()"
             @keydown="onKeypressValue()"
-          >
+          />
           <button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
@@ -67,7 +64,7 @@ const data = ref<any[]>([]);
 const username = ref('');
 const suggestionsHere = ref<any[]>([]);
 
-function onKeypressValue () {
+function onKeypressValue() {
   if (username.value !== undefined && username.value !== '') {
     /* useFetch("/api/test.json").then((res: any) => {
           if (res.data && res.data.length > 0) {
@@ -77,7 +74,7 @@ function onKeypressValue () {
   }
 }
 
-function search () {
+function search() {
   return true;
 }
 

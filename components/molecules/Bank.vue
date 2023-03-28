@@ -18,7 +18,7 @@
         :style="coinsPosition[n]"
         src="@/assets/img/bank/coin.svg"
         @contextmenu.prevent
-      >
+      />
       <img
         class="door"
         width="154"
@@ -27,7 +27,7 @@
         alt="Bank vault"
         :src="`${asset('img/bank/door.svg')}?${reload}`"
         @contextmenu.prevent
-      >
+      />
     </div>
 
     <NuxtLink to="/bank">
@@ -127,7 +127,7 @@ for (let i = 8; i <= Math.min(Math.floor(+user.value!.money / 10), 360); i++) {
   });
 }
 
-function tween () {
+function tween() {
   if (coins.value >= +user.value!.money || coins.value > 1760) {
     return;
   }

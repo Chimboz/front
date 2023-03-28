@@ -26,8 +26,8 @@
               @contextmenu.prevent
             />
           </NuxtLink>
-          <em>"{{ image.name.replace(/\.[^/.]+$/, '') }}"</em><br>
-          <UserLink :user="image.author" /><br>
+          <em>"{{ image.name.replace(/\.[^/.]+$/, '') }}"</em><br />
+          <UserLink :user="image.author" /><br />
           {{ $format(image.date, 'PPp') }}
         </div>
       </ScrollableContainer>

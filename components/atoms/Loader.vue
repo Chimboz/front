@@ -30,7 +30,7 @@ const isVisible = ref(false); // Once animate finish, set display: none
 const progress = ref(startingPoint);
 const timeoutId = ref<NodeJS.Timeout | undefined>(undefined);
 
-function loop () {
+function loop() {
   if (timeoutId.value) {
     clearTimeout(timeoutId.value);
   }
@@ -52,14 +52,14 @@ function loop () {
   );
 }
 
-function start () {
+function start() {
   isLoading.value = true;
   isVisible.value = true;
   progress.value = startingPoint;
   loop();
 }
 
-function stop () {
+function stop() {
   isLoading.value = false;
   progress.value = 100;
   clearTimeout(timeoutId.value);

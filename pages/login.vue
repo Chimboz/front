@@ -48,8 +48,8 @@
               :src="`gallery/${photo.name}`"
               :alt="photo.name"
               @contextmenu.prevent
-            >
-          </NuxtLink><b>{{ $format(photo.date, 'PP') }}</b>
+            /> </NuxtLink
+          ><b>{{ $format(photo.date, 'PP') }}</b>
         </div>
       </div>
       <div style="text-align: right">
@@ -61,7 +61,7 @@
             height="17"
             width="17"
             @contextmenu.prevent
-          >
+          />
           {{ $t('chaparazzi.more') }}
         </NuxtLink>
       </div>
@@ -69,8 +69,8 @@
     <template #right-column>
       <Card color="blue" header="games.gif">
         <div class="fullwidth">
-          <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria">
-          <img src="@/assets/img/game/bacteria/bg.gif" alt="">
+          <img src="@/assets/img/game/bacteria/head.gif" alt="Bacteria" />
+          <img src="@/assets/img/game/bacteria/bg.gif" alt="" />
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.bacteria.user.look.avatar"
@@ -83,12 +83,12 @@
             :item2="data.bacteria.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.bacteria.user" /><br>{{
+            <UserLink :user="data.bacteria.user" /><br />{{
               $t('champion.bacteria')
             }}
           </div>
-          <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur">
-          <img src="@/assets/img/game/patojdur/bg.gif" alt="">
+          <img src="@/assets/img/game/patojdur/head.gif" alt="Patojdur" />
+          <img src="@/assets/img/game/patojdur/bg.gif" alt="" />
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.patojdur.user.look.avatar"
@@ -101,12 +101,12 @@
             :item2="data.patojdur.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.patojdur.user" /><br>{{
+            <UserLink :user="data.patojdur.user" /><br />{{
               $t('champion.patojdur')
             }}
           </div>
-          <img src="@/assets/img/game/mazo/head.gif" alt="Mazo">
-          <img src="@/assets/img/game/mazo/bg.gif" alt="">
+          <img src="@/assets/img/game/mazo/head.gif" alt="Mazo" />
+          <img src="@/assets/img/game/mazo/bg.gif" alt="" />
           <Avatar
             style="margin-top: -66px; margin-bottom: 13px"
             :avatar="data.mazo.user.look.avatar"
@@ -119,7 +119,7 @@
             :item2="data.mazo.user.look.item2"
           />
           <div class="game-champion">
-            <UserLink :user="data.mazo.user" /><br>{{ $t('champion.mazo') }}
+            <UserLink :user="data.mazo.user" /><br />{{ $t('champion.mazo') }}
           </div>
         </div>
       </Card>

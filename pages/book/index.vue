@@ -12,7 +12,7 @@
       <div
         style="float: right; margin-top: -80px; width: 50%; position: relative"
       >
-        {{ $t('book.description1') }}<br><br>
+        {{ $t('book.description1') }}<br /><br />
         {{ $t('book.description2') }}
       </div>
     </Card>
@@ -23,9 +23,11 @@
         height="71"
         width="107"
         alt="Search icon"
-      >
+      />
       <div style="display: inline-block">
-        <label for="search"><h1>{{ $t('book.search') }}</h1></label>
+        <label for="search"
+          ><h1>{{ $t('book.search') }}</h1></label
+        >
         <form class="flex" @submit.prevent="search()">
           <input
             id="search"
@@ -40,7 +42,7 @@
             :aria-label="$t('book.search')"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
-          >
+          />
           <button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
@@ -62,9 +64,9 @@
       </template>
       <table class="fullwidth">
         <colgroup>
-          <col width="10%">
-          <col width="45%">
-          <col width="45%">
+          <col width="10%" />
+          <col width="45%" />
+          <col width="45%" />
         </colgroup>
         <thead>
           <tr>
@@ -98,9 +100,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b>{{ data.total }}</b> membres en tout.<br>
-        <br>
-        <b>Nouveaux</b><br>
+        /><b>{{ data.total }}</b> membres en tout.<br />
+        <br />
+        <b>Nouveaux</b><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -108,7 +110,7 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b>{{ data.day }}</b> depuis 24h!<br>
+        /><b>{{ data.day }}</b> depuis 24h!<br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -116,9 +118,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        ><b>{{ data.month }}</b> depuis 1 mois!<br>
-        <br>
-        <b>Les Genres :</b><br>
+        /><b>{{ data.month }}</b> depuis 1 mois!<br />
+        <br />
+        <b>Les Genres :</b><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -126,7 +128,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >Fille(s) : <b>{{ data.female }}</b>&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub><br>
+        />Fille(s) : <b>{{ data.female }}</b
+        >&nbsp; <sub>({{ ((data.female / data.total) * 100).toFixed(2) }}%)</sub
+        ><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -134,7 +138,9 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >Garçon(s) : <b>{{ data.male }}</b>&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub><br>
+        />Garçon(s) : <b>{{ data.male }}</b
+        >&nbsp; <sub>({{ ((data.male / data.total) * 100).toFixed(2) }}%)</sub
+        ><br />
         <img
           src="@/assets/img/puce.svg"
           alt="Caret"
@@ -142,13 +148,16 @@
           height="17"
           width="17"
           @contextmenu.prevent
-        >Inconnu(s) : <b>{{ data.total - data.female - data.male }}</b>&nbsp;
-        <sub>({{
-          (
-            ((data.total - data.female - data.male) / data.total) *
-            100
-          ).toFixed(2)
-        }}%)</sub>
+        />Inconnu(s) : <b>{{ data.total - data.female - data.male }}</b
+        >&nbsp;
+        <sub
+          >({{
+            (
+              ((data.total - data.female - data.male) / data.total) *
+              100
+            ).toFixed(2)
+          }}%)</sub
+        >
       </Card>
     </template>
   </Container>
@@ -162,7 +171,7 @@ const { data } = await useFetch<any>('https://chimboz.fr/api/book');
 const userSearch = ref('');
 const suggestionsHere = ref<any>(null);
 
-async function search () {
+async function search() {
   router.push(
     `/book/${
       (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value

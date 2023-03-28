@@ -23,7 +23,7 @@
                   width="30"
                   src="@/assets/img/puce.svg"
                   @contextmenu.prevent
-                >
+                />
               </button>
             </div>
             <div class="cabin-scene relative flex" tabindex="0">
@@ -59,7 +59,7 @@
                   width="30"
                   src="@/assets/img/puce.svg"
                   @contextmenu.prevent
-                >
+                />
               </button>
             </div>
           </div>
@@ -80,8 +80,8 @@
                 title="Male gender"
                 src="@/assets/img/icon/gender/male.svg"
                 @contextmenu.prevent
-              >
-            </button><button
+              /></button
+            ><button
               type="button"
               class="btn-pink"
               :class="{ active: data.gender === 'Chimbette' }"
@@ -97,8 +97,8 @@
                 title="Female gender"
                 src="@/assets/img/icon/gender/female.svg"
                 @contextmenu.prevent
-              >
-            </button><button
+              /></button
+            ><button
               type="button"
               class="btn-pink"
               :class="{ active: data.gender === 'Chimbi' }"
@@ -114,7 +114,7 @@
                 title="Unknown gender"
                 src="@/assets/img/icon/gender/unknown.svg"
                 @contextmenu.prevent
-              >
+              />
             </button>
           </div>
           <div class="gender">
@@ -129,8 +129,8 @@
               :aria-label="$t('profile.profile')"
               @click="profile = !profile"
             >
-              {{ $t('profile.profile') }}
-            </Button><Button
+              {{ $t('profile.profile') }} </Button
+            ><Button
               type="button"
               :class="{ active: !profile }"
               :aria-label="$t('profile.inventory')"
@@ -145,7 +145,8 @@
           <div v-show="profile" id="profile">
             <Emotes @emote="(emote: any) => emit('emote', emote)" />
             <div class="left mt-2">
-              <label for="motto">{{ $t('profile.motto') }}
+              <label for="motto"
+                >{{ $t('profile.motto') }}
                 <input
                   id="motto"
                   minlength="0"
@@ -158,9 +159,10 @@
                       ($event.target as InputHTMLAttributes).value
                     )
                   "
-                >
+                />
               </label>
-              <label for="website">{{ $t('profile.website') }}
+              <label for="website"
+                >{{ $t('profile.website') }}
                 <input
                   id="website"
                   minlength="0"
@@ -173,9 +175,10 @@
                       ($event.target as InputHTMLAttributes).value
                     )
                   "
-                >
+                />
               </label>
-              <label>{{ $t('profile.interests') }}
+              <label
+                >{{ $t('profile.interests') }}
                 <ol>
                   <li>
                     <input
@@ -191,7 +194,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    >
+                    />
                   </li>
                   <li>
                     <input
@@ -207,7 +210,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    >
+                    />
                   </li>
                   <li>
                     <input
@@ -223,7 +226,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    >
+                    />
                   </li>
                   <li>
                     <input
@@ -239,7 +242,7 @@
                           ($event.target as InputHTMLAttributes).value
                         )
                       "
-                    >
+                    />
                   </li>
                 </ol>
               </label>
@@ -256,13 +259,13 @@
                 @click="
                   checked.includes(category) && checked.length === 1
                     ? (checked = [
-                      'item0',
-                      'hat',
-                      'item1',
-                      'body',
-                      'item2',
-                      'shoe',
-                    ])
+                        'item0',
+                        'hat',
+                        'item1',
+                        'body',
+                        'item2',
+                        'shoe',
+                      ])
                     : (checked = [`${category}`])
                 "
                 @contextmenu.prevent="
@@ -276,7 +279,7 @@
                   :src="asset(`img/icon/item_category/${category}.svg`)"
                   :alt="category"
                   @contextmenu.prevent
-                >
+                />
               </button>
             </div>
             <div class="chest">
@@ -309,15 +312,15 @@
                   <img
                     v-if="
                       item.id === 1 ||
-                        item.id === 792 ||
-                        item.id === 868 ||
-                        item.id === 938
+                      item.id === 792 ||
+                      item.id === 868 ||
+                      item.id === 938
                     "
                     draggable="false"
                     alt="No item"
                     src="@/assets/img/icon/cross.svg"
                     @contextmenu.prevent
-                  >
+                  />
                   <VLazyImage
                     v-else
                     draggable="false"
@@ -348,9 +351,9 @@
               height="33"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
-            >
-          </template>{{ $t('button.save') }}
-        </Button><NuxtLink :to="`/book/${data.id}`" class="btn">
+            /> </template
+          >{{ $t('button.save') }} </Button
+        ><NuxtLink :to="`/book/${data.id}`" class="btn">
           <Button type="button" style="width: 150px">
             <template #prepend>
               <img
@@ -360,8 +363,8 @@
                 height="24"
                 src="@/assets/img/icon/profile.svg"
                 @contextmenu.prevent
-              >
-            </template>{{ $t('button.card') }}
+              /> </template
+            >{{ $t('button.card') }}
           </Button>
         </NuxtLink>
       </div>
@@ -413,7 +416,7 @@ const info = ref('');
 const checked = ref(categories);
 const gender = ref(props.data.gender);
 
-function submit () {}
+function submit() {}
 </script>
 <style lang="scss">
 .cabin-scene .tiz {

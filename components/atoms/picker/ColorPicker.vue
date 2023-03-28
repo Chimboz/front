@@ -11,7 +11,7 @@
       @input="
         $emit('update:modelValue', ($event.target as InputHTMLAttributes).value)
       "
-    >
+    />
   </div>
 </template>
 <script setup lang="ts">

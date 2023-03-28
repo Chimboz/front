@@ -20,7 +20,7 @@
           class="btn-md"
           aria-label="Group"
           :placeholder="$t('placeholder.groupName')"
-        >
+        />
       </Card>
       <CoatCabin
         :data="data"
@@ -37,7 +37,7 @@
                 (data.items[name] as (string|number)[]).indexOf(data.blazon[name]) + 1
               ])
         "
-      /><br>
+      /><br />
       <Button color="green" type="submit">
         <template #prepend>
           <img
@@ -46,8 +46,8 @@
             class="arrow green jitter"
             src="@/assets/img/arrow.svg"
             @contextmenu.prevent
-          >
-        </template>Sauver
+          /> </template
+        >Sauver
       </Button>
     </form>
     <template #right-column />
@@ -116,7 +116,7 @@ const data = reactive({
 
 const name = ref('');
 
-function create () {
+function create() {
   useFetch('groups/createok', {
     method: 'post',
     body: { name: name.value, blazon: data.blazon },

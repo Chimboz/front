@@ -53,7 +53,8 @@
               <h3>
                 <UserLink v-if="!message.you" :user="data.user" />&nbsp;<span
                   style="font-weight: normal; font-size: 11px"
-                >{{ $distanceToNow(message.date) }}</span>
+                  >{{ $distanceToNow(message.date) }}</span
+                >
               </h3>
             </div>
             <span
@@ -74,9 +75,7 @@
           class="btn-md"
           aria-label="Message"
           :placeholder="$t('placeholder.message')"
-        ><button type="submit" class="btn-action">
-          ➤
-        </button>
+        /><button type="submit" class="btn-action">➤</button>
       </form>
     </Card>
     <template #right-column>
@@ -118,7 +117,7 @@ import { useRoute } from 'vue-router';
 const { data } = await useFetch<any>('/api/mi5');
 const input = ref('');
 
-function send () {
+function send() {
   useFetch('mi/reply', {
     method: 'post',
     body: { conv: useRoute().params.id, message: input.value },

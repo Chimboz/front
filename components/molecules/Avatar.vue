@@ -12,7 +12,7 @@
           :src="`/avatar/0/emote/${emote}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
+        />
         <img
           src="/avatar/0/hands.svg"
           draggable="false"
@@ -20,7 +20,7 @@
           alt="Hands"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
-        >
+        />
         <Item :id="item2" type="item2" />
         <Item :id="item1" type="item1" />
         <Item :id="hat" type="hat" />

@@ -15,16 +15,16 @@
       style="position: relative"
     >
       <audio autoplay>
-        <source src="@/assets/sound/shop/moving_stars.flac" type="audio/flac">
+        <source src="@/assets/sound/shop/moving_stars.flac" type="audio/flac" />
       </audio>
       <audio autoplay>
-        <source src="@/assets/sound/shop/preview.mp3" type="audio/mpeg">
+        <source src="@/assets/sound/shop/preview.mp3" type="audio/mpeg" />
       </audio>
       <audio ref="clickAudio">
-        <source src="@/assets/sound/shop/show.wav" type="audio/wav">
+        <source src="@/assets/sound/shop/show.wav" type="audio/wav" />
       </audio>
       <audio ref="buyAudio">
-        <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg">
+        <source src="@/assets/sound/shop/selected.mp3" type="audio/mpeg" />
       </audio>
       <div class="preview fullwidth flex">
         <img
@@ -35,7 +35,7 @@
           width="468"
           src="@/assets/img/shop/cabin.svg"
           @contextmenu.prevent
-        >
+        />
         <div class="preview-tiz flex centered">
           <Avatar
             :avatar="shown.looks[0].avatar"
@@ -66,13 +66,13 @@
               draggable="false"
               alt="Shop price"
               @contextmenu.prevent
-            >
+            />
             <span>{{ shown.cost }}{{ $t('credit.abbreviation') }}</span>
           </div>
         </div>
         <div>
           <div class="preview-infos">
-            <br><br>
+            <br /><br />
             <h3>{{ $t('shop.pack') }} {{ shown.name }}</h3>
             {{ shown.description }}
             <Button
@@ -119,11 +119,11 @@ const shown = ref<any>(data.value.packs[0]);
 const buyAudio = ref<null | HTMLAudioElement>(null);
 const clickAudio = ref<null | HTMLAudioElement>(null);
 
-function show (pack: any) {
+function show(pack: any) {
   shown.value = pack;
   clickAudio.value!.play();
 }
-function buy () {
+function buy() {
   buyAudio.value!.play();
   $eventBus.emit('confirmation', {
     message: t('confirm.buy'),

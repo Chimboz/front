@@ -1,8 +1,6 @@
 <template>
   <Card color="yellow">
-    <template #subtop>
-      Chaparadio
-    </template>
+    <template #subtop> Chaparadio </template>
     <div class="flex">
       <img
         draggable="false"
@@ -11,7 +9,7 @@
         width="65"
         src="@/assets/img/radio/logo.svg"
         @contextmenu.prevent
-      >
+      />
       <img
         v-if="!playing"
         class="btn-radio pointer"
@@ -23,7 +21,7 @@
         @contextmenu.prevent
         @click.prevent="play"
         @keyup.prevent="play"
-      >
+      />
       <img
         v-else
         class="btn-radio pointer"
@@ -35,7 +33,7 @@
         @contextmenu.prevent
         @click.prevent="pause"
         @keyup.prevent="pause"
-      >
+      />
       <img
         class="btn-radio pointer"
         draggable="false"
@@ -46,7 +44,7 @@
         @contextmenu.prevent
         @click.prevent="stop"
         @keyup.prevent="stop"
-      >
+      />
       <!--eslint-disable-next-line vuejs-accessibility/click-events-have-key-events-->
       <div ref="progress" class="progress pointer" @click.prevent="skip">
         <div
@@ -57,8 +55,8 @@
       </div>
     </div>
     <audio ref="player" @timeupdate="onProgress">
-      <source :src="`/radio/${src}`">
-      <track default kind="captions" :src="`/radio/${src.split('.')[0]}.vtt`">
+      <source :src="`/radio/${src}`" />
+      <track default kind="captions" :src="`/radio/${src.split('.')[0]}.vtt`" />
     </audio>
   </Card>
 </template>
@@ -75,23 +73,23 @@ const player = ref<null | HTMLAudioElement>(null);
 const progress = ref<null | HTMLElement>(null);
 const progressBar = ref<null | HTMLElement>(null);
 
-function play () {
+function play() {
   playing.value = true;
   player.value!.play();
 }
-function pause () {
+function pause() {
   playing.value = false;
   player.value!.pause();
 }
-function stop () {
+function stop() {
   pause();
   player.value!.currentTime = 0;
 }
-function skip (e: MouseEvent) {
+function skip(e: MouseEvent) {
   player.value!.currentTime =
     (e.offsetX / progress.value!.offsetWidth) * player.value!.duration;
 }
-function onProgress () {
+function onProgress() {
   progressBar.value!.style.width = `${
     (player.value!.currentTime / player.value!.duration) * 100
   }%`;

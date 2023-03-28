@@ -3,33 +3,24 @@
     <NuxtLink to="/bbs" class="pink">BBS</NuxtLink> »
     <NuxtLink :to="`/bbs/${$route.params.forum}-1`" class="pink">{{
       forum.name
-    }}</NuxtLink></span>
+    }}</NuxtLink></span
+  >
   <table class="bbs board mb-3">
     <colgroup>
-      <col width="60">
-      <col width="100%">
-      <col width="60">
-      <col width="100">
-      <col width="60">
-      <col width="100">
+      <col width="60" />
+      <col width="100%" />
+      <col width="60" />
+      <col width="100" />
+      <col width="60" />
+      <col width="100" />
     </colgroup>
     <thead>
       <tr>
-        <th colspan="2" valign="top" height="25" nowrap="nowrap">
-          Sujets
-        </th>
-        <th width="50" valign="top" nowrap="nowrap">
-          Réponses
-        </th>
-        <th width="100" valign="top" nowrap="nowrap">
-          Auteur
-        </th>
-        <th width="50" valign="top" nowrap="nowrap">
-          Vus
-        </th>
-        <th valign="top" nowrap="nowrap">
-          Dernier message
-        </th>
+        <th colspan="2" valign="top" height="25" nowrap="nowrap">Sujets</th>
+        <th width="50" valign="top" nowrap="nowrap">Réponses</th>
+        <th width="100" valign="top" nowrap="nowrap">Auteur</th>
+        <th width="50" valign="top" nowrap="nowrap">Vus</th>
+        <th valign="top" nowrap="nowrap">Dernier message</th>
       </tr>
     </thead>
     <tbody>
@@ -65,7 +56,7 @@
         draggable="false"
         alt="Lock"
         @contextmenu.prevent
-      >&nbsp;Verrouiller
+      />&nbsp;Verrouiller
     </button>
   </div>
 </template>
@@ -80,7 +71,7 @@ defineProps<{
   forum: any;
 }>();
 
-function lock (id: string) {
+function lock(id: string) {
   // TODO api forum lock
   useFetch(`/lock/${id}`);
 }

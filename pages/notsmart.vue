@@ -23,7 +23,7 @@
           :placeholder="$t('placeholder.password.current')"
           autocomplete="current-password"
           class="btn-md"
-        >
+        />
         <input
           v-model="newPassword"
           required
@@ -32,7 +32,7 @@
           aria-label="$t('placeholder.password.new')"
           :placeholder="$t('placeholder.password.new')"
           class="btn-md"
-        >
+        />
         <input
           v-model="confirmPassword"
           required
@@ -41,7 +41,7 @@
           aria-label="$t('placeholder.password.confirm')"
           :placeholder="$t('placeholder.password.confirm')"
           class="btn-md"
-        >
+        />
         <Button class="my-3" type="submit" color="green">
           <template #prepend>
             <img
@@ -52,8 +52,8 @@
               height="33"
               src="@/assets/img/arrow.svg"
               @contextmenu.prevent
-            >
-          </template>{{ $t('button.send') }}
+            /> </template
+          >{{ $t('button.send') }}
         </Button>
       </form>
       {{ $t('notsmart.footer') }}
@@ -66,7 +66,7 @@ const currentPassword = ref('');
 const newPassword = ref('');
 const confirmPassword = ref('');
 
-function changePassword () {
+function changePassword() {
   useFetch('account/password', {
     method: 'post',
     body: {

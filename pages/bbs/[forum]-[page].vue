@@ -9,16 +9,16 @@
       <Rules bot />
     </template>
     <Forum :forum="data" />
-    <br>
+    <br />
     <button type="button" style="text-align: left" @click="post = true">
       <img
         v-if="!post && !data.locked"
         alt="New topic"
         src="@/assets/img/bbs/post.gif"
-      >
+      />
     </button>
     <Post v-if="post && !data.locked" is-topic />
-    <br>
+    <br />
     <Card>
       <div class="columns">
         <div v-for="(description, i) in iconDescriptions" :key="i">
@@ -28,7 +28,7 @@
             :title="description.label"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
           {{ description.label }}
         </div>
       </div>

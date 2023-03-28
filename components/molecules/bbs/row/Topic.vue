@@ -22,13 +22,13 @@
         alt="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         title="Ce BBS est verrouillé, tu ne peux pas poster, ni répondre, ni éditer les sujets."
         @contextmenu.prevent
-      >
+      />
     </td>
     <td width="100%" height="50" style="text-align: left">
       <NuxtLink :to="`/bbs/${$route.params.forum}-${topic.id}-1`">
         {{ topic.title }}
       </NuxtLink>
-      <br>
+      <br />
       <Pagination
         v-if="topic.reply > 9"
         :total="Math.floor(topic.reply / 10 + 1)"
@@ -59,13 +59,13 @@
           alt="Voir le dernier message"
           title="Voir le dernier message"
           @contextmenu.prevent
-        >
+        />
       </NuxtLink>
     </td>
   </tr>
   <tr v-if="separator">
     <td colspan="6">
-      <hr>
+      <hr />
     </td>
   </tr>
 </template>

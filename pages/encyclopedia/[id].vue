@@ -13,13 +13,13 @@
             :alt="data.rarity"
             draggable="false"
             @contextmenu.prevent
-          >&nbsp;<img
+          />&nbsp;<img
             :src="asset(`img/icon/item_category/${data.type}.svg`)"
             :title="data.type"
             :alt="data.type"
             draggable="false"
             @contextmenu.prevent
-          >
+          />
         </div>
       </div>
       <div class="flex" style="align-items: flex-start">
@@ -41,8 +41,8 @@
         <div class="owners">
           <table>
             <colgroup>
-              <col width="100%">
-              <col width="60">
+              <col width="100%" />
+              <col width="60" />
             </colgroup>
             <thead>
               <tr>
