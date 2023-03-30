@@ -80,11 +80,12 @@ useHead({ title: computed(() => t('capitalization')) });
 
 <style lang="scss" scoped>
 .letter {
+  color: var(--text);
   text-align: center;
   font-size: 24px;
   width: 24px;
   font-family: 'Pixelated Verdana 10';
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--text);
   margin: 2px;
 }
 </style>
