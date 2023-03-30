@@ -10,7 +10,7 @@
     </template>
     <Card header="group.webp" :height="70" color="blue" left>
       <div class="group-header">
-        <blazon
+        <Coat
           :shape="data.blazon.shape"
           :top="data.blazon.top"
           :bot="data.blazon.bot"
