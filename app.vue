@@ -30,7 +30,7 @@ useHead({
   htmlAttrs: {
     lang: i18n.locale.value,
   },
-  titleTemplate: (title: string) =>
+  titleTemplate: (title) =>
     `${
       notifications.value
         ? notifications.value
