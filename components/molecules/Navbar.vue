@@ -237,6 +237,7 @@ header {
   justify-content: flex-end;
   padding: var(--gap) 14px 0 0;
   align-items: center;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 #username {
@@ -294,6 +295,7 @@ header {
 #connect {
   margin-right: -20px;
   padding-right: 24px;
+  width: max-content;
 }
 
 .nav-btn {
