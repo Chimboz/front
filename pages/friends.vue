@@ -40,7 +40,6 @@
             </div>
           </NuxtLink>
           <div v-if="friend.status.sent">
-            ·
             <span
               class="link"
               style="color: red; cursor: var(--pointer)"
