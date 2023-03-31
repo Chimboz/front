@@ -70,6 +70,7 @@ watchEffect(() => {
 // TODO better quotes
 // TODO add commitlint
 // TODO custom markdown tags
+// TODO input with suggestion (member group etc)
 // FIXME configure eslint
 // TODO mannequin/refactor avatar
 // TODO sitemap and robots.txt generator
