@@ -29,7 +29,7 @@ const ALLOWED_TAGS = [
   'kbd',
   'strong',
   'em',
-  's',
+  'del',
   'u',
   'i',
   'table',

@@ -68,8 +68,8 @@
               ><button type="button" class="btn-md" @click="format('<u>')">
                 <u>u</u>
               </button>
-              <button type="button" class="btn-md" @click="format('<s>')">
-                <s>s</s>
+              <button type="button" class="btn-md" @click="format('~~')">
+                <del>s</del>
               </button>
               <button type="button" class="btn-md" @click="formatLink(false)">
                 <a href="#" @click.prevent>a</a>
