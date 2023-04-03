@@ -45,7 +45,7 @@ const ALLOWED_TAGS = [
 const ALLOWED_ATTR = ['style', 'class', 'alt', 'src', 'href'];
 const ALLOWED_PROPERTIES = ['color'];
 const ALLOW_CSS_FUNCTIONS = true;
-const ALLOWED_CLASS = ['hljs-', 'center', 'right'];
+const ALLOWED_CLASS = [/^hljs-.+$/, /^center$/, /^right$/];
 
 function markedRender(string: string) {
   // Custom emotes
@@ -108,7 +108,7 @@ function dompurifyRender(window: any, string: string) {
       return;
     }
     classes.forEach((name) => {
-      if (!ALLOWED_CLASS.includes(name)) {
+      if (!ALLOWED_CLASS.some((pattern) => pattern.test(name))) {
         (node as HTMLElement).classList.remove(name);
       }
     });
