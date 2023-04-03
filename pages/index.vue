@@ -10,7 +10,7 @@
             </div>
           </div>
         </NuxtLink>
-        <NuxtLink to="/messenger">
+        <NuxtLink to="/messenger" class="block mt-2">
           <div class="messages">
             <img
               draggable="false"
@@ -27,7 +27,7 @@
           </div>
           {{ $t('mi.message', data.messages) }}
         </NuxtLink>
-        <NuxtLink to="/friends">
+        <NuxtLink to="/friends" class="block mt-2">
           <div class="friends">
             <img
               draggable="false"
@@ -153,7 +153,7 @@
     <template #right-column>
       <Card color="blue" top>
         <template #header>
-          <NuxtLink to="/online">
+          <NuxtLink to="/online" class="mb-2 block">
             <h1>{{ data.connected }}</h1>
             {{ $t('online', data.connected) }}
           </NuxtLink>
@@ -240,12 +240,25 @@ useHead({ title: computed(() => t('home')) });
   width: 100%;
 }
 
-.messages div {
-  transform: translate3d(20%, -210%, 0);
+.friends,
+.messages {
+  position: relative;
 }
 
+.messages div,
 .friends div {
-  transform: translate3d(0, -205%, 0);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.messages div,
+.friends div {
+  left: 50%;
+  top: 50%;
+}
+
+.messages div {
+  left: 70%;
 }
 
 .handle {
