@@ -4,6 +4,7 @@ import hljs from 'highlight.js';
 import '@/assets/css/bbs/markdown.css';
 import 'highlight.js/styles/github-dark.css';
 import { AnchorHTMLAttributes } from 'vue';
+import extensions from './extensions';
 
 const ALLOWED_URI = ['http', 'https'];
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', 'localhost:3000'];
@@ -44,7 +45,7 @@ const ALLOWED_TAGS = [
 const ALLOWED_ATTR = ['style', 'class', 'alt', 'src', 'href'];
 const ALLOWED_PROPERTIES = ['color'];
 const ALLOW_CSS_FUNCTIONS = true;
-const ALLOWED_CLASS = 'hljs-';
+const ALLOWED_CLASS = ['hljs-', 'center', 'right'];
 
 function markedRender(string: string) {
   // Custom emotes
@@ -72,6 +73,8 @@ function markedRender(string: string) {
     smartypants: false,
     xhtml: false,
   });
+
+  marked.use(extensions);
 
   return marked(string);
 }
@@ -105,7 +108,7 @@ function dompurifyRender(window: any, string: string) {
       return;
     }
     classes.forEach((name) => {
-      if (!name.includes(ALLOWED_CLASS)) {
+      if (!ALLOWED_CLASS.includes(name)) {
         (node as HTMLElement).classList.remove(name);
       }
     });

@@ -1,12 +1,12 @@
-import { marked } from "marked";
+import { marked } from 'marked';
 
-export const center = {
+const center: marked.TokenizerExtension | marked.RendererExtension = {
   name: 'center',
   level: 'block',
-  start(src) {
-    return src.match(/<center>/);
+  start(this, src) {
+    return src.match(/<center>/)?.index;
   },
-  tokenizer(src, tokens) {
+  tokenizer(src) {
     const rule = /^<center>([\S\s]*)<\/center>/;
     const match = rule.exec(src);
     if (match) {
@@ -20,20 +20,18 @@ export const center = {
       return token;
     }
   },
-  renderer(token) {
-    return `<p style="text-align:center">${this.parser.parseInline(
-      token.tokens
-    )}</p>\n`;
+  renderer(this, token) {
+    return `<p class="center">${this.parser.parseInline(token.tokens!)}</p>\n`;
   },
-}  as marked.MarkedExtension;
+};
 
-export const right = {
+const right: marked.TokenizerExtension | marked.RendererExtension = {
   name: 'right',
   level: 'block',
-  start(src) {
-    return src.match(/<right>/);
+  start(this, src) {
+    return src.match(/<right>/)?.index;
   },
-  tokenizer(src, tokens) {
+  tokenizer(src) {
     const rule = /^<right>([\S\s]*)<\/right>/;
     const match = rule.exec(src);
     if (match) {
@@ -48,8 +46,15 @@ export const right = {
     }
   },
   renderer(token) {
-    return `<p style="text-align:right">${this.parser.parseInline(
-      token.tokens
-    )}</p>\n`;
+    return `<p class="right">${this.parser.parseInline(token.tokens!)}</p>\n`;
   },
-} as marked.MarkedExtension;
+};
+
+const extensions: (marked.TokenizerExtension | marked.RendererExtension)[] = [
+  center,
+  right,
+];
+
+export default <marked.MarkedExtension>{
+  extensions,
+};
