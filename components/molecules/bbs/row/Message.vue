@@ -45,7 +45,7 @@
             :src="asset(`img/bbs/msg${message.new ? '_new' : ''}.svg`)"
           /> </a
         >&nbsp;
-        <b class="ellipsis title">{{ message.title }}</b>
+        <b class="ellipsis title"></b>
         &nbsp;
         <div v-if="user">
           <button
@@ -104,7 +104,7 @@
           </button>
         </div>
       </div>
-      <hr style="margin: 2px 0" />
+      <hr style="margin: 6px 0" />
       <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
       <div class="markdown-body" v-html="$messageRender(message.content)" />
       <br /><i>"{{ message.author.signature }}"</i>
