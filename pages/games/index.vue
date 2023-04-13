@@ -211,8 +211,6 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@vueuse/head';
-
 const { data } = await useFetch<any>('https://chimboz.fr/api/games');
 data.value = JSON.parse(data.value);
 
