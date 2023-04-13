@@ -61,9 +61,17 @@ useHead({
   ],
 });
 
-watchEffect(() => {
+watch(notifications, () => {
   useHead({ link: notifications.value ? faviconNew : favicon });
 });
+
+watch(i18n.locale, () =>
+  useHead({
+    htmlAttrs: {
+      lang: i18n.locale.value,
+    },
+  })
+);
 
 // TODO check forms submit
 // TODO password reset page

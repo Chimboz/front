@@ -73,9 +73,17 @@ useHead({
   ],
 });
 
-watchEffect(() => {
+watch(notifications, () => {
   useHead({ link: notifications.value ? faviconNew : favicon });
 });
+
+watch(i18n.locale, () =>
+  useHead({
+    htmlAttrs: {
+      lang: i18n.locale.value,
+    },
+  })
+);
 </script>
 <style lang="css" scoped>
 @keyframes cycleBackground {

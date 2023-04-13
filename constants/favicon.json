@@ -2,31 +2,40 @@
   {
     "rel": "apple-touch-icon",
     "sizes": "180x180",
-    "href": "/favicon/apple-touch-icon.png"
+    "href": "/favicon/apple-touch-icon.png",
+    "key": "apple-touch-icon"
   },
   {
     "rel": "icon",
     "type": "image/png",
     "sizes": "32x32",
-    "href": "/favicon/favicon-32x32.png"
+    "href": "/favicon/favicon-32x32.png",
+    "key": "icon32"
   },
   {
     "rel": "icon",
     "type": "image/png",
     "sizes": "16x16",
-    "href": "/favicon/favicon-16x16.png"
+    "href": "/favicon/favicon-16x16.png",
+    "key": "icon16"
   },
-  { "rel": "manifest", "href": "/favicon/site.webmanifest" },
+  { "rel": "manifest", "href": "/favicon/site.webmanifest", "key": "manifest" },
   {
     "rel": "mask-icon",
     "href": "/favicon/safari-pinned-tab.svg",
-    "color": "#6090be"
+    "color": "#6090be",
+    "key": "mask"
   },
-  { "rel": "shortcut,icon", "href": "/favicon/favicon.ico" },
-  { "name": "msapplication-TileColor", "content": "#6090be" },
+  { "rel": "shortcut,icon", "href": "/favicon/favicon.ico", "key": "shortcut" },
+  {
+    "name": "msapplication-TileColor",
+    "content": "#6090be",
+    "key": "tile-color"
+  },
   {
     "name": "msapplication-config",
-    "content": "/favicon/browserconfig.xml"
+    "content": "/favicon/browserconfig.xml",
+    "key": "config"
   },
-  { "name": "theme-color", "content": "#6090be" }
+  { "name": "theme-color", "content": "#6090be", "key": "theme-color" }
 ]
