@@ -117,7 +117,10 @@ const bankData = computed(() => {
     .forEach((day) => {
       const value: number = data.value
         .filter((el: any) => isSameDay(el.date, day))
-        .reduce((prev: any, curr: any) => prev.value + curr.value).value;
+        .reduce(
+          (prev: any, curr: any) => ({ value: prev.value + curr.value }),
+          { value: 0 }
+        ).value;
       balance -= value;
       dataset.labels!.push($format(day, 'd MMM'));
       dataset.datasets[0].data.push([balance, balance + value]);

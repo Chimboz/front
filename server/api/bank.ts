@@ -3,7 +3,7 @@ import { randomInt } from '~~/utils';
 const date = Date.now();
 export default defineEventHandler(() => {
   const bank = [];
-  for (let i = 0; i < 31; i++) {
+  for (let i = 0; i < 40; i++) {
     bank.push({
       date: date - 86400000 * i,
       description: 'Loterie du jour',
