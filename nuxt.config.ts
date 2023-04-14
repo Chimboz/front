@@ -34,15 +34,14 @@ export default defineNuxtConfig({
     '@/assets/css/atomic.scss',
   ],
   i18n: {
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: 'en',
-    },
     strategy: 'no_prefix',
     locales: [
       { code: 'en', file: 'en.json' },
       { code: 'fr', file: 'fr.json' },
     ],
+    precompile: {
+      strictMessage: false,
+    },
     defaultLocale: 'en',
     lazy: true,
     langDir: 'locales/',
