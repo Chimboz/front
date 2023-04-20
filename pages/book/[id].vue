@@ -283,6 +283,8 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
+console.log(data.value);
+
 switch (data.value.gender) {
   case 'chimbo':
     data.value.gender = 'male';
@@ -304,7 +306,7 @@ const color = ref({
 });
 
 const { t } = useI18n();
-useHead({ title: computed(() => t('member')) });
+useHead({ title: computed(() => `${t('member')} ${data.value.name}`) });
 </script>
 <style lang="scss">
 .card {

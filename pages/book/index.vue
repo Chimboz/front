@@ -222,7 +222,7 @@ function suggest() {
 }
 
 const { t } = useI18n();
-useHead({ title: computed(() => t('popularity')) });
+useHead({ title: computed(() => t('book')) });
 </script>
 
 <style lang="scss" scoped>
