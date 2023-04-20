@@ -75,8 +75,6 @@ watch(i18n.locale, () =>
 
 // TODO check forms submit
 // TODO password reset page
-// TODO better quotes
-// TODO add commitlint
 // TODO custom markdown tags
 // TODO input with suggestion (member group etc)
 // FIXME configure eslint
