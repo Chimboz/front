@@ -198,7 +198,7 @@ async function search() {
 
 function suggest() {
   clearTimeout(timer);
-  if (/^[\w._@-]{3,15}$/.test(userSearch.value))
+  if (userSearch.value && /^[\w._@-]{3,15}$/.test(userSearch.value))
     timer = setTimeout(async () => {
       suggestions.value = (
         await useFetch<Suggestion[]>(
