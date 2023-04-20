@@ -94,7 +94,7 @@
           <Pack
             v-for="pack of data.packs"
             :key="pack.name"
-            :name="pack.name"
+            :name="pack.img"
             :looks="pack.looks"
             @click.prevent="show(pack)"
           />
