@@ -37,12 +37,21 @@
             maxlength="15"
             pattern="[\w\.\-_@]{3,15}"
             name="username"
+            list="suggestions"
             type="text"
             class="btn-md"
             :aria-label="$t('book.search')"
             autocomplete="username"
             :placeholder="$t('placeholder.username')"
+            @input="suggest"
           />
+          <datalist id="suggestions">
+            <option
+              v-for="option of suggestions"
+              :key="option.mid"
+              :value="option.pseudo"
+            />
+          </datalist>
           <button type="submit" class="btn-action">
             {{ $t('button.go') }}
           </button>
@@ -169,15 +178,33 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const { data } = await useFetch<any>('https://chimboz.fr/api/book');
 const userSearch = ref('');
+
+type Suggestion = { pseudo: string; mid: number };
+const suggestions = ref<Suggestion[] | null>([]);
 const suggestionsHere = ref<any>(null);
+let timer: NodeJS.Timeout;
 
 async function search() {
   router.push(
     `/book/${
-      (await useFetch<any>(`book/search/${userSearch.value}/search`)).data.value
-        .mid
+      (
+        await useFetch<any>(
+          `https://chimboz.fr/api/book/search/${userSearch.value}/search`
+        )
+      ).data.value.mid
     }`
   );
+}
+
+function suggest() {
+  clearTimeout(timer);
+  timer = setTimeout(async () => {
+    suggestions.value = (
+      await useFetch<Suggestion[]>(
+        `https://chimboz.fr/api/book/search/${userSearch.value}/list`
+      )
+    ).data.value;
+  }, 400);
 }
 
 const { t } = useI18n();
