@@ -35,7 +35,7 @@
             required
             minlength="3"
             maxlength="15"
-            pattern="[\w\.\-_@]{3,15}"
+            pattern="^[\w.\-_@]{3,15}$"
             name="username"
             list="suggestions"
             type="text"
@@ -198,13 +198,14 @@ async function search() {
 
 function suggest() {
   clearTimeout(timer);
-  timer = setTimeout(async () => {
-    suggestions.value = (
-      await useFetch<Suggestion[]>(
-        `https://chimboz.fr/api/book/search/${userSearch.value}/list`
-      )
-    ).data.value;
-  }, 400);
+  if (/^[\w.\-_@]{3,15}$/.test(userSearch.value))
+    timer = setTimeout(async () => {
+      suggestions.value = (
+        await useFetch<Suggestion[]>(
+          `https://chimboz.fr/api/book/search/${userSearch.value}/list`
+        )
+      ).data.value;
+    }, 400);
 }
 
 const { t } = useI18n();
