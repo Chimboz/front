@@ -152,8 +152,8 @@ table {
   overflow: hidden;
 }
 
-:not(.markdown-body) > table:not(.bbs) tr:nth-child(odd) {
-  background: var(--selected-dark-card);
+:not(.markdown-body) > table:not(.bbs) tbody tr:nth-child(odd) {
+  background: var(--light-accent);
 }
 
 iframe {

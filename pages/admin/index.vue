@@ -86,8 +86,8 @@ useHead({ title: computed(() => t('admin')) });
   padding: var(--md-gap);
 }
 
-.log:nth-child(odd) {
-  background: #fff3;
+.log:nth-child(even) {
+  background: var(--light-accent);
 }
 
 .suggestions {
