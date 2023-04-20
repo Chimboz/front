@@ -782,5 +782,6 @@ li::marker {
 
 ol {
   padding-inline-start: 0;
+  list-style-position: outside;
 }
 </style>
