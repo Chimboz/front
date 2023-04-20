@@ -283,7 +283,18 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
-data.value.gender = 'female';
+switch (data.value.gender) {
+  case 'chimbo':
+    data.value.gender = 'male';
+    break;
+  case 'chimbette':
+    data.value.gender = 'female';
+    break;
+  case 'inconnu':
+  default:
+    data.value.gender = 'unknown';
+}
+
 const color = ref({
   h: data.value.gender === 'female' ? 320 : 207,
   s: data.value.gender === 'female' ? '80%' : '50%',
@@ -309,8 +320,8 @@ useHead({ title: computed(() => t('member')) });
     animation: rainbow 5s infinite linear;
   }
 }
-.male .card,
-.unknown .card {
+
+.card-container:not(.female) .card {
   background-image: url(@/assets/img/member/header/male.svg);
 }
 
