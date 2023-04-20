@@ -143,6 +143,11 @@ p {
   padding-bottom: 6px;
 }
 
+ul,
+ol {
+  list-style-position: inside;
+}
+
 table {
   table-layout: fixed;
   border-spacing: 0;
