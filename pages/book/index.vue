@@ -35,7 +35,7 @@
             required
             minlength="3"
             maxlength="15"
-            pattern="^[\w._@-]{3,15}$"
+            pattern="^[\w._@\-]{3,15}$"
             name="username"
             list="suggestions"
             type="text"
@@ -180,7 +180,7 @@ const { data } = await useFetch<any>('https://chimboz.fr/api/book');
 const userSearch = ref('');
 
 type Suggestion = { pseudo: string; mid: number };
-const suggestions = ref<Suggestion[] | null>([]);
+const suggestions = ref<Suggestion[] | undefined>([]);
 const suggestionsHere = ref<any>(null);
 let timer: NodeJS.Timeout;
 
@@ -204,7 +204,20 @@ function suggest() {
         await useFetch<Suggestion[]>(
           `https://chimboz.fr/api/book/search/${userSearch.value}/list`
         )
-      ).data.value;
+      ).data.value?.sort((a, b) => {
+        const regex = RegExp(`^${userSearch.value}`);
+        if (
+          regex.test(a.pseudo.toLowerCase()) &&
+          !regex.test(b.pseudo.toLowerCase())
+        )
+          return -1;
+        if (
+          !regex.test(a.pseudo.toLowerCase()) &&
+          regex.test(b.pseudo.toLowerCase())
+        )
+          return 1;
+        return a.pseudo.localeCompare(b.pseudo.toLowerCase());
+      });
     }, 400);
 }
 
