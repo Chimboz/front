@@ -321,11 +321,11 @@ useHead({ title: computed(() => t('member')) });
   }
 }
 
-.card-container:not(.female) .card {
+.member:not(.female) .card {
   background-image: url(@/assets/img/member/header/male.svg);
 }
 
-.female .card {
+.member.female .card {
   background-image: url(@/assets/img/member/header/female.svg);
 }
 
