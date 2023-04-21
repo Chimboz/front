@@ -54,7 +54,7 @@ function play() {
 .pack-header,
 .pack-footer {
   position: absolute;
-  mask-origin: padding-box;
+  mask-origin: content-box;
   width: 100%;
   padding: 6%;
   background-size: cover;
