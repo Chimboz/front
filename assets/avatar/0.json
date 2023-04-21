@@ -1,0 +1,38 @@
+{
+  "animation": "bump",
+  "hat": {
+    "top": -44,
+    "left": -18.6,
+    "scale": 0.85
+  },
+  "body": {
+    "top": -21.3,
+    "left": -20,
+    "scale": 0.91
+  },
+  "shoe": {
+    "top": 25.3,
+    "y": -7,
+    "scale": 0.75
+  },
+  "item2": {
+    "top": -42,
+    "left": -10,
+    "scale": 0.91
+  },
+  "item1": {
+    "top": -10.65,
+    "left": -10.65,
+    "scale": 0.91
+  },
+  "item0": {
+    "top": -13.9,
+    "left": -2.4,
+    "scale": 0.91
+  },
+  "emote": {
+    "top": -53.7,
+    "left": -55.2,
+    "scale": 0.91
+  }
+}

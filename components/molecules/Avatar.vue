@@ -1,14 +1,45 @@
 <template>
-  <div class="tiz animated" @contextmenu.prevent>
-    <div v-if="avatar === 0 || avatar === 2 || avatar === 6" class="avatar">
-      <Item :id="shoe" type="shoe" class="shoe1" />
-      <Item :id="shoe" type="shoe" class="shoe2" />
+  <div :class="[config.animation]" class="tiz animated" @contextmenu.prevent>
+    <div class="avatar">
+      <Item
+        :id="shoe"
+        type="shoe"
+        class="shoe1"
+        :style="{
+          top: `${config.shoe.top}px`,
+          left: `${config.shoe.y}px`,
+          transform: `scale(${config.shoe.scale})`,
+        }"
+      />
+      <Item
+        :id="shoe"
+        type="shoe"
+        class="shoe2"
+        :style="{
+          top: `${config.shoe.top}px`,
+          right: `${config.shoe.y}px`,
+          transform: `scale(-${config.shoe.scale},${config.shoe.scale})`,
+        }"
+      />
       <div class="body-parts">
-        <Item :id="body" type="body" />
+        <Item
+          :id="body"
+          type="body"
+          :style="{
+            top: `${config.body.top}px`,
+            left: `${config.body.left}px`,
+            transform: `scale(${config.body.scale})`,
+          }"
+        />
         <img
           class="item emote"
           draggable="false"
           alt="Emote"
+          :style="{
+            top: `${config.emote.top}px`,
+            left: `${config.emote.left}px`,
+            transform: `scale(${config.emote.scale})`,
+          }"
           :src="`/avatar/0/emote/${emote}.svg`"
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
@@ -21,10 +52,42 @@
           @contextmenu.prevent
           @error.prevent="(e) => ((e.target as ImgHTMLAttributes).style! = 'display: none')"
         />
-        <Item :id="item2" type="item2" />
-        <Item :id="item1" type="item1" />
-        <Item :id="hat" type="hat" />
-        <Item :id="item0" type="item0" />
+        <Item
+          :id="item2"
+          type="item2"
+          :style="{
+            top: `${config.item2.top}px`,
+            left: `${config.item2.left}px`,
+            transform: `scale(${config.item2.scale})`,
+          }"
+        />
+        <Item
+          :id="item1"
+          type="item1"
+          :style="{
+            top: `${config.item1.top}px`,
+            left: `${config.item1.left}px`,
+            transform: `scale(${config.item1.scale})`,
+          }"
+        />
+        <Item
+          :id="hat"
+          type="hat"
+          :style="{
+            top: `${config.hat.top}px`,
+            left: `${config.hat.left}px`,
+            transform: `scale(${config.hat.scale})`,
+          }"
+        />
+        <Item
+          :id="item0"
+          type="item0"
+          :style="{
+            top: `${config.item0.top}px`,
+            left: `${config.item0.left}px`,
+            transform: `scale(${config.item0.scale})`,
+          }"
+        />
       </div>
     </div>
     <div class="shadow" />
@@ -32,8 +95,9 @@
 </template>
 <script setup lang="ts">
 import { ImgHTMLAttributes } from 'vue';
-// TODO refacto
-withDefaults(
+import { AvatarConfig } from '@/types/Avatar';
+
+const props = withDefaults(
   defineProps<{
     avatar: number;
     emote: string;
@@ -54,6 +118,10 @@ withDefaults(
     item1: 868,
     item2: 938,
   }
+);
+
+const config: AvatarConfig = await import(
+  `../../assets/avatar/${props.avatar}.json`
 );
 </script>
 <style lang="scss" scoped>
@@ -90,56 +158,11 @@ withDefaults(
   top: 0;
 }
 
-.shoe1 {
-  top: 25.3px;
-  left: -7px;
-  transform: scale(0.75);
-}
-
-.shoe2 {
-  top: 24.9px;
-  left: 14.7px;
-  transform: scale(-0.75, 0.75);
-}
-
-.hat {
-  top: -44px;
-  left: -18.6px;
-  transform: scale(0.85);
-}
-
-.body {
-  top: -21.3px;
-  left: -20px;
-  transform: scale(0.91);
-}
-
-.item2 {
-  top: -42px;
-  left: -10px;
-  transform: scale(0.91);
-}
-
-.item1 {
-  top: -10.65px;
-  left: -10.65px;
-  transform: scale(0.91);
-}
-
-.item0 {
-  top: -13.9px;
-  left: -2.4px;
-  transform: scale(0.91);
-}
-
-.emote {
-  top: -53.7px;
-  left: -55.2px;
-  transform: scale(0.91);
-}
-
 .body-parts {
   position: relative;
+}
+
+.bump .body-parts {
   animation: bump 2.2s infinite;
 }
 
