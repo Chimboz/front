@@ -9,60 +9,8 @@
       <source src="@/assets/sound/shop/hover.mp3" type="audio/wav" />
     </audio>
     <img src="@/assets/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
-    <svg
-      viewBox="0 0 155.612 89.887"
-      xmlns="http://www.w3.org/2000/svg"
-      class="pack-header"
-    >
-      <path
-        d="m63.793 7.664-5.223.008c-4.95.008-12.23 4.93-12.23 10.068v11.758c0 5.114 4.532 12.248 12.387 12.386h38.362c8.909 0 12.204-8.826 12.26-12.261V17.666c0-6.12-8.063-9.924-12.135-9.924l-4.902.088c0-3.975-1.727-6.273-4.191-7.536h60.809c4.388 0 6.682 3.24 6.682 6.682v74.667c0 5.398-3.452 8.162-8.162 8.162-14.054 0-48.13-5.886-72.312-5.82-22.627.064-52.674 6.71-67.63 5.82-4.787 0-7.508-4.64-7.508-7.508V7.547C0 2.256 4.972 0 7.547 0h60.004c-1.992 1.599-3.715 3.36-3.757 7.665Z"
-        :fill="`url(#header_${name})`"
-      />
-      <defs>
-        <pattern
-          :id="`header_${name}`"
-          patternUnits="userSpaceOnUse"
-          width="100%"
-          height="100%"
-          x="0"
-          y="0"
-        >
-          <image
-            :href="`/pack/header/${name}.webp`"
-            x="0"
-            y="0"
-            width="155.612"
-            height="89.887"
-            preserveAspectRatio="xMidYMid slice"
-          />
-        </pattern>
-      </defs>
-    </svg>
-    <svg
-      viewBox="0 0 166 64"
-      xmlns="http://www.w3.org/2000/svg"
-      class="pack-footer"
-    >
-      <path
-        d="M32 0h102c17.728 0 32 14.272 32 32s-14.272 32-32 32H32C14.272 64 0 49.728 0 32S14.272 0 32 0Z"
-        :fill="`url(#footer_${name})`"
-      />
-      <defs>
-        <pattern
-          :id="`footer_${name}`"
-          patternUnits="userSpaceOnUse"
-          width="100%"
-          height="100%"
-        >
-          <image
-            :href="`/pack/footer/${name}.webp`"
-            width="166"
-            height="64"
-            preserveAspectRatio="xMidYMid slice"
-          />
-        </pattern>
-      </defs>
-    </svg>
+    <div class="pack-header"></div>
+    <div class="pack-footer"></div>
     <div class="pack-content flex">
       <Avatar
         class="female"
@@ -90,7 +38,7 @@
   </div>
 </template>
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   name: string;
   looks: any[];
 }>();
@@ -100,19 +48,38 @@ const audio = ref<null | HTMLAudioElement>(null);
 function play() {
   audio.value!.play();
 }
+
+const footer = `url("/pack/footer/${props.name}.webp")`;
+const header = `url("/pack/header/${props.name}.webp")`;
 </script>
 
 <style scoped>
 .pack-header,
 .pack-footer {
   position: absolute;
+
+  mask-origin: padding-box;
   width: 100%;
   padding: 6%;
+  background-size: cover;
+  mask-origin: content;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.pack-header {
+  aspect-ratio: 1.73;
+  mask-image: url(/assets/img/pack/header.svg);
+  background-image: v-bind(header);
 }
 
 .pack-footer {
   bottom: 0;
+  aspect-ratio: 2.6;
+  mask-image: url(/assets/img/pack/footer.svg);
+  background-image: v-bind(footer);
 }
+
 .pack {
   position: relative;
 }
