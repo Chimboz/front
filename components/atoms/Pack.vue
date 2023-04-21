@@ -9,8 +9,8 @@
       <source src="@/assets/sound/shop/hover.mp3" type="audio/wav" />
     </audio>
     <img src="@/assets/img/pack/sleeve.svg" style="width: 100%" alt="Sleeve" />
-    <div class="pack-header"></div>
-    <div class="pack-footer"></div>
+    <img class="pack-header" :src="`/pack/header/${props.name}.webp`" />
+    <img class="pack-footer" :src="`/pack/footer/${props.name}.webp`" />
     <div class="pack-content flex">
       <Avatar
         class="female"
@@ -48,16 +48,12 @@ const audio = ref<null | HTMLAudioElement>(null);
 function play() {
   audio.value!.play();
 }
-
-const footer = `url("/pack/footer/${props.name}.webp")`;
-const header = `url("/pack/header/${props.name}.webp")`;
 </script>
 
 <style scoped>
 .pack-header,
 .pack-footer {
   position: absolute;
-
   mask-origin: padding-box;
   width: 100%;
   padding: 6%;
@@ -68,16 +64,12 @@ const header = `url("/pack/header/${props.name}.webp")`;
 }
 
 .pack-header {
-  aspect-ratio: 1.73;
   mask-image: url(/assets/img/pack/header.svg);
-  background-image: v-bind(header);
 }
 
 .pack-footer {
   bottom: 0;
-  aspect-ratio: 2.6;
   mask-image: url(/assets/img/pack/footer.svg);
-  background-image: v-bind(footer);
 }
 
 .pack {
