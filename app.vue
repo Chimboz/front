@@ -88,7 +88,7 @@ watch(i18n.locale, () =>
 // TODO opengraph https://ogp.me/
 // TODO check prototype pollution
 // TODO forget password page
-// TODO replace marked emoji support by extension + check language class on code blocks + link auto detection + compare highlight.js with prismjs
+// TODO replace marked emoji support by extension with :nerd: + functional message copy image + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 </script>
 <style lang="css" scoped>
 @keyframes cycleBackground {
