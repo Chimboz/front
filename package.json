@@ -86,7 +86,7 @@
     "date-fns": "^2.29.3",
     "dompurify": "^3.0.0",
     "highlight.js": "^11.7.0",
-    "jsdom": "^21.0.0",
+    "jsdom": "^22.0.0",
     "marked": "^4.2.5",
     "modern-normalize": "^1.1.0",
     "pinia": "^2.0.34",
