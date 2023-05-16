@@ -68,7 +68,7 @@
     "inquirer": "^8.2.5",
     "lint-staged": "^13.2.1",
     "mitt": "^3.0.0",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.5.0",
     "prettier": "^2.8.2",
     "sass": "^1.61.0",
     "typescript": "^5.0.2",
@@ -88,7 +88,7 @@
     "highlight.js": "^11.7.0",
     "jsdom": "^22.0.0",
     "marked": "^4.2.5",
-    "modern-normalize": "^1.1.0",
+    "modern-normalize": "^2.0.0",
     "pinia": "^2.0.34",
     "v-lazy-image": "^2.1.1",
     "vue-chart-3": "^3.1.8"
