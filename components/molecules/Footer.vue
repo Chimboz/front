@@ -22,7 +22,6 @@
         draggable="false"
         alt="Discord server"
         title="Discord server"
-        width="127"
         height="20"
         src="https://img.shields.io/discord/765491519536496660?label=discord&amp;logo=discord&amp;logoColor=fff"
         @contextmenu.prevent /></a
@@ -49,14 +48,36 @@
         draggable="false"
         alt="Front version"
         title="Front version"
-        width="96"
         height="20"
-        src="https://img.shields.io/github/package-json/v/Chimboz/ChimbozFront"
+        :src="`https://img.shields.io/badge/version-v${runtimeConfig.public.clientVersion.replaceAll(
+          '-',
+          '--'
+        )}-${color}`"
         @contextmenu.prevent
     /></a>
   </footer>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const runtimeConfig = useRuntimeConfig();
+
+const releaseType =
+  runtimeConfig.public.clientVersion.match(/^\d+.\d+.\d+-([a-z]+)\d+$/)?.[1] ??
+  'stable';
+const color = computed(() => {
+  switch (releaseType) {
+    case 'stable':
+      return 'blue';
+    case 'alpha':
+      return 'orange';
+    case 'beta':
+      return 'yellow';
+    case 'rc':
+      return 'green';
+    default:
+      return 'lightgrey';
+  }
+});
+</script>
 <style lang="scss" scoped>
 footer {
   margin-bottom: var(--gap);

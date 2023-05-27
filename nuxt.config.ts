@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import pkg from './package.json';
+
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      clientVersion: pkg.version,
+    },
+  },
   typescript: {
     strict: true,
     // TODO typeCheck: true
