@@ -19,13 +19,7 @@
           style="display: inherit"
         />
         <div class="flex">
-          <button
-            id="theme-toggler"
-            class="btn-header btn-toggle mr-2"
-            type="button"
-            :aria-label="$t('button.theme')"
-            @click="toggle"
-          />
+          <dark-mode-toggler class="mr-2" />
           <button
             class="mr-2"
             type="button"
@@ -213,61 +207,8 @@ import useAuthStore from '@/stores/auth';
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
-const colorMode = useColorMode();
 
 defineProps<{ time: string }>();
-
-function toggleColorMode() {
-  colorMode.value !== 'dark'
-    ? (colorMode.preference = 'dark')
-    : (colorMode.preference = 'light');
-}
-
-const isAppearanceTransition =
-  // @ts-expect-error: Transition API
-  document.startViewTransition &&
-  !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-/**
- * Credit to [@hooray](https://github.com/hooray)
- * @see https://github.com/vuejs/vitepress/pull/2347
- */
-function toggle(event?: MouseEvent) {
-  if (!isAppearanceTransition || !event) {
-    toggleColorMode();
-    return;
-  }
-  const x = event.clientX;
-  const y = event.clientY;
-  const endRadius = Math.hypot(
-    Math.max(x, innerWidth - x),
-    Math.max(y, innerHeight - y)
-  );
-  // @ts-expect-error: Transition API
-  const transition = document.startViewTransition(async () => {
-    toggleColorMode();
-    await nextTick();
-  });
-  transition.ready.then(() => {
-    const clipPath = [
-      `circle(0px at ${x}px ${y}px)`,
-      `circle(${endRadius}px at ${x}px ${y}px)`,
-    ];
-    document.documentElement.animate(
-      {
-        clipPath:
-          colorMode.preference === 'dark' ? [...clipPath].reverse() : clipPath,
-      },
-      {
-        duration: 400,
-        easing: 'ease-in',
-        pseudoElement:
-          colorMode.preference === 'dark'
-            ? '::view-transition-old(root)'
-            : '::view-transition-new(root)',
-      }
-    );
-  });
-}
 </script>
 <style lang="scss" scoped>
 header {
@@ -297,20 +238,6 @@ header {
   text-shadow: 0 0 5px var(--light), 0 0 5px var(--light);
 }
 
-.theme-toggler {
-  background: var(--light);
-  border-radius: var(--round);
-  height: calc(var(--font-size) * 2);
-  background: var(--dark);
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.theme-toggler img {
-  height: calc(var(--font-size) * 2);
-}
-
 .btn-header {
   font-family: 'Pixelated Verdana 12';
   font-size: 1.3rem;
@@ -328,17 +255,6 @@ header {
 .btn-header:hover {
   background: var(--light-blue);
   text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
-}
-
-.btn-toggle {
-  width: 20px;
-}
-
-#theme-toggler {
-  background-size: 16px;
-  background-position: 2px;
-  background-repeat: no-repeat;
-  background-image: url(@/assets/img/icon/theme/light.svg);
 }
 
 #connect {
