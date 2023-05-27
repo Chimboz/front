@@ -24,11 +24,7 @@
             class="btn-header btn-toggle mr-2"
             type="button"
             :aria-label="$t('button.theme')"
-            @click="
-              $colorMode.value !== 'dark'
-                ? ($colorMode.preference = 'dark')
-                : ($colorMode.preference = 'light')
-            "
+            @click="toggle"
           />
           <button
             class="mr-2"
@@ -217,8 +213,61 @@ import useAuthStore from '@/stores/auth';
 
 const auth = useAuthStore();
 const user = computed(() => auth.user);
+const colorMode = useColorMode();
 
 defineProps<{ time: string }>();
+
+function toggleColorMode() {
+  colorMode.value !== 'dark'
+    ? (colorMode.preference = 'dark')
+    : (colorMode.preference = 'light');
+}
+
+const isAppearanceTransition =
+  // @ts-expect-error: Transition API
+  document.startViewTransition &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/**
+ * Credit to [@hooray](https://github.com/hooray)
+ * @see https://github.com/vuejs/vitepress/pull/2347
+ */
+function toggle(event?: MouseEvent) {
+  if (!isAppearanceTransition || !event) {
+    toggleColorMode();
+    return;
+  }
+  const x = event.clientX;
+  const y = event.clientY;
+  const endRadius = Math.hypot(
+    Math.max(x, innerWidth - x),
+    Math.max(y, innerHeight - y)
+  );
+  // @ts-expect-error: Transition API
+  const transition = document.startViewTransition(async () => {
+    toggleColorMode();
+    await nextTick();
+  });
+  transition.ready.then(() => {
+    const clipPath = [
+      `circle(0px at ${x}px ${y}px)`,
+      `circle(${endRadius}px at ${x}px ${y}px)`,
+    ];
+    document.documentElement.animate(
+      {
+        clipPath:
+          colorMode.preference === 'dark' ? [...clipPath].reverse() : clipPath,
+      },
+      {
+        duration: 400,
+        easing: 'ease-in',
+        pseudoElement:
+          colorMode.preference === 'dark'
+            ? '::view-transition-old(root)'
+            : '::view-transition-new(root)',
+      }
+    );
+  });
+}
 </script>
 <style lang="scss" scoped>
 header {
