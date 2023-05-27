@@ -1,6 +1,6 @@
 <template>
   <Card class="rules" color="blue" :bot="bot" :top="top">
-    <div class="rule-container fullwidth">
+    <div class="rules-container fullwidth">
       <div>
         <img
           draggable="false"
@@ -18,7 +18,7 @@
         <b>{{ $t(`rules.rule${rule}`) }}</b>
       </div>
     </div>
-    <div class="fullwidth">
+    <div class="fullwidth btn-rules">
       <Button icon="rules.svg" type="button"> Règles </Button>
     </div>
   </Card>
@@ -39,18 +39,33 @@ setInterval(() => {
 }
 </style>
 <style lang="scss" scoped>
-.rule-container {
-  height: 120px;
-  overflow: hidden;
-  padding: var(--gap);
-}
-.rule {
-  animation: opacity 3s infinite;
-  color: var(--light);
-}
+.rules {
+  .rules-container {
+    background: #1fabff linear-gradient(180deg, #99dbfa, #1fabff 20%);
+    border-radius: 12px 12px 0 0;
+    box-shadow: inset 0 0 1px 4px #1fabff;
+    height: 120px;
+    overflow: hidden;
+    padding: var(--gap);
+  }
 
-.rule-number {
-  transform: translateY(-18px);
+  .btn-rules {
+    background: linear-gradient(
+      to bottom,
+      #1fabff,
+      #1fabff 50%,
+      var(--selected-main-card) 50%
+    ) !important;
+  }
+
+  .rule {
+    animation: opacity 3s infinite;
+    color: var(--light);
+  }
+
+  .rule-number {
+    transform: translateY(-18px);
+  }
 }
 
 @keyframes opacity {
