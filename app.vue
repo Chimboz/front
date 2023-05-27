@@ -1,7 +1,7 @@
 <template>
   <div id="body">
     <main id="main">
-      <Loader />
+      <NuxtLoadingIndicator color="var(--pink)" :height="4" />
       <Navbar :time="time" />
       <Transition>
         <div>
