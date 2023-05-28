@@ -52,7 +52,7 @@ function toggleDark(event?: MouseEvent) {
           colorMode.preference === 'dark' ? [...clipPath].reverse() : clipPath,
       },
       {
-        duration: 400,
+        duration: 300,
         easing: 'ease-in',
         pseudoElement:
           colorMode.preference === 'dark'
