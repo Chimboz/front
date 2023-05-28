@@ -96,7 +96,7 @@ defineProps<{
   content: '▼ ';
   display: inline-block;
   will-change: transform;
-  transition: 0.2s;
+  transition: var(--duration);
 }
 
 .category.arrow .link::before {

@@ -92,7 +92,7 @@ select option:checked {
 :target,
 .target {
   background: var(--light-bbs);
-  transition: 0.3s;
+  transition: var(--duration);
 }
 
 // Default tags

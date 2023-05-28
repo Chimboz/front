@@ -51,7 +51,7 @@ async function onScroll({ target }: UIEvent) {
 .scrollable {
   overflow-y: auto;
   overflow-x: hidden;
-  transition: 0.3s;
+  transition: var(--duration);
 }
 
 .spinner-loading {

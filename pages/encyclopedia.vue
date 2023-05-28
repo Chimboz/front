@@ -229,7 +229,7 @@ useHead({ title: computed(() => t('encyclopedia')) });
   max-height: 450px;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: 0.3s;
+  transition: var(--duration);
 }
 
 .spinner-loading {

@@ -515,7 +515,7 @@ li::marker {
   left: 0;
   width: 100%;
   height: 100%;
-  animation: bg 0.3s linear infinite 0.3s alternate;
+  animation: bg var(--duration) linear infinite var(--duration) alternate;
   z-index: 2;
   border-radius: 50%/20%;
 }
@@ -527,7 +527,7 @@ li::marker {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(to bottom, #b40026, transparent);
-  animation: opacity 0.3s linear infinite alternate;
+  animation: opacity var(--duration) linear infinite alternate;
   z-index: 1;
   border-radius: 50%/20%;
 }
@@ -590,7 +590,7 @@ li::marker {
   );
   border-radius: 100%;
   position: absolute;
-  animation: blink 0.3s infinite step-end;
+  animation: blink var(--duration) infinite step-end;
   z-index: 2;
 }
 
