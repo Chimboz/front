@@ -17,11 +17,13 @@
           <div
             v-for="rank of data"
             :key="rank.level"
-            class="pointer"
+            class="pointer level"
+            :class="{ active: selected === rank.level }"
             @click="selected = rank.level"
             @keyup="selected = rank.level"
           >
-            <Number :number="rank.level" />&nbsp;<b>{{ rank.name }}</b>
+            <b class="mr-auto">{{ rank.name }}</b>
+            <div><Number :number="rank.level" /></div>
           </div>
         </div>
         <div class="level-description flex centered">
@@ -58,17 +60,23 @@ useHead({ title: computed(() => t('levels')) });
   max-height: 450px;
   overflow-y: scroll;
   direction: rtl;
-  div {
+  .level {
     background: var(--dark-card-yellow);
     border: 2px solid var(--main-card-yellow);
     padding: var(--gap);
     border-radius: var(--border-radius);
     direction: ltr;
+    transition: var(--duration);
+
+    &.active {
+      background: var(--pink);
+      color: var(--light);
+    }
   }
 }
+
 .level-description {
   flex-direction: column;
-  justify-content: center;
   flex: 1 0 0%;
 }
 </style>
