@@ -83,6 +83,7 @@
         </div>
       </div>
       <Avatar
+        class="pointer"
         style="margin-right: 16px"
         :avatar="user ? 0 : 0"
         :emote="user ? user.avatar_mood : 'neutral'"
@@ -92,6 +93,7 @@
         :item0="user ? +user.avatar_design.split(';')[4] : 792"
         :item1="user ? +user.avatar_design.split(';')[5] : 868"
         :item2="user ? +user.avatar_design.split(';')[6] : 938"
+        @click="$router.push(`/book/${user?.id}`)"
       />
     </div>
   </header>
@@ -286,7 +288,7 @@ header {
   text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
 }
 
-@media (pointer: coarse), (pointer: none) {
+@media (pointer: coarse), (pointer: none), not (min-width: 600px) {
   .btn-header {
     border: 8px solid #fff0;
   }
