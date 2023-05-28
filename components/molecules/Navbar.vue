@@ -10,6 +10,15 @@
         src="@/assets/img/logo.svg"
         @contextmenu.prevent
       />
+      <img
+        id="logo_responsive"
+        draggable="false"
+        alt="Logo Chimboz"
+        width="112"
+        height="70"
+        src="@/assets/img/logo_responsive.svg"
+        @contextmenu.prevent
+      />
     </NuxtLink>
     <div class="login flex">
       <div style="margin-top: -10px">
@@ -21,7 +30,7 @@
         <div class="flex">
           <dark-mode-toggler class="mr-2" />
           <button
-            class="mr-2"
+            class="mr-2 btn-header"
             type="button"
             @click="$i18n.setLocale($i18n.locale === 'fr' ? 'en' : 'fr')"
           >
@@ -228,8 +237,17 @@ header {
   background-size: cover;
 }
 
-#logo {
+#logo,
+#logo_responsive {
   float: left;
+}
+
+#logo {
+  display: none;
+}
+
+#logo_responsive {
+  display: block;
 }
 
 .login {
@@ -260,11 +278,18 @@ header {
   text-align: left;
   display: flex;
   align-items: center;
+  box-sizing: content-box;
 }
 
 .btn-header:hover {
   background: var(--light-blue);
   text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
+}
+
+@media (pointer: coarse) {
+  .btn-header {
+    border: 8px solid #fff0;
+  }
 }
 
 #connect {
@@ -418,6 +443,14 @@ nav a:first-child .nav-btn:active {
 }
 
 @media (min-width: 600px) {
+  #logo {
+    display: block;
+  }
+
+  #logo_responsive {
+    display: none;
+  }
+
   .btn-label {
     display: inherit;
   }

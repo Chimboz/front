@@ -75,16 +75,23 @@ function toggleDark(event?: MouseEvent) {
   line-height: 1;
   background-color: var(--light);
   background-size: 16px;
-  background-position: 2px;
+  background-position: 4px;
   background-repeat: no-repeat;
   background-image: url(@/assets/img/icon/theme/light.svg);
   text-align: left;
   display: flex;
   align-items: center;
+  box-sizing: content-box;
 
   &:hover {
     background-color: var(--light-blue);
     text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
+  }
+}
+
+@media (pointer: coarse) {
+  #theme-toggler {
+    border: 8px solid #fff0;
   }
 }
 </style>
