@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries category="home" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
