@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -305,6 +305,10 @@ const color = ref({
   rainbow: false,
 });
 
+definePageMeta({
+  category: 'members',
+  section: 'book',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => `${t('member')} ${data.value.name}`) });
 </script>

@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Community" />
+          <SideNavEntries category="community" />
         </div>
       </Card>
       <Rules bot />
@@ -24,6 +24,10 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/bbs/topic/${route.params.forum}/${route.params.topic}?page=${route.params.page}`
 );
 
+definePageMeta({
+  category: 'community',
+  section: 'bbs',
+});
 useHead({
   title: computed(() => `${t('topic')} "${data.value.messages[0].title}"`),
 });

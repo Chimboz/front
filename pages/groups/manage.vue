@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -363,6 +363,10 @@ function leave(id: number) {
   useFetch(`groups/manage/${id}/1`);
 }
 
+definePageMeta({
+  category: 'members',
+  section: 'groups',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('groups')) });
 </script>

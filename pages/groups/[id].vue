@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -148,6 +148,10 @@ function join() {
   useFetch(`groups/demand/${data.value.id}`);
 }
 
+definePageMeta({
+  category: 'members',
+  section: 'groups',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('group')) });
 </script>

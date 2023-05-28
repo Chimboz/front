@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -454,6 +454,10 @@ function vote() {
   });
 }
 
+definePageMeta({
+  category: 'members',
+  section: 'popularity',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('popularity')) });
 </script>

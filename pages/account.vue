@@ -11,7 +11,7 @@
           </div>
         </NuxtLink>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" />
+          <SideNavEntries category="account" />
         </div>
       </Card>
       <Bank />
@@ -311,6 +311,10 @@ function statsPatojdur() {
   };
 }
 
+definePageMeta({
+  category: 'account',
+  section: 'account',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('account')) });
 </script>

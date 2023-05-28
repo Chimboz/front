@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" />
+          <SideNavEntries category="account" />
         </div>
       </Card>
       <Rules bot />
@@ -74,6 +74,10 @@ function submit() {
   });
 }
 
+definePageMeta({
+  category: 'account',
+  section: 'lowupp',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('capitalization')) });
 </script>

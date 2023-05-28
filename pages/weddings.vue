@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -419,6 +419,11 @@ const userSearch = ref('');
 function search() {
   router.push(`/weddings/${idSearch.value}`);
 }
+
+definePageMeta({
+  category: 'members',
+  section: 'weddings',
+});
 
 const { t } = useI18n();
 useHead({ title: computed(() => t('wedding')) });

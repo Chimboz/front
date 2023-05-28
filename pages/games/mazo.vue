@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Games" />
+          <SideNavEntries category="games" />
         </div>
       </Card>
       <Rules bot />
@@ -182,6 +182,10 @@
 <script setup lang="ts">
 const { data } = await useFetch<any>('https://chimboz.fr/api/games/mazo');
 
+definePageMeta({
+  category: 'games',
+  section: 'mazo',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('mazo')) });
 </script>

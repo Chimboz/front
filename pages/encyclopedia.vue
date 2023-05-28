@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Community" />
+          <SideNavEntries category="community" />
         </div>
       </Card>
       <Rules bot />
@@ -216,6 +216,10 @@ const search = ref('');
 
 function onSearch() {}
 
+definePageMeta({
+  category: 'community',
+  section: 'encyclopedia',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('encyclopedia')) });
 </script>

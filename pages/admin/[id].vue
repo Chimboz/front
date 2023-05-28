@@ -254,6 +254,10 @@ function action(type: string, payload?: object) {
   });
 }
 
+definePageMeta({
+  category: 'admin',
+  section: 'admin',
+});
 useHead({ title: computed(() => t('admin')) });
 </script>
 <style lang="scss" scoped>

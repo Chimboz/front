@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -303,6 +303,10 @@ function rejectDemand(id: number) {
 function focusHandler() {}
 function selectionHandler() {}
 
+definePageMeta({
+  category: 'members',
+  section: 'groups',
+});
 useHead({ title: computed(() => t('groupedit')) });
 </script>
 <style lang="scss" scoped>

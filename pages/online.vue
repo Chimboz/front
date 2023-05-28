@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="home" />
         </div>
       </Card>
       <Rules bot />
@@ -49,6 +49,10 @@
 <script setup lang="ts">
 const { data } = await useFetch<any>('https://chimboz.fr/api/online');
 
+definePageMeta({
+  category: 'home',
+  section: 'online',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('online')) });
 </script>

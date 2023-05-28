@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" />
+          <SideNavEntries category="account" />
         </div>
       </Card>
       <Rules bot />
@@ -152,6 +152,10 @@ const options = {
   },
 };
 
+definePageMeta({
+  category: 'account',
+  section: 'bank',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('bank')) });
 </script>

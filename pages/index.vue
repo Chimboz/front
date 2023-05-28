@@ -202,6 +202,10 @@ async function handle() {
   gain.value = (await useFetch<any>('/api/lottery')).data.value.gain;
 }
 
+definePageMeta({
+  category: 'home',
+  section: 'home',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('home')) });
 </script>

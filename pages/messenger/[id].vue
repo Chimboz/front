@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" />
+          <SideNavEntries category="account" />
         </div>
       </Card>
       <Rules bot />
@@ -130,6 +130,10 @@ function send() {
   input.value = '';
 }
 
+definePageMeta({
+  category: 'account',
+  section: 'messenger',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('conversation')) });
 </script>

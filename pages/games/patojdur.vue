@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Games" />
+          <SideNavEntries category="games" />
         </div>
       </Card>
       <Rules bot />
@@ -372,6 +372,10 @@ data.value.stats = {
   yesterday: 2,
 };
 
+definePageMeta({
+  category: 'games',
+  section: 'patojdur',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('patojdur')) });
 </script>

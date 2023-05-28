@@ -78,6 +78,10 @@ function search() {
   return true;
 }
 
+definePageMeta({
+  category: 'admin',
+  section: 'admin',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('admin')) });
 </script>

@@ -74,6 +74,11 @@ const { data } = await useFetch<any>(
 const hue = ref(0);
 const add = ref<string>('#000000');
 const multiply = ref<string>('#ffffff');
+
+definePageMeta({
+  category: 'community',
+  section: 'encyclopedia',
+});
 </script>
 <style lang="scss" scoped>
 .item-name {

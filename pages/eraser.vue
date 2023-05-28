@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Account" />
+          <SideNavEntries category="account" />
         </div>
       </Card>
       <Rules bot />
@@ -83,6 +83,10 @@ async function generatePseudo() {
   pseudo.value = JSON.parse(data.value).pseudo;
 }
 
+definePageMeta({
+  category: 'account',
+  section: 'eraser',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('eraser')) });
 </script>

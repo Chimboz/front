@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Community" />
+          <SideNavEntries category="community" />
         </div>
       </Card>
       <Rules bot />
@@ -42,6 +42,10 @@ const { data } = await useFetch<any[]>(
   'https://chimboz.fr/public/api/gallery?page=0'
 );
 
+definePageMeta({
+  category: 'community',
+  section: 'chaparazzi',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('chaparazzi')) });
 </script>

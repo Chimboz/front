@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Games" />
+          <SideNavEntries category="games" />
         </div>
       </Card>
       <Rules bot />
@@ -245,6 +245,10 @@
   </Container>
 </template>
 <script setup lang="ts">
+definePageMeta({
+  category: 'games',
+  section: 'bacteria',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('bacteria.story')) });
 </script>

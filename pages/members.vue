@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Members" />
+          <SideNavEntries category="members" />
         </div>
       </Card>
       <Rules bot />
@@ -198,6 +198,10 @@ async function searchGroup() {
   );
 }
 
+definePageMeta({
+  category: 'members',
+  section: 'members',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('members')) });
 </script>

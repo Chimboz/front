@@ -1,9 +1,10 @@
 <template>
   <NuxtLink
     v-for="(entry, i) of sideNavEntries.filter(
-      (entry) => entry.section === section
+      (entry) => entry.category === category
     )"
     :key="i"
+    :class="{ active: $route.meta.section === entry.section }"
     :to="entry.url"
   >
     <div class="list">
@@ -20,7 +21,7 @@
 </template>
 <script setup lang="ts">
 defineProps<{
-  section: string;
+  category: string;
 }>();
 
 const { t } = useI18n();
@@ -29,107 +30,126 @@ const sideNavEntries = computed(() => [
   {
     label: t('account'),
     url: '/account',
-    section: 'Account',
+    category: 'account',
+    section: 'account',
   },
   {
     label: t('messenger'),
     url: '/messenger',
-    section: 'Account',
+    category: 'account',
+    section: 'messenger',
   },
   {
     label: t('groups'),
     url: '/groups/manage',
-    section: 'Account',
+    category: 'account',
+    section: 'groups',
   },
   {
     label: t('friends'),
     url: '/friends',
-    section: 'Account',
+    category: 'account',
+    section: 'friends',
   },
   {
     label: t('password'),
     url: '/notsmart',
-    section: 'Account',
+    category: 'account',
+    section: 'notsmart',
   },
   {
     label: t('eraser'),
     url: '/eraser',
-    section: 'Account',
+    category: 'account',
+    section: 'eraser',
   },
   {
     label: t('capitalization'),
     url: '/lowupp',
-    section: 'Account',
+    category: 'account',
+    section: 'lowupp',
   },
   {
     label: t('games'),
     url: '/games',
-    section: 'Games',
+    category: 'games',
+    section: 'games',
   },
   {
     label: t('bacteria'),
     url: '/games/bacteria',
-    section: 'Games',
+    category: 'games',
+    section: 'bacteria',
   },
   {
     label: t('patojdur'),
     url: '/games/patojdur',
-    section: 'Games',
+    category: 'games',
+    section: 'patojdur',
   },
   {
     label: t('mazo'),
     url: '/games/mazo',
-    section: 'Games',
+    category: 'games',
+    section: 'mazo',
   },
   {
     label: t('members'),
     url: '/members',
-    section: 'Members',
+    category: 'members',
+    section: 'members',
   },
   {
     label: t('book'),
     url: '/book',
-    section: 'Members',
+    category: 'members',
+    section: 'book',
   },
   {
     label: t('popularity'),
     url: '/popularity',
-    section: 'Members',
+    category: 'members',
+    section: 'popularity',
   },
   {
     label: t('wedding'),
     url: '/weddings',
-    section: 'Members',
+    category: 'members',
+    section: 'weddings',
   },
   {
     label: t('groups'),
     url: '/groups',
-    section: 'Members',
+    category: 'members',
+    section: 'groups',
   },
   {
     label: t('forum'),
     url: '/bbs',
-    section: 'Community',
+    category: 'community',
+    section: 'bbs',
   },
   {
     label: t('shop'),
     url: '/shop',
-    section: 'Community',
+    category: 'community',
+    section: 'shop',
   },
   {
     label: t('encyclopedia'),
     url: '/encyclopedia',
-    section: 'Community',
+    category: 'community',
+    section: 'encyclopedia',
   },
   {
     label: t('chaparazzi'),
     url: '/chaparazzi',
-    section: 'Community',
+    category: 'community',
+    section: 'chaparazzi',
   },
 ]);
 </script>
 <style scoped>
-.router-link-active .list,
 .active .list {
   background: transparent
     linear-gradient(
@@ -141,7 +161,6 @@ const sideNavEntries = computed(() => [
     ) !important;
 }
 
-.card .router-link-active,
 .card .active {
   color: var(--light);
 }

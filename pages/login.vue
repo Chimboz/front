@@ -129,6 +129,10 @@
 <script setup lang="ts">
 const { data } = await useFetch<any>('https://chimboz.fr/api/right');
 
+definePageMeta({
+  category: 'home',
+  section: 'login',
+});
 const { t } = useI18n();
 useHead({ title: computed(() => t('login')) });
 </script>

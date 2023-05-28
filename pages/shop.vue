@@ -3,7 +3,7 @@
     <template #left-column>
       <Card color="blue" top>
         <div class="flex col fullwidth">
-          <SideNavEntries section="Community" />
+          <SideNavEntries category="community" />
         </div>
       </Card>
       <Rules bot />
@@ -134,6 +134,10 @@ function buy() {
   });
 }
 
+definePageMeta({
+  category: 'community',
+  section: 'shop',
+});
 useHead({ title: computed(() => t('shop')) });
 </script>
 <style lang="scss">

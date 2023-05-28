@@ -24,4 +24,9 @@
 import { useRoute } from 'vue-router';
 
 const name = (useRoute().params.name as string).split('.')[0];
+
+definePageMeta({
+  category: 'community',
+  section: 'chaparazzi',
+});
 </script>

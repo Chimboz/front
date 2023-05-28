@@ -87,7 +87,7 @@
     </div>
   </header>
   <nav class="flex centered mb-3">
-    <NuxtLink to="/">
+    <NuxtLink to="/" :class="{ active: $route.meta.category === 'home' }">
       <button class="nav-btn flex centered" type="button">
         <img
           draggable="false"
@@ -127,7 +127,11 @@
           @contextmenu.prevent
         /></button
     ></a>
-    <NuxtLink v-if="user" to="/account">
+    <NuxtLink
+      v-if="user"
+      to="/account"
+      :class="{ active: $route.meta.category === 'account' }"
+    >
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -145,7 +149,7 @@
         </div>
       </button>
     </NuxtLink>
-    <NuxtLink to="/games">
+    <NuxtLink to="/games" :class="{ active: $route.meta.category === 'games' }">
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -163,7 +167,10 @@
         </div>
       </button>
     </NuxtLink>
-    <NuxtLink to="/members">
+    <NuxtLink
+      to="/members"
+      :class="{ active: $route.meta.category === 'members' }"
+    >
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -181,7 +188,10 @@
         </div>
       </button>
     </NuxtLink>
-    <NuxtLink to="/bbs">
+    <NuxtLink
+      to="/bbs"
+      :class="{ active: $route.meta.category === 'community' }"
+    >
       <button class="nav-btn flex centered" type="button">
         <div class="nav-text">
           <img
@@ -303,7 +313,7 @@ nav a:last-child .nav-btn {
 
 .nav-btn:hover .nav-icon,
 .nav-btn:active .nav-icon,
-nav a.router-link-active .nav-icon {
+nav a.active .nav-icon {
   filter: none;
 }
 
@@ -324,7 +334,7 @@ nav a:first-child .nav-btn {
 
 .nav-btn:hover,
 .nav-btn:active,
-nav a.router-link-active .nav-btn {
+nav a.active .nav-btn {
   background-image: linear-gradient(
     to bottom,
     var(--light),
@@ -338,7 +348,7 @@ nav a.router-link-active .nav-btn {
 
 nav a:first-child .nav-btn:hover,
 nav a:first-child .nav-btn:active,
-nav a:first-child.router-link-active .nav-btn {
+nav a:first-child.active .nav-btn {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--light) 0%,
@@ -352,8 +362,8 @@ nav a:nth-child(2) .nav-btn:hover,
 nav a:first-child .nav-btn:hover,
 nav a:nth-child(2) .nav-btn:active,
 nav a:first-child .nav-btn:active,
-nav a:first-child.router-link-active .nav-btn,
-nav a:nth-child(2).router-link-active .nav-btn {
+nav a:first-child.active .nav-btn,
+nav a:nth-child(2).active .nav-btn {
   border-left-color: var(--orange);
 }
 
@@ -361,8 +371,8 @@ nav a:last-child .nav-btn:hover,
 nav a:first-child .nav-btn:hover,
 nav a:last-child .nav-btn:active,
 nav a:first-child .nav-btn:active,
-nav a:last-child.router-link-active .nav-btn,
-nav a:first-child.router-link-active .nav-btn {
+nav a:last-child.active .nav-btn,
+nav a:first-child.active .nav-btn {
   border-right-color: var(--orange);
 }
 
@@ -414,7 +424,7 @@ nav a:first-child .nav-btn:active {
 
   .nav-btn:hover .nav-text,
   .nav-btn:active .nav-text,
-  nav a.router-link-active .nav-text {
+  nav a.active .nav-text {
     stroke: var(--dark-orange);
   }
 
