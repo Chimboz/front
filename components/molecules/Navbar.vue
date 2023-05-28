@@ -286,7 +286,7 @@ header {
   text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
 }
 
-@media (pointer: coarse) {
+@media (pointer: coarse), (pointer: none) {
   .btn-header {
     border: 8px solid #fff0;
   }

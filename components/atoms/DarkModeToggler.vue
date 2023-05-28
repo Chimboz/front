@@ -89,7 +89,7 @@ function toggleDark(event?: MouseEvent) {
   }
 }
 
-@media (pointer: coarse) {
+@media (pointer: coarse), (pointer: none) {
   #theme-toggler {
     border: 8px solid #fff0;
   }
