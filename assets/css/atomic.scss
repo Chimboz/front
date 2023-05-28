@@ -83,3 +83,10 @@ $types: (
     }
   }
 }
+
+@each $type, $axis in $types {
+  .m#{string.slice($type,1,1)}-auto,
+  .m#{string.slice($axis,1,1)}-auto {
+    margin-#{$type}: auto !important;
+  }
+}
