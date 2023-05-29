@@ -1,6 +1,6 @@
 {
   "name": "chimboz-front",
-  "version": "2.0.0-alpha5",
+  "version": "2.0.0-alpha6",
   "description": "Chimboz front using Nuxt",
   "keywords": [
     "nuxt",
@@ -68,7 +68,7 @@
     "inquirer": "^8.2.5",
     "lint-staged": "^13.2.1",
     "mitt": "^3.0.0",
-    "nuxt": "^3.5.0",
+    "nuxt": "^3.5.2",
     "prettier": "^2.8.2",
     "sass": "^1.61.0",
     "typescript": "^5.0.2",
