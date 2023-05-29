@@ -98,22 +98,25 @@
     </div>
   </header>
   <nav class="flex centered mb-3">
-    <NuxtLink to="/" :class="{ active: $route.meta.category === 'home' }">
-      <button class="nav-btn flex centered" type="button">
+    <NuxtLink
+      to="/"
+      :class="{ active: $route.meta.category === 'home' }"
+      class="mr-3 block"
+    >
+      <button class="nav-btn nav-btn-single flex centered" type="button">
         <img
           draggable="false"
           alt="Home icon"
-          class="nav-icon"
+          class="nav-icon mx-1"
           src="@/assets/img/navbar/icon/home.svg"
           width="20"
           height="20"
-          style="margin: 2px; padding: 1px"
           @contextmenu.prevent
         />
       </button>
     </NuxtLink>
     <a target="_blank" href="/tchat"
-      ><button class="nav-btn flex centered" type="button">
+      ><button class="nav-btn nav-btn-left flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -203,7 +206,7 @@
       to="/bbs"
       :class="{ active: $route.meta.category === 'community' }"
     >
-      <button class="nav-btn flex centered" type="button">
+      <button class="nav-btn nav-btn-right flex centered" type="button">
         <div class="nav-text">
           <img
             draggable="false"
@@ -218,6 +221,24 @@
             {{ $t('navbar.community') }}
           </StrokeText>
         </div>
+      </button>
+    </NuxtLink>
+    <NuxtLink
+      v-if="+(user?.user_level ?? 0) > 3"
+      to="/admin"
+      :class="{ active: $route.meta.category === 'admin' }"
+      class="ml-3 block"
+    >
+      <button class="nav-btn nav-btn-single flex centered" type="button">
+        <img
+          draggable="false"
+          alt="Home icon"
+          class="nav-icon mx-1"
+          src="@/assets/img/navbar/icon/admin.svg"
+          width="21"
+          height="20"
+          @contextmenu.prevent
+        />
       </button>
     </NuxtLink>
   </nav>
@@ -317,17 +338,17 @@ header {
   box-shadow: 0 2px 1px var(--dark);
 }
 
-nav a:not(:first-child) {
+nav a {
   display: contents;
 }
 
-nav a:nth-child(2) .nav-btn {
+nav .nav-btn-left {
   border-left-color: var(--pink);
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   border-left-width: 5px;
 }
 
-nav a:last-child .nav-btn {
+nav .nav-btn-right {
   border-right-color: var(--pink);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   border-right-width: 5px;
@@ -344,7 +365,7 @@ nav a.active .nav-icon {
   filter: none;
 }
 
-nav a:first-child .nav-btn {
+nav .nav-btn-single {
   border-right-color: var(--pink);
   border-left-color: var(--pink);
   background-image: radial-gradient(
@@ -356,7 +377,6 @@ nav a:first-child .nav-btn {
   );
   border-radius: var(--border-radius);
   border-width: 2px 5px;
-  margin-right: var(--gap);
 }
 
 .nav-btn:hover,
@@ -373,9 +393,9 @@ nav a.active .nav-btn {
   border-color: var(--orange) var(--orange) var(--dark-orange) var(--orange);
 }
 
-nav a:first-child .nav-btn:hover,
-nav a:first-child .nav-btn:active,
-nav a:first-child.active .nav-btn {
+nav .nav-btn-single:hover,
+nav .nav-btn-single:active,
+nav .active .nav-btn-single {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--light) 0%,
@@ -385,21 +405,21 @@ nav a:first-child.active .nav-btn {
   );
 }
 
-nav a:nth-child(2) .nav-btn:hover,
-nav a:first-child .nav-btn:hover,
-nav a:nth-child(2) .nav-btn:active,
-nav a:first-child .nav-btn:active,
-nav a:first-child.active .nav-btn,
-nav a:nth-child(2).active .nav-btn {
+nav .nav-btn-left:hover,
+nav .nav-btn-single:hover,
+nav .nav-btn-left:active,
+nav .nav-btn-single:active,
+nav .active .nav-btn-left,
+nav .active .nav-btn-single {
   border-left-color: var(--orange);
 }
 
-nav a:last-child .nav-btn:hover,
-nav a:first-child .nav-btn:hover,
-nav a:last-child .nav-btn:active,
-nav a:first-child .nav-btn:active,
-nav a:last-child.active .nav-btn,
-nav a:first-child.active .nav-btn {
+nav .nav-btn-right:hover,
+nav .nav-btn-single:hover,
+nav .nav-btn-right:active,
+nav .nav-btn-single:active,
+nav .active .nav-btn-right,
+nav .active .nav-btn-single {
   border-right-color: var(--orange);
 }
 
@@ -417,7 +437,7 @@ a:hover {
   ) !important;
 }
 
-nav a:first-child .nav-btn:active {
+nav .nav-btn-single:active {
   background-image: radial-gradient(
     ellipse 120% 100% at 50% 0%,
     var(--orange),
@@ -463,7 +483,7 @@ nav a:first-child .nav-btn:active {
     stroke: var(--dark-orange);
   }
 
-  a:not(:first-child) .nav-btn {
+  .nav-btn:not(.nav-btn-single) {
     padding: 0 20px;
   }
 
