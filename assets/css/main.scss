@@ -1,6 +1,7 @@
 // Reseting margins
 * {
   margin: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 // Fix for focused black lines in Chrome
