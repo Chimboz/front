@@ -283,8 +283,6 @@ const { data } = await useFetch<any>(
   `https://chimboz.fr/api/book/${useRoute().params.id}`
 );
 
-console.log(data.value);
-
 switch (data.value.gender) {
   case 'chimbo':
     data.value.gender = 'male';
