@@ -90,6 +90,7 @@ watch(i18n.locale, () =>
 // TODO forget password page
 // TODO replace marked emoji support by extension with :nerd: + functional message copy image + check language class on code blocks + link auto detection + compare highlight.js with prismjs
 // TODO add web vitals from nuxt to a dashboard
+// TODO optimize svg with sprites https://www.npmjs.com/package/@nuxtjs/svg-sprite
 </script>
 <style lang="css" scoped>
 @keyframes cycleBackground {
