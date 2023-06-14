@@ -36,7 +36,7 @@
 </template>
 <script setup lang="ts">
 import { ImgHTMLAttributes } from 'vue';
-import { LookCategory } from '@/types/Item';
+import type { LookCategory } from '@/types/Item';
 
 withDefaults(
   defineProps<{

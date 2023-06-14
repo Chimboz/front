@@ -1,10 +1,14 @@
 import { marked } from 'marked';
-import DOMPurify from 'dompurify';
+import { markedHighlight } from 'marked-highlight';
+import { markedEmoji } from 'marked-emoji';
+// import emojis from 'emojilib';
 import hljs from 'highlight.js';
+import DOMPurify from 'dompurify';
 import '@/assets/css/bbs/markdown.css';
 import 'highlight.js/styles/github-dark.css';
 import { AnchorHTMLAttributes } from 'vue';
 import extensions from './extensions';
+import { EmoteList } from '@/types/Emotes';
 
 const ALLOWED_URI = ['http', 'https'];
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', 'localhost:3000'];
@@ -47,15 +51,18 @@ const ALLOWED_PROPERTIES = ['color'];
 const ALLOW_CSS_FUNCTIONS = true;
 const ALLOWED_CLASS = [/^hljs-.+$/, /^center$/, /^right$/];
 
-function markedRender(string: string) {
-  // Custom emotes
-  string = string.replace(
-    /:[a-z]+:/g,
-    (match) => `![${match.slice(1, -1)}](/emoticon/${match.slice(1, -1)}.svg)`
-  );
-
-  // Marked options
-  marked.setOptions({
+marked.use(
+  {
+    pedantic: false,
+    gfm: true,
+    breaks: true,
+    sanitize: false,
+    smartLists: true,
+    headerIds: false,
+    mangle: false,
+  },
+  markedHighlight({
+    langPrefix: '',
     highlight: (code: string, lang: string) => {
       if (lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -63,21 +70,21 @@ function markedRender(string: string) {
       }
       return hljs.highlightAuto(code).value;
     },
-    langPrefix: '',
-    pedantic: false,
-    gfm: true,
-    breaks: true,
-    headerIds: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    xhtml: false,
-  });
-
-  marked.use(extensions);
-
-  return marked(string);
-}
+  }),
+  markedEmoji({
+    emojis: EmoteList.reduce(
+      (a, emote) => ({ ...a, [emote]: `/emoticon/${emote}.svg` }),
+      {}
+    ),
+    unicode: false,
+  }),
+  /*
+  markedEmoji({
+    emojis,
+    unicode: true,
+  }), */
+  extensions
+);
 
 function dompurifyRender(window: any, string: string) {
   const purify = DOMPurify(window);
@@ -172,7 +179,7 @@ function dompurifyRender(window: any, string: string) {
 
 export default function messageRender(window: any) {
   return (string: string): string => {
-    const result = dompurifyRender(window, markedRender(string));
+    const result = dompurifyRender(window, marked(string));
 
     // Custom embeds
     const DOM = window.document.createElement('div');

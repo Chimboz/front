@@ -95,7 +95,7 @@
 </template>
 <script setup lang="ts">
 import { ImgHTMLAttributes } from 'vue';
-import { AvatarConfig } from '@/types/Avatar';
+import type { AvatarConfig } from '@/types/Avatar';
 
 const props = withDefaults(
   defineProps<{
