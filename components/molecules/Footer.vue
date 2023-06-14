@@ -50,22 +50,31 @@
           alt="Front version"
           title="Front version"
           height="20"
-          :src="`https://img.shields.io/badge/version-v${runtimeConfig.public.clientVersion.replaceAll(
+          :src="`https://img.shields.io/badge/version-v${version.replaceAll(
             '-',
             '--'
-          )}-${color}`"
-          @contextmenu.prevent
-      /></a>
+          )}-${versionColor}`"
+          @contextmenu.prevent /></a
+      >&nbsp;
+      <img
+        draggable="false"
+        alt="Front version"
+        title="Front version"
+        height="20"
+        :src="`https://img.shields.io/badge/loadtime-${formatDuration(
+          $timeMetric.pageEnd - $timeMetric.pageStart
+        )}-${timeColor}`"
+        @contextmenu.prevent
+      />
     </div>
   </footer>
 </template>
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
+import { version } from '../../package.json';
+import { formatDuration } from '~~/utils';
 
-const releaseType =
-  runtimeConfig.public.clientVersion.match(/^\d+.\d+.\d+-([a-z]+)\d+$/)?.[1] ??
-  'stable';
-const color = computed(() => {
+const releaseType = version.match(/^\d+.\d+.\d+-([a-z]+)\d+$/)?.[1] ?? 'stable';
+const versionColor = computed(() => {
   switch (releaseType) {
     case 'stable':
       return 'blue';
@@ -78,6 +87,16 @@ const color = computed(() => {
     default:
       return 'lightgrey';
   }
+});
+
+const { $timeMetric } = useNuxtApp();
+const timeColor = computed(() => {
+  const loadtime = $timeMetric.pageEnd - $timeMetric.pageStart;
+  if (loadtime < 0) return 'lightgrey';
+  else if (loadtime < 500) return 'green';
+  else if (loadtime < 1000) return 'yellow';
+  else if (loadtime < 2000) return 'orange';
+  else return 'red';
 });
 </script>
 <style lang="scss" scoped>
