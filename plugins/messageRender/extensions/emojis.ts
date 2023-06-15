@@ -53,9 +53,7 @@ export function markedEmoji(options: {
           if (options.unicode) {
             return token.emoji;
           } else {
-            return `<img alt="${token.name}" src="${token.emoji}"${
-              this.parser.options.xhtml ? ' /' : ''
-            }>`;
+            return `<img alt=":${token.name}:" src="${token.emoji}">`;
           }
         },
       },
