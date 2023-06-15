@@ -63,6 +63,7 @@
 }
 
 .markdown-body img {
+  user-select: inherit;
   background: transparent !important;
 }
 
