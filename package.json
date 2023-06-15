@@ -89,7 +89,6 @@
     "highlight.js": "^11.7.0",
     "jsdom": "^22.0.0",
     "marked": "^5.1.0",
-    "marked-emoji": "^1.0.1",
     "marked-highlight": "^2.0.1",
     "modern-normalize": "^2.0.0",
     "pinia": "^2.0.34",

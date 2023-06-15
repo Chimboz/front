@@ -1,6 +1,6 @@
 import { marked } from 'marked';
 
-const center: marked.TokenizerExtension | marked.RendererExtension = {
+const center: marked.TokenizerAndRendererExtension = {
   name: 'center',
   level: 'block',
   start(this, src) {
@@ -25,7 +25,7 @@ const center: marked.TokenizerExtension | marked.RendererExtension = {
   },
 };
 
-const right: marked.TokenizerExtension | marked.RendererExtension = {
+const right: marked.TokenizerAndRendererExtension = {
   name: 'right',
   level: 'block',
   start(this, src) {
@@ -50,10 +50,7 @@ const right: marked.TokenizerExtension | marked.RendererExtension = {
   },
 };
 
-const extensions: (marked.TokenizerExtension | marked.RendererExtension)[] = [
-  center,
-  right,
-];
+const extensions: marked.TokenizerAndRendererExtension[] = [center, right];
 
 export default <marked.MarkedExtension>{
   extensions,

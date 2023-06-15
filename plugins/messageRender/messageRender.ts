@@ -1,13 +1,13 @@
 import { marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
-import { markedEmoji } from 'marked-emoji';
 // import emojis from 'emojilib';
 import hljs from 'highlight.js';
 import DOMPurify from 'dompurify';
 import '@/assets/css/bbs/markdown.css';
 import 'highlight.js/styles/github-dark.css';
 import { AnchorHTMLAttributes } from 'vue';
-import extensions from './extensions';
+import textAlign from './extensions/textAlign';
+import { emojis } from './extensions/emojis';
 import { EmoteList } from '@/types/Emotes';
 
 const ALLOWED_URI = ['http', 'https'];
@@ -57,7 +57,6 @@ marked.use(
     gfm: true,
     breaks: true,
     sanitize: false,
-    smartLists: true,
     headerIds: false,
     mangle: false,
   },
@@ -71,19 +70,20 @@ marked.use(
       return hljs.highlightAuto(code).value;
     },
   }),
-  markedEmoji({
+  emojis({
+    name: 'chimboz-emotes',
     emojis: EmoteList.reduce(
       (a, emote) => ({ ...a, [emote]: `/emoticon/${emote}.svg` }),
       {}
     ),
     unicode: false,
   }),
-  /*
-  markedEmoji({
-    emojis,
+  emojis({
+    name: 'emojis',
+    emojis: { nerd: '🤓' },
     unicode: true,
-  }), */
-  extensions
+  }),
+  textAlign
 );
 
 function dompurifyRender(window: any, string: string) {
