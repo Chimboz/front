@@ -88,7 +88,7 @@ watch(i18n.locale, () =>
 // TODO opengraph https://ogp.me/
 // TODO check prototype pollution
 // TODO forget password page
-// TODO replace marked emoji support by extension with :nerd: + functional message copy image + check language class on code blocks + link auto detection + compare highlight.js with prismjs
+// TODO check language class on code blocks + compare highlight.js with prismjs
 // TODO add web vitals from nuxt to a dashboard
 // TODO optimize svg with sprites https://www.npmjs.com/package/@nuxtjs/svg-sprite
 // TODO infinite scroll with IntersectionObserver
