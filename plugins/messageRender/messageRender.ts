@@ -1,13 +1,14 @@
 import { marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
-// import emojis from 'emojilib';
 import hljs from 'highlight.js';
 import DOMPurify from 'dompurify';
 import '@/assets/css/bbs/markdown.css';
 import 'highlight.js/styles/github-dark.css';
 import { AnchorHTMLAttributes } from 'vue';
+import { DOMWindow } from 'jsdom';
 import textAlign from './extensions/textAlign';
-import { emojis } from './extensions/emojis';
+import { markedEmoji } from './extensions/emojis';
+import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
 const ALLOWED_URI = ['http', 'https'];
@@ -70,7 +71,7 @@ marked.use(
       return hljs.highlightAuto(code).value;
     },
   }),
-  emojis({
+  markedEmoji({
     name: 'chimboz-emotes',
     emojis: EmoteList.reduce(
       (a, emote) => ({ ...a, [emote]: `/emoticon/${emote}.svg` }),
@@ -78,15 +79,18 @@ marked.use(
     ),
     unicode: false,
   }),
-  emojis({
+  markedEmoji({
     name: 'emojis',
-    emojis: { nerd: '🤓' },
+    emojis,
     unicode: true,
   }),
   textAlign
 );
 
-function dompurifyRender(window: any, string: string) {
+function dompurifyRender(
+  window: (Window & typeof globalThis) | DOMWindow,
+  string: string
+) {
   const purify = DOMPurify(window);
   // Allowed URI schemes
   const REGEX_URI = RegExp(`^(${ALLOWED_URI.join('|')}):`, 'gim');
@@ -179,7 +183,10 @@ function dompurifyRender(window: any, string: string) {
 
 export default function messageRender(window: any) {
   return (string: string): string => {
-    const result = dompurifyRender(window, marked(string));
+    const result = dompurifyRender(
+      window,
+      marked(string.replaceAll('<', '&lt;'))
+    );
 
     // Custom embeds
     const DOM = window.document.createElement('div');
