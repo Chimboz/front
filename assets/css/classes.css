@@ -58,6 +58,10 @@
 }
 
 /* Markdown custom styling */
+.markdown-body {
+  word-break: break-word;
+}
+
 .markdown-body img {
   background: transparent !important;
 }
