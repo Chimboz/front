@@ -11,8 +11,9 @@ import { markedEmoji } from './extensions/emojis';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
+const HOSTS = ['localhost:3000', 'chimboz.fr', 'chimboz-dev.vercel.app'];
 const ALLOWED_URI = ['http', 'https', 'mailto'];
-const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', 'localhost:3000'];
+const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', ...HOSTS];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
 const ALLOWED_TAGS = [
@@ -135,7 +136,7 @@ function dompurifyRender(
     if (node.hasAttribute('href')) {
       anchor = window.document.createElement('a');
       anchor.href = node.getAttribute('href')!;
-      if (anchor.host !== 'localhost:3000') {
+      if (!HOSTS.includes(anchor.host)) {
         node.setAttribute('target', '_blank');
         node.setAttribute('rel', 'noreferrer noopener nofollow');
       }
