@@ -11,7 +11,7 @@ import { markedEmoji } from './extensions/emojis';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
-const ALLOWED_URI = ['http', 'https'];
+const ALLOWED_URI = ['http', 'https', 'mailto'];
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', 'localhost:3000'];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
