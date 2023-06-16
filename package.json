@@ -88,6 +88,7 @@
     "emojilib": "^3.0.10",
     "highlight.js": "^11.7.0",
     "jsdom": "^22.0.0",
+    "lucide-vue-next": "^0.244.0",
     "marked": "^5.1.0",
     "marked-highlight": "^2.0.1",
     "modern-normalize": "^2.0.0",

@@ -68,7 +68,24 @@
               ><button type="button" class="btn-md" @click="format('<u>')">
                 <u>u</u>
               </button>
-              <button type="button" class="btn-md" @click="format('~~')">
+              <button type="button" class="btn-md" @click="format('~')">
+                <del>s</del>
+              </button>
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatAlign('center')"
+              >
+                <AlignCenter />
+              </button>
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatAlign('right')"
+              >
+                <AlignRight />
+              </button>
+              <button type="button" class="btn-md" @click="format('~')">
                 <del>s</del>
               </button>
               <button type="button" class="btn-md" @click="formatLink(false)">
@@ -163,14 +180,20 @@
               >
                 • List
               </button>
-              <button type="button" class="btn-md" @click="format('<kbd>')">
-                <kbd>Key</kbd>
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatMultiline('- [ ] ')"
+              >
+                Task
               </button>
               <button type="button" class="btn-md" @click="format('`')">
                 <code>Code</code>
               </button>
               <button type="button" class="btn-md" @click="formatCode()">
-                <code>Code block</code>
+                <code style="background: #161b22; color: #c9d1d9"
+                  >Code block</code
+                >
               </button>
             </div>
           </td>
@@ -251,6 +274,7 @@
 import { SelectHTMLAttributes } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
+import { AlignRight, AlignCenter } from 'lucide-vue-next';
 import useAuthStore from '@/stores/auth';
 
 const { $eventBus } = useNuxtApp();
@@ -432,12 +456,23 @@ function formatColor(hex: string) {
     message.value = `${message.value.substring(
       0,
       selectionRange.value[0]
-    )}<i style="color:${hex}">${message.value.substring(
+    )}<color ${hex}>${message.value.substring(
       selectionRange.value[0],
       selectionRange.value[1]
-    )}</i>${message.value.substring(selectionRange.value[1])}`;
+    )}</color>${message.value.substring(selectionRange.value[1])}`;
     focusHandler();
   }
+}
+
+function formatAlign(align: 'center' | 'right') {
+  message.value = `${message.value.substring(
+    0,
+    selectionRange.value[0]
+  )}<${align}>${message.value.substring(
+    selectionRange.value[0],
+    selectionRange.value[1]
+  )}</${align}>${message.value.substring(selectionRange.value[1])}`;
+  focusHandler();
 }
 </script>
 <style lang="scss" scoped>

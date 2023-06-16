@@ -83,13 +83,15 @@
 /* Button medium */
 .btn-md {
   display: inline-flex;
-  padding: var(--md-gap);
+  height: calc(var(--unit) * 7);
+  padding: 0 var(--md-gap);
   border-radius: var(--md-gap);
   justify-content: center;
   border: 0;
   color: var(--text);
   background: var(--light);
   box-shadow: inset 1px 1px 1px var(--dark), inset -1px -1px 1px var(--dark);
+  align-items: center;
 }
 
 input:valid:not(:placeholder-shown):not([type='checkbox']),
