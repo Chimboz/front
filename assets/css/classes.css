@@ -75,6 +75,10 @@
   background: var(--light-bbs);
 }
 
+.markdown-body li:has(input) {
+  list-style: none;
+}
+
 /* Custom buttons */
 /* Button medium */
 .btn-md {

@@ -6,7 +6,7 @@ const defaultOptions = {
   name: 'emoji',
 };
 
-export function markedEmoji(options: {
+export default function markedEmoji(options: {
   emojis: { [e: string]: string };
   unicode: boolean;
   name: string;

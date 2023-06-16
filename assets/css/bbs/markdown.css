@@ -214,6 +214,8 @@
 .markdown-body [type='radio'] {
   box-sizing: border-box;
   padding: 0;
+  vertical-align: middle;
+  pointer-events: none;
 }
 .markdown-body [type='number']::-webkit-inner-spin-button,
 .markdown-body [type='number']::-webkit-outer-spin-button {

@@ -1,13 +1,14 @@
+/* eslint-disable no-irregular-whitespace */
 import { marked } from 'marked';
 
 const center: marked.TokenizerAndRendererExtension = {
   name: 'center',
   level: 'block',
   start(this, src) {
-    return src.match(/<center>/)?.index;
+    return src.match(/<​center>/)?.index;
   },
   tokenizer(src) {
-    const rule = /^<center>([\S\s]*)<\/center>/;
+    const rule = /^<​center>(.*?)<​\/center>/;
     const match = rule.exec(src);
     if (match) {
       const token = {
@@ -29,10 +30,10 @@ const right: marked.TokenizerAndRendererExtension = {
   name: 'right',
   level: 'block',
   start(this, src) {
-    return src.match(/<right>/)?.index;
+    return src.match(/<​right>/)?.index;
   },
   tokenizer(src) {
-    const rule = /^<right>([\S\s]*)<\/right>/;
+    const rule = /^<​right>(.*?)<​\/right>/;
     const match = rule.exec(src);
     if (match) {
       const token = {

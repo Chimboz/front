@@ -7,7 +7,8 @@ import 'highlight.js/styles/github-dark.css';
 import { AnchorHTMLAttributes } from 'vue';
 import { DOMWindow } from 'jsdom';
 import textAlign from './extensions/textAlign';
-import { markedEmoji } from './extensions/emojis';
+import color from './extensions/color';
+import markedEmoji from './extensions/emojis';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
@@ -39,6 +40,7 @@ const ALLOWED_TAGS = [
   'del',
   'u',
   'i',
+  'input',
   'table',
   'thead',
   'tbody',
@@ -48,7 +50,15 @@ const ALLOWED_TAGS = [
   'a',
   'img',
 ];
-const ALLOWED_ATTR = ['style', 'class', 'alt', 'src', 'href'];
+const ALLOWED_ATTR = [
+  'style',
+  'class',
+  'alt',
+  'src',
+  'href',
+  'type',
+  'checked',
+];
 const ALLOWED_PROPERTIES = ['color'];
 const ALLOW_CSS_FUNCTIONS = true;
 const ALLOWED_CLASS = [/^hljs-.+$/, /^center$/, /^right$/];
@@ -85,7 +95,8 @@ marked.use(
     emojis,
     unicode: true,
   }),
-  textAlign
+  textAlign,
+  color
 );
 
 function dompurifyRender(
@@ -186,7 +197,7 @@ export default function messageRender(window: any) {
   return (string: string): string => {
     const result = dompurifyRender(
       window,
-      marked(string.replaceAll('<', '&lt;'))
+      marked(string.replaceAll('<', '<​'))
     );
 
     // Custom embeds
