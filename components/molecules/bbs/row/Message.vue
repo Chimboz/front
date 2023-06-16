@@ -106,7 +106,7 @@
       </div>
       <hr style="margin: 6px 0" />
       <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
-      <div class="markdown-body" v-html="$messageRender(message.content)" />
+      <div class="markdown-body" v-html="$md.render(message.content)" />
       <br /><i>"{{ message.author.signature }}"</i>
     </td>
   </tr>
@@ -118,7 +118,6 @@
 </template>
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-
 import useAuthStore from '@/stores/auth';
 
 const auth = useAuthStore();

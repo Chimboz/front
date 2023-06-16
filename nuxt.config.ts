@@ -21,11 +21,10 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
   ],
   plugins: [
-    '~/plugins/eventBus.ts',
     '~/plugins/timeMetrics.ts',
+    '~/plugins/eventBus.ts',
     '~/plugins/date.ts',
-    '~/plugins/messageRender/index.server.ts',
-    '~/plugins/messageRender/index.client.ts',
+    '~/plugins/messageRender.ts',
   ],
   css: [
     'modern-normalize/modern-normalize.css',
