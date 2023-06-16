@@ -108,7 +108,7 @@
         {{ data.news.title }}
       </template>
       <!--eslint-disable-next-line vue/no-v-html description is sanitized-->
-      <div class="markdown-body" v-html="$messageRender(data.news.content)" />
+      <div class="markdown-body" v-html="$md(data.news.content)" />
       <div class="news-date">
         {{ data.news.author }}, {{ $format(data.news.date, 'PPp') }}
       </div>

@@ -60,7 +60,7 @@
             <span
               class="content markdown-body"
               :style="{ background: hashColor(data.user.name) }"
-              v-html="$messageRender(message.content)"
+              v-html="$md(message.content)"
             />
           </div>
         </div>
