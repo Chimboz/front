@@ -67,6 +67,7 @@
   "eraser.header": "SOS moldy nickname, change your nickname for 200 credits!",
   "error": "Error",
   "error.default": "An error occured.",
+  "error.javascript": "We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.",
   "error.unknown": "An unknown error has occurred.",
   "failure.buy": "You could not buy this article.",
   "format.language": "language",

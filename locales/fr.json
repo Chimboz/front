@@ -67,6 +67,7 @@
   "eraser.header": "SOS pseudo moisi, changez de pseudo pour 200 pepettes !",
   "error": "Erreur",
   "error.default": "Une erreur est survenue.",
+  "error.javascript": "Nous sommes désolés, mais ce site ne fonctionne pas correctement si JavaScript est désactivé. Veuillez l'activer pour continuer.",
   "error.unknown": "Une erreur inconnue est survenue.",
   "failure.buy": "Vous n'avez pas pu acheter cet article.",
   "format.language": "langage",

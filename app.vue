@@ -3,6 +3,18 @@
     <main id="main">
       <NuxtLoadingIndicator color="var(--pink)" :height="4" />
       <Navbar :time="time" />
+      <component :is="'noscript'">
+        <Card color="red">
+          <img
+            draggable="false"
+            alt="Error icon"
+            width="39"
+            height="32"
+            src="@/assets/img/icon/warning.svg"
+            @contextmenu.prevent
+          /><b>&nbsp;{{ $t('error.javascript') }}</b>
+        </Card>
+      </component>
       <Transition>
         <div>
           <NuxtPage />
