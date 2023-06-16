@@ -71,23 +71,6 @@
               <button type="button" class="btn-md" @click="format('~')">
                 <del>s</del>
               </button>
-              <button
-                type="button"
-                class="btn-md"
-                @click="formatAlign('center')"
-              >
-                <AlignCenter />
-              </button>
-              <button
-                type="button"
-                class="btn-md"
-                @click="formatAlign('right')"
-              >
-                <AlignRight />
-              </button>
-              <button type="button" class="btn-md" @click="format('~')">
-                <del>s</del>
-              </button>
               <button type="button" class="btn-md" @click="formatLink(false)">
                 <a href="#" @click.prevent>a</a>
               </button>
@@ -105,6 +88,20 @@
                   style="height: 100%"
                   @contextmenu.prevent
                 />
+              </button>
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatAlign('center')"
+              >
+                <AlignCenter />
+              </button>
+              <button
+                type="button"
+                class="btn-md"
+                @click="formatAlign('right')"
+              >
+                <AlignRight />
               </button>
               <select
                 class="btn-md"
