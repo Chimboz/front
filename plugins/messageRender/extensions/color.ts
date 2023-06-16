@@ -25,7 +25,7 @@ const color: marked.TokenizerAndRendererExtension = {
   renderer(this, token) {
     return `<i style="color: ${token.color}">${this.parser.parseInline(
       token.tokens!
-    )}</p>\n`;
+    )}</i>\n`;
   },
 };
 
