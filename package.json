@@ -75,6 +75,7 @@
     "vue-tsc": "^1.0.24"
   },
   "dependencies": {
+    "@khanacademy/simple-markdown": "^0.9.2",
     "@pinia/nuxt": "^0.4.8",
     "@radial-color-picker/vue-color-picker": "^5.0.1",
     "@rushstack/eslint-patch": "^1.2.0",
@@ -83,9 +84,6 @@
     "date-fns": "^2.29.3",
     "highlight.js": "^11.7.0",
     "lucide-vue-next": "^0.244.0",
-    "markdown-it": "^13.0.1",
-    "markdown-it-align": "^0.1.0",
-    "markdown-it-emoji": "^2.0.2",
     "modern-normalize": "^2.0.0",
     "pinia": "^2.0.34",
     "v-lazy-image": "^2.1.1",

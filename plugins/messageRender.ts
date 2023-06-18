@@ -1,28 +1,26 @@
-import MarkdownIt from 'markdown-it';
-import emoji from 'markdown-it-emoji';
-import align from 'markdown-it-align';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github-dark.css';
+import SimpleMarkdown, { type ParserRules } from '@khanacademy/simple-markdown';
 
-const md = new MarkdownIt({
-  breaks: true,
-  linkify: true,
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(str, { language: lang }).value;
-      } catch (__) {}
-    }
-
-    return ''; // use external default escaping
+const rules: typeof SimpleMarkdown.defaultRules = {
+  ...SimpleMarkdown.defaultRules,
+  paragraph: {
+    ...SimpleMarkdown.defaultRules.paragraph,
+    html: function (node, output, state) {
+      return SimpleMarkdown.htmlTag('p', output(node.content, state));
+    },
   },
-});
-md.use(emoji).use(align);
+  br: {
+    ...SimpleMarkdown.defaultRules.br,
+    match: SimpleMarkdown.anyScopeRegex(/^\n/),
+  },
+};
+
+const parser = SimpleMarkdown.parserFor(rules as unknown as ParserRules);
+const htmlOutput = SimpleMarkdown.outputFor(rules, 'html');
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      md,
+      md: (source: string) => htmlOutput(parser(source)),
     },
   };
 });
