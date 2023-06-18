@@ -8,6 +8,12 @@ const rules: typeof SimpleMarkdown.defaultRules = {
       return SimpleMarkdown.htmlTag('p', output(node.content, state));
     },
   },
+  text: {
+    ...SimpleMarkdown.defaultRules.text,
+    match: SimpleMarkdown.anyScopeRegex(
+      /^[\s\S]+?(?=[^0-9A-Za-z\s\u00C0-\uFFFF]|\n\n| {2,}\n|\n|\w+:\S|$)/
+    ),
+  },
   br: {
     ...SimpleMarkdown.defaultRules.br,
     match: SimpleMarkdown.anyScopeRegex(/^\n/),
