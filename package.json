@@ -64,7 +64,6 @@
     "eslint": "^8.35.0",
     "eslint-plugin-vue": "^9.8.0",
     "husky": "^8.0.3",
-    "inquirer": "^8.2.5",
     "lint-staged": "^13.2.1",
     "mitt": "^3.0.0",
     "nuxt": "^3.6.1",
