@@ -82,7 +82,7 @@
     "chart.js": "^3.9.1",
     "date-fns": "^2.29.3",
     "highlight.js": "^11.7.0",
-    "lucide-vue-next": "^0.255.0",
+    "lucide-vue-next": "^0.256.0",
     "modern-normalize": "^2.0.0",
     "pinia": "^2.0.34",
     "v-lazy-image": "^2.1.1",
