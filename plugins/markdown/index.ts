@@ -105,10 +105,11 @@ function nodeRender(node: Token): VNode | undefined | string {
           'thead',
           h(
             'tr',
-            node.header.map((child) =>
+            node.header.map((th, index) =>
               h(
                 'th',
-                child.tokens.map((th) => nodeRender(th))
+                { style: { textAlign: node.align[index] } },
+                th.tokens.map((child) => nodeRender(child))
               )
             )
           )
@@ -118,9 +119,10 @@ function nodeRender(node: Token): VNode | undefined | string {
           node.rows.map((tr) =>
             h(
               'tr',
-              tr.map((td) =>
+              tr.map((td, index) =>
                 h(
                   'td',
+                  { style: { textAlign: node.align[index] } },
                   td.tokens.map((content) => nodeRender(content))
                 )
               )
@@ -131,8 +133,10 @@ function nodeRender(node: Token): VNode | undefined | string {
     case 'link':
       return h(
         'a',
-        { href: node.href, title: node.title },
-        node.tokens.map((child) => nodeRender(child))
+        { href: node.href },
+        node.tokens.length
+          ? node.tokens.map((child) => nodeRender(child))
+          : node.href
       );
     case 'space':
       return;
@@ -144,6 +148,7 @@ function nodeRender(node: Token): VNode | undefined | string {
     case 'list':
       return h(
         node.ordered ? 'ol' : 'ul',
+        { start: node.start },
         node.items.map((child) => nodeRender(child))
       );
     case 'list_item':
@@ -190,7 +195,11 @@ function nodeRender(node: Token): VNode | undefined | string {
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      md: (src: string) => marked.lexer(src).map((node) => nodeRender(node)),
+      md: (src: string) => {
+        const tokens = marked.lexer(src);
+        console.log(tokens);
+        return tokens.map((node) => nodeRender(node));
+      },
     },
   };
 });
