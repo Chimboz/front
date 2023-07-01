@@ -13,17 +13,20 @@ export function randomInt(min: number, max: number) {
   );
 }
 
-export function hashColor(str: string) {
+export function hashColor(
+  src: string | number,
+  lightness = 66,
+  saturation = 100
+) {
+  src = src.toString(2);
   let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  for (let i = 0; i < src.length; i += 1) {
+    hash = src.charCodeAt(i) + ((hash << 5) - hash);
+    hash &= hash;
   }
-  let colour = '#';
-  for (let i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff;
-    colour += `00${value.toString(16)}`.substr(-2);
-  }
-  return colour;
+  return `hsl(${
+    hash % 360
+  }, ${saturation}%, calc(var(--lightness) + var(--lightness-factor) * ${lightness}%))`;
 }
 
 export function formatDuration(ms: number) {

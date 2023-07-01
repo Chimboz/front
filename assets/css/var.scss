@@ -16,6 +16,8 @@
   --round: 99px;
   --pointer: url(@/assets/img/pointer.svg) 4 2, pointer;
   --duration: 0.3s;
+  --lightness: 0%;
+  --lightness-factor: 1;
 
   /* Colors */
   --text: #284555;
@@ -77,6 +79,9 @@
 }
 
 .dark-mode {
+  --lightness: 100%;
+  --lightness-factor: -1;
+
   /* Colors */
   --text: hsl(201, 36%, 75%);
   --text-button: #fff;

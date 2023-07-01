@@ -22,10 +22,10 @@
             :to="'/book/' + friend.user.id"
             :class="{ pending: friend.status.hasOwnProperty('sent') }"
           >
-            <UserLink :user="friend.user" class="ellipsis" />
+            <span class="ellipsis">{{ friend.user.name }}</span>
             <div
               class="tiz-portrait"
-              :style="{ background: hashColor(friend.user.name) }"
+              :style="{ background: hashColor(friend.user.id) }"
             >
               <Avatar
                 :avatar="friend.user.look.avatar"

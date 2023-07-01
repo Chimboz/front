@@ -40,7 +40,7 @@
         >
           <div
             class="tiz-portrait"
-            :style="{ background: hashColor(message.user.name) }"
+            :style="{ background: hashColor(message.user.id) }"
           >
             <Avatar
               :avatar="message.user.look.avatar"

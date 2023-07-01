@@ -28,7 +28,7 @@
           <div
             v-if="!message.you"
             class="tiz-portrait"
-            :style="{ background: hashColor(data.user.name) }"
+            :style="{ background: hashColor(data.user.id) }"
           >
             <Avatar
               :avatar="data.user.look.avatar"
@@ -59,7 +59,9 @@
             </div>
             <Markdown
               class="content"
-              :style="{ background: hashColor(data.user.name) }"
+              :style="{
+                background: hashColor(data.user.id, 90),
+              }"
               :src="message.content"
             />
           </div>
@@ -92,7 +94,7 @@
           >
             <div
               class="tiz-portrait"
-              :style="{ background: hashColor(user.name) }"
+              :style="{ background: hashColor(user.id) }"
             >
               <Avatar
                 :avatar="user.look.avatar"
@@ -156,7 +158,7 @@ useHead({ title: computed(() => t('conversation')) });
 .content {
   padding: var(--gap) var(--gap) 6px var(--gap);
   background: var(--light);
-  color: var(--light);
+  color: var(--text);
   border-radius: 16px;
   box-shadow: 0 1px 1px 1px #0005;
 }
