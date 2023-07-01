@@ -105,6 +105,7 @@
         </div>
       </div>
       <hr style="margin: 6px 0" />
+      <div class="markdown-body"></div>
       <Markdown :src="message.content" />
       <br /><i>"{{ message.author.signature }}"</i>
     </td>
@@ -130,6 +131,9 @@ const props = withDefaults(
   }>(),
   { separator: true }
 );
+
+// const { $md } = useNuxtApp();
+// const markdown = $md(Object.freeze(props.message.content));
 
 function deleteMessage() {
   useFetch('bbs/delete', {

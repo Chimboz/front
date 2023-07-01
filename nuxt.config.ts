@@ -21,9 +21,10 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
   ],
   plugins: [
-    '~/plugins/eventBus.ts',
     '~/plugins/timeMetrics.ts',
+    '~/plugins/eventBus.ts',
     '~/plugins/date.ts',
+    '~/plugins/markdown/index.ts',
   ],
   css: [
     'modern-normalize/modern-normalize.css',
