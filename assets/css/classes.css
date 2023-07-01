@@ -189,6 +189,7 @@ textarea.btn-md {
 .card .list {
   display: flex;
   align-items: center;
+  line-height: initial;
   padding: var(--sm-gap) var(--md-gap);
 }
 
