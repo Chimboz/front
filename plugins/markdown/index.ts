@@ -200,11 +200,7 @@ function nodeRender(node: Token): VNode | undefined | string {
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      md: (src: string) => {
-        const tokens = marked.lexer(src);
-        console.log(tokens);
-        return tokens.map((node) => nodeRender(node));
-      },
+      md: (src: string) => marked.lexer(src).map((node) => nodeRender(node)),
     },
   };
 });
