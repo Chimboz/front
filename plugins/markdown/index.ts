@@ -135,13 +135,15 @@ function nodeRender(node: Token): VNode | undefined | string {
         ),
       ]);
     case 'link':
-      return h(
-        'a',
-        { href: node.href },
-        node.tokens.length
-          ? node.tokens.map((child) => nodeRender(child))
-          : node.href
-      );
+      return node.href
+        ? h(
+            'a',
+            { href: node.href },
+            node.tokens.length
+              ? node.tokens.map((child) => nodeRender(child))
+              : node.href
+          )
+        : node.raw;
     case 'space':
       return;
     case 'heading':
@@ -169,7 +171,7 @@ function nodeRender(node: Token): VNode | undefined | string {
       return h('a', { href: node.href, title: node.title }, node.raw);
     case 'image':
       return node.href
-        ? h('img', { src: node.href, alt: node.raw, title: node.text })
+        ? h('img', { src: node.href, alt: node.text, title: node.text })
         : node.raw;
     case 'codespan':
       return h('code', node.raw.slice(1, -1));
