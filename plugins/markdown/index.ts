@@ -1,22 +1,17 @@
-import { marked } from 'marked';
+import { marked, type marked as markedTypes } from 'marked';
+import hljs from 'highlight.js';
 import { markedHighlight } from 'marked-highlight';
 import { markedEmoji } from 'marked-emoji';
-import hljs from 'highlight.js';
-import '@/assets/css/bbs/markdown.css';
-import 'highlight.js/styles/github-dark.css';
-import type { marked as markedTypes } from 'marked';
 import textAlign from './extensions/textAlign';
 import color from './extensions/color';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
-/*
 const HOSTS = ['localhost:3000', 'chimboz.fr', 'chimboz-dev.vercel.app'];
-const ALLOWED_URI = ['http', 'https', 'mailto'];
+const ALLOWED_PROTOCOL = ['http:', 'https:', 'mailto:'];
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', ...HOSTS];
-const youtube =
-  /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
-*/
+// const youtube = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
+
 const EMOJIS = {
   ...EmoteList.reduce(
     (a, emote) => ({ ...a, [emote]: { url: `/emoticon/${emote}.svg` } }),
@@ -135,15 +130,20 @@ function nodeRender(node: Token): VNode | undefined | string {
         ),
       ]);
     case 'link':
-      return node.href
-        ? h(
-            'a',
-            { href: node.href },
-            node.tokens.length
-              ? node.tokens.map((child) => nodeRender(child))
-              : node.href
-          )
-        : node.raw;
+      try {
+        return node.href &&
+          ALLOWED_PROTOCOL.includes(new URL(node.href).protocol)
+          ? h(
+              'a',
+              { href: node.href },
+              node.tokens.length
+                ? node.tokens.map((child) => nodeRender(child))
+                : node.href
+            )
+          : node.raw;
+      } catch (e) {
+        return node.raw;
+      }
     case 'space':
       return;
     case 'heading':
@@ -170,9 +170,13 @@ function nodeRender(node: Token): VNode | undefined | string {
     case 'def':
       return h('a', { href: node.href, title: node.title }, node.raw);
     case 'image':
-      return node.href
-        ? h('img', { src: node.href, alt: node.text, title: node.text })
-        : node.raw;
+      try {
+        return node.href && ALLOWED_IMAGES.includes(new URL(node.href).host)
+          ? h('img', { src: node.href, alt: node.text, title: node.text })
+          : node.raw;
+      } catch (e) {
+        return node.raw;
+      }
     case 'codespan':
       return h('code', node.raw.slice(1, -1));
     case 'emoji':
