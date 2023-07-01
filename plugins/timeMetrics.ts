@@ -1,6 +1,4 @@
-import { defineNuxtPlugin, useRouter } from '#imports';
-
-export default defineNuxtPlugin((nuxt: any) => {
+export default defineNuxtPlugin((nuxt) => {
   const timeMetric = shallowReactive({
     pageStart: Date.now(),
     pageEnd: Date.now(),
