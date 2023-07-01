@@ -15,18 +15,19 @@ import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
 const props = defineProps<{ src: string }>();
-
+/*
 const HOSTS = ['localhost:3000', 'chimboz.fr', 'chimboz-dev.vercel.app'];
 const ALLOWED_URI = ['http', 'https', 'mailto'];
 const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', ...HOSTS];
 const youtube =
   /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
+*/
 const EMOJIS = {
   ...EmoteList.reduce(
     (a, emote) => ({ ...a, [emote]: { url: `/emoticon/${emote}.svg` } }),
     {}
   ),
-  ...Object.keys(emojis).reduce(
+  ...(Object.keys(emojis) as Array<keyof typeof emojis>).reduce(
     (a, emote) => ({ ...a, [emote]: { char: emojis[emote] } }),
     {}
   ),
@@ -58,7 +59,24 @@ marked.use(
   color
 );
 
-function nodeRender(node: markedTypes.Token) {
+type EmojiToken = {
+  type: 'emoji';
+  raw: string;
+  name: string;
+  emoji: string;
+  unicode: boolean;
+};
+type ColorToken = {
+  type: 'color';
+  raw: string;
+  text: string;
+  color: string;
+  tokens: (markedTypes.Token | EmojiToken | ColorToken)[];
+};
+
+type Token = markedTypes.Token | EmojiToken | ColorToken;
+
+function nodeRender(node: Token): VNode | undefined | string {
   switch (node.type) {
     case 'hr':
       return h('hr', node.raw);
@@ -67,24 +85,24 @@ function nodeRender(node: markedTypes.Token) {
     case 'blockquote':
       return h(
         'blockquote',
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'code':
       return h('pre', h('code', node.text));
     case 'strong':
       return h(
         'strong',
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'em':
       return h(
         'em',
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'del':
       return h(
         'del',
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'table':
       return h('table', [
@@ -119,29 +137,29 @@ function nodeRender(node: markedTypes.Token) {
       return h(
         'a',
         { href: node.href, title: node.title },
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'space':
       return;
     case 'heading':
       return h(
         `h${node.depth}`,
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'list':
       return h(
         node.ordered ? 'ol' : 'ul',
-        node.items.map((child: markedTypes.Token) => nodeRender(child))
+        node.items.map((child) => nodeRender(child))
       );
     case 'list_item':
       return h(
         'li',
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'paragraph':
       return h(
         'p',
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'def':
       return h('a', { href: node.href, title: node.title }, node.raw);
@@ -152,25 +170,34 @@ function nodeRender(node: markedTypes.Token) {
     case 'emoji':
       return node.unicode
         ? node.emoji
-        : h('img', { src: node.emoji, alt: node.name });
+        : h('img', { src: node.emoji, alt: node.raw });
     case 'color':
       return h(
         'i',
         { style: { color: node.color } },
-        node.tokens.map((child: markedTypes.Token) => nodeRender(child))
+        node.tokens.map((child) => nodeRender(child))
       );
     case 'escape':
       return node.text;
-    case 'html':
     case 'text':
+      return 'tokens' in node && Array.isArray(node.tokens)
+        ? h(
+            'i',
+            node.tokens.map((child) => nodeRender(child))
+          )
+        : node.raw;
+    case 'html':
     default:
       return node.raw;
   }
 }
 
 function render() {
+  console.log('start');
   const tokens = marked.lexer(props.src);
-  console.log(ALLOWED_IMAGES, ALLOWED_URI, youtube);
-  return tokens.map((node) => nodeRender(node));
+  console.log('lexer', tokens);
+  const rendered = tokens.map((node) => nodeRender(node));
+  console.log('rendered', rendered);
+  return rendered;
 }
 </script>
