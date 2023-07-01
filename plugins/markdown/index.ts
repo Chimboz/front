@@ -37,6 +37,7 @@ marked.use(
     headerIds: false,
     mangle: false,
     tokenizer: {
+      // @ts-expect-error https://github.com/markedjs/marked/issues/420#issuecomment-1210799497
       html() {},
     },
   },
