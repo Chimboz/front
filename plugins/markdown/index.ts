@@ -36,6 +36,9 @@ marked.use(
     sanitize: false,
     headerIds: false,
     mangle: false,
+    tokenizer: {
+      html() {},
+    },
   },
   markedHighlight({
     langPrefix: '',
@@ -186,7 +189,6 @@ function nodeRender(node: Token): VNode | undefined | string {
             node.tokens.map((child) => nodeRender(child))
           )
         : node.raw;
-    case 'html':
     default:
       return node.raw;
   }
