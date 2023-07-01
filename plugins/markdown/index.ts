@@ -168,7 +168,9 @@ function nodeRender(node: Token): VNode | undefined | string {
     case 'def':
       return h('a', { href: node.href, title: node.title }, node.raw);
     case 'image':
-      return h('img', { src: node.href, alt: node.title });
+      return node.href
+        ? h('img', { src: node.href, alt: node.raw, title: node.text })
+        : node.raw;
     case 'codespan':
       return h('code', node.raw.slice(1, -1));
     case 'emoji':
