@@ -180,7 +180,7 @@ function nodeRender(node: Token): VNode | undefined | string {
     case 'escape':
       return node.text;
     case 'text':
-      return 'tokens' in node && Array.isArray(node.tokens)
+      return 'tokens' in node && node.tokens
         ? h(
             'i',
             node.tokens.map((child) => nodeRender(child))
