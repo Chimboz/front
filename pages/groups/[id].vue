@@ -31,8 +31,7 @@
           @contextmenu.prevent
         />
       </div>
-      <!--eslint-disable-next-line vue/no-v-html description is sanitized-->
-      <div class="markdown-body" v-html="$md(data.description)" />
+      <Markdown :src="data.description" />
       <br />
       <Card left>
         {{ $t(`group.leader.${data.type}`) }}:

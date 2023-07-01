@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
   ],
   plugins: [
-    '~/plugins/messageRender.ts',
     '~/plugins/eventBus.ts',
     '~/plugins/timeMetrics.ts',
     '~/plugins/date.ts',

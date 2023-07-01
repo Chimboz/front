@@ -105,8 +105,7 @@
         </div>
       </div>
       <hr style="margin: 6px 0" />
-      <!--eslint-disable-next-line vue/no-v-html message is sanitized-->
-      <div class="markdown-body" v-html="$md(message.content)" />
+      <Markdown :src="message.content" />
       <br /><i>"{{ message.author.signature }}"</i>
     </td>
   </tr>

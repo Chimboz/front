@@ -57,10 +57,10 @@
                 >
               </h3>
             </div>
-            <span
-              class="content markdown-body"
+            <Markdown
+              class="content"
               :style="{ background: hashColor(data.user.name) }"
-              v-html="$md(message.content)"
+              :src="message.content"
             />
           </div>
         </div>
