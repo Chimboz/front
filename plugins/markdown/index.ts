@@ -132,13 +132,12 @@ function nodeRender(node: Token): VNode | undefined | string {
     case 'link':
       try {
         return node.href &&
+          node.tokens.length &&
           ALLOWED_PROTOCOL.includes(new URL(node.href).protocol)
           ? h(
               'a',
               { href: node.href },
-              node.tokens.length
-                ? node.tokens.map((child) => nodeRender(child))
-                : node.href
+              node.tokens.map((child) => nodeRender(child))
             )
           : node.raw;
       } catch (e) {
