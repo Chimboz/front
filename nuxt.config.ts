@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     {
       path: '~/components',
       pathPrefix: false,
+      global: true,
     },
   ],
   app: {
@@ -21,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
   ],
   plugins: [
+    '~/plugins/env.ts',
     '~/plugins/timeMetrics.ts',
     '~/plugins/eventBus.ts',
     '~/plugins/date.ts',

@@ -7,9 +7,7 @@ import color from './extensions/color';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
-const HOSTS = ['localhost:3000', 'chimboz.fr', 'chimboz-dev.vercel.app'];
-const ALLOWED_PROTOCOL = ['http:', 'https:', 'mailto:'];
-const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com', ...HOSTS];
+const ALLOWED_IMAGES = ['i.imgur.com', 'image.noelshack.com'];
 // const youtube = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/gi;
 
 const EMOJIS = {
@@ -130,19 +128,7 @@ function nodeRender(node: Token): VNode | undefined | string {
         ),
       ]);
     case 'link':
-      try {
-        return node.href &&
-          node.tokens.length &&
-          ALLOWED_PROTOCOL.includes(new URL(node.href).protocol)
-          ? h(
-              'a',
-              { href: node.href },
-              node.tokens.map((child) => nodeRender(child))
-            )
-          : node.raw;
-      } catch (e) {
-        return node.raw;
-      }
+      return h(resolveComponent('MarkdownLink'), { node });
     case 'space':
       return;
     case 'heading':
@@ -206,6 +192,7 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       md: (src: string) => marked.lexer(src).map((node) => nodeRender(node)),
+      nodeRender,
     },
   };
 });
