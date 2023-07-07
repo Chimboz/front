@@ -160,10 +160,14 @@
   top: -0.5em;
 }
 .markdown-body img {
+  vertical-align: initial;
   border-style: none;
   max-width: 100%;
+  user-select: inherit;
   box-sizing: content-box;
-  background-color: var(--color-canvas-default);
+}
+.markdown-body i {
+  font-style: normal;
 }
 .markdown-body code,
 .markdown-body kbd,
@@ -270,8 +274,14 @@
 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
-  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-    Liberation Mono, monospace;
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   line-height: 10px;
   color: var(--color-fg-default);
   vertical-align: middle;
@@ -352,15 +362,27 @@
 }
 .markdown-body code,
 .markdown-body tt {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-    Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 12px;
 }
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-    Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 12px;
   word-wrap: normal;
 }

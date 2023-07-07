@@ -57,28 +57,6 @@
   margin-bottom: var(--sm-gap);
 }
 
-/* Markdown custom styling */
-.markdown-body {
-  word-break: break-word;
-}
-
-.markdown-body img {
-  user-select: inherit;
-  background: transparent !important;
-}
-
-.markdown-body i {
-  font-style: normal;
-}
-
-.markdown-body *:not(.markdown-body) > table {
-  background: var(--light-bbs);
-}
-
-.markdown-body li:has(input) {
-  list-style: none;
-}
-
 /* Custom buttons */
 /* Button medium */
 .btn-md {
@@ -90,13 +68,16 @@
   border: 0;
   color: var(--text);
   background: var(--light);
-  box-shadow: inset 1px 1px 1px var(--dark), inset -1px -1px 1px var(--dark);
+  box-shadow:
+    inset 1px 1px 1px var(--dark),
+    inset -1px -1px 1px var(--dark);
   align-items: center;
 }
 
 input:valid:not(:placeholder-shown):not([type='checkbox']),
 textarea:valid:not(:placeholder-shown) {
-  box-shadow: inset 1px 1px 1px var(--main-button-green),
+  box-shadow:
+    inset 1px 1px 1px var(--main-button-green),
     inset -1px -1px 1px var(--dark-button-green);
 }
 
@@ -104,7 +85,9 @@ textarea:valid:not(:placeholder-shown) {
 .btn-md:active,
 input:not([type='checkbox']).btn-md:focus,
 textarea.btn-md:focus {
-  box-shadow: inset 1px 1px 1px var(--orange), inset -1px -1px 1px var(--orange);
+  box-shadow:
+    inset 1px 1px 1px var(--orange),
+    inset -1px -1px 1px var(--orange);
 }
 
 input:invalid:not(:placeholder-shown):not([type='checkbox']),
@@ -153,10 +136,15 @@ textarea.btn-md {
   color: var(--light);
   border: 1px solid var(--dark-button-red);
   background: linear-gradient(to bottom, var(--light), var(--main-button-red));
-  text-shadow: 1px 0 0 var(--dark-button-red), -1px 0 0 var(--dark-button-red),
-    0 1px 0 var(--dark-button-red), 0 -1px 0 var(--dark-button-red),
-    0.7px 0.7px var(--dark-button-red), -0.7px -0.7px 0 var(--dark-button-red),
-    0.7px -0.7px 0 var(--dark-button-red), -0.7px 0.7px 0 var(--dark-button-red);
+  text-shadow:
+    1px 0 0 var(--dark-button-red),
+    -1px 0 0 var(--dark-button-red),
+    0 1px 0 var(--dark-button-red),
+    0 -1px 0 var(--dark-button-red),
+    0.7px 0.7px var(--dark-button-red),
+    -0.7px -0.7px 0 var(--dark-button-red),
+    0.7px -0.7px 0 var(--dark-button-red),
+    -0.7px 0.7px 0 var(--dark-button-red);
 }
 
 .btn-success {
@@ -167,9 +155,12 @@ textarea.btn-md {
     var(--light),
     var(--main-button-green)
   );
-  text-shadow: 1px 0 0 var(--dark-button-green),
-    -1px 0 0 var(--dark-button-green), 0 1px 0 var(--dark-button-green),
-    0 -1px 0 var(--dark-button-green), 0.7px 0.7px var(--dark-button-green),
+  text-shadow:
+    1px 0 0 var(--dark-button-green),
+    -1px 0 0 var(--dark-button-green),
+    0 1px 0 var(--dark-button-green),
+    0 -1px 0 var(--dark-button-green),
+    0.7px 0.7px var(--dark-button-green),
     -0.7px -0.7px 0 var(--dark-button-green),
     0.7px -0.7px 0 var(--dark-button-green),
     -0.7px 0.7px 0 var(--dark-button-green);
