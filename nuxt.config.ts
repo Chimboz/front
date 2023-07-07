@@ -39,16 +39,6 @@ export default defineNuxtConfig({
   ],
   i18n: {
     strategy: 'no_prefix',
-    locales: [
-      { code: 'en', file: 'en.json' },
-      { code: 'fr', file: 'fr.json' },
-    ],
-    precompile: {
-      strictMessage: false,
-    },
-    defaultLocale: 'en',
-    lazy: true,
-    langDir: 'locales/',
   },
   nitro: {
     compressPublicAssets: true,

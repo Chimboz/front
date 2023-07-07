@@ -67,9 +67,11 @@
             :item2="user.look.item2"
           />
           <UserLink :user="user" />
-          <span
-            v-html="$t('members.popularity.withPoints', { score: user.score })"
-          />
+          <i18n-t scope="global" keypath="members.popularity.withPoints">
+            <template #score>
+              <b>{{ user.score }}</b>
+            </template>
+          </i18n-t>
         </div>
       </div>
       <br />

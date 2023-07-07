@@ -12,7 +12,14 @@
       <template #subtop>
         {{ $t('notsmart') }}
       </template>
-      <span v-html="$t('notsmart.description')" />
+      <i18n-t scope="global" keypath="notsmart.description">
+        <template #notsmart>
+          <h3>{{ $t('notsmart.notsmart') }}</h3>
+        </template>
+        <template #break>
+          <br />
+        </template> </i18n-t
+      ><br /><br />
       <form @submit.prevent="changePassword">
         <input
           v-model="currentPassword"

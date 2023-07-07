@@ -61,7 +61,11 @@
             >Sauver
           </Button>
         </div>
-        <span v-html="$t('eraser.description')" />
+        <i18n-t scope="global" keypath="eraser.description">
+          <template #warning>
+            <b>{{ $t('warning') }}</b>
+          </template>
+        </i18n-t>
       </form>
     </Card>
     <template #right-column>
