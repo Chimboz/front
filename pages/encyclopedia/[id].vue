@@ -65,10 +65,11 @@
   </div>
 </template>
 <script setup lang="ts">
+const { $i18n } = useNuxtApp();
 const { data } = await useFetch<any>(
-  `https://chimboz.fr/public/api/item/${
-    useRoute().params.id
-  }?lang=${useBrowserLocale()?.split('-')[0]}`
+  `https://chimboz.fr/public/api/item/${useRoute().params.id}?lang=${
+    $i18n.locale.value
+  }`
 );
 
 const hue = ref(0);

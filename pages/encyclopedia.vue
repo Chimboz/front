@@ -160,10 +160,9 @@
 <script setup lang="ts">
 import VLazyImage from 'v-lazy-image';
 
+const { $i18n } = useNuxtApp();
 const { data } = await useFetch<any[]>(
-  `https://chimboz.fr/public/api/encyclopedia?lang=${useBrowserLocale()?.split(
-    '-'
-  )[0]}&page=0`
+  `https://chimboz.fr/public/api/encyclopedia?lang=${$i18n.locale.value}&page=0`
 );
 
 const categories = [

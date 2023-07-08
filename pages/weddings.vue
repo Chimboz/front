@@ -121,7 +121,7 @@
       {{ $t('wedding.wishes') }}<br />
       <UserLink :user="data.last.married1" /> &amp;
       <UserLink :user="data.last.married2" /><br />
-      <i18n-t scope="global" keypath="wedding.marriedByGuruji">
+      <i18n-t keypath="wedding.marriedByGuruji">
         <template #Guruji>
           <b>Guruji</b>
         </template> </i18n-t
@@ -323,7 +323,7 @@
           width="17"
           @contextmenu.prevent
         />
-        <i18n-t scope="global" keypath="wedding.rightColumn.gurujiCelebrated">
+        <i18n-t keypath="wedding.rightColumn.gurujiCelebrated">
           <template #Guruji>
             <b>Guruji</b>
           </template>
@@ -340,7 +340,7 @@
           height="39"
           @contextmenu.prevent
         /><br />
-        <i18n-t scope="global" keypath="wedding.rightColumn.divorced">
+        <i18n-t keypath="wedding.rightColumn.divorced">
           <template #total>
             <b>{{ data.stats.divorce }}</b>
           </template> </i18n-t
@@ -353,7 +353,7 @@
           height="39"
           @contextmenu.prevent
         /><br />
-        <i18n-t scope="global" keypath="wedding.rightColumn.all">
+        <i18n-t keypath="wedding.rightColumn.all">
           <template #couples>
             <b>{{ data.stats.divorce }}</b>
           </template>

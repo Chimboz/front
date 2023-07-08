@@ -12,7 +12,7 @@
       <template #subtop>
         {{ $t('notsmart') }}
       </template>
-      <i18n-t scope="global" keypath="notsmart.description">
+      <i18n-t keypath="notsmart.description">
         <template #notsmart>
           <h3>{{ $t('notsmart.notsmart') }}</h3>
         </template>

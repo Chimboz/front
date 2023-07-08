@@ -61,7 +61,7 @@
             >Sauver
           </Button>
         </div>
-        <i18n-t scope="global" keypath="eraser.description">
+        <i18n-t keypath="eraser.description">
           <template #warning>
             <b>{{ $t('warning') }}</b>
           </template>
