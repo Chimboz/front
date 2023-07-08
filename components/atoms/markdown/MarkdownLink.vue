@@ -1,16 +1,20 @@
 <template>
-  <a
+  <Tooltip
     v-if="ALLOWED_PROTOCOL.includes(link.protocol)"
-    :href="link.href"
     class="markdown-link"
-    :rel="link.host === HOST.host ? '' : 'noreferrer noopener nofollow'"
   >
-    <Tooltip>
-      <template #tooltip>{{ link.href }}</template>
-      <template v-if="text && text !== link.host + link.pathname">⚠️</template
-      ><content />
-    </Tooltip>
-  </a>
+    <template #tooltip>{{ link.href }}</template>
+    <template v-if="text && text !== link.host + link.pathname"
+      >⚠️&nbsp;</template
+    >
+    <a
+      :href="link.href"
+      :rel="link.host === HOST.host ? '' : 'noreferrer noopener nofollow'"
+      target="_blank"
+      ><content
+    /></a>
+  </Tooltip>
+
   <template v-else>
     {{ node.raw }}
   </template>
@@ -41,6 +45,6 @@ const content = () => props.node.tokens.map((el) => $nodeRender(el));
 </script>
 <style lang="scss" scoped>
 .markdown-link {
-  display: inline-block;
+  display: unset;
 }
 </style>
