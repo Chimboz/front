@@ -66,9 +66,9 @@
 </template>
 <script setup lang="ts">
 const { data } = await useFetch<any>(
-  `https://chimboz.fr/public/api/item/${useRoute().params.id}?lang=${
-    useBrowserLocale()!.split('-')[0]
-  }`
+  `https://chimboz.fr/public/api/item/${
+    useRoute().params.id
+  }?lang=${useBrowserLocale()?.split('-')[0]}`
 );
 
 const hue = ref(0);

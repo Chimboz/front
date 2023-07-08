@@ -14,7 +14,9 @@
         route="https://chimboz.fr/api/encyclopedia"
         class="fullwidth"
         :max-height="450"
-        @scroll-data="(results: any[]) => (data = [...new Set([...data!, ...results])])"
+        @scroll-data="
+          (results: any[]) => (data = [...new Set([...data!, ...results])])
+        "
       >
         <div
           v-for="item of data!.filter(
@@ -159,9 +161,9 @@
 import VLazyImage from 'v-lazy-image';
 
 const { data } = await useFetch<any[]>(
-  `https://chimboz.fr/public/api/encyclopedia?lang=${
-    useBrowserLocale()!.split('-')[0]
-  }&page=0`
+  `https://chimboz.fr/public/api/encyclopedia?lang=${useBrowserLocale()?.split(
+    '-'
+  )[0]}&page=0`
 );
 
 const categories = [
