@@ -5,7 +5,7 @@
 
   --unit: 4px;
   /* Global style */
-  --font-family: Helvetica, 'Helvetica Fallback', sans-serif;
+  --font-family: 'Inter', sans-serif, 'system-ui';
   --sm-gap: calc(var(--unit) * 0.5);
   --md-gap: calc(2 * var(--unit));
   --gap: calc(3 * var(--unit));

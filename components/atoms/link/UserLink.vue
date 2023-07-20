@@ -1,5 +1,5 @@
 <template>
-  <span :class="{ ellipsis: ellipsis }">
+  <span :class="{ ellipsis: ellipsis }" class="user-link">
     <NuxtLink
       v-if="user.id"
       :to="'/book/' + user.id"
@@ -19,8 +19,8 @@ defineProps<{
 }>();
 </script>
 <style lang="scss" scoped>
-div {
-  display: inline-block;
+.user-link {
+  font-feature-settings: 'ss02';
 }
 
 .ellipsis {

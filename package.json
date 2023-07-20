@@ -82,6 +82,7 @@
     "chart.js": "^3.9.1",
     "date-fns": "^2.29.3",
     "highlight.js": "^11.7.0",
+    "inter-ui": "^3.19.3",
     "lucide-vue-next": "^0.262.0",
     "marked": "^5.1.0",
     "marked-emoji": "^1.1.1",

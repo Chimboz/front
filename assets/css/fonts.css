@@ -1,6 +1,9 @@
+@import 'inter-ui/inter.css';
+
 @font-face {
   font-family: 'Pixelated Verdana 12';
-  src: url(@/assets/font/pixelated_verdana_12pt.woff2) format('woff2'),
+  src:
+    url(@/assets/font/pixelated_verdana_12pt.woff2) format('woff2'),
     url(@/assets/font/pixelated_verdana_12pt.woff) format('woff');
   font-weight: normal;
   font-style: normal;
@@ -11,7 +14,8 @@
 
 @font-face {
   font-family: 'Pixelated Verdana 12';
-  src: url(@/assets/font/pixelated_verdana_bold_12pt.woff2) format('woff2'),
+  src:
+    url(@/assets/font/pixelated_verdana_bold_12pt.woff2) format('woff2'),
     url(@/assets/font/pixelated_verdana_bold_12pt.woff) format('woff');
   font-weight: bold;
   font-style: normal;
@@ -22,7 +26,8 @@
 
 @font-face {
   font-family: 'Pixelated Verdana 10';
-  src: url(@/assets/font/pixelated_verdana_bold_10pt.woff2) format('woff2'),
+  src:
+    url(@/assets/font/pixelated_verdana_bold_10pt.woff2) format('woff2'),
     url(@/assets/font/pixelated_verdana_bold_10pt.woff) format('woff');
   font-weight: bold;
   font-style: normal;
@@ -33,7 +38,8 @@
 
 @font-face {
   font-family: 'Chimboz Heavy';
-  src: url(@/assets/font/chimbozheavy.woff2) format('woff2'),
+  src:
+    url(@/assets/font/chimbozheavy.woff2) format('woff2'),
     url(@/assets/font/chimbozheavy.woff) format('woff');
   font-weight: normal;
   font-style: normal;
@@ -42,7 +48,8 @@
 
 @font-face {
   font-family: 'Chimboz Heavy';
-  src: url(@/assets/font/chimbozheavy_bold.woff2) format('woff2'),
+  src:
+    url(@/assets/font/chimbozheavy_bold.woff2) format('woff2'),
     url(@/assets/font/chimbozheavy_bold.woff) format('woff');
   font-weight: bold;
   font-style: normal;
@@ -50,44 +57,9 @@
 }
 
 @font-face {
-  font-family: 'Helvetica Fallback';
-  src: url(@/assets/font/helvetica_bold_oblique.woff2) format('woff2'),
-    url(@/assets/font/helvetica_bold_oblique.woff) format('woff');
-  font-weight: bold;
-  font-style: italic;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Helvetica Fallback';
-  src: url(@/assets/font/helvetica.woff2) format('woff2'),
-    url(@/assets/font/helvetica.woff) format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Helvetica Fallback';
-  src: url(@/assets/font/helvetica_bold.woff2) format('woff2'),
-    url(@/assets/font/helvetica_bold.woff) format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Helvetica Fallback';
-  src: url(@/assets/font/helvetica_oblique.woff2) format('woff2'),
-    url(@/assets/font/helvetica_oblique.woff) format('woff');
-  font-weight: 500;
-  font-style: italic;
-  font-display: fallback;
-}
-
-@font-face {
   font-family: 'Pixelade';
-  src: url(@/assets/font/pixelade.woff2) format('woff2'),
+  src:
+    url(@/assets/font/pixelade.woff2) format('woff2'),
     url(@/assets/font/pixelade.woff) format('woff');
   font-weight: normal;
   font-style: normal;
@@ -98,7 +70,8 @@
 
 @font-face {
   font-family: 'Impact';
-  src: url(@/assets/font/impact.woff2) format('woff2'),
+  src:
+    url(@/assets/font/impact.woff2) format('woff2'),
     url(@/assets/font/impact.woff) format('woff');
   font-weight: normal;
   font-style: normal;
@@ -107,7 +80,8 @@
 
 @font-face {
   font-family: 'Cocon';
-  src: url(@/assets/font/cocon.woff2) format('woff2'),
+  src:
+    url(@/assets/font/cocon.woff2) format('woff2'),
     url(@/assets/font/cocon.woff) format('woff');
   font-weight: normal;
   font-style: normal;

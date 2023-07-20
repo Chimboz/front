@@ -10,6 +10,7 @@
 }
 
 html {
+  font-family: var(--font-family);
   font-size: var(--font-size);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +18,6 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
   color: var(--text);
   background-color: var(--main-bg);
   overflow-x: hidden;
@@ -58,10 +58,15 @@ body {
 ::selection {
   background-color: var(--orange);
   color: var(--light);
-  text-shadow: 1px 0 0 var(--dark-orange), -1px 0 0 var(--dark-orange),
-    0 1px 0 var(--dark-orange), 0 -1px 0 var(--dark-orange),
-    0.7px 0.7px var(--dark-orange), -0.7px -0.7px 0 var(--dark-orange),
-    0.7px -0.7px 0 var(--dark-orange), -0.7px 0.7px 0 var(--dark-orange);
+  text-shadow:
+    1px 0 0 var(--dark-orange),
+    -1px 0 0 var(--dark-orange),
+    0 1px 0 var(--dark-orange),
+    0 -1px 0 var(--dark-orange),
+    0.7px 0.7px var(--dark-orange),
+    -0.7px -0.7px 0 var(--dark-orange),
+    0.7px -0.7px 0 var(--dark-orange),
+    -0.7px 0.7px 0 var(--dark-orange);
 }
 
 // Dark mode transition
