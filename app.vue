@@ -50,7 +50,17 @@ useHead({
             .replace(/[0-9]/g, (c) => '⁰¹²³⁴⁵⁶⁷⁸⁹'.charAt(+c))
         : ''
     }Chimboz ${title}`,
-  link: notifications.value ? faviconNew : favicon,
+  link: [
+    ...(notifications.value ? faviconNew : favicon),
+    {
+      rel: 'preconnect',
+      href: 'https://rsms.me/',
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://rsms.me/inter/inter.css',
+    },
+  ],
   meta: [
     {
       name: 'description',
