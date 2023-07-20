@@ -67,7 +67,7 @@
             :item2="user.look.item2"
           />
           <UserLink :user="user" />
-          <i18n-t keypath="members.popularity.withPoints">
+          <i18n-t keypath="members.popularity.withPoints" tag="div">
             <template #score>
               <b>{{ user.score }}</b>
             </template>
