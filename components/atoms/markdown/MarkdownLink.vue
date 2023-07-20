@@ -46,5 +46,6 @@ const content = () => props.node.tokens.map((el) => $nodeRender(el));
 <style lang="scss" scoped>
 .markdown-link {
   display: unset;
+  font-feature-settings: 'ss02';
 }
 </style>

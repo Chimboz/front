@@ -146,7 +146,9 @@
           <br /><br />
           <p>
             Vérification du nom :
-            <b>{{ data.name.toLowerCase() }}, {{ data.name.toUpperCase() }}</b>
+            <b class="disambiguation"
+              >{{ data.name.toLowerCase() }}, {{ data.name.toUpperCase() }}</b
+            >
           </p>
           <p>
             Signe astrologik : <b>{{ data.astro }}</b>
