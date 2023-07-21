@@ -15,6 +15,7 @@
 
 .disambiguation {
   font-feature-settings: 'ss02';
+  font-variant-ligatures: none;
 }
 
 /* Pink icon */

@@ -1,6 +1,10 @@
 <template>
   <span>
-    <NuxtLink :to="'/groups/' + group.id" :style="{ color: group.color }">
+    <NuxtLink
+      :to="'/groups/' + group.id"
+      :style="{ color: group.color }"
+      class="disambiguation"
+    >
       {{ group.name }}
     </NuxtLink>
     <span v-if="separator">, </span>

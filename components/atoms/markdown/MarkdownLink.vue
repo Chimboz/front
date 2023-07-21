@@ -1,7 +1,7 @@
 <template>
   <Tooltip
     v-if="ALLOWED_PROTOCOL.includes(link.protocol)"
-    class="markdown-link"
+    class="markdown-link disambiguation"
   >
     <template #tooltip>{{ link.href }}</template>
     <template v-if="text && text !== link.host + link.pathname"
@@ -46,6 +46,5 @@ const content = () => props.node.tokens.map((el) => $nodeRender(el));
 <style lang="scss" scoped>
 .markdown-link {
   display: unset;
-  font-feature-settings: 'ss02';
 }
 </style>
