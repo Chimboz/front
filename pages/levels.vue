@@ -16,6 +16,7 @@
         <div class="level-list">
           <div
             v-for="rank of data"
+            :id="`level${rank.level}`"
             :key="rank.level"
             class="pointer level"
             :class="{ active: selected === rank.level }"
@@ -44,8 +45,23 @@
   </Container>
 </template>
 <script setup lang="ts">
+import useAuthStore from '@/stores/auth';
+
 const { data } = await useFetch<any>('/api/levels');
-const selected = ref(0);
+
+const auth = useAuthStore();
+const selected = ref(+auth.user!.level);
+
+onMounted(() => {
+  // FIXME: dirty bruteforce to scroll to level
+  const id = setInterval(() => {
+    const el = document?.querySelector(`#level${selected.value}`);
+    if (el) {
+      el.scrollIntoView();
+      clearInterval(id);
+    }
+  }, 10);
+});
 
 definePageMeta({
   category: 'account',
@@ -60,6 +76,7 @@ useHead({ title: computed(() => t('levels')) });
   max-height: 450px;
   overflow-y: scroll;
   direction: rtl;
+  scroll-behavior: smooth;
   .level {
     background: var(--dark-card-yellow);
     border: 2px solid var(--main-card-yellow);
