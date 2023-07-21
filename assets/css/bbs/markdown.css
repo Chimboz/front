@@ -160,7 +160,7 @@
   top: -0.5em;
 }
 .markdown-body img {
-  vertical-align: initial;
+  vertical-align: bottom;
   border-style: none;
   max-width: 100%;
   user-select: inherit;
