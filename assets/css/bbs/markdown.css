@@ -202,6 +202,7 @@
 .markdown-body [type='reset'],
 .markdown-body [type='submit'] {
   -webkit-appearance: button;
+  appearance: button;
 }
 .markdown-body [type='button']::-moz-focus-inner,
 .markdown-body [type='reset']::-moz-focus-inner,
@@ -227,6 +228,7 @@
 }
 .markdown-body [type='search'] {
   -webkit-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
 }
 .markdown-body [type='search']::-webkit-search-cancel-button,
