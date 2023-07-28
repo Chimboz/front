@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/devtools',
+    'nuxt-vitest',
   ],
   plugins: [
     '~/plugins/timeMetrics.ts',
