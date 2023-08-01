@@ -1,4 +1,4 @@
-import { marked, type marked as markedTypes } from 'marked';
+import { marked, type Token } from 'marked';
 import hljs from 'highlight.js';
 import { markedHighlight } from 'marked-highlight';
 import { markedEmoji } from 'marked-emoji';
@@ -63,12 +63,12 @@ type ColorToken = {
   raw: string;
   text: string;
   color: string;
-  tokens: (markedTypes.Token | EmojiToken | ColorToken)[];
+  tokens: (Token | EmojiToken | ColorToken)[];
 };
 
-type Token = markedTypes.Token | EmojiToken | ColorToken;
+type CustomToken = Token | EmojiToken | ColorToken;
 
-function nodeRender(node: Token): VNode | undefined | string {
+function nodeRender(node: CustomToken): VNode | undefined | string {
   switch (node.type) {
     case 'hr':
       return h('hr', node.raw);
@@ -106,7 +106,7 @@ function nodeRender(node: Token): VNode | undefined | string {
               h(
                 'th',
                 { style: { textAlign: node.align[index] } },
-                th.tokens.map((child) => nodeRender(child))
+                th.tokens?.map((child) => nodeRender(child))
               )
             )
           )
@@ -120,7 +120,7 @@ function nodeRender(node: Token): VNode | undefined | string {
                 h(
                   'td',
                   { style: { textAlign: node.align[index] } },
-                  td.tokens.map((content) => nodeRender(content))
+                  td.tokens?.map((content) => nodeRender(content))
                 )
               )
             )
@@ -143,10 +143,7 @@ function nodeRender(node: Token): VNode | undefined | string {
         node.items.map((child) => nodeRender(child))
       );
     case 'list_item':
-      return h(
-        'li',
-        node.tokens.map((child) => nodeRender(child))
-      );
+      return h('li', node.tokens?.map((child) => nodeRender(child)));
     case 'paragraph':
       return h(
         'p',
