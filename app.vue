@@ -80,6 +80,30 @@ useHead({
       name: 'color-scheme',
       content: 'dark light',
     },
+    {
+      name: 'apple-mobile-web-app-title',
+      content: 'Chimboz',
+    },
+    {
+      name: 'application-name',
+      content: 'Chimboz',
+    },
+    {
+      name: 'msapplication-TileColor',
+      content: '#2d89ef',
+    },
+    {
+      name: 'theme-color',
+      content: '#ffffff',
+    },
+    ...(notifications.value
+      ? [
+          {
+            name: 'msapplication-config',
+            content: '/favicon_new/browserconfig.xml',
+          },
+        ]
+      : []),
   ],
 });
 
