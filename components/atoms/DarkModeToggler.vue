@@ -15,12 +15,12 @@ function toggleColorMode() {
     : (colorMode.preference = 'light');
 }
 
-const isAppearanceTransition = computed(
-  () =>
-    // @ts-expect-error: Transition API
-    document.startViewTransition &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-);
+const isAppearanceTransition =
+  typeof document !== 'undefined' &&
+  // @ts-expect-error: Transition API
+  document.startViewTransition &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /**
  * Credit to [@hooray](https://github.com/hooray)
  * @see https://github.com/vuejs/vitepress/pull/2347
