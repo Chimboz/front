@@ -634,6 +634,12 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+.markdown-body li.checked {
+  list-style-image: url(@/assets/img/icon/checkbox_checked.svg);
+}
+.markdown-body li.unchecked {
+  list-style-image: url(@/assets/img/icon/checkbox_unchecked.svg);
+}
 .markdown-body li > p {
   margin-top: 16px;
 }

@@ -1,9 +1,10 @@
-import { marked, type Token } from 'marked';
+import { marked, Tokens, type Token } from 'marked';
 import hljs from 'highlight.js';
 import { markedHighlight } from 'marked-highlight';
 import { markedEmoji } from 'marked-emoji';
-import textAlign from './extensions/textAlign';
+import align from './extensions/align';
 import color from './extensions/color';
+import spoiler from './extensions/spoiler';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
@@ -47,62 +48,34 @@ marked.use(
   markedEmoji({
     emojis: EMOJIS,
   }),
-  textAlign,
-  color
+  align,
+  color,
+  spoiler
 );
 
-type EmojiToken = {
-  type: 'emoji';
-  raw: string;
-  name: string;
-  emoji: string;
-  unicode: boolean;
-};
-type ColorToken = {
-  type: 'color';
-  raw: string;
-  text: string;
-  color: string;
-  tokens: (Token | EmojiToken | ColorToken)[];
-};
-
-type CustomToken = Token | EmojiToken | ColorToken;
-
-function nodeRender(node: CustomToken): VNode | undefined | string {
+function nodeRender(node: Token): VNode | undefined | string {
   switch (node.type) {
     case 'hr':
       return h('hr', node.raw);
     case 'br':
       return h('br');
     case 'blockquote':
-      return h(
-        'blockquote',
-        node.tokens.map((child) => nodeRender(child))
-      );
+      return h('blockquote', node.tokens?.map((child) => nodeRender(child)));
     case 'code':
       return h('pre', h('code', node.text));
     case 'strong':
-      return h(
-        'strong',
-        node.tokens.map((child) => nodeRender(child))
-      );
+      return h('strong', node.tokens?.map((child) => nodeRender(child)));
     case 'em':
-      return h(
-        'em',
-        node.tokens.map((child) => nodeRender(child))
-      );
+      return h('em', node.tokens?.map((child) => nodeRender(child)));
     case 'del':
-      return h(
-        'del',
-        node.tokens.map((child) => nodeRender(child))
-      );
+      return h('del', node.tokens?.map((child) => nodeRender(child)));
     case 'table':
       return h('table', [
         h(
           'thead',
           h(
             'tr',
-            node.header.map((th, index) =>
+            (node as Tokens.Table).header.map((th, index) =>
               h(
                 'th',
                 { style: { textAlign: node.align[index] } },
@@ -113,7 +86,7 @@ function nodeRender(node: CustomToken): VNode | undefined | string {
         ),
         h(
           'tbody',
-          node.rows.map((tr) =>
+          (node as Tokens.Table).rows.map((tr) =>
             h(
               'tr',
               tr.map((td, index) =>
@@ -134,20 +107,32 @@ function nodeRender(node: CustomToken): VNode | undefined | string {
     case 'heading':
       return h(
         `h${node.depth}`,
-        node.tokens.map((child) => nodeRender(child))
+        node.tokens?.map((child) => nodeRender(child))
       );
     case 'list':
       return h(
         node.ordered ? 'ol' : 'ul',
         { start: node.start },
-        node.items.map((child) => nodeRender(child))
+        (node as Tokens.List).items.map((child) => nodeRender(child))
       );
     case 'list_item':
-      return h('li', node.tokens?.map((child) => nodeRender(child)));
+      return h(
+        'li',
+        {
+          class: {
+            checked: node.task && node.checked,
+            unchecked: node.task && !node.checked,
+          },
+        },
+        node.tokens?.map((child) => nodeRender(child))
+      );
     case 'paragraph':
+      return h('p', node.tokens?.map((child) => nodeRender(child)));
+    case 'align':
       return h(
         'p',
-        node.tokens.map((child) => nodeRender(child))
+        { style: { textAlign: node.align } },
+        node.tokens?.map((child) => nodeRender(child))
       );
     case 'def':
       return h('a', { href: node.href, title: node.title }, node.raw);
@@ -169,8 +154,10 @@ function nodeRender(node: CustomToken): VNode | undefined | string {
       return h(
         'i',
         { style: { color: node.color } },
-        node.tokens.map((child) => nodeRender(child))
+        node.tokens?.map((child) => nodeRender(child))
       );
+    case 'spoiler':
+      return h(resolveComponent('MarkdownSpoiler'), { node });
     case 'escape':
       return node.text;
     case 'text':

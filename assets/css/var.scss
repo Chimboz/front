@@ -7,8 +7,8 @@
   /* Global style */
   --font-family: 'Inter', sans-serif, 'system-ui';
   --sm-gap: calc(var(--unit) * 0.5);
-  --md-gap: calc(2 * var(--unit));
-  --gap: calc(3 * var(--unit));
+  --md-gap: calc(var(--unit) * 2);
+  --gap: calc(var(--unit) * 3);
   --border-radius: 12px;
   --padding: 20px;
   --font-size: 12px;
