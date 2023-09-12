@@ -3,7 +3,7 @@
     v-if="ALLOWED_PROTOCOL.includes(link.protocol) && link.href.match(youtube)"
     width="560"
     height="315"
-    :src="link.href.replace(youtube, `https://invidious.fdn.fr/embed/$5$6`)"
+    :src="link.href.replace(youtube, `https://youtube.com/embed/$5$6`)"
   >
   </iframe>
   <Tooltip
