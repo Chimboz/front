@@ -1,13 +1,8 @@
 <template>
   <section class="markdown-bacteria">
     <h1>
-      Bacteria <sub>{{ move }}/{{ moves.length }}</sub>
+      {{ title || 'Bacteria' }} <sub>{{ move }}/{{ moves.length }}</sub>
     </h1>
-    <Transition name="fade" mode="out-in">
-      <blockquote v-if="moves[move - 1]?.comment" :key="move">
-        <comment />
-      </blockquote>
-    </Transition>
     <div class="layout" @wheel.prevent="scrollMove">
       <div class="board">
         <Tooltip v-for="(tile, index) of board" :key="index" top class="cell">
@@ -16,7 +11,12 @@
             }}{{ Math.floor(index / 8) + 1 }}</template
           >
           <Transition name="pop" :duration="600">
-            <div :key="tile" class="tile pointer">
+            <div
+              :key="tile"
+              class="tile pointer"
+              :class="{ highlight: translate(index)!.x }"
+              @click="highlight = index"
+            >
               <img
                 :src="asset(`img/bacteria/${tile}.svg`)"
                 :class="`type-${tile}`"
@@ -25,47 +25,50 @@
           </Transition>
         </Tooltip>
       </div>
-      <table v-if="moves.length" class="moves">
-        <tbody>
-          <template v-for="(_, index) of moves" :key="index">
-            <tr v-if="!(index % 2)">
-              <td>
-                {{ index / 2 + 1 }}
-              </td>
-              <td
-                :class="[
-                  `color-${1 + firstPlayer}`,
-                  move === index + 1 ? 'active' : false,
-                ]"
-                class="btn-action pointer"
-                style="text-transform: uppercase"
-                @click="move = index + 1"
-              >
-                {{ moves[index].move }}
-              </td>
-              <td
-                v-if="moves[index + 1]"
-                :class="[
-                  `color-${2 - firstPlayer}`,
-                  move === index + 2 ? 'active' : false,
-                ]"
-                class="btn-action pointer"
-                style="text-transform: uppercase"
-                @click="move = index + 2"
-              >
-                {{ moves[index + 1].move }}
-              </td>
-            </tr>
-          </template>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3" width="1">
+      <div v-if="moves.length" class="infos">
+        <table>
+          <tbody>
+            <template v-for="(_, index) of moves" :key="index">
+              <tr v-if="!(index % 2)">
+                <td>
+                  {{ index / 2 + 1 }}
+                </td>
+                <td
+                  :class="[
+                    `color-${1 + firstPlayer}`,
+                    move === index + 1 ? 'active' : false,
+                  ]"
+                  class="btn-action pointer"
+                  style="text-transform: uppercase"
+                  @click="move = index + 1"
+                >
+                  {{ moves[index].move }}
+                </td>
+                <td
+                  v-if="moves[index + 1]"
+                  :class="[
+                    `color-${2 - firstPlayer}`,
+                    move === index + 2 ? 'active' : false,
+                  ]"
+                  class="btn-action pointer"
+                  style="text-transform: uppercase"
+                  @click="move = index + 2"
+                >
+                  {{ moves[index + 1].move }}
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+        <Transition name="fade" mode="out-in">
+          <blockquote :key="move">
+            <comment v-if="moves[move - 1]?.comment" />
+            <template v-else>
               Vous pouvez scoller pour afficher les coups suivants et précédents
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+            </template>
+          </blockquote>
+        </Transition>
+      </div>
     </div>
   </section>
 </template>
@@ -76,6 +79,24 @@ defineProps<{ node: Tokens.Generic }>();
 
 const { $md } = useNuxtApp();
 const comment = () => $md(moves.value[move.value - 1].comment);
+
+function translate(position: number | string) {
+  if (typeof position === 'string')
+    return {
+      notation: position,
+      x: position.charCodeAt(position.length - 2) - 97,
+      y: +position[position.length - 1] - 1,
+    };
+  if (typeof position === 'number')
+    return {
+      notation:
+        ((position % 8) + 10).toString(36).toUpperCase() +
+        Math.floor(position / 8) +
+        1,
+      x: position % 8,
+      y: Math.floor(position / 8),
+    };
+}
 
 const firstPlayer = 1;
 // prettier-ignore
@@ -97,6 +118,8 @@ const moves = ref<{ move: string; comment: string }[]>([
   { move: 'd4', comment: "Capturer 1 bactéries d'un coup" },
 ]);
 const move = ref(0);
+const title = ref('Partie de référence');
+const highlight = ref<number | undefined>(undefined);
 const board = computed(() => {
   const game = [...start];
   for (let i = 0; i < move.value && i < moves.value.length; i++) {
@@ -177,6 +200,7 @@ function scrollMove(event: any) {
       display: grid;
       flex: 1;
       aspect-ratio: 1.73931808373;
+      height: fit-content;
       grid: repeat(8, 1fr) / repeat(8, 1fr);
       background-image: url(@/assets/img/bacteria/floor.svg);
       background-size: contain;
@@ -221,7 +245,14 @@ function scrollMove(event: any) {
         }
       }
     }
-    .moves {
+    .infos {
+      display: flex;
+      flex-direction: column;
+      width: 120px;
+      blockquote {
+        width: min-content;
+        margin-left: var(--gap);
+      }
       .color-1 {
         border-color: var(--main-button-red);
         color: var(--dark-button-red);
