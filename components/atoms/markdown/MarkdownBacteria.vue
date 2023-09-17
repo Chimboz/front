@@ -12,7 +12,10 @@
             >{{ ((index % 8) + 10).toString(36).toUpperCase()
             }}{{ Math.floor(index / 8) + 1 }}</template
           >
-          <img :src="asset(`img/bacteria/${tile}.svg`)" />
+          <img
+            :src="asset(`img/bacteria/${tile}.svg`)"
+            :class="`type-${tile}`"
+          />
         </Tooltip>
       </div>
       <table v-if="moves.length" class="moves">
@@ -63,9 +66,9 @@ defineProps<{ node: Tokens.Generic }>();
 const firstPlayer = 1;
 // prettier-ignore
 const start = [
-  1, 1, 1, 0, 0, 0, 0, 0,
+  1, 1, 1, 3, 0, 0, 0, 0,
   1, 0, 1, 2, 0, 0, 0, 0,
-  1, 1, 1, 0, 0, 0, 0, 0,
+  1, 1, 1, 3, 0, 0, 0, 0,
   0, 0, 0, 0, 0, 0, 0, 0,
   0, 0, 0, 0, 0, 0, 0, 0,
   0, 2, 2, 0, 0, 0, 0, 0,
@@ -108,15 +111,23 @@ const move = ref(0);
     background-image: url(@/assets/img/bacteria/floor.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 1% 6% 4% 6%;
+    padding: 4% 6% 0 6%;
     .cell {
-      height: 20px;
+      height: 0;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       user-select: none;
       img {
         transition: var(--duration);
+        &.type-0,
+        &.type-3 {
+          width: 90%;
+        }
+        &.type-1,
+        &.type-2 {
+          width: 66%;
+        }
       }
       &::after {
         content: '';
