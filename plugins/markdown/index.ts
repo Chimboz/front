@@ -136,7 +136,7 @@ function nodeRender(node: Token): VNode | undefined | string {
       return h('p', node.tokens?.map((child) => nodeRender(child)));
     case 'align':
       return h(
-        'p',
+        'i',
         { style: { textAlign: node.align } },
         node.tokens?.map((child) => nodeRender(child))
       );

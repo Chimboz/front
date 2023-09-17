@@ -2,7 +2,7 @@ import type { TokenizerExtension } from 'marked';
 
 const bacteria: TokenizerExtension = {
   name: 'align',
-  level: 'block',
+  level: 'inline',
   start(this, src) {
     return src.match(/^{bacteria( \d+)?}/)?.index;
   },
