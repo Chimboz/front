@@ -7,11 +7,15 @@
         @click="move = minmax(move + 1, 0, moves.length)"
         @contextmenu.prevent="move = minmax(move - 1, 0, moves.length)"
       >
-        <div v-for="(tile, index) of game" :key="index" class="cell">
+        <Tooltip v-for="(tile, index) of game" :key="index" class="cell">
+          <template #tooltip
+            >{{ ((index % 8) + 10).toString(36).toUpperCase()
+            }}{{ Math.floor(index / 8) + 1 }}</template
+          >
           <img :src="asset(`img/bacteria/${tile}.svg`)" />
-        </div>
+        </Tooltip>
       </div>
-      <table class="moves">
+      <table v-if="moves.length" class="moves">
         <thead>
           <tr>
             <th>#</th>
@@ -27,6 +31,7 @@
               </td>
               <td
                 class="btn-action pointer"
+                style="text-transform: uppercase"
                 @click="
                   move =
                     index + 1 === move ? 0 : minmax(index + 1, 0, moves.length)
@@ -36,6 +41,7 @@
               </td>
               <td
                 class="btn-action pointer"
+                style="text-transform: uppercase"
                 @click="
                   move =
                     index + 2 === move ? 0 : minmax(index + 2, 0, moves.length)
@@ -88,7 +94,7 @@ const game = computed(() => {
   }
   return game;
 });
-const moves = ref(['b2', 'b7', 'b5', 'c5', 'd4']);
+const moves = ref<string[]>(['b2', 'b7', 'b5', 'c5', 'd4']);
 const move = ref(0);
 </script>
 <style lang="scss">
@@ -109,6 +115,25 @@ const move = ref(0);
       justify-content: center;
       align-items: flex-end;
       user-select: none;
+      img {
+        transition: var(--duration);
+      }
+      &::after {
+        content: '';
+        border-radius: 100%;
+        transition: var(--duration);
+        width: 100%;
+        position: absolute;
+        height: 20px;
+        z-index: -1;
+      }
+
+      &:hover {
+        z-index: 2;
+        &::after {
+          background: #fff;
+        }
+      }
     }
   }
 }
