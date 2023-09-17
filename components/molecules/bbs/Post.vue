@@ -107,7 +107,10 @@
                 class="btn-md"
                 aria-label="Color"
                 style="padding: 0"
-                @change="(event) => formatColor((event.target as SelectHTMLAttributes).value)"
+                @change="
+                  (event) =>
+                    formatColor((event.target as SelectHTMLAttributes).value)
+                "
               >
                 <option value="">Couleur</option>
                 <option style="color: #cecece" value="#CECECE">
@@ -148,7 +151,12 @@
                 class="btn-md"
                 style="padding: 0"
                 aria-label="Size"
-                @change="(event) => formatMultiline((event.target as SelectHTMLAttributes).value)"
+                @change="
+                  (event) =>
+                    formatMultiline(
+                      (event.target as SelectHTMLAttributes).value
+                    )
+                "
               >
                 <option value="##### ">Trop minuscule</option>
                 <option value="#### " selected>Taille</option>
@@ -161,7 +169,7 @@
                 class="btn-md"
                 @click="formatMultiline('> ')"
               >
-                <blockquote style="margin-bottom: 0">Quote</blockquote>
+                <blockquote class="mb-0 py-1">Quote</blockquote>
               </button>
               <button
                 type="button"
