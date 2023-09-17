@@ -24,6 +24,8 @@
   width: max-content;
   opacity: 0;
   transition: calc(var(--duration) / 2);
+  display: flex;
+  align-items: center;
 
   /* Position the tooltip */
   position: absolute;

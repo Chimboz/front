@@ -5,6 +5,8 @@ import { markedEmoji } from 'marked-emoji';
 import align from './extensions/align';
 import color from './extensions/color';
 import spoiler from './extensions/spoiler';
+import mention from './extensions/mention';
+import item from './extensions/item';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
@@ -50,7 +52,9 @@ marked.use(
   }),
   align,
   color,
-  spoiler
+  spoiler,
+  mention,
+  item
 );
 
 function nodeRender(node: Token): VNode | undefined | string {
@@ -158,6 +162,10 @@ function nodeRender(node: Token): VNode | undefined | string {
       );
     case 'spoiler':
       return h(resolveComponent('MarkdownSpoiler'), { node });
+    case 'mention':
+      return h(resolveComponent('MarkdownMention'), { node });
+    case 'item':
+      return h(resolveComponent('MarkdownItem'), { node });
     case 'escape':
       return node.text;
     case 'text':
