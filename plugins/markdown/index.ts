@@ -7,6 +7,7 @@ import color from './extensions/color';
 import spoiler from './extensions/spoiler';
 import mention from './extensions/mention';
 import item from './extensions/item';
+import bacteria from './extensions/bacteria';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
@@ -54,7 +55,8 @@ marked.use(
   color,
   spoiler,
   mention,
-  item
+  item,
+  bacteria
 );
 
 function nodeRender(node: Token): VNode | undefined | string {
@@ -166,6 +168,8 @@ function nodeRender(node: Token): VNode | undefined | string {
       return h(resolveComponent('MarkdownMention'), { node });
     case 'item':
       return h(resolveComponent('MarkdownItem'), { node });
+    case 'bacteria':
+      return h(resolveComponent('MarkdownBacteria'), { node });
     case 'escape':
       return node.text;
     case 'text':

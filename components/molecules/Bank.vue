@@ -64,58 +64,58 @@ const props = withDefaults(
 const coins = ref(7);
 const coinsPosition = [
   {
-    left: `${randomInt(33, 52)}px`,
-    top: `${randomInt(65, 69)}px`,
+    left: `${random(33, 52)}px`,
+    top: `${random(65, 69)}px`,
     filter: 'brightness(.7)',
     transform: 'scale(.8)',
   },
   {
-    left: `${randomInt(74, 96)}px`,
-    top: `${randomInt(65, 69)}px`,
+    left: `${random(74, 96)}px`,
+    top: `${random(65, 69)}px`,
     filter: 'brightness(.7)',
     transform: 'scale(.8)',
   },
 
   {
-    left: `${randomInt(22, 32)}px`,
-    top: `${randomInt(77, 81)}px`,
+    left: `${random(22, 32)}px`,
+    top: `${random(77, 81)}px`,
     filter: 'brightness(.85)',
     transform: 'scale(.9)',
   },
   {
-    left: `${randomInt(56, 68)}px`,
-    top: `${randomInt(77, 81)}px`,
+    left: `${random(56, 68)}px`,
+    top: `${random(77, 81)}px`,
     filter: 'brightness(.85)',
     transform: 'scale(.9)',
   },
   {
-    left: `${randomInt(92, 102)}px`,
-    top: `${randomInt(77, 81)}px`,
+    left: `${random(92, 102)}px`,
+    top: `${random(77, 81)}px`,
     filter: 'brightness(.85)',
     transform: 'scale(.9)',
   },
   {
-    left: `${randomInt(22, 32)}px`,
-    top: `${randomInt(88, 93)}px`,
+    left: `${random(22, 32)}px`,
+    top: `${random(88, 93)}px`,
     filter: 'brightness(1)',
     transform: 'scale(1)',
   },
   {
-    left: `${randomInt(56, 68)}px`,
-    top: `${randomInt(88, 93)}px`,
+    left: `${random(56, 68)}px`,
+    top: `${random(88, 93)}px`,
     filter: 'brightness(1)',
     transform: 'scale(1)',
   },
   {
-    left: `${randomInt(92, 102)}px`,
-    top: `${randomInt(88, 93)}px`,
+    left: `${random(92, 102)}px`,
+    top: `${random(88, 93)}px`,
     filter: 'brightness(1)',
     transform: 'scale(1)',
   },
 ];
 
 for (let i = 8; i <= Math.min(Math.floor(+user.value!.money / 10), 360); i++) {
-  const left = +coinsPosition[i % 8].left.slice(0, -2) + randomInt(-3, 3);
+  const left = +coinsPosition[i % 8].left.slice(0, -2) + random(-3, 3);
   const top = +coinsPosition[i - 8].top.slice(0, -2) - 4;
   const { filter } = coinsPosition[i % 8];
   const { transform } = coinsPosition[i % 8];

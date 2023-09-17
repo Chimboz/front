@@ -82,7 +82,7 @@ function submit() {
 
 async function generatePseudo() {
   const { data } = await useFetch<any>(
-    `https://chimboz.fr/api/generator/${randomInt(3, 15)}/${randomInt(1, 2)}`
+    `https://chimboz.fr/api/generator/${random(3, 15)}/${random(1, 2)}`
   );
   pseudo.value = JSON.parse(data.value).pseudo;
 }
