@@ -202,7 +202,7 @@ useHead({ title: computed(() => t('friends')) });
 }
 
 .online {
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   font-size: 10px;
   color: var(--light);
   justify-content: center;

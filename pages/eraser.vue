@@ -100,7 +100,7 @@ useHead({ title: computed(() => t('eraser')) });
   text-align: center;
   font-size: 24px;
   width: 24px;
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   border-bottom: 2px solid black;
   margin: 2px;
 }

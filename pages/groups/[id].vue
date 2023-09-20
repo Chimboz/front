@@ -180,7 +180,7 @@ useHead({ title: computed(() => t('group')) });
 
 .icon {
   display: inline-flex;
-  font-family: 'Pixelade';
+  font-family: 'Tamsyn';
   font-size: 13px;
   justify-content: center;
   width: 50px;

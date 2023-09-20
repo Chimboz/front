@@ -95,9 +95,7 @@
       @next-item="
         (name: any) =>
           (data.blazon[name] =
-            data.items[name][
-              data.items[name].indexOf(data.blazon[name]) + 1
-            ])
+            data.items[name][data.items[name].indexOf(data.blazon[name]) + 1])
       "
     />
     <br />
@@ -339,7 +337,7 @@ useHead({ title: computed(() => t('groupedit')) });
 
 .icon {
   display: inline-flex;
-  font-family: 'Pixelade';
+  font-family: 'Tamsyn';
   font-size: 13px;
   justify-content: center;
   width: 50px;

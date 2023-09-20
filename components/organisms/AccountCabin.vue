@@ -48,7 +48,7 @@
                   data.items[category]
                     .map((item: any) => item.id)
                     .indexOf(data.look[category]) >
-                    data.items[category].length - 2
+                  data.items[category].length - 2
                 "
                 @click="emit('nextItem', category)"
               >
@@ -429,7 +429,7 @@ function submit() {}
 <style lang="scss" scoped>
 input[type='text'] {
   text-align: center;
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   font-size: 10px;
   color: var(--text);
   border: 2px solid;
@@ -491,7 +491,7 @@ li::marker {
   width: 100px;
   align-items: flex-end;
   justify-content: center;
-  margin: 0 -var(--gap);
+  margin: 0 - var(--gap);
 }
 
 .cabin {
@@ -711,7 +711,7 @@ li::marker {
   padding: var(--sm-gap);
   border-radius: var(--gap);
   font-weight: bold;
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   font-size: 10px;
   background-image: linear-gradient(
     to top,
@@ -746,7 +746,7 @@ li::marker {
 }
 
 .info {
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   font-size: 10px;
   display: flex;
   justify-content: center;

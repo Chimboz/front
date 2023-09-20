@@ -24,17 +24,28 @@
       </Card>
       <CoatCabin
         :data="data"
-        @update-item="(name: 'shape'|'top'|'bot'|'primary'|'secondary', item: number|string ) => ((data.blazon[name] as number|string) = item)"
+        @update-item="
+          (
+            name: 'shape' | 'top' | 'bot' | 'primary' | 'secondary',
+            item: number | string
+          ) => ((data.blazon[name] as number | string) = item)
+        "
         @previous-item="
-          (name: 'shape'|'top'|'bot'|'primary'|'secondary') =>
-            ((data.blazon[name] as number|string) =
-              data.items[name][(data.items[name] as (string|number)[]).indexOf(data.blazon[name]) - 1])
+          (name: 'shape' | 'top' | 'bot' | 'primary' | 'secondary') =>
+            ((data.blazon[name] as number | string) =
+              data.items[name][
+                (data.items[name] as (string | number)[]).indexOf(
+                  data.blazon[name]
+                ) - 1
+              ])
         "
         @next-item="
-          (name: 'shape'|'top'|'bot'|'primary'|'secondary') =>
-            ((data.blazon[name] as number|string) =
+          (name: 'shape' | 'top' | 'bot' | 'primary' | 'secondary') =>
+            ((data.blazon[name] as number | string) =
               data.items[name][
-                (data.items[name] as (string|number)[]).indexOf(data.blazon[name]) + 1
+                (data.items[name] as (string | number)[]).indexOf(
+                  data.blazon[name]
+                ) + 1
               ])
         "
       /><br />
@@ -160,7 +171,7 @@ useHead({ title: computed(() => t('groupedit')) });
 
 .icon {
   display: inline-flex;
-  font-family: 'Pixelade';
+  font-family: 'Tamsyn';
   font-size: 13px;
   justify-content: center;
   width: 50px;

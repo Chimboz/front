@@ -242,7 +242,7 @@ h3 {
 .btn-shop {
   text-transform: uppercase;
   border-radius: 4px;
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   border: 1px solid;
   border-color: #f0e0b8 #f0e0b8 #b4aa6e #f0e0b8;
   color: var(--light);

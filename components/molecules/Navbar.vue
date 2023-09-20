@@ -282,15 +282,13 @@ header {
 }
 
 #username {
-  font-family: 'Pixelated Verdana 12';
-  font-weight: bold;
-  font-size: 16px;
-  color: var(--blue);
-  text-shadow: 0 0 5px var(--light), 0 0 5px var(--light);
+  font-size: 1.3rem;
+  text-shadow:
+    0 0 5px var(--light),
+    0 0 5px var(--light);
 }
 
 .btn-header {
-  font-family: 'Pixelated Verdana 12';
   font-size: 1.3rem;
   color: var(--text);
   border-radius: var(--round);
@@ -306,7 +304,9 @@ header {
 
 .btn-header:hover {
   background: var(--light-blue);
-  text-shadow: -0.1ex 0 0 currentColor, 0.1ex 0 0 currentColor;
+  text-shadow:
+    -0.1ex 0 0 currentColor,
+    0.1ex 0 0 currentColor;
 }
 
 @media (pointer: coarse), (pointer: none), not (min-width: 600px) {

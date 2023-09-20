@@ -302,7 +302,9 @@ onMounted(() => {
   background: linear-gradient(to bottom, transparent, transparent 50%, #ffe6e6);
   border-radius: var(--border-radius);
   border-bottom: 2px solid var(--light);
-  box-shadow: 0 2px #f3cac2, 0 4px #dfe7ea;
+  box-shadow:
+    0 2px #f3cac2,
+    0 4px #dfe7ea;
   display: flex;
   justify-content: center;
   padding: 6px;
@@ -406,7 +408,7 @@ section.display {
   transform: translateY(-100%);
   transition: 0.5s;
   width: 100%;
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   font-size: 10px;
   text-shadow: 0 0 2px var(--pink);
   color: var(--light);
@@ -425,7 +427,7 @@ section.display {
 .foreground form input {
   width: calc(50% - var(--md-gap));
   margin: 2px;
-  font-family: 'Pixelated Verdana 10';
+  font-family: 'Tamsyn';
   font-size: 10px;
 }
 
