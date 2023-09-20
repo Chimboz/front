@@ -282,14 +282,19 @@ header {
 }
 
 #username {
-  font-size: 1.3rem;
+  font-size: 1.16rem;
   text-shadow:
+    0 0 7px var(--light),
+    0 0 6px var(--light),
     0 0 5px var(--light),
-    0 0 5px var(--light);
+    0 0 4px var(--light),
+    0 0 3px var(--light),
+    0 0 2px var(--light),
+    0 0 1px var(--light);
 }
 
 .btn-header {
-  font-size: 1.3rem;
+  font-size: 1.16rem;
   color: var(--text);
   border-radius: var(--round);
   padding: 2px;

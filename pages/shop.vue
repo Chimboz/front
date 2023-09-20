@@ -238,22 +238,4 @@ h3 {
 .preview-tiz .tiz:nth-child(2) {
   transform: scale(1.6);
 }
-
-.btn-shop {
-  text-transform: uppercase;
-  border-radius: 4px;
-  font-family: 'Tamsyn';
-  border: 1px solid;
-  border-color: #f0e0b8 #f0e0b8 #b4aa6e #f0e0b8;
-  color: var(--light);
-  font-size: 11px;
-  background: linear-gradient(
-    to bottom,
-    #dfbe20,
-    #ceaf1e 49%,
-    #b59c2a 51%,
-    #e8d8a0
-  );
-  padding: 4px;
-}
 </style>

@@ -436,8 +436,7 @@ useHead({ title: computed(() => `${t('member')} ${data.value.name}`) });
 
 .icon {
   display: inline-flex;
-  font-family: 'Tamsyn';
-  font-size: 13px;
+  font-size: 0.9rem;
   justify-content: space-evenly;
   width: 50px;
   height: 50px;
@@ -455,8 +454,6 @@ useHead({ title: computed(() => `${t('member')} ${data.value.name}`) });
 }
 
 .online {
-  font-family: 'Tamsyn';
-  font-size: 10px;
   color: var(--light);
   justify-content: center;
   width: 100%;

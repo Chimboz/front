@@ -408,9 +408,10 @@ section.display {
   transform: translateY(-100%);
   transition: 0.5s;
   width: 100%;
-  font-family: 'Tamsyn';
-  font-size: 10px;
-  text-shadow: 0 0 2px var(--pink);
+  font-weight: bold;
+  text-shadow:
+    0 0 2px var(--pink),
+    0 0 2px var(--pink);
   color: var(--light);
   height: 45.25px;
   text-align: left;
@@ -426,9 +427,8 @@ section.display {
 
 .foreground form input {
   width: calc(50% - var(--md-gap));
+  font-weight: bold;
   margin: 2px;
-  font-family: 'Tamsyn';
-  font-size: 10px;
 }
 
 .foreground form .btn {

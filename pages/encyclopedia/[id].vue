@@ -98,7 +98,7 @@ definePageMeta({
   right: 0;
   top: 0;
   color: var(--light);
-  font-family: 'Tamsyn';
+  font-weight: bold;
 }
 
 .item-icons img {

@@ -171,8 +171,7 @@ useHead({ title: computed(() => t('groupedit')) });
 
 .icon {
   display: inline-flex;
-  font-family: 'Tamsyn';
-  font-size: 13px;
+  font-size: 0.9rem;
   justify-content: center;
   width: 50px;
   height: 50px;
