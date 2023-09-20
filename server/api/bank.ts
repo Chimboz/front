@@ -1,4 +1,4 @@
-import { random } from '~~/utils';
+import { random } from '~~/utils/Number';
 
 const date = Date.now();
 export default defineEventHandler(() => {
