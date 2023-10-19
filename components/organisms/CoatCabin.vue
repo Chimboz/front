@@ -309,8 +309,7 @@ function viewBox(category: BlazonCategory) {
 }
 
 .info {
-  font-family: 'Pixelated Verdana 10';
-  font-size: 10px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -42,7 +42,7 @@ function tween(timestamp: number) {
   elapsed.value = timestamp - start.value;
 
   if (previousTimeStamp.value !== timestamp) {
-    displayNumber.value = randomInt(props.min, props.max);
+    displayNumber.value = random(props.min, props.max);
   }
 
   if (elapsed.value < props.duration) {

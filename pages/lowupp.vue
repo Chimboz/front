@@ -24,7 +24,7 @@
           <button
             v-for="(letter, index) of pseudo"
             :key="index"
-            class="letter"
+            class="letter disambiguation"
             type="button"
             @click="changeCase(index)"
           >
@@ -86,9 +86,9 @@ useHead({ title: computed(() => t('capitalization')) });
 .letter {
   color: var(--text);
   text-align: center;
-  font-size: 24px;
   width: 24px;
-  font-family: 'Pixelated Verdana 10';
+  font-size: 2rem;
+  font-weight: bold;
   border-bottom: 2px solid var(--text);
   margin: 2px;
 }

@@ -5,6 +5,9 @@ import { markedEmoji } from 'marked-emoji';
 import align from './extensions/align';
 import color from './extensions/color';
 import spoiler from './extensions/spoiler';
+import mention from './extensions/mention';
+import item from './extensions/item';
+import bacteria from './extensions/bacteria';
 import emojis from '@/constants/emojis.json';
 import { EmoteList } from '@/types/Emotes';
 
@@ -50,7 +53,10 @@ marked.use(
   }),
   align,
   color,
-  spoiler
+  spoiler,
+  mention,
+  item,
+  bacteria
 );
 
 function nodeRender(node: Token): VNode | undefined | string {
@@ -130,7 +136,7 @@ function nodeRender(node: Token): VNode | undefined | string {
       return h('p', node.tokens?.map((child) => nodeRender(child)));
     case 'align':
       return h(
-        'p',
+        'i',
         { style: { textAlign: node.align } },
         node.tokens?.map((child) => nodeRender(child))
       );
@@ -158,6 +164,12 @@ function nodeRender(node: Token): VNode | undefined | string {
       );
     case 'spoiler':
       return h(resolveComponent('MarkdownSpoiler'), { node });
+    case 'mention':
+      return h(resolveComponent('MarkdownMention'), { node });
+    case 'item':
+      return h(resolveComponent('MarkdownItem'), { node });
+    case 'bacteria':
+      return h(resolveComponent('MarkdownBacteria'), { node });
     case 'escape':
       return node.text;
     case 'text':

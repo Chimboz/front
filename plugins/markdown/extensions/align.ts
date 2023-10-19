@@ -2,7 +2,7 @@ import type { TokenizerExtension } from 'marked';
 
 const align: TokenizerExtension = {
   name: 'align',
-  level: 'block',
+  level: 'inline',
   start(this, src) {
     return src.match(/^{(left|center|right|justify)}/)?.index;
   },

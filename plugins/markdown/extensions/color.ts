@@ -5,12 +5,12 @@ const color: TokenizerExtension = {
   level: 'inline',
   start(this, src) {
     return src.match(
-      /\\color{(#[A-Fa-f0-9]{3,4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})}{(.*?)\}/
+      /{color (#[A-Fa-f0-9]{3,4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})}{(.*?)\}/
     )?.index;
   },
   tokenizer(src) {
     const match =
-      /^\\color{(#[A-Fa-f0-9]{3,4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})}{(.*?)\}/.exec(
+      /^{color (#[A-Fa-f0-9]{3,4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})}{(.*?)\}/.exec(
         src
       );
     if (match) {

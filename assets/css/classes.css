@@ -123,13 +123,19 @@ textarea.btn-md {
   text-decoration: none !important;
   margin: 0 var(--sm-gap);
 }
-.btn-action:hover {
+.btn-action:hover,
+.btn-action:active {
   border-color: var(--orange);
   color: var(--orange);
   background: linear-gradient(to bottom, var(--light), var(--dark-card-yellow));
 }
 
-.btn-action:hover img {
+.btn-action:active {
+  background: linear-gradient(to top, var(--light), var(--dark-card-yellow));
+}
+
+.btn-action:hover img,
+.btn-action:active img {
   filter: invert(51%) sepia(55%) saturate(1488%) hue-rotate(0deg)
     brightness(103%) contrast(102%);
 }
@@ -326,4 +332,15 @@ button:hover .arrow {
   100% {
     transform: rotateZ(-30deg) scale(1.15);
   }
+}
+
+/* Default fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--duration) ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }

@@ -48,7 +48,7 @@
                   data.items[category]
                     .map((item: any) => item.id)
                     .indexOf(data.look[category]) >
-                    data.items[category].length - 2
+                  data.items[category].length - 2
                 "
                 @click="emit('nextItem', category)"
               >
@@ -179,72 +179,7 @@
               </label>
               <label
                 >{{ $t('profile.interests') }}
-                <ol>
-                  <li>
-                    <input
-                      id="interesta"
-                      minlength="0"
-                      maxlength="100"
-                      type="text"
-                      :value="centrea"
-                      aria-label="Interest A"
-                      @input="
-                        emit(
-                          'update:centrea',
-                          ($event.target as InputHTMLAttributes).value
-                        )
-                      "
-                    />
-                  </li>
-                  <li>
-                    <input
-                      id="interestb"
-                      minlength="0"
-                      maxlength="100"
-                      type="text"
-                      :value="centreb"
-                      aria-label="Interest B"
-                      @input="
-                        emit(
-                          'update:centreb',
-                          ($event.target as InputHTMLAttributes).value
-                        )
-                      "
-                    />
-                  </li>
-                  <li>
-                    <input
-                      id="interestc"
-                      minlength="0"
-                      maxlength="100"
-                      type="text"
-                      :value="centrec"
-                      aria-label="Interest C"
-                      @input="
-                        emit(
-                          'update:centrec',
-                          ($event.target as InputHTMLAttributes).value
-                        )
-                      "
-                    />
-                  </li>
-                  <li>
-                    <input
-                      id="interestd"
-                      minlength="0"
-                      maxlength="100"
-                      type="text"
-                      :value="centred"
-                      aria-label="Interest D"
-                      @input="
-                        emit(
-                          'update:centred',
-                          ($event.target as InputHTMLAttributes).value
-                        )
-                      "
-                    />
-                  </li>
-                </ol>
+                <textarea maxlength="255" rows="4"></textarea>
               </label>
             </div>
           </div>
@@ -427,10 +362,14 @@ function submit() {}
 }
 </style>
 <style lang="scss" scoped>
-input[type='text'] {
+input[type='text'],
+textarea {
   text-align: center;
-  font-family: 'Pixelated Verdana 10';
-  font-size: 10px;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: bold;
+  width: 100%;
+  resize: vertical;
   color: var(--text);
   border: 2px solid;
   border-color: var(--blue) var(--dark-card-blue) var(--dark-card-blue)
@@ -491,7 +430,7 @@ li::marker {
   width: 100px;
   align-items: flex-end;
   justify-content: center;
-  margin: 0 -var(--gap);
+  margin: 0 - var(--gap);
 }
 
 .cabin {
@@ -711,8 +650,6 @@ li::marker {
   padding: var(--sm-gap);
   border-radius: var(--gap);
   font-weight: bold;
-  font-family: 'Pixelated Verdana 10';
-  font-size: 10px;
   background-image: linear-gradient(
     to top,
     var(--selected-main-card),
@@ -746,8 +683,7 @@ li::marker {
 }
 
 .info {
-  font-family: 'Pixelated Verdana 10';
-  font-size: 10px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;

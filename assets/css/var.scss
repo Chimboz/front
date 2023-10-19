@@ -78,6 +78,10 @@
   --unique: #c00;
 }
 
+.dyslexic {
+  --font-family: 'OpenDyslexic', sans-serif, 'system-ui';
+}
+
 .dark-mode {
   --lightness: 100%;
   --lightness-factor: -1;

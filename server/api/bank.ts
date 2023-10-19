@@ -1,4 +1,4 @@
-import { randomInt } from '~~/utils';
+import { random } from '~~/utils/Number';
 
 const date = Date.now();
 export default defineEventHandler(() => {
@@ -7,7 +7,7 @@ export default defineEventHandler(() => {
     bank.push({
       date: date - 86400000 * i,
       description: 'Loterie du jour',
-      value: randomInt(-100, 100),
+      value: random(-100, 100),
     });
   }
   return bank;

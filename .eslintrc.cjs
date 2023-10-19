@@ -9,7 +9,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',
     '@nuxtjs/eslint-config-typescript',
     '@vue/eslint-config-prettier/skip-formatting',
   ],
@@ -18,7 +17,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: ['vue'],
   rules: {
     'vue/multi-word-component-names': 'off',
     'comma-dangle': 'off',
