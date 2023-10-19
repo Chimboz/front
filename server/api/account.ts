@@ -1,12 +1,12 @@
 export default defineEventHandler(() => {
   return {
-    username: 'Tigriz',
-    id: 3,
+    username: 'user',
+    id: 1,
     level: 25,
     gender: 'chimbo',
-    motto: 'Nitens lux, horrenda procella, tenebris aeternis involuta',
-    centres: ['Musique', 'informatique', 'mathématiques', 'Sayaka'],
-    website: 'http://last.fm/user/Tigriz',
+    motto: 'Motto',
+    centres: ['test', 'test', 'test', 'test'],
+    website: 'test',
     emote: 'zzz',
     ppt: 2576,
     look: {
